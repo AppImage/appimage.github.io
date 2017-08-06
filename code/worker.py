@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os, sys
+import os, sys, binascii
 import urllib.request
 
 # Get the URL to the AppImage
@@ -20,4 +20,4 @@ urllib.request.urlretrieve(firstline, filename)
 f = open(filename)
 f.seek(8)
 stringdata = f.read(3)
-print(stringdata.encode('hex'))
+print(binascii.hexlify(stringdata))
