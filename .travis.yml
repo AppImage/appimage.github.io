@@ -8,3 +8,8 @@ script:
   - FILES=$(git log -p -1 data/ | grep +++ | cut -d '/' -f 2- | sed -e 's|dev/null||g')
   - # Work on these files that have been changed in the last commit
   - for FILE in $FILES ; do echo "$FILE" ; python3 code/worker.py $(readlink -f "$FILE") ; done
+
+addons:
+  apt:
+    packages:
+      - python3-requests
