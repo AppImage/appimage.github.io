@@ -22,4 +22,4 @@ f.seek(8)
 block = f.read(3)
 for ch in block:
     str += hex(ord(ch))+" "
-print str
+print(str)
