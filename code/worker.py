@@ -15,9 +15,9 @@ def main() -> None:
     header = r.raw.read(8+3)
     tag = header[8:8+3]
     name = r.url
-    if tag == b'\x41\x49\x01':
+    if tag == b'AI\x01':
         print("{} looks like a valid type-1 appimage file".format(name))
-    elif tag == b'\x41\x49\x02':
+    elif tag == b'AI\x02':
         print("{} looks like a valid type-2 appimage file".format(name))
     else:
         raise SystemExit("{} doesn't look like a valid appimage file".format(name))
