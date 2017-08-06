@@ -23,7 +23,8 @@ def main() -> None:
         print("{} looks like a valid type-2 AppImage file".format(name))
     else:
         raise SystemExit(
-                "{} doesn't look like a valid AppImage file".format(name))
+                "cannot process {!a}: AppImage signature not found".format(
+                    ns.appimage_url))
     # If 0x414902 then extract desktop file like so:
     # export TARGET_APPIMAGE = filename
     # ./runtime --appimage-extract '*.desktop'
