@@ -18,11 +18,11 @@ filename = firstline.split('/')[-1].split('#')[0].split('?')[0]
 urllib.request.urlretrieve(firstline, filename)
 
 # Get the magic bytes
-f = open(filename)
-f.seek(8)
-data = f.read(3)
-for c in data:
-    print(c) # FIXME; should be 0x414902
+with open(filename) as f: # <zyga-suse> this always closes f, even if exceptions happen
+    f.seek(8)
+    data = f.read(3)
+    for c in data:
+        print(c) # FIXME; should be 0x414902
 
 # Exit if the magic bytes are not 0x414901 (type 1) or 0x414902 (type 2)
 
