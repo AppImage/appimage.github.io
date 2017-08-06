@@ -19,7 +19,5 @@ urllib.request.urlretrieve(firstline, filename)
 # Get the magic bytes
 f = open(filename)
 f.seek(8)
-block = f.read(3)
-for ch in block:
-    str += str(hex(ord(ch)))+" "
-print(str)
+stringdata = f.read(3)
+print stringdata.encode('hex')
