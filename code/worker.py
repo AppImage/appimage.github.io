@@ -21,5 +21,5 @@ f = open(filename)
 f.seek(8)
 block = f.read(3)
 for ch in block:
-    str += hex(ord(ch))+" "
+    str += str(hex(ord(ch)))+" "
 print(str)
