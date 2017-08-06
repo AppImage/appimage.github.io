@@ -1,5 +1,9 @@
+language: python
+python:
+  - "3.6"
+  
 sudo: false
 dist: trusty
 
 script:
-  - bash ./code/travis.sh
+  - python ./code/travis.py
