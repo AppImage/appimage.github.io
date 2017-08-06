@@ -1,38 +1,40 @@
 #!/usr/bin/env python3
+import argparse
 
-import os, sys, binascii
-import urllib.request
+import requests
 
-# Get the URL to the AppImage
-f = open(sys.argv[1], "r") 
-firstline = f.readline()
-f.close()
-print(firstline)
-if not firstline.startswith("http"):
-    print("%s seems not to contain an URL, exiting" % (sys.argv[1]))
-    exit(1)
 
-# Download the AppImage
-# TODO: Optionally FUSE-mount the AppImage with httpfs; is it really worth it?
-filename = firstline.split('/')[-1].split('#')[0].split('?')[0]
-urllib.request.urlretrieve(firstline, filename)
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        'appimage_url', metavar='URL',
+        help="URL of the Appimage file to query")
+    ns = parser.parse_args()
+    r = requests.get(ns.appimage_url, stream=True)
+    r.raise_for_status()
+    header = r.raw.read(8+3)
+    tag = header[8:8+3]
+    name = r.url
+    if tag == b'\x41\x49\x01':
+        print("{} looks like a valid type-1 appimage file".format(name))
+    elif tag == b'\x41\x49\x02':
+        print("{} looks like a valid type-2 appimage file".format(name))
+    else:
+        raise SystemExit("{} doesn't look like a valid appimage file".format(name))
+    # If 0x414902 then extract desktop file like so:
+    # export TARGET_APPIMAGE = filename
+    # ./runtime --appimage-extract '*.desktop'
+    # ...
 
-# Get the magic bytes
-with open(filename) as f: # <zyga-suse> this always closes f, even if exceptions happen
-    f.seek(8)
-    data = f.read(3)
-    for c in data:
-        print(c) # FIXME; should be 0x414902
+    # If 0x414901 then loop-mount with fuseiso
+    # ...
 
-# Exit if the magic bytes are not 0x414901 (type 1) or 0x414902 (type 2)
+    # Run some checks
+    # Export data from the desktop file to "database file"
 
-# If 0x414902 then extract desktop file like so:
-# export TARGET_APPIMAGE = filename
-# ./runtime --appimage-extract '*.desktop'
-# ...
 
-# If 0x414901 then loop-mount with fuseiso
-# ...
 
-# Run some checks
-# Export data from the desktop file to "database file"
+if __name__ == "__main__":
+    main()
+
+
