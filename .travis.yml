@@ -6,4 +6,4 @@ sudo: false
 dist: trusty
 
 script:
-  - python ./code/travis.sh
+  - bash ./code/travis.sh
