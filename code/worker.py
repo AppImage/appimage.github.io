@@ -19,5 +19,6 @@ urllib.request.urlretrieve(firstline, filename)
 # Get the magic bytes
 f = open(filename)
 f.seek(8)
-stringdata = f.read(3)
-print(binascii.hexlify(stringdata))
+data = f.read(3)
+for c in data:
+    print(c)
