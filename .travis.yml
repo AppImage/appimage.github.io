@@ -1,2 +1,5 @@
+sudo: false
+dist: trusty
+
 script:
-  - ./code/travis.sh
+  - bash ./code/travis.sh
