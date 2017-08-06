@@ -8,7 +8,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         'appimage_url', metavar='URL',
-        help="URL of the Appimage file to query")
+        help="URL of the AppImage file to query")
     ns = parser.parse_args()
     r = requests.get(ns.appimage_url, stream=True)
     r.raise_for_status()
@@ -16,9 +16,9 @@ def main() -> None:
     tag = header[8:8+3]
     name = r.url
     if tag == b'AI\x01':
-        print("{} looks like a valid type-1 appimage file".format(name))
+        print("{} looks like a valid type-1 AppImage file".format(name))
     elif tag == b'AI\x02':
-        print("{} looks like a valid type-2 appimage file".format(name))
+        print("{} looks like a valid type-2 AppImage file".format(name))
     else:
         raise SystemExit("{} doesn't look like a valid appimage file".format(name))
     # If 0x414902 then extract desktop file like so:
