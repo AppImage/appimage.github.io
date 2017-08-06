@@ -20,7 +20,7 @@ def main() -> None:
     elif tag == b'AI\x02':
         print("{} looks like a valid type-2 AppImage file".format(name))
     else:
-        raise SystemExit("{} doesn't look like a valid appimage file".format(name))
+        raise SystemExit("{} doesn't look like a valid AppImage file".format(name))
     # If 0x414902 then extract desktop file like so:
     # export TARGET_APPIMAGE = filename
     # ./runtime --appimage-extract '*.desktop'
