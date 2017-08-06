@@ -9,8 +9,8 @@ firstline = f.readline()
 f.close()
 print(firstline)
 if not firstline.startswith("http"):
-  print("%s seems not to contain an URL, exiting" % (sys.argv[1]))
-  exit(1)
+    print("%s seems not to contain an URL, exiting" % (sys.argv[1]))
+    exit(1)
 
 # Download the AppImage
 filename = firstline.split('/')[-1].split('#')[0].split('?')[0]
@@ -19,9 +19,7 @@ urllib.request.urlretrieve(firstline, filename)
 # Get the magic bytes
 f = open(filename)
 f.seek(8)
-print(hex(f.read(1)))
-print(hex(f.read(1)))
-print(hex(f.read(1)))
-f.seek(8)
-print(hex(f.read(3)))
-f.close()
+block = f.read(3)
+for ch in block:
+    str += hex(ord(ch))+" "
+print str
