@@ -16,11 +16,10 @@ def main() -> None:
     req.raise_for_status()
     header = req.raw.read(8+3)
     tag = header[8:8+3]
-    name = req.url
     if tag == b'AI\x01':
-        print("{} looks like a valid type-1 AppImage file".format(name))
+        print("Found valid type-1 AppImage signature")
     elif tag == b'AI\x02':
-        print("{} looks like a valid type-2 AppImage file".format(name))
+        print("Found valid type-2 AppImage signature")
     else:
         raise SystemExit(
                 "cannot process {!a}: AppImage signature not found".format(
