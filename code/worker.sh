@@ -18,12 +18,33 @@ fi
 TYPE=""
 MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4)
 if [ $MAGIC == $(echo -ne "\x41\x49\x02") ] ; then
-  echo "AppImage Type 2 detected"
+  echo "AppImage type 2 detected"
   TYPE=2
 elif [ $MAGIC == $(echo -ne "\x41\x49\x01") ] ; then
-  echo "AppImage Type 1 detected"
+  echo "AppImage type 1 detected"
   TYPE=1
 else
   echo "Unknown file detected"
   exit 1
+fi
+
+# If we have a type 2 AppImage, then mount it using appimagetool (not using itself for security reasons)
+if [ $TYPE -eq 2 ] ; then
+  if [ ! -e appimagetool-x86_64.AppImage ] ; then
+    wget -c https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+    chmod +x appimagetool*
+  fi
+  # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
+  TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-mount &
+  PID=$!
+  sleep 1
+  mount | grep tmp | tail -n 1
+  APPDIR=$(mount | grep tmp | tail -n 1 | cut -d " " -f 3)
+  echo $APPDIR
+  ls "$APPDIR"
+  if [ ! -f appdir-lint.sh ] ; then
+    wget -c https://raw.githubusercontent.com/AppImage/AppImages/master/appdir-lint.sh https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist
+  fi
+  bash appdir-lint.sh "$APPDIR"
+  kill $PID # fuse
 fi
