@@ -8,7 +8,7 @@ def main() -> None:
     
     # Get the URL to the AppImage
     f = open(sys.argv[1], "r") 
-    firstline = f.readline()
+    url = f.readline()
     f.close()
     print(url)
     if not url.startswith("http"):
