@@ -13,7 +13,7 @@ def main() -> None:
     print(url)
     if not url.startswith("http"):
         print("%s seems not to contain an URL, exiting" % (sys.argv[1]))
-    exit(1)
+        exit(1)
 
     req = requests.get(url, stream=True)
     print("Status %s" % (r.status_code))
