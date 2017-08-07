@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
-"""AppImage hub worker scrpit."""
-import argparse
 
 import requests
 
 
 def main() -> None:
-    """Process worker request as given on command line."""
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        'appimage_url', metavar='URL',
-        help="URL of the AppImage file to query")
-    ns = parser.parse_args()
-    req = requests.get(ns.appimage_url, stream=True)
+    
+    # Get the URL to the AppImage
+    f = open(sys.argv[1], "r") 
+    firstline = f.readline()
+    f.close()
+    print(firstline)
+    if not firstline.startswith("http"):
+        print("%s seems not to contain an URL, exiting" % (sys.argv[1]))
+    exit(1)
+
+    req = requests.get(firstline, stream=True)
     req.raise_for_status()
     header = req.raw.read(8+3)
     tag = header[8:8+3]
