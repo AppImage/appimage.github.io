@@ -103,8 +103,8 @@ git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis CI"
 ( cd database/ ; git add . ) # Recursively add everything in this directory
 git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
-git remote add origin https://${GITHUB_TOKEN}@github.com/AppImages/AppImage.git > /dev/null 2>&1
-git push --quiet --set-upstream origin master 
+( set +x ; git remote add origin https://${GITHUB_TOKEN}@github.com/AppImages/AppImage.git > /dev/null 2>&1 )
+git push --set-upstream origin master 
 
 # TODO: If this is not a PR, then convert the "database files" into whatever output formats we need to support
 # e.g., OCS for knsrc/Discover
