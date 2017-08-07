@@ -1,6 +1,6 @@
 language: generic
 
-sudo: false
+sudo: true # Otherwise there seems to be no fuse available
 dist: trusty
 
 script:
