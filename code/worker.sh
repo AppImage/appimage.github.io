@@ -3,11 +3,15 @@
 URL=$(cat $1)
 echo $URL
 
-# TODO: Check if $URL starts with "http", otherwise exit
+# Check if $URL starts with "http", otherwise exit
+if [ ${URL:0:4} != http ] ; then
+  echo "No http link detected in $1"
+  exit 1
+fi
 
 # If $URL begins with https://api.github.com, then treat it specially
 # This allows us to have generic URLs rather than URLs to specific releases
-if [ ${URL:0:22}  == https://api.github.com ] ; then
+if [ ${URL:0:22} == https://api.github.com ] ; then
   echo "GitHub API URL detected"
   URL=$(wget -q "$URL" -O - | grep browser_download_url | grep -i AppImage | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
   echo "URL from GitHub API: $URL"
@@ -67,6 +71,8 @@ if [ $TYPE -eq 1 ] ; then
   bash appdir-lint.sh "$APPDIR"
   sudo umount -l /mnt
 fi
+
+# If everything succeeded until here, then download Firejail aith Xpra and run the application in it and take screenshots
 
 # If everything succeeded until here, then put together a "database file" and display it
 
