@@ -1,38 +1,40 @@
 #!/usr/bin/env python3
+"""AppImage hub worker scrpit."""
+import argparse
 
-import os, sys, binascii
-import urllib.request
+import requests
 
-# Get the URL to the AppImage
-f = open(sys.argv[1], "r") 
-firstline = f.readline()
-f.close()
-print(firstline)
-if not firstline.startswith("http"):
-    print("%s seems not to contain an URL, exiting" % (sys.argv[1]))
-    exit(1)
 
-# Download the AppImage
-# TODO: Optionally FUSE-mount the AppImage with httpfs; is it really worth it?
-filename = firstline.split('/')[-1].split('#')[0].split('?')[0]
-urllib.request.urlretrieve(firstline, filename)
+def main() -> None:
+    """Process worker request as given on command line."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        'appimage_url', metavar='URL',
+        help="URL of the AppImage file to query")
+    ns = parser.parse_args()
+    req = requests.get(ns.appimage_url, stream=True)
+    req.raise_for_status()
+    header = req.raw.read(8+3)
+    tag = header[8:8+3]
+    if tag == b'AI\x01':
+        print("Found valid type-1 AppImage signature")
+    elif tag == b'AI\x02':
+        print("Found valid type-2 AppImage signature")
+    else:
+        raise SystemExit(
+                "cannot process {!a}: AppImage signature not found".format(
+                    ns.appimage_url))
+    # If 0x414902 then extract desktop file like so:
+    # export TARGET_APPIMAGE = filename
+    # ./runtime --appimage-extract '*.desktop'
+    # ...
 
-# Get the magic bytes
-with open(filename) as f: # <zyga-suse> this always closes f, even if exceptions happen
-    f.seek(8)
-    data = f.read(3)
-    for c in data:
-        print(c) # FIXME; should be 0x414902
+    # If 0x414901 then loop-mount with fuseiso
+    # ...
 
-# Exit if the magic bytes are not 0x414901 (type 1) or 0x414902 (type 2)
+    # Run some checks
+    # Export data from the desktop file to "database file"
 
-# If 0x414902 then extract desktop file like so:
-# export TARGET_APPIMAGE = filename
-# ./runtime --appimage-extract '*.desktop'
-# ...
 
-# If 0x414901 then loop-mount with fuseiso
-# ...
-
-# Run some checks
-# Export data from the desktop file to "database file"
+if __name__ == "__main__":
+    main()
