@@ -101,6 +101,7 @@ find database/ -type f -exec cat {} \;
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
 git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis CI"
+git checkout master
 ( cd database/ ; git add . ) # Recursively add everything in this directory
 git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
 ( set +x ; git remote add deploy https://${GITHUB_TOKEN}@github.com/AppImages/AppImageHub.git > /dev/null 2>&1 )
