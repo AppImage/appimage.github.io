@@ -10,13 +10,16 @@ def main() -> None:
     f = open(sys.argv[1], "r") 
     firstline = f.readline()
     f.close()
-    print(firstline)
-    if not firstline.startswith("http"):
+    print(url)
+    if not url.startswith("http"):
         print("%s seems not to contain an URL, exiting" % (sys.argv[1]))
     exit(1)
 
-    req = requests.get(firstline, stream=True)
+    req = requests.get(url, stream=True)
+    print("Status %s" % (r.status_code))
     req.raise_for_status()
+    
+    # Check the file type. Since we are using requests with "stream=True", not the whole file will be downloaded for this
     header = req.raw.read(8+3)
     tag = header[8:8+3]
     if tag == b'AI\x01':
@@ -26,7 +29,8 @@ def main() -> None:
     else:
         raise SystemExit(
                 "cannot process {!a}: AppImage signature not found".format(
-                    ns.appimage_url))
+                    url))
+    
     # If 0x414902 then extract desktop file like so:
     # export TARGET_APPIMAGE = filename
     # ./runtime --appimage-extract '*.desktop'
