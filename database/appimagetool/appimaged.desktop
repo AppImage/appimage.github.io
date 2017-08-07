@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=appimaged
+Exec=appimaged
+Comment=Optional daemon to integrate AppImages with the desktop
+Icon=appimaged
+Categories=Development;
+Terminal=false
+NoDisplay=true
+
+[AppImageHub]
+UpdateInformation=false
+# Dear upstream developer, please add update information to your AppImage
+# so that users can easily update the AppImage
