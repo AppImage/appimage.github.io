@@ -53,9 +53,9 @@ fi
 # If we have a type 1 AppImage, then loop-mount it (not using itself for security reasons)
 if [ $TYPE -eq 1 ] ; then
   # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
-  mount "$FILENAME" -o loop /mnt
+  sudo mount "$FILENAME" -o loop /mnt
   APPDIR=/mnt
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"
-  kill $PID # fuse
+  sudo umount -l /mnt
 fi
