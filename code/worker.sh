@@ -1,6 +1,6 @@
 #!/bin/bash
 
-URL=$(cat $1)
+URL=$(cat $1 | head -n 1)
 echo $URL
 
 # Check if $URL starts with "http", otherwise exit
