@@ -59,3 +59,7 @@ if [ $TYPE -eq 1 ] ; then
   bash appdir-lint.sh "$APPDIR"
   sudo umount -l /mnt
 fi
+
+# If everything succeeded until here, then put together a "database file" and display it
+
+# If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
