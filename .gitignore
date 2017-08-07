@@ -1,3 +1,9 @@
+# Working copies
+AppImageUpdate-x86_64.AppImage
+appdir-lint.sh
+appimagetool-x86_64.AppImage
+excludelist
+
 # Prerequisites
 *.d
 
