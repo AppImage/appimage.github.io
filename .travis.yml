@@ -4,7 +4,7 @@ sudo: true # Otherwise there seems to be no fuse available
 dist: trusty
 
 script:
-  - sudo apt-get -y install appstream libxml-xpath-perl
+  - sudo apt-get -y install libxml-xpath-perl # appstream
   - # Find out which files in data/ have been changed in the last commit
   - FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2- | sed -e 's|dev/null||g')
   - # Work on these files that have been changed in the last commit
