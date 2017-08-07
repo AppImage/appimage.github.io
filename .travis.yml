@@ -10,7 +10,7 @@ script:
   - # for FILE in $FILES ; do echo "$FILE" ; /usr/bin/python3 code/worker.py $(readlink -f "$FILE") ; done
   - for FILE in $FILES ; do echo "$FILE" ; bash -e code/worker.sh $(readlink -f "$FILE") ; done
 
-# addons:
-#   apt:
-#     packages:
-#       - python3-requests
+addons:
+  apt:
+    packages:
+      - appstream
