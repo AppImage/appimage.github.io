@@ -72,7 +72,10 @@ if [ $TYPE -eq 1 ] ; then
   sudo umount -l /mnt
 fi
 
-# If everything succeeded until here, then download Firejail aith Xpra and run the application in it and take screenshots
+# If there is an AppStream file, then extract data like screenshhot URLs from it
+
+# If everything succeeded until here, then download Firejail aith Xpra and run the application in it
+# and take screenshots if we don't have them already from AppStream
 
 # If everything succeeded until here, then put together a "database file" and display it
 
