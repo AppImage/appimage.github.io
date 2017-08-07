@@ -97,7 +97,14 @@ find database/ -type f -exec cat {} \;
 
 # TODO: If there is an AppStream file, then extract data like screenshhot URLs from it
 
-# TODO: If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
+# If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
+# https://gist.github.com/willprice/e07efd73fb7f13f917ea
+git config --global user.email "travis@travis-ci.org"
+git config --global user.name "Travis CI"
+( cd database/ ; git add . ) # Recursively add everything in this directory
+git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
+git remote add origin https://${GITHUB_TOKEN}@github.com/AppImages/AppImage.git > /dev/null 2>&1
+git push --quiet --set-upstream origin master 
 
 # TODO: If this is not a PR, then convert the "database files" into whatever output formats we need to support
 # e.g., OCS for knsrc/Discover
