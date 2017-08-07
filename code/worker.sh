@@ -61,7 +61,7 @@ if [ $TYPE -eq 2 ] ; then
   bash appdir-lint.sh "$APPDIR"
   kill $PID # fuse
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
-  UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-updateinformation)
+  UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-updateinformation) || echo "Could not get update information from the AppImage"
 fi
 
 # If we have a type 1 AppImage, then loop-mount it (not using itself for security reasons)
@@ -72,7 +72,7 @@ if [ $TYPE -eq 1 ] ; then
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"  
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
-  UPDATE_INFORMATION=$(dd if="${APPIMAGE}" bs=1 skip=33651 count=512 2>/dev/null)
+  UPDATE_INFORMATION=$(dd if="${APPIMAGE}" bs=1 skip=33651 count=512 2>/dev/null) || echo "Could not get update information from the AppImage"
   sudo umount -l /mnt
 fi
 
