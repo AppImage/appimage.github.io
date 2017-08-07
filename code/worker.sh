@@ -59,7 +59,7 @@ if [ $TYPE -eq 2 ] ; then
   APPDIR=$(mount | grep tmp | tail -n 1 | cut -d " " -f 3)
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"
-  kill $PID # fuse
+  # later # kill $PID # fuse
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
   UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-updateinformation) || echo "Could not get update information from the AppImage"
 fi
@@ -73,18 +73,29 @@ if [ $TYPE -eq 1 ] ; then
   bash appdir-lint.sh "$APPDIR"  
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
   UPDATE_INFORMATION=$(dd if="${APPIMAGE}" bs=1 skip=33651 count=512 2>/dev/null) || echo "Could not get update information from the AppImage"
-  sudo umount -l /mnt
+  # later # sudo umount -l /mnt
 fi
-
-
-# TODO: If there is an AppStream file, then extract data like screenshhot URLs from it
 
 # TODO: If everything succeeded until here, then download Firejail aith Xpra and run the application in it
 # and take screenshots if we don't have them already from AppStream
 
 # TODO: If everything succeeded until here, then put together a "database file" and display it
 
-echo "${UPDATE_INFORMATION}"
+mkdir -p database/$FILENAME
+cp "$APPDIR/*.desktop" database/$FILENAME/
+DATAFILE=$(readlink -f database/$FILENAME/*.desktop)
+
+echo "" >> "$DATAFILE"
+echo "[AppImageHub]" >> "$DATAFILE"
+
+if [ ! -x $UPDATE_INFORMATION] ; then
+  echo "UpdateInformation=${UPDATE_INFORMATION}" >> "$DATAFILE"
+fi
+
+echo "==========================================="
+find database/ -type f -exec cat {} \;
+
+# TODO: If there is an AppStream file, then extract data like screenshhot URLs from it
 
 # TODO: If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
 
@@ -92,3 +103,10 @@ echo "${UPDATE_INFORMATION}"
 # e.g., OCS for knsrc/Discover
 # e.g., JSON for something Jekyll-based like https://quassy.github.io/elementary-apps/
 # and trigger a deployment of the static website
+
+if [ $TYPE -eq 2 ] ; then
+  kill $PID # fuse
+fi
+if [ $TYPE -eq 1 ] ; then
+  sudo umount -l /mnt
+fi
