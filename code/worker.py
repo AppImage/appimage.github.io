@@ -18,7 +18,9 @@ def main() -> None:
     req = requests.get(url, stream=True)
     print("Status %s" % (r.status_code))
     req.raise_for_status()
-    
+        
+    print(r.headers['Content-Type'])
+
     # Check the file type. Since we are using requests with "stream=True", not the whole file will be downloaded for this
     header = req.raw.read(8+3)
     tag = header[8:8+3]
