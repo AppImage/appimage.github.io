@@ -105,7 +105,7 @@ git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis CI"
 ( cd database/ ; git add . ) # Recursively add everything in this directory
 git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
-( set +x ; git remote add deploy https://${GITHUB_TOKEN}@github.com/AppImages/AppImageHub.git > /dev/null 2>&1 )
+git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
 git push --set-upstream deploy
 
 # TODO: If this is not a PR, then convert the "database files" into whatever output formats we need to support
