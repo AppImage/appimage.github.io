@@ -5,6 +5,8 @@ git checkout master
 URL=$(cat $1 | head -n 1)
 echo $URL
 
+INPUTBASENAME=$(basename $1)
+
 # Check if $URL starts with "http", otherwise exit
 if [ ${URL:0:4} != http ] ; then
   echo "No http link detected in $1"
@@ -83,9 +85,9 @@ fi
 
 # TODO: If everything succeeded until here, then put together a "database file" and display it
 
-mkdir -p database/$FILENAME
-cp "$APPDIR"/*.desktop database/$FILENAME/
-DATAFILE=$(readlink -f database/$FILENAME/*.desktop)
+mkdir -p database/$INPUTBASENAME
+cp "$APPDIR"/*.desktop database/$INPUTBASENAME/
+DATAFILE=$(readlink -f database/$INPUTBASENAME/*.desktop)
 
 echo "" >> "$DATAFILE"
 echo "[AppImageHub]" >> "$DATAFILE"
