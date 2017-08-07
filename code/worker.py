@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import requests
+import os, sys
+import requests # It is an extra dependency but it allows us to download only the portion of the file that is needed to check the magic
 
 
 def main() -> None:
