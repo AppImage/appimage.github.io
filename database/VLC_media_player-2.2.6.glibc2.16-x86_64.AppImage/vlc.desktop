@@ -93,3 +93,6 @@ X-KDE-Protocols=ftp,http,https,mms,rtmp,rtsp,sftp,smb
 Keywords=Player;Capture;DVD;Audio;Video;Server;Broadcast;
 
 [AppImageHub]
+UpdateInformation=false
+# Dear upstream developer, please add update information to your AppImage
+# so that users can easily update the AppImage
