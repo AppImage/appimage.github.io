@@ -5,6 +5,14 @@ echo $URL
 
 # TODO: Check if $URL starts with "http", otherwise exit
 
+# If $URL begins with https://api.github.com, then treat it specially
+# This allows us to have generic URLs rather than URLs to specific releases
+if [ ${URL:0:22}  == https://api.github.com ] ; then
+  echo "GitHub API URL detected"
+  URL=$(wget -q "$URL" -O - | grep browser_download_url | grep -i AppImage | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
+  echo "URL from GitHub API: $URL"
+fi
+
 # Download the file if it is not already there
 # This may get replaced by mounting the file with fuse httpfs
 # if we find an implementation that supports https
