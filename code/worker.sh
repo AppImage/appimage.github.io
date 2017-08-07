@@ -110,7 +110,7 @@ find database/ -type f -exec cat {} \;
 git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis CI"
 ( cd database/ ; git add . ) # Recursively add everything in this directory
-git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
+git commit --message "Travis CI build $TRAVIS_BUILD_NUMBER\n[ci skip]"
 git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
 git push --set-upstream deploy
 
