@@ -14,3 +14,4 @@ addons:
   apt:
     packages:
       - appstream
+      - libxml-xpath-perl
