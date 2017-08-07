@@ -72,11 +72,16 @@ if [ $TYPE -eq 1 ] ; then
   sudo umount -l /mnt
 fi
 
-# If there is an AppStream file, then extract data like screenshhot URLs from it
+# TODO: If there is an AppStream file, then extract data like screenshhot URLs from it
 
-# If everything succeeded until here, then download Firejail aith Xpra and run the application in it
+# TODO: If everything succeeded until here, then download Firejail aith Xpra and run the application in it
 # and take screenshots if we don't have them already from AppStream
 
-# If everything succeeded until here, then put together a "database file" and display it
+# TODO: If everything succeeded until here, then put together a "database file" and display it
 
-# If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
+# TODO: If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
+
+# TODO: If this is not a PR, then convert the "database files" into whatever output formats we need to support
+# e.g., OCS for knsrc/Discover
+# e.g., JSON for something Jekyll-based like https://quassy.github.io/elementary-apps/
+# and trigger a deployment of the static website
