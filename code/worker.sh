@@ -82,7 +82,7 @@ fi
 # TODO: If everything succeeded until here, then put together a "database file" and display it
 
 mkdir -p database/$FILENAME
-cp "$APPDIR/*.desktop" database/$FILENAME/
+cp "$APPDIR"/*.desktop database/$FILENAME/
 DATAFILE=$(readlink -f database/$FILENAME/*.desktop)
 
 echo "" >> "$DATAFILE"
