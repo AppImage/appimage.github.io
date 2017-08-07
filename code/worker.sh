@@ -92,6 +92,10 @@ echo "[AppImageHub]" >> "$DATAFILE"
 
 if [ ! -x $UPDATE_INFORMATION] ; then
   echo "UpdateInformation=${UPDATE_INFORMATION}" >> "$DATAFILE"
+else
+  echo "UpdateInformation=false" >> "$DATAFILE"
+  echo "# Dear upstream developer, please add update information to your AppImage" >> "$DATAFILE"
+  echo "# so that users can easily update the AppImage" >> "$DATAFILE"
 fi
 
 echo "==========================================="
