@@ -30,13 +30,13 @@ fi
 
 # Get lint (consider moving it to this repository at some point)
 if [ ! -f appdir-lint.sh ] ; then
-  wget -c https://raw.githubusercontent.com/AppImage/AppImages/master/appdir-lint.sh https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist
+  wget -c -q https://raw.githubusercontent.com/AppImage/AppImages/master/appdir-lint.sh https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist
 fi
   
 # If we have a type 2 AppImage, then mount it using appimagetool (not using itself for security reasons)
 if [ $TYPE -eq 2 ] ; then
   if [ ! -e appimagetool-x86_64.AppImage ] ; then
-    wget -c https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+    wget -c -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
     chmod +x appimagetool*
   fi
   # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
@@ -53,7 +53,7 @@ fi
 # If we have a type 1 AppImage, then loop-mount it (not using itself for security reasons)
 if [ $TYPE -eq 1 ] ; then
   # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
-  sudo mount "$FILENAME" -o loop /mnt
+  sudo mount "$FILENAME" -o ro,loop /mnt
   APPDIR=/mnt
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"
