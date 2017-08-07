@@ -60,6 +60,8 @@ if [ $TYPE -eq 2 ] ; then
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"
   kill $PID # fuse
+  # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
+  UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-updateinformation)
 fi
 
 # If we have a type 1 AppImage, then loop-mount it (not using itself for security reasons)
@@ -68,9 +70,12 @@ if [ $TYPE -eq 1 ] ; then
   sudo mount "$FILENAME" -o ro,loop /mnt
   APPDIR=/mnt
   echo $APPDIR
-  bash appdir-lint.sh "$APPDIR"
+  bash appdir-lint.sh "$APPDIR"  
+  # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
+  UPDATE_INFORMATION=$(dd if="${APPIMAGE}" bs=1 skip=33651 count=512 2>/dev/null)
   sudo umount -l /mnt
 fi
+
 
 # TODO: If there is an AppStream file, then extract data like screenshhot URLs from it
 
@@ -78,6 +83,8 @@ fi
 # and take screenshots if we don't have them already from AppStream
 
 # TODO: If everything succeeded until here, then put together a "database file" and display it
+
+echo "${UPDATE_INFORMATION}"
 
 # TODO: If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
 
