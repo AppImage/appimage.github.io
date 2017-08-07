@@ -28,6 +28,11 @@ else
   exit 1
 fi
 
+# Get lint (consider moving it to this repository at some point)
+if [ ! -f appdir-lint.sh ] ; then
+  wget -c https://raw.githubusercontent.com/AppImage/AppImages/master/appdir-lint.sh https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist
+fi
+  
 # If we have a type 2 AppImage, then mount it using appimagetool (not using itself for security reasons)
 if [ $TYPE -eq 2 ] ; then
   if [ ! -e appimagetool-x86_64.AppImage ] ; then
@@ -41,10 +46,16 @@ if [ $TYPE -eq 2 ] ; then
   mount | grep tmp | tail -n 1
   APPDIR=$(mount | grep tmp | tail -n 1 | cut -d " " -f 3)
   echo $APPDIR
-  ls "$APPDIR"
-  if [ ! -f appdir-lint.sh ] ; then
-    wget -c https://raw.githubusercontent.com/AppImage/AppImages/master/appdir-lint.sh https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist
-  fi
+  bash appdir-lint.sh "$APPDIR"
+  kill $PID # fuse
+fi
+
+# If we have a type 1 AppImage, then loop-mount it (not using itself for security reasons)
+if [ $TYPE -eq 1 ] ; then
+  # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
+  mount "$FILENAME" -o loop /mnt
+  APPDIR=/mnt
+  echo $APPDIR
   bash appdir-lint.sh "$APPDIR"
   kill $PID # fuse
 fi
