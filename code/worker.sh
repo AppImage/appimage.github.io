@@ -101,7 +101,10 @@ echo "==========================================="
 firejail --noprofile --appimage ./"$FILENAME" &
 APID=$!
 sleep 5
-xpra screenshot database/$INPUTBASENAME/screenshot
+# xpra screenshot database/$INPUTBASENAME/screenshot
+# screenshot is empty and has not been saved (maybe there are no windows or they are not currently shown)
+sudo apt-get -y install graphicsmagick-imagemagick-compat
+import -window root database/$INPUTBASENAME/screenshot.jpg # ImageMagick
 kill $APID && echo "SUCCESS" || exit 1
 
 echo "==========================================="
