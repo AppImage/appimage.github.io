@@ -9,7 +9,7 @@ env:
 
 script:
   - sudo apt-get -q -y install libxml-xpath-perl xpra graphicsmagick-imagemagick-compat # appstream # TODO: Cache me!
-  - xpra start :99 --sync-vfb=50 # https://www.xpra.org/trac/ticket/988#comment:5
+  - xpra start :99
   - until xset -q; do echo "Waiting for X server to start..."; sleep 1; done
   - # Find out which files in data/ have been changed in the last commit
   - FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2- | sed -e 's|dev/null||g')
