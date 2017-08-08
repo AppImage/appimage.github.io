@@ -27,7 +27,7 @@ fi
 FILENAME=$(basename $URL | cut -d '?' -f 1)
 echo $FILENAME
 if [ ! -e $FILENAME ] ; then
-  wget -c "$URL"
+  wget -q -c "$URL"
 fi
 
 # Check the type of the AppImage
@@ -103,7 +103,6 @@ APID=$!
 sleep 5
 # xpra screenshot database/$INPUTBASENAME/screenshot
 # screenshot is empty and has not been saved (maybe there are no windows or they are not currently shown)
-sudo apt-get -y install graphicsmagick-imagemagick-compat
 import -window root database/$INPUTBASENAME/screenshot.jpg # ImageMagick
 kill $APID && echo "SUCCESS" || exit 1
 
