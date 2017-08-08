@@ -103,7 +103,9 @@ APID=$!
 sleep 5
 # xpra screenshot database/$INPUTBASENAME/screenshot
 # screenshot is empty and has not been saved (maybe there are no windows or they are not currently shown)
-import -window root database/$INPUTBASENAME/screenshot.jpg # ImageMagick
+# import -window root database/$INPUTBASENAME/screenshot.jpg # ImageMagick
+sudo apt-get -y install scrot 
+scrot -u -b database/$INPUTBASENAME/screenshot.jpg
 kill $APID && echo "SUCCESS" || exit 1
 
 echo "==========================================="
