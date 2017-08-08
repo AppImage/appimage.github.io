@@ -124,7 +124,7 @@ else
   echo "TODO: Make a screenshot of a terminal application"
 fi
 
-kill $APID && echo "SUCCESS" || exit 1
+kill $APID && echo "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 
 echo "==========================================="
 
