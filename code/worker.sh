@@ -93,7 +93,12 @@ echo "==========================================="
 git clone https://github.com/netblue30/firejail.git
 ( cd firejail ; ./configure && make && sudo make install-strip )
 
-firejail --appimage ./"$FILENAME" &
+
+echo "==========================================="
+echo "============= TRYING TO RUN ==============="
+echo "==========================================="
+
+firejail --noprofile --appimage ./"$FILENAME" &
 APID=$!
 sleep 5
 kill $APID && echo "SUCCESS" || exit 1
