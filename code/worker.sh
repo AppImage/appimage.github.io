@@ -87,7 +87,8 @@ echo "==========================================="
 # and take screenshots if we don't have them already from AppStream
 
 # LD_DEBUG=libs "$APPDIR/AppRun" & # Getting "Desktop file is missing. Please run /mnt/AppRun from within an AppImage." with wire-2.15.2751-x86_64.AppImage
-LD_DEBUG=libs "$FILENAME" &
+chmod +x "$FILENAME"
+LD_DEBUG=libs ./"$FILENAME" &
 APID=$!
 sleep 5
 kill $APID && echo "SUCCESS" || exit 1
