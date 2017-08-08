@@ -102,7 +102,7 @@ firejail --noprofile --appimage ./"$FILENAME" &
 APID=$!
 sleep 7
 
-xpra screenshot database/$INPUTBASENAME/screenshot
+# xpra screenshot database/$INPUTBASENAME/screenshot # does not produce a screenshot; FIXME
 
 # results in grey screenshot
 # screenshot is empty and has not been saved (maybe there are no windows or they are not currently shown)
@@ -111,7 +111,11 @@ xpra screenshot database/$INPUTBASENAME/screenshot
 # results in grey screenshot, too
 # sudo apt-get -y install scrot 
 # scrot -u -b database/$INPUTBASENAME/screenshot.jpg
-# kill $APID && echo "SUCCESS" || exit 1
+
+sudo apt-get -y install x11-apps netpbm 
+xwd -root -silent -display :99.0 | xwdtopnm | pnmtojpeg > database/$INPUTBASENAME/screenshot.jpg
+
+kill $APID && echo "SUCCESS" || exit 1
 
 echo "==========================================="
 
