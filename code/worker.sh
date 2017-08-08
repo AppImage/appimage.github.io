@@ -101,7 +101,7 @@ echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
-firejail --noprofile --appimage ./"$FILENAME" &
+firejail --noprofile --net=none --appimage ./"$FILENAME" &
 APID=$!
 sleep 7
 
