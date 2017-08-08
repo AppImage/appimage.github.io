@@ -113,13 +113,13 @@ sleep 7
 # scrot -u -b database/$INPUTBASENAME/screenshot.jpg
 
 sudo apt-get -y install x11-apps netpbm 
-xwd -root -silent -display :99.0 | xwdtopnm | pnmtojpeg > database/$INPUTBASENAME/screenshot.jpg
+xwd -root -silent -display :99.0 | xwdtopnm | pnmtojpeg > database/$INPUTBASENAME/screenshot.jpg && cat database/$INPUTBASENAME/screenshot.jpg
 
 kill $APID && echo "SUCCESS" || exit 1
 
 echo "==========================================="
 
-# TODO: If everything succeeded until here, then put together a "database file" and display it
+# If everything succeeded until here, then put together a "database file" and display it
 
 mkdir -p database/$INPUTBASENAME
 cp "$APPDIR"/*.desktop database/$INPUTBASENAME/
@@ -134,6 +134,12 @@ else
   echo "UpdateInformation=false" >> "$DATAFILE"
   echo "# Dear upstream developer, please add update information to your AppImage" >> "$DATAFILE"
   echo "# so that users can easily update the AppImage" >> "$DATAFILE"
+fi
+
+# If available, also copy in AppStream metainfo
+
+if [ -e $APPDIR/usr/share/metainfo/*.appdata.xml ] ; then
+  cp $APPDIR/usr/share/metainfo/*.appdata.xml database/$INPUTBASENAME/
 fi
 
 echo "==========================================="
