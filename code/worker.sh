@@ -128,7 +128,7 @@ else
 fi
 
 echo "==========================================="
-find database/ -type f -exec cat {} \;
+find database/ -type f -name '*.desktop' -exec cat {} \;
 
 # TODO: If there is an AppStream file, then extract data like screenshhot URLs from it
 
