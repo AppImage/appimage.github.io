@@ -88,7 +88,7 @@ echo "==========================================="
 
 # LD_DEBUG=libs "$APPDIR/AppRun" & # Getting "Desktop file is missing. Please run /mnt/AppRun from within an AppImage." with wire-2.15.2751-x86_64.AppImage
 # chmod +x "$FILENAME"
-wet -c https://sourceforge.net/projects/firejail/files/firejail/firejail_0.9_1_amd64.deb/download -O firejail_0.9_1_amd64.deb
+wget -c https://sourceforge.net/projects/firejail/files/firejail/firejail_0.9_1_amd64.deb/download -O firejail_0.9_1_amd64.deb
 sudo dpkg -i firejail_0.9_1_amd64.deb
 
 firejail --x11=xpra --appimage ./"$FILENAME" &
