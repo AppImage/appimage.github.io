@@ -128,7 +128,7 @@ DATAFILE=$(readlink -f database/$INPUTBASENAME/*.desktop)
 echo "" >> "$DATAFILE"
 echo "[AppImageHub]" >> "$DATAFILE"
 
-if [ ! -x $UPDATE_INFORMATION] ; then
+if [ ! -x $UPDATE_INFORMATION ] ; then
   echo "UpdateInformation=${UPDATE_INFORMATION}" >> "$DATAFILE"
 else
   echo "UpdateInformation=false" >> "$DATAFILE"
