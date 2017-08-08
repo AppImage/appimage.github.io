@@ -80,13 +80,20 @@ if [ $TYPE -eq 1 ] ; then
   # later # sudo umount -l /mnt
 fi
 
+
+echo "==========================================="
+
 # TODO: If everything succeeded until here, then download Firejail aith Xpra and run the application in it
 # and take screenshots if we don't have them already from AppStream
 
-LD_DEBUG=libs "$APPDIR/AppRun" &
+# LD_DEBUG=libs "$APPDIR/AppRun" & # Getting "Desktop file is missing. Please run /mnt/AppRun from within an AppImage." with wire-2.15.2751-x86_64.AppImage
+LD_DEBUG=libs "$FILENAME" &
 APID=$!
 sleep 5
 kill $APID && echo "SUCCESS" || exit 1
+
+
+echo "==========================================="
 
 # TODO: If everything succeeded until here, then put together a "database file" and display it
 
