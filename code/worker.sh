@@ -83,12 +83,15 @@ fi
 
 echo "==========================================="
 
+# Disable network access for the AppImage under test
+sudo ip netns add jail
+
 # TODO: If everything succeeded until here, then download Firejail aith Xpra and run the application in it
 # and take screenshots if we don't have them already from AppStream
 
 # LD_DEBUG=libs "$APPDIR/AppRun" & # Getting "Desktop file is missing. Please run /mnt/AppRun from within an AppImage." with wire-2.15.2751-x86_64.AppImage
 chmod +x "$FILENAME"
-LD_DEBUG=libs ./"$FILENAME" &
+sudo ip netns exec jail su $USER -c ./"$FILENAME" &
 APID=$!
 sleep 5
 kill $APID && echo "SUCCESS" || exit 1
