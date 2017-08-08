@@ -86,7 +86,7 @@ fi
 LD_DEBUG=libs "$APPDIR/AppRun" &
 APID=$!
 sleep 5
-kill $APID && echo "SUCCESS"
+kill $APID && echo "SUCCESS" || exit 1
 
 # TODO: If everything succeeded until here, then put together a "database file" and display it
 
