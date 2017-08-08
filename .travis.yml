@@ -3,9 +3,18 @@ language: generic
 sudo: true # Otherwise there seems to be no fuse available
 dist: trusty
 
+env:
+  global:
+    - DISPLAY=:99
+
 script:
-  - sudo apt-get -y install libxml-xpath-perl # appstream
+  - sudo apt-get -y install libxml-xpath-perl xpra # appstream
+  - xpra start :99
+  - until xset -q; do echo "Waiting for X server to start..."; sleep 1; done
   - # Find out which files in data/ have been changed in the last commit
   - FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2- | sed -e 's|dev/null||g')
   - # Work on these files that have been changed in the last commit
   - for FILE in $FILES ; do echo "$FILE" ; bash -e code/worker.sh $(readlink -f "$FILE") ; done
+
+after_script:
+  - "xpra stop :99"
