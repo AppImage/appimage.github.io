@@ -83,6 +83,11 @@ fi
 # TODO: If everything succeeded until here, then download Firejail aith Xpra and run the application in it
 # and take screenshots if we don't have them already from AppStream
 
+LD_DEBUG=libs "$APPDIR/AppRun" &
+APID=$!
+sleep 5
+kill $APID && echo "SUCCESS"
+
 # TODO: If everything succeeded until here, then put together a "database file" and display it
 
 mkdir -p database/$INPUTBASENAME
@@ -109,8 +114,8 @@ find database/ -type f -exec cat {} \;
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
 git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis CI"
-( cd database/ ; git add . ) # Recursively add everything in this directory
-git commit -F- <<EOF
+( cd database/ ; git add . || true ) # Recursively add everything in this directory
+git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
 Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
 [ci skip]
 EOF
