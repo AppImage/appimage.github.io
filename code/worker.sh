@@ -101,8 +101,8 @@ echo "==========================================="
 firejail --noprofile --appimage ./"$FILENAME" &
 APID=$!
 sleep 5
+xpra screenshot database/$INPUTBASENAME/screenshot
 kill $APID && echo "SUCCESS" || exit 1
-
 
 echo "==========================================="
 
