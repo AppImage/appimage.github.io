@@ -80,6 +80,9 @@ if [ $TYPE -eq 1 ] ; then
   # later # sudo umount -l /mnt
 fi
 
+TERMINAL=false
+grep -r Terminal=true "${APPIMAGE}"/*.desktop && TERMINAL=true
+echo "TERMINAL: $TERMINAL"
 
 echo "==========================================="
 
@@ -92,6 +95,8 @@ echo "==========================================="
 wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/firejail.tar.gz" ; sudo tar xf firejail.tar.gz -C /
 sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
 
+# Find out whether the application is a GUI application
+
 echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
@@ -100,19 +105,24 @@ firejail --noprofile --appimage ./"$FILENAME" &
 APID=$!
 sleep 7
 
-# xpra screenshot database/$INPUTBASENAME/screenshot # does not produce a screenshot; FIXME
+# Make a screenshot
+if [ "$TERMINAL" == "false" ] ; then
+  # xpra screenshot database/$INPUTBASENAME/screenshot # does not produce a screenshot; FIXME
 
-# results in grey screenshot
-# screenshot is empty and has not been saved (maybe there are no windows or they are not currently shown)
-# import -window root database/$INPUTBASENAME/screenshot.jpg # ImageMagick
+  # results in grey screenshot
+  # screenshot is empty and has not been saved (maybe there are no windows or they are not currently shown)
+  # import -window root database/$INPUTBASENAME/screenshot.jpg # ImageMagick
 
-# results in grey screenshot, too
-# sudo apt-get -y install scrot 
-# scrot -u -b database/$INPUTBASENAME/screenshot.jpg
+  # results in grey screenshot, too
+  # sudo apt-get -y install scrot 
+  # scrot -u -b database/$INPUTBASENAME/screenshot.jpg
 
-# results in grey screenshot, too
-sudo apt-get -y install x11-apps netpbm 
-xwd -root -silent -display :99.0 | xwdtopnm | pnmtojpeg > database/$INPUTBASENAME/screenshot.jpg && cat database/$INPUTBASENAME/screenshot.jpg
+  # results in grey screenshot, too
+  sudo apt-get -y install x11-apps netpbm 
+  xwd -root -silent -display :99.0 | xwdtopnm | pnmtojpeg > database/$INPUTBASENAME/screenshot.jpg && cat database/$INPUTBASENAME/screenshot.jpg
+else
+  echo "TODO: Make a screenshot of a terminal application"
+fi
 
 kill $APID && echo "SUCCESS" || exit 1
 
