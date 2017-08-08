@@ -90,7 +90,7 @@ echo "==========================================="
 # chmod +x "$FILENAME"
 
 wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/firejail.tar.gz" ; sudo tar xf firejail.tar.gz -C /
-sudo chmod u+s /usr/bin/firejail # suid
+sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
 
 echo "==========================================="
 echo "============= TRYING TO RUN ==============="
