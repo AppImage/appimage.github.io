@@ -1,9 +1,9 @@
 # Working copies
-AppImageUpdate-x86_64.AppImage
+*.AppImage
 appdir-lint.sh
-appimagetool-x86_64.AppImage
 excludelist
-
+firejail.tar.gz
+  
 # Prerequisites
 *.d
 
