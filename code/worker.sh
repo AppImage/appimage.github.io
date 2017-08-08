@@ -91,7 +91,7 @@ echo "==========================================="
 wget -c https://sourceforge.net/projects/firejail/files/firejail/firejail_0.9_1_amd64.deb/download -O firejail_0.9_1_amd64.deb
 sudo dpkg -i firejail_0.9_1_amd64.deb
 
-firejail --x11=xpra --appimage ./"$FILENAME" &
+firejail --appimage ./"$FILENAME" &
 APID=$!
 sleep 5
 kill $APID && echo "SUCCESS" || exit 1
