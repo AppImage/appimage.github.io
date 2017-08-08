@@ -8,7 +8,7 @@ env:
     - DISPLAY=:99
 
 script:
-  - sudo apt-get -y install libxml-xpath-perl xpra # appstream
+  - sudo apt-get -q -y install libxml-xpath-perl xpra graphicsmagick-imagemagick-compat # appstream # TODO: Cache me!
   - xpra start :99
   - until xset -q; do echo "Waiting for X server to start..."; sleep 1; done
   - # Find out which files in data/ have been changed in the last commit
