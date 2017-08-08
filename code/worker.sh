@@ -110,6 +110,7 @@ sleep 7
 # sudo apt-get -y install scrot 
 # scrot -u -b database/$INPUTBASENAME/screenshot.jpg
 
+# results in grey screenshot, too
 sudo apt-get -y install x11-apps netpbm 
 xwd -root -silent -display :99.0 | xwdtopnm | pnmtojpeg > database/$INPUTBASENAME/screenshot.jpg && cat database/$INPUTBASENAME/screenshot.jpg
 
