@@ -121,8 +121,9 @@ if [ "$TERMINAL" == "false" ] ; then
 
   # results in grey screenshot, too
   sudo apt-get -y install scrot 
-  scrot -b 'database/$INPUTBASENAME/screenshot_$wx$h.png.jpg' # -u gives "X Error of failed request:  BadDrawable (invalid Pixmap or Window parameter)"
-
+  scrot -b 'screenshot_$wx$h.jpg' # -u gives "X Error of failed request:  BadDrawable (invalid Pixmap or Window parameter)"
+  mv screenshot_* database/$INPUTBASENAME/
+  
   # Works with Xvfb
   # sudo apt-get -y install x11-apps netpbm 
   # xwd -root -silent -display :99.0 | xwdtopnm | pnmtojpeg > database/$INPUTBASENAME/screenshot.jpg && cat database/$INPUTBASENAME/screenshot.jpg
