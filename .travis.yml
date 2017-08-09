@@ -9,7 +9,8 @@ env:
 
 script:
   - sudo apt-get -q -y install libxml-xpath-perl xvfb xpra graphicsmagick-imagemagick-compat # appstream # TODO: Cache me!
-  - xpra start :99
+  - # xpra start :99
+  - Xvfb :99 &
   - # until xset -q; do echo "Waiting for X server to start..."; sleep 1; done # We are not immediately using it anyway
   - # Find out which files in data/ have been changed in the last commit
   - FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2- | sed -e 's|dev/null||g')
@@ -17,4 +18,5 @@ script:
   - for FILE in $FILES ; do echo "$FILE" ; bash -e code/worker.sh $(readlink -f "$FILE") ; done
 
 after_script:
-  - "xpra stop :99"
+  - # xpra stop :99
+  - killall Xvfb
