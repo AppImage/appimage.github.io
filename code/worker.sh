@@ -126,6 +126,7 @@ if [ "$TERMINAL" == "false" ] ; then
   # Getting the active window seems to require a window manager
   sudo apt-get -y install metacity
   metacity &
+  sleep 5
   
   # We could simulate X11 keyboard/mouse input with xdotool here if needed
   xdotool getactivewindow key alt+f4
