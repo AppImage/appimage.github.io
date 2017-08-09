@@ -129,8 +129,8 @@ if [ "$TERMINAL" == "false" ] ; then
   sleep 2
   
   # We could simulate X11 keyboard/mouse input with xdotool here if needed
-  xdotool getactivewindow sleep 0.1 key Enter
-  xdotool getactivewindow sleep 0.1 key shift+F1
+  xdotool sleep 0.1 key Return
+  xdotool sleep 0.1 key shift+F1
   
   # Works with Xvfb
   # sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
