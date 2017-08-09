@@ -8,7 +8,7 @@ env:
     - DISPLAY=:99
 
 script:
-  - sudo apt-get -q -y install libxml-xpath-perl xvfb x11-utils graphicsmagick-imagemagick-compat # appstream # TODO: Cache me!
+  - sudo apt-get -q -y install libxml-xpath-perl xvfb x11-utils x11-apps netpbm xdotool # appstream # TODO: Cache me!
   - # xpra start :99 # Cannot get screenshots to work
   - Xvfb :99 &
   - # until xset -q; do echo "Waiting for X server to start..."; sleep 1; done # We are not immediately using it anyway
