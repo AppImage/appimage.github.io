@@ -126,7 +126,7 @@ if [ "$TERMINAL" == "false" ] ; then
   # Getting the active window seems to require a window manager
   sudo apt-get -y install icewm
   icewm &
-  sleep 5
+  sleep 2
   
   # We could simulate X11 keyboard/mouse input with xdotool here if needed
   xdotool getactivewindow sleep 0.1 key alt+F4
@@ -142,7 +142,7 @@ else
 fi
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
-killall metacity
+killall icewm
 
 echo "==========================================="
 
