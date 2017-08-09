@@ -122,7 +122,11 @@ if [ "$TERMINAL" == "false" ] ; then
   # sudo apt-get -y install scrot 
   # scrot -b 'screenshot_$wx$h.jpg' # -u gives "X Error of failed request:  BadDrawable (invalid Pixmap or Window parameter)"
   # mv screenshot_* database/$INPUTBASENAME/
-
+  
+  # Getting the active window seems to require a window manager
+  sudo apt-get -y install metacity
+  metacity &
+  
   # We could simulate X11 keyboard/mouse input with xdotool here if needed
   xdotool getactivewindow key alt+f4
   xdotool getactivewindow key shift+f1
@@ -132,10 +136,11 @@ if [ "$TERMINAL" == "false" ] ; then
   xwd -id $(xdotool getactivewindow)  -silent -display :0 | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
   
 else
-  echo "TODO: Make a screenshot of a terminal application"
+  echo "TODO: Make a screenshot of a terminal application (fbgrab/fbdump; try running AppImage with -h and observe exit status)"
 fi
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
+killall metacity
 
 echo "==========================================="
 
