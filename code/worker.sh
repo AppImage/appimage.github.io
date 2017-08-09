@@ -124,14 +124,16 @@ if [ "$TERMINAL" == "false" ] ; then
   # mv screenshot_* database/$INPUTBASENAME/
   
   # Getting the active window seems to require a window manager
-  sudo apt-get -y install icewm
   icewm &
   sleep 2
   
-  # We could simulate X11 keyboard/mouse input with xdotool here if needed
-  xdotool sleep 0.1 key Return
-  xdotool sleep 0.1 key shift+F1
-  sleep 1
+  # We could simulate X11 keyboard/mouse input with xdotool here if needed;
+  # of course this should not be hardcoded here (this is just an example)
+  if [ "$INPUTBASENAME" == "VLC" ] ; then
+    xdotool sleep 0.1 key Return # Click away the data protection window
+    xdotool sleep 0.1 key shift+F1 # Open the about screen
+    sleep 1
+  fi
   
   # Works with Xvfb
   # sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
