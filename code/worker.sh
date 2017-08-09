@@ -126,7 +126,7 @@ if [ "$TERMINAL" == "false" ] ; then
   # mv screenshot_* database/$INPUTBASENAME/
   
   # Works with Xvfb
-  sudo apt-get -y install x11-apps netpbm xdotool
+  # sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
   xwd -id $(xdotool getactivewindow)  -silent -display :0 | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
   
   # We could simulate X11 keyboard/mouse input with xdotool here if needed
