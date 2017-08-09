@@ -103,7 +103,7 @@ echo "==========================================="
 
 firejail --noprofile --net=none --appimage ./"$FILENAME" &
 APID=$!
-sleep 7
+sleep 10
 
 # Make a screenshot
 if [ "$TERMINAL" == "false" ] ; then
@@ -114,7 +114,7 @@ if [ "$TERMINAL" == "false" ] ; then
   # Count the windows on screen
   NUMBER_OF_WINDOWS=$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | wc -l)
   echo "NUMBER_OF_WINDOWS: $NUMBER_OF_WINDOWS"
-  if [ NUMBER_OF_WINDOWS -lt 1 ] ; then
+  if [ $(($NUMBER_OF_WINDOWS)) -lt 1 ] ; then
     echo "ERROR: Could not find a single window on screen :-("
   fi
   
