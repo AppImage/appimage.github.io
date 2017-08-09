@@ -124,8 +124,8 @@ if [ "$TERMINAL" == "false" ] ; then
   # mv screenshot_* database/$INPUTBASENAME/
   
   # Getting the active window seems to require a window manager
-  sudo apt-get -y install metacity
-  metacity &
+  sudo apt-get -y install icewm
+  icewm &
   sleep 5
   
   # We could simulate X11 keyboard/mouse input with xdotool here if needed
