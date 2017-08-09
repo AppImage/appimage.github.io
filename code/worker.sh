@@ -129,7 +129,7 @@ if [ "$TERMINAL" == "false" ] ; then
   sleep 2
   
   # We could simulate X11 keyboard/mouse input with xdotool here if needed
-  xdotool getactivewindow sleep 0.1 key alt+F4
+  xdotool getactivewindow sleep 0.1 key Enter
   xdotool getactivewindow sleep 0.1 key shift+F1
   
   # Works with Xvfb
