@@ -129,12 +129,13 @@ if [ "$TERMINAL" == "false" ] ; then
   sleep 5
   
   # We could simulate X11 keyboard/mouse input with xdotool here if needed
-  xdotool getactivewindow key alt+f4
-  xdotool getactivewindow key shift+f1
+  xdotool getactivewindow sleep 0.1 key alt+F4
+  xdotool getactivewindow sleep 0.1 key shift+F1
   
   # Works with Xvfb
   # sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
-  xwd -id $(xdotool getactivewindow)  -silent -display :0 | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
+  # -display :99 needed here? 
+  xwd -id $(xdotool getactivewindow) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
   
 else
   echo "TODO: Make a screenshot of a terminal application (fbgrab/fbdump; try running AppImage with -h and observe exit status)"
