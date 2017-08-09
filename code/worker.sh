@@ -114,12 +114,12 @@ if [ "$TERMINAL" == "false" ] ; then
   # import -window root database/$INPUTBASENAME/screenshot.jpg # ImageMagick
 
   # results in grey screenshot, too
-  # sudo apt-get -y install scrot 
-  # scrot -u -b database/$INPUTBASENAME/screenshot.jpg
+  sudo apt-get -y install scrot 
+  scrot -u -b database/$INPUTBASENAME/screenshot.jpg
 
-  # results in grey screenshot, too
-  sudo apt-get -y install x11-apps netpbm 
-  xwd -root -silent -display :99.0 | xwdtopnm | pnmtojpeg > database/$INPUTBASENAME/screenshot.jpg && cat database/$INPUTBASENAME/screenshot.jpg
+  # Works with Xpra
+  # sudo apt-get -y install x11-apps netpbm 
+  # xwd -root -silent -display :99.0 | xwdtopnm | pnmtojpeg > database/$INPUTBASENAME/screenshot.jpg && cat database/$INPUTBASENAME/screenshot.jpg
 else
   echo "TODO: Make a screenshot of a terminal application"
 fi
