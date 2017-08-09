@@ -122,12 +122,14 @@ if [ "$TERMINAL" == "false" ] ; then
   # sudo apt-get -y install scrot 
   # scrot -b 'screenshot_$wx$h.jpg' # -u gives "X Error of failed request:  BadDrawable (invalid Pixmap or Window parameter)"
   # mv screenshot_* database/$INPUTBASENAME/
+
+  # We could simulate X11 keyboard/mouse input with xdotool here if needed
+  xdotool getactivewindow key alt+f4
+  xdotool getactivewindow key shift+f1
   
   # Works with Xvfb
   # sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
   xwd -id $(xdotool getactivewindow)  -silent -display :0 | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
-  
-  # We could simulate X11 keyboard/mouse input with xdotool here if needed
   
 else
   echo "TODO: Make a screenshot of a terminal application"
