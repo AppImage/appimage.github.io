@@ -107,6 +107,12 @@ sleep 7
 
 # Make a screenshot
 if [ "$TERMINAL" == "false" ] ; then
+
+  # Get a list of open windows
+  xwininfo -tree -root
+  echo "==="
+  xwininfo -tree -root | grep 0x | grep '": ("'
+  
   # xpra screenshot database/$INPUTBASENAME/screenshot # does not produce a screenshot; FIXME
 
   # results in grey screenshot
