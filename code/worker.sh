@@ -107,7 +107,7 @@ sleep 7
 
 # Make a screenshot
 if [ "$TERMINAL" == "false" ] ; then
-  xpra screenshot database/$INPUTBASENAME/screenshot # does not produce a screenshot; FIXME
+  # xpra screenshot database/$INPUTBASENAME/screenshot # does not produce a screenshot; FIXME
 
   # results in grey screenshot
   # screenshot is empty and has not been saved (maybe there are no windows or they are not currently shown)
