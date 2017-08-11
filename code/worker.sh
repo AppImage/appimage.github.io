@@ -42,7 +42,7 @@ if [ -z $MAGIC ] ; then
     ISOMAGIC=$(dd if="$FILENAME" bs=1 skip=32769 count=5 2>/dev/null)
     if [ $ISOMAGIC == $(echo -ne "CD001") ] ; then
       echo "ISO9660 file detected"
-      echo "Hence assuming AppImage type 1. Dear upstream, please consider to switch to type 2"
+      echo "Hence assuming AppImage type 1"
       TYPE=1
     fi
   fi
@@ -50,7 +50,7 @@ elif [ $MAGIC == $(echo -ne "\x41\x49\x02") ] ; then
   echo "AppImage type 2 detected"
   TYPE=2
 elif [ $MAGIC == $(echo -ne "\x41\x49\x01") ] ; then
-  echo "AppImage type 1 detected. Dear upstream, please consider to switch to type 2"
+  echo "AppImage type 1 detected"
   TYPE=1
 else
   echo "Unknown file detected"
@@ -180,6 +180,18 @@ else
   echo "# so that users can easily update the AppImage" >> "$DATAFILE"
 fi
 
+if [ "1" == "$TYPE" ] ; then
+  echo "AppImage-Type=1" >> "$DATAFILE"
+  echo "# Dear upstream developer, please consider to switch to type 2" >> "$DATAFILE"
+  echo "# so that users can benefit from the additional features like digital embedded signatures" >> "$DATAFILE"
+  echo "# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format" >> "$DATAFILE"
+  echo "# or use linuxdeployqt or appimagetool which produce type 2 automatically" >> "$DATAFILE"
+fi
+
+if [ "2" == "$TYPE" ] ; then
+  echo "AppImage-Type=2" >> "$DATAFILE"
+fi
+
 # If available, also copy in AppStream metainfo
 
 if [ -e $APPDIR/usr/share/metainfo/*.appdata.xml ] ; then
@@ -187,7 +199,6 @@ if [ -e $APPDIR/usr/share/metainfo/*.appdata.xml ] ; then
 fi
 
 echo "==========================================="
-find database/ -type f -name '*.desktop' -exec cat {} \;
 
 # TODO: If there is an AppStream file, then extract data like screenshhot URLs from it
 
