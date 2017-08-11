@@ -150,12 +150,15 @@ if [ "$TERMINAL" == "false" ] ; then
   if [ "$INPUTBASENAME" == "Subsurface" ] ; then
     xdotool sleep 0.1 key Escape # Click away the update check window
     sleep 1
+    # Get a list of open windows
+    xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
   fi
   
   # Works with Xvfb
   # sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
   # -display :99 needed here? 
-  xwd -id $(xdotool getactivewindow) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
+  # xwd -id $(xdotool getactivewindow) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
+  xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
   
 else
   echo "TODO: Make a screenshot of a terminal application (fbgrab/fbdump; try running AppImage with -h and observe exit status)"
