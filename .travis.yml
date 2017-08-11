@@ -9,7 +9,7 @@ env:
 
 script:
   - sudo apt-get -qq -y install libxml-xpath-perl xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri > /dev/null # appstream # TODO: Cache me!
-  - echo "ShowTaskBar = 0" > $HOME/.icewm/preferences
+  - mkdir $HOME/.icewm/ ; echo "ShowTaskBar = 0" > $HOME/.icewm/preferences
   - # xpra start :99 # Cannot get screenshots to work
   - Xvfb :99 >/dev/null 2>&1 &
   - # until xset -q; do echo "Waiting for X server to start..."; sleep 1; done # We are not immediately using it anyway
