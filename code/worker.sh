@@ -42,6 +42,7 @@ if [ -z $MAGIC ] ; then
     ISOMAGIC=$(dd if="$FILENAME" bs=1 skip=32769 count=5 2>/dev/null)
     if [ $ISOMAGIC == $(echo -ne "CD001") ] ; then
       echo "ISO9660 file detected"
+      echo "Hence assuming AppImage type 1. Dear upstream, please consider to switch to type 2"
       TYPE=1
     fi
   fi
