@@ -147,6 +147,10 @@ if [ "$TERMINAL" == "false" ] ; then
     xdotool sleep 0.1 key shift+F1 # Open the about screen
     sleep 1
   fi
+  if [ "$INPUTBASENAME" == "Subsurface" ] ; then
+    xdotool sleep 0.1 key Escape # Click away the update check window
+    sleep 1
+  fi
   
   # Works with Xvfb
   # sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
