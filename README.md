@@ -12,4 +12,4 @@ Create a new file using [this link](https://github.com/AppImage/AppImageHub/new/
 
 Not just yet...
 
-App stores and software centers can consume the metadata collected by this project. Currently no app stores or software centers are known to already use this data. If you would like to use this data, please contact us first on #AppImage at irc.freenode.net, so that we can discuss an output format that would serve your needs best.
+App stores and software centers can consume the metadata collected by this project. See [AppImage ecosystem](https://github.com/AppImage/AppImageKit/wiki/Ecosystem). Currently no app stores or software centers are known to already use this data. If you would like to use this data, please contact us first on #AppImage at irc.freenode.net, so that we can discuss an output format that would serve your needs best.
