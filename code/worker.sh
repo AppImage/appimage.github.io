@@ -32,12 +32,24 @@ fi
 
 # Check the type of the AppImage
 TYPE=""
-MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4)
-if [ $MAGIC == $(echo -ne "\x41\x49\x02") ] ; then
+MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4 2>/dev/null)
+if [ -z $MAGIC ] ; then
+  echo "Magic number not detected. Dear upstream, please consider to add one to the AppImage as per"
+  echo "https://github.com/AppImage/AppImageSpec/blob/master/draft.md"
+  ELFMAGIC=$(dd if="$FILENAME" bs=1 skip=0 count=5 2>/dev/null)
+  if [ $ELFMAGIC == $(echo -ne "\x7f\x45\x4c\x46")] ; then
+    echo "ELF file detected"
+    ISOMAGIC=$(dd if="$FILENAME" bs=1 skip=32769 count=5 2>/dev/null)
+    if [ $ISOMAGIC == $(echo -ne "CD001")] ; then
+      echo "ISO9660 file detected"
+      TYPE=1
+    fi
+  fi
+elif [ $MAGIC == $(echo -ne "\x41\x49\x02") ] ; then
   echo "AppImage type 2 detected"
   TYPE=2
 elif [ $MAGIC == $(echo -ne "\x41\x49\x01") ] ; then
-  echo "AppImage type 1 detected"
+  echo "AppImage type 1 detected. Dear upstream, please consider to switch to type 2"
   TYPE=1
 else
   echo "Unknown file detected"
