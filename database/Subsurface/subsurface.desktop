@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=Subsurface
+GenericName=dive log program
+Comment=manage and display dive computer data
+Icon=subsurface-icon
+Exec=subsurface.wrapper
+Terminal=false
+Categories=Utility;
+Keywords=dive;log;divelog;divecomputer;dives;computer;
+
+[AppImageHub]
+UpdateInformation=false
+# Dear upstream developer, please add update information to your AppImage
+# so that users can easily update the AppImage
