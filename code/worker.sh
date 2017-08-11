@@ -36,7 +36,7 @@ MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4 2>/dev/null)
 if [ -z $MAGIC ] ; then
   echo "Magic number not detected. Dear upstream, please consider to add one to the AppImage as per"
   echo "https://github.com/AppImage/AppImageSpec/blob/master/draft.md"
-  ELFMAGIC=$(dd if="$FILENAME" bs=1 skip=0 count=5 2>/dev/null)
+  ELFMAGIC=$(dd if="$FILENAME" bs=1 skip=0 count=4 2>/dev/null)
   if [ $ELFMAGIC == $(echo -ne "\x7f\x45\x4c\x46")] ; then
     echo "ELF file detected"
     ISOMAGIC=$(dd if="$FILENAME" bs=1 skip=32769 count=5 2>/dev/null)
