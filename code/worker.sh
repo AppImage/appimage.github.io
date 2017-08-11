@@ -173,15 +173,15 @@ echo "" >> "$DATAFILE"
 echo "[AppImageHub]" >> "$DATAFILE"
 
 if [ ! -x $UPDATE_INFORMATION ] ; then
-  echo "UpdateInformation=${UPDATE_INFORMATION}" >> "$DATAFILE"
+  echo "X-AppImage-UpdateInformation=${UPDATE_INFORMATION}" >> "$DATAFILE"
 else
-  echo "UpdateInformation=false" >> "$DATAFILE"
+  echo "X-AppImage-UpdateInformation=false" >> "$DATAFILE"
   echo "# Dear upstream developer, please add update information to your AppImage" >> "$DATAFILE"
   echo "# so that users can easily update the AppImage" >> "$DATAFILE"
 fi
 
 if [ "1" == "$TYPE" ] ; then
-  echo "AppImage-Type=1" >> "$DATAFILE"
+  echo "X-AppImage-Type=1" >> "$DATAFILE"
   echo "# Dear upstream developer, please consider to switch to type 2" >> "$DATAFILE"
   echo "# so that users can benefit from the additional features like digital embedded signatures" >> "$DATAFILE"
   echo "# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format" >> "$DATAFILE"
@@ -189,7 +189,7 @@ if [ "1" == "$TYPE" ] ; then
 fi
 
 if [ "2" == "$TYPE" ] ; then
-  echo "AppImage-Type=2" >> "$DATAFILE"
+  echo "X-AppImage-Type=2" >> "$DATAFILE"
 fi
 
 # If available, also copy in AppStream metainfo
