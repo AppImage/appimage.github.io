@@ -88,12 +88,12 @@ if [ $TYPE -eq 1 ] ; then
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"  
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
-  UPDATE_INFORMATION=$(dd if="${APPIMAGE}" bs=1 skip=33651 count=512 2>/dev/null) || echo "Could not get update information from the AppImage"
+  UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null) || echo "Could not get update information from the AppImage"
   # later # sudo umount -l /mnt
 fi
 
 TERMINAL=false
-grep -r Terminal=true "${APPIMAGE}"/*.desktop && TERMINAL=true
+grep -r Terminal=true "${FILENAME}"/*.desktop && TERMINAL=true
 echo "TERMINAL: $TERMINAL"
 
 echo "==========================================="
@@ -164,6 +164,7 @@ echo "==========================================="
 # If everything succeeded until here, then put together a "database file" and display it
 
 mkdir -p database/$INPUTBASENAME
+ls "$APPDIR"
 cp "$APPDIR"/*.desktop database/$INPUTBASENAME/
 DATAFILE=$(readlink -f database/$INPUTBASENAME/*.desktop)
 
