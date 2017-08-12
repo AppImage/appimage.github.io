@@ -181,7 +181,7 @@ DATAFILE=$(readlink -f database/$INPUTBASENAME/*.desktop)
 echo "" >> "$DATAFILE"
 echo "[AppImageHub]" >> "$DATAFILE"
 
-if [ ! -x $UPDATE_INFORMATION ] ; then
+if [ ! -z "$UPDATE_INFORMATION" ] ; then
   echo "X-AppImage-UpdateInformation=${UPDATE_INFORMATION}" >> "$DATAFILE"
 else
   echo "X-AppImage-UpdateInformation=false" >> "$DATAFILE"
@@ -218,9 +218,9 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
     git config --global user.name "Travis CI"
     ( cd database/ ; git add . || true ) # Recursively add everything in this directory
     git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
-    Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
-    [ci skip]
-    EOF
+Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
+[ci skip]
+EOF
     git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
     git push --set-upstream deploy
 fi
