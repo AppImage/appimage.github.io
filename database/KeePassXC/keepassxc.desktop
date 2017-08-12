@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=KeePassXC
+GenericName=Community Password Manager
+GenericName[de]=Passwortverwaltung
+GenericName[es]=Gestor de contraseñas
+GenericName[fr]=Gestionnaire de mot de passe
+GenericName[ru]=менеджер паролей
+Exec=keepassxc_env.wrapper %f
+Icon=keepassxc
+Terminal=false
+Type=Application
+Categories=Qt;Utility;
+MimeType=application/x-keepass2;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=Using TARGET_APPIMAGE KeePassXC-2.2.0-x86_64.AppImage
+X-AppImage-Type=2
