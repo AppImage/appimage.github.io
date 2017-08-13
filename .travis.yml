@@ -11,7 +11,7 @@ script:
   - sudo apt-get -qq -y install libxml-xpath-perl xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri > /dev/null # appstream # TODO: Cache me!
   - mkdir $HOME/.icewm/ ; echo "ShowTaskBar = 0" > $HOME/.icewm/preferences
   - # xpra start :99 # Cannot get screenshots to work
-  - Xvfb :99 -screen 0 1920x1080x24 >/dev/null 2>&1 & # https://github.com/AppImage/AppImageHub/pull/8#issuecomment-322045090
+  - Xvfb :99 -screen 0 800x600x24 >/dev/null 2>&1 & # Need to set bit depth, otherwise get some black screenshots
   - # until xset -q; do echo "Waiting for X server to start..."; sleep 1; done # We are not immediately using it anyway
   - # Find out which files in data/ have been changed in the last commit
   - FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2- | sed -e 's|dev/null||g')
