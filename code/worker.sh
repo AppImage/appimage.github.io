@@ -163,6 +163,7 @@ if [ "$TERMINAL" == "false" ] ; then
   # sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
   # -display :99 needed here? 
   # xwd -id $(xdotool getactivewindow) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
+  mkdir -p database/$INPUTBASENAME/
   xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
   
 else
