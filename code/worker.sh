@@ -35,6 +35,8 @@ fi
 
 # Check the type of the AppImage
 TYPE=""
+ARCHITECTURE=$(file "$FILENAME" | cut -d "," -f 2 | xargs | sed -e 's|-|_|g' )
+echo $ARCHCITECTURE # TODO: Normalize
 MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4 2>/dev/null)
 if [ -z $MAGIC ] ; then
   echo "Magic number not detected. Dear upstream, please consider to add one to the AppImage as per"
@@ -201,6 +203,8 @@ fi
 if [ "2" == "$TYPE" ] ; then
   echo "X-AppImage-Type=2" >> "$DATAFILE"
 fi
+
+echo "X-AppImage-Architecture=$ARCHITECTURE" >> "$DATAFILE"
 
 # If available, also copy in AppStream metainfo
 
