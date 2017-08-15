@@ -15,3 +15,4 @@ X-AppImage-UpdateInformation=false
 # Dear upstream developer, please add update information to your AppImage
 # so that users can easily update the AppImage
 X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
