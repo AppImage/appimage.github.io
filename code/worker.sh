@@ -15,6 +15,16 @@ if [ ${URL:0:4} != http ] ; then
   exit 1
 fi
 
+# If the URL begins with https://github.com, then treat it specially
+# https://github.com/egoist/devdocs-desktop/
+if [ ${URL:0:17} == https://github.com ] ; then
+  echo "GitHub URL detected"
+  GHUSER=$(echo $URL | cut -d '/' -f 4)
+  GHREPO=$(echo $URL | cut -d '/' -f 5)
+  URL="https://api.github.com/repos/$GHUSER/$GHREPO/releases/latest"
+  echo "URL from GitHub: $URL"
+fi
+
 # If $URL begins with https://api.github.com, then treat it specially
 # This allows us to have generic URLs rather than URLs to specific releases
 if [ ${URL:0:22} == https://api.github.com ] ; then
