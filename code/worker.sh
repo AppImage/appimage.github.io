@@ -199,6 +199,7 @@ ls "$APPDIR"
 cp "$APPDIR"/*.desktop database/$INPUTBASENAME/
 DATAFILE=$(readlink -f database/$INPUTBASENAME/*.desktop)
 sudo chown $USER "$DATAFILE" # https://github.com/AppImage/AppImageHub/issues/19
+chmod 644 "$DATAFILE" # https://github.com/AppImage/AppImageHub/issues/19
 
 echo "" >> "$DATAFILE"
 echo "[AppImageHub]" >> "$DATAFILE"
