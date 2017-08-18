@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=jumpfm
+Comment=A file manager that lets you jump
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=jumpfm
+X-AppImage-Version=0.15.4
+X-AppImage-BuildId=375315e0-834a-11a7-29d5-a70505eda364
+Categories=Utility;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=false
+# Dear upstream developer, please add update information to your AppImage
+# so that users can easily update the AppImage
+X-AppImage-Type=1
+# Dear upstream developer, please consider to switch to type 2
+# so that users can benefit from the additional features like digital embedded signatures
+# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
+# or use linuxdeployqt or appimagetool which produce type 2 automatically
+X-AppImage-Architecture=x86_64
