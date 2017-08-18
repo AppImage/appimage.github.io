@@ -10,7 +10,9 @@ X-AppImage-BuildId=1589aa60-8416-11a7-23eb-89283a4af1ee
 Categories=Office;
 
 [AppImageHub]
-X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+X-AppImage-UpdateInformation=false
+# Dear upstream developer, please add update information to your AppImage
+# so that users can easily update the AppImage
 X-AppImage-Type=1
 # Dear upstream developer, please consider to switch to type 2
 # so that users can benefit from the additional features like digital embedded signatures
