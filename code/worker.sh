@@ -17,7 +17,7 @@ fi
 
 # If the URL begins with https://github.com, then treat it specially
 # https://github.com/egoist/devdocs-desktop/
-if [ ${URL:0:18} == https://github.com ] ; then
+if [ "${URL:0:18}" == "https://github.com" ] ; then
   echo "GitHub URL detected"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
@@ -27,7 +27,7 @@ fi
 
 # If $URL begins with https://api.github.com, then treat it specially
 # This allows us to have generic URLs rather than URLs to specific releases
-if [ ${URL:0:22} == https://api.github.com || ${GHURL:0:22} == https://api.github.com ] ; then
+if [ "${URL:0:22}" == "https://api.github.com" ] || [ "${GHURL:0:22}" == "https://api.github.com" ] ; then
   echo "GitHub API URL detected"
   URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -i 64 | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
   if [ "" == "$URL" ] ; then
