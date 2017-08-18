@@ -1,0 +1,18 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=LDView
+GenericName=LDraw model viewer
+Comment=LDraw Model Viewer
+Exec=LDView %f
+Icon=gnome-ldraw
+Terminal=false
+Type=Application
+MimeType=application/x-ldraw;application/x-multipart-ldraw;
+Categories=Graphics;3DGraphics;Viewer;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=false
+# Dear upstream developer, please add update information to your AppImage
+# so that users can easily update the AppImage
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
