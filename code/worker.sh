@@ -29,7 +29,7 @@ fi
 # This allows us to have generic URLs rather than URLs to specific releases
 if [ ${URL:0:22} == https://api.github.com ] ; then
   echo "GitHub API URL detected"
-  URL=$(wget -q "$URL" -O - | grep browser_download_url | grep -i AppImage | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
+  URL=$(wget -q "$URL" -O - | grep browser_download_url | grep -i AppImage | grep -i 64 | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
   echo "URL from GitHub API: $URL"
 fi
 
