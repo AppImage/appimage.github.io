@@ -6,7 +6,7 @@ Given an URL to an AppImage, it inspects the AppImage and puts it into a communi
 
 ## How to submit AppImages to the catalog
 
-Create a new file using [this link](https://github.com/AppImage/AppImageHub/new/master/data). The file should contain one line with a link to the AppImage. Nothing else. Then send a Pull Request to this repository. Travis CI will instantly perform an automated review of the AppImage, and in case it succeeds, you will see a __green__ result in your pull request. If you get a __red__ result, check the log of the Travis CI build, and fix it.
+Create a new file using [this link](https://github.com/AppImage/AppImageHub/new/master/data). The file should contain one line with a link to the GitHub repository that hosts AppImages on its Releases page. Alternatively, a link to the AppImage. Nothing else. Then send a Pull Request to this repository. Travis CI will instantly perform an automated review of the AppImage, and in case it succeeds, you will see a __green__ result in your pull request. If you get a __red__ result, check the log of the Travis CI build, and fix it.
 
 ## How to use
 
