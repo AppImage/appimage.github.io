@@ -21,7 +21,7 @@ if [ ${URL:0:18} == https://github.com ] ; then
   echo "GitHub URL detected"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  URL="https://api.github.com/repos/$GHUSER/$GHREPO/releases/latest"
+  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases/latest"
   echo "URL from GitHub: $URL"
 fi
 
@@ -29,7 +29,10 @@ fi
 # This allows us to have generic URLs rather than URLs to specific releases
 if [ ${URL:0:22} == https://api.github.com ] ; then
   echo "GitHub API URL detected"
-  URL=$(wget -q "$URL" -O - | grep browser_download_url | grep -i AppImage | grep -i 64 | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
+  URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -i 64 | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
+  if [ "" == "$URL" ] ; then
+    URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | head -n 1 | cut -d '"' -f 4) # No 64-bit one found, trying any; TODO: Handle more than one AppImage per release
+  fi
   echo "URL from GitHub API: $URL"
 fi
 
