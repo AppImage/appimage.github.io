@@ -237,6 +237,7 @@ echo "==========================================="
 # If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
 if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
+    git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
     git config --global user.email "travis@travis-ci.org"
     git config --global user.name "Travis CI"
     ( cd database/ ; git add . || true ) # Recursively add everything in this directory
