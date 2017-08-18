@@ -21,7 +21,7 @@ if [ "${URL:0:18}" == "https://github.com" ] ; then
   echo "GitHub URL detected"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases/latest"
+  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases" # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
   echo "URL from GitHub: $URL"
 fi
 
@@ -39,7 +39,7 @@ fi
 # Download the file if it is not already there
 # This may get replaced by mounting the file with fuse httpfs
 # if we find an implementation that supports https
-echo "URL : $URL"
+echo "URL: $URL"
 FILENAME=$(basename $URL | cut -d '?' -f 1)
 echo $FILENAME
 if [ ! -e $FILENAME ] ; then
