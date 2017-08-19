@@ -266,6 +266,7 @@ for INPUTBASENAME in database/*; do
   echo "layout: app" >> apps/$INPUTBASENAME.md
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
+  # Description
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .)
@@ -279,6 +280,19 @@ for INPUTBASENAME in database/*; do
     echo "" >> apps/$INPUTBASENAME.md
     echo "screenshots:" >> apps/$INPUTBASENAME.md
     echo "  - $INPUTBASENAME/screenshot.png" >> apps/$INPUTBASENAME.md
+  fi
+  # Authors
+  echo "" >> apps/$INPUTBASENAME.md
+  echo "authors:" >> apps/$INPUTBASENAME.md
+  GH_USER=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
+  GH_REPO=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
+  if [  "$GH_USER" == "" ] ; then
+    GH_USER=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
+    GH_REPO=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 6 )
+  fi
+  if [  "$GH_USER" != "" ] ; then
+    echo "  - name: $GH_USER" >> apps/$INPUTBASENAME.md
+    echo "    url: https://github.com/$GH_USER" >> apps/$INPUTBASENAME.md
   fi
   echo "---" >> apps/$INPUTBASENAME.md
 done
