@@ -294,6 +294,15 @@ for INPUTBASENAME in database/*; do
     echo "  - name: $GH_USER" >> apps/$INPUTBASENAME.md
     echo "    url: https://github.com/$GH_USER" >> apps/$INPUTBASENAME.md
   fi
+  # Authors
+  echo "" >> apps/$INPUTBASENAME.md
+  echo "links:" >> apps/$INPUTBASENAME.md
+  if [  "$GH_USER" != "" ] ; then
+    echo "  - type: GitHub" >> apps/$INPUTBASENAME.md
+    echo "    url: https://github.com/$GH_USER/$GH_REPO" >> apps/$INPUTBASENAME.md
+    echo "  - type: Install" >> apps/$INPUTBASENAME.md
+    echo "    url: https://github.com/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
+  fi
   echo "---" >> apps/$INPUTBASENAME.md
 done
 
