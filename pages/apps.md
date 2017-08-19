@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Apps for AppImage
+title: Apps in AppImage format
 permalink: /apps/
 ---
 
