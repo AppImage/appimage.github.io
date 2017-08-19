@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: tbrouns/tbrouns
+    url: tbrouns/eyestalker
   - type: Install
-    url: https://github.com/tbrouns/tbrouns/releases
+    url: https://github.com/tbrouns/eyestalker/releases
 ---

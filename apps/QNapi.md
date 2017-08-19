@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: QNapi/QNapi
+    url: QNapi/qnapi
   - type: Install
-    url: https://github.com/QNapi/QNapi/releases
+    url: https://github.com/QNapi/qnapi/releases
 ---

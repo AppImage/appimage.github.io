@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: Gilad-Kutiel-App/Gilad-Kutiel-App
+    url: Gilad-Kutiel-App/jumpfm
   - type: Install
-    url: https://github.com/Gilad-Kutiel-App/Gilad-Kutiel-App/releases
+    url: https://github.com/Gilad-Kutiel-App/jumpfm/releases
 ---

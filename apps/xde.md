@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: expo/expo
+    url: expo/xde
   - type: Install
-    url: https://github.com/expo/expo/releases
+    url: https://github.com/expo/xde/releases
 ---

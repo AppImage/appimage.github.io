@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: willyb321/willyb321
+    url: willyb321/media_mate
   - type: Install
-    url: https://github.com/willyb321/willyb321/releases
+    url: https://github.com/willyb321/media_mate/releases
 ---

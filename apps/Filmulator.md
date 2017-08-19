@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: CarVac/CarVac
+    url: CarVac/filmulator-gui
   - type: Install
-    url: https://github.com/CarVac/CarVac/releases
+    url: https://github.com/CarVac/filmulator-gui/releases
 ---

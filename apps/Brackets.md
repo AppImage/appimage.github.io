@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: zaggino/zaggino
+    url: zaggino/brackets-electron
   - type: Install
-    url: https://github.com/zaggino/zaggino/releases
+    url: https://github.com/zaggino/brackets-electron/releases
 ---

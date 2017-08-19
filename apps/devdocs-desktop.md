@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: egoist/egoist
+    url: egoist/devdocs-desktop
   - type: Install
-    url: https://github.com/egoist/egoist/releases
+    url: https://github.com/egoist/devdocs-desktop/releases
 ---

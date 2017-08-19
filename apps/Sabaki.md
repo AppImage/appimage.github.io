@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: yishn/yishn
+    url: yishn/Sabaki
   - type: Install
-    url: https://github.com/yishn/yishn/releases
+    url: https://github.com/yishn/Sabaki/releases
 ---

@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: christofferok/christofferok
+    url: christofferok/langly
   - type: Install
-    url: https://github.com/christofferok/christofferok/releases
+    url: https://github.com/christofferok/langly/releases
 ---

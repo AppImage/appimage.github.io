@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: felix557700/felix557700
+    url: felix557700/erdesigner
   - type: Install
-    url: https://github.com/felix557700/felix557700/releases
+    url: https://github.com/felix557700/erdesigner/releases
 ---

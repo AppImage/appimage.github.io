@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: aricovindanevectone/aricovindanevectone
+    url: aricovindanevectone/hari
   - type: Install
-    url: https://github.com/aricovindanevectone/aricovindanevectone/releases
+    url: https://github.com/aricovindanevectone/hari/releases
 ---

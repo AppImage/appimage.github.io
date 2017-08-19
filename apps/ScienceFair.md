@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: codeforscience/codeforscience
+    url: codeforscience/sciencefair
   - type: Install
-    url: https://github.com/codeforscience/codeforscience/releases
+    url: https://github.com/codeforscience/sciencefair/releases
 ---

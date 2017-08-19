@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: Blinkinlabs/Blinkinlabs
+    url: Blinkinlabs/PatternPaint
   - type: Install
-    url: https://github.com/Blinkinlabs/Blinkinlabs/releases
+    url: https://github.com/Blinkinlabs/PatternPaint/releases
 ---

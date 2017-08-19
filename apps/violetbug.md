@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: belltown/belltown
+    url: belltown/violetbug
   - type: Install
-    url: https://github.com/belltown/belltown/releases
+    url: https://github.com/belltown/violetbug/releases
 ---

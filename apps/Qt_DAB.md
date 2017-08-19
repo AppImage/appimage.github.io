@@ -12,7 +12,7 @@ authors:
 
 links:
   - type: GitHub
-    url: JvanKatwijk/JvanKatwijk
+    url: JvanKatwijk/qt-dab
   - type: Install
-    url: https://github.com/JvanKatwijk/JvanKatwijk/releases
+    url: https://github.com/JvanKatwijk/qt-dab/releases
 ---

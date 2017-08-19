@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: mykter/mykter
+    url: mykter/TagTime-desktop
   - type: Install
-    url: https://github.com/mykter/mykter/releases
+    url: https://github.com/mykter/TagTime-desktop/releases
 ---

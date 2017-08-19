@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: linux-man/linux-man
+    url: linux-man/unreel
   - type: Install
-    url: https://github.com/linux-man/linux-man/releases
+    url: https://github.com/linux-man/unreel/releases
 ---

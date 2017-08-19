@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: makinacorpus/makinacorpus
+    url: makinacorpus/accessimap-lecteur-der
   - type: Install
-    url: https://github.com/makinacorpus/makinacorpus/releases
+    url: https://github.com/makinacorpus/accessimap-lecteur-der/releases
 ---

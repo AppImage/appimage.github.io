@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: marcoancona/marcoancona
+    url: marcoancona/MineTime
   - type: Install
-    url: https://github.com/marcoancona/marcoancona/releases
+    url: https://github.com/marcoancona/MineTime/releases
 ---

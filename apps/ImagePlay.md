@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: cpvrlab/cpvrlab
+    url: cpvrlab/ImagePlay
   - type: Install
-    url: https://github.com/cpvrlab/cpvrlab/releases
+    url: https://github.com/cpvrlab/ImagePlay/releases
 ---

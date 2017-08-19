@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: cerebral/cerebral
+    url: cerebral/cerebral-debugger
   - type: Install
-    url: https://github.com/cerebral/cerebral/releases
+    url: https://github.com/cerebral/cerebral-debugger/releases
 ---

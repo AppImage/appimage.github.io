@@ -12,7 +12,7 @@ authors:
 
 links:
   - type: GitHub
-    url: neuro-sys/neuro-sys
+    url: neuro-sys/tumblr-downloader-client
   - type: Install
-    url: https://github.com/neuro-sys/neuro-sys/releases
+    url: https://github.com/neuro-sys/tumblr-downloader-client/releases
 ---

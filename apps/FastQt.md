@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: labsquare/labsquare
+    url: labsquare/fastQt
   - type: Install
-    url: https://github.com/labsquare/labsquare/releases
+    url: https://github.com/labsquare/fastQt/releases
 ---

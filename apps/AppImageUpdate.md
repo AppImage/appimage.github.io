@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: AppImage/AppImage
+    url: AppImage/AppImageUpdate
   - type: Install
-    url: https://github.com/AppImage/AppImage/releases
+    url: https://github.com/AppImage/AppImageUpdate/releases
 ---

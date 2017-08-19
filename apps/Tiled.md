@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: bjorn/bjorn
+    url: bjorn/tiled
   - type: Install
-    url: https://github.com/bjorn/bjorn/releases
+    url: https://github.com/bjorn/tiled/releases
 ---

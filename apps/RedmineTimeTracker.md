@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: ujiro99/ujiro99
+    url: ujiro99/RedmineTimeTracker
   - type: Install
-    url: https://github.com/ujiro99/ujiro99/releases
+    url: https://github.com/ujiro99/RedmineTimeTracker/releases
 ---

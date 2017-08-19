@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: CityOfZion/CityOfZion
+    url: CityOfZion/neon-wallet
   - type: Install
-    url: https://github.com/CityOfZion/CityOfZion/releases
+    url: https://github.com/CityOfZion/neon-wallet/releases
 ---

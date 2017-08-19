@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: FrogTheFrog/FrogTheFrog
+    url: FrogTheFrog/steam-rom-manager
   - type: Install
-    url: https://github.com/FrogTheFrog/FrogTheFrog/releases
+    url: https://github.com/FrogTheFrog/steam-rom-manager/releases
 ---

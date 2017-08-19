@@ -12,7 +12,7 @@ authors:
 
 links:
   - type: GitHub
-    url: sindresorhus/sindresorhus
+    url: sindresorhus/caprine
   - type: Install
-    url: https://github.com/sindresorhus/sindresorhus/releases
+    url: https://github.com/sindresorhus/caprine/releases
 ---

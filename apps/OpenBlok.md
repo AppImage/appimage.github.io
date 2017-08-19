@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: mmatyas/mmatyas
+    url: mmatyas/openblok
   - type: Install
-    url: https://github.com/mmatyas/mmatyas/releases
+    url: https://github.com/mmatyas/openblok/releases
 ---

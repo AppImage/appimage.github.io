@@ -12,7 +12,7 @@ authors:
 
 links:
   - type: GitHub
-    url: dannagle/dannagle
+    url: dannagle/PacketSender
   - type: Install
-    url: https://github.com/dannagle/dannagle/releases
+    url: https://github.com/dannagle/PacketSender/releases
 ---

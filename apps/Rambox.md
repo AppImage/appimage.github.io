@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: saenzramiro/saenzramiro
+    url: saenzramiro/rambox
   - type: Install
-    url: https://github.com/saenzramiro/saenzramiro/releases
+    url: https://github.com/saenzramiro/rambox/releases
 ---

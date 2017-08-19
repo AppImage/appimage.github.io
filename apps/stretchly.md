@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: hovancik/hovancik
+    url: hovancik/stretchly
   - type: Install
-    url: https://github.com/hovancik/hovancik/releases
+    url: https://github.com/hovancik/stretchly/releases
 ---
