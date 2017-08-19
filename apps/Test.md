@@ -33,12 +33,12 @@ installation:
   - system: AppImage
     info:
     - version: '0.3'
-      repository: 'ppa:justsomedood/justsomeAppImage'
-      package: pack
+      repository: 'FactualAppImageDownloadURLGoesHere'
+      package: AppImageFilenameGoesHereWithNumbersReplaced
       type: stable
     - version: '0.2'
-      repository: repo
-      package: pack
+      repository: 'FactualAppImageDownloadURLGoesHere'
+      package: AppImageFilenameGoesHereWithNumbersReplaced
       type: unstable
   - system: Ubuntu
     info:
