@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/mmatyas/mmatyas
+    url: mmatyas/mmatyas
   - type: Install
     url: https://github.com/mmatyas/mmatyas/releases
 ---

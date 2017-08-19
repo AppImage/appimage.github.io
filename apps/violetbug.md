@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/belltown/belltown
+    url: belltown/belltown
   - type: Install
     url: https://github.com/belltown/belltown/releases
 ---

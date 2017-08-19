@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/CarVac/CarVac
+    url: CarVac/CarVac
   - type: Install
     url: https://github.com/CarVac/CarVac/releases
 ---

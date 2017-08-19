@@ -12,7 +12,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/sindresorhus/sindresorhus
+    url: sindresorhus/sindresorhus
   - type: Install
     url: https://github.com/sindresorhus/sindresorhus/releases
 ---

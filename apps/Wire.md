@@ -10,7 +10,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/wireapp/wireapp
+    url: wireapp/wireapp
   - type: Install
     url: https://github.com/wireapp/wireapp/releases
 ---

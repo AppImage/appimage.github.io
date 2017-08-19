@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/mykter/mykter
+    url: mykter/mykter
   - type: Install
     url: https://github.com/mykter/mykter/releases
 ---

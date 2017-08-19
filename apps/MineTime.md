@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/marcoancona/marcoancona
+    url: marcoancona/marcoancona
   - type: Install
     url: https://github.com/marcoancona/marcoancona/releases
 ---

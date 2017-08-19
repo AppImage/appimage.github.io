@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/pascalopitz/pascalopitz
+    url: pascalopitz/pascalopitz
   - type: Install
     url: https://github.com/pascalopitz/pascalopitz/releases
 ---

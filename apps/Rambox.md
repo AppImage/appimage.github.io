@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/saenzramiro/saenzramiro
+    url: saenzramiro/saenzramiro
   - type: Install
     url: https://github.com/saenzramiro/saenzramiro/releases
 ---

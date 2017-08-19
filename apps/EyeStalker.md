@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/tbrouns/tbrouns
+    url: tbrouns/tbrouns
   - type: Install
     url: https://github.com/tbrouns/tbrouns/releases
 ---

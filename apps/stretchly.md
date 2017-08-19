@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/hovancik/hovancik
+    url: hovancik/hovancik
   - type: Install
     url: https://github.com/hovancik/hovancik/releases
 ---

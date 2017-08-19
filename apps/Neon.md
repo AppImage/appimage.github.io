@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/CityOfZion/CityOfZion
+    url: CityOfZion/CityOfZion
   - type: Install
     url: https://github.com/CityOfZion/CityOfZion/releases
 ---

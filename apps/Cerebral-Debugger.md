@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/cerebral/cerebral
+    url: cerebral/cerebral
   - type: Install
     url: https://github.com/cerebral/cerebral/releases
 ---

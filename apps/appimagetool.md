@@ -10,7 +10,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/AppImage/AppImageKit
+    url: AppImage/AppImageKit
   - type: Install
     url: https://github.com/AppImage/AppImageKit/releases
 ---

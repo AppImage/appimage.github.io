@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/Skrifa/Skrifa
+    url: Skrifa/Skrifa
   - type: Install
     url: https://github.com/Skrifa/Skrifa/releases
 ---

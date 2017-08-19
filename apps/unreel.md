@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/linux-man/linux-man
+    url: linux-man/linux-man
   - type: Install
     url: https://github.com/linux-man/linux-man/releases
 ---

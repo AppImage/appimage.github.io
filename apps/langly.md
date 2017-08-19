@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/christofferok/christofferok
+    url: christofferok/christofferok
   - type: Install
     url: https://github.com/christofferok/christofferok/releases
 ---

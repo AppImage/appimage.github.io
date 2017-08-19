@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/vim/vim
+    url: vim/vim
   - type: Install
     url: https://github.com/vim/vim/releases
 ---

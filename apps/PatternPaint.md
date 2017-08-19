@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/Blinkinlabs/Blinkinlabs
+    url: Blinkinlabs/Blinkinlabs
   - type: Install
     url: https://github.com/Blinkinlabs/Blinkinlabs/releases
 ---

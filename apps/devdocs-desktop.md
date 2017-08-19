@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/egoist/egoist
+    url: egoist/egoist
   - type: Install
     url: https://github.com/egoist/egoist/releases
 ---

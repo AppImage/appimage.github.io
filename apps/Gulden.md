@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/Gulden/Gulden
+    url: Gulden/Gulden
   - type: Install
     url: https://github.com/Gulden/Gulden/releases
 ---

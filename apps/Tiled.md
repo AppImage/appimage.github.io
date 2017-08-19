@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/bjorn/bjorn
+    url: bjorn/bjorn
   - type: Install
     url: https://github.com/bjorn/bjorn/releases
 ---

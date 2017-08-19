@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/cpvrlab/cpvrlab
+    url: cpvrlab/cpvrlab
   - type: Install
     url: https://github.com/cpvrlab/cpvrlab/releases
 ---

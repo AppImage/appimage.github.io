@@ -12,7 +12,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/neuro-sys/neuro-sys
+    url: neuro-sys/neuro-sys
   - type: Install
     url: https://github.com/neuro-sys/neuro-sys/releases
 ---

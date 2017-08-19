@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/labsquare/labsquare
+    url: labsquare/labsquare
   - type: Install
     url: https://github.com/labsquare/labsquare/releases
 ---

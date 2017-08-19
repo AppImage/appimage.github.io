@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/expo/expo
+    url: expo/expo
   - type: Install
     url: https://github.com/expo/expo/releases
 ---

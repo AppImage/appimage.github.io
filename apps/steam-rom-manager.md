@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/FrogTheFrog/FrogTheFrog
+    url: FrogTheFrog/FrogTheFrog
   - type: Install
     url: https://github.com/FrogTheFrog/FrogTheFrog/releases
 ---

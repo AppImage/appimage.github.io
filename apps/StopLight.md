@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/stoplightio/stoplightio
+    url: stoplightio/stoplightio
   - type: Install
     url: https://github.com/stoplightio/stoplightio/releases
 ---

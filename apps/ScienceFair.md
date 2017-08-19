@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/codeforscience/codeforscience
+    url: codeforscience/codeforscience
   - type: Install
     url: https://github.com/codeforscience/codeforscience/releases
 ---

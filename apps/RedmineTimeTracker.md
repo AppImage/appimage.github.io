@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/ujiro99/ujiro99
+    url: ujiro99/ujiro99
   - type: Install
     url: https://github.com/ujiro99/ujiro99/releases
 ---

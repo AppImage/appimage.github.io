@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/yishn/yishn
+    url: yishn/yishn
   - type: Install
     url: https://github.com/yishn/yishn/releases
 ---

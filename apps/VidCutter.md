@@ -10,7 +10,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/ozmartian/vidcutter
+    url: ozmartian/vidcutter
   - type: Install
     url: https://github.com/ozmartian/vidcutter/releases
 ---

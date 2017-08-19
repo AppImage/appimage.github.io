@@ -12,7 +12,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/keepassxreboot/keepassxreboot
+    url: keepassxreboot/keepassxreboot
   - type: Install
     url: https://github.com/keepassxreboot/keepassxreboot/releases
 ---

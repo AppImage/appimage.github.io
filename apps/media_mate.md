@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/willyb321/willyb321
+    url: willyb321/willyb321
   - type: Install
     url: https://github.com/willyb321/willyb321/releases
 ---

@@ -12,7 +12,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/dannagle/dannagle
+    url: dannagle/dannagle
   - type: Install
     url: https://github.com/dannagle/dannagle/releases
 ---

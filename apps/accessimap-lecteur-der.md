@@ -13,7 +13,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/makinacorpus/makinacorpus
+    url: makinacorpus/makinacorpus
   - type: Install
     url: https://github.com/makinacorpus/makinacorpus/releases
 ---

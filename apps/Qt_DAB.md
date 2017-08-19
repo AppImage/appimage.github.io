@@ -12,7 +12,7 @@ authors:
 
 links:
   - type: GitHub
-    url: https://github.com/JvanKatwijk/JvanKatwijk
+    url: JvanKatwijk/JvanKatwijk
   - type: Install
     url: https://github.com/JvanKatwijk/JvanKatwijk/releases
 ---
