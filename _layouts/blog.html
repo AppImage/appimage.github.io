@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="posts">
+
+  {% assign sorted = site.pages | sort:"updated" | reverse %}
+  {% for post in sorted %}
+    {% if post.layout == 'app' && post.published == 'true' %}  
+ 
+      {% include loop.html %}
+      
+    {% endif %}
+  {% endfor %}
+
+</div>

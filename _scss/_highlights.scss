@@ -1,0 +1,167 @@
+
+/***********************/
+/* SYNTAX HIGHLIGHTING */
+/***********************/
+
+.highlight { 
+  background-color: $base02;
+  color: $white;
+  padding: 5px 10px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  & > * {
+    margin:0 5px;
+  }
+}
+
+.highlight pre {
+  /* overflow: scroll; Prefer no word wrap? Uncomment this line and comment out the 2 lines below. */
+  word-break: break-all;
+  word-wrap: break-word;
+}
+ 
+code {
+  font-family: $font_code;
+  font-size: 14px;
+}
+ 
+// Solarized Light Pygments 
+// Thanks https://gist.github.com/edwardhotchkiss/2005058
+/* Comment */
+.highlight .c, .highlight .c1 { color: $base01 }
+/* Error */
+.highlight .err { color: $base1 }
+/* Generic */
+.highlight .g { color: $base1 }
+/* Keyword */
+.highlight .k { color: $green }
+/* Literal */
+.highlight .l { color: $base1 }
+/* Name */
+.highlight .n { color: $base1 }
+/* Operator */
+.highlight .o { color: $green }
+/* Other */
+.highlight .x { color: $orange }
+/* Punctuation */
+.highlight .p { color: $base1 }
+/* Comment.Multiline */
+.highlight .cm { color: $base01 }
+/* Comment.Preproc */
+.highlight .cp { color: $green }
+/* Comment.Single */
+.highlight .c1 { color: $base01 }
+/* Comment.Special */
+.highlight .cs { color: $green }
+/* Generic.Deleted */
+.highlight .gd { color: $cyan }
+/* Generic.Emph */
+.highlight .ge { color: $base1; font-style: italic }
+/* Generic.Error */
+.highlight .gr { color: $red }
+/* Generic.Heading */
+.highlight .gh { color: $orange }
+/* Generic.Inserted */
+.highlight .gi { color: $green }
+/* Generic.Output */
+.highlight .go { color: $base1 }
+/* Generic.Prompt */
+.highlight .gp { color: $base1 }
+/* Generic.Strong */
+.highlight .gs { color: $base1; font-weight: bold }
+/* Generic.Subheading */
+.highlight .gu { color: $orange }
+/* Generic.Traceback */
+.highlight .gt { color: $base1 }
+/* Keyword.Constant */
+.highlight .kc { color: $orange }
+/* Keyword.Declaration */
+.highlight .kd { color: $blue }
+/* Keyword.Namespace */
+.highlight .kn { color: $green }
+/* Keyword.Pseudo */
+.highlight .kp { color: $green }
+/* Keyword.Reserved */
+.highlight .kr { color: $blue }
+/* Keyword.Type */
+.highlight .kt { color: $red }
+/* Literal.Date */
+.highlight .ld { color: $base1 }
+/* Literal.Number */
+.highlight .m { color: $cyan }
+/* Literal.String */
+.highlight .s { color: $cyan }
+/* Name.Attribute */
+.highlight .na { color: $base1 }
+/* Name.Builtin */
+.highlight .nb { color: $yellow }
+/* Name.Class */
+.highlight .nc { color: $blue }
+/* Name.Constant */
+.highlight .no { color: $orange }
+/* Name.Decorator */
+.highlight .nd { color: $blue }
+/* Name.Entity */
+.highlight .ni { color: $orange }
+/* Name.Exception */
+.highlight .ne { color: $orange }
+/* Name.Function */
+.highlight .nf { color: $blue }
+/* Name.Label */
+.highlight .nl { color: $base1 }
+/* Name.Namespace */
+.highlight .nn { color: $base1 }
+/* Name.Other */
+.highlight .nx { color: $base01 } /*was #555*/
+/* Name.Property */
+.highlight .py { color: $base1 }
+/* Name.Tag */
+.highlight .nt { color: $blue }
+/* Name.Variable */
+.highlight .nv { color: $blue }
+/* Operator.Word */
+.highlight .ow { color: $green }
+/* Text.Whitespace */
+.highlight .w { color: $base1 }
+/* Literal.Number.Float */
+.highlight .mf { color: $cyan }
+/* Literal.Number.Hex */
+.highlight .mh { color: $cyan }
+/* Literal.Number.Integer */
+.highlight .mi { color: $cyan }
+/* Literal.Number.Oct */
+.highlight .mo { color: $cyan }
+/* Literal.String.Backtick */
+.highlight .sb { color: $base01 }
+/* Literal.String.Char */
+.highlight .sc { color: $cyan }
+/* Literal.String.Doc */
+.highlight .sd { color: $base1 }
+/* Literal.String.Double */
+.highlight .s2 { color: $cyan }
+/* Literal.String.Escape */
+.highlight .se { color: $orange }
+/* Literal.String.Heredoc */
+.highlight .sh { color: $base1 }
+/* Literal.String.Interpol */
+.highlight .si { color: $cyan }
+/* Literal.String.Other */
+.highlight .sx { color: $cyan }
+/* Literal.String.Regex */
+.highlight .sr { color: $red }
+/* Literal.String.Single */
+.highlight .s1 { color: $cyan }
+/* Literal.String.Symbol */
+.highlight .ss { color: $cyan }
+/* Name.Builtin.Pseudo */
+.highlight .bp { color: $blue }
+/* Name.Variable.Class */
+.highlight .vc { color: $blue }
+/* Name.Variable.Global */
+.highlight .vg { color: $blue }
+/* Name.Variable.Instance */
+.highlight .vi { color: $blue }
+/* Literal.Number.Integer.Long */
+.highlight .il { color: $cyan }

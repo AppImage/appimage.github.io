@@ -1,0 +1,32 @@
+<article class="post">
+
+  <header>
+    <a href="{{ site.baseurl }}{{ post.url }}">
+      <h1 id="{% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md" }}{% endif %}">{% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md" }}{% endif %}</h1>
+      {% if post.generic and post.title_obvious != true %}<p>{{ post.generic }}</p>{% endif %}
+    </a>
+  </header>
+
+  <div class="entry">
+    {% if post.layout == 'app' %}
+      {% include app_teaser.html %}
+    {% else %}
+      {{ post.content}}
+    {% endif %}
+  </div>
+
+  <p>
+    <div class="date">
+      <span class="octicon octicon-calendar"></span>
+      {% if post.created != post.updated %}
+        Published {{ post.created }}, last updated {{ post.updated }}
+      {% else %}
+        Published {{ post.created }}
+      {% endif %}
+    </div>
+    <a style="font-weight:bold" href="{{ site.baseurl }}{{ post.url }}">
+      Read more...
+    </a>
+  </p>
+
+</article>

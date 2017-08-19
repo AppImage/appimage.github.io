@@ -1,0 +1,41 @@
+{% if post.screenshots %}
+  <div id="screenshots">
+    {% for screenshot in post.screenshots %}
+      <img src="{{ site.baseurl }}/img/windows/placeholder.png" data-src="{{ site.baseurl }}/img/windows/{{ screenshot }}" alt="Screenshot of {{ post.title }}" />
+      <noscript>
+        <img src="{{ site.baseurl }}/img/windows/{{ screenshot }}" alt="Screenshot" />
+      </noscript>
+    {% endfor %}
+  </div>
+  <p id="showcase" style="text-align:center">
+    {% for link in post.links %}
+      {% case link.type %}
+      {% when "Screenshots" or "Videos" %}
+        {% assign prefix = nil %}
+      {% else %}
+        {% continue %}
+      {% endcase %}
+      <a href="{{ prefix }}{{ link.url }}">
+        {% if link.name %}{{ link.name }}{% else %}{{ link.type }}{% endif %}</a>{% if forloop.last == false %}, {% endif %}
+    {% endfor %}
+  </p>
+{% endif %}
+
+
+{% if post.description %}
+  <blockquote>{{ post.description }}</blockquote>
+{% endif %}
+
+{% if post.authors %}
+  <p id="authors">
+    <b>Authors</b>:
+    {% include list_authors.html %}
+  </p>
+{% endif %}
+
+{% if post.links %}
+  <p id="links">
+    <b>Links</b>:
+    {% include list_links.html %}
+  </p>
+{% endif %}
