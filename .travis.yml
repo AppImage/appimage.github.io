@@ -21,3 +21,8 @@ script:
 after_script:
   - # xpra stop :99
   - killall Xvfb
+
+branches:
+  only:
+  - gh-pages     # test the gh-pages branch (it is not tested on Travis CI by default)
+  - /(.*)/       # test every other branch
