@@ -4,7 +4,7 @@ URL=$(cat $1 | head -n 1)
 echo $URL
 
 if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
-  git checkout master
+  git checkout "$TRAVIS_BRANCH"
 fi
 
 INPUTBASENAME=$(basename $1)
