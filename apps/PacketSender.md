@@ -9,4 +9,10 @@ screenshots:
 authors:
   - name: dannagle
     url: https://github.com/dannagle
+
+links:
+  - type: GitHub
+    url: https://github.com/dannagle/dannagle
+  - type: Install
+    url: https://github.com/dannagle/dannagle/releases
 ---

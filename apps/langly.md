@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: christofferok
     url: https://github.com/christofferok
+
+links:
+  - type: GitHub
+    url: https://github.com/christofferok/christofferok
+  - type: Install
+    url: https://github.com/christofferok/christofferok/releases
 ---

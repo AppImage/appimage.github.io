@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: FrogTheFrog
     url: https://github.com/FrogTheFrog
+
+links:
+  - type: GitHub
+    url: https://github.com/FrogTheFrog/FrogTheFrog
+  - type: Install
+    url: https://github.com/FrogTheFrog/FrogTheFrog/releases
 ---

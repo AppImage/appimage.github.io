@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: saenzramiro
     url: https://github.com/saenzramiro
+
+links:
+  - type: GitHub
+    url: https://github.com/saenzramiro/saenzramiro
+  - type: Install
+    url: https://github.com/saenzramiro/saenzramiro/releases
 ---

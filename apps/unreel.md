@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: linux-man
     url: https://github.com/linux-man
+
+links:
+  - type: GitHub
+    url: https://github.com/linux-man/linux-man
+  - type: Install
+    url: https://github.com/linux-man/linux-man/releases
 ---

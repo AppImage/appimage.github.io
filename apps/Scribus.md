@@ -8,4 +8,6 @@ screenshots:
   - Scribus/screenshot.png
 
 authors:
+
+links:
 ---

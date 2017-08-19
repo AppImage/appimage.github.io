@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: makinacorpus
     url: https://github.com/makinacorpus
+
+links:
+  - type: GitHub
+    url: https://github.com/makinacorpus/makinacorpus
+  - type: Install
+    url: https://github.com/makinacorpus/makinacorpus/releases
 ---

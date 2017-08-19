@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: cerebral
     url: https://github.com/cerebral
+
+links:
+  - type: GitHub
+    url: https://github.com/cerebral/cerebral
+  - type: Install
+    url: https://github.com/cerebral/cerebral/releases
 ---

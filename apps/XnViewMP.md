@@ -8,4 +8,6 @@ screenshots:
   - XnViewMP/screenshot.png
 
 authors:
+
+links:
 ---

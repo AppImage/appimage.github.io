@@ -8,4 +8,6 @@ screenshots:
   - QOwnNotes/screenshot.png
 
 authors:
+
+links:
 ---

@@ -8,4 +8,6 @@ screenshots:
   - mandelbulber2/screenshot.png
 
 authors:
+
+links:
 ---

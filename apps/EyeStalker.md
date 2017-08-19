@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: tbrouns
     url: https://github.com/tbrouns
+
+links:
+  - type: GitHub
+    url: https://github.com/tbrouns/tbrouns
+  - type: Install
+    url: https://github.com/tbrouns/tbrouns/releases
 ---

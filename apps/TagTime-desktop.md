@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: mykter
     url: https://github.com/mykter
+
+links:
+  - type: GitHub
+    url: https://github.com/mykter/mykter
+  - type: Install
+    url: https://github.com/mykter/mykter/releases
 ---

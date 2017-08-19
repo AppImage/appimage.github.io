@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: yishn
     url: https://github.com/yishn
+
+links:
+  - type: GitHub
+    url: https://github.com/yishn/yishn
+  - type: Install
+    url: https://github.com/yishn/yishn/releases
 ---

@@ -8,4 +8,6 @@ screenshots:
   - LibrePCB-Nightly/screenshot.png
 
 authors:
+
+links:
 ---

@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: codeforscience
     url: https://github.com/codeforscience
+
+links:
+  - type: GitHub
+    url: https://github.com/codeforscience/codeforscience
+  - type: Install
+    url: https://github.com/codeforscience/codeforscience/releases
 ---

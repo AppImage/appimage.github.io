@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: pascalopitz
     url: https://github.com/pascalopitz
+
+links:
+  - type: GitHub
+    url: https://github.com/pascalopitz/pascalopitz
+  - type: Install
+    url: https://github.com/pascalopitz/pascalopitz/releases
 ---

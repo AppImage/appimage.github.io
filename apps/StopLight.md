@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: stoplightio
     url: https://github.com/stoplightio
+
+links:
+  - type: GitHub
+    url: https://github.com/stoplightio/stoplightio
+  - type: Install
+    url: https://github.com/stoplightio/stoplightio/releases
 ---

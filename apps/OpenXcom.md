@@ -8,4 +8,6 @@ screenshots:
   - OpenXcom/screenshot.png
 
 authors:
+
+links:
 ---

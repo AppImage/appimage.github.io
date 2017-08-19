@@ -7,4 +7,6 @@ screenshots:
   - Kate/screenshot.png
 
 authors:
+
+links:
 ---

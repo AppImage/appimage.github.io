@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: Skrifa
     url: https://github.com/Skrifa
+
+links:
+  - type: GitHub
+    url: https://github.com/Skrifa/Skrifa
+  - type: Install
+    url: https://github.com/Skrifa/Skrifa/releases
 ---

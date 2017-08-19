@@ -9,4 +9,10 @@ screenshots:
 authors:
   - name: JvanKatwijk
     url: https://github.com/JvanKatwijk
+
+links:
+  - type: GitHub
+    url: https://github.com/JvanKatwijk/JvanKatwijk
+  - type: Install
+    url: https://github.com/JvanKatwijk/JvanKatwijk/releases
 ---

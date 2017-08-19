@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: AppImage
     url: https://github.com/AppImage
+
+links:
+  - type: GitHub
+    url: https://github.com/AppImage/AppImage
+  - type: Install
+    url: https://github.com/AppImage/AppImage/releases
 ---

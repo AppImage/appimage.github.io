@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: bjorn
     url: https://github.com/bjorn
+
+links:
+  - type: GitHub
+    url: https://github.com/bjorn/bjorn
+  - type: Install
+    url: https://github.com/bjorn/bjorn/releases
 ---

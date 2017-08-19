@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: Gulden
     url: https://github.com/Gulden
+
+links:
+  - type: GitHub
+    url: https://github.com/Gulden/Gulden
+  - type: Install
+    url: https://github.com/Gulden/Gulden/releases
 ---

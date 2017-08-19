@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: willyb321
     url: https://github.com/willyb321
+
+links:
+  - type: GitHub
+    url: https://github.com/willyb321/willyb321
+  - type: Install
+    url: https://github.com/willyb321/willyb321/releases
 ---

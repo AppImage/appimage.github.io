@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: aricovindanevectone
     url: https://github.com/aricovindanevectone
+
+links:
+  - type: GitHub
+    url: https://github.com/aricovindanevectone/aricovindanevectone
+  - type: Install
+    url: https://github.com/aricovindanevectone/aricovindanevectone/releases
 ---

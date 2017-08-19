@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: sidneys
     url: https://github.com/sidneys
+
+links:
+  - type: GitHub
+    url: https://github.com/sidneys/sidneys
+  - type: Install
+    url: https://github.com/sidneys/sidneys/releases
 ---

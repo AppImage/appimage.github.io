@@ -8,4 +8,6 @@ screenshots:
   - TeXstudio/screenshot.png
 
 authors:
+
+links:
 ---

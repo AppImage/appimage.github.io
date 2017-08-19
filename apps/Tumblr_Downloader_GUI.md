@@ -9,4 +9,10 @@ screenshots:
 authors:
   - name: neuro-sys
     url: https://github.com/neuro-sys
+
+links:
+  - type: GitHub
+    url: https://github.com/neuro-sys/neuro-sys
+  - type: Install
+    url: https://github.com/neuro-sys/neuro-sys/releases
 ---

@@ -5,4 +5,6 @@ permalink: /Krita/
 description: Digital Painting
 
 authors:
+
+links:
 ---

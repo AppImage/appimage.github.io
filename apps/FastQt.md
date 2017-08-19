@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: labsquare
     url: https://github.com/labsquare
+
+links:
+  - type: GitHub
+    url: https://github.com/labsquare/labsquare
+  - type: Install
+    url: https://github.com/labsquare/labsquare/releases
 ---

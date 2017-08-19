@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: belltown
     url: https://github.com/belltown
+
+links:
+  - type: GitHub
+    url: https://github.com/belltown/belltown
+  - type: Install
+    url: https://github.com/belltown/belltown/releases
 ---

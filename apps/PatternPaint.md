@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: Blinkinlabs
     url: https://github.com/Blinkinlabs
+
+links:
+  - type: GitHub
+    url: https://github.com/Blinkinlabs/Blinkinlabs
+  - type: Install
+    url: https://github.com/Blinkinlabs/Blinkinlabs/releases
 ---

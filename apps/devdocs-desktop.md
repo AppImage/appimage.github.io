@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: egoist
     url: https://github.com/egoist
+
+links:
+  - type: GitHub
+    url: https://github.com/egoist/egoist
+  - type: Install
+    url: https://github.com/egoist/egoist/releases
 ---

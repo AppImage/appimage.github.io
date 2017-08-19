@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: vim
     url: https://github.com/vim
+
+links:
+  - type: GitHub
+    url: https://github.com/vim/vim
+  - type: Install
+    url: https://github.com/vim/vim/releases
 ---

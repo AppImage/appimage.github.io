@@ -7,4 +7,6 @@ screenshots:
   - Kdevelop/screenshot.png
 
 authors:
+
+links:
 ---

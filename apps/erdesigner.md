@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: felix557700
     url: https://github.com/felix557700
+
+links:
+  - type: GitHub
+    url: https://github.com/felix557700/felix557700
+  - type: Install
+    url: https://github.com/felix557700/felix557700/releases
 ---

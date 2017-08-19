@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: hovancik
     url: https://github.com/hovancik
+
+links:
+  - type: GitHub
+    url: https://github.com/hovancik/hovancik
+  - type: Install
+    url: https://github.com/hovancik/hovancik/releases
 ---

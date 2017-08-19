@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: QNapi
     url: https://github.com/QNapi
+
+links:
+  - type: GitHub
+    url: https://github.com/QNapi/QNapi
+  - type: Install
+    url: https://github.com/QNapi/QNapi/releases
 ---

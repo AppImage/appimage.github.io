@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: Gilad-Kutiel-App
     url: https://github.com/Gilad-Kutiel-App
+
+links:
+  - type: GitHub
+    url: https://github.com/Gilad-Kutiel-App/Gilad-Kutiel-App
+  - type: Install
+    url: https://github.com/Gilad-Kutiel-App/Gilad-Kutiel-App/releases
 ---

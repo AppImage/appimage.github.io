@@ -7,4 +7,6 @@ screenshots:
   - PrusaControl/screenshot.png
 
 authors:
+
+links:
 ---

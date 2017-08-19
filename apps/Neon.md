@@ -10,4 +10,10 @@ screenshots:
 authors:
   - name: CityOfZion
     url: https://github.com/CityOfZion
+
+links:
+  - type: GitHub
+    url: https://github.com/CityOfZion/CityOfZion
+  - type: Install
+    url: https://github.com/CityOfZion/CityOfZion/releases
 ---

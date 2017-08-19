@@ -7,4 +7,6 @@ screenshots:
   - MrWriter/screenshot.png
 
 authors:
+
+links:
 ---
