@@ -23,10 +23,10 @@ links:
     url: GitHubReleasesPageGoesHere
   # Screenshots, videos, reviews
   - type: Screenshots
-    url: https://appimage.github.io/AppImageHub/database/Cantata/screenshot.jpg
+    url: Cantata/screenshot.jpg
 
 screenshots:
-  - /database/Cantata/screenshot.jpg
+  - Cantata/screenshot.jpg
 
 # TODO: This needs to be replaced by channels
 installation:
