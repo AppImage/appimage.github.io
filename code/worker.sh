@@ -266,7 +266,7 @@ for INPUTBASENAME in database/*; do
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary" -v .)
+    SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .)
     if [ "$SUMMARY" != "" ] ; then
       echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
     fi
