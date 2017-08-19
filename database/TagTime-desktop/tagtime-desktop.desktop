@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=TagTime-desktop
+Comment=Time tracking for space cadets - desktop edition
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=tagtime-desktop
+X-AppImage-Version=0.3.0.278
+X-AppImage-BuildId=75f81200-776a-11a7-2a59-17151b91d234
+Categories=Utility;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=false
+# Dear upstream developer, please add update information to your AppImage
+# so that users can easily update the AppImage
+X-AppImage-Type=1
+# Dear upstream developer, please consider to switch to type 2
+# so that users can benefit from the additional features like digital embedded signatures
+# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
+# or use linuxdeployqt or appimagetool which produce type 2 automatically
+X-AppImage-Architecture=x86_64
