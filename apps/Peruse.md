@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /Peruse/
+description: Document ViewerVisualitzador de documentsVisualitzador de documentsProhlížeč dokumentůDokumentenbetrachterDocument ViewerVisor de documentosDokumendinäitajaAsiakirjakatselinVisore di documenti문서 뷰어DocumentenviewerDokumentvisarVisualizador do DocumentoPrehliadač dokumentovPregledovalnik dokumentovПриказивач докуменатаPrikazivač dokumenataПриказивач докуменатаPrikazivač dokumenataDokumentvisareПрограма для перегляду документівxxDocument Viewerxx文件檢視器
 
 screenshots:
   - Peruse/screenshot.png
