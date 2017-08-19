@@ -1,9 +1,9 @@
 {% if post.screenshots %}
   <div id="screenshots">
     {% for screenshot in post.screenshots %}
-      <img src="{{ site.baseurl }}/img/windows/placeholder.png" data-src="{{ site.baseurl }}/img/windows/{{ screenshot }}" alt="Screenshot of {{ post.title }}" />
+      <img src="{{ site.baseurl }}/img/windows/placeholder.png" data-src="{{ site.baseurl }}/database/{{ screenshot }}" alt="Screenshot of {{ post.title }}" />
       <noscript>
-        <img src="{{ site.baseurl }}/img/windows/{{ screenshot }}" alt="Screenshot" />
+        <img src="{{ site.baseurl }}/database/{{ screenshot }}" alt="Screenshot" />
       </noscript>
     {% endfor %}
   </div>
