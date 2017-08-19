@@ -132,6 +132,7 @@ sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
 
 # Find out whether the application is a GUI application
 
+echo ""
 echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
@@ -237,21 +238,6 @@ echo "==========================================="
 
 # TODO: If there is an AppStream file, then extract data like screenshhot URLs from it
 
-# If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
-# https://gist.github.com/willprice/e07efd73fb7f13f917ea
-if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
-    git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
-    git config --global user.email "travis@travis-ci.org"
-    git config --global user.name "Travis CI"
-    ( cd database/ ; git add . || true ) # Recursively add everything in this directory
-    git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
-Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
-[ci skip]
-EOF
-    git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
-    git push --set-upstream deploy
-fi
-
 # TODO: If this is not a PR, then convert the "database files" into whatever output formats we need to support
 # e.g., OCS for knsrc/Discover
 # e.g., JSON for something Jekyll-based like https://quassy.github.io/AppImage-apps/
@@ -264,6 +250,7 @@ if [ $TYPE -eq 1 ] ; then
   sudo umount -l /mnt
 fi
 
+echo ""
 echo "==========================================="
 echo "============ EXPORTING DATA ==============="
 echo "==========================================="
@@ -271,7 +258,7 @@ echo "==========================================="
 # For Jekyll Now
 for INPUTBASENAME in database/*; do
   INPUTBASENAME=${INPUTBASENAME##*/} # Remove path up to last /
-  echo "Exporting $INPUTBASENAME to .md for Jekyll"
+  echo "Exporting $INPUTBASENAME to apps/$INPUTBASENAME.md for Jekyll"
   touch apps/$INPUTBASENAME.md
   echo "---" >> apps/$INPUTBASENAME.md
   echo "layout: app" >> apps/$INPUTBASENAME.md
@@ -284,3 +271,24 @@ for INPUTBASENAME in database/*; do
   fi
   echo "---" >> apps/$INPUTBASENAME.md
 done
+
+echo ""
+echo "==========================================="
+echo "============== PUSHING DATA ==============="
+echo "==========================================="
+
+# If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
+# https://gist.github.com/willprice/e07efd73fb7f13f917ea
+if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
+    git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
+    git config --global user.email "travis@travis-ci.org"
+    git config --global user.name "Travis CI"
+    ( cd database/ ; git add . || true ) # Recursively add everything in this directory
+    ( cd apps/ ; git add . || true ) # Recursively add everything in this directory
+    git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
+Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
+[ci skip]
+EOF
+    git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+    git push --set-upstream deploy
+fi
