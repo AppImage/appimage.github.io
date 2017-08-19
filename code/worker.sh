@@ -264,7 +264,7 @@ for INPUTBASENAME in database/*; do
   echo "layout: app" >> apps/$INPUTBASENAME.md
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
-  DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/"*.desktop | cut -d '=' -f 2- )
+  DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     SUMMARY=$(cat $APPDIR/usr/share/metainfo/*.appdata.xml | xml sel -t -m "/component/summary" -v .)
     if [ "$SUMMARY" != "" ] ; then
