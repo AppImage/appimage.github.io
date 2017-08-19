@@ -40,13 +40,13 @@ $color_borders: #ccc;
 
 // Fonts
 // Only with Latin subset for now
-@import url("//fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic&subset=latin,latin-ext");
-$font_body: "Open Sans","Droid Sans", "Source Sans Pro", "Carlito", "DejaVu Sans", sans-serif;
+@import url("//fonts.googleapis.com/css?family=Montserrat:400,700,700italic,400italic&subset=latin,latin-ext");
+$font_body: "Montserrat","Droid Sans", "Source Sans Pro", "Carlito", "DejaVu Sans", sans-serif;
 $font_header: $font_body;
 
 // Needs some cleanup, not all weights are needed
-@import url("//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900");
-$font_heading: "Raleway", "Open Sans","Droid Sans", "Source Sans Pro", "Carlito", "DejaVu Sans", sans-serif;
+@import url("//fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900");
+$font_heading: "Montserrat", "Open Sans","Droid Sans", "Source Sans Pro", "Carlito", "DejaVu Sans", sans-serif;
 
 // Some day there will be Open Sans Mono 
 @import url("//fonts.googleapis.com/css?family=Source+Code+Pro:400,700");
