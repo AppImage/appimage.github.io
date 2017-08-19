@@ -294,7 +294,7 @@ for INPUTBASENAME in database/*; do
     echo "  - name: $GH_USER" >> apps/$INPUTBASENAME.md
     echo "    url: https://github.com/$GH_USER" >> apps/$INPUTBASENAME.md
   fi
-  # Authors
+  # Links
   echo "" >> apps/$INPUTBASENAME.md
   echo "links:" >> apps/$INPUTBASENAME.md
   if [  "$GH_USER" != "" ] ; then
