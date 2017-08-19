@@ -228,14 +228,6 @@ if [ "2" == "$TYPE" ] ; then
   echo "X-AppImage-Type=2" >> "$DATAFILE"
 fi
 
-
-if [ "" != "$GH_USER" ] ; then
-  echo "X-GitHub-User=$GH_USER" >> "$DATAFILE"
-fi
-if [ "" != "$GH_REPO" ] ; then
-  echo "X-GitHub-Repo=$GH_REPO" >> "$DATAFILE"
-fi
-
 echo "X-AppImage-Architecture=$ARCHITECTURE" >> "$DATAFILE"
 
 # If available, also copy in AppStream metainfo
@@ -274,7 +266,6 @@ for INPUTBASENAME in database/*; do
   echo "layout: app" >> apps/$INPUTBASENAME.md
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
-  # Description
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .)
@@ -289,26 +280,6 @@ for INPUTBASENAME in database/*; do
     echo "screenshots:" >> apps/$INPUTBASENAME.md
     echo "  - $INPUTBASENAME/screenshot.png" >> apps/$INPUTBASENAME.md
   fi
-  echo "" >> apps/$INPUTBASENAME.md
-  echo "  links:" >> apps/$INPUTBASENAME.md
-  # Download link
-  DESKTOP_GH_USER=$(grep "^X-GitHub-User=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
-  DESKTOP_GH_REPO=$(grep "^X-GitHub-Repo=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
-  if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    DLD=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/url[@download][1]" -v .)
-    if [ "$SUMMARY" != "" ] ; then
-      echo "      - type: Install" >> apps/$INPUTBASENAME.md
-      echo "        url: https://github.com/AppImage/AppImageUpdate/releases" >> apps/$INPUTBASENAME.md
-    fi
-  elif [ "$DESKTOP_GH_USER" != "" ] && [ "$DESKTOP_GH_REPO" != "" ] ; then
-      echo "      - type: Install" >> apps/$INPUTBASENAME.md
-      echo "        url: https://github.com/$DESKTOP_GH_USER/$DESKTOP_GH_REPO/releases" >> apps/$INPUTBASENAME.md
-  fi
-  if [ -f database/$INPUTBASENAME/screenshot.png ] ; then
-    echo "" >> apps/$INPUTBASENAME.md
-    echo "screenshots:" >> apps/$INPUTBASENAME.md
-    echo "  - $INPUTBASENAME/screenshot.png" >> apps/$INPUTBASENAME.md
-  fi  
   echo "---" >> apps/$INPUTBASENAME.md
 done
 
