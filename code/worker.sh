@@ -260,7 +260,7 @@ for INPUTBASENAME in database/*; do
   INPUTBASENAME=${INPUTBASENAME##*/} # Remove path up to last /
   echo "Exporting $INPUTBASENAME to apps/$INPUTBASENAME.md for Jekyll"
   touch apps/$INPUTBASENAME.md
-  echo "---" >> apps/$INPUTBASENAME.md
+  echo "---" > apps/$INPUTBASENAME.md
   echo "layout: app" >> apps/$INPUTBASENAME.md
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
