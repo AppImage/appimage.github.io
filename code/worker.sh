@@ -265,7 +265,7 @@ for INPUTBASENAME in database/*; do
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/"*.desktop | cut -d '=' -f 2- )
-  if [ -f "database/$INPUTBASENAME/"*appdata.xml ] ; then
+  if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     SUMMARY=$(cat $APPDIR/usr/share/metainfo/*.appdata.xml | xml sel -t -m "/component/summary" -v .)
     if [ "$SUMMARY" != "" ] ; then
       echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
@@ -273,7 +273,7 @@ for INPUTBASENAME in database/*; do
   elif [  "$DESKTOP_COMMENT" != "" ] ; then
     echo "description: $DESKTOP_COMMENT" >> apps/$INPUTBASENAME.md
   fi
-  if [ -f "database/$INPUTBASENAME/screenshot.png" ] ; then
+  if [ -f database/$INPUTBASENAME/screenshot.png ] ; then
     echo "" >> apps/$INPUTBASENAME.md
     echo "screenshots:" >> apps/$INPUTBASENAME.md
     echo "  - $INPUTBASENAME/screenshot.png" >> apps/$INPUTBASENAME.md
