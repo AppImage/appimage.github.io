@@ -4,7 +4,7 @@ title: Apps in AppImage format
 permalink: /apps/
 ---
 
-We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) and pieces of [art]({{ site.baseurl }}/art/) in our database. Something missing? [**Report it at GitHub.**](https://github.com/AppImage/AppImageHub/issues/new)
+We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in our database. Something missing? [**Report it at GitHub.**](https://github.com/AppImage/AppImageHub/issues/new)
 
 <table class="overview tablesorter">
   <thead>
