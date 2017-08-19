@@ -1,0 +1,81 @@
+#
+# This file is part of the LibreOffice project.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# This file incorporates work covered by the following license notice:
+#
+#   Licensed to the Apache Software Foundation (ASF) under one or more
+#   contributor license agreements. See the NOTICE file distributed
+#   with this work for additional information regarding copyright
+#   ownership. The ASF licenses this file to you under the Apache
+#   License, Version 2.0 (the "License"); you may not use this file
+#   except in compliance with the License. You may obtain a copy of
+#   the License at http://www.apache.org/licenses/LICENSE-2.0 .
+#
+[Desktop Entry]
+Version=1.0
+Terminal=false
+NoDisplay=false
+Icon=libreofficedev6.0-startcenter
+Type=Application
+Categories=Office;X-Red-Hat-Base;X-SuSE-Core-Office;X-MandrivaLinux-Office-Other;
+Exec=libreofficedev6.0 %U
+MimeType=application/vnd.openofficeorg.extension;x-scheme-handler/vnd.libreoffice.cmis;
+Name=LibreOfficeDev
+GenericName=LibreOfficeDev
+GenericName[ar]=مكتب
+GenericName[de]=Office
+GenericName[en]=Office
+GenericName[ja]=Office
+GenericName[pt_BR]=Office
+GenericName[vec]=Ufisio
+Comment=The office productivity suite compatible to the open and standardized ODF document format. Supported by The Document Foundation.
+Comment[ar]=الحقيبة اﻻنتاجية المكتبية متوافقة مع صيغ الوثائق المفتوحة المدعومة من مؤسسة الوثائق المفتوحة المصدر.
+Comment[de]=Die produktive Bürosoftware ist kompatibel zu dem offenen und standardisierten OpenDocument Format (ODF). Unterstützt von The Document Foundation.
+Comment[en]=The office productivity suite compatible to the open and standardized ODF document format. Supported by The Document Foundation.
+Comment[ja]=オープンで標準化された ODF ドキュメント形式に準拠したオフィススイートです。The Document Foundation によってサポートされています。
+Comment[pt_BR]=A suite de produtividade de escritório compatível com o formato aberto e padronizado ODF. Com o apoio da The Document Foundation.
+Comment[vec]=Ła suite de produtività par l'ufisio conpatìbiłe co'l formato standard verto ODF. Suportà da The Document Foundation.
+StartupNotify=true
+X-GIO-NoFuse=true
+StartupWMClass=libreoffice-startcenter
+X-KDE-Protocols=file,http,ftp,webdav
+
+##Define Actions
+Actions=Writer;Calc;Impress;Draw;Base;Math;
+
+[Desktop Action Writer]
+Name=LibreOfficeDev
+Exec=libreofficedev6.0 --writer
+
+[Desktop Action Calc]
+Name=LibreOfficeDev
+Exec=libreofficedev6.0 --calc
+
+[Desktop Action Impress]
+Name=LibreOfficeDev
+Exec=libreofficedev6.0 --impress
+
+[Desktop Action Draw]
+Name=LibreOfficeDev
+Exec=libreofficedev6.0 --draw
+
+[Desktop Action Base]
+Name=LibreOfficeDev
+Exec=libreofficedev6.0 --base
+
+[Desktop Action Math]
+Name=LibreOfficeDev
+Exec=libreofficedev6.0 --math
+
+##End of actions menu
+
+[AppImageHub]
+X-AppImage-UpdateInformation=false
+# Dear upstream developer, please add update information to your AppImage
+# so that users can easily update the AppImage
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
