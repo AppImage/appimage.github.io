@@ -11,7 +11,7 @@
     {% for link in post.links %}
       {% case link.type %}
       {% when "Screenshots" or "Videos" %}
-        {% assign prefix = nil %}
+        {% assign prefix = "{{ site.baseurl }}/database/" %}
       {% else %}
         {% continue %}
       {% endcase %}
