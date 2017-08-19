@@ -15,31 +15,12 @@ authors:
 
 links:
   - type: Web
-    url:
+    url: WebUrlGoesHere
   - type: GitHub
     url: GitHubUrlGoesHere
-  - type: Launchpad
-    url:
-  - type: Google+
-    url:
-  - type: Twitter
-    url:
-  - type: Facebook
-    url:
-  - type: Chat
-    url:
-  # Link to website with install instructions (for normal users)
+  # Link to website with install instructions
   - type: Install
     url: GitHubReleasesPageGoesHere
-  # Link to instructions for build, readme, license
-  - type: Build
-    url:
-  - type: Readme
-    url:
-  - type: License
-    url:
-  - type: Authors
-    url:
   # Screenshots, videos, reviews
   - type: Screenshots
     url: https://appimage.github.io/AppImageHub/database/Cantata/screenshot.jpg
@@ -47,6 +28,7 @@ links:
 screenshots:
   - /database/Cantata/screenshot.jpg
 
+# TODO: This needs to be replaced by channels
 installation:
   - system: AppImage
     info:
@@ -64,10 +46,6 @@ installation:
       repository: ppaxy
       package: pack
       type: daily
-
-# version should just be the number aka 'x.x'
-# repository is either an actual repo (like ppa: or http://) or default/stock (which one?)
-# type can be stable, unstable, daily (in that order)
 
 tags:
   - official 
