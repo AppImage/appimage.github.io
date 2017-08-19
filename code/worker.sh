@@ -270,8 +270,7 @@ echo "==========================================="
 
 # For Jekyll Now
 for INPUTBASENAME in database/*; do
-  [ -e "$INPUTBASENAME/*.desktop" ] || continue
-  # ... rest of the loop body
+  INPUTBASENAME=${INPUTBASENAME##*/} # Remove path up to last /
   echo "Exporting $INPUTBASENAME to .md for Jekyll"
   touch apps/$INPUTBASENAME.md
   echo "---" >> apps/$INPUTBASENAME.md
