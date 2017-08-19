@@ -4,7 +4,7 @@
   {% for dist in post.installation %}
     <h3 id="installation-{{ dist.system }}">{{ dist.system }}</h3>
     {% for repo in dist.info %}
-      <p>Add a {{ dist.type }} repository for {{ dist.system }} version {{ repo.version }} to install the software, by entering the following commands in a terminal:</p>
+      <p>Download version {{ repo.version }} to install the software, by entering the following commands in a terminal:</p>
       <div class="highlight">
         <span class="mega-octicon octicon-terminal"></span>
         <pre><code>wget {{ repo.repository }}
