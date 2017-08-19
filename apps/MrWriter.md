@@ -5,4 +5,6 @@ permalink: /MrWriter/
 
 screenshots:
   - MrWriter/screenshot.png
+
+authors:
 ---

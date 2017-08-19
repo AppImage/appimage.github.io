@@ -6,4 +6,6 @@ description: Design Schematics and PCBs
 
 screenshots:
   - LibrePCB-Nightly/screenshot.png
+
+authors:
 ---

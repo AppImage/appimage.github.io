@@ -6,4 +6,6 @@ description: Plain text notepad and todo list manager with markdown support that
 
 screenshots:
   - QOwnNotes/screenshot.png
+
+authors:
 ---

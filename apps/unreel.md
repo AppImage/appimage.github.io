@@ -6,4 +6,8 @@ description: Reveal your ideas. With Unreel you can create amazing REVEAL.JS pre
 
 screenshots:
   - unreel/screenshot.png
+
+authors:
+  - name: linux-man
+    url: https://github.com/linux-man
 ---

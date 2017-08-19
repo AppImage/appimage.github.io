@@ -6,4 +6,6 @@ description: LDraw Model Viewer
 
 screenshots:
   - ldview/screenshot.png
+
+authors:
 ---

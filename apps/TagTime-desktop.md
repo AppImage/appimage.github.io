@@ -6,4 +6,8 @@ description: Time tracking for space cadets - desktop edition
 
 screenshots:
   - TagTime-desktop/screenshot.png
+
+authors:
+  - name: mykter
+    url: https://github.com/mykter
 ---

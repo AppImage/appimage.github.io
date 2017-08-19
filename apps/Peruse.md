@@ -6,4 +6,6 @@ description: Document Viewer
 
 screenshots:
   - Peruse/screenshot.png
+
+authors:
 ---

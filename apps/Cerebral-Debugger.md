@@ -6,4 +6,8 @@ description: Cerebral Debugger
 
 screenshots:
   - Cerebral-Debugger/screenshot.png
+
+authors:
+  - name: cerebral
+    url: https://github.com/cerebral
 ---

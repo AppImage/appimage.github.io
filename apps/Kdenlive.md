@@ -6,4 +6,6 @@ description: Video Editor
 
 screenshots:
   - Kdenlive/screenshot.png
+
+authors:
 ---

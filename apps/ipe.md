@@ -5,4 +5,6 @@ permalink: /ipe/
 
 screenshots:
   - ipe/screenshot.png
+
+authors:
 ---

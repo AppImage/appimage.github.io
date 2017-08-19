@@ -6,4 +6,6 @@ description: tubCloud desktop synchronization client
 
 screenshots:
   - tubCloud/screenshot.png
+
+authors:
 ---

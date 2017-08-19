@@ -6,4 +6,6 @@ description: Play the best first-person shooter in the world! Free and open-sour
 
 screenshots:
   - Red_Eclipse-Development/screenshot.png
+
+authors:
 ---

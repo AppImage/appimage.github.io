@@ -6,4 +6,8 @@ description: My SDD HSC Major Project, a full media server/player/downloader/etc
 
 screenshots:
   - media_mate/screenshot.png
+
+authors:
+  - name: willyb321
+    url: https://github.com/willyb321
 ---

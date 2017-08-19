@@ -6,4 +6,6 @@ description: The office productivity suite compatible to the open and standardiz
 
 screenshots:
   - LibreOfficeDev/screenshot.png
+
+authors:
 ---

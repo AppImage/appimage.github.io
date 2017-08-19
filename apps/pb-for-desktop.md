@@ -6,4 +6,8 @@ description: Pushbullet Desktop app for macOS, Windows and Linux.
 
 screenshots:
   - pb-for-desktop/screenshot.png
+
+authors:
+  - name: sidneys
+    url: https://github.com/sidneys
 ---

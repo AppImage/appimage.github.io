@@ -6,4 +6,6 @@ description: blubVolley - a fun volleyball game
 
 screenshots:
   - blubVolley/screenshot.png
+
+authors:
 ---

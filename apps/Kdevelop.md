@@ -5,4 +5,6 @@ permalink: /Kdevelop/
 
 screenshots:
   - Kdevelop/screenshot.png
+
+authors:
 ---
