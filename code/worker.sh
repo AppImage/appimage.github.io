@@ -264,7 +264,7 @@ for INPUTBASENAME in database/*; do
   echo "layout: app" >> apps/$INPUTBASENAME.md
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
-  if [ -e "$INPUTBASENAME/screenshot.png" ] ; then
+  if [ -f "database/$INPUTBASENAME/screenshot.png" ] ; then
     echo "" >> apps/$INPUTBASENAME.md
     echo "screenshots:" >> apps/$INPUTBASENAME.md
     echo "  - $INPUTBASENAME/screenshot.png" >> apps/$INPUTBASENAME.md
