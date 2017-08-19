@@ -1,5 +1,7 @@
 # AppImageHub [![Build Status](https://travis-ci.org/AppImage/AppImageHub.svg?branch=master)](https://travis-ci.org/AppImage/AppImageHub)
 
+https://appimage.github.io/AppImageHub/
+
 Entirely open source data for app stores and software centers with crowd-sourced and automated open source app reviews.
 
 Given an URL to an AppImage, it inspects the AppImage and puts it into a community-maintained catalog. The idea is that all the metadata travels inside the AppImage, so besides adding an URL to this repository no additional information is asked, since it comes with the AppImage itself.
