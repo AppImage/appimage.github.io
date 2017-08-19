@@ -6,7 +6,7 @@ description: Crowd-sourced central AppImage directory
 description_html: Crowd-sourced central <a href="http://appimage.org">AppImage</a> directory
 
 # URL of your avatar or profile pic
-avatar: /AppImageHub/img/apps-logo_4x64.png
+avatar: http://appimage.org/images/logo3.svg
 
 # Includes an icon in the footer for each username you enter
 footer-links:
