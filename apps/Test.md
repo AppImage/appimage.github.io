@@ -1,51 +1,41 @@
 ---
 layout: app
-created: 2017-04-15
-updated: 2017-04-15
+created: 2017-08-15
+updated: 2017-08-15
 
-permalink: /Test/
+permalink: /AppImageUpdate/
 title_obvious: true
-generic: Generic title goes here
-description: Description goes here
-license: License goes here
+generic: AppImageUpdate
+description: Update AppImages from their upstream location
+license: MIT
 
 authors:
-  - name: GitHub username goes here
-    url: GitHub repo goes here
+  - name: AppImage
+    url: https://github.com/AppImage
 
 links:
   - type: Web
-    url: WebUrlGoesHere
+    url: https://appimage.org
   - type: GitHub
-    url: GitHubUrlGoesHere
+    url: https://github.com/AppImage/AppImageUpdate
   # Link to website with install instructions
   - type: Install
-    url: GitHubReleasesPageGoesHere
+    url: https://github.com/AppImage/AppImageUpdate/releases
   # Screenshots, videos, reviews
   - type: Screenshots
-    url: https://appimage.github.io/AppImageHub/database/Cantata/screenshot.jpg
-
+    url: AppImageUpdate/screenshot.png
+    
 screenshots:
-  - /database/Cantata/screenshot.jpg
+  - AppImageUpdate/screenshot.png
 
 # TODO: This needs to be replaced by channels
 installation:
   - system: AppImage
     info:
-    - version: '0.3'
-      repository: 'FactualAppImageDownloadURLGoesHere'
-      package: AppImageFilenameGoesHereWithNumbersReplaced
+    - version: continuous
+      repository: https://github.com/AppImage/AppImageUpdate/releases/download/continuous/AppImageUpdate-x86_64.AppImage
+      package: AppImageUpdate-x86_64.AppImage
       type: stable
-    - version: '0.2'
-      repository: 'FactualAppImageDownloadURLGoesHere'
-      package: AppImageFilenameGoesHereWithNumbersReplaced
-      type: unstable
-  - system: Ubuntu
-    info:
-    - version: '14.04'
-      repository: ppaxy
-      package: pack
-      type: daily
 
 tags:
   - official 
