@@ -4,7 +4,6 @@ created: 2017-08-15
 updated: 2017-08-15
 
 permalink: /AppImageUpdate/
-title_obvious: true
 generic: AppImageUpdate
 description: Update AppImages from their upstream location
 license: MIT
