@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=QOwnNotes
+Comment=Plain text notepad and todo list manager with markdown support that works together with ownCloud/Nextcloud
+Exec=QOwnNotes
+Keywords=markdown;owncloud;nextcloud;notes;
+Icon=QOwnNotes
+Type=Application
+Terminal=false
+StartupNotify=true
+Categories=Utility;TextEditor;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=false
+# Dear upstream developer, please add update information to your AppImage
+# so that users can easily update the AppImage
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
