@@ -75,6 +75,7 @@ elif [ $MAGIC == $(echo -ne "\x41\x49\x01") ] ; then
   TYPE=1
 else
   echo "Unknown file detected"
+  file "$FILENAME"
   exit 1
 fi
 
