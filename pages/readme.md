@@ -4,9 +4,6 @@ title: About AppImage
 permalink: /readme/
 ---
 
-
-# Linux apps that run anywhere
-
 Download an application, make it executable, and run! No need to install. No system libraries or system preferences are altered. Can also run in a sandbox like Firejail.
 
 Most AppImages run on recent versions of Arch Linux, CentOS, Debian, Fedora, openSUSE, Red Hat, Ubuntu, and other common desktop distributions.
