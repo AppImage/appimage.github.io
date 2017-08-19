@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Apps for elementary
+title: Apps for AppImage
 permalink: /apps/
 ---
 

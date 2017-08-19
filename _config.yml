@@ -2,8 +2,8 @@
 name: AppImageHub
 
 # Short bio or description (displayed in the header)
-description: 3rd party elementary software
-description_html: 3rd party <a href="http://appimage.org">elementary</a> software
+description: 3rd party AppImage software
+description_html: 3rd party <a href="http://appimage.org">AppImage</a> software
 
 # URL of your avatar or profile pic
 avatar: /AppImageHub/img/apps-logo_4x64.png

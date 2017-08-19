@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Art for elementary
+title: Art for AppImage
 permalink: /art/
 ---
 

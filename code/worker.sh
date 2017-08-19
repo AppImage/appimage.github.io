@@ -254,7 +254,7 @@ fi
 
 # TODO: If this is not a PR, then convert the "database files" into whatever output formats we need to support
 # e.g., OCS for knsrc/Discover
-# e.g., JSON for something Jekyll-based like https://quassy.github.io/elementary-apps/
+# e.g., JSON for something Jekyll-based like https://quassy.github.io/AppImage-apps/
 # and trigger a deployment of the static website
 
 if [ $TYPE -eq 2 ] ; then

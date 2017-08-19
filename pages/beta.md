@@ -1,6 +1,6 @@
 ---
 layout: default-beta
-title: elementary for other systems
+title: AppImage for other systems
 permalink: /style/
 ---
 
