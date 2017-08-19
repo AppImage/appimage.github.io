@@ -263,3 +263,25 @@ fi
 if [ $TYPE -eq 1 ] ; then
   sudo umount -l /mnt
 fi
+
+echo "==========================================="
+echo "============ EXPORTING DATA ==============="
+echo "==========================================="
+
+# For Jekyll Now
+for INPUTBASENAME in database/*; do
+  [ -e "$INPUTBASENAME/*.desktop" ] || continue
+  # ... rest of the loop body
+  echo "Exporting $INPUTBASENAME to .md for Jekyll"
+  touch apps/$INPUTBASENAME.md
+  echo "---" >> apps/$INPUTBASENAME.md
+  echo "layout: app" >> apps/$INPUTBASENAME.md
+  echo "" >> apps/$INPUTBASENAME.md
+  echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
+  if [ -e "$INPUTBASENAME/screenshot.png" ] ; then
+    echo "" >> apps/$INPUTBASENAME.md
+    echo "screenshots:" >> apps/$INPUTBASENAME.md
+    echo "  - $INPUTBASENAME/screenshot.png" >> apps/$INPUTBASENAME.md
+  fi
+  echo "---" >> apps/$INPUTBASENAME.md
+done
