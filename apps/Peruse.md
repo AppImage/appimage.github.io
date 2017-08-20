@@ -3,9 +3,10 @@ layout: app
 
 permalink: /Peruse/
 description: Document Viewer
-
 screenshots:
-  - Peruse/screenshot.png
+- 
+      https://www.kde.org/images/screenshots/okular.png
+    
 
 authors:
 

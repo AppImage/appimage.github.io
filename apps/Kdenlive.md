@@ -3,9 +3,10 @@ layout: app
 
 permalink: /Kdenlive/
 description: Video Editor
-
 screenshots:
-  - Kdenlive/screenshot.png
+- 
+      https://kdenlive.org/wp-content/data/kdenlive-screenshot.png
+    
 
 authors:
 
