@@ -251,8 +251,8 @@ echo "============ EXPORTING DATA ==============="
 echo "==========================================="
 
 # Until https://github.com/ximion/appstream/issues/128 is solved
-sudo wget -c "https://github.com/AppImage/AppImageHub/releases/download/deps/appstreamcli-x86_64.AppImage" -O appstreamcli
-sudo chmod a+x appstreamcli
+sudo wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/appstreamcli-x86_64.AppImage"
+sudo chmod a+x appstreamcli-x86_64.AppImage
 
 # For Jekyll Now
 for INPUTBASENAME in database/*; do
@@ -266,7 +266,7 @@ for INPUTBASENAME in database/*; do
   # Description
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    ./appstreamcli database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
+    ./appstreamcli-x86_64.AppImage database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
     SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .)
     if [ "$SUMMARY" != "" ] ; then
       echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
