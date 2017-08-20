@@ -86,7 +86,6 @@ body {
   font-family: $font_header; 
   font-weight: 100;
   font-size: 28px;
-  letter-spacing: 1px;
 }
 
 .site-description {
@@ -118,7 +117,6 @@ nav {
     color: $darkGrey;
     text-align: right;
     font-weight: 300;
-    letter-spacing: 1px;
 
     @include mobile {
       margin: 0 10px;
