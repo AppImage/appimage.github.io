@@ -118,7 +118,7 @@ if [ $TYPE -eq 1 ] ; then
 fi
 
 TERMINAL=false
-grep -r Terminal=true "${FILENAME}"/*.desktop && TERMINAL=true
+grep -r Terminal=true "${APPDIR}"/*.desktop && TERMINAL=true
 echo "TERMINAL: $TERMINAL"
 
 echo "==========================================="
@@ -139,6 +139,7 @@ echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
+reset
 firejail --noprofile --net=none --appimage ./"$FILENAME" &
 APID=$!
 sleep 10
@@ -186,9 +187,8 @@ if [ "$TERMINAL" == "false" ] ; then
   mkdir -p database/$INPUTBASENAME/
   # xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
   xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtopng  > database/$INPUTBASENAME/screenshot.png && echo "Snap!"
-  
 else
-  echo "TODO: Make a screenshot of a terminal application (fbgrab/fbdump; try running AppImage with -h and observe exit status)"
+  fbgrab database/$INPUTBASENAME/screenshot.png && echo "cliSnap!"
 fi
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
