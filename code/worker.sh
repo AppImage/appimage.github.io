@@ -45,10 +45,10 @@ fi
 # This may get replaced by mounting the file with fuse httpfs
 # if we find an implementation that supports https
 echo "URL: $URL"
-FILENAME=$(basename $URL | cut -d '?' -f 1)
-echo $FILENAME
-if [ ! -e $FILENAME ] ; then
-  wget -q -c "$URL"
+
+FILENAME=BeingTested.AppImage
+if [ ! -e "$FILENAME" ] ; then
+  wget -q -c "$URL" -O "$FILENAME"
 fi
 
 # Check the type of the AppImage
