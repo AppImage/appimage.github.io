@@ -9,8 +9,8 @@
         <span class="mega-octicon octicon-terminal"></span>
         <pre><code>wget {{ repo.repository }}
 chmod +x {{ repo.package }}</code></pre>
-      <p>Of course, you can also just download <a href="{{ repo.version }}">{{ repo.version }}</a>.</p>
       </div>
+      <p>Of course, you can also just download <a href="{{ repo.version }}">{{ repo.version }}</a>.</p>
     {% endfor %}
   {% endfor %}
 {% endif %}
