@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=linuxdeployqt
+Exec=linuxdeployqt
+Icon=linuxdeployqt
+Comment=Bundle an application as an AppDir and/or AppImage
+Terminal=true
+Categories=Development;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=false
+# Dear upstream developer, please add update information to your AppImage
+# so that users can easily update the AppImage
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
