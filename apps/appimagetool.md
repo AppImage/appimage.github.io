@@ -2,7 +2,10 @@
 layout: app
 
 permalink: /appimagetool/
-description: Optional daemon to integrate AppImages with the desktop
+description: Tool to generate AppImages from AppDirs
+
+screenshots:
+  - appimagetool/screenshot.png
 
 authors:
   - name: AppImage
