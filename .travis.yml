@@ -9,7 +9,15 @@ env:
 
 script:
   - sudo apt-get -qq -y install xmlstarlet xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 > /dev/null # appstream # TODO: Cache me!
-  - mkdir $HOME/.icewm/ ; echo "ShowTaskBar = 0" > $HOME/.icewm/preferences
+  - mkdir $HOME/.icewm/
+  - echo "ShowTaskBar = 0" > $HOME/.icewm/preferences
+  - echo "TaskBarAutoHide = 1" > $HOME/.icewm/preferences
+  - echo "TaskBarShowWorkspaces = 0" > $HOME/.icewm/preferences
+  - echo "TaskBarShowAllWindows = 0" > $HOME/.icewm/preferences
+  - echo "TaskBarShowClock = 0" > $HOME/.icewm/preferences
+  - echo "TaskBarShowMailboxStatus = 0" > $HOME/.icewm/preferences
+  - echo "TaskBarShowCPUStatus = 0" > $HOME/.icewm/preferences
+  - echo "TaskBarShowWindowListMenu = 0" > $HOME/.icewm/preferences
   - # xpra start :99 # Cannot get screenshots to work
   - Xvfb :99 -screen 0 800x600x24 >/dev/null 2>&1 & # Need to set bit depth, otherwise get some black screenshots
   - # until xset -q; do echo "Waiting for X server to start..."; sleep 1; done # We are not immediately using it anyway
