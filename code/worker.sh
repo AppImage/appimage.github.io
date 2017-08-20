@@ -254,7 +254,7 @@ echo "==========================================="
 sudo wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/appstreamcli-x86_64.AppImage"
 sudo chmod a+x appstreamcli-x86_64.AppImage
 ./appstreamcli-x86_64.AppImage --appimage-extract ; mv squashfs-root appstreamcli.AppDir # TODO: remove need for this
-alias appstreamcli='appstreamcli.AppDir/root_overlay/lib/x86_64-linux-gnu/ld-2.23.so --library-path appstreamcli.AppDir/root_overlay/usr/lib/x86_64-linux-gnu/ appstreamcli.AppDir/root_overlay/usr/bin/appstreamcli'
+# Does not seem to work # alias appstreamcli='appstreamcli.AppDir/root_overlay/lib/x86_64-linux-gnu/ld-2.23.so --library-path appstreamcli.AppDir/root_overlay/usr/lib/x86_64-linux-gnu/ appstreamcli.AppDir/root_overlay/usr/bin/appstreamcli'
 # For Jekyll Now
 for INPUTBASENAME in database/*; do
   INPUTBASENAME=${INPUTBASENAME##*/} # Remove path up to last /
@@ -267,8 +267,7 @@ for INPUTBASENAME in database/*; do
   # Description
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-  export LD_LIBRARY_PATH=$(readlink -f squashfs-root/root_overlay/usr/lib/x86_64-linux-gnu/)
-    appstreamcli.AppDir/root_overlay/lib/x86_64-linux-gnu/ld-2.23.so --library-path appstreamcli.AppDir/root_overlay/usr/lib/x86_64-linux-gnu/ appstreamcli.AppDir/root_overlay/usr/bin/appstreamcli database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
+    appstreamcli.AppDir/root_overlay/lib/x86_64-linux-gnu/ld-2.23.so --inhibit-cache --library-path $(readlink -f squashfs-root/root_overlay/usr/lib/x86_64-linux-gnu/) appstreamcli.AppDir/root_overlay/usr/bin/appstreamcli database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
     SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .)
     if [ "$SUMMARY" != "" ] ; then
       echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
