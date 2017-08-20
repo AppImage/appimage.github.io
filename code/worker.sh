@@ -238,13 +238,6 @@ fi
 
 echo "==========================================="
 
-# TODO: If there is an AppStream file, then extract data like screenshhot URLs from it
-
-# TODO: If this is not a PR, then convert the "database files" into whatever output formats we need to support
-# e.g., OCS for knsrc/Discover
-# e.g., JSON for something Jekyll-based like https://quassy.github.io/AppImage-apps/
-# and trigger a deployment of the static website
-
 if [ $TYPE -eq 2 ] ; then
   kill $PID # fuse
 fi
@@ -256,6 +249,10 @@ echo ""
 echo "==========================================="
 echo "============ EXPORTING DATA ==============="
 echo "==========================================="
+
+# Until https://github.com/ximion/appstream/issues/128 is solved
+sudo wget -c "https://github.com/AppImage/AppImageHub/releases/download/deps/appstreamcli-x86_64.AppImage" -O /usr/local/bin/appstreamcli
+sudo chmod a+x /usr/local/bin/appstreamcli
 
 # For Jekyll Now
 for INPUTBASENAME in database/*; do
@@ -269,6 +266,7 @@ for INPUTBASENAME in database/*; do
   # Description
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
+    appstreamcli database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
     SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .)
     if [ "$SUMMARY" != "" ] ; then
       echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
@@ -312,6 +310,9 @@ for INPUTBASENAME in database/*; do
   fi
   echo "---" >> apps/$INPUTBASENAME.md
 done
+
+# TODO: Convert the "database files" into whatever output formats we need to support
+# e.g., OCS for knsrc/Discover
 
 echo ""
 echo "==========================================="
