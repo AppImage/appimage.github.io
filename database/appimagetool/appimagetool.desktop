@@ -10,6 +10,7 @@ Terminal=true
 
 [AppImageHub]
 X-AppImage-UpdateInformation=zsync|https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage.zsync
-X-AppImage-Signed=true
+X-AppImage-Signature=Signature made Sat 12 Aug 2017 04:36:22 PM UTC using RSA key ID 101B2DC4
+Can't check signature: No public key
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
