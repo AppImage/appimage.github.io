@@ -39,7 +39,7 @@ url: https://AppImage.github.io/AppImageHub
 # (http://yourusername.github.io/repository-name)
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
-baseurl: "/AppImageHub"
+baseurl: ""
 
 # Advanced config
 permalink: /:title
