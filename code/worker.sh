@@ -267,7 +267,7 @@ for INPUTBASENAME in database/*; do
   # Description
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    ./appstreamcli-x86_64.AppImage database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
+    ./appstreamcli-x86_64.AppImage convert database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
     SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .)
     if [ "$SUMMARY" != "" ] ; then
       echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
