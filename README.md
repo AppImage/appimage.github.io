@@ -1,6 +1,6 @@
 # AppImageHub [![Build Status](https://travis-ci.org/AppImage/AppImageHub.svg?branch=gh-pages)](https://travis-ci.org/AppImage/AppImageHub)
 
-https://appimage.github.io/AppImageHub/
+https://appimage.github.io/
 
 Entirely open source data for app stores and software centers with crowd-sourced and automated open source app reviews.
 
