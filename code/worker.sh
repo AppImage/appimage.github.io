@@ -104,7 +104,7 @@ if [ $TYPE -eq 2 ] ; then
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
   UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-updateinformation) || echo "Could not get update information from the AppImage"
   TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-signature > sig || echo "Could not get signature from the AppImage"
-  SIGNATURE=$(gpg2 --verify sig sig 2>&1 | sed -e 's|gpg: ||g' || true )
+  SIGNATURE=$(gpg2 --verify sig sig 2>&1 | sed -e 's|gpg: ||g' |tr '\n' ' ' || true )
 fi
 
 # If we have a type 1 AppImage, then loop-mount it (not using itself for security reasons)
