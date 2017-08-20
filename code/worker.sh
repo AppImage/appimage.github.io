@@ -219,9 +219,9 @@ else
 fi
 
 if [ "" != "$SIGNATURE" ] ; then
-  echo "X-AppImage-Signed=true" >> "$DATAFILE"
+  echo "X-AppImage-Signature=$SIGNATURE" >> "$DATAFILE"
 else
-  echo "X-AppImage-Signed=false" >> "$DATAFILE"
+  echo "X-AppImage-Signature=false" >> "$DATAFILE"
   echo "# Dear upstream developer, please include a digital signature in your AppImage" >> "$DATAFILE"
   echo "# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage" >> "$DATAFILE"
 fi
