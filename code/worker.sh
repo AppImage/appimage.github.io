@@ -17,7 +17,7 @@ fi
 
 # If the URL begins with https://github.com, then treat it specially
 # https://github.com/egoist/devdocs-desktop/
-if [ "${URL:0:18}" == "https://github.com" ] ; then
+if [ "${URL:0:18}" == "https://github.com" ] && [[ ${URL} != *"download"* ]] ; then # do not redirect direct links
   echo "GitHub URL detected"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
