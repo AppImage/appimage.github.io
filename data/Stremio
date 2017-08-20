@@ -1,1 +1,3 @@
-http://www.strem.io/download
+http://dl.strem.io/linux/v4.0.0-beta.25/Stremio+4.0.0-beta.25.appimage
+# Link without version would be better
+# http://www.strem.io/download does not work, see https://github.com/Stremio/stremio-bugs/issues/122#issuecomment-323574487
