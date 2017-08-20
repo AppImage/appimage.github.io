@@ -145,7 +145,7 @@ echo "==========================================="
 if [ "$TERMINAL" == "false" ] ; then
   firejail --noprofile --net=none --appimage ./"$FILENAME" &
 else
-  xterm -hold -e firejail --noprofile --net=none --appimage ./"$FILENAME" &
+  xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
 fi
 APID=$!
 sleep 10
