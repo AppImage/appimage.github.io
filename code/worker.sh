@@ -276,7 +276,13 @@ for INPUTBASENAME in database/*; do
   elif [  "$DESKTOP_COMMENT" != "" ] ; then
     echo "description: $DESKTOP_COMMENT" >> apps/$INPUTBASENAME.md
   fi
-  if [ -f database/$INPUTBASENAME/screenshot.png ] ; then
+  if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
+    SCREENSHOT=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/screenshots/screenshot[1]" -v .)
+    if [ "$SCREENSHOT" != "" ] ; then
+      echo "screenshots:" >> apps/$INPUTBASENAME.md
+      echo "- $SCREENSHOT" >> apps/$INPUTBASENAME.md
+    fi
+  elif [ -f database/$INPUTBASENAME/screenshot.png ] ; then
     echo "" >> apps/$INPUTBASENAME.md
     echo "screenshots:" >> apps/$INPUTBASENAME.md
     echo "  - $INPUTBASENAME/screenshot.png" >> apps/$INPUTBASENAME.md
