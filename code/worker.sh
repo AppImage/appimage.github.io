@@ -36,6 +36,10 @@ if [ "${URL:0:22}" == "https://api.github.com" ] || [ "${GHURL:0:22}" == "https:
   if [ "" == "$URL" ] ; then
     URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | head -n 1 | cut -d '"' -f 4) # No 64-bit one found, trying any; TODO: Handle more than one AppImage per release
   fi
+  if [ "" == "$URL" ] ; then
+    echo "Unable to get download URL for the AppImage. Is it really there on GitHub Releases?"
+    exit 1
+  fi
   echo "URL from GitHub API: $URL"
   GHUSER=$(echo "$URL" | cut -d '/' -f 5)
   GHREPO=$(echo "$URL" | cut -d '/' -f 6)
