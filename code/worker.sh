@@ -39,7 +39,7 @@ if [ "${URL:0:22}" == "https://api.github.com" ] || [ "${GHURL:0:22}" == "https:
   echo "URL from GitHub API: $URL"
   GHUSER=$(echo "$URL" | cut -d '/' -f 5)
   GHREPO=$(echo "$URL" | cut -d '/' -f 6)
-  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" https://api.github.com/repos/probonopd/linuxdeployqt -O - | grep spdx_id | cut -d '"' -f 4)
+  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" https://api.github.com/repos/$GHUSER/$GHREPO -O - | grep spdx_id | cut -d '"' -f 4)
 fi
 
 # Download the file if it is not already there
@@ -289,6 +289,16 @@ for INPUTBASENAME in database/*; do
     fi
   elif [  "$DESKTOP_COMMENT" != "" ] ; then
     echo "description: $DESKTOP_COMMENT" >> apps/$INPUTBASENAME.md
+  fi
+  # License
+  if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
+    AS_LICENSE=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/project_license" -v .)
+  fi
+  DT_LICENSE=$(grep -r "X-AppImage-Payload-License=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2)
+  if [ "$AS_LICENSE" != "" ] ; then
+    echo "license: $AS_LICENSE" >> apps/$INPUTBASENAME.md
+  elif [ "$DT_LICENSE" != "" ] ; then
+    echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
   fi
   # Screenshot
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
