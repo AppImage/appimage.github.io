@@ -302,7 +302,7 @@ for INPUTBASENAME in database/*; do
   fi
   # Screenshot
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    SCREENSHOT=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/screenshots/screenshot[1]/image" -v .)
+    SCREENSHOT=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/screenshots/screenshot[1]/image" -v . || true)
     if [ "$SCREENSHOT" != "" ] ; then
       echo "screenshots:" >> apps/$INPUTBASENAME.md
       echo "- $SCREENSHOT" >> apps/$INPUTBASENAME.md
