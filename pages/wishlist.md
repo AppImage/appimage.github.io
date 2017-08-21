@@ -14,4 +14,4 @@ Name | Generic | Info
 ---|---|---|
 ||
 
-<p><a class="b" href="https://github.com/AppImage/AppImageHub/edit/gh-pages/{{ page.path }}"><span class="octicon octicon-pencil"></span> Improve this list on GitHub!</a></p>
+<p><a class="b" href="https://github.com/AppImage/AppImageHub/edit/master/{{ page.path }}"><span class="octicon octicon-pencil"></span> Improve this list on GitHub!</a></p>
