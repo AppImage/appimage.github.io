@@ -39,6 +39,7 @@ if [ "${URL:0:22}" == "https://api.github.com" ] || [ "${GHURL:0:22}" == "https:
   echo "URL from GitHub API: $URL"
   GHUSER=$(echo "$URL" | cut -d '/' -f 5)
   GHREPO=$(echo "$URL" | cut -d '/' -f 6)
+  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" https://api.github.com/repos/probonopd/linuxdeployqt -O - | grep spdx_id | cut -d '"' -f 4)
 fi
 
 # Download the file if it is not already there
@@ -239,6 +240,10 @@ if [ "2" == "$TYPE" ] ; then
 fi
 
 echo "X-AppImage-Architecture=$ARCHITECTURE" >> "$DATAFILE"
+
+if [ "" != "$LICENSE" ] ; then
+  echo "X-AppImage-Payload-License=$LICENSE" >> "$DATAFILE"
+fi
 
 # If available, also copy in AppStream metainfo
 
