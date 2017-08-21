@@ -1,4 +1,4 @@
-# AppImageHub [![Build Status](https://travis-ci.org/AppImage/AppImageHub.svg?branch=gh-pages)](https://travis-ci.org/AppImage/AppImageHub)
+# AppImageHub [![Build Status](https://travis-ci.org/AppImage/appimage.github.io.svg?branch=master)](https://travis-ci.org/AppImage/appimage.github.io)
 
 https://appimage.github.io/
 
