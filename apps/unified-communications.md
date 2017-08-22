@@ -3,7 +3,6 @@ layout: app
 
 permalink: /unified-communications/
 description: Unified Communication from Mundio Mobiles
-license: GPL-2.0+
 
 screenshots:
   - unified-communications/screenshot.png

@@ -3,7 +3,6 @@ layout: app
 
 permalink: /stretchly/
 description: break time reminder app
-license: GPL-2.0+
 
 screenshots:
   - stretchly/screenshot.png

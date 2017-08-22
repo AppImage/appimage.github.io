@@ -3,7 +3,6 @@ layout: app
 
 permalink: /Gulden/
 description: The payment system of the future today
-license: MIT
 
 screenshots:
   - Gulden/screenshot.png

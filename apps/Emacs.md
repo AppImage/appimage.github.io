@@ -3,7 +3,7 @@ layout: app
 
 permalink: /Emacs/
 description: Edit text
-license: MIT
+license: GPL-3.0
 
 screenshots:
   - Emacs/screenshot.png

@@ -3,7 +3,6 @@ layout: app
 
 permalink: /QNapi/
 description: Program for downloading video subtitles
-license: GPL-2.0+ and GFDL-1.3
 
 screenshots:
   - QNapi/screenshot.png

@@ -3,7 +3,6 @@ layout: app
 
 permalink: /iota1k/
 description: IOTA based messenging app
-license: MIT
 
 screenshots:
   - iota1k/screenshot.png

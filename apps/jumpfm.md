@@ -3,7 +3,6 @@ layout: app
 
 permalink: /jumpfm/
 description: A file manager that lets you jump
-license: MIT
 
 screenshots:
   - jumpfm/screenshot.png

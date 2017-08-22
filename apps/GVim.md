@@ -3,7 +3,6 @@ layout: app
 
 permalink: /GVim/
 description: Edit text files
-license: MIT
 
 screenshots:
   - GVim/screenshot.png

@@ -3,7 +3,6 @@ layout: app
 
 permalink: /RedmineTimeTracker/
 description: Time Tracking tool for Redmine
-license: GPL-2.0+ and GFDL-1.3
 
 screenshots:
   - RedmineTimeTracker/screenshot.png

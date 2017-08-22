@@ -3,7 +3,6 @@ layout: app
 
 permalink: /Neon/
 description: Light wallet for NEO blockchain
-license: GPL-2.0+
 
 screenshots:
   - Neon/screenshot.png

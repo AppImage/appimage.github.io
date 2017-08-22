@@ -3,7 +3,6 @@ layout: app
 
 permalink: /ImagePlay/
 description: ImagePlay
-license: MIT
 
 screenshots:
   - ImagePlay/screenshot.png

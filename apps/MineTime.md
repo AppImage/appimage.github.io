@@ -3,7 +3,6 @@ layout: app
 
 permalink: /MineTime/
 description: Smart scheduling assistant
-license: GPL-2.0+
 
 screenshots:
   - MineTime/screenshot.png

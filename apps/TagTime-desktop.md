@@ -3,7 +3,6 @@ layout: app
 
 permalink: /TagTime-desktop/
 description: Time tracking for space cadets - desktop edition
-license: GPL-2.0+
 
 screenshots:
   - TagTime-desktop/screenshot.png

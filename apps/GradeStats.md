@@ -3,7 +3,6 @@ layout: app
 
 permalink: /GradeStats/
 description: Import from xls spredsheets, store and analyze student grade data
-license: MIT
 
 screenshots:
   - GradeStats/screenshot.png

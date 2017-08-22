@@ -2,7 +2,6 @@
 layout: app
 
 permalink: /caprine/
-license: MIT
 
 screenshots:
   - caprine/screenshot.png

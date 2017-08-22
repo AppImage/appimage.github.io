@@ -3,7 +3,6 @@ layout: app
 
 permalink: /Rambox/
 description: Rambox
-license: GPL-2.0+ and GFDL-1.3
 
 screenshots:
   - Rambox/screenshot.png

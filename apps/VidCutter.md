@@ -3,7 +3,6 @@ layout: app
 
 permalink: /VidCutter/
 description: Simple & fast FFmpeg based video cutter & joiner
-license: GPL-2.0+
 
 authors:
   - name: ozmartian

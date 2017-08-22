@@ -2,7 +2,6 @@
 layout: app
 
 permalink: /KeePassXC/
-license: GPL-2.0+
 
 screenshots:
   - KeePassXC/screenshot.png

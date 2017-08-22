@@ -3,7 +3,6 @@ layout: app
 
 permalink: /Filmulator/
 description: Streamlined photo editor
-license: MIT
 
 screenshots:
   - Filmulator/screenshot.png

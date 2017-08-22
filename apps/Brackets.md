@@ -3,7 +3,6 @@ layout: app
 
 permalink: /Brackets/
 description: Brackets-Electron
-license: MIT
 
 screenshots:
   - Brackets/screenshot.png

@@ -3,7 +3,6 @@ layout: app
 
 permalink: /pb-for-desktop/
 description: Pushbullet Desktop app for macOS, Windows and Linux.
-license: GPL-2.0+
 
 screenshots:
   - pb-for-desktop/screenshot.png

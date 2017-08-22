@@ -3,7 +3,6 @@ layout: app
 
 permalink: /steam-rom-manager/
 description: An app for managing ROMs in Steam
-license: GPL-2.0+
 
 screenshots:
   - steam-rom-manager/screenshot.png

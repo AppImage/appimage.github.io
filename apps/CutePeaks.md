@@ -3,7 +3,6 @@ layout: app
 
 permalink: /CutePeaks/
 description: A simple sanger trace file viewer
-license: MIT
 
 screenshots:
   - CutePeaks/screenshot.png
