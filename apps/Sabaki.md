@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Sabaki/
 description: An elegant Go/Baduk/Weiqi board and SGF editor for a more civilized age.
+license: GPL-2.0+ and GFDL-1.3
 
 screenshots:
   - Sabaki/screenshot.png

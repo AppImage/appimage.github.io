@@ -3,6 +3,7 @@ layout: app
 
 permalink: /OpenBlok/
 description: A falling block puzzle game
+license: GPL-2.0+
 
 screenshots:
   - OpenBlok/screenshot.png

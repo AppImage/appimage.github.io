@@ -3,6 +3,7 @@ layout: app
 
 permalink: /PatternPaint/
 description: Making beautiful light shows is as easy as drawing a picture
+license: GPL-2.0+
 
 screenshots:
   - PatternPaint/screenshot.png

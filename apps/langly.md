@@ -3,6 +3,7 @@ layout: app
 
 permalink: /langly/
 description: Manage Laravel json language files
+license: GPL-2.0+
 
 screenshots:
   - langly/screenshot.png

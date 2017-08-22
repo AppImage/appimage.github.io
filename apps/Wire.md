@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Wire/
 description: Modern communication, full privacy.
+license: GPL-2.0+
 
 authors:
   - name: wireapp

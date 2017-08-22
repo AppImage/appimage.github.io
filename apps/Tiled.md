@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Tiled/
 description: Tile map editor
+license: GPL-2.0+
 
 screenshots:
   - Tiled/screenshot.png

@@ -3,6 +3,7 @@ layout: app
 
 permalink: /marlin-conf/
 description: configuration tool for Marlin project
+license: GPL-2.0+
 
 screenshots:
   - marlin-conf/screenshot.png

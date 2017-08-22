@@ -3,6 +3,7 @@ layout: app
 
 permalink: /EyeStalker/
 description: Image-based eye tracking
+license: MIT
 
 screenshots:
   - EyeStalker/screenshot.png

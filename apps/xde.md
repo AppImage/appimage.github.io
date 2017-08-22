@@ -3,6 +3,7 @@ layout: app
 
 permalink: /xde/
 description: The Expo Development Environment
+license: GPL-2.0+
 
 screenshots:
   - xde/screenshot.png

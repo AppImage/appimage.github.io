@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /Tumblr_Downloader_GUI/
+license: GPL-2.0+
 
 screenshots:
   - Tumblr_Downloader_GUI/screenshot.png

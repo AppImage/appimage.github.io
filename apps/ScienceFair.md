@@ -3,6 +3,7 @@ layout: app
 
 permalink: /ScienceFair/
 description: ScienceFair desktop science reading app for Linux
+license: GPL-2.0+ and GFDL-1.3
 
 screenshots:
   - ScienceFair/screenshot.png

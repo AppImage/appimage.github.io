@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Cerebral-Debugger/
 description: Cerebral Debugger
+license: MIT
 
 screenshots:
   - Cerebral-Debugger/screenshot.png

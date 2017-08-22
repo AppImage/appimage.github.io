@@ -3,6 +3,7 @@ layout: app
 
 permalink: /erdesigner/
 description: An open-source ER Diagram tool that is available for ALL platforms.
+license: MIT
 
 screenshots:
   - erdesigner/screenshot.png

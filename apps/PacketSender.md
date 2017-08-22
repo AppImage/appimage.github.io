@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /PacketSender/
+license: GPL-2.0+
 
 screenshots:
   - PacketSender/screenshot.png

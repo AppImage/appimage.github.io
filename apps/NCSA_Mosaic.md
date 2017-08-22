@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /NCSA_Mosaic/
+license: GPL-2.0+
 
 screenshots:
   - NCSA_Mosaic/screenshot.png

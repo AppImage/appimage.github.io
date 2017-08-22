@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Imagine/
 description: PNG/JPEG optimization
+license: MIT
 
 screenshots:
   - Imagine/screenshot.png
