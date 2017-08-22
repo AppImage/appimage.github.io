@@ -295,6 +295,8 @@ for INPUTBASENAME in database/*; do
     echo "description: $DESKTOP_COMMENT" >> apps/$INPUTBASENAME.md
   fi
   # License
+  AS_LICENSE=""
+  DT_LICENSE=""
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     AS_LICENSE=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/project_license" -v .)
   fi
