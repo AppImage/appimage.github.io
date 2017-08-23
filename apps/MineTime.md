@@ -5,10 +5,10 @@ permalink: /MineTime/
 description: Smart scheduling assistant
 
 screenshots:
-  - MineTime/screenshot.png
+  - https://minetime.ai/static/img/screen.png
 
 authors:
-  - name: marcoancona
+  - name: marcoancona (ETH Zurich)
     url: https://github.com/marcoancona
 
 links:
