@@ -3,8 +3,7 @@ layout: app
 
 permalink: /VLC/
 description: VLC media player, the open-source multimedia player
-screenshots:
-- http://images.videolan.org/vlc/screenshots/2.0.0/vlc-2.0-poney.jpg
+license: GPL-2.0+
 
 authors:
   - name: darealshinji
