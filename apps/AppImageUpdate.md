@@ -16,4 +16,17 @@ links:
     url: AppImage/AppImageUpdate
   - type: Install
     url: https://github.com/AppImage/AppImageUpdate/releases
+
+desktop:
+Desktop Entry:
+  Type: Application
+  Name: AppImageUpdate
+  Exec: appimageupdate
+  Icon: appimageupdate
+  Comment: Update AppImages from their upstream location
+  Categories: System
+AppImageHub:
+  X-AppImage-UpdateInformation: gh-releases-zsync|AppImage|AppImageUpdate|continuous|AppImageUpdate-*x86_64.AppImage.zsync
+  X-AppImage-Type: 2
+  X-AppImage-Architecture: x86_64
 ---
