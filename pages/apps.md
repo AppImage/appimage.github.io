@@ -29,8 +29,8 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             {% include list_links.html %}
           </td>
           <td>
-            {% if post.desktop["Desktop Entry"].Comment %}{{ post.desktop["Desktop Entry"].Comment }}<br/>{% endif %}
-            {% if post.desktop["Desktop Entry"].GenericName %}{{ post.desktop["Desktop Entry"].GenericName }}<br/>{% endif %}
+            {% if post.desktop["Desktop Entry"].Comment %}{{ post.desktop["Desktop Entry"].Comment }}<br/>
+            {% elsif post.desktop["Desktop Entry"].GenericName %}{{ post.desktop["Desktop Entry"].GenericName }}<br/>{% endif %}
             {% if post.license %}{{ post.license }}<br/>{% endif %}
             {{ post.desktop["Desktop Entry"].Categories }}
           </td>
