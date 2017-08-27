@@ -30,7 +30,8 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
           </td>
           <td>
             {{ post.generic }}<br/>
-            {{ post.license }}
+            {{ post.license }}<br/>
+            {{ post[desktop][Desktop Entry][Categories] }}
           </td>
           <td>
             {% include list_authors.html %}
