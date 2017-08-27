@@ -43,10 +43,10 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             {% if post.license %}{{ post.license }}{% endif %}
           </td>
           <td>
-            {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}{{ post.desktop.AppImageHub.X-AppImage-UpdateInformation }}{% endif %}
+            {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>{% endif %}
           </td>
           <td>
-            {% if post.desktop.AppImageHub.X-AppImage-Signature %}{{ post.desktop.AppImageHub.X-AppImage-Signatuer }}{% endif %}
+            {% if post.desktop.AppImageHub.X-AppImage-Signature %}{{ post.desktop.AppImageHub.X-AppImage-Signature }}{% endif %}
           </td>
           </tr>
       {% endif %}
