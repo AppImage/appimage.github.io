@@ -346,7 +346,7 @@ for INPUTBASENAME in database/*; do
     echo "    url: https://github.com/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
   fi
   # Add content of desktop file
-  if [ -e "database/$INPUTBASENAME/*.desktop" ] ; then
+  if [ -e database/$INPUTBASENAME/*.desktop ] ; then
     dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
     echo "" >> apps/$INPUTBASENAME.md
     echo "desktop:" >> apps/$INPUTBASENAME.md
@@ -354,12 +354,13 @@ for INPUTBASENAME in database/*; do
     rm database/$INPUTBASENAME/desktop.yaml
   fi
   # Add content of AppStream metainfo file
-  if [ -e "database/$INPUTBASENAME/appdata.yaml" ] ; then
+  if [ -e database/$INPUTBASENAME/appdata.yaml ] ; then
     echo "" >> apps/$INPUTBASENAME.md
     echo "appdata:" >> apps/$INPUTBASENAME.md
     cat database/$INPUTBASENAME/appdata.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
     rm database/$INPUTBASENAME/appdata.yaml
   fi
+  echo "---" >> apps/$INPUTBASENAME.md
 done
 
 # TODO: Convert the "database files" into whatever output formats we need to support
