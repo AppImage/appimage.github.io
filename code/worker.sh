@@ -358,7 +358,7 @@ for INPUTBASENAME in database/*; do
     echo "" >> apps/$INPUTBASENAME.md
     echo "appdata:" >> apps/$INPUTBASENAME.md
     cat database/$INPUTBASENAME/appdata.yaml | sed  's/^/  /' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first like ("---")
-    database/$INPUTBASENAME/appdata.yaml
+    rm database/$INPUTBASENAME/appdata.yaml
   fi
 done
 
@@ -376,7 +376,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
     git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
     git config --global user.email "travis@travis-ci.org"
     git config --global user.name "Travis CI"
-    ( cd database/ ; git add . || true ) # Recursively add everything in this directory
+    ( cd database/ ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
     ( cd apps/ ; git add . || true ) # Recursively add everything in this directory
     git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
 Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
@@ -384,4 +384,4 @@ Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
 EOF
     git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
     git push --set-upstream deploy
-fi
+fi.
