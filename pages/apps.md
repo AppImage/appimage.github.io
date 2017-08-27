@@ -13,6 +13,8 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
       <th>Description</th>
       <th>Authors</th>
       <th>License</th>
+      <th>Update Information</th>
+      <th>Signature</th>
     </tr>
   </thead>
   <tbody>
@@ -40,7 +42,13 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
           <td>
             {% if post.license %}{{ post.license }}{% endif %}
           </td>
-        </tr>
+          <td>
+            {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}{{ post.desktop.AppImageHub.X-AppImage-UpdateInformation }}{% endif %}
+          </td>
+          <td>
+            {% if post.desktop.AppImageHub.X-AppImage-Signature %}{{ post.desktop.AppImageHub.X-AppImage-Signatuer }}{% endif %}
+          </td>
+          </tr>
       {% endif %}
     {% endfor %}
   </tbody>
