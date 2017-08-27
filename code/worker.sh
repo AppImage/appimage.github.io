@@ -251,8 +251,8 @@ fi
 
 # Convert desktop file to YAML
 
-// dv "$DATAFILE" --yaml -o database/$INPUTBASENAME/desktop.yaml
-// For now we do this below for all desktop files on each run
+# dv "$DATAFILE" --yaml -o database/$INPUTBASENAME/desktop.yaml
+# For now we do this below for all desktop files on each run
 
 # If available, also copy in AppStream metainfo
 
