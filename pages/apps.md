@@ -46,7 +46,10 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>{% endif %}
           </td>
           <td>
-            {% if post.desktop.AppImageHub.X-AppImage-Signature %}{{ post.desktop.AppImageHub.X-AppImage-Signature }}{% endif %}
+            {% if post.desktop.AppImageHub.X-AppImage-Signature %}
+              {% assign shortsig = post.desktop.AppImageHub.X-AppImage-Signature | split: '.' %}
+              {{ shortsig }}
+            {% endif %}
           </td>
           </tr>
       {% endif %}
