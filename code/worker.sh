@@ -249,6 +249,11 @@ if [ "" != "$LICENSE" ] ; then
   echo "X-AppImage-Payload-License=$LICENSE" >> "$DATAFILE"
 fi
 
+# Convert desktop file to YAML
+
+// dv "$DATAFILE" --yaml -o database/$INPUTBASENAME/desktop.yaml
+// For now we do this below for all desktop files on each run
+
 # If available, also copy in AppStream metainfo
 
 if [ -e $APPDIR/usr/share/metainfo/*.appdata.xml ] ; then
@@ -277,6 +282,8 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
 # For Jekyll Now
 for INPUTBASENAME in database/*; do
   INPUTBASENAME=${INPUTBASENAME##*/} # Remove path up to last /
+  // Convert desktop file to yaml
+  dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
   echo "Exporting $INPUTBASENAME to apps/$INPUTBASENAME.md for Jekyll"
   touch apps/$INPUTBASENAME.md
   echo "---" > apps/$INPUTBASENAME.md
