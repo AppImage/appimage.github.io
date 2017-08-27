@@ -16,3 +16,20 @@ links:
     url: hovancik/stretchly
   - type: Install
     url: https://github.com/hovancik/stretchly/releases
+
+desktop:
+  Desktop Entry:
+    Name: stretchly
+    Comment: break time reminder app
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: stretchly
+    X-AppImage-Version: 0.10.0
+    X-AppImage-BuildId: a1f4cca0-84ed-11a7-37ef-2340c18ec62f
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-UpdateInformation: false
+    X-AppImage-Type: 1
+    X-AppImage-Architecture: x86_64
+---

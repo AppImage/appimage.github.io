@@ -11,6 +11,21 @@ authors:
 
 links:
 
+desktop:
+  Desktop Entry:
+    Name: Peruse
+    GenericName: Comic Book Reader
+    Comment: A reader application for comic books
+    Exec: peruse.wrapper %U
+    Terminal: false
+    Type: Application
+    Categories: Qt
+    Icon: peruse
+  AppImageHub:
+    X-AppImage-UpdateInformation: 
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+
 appdata:
   Type: desktop-application
   ID: org.kde.okular.desktop
@@ -334,3 +349,4 @@ appdata:
     source-image:
       url: https://www.kde.org/images/screenshots/okular.png
       lang: C
+---
