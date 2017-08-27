@@ -10,19 +10,4 @@ screenshots:
 authors:
 
 links:
-Desktop Entry:
-  Name: LibrePCB
-  Comment: Design Schematics and PCBs
-  Comment[de]: Entwerfen eines Schaltplans oder einer Platine
-  GenericName: PCB Designer
-  Categories: Development
-  Type: Application
-  Terminal: false
-  Icon: librepcb
-  Exec: librepcb %U
-  MimeType: application/x-librepcb-project
-AppImageHub:
-  X-AppImage-UpdateInformation: 
-  X-AppImage-Type: 2
-  X-AppImage-Architecture: x86_64
 ---
