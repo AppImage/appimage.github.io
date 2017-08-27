@@ -16,7 +16,6 @@ links:
     url: Gilad-Kutiel-App/jumpfm
   - type: Install
     url: https://github.com/Gilad-Kutiel-App/jumpfm/releases
----
 Desktop Entry:
   Name: jumpfm
   Comment: A file manager that lets you jump

@@ -16,7 +16,6 @@ links:
     url: stoplightio/desktop
   - type: Install
     url: https://github.com/stoplightio/desktop/releases
----
 Desktop Entry:
   Name: Scenarios
   Comment: The kickass API platform.

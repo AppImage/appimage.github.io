@@ -16,7 +16,6 @@ links:
     url: labsquare/fastQt
   - type: Install
     url: https://github.com/labsquare/fastQt/releases
----
 Desktop Entry:
   Type: Application
   Name: FastQt

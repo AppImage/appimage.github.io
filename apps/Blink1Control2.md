@@ -16,7 +16,6 @@ links:
     url: todbot/Blink1Control2
   - type: Install
     url: https://github.com/todbot/Blink1Control2/releases
----
 Desktop Entry:
   Name: Blink1Control2
   Comment: Blink1Control2 GUI app for blink(1) devices

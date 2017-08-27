@@ -16,7 +16,6 @@ links:
     url: probonopd/linuxdeployqt
   - type: Install
     url: https://github.com/probonopd/linuxdeployqt/releases
----
 Desktop Entry:
   Type: Application
   Name: linuxdeployqt

@@ -16,7 +16,6 @@ links:
     url: AppImage/AppImageUpdate
   - type: Install
     url: https://github.com/AppImage/AppImageUpdate/releases
----
 Desktop Entry:
   Type: Application
   Name: AppImageUpdate

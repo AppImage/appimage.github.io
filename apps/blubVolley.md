@@ -10,7 +10,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   Name: blubVolley
   Comment: blubVolley - a fun volleyball game

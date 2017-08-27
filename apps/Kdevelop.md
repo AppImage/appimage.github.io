@@ -9,7 +9,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   GenericName: Integrated development environment
   Name: KDevelop

@@ -16,7 +16,6 @@ links:
     url: aricovindanevectone/hari
   - type: Install
     url: https://github.com/aricovindanevectone/hari/releases
----
 Desktop Entry:
   Name: Unified Communication
   Comment: Unified Communication from Mundio Mobiles

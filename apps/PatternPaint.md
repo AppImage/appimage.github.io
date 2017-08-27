@@ -16,7 +16,6 @@ links:
     url: Blinkinlabs/PatternPaint
   - type: Install
     url: https://github.com/Blinkinlabs/PatternPaint/releases
----
 Desktop Entry:
   Name: PatternPaint
   Type: Application

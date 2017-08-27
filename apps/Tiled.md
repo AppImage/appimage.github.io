@@ -16,7 +16,6 @@ links:
     url: bjorn/tiled
   - type: Install
     url: https://github.com/bjorn/tiled/releases
----
 Desktop Entry:
   Name: Tiled
   GenericName: Map editor

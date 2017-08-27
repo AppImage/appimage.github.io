@@ -16,7 +16,6 @@ links:
     url: nikolio/GradeStats
   - type: Install
     url: https://github.com/nikolio/GradeStats/releases
----
 Desktop Entry:
   Name: GradeStats
   Comment: Import from xls spredsheets, store and analyze student grade data

@@ -14,7 +14,6 @@ links:
     url: darealshinji/vlc-AppImage
   - type: Install
     url: https://github.com/darealshinji/vlc-AppImage/releases
----
 Desktop Entry:
   Version: 1.0
   Name: VLC media player

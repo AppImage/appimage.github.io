@@ -10,7 +10,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   Name: LibrePCB
   Comment: Design Schematics and PCBs

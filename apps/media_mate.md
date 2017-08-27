@@ -16,7 +16,6 @@ links:
     url: willyb321/media_mate
   - type: Install
     url: https://github.com/willyb321/media_mate/releases
----
 Desktop Entry:
   Name: Media Mate
   Comment: My SDD HSC Major Project, a full media server/player/downloader/etc - in

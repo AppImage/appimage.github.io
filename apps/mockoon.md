@@ -10,7 +10,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   Name: Mockoon
   Comment: Mock servers in seconds

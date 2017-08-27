@@ -16,7 +16,6 @@ links:
     url: Skrifa/Skrifa
   - type: Install
     url: https://github.com/Skrifa/Skrifa/releases
----
 Desktop Entry:
   Name: Skrifa
   Comment: A simple word processor built with web technologies

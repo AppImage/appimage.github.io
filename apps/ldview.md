@@ -10,7 +10,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   Encoding: UTF-8
   Name: LDView

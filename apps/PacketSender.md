@@ -15,7 +15,6 @@ links:
     url: dannagle/PacketSender
   - type: Install
     url: https://github.com/dannagle/PacketSender/releases
----
 Desktop Entry:
   Type: Application
   Name: PacketSender

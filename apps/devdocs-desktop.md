@@ -16,7 +16,6 @@ links:
     url: egoist/devdocs-desktop
   - type: Install
     url: https://github.com/egoist/devdocs-desktop/releases
----
 Desktop Entry:
   Name: DevDocs
   Comment: Desktop client for devdocs.io

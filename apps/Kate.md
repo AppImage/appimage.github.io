@@ -9,7 +9,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   GenericName: Advanced text editor
   Name: Kate

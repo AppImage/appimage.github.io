@@ -16,7 +16,6 @@ links:
     url: thorpelawrence/pixsrt
   - type: Install
     url: https://github.com/thorpelawrence/pixsrt/releases
----
 Desktop Entry:
   Type: Application
   Name: Pixsrt

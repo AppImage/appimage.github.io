@@ -16,7 +16,6 @@ links:
     url: vim/vim-appimage
   - type: Install
     url: https://github.com/vim/vim-appimage/releases
----
 Desktop Entry:
   Name: GVim
   GenericName: Text Editor

@@ -16,7 +16,6 @@ links:
     url: linux-man/unreel
   - type: Install
     url: https://github.com/linux-man/unreel/releases
----
 Desktop Entry:
   Name: unreel
   Comment: Reveal your ideas. With Unreel you can create amazing REVEAL.JS presentations

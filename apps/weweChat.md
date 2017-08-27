@@ -16,7 +16,6 @@ links:
     url: trazyn/weweChat
   - type: Install
     url: https://github.com/trazyn/weweChat/releases
----
 Desktop Entry:
   Name: wewechat
   Comment: Unofficial WeChat client built with React, MobX and Electron.

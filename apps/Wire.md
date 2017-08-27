@@ -13,7 +13,6 @@ links:
     url: wireapp/wire-desktop
   - type: Install
     url: https://github.com/wireapp/wire-desktop/releases
----
 Desktop Entry:
   Name: wire-desktop
   Comment: Modern communication, full privacy.

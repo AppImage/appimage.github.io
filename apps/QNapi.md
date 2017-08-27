@@ -16,7 +16,6 @@ links:
     url: QNapi/qnapi
   - type: Install
     url: https://github.com/QNapi/qnapi/releases
----
 Desktop Entry:
   Exec: qnapi %U
   Name: QNapi

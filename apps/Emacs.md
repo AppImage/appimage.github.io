@@ -17,7 +17,6 @@ links:
     url: probonopd/Emacs.AppImage
   - type: Install
     url: https://github.com/probonopd/Emacs.AppImage/releases
----
 Desktop Entry:
   Name: Emacs
   GenericName: Text Editor

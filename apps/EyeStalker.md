@@ -16,7 +16,6 @@ links:
     url: tbrouns/eyestalker
   - type: Install
     url: https://github.com/tbrouns/eyestalker/releases
----
 Desktop Entry:
   Type: Application
   Name: EyeStalker

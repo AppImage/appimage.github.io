@@ -10,7 +10,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   Categories: Graphics
   Comment: Visit 3D Fractal World

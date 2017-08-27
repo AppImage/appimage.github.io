@@ -16,7 +16,6 @@ links:
     url: labsquare/CutePeaks
   - type: Install
     url: https://github.com/labsquare/CutePeaks/releases
----
 Desktop Entry:
   Type: Application
   Name: CutePeaks

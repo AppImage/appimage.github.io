@@ -15,7 +15,6 @@ links:
     url: JvanKatwijk/qt-dab
   - type: Install
     url: https://github.com/JvanKatwijk/qt-dab/releases
----
 Desktop Entry:
   Name: Qt_DAB
   Exec: qt-dab

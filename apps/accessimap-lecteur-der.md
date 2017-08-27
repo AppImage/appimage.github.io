@@ -16,7 +16,6 @@ links:
     url: makinacorpus/accessimap-lecteur-der
   - type: Install
     url: https://github.com/makinacorpus/accessimap-lecteur-der/releases
----
 Desktop Entry:
   Name: accessimap-lecteur-der
   Comment: Accessimap Lecteur DER

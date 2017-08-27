@@ -16,7 +16,6 @@ links:
     url: zaggino/brackets-electron
   - type: Install
     url: https://github.com/zaggino/brackets-electron/releases
----
 Desktop Entry:
   Name: Brackets-Electron
   Comment: Brackets-Electron

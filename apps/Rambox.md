@@ -16,7 +16,6 @@ links:
     url: saenzramiro/rambox
   - type: Install
     url: https://github.com/saenzramiro/rambox/releases
----
 Desktop Entry:
   Name: Rambox
   Comment: Rambox

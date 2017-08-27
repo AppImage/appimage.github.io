@@ -16,7 +16,6 @@ links:
     url: christofferok/langly
   - type: Install
     url: https://github.com/christofferok/langly/releases
----
 Desktop Entry:
   Name: Langly
   Comment: Manage Laravel json language files

@@ -16,7 +16,6 @@ links:
     url: mmatyas/openblok
   - type: Install
     url: https://github.com/mmatyas/openblok/releases
----
 Desktop Entry:
   Version: 1.0
   Type: Application

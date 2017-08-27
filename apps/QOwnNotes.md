@@ -10,7 +10,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   Name: QOwnNotes
   Comment: Plain text notepad and todo list manager with markdown support that works

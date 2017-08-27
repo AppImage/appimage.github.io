@@ -9,7 +9,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   Name: PrusaControl
   Icon: prusacontrol

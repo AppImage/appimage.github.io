@@ -16,7 +16,6 @@ links:
     url: cerebral/cerebral-debugger
   - type: Install
     url: https://github.com/cerebral/cerebral-debugger/releases
----
 Desktop Entry:
   Name: Cerebral Debugger
   Comment: Cerebral Debugger

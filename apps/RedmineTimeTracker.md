@@ -16,7 +16,6 @@ links:
     url: ujiro99/RedmineTimeTracker
   - type: Install
     url: https://github.com/ujiro99/RedmineTimeTracker/releases
----
 Desktop Entry:
   Name: RedmineTimeTracker
   Comment: Time Tracking tool for Redmine

@@ -16,7 +16,6 @@ links:
     url: mykter/TagTime-desktop
   - type: Install
     url: https://github.com/mykter/TagTime-desktop/releases
----
 Desktop Entry:
   Name: TagTime-desktop
   Comment: Time tracking for space cadets - desktop edition

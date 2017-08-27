@@ -16,7 +16,6 @@ links:
     url: Gulden/gulden-official
   - type: Install
     url: https://github.com/Gulden/gulden-official/releases
----
 Desktop Entry:
   Type: Application
   Name: Gulden

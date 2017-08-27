@@ -16,7 +16,6 @@ links:
     url: yishn/Sabaki
   - type: Install
     url: https://github.com/yishn/Sabaki/releases
----
 Desktop Entry:
   Name: Sabaki
   Comment: An elegant Go/Baduk/Weiqi board and SGF editor for a more civilized age.

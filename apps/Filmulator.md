@@ -16,7 +16,6 @@ links:
     url: CarVac/filmulator-gui
   - type: Install
     url: https://github.com/CarVac/filmulator-gui/releases
----
 Desktop Entry:
   Type: Application
   Encoding: UTF-8

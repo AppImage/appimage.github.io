@@ -7,7 +7,6 @@ description: manage and display dive computer data
 authors:
 
 links:
----
 Desktop Entry:
   Type: Application
   Name: Subsurface

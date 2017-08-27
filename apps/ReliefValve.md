@@ -16,7 +16,6 @@ links:
     url: l3laze/ReliefValve
   - type: Install
     url: https://github.com/l3laze/ReliefValve/releases
----
 Desktop Entry:
   Name: ReliefValve
   Comment: Helps manage the Steam client application.

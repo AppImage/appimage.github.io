@@ -7,7 +7,6 @@ description: Digital Painting
 authors:
 
 links:
----
 Desktop Entry:
   Name: Krita
   Name[af]: Krita

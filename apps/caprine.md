@@ -15,7 +15,6 @@ links:
     url: sindresorhus/caprine
   - type: Install
     url: https://github.com/sindresorhus/caprine/releases
----
 Desktop Entry:
   Name: Caprine
   Comment: 

@@ -16,7 +16,6 @@ links:
     url: marcoancona/MineTime
   - type: Install
     url: https://github.com/marcoancona/MineTime/releases
----
 Desktop Entry:
   Name: MineTime
   Comment: Smart scheduling assistant

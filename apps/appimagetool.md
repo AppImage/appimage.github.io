@@ -16,7 +16,6 @@ links:
     url: AppImage/AppImageKit
   - type: Install
     url: https://github.com/AppImage/AppImageKit/releases
----
 Desktop Entry:
   Type: Application
   Name: appimagetool

@@ -16,7 +16,6 @@ links:
     url: tamlok/vnote
   - type: Install
     url: https://github.com/tamlok/vnote/releases
----
 Desktop Entry:
   Type: Application
   Version: 1.0

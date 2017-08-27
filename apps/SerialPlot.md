@@ -10,7 +10,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   Name: SerialPlot
   Comment: Small and simple software for plotting data from serial port

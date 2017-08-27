@@ -16,7 +16,6 @@ links:
     url: xx10t4/iota1k
   - type: Install
     url: https://github.com/xx10t4/iota1k/releases
----
 Desktop Entry:
   Name: iota1k
   Comment: IOTA based messenging app

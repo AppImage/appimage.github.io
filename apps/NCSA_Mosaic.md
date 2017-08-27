@@ -15,7 +15,6 @@ links:
     url: AppImage/NCSA-Mosaic-AppImage
   - type: Install
     url: https://github.com/AppImage/NCSA-Mosaic-AppImage/releases
----
 Desktop Entry:
   Categories: Network
   Exec: Mosaic

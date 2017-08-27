@@ -15,7 +15,6 @@ links:
     url: keepassxreboot/keepassxc
   - type: Install
     url: https://github.com/keepassxreboot/keepassxc/releases
----
 Desktop Entry:
   Name: KeePassXC
   GenericName: Community Password Manager

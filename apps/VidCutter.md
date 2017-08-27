@@ -13,7 +13,6 @@ links:
     url: ozmartian/vidcutter
   - type: Install
     url: https://github.com/ozmartian/vidcutter/releases
----
 Desktop Entry:
   Name: VidCutter
   GenericName: Video Cutter + Joiner

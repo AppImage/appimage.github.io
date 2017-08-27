@@ -16,7 +16,6 @@ links:
     url: meowtec/Imagine
   - type: Install
     url: https://github.com/meowtec/Imagine/releases
----
 Desktop Entry:
   Name: Imagine
   Comment: PNG/JPEG optimization

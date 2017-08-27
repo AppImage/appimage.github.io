@@ -16,7 +16,6 @@ links:
     url: buttercup/buttercup-desktop
   - type: Install
     url: https://github.com/buttercup/buttercup-desktop/releases
----
 Desktop Entry:
   Name: Buttercup
   Comment: Free and Open Source password vault

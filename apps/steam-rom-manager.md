@@ -16,7 +16,6 @@ links:
     url: FrogTheFrog/steam-rom-manager
   - type: Install
     url: https://github.com/FrogTheFrog/steam-rom-manager/releases
----
 Desktop Entry:
   Name: Steam ROM Manager
   Comment: An app for managing ROMs in Steam

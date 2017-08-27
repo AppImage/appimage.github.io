@@ -16,7 +16,6 @@ links:
     url: codeforscience/sciencefair
   - type: Install
     url: https://github.com/codeforscience/sciencefair/releases
----
 Desktop Entry:
   Name: ScienceFair
   Comment: ScienceFair desktop science reading app for Linux

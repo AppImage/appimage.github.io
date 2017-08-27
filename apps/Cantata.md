@@ -6,7 +6,6 @@ permalink: /Cantata/
 authors:
 
 links:
----
 Desktop Entry:
   Type: Application
   Name: Cantata

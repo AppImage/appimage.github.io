@@ -9,7 +9,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   Type: Application
   Name: Ipe

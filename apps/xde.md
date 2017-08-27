@@ -16,7 +16,6 @@ links:
     url: expo/xde
   - type: Install
     url: https://github.com/expo/xde/releases
----
 Desktop Entry:
   Name: Expo XDE
   Comment: The Expo Development Environment

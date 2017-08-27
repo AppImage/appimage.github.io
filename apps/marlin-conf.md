@@ -16,7 +16,6 @@ links:
     url: akaJes/marlin-config
   - type: Install
     url: https://github.com/akaJes/marlin-config/releases
----
 Desktop Entry:
   Name: marlin-conf
   Comment: configuration tool for Marlin project

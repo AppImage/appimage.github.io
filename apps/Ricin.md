@@ -10,7 +10,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   Name: ricin
   Comment: A dead-simple but powerful Tox client.

@@ -16,7 +16,6 @@ links:
     url: hovancik/stretchly
   - type: Install
     url: https://github.com/hovancik/stretchly/releases
----
 Desktop Entry:
   Name: stretchly
   Comment: break time reminder app

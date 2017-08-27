@@ -15,7 +15,6 @@ links:
     url: neuro-sys/tumblr-downloader-client
   - type: Install
     url: https://github.com/neuro-sys/tumblr-downloader-client/releases
----
 Desktop Entry:
   Type: Application
   Name: Tumblr Downloader Client

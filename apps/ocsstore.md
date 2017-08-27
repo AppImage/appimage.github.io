@@ -9,7 +9,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   Name: OCS-Store
   Exec: ocsstore

@@ -16,7 +16,6 @@ links:
     url: CityOfZion/neon-wallet
   - type: Install
     url: https://github.com/CityOfZion/neon-wallet/releases
----
 Desktop Entry:
   Name: Neon
   Comment: Light wallet for NEO blockchain

@@ -16,7 +16,6 @@ links:
     url: cpvrlab/ImagePlay
   - type: Install
     url: https://github.com/cpvrlab/ImagePlay/releases
----
 Desktop Entry:
   Name: ImagePlay
   Icon: imageplay

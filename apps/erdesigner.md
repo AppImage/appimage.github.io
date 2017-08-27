@@ -16,7 +16,6 @@ links:
     url: felix557700/erdesigner
   - type: Install
     url: https://github.com/felix557700/erdesigner/releases
----
 Desktop Entry:
   Name: erdesigner
   Comment: An open-source ER Diagram tool that is available for ALL platforms.

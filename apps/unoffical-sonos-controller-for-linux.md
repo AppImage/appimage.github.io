@@ -16,7 +16,6 @@ links:
     url: pascalopitz/unoffical-sonos-controller-for-linux
   - type: Install
     url: https://github.com/pascalopitz/unoffical-sonos-controller-for-linux/releases
----
 Desktop Entry:
   Name: sonos-controller-unofficial
   Comment: Unoffical sonos controller for linux.

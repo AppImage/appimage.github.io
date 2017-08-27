@@ -16,7 +16,6 @@ links:
     url: sidneys/pb-for-desktop
   - type: Install
     url: https://github.com/sidneys/pb-for-desktop/releases
----
 Desktop Entry:
   Name: PB for Desktop
   Comment: Pushbullet Desktop app for macOS, Windows and Linux.

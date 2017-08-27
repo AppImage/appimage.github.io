@@ -16,7 +16,6 @@ links:
     url: sigoden/alphat
   - type: Install
     url: https://github.com/sigoden/alphat/releases
----
 Desktop Entry:
   Name: AlphaT
   Comment: 文档翻译工具

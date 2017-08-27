@@ -10,7 +10,6 @@ screenshots:
 authors:
 
 links:
----
 Desktop Entry:
   Name: Kdenlive
   Name[ast]: Kdenlive

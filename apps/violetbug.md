@@ -16,7 +16,6 @@ links:
     url: belltown/violetbug
   - type: Install
     url: https://github.com/belltown/violetbug/releases
----
 Desktop Entry:
   Name: VioletBug
   Comment: A cross-platform Roku Debugger graphical interface
