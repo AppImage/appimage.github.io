@@ -282,7 +282,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
 # For Jekyll Now
 for INPUTBASENAME in database/*; do
   INPUTBASENAME=${INPUTBASENAME##*/} # Remove path up to last /
-  // Convert desktop file to yaml
+  # Convert desktop file to yaml
   dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
   echo "Exporting $INPUTBASENAME to apps/$INPUTBASENAME.md for Jekyll"
   touch apps/$INPUTBASENAME.md
