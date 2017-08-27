@@ -215,7 +215,7 @@ chmod 644 "$DATAFILE" # https://github.com/AppImage/AppImageHub/issues/19
 echo "" >> "$DATAFILE"
 echo "[AppImageHub]" >> "$DATAFILE"
 
-if [ "" != "$UPDATE_INFORMATION" ] ; then
+if [ ! -z "$UPDATE_INFORMATION" ] ; then
   echo "X-AppImage-UpdateInformation=${UPDATE_INFORMATION}" >> "$DATAFILE"
 else
   # echo "X-AppImage-UpdateInformation=false" >> "$DATAFILE"
@@ -223,7 +223,7 @@ else
   echo "# (e.g., with appimagetool -u) so that users can easily update the AppImage" >> "$DATAFILE"
 fi
 
-if [ "" != "$SIGNATURE" ] ; then
+if [ ! -z "$SIGNATURE" ] ; then
   echo "X-AppImage-Signature=$SIGNATURE" >> "$DATAFILE"
 else
   # echo "X-AppImage-Signature=false" >> "$DATAFILE"
