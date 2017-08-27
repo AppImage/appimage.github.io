@@ -348,7 +348,7 @@ for INPUTBASENAME in database/*; do
   # Add content of desktop file
   dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
   echo ""
-  cat database/$INPUTBASENAME/desktop.yaml >> apps/$INPUTBASENAME.md
+  cat database/$INPUTBASENAME/desktop.yaml | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first like ("---")
   echo "---" >> apps/$INPUTBASENAME.md
 done
 
