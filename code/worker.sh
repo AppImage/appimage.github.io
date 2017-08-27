@@ -347,9 +347,9 @@ for INPUTBASENAME in database/*; do
   fi
   # Add content of desktop file
   dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
-  echo ""
-  echo "desktop:"
-  cat database/$INPUTBASENAME/desktop.yaml | sed -i -e 's|\n|\n  |g' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first like ("---")
+  echo "" >> apps/$INPUTBASENAME.md
+  echo "desktop:" >> apps/$INPUTBASENAME.md
+  cat database/$INPUTBASENAME/desktop.yaml | sed -e 's|\n|\n  |g' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first like ("---")
   echo "---" >> apps/$INPUTBASENAME.md
   rm database/$INPUTBASENAME/desktop.yaml
 done
