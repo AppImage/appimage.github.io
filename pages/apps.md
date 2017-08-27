@@ -29,7 +29,7 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             {% include list_links.html %}
           </td>
           <td>
-            {{ post.generic }}<br/>
+            {{ post.desktop["Desktop Entry"].GenericName }}<br/>
             {{ post.license }}<br/>
             {{ post.desktop["Desktop Entry"].Categories }}
           </td>
