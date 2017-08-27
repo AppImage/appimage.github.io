@@ -30,7 +30,6 @@ desktop:
     Categories: Utility
   AppImageHub:
     X-AppImage-UpdateInformation: 
-    X-AppImage-Signature: false
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
 ---
