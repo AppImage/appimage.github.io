@@ -346,12 +346,20 @@ for INPUTBASENAME in database/*; do
     echo "    url: https://github.com/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
   fi
   # Add content of desktop file
-  dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
-  echo "" >> apps/$INPUTBASENAME.md
-  echo "desktop:" >> apps/$INPUTBASENAME.md
-  cat database/$INPUTBASENAME/desktop.yaml | sed -e 's|\n|\n  |g' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first like ("---")
-  echo "---" >> apps/$INPUTBASENAME.md
-  rm database/$INPUTBASENAME/desktop.yaml
+  if [ -e "database/$INPUTBASENAME/*.desktop" ] ; then
+    dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
+    echo "" >> apps/$INPUTBASENAME.md
+    echo "desktop:" >> apps/$INPUTBASENAME.md
+    cat database/$INPUTBASENAME/desktop.yaml | sed  's/^/  /' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first like ("---")
+    rm database/$INPUTBASENAME/desktop.yaml
+  fi
+  # Add content of AppStream metainfo file
+  if [ -e "database/$INPUTBASENAME/appdata.yaml" ] ; then
+    echo "" >> apps/$INPUTBASENAME.md
+    echo "appdata:" >> apps/$INPUTBASENAME.md
+    cat database/$INPUTBASENAME/appdata.yaml | sed  's/^/  /' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first like ("---")
+    database/$INPUTBASENAME/appdata.yaml
+  fi
 done
 
 # TODO: Convert the "database files" into whatever output formats we need to support
