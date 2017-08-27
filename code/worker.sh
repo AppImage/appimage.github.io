@@ -350,14 +350,14 @@ for INPUTBASENAME in database/*; do
     dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
     echo "" >> apps/$INPUTBASENAME.md
     echo "desktop:" >> apps/$INPUTBASENAME.md
-    cat database/$INPUTBASENAME/desktop.yaml | sed  's/^/  /' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first like ("---")
+    cat database/$INPUTBASENAME/desktop.yaml | sed  's/^/  /' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first line ("---")
     rm database/$INPUTBASENAME/desktop.yaml
   fi
   # Add content of AppStream metainfo file
   if [ -e "database/$INPUTBASENAME/appdata.yaml" ] ; then
     echo "" >> apps/$INPUTBASENAME.md
     echo "appdata:" >> apps/$INPUTBASENAME.md
-    cat database/$INPUTBASENAME/appdata.yaml | sed  's/^/  /' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first like ("---")
+    cat database/$INPUTBASENAME/appdata.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
     rm database/$INPUTBASENAME/appdata.yaml
   fi
 done
