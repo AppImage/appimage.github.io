@@ -282,8 +282,6 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
 # For Jekyll Now
 for INPUTBASENAME in database/*; do
   INPUTBASENAME=${INPUTBASENAME##*/} # Remove path up to last /
-  # Convert desktop file to yaml
-  dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
   echo "Exporting $INPUTBASENAME to apps/$INPUTBASENAME.md for Jekyll"
   touch apps/$INPUTBASENAME.md
   echo "---" > apps/$INPUTBASENAME.md
@@ -347,6 +345,10 @@ for INPUTBASENAME in database/*; do
     echo "  - type: Install" >> apps/$INPUTBASENAME.md
     echo "    url: https://github.com/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
   fi
+  # Add content of desktop file
+  dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
+  echo ""
+  cat database/$INPUTBASENAME/desktop.yaml >> apps/$INPUTBASENAME.md
   echo "---" >> apps/$INPUTBASENAME.md
 done
 
