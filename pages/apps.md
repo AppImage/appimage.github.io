@@ -48,7 +48,7 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
           <td>
             {% if post.desktop.AppImageHub.X-AppImage-Signature %}
               {% assign shortsig = post.desktop.AppImageHub.X-AppImage-Signature | split: '.' %}
-              {{ shortsig }}
+              {{ shortsig[0] }}
             {% endif %}
           </td>
           </tr>
