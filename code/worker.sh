@@ -384,4 +384,4 @@ Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
 EOF
     git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
     git push --set-upstream deploy
-fi.
+fi
