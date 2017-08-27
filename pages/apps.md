@@ -40,15 +40,15 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             {% include list_authors.html %}
           </td>
           <td>
-            {% if post.license %}{{ post.license }}{% endif %}
+            {% if post.license %}<span class="octicon octicon-law"></span> {{ post.license }}{% endif %}
           </td>
           <td>
-            {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>{% endif %}
+            {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}<span class="octicon octicon-check"></span> Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>{% endif %}
           </td>
           <td>
             {% if post.desktop.AppImageHub.X-AppImage-Signature %}
               {% assign shortsig = post.desktop.AppImageHub.X-AppImage-Signature | split: '.' %}
-              {{ shortsig[0] }}
+              <span class="octicon octicon-key"></span> {{ shortsig[0] }}
             {% endif %}
           </td>
           </tr>
