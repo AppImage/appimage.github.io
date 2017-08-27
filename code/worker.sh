@@ -218,7 +218,7 @@ echo "[AppImageHub]" >> "$DATAFILE"
 if [ "" != "$UPDATE_INFORMATION" ] ; then
   echo "X-AppImage-UpdateInformation=${UPDATE_INFORMATION}" >> "$DATAFILE"
 else
-  echo "X-AppImage-UpdateInformation=false" >> "$DATAFILE"
+  # echo "X-AppImage-UpdateInformation=false" >> "$DATAFILE"
   echo "# Dear upstream developer, please include update information in your AppImage" >> "$DATAFILE"
   echo "# (e.g., with appimagetool -u) so that users can easily update the AppImage" >> "$DATAFILE"
 fi
@@ -226,7 +226,7 @@ fi
 if [ "" != "$SIGNATURE" ] ; then
   echo "X-AppImage-Signature=$SIGNATURE" >> "$DATAFILE"
 else
-  echo "X-AppImage-Signature=false" >> "$DATAFILE"
+  # echo "X-AppImage-Signature=false" >> "$DATAFILE"
   echo "# Dear upstream developer, please include a digital signature in your AppImage" >> "$DATAFILE"
   echo "# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage" >> "$DATAFILE"
 fi
