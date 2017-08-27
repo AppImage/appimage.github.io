@@ -43,7 +43,7 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             {% if post.license %}<span class="octicon octicon-law"></span> {{ post.license }}{% endif %}
           </td>
           <td>
-            {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}<span class="octicon octicon-check"></span> Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>{% endif %}
+            {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}<span class="octicon octicon-check" style="color:green;"></span> Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>{% endif %}
           </td>
           <td>
             {% if post.desktop.AppImageHub.X-AppImage-Signature %}
