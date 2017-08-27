@@ -17,3 +17,16 @@ links:
   - type: Install
     url: https://github.com/tbrouns/eyestalker/releases
 ---
+Desktop Entry:
+  Type: Application
+  Name: EyeStalker
+  Categories: Science
+  Exec: "/home/tsn/C++/eye_tracking/EyeStalkerOffline-build-release/EyeStalker %F"
+  Icon: eyestalker_logo
+  Comment: Image-based eye tracking
+  Terminal: false
+AppImageHub:
+  X-AppImage-UpdateInformation: 
+  X-AppImage-Type: 2
+  X-AppImage-Architecture: x86_64
+---
