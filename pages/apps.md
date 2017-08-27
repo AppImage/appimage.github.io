@@ -12,6 +12,7 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
       <th>Name</th>
       <th>Info</th>
       <th>Authors</th>
+      <th>License</th>
     </tr>
   </thead>
   <tbody>
@@ -31,11 +32,13 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
           <td>
             {% if post.desktop["Desktop Entry"].Comment %}{{ post.desktop["Desktop Entry"].Comment }}<br/>
             {% elsif post.desktop["Desktop Entry"].GenericName %}{{ post.desktop["Desktop Entry"].GenericName }}<br/>{% endif %}
-            {% if post.license %}{{ post.license }}<br/>{% endif %}
             {{ post.desktop["Desktop Entry"].Categories }}
           </td>
           <td>
             {% include list_authors.html %}
+          </td>
+          <td>
+            {% if post.license %}{{ post.license }}{% endif %}
           </td>
         </tr>
       {% endif %}
