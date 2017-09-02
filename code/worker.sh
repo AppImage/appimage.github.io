@@ -259,15 +259,15 @@ if [ -e $APPDIR/usr/share/metainfo/*.appdata.xml ] ; then
 fi
 
 # Get pacakge.json from resources/app.asar for electron-builder applications
+ASAR=$(find "$APPDIR" -name "app.asar" || true)
+PJ=$(find "$APPDIR" -name "package.json" || true)
 ls "$APPDIR/resources" || continue
-if [ -e "$APPDIR/resources/app.asar" ] ; then
+if [ ! -z "$ASAR" ] ; then
   echo "Extracting package.json from app.asar"
-  asar extract-file "$APPDIR/resources/app.asar" package.json && mv package.json database/$INPUTBASENAME/
-fi
-# If asar disabled
-if [ -e "$APPDIR/resources/app/package.json" ] ; then
+  asar extract-file "$ASARr" package.json && mv package.json database/$INPUTBASENAME/
+elif [ ! -z "$PJ" ] ; then
   echo "echo "Copying package.json"
-  cp "$APPDIR/resources/app/package.json" database/$INPUTBASENAME/
+  cp "$PJ" database/$INPUTBASENAME/
 fi
 
 echo "==========================================="
