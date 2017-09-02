@@ -258,10 +258,13 @@ if [ -e $APPDIR/usr/share/metainfo/*.appdata.xml ] ; then
   cp $APPDIR/usr/share/metainfo/*.appdata.xml database/$INPUTBASENAME/
 fi
 
-# get pacakge.json from resources/app.asar for electron-builder applications
-
+# Get pacakge.json from resources/app.asar for electron-builder applications
 if [ -e "$APPDIR/resources/app.asar" ] ; then
   asar extract-file "$APPDIR/resources/app.asar" package.json && mv package.json database/$INPUTBASENAME/
+fi
+# If asar disabled
+if [ -e "$APPDIR/resources/app.asar" ] ; then
+  cp "$APPDIR/resources/app/package.json" database/$INPUTBASENAME/
 fi
 
 echo "==========================================="
