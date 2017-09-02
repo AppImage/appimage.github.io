@@ -263,9 +263,9 @@ ASAR=$(find "$APPDIR" -name "app.asar" || true)
 PJ=$(find "$APPDIR" -name "package.json" || true)
 if [ ! -z "$ASAR" ] ; then
   echo "Extracting package.json from app.asar"
-  asar extract-file "$ASARr" package.json && mv package.json database/$INPUTBASENAME/
+  asar extract-file "$ASAR" package.json && mv package.json database/$INPUTBASENAME/
 elif [ ! -z "$PJ" ] ; then
-  echo "echo "Copying package.json"
+  echo "Copying package.json"
   cp "$PJ" database/$INPUTBASENAME/
 fi
 
