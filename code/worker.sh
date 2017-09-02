@@ -139,8 +139,6 @@ echo "==========================================="
 wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/firejail.tar.gz" ; sudo tar xf firejail.tar.gz -C /
 sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
 
-# Find out whether the application is a GUI application
-
 echo ""
 echo "==========================================="
 echo "============= TRYING TO RUN ==============="
@@ -258,6 +256,12 @@ fi
 
 if [ -e $APPDIR/usr/share/metainfo/*.appdata.xml ] ; then
   cp $APPDIR/usr/share/metainfo/*.appdata.xml database/$INPUTBASENAME/
+fi
+
+# get pacakge.json from resources/app.asar for electron-builder applications
+
+if [ -e "$APPDIR/resources/app.asar" ] ; then
+  asar extract-file "$APPDIR/resources/app.asar" package.json && mv package.json database/$INPUTBASENAME/
 fi
 
 echo "==========================================="
