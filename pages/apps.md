@@ -34,7 +34,9 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
           <td>
             {{ post.desktop["Desktop Entry"].Categories }}:<br/>
             {% if post.desktop["Desktop Entry"].Comment %}{{ post.desktop["Desktop Entry"].Comment }}<br/>
-            {% elsif post.desktop["Desktop Entry"].GenericName %}{{ post.desktop["Desktop Entry"].GenericName }}<br/>{% endif %}
+            {% elsif post.desktop["Desktop Entry"].GenericName %}{{ post.desktop["Desktop Entry"].GenericName }}<br/>
+            {% elsif post.electron.description %}{{ post.electron.description }}<br/>
+            {% endif %}
           </td>
           <td>
             {% include list_authors.html %}
