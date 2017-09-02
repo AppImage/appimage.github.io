@@ -42,7 +42,9 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             {% include list_authors.html %}
           </td>
           <td>
-            {% if post.license %}<span class="octicon octicon-law"></span> {{ post.license }}{% endif %}
+            {% if post.license %}<span class="octicon octicon-law"></span> {{ post.license }}
+            {% elsif post.electron.license %}<span class="octicon octicon-law"></span> {{ post.electron.license }}
+            {% endif %}
           </td>
           <td>
             {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}<span class="octicon octicon-check" style="color:green;"></span> Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>{% endif %}
