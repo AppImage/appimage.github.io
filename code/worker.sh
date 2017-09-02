@@ -369,6 +369,14 @@ for INPUTBASENAME in database/*; do
     cat database/$INPUTBASENAME/appdata.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
     rm database/$INPUTBASENAME/appdata.yaml
   fi
+  # Add content of Electron package.json file
+  if [ -e database/$INPUTBASENAME/package.json ] ; then
+    dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml
+    echo "" >> apps/$INPUTBASENAME.md
+    echo "electron:" >> apps/$INPUTBASENAME.md
+    cat database/$INPUTBASENAME/package.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
+    rm database/$INPUTBASENAME/package.yaml
+  fi
   echo "---" >> apps/$INPUTBASENAME.md
 done
 
