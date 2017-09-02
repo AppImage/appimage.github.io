@@ -32,4 +32,16 @@ desktop:
     X-AppImage-UpdateInformation: 
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
+
+electron:
+  description: Onshape desktop app (web application shell)
+  author: Vladimir Krivosheev <develar@gmail.com>
+  main: "./out/index.js"
+  dependencies:
+    configstore: "^3.1.1"
+    electron-debug: "^1.4.0"
+    electron-is-dev: "^0.3.0"
+    electron-log: "^2.2.7"
+    electron-updater: "^2.8.7"
+    keytar-prebuild: "^4.0.3"
 ---
