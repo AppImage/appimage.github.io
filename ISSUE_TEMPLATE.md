@@ -1,7 +1,6 @@
 <!--
 
-Welcome to AppImageHub, the crowd-sourced cenrtral repository of available AppImages. Before you open an issue, please check whether the AppImage is already in our collection. If it is not, please submit an issue if the original authors of the software provide an official AppImage. Please do NOT request AppImages for applications here if one does not exist yet; in this case, please ask the application authors instead.
-
+Welcome to AppImageHub, the crowd-sourced central directory of available AppImages. Before you open an issue, please check whether the AppImage is already in our collection. If it is not, please submit an issue here if the original authors of the software provide an official AppImage that should be included in this directory. Please do NOT request AppImages for applications here if one does not exist yet; in this case, please ask the application authors instead.
 Do you want to ask a question? Are you looking for support? The Atom message board is the best place for getting support: https://discourse.appimage.org
 
 -->
