@@ -27,7 +27,7 @@ script:
   - # Find out which files in data/ have been changed in the last commit
   - FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2- | sed -e 's|dev/null||g')
   - # Work on these files that have been changed in the last commit
-  - for FILE in $FILES ; do echo "$FILE" ; bash -ex code/worker.sh $(readlink -f "$FILE") ; done
+  - for FILE in $FILES ; do echo "$FILE" ; bash -e code/worker.sh $(readlink -f "$FILE") ; done
 
 after_script:
   - # xpra stop :99
