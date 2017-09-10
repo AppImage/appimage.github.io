@@ -104,7 +104,7 @@ if [ $TYPE -eq 2 ] ; then
   mount | grep tmp | tail -n 1
   APPDIR=$(mount | grep tmp | tail -n 1 | cut -d " " -f 3)
   echo $APPDIR
-  bash appdir-lint.sh "$APPDIR"
+  bash -x appdir-lint.sh "$APPDIR"
   # later # kill $PID # fuse
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
   UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-updateinformation) || echo "Could not get update information from the AppImage"
