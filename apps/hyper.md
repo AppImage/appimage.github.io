@@ -25,16 +25,16 @@ desktop:
     Terminal: false
     Type: Application
     Icon: hyper
-    X-AppImage-Version: 1.4.3.2217
-    X-AppImage-BuildId: d2bf7810-90c5-11a7-1dee-57d1d0367dbd
-    Categories: Development
+    X-AppImage-Version: 1.4.4.2266
+    X-AppImage-BuildId: cd200620-98b5-11a7-3125-59c1c1e15a37
+    Categories: TerminalEmulator
   AppImageHub:
     X-AppImage-UpdateInformation: 
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
 
 electron:
-  version: 1.4.3
+  version: 1.4.4
   license: MIT
   author:
     name: Zeit, Inc.
@@ -49,6 +49,7 @@ electron:
     electron-config: 1.0.0
     electron-is-dev: 0.3.0
     electron-squirrel-startup: 1.0.0
+    lodash: 4.17.4
     file-uri-to-path: 1.0.0
     git-describe: 4.0.2
     mkdirp: 0.5.1
