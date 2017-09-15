@@ -1,12 +1,15 @@
 {
   "name": "EnvKey",
-  "version": "0.9.6",
+  "version": "0.9.8",
   "description": "EnvKey's cross-platform native app",
   "author": "Dane Schneider <dane@envkey.com> (https://www.envkey.com)",
   "homepage": "https://www.envkey.com",
   "repository": "https://github.com/envkey/envkey-ui",
   "license": "MIT",
   "main": "main.js",
+  "bin": {
+    "remove-releases": "bin/remove_releases.js"
+  },
   "updater": {
     "url": "https://raw.githubusercontent.com/envkey/envkey-ui/master/envkey-electron/updates.json"
   },

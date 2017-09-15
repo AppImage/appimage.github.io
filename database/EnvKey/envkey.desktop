@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=envkey
-X-AppImage-Version=0.9.6
-X-AppImage-BuildId=7ffe9120-9907-11a7-22ba-0983176f56d3
+X-AppImage-Version=0.9.8
+X-AppImage-BuildId=e0d2f790-9982-11a7-1234-67d405dff61e
 Categories=Development;
 
 [AppImageHub]
