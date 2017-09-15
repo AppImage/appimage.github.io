@@ -34,13 +34,17 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
           <td>
             {{ post.desktop["Desktop Entry"].Categories }}:<br/>
             {% if post.desktop["Desktop Entry"].Comment %}{{ post.desktop["Desktop Entry"].Comment }}<br/>
-            {% elsif post.desktop["Desktop Entry"].GenericName %}{{ post.desktop["Desktop Entry"].GenericName }}<br/>{% endif %}
+            {% elsif post.desktop["Desktop Entry"].GenericName %}{{ post.desktop["Desktop Entry"].GenericName }}<br/>
+            {% elsif post.electron.description %}{{ post.electron.description }}<br/>
+            {% endif %}
           </td>
           <td>
             {% include list_authors.html %}
           </td>
           <td>
-            {% if post.license %}<span class="octicon octicon-law"></span> {{ post.license }}{% endif %}
+            {% if post.license %}<span class="octicon octicon-law"></span> {{ post.license }}
+            {% elsif post.electron.license %}<span class="octicon octicon-law"></span> {{ post.electron.license }}
+            {% endif %}
           </td>
           <td>
             {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}<span class="octicon octicon-check" style="color:green;"></span> Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>{% endif %}

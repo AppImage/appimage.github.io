@@ -1,13 +1,13 @@
 [Desktop Entry]
-Name=stretchly
-Comment=break time reminder app
+Name=p2p-chat
+Comment=a p2p chat app
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=stretchly
-X-AppImage-Version=0.11.0
-X-AppImage-BuildId=60c839b0-954b-11a7-223d-65875306659c
-Categories=Utility;
+Icon=p2p-chat
+X-AppImage-Version=0.7.3
+X-AppImage-BuildId=cef00930-9178-11a7-34d3-dd9c8a9d2761
+Categories=Network;
 
 [AppImageHub]
 X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

@@ -1,13 +1,15 @@
 [Desktop Entry]
-Name=stretchly
-Comment=break time reminder app
+Name=Electorrent
+Comment=A thin client for your torrenting needs
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=stretchly
-X-AppImage-Version=0.11.0
-X-AppImage-BuildId=60c839b0-954b-11a7-223d-65875306659c
-Categories=Utility;
+Icon=electorrent
+X-AppImage-Version=2.1.10.236
+X-AppImage-BuildId=3f72b600-92f3-11a7-1b1d-9510de948b9f
+MimeType=application/x-bittorrent;x-scheme-handler/magnet;
+Keywords=p2p;bittorrent;
+Categories=Network;FileTransfer;P2P;
 
 [AppImageHub]
 X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

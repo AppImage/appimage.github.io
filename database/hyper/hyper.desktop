@@ -1,13 +1,13 @@
 [Desktop Entry]
-Name=stretchly
-Comment=break time reminder app
+Name=Hyper
+Comment=A terminal built on web technologies
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=stretchly
-X-AppImage-Version=0.11.0
-X-AppImage-BuildId=60c839b0-954b-11a7-223d-65875306659c
-Categories=Utility;
+Icon=hyper
+X-AppImage-Version=1.4.4.2266
+X-AppImage-BuildId=cd200620-98b5-11a7-3125-59c1c1e15a37
+Categories=TerminalEmulator;
 
 [AppImageHub]
 X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

@@ -139,8 +139,6 @@ echo "==========================================="
 wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/firejail.tar.gz" ; sudo tar xf firejail.tar.gz -C /
 sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
 
-# Find out whether the application is a GUI application
-
 echo ""
 echo "==========================================="
 echo "============= TRYING TO RUN ==============="
@@ -260,6 +258,17 @@ if [ -e $APPDIR/usr/share/metainfo/*.appdata.xml ] ; then
   cp $APPDIR/usr/share/metainfo/*.appdata.xml database/$INPUTBASENAME/
 fi
 
+# Get pacakge.json from resources/app.asar for electron-builder applications
+ASAR=$(find "$APPDIR" -name "app.asar" || true)
+PJ=$(find "$APPDIR" -name "package.json" || true)
+if [ ! -z "$ASAR" ] ; then
+  echo "Extracting package.json from app.asar"
+  asar extract-file "$ASAR" package.json && mv package.json database/$INPUTBASENAME/
+elif [ ! -z "$PJ" ] ; then
+  echo "Copying package.json"
+  cp "$PJ" database/$INPUTBASENAME/
+fi
+
 echo "==========================================="
 
 if [ $TYPE -eq 2 ] ; then
@@ -282,7 +291,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
 # For Jekyll Now
 for INPUTBASENAME in database/*; do
   INPUTBASENAME=${INPUTBASENAME##*/} # Remove path up to last /
-  echo "Exporting $INPUTBASENAME to apps/$INPUTBASENAME.md for Jekyll"
+  # echo "Exporting $INPUTBASENAME to apps/$INPUTBASENAME.md for Jekyll"
   touch apps/$INPUTBASENAME.md
   echo "---" > apps/$INPUTBASENAME.md
   echo "layout: app" >> apps/$INPUTBASENAME.md
@@ -359,6 +368,14 @@ for INPUTBASENAME in database/*; do
     echo "appdata:" >> apps/$INPUTBASENAME.md
     cat database/$INPUTBASENAME/appdata.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
     rm database/$INPUTBASENAME/appdata.yaml
+  fi
+  # Add content of Electron package.json file
+  if [ -e database/$INPUTBASENAME/package.json ] ; then
+    dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml
+    echo "" >> apps/$INPUTBASENAME.md
+    echo "electron:" >> apps/$INPUTBASENAME.md
+    cat database/$INPUTBASENAME/package.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
+    rm database/$INPUTBASENAME/package.yaml
   fi
   echo "---" >> apps/$INPUTBASENAME.md
 done

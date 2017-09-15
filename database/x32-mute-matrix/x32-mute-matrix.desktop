@@ -1,13 +1,13 @@
 [Desktop Entry]
-Name=stretchly
-Comment=break time reminder app
+Name=X32 Mute Matrix
+Comment=See and configure the mute status of all your X32’s channels (on every mixbus) in one place.
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=stretchly
-X-AppImage-Version=0.11.0
-X-AppImage-BuildId=60c839b0-954b-11a7-223d-65875306659c
-Categories=Utility;
+Icon=x32-mute-matrix
+X-AppImage-Version=0.0.2.10
+X-AppImage-BuildId=fd19ecd0-91f1-11a7-3913-53c75033ffc3
+Categories=Audio;
 
 [AppImageHub]
 X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

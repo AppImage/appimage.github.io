@@ -1,13 +1,13 @@
 [Desktop Entry]
-Name=stretchly
-Comment=break time reminder app
+Name=EnvKey
+Comment=EnvKey’s cross-platform native app
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=stretchly
-X-AppImage-Version=0.11.0
-X-AppImage-BuildId=60c839b0-954b-11a7-223d-65875306659c
-Categories=Utility;
+Icon=envkey
+X-AppImage-Version=0.9.8
+X-AppImage-BuildId=e0d2f790-9982-11a7-1234-67d405dff61e
+Categories=Development;
 
 [AppImageHub]
 X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

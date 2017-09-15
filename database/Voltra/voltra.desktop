@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=stretchly
-Comment=break time reminder app
+Name=Voltra
+Comment=Voltra Co. Music Player
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=stretchly
-X-AppImage-Version=0.11.0
-X-AppImage-BuildId=60c839b0-954b-11a7-223d-65875306659c
+Icon=voltra
+X-AppImage-Version=3.1.4.578
+X-AppImage-BuildId=bad49460-8daa-11a7-1af1-7bb4c4dddd2a
 Categories=Utility;
 
 [AppImageHub]

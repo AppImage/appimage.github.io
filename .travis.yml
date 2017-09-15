@@ -8,8 +8,9 @@ env:
     - DISPLAY=:99
 
 script:
-  - sudo apt-get -qq -y install xmlstarlet xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 > /dev/null # appstream # TODO: Cache me!
+  - sudo apt-get -qq -y install desktop-file-utils xmlstarlet xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 > /dev/null # appstream # TODO: Cache me!
   - gem install dupervisor # To convert ini to yaml files
+  - npm install -g asar # to get pacakges.json from resources/app.asar for electron-builder applications
   - # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
   - mkdir $HOME/.icewm/
   - echo "ShowTaskBar = 0" > $HOME/.icewm/preferences

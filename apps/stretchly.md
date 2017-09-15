@@ -25,11 +25,22 @@ desktop:
     Terminal: false
     Type: Application
     Icon: stretchly
-    X-AppImage-Version: 0.10.0
-    X-AppImage-BuildId: a1f4cca0-84ed-11a7-37ef-2340c18ec62f
+    X-AppImage-Version: 0.11.0
+    X-AppImage-BuildId: 60c839b0-954b-11a7-223d-65875306659c
     Categories: Utility
   AppImageHub:
-    X-AppImage-UpdateInformation: false
+    X-AppImage-UpdateInformation: 
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
+
+electron:
+  main: main.js
+  repository:
+    type: git
+    url: git+https://github.com/hovancik/stretchly.git
+  author: Jan Hovancik <conta.srdr@gmail.com>
+  license: BSD-2-Clause
+  bugs:
+    url: https://github.com/hovancik/stretchly/issues
+  homepage: https://hovancik.net/stretchly
 ---
