@@ -25,8 +25,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: envkey
-    X-AppImage-Version: 0.9.6
-    X-AppImage-BuildId: 7ffe9120-9907-11a7-22ba-0983176f56d3
+    X-AppImage-Version: 0.9.8
+    X-AppImage-BuildId: e0d2f790-9982-11a7-1234-67d405dff61e
     Categories: Development
   AppImageHub:
     X-AppImage-UpdateInformation: 
@@ -39,6 +39,8 @@ electron:
   repository: https://github.com/envkey/envkey-ui
   license: MIT
   main: main.js
+  bin:
+    remove-releases: bin/remove_releases.js
   updater:
     url: https://raw.githubusercontent.com/envkey/envkey-ui/master/envkey-electron/updates.json
   dependencies:
