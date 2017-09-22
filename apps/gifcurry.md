@@ -3,9 +3,9 @@ layout: app
 
 permalink: /gifcurry/
 description: Open source video to GIF maker, written in Haskell, that allows overlaid text.
-
+license: BSD-3-Clause
 screenshots:
-  - gifcurry/screenshot.png
+- https://i.imgur.com/XLcD7fg.png
 
 authors:
   - name: lettier
@@ -33,4 +33,39 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+
+appdata:
+  Type: desktop-application
+  ID: org.lettier.gifcurry
+  Name:
+    C: Gifcurry
+  Summary:
+    C: Open source video to GIF maker, written in Haskell, that allows overlaid text.
+  ProjectLicense: BSD-3-Clause
+  Url:
+    homepage: https://github.com/lettier/gifcurry
+  Launchable:
+    desktop-id:
+    - gifcurry.desktop
+  Provides:
+    binaries:
+    - gifcurry_gui
+  Screenshots:
+  - default: true
+    caption:
+      C: The main Gifcurry window showing the video Big Buck Bunny produced by the Blender Foundation.
+    thumbnails: []
+    source-image:
+      url: https://i.imgur.com/XLcD7fg.png
+      width: 403
+      height: 467
+      lang: C
+  - caption:
+      C: The about Gifcurry window.
+    thumbnails: []
+    source-image:
+      url: https://i.imgur.com/5pZrB1f.png
+      width: 426
+      height: 600
+      lang: C
 ---
