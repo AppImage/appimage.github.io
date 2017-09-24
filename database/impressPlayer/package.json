@@ -1,0 +1,20 @@
+{
+  "name": "impressPlayer",
+  "version": "0.8.0",
+  "description": "Standalone impress.js presentations viewer and controller. Accepts html, markdown and specifically structured zip.",
+  "main": "main.js",
+  "repository": "https://github.com/matejmosko/gow",
+  "author": "Matej Moško",
+  "license": "CC0-1.0",
+  "postinstall": "install-app-deps",
+  "dependencies": {
+    "decompress-zip": "^0.3.0",
+    "electron-settings": "^3.1.1",
+    "fs": "0.0.1-security",
+    "i18n-2": "^0.7.1",
+    "markpress": "^4.0.0",
+    "mousetrap": "^1.6.1",
+    "mustache": "^2.3.0",
+    "xel": "0.0.48"
+  }
+}
