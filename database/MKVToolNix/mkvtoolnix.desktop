@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Name=MKVToolNix
+Name[sr]=Мкв-алатница
+GenericName=MKVToolNix GUI
+Comment=Matroska files creator and tools
+Comment[ca]=Eines i creador de fitxers Matroska
+Comment[de]=Matroska-Dateien erstellen und mit ihnen arbeiten
+Comment[es]=Creador de ficheros Matroska
+Comment[fr]=Créateur de fichiers Matroska
+Comment[sr]=Програм за стварање и обрађивање Матрошка датотека.
+Comment[zh_CN]=Matroska 文件创建器
+Comment[zh_TW]=Matroska 檔製作軟體
+Icon=mkvtoolnix
+Exec=launcher
+Terminal=false
+MimeType=application/x-mkvtoolnix-gui-settings;video/x-matroska;audio/x-matroska;
+Categories=AudioVideo;AudioVideoEditing;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
