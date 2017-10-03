@@ -260,7 +260,7 @@ fi
 
 # Get pacakge.json from resources/app.asar for electron-builder applications
 ASAR=$(find "$APPDIR" -name "app.asar" || true)
-PJ=$(find "$APPDIR" -name "package.json" || true)
+PJ=$(find "$APPDIR" -path "app/package.json" || true)
 if [ ! -z "$ASAR" ] ; then
   echo "Extracting package.json from app.asar"
   asar extract-file "$ASAR" package.json && mv package.json database/$INPUTBASENAME/
