@@ -1,6 +1,6 @@
 {
   "name": "impressPlayer",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Standalone impress.js presentations viewer and controller. Accepts html, markdown and specifically structured zip.",
   "main": "main.js",
   "repository": "https://github.com/matejmosko/gow",

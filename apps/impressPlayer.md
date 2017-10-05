@@ -26,8 +26,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: impressplayer
-    X-AppImage-Version: 0.8.0
-    X-AppImage-BuildId: 653dc500-a90f-11a7-0aad-c3b7bd0e963b
+    X-AppImage-Version: 0.8.2
+    X-AppImage-BuildId: e5b7f1c0-a9bd-11a7-3292-1b72297e9344
     Categories: Office
   AppImageHub:
     X-AppImage-UpdateInformation: 
