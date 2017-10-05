@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=dexter_dev_env
+Comment=Dexter Development Environment
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=dexter_dev_env
+X-AppImage-Version=2.1.4.150
+X-AppImage-BuildId=27a3f3f0-a891-11a7-2c7c-051d3d2cec01
+Categories=Development;Education;Robotics;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+# Dear upstream developer, please include a digital signature in your AppImage
+# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
+X-AppImage-Type=1
+# Dear upstream developer, please consider to switch to type 2
+# so that users can benefit from the additional features like digital embedded signatures
+# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
+# or use linuxdeployqt or appimagetool which produce type 2 automatically
+X-AppImage-Architecture=x86_64
