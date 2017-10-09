@@ -25,8 +25,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: dexter_dev_env
-    X-AppImage-Version: 2.1.4.150
-    X-AppImage-BuildId: 27a3f3f0-a891-11a7-2c7c-051d3d2cec01
+    X-AppImage-Version: 2.1.5.154
+    X-AppImage-BuildId: 52550f90-aa3e-11a7-3874-2598b84536db
     Categories: Development
   AppImageHub:
     X-AppImage-UpdateInformation: 
@@ -34,7 +34,7 @@ desktop:
     X-AppImage-Architecture: x86_64
 
 electron:
-  release_date: Oct 3, 2017
+  release_date: Oct 5, 2017
   description: Dexter Development Environment
   author: Fry
   license: GPL-3.0
