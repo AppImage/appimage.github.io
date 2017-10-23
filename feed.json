@@ -2,7 +2,7 @@
 layout: null
 ---
 {
-    "version": "1.0",
+    "version": 1,
     "home_page_url": "{{ "/" | absolute_url }}",
     "feed_url": "{{ "/feed.json" | absolute_url }}",
     "description": {{ site.description | jsonify }},
