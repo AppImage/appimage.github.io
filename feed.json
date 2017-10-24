@@ -1,0 +1,35 @@
+---
+layout: null
+---
+{
+    "version": 1,
+    "home_page_url": "{{ "/" | absolute_url }}",
+    "feed_url": "{{ "/feed.json" | absolute_url }}",
+    "description": {{ site.description | jsonify }},
+    "icon": "{{ "/apple-touch-icon.png" | absolute_url }}",
+    "favicon": "{{ "/favicon.ico" | absolute_url }}",
+    "expired": false,
+    {% if site.author %}
+    "author": {% if site.author.name %} {
+        "name": "{{ site.author.name }}",
+        "url": {% if site.author.url %}"{{ site.author.url }}"{% else %}null{% endif %},
+        "avatar": {% if site.author.avatar %}"{{ site.author.avatar }}"{% else %}null{% endif %}
+    },{% else %}"{{ site.author }}",{% endif %}
+    {% endif %}
+"items": [
+    {% assign sorted = site.pages | sort: 'permalink' %}
+    {% for post in sorted %}
+        {% if post.layout == 'app' && post.published != 'false' %}
+        {
+        "name": {% if post.title %}{{ post.title | jsonify }}{% else %}{{ post.name | remove: ".md" | jsonify  }}{% endif %},
+        "description": {{ post.desktop["Desktop Entry"].Comment | jsonify }},
+        "categories": [{{ post.desktop["Desktop Entry"].Categories | jsonify }}],
+        "authors" : {{ post.authors | jsonify }},
+        "licence" : {{ post.license | jsonify }},
+        "links": {{ post.links | jsonify }},
+        "screenshots" : {{ post.screenshots | jsonify }}
+        }{% if forloop.last == false %},{% endif %}
+        {% endif %}
+    {% endfor %}
+    ]
+}
