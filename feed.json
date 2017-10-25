@@ -25,7 +25,7 @@ layout: null
         "description": {{ post.desktop["Desktop Entry"].Comment | jsonify }},
         "categories": [{{ post.desktop["Desktop Entry"].Categories | jsonify }}],
         "authors" : {{ post.authors | jsonify }},
-        "licence" : {{ post.license | jsonify }},
+        "license" : {{ post.license | jsonify }},
         "links": {{ post.links | jsonify }},
         "screenshots" : {{ post.screenshots | jsonify }}
         }{% if forloop.last == false %},{% endif %}
