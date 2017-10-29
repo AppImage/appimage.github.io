@@ -37,11 +37,10 @@ As a format, AppImage is designed in a way that does not impose restrictions on 
 
 ## How to use
 
-Not just yet...
-
 App stores and software centers can consume the metadata collected by this project. See [AppImage ecosystem](https://github.com/AppImage/AppImageKit/wiki/Ecosystem). 
 
-Projects using this data
-* https://github.com/simoniz0r/spm
+Currently we are providing a JSON feed at https://appimage.github.io/feed.json. If you would like to use this data but need changes, please contact us on #AppImage at irc.freenode.net, so that we can discuss an output format that would serve your needs best. __PLEASE NOTE__ that the data output format is not finalized yet and is subject to change any time without prior notice, until we release a stable version of it.
 
-If you would like to use this data, please contact us first on #AppImage at irc.freenode.net, so that we can discuss an output format that would serve your needs best. __PLEASE NOTE__ that the data output formats are not finalized yet and are subject to change any time without prior notice, until we have officially supported output formats.
+Projects already using this data
+* https://github.com/simoniz0r/spm
+* Please contact us if you are using this data so that we can list your project here
