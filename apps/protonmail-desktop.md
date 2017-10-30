@@ -25,8 +25,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: protonmail-desktop
-    X-AppImage-Version: 0.5.1.268
-    X-AppImage-BuildId: e1b1f9a0-b1af-11a7-075b-c133862e5b20
+    X-AppImage-Version: 0.5.2.293
+    X-AppImage-BuildId: bfec72c0-bd10-11a7-0295-85cd568e0fb0
     Categories: Office
   AppImageHub:
     X-AppImage-UpdateInformation: 
@@ -34,7 +34,7 @@ desktop:
     X-AppImage-Architecture: x86_64
 
 electron:
-  version: 0.5.1
+  version: 0.5.2
   author:
     name: Matthew Core <matcore@protonmail.com>
     email: matcore@protonmail.com
@@ -53,11 +53,10 @@ electron:
     electron-dl: "^1.9.0"
     electron-settings: "^3.1.1"
     electron-tabs: "^0.7.0"
-    eslint: "^4.8.0"
     electron-updater: "^2.10.1"
+    eslint: "^4.8.0"
     fs-jetpack: "^1.2.0"
     gulp-sass: "^3.1.0"
     minimist: "^1.2.0"
-    open: 0.0.5
     sweetalert: "^1.1.3"
 ---

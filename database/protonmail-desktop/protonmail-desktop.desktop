@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=protonmail-desktop
-X-AppImage-Version=0.5.1.268
-X-AppImage-BuildId=e1b1f9a0-b1af-11a7-075b-c133862e5b20
+X-AppImage-Version=0.5.2.293
+X-AppImage-BuildId=bfec72c0-bd10-11a7-0295-85cd568e0fb0
 Categories=Office;
 
 [AppImageHub]
