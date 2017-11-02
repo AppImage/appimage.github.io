@@ -8,8 +8,14 @@ screenshots:
   - jaxx/screenshot.png
 
 authors:
+  - name: Jaxx-io
+    url: https://github.com/Jaxx-io
 
 links:
+  - type: GitHub
+    url: Jaxx-io/Jaxx
+  - type: Install
+    url: https://github.com/Jaxx-io/Jaxx/releases
 
 desktop:
   Desktop Entry:
@@ -19,8 +25,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: jaxx
-    X-AppImage-Version: 1.3.3
-    X-AppImage-BuildId: ba6c9ca0-b04d-11a7-38aa-1d4dcce1d1c1
+    X-AppImage-Version: 1.3.4
+    X-AppImage-BuildId: 2c908730-b506-11a7-0ed3-e15a5d8477f8
     Categories: Utility
   AppImageHub:
     X-AppImage-UpdateInformation: 
