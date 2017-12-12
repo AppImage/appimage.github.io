@@ -1,6 +1,6 @@
 {
-  "name": "Cumulonimbus",
-  "version": "1.6.7",
+  "name": "cumulonimbus",
+  "version": "1.7.0",
   "description": "A simple, beautiful podcast app.",
   "main": "main.js",
   "repository": {
@@ -10,7 +10,7 @@
   "author": {
     "name": "Zachary James Guard",
     "email": "zacharyguard@gmail.com",
-    "url": "zacharyguard.co.nf"
+    "url": "http://zacharyguard.co.nf"
   },
   "license": "Apache-2.0",
   "bugs": {
@@ -30,6 +30,8 @@
     "nodemailer-sendgrid-transport": "^0.2.0",
     "open": "^0.0.5",
     "request": "2.81.0",
+    "sha1": "^1.1.1",
+    "valid-url": "^1.0.9",
     "xml2js": "0.4.19"
   }
 }

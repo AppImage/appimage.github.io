@@ -20,14 +20,14 @@ links:
 
 desktop:
   Desktop Entry:
-    Name: Cumulonimbus
+    Name: cumulonimbus
     Comment: A simple, beautiful podcast app.
     Exec: AppRun
     Terminal: false
     Type: Application
     Icon: cumulonimbus
-    X-AppImage-Version: 1.6.7.40
-    X-AppImage-BuildId: a8b7b910-985e-11a7-383f-2560d7f732d6
+    X-AppImage-Version: 1.7.0.59
+    X-AppImage-BuildId: 3c228ae0-def5-11a7-0713-c32285fb1fa0
     Categories: Audio
   AppImageHub:
     X-AppImage-UpdateInformation: 
@@ -43,7 +43,7 @@ electron:
   author:
     name: Zachary James Guard
     email: zacharyguard@gmail.com
-    url: zacharyguard.co.nf
+    url: http://zacharyguard.co.nf
   license: Apache-2.0
   bugs:
     url: https://github.com/z-------------/cumulonimbus/issues
@@ -61,5 +61,7 @@ electron:
     nodemailer-sendgrid-transport: "^0.2.0"
     open: "^0.0.5"
     request: 2.81.0
+    sha1: "^1.1.1"
+    valid-url: "^1.0.9"
     xml2js: 0.4.19
 ---
