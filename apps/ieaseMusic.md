@@ -25,12 +25,14 @@ desktop:
     Terminal: false
     Type: Application
     Icon: iease-music
-    X-AppImage-Version: 1.0.1
-    X-AppImage-BuildId: c320cf20-b312-11a7-25a8-0df93c0d8341
+    X-AppImage-Version: 1.0.9
+    X-AppImage-BuildId: f9433f40-de85-11a7-2c0d-f9d26d154d4e
     Categories: Music
   AppImageHub:
-    X-AppImage-UpdateInformation: 
-    X-AppImage-Type: 1
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
 
 electron:
@@ -52,9 +54,11 @@ electron:
     debug: "^3.0.1"
     delegate: "^3.1.3"
     electron-json-storage: "^3.1.0"
+    electron-updater: "^2.17.3"
     electron-window-state: "^4.1.1"
     han: 0.0.7
     ionicons201: "^1.0.0"
+    libphonenumber-js: "^0.4.38"
     md5: "^2.2.1"
     mobx: "^3.2.2"
     mobx-react: "^4.2.2"
@@ -67,4 +71,7 @@ electron:
     react-router: "^3.0.5"
     react-scroll-horizontal: github:trazyn/react-scroll-horizontal#gh-pages
     request: "^2.81.0"
+    request-promise-native: "^1.0.5"
+    roboto-fontface: "^0.8.0"
+    simple-lastfm: "^1.0.5"
 ---
