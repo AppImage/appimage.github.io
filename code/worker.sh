@@ -283,6 +283,8 @@ echo "==========================================="
 echo "============ EXPORTING DATA ==============="
 echo "==========================================="
 
+set -x
+
 # Until https://github.com/ximion/appstream/issues/128 is solved
 sudo wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/appstreamcli-x86_64.AppImage"
 sudo chmod a+x appstreamcli-x86_64.AppImage
@@ -382,6 +384,8 @@ done
 
 # TODO: Convert the "database files" into whatever output formats we need to support
 # e.g., OCS for knsrc/Discover
+
+set +x
 
 echo ""
 echo "==========================================="
