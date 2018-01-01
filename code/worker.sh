@@ -90,6 +90,8 @@ fi
 if [ ! -f appdir-lint.sh ] ; then
   wget -c -q https://raw.githubusercontent.com/AppImage/AppImages/master/appdir-lint.sh https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist
 fi
+
+set -x
   
 # If we have a type 2 AppImage, then mount it using appimagetool (not using itself for security reasons)
 if [ $TYPE -eq 2 ] ; then
@@ -123,6 +125,8 @@ if [ $TYPE -eq 1 ] ; then
   UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null) || echo "Could not get update information from the AppImage"
   # later # sudo umount -l /mnt
 fi
+
+set +x
 
 TERMINAL=false
 grep -r Terminal=true "${APPDIR}"/*.desktop && TERMINAL=true
