@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=PacketSender
+Comment=Network utility for sending / receiving TCP, UDP, SSL
 Exec=PacketSender
 Icon=packetsender
 Categories=Network;
