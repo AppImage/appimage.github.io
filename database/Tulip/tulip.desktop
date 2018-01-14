@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Tulip
-Comment=A data visualization framework for analysis, drawing and visualization of very large graphs (up to a million of nodes and edges)
+Comment=A data visualization framework for analysis, drawing and visualization of very large graphs (up to a million nodes and edges)
 Type=Application
 Exec=tulip_perspective
 Icon=Tulip
