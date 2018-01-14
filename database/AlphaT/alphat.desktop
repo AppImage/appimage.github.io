@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=AlphaT
-Comment=文档翻译工具
+Comment=Document translation app powered by machine tranlation engines to help translate documents quickly and easily
 Exec=AppRun
 Terminal=false
 Type=Application
@@ -20,3 +20,5 @@ X-AppImage-Type=1
 # see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
 # or use linuxdeployqt or appimagetool which produce type 2 automatically
 X-AppImage-Architecture=x86_64
+# Can one put Chines as well as English comments into .desktop?
+# Original was: Comment=文档翻译工具
