@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /AzPainter/
+description: A full color painting software for illustration drawing
 
 screenshots:
   - AzPainter/screenshot.png
@@ -20,6 +21,7 @@ desktop:
   Desktop Entry:
     Type: Application
     Name: AzPainter
+    Comment: A full color painting software for illustration drawing
     Exec: azpainter %f
     Icon: azpainter
     Terminal: false
