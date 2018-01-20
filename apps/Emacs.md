@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: probonopd/Emacs.AppImage
-  - type: Install
+  - type: Download
     url: https://github.com/probonopd/Emacs.AppImage/releases
 
 desktop:

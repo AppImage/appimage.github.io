@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=GitHoard
+Comment=Hoard git repositories with ease
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=githoard
+X-AppImage-Version=0.3.4.10
+X-AppImage-BuildId=1c6a1da0-a5f0-11a7-2e11-1126c17da5f6
+Categories=Development;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+# Dear upstream developer, please include a digital signature in your AppImage
+# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
+X-AppImage-Type=1
+# Dear upstream developer, please consider to switch to type 2
+# so that users can benefit from the additional features like digital embedded signatures
+# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
+# or use linuxdeployqt or appimagetool which produce type 2 automatically
+X-AppImage-Architecture=x86_64
