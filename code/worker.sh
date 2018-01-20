@@ -343,6 +343,7 @@ for INPUTBASENAME in database/*; do
   echo "authors:" >> apps/$INPUTBASENAME.md
   GH_USER=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
   GH_REPO=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
+  OBS_USER=$(grep "^http.*://download.opensuse.org/repositories/home:/" data/$INPUTBASENAME | cut -d "/" -f 6)
   if [  x"$GH_USER" == x"" ] ; then
     GH_USER=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
     GH_REPO=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 6 )
@@ -350,6 +351,9 @@ for INPUTBASENAME in database/*; do
   if [  x"$GH_USER" != x"" ] ; then
     echo "  - name: $GH_USER" >> apps/$INPUTBASENAME.md
     echo "    url: https://github.com/$GH_USER" >> apps/$INPUTBASENAME.md
+  elif [  x"$OBS_USER" != x"" ] ; then
+    echo "  - name: $OBS_USER" >> apps/$INPUTBASENAME.md
+    echo "    url: https://build.opensuse.org/user/show/$OBS_USER" >> apps/$INPUTBASENAME.md
   fi
   # Links
   echo "" >> apps/$INPUTBASENAME.md
@@ -359,6 +363,11 @@ for INPUTBASENAME in database/*; do
     echo "    url: $GH_USER/$GH_REPO" >> apps/$INPUTBASENAME.md
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: https://github.com/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
+  fi
+  OBS_LINK=$(grep "^http.*://download.opensuse.org.*latest.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g')
+  if [  x"$OBS_LINK" != x"" ] ; then
+    echo "  - type: Download" >> apps/$INPUTBASENAME.md
+    echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
   fi
   # Add content of desktop file
   if [ -e database/$INPUTBASENAME/*.desktop ] ; then
