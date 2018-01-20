@@ -357,7 +357,7 @@ for INPUTBASENAME in database/*; do
   if [  x"$GH_USER" != x"" ] ; then
     echo "  - type: GitHub" >> apps/$INPUTBASENAME.md
     echo "    url: $GH_USER/$GH_REPO" >> apps/$INPUTBASENAME.md
-    echo "  - type: Install" >> apps/$INPUTBASENAME.md
+    echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: https://github.com/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
   fi
   # Add content of desktop file

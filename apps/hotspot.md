@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: KDAB/hotspot
-  - type: Install
+  - type: Download
     url: https://github.com/KDAB/hotspot/releases
 
 desktop:

@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: bitshares/bitshares-ui
-  - type: Install
+  - type: Download
     url: https://github.com/bitshares/bitshares-ui/releases
 
 desktop:

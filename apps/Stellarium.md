@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Stellarium/stellarium
-  - type: Install
+  - type: Download
     url: https://github.com/Stellarium/stellarium/releases
 
 desktop:

@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: bhavyaagg/Invoice-Generator-Electron
-  - type: Install
+  - type: Download
     url: https://github.com/bhavyaagg/Invoice-Generator-Electron/releases
 
 desktop:

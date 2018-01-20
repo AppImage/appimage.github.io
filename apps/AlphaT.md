@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: sigoden/alphat
-  - type: Install
+  - type: Download
     url: https://github.com/sigoden/alphat/releases
 
 desktop:

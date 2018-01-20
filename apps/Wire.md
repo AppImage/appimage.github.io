@@ -11,7 +11,7 @@ authors:
 links:
   - type: GitHub
     url: wireapp/wire-desktop
-  - type: Install
+  - type: Download
     url: https://github.com/wireapp/wire-desktop/releases
 
 desktop:

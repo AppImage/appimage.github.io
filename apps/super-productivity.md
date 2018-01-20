@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: johannesjo/super-productivity
-  - type: Install
+  - type: Download
     url: https://github.com/johannesjo/super-productivity/releases
 
 desktop:

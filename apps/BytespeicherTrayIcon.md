@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: Bytespeicher/BytespeicherTrayIcon
-  - type: Install
+  - type: Download
     url: https://github.com/Bytespeicher/BytespeicherTrayIcon/releases
 
 desktop:

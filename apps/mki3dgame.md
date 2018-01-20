@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: mki1967/mki3dgame
-  - type: Install
+  - type: Download
     url: https://github.com/mki1967/mki3dgame/releases
 
 desktop:

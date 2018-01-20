@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Symbian9/azpainter
-  - type: Install
+  - type: Download
     url: https://github.com/Symbian9/azpainter/releases
 
 desktop:

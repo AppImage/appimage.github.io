@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: JvanKatwijk/qt-dab
-  - type: Install
+  - type: Download
     url: https://github.com/JvanKatwijk/qt-dab/releases
 
 desktop:

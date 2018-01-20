@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: radareorg/cutter
-  - type: Install
+  - type: Download
     url: https://github.com/radareorg/cutter/releases
 
 desktop:

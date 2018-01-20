@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: lutzroeder/Netron
-  - type: Install
+  - type: Download
     url: https://github.com/lutzroeder/Netron/releases
 
 desktop:

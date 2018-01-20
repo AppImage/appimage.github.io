@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: Microsoft/BotFramework-Emulator
-  - type: Install
+  - type: Download
     url: https://github.com/Microsoft/BotFramework-Emulator/releases
 
 desktop:

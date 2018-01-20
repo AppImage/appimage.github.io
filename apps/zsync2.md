@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: TheAssassin/zsync2
-  - type: Install
+  - type: Download
     url: https://github.com/TheAssassin/zsync2/releases
 
 desktop:

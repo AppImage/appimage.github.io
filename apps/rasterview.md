@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: KurtPfeifle/rasterview
-  - type: Install
+  - type: Download
     url: https://github.com/KurtPfeifle/rasterview/releases
 
 desktop:
