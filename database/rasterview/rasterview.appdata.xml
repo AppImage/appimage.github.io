@@ -20,13 +20,15 @@
   <url type="bugtracker">https://github.com/michaelrsweet/rasterview/issues</url>
   <url type="help">http://michaelrsweet.github.io/rasterview/rasterview.html</url>
   <url type="homepage">http://michaelrsweet.github.io/rasterview/index.html</url>
-  <!--
   <screenshots>
     <screenshot type="default">
-      <caption></caption>
-      <image height="630" width="1120"></image>
+      <caption>RasterView document window with 'Page Attributes' panel enabled</caption>
+      <image height="833" width="918">https://camo.githubusercontent.com/d9ee2c210f6b2549c396353936614ab995802b61/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f6f646d4d722e706e67</image>
+    </screenshot>
+    <screenshot>
+      <caption>RasterView 'help' window</caption>
+      <image height="584" width="822">https://camo.githubusercontent.com/112056a0fbe9fc9cd44c9b9a01eed24ae339f1c0/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f5651635a682e706e67</image>
     </screenshot>
   </screenshots>
-  -->
   <update_contact>michael.r.sweet@gmail.com</update_contact>
 </component>

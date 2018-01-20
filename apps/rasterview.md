@@ -4,6 +4,8 @@ layout: app
 permalink: /rasterview/
 description: Raster Viewer for CUPS-Raster, Apple-Raster and PWG-Raster
 license: GPL-2
+screenshots:
+- https://camo.githubusercontent.com/d9ee2c210f6b2549c396353936614ab995802b61/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f6f646d4d722e706e67
 
 authors:
   - name: KurtPfeifle
@@ -27,7 +29,7 @@ desktop:
     Type: Application
     Terminal: false
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|KurtPfeifle|RasterView|continuous|RasterView-*x86_64.AppImage.zsync
+    X-AppImage-UpdateInformation: gh-releases-zsync|KurtPfeifle|rasterview|continuous|rasterview-*x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
@@ -57,4 +59,22 @@ appdata:
     bugtracker: https://github.com/michaelrsweet/rasterview/issues
     homepage: http://michaelrsweet.github.io/rasterview/index.html
     help: http://michaelrsweet.github.io/rasterview/rasterview.html
+  Screenshots:
+  - default: true
+    caption:
+      C: RasterView document window with 'Page Attributes' panel enabled
+    thumbnails: []
+    source-image:
+      url: https://camo.githubusercontent.com/d9ee2c210f6b2549c396353936614ab995802b61/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f6f646d4d722e706e67
+      width: 918
+      height: 833
+      lang: C
+  - caption:
+      C: RasterView 'help' window
+    thumbnails: []
+    source-image:
+      url: https://camo.githubusercontent.com/112056a0fbe9fc9cd44c9b9a01eed24ae339f1c0/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f5651635a682e706e67
+      width: 822
+      height: 584
+      lang: C
 ---
