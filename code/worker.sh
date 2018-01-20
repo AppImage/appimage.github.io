@@ -343,7 +343,7 @@ for INPUTBASENAME in database/*; do
   echo "authors:" >> apps/$INPUTBASENAME.md
   GH_USER=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
   GH_REPO=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
-  OBS_USER=$(grep "^http.*://download.opensuse.org/repositories/home:/" data/$INPUTBASENAME | cut -d "/" -f 6)
+  OBS_USER=$(grep "^http.*://download.opensuse.org/repositories/home:/" data/$INPUTBASENAME | cut -d "/" -f 6 | sed -e 's|:||g')
   if [  x"$GH_USER" == x"" ] ; then
     GH_USER=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
     GH_REPO=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 6 )
