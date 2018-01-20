@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Cozy Drive
+Comment=Save them safely in your open source personal cloud, access them anywhere, anytime with the mobile application and share them with the world or just your friends and colleagues. You can host your own Cozy Cloud, and or use the hosting services. Your freedom to chose is why you can trust us.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=cozydrive
+X-AppImage-Version=3.4.2-beta.4.4513
+X-AppImage-BuildId=e4950840-fd51-11a7-2b77-95a3cff6b30a
+StartupNotify=true
+Categories=Network;FileTransfer;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=AGPL-3.0
