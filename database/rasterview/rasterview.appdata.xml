@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>rasterview.desktop</id>
+  <name>RasterView</name>
+  <summary>Raster Viewer for CUPS-Raster, Apple-Raster and PWG-Raster</summary>
+  <developer_name>Michael R. Sweet</developer_name>
+  <description>
+  <p>
+      RasterView is a CUPS, PWG, and Apple raster file viewing application.
+  </p>
+  <p>
+      It basically allows you to visually evaluate raster data produced by any of the standard CUPS RIP filters (cgpdftoraster, imagetoraster, pdftoraster and pstoraster). It is normally used to either test those filters or look at the data that is being sent to your raster printer driver.
+  </p>
+  <p>
+      RasterView is provided as free software under version 2 of the GNU General Public license.
+  </p>
+</description>
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-2</project_license>
+  <url type="bugtracker">https://github.com/michaelrsweet/rasterview/issues</url>
+  <url type="help">http://michaelrsweet.github.io/rasterview/rasterview.html</url>
+  <url type="homepage">http://michaelrsweet.github.io/rasterview/index.html</url>
+  <!--
+  <screenshots>
+    <screenshot type="default">
+      <caption></caption>
+      <image height="630" width="1120"></image>
+    </screenshot>
+  </screenshots>
+  -->
+  <update_contact>michael.r.sweet@gmail.com</update_contact>
+</component>
