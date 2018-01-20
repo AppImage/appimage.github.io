@@ -8,8 +8,12 @@ screenshots:
   - OpenSCAD/screenshot.png
 
 authors:
+  - name: t-paul
+    url: https://build.opensuse.org/user/show/t-paul
 
 links:
+  - type: Download
+    url: https://download.opensuse.org/repositories/home:/t-paul/AppImage/OpenSCAD-latest-x86_64.AppImage.mirrorlist
 
 desktop:
   Desktop Entry:

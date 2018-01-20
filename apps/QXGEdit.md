@@ -8,8 +8,12 @@ screenshots:
 - http://qxgedit.sourceforge.net/image/qxgedit-screenshot2.png
 
 authors:
+  - name: rncbc
+    url: https://build.opensuse.org/user/show/rncbc
 
 links:
+  - type: Download
+    url: https://download.opensuse.org/repositories/home:/rncbc/AppImage/qxgedit-latest-x86_64.AppImage.mirrorlist
 
 desktop:
   Desktop Entry:

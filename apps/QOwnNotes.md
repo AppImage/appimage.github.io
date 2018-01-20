@@ -8,8 +8,12 @@ screenshots:
   - QOwnNotes/screenshot.png
 
 authors:
+  - name: pbek:
+    url: https://build.opensuse.org/user/show/pbek:
 
 links:
+  - type: Download
+    url: https://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/AppImage/QOwnNotes-latest-x86_64.AppImage.mirrorlist
 
 desktop:
   Desktop Entry:
