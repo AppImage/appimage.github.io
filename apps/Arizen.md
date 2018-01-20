@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: ZencashOfficial/arizen
-  - type: Install
+  - type: Download
     url: https://github.com/ZencashOfficial/arizen/releases
 
 desktop:
