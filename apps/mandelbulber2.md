@@ -8,8 +8,8 @@ screenshots:
   - mandelbulber2/screenshot.png
 
 authors:
-  - name: lachs0r:
-    url: https://build.opensuse.org/user/show/lachs0r:
+  - name: lachs0r
+    url: https://build.opensuse.org/user/show/lachs0r
 
 links:
   - type: Download

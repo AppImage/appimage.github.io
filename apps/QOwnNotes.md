@@ -8,8 +8,8 @@ screenshots:
   - QOwnNotes/screenshot.png
 
 authors:
-  - name: pbek:
-    url: https://build.opensuse.org/user/show/pbek:
+  - name: pbek
+    url: https://build.opensuse.org/user/show/pbek
 
 links:
   - type: Download
