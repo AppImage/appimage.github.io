@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: anthonyraymond/joal-desktop
-  - type: Install
+  - type: Download
     url: https://github.com/anthonyraymond/joal-desktop/releases
 
 desktop:
