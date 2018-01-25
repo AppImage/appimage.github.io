@@ -1,12 +1,12 @@
 ---
 layout: app
 
-permalink: /quentier/
+permalink: /Quentier/
 description: Note taking app integrated with Evernote
 license: GPL-3.0
 
 screenshots:
-  - quentier/screenshot.png
+  - Quentier/screenshot.png
 
 authors:
   - name: d1vanov
