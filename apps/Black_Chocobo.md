@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: sithlord48/blackchocobo
-  - type: Install
+  - type: Download
     url: https://github.com/sithlord48/blackchocobo/releases
 
 desktop:

@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: ridaamirini/ImapSyncClient
-  - type: Install
+  - type: Download
     url: https://github.com/ridaamirini/ImapSyncClient/releases
 
 desktop:

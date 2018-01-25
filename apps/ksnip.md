@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: DamirPorobic/ksnip
-  - type: Install
+  - type: Download
     url: https://github.com/DamirPorobic/ksnip/releases
 
 desktop:

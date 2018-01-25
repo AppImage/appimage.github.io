@@ -9,14 +9,8 @@ screenshots:
   - quentier/screenshot.png
 
 authors:
-  - name: d1vanov
-    url: https://github.com/d1vanov
 
 links:
-  - type: GitHub
-    url: d1vanov/quentier
-  - type: Install
-    url: https://github.com/d1vanov/quentier/releases
 
 desktop:
   Desktop Entry:

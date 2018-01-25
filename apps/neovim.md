@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: neovim/neovim
-  - type: Install
+  - type: Download
     url: https://github.com/neovim/neovim/releases
 
 desktop:

@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: notepadqq/notepadqq
-  - type: Install
+  - type: Download
     url: https://github.com/notepadqq/notepadqq/releases
 
 desktop:

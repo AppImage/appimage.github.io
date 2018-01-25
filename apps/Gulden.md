@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Gulden/gulden-official
-  - type: Install
+  - type: Download
     url: https://github.com/Gulden/gulden-official/releases
 
 desktop:

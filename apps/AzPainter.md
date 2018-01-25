@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /AzPainter/
+description: A full color painting software for illustration drawing
 
 screenshots:
   - AzPainter/screenshot.png
@@ -13,13 +14,14 @@ authors:
 links:
   - type: GitHub
     url: Symbian9/azpainter
-  - type: Install
+  - type: Download
     url: https://github.com/Symbian9/azpainter/releases
 
 desktop:
   Desktop Entry:
     Type: Application
     Name: AzPainter
+    Comment: A full color painting software for illustration drawing
     Exec: azpainter %f
     Icon: azpainter
     Terminal: false

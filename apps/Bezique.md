@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Sriep/Bezique
-  - type: Install
+  - type: Download
     url: https://github.com/Sriep/Bezique/releases
 
 desktop:
