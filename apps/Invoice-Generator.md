@@ -11,6 +11,8 @@ screenshots:
 authors:
   - name: bhavyaagg
     url: https://github.com/bhavyaagg
+  - name: nimit96
+    url: https://github.com/nimit95
 
 links:
   - type: GitHub
@@ -46,7 +48,7 @@ electron:
   repository:
     type: git
     url: git+https://github.com/bhavyaagg/Invoice-Generator-Electron.git
-  author: bhavyaagg <bhavyaaggarwal1209@gmail.com>
+  author: bhavyaagg <bhavyaaggarwal1209@gmail.com>, nimit95 <nimitagg95@gmail.com>
   license: ISC
   homepage: https://github.com/bhavyaagg/Invoice-Generator-Electron#readme
   dependencies:
