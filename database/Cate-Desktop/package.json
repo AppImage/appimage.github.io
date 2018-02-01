@@ -1,0 +1,32 @@
+{
+  "name": "cate-desktop",
+  "productName": "Cate Desktop",
+  "version": "1.0.0",
+  "description": "A graphical user interface for the ESA CCI Toolbox (Cate)",
+  "main": "main.js",
+  "author": "CCI Toolbox (Cate) Development Team",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@blueprintjs/core": "^1.26.0",
+    "@blueprintjs/datetime": "^1.21.0",
+    "@blueprintjs/table": "^1.23.0",
+    "cesium": "^1.34.0",
+    "classnames": "^2.2.5",
+    "d3": "^3.5.17",
+    "deep-equal": "^1.0.1",
+    "electron-devtools-installer": "^2.2.0",
+    "oboe": "^2.1.3",
+    "openlayers": "^4.2.0",
+    "proj4": "^2.4.3",
+    "react": "^15.6.1",
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "reselect": "^2.5.4",
+    "semver": "^5.3.0"
+  }
+}

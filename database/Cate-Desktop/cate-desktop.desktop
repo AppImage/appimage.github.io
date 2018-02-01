@@ -1,0 +1,22 @@
+[Desktop Entry]
+Name=Cate Desktop
+Comment=A graphical user interface for the ESA CCI Toolbox (Cate)
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=cate-desktop
+X-AppImage-Version=1.0.0.98
+X-AppImage-BuildId=c2954d10-ade5-11a7-2573-af9663b004c1
+Categories=Science;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+# Dear upstream developer, please include a digital signature in your AppImage
+# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
+X-AppImage-Type=1
+# Dear upstream developer, please consider to switch to type 2
+# so that users can benefit from the additional features like digital embedded signatures
+# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
+# or use linuxdeployqt or appimagetool which produce type 2 automatically
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT
