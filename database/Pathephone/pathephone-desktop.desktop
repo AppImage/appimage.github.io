@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=pathephone-desktop
-X-AppImage-Version=1.0.0.385
-X-AppImage-BuildId=ea042e70-0754-11a8-252d-b3d05d05d717
+X-AppImage-Version=0.4.0.425
+X-AppImage-BuildId=78a9f110-0871-11a8-0a93-7fc706135a4d
 Categories=Audio;
 
 [AppImageHub]

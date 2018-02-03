@@ -26,8 +26,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: pathephone-desktop
-    X-AppImage-Version: 1.0.0.385
-    X-AppImage-BuildId: ea042e70-0754-11a8-252d-b3d05d05d717
+    X-AppImage-Version: 0.4.0.425
+    X-AppImage-BuildId: 78a9f110-0871-11a8-0a93-7fc706135a4d
     Categories: Audio
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -38,7 +38,7 @@ desktop:
     X-AppImage-Payload-License: MIT
 
 electron:
-  version: 1.0.0
+  version: 0.4.0
   private: true
   author: Maxim Ilyin <negamaxi@gmail.com>
   copyright: Copyright © 2018 Maxim Ilyin
@@ -79,17 +79,16 @@ electron:
     pump: "^1.0.3"
     qs: "^6.5.1"
     react: "^16.1.1"
-    react-audio-player: "^0.6.2"
     react-dom: "^16.1.1"
     react-icons: "^2.2.7"
     react-toggle-view: "^1.0.0"
     recall-action: "^1.0.0"
     rxdb: "^7.0.1"
     rxjs: "^5.5.2"
-    semantic-ui-react: "^0.76.0"
     streamifier: "^0.1.1"
     tar-stream: "^1.5.5"
     targz: "^1.0.1"
     through2: "^2.0.3"
     unzip: "^0.1.11"
+    util.promisify: "^1.0.0"
 ---
