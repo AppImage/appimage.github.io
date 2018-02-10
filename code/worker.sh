@@ -3,21 +3,21 @@
 URL=$(cat $1 | head -n 1)
 echo $URL
 
-if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
+if [ x"$TRAVIS_PULL_REQUEST" == xfalse ] ; then
   git checkout "$TRAVIS_BRANCH"
 fi
 
 INPUTBASENAME=$(basename $1)
 
 # Check if $URL starts with "http", otherwise exit
-if [ x${URL:0:4} != xhttp ] ; then
+if [ x"${URL:0:4}" != xhttp ] ; then
   echo "No http link detected in $1"
   exit 1
 fi
 
 # If the URL begins with https://github.com, then treat it specially
 # https://github.com/egoist/devdocs-desktop/
-if [ x"${URL:0:18}" == x"https://github.com" ] && [[ ${URL} != *"download"* ]] ; then # do not redirect direct links
+if [ x"${URL:0:18}" == x"https://github.com" ] && [[ "${URL}" != *"download"* ]] ; then # do not redirect direct links
   echo "GitHub URL detected"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
@@ -61,23 +61,23 @@ TYPE=""
 ARCHITECTURE=$(file "$FILENAME" | cut -d "," -f 2 | xargs | sed -e 's|-|_|g' )
 echo $ARCHCITECTURE # TODO: Normalize
 MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4 2>/dev/null)
-if [ -z $MAGIC ] ; then
+if [ -z "$MAGIC" ] ; then
   echo "Magic number not detected. Dear upstream, please consider to add one to the AppImage as per"
   echo "https://github.com/AppImage/AppImageSpec/blob/master/draft.md"
   ELFMAGIC=$(dd if="$FILENAME" bs=1 skip=0 count=4  2>/dev/null)
-  if [ x$ELFMAGIC == x$(echo -ne "\x7f\x45\x4c\x46") ] ; then
+  if [ x"$ELFMAGIC" == x$(echo -ne "\x7f\x45\x4c\x46") ] ; then
     echo "ELF file detected"
     ISOMAGIC=$(dd if="$FILENAME" bs=1 skip=32769 count=5 2>/dev/null)
-    if [ x$ISOMAGIC == x$(echo -ne "CD001") ] ; then
+    if [ x"$ISOMAGIC" == x$(echo -ne "CD001") ] ; then
       echo "ISO9660 file detected"
       echo "Hence assuming AppImage type 1"
       TYPE=1
     fi
   fi
-elif [ x$MAGIC == x$(echo -ne "\x41\x49\x02") ] ; then
+elif [ x"$MAGIC" == x$(echo -ne "\x41\x49\x02") ] ; then
   echo "AppImage type 2 detected"
   TYPE=2
-elif [ x$MAGIC == x$(echo -ne "\x41\x49\x01") ] ; then
+elif [ x"$MAGIC" == x$(echo -ne "\x41\x49\x01") ] ; then
   echo "AppImage type 1 detected"
   TYPE=1
 else
@@ -94,7 +94,7 @@ fi
 set -x
   
 # If we have a type 2 AppImage, then mount it using appimagetool (not using itself for security reasons)
-if [ x$TYPE == x2 ] ; then
+if [ x"$TYPE" == x2 ] ; then
   if [ ! -e appimagetool-x86_64.AppImage ] ; then
     wget -c -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
     chmod +x appimagetool*
@@ -115,7 +115,7 @@ if [ x$TYPE == x2 ] ; then
 fi
 
 # If we have a type 1 AppImage, then loop-mount it (not using itself for security reasons)
-if [ x$TYPE == x1 ] ; then
+if [ x"$TYPE" == x1 ] ; then
   # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
   sudo mount "$FILENAME" -o ro,loop /mnt
   APPDIR=/mnt
@@ -149,7 +149,7 @@ echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
 # reset does not work here
-if [ x"$TERMINAL" == x"false" ] ; then
+if [ x"$TERMINAL" == xfalse ] ; then
   firejail --noprofile --net=none --appimage ./"$FILENAME" &
 else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
@@ -180,12 +180,12 @@ sleep 2
 
 # We could simulate X11 keyboard/mouse input with xdotool here if needed;
 # of course this should not be hardcoded here (this is just an example)
-if [ x"$INPUTBASENAME" == x"VLC" ] ; then
+if [ x"$INPUTBASENAME" == xVLC ] ; then
   xdotool sleep 0.1 key Return # Click away the data protection window
   xdotool sleep 0.1 key shift+F1 # Open the about screen
   sleep 1
 fi
-if [ x"$INPUTBASENAME" == x"Subsurface" ] ; then
+if [ x"$INPUTBASENAME" == xSubsurface ] ; then
   xdotool sleep 0.1 key Escape # Click away the update check window
   sleep 1
   # Get a list of open windows
@@ -233,7 +233,7 @@ else
   echo "# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage" >> "$DATAFILE"
 fi
 
-if [ x"1" == x"$TYPE" ] ; then
+if [ x1 == x"$TYPE" ] ; then
   echo "X-AppImage-Type=1" >> "$DATAFILE"
   echo "# Dear upstream developer, please consider to switch to type 2" >> "$DATAFILE"
   echo "# so that users can benefit from the additional features like digital embedded signatures" >> "$DATAFILE"
@@ -241,7 +241,7 @@ if [ x"1" == x"$TYPE" ] ; then
   echo "# or use linuxdeployqt or appimagetool which produce type 2 automatically" >> "$DATAFILE"
 fi
 
-if [ x"2" == x"$TYPE" ] ; then
+if [ x2 == x"$TYPE" ] ; then
   echo "X-AppImage-Type=2" >> "$DATAFILE"
 fi
 
@@ -275,10 +275,10 @@ fi
 
 echo "==========================================="
 
-if [ x$TYPE == x2 ] ; then
+if [ x"$TYPE" == x2 ] ; then
   kill $PID # fuse
 fi
-if [ x$TYPE == x1 ] ; then
+if [ x"$TYPE" == x1 ] ; then
   sudo umount -l /mnt
 fi
 
