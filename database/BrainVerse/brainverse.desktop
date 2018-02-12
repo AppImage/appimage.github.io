@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=brainverse
-X-AppImage-Version=0.0.2
-X-AppImage-BuildId=dac1cfd0-0b64-11a8-19c7-bd700046c53f
+X-AppImage-Version=0.0.3
+X-AppImage-BuildId=35d81610-101d-11a8-2052-0d08596f84ff
 Categories=Education;
 
 [AppImageHub]

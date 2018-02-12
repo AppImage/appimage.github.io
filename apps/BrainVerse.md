@@ -25,8 +25,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: brainverse
-    X-AppImage-Version: 0.0.2
-    X-AppImage-BuildId: dac1cfd0-0b64-11a8-19c7-bd700046c53f
+    X-AppImage-Version: 0.0.3
+    X-AppImage-BuildId: 35d81610-101d-11a8-2052-0d08596f84ff
     Categories: Education
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -47,6 +47,7 @@ electron:
     connect-flash: "^0.1.1"
     cookie-parser: "^1.4.3"
     csv: "^1.1.0"
+    electron-debug: "^1.5.0"
     express: "^4.14.1"
     express-fileupload: "^0.1.1"
     express-flash: 0.0.2
