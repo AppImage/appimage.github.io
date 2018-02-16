@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: cgarry/ser-player
-  - type: Install
+  - type: Download
     url: https://github.com/cgarry/ser-player/releases
 
 desktop:
