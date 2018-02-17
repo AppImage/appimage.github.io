@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: aferrero2707/gimp-appimage
-  - type: Install
+  - type: Download
     url: https://github.com/aferrero2707/gimp-appimage/releases
 
 desktop:
