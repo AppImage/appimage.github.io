@@ -1,0 +1,67 @@
+---
+layout: app
+
+permalink: /nRF_Connect/
+description: nRF Connect for PC
+
+screenshots:
+  - nRF_Connect/screenshot.png
+
+authors:
+  - name: NordicSemiconductor
+    url: https://github.com/NordicSemiconductor
+
+links:
+  - type: GitHub
+    url: NordicSemiconductor/pc-nrfconnect-core
+  - type: Download
+    url: https://github.com/NordicSemiconductor/pc-nrfconnect-core/releases
+
+desktop:
+  Desktop Entry:
+    Name: nRF Connect
+    Comment: nRF Connect for PC
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: nrfconnect
+    X-AppImage-Version: 2.3.0-alpha.6
+    X-AppImage-BuildId: 6f425180-0295-11a8-0be2-e36f47400586
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+
+electron:
+  repository:
+    type: git
+    url: https://github.com/NordicSemiconductor/pc-nrfconnect-core.git
+  main: index.js
+  author: Nordic Semiconductor ASA
+  license: Proprietary
+  dependencies:
+    chmodr: 1.0.2
+    electron-builder-http: 18.5.1
+    electron-log: 2.2.6
+    electron-updater: 2.18.2
+    fs-extra: 4.0.1
+    mustache: 2.3.0
+    pc-ble-driver-js: 2.3.0
+    pc-nrfjprog-js: 1.2.0
+    png2icons: 0.9.1
+    semver: 5.3.0
+    serialport: 4.0.7
+    shasum: 1.0.2
+    targz: 1.0.1
+    usb: 1.3.1
+    yargs: 8.0.1
+  jest:
+    moduleNameMapper:
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$": "<rootDir>/mocks/fileMock.js"
+      "\\.(css|less)$": "<rootDir>/mocks/styleMock.js"
+      electron: "<rootDir>/mocks/electronMock.js"
+      pc-nrfjprog-js: "<rootDir>/mocks/nrfjprogjsMock.js"
+---
