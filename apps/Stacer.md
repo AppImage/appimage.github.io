@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: oguzhaninan/Stacer
-  - type: Install
+  - type: Download
     url: https://github.com/oguzhaninan/Stacer/releases
 
 desktop:

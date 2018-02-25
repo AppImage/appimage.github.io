@@ -1,0 +1,19 @@
+{
+  "name": "parolu",
+  "version": "1.6.11",
+  "description": "Cloud project management software for centralized and efficient collaboration on projects and documents.",
+  "main": "main.js",
+  "author": {
+    "name": "parolu UG (haftungsbeschränkt)",
+    "email": "info@parolu.io",
+    "url": "https://www.parolu.io"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "electron-debug": "^1.4.0",
+    "electron-google-oauth": "^2.0.0",
+    "electron-log": "^2.2.12",
+    "electron-updater": "^2.17.6",
+    "electron-window-state": "^4.1.1"
+  }
+}

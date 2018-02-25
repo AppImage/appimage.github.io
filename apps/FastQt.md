@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: labsquare/fastQt
-  - type: Install
+  - type: Download
     url: https://github.com/labsquare/fastQt/releases
 
 desktop:
