@@ -32,6 +32,7 @@ desktop:
       key ID 98012C7E Can''t check signature: No public key'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: Apache-2.0
 
 appdata:
   Type: generic
