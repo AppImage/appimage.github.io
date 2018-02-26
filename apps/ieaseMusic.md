@@ -3,6 +3,7 @@ layout: app
 
 permalink: /ieaseMusic/
 description: 这应该是最好的网易云音乐播放器了，没有之一，如果有请打醒 🤘
+license: MIT
 
 screenshots:
   - ieaseMusic/screenshot.png
@@ -14,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: trazyn/ieaseMusic
-  - type: Install
+  - type: Download
     url: https://github.com/trazyn/ieaseMusic/releases
 
 desktop:
@@ -25,8 +26,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: iease-music
-    X-AppImage-Version: 1.0.9
-    X-AppImage-BuildId: f9433f40-de85-11a7-2c0d-f9d26d154d4e
+    X-AppImage-Version: 1.1.3
+    X-AppImage-BuildId: 6897eb20-0596-11a8-05da-279afc969cc9
     Categories: Music
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -34,6 +35,7 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
 
 electron:
   main: main.js
@@ -46,19 +48,19 @@ electron:
     type: git
     url: https://github.com/trazyn/ieaseMusic.git
   dependencies:
-    apicache: "^0.11.2"
-    axios: "^0.16.2"
+    apicache: "^1.2.0"
+    axios: "^0.17.1"
     big-integer: "^1.6.25"
     classname: 0.0.0
     cookie-parser: "^1.4.3"
     debug: "^3.0.1"
     delegate: "^3.1.3"
-    electron-json-storage: "^3.1.0"
+    electron-json-storage: "^4.0.2"
     electron-updater: "^2.17.3"
     electron-window-state: "^4.1.1"
     han: 0.0.7
     ionicons201: "^1.0.0"
-    libphonenumber-js: "^0.4.38"
+    libphonenumber-js: "^0.4.44"
     md5: "^2.2.1"
     mobx: "^3.2.2"
     mobx-react: "^4.2.2"
