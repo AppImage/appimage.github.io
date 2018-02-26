@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Terminal=true
+Exec=qpdf
+Name=qpdf
+Comment=Structural, content-preserving transformations on PDF files
+Icon=qpdf
+Categories=Utility;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|qpdf|qpdf|latest|qpdf-*x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Sun 25 Feb 2018 09:56:37 PM UTC using RSA key ID 98012C7E Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=Apache-2.0
