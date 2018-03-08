@@ -3,7 +3,6 @@ layout: app
 
 permalink: /Cromberg/
 description: Personal accounting system
-license: MIT
 
 screenshots:
   - Cromberg/screenshot.png
@@ -35,7 +34,6 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: MIT
 
 electron:
   version: 1.2.2
