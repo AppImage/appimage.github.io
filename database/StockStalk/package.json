@@ -1,0 +1,25 @@
+{
+  "name": "StockStalk",
+  "version": "1.0.1",
+  "author": "FOO BAR",
+  "private": true,
+  "description": "Your stocks on your desktop",
+  "license": "MIT",
+  "main": "build/electron-starter.js",
+  "repository": "github:sagivo/StockStalk",
+  "homepage": "./",
+  "dependencies": {
+    "electron-context-menu": "*",
+    "electron-is-dev": "*",
+    "electron-updater": "^2.20.1",
+    "jimp": "oliver-moran/jimp",
+    "mobx": "*",
+    "mobx-persist": "*",
+    "mobx-react": "*",
+    "react": "*",
+    "react-countup": "*",
+    "react-dom": "*",
+    "request": "*",
+    "request-promise-native": "*"
+  }
+}
