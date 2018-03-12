@@ -372,7 +372,7 @@ for INPUTBASENAME in database/*; do
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
   fi
   # Add content of desktop file
-  if [ -e database/$INPUTBASENAME/*.desktop ] ; then
+  if file database/$INPUTBASENAME/*.desktop > /dev/null 2>&1; then
     dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
     echo "" >> apps/$INPUTBASENAME.md
     echo "desktop:" >> apps/$INPUTBASENAME.md
