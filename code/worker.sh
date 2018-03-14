@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 # function to make giving clear error outputs easier
 function workerexit() {
     # use case to detect which error was passed to workerexit
@@ -43,7 +43,6 @@ function workerexit() {
 }
 
 # check github rate limit and exit if over limit
-wget -qO - https://api.github.com/rate_limit
 RATE_LIMIT="$(wget -qO - https://api.github.com/rate_limit | grep -m1 '"remaining":' | cut -f2 -d':' | tr -d '[:blank:],')"
 echo "Github rate limit remaining: $RATE_LIMIT"
 [ $RATE_LIMIT -eq 0 ] && workerexit 2 "Reached Github rate limit!"
@@ -64,14 +63,12 @@ INPUTBASENAME="$(basename $TEST_DATA)"
 
 # function to get latest download URL from github api
 function checkgithubapi() {
-    set -vx
     # use wget and grep to find latest 'browser_download_url'; try to only get 64bit releases
     DL_URL="$(wget -qO - $1 | grep 'browser_download_url' | grep -im1 '.*.AppImage' | grep '64' | grep -v 'i386\|i686\|ia32' | rev | cut -f2 -d'"' | rev)"
     # if no DL_URL, remove checks to try and find 64bit only
     [ -z "$DL_URL" ] && DL_URL="$(wget -qO - $1 | grep 'browser_download_url' | grep -im1 '.*.AppImage' | rev | cut -f2 -d'"' | rev)"
     # exit code 2 if no DL_URL found still
     [ -z "$DL_URL" ] && workerexit 2 "No AppImage release found at $1"
-    set +vx
 }
 
 # use case $URL in to check what type of url we're dealing with and to make sure it's actually a url
@@ -161,9 +158,9 @@ fi
 
 # Get lint (consider moving it to this repository at some point)
 if [ ! -f "appdir-lint.sh" ]; then
-    wget "https://raw.githubusercontent.com/AppImage/AppImages/master/appdir-lint.sh" -qO appdir-lint.sh
+    wget "https://raw.githubusercontent.com/AppImage/AppImages/master/appdir-lint.sh" -qO ./appdir-lint.sh
     chmod +x ./appdir-lint.sh
-    wget "https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist" -qO excludelist
+    wget "https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist" -qO ./excludelist
 fi
 
 set -x
@@ -182,7 +179,7 @@ if [ $APPIMAGE_TYPE = 2 ]; then
     # get APPDIR by finding latest mount in '/tmp/'
     APPDIR="$(mount | tac | grep -m1 '/tmp/' | cut -f3 -d" ")"
     echo "$APPDIR"
-    appdir-lint.sh "$APPDIR"
+    ./appdir-lint.sh "$APPDIR"
     # later # kill $PID # fuse
     # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
     UPDATE_INFORMATION="$(TARGET_APPIMAGE="$FILENAME" ./appimagetool-x86_64.AppImage --appimage-updateinformation)"
@@ -197,7 +194,7 @@ if [ "$APPIMAGE_TYPE" = 1 ]; then
     sudo mount "$FILENAME" -o ro,loop /mnt
     APPDIR=/mnt
     echo $APPDIR
-    appdir-lint.sh "$APPDIR"
+    ./appdir-lint.sh "$APPDIR"
     # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
     UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null) || echo "Could not get update information from the AppImage"
     # later # sudo umount -l /mnt
