@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 # function to make giving clear error outputs easier
 function workerexit() {
@@ -63,12 +63,14 @@ INPUTBASENAME="$(basename $TEST_DATA)"
 
 # function to get latest download URL from github api
 function checkgithubapi() {
+    set -xv
     # use wget and grep to find latest 'browser_download_url'; try to only get 64bit releases
-    DL_URL="$(wget -qO - $1 | grep 'browser_download_url' | grep -im1 '.*.AppImage' | grep '64' | grep -v 'i386\|i686\|ia32' | rev | cut -f2 -d'"' | rev)"
+    DL_URL="$(wget -qO - $1 | grep 'browser_download_url' | grep -m1 '.AppImage\|.appimage' | grep '64' | grep -v 'i386\|i686\|ia32' | rev | cut -f2 -d'"' | rev)"
     # if no DL_URL, remove checks to try and find 64bit only
-    [ -z "$DL_URL" ] && DL_URL="$(wget -qO - $1 | grep 'browser_download_url' | grep -im1 '.*.AppImage' | rev | cut -f2 -d'"' | rev)"
+    [ -z "$DL_URL" ] && DL_URL="$(wget -qO - $1 | grep 'browser_download_url' | grep -m1 '.AppImage\|.appimage' | rev | cut -f2 -d'"' | rev)"
     # exit code 2 if no DL_URL found still
     [ -z "$DL_URL" ] && workerexit 2 "No AppImage release found at $1"
+    set +xv
 }
 
 # use case $URL in to check what type of url we're dealing with and to make sure it's actually a url
