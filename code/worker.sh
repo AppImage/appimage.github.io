@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # function to make giving clear error outputs easier
 function workerexit() {
     # use case to detect which error was passed to workerexit
