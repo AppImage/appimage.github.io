@@ -161,8 +161,6 @@ if [ ! -f "appdir-lint.sh" ]; then
     wget "https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist" -qO ./excludelist
 fi
 
-set -x
-
 # If we have a type 2 AppImage, then mount it using appimagetool (not using itself for security reasons)
 if [ $APPIMAGE_TYPE = 2 ]; then
     if [ ! -f "appimagetool-x86_64.AppImage" ]; then
@@ -197,8 +195,6 @@ if [ "$APPIMAGE_TYPE" = 1 ]; then
     UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null) || echo "Could not get update information from the AppImage"
     # later # sudo umount -l /mnt
 fi
-
-set +x
 
 USE_TERMINAL="$(grep -m1 'Terminal=' "$APPDIR"/*.desktop)"
 [ -z "$USE_TERMINAL" ] && USE_TERMINAL="false"
@@ -464,8 +460,6 @@ done
 
 # TODO: Convert the "database files" into whatever output formats we need to support
 # e.g., OCS for knsrc/Discover
-
-set -xv
 
 echo ""
 echo "======================"
