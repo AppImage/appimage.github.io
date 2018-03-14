@@ -335,8 +335,10 @@ fi
 
 # If available, also copy in AppStream metainfo
 
-FIND_APPDATA="$(dir -C -w 1 $APPDIR/usr/share/metainfo | grep -m1 '.*appdata.xml')"
-[ -n "$FIND_APPDATA" ] && cp "$APPDIR"/usr/share/metainfo/*.appdata.xml database/"$INPUTBASENAME"/
+if [ -d "$APPDIR/usr/share/metainfo" ]; then
+    FIND_APPDATA="$(dir -C -w 1 $APPDIR/usr/share/metainfo | grep -m1 '.*appdata.xml')"
+    [ -n "$FIND_APPDATA" ] && cp "$APPDIR"/usr/share/metainfo/*.appdata.xml database/"$INPUTBASENAME"/
+fi
 
 # Get pacakge.json from resources/app.asar for electron-builder applications
 ASAR=$(find "$APPDIR" -name "app.asar" || true)
@@ -362,9 +364,6 @@ echo ""
 echo "======================"
 echo "====== EXPORTING DATA ========"
 echo "======================"
-
-# set verbose output to try and detect errors
-set -v
 
 # ./appstreamcli-x86_64.AppImage --appimage-extract ; mv squashfs-root appstreamcli.AppDir # TODO: remove need for this
 # Does not seem to work # alias appstreamcli='appstreamcli.AppDir/root_overlay/lib/x86_64-linux-gnu/ld-2.23.so --library-path appstreamcli.AppDir/root_overlay/usr/lib/x86_64-linux-gnu/ appstreamcli.AppDir/root_overlay/usr/bin/appstreamcli'
@@ -470,7 +469,7 @@ done
 # TODO: Convert the "database files" into whatever output formats we need to support
 # e.g., OCS for knsrc/Discover
 
-set +v
+set -xv
 
 echo ""
 echo "======================"
