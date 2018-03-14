@@ -59,9 +59,9 @@ INPUTBASENAME="$(basename $TEST_DATA)"
 # function to get latest download URL from github api
 function checkgithubapi() {
     # use wget and grep to find latest 'browser_download_url'; try to only get 64bit releases
-    DL_URL="$(wget -qO - $TEST_DATA | grep -m1 'browser_download_url' | grep -i '.*.AppImage' | grep '64' | grep -v 'i386\|i686\|ia32' | rev | cut -f2 -d'"' | rev)"
+    DL_URL="$(wget -qO - $1 | grep -m1 'browser_download_url' | grep -i '.*.AppImage' | grep '64' | grep -v 'i386\|i686\|ia32' | rev | cut -f2 -d'"' | rev)"
     # if no DL_URL, remove checks to try and find 64bit only
-    [ -z "$DL_URL" ] && DL_URL="$(wget -qO - $TEST_DATA | grep -m1 'browser_download_url' | grep -i '.*.AppImage' | rev | cut -f2 -d'"' | rev)"
+    [ -z "$DL_URL" ] && DL_URL="$(wget -qO - $1 | grep -m1 'browser_download_url' | grep -i '.*.AppImage' | rev | cut -f2 -d'"' | rev)"
     # exit code 2 if no DL_URL found still
     [ -z "$DL_URL" ] && workerexit 2 "No AppImage release found at $TEST_DATA"
 }
