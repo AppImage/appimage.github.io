@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 # function to make giving clear error outputs easier
 function workerexit() {
     # use case to detect which error was passed to workerexit
@@ -63,21 +63,21 @@ function checkgithubapi() {
     # if no DL_URL, remove checks to try and find 64bit only
     [ -z "$DL_URL" ] && DL_URL="$(wget -qO - $1 | grep -m1 'browser_download_url' | grep -i '.*.AppImage' | rev | cut -f2 -d'"' | rev)"
     # exit code 2 if no DL_URL found still
-    [ -z "$DL_URL" ] && workerexit 2 "No AppImage release found at $TEST_DATA"
+    [ -z "$DL_URL" ] && workerexit 2 "No AppImage release found at $1"
 }
 
 # use case $URL in to check what type of url we're dealing with and to make sure it's actually a url
 case $URL in
     # If the URL begins with https://github.com, then treat it specially
     # https://github.com/egoist/devdocs-desktop/
-    https://github.com/*)
+        # If $URL begins with https://api.github.com, then treat it specially
+    # This allows us to have generic URLs rather than URLs to specific releases
+   *api.github.com*)
         echo "GitHub URL detected"
         # get user and repo from url
-        GHUSER="$(echo "$URL" | cut -f4 -d'/')"
-        GHREPO="$(echo "$URL" | cut -f5 -d'/')"
-        # set url for checkgithubapi function
-        # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
-        GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases"
+        GHUSER="$(echo "$URL" | cut -f5 -d'/')"
+        GHREPO="$(echo "$URL" | cut -f6 -d'/')"
+        GHURL="$URL"
         echo "URL from GitHub: $URL"
         # try to find latest release
         checkgithubapi "$GHURL"
@@ -85,14 +85,14 @@ case $URL in
         # try to find the repo's license
         LICENSE="$(wget -qO - https://api.github.com/repos/$GHUSER/$GHREPO | grep -m1 'spdx_id' | cut -f4 -d'"')"
         ;;
-    # If $URL begins with https://api.github.com, then treat it specially
-    # This allows us to have generic URLs rather than URLs to specific releases
-    https://api.github.com/repos/*)
+    *github.com*)
         echo "GitHub URL detected"
         # get user and repo from url
-        GHUSER="$(echo "$URL" | cut -f5 -d'/')"
-        GHREPO="$(echo "$URL" | cut -f6 -d'/')"
-        GHURL="$URL"
+        GHUSER="$(echo "$URL" | cut -f4 -d'/')"
+        GHREPO="$(echo "$URL" | cut -f5 -d'/')"
+        # set url for checkgithubapi function
+        # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
+        GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases"
         echo "URL from GitHub: $URL"
         # try to find latest release
         checkgithubapi "$GHURL"
@@ -108,7 +108,7 @@ case $URL in
         ;;
     # exit if no valid url found
     *)
-        workerexit 1 "No http link detected in $TEST_DATA"
+        workerexit 1 "No http link detected in $1"
         ;;
 esac
 
