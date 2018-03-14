@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # function to make giving clear error outputs easier
 function workerexit() {
     # use case to detect which error was passed to workerexit
@@ -43,6 +43,7 @@ function workerexit() {
 }
 
 # check github rate limit and exit if over limit
+wget -qO - https://api.github.com/rate_limit
 RATE_LIMIT="$(wget -qO - https://api.github.com/rate_limit | grep -m1 '"remaining":' | cut -f2 -d':' | tr -d '[:blank:],')"
 echo "Github rate limit remaining: $RATE_LIMIT"
 [ $RATE_LIMIT -eq 0 ] && workerexit 2 "Reached Github rate limit!"
