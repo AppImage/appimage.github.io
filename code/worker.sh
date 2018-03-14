@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 # function to make giving clear error outputs easier
 function workerexit() {
