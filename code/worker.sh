@@ -324,7 +324,7 @@ fi
 
 echo "X-AppImage-Architecture=$ARCHITECTURE" >> "$DATAFILE"
 
-if [ "" != "$LICENSE" ]; then
+if [ -n "$LICENSE" ]; then
     echo "X-AppImage-Payload-License=$LICENSE" >> "$DATAFILE"
 fi
 
@@ -421,7 +421,7 @@ for datadir in $(dir -C -w 1 database/); do
     if [ -n "$GH_USER" ]; then
         echo "  - name: $GH_USER" >> apps/"$datadir".md
         echo "    url: https://github.com/$GH_USER" >> apps/"$datadir".md
-    elif [ "$OBS_USER" != "" ]; then
+    elif [ -n "$OBS_USER" ]; then
         echo "  - name: $OBS_USER" >> apps/"$datadir".md
         echo "    url: https://build.opensuse.org/user/show/$OBS_USER" >> apps/"$datadir".md
     fi
@@ -491,3 +491,4 @@ EOF
     git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
     git push --set-upstream deploy
 fi
+exit 0
