@@ -61,21 +61,11 @@ fi
 # set INPUTBASENAME based on file input from data dir
 INPUTBASENAME="$(basename $TEST_DATA)"
 
-# function to get latest download URL from github api
-function checkgithubapi() {
-    # use wget and grep to find latest 'browser_download_url'; try to only get 64bit releases
-    DL_URL="$(wget -qO - $1 | grep 'browser_download_url' | grep -m1 '.AppImage\|.appimage' | grep '64' | grep -v 'i386\|i686\|ia32' | rev | cut -f2 -d'"' | rev)"
-    # if no DL_URL, remove checks to try and find 64bit only
-    [ -z "$DL_URL" ] && DL_URL="$(wget -qO - $1 | grep 'browser_download_url' | grep -m1 '.AppImage\|.appimage' | rev | cut -f2 -d'"' | rev)"
-    # exit code 2 if no DL_URL found still
-    [ -z "$DL_URL" ] && workerexit 2 "No AppImage release found at $1"
-}
-
 # use case $URL in to check what type of url we're dealing with and to make sure it's actually a url
 case $URL in
     # If the URL begins with https://github.com, then treat it specially
     # https://github.com/egoist/devdocs-desktop/
-        # If $URL begins with https://api.github.com, then treat it specially
+    # If $URL begins with https://api.github.com, then treat it specially
     # This allows us to have generic URLs rather than URLs to specific releases
    *api.github.com*)
         echo "GitHub URL detected"
@@ -85,7 +75,11 @@ case $URL in
         GHURL="$URL"
         echo "URL from GitHub: $URL"
         # try to find latest release
-        checkgithubapi "$GHURL"
+        DL_URL="$(wget -qO - $GHURL | grep 'browser_download_url' | grep -m1 '.AppImage\|.appimage' | grep '64' | grep -v 'i386\|i686\|ia32' | rev | cut -f2 -d'"' | rev)"
+        # if no DL_URL, remove checks to try and find 64bit only
+        [ -z "$DL_URL" ] && DL_URL="$(wget -qO - $GHURL | grep 'browser_download_url' | grep -m1 '.AppImage\|.appimage' | rev | cut -f2 -d'"' | rev)"
+        # exit code 2 if no DL_URL found still
+        [ -z "$DL_URL" ] && workerexit 2 "No AppImage release found at $GHURL"
         echo "Download URL: $DL_URL"
         # try to find the repo's license
         LICENSE="$(wget -qO - https://api.github.com/repos/$GHUSER/$GHREPO | grep -m1 'spdx_id' | cut -f4 -d'"')"
@@ -100,7 +94,11 @@ case $URL in
         GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases"
         echo "URL from GitHub: $URL"
         # try to find latest release
-        checkgithubapi "$GHURL"
+        DL_URL="$(wget -qO - $GHURL | grep 'browser_download_url' | grep -m1 '.AppImage\|.appimage' | grep '64' | grep -v 'i386\|i686\|ia32' | rev | cut -f2 -d'"' | rev)"
+        # if no DL_URL, remove checks to try and find 64bit only
+        [ -z "$DL_URL" ] && DL_URL="$(wget -qO - $GHURL | grep 'browser_download_url' | grep -m1 '.AppImage\|.appimage' | rev | cut -f2 -d'"' | rev)"
+        # exit code 2 if no DL_URL found still
+        [ -z "$DL_URL" ] && workerexit 2 "No AppImage release found at $GHURL"
         echo "Download URL: $DL_URL"
         # try to find the repo's license
         LICENSE="$(wget -qO - https://api.github.com/repos/$GHUSER/$GHREPO | grep -m1 'spdx_id' | cut -f4 -d'"')"
