@@ -431,10 +431,10 @@ Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
 EOF
 set +x
 git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
-if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
+# wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     set -x
     git push --set-upstream deploy
     set +x
-else
-    echo "Not runing 'git push --set-upstream deploy' because this build does NOT have TRAVIS_PULL_REQUEST=false"
-fi
+# wrong logic? # else
+# wrong logic? #     echo "Not runing 'git push --set-upstream deploy' because this build does NOT have TRAVIS_PULL_REQUEST=false"
+# wrong logic? # fi
