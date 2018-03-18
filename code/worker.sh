@@ -304,7 +304,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
 # ./appstreamcli-x86_64.AppImage --appimage-extract ; mv squashfs-root appstreamcli.AppDir # TODO: remove need for this
 # Does not seem to work # alias appstreamcli='appstreamcli.AppDir/root_overlay/lib/x86_64-linux-gnu/ld-2.23.so --library-path appstreamcli.AppDir/root_overlay/usr/lib/x86_64-linux-gnu/ appstreamcli.AppDir/root_overlay/usr/bin/appstreamcli'
 # For Jekyll Now
-for INPUTBASENAME in database/*; do
+##### for INPUTBASENAME in database/*; do
   INPUTBASENAME=${INPUTBASENAME##*/} # Remove path up to last /
   # echo "Exporting $INPUTBASENAME to apps/$INPUTBASENAME.md for Jekyll"
   touch apps/$INPUTBASENAME.md
@@ -402,7 +402,7 @@ for INPUTBASENAME in database/*; do
     rm database/$INPUTBASENAME/package.yaml
   fi
   echo "---" >> apps/$INPUTBASENAME.md
-done
+##### done
 
 # TODO: Convert the "database files" into whatever output formats we need to support
 # e.g., OCS for knsrc/Discover
@@ -421,13 +421,15 @@ if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     git config --global user.email "travis@travis-ci.org"
     git config --global user.name "Travis CI"
     set -x
-    ( cd database/ ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
-    ( cd apps/ ; git add . || true ) # Recursively add everything in this directory
-    set +x
+    ( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
+    ( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
     git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
 Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
 [ci skip]
 EOF
+    set +x
     git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+    set -x
     git push --set-upstream deploy
+    set +x
 fi
