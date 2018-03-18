@@ -294,7 +294,7 @@ echo "==========================================="
 echo "============ EXPORTING DATA ==============="
 echo "==========================================="
 
-# set -x
+set -x
 
 # Until https://github.com/ximion/appstream/issues/128 is solved
 # This URL was wrong:
@@ -407,7 +407,7 @@ done
 # TODO: Convert the "database files" into whatever output formats we need to support
 # e.g., OCS for knsrc/Discover
 
-# set +x
+set +x
 
 echo ""
 echo "==========================================="
@@ -420,8 +420,10 @@ if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
     git config --global user.email "travis@travis-ci.org"
     git config --global user.name "Travis CI"
+    set -x
     ( cd database/ ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
     ( cd apps/ ; git add . || true ) # Recursively add everything in this directory
+    set +x
     git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
 Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
 [ci skip]
