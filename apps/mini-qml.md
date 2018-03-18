@@ -1,33 +1,33 @@
 ---
 layout: app
 
-permalink: /cncjs/
-description: CNC Milling Controller
+permalink: /mini-qml/
+description: mini-qml Comment
 
 screenshots:
-  - cncjs/screenshot.png
+  - mini-qml/screenshot.png
 
 authors:
-  - name: cncjs
-    url: https://github.com/cncjs
+  - name: patrickelectric
+    url: https://github.com/patrickelectric
 
 links:
   - type: GitHub
-    url: cncjs/cncjs
+    url: patrickelectric/mini-qml
   - type: Download
-    url: https://github.com/cncjs/cncjs/releases
+    url: https://github.com/patrickelectric/mini-qml/releases
 
 desktop:
   Desktop Entry:
-    Name: CNCjs
-    Comment: CNC Milling Controller
-    Exec: AppRun
-    Terminal: false
     Type: Application
-    Icon: cncjs-app
-    X-AppImage-Version: 1.9.15.3078
-    X-AppImage-BuildId: d32a0e60-214c-11a8-108f-2fe1e888ac97
+    Name: mini-qml
+    GenericName: mini-qml
+    Comment: mini-qml Comment
+    Icon: icon
+    Exec: mini-qml
+    Terminal: false
     Categories: Utility
+    Keywords: computer
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
