@@ -402,6 +402,8 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     rm database/$INPUTBASENAME/package.yaml
   fi
   echo "---" >> apps/$INPUTBASENAME.md
+  ls -lh apps/$INPUTBASENAME.md || exit 1
+  ls -lh database/$INPUTBASENAME/ || exit 1
 ##### done
 
 # TODO: Convert the "database files" into whatever output formats we need to support
@@ -416,20 +418,23 @@ echo "==========================================="
 
 # If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
-if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
-    git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
-    git config --global user.email "travis@travis-ci.org"
-    git config --global user.name "Travis CI"
-    set -x
-    ( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
-    ( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
-    git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
+
+git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
+git config --global user.email "travis@travis-ci.org"
+git config --global user.name "Travis CI"
+set -x
+( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
+( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
+git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
 Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
 [ci skip]
 EOF
-    set +x
-    git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+set +x
+git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     set -x
     git push --set-upstream deploy
     set +x
+else
+    echo "Not runing 'git push --set-upstream deploy' because this build does NOT have TRAVIS_PULL_REQUEST=false"
 fi
