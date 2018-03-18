@@ -3,7 +3,6 @@ layout: app
 
 permalink: /cncjs/
 description: CNC Milling Controller
-license: MIT
 
 screenshots:
   - cncjs/screenshot.png
@@ -35,5 +34,4 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: MIT
 ---
