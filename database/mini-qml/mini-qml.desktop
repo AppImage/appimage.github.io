@@ -1,14 +1,13 @@
 [Desktop Entry]
-Name=CNCjs
-Comment=CNC Milling Controller
-Exec=AppRun
-Terminal=false
 Type=Application
-Icon=cncjs-app
-X-AppImage-Version=1.9.15.3078
-X-AppImage-BuildId=d32a0e60-214c-11a8-108f-2fe1e888ac97
+Name=mini-qml
+GenericName=mini-qml
+Comment=mini-qml Comment
+Icon=icon
+Exec=mini-qml
+Terminal=false
 Categories=Utility;
-
+Keywords=computer;
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
 # (e.g., with appimagetool -u) so that users can easily update the AppImage
