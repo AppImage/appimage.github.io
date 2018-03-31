@@ -430,7 +430,7 @@ Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
 [ci skip]
 EOF
 set +x
-git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+git remote add deploy https://git@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
 # wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     set -x
     git push --set-upstream deploy
