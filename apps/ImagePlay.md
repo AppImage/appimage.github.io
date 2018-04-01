@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: cpvrlab/ImagePlay
-  - type: Install
+  - type: Download
     url: https://github.com/cpvrlab/ImagePlay/releases
 
 desktop:

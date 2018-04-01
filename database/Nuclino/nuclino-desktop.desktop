@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Nuclino
+Comment=Nuclino is the easiest way to organize and share knowledge in your team.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=nuclino-desktop
+X-AppImage-Version=1.0.1
+X-AppImage-BuildId=e9023060-3299-11a8-1b64-8790ffb27a05
+Categories=Office;ProjectManagement;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
