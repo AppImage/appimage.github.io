@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: workflowy/desktop
-  - type: Install
+  - type: Download
     url: https://github.com/workflowy/desktop/releases
 
 desktop:
