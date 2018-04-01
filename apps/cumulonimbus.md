@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: z-------------/cumulonimbus
-  - type: Install
+  - type: Download
     url: https://github.com/z-------------/cumulonimbus/releases
 
 desktop:

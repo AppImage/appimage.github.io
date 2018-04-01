@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: plotly/falcon-sql-client
-  - type: Install
+  - type: Download
     url: https://github.com/plotly/falcon-sql-client/releases
 
 desktop:

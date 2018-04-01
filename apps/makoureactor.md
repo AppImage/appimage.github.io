@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: myst6re/makoureactor
-  - type: Install
+  - type: Download
     url: https://github.com/myst6re/makoureactor/releases
 
 desktop:

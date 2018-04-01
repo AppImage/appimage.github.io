@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Tumblr Downloader Client
+Comment=Authenticates to your Tumblr account and downloads all liked photos to your computer
 Exec=tumblr-downloader-gui
 Icon=tumblr-downloader-client
 Categories=AudioVideo;

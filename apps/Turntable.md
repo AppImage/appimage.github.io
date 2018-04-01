@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: radiium/turntable
-  - type: Install
+  - type: Download
     url: https://github.com/radiium/turntable/releases
 
 desktop:

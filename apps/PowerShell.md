@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: PowerShell/PowerShell
-  - type: Install
+  - type: Download
     url: https://github.com/PowerShell/PowerShell/releases
 
 desktop:

@@ -13,7 +13,7 @@ authors:
 links:
   - type: GitHub
     url: unruhschuh/MrWriter
-  - type: Install
+  - type: Download
     url: https://github.com/unruhschuh/MrWriter/releases
 
 desktop:

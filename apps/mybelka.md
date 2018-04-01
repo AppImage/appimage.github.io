@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Leinnan/mybelka
-  - type: Install
+  - type: Download
     url: https://github.com/Leinnan/mybelka/releases
 
 desktop:

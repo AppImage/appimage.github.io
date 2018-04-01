@@ -1,0 +1,12 @@
+{
+  "name": "rebaslight",
+  "version": "3.3.1",
+  "private": true,
+  "description": "Rebaslight - an easy to use special effects editor",
+  "repository": "git@github.com:rebaslight/rebaslight.git",
+  "author": "Very Small Helm LLC <dev@smallhelm.com>",
+  "license": "AGPL-3.0+",
+  "productName": "Rebaslight",
+  "homepage": "http://www.rebaslight.com/",
+  "main": "app/index.js"
+}

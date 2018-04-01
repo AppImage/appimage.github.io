@@ -1,0 +1,30 @@
+{
+  "name": "feedseries",
+  "desktopName": "FeedSeries",
+  "productName": "FeedSeries",
+  "version": "0.3.1",
+  "author": "Matthieu YK <matthieuy+git@riseup.net>",
+  "description": "Suivez votre actualité sériephile",
+  "license": "MIT",
+  "homepage": "https://github.com/matthieuy/feedseries",
+  "repository": "https://github.com/matthieuy/feedseries",
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "auto-launch": "^5.0.5",
+    "axios": "^0.16.1",
+    "camo": "^0.12.3",
+    "canvasjs": "github:vasilrimar/canvasjs",
+    "electron-log": "^2.2.14",
+    "electron-store": "^1.3.0",
+    "electron-updater": "^2.20.1",
+    "md5": "^2.2.1",
+    "moment": "^2.20.1",
+    "nedb": "^1.8.0",
+    "request": "^2.83.0",
+    "vue": "^2.3.3",
+    "vue-context-menu": "^2.0.6",
+    "vue-electron": "^1.0.6",
+    "vue-router": "^2.5.3",
+    "vuex": "^2.3.1"
+  }
+}

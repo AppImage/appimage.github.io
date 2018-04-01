@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: AppImage/AppImageUpdate
-  - type: Install
+  - type: Download
     url: https://github.com/AppImage/AppImageUpdate/releases
 
 desktop:
