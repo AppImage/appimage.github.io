@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Azure/BatchLabs
-  - type: Install
+  - type: Download
     url: https://github.com/Azure/BatchLabs/releases
 
 desktop:

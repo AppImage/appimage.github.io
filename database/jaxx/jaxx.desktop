@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Jaxx
+Comment=Blockchain Wallet for desktop
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=jaxx
+X-AppImage-Version=1.3.4
+X-AppImage-BuildId=2c908730-b506-11a7-0ed3-e15a5d8477f8
+Categories=Utility;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+# Dear upstream developer, please include a digital signature in your AppImage
+# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
+X-AppImage-Type=1
+# Dear upstream developer, please consider to switch to type 2
+# so that users can benefit from the additional features like digital embedded signatures
+# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
+# or use linuxdeployqt or appimagetool which produce type 2 automatically
+X-AppImage-Architecture=x86_64

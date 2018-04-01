@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Gilad-Kutiel-App/jumpfm
-  - type: Install
+  - type: Download
     url: https://github.com/Gilad-Kutiel-App/jumpfm/releases
 
 desktop:

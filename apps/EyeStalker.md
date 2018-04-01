@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: tbrouns/eyestalker
-  - type: Install
+  - type: Download
     url: https://github.com/tbrouns/eyestalker/releases
 
 desktop:

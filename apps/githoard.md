@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: jojobyte/githoard
-  - type: Install
+  - type: Download
     url: https://github.com/jojobyte/githoard/releases
 
 desktop:

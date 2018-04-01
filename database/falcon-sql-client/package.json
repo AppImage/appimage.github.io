@@ -1,0 +1,47 @@
+{
+  "name": "falcon-sql-client",
+  "version": "2.4.0",
+  "description": "Free, open-source SQL client for Windows, Mac and Linux",
+  "main": "./backend/main.js",
+  "bin": {
+    "electron": "./node_modules/.bin/electron"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plotly/falcon-sql-client"
+  },
+  "author": {
+    "name": "Plotly",
+    "email": "chris@plot.ly",
+    "url": ""
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/plotly/falcon-sql-client/issues"
+  },
+  "homepage": "https://github.com/plotly/falcon-sql-client",
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
+  "dependencies": {
+    "csv-parse": "^2.0.0",
+    "font-awesome": "^4.6.1",
+    "ibm_db": "git+https://git@github.com/n-riesco/node-ibm_db.git#patched-v2.2.1",
+    "mysql": "^2.15.0",
+    "pg": "^4.5.5",
+    "pg-hstore": "^2.3.2",
+    "restify": "^4.3.2",
+    "sequelize": "^3.30.4",
+    "source-map-support": "^0.5.0",
+    "sqlite3": "^3.1.13",
+    "tedious": "^2.1.4"
+  },
+  "engines": {
+    "node": "6",
+    "yarn": "1"
+  },
+  "devEngines": {
+    "node": "6",
+    "yarn": "1"
+  }
+}
