@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: jgraph/drawio-desktop
-  - type: Install
+  - type: Download
     url: https://github.com/jgraph/drawio-desktop/releases
 
 desktop:

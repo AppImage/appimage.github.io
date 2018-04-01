@@ -1,0 +1,14 @@
+{
+  "name": "tweet-tray",
+  "productName": "Tweet Tray",
+  "version": "1.1.0",
+  "description": "Tweet quickly from the desktop without any more distractions.",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "Jonathon Toon",
+    "email": "jonathontoon@gmail.com",
+    "url": "https://github.com/jonathontoon"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

@@ -19,7 +19,17 @@ https://appimage.github.io/
 
 ## How to submit AppImages to the catalog
 
-Create a new file using [this link](https://github.com/AppImage/AppImageHub/new/gh-pages/data) and send a Pull Request. The file should contain one line with a link to the GitHub repository that hosts AppImages on its Releases page. Alternatively, a link to the AppImage. Nothing else. Then send a Pull Request to this repository. Travis CI will instantly perform an automated review of the AppImage, and in case it succeeds, you will see a __green__ result in your pull request. If you get a __red__ result, check the log of the Travis CI build, and fix it.
+Create a new file using
+
+### **[this link](https://github.com/AppImage/AppImageHub/new/master/data)**
+
+and send a Pull Request. 
+
+**The file should contain one line with a link to the GitHub repository that hosts AppImages on its Releases page.**
+
+**Alternatively, a link to the AppImage. Nothing else.**
+
+Then send a Pull Request to this repository. Travis CI will instantly perform an automated review of the AppImage, and in case it succeeds, you will see a __green__ result in your pull request. If you get a __red__ result, check the log of the Travis CI build, and fix it.
 
 ### Checklist for submitting your own AppImage
 
@@ -39,8 +49,12 @@ As a format, AppImage is designed in a way that does not impose restrictions on 
 
 App stores and software centers can consume the metadata collected by this project. See [AppImage ecosystem](https://github.com/AppImage/AppImageKit/wiki/Ecosystem). 
 
+![peek 2017-11-26 11-28](https://user-images.githubusercontent.com/2480569/33243768-497bf74a-d2ba-11e7-8336-ae2018229e57.gif)
+
 Currently we are providing a JSON feed at https://appimage.github.io/feed.json. If you would like to use this data but need changes, please contact us on #AppImage at irc.freenode.net, so that we can discuss an output format that would serve your needs best. __PLEASE NOTE__ that the data output format is not finalized yet and is subject to change any time without prior notice, until we release a stable version of it.
 
 Projects already using this data
+* Nitrux, NX Software Center: https://github.com/nomad-desktop/nx-software-center
 * https://github.com/simoniz0r/spm
+* https://github.com/sillasleal/appcenter
 * Please contact us if you are using this data so that we can list your project here

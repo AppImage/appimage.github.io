@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: l3laze/ReliefValve
-  - type: Install
+  - type: Download
     url: https://github.com/l3laze/ReliefValve/releases
 
 desktop:
