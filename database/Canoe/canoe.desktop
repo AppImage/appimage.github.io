@@ -1,13 +1,15 @@
 [Desktop Entry]
-Name=CNCjs
-Comment=CNC Milling Controller
-Exec=AppRun
-Terminal=false
 Type=Application
-Icon=cncjs-app
-X-AppImage-Version=1.9.15.3078
-X-AppImage-BuildId=d32a0e60-214c-11a8-108f-2fe1e888ac97
-Categories=Utility;
+Name=Canoe
+Comment=Nano Wallet
+Exec=canoe
+Icon=canoe
+Terminal=false
+Categories=Office;Finance;
+MimeType=x-scheme-handler/xrb;
+X-Canoe-BuildId=0.3.5
+X-Ubuntu-Touch=true
+X-Ubuntu-StageHint=SideStage
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

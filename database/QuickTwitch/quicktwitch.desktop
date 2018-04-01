@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=CNCjs
-Comment=CNC Milling Controller
+Name=QuickTwitch
+Comment=electron-react-redux-boilerplate
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=cncjs-app
-X-AppImage-Version=1.9.15.3078
-X-AppImage-BuildId=d32a0e60-214c-11a8-108f-2fe1e888ac97
+Icon=quicktwitch
+X-AppImage-Version=0.9.0
+X-AppImage-BuildId=8d1f9a90-33a1-11a8-1b4d-31cb8d2b70ef
 Categories=Utility;
 
 [AppImageHub]

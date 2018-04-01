@@ -1,13 +1,13 @@
 [Desktop Entry]
-Name=CNCjs
-Comment=CNC Milling Controller
+Name=Nuclino
+Comment=Nuclino is the easiest way to organize and share knowledge in your team.
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=cncjs-app
-X-AppImage-Version=1.9.15.3078
-X-AppImage-BuildId=d32a0e60-214c-11a8-108f-2fe1e888ac97
-Categories=Utility;
+Icon=nuclino-desktop
+X-AppImage-Version=1.0.1
+X-AppImage-BuildId=e9023060-3299-11a8-1b64-8790ffb27a05
+Categories=Office;ProjectManagement;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

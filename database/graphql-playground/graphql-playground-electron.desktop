@@ -1,13 +1,13 @@
 [Desktop Entry]
-Name=CNCjs
-Comment=CNC Milling Controller
+Name=GraphQL Playground
+Comment=GraphQL IDE for better development workflows (GraphQL Subscriptions, interactive docs & collaboration)
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=cncjs-app
-X-AppImage-Version=1.9.15.3078
-X-AppImage-BuildId=d32a0e60-214c-11a8-108f-2fe1e888ac97
-Categories=Utility;
+Icon=graphql-playground-electron
+X-AppImage-Version=1.3.24.1760
+X-AppImage-BuildId=1f2548d0-f8ac-11a7-36a8-65fd833819f1
+Categories=Development;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=CNCjs
-Comment=CNC Milling Controller
+Name=blackmirror
+Comment=two-party automatic writing tool
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=cncjs-app
-X-AppImage-Version=1.9.15.3078
-X-AppImage-BuildId=d32a0e60-214c-11a8-108f-2fe1e888ac97
+Icon=blackmirror
+X-AppImage-Version=7.7.7
+X-AppImage-BuildId=9b47a650-2bb1-11a8-2abc-4b5da1e488c1
 Categories=Utility;
 
 [AppImageHub]

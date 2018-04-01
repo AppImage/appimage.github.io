@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=CNCjs
-Comment=CNC Milling Controller
+Name=SPlayer
+Comment=a media player
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=cncjs-app
-X-AppImage-Version=1.9.15.3078
-X-AppImage-BuildId=d32a0e60-214c-11a8-108f-2fe1e888ac97
+Icon=splayer
+X-AppImage-Version=0.0.0.78
+X-AppImage-BuildId=ecfe7d20-330e-11a8-1d71-9df5b11cacbc
 Categories=Utility;
 
 [AppImageHub]

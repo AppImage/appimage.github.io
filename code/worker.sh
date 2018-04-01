@@ -284,10 +284,17 @@ fi
 
 echo ""
 echo "==========================================="
+echo "============= LISTING FILES ==============="
+echo "==========================================="
+
+ls -lh database/$INPUTBASENAME/
+
+echo ""
+echo "==========================================="
 echo "============ EXPORTING DATA ==============="
 echo "==========================================="
 
-# set -x
+set -x
 
 # Until https://github.com/ximion/appstream/issues/128 is solved
 # This URL was wrong:
@@ -297,7 +304,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
 # ./appstreamcli-x86_64.AppImage --appimage-extract ; mv squashfs-root appstreamcli.AppDir # TODO: remove need for this
 # Does not seem to work # alias appstreamcli='appstreamcli.AppDir/root_overlay/lib/x86_64-linux-gnu/ld-2.23.so --library-path appstreamcli.AppDir/root_overlay/usr/lib/x86_64-linux-gnu/ appstreamcli.AppDir/root_overlay/usr/bin/appstreamcli'
 # For Jekyll Now
-for INPUTBASENAME in database/*; do
+##### for INPUTBASENAME in database/*; do
   INPUTBASENAME=${INPUTBASENAME##*/} # Remove path up to last /
   # echo "Exporting $INPUTBASENAME to apps/$INPUTBASENAME.md for Jekyll"
   touch apps/$INPUTBASENAME.md
@@ -395,30 +402,50 @@ for INPUTBASENAME in database/*; do
     rm database/$INPUTBASENAME/package.yaml
   fi
   echo "---" >> apps/$INPUTBASENAME.md
-done
+  ls -lh apps/$INPUTBASENAME.md || exit 1
+  ls -lh database/$INPUTBASENAME/ || exit 1
+##### done
 
 # TODO: Convert the "database files" into whatever output formats we need to support
 # e.g., OCS for knsrc/Discover
 
-# set +x
+set +x
 
 echo ""
 echo "==========================================="
 echo "============== PUSHING DATA ==============="
 echo "==========================================="
 
+# If this a PR, then just check whether the files have generated
+# See https://github.com/AppImage/appimage.github.io/issues/476 for more information
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then 
+  cat "apps/${INPUTBASENAME}.md" || exit 1
+  cat "database/${INPUTBASENAME}/"*.desktop || exit 1 # Asterisk must not be inside quotes, https://travis-ci.org/AppImage/appimage.github.io/builds/360847207#L782
+  ls -lh "database/${INPUTBASENAME}/screenshot.png" || exit 1
+  curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfer.sh/screenshot.png 
+  echo "Since we are on a TRAVIS_PULL_REQUEST and the required files are there, we are assuming the test is OK"
+  exit 0
+fi
+
 # If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
-if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
-    git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
-    git config --global user.email "travis@travis-ci.org"
-    git config --global user.name "Travis CI"
-    ( cd database/ ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
-    ( cd apps/ ; git add . || true ) # Recursively add everything in this directory
-    git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
+
+git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
+git config --global user.email "travis@travis-ci.org"
+git config --global user.name "Travis CI"
+set -x
+( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
+( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
+git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
 Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
 [ci skip]
 EOF
-    git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+set +x
+git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+# wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
+    set -x
     git push --set-upstream deploy
-fi
+    set +x
+# wrong logic? # else
+# wrong logic? #     echo "Not runing 'git push --set-upstream deploy' because this build does NOT have TRAVIS_PULL_REQUEST=false"
+# wrong logic? # fi

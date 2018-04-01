@@ -1,13 +1,13 @@
 [Desktop Entry]
-Name=CNCjs
-Comment=CNC Milling Controller
+Name=Lunyr
+Comment=Ethereum-based Encyclopedia
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=cncjs-app
-X-AppImage-Version=1.9.15.3078
-X-AppImage-BuildId=d32a0e60-214c-11a8-108f-2fe1e888ac97
-Categories=Utility;
+Icon=lunyr
+X-AppImage-Version=1.0.0
+X-AppImage-BuildId=e1861810-31ea-11a8-2b0c-fd170feab4a5
+Categories=Network;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
