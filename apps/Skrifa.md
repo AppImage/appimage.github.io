@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Skrifa/Skrifa
-  - type: Install
+  - type: Download
     url: https://github.com/Skrifa/Skrifa/releases
 
 desktop:

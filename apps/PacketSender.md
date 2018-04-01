@@ -13,7 +13,7 @@ authors:
 links:
   - type: GitHub
     url: dannagle/PacketSender
-  - type: Install
+  - type: Download
     url: https://github.com/dannagle/PacketSender/releases
 
 desktop:

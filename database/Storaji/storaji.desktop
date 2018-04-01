@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Storaji
+Comment=The Light/Responsive Inventory Management System.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=storaji
+X-AppImage-Version=1.0.0-beta.7.72
+X-AppImage-BuildId=3baa8840-fe50-11a7-3c10-9f6ac83f0998
+Categories=Office;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT

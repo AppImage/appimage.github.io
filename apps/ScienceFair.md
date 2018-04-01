@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: codeforscience/sciencefair
-  - type: Install
+  - type: Download
     url: https://github.com/codeforscience/sciencefair/releases
 
 desktop:

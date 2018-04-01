@@ -1,0 +1,26 @@
+{
+  "name": "Cromberg",
+  "description": "Personal accounting system",
+  "homepage": "http://cromberg.blweb.ru",
+  "version": "1.2.2",
+  "main": "main.js",
+  "author": {
+    "name": "z-17",
+    "email": "admin@blweb.ru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/z17/home-accounting-system.git"
+  },
+  "license": "GPL",
+  "dependencies": {
+    "compare-versions": "^3.1.0",
+    "electron-config": "^1.0.0",
+    "jquery": "^3.2.1",
+    "jquery-ui-dist": "^1.12.1",
+    "minimist": "^1.2.0",
+    "moment": "^2.19.1",
+    "nedb": "^1.8.0",
+    "normalize.css": "^6.0.0"
+  }
+}

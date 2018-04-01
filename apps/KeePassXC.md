@@ -13,7 +13,7 @@ authors:
 links:
   - type: GitHub
     url: keepassxreboot/keepassxc
-  - type: Install
+  - type: Download
     url: https://github.com/keepassxreboot/keepassxc/releases
 
 desktop:
