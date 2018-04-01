@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: vim/vim-appimage
-  - type: Install
+  - type: Download
     url: https://github.com/vim/vim-appimage/releases
 
 desktop:

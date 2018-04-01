@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: matejmosko/impressPlayer
-  - type: Install
+  - type: Download
     url: https://github.com/matejmosko/impressPlayer/releases
 
 desktop:

@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: labsquare/CutePeaks
-  - type: Install
+  - type: Download
     url: https://github.com/labsquare/CutePeaks/releases
 
 desktop:
