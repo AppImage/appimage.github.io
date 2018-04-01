@@ -4,7 +4,6 @@ Comment=Cross Platform IDE for reverse-engineering APKs
 Type=Application
 Exec=apkstudio
 Icon=apkstudio
-Terminal=true
 Categories=IDE;Development;Qt;
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

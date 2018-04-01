@@ -25,7 +25,6 @@ desktop:
     Type: Application
     Exec: apkstudio
     Icon: apkstudio
-    Terminal: true
     Categories: IDE
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
