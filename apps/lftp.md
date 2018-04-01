@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /lftp/
+license: GPL-3.0
 
 screenshots:
   - lftp/screenshot.png
@@ -13,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: lavv17/lftp
-  - type: Install
+  - type: Download
     url: https://github.com/lavv17/lftp/releases
 
 desktop:
@@ -31,4 +32,5 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: GPL-3.0
 ---
