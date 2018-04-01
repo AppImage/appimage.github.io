@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: dgeibi/p2p-chat
-  - type: Install
+  - type: Download
     url: https://github.com/dgeibi/p2p-chat/releases
 
 desktop:

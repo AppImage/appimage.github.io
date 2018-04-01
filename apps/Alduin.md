@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Xstoudi/alduin
-  - type: Install
+  - type: Download
     url: https://github.com/Xstoudi/alduin/releases
 
 desktop:

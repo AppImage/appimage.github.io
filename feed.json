@@ -22,10 +22,14 @@ layout: null
         {% if post.layout == 'app' && post.published != 'false' %}
         {
         "name": {% if post.title %}{{ post.title | jsonify }}{% else %}{{ post.name | remove: ".md" | jsonify  }}{% endif %},
+    {% if post.appdata.Description.C %}
+        "description": {{ post.appdata.Description.C | jsonify }},
+    {% elsif post.desktop["Desktop Entry"].Comment %}
         "description": {{ post.desktop["Desktop Entry"].Comment | jsonify }},
+    {% endif %}
         "categories": [{{ post.desktop["Desktop Entry"].Categories | jsonify }}],
         "authors" : {{ post.authors | jsonify }},
-        "licence" : {{ post.license | jsonify }},
+        "license" : {{ post.license | jsonify }},
         "links": {{ post.links | jsonify }},
         "screenshots" : {{ post.screenshots | jsonify }}
         }{% if forloop.last == false %},{% endif %}
