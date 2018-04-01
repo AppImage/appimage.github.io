@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: jojobyte/githoard
-  - type: Install
+  - type: Download
     url: https://github.com/jojobyte/githoard/releases
 
 desktop:
@@ -25,8 +25,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: githoard
-    X-AppImage-Version: 0.3.3.7
-    X-AppImage-BuildId: c4425770-a43a-11a7-359d-9df0a80dea67
+    X-AppImage-Version: 0.3.4.10
+    X-AppImage-BuildId: 1c6a1da0-a5f0-11a7-2e11-1126c17da5f6
     Categories: Development
   AppImageHub:
     X-AppImage-UpdateInformation: 
@@ -34,7 +34,7 @@ desktop:
     X-AppImage-Architecture: x86_64
 
 electron:
-  version: 0.3.3
+  version: 0.3.4
   author:
     name: Jordan Hess
     email: byte@jojo.io

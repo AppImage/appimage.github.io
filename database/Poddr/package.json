@@ -1,0 +1,15 @@
+{
+  "name": "poddr",
+  "version": "1.0.5",
+  "description": "Simple podcast client",
+  "main": "main.js",
+  "author": "Sn8z",
+  "license": "MIT",
+  "dependencies": {
+    "electron-json-storage": "^3.2.0",
+    "electron-window-state": "^4.1.1",
+    "itunes-api-search": "^1.1.0",
+    "mousetrap": "^1.6.1",
+    "node-podcast-parser": "^2.0.0"
+  }
+}

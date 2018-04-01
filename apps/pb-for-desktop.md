@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: sidneys/pb-for-desktop
-  - type: Install
+  - type: Download
     url: https://github.com/sidneys/pb-for-desktop/releases
 
 desktop:

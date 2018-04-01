@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: yishn/Sabaki
-  - type: Install
+  - type: Download
     url: https://github.com/yishn/Sabaki/releases
 
 desktop:
