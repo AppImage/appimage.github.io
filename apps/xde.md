@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: expo/xde
-  - type: Install
+  - type: Download
     url: https://github.com/expo/xde/releases
 
 desktop:

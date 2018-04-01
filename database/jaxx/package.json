@@ -1,6 +1,6 @@
 {
   "name": "jaxx",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Blockchain Wallet for desktop",
   "main": "loadDesktop.js",
   "repository": {

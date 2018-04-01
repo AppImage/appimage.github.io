@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /hotspot/
+description: The Linux perf GUI for performance analysis
 
 screenshots:
   - hotspot/screenshot.png
@@ -13,13 +14,14 @@ authors:
 links:
   - type: GitHub
     url: KDAB/hotspot
-  - type: Install
+  - type: Download
     url: https://github.com/KDAB/hotspot/releases
 
 desktop:
   Desktop Entry:
     Type: Application
     Name: Hotspot
+    Comment: The Linux perf GUI for performance analysis
     Exec: hotspot
     Icon: hotspot
     Categories: Development
