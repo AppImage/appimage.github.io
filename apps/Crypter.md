@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: HR/Crypter
-  - type: Install
+  - type: Download
     url: https://github.com/HR/Crypter/releases
 
 desktop:

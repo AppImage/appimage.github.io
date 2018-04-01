@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: saenzramiro/rambox
-  - type: Install
+  - type: Download
     url: https://github.com/saenzramiro/rambox/releases
 
 desktop:

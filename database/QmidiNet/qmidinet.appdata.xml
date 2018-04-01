@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2010-2015 Rui Nuno Capela <rncbc@rncbc.org> -->
+<component type="desktop">
+ <id>qmidinet.desktop</id>
+ <metadata_license>GPL-2.0+</metadata_license>
+ <project_license>GPL-2.0+</project_license>
+ <name>QmidiNet</name>
+ <summary>A MIDI Network Gateway via UDP/IP Multicast</summary>
+ <description>
+  <p>QmidiNet is a MIDI network gateway application that sends and receives
+  MIDI data (ALSA Sequencer and/or JACK MIDI) over the network, using UDP/IP
+  multicast. Inspired by multimidicast (http://llg.cubic.org/tools) and
+  designed to be compatible with ipMIDI for Windows (http://nerds.de).</p>
+ </description>
+ <screenshots>
+  <screenshot type="default">
+   <image>http://qmidinet.sourceforge.net/image/qmidinet.png</image>
+   <caption>The system tray icon showing the application in action</caption>
+  </screenshot>
+ </screenshots>
+ <keywords>
+  <keyword>MIDI</keyword>
+  <keyword>ALSA</keyword>
+  <keyword>JACK</keyword>
+  <keyword>Multicast</keyword>
+  <keyword>Network</keyword>
+  <keyword>UDP</keyword>
+  <keyword>IP</keyword>
+  <keyword>Qt</keyword>
+ </keywords>
+ <url type="homepage">http://qmidinet.sourceforge.net</url>
+ <updatecontact>rncbc@rncbc.org</updatecontact>
+ <project_group>rncbc.org</project_group>
+ <kudos>
+  <kudo>ModernToolkit</kudo>
+ </kudos>
+</component>

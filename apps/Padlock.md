@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: MaKleSoft/padlock
-  - type: Install
+  - type: Download
     url: https://github.com/MaKleSoft/padlock/releases
 
 desktop:
