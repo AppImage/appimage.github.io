@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: envkey/envkey-ui
-  - type: Install
+  - type: Download
     url: https://github.com/envkey/envkey-ui/releases
 
 desktop:

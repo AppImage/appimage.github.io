@@ -4,7 +4,7 @@ title: Apps in AppImage format
 permalink: /apps/
 ---
 
-We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in our database. Something missing? [**Report it at GitHub.**](https://github.com/AppImage/AppImageHub/issues/new)
+We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in our database. Something missing? [**Submit a pull request on GitHub.**](https://github.com/AppImage/appimage.github.io#how-to-submit-appimages-to-the-catalog)
 
 <table class="overview tablesorter">
   <thead>
@@ -61,4 +61,4 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
   </tbody>
 </table>
 
-<p><a class="b" href="https://github.com/AppImage/AppImageHub/issues/new"><span class="octicon octicon-pencil"></span> Report a missing app on GitHub!</a></p>
+<p><a class="b" href="https://github.com/AppImage/appimage.github.io#how-to-submit-appimages-to-the-catalog"><span class="octicon octicon-pencil"></span> Something missing? Submit a pull request on GitHub!</a></p>

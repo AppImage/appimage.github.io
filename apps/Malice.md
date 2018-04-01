@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Cloud-V/Malice
-  - type: Install
+  - type: Download
     url: https://github.com/Cloud-V/Malice/releases
 
 desktop:
