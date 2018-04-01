@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: mmatyas/openblok
-  - type: Install
+  - type: Download
     url: https://github.com/mmatyas/openblok/releases
 
 desktop:

@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: tmstieff/Woke
-  - type: Install
+  - type: Download
     url: https://github.com/tmstieff/Woke/releases
 
 desktop:

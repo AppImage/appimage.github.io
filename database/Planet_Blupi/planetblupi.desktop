@@ -1,0 +1,18 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Planet Blupi
+GenericName=Video Game
+Comment=Planet Blupi - A delirious spell-binding game
+Exec=planetblupi
+StartupWMClass=planetblupi
+Icon=blupi
+Categories=Game;StrategyGame;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=Signature made Tue 13 Feb 2018 02:36:46 PM UTC using RSA key ID FA9DA8A8 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=GPL-3.0

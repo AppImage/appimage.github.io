@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: martinribelotta/embedded-ide
-  - type: Install
+  - type: Download
     url: https://github.com/martinribelotta/embedded-ide/releases
 
 desktop:
