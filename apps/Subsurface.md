@@ -5,8 +5,14 @@ permalink: /Subsurface/
 description: manage and display dive computer data
 
 authors:
+  - name: Subsurface-divelog
+    url: https://github.com/Subsurface-divelog
 
 links:
+  - type: GitHub
+    url: Subsurface-divelog/subsurface
+  - type: Download
+    url: https://github.com/Subsurface-divelog/subsurface/releases
 
 desktop:
   Desktop Entry:

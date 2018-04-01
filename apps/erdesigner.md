@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: felix557700/erdesigner
-  - type: Install
+  - type: Download
     url: https://github.com/felix557700/erdesigner/releases
 
 desktop:

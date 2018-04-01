@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: lettier/gifcurry
-  - type: Install
+  - type: Download
     url: https://github.com/lettier/gifcurry/releases
 
 desktop:

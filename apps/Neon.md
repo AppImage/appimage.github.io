@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: CityOfZion/neon-wallet
-  - type: Install
+  - type: Download
     url: https://github.com/CityOfZion/neon-wallet/releases
 
 desktop:
