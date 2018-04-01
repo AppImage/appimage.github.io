@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: pascalopitz/unoffical-sonos-controller-for-linux
-  - type: Install
+  - type: Download
     url: https://github.com/pascalopitz/unoffical-sonos-controller-for-linux/releases
 
 desktop:

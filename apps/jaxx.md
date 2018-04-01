@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Jaxx-io/Jaxx
-  - type: Install
+  - type: Download
     url: https://github.com/Jaxx-io/Jaxx/releases
 
 desktop:

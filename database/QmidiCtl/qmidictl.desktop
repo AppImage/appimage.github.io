@@ -1,0 +1,21 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=QmidiCtl
+Version=1.0
+Comment=MIDI Remote Controller via UDP/IP Multicast
+Comment[fr]=Contrôleur MIDI distant via UDP/IP Multicast
+Exec=qmidictl
+Icon=qmidictl
+Categories=Audio;AudioVideo;Midi;X-Alsa;Qt;
+Keywords=MIDI;Multicast;Network;UDP;IP;Qt;
+StartupWMClass=qmidictl
+X-Window-Icon=qmidictl
+X-HildonDesk-ShowInToolbar=true
+X-Osso-Type=application/x-executable
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://download.opensuse.org/repositories/home:/rncbc/AppImage/qmidictl-latest-x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Sat 20 Jan 2018 07:56:54 AM UTC using DSA key ID 462E2AF2 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

@@ -1,0 +1,21 @@
+{
+  "name": "nuclino-desktop",
+  "version": "1.0.1",
+  "productName": "Nuclino",
+  "description": "The easy knowledge base for teams",
+  "homepage": "https://www.nuclino.com",
+  "author": {
+    "name": "Nuclino",
+    "email": "contact@nuclino.com",
+    "url": "https://www.nuclino.com"
+  },
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "./src/main.js",
+  "dependencies": {
+    "electron-dl": "1.11.0",
+    "electron-is-dev": "0.3.0",
+    "electron-log": "2.2.14",
+    "electron-updater": "2.21.3"
+  }
+}
