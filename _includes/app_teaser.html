@@ -21,8 +21,9 @@
   </p>
 {% endif %}
 
-
-{% if post.description %}
+{% if post.appdata.Description.C %}
+  <blockquote>{{ post.appdata.Description.C }}</blockquote>
+{% elsif post.description %}
   <blockquote>{{ post.description }}</blockquote>
 {% endif %}
 

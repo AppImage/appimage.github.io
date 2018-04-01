@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: belltown/violetbug
-  - type: Install
+  - type: Download
     url: https://github.com/belltown/violetbug/releases
 
 desktop:

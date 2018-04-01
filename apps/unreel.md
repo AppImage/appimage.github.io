@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: linux-man/unreel
-  - type: Install
+  - type: Download
     url: https://github.com/linux-man/unreel/releases
 
 desktop:

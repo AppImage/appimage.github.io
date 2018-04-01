@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Tympanix/Electorrent
-  - type: Install
+  - type: Download
     url: https://github.com/Tympanix/Electorrent/releases
 
 desktop:
