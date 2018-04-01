@@ -1,0 +1,37 @@
+{
+  "name": "blackmirror",
+  "version": "7.7.7",
+  "description": "two-party automatic writing tool",
+  "main": "main.js",
+  "repository": "https://github.com/sorentycho/blackmirror",
+  "author": "Soren Tycho",
+  "license": "MIT",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "plugins": [
+            "transform-async-to-generator"
+          ]
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "chokidar": "^2.0.0",
+    "electron-editor-context-menu": "^1.1.1",
+    "electron-is-dev": "^0.3.0",
+    "electron-prompt": "^0.5.0",
+    "front-matter": "^2.2.0",
+    "fs-extra": "^4.0.3",
+    "glob": "^7.1.2",
+    "js-yaml": "^3.10.0",
+    "keymaster": "^1.6.2",
+    "marked": "^0.3.9",
+    "moment": "^2.20.1",
+    "shuffle-array": "^1.0.1",
+    "spellchecker": "^3.4.4",
+    "tmp": "0.0.31"
+  }
+}
