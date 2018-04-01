@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: MainframeHQ/onyx
-  - type: Install
+  - type: Download
     url: https://github.com/MainframeHQ/onyx/releases
 
 desktop:

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop">
+  <id>org.kde.kcalc.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>KCalc</name>
+  <name xml:lang="ast">KCalc</name>
+  <name xml:lang="ca">KCalc</name>
+  <name xml:lang="ca-valencia">KCalc</name>
+  <name xml:lang="cs">KCalc</name>
+  <name xml:lang="de">KCalc</name>
+  <name xml:lang="en-GB">KCalc</name>
+  <name xml:lang="es">KCalc</name>
+  <name xml:lang="et">KCalc</name>
+  <name xml:lang="ia">KCalc</name>
+  <name xml:lang="it">KCalc</name>
+  <name xml:lang="ko">KCalc</name>
+  <name xml:lang="nl">KCalc</name>
+  <name xml:lang="nn">KCalc</name>
+  <name xml:lang="pl">KCalc</name>
+  <name xml:lang="pt">KCalc</name>
+  <name xml:lang="sk">KCalc</name>
+  <name xml:lang="sl">KCalc</name>
+  <name xml:lang="sr">К‑калк</name>
+  <name xml:lang="sr-Latn">KCalc</name>
+  <name xml:lang="sr-ijekavian">К‑калк</name>
+  <name xml:lang="sr-ijekavianlatin">KCalc</name>
+  <name xml:lang="sv">Kcalc</name>
+  <name xml:lang="uk">KCalc</name>
+  <name xml:lang="x-test">xxKCalcxx</name>
+  <name xml:lang="zh-CN">KCalc</name>
+  <name xml:lang="zh-TW">KDE 計算機</name>
+  <summary>Scientific Calculator</summary>
+  <summary xml:lang="ast">Calculadora científica</summary>
+  <summary xml:lang="ca">Calculadora científica</summary>
+  <summary xml:lang="ca-valencia">Calculadora científica</summary>
+  <summary xml:lang="cs">Vědecká kalkulačka</summary>
+  <summary xml:lang="de">Wissenschaftlicher Taschenrechner</summary>
+  <summary xml:lang="en-GB">Scientific Calculator</summary>
+  <summary xml:lang="es">Calculadora científica</summary>
+  <summary xml:lang="et">Teaduslik kalkulaator</summary>
+  <summary xml:lang="ia">Calculator scientific</summary>
+  <summary xml:lang="it">Calcolatrice scientifica</summary>
+  <summary xml:lang="ko">공학용 계산기</summary>
+  <summary xml:lang="nl">Wetenschappelijke rekenmachine</summary>
+  <summary xml:lang="nn">Vitskapleg kalkulator</summary>
+  <summary xml:lang="pl">Kalkulator naukowy</summary>
+  <summary xml:lang="pt">Calculadora Científica</summary>
+  <summary xml:lang="sk">Vedecká kalkulačka</summary>
+  <summary xml:lang="sl">Znanstveno računalo</summary>
+  <summary xml:lang="sr">Научни калкулатор</summary>
+  <summary xml:lang="sr-Latn">Naučni kalkulator</summary>
+  <summary xml:lang="sr-ijekavian">Научни калкулатор</summary>
+  <summary xml:lang="sr-ijekavianlatin">Naučni kalkulator</summary>
+  <summary xml:lang="sv">Vetenskaplig miniräknare</summary>
+  <summary xml:lang="uk">Інженерний калькулятор</summary>
+  <summary xml:lang="x-test">xxScientific Calculatorxx</summary>
+  <summary xml:lang="zh-CN">科学计算器</summary>
+  <summary xml:lang="zh-TW">科學計算機</summary>
+  <description>
+    <p>
+      KCalc has everything you would expect from a scientific calculator, plus:
+      
+    </p>
+    <p xml:lang="ast">KCalc tien tolo qu'esperaríes d'una calculadora científica, amás de:</p>
+    <p xml:lang="ca">El KCalc té tot allò que espereu d'una calculadora científica, més:</p>
+    <p xml:lang="ca-valencia">El KCalc té tot allò que espereu d'una calculadora científica, més:</p>
+    <p xml:lang="de">KCalc bietet alles, was Sie von einem wissenschaftlichen Taschenrechner erwarten, plus:</p>
+    <p xml:lang="en-GB">KCalc has everything you would expect from a scientific calculator, plus:</p>
+    <p xml:lang="es">KCalc tiene todo lo que cabría esperar de una calculadora científica, además de:</p>
+    <p xml:lang="et">KCalc pakub kõike, mida oskad soovida ühelt teaduslikult kalkulaatorilt ja sellele lisaks veel:</p>
+    <p xml:lang="it">KCalc ha tutto quello che ci si aspetta da una calcolatrice scientifica.</p>
+    <p xml:lang="ko">KCalc는 공학용 계산기에서 찾을 수 있는 기능 외에도 다음을 더 지원합니다:</p>
+    <p xml:lang="nl">KCalc heeft alles wat u verwacht van een wetenschappelijke rekenmachine, plus:</p>
+    <p xml:lang="nn">KCalc har alt du forventar av ein vitskapleg kalkulator, pluss:</p>
+    <p xml:lang="pl">KCalc ma wszystko czego możnaby oczekiwać od kalkulatora naukowego, plus:</p>
+    <p xml:lang="pt">O KCalc tem tudo o que poderá esperar de uma calculadora científica, e ainda mais:</p>
+    <p xml:lang="sk">KCalc má všetko, čo by ste očakávali od vedeckej kalkulačky, plus:</p>
+    <p xml:lang="sl">KCalc poleg zmožnosti znanstvenega računala ponuja še naslednje zmožnosti:</p>
+    <p xml:lang="sr">К‑калк има све што бисте очекивали код једног научног калкулатора, плус:</p>
+    <p xml:lang="sr-Latn">KCalc ima sve što biste očekivali kod jednog naučnog kalkulatora, plus:</p>
+    <p xml:lang="sr-ijekavian">К‑калк има све што бисте очекивали код једног научног калкулатора, плус:</p>
+    <p xml:lang="sr-ijekavianlatin">KCalc ima sve što biste očekivali kod jednog naučnog kalkulatora, plus:</p>
+    <p xml:lang="sv">Miniräknaren har allt som man kan förvänta sig av en vetenskaplig räknare, samt:</p>
+    <p xml:lang="uk">KCalc вміє усе, що ви могли б очікувати від інженерного калькулятора, а крім того, вміє таке:</p>
+    <p xml:lang="x-test">xxKCalc has everything you would expect from a scientific calculator, plus:xx</p>
+    <p xml:lang="zh-CN">KCalc 具有您所期待的科学计算器的全部功能，以及：</p>
+    <p xml:lang="zh-TW">KCalac 有所有您預期科學計算機會有的功能，再加上：</p>
+  </description>
+  <url type="homepage">https://utils.kde.org/projects/kcalc/</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=kcalc</url>
+  <url type="help">https://docs.kde.org/trunk5/en/kdeutils/kcalc</url>
+  <url type="donation">https://www.kde.org/community/donations</url>
+  <provides>
+    <binary>kcalc</binary>
+  </provides>
+  <project_group>KDE</project_group>
+</component>

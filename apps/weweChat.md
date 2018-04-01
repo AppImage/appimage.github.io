@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: trazyn/weweChat
-  - type: Install
+  - type: Download
     url: https://github.com/trazyn/weweChat/releases
 
 desktop:

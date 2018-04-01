@@ -11,7 +11,7 @@ authors:
 links:
   - type: GitHub
     url: Subsurface-divelog/subsurface
-  - type: Install
+  - type: Download
     url: https://github.com/Subsurface-divelog/subsurface/releases
 
 desktop:

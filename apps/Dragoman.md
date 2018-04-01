@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: improbable-eng/Dragoman
-  - type: Install
+  - type: Download
     url: https://github.com/improbable-eng/Dragoman/releases
 
 desktop:

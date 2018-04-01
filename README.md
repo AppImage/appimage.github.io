@@ -56,4 +56,5 @@ Currently we are providing a JSON feed at https://appimage.github.io/feed.json. 
 Projects already using this data
 * Nitrux, NX Software Center: https://github.com/nomad-desktop/nx-software-center
 * https://github.com/simoniz0r/spm
+* https://github.com/sillasleal/appcenter
 * Please contact us if you are using this data so that we can list your project here

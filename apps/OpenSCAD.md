@@ -2,19 +2,25 @@
 layout: app
 
 permalink: /OpenSCAD/
+description: The Programmers Solid 3D CAD Modeller
 
 screenshots:
   - OpenSCAD/screenshot.png
 
 authors:
+  - name: t-paul
+    url: https://build.opensuse.org/user/show/t-paul
 
 links:
+  - type: Download
+    url: https://download.opensuse.org/repositories/home:/t-paul/AppImage/OpenSCAD-latest-x86_64.AppImage.mirrorlist
 
 desktop:
   Desktop Entry:
     Type: Application
     Version: 1.0
     Name: OpenSCAD
+    Comment: The Programmers Solid 3D CAD Modeller
     Icon: openscad
     Exec: openscad %f
     MimeType: application/x-openscad

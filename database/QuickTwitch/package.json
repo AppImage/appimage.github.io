@@ -1,0 +1,29 @@
+{
+  "name": "QuickTwitch",
+  "version": "0.9.0",
+  "description": "electron-react-redux-boilerplate",
+  "main": "init.js",
+  "author": {
+    "name": "Miles Hollingsworth",
+    "email": "miles@hollingsware.com"
+  },
+  "repository": "https://github.com/jschr/electron-react-redux-boilerplate",
+  "license": "MIT",
+  "dependencies": {
+    "babel-runtime": "^6.22.0",
+    "cross-env": "^5.1.4",
+    "history": "^4.6.3",
+    "prop-types": "^15.5.10",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.2",
+    "react-router": "^4.1.2",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.8",
+    "redux": "^3.0.0",
+    "redux-actions": "^2.2.1",
+    "redux-localstorage": "^0.4.1",
+    "redux-thunk": "^2.2.0",
+    "twitch-sdk": "Spiffyk/twitch-node-sdk"
+  }
+}

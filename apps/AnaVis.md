@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: learningmedia/anavis
-  - type: Install
+  - type: Download
     url: https://github.com/learningmedia/anavis/releases
 
 desktop:
