@@ -1,0 +1,14 @@
+{
+  "name": "pomotroid",
+  "version": "0.1.2",
+  "author": "Christopher Murphy <christopherianmurphy@gmail.com>",
+  "description": "A simple and visually-pleasing Pomodoro timer",
+  "license": "MIT",
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "animejs": "^2.2.0",
+    "vue": "^2.3.3",
+    "vue-electron": "^1.0.6",
+    "vuex": "^2.3.1"
+  }
+}

@@ -14,6 +14,20 @@ authors:
 links:
   - type: GitHub
     url: labsquare/CutePeaks
-  - type: Install
+  - type: Download
     url: https://github.com/labsquare/CutePeaks/releases
+
+desktop:
+  Desktop Entry:
+    Type: Application
+    Name: CutePeaks
+    Comment: A simple sanger trace file viewer
+    Exec: cutepeaks %F
+    Icon: cutepeaks
+    Terminal: false
+    Categories: Science
+  AppImageHub:
+    X-AppImage-UpdateInformation: 
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
 ---

@@ -3,21 +3,21 @@
 URL=$(cat $1 | head -n 1)
 echo $URL
 
-if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
+if [ x"$TRAVIS_PULL_REQUEST" == xfalse ] ; then
   git checkout "$TRAVIS_BRANCH"
 fi
 
 INPUTBASENAME=$(basename $1)
 
 # Check if $URL starts with "http", otherwise exit
-if [ ${URL:0:4} != http ] ; then
+if [ x"${URL:0:4}" != xhttp ] ; then
   echo "No http link detected in $1"
   exit 1
 fi
 
 # If the URL begins with https://github.com, then treat it specially
 # https://github.com/egoist/devdocs-desktop/
-if [ "${URL:0:18}" == "https://github.com" ] && [[ ${URL} != *"download"* ]] ; then # do not redirect direct links
+if [ x"${URL:0:18}" == x"https://github.com" ] && [[ "${URL}" != *"download"* ]] ; then # do not redirect direct links
   echo "GitHub URL detected"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
@@ -27,23 +27,23 @@ fi
 
 # If $URL begins with https://api.github.com, then treat it specially
 # This allows us to have generic URLs rather than URLs to specific releases
-if [ "${URL:0:22}" == "https://api.github.com" ] || [ "${GHURL:0:22}" == "https://api.github.com" ] ; then
-  if [ "${URL:0:22}" == "https://api.github.com" ] ; then
+if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"https://api.github.com" ] ; then
+  if [ x"${URL:0:22}" == x"https://api.github.com" ] ; then
     GHURL="$URL"
   fi
   echo "GitHub API URL detected"
-  URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -i 64 | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
-  if [ "" == "$URL" ] ; then
-    URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | head -n 1 | cut -d '"' -f 4) # No 64-bit one found, trying any; TODO: Handle more than one AppImage per release
+  URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | grep -i 64 | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
+  if [ x"" == x"$URL" ] ; then
+    URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | head -n 1 | cut -d '"' -f 4) # No 64-bit one found, trying any; TODO: Handle more than one AppImage per release
   fi
-  if [ "" == "$URL" ] ; then
+  if [ x"" == x"$URL" ] ; then
     echo "Unable to get download URL for the AppImage. Is it really there on GitHub Releases?"
     exit 1
   fi
   echo "URL from GitHub API: $URL"
-  GHUSER=$(echo "$URL" | cut -d '/' -f 5)
-  GHREPO=$(echo "$URL" | cut -d '/' -f 6)
-  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" https://api.github.com/repos/$GHUSER/$GHREPO -O - | grep spdx_id | cut -d '"' -f 4)
+  GHUSER=$(echo "$URL" | cut -d '/' -f 4)
+  GHREPO=$(echo "$URL" | cut -d '/' -f 5)
+  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" https://api.github.com/repos/$GHUSER/$GHREPO -O - | grep spdx_id | cut -d '"' -f 4 | head -n 1)
 fi
 
 # Download the file if it is not already there
@@ -61,23 +61,23 @@ TYPE=""
 ARCHITECTURE=$(file "$FILENAME" | cut -d "," -f 2 | xargs | sed -e 's|-|_|g' )
 echo $ARCHCITECTURE # TODO: Normalize
 MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4 2>/dev/null)
-if [ -z $MAGIC ] ; then
+if [ -z "$MAGIC" ] ; then
   echo "Magic number not detected. Dear upstream, please consider to add one to the AppImage as per"
   echo "https://github.com/AppImage/AppImageSpec/blob/master/draft.md"
   ELFMAGIC=$(dd if="$FILENAME" bs=1 skip=0 count=4  2>/dev/null)
-  if [ $ELFMAGIC == $(echo -ne "\x7f\x45\x4c\x46") ] ; then
+  if [ x"$ELFMAGIC" == x$(echo -ne "\x7f\x45\x4c\x46") ] ; then
     echo "ELF file detected"
     ISOMAGIC=$(dd if="$FILENAME" bs=1 skip=32769 count=5 2>/dev/null)
-    if [ $ISOMAGIC == $(echo -ne "CD001") ] ; then
+    if [ x"$ISOMAGIC" == x$(echo -ne "CD001") ] ; then
       echo "ISO9660 file detected"
       echo "Hence assuming AppImage type 1"
       TYPE=1
     fi
   fi
-elif [ $MAGIC == $(echo -ne "\x41\x49\x02") ] ; then
+elif [ x"$MAGIC" == x$(echo -ne "\x41\x49\x02") ] ; then
   echo "AppImage type 2 detected"
   TYPE=2
-elif [ $MAGIC == $(echo -ne "\x41\x49\x01") ] ; then
+elif [ x"$MAGIC" == x$(echo -ne "\x41\x49\x01") ] ; then
   echo "AppImage type 1 detected"
   TYPE=1
 else
@@ -90,9 +90,11 @@ fi
 if [ ! -f appdir-lint.sh ] ; then
   wget -c -q https://raw.githubusercontent.com/AppImage/AppImages/master/appdir-lint.sh https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist
 fi
+
+set -x
   
 # If we have a type 2 AppImage, then mount it using appimagetool (not using itself for security reasons)
-if [ $TYPE -eq 2 ] ; then
+if [ x"$TYPE" == x2 ] ; then
   if [ ! -e appimagetool-x86_64.AppImage ] ; then
     wget -c -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
     chmod +x appimagetool*
@@ -113,7 +115,7 @@ if [ $TYPE -eq 2 ] ; then
 fi
 
 # If we have a type 1 AppImage, then loop-mount it (not using itself for security reasons)
-if [ $TYPE -eq 1 ] ; then
+if [ x"$TYPE" == x1 ] ; then
   # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
   sudo mount "$FILENAME" -o ro,loop /mnt
   APPDIR=/mnt
@@ -123,6 +125,8 @@ if [ $TYPE -eq 1 ] ; then
   UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null) || echo "Could not get update information from the AppImage"
   # later # sudo umount -l /mnt
 fi
+
+set +x
 
 TERMINAL=false
 grep -r Terminal=true "${APPDIR}"/*.desktop && TERMINAL=true
@@ -139,15 +143,13 @@ echo "==========================================="
 wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/firejail.tar.gz" ; sudo tar xf firejail.tar.gz -C /
 sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
 
-# Find out whether the application is a GUI application
-
 echo ""
 echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
 # reset does not work here
-if [ "$TERMINAL" == "false" ] ; then
+if [ x"$TERMINAL" == xfalse ] ; then
   firejail --noprofile --net=none --appimage ./"$FILENAME" &
 else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
@@ -178,12 +180,12 @@ sleep 2
 
 # We could simulate X11 keyboard/mouse input with xdotool here if needed;
 # of course this should not be hardcoded here (this is just an example)
-if [ "$INPUTBASENAME" == "VLC" ] ; then
+if [ x"$INPUTBASENAME" == xVLC ] ; then
   xdotool sleep 0.1 key Return # Click away the data protection window
   xdotool sleep 0.1 key shift+F1 # Open the about screen
   sleep 1
 fi
-if [ "$INPUTBASENAME" == "Subsurface" ] ; then
+if [ x"$INPUTBASENAME" == xSubsurface ] ; then
   xdotool sleep 0.1 key Escape # Click away the update check window
   sleep 1
   # Get a list of open windows
@@ -215,23 +217,23 @@ chmod 644 "$DATAFILE" # https://github.com/AppImage/AppImageHub/issues/19
 echo "" >> "$DATAFILE"
 echo "[AppImageHub]" >> "$DATAFILE"
 
-if [ "" != "$UPDATE_INFORMATION" ] ; then
+if [ ! -z "$UPDATE_INFORMATION" ] ; then
   echo "X-AppImage-UpdateInformation=${UPDATE_INFORMATION}" >> "$DATAFILE"
 else
-  echo "X-AppImage-UpdateInformation=false" >> "$DATAFILE"
+  # echo "X-AppImage-UpdateInformation=false" >> "$DATAFILE"
   echo "# Dear upstream developer, please include update information in your AppImage" >> "$DATAFILE"
   echo "# (e.g., with appimagetool -u) so that users can easily update the AppImage" >> "$DATAFILE"
 fi
 
-if [ "" != "$SIGNATURE" ] ; then
+if [ ! -z "$SIGNATURE" ] ; then
   echo "X-AppImage-Signature=$SIGNATURE" >> "$DATAFILE"
 else
-  echo "X-AppImage-Signature=false" >> "$DATAFILE"
+  # echo "X-AppImage-Signature=false" >> "$DATAFILE"
   echo "# Dear upstream developer, please include a digital signature in your AppImage" >> "$DATAFILE"
   echo "# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage" >> "$DATAFILE"
 fi
 
-if [ "1" == "$TYPE" ] ; then
+if [ x1 == x"$TYPE" ] ; then
   echo "X-AppImage-Type=1" >> "$DATAFILE"
   echo "# Dear upstream developer, please consider to switch to type 2" >> "$DATAFILE"
   echo "# so that users can benefit from the additional features like digital embedded signatures" >> "$DATAFILE"
@@ -239,15 +241,20 @@ if [ "1" == "$TYPE" ] ; then
   echo "# or use linuxdeployqt or appimagetool which produce type 2 automatically" >> "$DATAFILE"
 fi
 
-if [ "2" == "$TYPE" ] ; then
+if [ x2 == x"$TYPE" ] ; then
   echo "X-AppImage-Type=2" >> "$DATAFILE"
 fi
 
 echo "X-AppImage-Architecture=$ARCHITECTURE" >> "$DATAFILE"
 
-if [ "" != "$LICENSE" ] ; then
+if [ x"" != x"$LICENSE" ] ; then
   echo "X-AppImage-Payload-License=$LICENSE" >> "$DATAFILE"
 fi
+
+# Convert desktop file to YAML
+
+# dv "$DATAFILE" --yaml -o database/$INPUTBASENAME/desktop.yaml
+# For now we do this below for all desktop files on each run
 
 # If available, also copy in AppStream metainfo
 
@@ -255,29 +262,51 @@ if [ -e $APPDIR/usr/share/metainfo/*.appdata.xml ] ; then
   cp $APPDIR/usr/share/metainfo/*.appdata.xml database/$INPUTBASENAME/
 fi
 
+# Get pacakge.json from resources/app.asar for electron-builder applications
+ASAR=$(find "$APPDIR" -name "app.asar" || true)
+PJ=$(find "$APPDIR" -path "app/package.json" || true)
+if [ ! -z "$ASAR" ] ; then
+  echo "Extracting package.json from app.asar"
+  asar extract-file "$ASAR" package.json && mv package.json database/$INPUTBASENAME/
+elif [ ! -z "$PJ" ] ; then
+  echo "Copying package.json"
+  cp "$PJ" database/$INPUTBASENAME/
+fi
+
 echo "==========================================="
 
-if [ $TYPE -eq 2 ] ; then
+if [ x"$TYPE" == x2 ] ; then
   kill $PID # fuse
 fi
-if [ $TYPE -eq 1 ] ; then
+if [ x"$TYPE" == x1 ] ; then
   sudo umount -l /mnt
 fi
+
+echo ""
+echo "==========================================="
+echo "============= LISTING FILES ==============="
+echo "==========================================="
+
+ls -lh database/$INPUTBASENAME/
 
 echo ""
 echo "==========================================="
 echo "============ EXPORTING DATA ==============="
 echo "==========================================="
 
+set -x
+
 # Until https://github.com/ximion/appstream/issues/128 is solved
-sudo wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/appstreamcli-x86_64.AppImage"
+# This URL was wrong:
+#sudo wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/appstreamcli-x86_64.AppImage"
+sudo wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/appstreamcli-x86_64.AppImage"
 sudo chmod a+x appstreamcli-x86_64.AppImage
 # ./appstreamcli-x86_64.AppImage --appimage-extract ; mv squashfs-root appstreamcli.AppDir # TODO: remove need for this
 # Does not seem to work # alias appstreamcli='appstreamcli.AppDir/root_overlay/lib/x86_64-linux-gnu/ld-2.23.so --library-path appstreamcli.AppDir/root_overlay/usr/lib/x86_64-linux-gnu/ appstreamcli.AppDir/root_overlay/usr/bin/appstreamcli'
 # For Jekyll Now
-for INPUTBASENAME in database/*; do
+##### for INPUTBASENAME in database/*; do
   INPUTBASENAME=${INPUTBASENAME##*/} # Remove path up to last /
-  echo "Exporting $INPUTBASENAME to apps/$INPUTBASENAME.md for Jekyll"
+  # echo "Exporting $INPUTBASENAME to apps/$INPUTBASENAME.md for Jekyll"
   touch apps/$INPUTBASENAME.md
   echo "---" > apps/$INPUTBASENAME.md
   echo "layout: app" >> apps/$INPUTBASENAME.md
@@ -288,10 +317,10 @@ for INPUTBASENAME in database/*; do
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     ./appstreamcli-x86_64.AppImage convert database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
     SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .)
-    if [ "$SUMMARY" != "" ] ; then
+    if [ x"$SUMMARY" != x"" ] ; then
       echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
     fi
-  elif [  "$DESKTOP_COMMENT" != "" ] ; then
+  elif [  x"$DESKTOP_COMMENT" != x"" ] ; then
     echo "description: $DESKTOP_COMMENT" >> apps/$INPUTBASENAME.md
   fi
   # License
@@ -301,15 +330,15 @@ for INPUTBASENAME in database/*; do
     AS_LICENSE=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/project_license" -v .)
   fi
   DT_LICENSE=$(grep -r "X-AppImage-Payload-License=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2)
-  if [ "$AS_LICENSE" != "" ] ; then
+  if [ x"$AS_LICENSE" != x"" ] ; then
     echo "license: $AS_LICENSE" >> apps/$INPUTBASENAME.md
-  elif [ "$DT_LICENSE" != "" ] ; then
+  elif [ x"$DT_LICENSE" != x"" ] ; then
     echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
   fi
   # Screenshot
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     SCREENSHOT=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/screenshots/screenshot[1]/image" -v . || true)
-    if [ "$SCREENSHOT" != "" ] ; then
+    if [ x"$SCREENSHOT" != x"" ] ; then
       echo "screenshots:" >> apps/$INPUTBASENAME.md
       echo "- $SCREENSHOT" >> apps/$INPUTBASENAME.md
     fi
@@ -323,46 +352,100 @@ for INPUTBASENAME in database/*; do
   echo "authors:" >> apps/$INPUTBASENAME.md
   GH_USER=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
   GH_REPO=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
-  if [  "$GH_USER" == "" ] ; then
+  OBS_USER=$(grep "^http.*://download.opensuse.org/repositories/home:/" data/$INPUTBASENAME | cut -d "/" -f 6 | sed -e 's|:||g')
+  if [  x"$GH_USER" == x"" ] ; then
     GH_USER=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
     GH_REPO=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 6 )
   fi
-  if [  "$GH_USER" != "" ] ; then
+  if [  x"$GH_USER" != x"" ] ; then
     echo "  - name: $GH_USER" >> apps/$INPUTBASENAME.md
     echo "    url: https://github.com/$GH_USER" >> apps/$INPUTBASENAME.md
+  elif [  x"$OBS_USER" != x"" ] ; then
+    echo "  - name: $OBS_USER" >> apps/$INPUTBASENAME.md
+    echo "    url: https://build.opensuse.org/user/show/$OBS_USER" >> apps/$INPUTBASENAME.md
   fi
   # Links
   echo "" >> apps/$INPUTBASENAME.md
   echo "links:" >> apps/$INPUTBASENAME.md
-  if [  "$GH_USER" != "" ] ; then
+  if [  x"$GH_USER" != x"" ] ; then
     echo "  - type: GitHub" >> apps/$INPUTBASENAME.md
     echo "    url: $GH_USER/$GH_REPO" >> apps/$INPUTBASENAME.md
-    echo "  - type: Install" >> apps/$INPUTBASENAME.md
+    echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: https://github.com/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
   fi
+  OBS_LINK=$(grep "^http.*://download.opensuse.org.*latest.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g')
+  if [  x"$OBS_LINK" != x"" ] ; then
+    echo "  - type: Download" >> apps/$INPUTBASENAME.md
+    echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
+  fi
+  # Add content of desktop file
+  if [ -f "database/$INPUTBASENAME/$(dir -C -w 1 database/$INPUTBASENAME | grep -m1 '.desktop')" ]; then
+    dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
+    echo "" >> apps/$INPUTBASENAME.md
+    echo "desktop:" >> apps/$INPUTBASENAME.md
+    cat database/$INPUTBASENAME/desktop.yaml | sed  's/^/  /' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first line ("---")
+    rm database/$INPUTBASENAME/desktop.yaml
+  fi
+  # Add content of AppStream metainfo file
+  if [ -e database/$INPUTBASENAME/appdata.yaml ] ; then
+    echo "" >> apps/$INPUTBASENAME.md
+    echo "appdata:" >> apps/$INPUTBASENAME.md
+    cat database/$INPUTBASENAME/appdata.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
+    rm database/$INPUTBASENAME/appdata.yaml
+  fi
+  # Add content of Electron package.json file
+  if [ -e database/$INPUTBASENAME/package.json ] ; then
+    dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml
+    echo "" >> apps/$INPUTBASENAME.md
+    echo "electron:" >> apps/$INPUTBASENAME.md
+    cat database/$INPUTBASENAME/package.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
+    rm database/$INPUTBASENAME/package.yaml
+  fi
   echo "---" >> apps/$INPUTBASENAME.md
-done
+  ls -lh apps/$INPUTBASENAME.md || exit 1
+  ls -lh database/$INPUTBASENAME/ || exit 1
+##### done
 
 # TODO: Convert the "database files" into whatever output formats we need to support
 # e.g., OCS for knsrc/Discover
+
+set +x
 
 echo ""
 echo "==========================================="
 echo "============== PUSHING DATA ==============="
 echo "==========================================="
 
+# If this a PR, then just check whether the files have generated
+# See https://github.com/AppImage/appimage.github.io/issues/476 for more information
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then 
+  cat "apps/${INPUTBASENAME}.md" || exit 1
+  cat "database/${INPUTBASENAME}/"*.desktop || exit 1 # Asterisk must not be inside quotes, https://travis-ci.org/AppImage/appimage.github.io/builds/360847207#L782
+  ls -lh "database/${INPUTBASENAME}/screenshot.png" || exit 1
+  curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfer.sh/screenshot.png 
+  echo "Since we are on a TRAVIS_PULL_REQUEST and the required files are there, we are assuming the test is OK"
+  exit 0
+fi
+
 # If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
-if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
-    git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
-    git config --global user.email "travis@travis-ci.org"
-    git config --global user.name "Travis CI"
-    ( cd database/ ; git add . || true ) # Recursively add everything in this directory
-    ( cd apps/ ; git add . || true ) # Recursively add everything in this directory
-    git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
+
+git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
+git config --global user.email "travis@travis-ci.org"
+git config --global user.name "Travis CI"
+set -x
+( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
+( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
+git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
 Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
 [ci skip]
 EOF
-    git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+set +x
+git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+# wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
+    set -x
     git push --set-upstream deploy
-fi
+    set +x
+# wrong logic? # else
+# wrong logic? #     echo "Not runing 'git push --set-upstream deploy' because this build does NOT have TRAVIS_PULL_REQUEST=false"
+# wrong logic? # fi
