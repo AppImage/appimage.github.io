@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: michaelpb/whiteboard
-  - type: Install
+  - type: Download
     url: https://github.com/michaelpb/whiteboard/releases
 
 desktop:

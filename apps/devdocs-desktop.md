@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: egoist/devdocs-desktop
-  - type: Install
+  - type: Download
     url: https://github.com/egoist/devdocs-desktop/releases
 
 desktop:

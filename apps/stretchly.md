@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: hovancik/stretchly
-  - type: Install
+  - type: Download
     url: https://github.com/hovancik/stretchly/releases
 
 desktop:
