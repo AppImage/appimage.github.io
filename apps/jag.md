@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: seleznevae/jag
-  - type: Install
+  - type: Download
     url: https://github.com/seleznevae/jag/releases
 
 desktop:

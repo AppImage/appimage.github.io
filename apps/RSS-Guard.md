@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: martinrotter/rssguard
-  - type: Install
+  - type: Download
     url: https://github.com/martinrotter/rssguard/releases
 
 desktop:

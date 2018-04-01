@@ -7,8 +7,14 @@ screenshots:
   - MrWriter/screenshot.png
 
 authors:
+  - name: unruhschuh
+    url: https://github.com/unruhschuh
 
 links:
+  - type: GitHub
+    url: unruhschuh/MrWriter
+  - type: Download
+    url: https://github.com/unruhschuh/MrWriter/releases
 
 desktop:
   Desktop Entry:

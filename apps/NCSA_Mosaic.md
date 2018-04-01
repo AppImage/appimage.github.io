@@ -13,7 +13,7 @@ authors:
 links:
   - type: GitHub
     url: AppImage/NCSA-Mosaic-AppImage
-  - type: Install
+  - type: Download
     url: https://github.com/AppImage/NCSA-Mosaic-AppImage/releases
 
 desktop:

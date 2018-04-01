@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: irccloud/irccloud-desktop
-  - type: Install
+  - type: Download
     url: https://github.com/irccloud/irccloud-desktop/releases
 
 desktop:
