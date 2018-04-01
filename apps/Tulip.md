@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: tulip5/tulip
-  - type: Install
+  - type: Download
     url: https://github.com/tulip5/tulip/releases
 
 desktop:

@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /zsync2/
+description: A rewrite of the original zsync tool for advanced file download/syncing
 
 screenshots:
   - zsync2/screenshot.png
@@ -13,12 +14,13 @@ authors:
 links:
   - type: GitHub
     url: TheAssassin/zsync2
-  - type: Install
+  - type: Download
     url: https://github.com/TheAssassin/zsync2/releases
 
 desktop:
   Desktop Entry:
     Name: zsync2
+    Comment: A rewrite of the original zsync tool for advanced file download/syncing
     Type: Application
     Terminal: true
     Icon: zsync2

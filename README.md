@@ -19,7 +19,17 @@ https://appimage.github.io/
 
 ## How to submit AppImages to the catalog
 
-Create a new file using [this link](https://github.com/AppImage/AppImageHub/new/master/data) and send a Pull Request. The file should contain one line with a link to the GitHub repository that hosts AppImages on its Releases page. Alternatively, a link to the AppImage. Nothing else. Then send a Pull Request to this repository. Travis CI will instantly perform an automated review of the AppImage, and in case it succeeds, you will see a __green__ result in your pull request. If you get a __red__ result, check the log of the Travis CI build, and fix it.
+Create a new file using
+
+### **[this link](https://github.com/AppImage/AppImageHub/new/master/data)**
+
+and send a Pull Request. 
+
+**The file should contain one line with a link to the GitHub repository that hosts AppImages on its Releases page.**
+
+**Alternatively, a link to the AppImage. Nothing else.**
+
+Then send a Pull Request to this repository. Travis CI will instantly perform an automated review of the AppImage, and in case it succeeds, you will see a __green__ result in your pull request. If you get a __red__ result, check the log of the Travis CI build, and fix it.
 
 ### Checklist for submitting your own AppImage
 
@@ -46,4 +56,5 @@ Currently we are providing a JSON feed at https://appimage.github.io/feed.json. 
 Projects already using this data
 * Nitrux, NX Software Center: https://github.com/nomad-desktop/nx-software-center
 * https://github.com/simoniz0r/spm
+* https://github.com/sillasleal/appcenter
 * Please contact us if you are using this data so that we can list your project here

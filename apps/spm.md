@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: simoniz0r/spm
-  - type: Install
+  - type: Download
     url: https://github.com/simoniz0r/spm/releases
 
 desktop:

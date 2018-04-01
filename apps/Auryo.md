@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Superjo149/auryo
-  - type: Install
+  - type: Download
     url: https://github.com/Superjo149/auryo/releases
 
 desktop:
