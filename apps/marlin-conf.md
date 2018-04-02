@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: akaJes/marlin-config
-  - type: Install
+  - type: Download
     url: https://github.com/akaJes/marlin-config/releases
 
 desktop:

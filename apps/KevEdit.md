@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: cknave/kevedit
-  - type: Install
+  - type: Download
     url: https://github.com/cknave/kevedit/releases
 
 desktop:

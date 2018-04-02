@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: meetfranz/franz
-  - type: Install
+  - type: Download
     url: https://github.com/meetfranz/franz/releases
 
 desktop:
