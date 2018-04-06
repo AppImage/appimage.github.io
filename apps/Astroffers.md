@@ -3,7 +3,6 @@ layout: app
 
 permalink: /Astroffers/
 description: Take offers to watch at given nights by the NGC2000 catalog
-license: MIT
 
 screenshots:
   - Astroffers/screenshot.png
@@ -26,8 +25,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: astroffers
-    X-AppImage-Version: 1.1.0
-    X-AppImage-BuildId: 2b786d00-253f-11a8-1229-05a4f10cadeb
+    X-AppImage-Version: 1.1.2
+    X-AppImage-BuildId: 48697450-398e-11a8-0d4d-f7b826d356b1
     Categories: Astronomy
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -35,7 +34,6 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: MIT
 
 electron:
   main: lib/main.js
@@ -51,18 +49,18 @@ electron:
   license: MIT
   bugs:
     url: https://github.com/jayhasyee/astroffers/issues
-  homepage: https://github.com/jayhasyee/astroffers
+  homepage: http://astroffers.org
   dependencies:
+    astroffers-core: 1.0.2
     classnames: 2.2.5
     clone: 2.1.1
-    electron-ga: 1.0.4
-    electron-google-analytics: 0.0.24
+    electron-ga: 1.0.6
+    electron-is-dev: 0.3.0
     electron-log: 2.2.11
-    electron-nucleus: 0.2.0
     electron-updater: 2.21.0
     font-roboto-local: 1.0.1
     highcharts: 6.0.3
-    json-2-csv: "^2.2.0"
+    json-2-csv: 2.2.0
     left-pad: 1.2.0
     material-ui: 0.19.4
     mdi: 2.0.46
@@ -75,5 +73,5 @@ electron:
     react-redux: 5.0.6
     redux: 3.7.2
     repatch: 1.3.12
-    suncalc: 1.8.0
+    uuid: 3.2.1
 ---

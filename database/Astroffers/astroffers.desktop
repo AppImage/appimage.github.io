@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=astroffers
-X-AppImage-Version=1.1.0
-X-AppImage-BuildId=2b786d00-253f-11a8-1229-05a4f10cadeb
+X-AppImage-Version=1.1.2
+X-AppImage-BuildId=48697450-398e-11a8-0d4d-f7b826d356b1
 Categories=Astronomy;
 
 [AppImageHub]
@@ -15,4 +15,3 @@ Categories=Astronomy;
 X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
-X-AppImage-Payload-License=MIT
