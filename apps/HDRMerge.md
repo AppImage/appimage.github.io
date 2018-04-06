@@ -3,20 +3,19 @@ layout: app
 
 permalink: /HDRMerge/
 description: Merge several raw images into a single DNG raw image with high dynamic range.
-license: GPL-3.0
 
 screenshots:
   - HDRMerge/screenshot.png
 
 authors:
-  - name: aferrero2707
-    url: https://github.com/aferrero2707
+  - name: jcelaya
+    url: https://github.com/jcelaya
 
 links:
   - type: GitHub
-    url: aferrero2707/hdrmerge-appimage
+    url: jcelaya/hdrmerge
   - type: Download
-    url: https://github.com/aferrero2707/hdrmerge-appimage/releases
+    url: https://github.com/jcelaya/hdrmerge/releases
 
 desktop:
   Desktop Entry:
@@ -38,5 +37,4 @@ desktop:
   AppImageHub:
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: GPL-3.0
 ---
