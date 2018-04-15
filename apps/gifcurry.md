@@ -2,10 +2,10 @@
 layout: app
 
 permalink: /gifcurry/
-description: Open source video to GIF maker, written in Haskell, that allows overlaid text.
+description: Your open source video to GIF maker built with Haskell
 license: BSD-3-Clause
 screenshots:
-- https://i.imgur.com/XLcD7fg.png
+- https://i.imgur.com/er3AQjP.png
 
 authors:
   - name: lettier
@@ -14,25 +14,25 @@ authors:
 links:
   - type: GitHub
     url: lettier/gifcurry
-  - type: Install
+  - type: Download
     url: https://github.com/lettier/gifcurry/releases
 
 desktop:
   Desktop Entry:
     Type: Application
     Name: Gifcurry
-    Exec: gifcurry_gui
-    Comment: Open source video to GIF maker, written in Haskell, that allows overlaid
-      text.
-    Icon: gifcurry
+    Comment: Your open source video to GIF maker built with Haskell.
+    Icon: gifcurry-icon
     Categories: AudioVideo
     Terminal: false
+    Exec: gifcurry_gui
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: BSD-3-Clause
 
 appdata:
   Type: desktop-application
@@ -40,7 +40,13 @@ appdata:
   Name:
     C: Gifcurry
   Summary:
-    C: Open source video to GIF maker, written in Haskell, that allows overlaid text.
+    C: Your open source video to GIF maker built with Haskell
+  Description:
+    C: >-
+      <p>Gifcurry is your open source video to GIF maker built with Haskell.
+            Import a video, trim, crop, add text, pick a font, set the size, and
+            save your creation as a GIF or a video. Making GIFs with Gifcurry is
+            fun so try it out!</p>
   ProjectLicense: BSD-3-Clause
   Url:
     homepage: https://github.com/lettier/gifcurry
@@ -53,19 +59,19 @@ appdata:
   Screenshots:
   - default: true
     caption:
-      C: The main Gifcurry window showing the video Big Buck Bunny produced by the Blender Foundation.
+      C: The main Gifcurry window.
     thumbnails: []
     source-image:
-      url: https://i.imgur.com/XLcD7fg.png
-      width: 403
-      height: 467
+      url: https://i.imgur.com/er3AQjP.png
+      width: 1003
+      height: 468
       lang: C
   - caption:
       C: The about Gifcurry window.
     thumbnails: []
     source-image:
-      url: https://i.imgur.com/5pZrB1f.png
-      width: 426
-      height: 600
+      url: https://i.imgur.com/NMadQxQ.png
+      width: 715
+      height: 448
       lang: C
 ---

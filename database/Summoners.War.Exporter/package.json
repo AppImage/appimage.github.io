@@ -1,0 +1,29 @@
+{
+  "name": "sw-exporter",
+  "productName": "Summoners War Exporter",
+  "version": "0.0.21",
+  "description": "This tool will parse intercepted data from Summoners War and extract information on the monsters and runes of the user.",
+  "main": "./app/main.js",
+  "author": "porksmash & Xzandro",
+  "license": "Apache-2.0",
+  "bugs": "https://github.com/Xzandro/sw-exporter/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xzandro/sw-exporter.git"
+  },
+  "dependencies": {
+    "dateformat": "^2.0.0",
+    "electron-json-storage": "^3.1.0",
+    "fast-csv": "^2.4.0",
+    "fs-extra": "^4.0.1",
+    "http-proxy": "^1.16.2",
+    "lodash": "^4.17.4",
+    "mousetrap": "^1.6.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router": "^3.0.2",
+    "request": "^2.81.0",
+    "sanitize-filename": "^1.6.1",
+    "semantic-ui-react": "^0.71.5"
+  }
+}

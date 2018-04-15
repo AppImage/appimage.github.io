@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=Cumulonimbus
+Name=cumulonimbus
 Comment=A simple, beautiful podcast app.
 Exec=AppRun
 Terminal=false
 Type=Application
 Icon=cumulonimbus
-X-AppImage-Version=1.6.7.40
-X-AppImage-BuildId=a8b7b910-985e-11a7-383f-2560d7f732d6
+X-AppImage-Version=1.7.0.59
+X-AppImage-BuildId=3c228ae0-def5-11a7-0713-c32285fb1fa0
 Categories=Audio;
 
 [AppImageHub]

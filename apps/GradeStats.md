@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: nikolio/GradeStats
-  - type: Install
+  - type: Download
     url: https://github.com/nikolio/GradeStats/releases
 
 desktop:
