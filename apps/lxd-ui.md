@@ -2,10 +2,10 @@
 layout: app
 
 permalink: /lxd-ui/
-description: testing it...
+description: A simple easy to use GUI for your local LXD server.
 
 screenshots:
-  - lxd-ui/screenshot.png
+  - https://i.imgur.com/MDcbkne.png
 
 authors:
   - name: lcherone
@@ -20,7 +20,7 @@ links:
 desktop:
   Desktop Entry:
     Name: lxd-ui
-    Comment: testing it...
+    Comment: A simple easy to use GUI for your local LXD server.
     Exec: AppRun
     Terminal: false
     Type: Application
@@ -36,8 +36,8 @@ desktop:
     X-AppImage-Architecture: x86_64
 
 electron:
-  description: testing it...
-  homepage: http://cherone.co.uk
+  description: A simple easy to use GUI for your local LXD server.
+  homepage: https://github.com/lcherone/lxd-ui
   license: 
   main: "./dist/electron/main.js"
   dependencies:
