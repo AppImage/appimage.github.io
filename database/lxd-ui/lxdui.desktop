@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=LXDui
+Comment=A simple easy to use GUI for your local LXD server.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=lxdui
+X-AppImage-Version=0.0.9
+X-AppImage-BuildId=4d56c280-4611-11a8-250c-497e56333709
+Categories=Utility;
