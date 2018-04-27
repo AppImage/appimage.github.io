@@ -1,0 +1,24 @@
+{
+  "name": "Chronos",
+  "productName": "Chronos",
+  "version": "2.7.3",
+  "description": "Native app for time-tracking fully integrated with JIRA",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "Webpal",
+    "url": "https://github.com/web-pal"
+  },
+  "license": "CCL",
+  "dependencies": {
+    "@paulcbetts/system-idle-time": "github:paulcbetts/node-system-idle-time",
+    "electron-log": "2.2.14",
+    "electron-updater": "2.20.1",
+    "keytar": "4.1.0",
+    "node-notifier": "^5.1.2"
+  },
+  "devEngines": {
+    "node": ">=6.x",
+    "npm": ">=4.x",
+    "yarn": "0.22.0"
+  }
+}
