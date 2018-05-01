@@ -405,10 +405,11 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
   fi
   # Icon
-  if [ -f "database/$INPUTBASENAME/icons/$ICONSIZE/$ICONFILE" ] ; then
+  ICONBASENAME=$(basename "$ICONFILE")
+  if [ -f "database/$INPUTBASENAME/icons/$ICONSIZE/$ICONBASENAME" ] ; then
     echo "" >> apps/$INPUTBASENAME.md
     echo "icons:" >> apps/$INPUTBASENAME.md
-    echo "  - $INPUTBASENAME/icons/$ICONSIZE/$ICONFILE" >> apps/$INPUTBASENAME.md
+    echo "  - $INPUTBASENAME/icons/$ICONSIZE/$ICONBASENAME" >> apps/$INPUTBASENAME.md
   fi  
   # Screenshot
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
