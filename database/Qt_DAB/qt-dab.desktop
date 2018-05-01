@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Qt_DAB
 Exec=qt-dab
+Comment=Software for listening to terrestrial Digital Audio Broadcasting (DAB and DAB+)
 Icon=qt-dab
 Type=Application
 Categories=AudioVideo;

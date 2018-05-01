@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Whiteboard
+Comment=Whiteboard - a slide-based activity presentation system
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=whiteboard-app
+X-AppImage-Version=0.0.13.61
+X-AppImage-BuildId=1b1e6ef0-8fa3-11a7-3fb2-37b4a6092691
+Categories=Office;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+# Dear upstream developer, please include a digital signature in your AppImage
+# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
+X-AppImage-Type=1
+# Dear upstream developer, please consider to switch to type 2
+# so that users can benefit from the additional features like digital embedded signatures
+# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
+# or use linuxdeployqt or appimagetool which produce type 2 automatically
+X-AppImage-Architecture=x86_64

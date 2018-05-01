@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=draw.io
+Comment=draw.io desktop
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=draw.io
+X-AppImage-Version=7.4.3.98
+X-AppImage-BuildId=7de4b630-9e07-11a7-24c5-c5eab03140df
+Categories=Graphics;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+# Dear upstream developer, please include a digital signature in your AppImage
+# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
+X-AppImage-Type=1
+# Dear upstream developer, please consider to switch to type 2
+# so that users can benefit from the additional features like digital embedded signatures
+# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
+# or use linuxdeployqt or appimagetool which produce type 2 automatically
+X-AppImage-Architecture=x86_64

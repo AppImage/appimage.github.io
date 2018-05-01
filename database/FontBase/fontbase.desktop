@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=FontBase
+Comment=A lightning fast, beautiful and free font manager for designers.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=fontbase
+X-AppImage-Version=2.3.3
+X-AppImage-BuildId=0ceb2960-e744-11a7-0a73-8d58265598a8
+Categories=Graphics;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

@@ -1,0 +1,12 @@
+{
+  "name": "WorkFlowy",
+  "version": "0.0.2",
+  "description": "Make Lists. Not War.",
+  "main": "main.js",
+  "author": "WorkFlowy",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "electron-config": "^1.0.0",
+    "electron-simple-updater": "^1.2.0"
+  }
+}

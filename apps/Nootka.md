@@ -10,4 +10,32 @@ screenshots:
 authors:
 
 links:
+
+desktop:
+  Desktop Entry:
+    Name: Nootka
+    GenericName: to play scores
+    GenericName[cs]: pro hru z not
+    GenericName[de]: um Partituren zu spielen
+    GenericName[es]: interpretar partituras
+    GenericName[fr]: pour jouer des partitions
+    GenericName[pl]: żeby grać z nut
+    GenericName[ru]: чтобы играть с листа
+    Type: Application
+    Comment: Application for learning musical score notation
+    Comment[cs]: Program pro vyučování notového zápisu hudby
+    Comment[de]: Anwendung zum erlernen der musikalischen Notation
+    Comment[es]: Aplicación para aprender notación musical en partitura
+    Comment[fr]: Application pour apprendre la notation musicale sur partitions
+    Comment[pl]: Program do nauki nut
+    Comment[ru]: Программа для обучения нотной грамоте
+    Exec: nootka %f
+    Icon: nootka
+    Terminal: false
+    MimeType: application/x-nootka-noo
+    Categories: Education
+  AppImageHub:
+    X-AppImage-UpdateInformation: 
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
 ---

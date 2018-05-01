@@ -1,0 +1,16 @@
+{
+  "name": "stretchly",
+  "version": "0.11.0",
+  "description": "break time reminder app",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hovancik/stretchly.git"
+  },
+  "author": "Jan Hovancik <conta.srdr@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/hovancik/stretchly/issues"
+  },
+  "homepage": "https://hovancik.net/stretchly"
+}
