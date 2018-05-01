@@ -5,6 +5,9 @@ permalink: /mjml-app/
 description: The desktop app for MJML
 license: MIT
 
+icons:
+  - mjml-app/icons/128x128/mjml-app.png
+
 screenshots:
   - mjml-app/screenshot.png
 
