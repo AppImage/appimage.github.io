@@ -5,14 +5,14 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=stretchly
-X-AppImage-Version=0.10.0
-X-AppImage-BuildId=a1f4cca0-84ed-11a7-37ef-2340c18ec62f
+X-AppImage-Version=0.11.0
+X-AppImage-BuildId=60c839b0-954b-11a7-223d-65875306659c
 Categories=Utility;
 
 [AppImageHub]
-X-AppImage-UpdateInformation=false
-# Dear upstream developer, please add update information to your AppImage
-# so that users can easily update the AppImage
+X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+# Dear upstream developer, please include a digital signature in your AppImage
+# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
 X-AppImage-Type=1
 # Dear upstream developer, please consider to switch to type 2
 # so that users can benefit from the additional features like digital embedded signatures

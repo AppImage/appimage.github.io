@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=QuickTwitch
+Comment=electron-react-redux-boilerplate
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=quicktwitch
+X-AppImage-Version=0.9.0
+X-AppImage-BuildId=8d1f9a90-33a1-11a8-1b4d-31cb8d2b70ef
+Categories=Utility;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Realm Studio
+Comment=A tool for everything Realm
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=realm-studio
+X-AppImage-Version=1.20.0.265
+X-AppImage-BuildId=c2340ef0-2eb5-11a8-02ce-6d6efb136c4a
+Categories=Development;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

@@ -1,2 +1,2 @@
- https://dl.bintray.com/calinou/godot/Godot-Linux-x86_64-2017-08-18.445b0ab.AppImage
- # Link without version would be better
+https://archive.hugo.pro/builds/godot/editor/godot-linux-nightly-x86_64.AppImage
+# Inofficial build until the official one will become available; https://github.com/Calinou/godot-builds-ci/issues/1#issuecomment-379473127
