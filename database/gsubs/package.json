@@ -1,0 +1,17 @@
+{
+  "name": "gsubs",
+  "version": "1.0.1",
+  "description": "Finds you the perfect subtitle match",
+  "main": "main.js",
+  "repository": "https://github.com/sanjevirau/gsubs",
+  "homepage": "https://cholaware.com/gsubs",
+  "author": "Sanjevi Rau <sanjevi25@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "electron-store": "^1.3.0",
+    "electron-updater": "^2.21.1",
+    "jquery": "^3.3.1",
+    "opensubtitles-api": "^4.0.0",
+    "subdb": "0.0.3"
+  }
+}
