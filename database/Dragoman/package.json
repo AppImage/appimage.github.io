@@ -1,0 +1,14 @@
+{
+  "name": "dragoman",
+  "productName": "dragoman",
+  "version": "0.3.0",
+  "description": "GUI for polyglot",
+  "main": "./main.js",
+  "author": {
+    "name": "Pete Boothroyd",
+    "email": "petereboothroyd@gmail.com",
+    "url": "https://github.com/peteboothroyd"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

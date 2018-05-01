@@ -13,6 +13,18 @@ authors:
 links:
   - type: GitHub
     url: dannagle/PacketSender
-  - type: Install
+  - type: Download
     url: https://github.com/dannagle/PacketSender/releases
+
+desktop:
+  Desktop Entry:
+    Type: Application
+    Name: PacketSender
+    Exec: PacketSender
+    Icon: packetsender
+    Categories: Network
+  AppImageHub:
+    X-AppImage-UpdateInformation: 
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
 ---

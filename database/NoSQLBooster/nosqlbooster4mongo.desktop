@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=NoSQLBooster for MongoDB
+Comment=Essential admin GUI for mongodb
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=nosqlbooster4mongo
+X-AppImage-Version=4.3.1
+X-AppImage-BuildId=03695070-f503-11a7-2d44-9316b6674755
+Categories=Development;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
