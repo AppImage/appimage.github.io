@@ -141,13 +141,13 @@ ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.svg*" -path "*/scalable/*")
 # matching the Icon= entry in the desktop file
 
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/512x512/*")
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/128x128/*")
 fi
 if [ -z "$ICONFILE" ] ; then
     ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/256x256/*")
 fi
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/128x128/*")
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/512x512/*")
 fi
 
 # Then, fall back to the icon in the AppImage top level directory
