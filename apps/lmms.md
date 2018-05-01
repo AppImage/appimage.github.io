@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: tresf/lmms
-  - type: Install
+  - type: Download
     url: https://github.com/tresf/lmms/releases
 
 desktop:

@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: thorpelawrence/pixsrt
-  - type: Install
+  - type: Download
     url: https://github.com/thorpelawrence/pixsrt/releases
 
 desktop:

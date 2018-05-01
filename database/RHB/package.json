@@ -1,0 +1,19 @@
+{
+  "name": "RHB",
+  "version": "0.6.0",
+  "description": "Rapid HTML Builder/Prototyper, built with Electron and Grapesjs",
+  "author": {
+    "name": "Nicola Orritos",
+    "email": "nicola.orritos@gmail.com"
+  },
+  "license": "MIT",
+  "main": "javascripts/main/index.js",
+  "dependencies": {},
+  "settings": {
+    "width": 1280,
+    "height": 1024,
+    "reload": false,
+    "devTools": false,
+    "icon": ".png"
+  }
+}

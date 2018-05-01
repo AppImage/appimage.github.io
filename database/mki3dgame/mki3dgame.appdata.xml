@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>mki3dgame.desktop</id>
+  <metadata_license>GPL-3.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>mki3dgame</name>
+  <summary>A simple OpenGL game of searching for tokens in 3D stages. </summary>
+  <description>
+    <p>
+      A simple OpenGL game of searching for tokens in 3D stages.
+      You also have to avoid the monsters. (They can capture you.)
+    </p>
+    <p>
+      Any user can prepare his own assets with stages, monsters and tokens
+      designned with MKI3D (https://mki1967.github.io/mki3d/) as explained in
+      https://github.com/mki1967/mki3dgame/blob/master/README.md 
+    </p>
+  </description>
+    <screenshots>
+    <screenshot type="default">
+      <caption>A stage of mki3dgame</caption>
+      <image>https://raw.githubusercontent.com/mki1967/mki3dgame/master/screen-shot.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/mki1967/mki3dgame</url>
+  <provides>
+    <binary>mki3dgame</binary>
+  </provides>
+</component>
