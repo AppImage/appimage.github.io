@@ -29,7 +29,7 @@ desktop:
     Icon: phoo
     Type: Application
     Categories: Network
-    X-AppImage-Version: 29250f0
+    X-AppImage-Version: 4f6d087
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|probonopd|dwyco|continuous|Dwyco_Phoo*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
