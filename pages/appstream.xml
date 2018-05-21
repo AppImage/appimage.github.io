@@ -30,7 +30,7 @@ layout: null
     {% if post.screenshots %}
     <screenshots>
       <screenshot type="default">
-        <image>{% if post.screenshots[0] contains '://' %}{{post.screenshots[0]}}{% else %}{{ post.screenshots[0] | prepend: site.url + '/database/' }}{% endif %}</image>
+        <image>{% if post.screenshots[0] contains '://' %}{{post.screenshots[0]}}{% else %}{{ '/database/' | prepend: site.url | append: post.screenshots[0] }}{% endif %}</image>
         <caption/>
       </screenshot>
     </screenshots>
