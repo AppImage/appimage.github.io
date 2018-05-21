@@ -1,0 +1,41 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<components version="0.8" origin="">
+{% assign sorted = site.pages | sort: 'permalink' %}
+{% for post in sorted %}
+  {% if post.layout == 'app' && post.published != 'false' %}
+  <component type="desktop">
+    <id>xxx.desktop</id>
+    <pkgname>{% if post.title %}{{ post.title | jsonify }}{% else %}{{ post.name | remove: ".md" | jsonify  }}{% endif %}</pkgname>
+    <icon type="remote">{{ post.icons | jsonify }}</icon>
+    <update_contact></update_contact>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>{{ post.license | jsonify }}</project_license>
+    <name>{{ post.desktop["Desktop Entry"].Name | jsonify }}</name>
+    <summary>{{ post.desktop["Desktop Entry"].Comment | jsonify }}</summary>
+    <description>
+      <p>
+    {% if post.appdata.Description.C %}
+        {{ post.appdata.Description.C | jsonify }}
+    {% elsif post.desktop["Desktop Entry"].Comment %}
+        {{ post.desktop["Desktop Entry"].Comment | jsonify }}
+    {% endif %}
+      </p>
+    </description>
+    <url type="homepage"></url>
+    <screenshots>
+      <screenshot type="default">
+        <image>{{ post.screenshots | jsonify }}</image>
+        <caption/>
+      </screenshot>
+    </screenshots>
+    <translation/>
+    <developer_name>{{ post.authors | jsonify }}</developer_name>
+    <url type="bugtracker"></url>
+    <url type="help"></url>
+  </component>
+  {% endif %}
+{% endfor %}
+</components>
