@@ -27,12 +27,14 @@ layout: null
       </p>
     </description>
     <url type="homepage"></url>
+    {% if post.screenshots %}
     <screenshots>
       <screenshot type="default">
         <image>{{ post.screenshots[0] }}</image>
         <caption/>
       </screenshot>
     </screenshots>
+    {% endif %}
     <translation/>
     <developer_name>{{ post.authors[0].name }}</developer_name>
   </component>
