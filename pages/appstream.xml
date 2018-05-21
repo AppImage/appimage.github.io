@@ -7,26 +7,26 @@ layout: null
 {% for post in sorted %}{% if post.layout == 'app' && post.published != 'false' %}
   <component type="desktop">
     <id>xxx.desktop</id>
-    <pkgname>{% if post.title %}{{ post.title | jsonify }}{% else %}{{ post.name | remove: ".md" | jsonify  }}{% endif %}</pkgname>
-    <icon type="remote">{{ post.icons | jsonify }}</icon>
+    <pkgname>{% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md"  }}{% endif %}</pkgname>
+    <icon type="remote">{{ post.icons[0] }}</icon>
     <update_contact></update_contact>
     <metadata_license>CC0-1.0</metadata_license>
-    <project_license>{{ post.license | jsonify }}</project_license>
-    <name>{{ post.desktop["Desktop Entry"].Name | jsonify }}</name>
-    <summary>{{ post.desktop["Desktop Entry"].Comment | jsonify }}</summary>
+    <project_license>{{ post.license }}</project_license>
+    <name>{{ post.desktop["Desktop Entry"].Name }}</name>
+    <summary>{{ post.desktop["Desktop Entry"].Comment }}</summary>
     <description>
       <p>
     {% if post.appdata.Description.C %}
-        {{ post.appdata.Description.C | jsonify }}
+        {{ post.appdata.Description.C }}
     {% elsif post.desktop["Desktop Entry"].Comment %}
-        {{ post.desktop["Desktop Entry"].Comment | jsonify }}
+        {{ post.desktop["Desktop Entry"].Comment }}
     {% endif %}
       </p>
     </description>
     <url type="homepage"></url>
     <screenshots>
       <screenshot type="default">
-        <image>{{ post.screenshots | jsonify }}</image>
+        <image>{{ post.screenshots[0] }}</image>
         <caption/>
       </screenshot>
     </screenshots>
