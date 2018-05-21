@@ -2,6 +2,7 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- appstream-util validate-relax appstream.xml -->
 <components version="0.8" origin="">
 {% assign sorted = site.pages | sort: 'permalink' %}
 {% for post in sorted %}{% if post.layout == 'app' && post.published != 'false' %}
