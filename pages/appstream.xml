@@ -8,7 +8,9 @@ layout: null
   <component type="desktop">
     <id>{% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md" }}{% endif %}.desktop</id>
     <pkgname>{% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md"  }}{% endif %}</pkgname>
+    {% if post.icons %}
     <icon type="remote">{{ post.icons[0] }}</icon>
+    {% endif %}
     <update_contact></update_contact>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>{{ post.license }}</project_license>
@@ -32,8 +34,6 @@ layout: null
     </screenshots>
     <translation/>
     <developer_name>{{ post.authors[0].name }}</developer_name>
-    <url type="bugtracker"></url>
-    <url type="help"></url>
   </component>
 {% endif %}{% endfor %}
 </components>
