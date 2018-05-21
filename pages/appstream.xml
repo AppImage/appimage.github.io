@@ -10,7 +10,7 @@ layout: null
     <id>{% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md" }}{% endif %}.desktop</id>
     <pkgname>{% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md"  }}{% endif %}</pkgname>
     {% if post.icons %}
-    <icon type="remote">{{ post.icons[0] }}</icon>
+    <icon type="remote">{% if post.icons[0] contains '://' %}{{post.icons[0]}}{% else %}{{ '/database/' | prepend: site.url | append: post.icons[0] }}{% endif %}</icon>
     {% endif %}
     <update_contact></update_contact>
     <metadata_license>CC0-1.0</metadata_license>
