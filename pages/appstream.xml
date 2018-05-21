@@ -4,8 +4,7 @@ layout: null
 <?xml version="1.0" encoding="UTF-8"?>
 <components version="0.8" origin="">
 {% assign sorted = site.pages | sort: 'permalink' %}
-{% for post in sorted %}
-  {% if post.layout == 'app' && post.published != 'false' %}
+{% for post in sorted %}{% if post.layout == 'app' && post.published != 'false' %}
   <component type="desktop">
     <id>xxx.desktop</id>
     <pkgname>{% if post.title %}{{ post.title | jsonify }}{% else %}{{ post.name | remove: ".md" | jsonify  }}{% endif %}</pkgname>
@@ -36,6 +35,5 @@ layout: null
     <url type="bugtracker"></url>
     <url type="help"></url>
   </component>
-  {% endif %}
-{% endfor %}
+{% endif %}{% endfor %}
 </components>
