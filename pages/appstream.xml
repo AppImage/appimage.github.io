@@ -6,7 +6,7 @@ layout: null
 {% assign sorted = site.pages | sort: 'permalink' %}
 {% for post in sorted %}{% if post.layout == 'app' && post.published != 'false' %}
   <component type="desktop">
-    <id>xxx.desktop</id>
+    <id>{% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md" }}{% endif %}.desktop</id>
     <pkgname>{% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md"  }}{% endif %}</pkgname>
     <icon type="remote">{{ post.icons[0] }}</icon>
     <update_contact></update_contact>
