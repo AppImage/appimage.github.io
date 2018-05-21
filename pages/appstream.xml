@@ -19,9 +19,9 @@ layout: null
     <description><![CDATA[
       <p>
     {% if post.appdata.Description.C %}
-        {{ post.appdata.Description.C }}
+        {{ post.appdata.Description.C | strip_html }}
     {% elsif post.desktop["Desktop Entry"].Comment %}
-        {{ post.desktop["Desktop Entry"].Comment }}
+        {{ post.desktop["Desktop Entry"].Comment | strip_html }}
     {% endif %}
       </p>
     ]]></description>
