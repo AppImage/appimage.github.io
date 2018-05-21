@@ -15,13 +15,13 @@ layout: null
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>{{ post.license }}</project_license>
     <name>{{ post.desktop["Desktop Entry"].Name }}</name>
-    <summary>{{ post.desktop["Desktop Entry"].Comment }}</summary>
+    <summary>{{ post.desktop["Desktop Entry"].Comment | strip_html | replace: "&", "&amp;" }}</summary>
     <description>
       <p>
     {% if post.appdata.Description.C %}
-        {{ post.appdata.Description.C | strip_html }}
+        {{ post.appdata.Description.C | strip_html | replace: "&", "&amp;" }}
     {% elsif post.desktop["Desktop Entry"].Comment %}
-        {{ post.desktop["Desktop Entry"].Comment | strip_html }}
+        {{ post.desktop["Desktop Entry"].Comment | strip_html | replace: "&", "&amp;" }}
     {% endif %}
       </p>
     </description>
