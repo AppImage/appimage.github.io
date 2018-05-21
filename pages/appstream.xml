@@ -32,7 +32,7 @@ layout: null
       </screenshot>
     </screenshots>
     <translation/>
-    <developer_name>{{ post.authors | jsonify }}</developer_name>
+    <developer_name>{{ post.authors[0].name }}</developer_name>
     <url type="bugtracker"></url>
     <url type="help"></url>
   </component>
