@@ -8,8 +8,14 @@ screenshots:
   - Geometrize/screenshot.png
 
 authors:
+  - name: Tw1ddle
+    url: https://github.com/Tw1ddle
 
 links:
+  - type: GitHub
+    url: Tw1ddle/geometrize
+  - type: Install
+    url: https://github.com/Tw1ddle/geometrize/releases
 
 desktop:
   Desktop Entry:
