@@ -33,7 +33,7 @@ desktop:
     Keywords: Text
     Categories: Office
     MimeType: application/msword
-    X-AppImage-Version: 4.8.7.392.glibc2.17
+    X-AppImage-Version: 5.1.29.350.glibc2.17
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
