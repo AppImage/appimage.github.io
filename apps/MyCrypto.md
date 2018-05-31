@@ -3,13 +3,23 @@ layout: app
 
 permalink: /MyCrypto/
 description: MyCrypto web and electron app
+license: MIT
+
+icons:
+  - MyCrypto/icons/256x256/mycrypto.png
 
 screenshots:
   - MyCrypto/screenshot.png
 
 authors:
+  - name: MyCryptoHQ
+    url: https://github.com/MyCryptoHQ
 
 links:
+  - type: GitHub
+    url: MyCryptoHQ/MyCrypto
+  - type: Download
+    url: https://github.com/MyCryptoHQ/MyCrypto/releases
 
 desktop:
   Desktop Entry:
@@ -19,8 +29,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: mycrypto
-    X-AppImage-Version: 1.0.0.1
-    X-AppImage-BuildId: b2189630-4841-11a8-2602-530871e58afa
+    X-AppImage-Version: 1.0.2.8
+    X-AppImage-BuildId: 41f04c70-6044-11a8-19d5-1f438250b71f
     Categories: Finance
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -28,8 +38,10 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
 
 electron:
+  electron-version: 1.0.2-alpha.5
   main: main.js
   description: MyCrypto web and electron app
   repository: https://github.com/MyCryptoHQ/MyCrypto
@@ -37,7 +49,7 @@ electron:
     node: ">= 8.0.0"
     npm: ">= 5.0.0"
   dependencies:
-    "@parity/qr-signer": 0.1.1
+    "@parity/qr-signer": 0.2.1
     babel-polyfill: 6.26.0
     bip39: 2.5.0
     bn.js: 4.11.8
@@ -57,7 +69,7 @@ electron:
     lodash: 4.17.5
     moment: 2.22.1
     moment-timezone: 0.5.14
-    mycrypto-shepherd: 1.2.0
+    mycrypto-shepherd: 1.3.3
     normalizr: 3.2.4
     qrcode: 1.2.0
     qrcode.react: 0.8.0
