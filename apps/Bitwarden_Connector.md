@@ -29,8 +29,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: bitwarden-directory-connector
-    X-AppImage-Version: 2.0.1
-    X-AppImage-BuildId: bcbb0710-52fc-11a8-1195-2500673f77dd
+    X-AppImage-Version: 2.0.2
+    X-AppImage-BuildId: 430d66b0-659e-11a8-3184-b9cf7eefa394
     Categories: Utility
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -41,7 +41,7 @@ desktop:
     X-AppImage-Payload-License: GPL-3.0
 
 electron:
-  version: 2.0.1
+  version: 2.0.2
   author: 8bit Solutions LLC <hello@bitwarden.com> (https://bitwarden.com)
   homepage: https://bitwarden.com
   license: GPL-3.0
@@ -51,7 +51,7 @@ electron:
     url: https://github.com/bitwarden/desktop
   dependencies:
     electron-log: 2.2.14
-    electron-store: 1.3.0
     electron-updater: 2.21.4
     keytar: 4.1.0
+    lowdb: 1.0.0
 ---

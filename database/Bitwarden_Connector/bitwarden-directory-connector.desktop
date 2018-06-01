@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=bitwarden-directory-connector
-X-AppImage-Version=2.0.1
-X-AppImage-BuildId=bcbb0710-52fc-11a8-1195-2500673f77dd
+X-AppImage-Version=2.0.2
+X-AppImage-BuildId=430d66b0-659e-11a8-3184-b9cf7eefa394
 Categories=Utility;
 
 [AppImageHub]
