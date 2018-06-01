@@ -2,7 +2,7 @@
   "name": "bitwarden-directory-connector",
   "productName": "Bitwarden Directory Connector",
   "description": "Sync your user directory to your Bitwarden organization.",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "author": "8bit Solutions LLC <hello@bitwarden.com> (https://bitwarden.com)",
   "homepage": "https://bitwarden.com",
   "license": "GPL-3.0",
@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "electron-log": "2.2.14",
-    "electron-store": "1.3.0",
     "electron-updater": "2.21.4",
-    "keytar": "4.1.0"
+    "keytar": "4.1.0",
+    "lowdb": "1.0.0"
   }
 }
