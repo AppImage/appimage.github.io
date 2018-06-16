@@ -29,8 +29,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: scraper
-    X-AppImage-Version: 0.1.0.1
-    X-AppImage-BuildId: e0204f50-70dc-11a8-36f5-73636f37cebd
+    X-AppImage-Version: 0.1.2.6
+    X-AppImage-BuildId: 11304370-7178-11a8-3437-8903ac0f8c8a
     Categories: Utility
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
