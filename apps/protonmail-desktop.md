@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: protonmail-desktop/application
-  - type: Install
+  - type: Download
     url: https://github.com/protonmail-desktop/application/releases
 
 desktop:

@@ -12,7 +12,7 @@ authors:
 links:
   - type: GitHub
     url: darealshinji/vlc-AppImage
-  - type: Install
+  - type: Download
     url: https://github.com/darealshinji/vlc-AppImage/releases
 
 desktop:

@@ -1,0 +1,39 @@
+---
+layout: app
+
+permalink: /Skycoin/
+description: skycoin wallet
+
+screenshots:
+  - Skycoin/screenshot.png
+
+authors:
+
+links:
+
+desktop:
+  Desktop Entry:
+    Name: Skycoin
+    Comment: skycoin wallet
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: skycoin
+    X-AppImage-Version: 0.22.0.1167
+    X-AppImage-BuildId: 92009580-2e85-11a8-2066-8db34fd7f49a
+    Categories: Network
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+
+electron:
+  main: src/electron-main.js
+  version: 0.22.0
+  description: skycoin wallet
+  license: MIT
+  dependencies:
+    electron-log: "^2.2.9"
+---

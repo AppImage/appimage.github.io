@@ -2,7 +2,13 @@
 layout: app
 
 permalink: /Wire/
-description: Modern communication, full privacy.
+description: Secure messenger for everyone.
+
+icons:
+  - Wire/icons/256x256/wire-desktop.png
+
+screenshots:
+  - Wire/screenshot.png
 
 authors:
   - name: wireapp
@@ -11,20 +17,23 @@ authors:
 links:
   - type: GitHub
     url: wireapp/wire-desktop
-  - type: Install
+  - type: Download
     url: https://github.com/wireapp/wire-desktop/releases
 
 desktop:
   Desktop Entry:
     Name: wire-desktop
-    Comment: Modern communication, full privacy.
+    Comment: Secure messenger for everyone.
     Exec: AppRun
     Terminal: false
     Type: Application
     Icon: wire-desktop
-    X-AppImage-Version: 2.15.2751.154
-    X-AppImage-BuildId: 0740e9a0-6d2d-11a7-2e2f-159280cd3ce9
+    X-AppImage-Version: 3.0.2816.2816
+    X-AppImage-BuildId: 2219a1a0-b4a8-11a7-3712-9b9413ffc7e4
+    StartupWMClass: Wire
     Categories: Network
   AppImageHub:
-    UpdateInformation: false
+    X-AppImage-UpdateInformation: 
+    X-AppImage-Type: 1
+    X-AppImage-Architecture: x86_64
 ---
