@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=thorium-client
-X-AppImage-Version=0.0.1
-X-AppImage-BuildId=c52dcec0-0e7b-11a8-20a8-23c3215896fa
+X-AppImage-Version=1.0.2
+X-AppImage-BuildId=ec2dc9d0-43dc-11a8-28df-e33c25d3e3a2
 Categories=Utility;
 
 [AppImageHub]

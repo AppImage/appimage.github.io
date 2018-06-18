@@ -25,8 +25,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: thorium-client
-    X-AppImage-Version: 0.0.1
-    X-AppImage-BuildId: c52dcec0-0e7b-11a8-20a8-23c3215896fa
+    X-AppImage-Version: 1.0.2
+    X-AppImage-BuildId: ec2dc9d0-43dc-11a8-28df-e33c25d3e3a2
     Categories: Utility
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -44,10 +44,11 @@ electron:
   dependencies:
     bonjour: "^3.5.0"
     dialogs: "^1.1.20"
-    electron-json-storage: "^3.1.0"
-    electron-prompt: "^0.3.0"
-    electron-updater: "^2.20.1"
+    electron-json-storage: "^4.1.0"
+    electron-prompt: "^0.5.0"
+    electron-settings: "^3.1.4"
+    electron-updater: "^2.21.8"
     power-off: "^1.1.2"
-    robotjs: "^0.4.7"
+    robotjs: "^0.5.1"
     sleep-mode: "^1.1.0"
 ---

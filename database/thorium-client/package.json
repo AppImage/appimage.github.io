@@ -1,6 +1,6 @@
 {
   "name": "thorium-client",
-  "version": "0.0.1",
+  "version": "1.0.2",
   "description": "A client application for Thorium",
   "main": "main.js",
   "repository": "https://github.com/thorium-sim/thorium-kiosk",
@@ -10,11 +10,12 @@
   "dependencies": {
     "bonjour": "^3.5.0",
     "dialogs": "^1.1.20",
-    "electron-json-storage": "^3.1.0",
-    "electron-prompt": "^0.3.0",
-    "electron-updater": "^2.20.1",
+    "electron-json-storage": "^4.1.0",
+    "electron-prompt": "^0.5.0",
+    "electron-settings": "^3.1.4",
+    "electron-updater": "^2.21.8",
     "power-off": "^1.1.2",
-    "robotjs": "^0.4.7",
+    "robotjs": "^0.5.1",
     "sleep-mode": "^1.1.0"
   }
 }
