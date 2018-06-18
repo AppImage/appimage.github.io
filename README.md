@@ -57,4 +57,5 @@ Projects already using this data
 * Nitrux, NX Software Center: https://github.com/nomad-desktop/nx-software-center
 * https://github.com/simoniz0r/spm
 * https://github.com/sillasleal/appcenter
+* https://github.com/lliurex/lliurex-store
 * Please contact us if you are using this data so that we can list your project here
