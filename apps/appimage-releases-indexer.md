@@ -3,7 +3,6 @@ layout: app
 
 permalink: /appimage-releases-indexer/
 description: "Extracts metadata form AppImage files."
-license: GPL-3.0
 
 icons:
   - appimage-releases-indexer/icons/scalable/appimage_metadata_extractor.svg
@@ -39,5 +38,4 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: GPL-3.0
 ---
