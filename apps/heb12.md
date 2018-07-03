@@ -3,7 +3,6 @@ layout: app
 
 permalink: /heb12/
 description: A simple program for reading the Bible
-license: GPL-3.0
 
 icons:
   - heb12/icons/128x128/heb12.png
@@ -38,7 +37,6 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: GPL-3.0
 
 electron:
   description: A simple program for reading the Bible
