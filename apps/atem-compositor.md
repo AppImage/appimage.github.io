@@ -3,6 +3,7 @@ layout: app
 
 permalink: /atem-compositor/
 description: An alternate UI for rapidly creating precise compositions on a Blackmagic ATEM video switcher.
+license: MIT
 
 icons:
   - atem-compositor/icons/256x256/atem-compositor.png
@@ -38,6 +39,7 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
 
 electron:
     ATEM video switcher.
