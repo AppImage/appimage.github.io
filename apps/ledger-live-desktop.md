@@ -1,0 +1,131 @@
+---
+layout: app
+
+permalink: /ledger-live-desktop/
+description: Ledger Live - Desktop
+license: MIT
+
+icons:
+  - ledger-live-desktop/icons/512x512/ledger-live-desktop.png
+
+screenshots:
+  - ledger-live-desktop/screenshot.png
+
+authors:
+  - name: LedgerHQ
+    url: https://github.com/LedgerHQ
+
+links:
+  - type: GitHub
+    url: LedgerHQ/ledger-live-desktop
+  - type: Download
+    url: https://github.com/LedgerHQ/ledger-live-desktop/releases
+
+desktop:
+  Desktop Entry:
+    Name: Ledger Live
+    Comment: Ledger Live - Desktop
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: ledger-live-desktop
+    X-AppImage-Version: 0.1.0-alpha.11
+    X-AppImage-BuildId: 03ac1090-709b-11a8-1f68-e36b89d55747
+    Categories: Finance
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
+
+electron:
+  repository: https://github.com/LedgerHQ/ledger-live-desktop
+  version: 0.1.0-alpha.11
+  author: Ledger
+  license: MIT
+  electronWebpack:
+    title: true
+    renderer:
+      webpackConfig: "./webpack/renderer.config.js"
+    main:
+      webpackConfig: "./webpack/main.config.js"
+  resolutions:
+    uglify-es: 3.3.7
+    webpack-sources: 1.0.1
+  dependencies:
+    "@ledgerhq/hw-app-btc": "^4.13.0"
+    "@ledgerhq/hw-app-eth": "^4.14.0"
+    "@ledgerhq/hw-app-xrp": "^4.13.0"
+    "@ledgerhq/hw-transport": "^4.13.0"
+    "@ledgerhq/hw-transport-node-hid": "^4.13.0"
+    "@ledgerhq/ledger-core": 1.9.0
+    "@ledgerhq/live-common": 2.30.0
+    async: "^2.6.1"
+    axios: "^0.18.0"
+    babel-runtime: "^6.26.0"
+    bcryptjs: "^2.4.3"
+    bitcoinjs-lib: "^3.3.2"
+    bs58: "^4.0.1"
+    color: "^3.0.0"
+    cross-env: "^5.2.0"
+    d3: "^5.1.0"
+    debug: "^3.1.0"
+    downshift: "^1.31.16"
+    eip55: "^1.0.3"
+    electron-store: "^1.3.0"
+    electron-updater: "^2.21.8"
+    ethereumjs-tx: "^1.3.4"
+    fuse.js: "^3.2.1"
+    history: "^4.7.2"
+    i18next: "^11.2.2"
+    i18next-node-fs-backend: "^1.0.0"
+    invariant: "^2.2.4"
+    lodash: "^4.17.5"
+    lru-cache: "^4.1.3"
+    moment: "^2.22.2"
+    qrcode: "^1.2.0"
+    qrcode-reader: "^1.0.4"
+    qs: "^6.5.1"
+    raven: "^2.5.0"
+    raven-js: "^3.24.2"
+    react: "^16.4.1"
+    react-dom: "^16.4.1"
+    react-i18next: "^7.7.0"
+    react-markdown: "^3.3.2"
+    react-mortal: "^3.2.0"
+    react-motion: "^0.5.2"
+    react-redux: "^5.0.7"
+    react-router: "^4.3.1"
+    react-router-dom: "^4.3.1"
+    react-router-redux: 5.0.0-alpha.9
+    react-select: 2.0.0-beta.6
+    react-smooth-scrollbar: "^8.0.6"
+    react-spring: "^5.3.15"
+    redux: "^4.0.0"
+    redux-actions: "^2.4.0"
+    redux-thunk: "^2.3.0"
+    reselect: "^3.0.1"
+    ripple-binary-codec: "^0.1.13"
+    ripple-bs58check: "^2.0.2"
+    ripple-hashes: "^0.3.1"
+    ripple-lib: "^1.0.0-beta.0"
+    rxjs: "^6.2.1"
+    rxjs-compat: "^6.2.1"
+    secp256k1: 3.3.1
+    semaphore: "^1.1.0"
+    semver: "^5.5.0"
+    smooth-scrollbar: "^8.2.7"
+    source-map: 0.7.3
+    source-map-support: "^0.5.4"
+    styled-components: "^3.3.2"
+    styled-system: "^2.2.9"
+    tippy.js: "^2.5.2"
+    uncontrollable: "^6.0.0"
+    uuid: "^3.2.1"
+    ws: "^5.1.1"
+    zxcvbn: "^4.4.2"
+  private: true
+  main: main.js
+---

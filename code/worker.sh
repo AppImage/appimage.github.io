@@ -126,19 +126,83 @@ if [ x"$TYPE" == x1 ] ; then
   # later # sudo umount -l /mnt
 fi
 
+echo "==========================================="
+
+ICON_NAME=$(grep -r "^Icon=*" "${APPDIR}"/*.desktop  | cut -d "=" -f 2-99 | head -n 1)
+
+echo "ICON_NAME: ${ICON_NAME}"
+
+# Then, try scaleable icon from usr/share
+# matching the Icon= entry in the desktop file
+
+ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.svg*" -path "*/scalable/*")
+
+# Then, try large icons from usr/share
+# matching the Icon= entry in the desktop file
+
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/128x128/*")
+fi
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/256x256/*")
+fi
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/512x512/*")
+fi
+
+# Then, fall back to the icon in the AppImage top level directory
+# matching the Icon= entry in the desktop file
+
+
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.svg*")
+fi
+
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.png")
+fi
+
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.xpm")
+fi
+
+# Finally, fall back to .DirIcon
+# (can be a symlink), regardless of the desktop file
+
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name ".DirIcon")
+fi
+
+if [ -z "$ICONFILE" ] ; then
+    echo "Could not find icon file"
+    exit 1
+fi
+
+ICONFILE=$(readlink -f "$ICONFILE")
+echo "$ICONFILE"
+
+if ([[ "$ICONFILE" == *svg ]] || [[ "$ICONFILE" == *svgz ]]) ; then
+  ICONSIZE="scalable"
+else
+  # Get icon size
+  ICONSIZE=$(file "$ICONFILE" | grep -oe ", [0-9]* x [0-9]*," | sed -e 's|,||g' | sed -e 's| ||g')
+fi
+
+if [ -z "$ICONSIZE" ] ; then
+    echo "Could not determine the size of the icon"
+    exit 1
+fi
+
 set +x
+
+echo "==========================================="
+
+# If everything succeeded until here, then download Firejail aith Xpra and run the application in it
+# and take screenshots if we don't have them already from AppStream
 
 TERMINAL=false
 grep -r Terminal=true "${APPDIR}"/*.desktop && TERMINAL=true
 echo "TERMINAL: $TERMINAL"
-
-echo "==========================================="
-
-# TODO: If everything succeeded until here, then download Firejail aith Xpra and run the application in it
-# and take screenshots if we don't have them already from AppStream
-
-# LD_DEBUG=libs "$APPDIR/AppRun" & # Getting "Desktop file is missing. Please run /mnt/AppRun from within an AppImage." with wire-2.15.2751-x86_64.AppImage
-# chmod +x "$FILENAME"
 
 wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/firejail.tar.gz" ; sudo tar xf firejail.tar.gz -C /
 sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
@@ -273,6 +337,11 @@ elif [ ! -z "$PJ" ] ; then
   cp "$PJ" database/$INPUTBASENAME/
 fi
 
+# Copy in icon
+
+mkdir -p "database/$INPUTBASENAME/icons/$ICONSIZE/"
+cp "$ICONFILE" "database/$INPUTBASENAME/icons/$ICONSIZE/"
+
 echo "==========================================="
 
 if [ x"$TYPE" == x2 ] ; then
@@ -335,6 +404,13 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   elif [ x"$DT_LICENSE" != x"" ] ; then
     echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
   fi
+  # Icon
+  ICONBASENAME=$(basename "$ICONFILE")
+  if [ -f "database/$INPUTBASENAME/icons/$ICONSIZE/$ICONBASENAME" ] ; then
+    echo "" >> apps/$INPUTBASENAME.md
+    echo "icons:" >> apps/$INPUTBASENAME.md
+    echo "  - $INPUTBASENAME/icons/$ICONSIZE/$ICONBASENAME" >> apps/$INPUTBASENAME.md
+  fi  
   # Screenshot
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     SCREENSHOT=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/screenshots/screenshot[1]/image" -v . || true)
