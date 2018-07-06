@@ -11,7 +11,7 @@ If there is another app for AppImage you are missing desperately, feel free to [
 __PLEASE NOTE:__ We do not develop AppImages. We simply add them to this directory of available AppImages. So if you would like an AppImage to be made for your favorite application, please ask the project that makes the application to provide an AppImage. Once that becomes available, we can add it to this catalog.
 
 Name | Generic | Info
----|---|---|
+citrix receiver client|---|---|
 ||
 
 <p><a class="b" href="https://github.com/AppImage/AppImageHub/edit/master/{{ page.path }}"><span class="octicon octicon-pencil"></span> Improve this list on GitHub!</a></p>
