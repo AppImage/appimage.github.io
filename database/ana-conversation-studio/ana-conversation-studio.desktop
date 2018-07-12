@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=ana-conversation-studio
-X-AppImage-Version=0.1.8.49
-X-AppImage-BuildId=d95865e0-85a4-11a8-3d66-173d45a3de28
+X-AppImage-Version=0.1.8.65
+X-AppImage-BuildId=0c48c120-85f0-11a8-2566-e95b32cd636c
 Categories=Graphics;
 
 [AppImageHub]
