@@ -3,6 +3,7 @@ layout: app
 
 permalink: /edwc/
 description: An Electron app that puts every Elite: Dangerous community websites at the same place.
+license: MIT
 
 icons:
   - edwc/icons/128x128/edwc.png
@@ -38,6 +39,7 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
 
 electron:
   description: 'An Electron app that puts every Elite: Dangerous community websites
