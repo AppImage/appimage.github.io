@@ -1,0 +1,24 @@
+{
+  "name": "fmadio",
+  "description": "Cross platform FM Radio App for RTL2832U dongles",
+  "version": "0.9.4",
+  "main": "app/main.js",
+  "author": "Dominic Mooney <dominic.mooney99@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmooney65/fmradio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dmooney65/fmradio/issues"
+  },
+  "license": "GPLv2",
+  "dependencies": {
+    "bootstrap-material-design-icons": "^2.2.0",
+    "electron-settings": "^3.1.2",
+    "flac-bindings": "^1.2.2",
+    "jquery": "^3.2.1",
+    "nedb": "^1.8.0",
+    "sdrjs": "dmooney65/sdrjs",
+    "to-arraybuffer": "^1.0.1"
+  }
+}
