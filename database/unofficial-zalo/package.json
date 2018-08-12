@@ -1,0 +1,17 @@
+{
+  "name": "unofficial-zalo",
+  "version": "1.0.3",
+  "revision": "20171216",
+  "description": "Unofficial Zalo App",
+  "repository": "SafeStudio/unofficial-zalo",
+  "main": "app.js",
+  "author": {
+    "name": "Le Minh Tri",
+    "email": "ansidev@gmail.com",
+    "url": "https://ansidev.xyz/"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "auto-launch": "^5.0.5"
+  }
+}
