@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=City Hub
+Comment=City Hub is your hub into everything on City Chain and the Smart City Platform.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=cityhub
+StartupWMClass=City Hub
+X-AppImage-Version=0.0.20.city-hub-CI_20180811.26
+Categories=Utility;
+X-AppImage-BuildId=18eqYK6Zwj8VadYtMYW0n5m6ASP
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
