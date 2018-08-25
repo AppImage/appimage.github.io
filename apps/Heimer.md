@@ -9,14 +9,14 @@ icons:
   - Heimer/icons/64x64/heimer.png
 
 authors:
-  - name: probonopd
-    url: https://github.com/probonopd
+  - name: juzzlin
+    url: https://github.com/juzzlin
 
 links:
   - type: GitHub
-    url: probonopd/Heimer
+    url: juzzlin/Heimer
   - type: Download
-    url: https://github.com/probonopd/Heimer/releases
+    url: https://github.com/juzzlin/Heimer/releases
 
 desktop:
   Desktop Entry:
@@ -28,9 +28,8 @@ desktop:
     Type: Application
     Categories: Education
     StartupNotify: true
-    X-AppImage-Version: c9b12fe
+    X-AppImage-Version: 1.0.0
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|probonopd|Heimer|continuous|Heimer*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
