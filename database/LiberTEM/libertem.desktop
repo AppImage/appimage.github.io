@@ -6,7 +6,7 @@ Icon=libertem
 Exec=LiberTEM %u
 Categories=Science;
 StartupNotify=true
-X-AppImage-Version=e66c3ae
+X-AppImage-Version=abfabcc
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|LiberTEM|LiberTEM|continuous|LiberTEM*-x86_64.AppImage.zsync

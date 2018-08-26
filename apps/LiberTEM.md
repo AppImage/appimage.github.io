@@ -2,11 +2,13 @@
 layout: app
 
 permalink: /LiberTEM/
-description: Open software platform for pixelated STEM
+description: Open software platform for pixelated scanning transmission electron microscopy (STEM)
 license: GPL-3.0
 
 icons:
   - LiberTEM/icons/256x256/libertem.png
+screenshots:
+- https://iffwiki.fz-juelich.de/images/a/ac/Screenshot_of_the_LiberTEM_UI.png
 
 authors:
   - name: LiberTEM
@@ -27,7 +29,7 @@ desktop:
     Exec: LiberTEM %u
     Categories: Science
     StartupNotify: true
-    X-AppImage-Version: e66c3ae
+    X-AppImage-Version: abfabcc
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|LiberTEM|LiberTEM|continuous|LiberTEM*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -43,7 +45,7 @@ appdata:
   Name:
     C: LiberTEM
   Summary:
-    C: Open software platform for pixelated STEM
+    C: Open software platform for pixelated scanning transmission electron microscopy (STEM)
   Description:
     C: >-
       <p>The LiberTEM project develops an open software platform for pixelated/4D scanning transmission electron microscopy.</p>
@@ -57,6 +59,6 @@ appdata:
   - default: true
     thumbnails: []
     source-image:
-      url: 
+      url: https://iffwiki.fz-juelich.de/images/a/ac/Screenshot_of_the_LiberTEM_UI.png
       lang: C
 ---
