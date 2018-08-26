@@ -25,11 +25,13 @@ desktop:
     Type: Application
     Terminal: true
     Name: LiberTEM
+    Comment: Open software platform for pixelated scanning transmission electron microscopy
+      (STEM)
     Icon: libertem
     Exec: LiberTEM %u
     Categories: Science
     StartupNotify: true
-    X-AppImage-Version: abfabcc
+    X-AppImage-Version: 782ac82
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|LiberTEM|LiberTEM|continuous|LiberTEM*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
