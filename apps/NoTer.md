@@ -11,8 +11,14 @@ screenshots:
   - NoTer/screenshot.png
 
 authors:
+  - name: PabloF7
+    url: https://github.com/PabloF7
 
 links:
+  - type: GitHub
+    url: PabloF7/noter
+  - type: Download
+    url: https://github.com/PabloF7/noter/releases
 
 desktop:
   Desktop Entry:
