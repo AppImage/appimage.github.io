@@ -1,0 +1,18 @@
+{
+  "name": "TAGSTOO",
+  "description": "Tagstoo tagging application",
+  "author": "Pablo Andueza Munduate",
+  "version": "1.12.3",
+  "main": "app.js",
+  "dependencies": {
+    "adm-zip": "^0.4.7",
+    "drivelist": "^5.0.4",
+    "fs-extra": "^1.0.0",
+    "indexeddb-export-import": "^1.0.0",
+    "sniffr": "^1.1.4",
+    "underscore": "^1.8.3",
+    "windows-drive-letters": "^3.1.0",
+    "username": "^2.3.0"
+  },
+  "license": "GNU"
+}
