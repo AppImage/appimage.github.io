@@ -3,7 +3,6 @@ layout: app
 
 permalink: /AngularConsole/
 description: Angular Console
-license: MIT
 
 icons:
   - AngularConsole/icons/1024x1024/angularconsole.png
@@ -38,5 +37,4 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: MIT
 ---
