@@ -1,0 +1,14 @@
+{
+  "name": "Workbench",
+  "productName": "Workbench",
+  "version": "0.0.6",
+  "description": "The Openpilot Workbench is to help people fix problems with EON, Openpilot, etc.",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "jfrux",
+    "email": "support@opc.ai",
+    "url": "https://github.com/jfrux"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}
