@@ -2,10 +2,16 @@
 layout: app
 
 permalink: /movie-monad/
-description: A free and simple to use video player built with Haskell.
+description: Play Videos
+Play Videos
 license: BSD-3-Clause
+BSD-3-Clause
+
+icons:
+  - movie-monad/icons/scalable/com.lettier.movie-monad.svg
+
 screenshots:
-- https://i.imgur.com/UBNYbER.jpg
+  - movie-monad/screenshot.png
 
 authors:
   - name: lettier
@@ -25,8 +31,8 @@ desktop:
     Categories: AudioVideo
     Comment: Play Videos
     Icon: movie-monad
-    Exec: movie-monad
     Terminal: false
+    Exec: movie-monad
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -34,31 +40,4 @@ desktop:
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
     X-AppImage-Payload-License: BSD-3-Clause
-
-appdata:
-  Type: desktop-application
-  ID: org.lettier.movie-monad
-  Name:
-    C: Movie Monad
-  Summary:
-    C: A free and simple to use video player built with Haskell.
-  ProjectLicense: BSD-3-Clause
-  Url:
-    homepage: https://github.com/lettier/movie-monad
-  Launchable:
-    desktop-id:
-    - org.lettier.movie-monad.desktop
-  Provides:
-    binaries:
-    - movie-monad
-  Screenshots:
-  - default: true
-    caption:
-      C: The main Movie Monad window showing the video Sintel produced by the Blender Foundation.
-    thumbnails: []
-    source-image:
-      url: https://i.imgur.com/UBNYbER.jpg
-      width: 1026
-      height: 559
-      lang: C
 ---

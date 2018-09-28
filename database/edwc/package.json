@@ -1,0 +1,24 @@
+{
+  "name": "edwc",
+  "productName": "Elite Dangerous Websites Companion",
+  "version": "0.1.9",
+  "description": "An Electron app that puts every Elite: Dangerous community websites at the same place.",
+  "copyright": "Copyright © year ${author}",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/147loch/edwc.git"
+  },
+  "author": {
+    "name": "Loïc Herman",
+    "email": "contact@147lo.ch",
+    "url": "https://147lo.ch/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-cookies": "^1.1.0",
+    "electron-log": "^2.2.11",
+    "electron-updater": "^2.20.1",
+    "jquery": "^3.2.1"
+  }
+}

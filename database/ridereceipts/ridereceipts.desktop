@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Ride Receipts
+Comment=Simple automation desktop app to download and organize your tax invoices from Uber.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=ridereceipts
+X-AppImage-Version=1.5.2
+X-AppImage-BuildId=39b89230-81f8-11a8-080f-67dd7cd7e11e
+Categories=Utility;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT
