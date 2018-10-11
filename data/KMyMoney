@@ -1,1 +1,3 @@
-https://s3-eu-central-1.amazonaws.com/ds9-apps/kmymoney-master-appimage/kmymoney-latest-x86_64.AppImage
+https://binary-factory.kde.org/job/KMyMoney_Nightly_Appimage_Build/lastSuccessfulBuild/artifact/kmymoney--402c0c2-x86_64.appimage
+# https://s3-eu-central-1.amazonaws.com/ds9-apps/kmymoney-master-appimage/kmymoney-latest-x86_64.AppImage
+# Link without version would be better
