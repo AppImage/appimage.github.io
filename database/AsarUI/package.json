@@ -1,0 +1,19 @@
+{
+  "name": "asarui",
+  "version": "1.0.1",
+  "author": "Mustafa Yazar <myazarc@gmail.com>",
+  "description": "UI for Asar",
+  "license": "MIT",
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "about-window": "^1.12.1",
+    "asar": "^0.14.5",
+    "photonkit": "^0.1.2",
+    "pretty-bytes": "^5.1.0",
+    "vue": "^2.5.16",
+    "vue-electron": "^1.0.6",
+    "vue-photonkit": "^1.2.3",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  }
+}
