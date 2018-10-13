@@ -1,0 +1,23 @@
+{
+  "name": "statuspilatus",
+  "version": "0.3.0",
+  "description": "Monitor your PC like never before!",
+  "main": "app/index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "chart.js": "^2.7.2",
+    "jquery": "^3.3.1",
+    "proglistr": "^1.4.0",
+    "systeminformation": "^3.45.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/PilatusDevs/StatusPilatus.git"
+  },
+  "author": "PilatusDevs",
+  "license": "GPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/PilatusDevs/StatusPilatus/issues"
+  },
+  "homepage": "https://github.com/PilatusDevs/StatusPilatus"
+}
