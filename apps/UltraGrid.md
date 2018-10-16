@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /UltraGrid/
+license: NOASSERTION
 
 icons:
   - UltraGrid/icons/256x256/ultragrid.png
@@ -36,4 +37,5 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: NOASSERTION
 ---
