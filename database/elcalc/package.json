@@ -1,28 +1,27 @@
 {
   "name": "elcalc",
-  "productName": "elcalc",
-  "website": "https://github.com/elcalc/elcalc/releases/latest",
-  "version": "4.0.3",
-  "files": [
-    "**/*",
-    "build/icon.*",
-    "src/*",
-    "src/assets/css/*",
-    "src/assets/js/*"
-  ],
-  "description": "Simple, Cross-Platform calculator built with Electron.",
-  "main": "src/main.js",
-  "electronVersion": "2.0.4",
-  "author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
+  "version": "5.0.0-rc.2",
+  "description": "Simple, Cross-Platform calculator built with Electron",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/elcalc/elcalc.git"
-  },
-  "bugs": {
-    "url": "https://github.com/elcalc/elcalc/issues"
+  "main": "src/main.js",
+  "repository": "elcalc/elcalc",
+  "author": {
+    "name": "Antoni Kepinski",
+    "email": "a@kepinski.me",
+    "url": "kepinski.me"
   },
   "dependencies": {
-    "mathjs": "^5.0.2"
+    "electron-timber": "^0.5.1",
+    "mathjs": "^5.1.1"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-xo",
+    "rules": {
+      "property-no-vendor-prefix": null,
+      "property-blacklist": null,
+      "no-duplicate-selectors": null,
+      "declaration-property-value-blacklist": null,
+      "font-weight-notation": null
+    }
   }
 }

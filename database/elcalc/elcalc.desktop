@@ -5,9 +5,10 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=elcalc
-X-AppImage-Version=4.0.3
-X-AppImage-BuildId=8c4f0410-84f6-11a8-2b1f-c9b925b7819d
-Categories=Utility;
+StartupWMClass=elcalc
+X-AppImage-Version=5.0.0-rc.2
+Categories=Utility;Calculator;
+X-AppImage-BuildId=19qmzfH3nalioqe7e95ryM0RH12
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
