@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Blockbench/
 description: Minecraft Block Model Editor
+license: MIT
 
 icons:
   - Blockbench/icons/1024x1024/blockbench.png
@@ -37,6 +38,7 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
 
 electron:
   license: MIT
