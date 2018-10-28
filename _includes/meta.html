@@ -25,7 +25,3 @@
     <meta property="og:title" content="{{ page.title }}" />
     <meta property="twitter:title" content="{{ page.title }}" />
     {% endif %}
-
-    {% if post.screenshots %}
-    <meta property="og:image" content="{{ {% if post.screenshots[0] contains '://' %}{{post.screenshots[0]}}{% else %}{{ site.baseurl }}/database/{{ post.screenshots[0] }}{% endif %}" alt="Screenshot"  }}" />
-    {% endif %}
