@@ -3,7 +3,6 @@ layout: app
 
 permalink: /hubii-core/
 description: Send, recieve and trade Ethereum assets trustlessly without compromise. Powered by striim
-license: GPL-3.0
 
 icons:
   - hubii-core/icons/512x512/hubii-core.png
@@ -39,7 +38,6 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: GPL-3.0
 
 electron:
     name: hubii
