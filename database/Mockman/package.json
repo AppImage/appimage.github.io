@@ -1,0 +1,22 @@
+{
+  "name": "Mockman",
+  "version": "1.0.4",
+  "author": "lancegin <gin.lance.inside@hotmail.com>",
+  "description": "Manage and start the mock servers on your local platform easily",
+  "license": null,
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "codemirror": "^5.40.2",
+    "cors": "^2.8.4",
+    "element-ui": "^2.4.8",
+    "express": "^4.16.3",
+    "jsonlint": "^1.6.3",
+    "multer": "^1.4.0",
+    "sequelize": "^4.39.0",
+    "sqlite3": "^4.0.2",
+    "vue": "^2.5.16",
+    "vue-electron": "^1.0.6",
+    "vue-router": "^3.0.1"
+  }
+}
