@@ -3,7 +3,9 @@ layout: app
 
 permalink: /ieaseMusic/
 description: 这应该是最好的网易云音乐播放器了，没有之一，如果有请打醒 🤘
+这应该是最好的网易云音乐播放器了，没有之一，如果有请打醒 🤘
 license: MIT
+MIT
 
 screenshots:
   - ieaseMusic/screenshot.png
@@ -18,25 +20,6 @@ links:
   - type: Download
     url: https://github.com/trazyn/ieaseMusic/releases
 
-desktop:
-  Desktop Entry:
-    Name: ieaseMusic
-    Comment: "这应该是最好的网易云音乐播放器了，没有之一，如果有请打醒 \U0001F918"
-    Exec: AppRun
-    Terminal: false
-    Type: Application
-    Icon: iease-music
-    X-AppImage-Version: 1.1.3
-    X-AppImage-BuildId: 6897eb20-0596-11a8-05da-279afc969cc9
-    Categories: Music
-  AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
-    X-AppImage-Type: 2
-    X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: MIT
-
 electron:
   main: main.js
   author:
@@ -48,32 +31,39 @@ electron:
     type: git
     url: https://github.com/trazyn/ieaseMusic.git
   dependencies:
-    apicache: "^1.2.0"
-    axios: "^0.17.1"
-    big-integer: "^1.6.25"
+    apicache: "^1.2.3"
+    axios: "^0.18.0"
+    big-integer: "^1.6.36"
     classname: 0.0.0
     cookie-parser: "^1.4.3"
-    debug: "^3.0.1"
-    delegate: "^3.1.3"
-    electron-json-storage: "^4.0.2"
-    electron-updater: "^2.17.3"
-    electron-window-state: "^4.1.1"
+    crypto: "^1.0.1"
+    debug: "^4.1.0"
+    delegate: "^3.2.0"
+    electron-json-storage: "^4.1.4"
+    electron-updater: "^3.1.6"
+    electron-window-state: "^5.0.2"
     han: 0.0.7
     ionicons201: "^1.0.0"
-    libphonenumber-js: "^0.4.44"
+    libphonenumber-js: "^1.6.1"
     md5: "^2.2.1"
-    mobx: "^3.2.2"
-    mobx-react: "^4.2.2"
-    moment: "^2.18.1"
+    mkdirp: "^0.5.1"
+    mobx: "^5.5.0"
+    mobx-react: "^5.3.1"
+    moment: "^2.22.2"
+    node-id3: "^0.1.7"
     perdido: "^2.0.1"
-    react: "^15.6.1"
-    react-addons-css-transition-group: "^15.6.0"
-    react-dom: "^15.6.1"
-    react-jss: "^7.1.0"
-    react-router: "^3.0.5"
-    react-scroll-horizontal: github:trazyn/react-scroll-horizontal#gh-pages
-    request: "^2.81.0"
+    prop-types: "^15.6.2"
+    qrcode-js: 0.0.2
+    react: "^16.5.2"
+    react-addons-css-transition-group: "^15.6.2"
+    react-dom: "^16.5.2"
+    react-hot-loader: "^4.3.11"
+    react-jss: "^8.6.1"
+    react-router-dom: "^4.3.1"
+    request: "^2.88.0"
+    request-progress: "^3.0.0"
     request-promise-native: "^1.0.5"
-    roboto-fontface: "^0.8.0"
     simple-lastfm: "^1.0.5"
+    tmp-promise: "^1.0.5"
+    webpack-cli: "^3.1.2"
 ---
