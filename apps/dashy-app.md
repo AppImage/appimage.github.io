@@ -3,6 +3,7 @@ layout: app
 
 permalink: /dashy-app/
 description: Dashboard creation application
+license: NOASSERTION
 
 icons:
   - dashy-app/icons/512x512/dashy-app.png
@@ -38,6 +39,7 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: NOASSERTION
 
 electron:
   main: lib/main.js
