@@ -5,9 +5,10 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=astroprint
-X-AppImage-Version=0.2.0
-X-AppImage-BuildId=7af17c40-4edf-11a8-3c18-3bf31b5f077b
+StartupWMClass=AstroPrint
+X-AppImage-Version=0.2.1
 Categories=Printing;
+X-AppImage-BuildId=1ATHLxYMw5KO7jMuyjjTeH6FGnJ
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
