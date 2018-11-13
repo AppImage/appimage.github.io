@@ -1,0 +1,30 @@
+{
+  "name": "Paw",
+  "version": "0.2.2",
+  "author": {
+    "name": "Miguel Teixeira",
+    "email": "mteixeira88013@gmail.com"
+  },
+  "license": "MIT",
+  "description": "App inspired by developers and built for developers.",
+  "private": true,
+  "main": "main.js",
+  "dependencies": {
+    "about-window": "^1.12.1",
+    "auto-launch": "^5.0.5",
+    "axios": "^0.18.0",
+    "caniuse-api": "^3.0.0",
+    "electron-packager": "^12.2.0",
+    "electron-download-manager": "^2.2.0"
+  },
+  "files": [
+    "*.js",
+    "dist",
+    "node_modules"
+  ],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
