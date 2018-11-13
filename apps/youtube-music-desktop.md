@@ -3,7 +3,6 @@ layout: app
 
 permalink: /youtube-music-desktop/
 description: An unofficial YouTube Music app for desktop.
-license: Apache-2.0
 
 icons:
   - youtube-music-desktop/icons/128x128/youtube-music-desktop.png
@@ -39,7 +38,6 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: Apache-2.0
 
 electron:
   main: index.js

@@ -1,14 +1,14 @@
 [Desktop Entry]
-Name=YouTube Music for Desktop
-Comment=An unofficial YouTube Music app for desktop.
+Name=DBET Wallet
+Comment=DBET Wallet
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=youtube-music-desktop
-StartupWMClass=YouTube Music for Desktop
-X-AppImage-Version=0.2.1
-Categories=Utility;
-X-AppImage-BuildId=1BLrnFF6j6U1R9IXGnZKH870b6m
+Icon=dbet-wallet
+StartupWMClass=DBET Wallet
+X-AppImage-Version=2.0.0-alpha
+Categories=Finance;
+X-AppImage-BuildId=1BRQ3qTLaQMTyrR5QhPAnnlpOgD
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
