@@ -12,6 +12,13 @@ __PLEASE NOTE:__ We do not develop AppImages. We simply add them to this directo
 
 Name | Generic | Info
 ---|---|---|
+MuseScore | https://musescore.org/en/download#AppImage | Create, play and print beautiful sheet music. World’s most popular notation software
+Optifmus | https://gitlab.com/ciemat-psa/Optifmus/tree/master/bin | Open source multi-platform software tool for optimization studies in Functional Mock-up Interface (FMI) compliant models.
+LeafPad | https://dev.parrotsec.org/parrot/firejail/tree/e7a5918b273f0b3f1863b73a15c0cee18d1cb08c/test/appimage | it's not official, testing and a little old (2y)
+FishyTracking | https://git.benjamin-gallois.fr/bgallois/FishyTracking/tags | Fishy tracking software, a software to track multiple objects and dealing with occlusions.
+Panda 2 (Trial) | https://www.panda2.io/download  | Panda 2 is a HTML5 Game Development Platform for Mac, Windows and Linux. Full Version is paid.
+Qtractor | https://sourceforge.net/projects/qtractor/ |  An Audio/MIDI multi-track sequencer 
+OCS-Store | https://www.opendesktop.org/p/1175480/ | OCS-Store is a Content Management App for OCS-compatible websites like opendesktop.org, gnome-look.org, etc.
 ||
 
 <p><a class="b" href="https://github.com/AppImage/AppImageHub/edit/master/{{ page.path }}"><span class="octicon octicon-pencil"></span> Improve this list on GitHub!</a></p>
