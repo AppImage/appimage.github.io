@@ -28,9 +28,9 @@ desktop:
     Type: Application
     Icon: lotun-app
     StartupWMClass: Lotun
-    X-AppImage-Version: 0.0.2-alpha1
+    X-AppImage-Version: 0.0.3
     Categories: Development
-    X-AppImage-BuildId: 1DAiR3WAKPjMs5szqS9XVLJ8ZuF
+    X-AppImage-BuildId: 1DRg7Hvixmr9Q9FfyUpHOGxcTJf
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file

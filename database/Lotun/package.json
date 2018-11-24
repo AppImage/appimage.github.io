@@ -1,7 +1,7 @@
 {
   "name": "lotun-app",
   "author": "FreshIT, s.r.o.",
-  "version": "0.0.2-alpha1",
+  "version": "0.0.3",
   "main": "app/main.js",
   "license": "MIT",
   "repository": {

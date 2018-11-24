@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=lotun-app
 StartupWMClass=Lotun
-X-AppImage-Version=0.0.2-alpha1
+X-AppImage-Version=0.0.3
 Categories=Development;
-X-AppImage-BuildId=1DAiR3WAKPjMs5szqS9XVLJ8ZuF
+X-AppImage-BuildId=1DRg7Hvixmr9Q9FfyUpHOGxcTJf
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
