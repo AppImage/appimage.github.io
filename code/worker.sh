@@ -53,7 +53,7 @@ echo "URL: $URL"
 
 FILENAME=BeingTested.AppImage
 if [ ! -e "$FILENAME" ] ; then
-  wget -q -c "$URL" -O "$FILENAME"
+  wget -c "$URL" -O "$FILENAME"
 fi
 
 # Check the type of the AppImage
