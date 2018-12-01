@@ -1,0 +1,20 @@
+{
+  "name": "hermes",
+  "version": "1.0.0",
+  "description": "Desktop client version of the Hermes Messenger",
+  "main": "main.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HermesMessenger/HermesDesktop.git"
+  },
+  "author": {
+    "name": "Hermes Messenger",
+    "email": "hermes@hermes.org"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HermesMessenger/Hermes/issues"
+  },
+  "homepage": "https://github.com/HermesMessenger/Hermes#readme"
+}
