@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /RcloneTray/
-description: Simple Rclone bookmark manager GUI.
+description: Simple Rclone bookmark manager GUI that stays in the system tray.
 license: MIT
 
 icons:
@@ -24,15 +24,15 @@ links:
 desktop:
   Desktop Entry:
     Name: RcloneTray
-    Comment: Simple Rclone bookmark manager GUI.
+    Comment: Simple Rclone bookmark manager GUI that stays in the system tray.
     Exec: AppRun
     Terminal: false
     Type: Application
     Icon: rclonetray
     StartupWMClass: RcloneTray
-    X-AppImage-Version: 0.0.0
+    X-AppImage-Version: 1.0.0-alpha.181207.11
     Categories: Utility
-    X-AppImage-BuildId: 1CtypEXgFSUHiM5hr75DwOmIp6h
+    X-AppImage-BuildId: 1E2AGhFHDaOWl6i2dWaFSRy6xL7
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -42,8 +42,9 @@ desktop:
     X-AppImage-Payload-License: MIT
 
 electron:
-  version: 0.0.0
-  description: Simple Rclone bookmark manager GUI.
+  version: 1.0.0-alpha.181207
+  releaseType: prerelease
+  description: Simple Rclone bookmark manager GUI that stays in the system tray.
   repository:
     type: git
     url: https://github.com/dimitrov-adrian/RcloneTray
@@ -53,11 +54,8 @@ electron:
   license: MIT
   main: src/main.js
   dependencies:
-    adm-zip: "^0.4.11"
     chokidar: "^2.0.4"
     electron-context-menu: "^0.10.1"
-    electron-updater: "^3.2.2"
     electron-is-dev: "^1.0.1"
-    form-serialize: "^0.7.2"
     ini: "^1.3.5"
 ---

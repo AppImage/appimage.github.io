@@ -1,14 +1,14 @@
 [Desktop Entry]
 Name=RcloneTray
-Comment=Simple Rclone bookmark manager GUI.
+Comment=Simple Rclone bookmark manager GUI that stays in the system tray.
 Exec=AppRun
 Terminal=false
 Type=Application
 Icon=rclonetray
 StartupWMClass=RcloneTray
-X-AppImage-Version=0.0.0
+X-AppImage-Version=1.0.0-alpha.181207.11
 Categories=Utility;
-X-AppImage-BuildId=1CtypEXgFSUHiM5hr75DwOmIp6h
+X-AppImage-BuildId=1E2AGhFHDaOWl6i2dWaFSRy6xL7
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
