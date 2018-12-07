@@ -23,9 +23,9 @@ desktop:
     Type: Application
     Icon: crtx
     StartupWMClass: Cortex
-    X-AppImage-Version: 0.1.8-beta
+    X-AppImage-Version: 0.1.9-beta
     Categories: Utility
-    X-AppImage-BuildId: 1Dyx8TIGoPO2snZ4k10c5Gdc6LZ
+    X-AppImage-BuildId: 1E1eii6eBeiBcx6w7AFeYv3D19o
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -42,6 +42,7 @@ electron:
     "@sentry/node": "^4.3.0"
     electron-updater: "^4.0.5"
     firebase: "^5.5.8"
+    getstream: "^4.0.2"
     iohook: "^0.2.0"
     moment: "^2.22.2"
     nedb: "^1.8.0"

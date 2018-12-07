@@ -1,6 +1,6 @@
 {
   "name": "crtx",
-  "version": "0.1.8-beta",
+  "version": "0.1.9-beta",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
@@ -10,6 +10,7 @@
     "@sentry/node": "^4.3.0",
     "electron-updater": "^4.0.5",
     "firebase": "^5.5.8",
+    "getstream": "^4.0.2",
     "iohook": "^0.2.0",
     "moment": "^2.22.2",
     "nedb": "^1.8.0",

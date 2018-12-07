@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=crtx
 StartupWMClass=Cortex
-X-AppImage-Version=0.1.8-beta
+X-AppImage-Version=0.1.9-beta
 Categories=Utility;
-X-AppImage-BuildId=1Dyx8TIGoPO2snZ4k10c5Gdc6LZ
+X-AppImage-BuildId=1E1eii6eBeiBcx6w7AFeYv3D19o
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
