@@ -30,9 +30,9 @@ desktop:
     Type: Application
     Icon: clipr
     StartupWMClass: Clipr cloud
-    X-AppImage-Version: 1.0.25.20181205.2
+    X-AppImage-Version: 1.0.26.20181208.1
     Categories: Utility
-    X-AppImage-BuildId: 1DwaGTAzWtZ4649Wc22pThGzIyr
+    X-AppImage-BuildId: 1E4fqsmtwHilxRwBet0DQa7M3oj
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -57,6 +57,7 @@ electron:
     electron-store: 2.0.0
     electron-updater: 3.0.4
     extend: 3.0.2
+    is-online: 8.0.0
     lodash: 4.17.11
     pouchdb: 7.0.0
     transform-pouch: 1.1.4

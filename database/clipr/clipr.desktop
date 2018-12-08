@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=clipr
 StartupWMClass=Clipr cloud
-X-AppImage-Version=1.0.25.20181205.2
+X-AppImage-Version=1.0.26.20181208.1
 Categories=Utility;
-X-AppImage-BuildId=1DwaGTAzWtZ4649Wc22pThGzIyr
+X-AppImage-BuildId=1E4fqsmtwHilxRwBet0DQa7M3oj
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
