@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /perl-executing-browser/
-description: HTML interface for Perl 5 desktop applications
+description: HTML5 user interface for Perl 5 desktop applications
 license: LGPL-3.0
 
 icons:
@@ -26,7 +26,7 @@ desktop:
     Version: 1.0
     Type: Application
     Name: peb
-    Comment: HTML interface for Perl 5 desktop applications
+    Comment: HTML5 user interface for Perl 5 desktop applications
     Exec: peb
     Icon: peb
     Categories: Development
