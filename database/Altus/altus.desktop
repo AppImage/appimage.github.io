@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=altus
 StartupWMClass=Altus
-X-AppImage-Version=1.2.0
+X-AppImage-Version=1.2.4
 Categories=Chat;
-X-AppImage-BuildId=1BYm4d4ORwSgvaravmKfALpLihL
+X-AppImage-BuildId=1EyT3dCiG4vSvogCTSBt3ITnHXA
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
