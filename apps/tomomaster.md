@@ -30,9 +30,9 @@ desktop:
     Type: Application
     Icon: tomomaster
     StartupWMClass: tomomaster
-    X-AppImage-Version: 0.2.6.412
+    X-AppImage-Version: 1.1.3.798
     Categories: Network
-    X-AppImage-BuildId: 1CgndrZ3DY3JI0LHJVX3e1j1qRU
+    X-AppImage-BuildId: 1Eya5OYexVDg29tvNzEu5XuFbh6
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -52,13 +52,20 @@ electron:
     url: https://github.com/tomochain/tomomaster/issues
   homepage: https://github.com/tomochain/tomomaster#readme
   dependencies:
+    "@chenfengyuan/vue-qrcode": "^1.0.0"
+    "@fortawesome/fontawesome-svg-core": "^1.2.8"
+    "@fortawesome/free-brands-svg-icons": "^5.5.0"
+    "@fortawesome/free-solid-svg-icons": "^5.5.0"
+    "@fortawesome/vue-fontawesome": "^0.1.2"
+    "@ledgerhq/hw-app-eth": 4.24.0
+    "@ledgerhq/hw-transport-u2f": 4.24.0
+    axios: "^0.18.0"
     bignumber.js: "^7.2.1"
     bip39: "^2.5.0"
-    axios: "^0.18.0"
     body-parser: "^1.18.2"
     commander: "^2.17.1"
     config: "^1.30.0"
-    ethereumjs-abi: "^0.6.5"
+    ethereumjs-util: "^6.0.0"
     express: "^4.16.3"
     express-validator: "^5.1.2"
     highcharts: "^6.1.1"
@@ -68,9 +75,15 @@ electron:
     moment: "^2.22.2"
     mongoose: "^5.0.17"
     request: "^2.88.0"
-    truffle-contract: "^3.0.5"
+    store: "^2.0.12"
     truffle-hdwallet-provider: 0.0.6
     truffle-privatekey-provider: "^0.1.0"
+    url-join: "^4.0.0"
+    uuid: "^3.3.2"
+    vue-clipboards: "^1.2.4"
     vue-toasted: "^1.1.24"
+    vuex: "^3.0.1"
+    web3: "^1.0.0-beta.36"
     websocket: "^1.0.26"
+    winston: "^3.1.0"
 ---
