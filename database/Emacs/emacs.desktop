@@ -1,12 +1,16 @@
 [Desktop Entry]
+Name=Emacs
+GenericName=Text Editor
+Comment=Edit text
+MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
+Exec=emacs.wrapper %F
+Icon=emacs
 Type=Application
-Name=VirtScreen
-Comment=Make your iPad/tablet/computer as a secondary monitor on Linux
-Exec=bash -c "export PATH=\\$PATH:\\$HOME/.local/bin; virtscreen"
-Icon=virtscreen
 Terminal=false
-StartupNotify=false
-Categories=Application;
+Categories=Development;TextEditor;
+StartupWMClass=Emacs
+Keywords=Text;Editor;
+X-AppImage-Version=26.1.glibc2.17
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
