@@ -1,8 +1,7 @@
 ---
 layout: category
 xdg: AudioVideo
-headline: AudioVideo tools
-image: AudioVideoPlaceholder.png
+title: Multimedia
+subtitle: Application for presenting, creating, or processing multimedia (audio/video)
+image: https://cdn.stocksnap.io/img-thumbs/960w/X3SP1WEE4Z.jpg
 ---
-
-Some content about AudioVideo here...
