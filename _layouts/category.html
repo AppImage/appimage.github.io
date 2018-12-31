@@ -7,7 +7,7 @@ layout: default
   <!-- {% assign sorted = site.pages | sort:"updated" | reverse %} -->
   {% for post in sorted %}
     {% if post.layout == 'app' && post.published == 'true' %}  
-     {% if page.xdg == post.desktop.'Desktop Entry'.Categories %}  
+     {% if page.xdg == post.desktop["Desktop Entry"].Categories %}  
       {% include loop.html %}
      {% endif %}
     {% endif %}
