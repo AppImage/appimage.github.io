@@ -1,6 +1,6 @@
 ---
 layout: category
-title: AudioVideo
+xdg: AudioVideo
 headline: AudioVideo tools
 image: AudioVideoPlaceholder.png
 ---
