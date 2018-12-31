@@ -13,7 +13,6 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
       <th>Description</th>
       <th>Authors</th>
       <th>Update Information</th>
-      <th>Signature</th>
     </tr>
   </thead>
   <tbody>
@@ -39,19 +38,16 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             {% endif %}
           </td>
           <td>
-            {% if list_authors.html %}{% include list_authors.html %}<br>
-            {% endif %}
+            {% include list_authors.html %}<br>
             {% if post.license %}<span class="octicon octicon-law"></span> {{ post.license }}
             {% elsif post.electron.license %}<span class="octicon octicon-law"></span> {{ post.electron.license }}
             {% endif %}
           </td>
           <td style="vertical-align: top;">
             {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}<span class="octicon octicon-check" style="color:green;"></span> Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>{% endif %}
-          </td>
-          <td>
             {% if post.desktop.AppImageHub.X-AppImage-Signature %}
               {% assign shortsig = post.desktop.AppImageHub.X-AppImage-Signature | split: '.' %}
-              <span class="octicon octicon-key"></span> {{ shortsig[0] }}
+              <br><span class="octicon octicon-key"></span> {{ shortsig[0] }}
             {% endif %}
           </td>
           </tr>
