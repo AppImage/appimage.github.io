@@ -37,7 +37,7 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             {% elsif post.electron.description %}{{ post.electron.description }}<br/>
             {% endif %}
           </td>
-          <td>
+          <td style="vertical-align: top;">
             {% include list_authors.html %}<br>
             {% if post.license %}<span class="octicon octicon-law"></span> {{ post.license }}
             {% elsif post.electron.license %}<span class="octicon octicon-law"></span> {{ post.electron.license }}
