@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="posts">
-  {% assign sorted = site.pages | sort: 'title' %}
+  {% assign sorted = site.pages | sort_natural: 'title' %}
   {% for post in sorted %}
     {% if post.layout == 'app' && post.published == 'true' %}  
      {% if page.xdg == post.desktop["Desktop Entry"].Categories %}  
