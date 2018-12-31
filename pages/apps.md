@@ -23,7 +23,7 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
       {% if post.layout == 'app' && post.published != 'false' %}
         <tr id="{{ post.url }}">
           <td>
-            {% if post.icons[0] %}<img height="128" width="128" src="https://raw.githubusercontent.com/AppImage/appimage.github.io/master/database/{{post.icons[0]}}"/>{% else %}<span class="octicon octicon-device-desktop" title="Icon missing" style="color:#c00;"></span>{% endif %}<br>
+            {% if post.icons[0] %}<img height="64" width="64" src="https://raw.githubusercontent.com/AppImage/appimage.github.io/master/database/{{post.icons[0]}}"/>{% else %}<span class="octicon octicon-device-desktop" title="Icon missing" style="color:#c00;"></span>{% endif %}<br>
             <a href="{{ site.baseurl }}{{ post.url }}" style="font-weight:bold">
               {% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md" }}{% endif %}
             </a>
