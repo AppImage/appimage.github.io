@@ -44,10 +44,10 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             {% endif %}
           </td>
           <td style="vertical-align: top;">
-            {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}<span class="octicon octicon-check" style="color:green;"></span> Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>{% endif %}
+            {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}<span class="octicon octicon-check" style="color:green;"></span> Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a><br>{% endif %}
             {% if post.desktop.AppImageHub.X-AppImage-Signature %}
               {% assign shortsig = post.desktop.AppImageHub.X-AppImage-Signature | split: '.' %}
-              <br><span class="octicon octicon-key"></span> {{ shortsig[0] }}
+              <span class="octicon octicon-key"></span> {{ shortsig[0] }}
             {% endif %}
           </td>
           </tr>
