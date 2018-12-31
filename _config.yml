@@ -1,6 +1,12 @@
 # Name of your site (displayed in the header)
 name: AppImageHub
 
+# XDG categories
+# output: true = generate a page for each document in our collection
+collections:
+  categories:
+    output: true
+
 # Short bio or description (displayed in the header)
 description: Crowd-sourced central AppImage directory
 description_html: Crowd-sourced central <a href="http://appimage.org">AppImage</a> directory
