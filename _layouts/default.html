@@ -61,6 +61,16 @@
     </div>
   </div>
 
+  <ul>
+  {% for category in site.data.categories %}
+    <li>
+      <a href="{{ category.en }}">
+        {{ category.en }}
+      </a>
+    </li>
+  {% endfor %}
+  </ul>  
+  
   {% include analytics.html %}
   {% include analytics-piwik.html %}
   <script type="text/javascript" src="{{ site.baseurl }}/script.js"></script>  
