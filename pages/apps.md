@@ -22,7 +22,7 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
     {% for post in sorted %}
       {% if post.layout == 'app' && post.published != 'false' %}
         <tr id="{{ post.url }}">
-          <td>
+          <td style="vertical-align: top;">
             {% if post.icons[0] %}<img height="64" width="64" src="https://raw.githubusercontent.com/AppImage/appimage.github.io/master/database/{{post.icons[0]}}"/>{% else %}<img style="opacity: 0.5;" height="64" width="64" src="https://img.icons8.com/ios/1600/ios-application-placeholder.png"/>{% endif %}<br>
             <a href="{{ site.baseurl }}{{ post.url }}" style="font-weight:bold">
               {% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md" }}{% endif %}
@@ -32,7 +32,7 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             <br/>
             {% include list_links.html %}
           </td>
-          <td>
+          <td style="vertical-align: top;">
             {{ post.desktop["Desktop Entry"].Categories }}:<br/>
             {% if post.desktop["Desktop Entry"].Comment %}{{ post.desktop["Desktop Entry"].Comment }}<br/>
             {% elsif post.desktop["Desktop Entry"].GenericName %}{{ post.desktop["Desktop Entry"].GenericName }}<br/>
@@ -42,12 +42,12 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
           <td>
             {% include list_authors.html %}
           </td>
-          <td>
+          <td style="vertical-align: top;">
             {% if post.license %}<span class="octicon octicon-law"></span> {{ post.license }}
             {% elsif post.electron.license %}<span class="octicon octicon-law"></span> {{ post.electron.license }}
             {% endif %}
           </td>
-          <td>
+          <td style="vertical-align: top;">
             {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}<span class="octicon octicon-check" style="color:green;"></span> Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>{% endif %}
           </td>
           <td>
