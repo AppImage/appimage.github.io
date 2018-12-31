@@ -5,9 +5,10 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=uhk-agent
-X-AppImage-Version=1.2.0.2434
-X-AppImage-BuildId=b5716c30-4472-11a8-3fdb-7956e77626ee
+StartupWMClass=UHK Agent
+X-AppImage-Version=1.2.12.2970
 Categories=Utility;
+X-AppImage-BuildId=1D2iWQaRz8jssjkOXoF5iavlQMr
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
