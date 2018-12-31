@@ -19,3 +19,4 @@ X-AppImage-Type=1
 # see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
 # or use linuxdeployqt or appimagetool which produce type 2 automatically
 X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT
