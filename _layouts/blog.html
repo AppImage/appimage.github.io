@@ -3,14 +3,10 @@ layout: default
 ---
 
 <div class="posts">
-  {% assign sorted = site.pages | sort:"title" %}
-  <!-- {% assign sorted = site.pages | sort:"updated" | reverse %} -->
+  {% assign sorted = site.pages | sort: "title" %}
   {% for post in sorted %}
     {% if post.layout == 'app' && post.published == 'true' %}  
- 
       {% include loop.html %}
-      
     {% endif %}
   {% endfor %}
-
 </div>
