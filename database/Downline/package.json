@@ -1,0 +1,10 @@
+{
+  "name": "downline",
+  "productName": "Downline",
+  "version": "1.0.1",
+  "description": "A cross-platform video and audio downloader for YouTube, Vimeo, Dailymotion, SoundCloud and many other sites",
+  "homepage": "https://github.com/jarbun/downline",
+  "main": "./src/main.js",
+  "author": "Arjun B <https://github.com/jarbun>",
+  "license": "MIT"
+}
