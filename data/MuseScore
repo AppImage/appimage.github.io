@@ -1,1 +1,3 @@
-https://musescore.org/en/download/musescore-x86_64.AppImage
+https://download.musescore.com/releases/MuseScore-3.0.0/MuseScore-3.0.0-x86_64.AppImage
+# Link without version would be better, but
+# https://musescore.org/en/download/musescore-x86_64.AppImage is a HTML(!) page
