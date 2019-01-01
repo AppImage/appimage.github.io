@@ -26,9 +26,10 @@ layout: default
   <footer>
 
     <h3>Note for application authors</h3>
-{% if post.appdata %}
+{% if post.appdata.ID %}
+    <p>Thanks for shipping AppStream metainfo inside your AppImage. Please open a pull request on <a href="https://github.com/AppImage/appimage.github.io/blob/master/data/{{ page.name | remove: ".md" }}">https://github.com/AppImage/appimage.github.io/blob/master/data/{{ page.name | remove: ".md" }}</a> if you have changed it and would like to see this page updated accordingly.</p>
 {% else %}
-    <p>Thanks for shipping AppStream metainfo inside your AppImage. Please open a pull request on <a href="https://github.com/AppImage/appimage.github.io/blob/master/data/{{ page.name | remove: ".md" }}">https://github.com/AppImage/appimage.github.io/blob/master/data/{{ page.name | remove: ".md" }}</a> if you change it and would like to see this page updated.</p>
+    <p>Improve this entry by shipping an <a href="https://docs.appimage.org/packaging-guide/appstream.html">AppStream metainfo file</a> inside the AppImage in the <code>usr/share/metainfo</code> directory.</p>
 {% endif %}
 
 {% if post.appdata.Url.donation %}
