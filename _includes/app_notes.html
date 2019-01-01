@@ -1,8 +1,23 @@
+<h2 id="installation">Usage</h2>
+<p><b>Behold!</b> AppImages are usually not verified by others. Follow these instructions only if you trust the developer of the software. Use at your own risk!</p>
+<p>Download the {{ page.name | remove: ".md" }} AppImage and <a href="https://discourse.appimage.org/t/how-to-run-an-appimage/80">make it executable using your file manager</a> or by entering the following commands in a terminal:</p>
+<div class="highlight">
+  <span class="mega-octicon octicon-terminal"></span>
+  <pre><code>chmod +x *.AppImage</code></pre>
+</div>
+<p>Then double-click the AppImage in the file manager to open it.</p>
+<p>If you would like to see the {{ page.name | remove: ".md" }} integrated into the system (menus, icons, file type associations, etc.), then you may want to check the optional <a href="https://github.com/AppImage/appimaged">appimaged</a> daemon.</p>
 
-  <h2 id="installation">Usage</h2>
-  <p><b>Behold!</b> AppImages are usually not verified by others. Follow these instructions only if you trust the developer of the software. Use at your own risk!</p>
-  <p>Download the {{ page.name | remove: ".md" }} AppImage and make it executable by entering the following commands in a terminal:</p>
-  <div class="highlight">
-    <span class="mega-octicon octicon-terminal"></span>
-    <pre><code>chmod +x {{ repo.package }}</code></pre>
-  </div>
+<h2>Note for application authors</h2>
+{% if post.appdata.ID %}
+    <p>Thanks for shipping AppStream metainfo inside your AppImage. Please open a pull request on <a href="https://github.com/AppImage/appimage.github.io/blob/master/data/{{ page.name | remove: ".md" }}">https://github.com/AppImage/appimage.github.io/blob/master/data/{{ page.name | remove: ".md" }}</a> if you have changed it and would like to see this page updated accordingly.</p>
+{% else %}
+    <p>Improve this entry by shipping an <a href="https://docs.appimage.org/packaging-guide/appstream.html">AppStream metainfo file</a> inside the AppImage in the <code>usr/share/metainfo</code> directory.</p>
+{% endif %}
+
+{% if post.appdata.Url.donation %}
+{% else %}
+     <p>If you would like to see a donation link for the application here, please include one in the AppStream data.</p>
+{% endif %}
+
+  <p><a href="https://github.com/AppImage/AppImageHub/commits/master/{{ page.path }}"><span class="octicon octicon-mark-github"></span> History of this page</a></p>
