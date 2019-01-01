@@ -3,12 +3,15 @@
 layout: default
 ---
 
-  <ul>
+  <span>
   {% for category in site.data.categories %}
-    <li>
+    <p>
       <a href="/categories/{{ category.xdg }}">
         {{ category.en }}
+        {% if category.stocksnap %}
+        <img src="https://cdn.stocksnap.io/img-thumbs/280h/{{ category.stocksnap }}.jpg" />
+        {% endif %}
       </a>
-    </li>
+    </p>
   {% endfor %}
-  </ul>  
+  </span>  
