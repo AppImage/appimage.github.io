@@ -6,6 +6,7 @@ xdg: Audio
 # image: https://cdn.stocksnap.io/img-thumbs/960w/4C9TCUEARS.jpg # Doing this dynamically below
 ---
 
-{% assign title = site.data.categories[page.xdg].en %}
-{% assign subtitle = site.data.categories[page.xdg].subtitle %}
-{% assign image = "https://cdn.stocksnap.io/img-thumbs/960w/" | append: site.data.categories[page.xdg].stocksnap | append: ".jpg" %}
+# https://stackoverflow.com/questions/34162726/getting-a-specific-item-from-a-collection-in-jekyll
+{% assign title = site.data.categories.en | where:"xdg", page.xdg  | first %}
+{% assign subtitle = site.data.categories.subtitle | where:"xdg", page.xdg  | first %}
+{% assign image = "https://cdn.stocksnap.io/img-thumbs/960w/" | append: site.data.categories.stocksnap | where:"xdg", page.xdg  | first | append: ".jpg" %}
