@@ -102,7 +102,7 @@ desktop:
     Categories: Utility
     StartupNotify: false
     MimeType: text/english
-    X-AppImage-Version: v0.3.2.glibc2.17
+    X-AppImage-Version: v0.4.0-43-ga0140da7b.glibc2.17
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|neovim|neovim|nightly|nvim.appimage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -110,7 +110,6 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: NOASSERTION
 
 appdata:
   Type: desktop-application
