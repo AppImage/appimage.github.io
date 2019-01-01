@@ -39,7 +39,7 @@
         </div>
 
         <nav>
-          <a href="{{ site.baseurl }}/">News</a>
+          <a href="{{ site.baseurl }}/">Home</a>
           <a href="{{ site.baseurl }}/apps">Apps</a>
           <a href="{{ site.baseurl }}/wishlist">Wishlist</a>
           <a href="{{ site.baseurl }}/help">Help</a>
@@ -60,16 +60,6 @@
       </footer>
     </div>
   </div>
-
-  <ul>
-  {% for category in site.data.categories %}
-    <li>
-      <a href="/categories/{{ category.xdg }}">
-        {{ category.en }}
-      </a>
-    </li>
-  {% endfor %}
-  </ul>  
   
   {% include analytics.html %}
   {% include analytics-piwik.html %}
