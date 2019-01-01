@@ -7,10 +7,10 @@ layout: default
   {% for category in site.data.categories %}
     <p>
       <a href="/categories/{{ category.xdg }}">
-        {{ category.en }}
         {% if category.stocksnap %}
-        <img src="https://cdn.stocksnap.io/img-thumbs/280h/{{ category.stocksnap }}.jpg" />
+        <img src="https://cdn.stocksnap.io/img-thumbs/280h/{{ category.stocksnap }}.jpg" /><br>
         {% endif %}
+        {{ category.en }}
       </a>
     </p>
   {% endfor %}
