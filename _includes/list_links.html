@@ -28,6 +28,27 @@
 {% if forloop.last == false %} {% endif %}
 {% endfor %}
 
+
+{% if post.appdata.Url.homepage %}
+<a href="{{ post.appdata.Url.homepage }}" class="button white"><span class="octicon octicon-link-external"></span> {{ page.name | remove: ".md" }} Website</a>
+{% endif %}
+
+{% if post.appdata.Url.bugtracker %}
+<a href="{{ post.appdata.Url.bugtracker }}" class="button white"><span class="octicon octicon-bug"></span> {{ page.name | remove: ".md" }} Bugtracker</a>
+{% endif %}
+
+{% if post.appdata.Url.faq %}
+<a href="{{ post.appdata.Url.faq }}" class="button white"><span class="octicon octicon-question"></span> {{ page.name | remove: ".md" }} FAQ</a>
+{% endif %}
+
+{% if post.appdata.Url.help %}
+<a href="{{ post.appdata.Url.help }}" class="button white"><span class="octicon octicon-link-external"></span> {{ page.name | remove: ".md" }} Help</a>
+{% endif %}
+
 {% if post.appdata.Url.donation %}
 <a href="{{ post.appdata.Url.donation }}" class="button white"><span class="octicon octicon-link-external"></span> Donate</a>
+{% endif %}
+
+{% if post.appdata.Url.translate %}
+<a href="{{ post.appdata.Url.translate }}" class="button white"><span class="octicon octicon-link-external"></span> Help translating {{ page.name | remove: ".md" }}</a>
 {% endif %}
