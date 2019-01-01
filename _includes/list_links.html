@@ -17,8 +17,8 @@
   {% else %}
     {% assign prefix = nil %}
   {% endcase %}
-  <a href="{{ prefix }}{{ link.url }}" class="button green">
+  <a href="{{ prefix }}{{ link.url }}" class="button {% if link.name == "Download" %}green{% else %}white{% endif %}">
     {% if link.name %}{{ link.name }}{% else %}{{ link.type }}{% endif %}
   </a>
-{% if forloop.last == false %}, {% endif %}
+{% if forloop.last == false %} {% endif %}
 {% endfor %}
