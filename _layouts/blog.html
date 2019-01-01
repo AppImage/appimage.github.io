@@ -1,12 +1,14 @@
 ---
+# index.html in the root directory points here
 layout: default
 ---
 
-<div class="posts">
-  {% assign sorted = site.pages | sort: "title" %}
-  {% for post in sorted %}
-    {% if post.layout == 'app' && post.published == 'true' %}  
-      {% include loop.html %}
-    {% endif %}
+  <ul>
+  {% for category in site.data.categories %}
+    <li>
+      <a href="/categories/{{ category.xdg }}">
+        {{ category.en }}
+      </a>
+    </li>
   {% endfor %}
-</div>
+  </ul>  
