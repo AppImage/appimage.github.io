@@ -22,7 +22,8 @@ Unlike other applications, AppImages do not need to be installed before they can
 
 <h2>Note for application authors</h2>
 
-{% if not post.desktop.AppImageHub.X-AppImage-UpdateInformation %}
+{% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}
+{% else %}
     <p>Please consider to add <a href="https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information">update information</a> to the {{ page.name | remove: ".md" }} AppImage and ship a `.zsync` file so that it can be updated using <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>.</p>
 {% endif %}
 
