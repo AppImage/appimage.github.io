@@ -1,6 +1,6 @@
 {
   "name": "odio",
-  "version": "1.3.5",
+  "version": "1.4.0",
   "description": "odio is a free radio streaming software with more than 20,000 radio stations from around the world for Windows, MacOs and Linux.",
   "author": "Meni Edri",
   "homepage": "http://www.cicodo.com",
@@ -13,7 +13,7 @@
     "electron-ga": "^1.0.6",
     "electron-log": "^2.2.17",
     "electron-settings": "^3.2.0",
-    "electron-updater": "~3.1.2",
+    "electron-updater": "~4.0.6",
     "flag-icon-css": "^3.0.0",
     "hls.js": "^0.12.1",
     "howler": "^2.0.15",
