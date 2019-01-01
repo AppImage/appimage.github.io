@@ -25,11 +25,14 @@ layout: default
 
   <footer>
 
-    <p>
-      <a href="https://github.com/AppImage/AppImageHub/commits/master/{{ page.path }}">
-        <span class="octicon octicon-mark-github"></span> History of this page</a> 
-       | Improve this entry! Application authors may want to provide their own metadata. This is possible by shipping an <a href="https://docs.appimage.org/packaging-guide/appstream.html">AppStream metainfo file</a> inside the AppImage in the <code>usr/share/metainfo</code> directory.
-    </p>
+    <h3>Note for application authors</h3>
+    <p>Improve this entry by shipping an <a href="https://docs.appimage.org/packaging-guide/appstream.html">AppStream metainfo file</a> inside the AppImage in the <code>usr/share/metainfo</code> directory.</p>
+{% if post.appdata.Url.donation %}
+{% else %}
+     <p>If you would like to see a donation link for the application here, please include one in the AppStream data.</p>
+{% endif %}
+
+  <p><a href="https://github.com/AppImage/AppImageHub/commits/master/{{ page.path }}"><span class="octicon octicon-mark-github"></span> History of this page</a></p>
 
   </footer>
 
