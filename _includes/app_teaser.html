@@ -42,7 +42,7 @@
 {% endif %}
 
 {% if post.appdata.Url.donation %}
-<p>Donate: <a href="{{ post.appdata.Url.donation }}">{{ post.appdata.Url.donation }}</a></p>
+<p><span class="octicon octicon-link-external"></span> <b>Donate:</b> <a href="{{ post.appdata.Url.donation }}">{{ post.appdata.Url.donation }}</a></p>
 {% elsif post.description %}
  <p>If you would like to see a donation link for the application here, please ask the appliction author to include on in the AppStream metainfo file</p>
 {% endif %}
