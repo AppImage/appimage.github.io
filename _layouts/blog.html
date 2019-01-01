@@ -5,15 +5,16 @@ layout: default
 
   <style type="text/css">
     /* Container holding the image and the text */
-    .container {
+    .moodpic {
       position: relative;
       text-align: center;
       color: white;
     }
     /* Centered text */
-    .centered {
+    .moodtext {
       position: absolute;
       font-size: 30px;
+      color: white;
       text-shadow: 2px 2px 8px #000000;
       top: 50%;
       left: 50%;
@@ -26,12 +27,12 @@ layout: default
     <p>
       <a href="/categories/{{ category.xdg }}">
         {% if category.stocksnap %}
-          <div class="container">
+          <div class="moodpic">
             <img src="https://cdn.stocksnap.io/img-thumbs/280h/{{ category.stocksnap }}.jpg" />
-            <div class="centered">{{ category.en }}</div>
+            <div class="moodtext">{{ category.en }}</div>
           </div>
         {% else %}
-          <div class="centered">{{ category.en }}</div>
+          <div>{{ category.en }}</div>
         {% endif %}
       </a>
     </p>
