@@ -27,8 +27,6 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             </a>
             {% if post.installation %}<span class="octicon octicon-package" title="Package available"></span>{% endif %}
             {% if post.screenshots %} {% else %}<span class="octicon octicon-device-desktop" title="Screenshot missing" style="color:#c00;"></span>{% endif %}
-            <br/>
-            {% include list_links.html %}
           </td>
           <td style="vertical-align: top;">
             {{ post.desktop["Desktop Entry"].Categories }}:<br/>
