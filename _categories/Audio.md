@@ -6,6 +6,7 @@ xdg: Audio
 # image: https://cdn.stocksnap.io/img-thumbs/960w/4C9TCUEARS.jpg # Doing this dynamically below
 ---
 
+{% assign xdg = page.name %}
 # https://stackoverflow.com/questions/34162726/getting-a-specific-item-from-a-collection-in-jekyll
 {% assign title = site.data.categories.en | where:"xdg", xdg  | first %}
 {% assign subtitle = site.data.categories.subtitle | where:"xdg", xdg  | first %}
