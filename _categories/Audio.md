@@ -7,4 +7,4 @@ subtitle: Audio applications
 ---
 
 {% assign title = site.data.categories[page.xdg].en %}
-{% assign image = "https://cdn.stocksnap.io/img-thumbs/960w/" | append: site.data.categories[page.xdg].stocksnap | append:  ".jpg %}
+{% assign image = "https://cdn.stocksnap.io/img-thumbs/960w/" | append: site.data.categories[page.xdg].stocksnap | append: ".jpg" %}
