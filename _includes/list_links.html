@@ -27,3 +27,7 @@
   </a>
 {% if forloop.last == false %} {% endif %}
 {% endfor %}
+
+{% if post.appdata.Url.donation %}
+<a href="{{ post.appdata.Url.donation }} class="button white">{{ post.appdata.Url.donation }}<span class="octicon octicon-link-external"></span> Donate</a>
+{% endif %}
