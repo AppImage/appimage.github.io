@@ -3,6 +3,23 @@
 layout: default
 ---
 
+  <style type="text/css">
+    /* Container holding the image and the text */
+    .container {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    /* Centered text */
+    .centered {
+      position: absolute;
+      text-size: 30px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+    
   <span>
   {% for category in site.data.categories %}
     <p>
@@ -13,5 +30,10 @@ layout: default
         {{ category.en }}
       </a>
     </p>
+    <div class="container">
+      <img src="https://cdn.stocksnap.io/img-thumbs/280h/{{ category.stocksnap }}.jpg" />
+      <div class="centered">{{ category.en }}</div>
+    </div>
+    
   {% endfor %}
   </span>  
