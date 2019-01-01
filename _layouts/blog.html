@@ -14,6 +14,7 @@ layout: default
     .centered {
       position: absolute;
       font-size: 30px;
+      text-shadow: 2px 2px 8px #000000;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -25,15 +26,17 @@ layout: default
     <p>
       <a href="/categories/{{ category.xdg }}">
         {% if category.stocksnap %}
-        <img src="https://cdn.stocksnap.io/img-thumbs/280h/{{ category.stocksnap }}.jpg" /><br>
+          <div class="container">
+            <img src="https://cdn.stocksnap.io/img-thumbs/280h/{{ category.stocksnap }}.jpg" />
+            <div class="centered">{{ category.en }}</div>
+          </div>
+        {% else %}
+          <div class="centered">{{ category.en }}</div>
         {% endif %}
         {{ category.en }}
       </a>
     </p>
-    <div class="container">
-      <img src="https://cdn.stocksnap.io/img-thumbs/280h/{{ category.stocksnap }}.jpg" />
-      <div class="centered">{{ category.en }}</div>
-    </div>
+
     
   {% endfor %}
   </span>  
