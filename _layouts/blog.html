@@ -40,7 +40,6 @@ layout: default
 
   <div class="cats">
   {% for category in site.data.categories %}
-    <p>
       <a href="/categories/{{ category.xdg }}">
         {% if category.stocksnap %}
           <div class="moodpic">
@@ -51,8 +50,6 @@ layout: default
           <div>{{ category.en }}</div>
         {% endif %}
       </a>
-    </p>
-
     
   {% endfor %}
   </div>  
