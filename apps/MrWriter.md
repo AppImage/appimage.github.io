@@ -3,18 +3,15 @@ layout: app
 
 permalink: /MrWriter/
 
+icons:
+  - MrWriter/icons/1024x1024/.DirIcon
+
 screenshots:
   - MrWriter/screenshot.png
 
 authors:
-  - name: unruhschuh
-    url: https://github.com/unruhschuh
 
 links:
-  - type: GitHub
-    url: unruhschuh/MrWriter
-  - type: Download
-    url: https://github.com/unruhschuh/MrWriter/releases
 
 desktop:
   Desktop Entry:
@@ -26,7 +23,6 @@ desktop:
     Terminal: false
     Categories: Office
   AppImageHub:
-    X-AppImage-UpdateInformation: 
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
 ---

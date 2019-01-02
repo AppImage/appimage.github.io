@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=leonflix
-X-AppImage-Version=0.4.2
-X-AppImage-BuildId=f275eea0-0785-11a8-32ed-c3e0f4f8bf05
+X-AppImage-Version=0.4.7
+X-AppImage-BuildId=76d8cab0-4231-11a8-0615-115b33d41495
 Categories=Utility;
 
 [AppImageHub]

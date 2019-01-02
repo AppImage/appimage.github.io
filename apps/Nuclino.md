@@ -4,6 +4,9 @@ layout: app
 permalink: /Nuclino/
 description: Nuclino is the easiest way to organize and share knowledge in your team.
 
+icons:
+  - Nuclino/icons/128x128/nuclino-desktop.png
+
 screenshots:
   - Nuclino/screenshot.png
 
@@ -19,9 +22,10 @@ desktop:
     Terminal: false
     Type: Application
     Icon: nuclino-desktop
-    X-AppImage-Version: 1.0.1
-    X-AppImage-BuildId: e9023060-3299-11a8-1b64-8790ffb27a05
+    StartupWMClass: Nuclino
+    X-AppImage-Version: 1.1.1
     Categories: Office
+    X-AppImage-BuildId: 1EcrXHnGOz6970MJ6iE3n2eydjG
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -40,8 +44,8 @@ electron:
   license: UNLICENSED
   main: "./src/main.js"
   dependencies:
-    electron-dl: 1.11.0
-    electron-is-dev: 0.3.0
-    electron-log: 2.2.14
-    electron-updater: 2.21.3
+    electron-dl: 1.12.0
+    electron-is-dev: 1.0.1
+    electron-log: 2.2.17
+    electron-updater: 4.0.6
 ---

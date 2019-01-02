@@ -28,7 +28,7 @@ desktop:
     Icon: redict
     Comment: A dictionary based on C++/Qt development
     Categories: Office
-    X-AppImage-Version: 9d6b78a
+    X-AppImage-Version: c270175
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|rekols|redict|continuous|Redict*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.

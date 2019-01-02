@@ -17,7 +17,7 @@
     <url type="bugtracker">https://trac.videolan.org/vlc/</url>
     <url type="donation">https://www.videolan.org/contribute.html</url>
     <releases>
-        <release version="2.2.6" />
+        <release version="$VERSION" />
     </releases>
     <project_group>VideoLAN</project_group>
     <project_license>GPL-2.0+</project_license>

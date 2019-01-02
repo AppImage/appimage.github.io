@@ -1,6 +1,6 @@
 {
 	"name": "FontBase",
-	"version": "2.3.3",
+	"version": "2.7.0",
 	"productName": "FontBase",
 	"description": "A lightning fast, beautiful and free font manager for designers.",
 	"homepage": "http://fontba.se",
@@ -12,7 +12,7 @@
 	},
 	"license": "Dominik Levitsky Studio",
 	"dependencies": {
-		"fs-extra": "^4.0.2"
+		"fs-extra": "^5.0.0"
 	},
 	"optionalDependencies": {
 		"fontsession": "git+https://github.com/DominikLevitsky/fontsession.git",

@@ -1,20 +1,14 @@
 {% if site.disqus %}
 <div class="comments">
-
   <div id="disqus_thread"></div>
-  <div id="disqus_loader">
-    <a onclick='
+  <script>
       jQuery.ajaxSetup({cache:true});
       jQuery.getScript("//{{ site.disqus }}.disqus.com/embed.js");
       jQuery.ajaxSetup({cache:false});
       jQuery("#disqus_loader").remove();
-    '>
-    Click to view comments and add your own! Powered by Disqus.
-    </a>
-  </div>
-	<noscript>
+  </script>
+  <noscript>
     Enable JavaScript if you want to view the comments! <a href="https://disqus.com/?ref_noscript">Powered by Disqus.</a>
   </noscript>
-
 </div>
 {% endif %}
