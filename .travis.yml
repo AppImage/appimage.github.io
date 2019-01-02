@@ -8,7 +8,7 @@ env:
     - DISPLAY=:99
 
 script:
-  - sudo apt-get -qq -y install libjack0 desktop-file-utils xmlstarlet xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev > /dev/null # appstream # TODO: Cache me!
+  - sudo apt-get -qq -y install libjack0 desktop-file-utils xmlstarlet xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev fonts-wqy-microhei > /dev/null # appstream # TODO: Cache me!
   - gem install dupervisor -v 1.0.5 # To convert ini to yaml files
   - npm install -g asar # to get pacakges.json from resources/app.asar for electron-builder applications
   - # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
