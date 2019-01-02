@@ -1,7 +1,7 @@
 {% if post.screenshots %}
   <div id="screenshots">
     {% for screenshot in post.screenshots %}
-      <img src="{{ site.baseurl }}/img/windows/placeholder.png" data-src="{% if screenshot contains '://' %}{{screenshot}}{% else %}{{ site.baseurl }}/database/{{ screenshot }}{% endif %}" alt="Screenshot of {{ post.title }}" />
+      <img src="{{ site.baseurl }}/img/windows/placeholder.png" data-src="{% if screenshot contains '://' %}{{screenshot}}{% else %}{{ site.baseurl }}/database/{{ screenshot }}{% endif %}" alt="Screenshot of {{ page.name | remove: ".md" }}" />
       <noscript>
         <img src="{% if screenshot contains '://' %}{{screenshot}}{% else %}{{ site.baseurl }}/database/{{ screenshot }}{% endif %}" alt="Screenshot" />
       </noscript>
