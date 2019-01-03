@@ -30,9 +30,9 @@ desktop:
     Type: Application
     Icon: tomomaster
     StartupWMClass: tomomaster
-    X-AppImage-Version: 1.1.3.798
+    X-AppImage-Version: 1.1.4.804
     Categories: Network
-    X-AppImage-BuildId: 1Eya5OYexVDg29tvNzEu5XuFbh6
+    X-AppImage-BuildId: 1EzMUDpgOR1EWxiuCd0yPlPG1W2
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
