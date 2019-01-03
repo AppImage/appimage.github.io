@@ -1,0 +1,43 @@
+{
+  "name": "ao",
+  "productName": "Ao",
+  "version": "6.1.0",
+  "description": "Elegant Microsoft To-Do desktop app",
+  "license": "MIT",
+  "repository": "klaussinani/ao",
+  "author": {
+    "name": "Klaus Sinani",
+    "email": "klaussinani@gmail.com",
+    "url": "https://klaussinani.github.io"
+  },
+  "maintainers": [
+    {
+      "name": "Mario Sinani",
+      "email": "mariosinani@protonmail.ch",
+      "url": "https://github.com/mariocfhq"
+    }
+  ],
+  "dependencies": {
+    "auto-launch": "^5.0.1",
+    "electron-context-menu": "^0.9.1",
+    "electron-debug": "^1.4.0",
+    "electron-dl": "^1.10.0",
+    "electron-settings": "^3.1.4"
+  },
+  "stylelint": {
+    "rules": {
+      "block-closing-brace-empty-line-before": "never",
+      "block-closing-brace-newline-after": "always",
+      "block-no-empty": true,
+      "block-opening-brace-space-before": "always",
+      "color-hex-case": "upper",
+      "color-hex-length": "long",
+      "color-no-invalid-hex": true,
+      "comment-no-empty": true,
+      "declaration-block-semicolon-space-before": "never",
+      "indentation": 2,
+      "max-empty-lines": 0,
+      "no-duplicate-selectors": true
+    }
+  }
+}

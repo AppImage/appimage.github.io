@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Ao
+Comment=Ao is an unofficial, featureful, open source, community-driven, free Microsoft To-Do app, used by people in more than 120 countries.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=ao
+StartupWMClass=Ao
+X-AppImage-Version=6.1.0.309
+Categories=Office;
+X-AppImage-BuildId=1FEfFEVxRXkfN24PdewmU7rYc4K
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT
