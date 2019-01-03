@@ -11,7 +11,7 @@ We do not develop AppImages. We simply add them to this directory of available A
 
 ## For application developers
 
-Providing an [AppImage](http://appimage.org/) would have, among others, these advantages:
+Providing an [AppImage](http://appimage.org/) has, among others, these advantages:
 - Applications packaged as an AppImage can run on many distributions (including Ubuntu, Fedora, openSUSE, CentOS, elementaryOS, Linux Mint, and others)
 - One app = one file = super simple for users: just download one AppImage file, [make it executable](http://discourse.appimage.org/t/how-to-make-an-appimage-executable/80), and run
 - No unpacking or installation necessary
