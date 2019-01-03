@@ -4,6 +4,8 @@ title: Application wishlist
 permalink: /wishlist/
 ---
 
+This is a crowd-sourced central [AppImage](http://appimage.org/) directory. It is entirely maintained on GitHub at [https://github.com/AppImage/appimage.github.io/](https://github.com/AppImage/appimage.github.io/edit/master/pages/wishlist.md).
+
 As many excellent apps you will find here, as many people probably miss their personal favorite. This is just a collection of applications for with the respective authors provide an AppImage for Linux.
 
 ## For users
