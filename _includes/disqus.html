@@ -1,14 +1,12 @@
-{% if site.disqus %}
-<div class="comments">
-  <div id="disqus_thread"></div>
-  <script>
-      jQuery.ajaxSetup({cache:true});
-      jQuery.getScript("//{{ site.disqus }}.disqus.com/embed.js");
-      jQuery.ajaxSetup({cache:false});
-      jQuery("#disqus_loader").remove();
-  </script>
-  <noscript>
-    Enable JavaScript if you want to view the comments! <a href="https://disqus.com/?ref_noscript">Powered by Disqus.</a>
-  </noscript>
-</div>
-{% endif %}
+<div id='discourse-comments'></div>
+
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'http://discourse.appimage.org/',
+                     discourseEmbedUrl: '{{ page.url }}' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
