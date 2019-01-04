@@ -24,4 +24,13 @@
     {% if page.title %}
     <meta property="og:title" content="{{ page.title }}" />
     <meta property="twitter:title" content="{{ page.title }}" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AppImages">
+    <meta name="twitter:creator" content="@probonopd">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.excerpt| strip_html }}">
+    <meta name="twitter:image" content="{% if screenshot contains '://' %}{{screenshot}}{% else %}{{ site.url }}{{ site.baseurl }}/database/{{ screenshot }}{% endif %}">
+
+
     {% endif %}
