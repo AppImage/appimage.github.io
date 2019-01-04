@@ -21,7 +21,7 @@
     {% endif %}
     <meta name="author" content="{{ site.name }}" />
 
-    <meta property="og:title" content=" {% if page.title %}{{ page.title }}{% else %}{{ page.name | remove: ".md" }}{% endif %}" />
+    <meta property="og:title" content=" {% if page.title %}{{ page.title | replace: "_", " " }}{% else %}{{ page.name | remove: ".md" | replace: "_", " " }}{% endif %}" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@AppImages">
     <meta name="twitter:creator" content="@probonopd">
