@@ -17,13 +17,18 @@
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.4/js/jquery.tablesorter.widgets.min.js"></script>
 
   <script type="text/javascript" src="https://unpkg.com/simple-jekyll-search@1.5.0/dest/simple-jekyll-search.min.js"></script>
+
   <script type="text/javascript">
-  SimpleJekyllSearch({
-    search-input: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results-container'),
-    json: '/search.json',
-    searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a></li>'
-  })
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '/Simple-Jekyll-Search/search.json',
+      searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+      noResultsText: 'No results found',
+      limit: 10,
+      fuzzy: false,
+      exclude: ['Welcome']
+    })
   </script>
   
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
