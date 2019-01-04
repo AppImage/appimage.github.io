@@ -4,7 +4,7 @@
   {% include meta.html %}
 
   <title>
-    {{ page.name | remove: ".md" }} – {{ site.name }}
+    {{ page.name | remove: ".md" | replace: "_", " " }} – {{ site.name }}
   </title>
 
   <!--[if lt IE 9]>
