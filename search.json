@@ -1,8 +1,11 @@
 ---
 layout: null
 ---
+
+{% assign sorted = site.pages | sort: 'permalink' %}
+
 [
-  {% for post in site.posts %}
+  {% for post in sorted %}
     {
       "title"    : "{{ post.title | escape }}",
       "category" : "{{ post.category }}",
