@@ -1,3 +1,7 @@
+{% if post.layout != 'app' %}
+  <a style="font-weight:bold" href="{{ site.baseurl }}{{ post.url }}">
+{% endif %}
+
 {% if post.screenshots %}
   <div id="screenshots">
     {% for screenshot in post.screenshots %}
@@ -21,6 +25,10 @@
   </p>
 {% endif %}
 
+{% if post.layout != 'app' %}
+  </a>
+{% endif %}
+  
 {% if post.appdata.Description.C %}
   <blockquote>{{ post.appdata.Description.C }}</blockquote>
 {% elsif post.description %}
