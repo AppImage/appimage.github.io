@@ -6,13 +6,14 @@ layout: default
 
 {% assign post = page %}
 
+<p>
+  <a href="/">{{ site.name }}</a> > <a href="/categories/{{ page.desktop["Desktop Entry"].Categories }}">{{ page.desktop["Desktop Entry"].Categories }}</a> > {{ page.name | remove: ".md" }}
+</p>
+
 <article class="post">
 
   <header>
-    
-    <p>
-      <a href="/">{{ site.name }}</a> > <a href="/categories/{{ page.desktop["Desktop Entry"].Categories }}">{{ page.desktop["Desktop Entry"].Categories }}</a> > {{ page.name | remove: ".md" }}
-    </p>
+ 
     <h1 style="text-align:center" id="{{ post.title }}">
       {% if post.icons[0] %}<img height="128" width="128" src="https://gitcdn.xyz/repo/AppImage/appimage.github.io/master/database/{{post.icons[0]}}"/><br/>{% else %}{% endif %}
       {% if page.title %}{{ page.title }}{% else %}{{ page.name | remove: ".md" }}{% endif %}</h1>
