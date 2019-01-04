@@ -28,8 +28,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: whu-library-seat
-    X-AppImage-Version: 1.3.2.192
-    X-AppImage-BuildId: 16d84850-c7f8-11a8-3566-7d5c58af232b
+    X-AppImage-Version: 1.8.0.333
+    X-AppImage-BuildId: d8d8dd80-0d1b-11a9-0d22-77a39db783d7
     Categories: Utility
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -47,10 +47,13 @@ electron:
     electron-store: "^2.0.0"
     electron-updater: "^3.0.3"
     element-ui: "^2.4.4"
+    js-md5: "^0.7.3"
     mockjs: "^1.0.1-beta3"
     node-notifier: "^5.2.1"
+    socket.io-client: "^2.2.0"
     vue: "^2.3.3"
     vue-electron: "^1.0.6"
+    vue-markdown: "^2.2.4"
     vue-router: "^2.5.3"
     vuepress-theme-vue: "^1.0.3"
     vuex: "^2.3.1"
