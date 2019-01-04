@@ -27,4 +27,4 @@
     <meta name="twitter:creator" content="@probonopd">
     <meta name="twitter:title" content=" {% if page.title %}{{ page.title }}{% else %}{{ page.name | remove: ".md" }}{% endif %}">
     <meta name="twitter:description" content="{{ page.excerpt| strip_html }}">
-    <meta name="twitter:image" content="{% if screenshot contains '://' %}{{screenshot}}{% else %}{{ site.url }}{{ site.baseurl }}/database/{{ screenshot }}{% endif %}">
+    <meta name="twitter:image" content="{% if page.screenshots[0] contains '://' %}{{page.screenshots[0]}}{% else %}{{ site.url }}{{ site.baseurl }}/database/{{ page.screenshots[0] }}{% endif %}">
