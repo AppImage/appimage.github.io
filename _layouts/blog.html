@@ -38,6 +38,13 @@ layout: default
  
   <div align="center"><h3>Willkommen • Welcome • 欢迎 • Bienvenue • Benvenuto • Bienvenido • ようこそ • Mabuhay • Välkommen • أهلا وسهلا • Добро пожаловать • Merhaba • Bonvenon • 歡迎光臨</h3></div>
   <div align="center"><p>Here are {{ site.pages | size }} apps that you can run on Linux without installation. And counting</p></div>
+
+  <div align="center">
+    <input type="text" id="search-input" placeholder="Search">
+    <br/>
+    <div id="results-container"></div>
+  </div>
+  
   <div class="cats">
   {% for category in site.data.categories %}
       <a href="/categories/{{ category.xdg }}">
