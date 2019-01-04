@@ -9,7 +9,7 @@ StartupNotify=true
 Terminal=false
 Type=Application
 Keywords=shell;prompt;command;commandline;
-X-AppImage-Version=afa456f
+X-AppImage-Version=54a6a7f
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|Swordfish90|cool-retro-term|continuous|Cool_Retro_Term*-x86_64.AppImage.zsync
