@@ -25,6 +25,6 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@AppImages">
     <meta name="twitter:creator" content="@probonopd">
-    <meta name="twitter:title" content=" {% if page.title %}{{ page.title | replace: "_", " " }}{% else %}{{ page.name | remove: ".md" | replace: "_", " " }}{% endif %}">
-    <meta name="twitter:description" content="{{ page.description| strip_html }}">
+    <meta name="twitter:title" content=" {% if page.title %}{{ page.title | replace: "_", " " }}{% else %}{{ page.name | remove: ".md" | replace: "_", " " }}{% endif %} AppImage for Linux">
+    <meta name="twitter:description" content="{{ page.description| strip_html }} - run on Linux without installation">
     <meta name="twitter:image" content="{% if page.screenshots[0] contains '://' %}{{page.screenshots[0]}}{% else %}{{ site.url }}{{ site.baseurl }}/database/{{ page.screenshots[0] }}{% endif %}">
