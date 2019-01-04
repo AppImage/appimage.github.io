@@ -3,7 +3,11 @@ layout: app
 
 permalink: /cumulonimbus/
 description: A simple, beautiful podcast app.
+A simple, beautiful podcast app.
 license: Apache-2.0
+
+icons:
+  - cumulonimbus/icons/128x128/cpod.png
 
 screenshots:
   - cumulonimbus/screenshot.png
@@ -14,9 +18,9 @@ authors:
 
 links:
   - type: GitHub
-    url: z-------------/cumulonimbus
+    url: z-------------/CPod
   - type: Download
-    url: https://github.com/z-------------/cumulonimbus/releases
+    url: https://github.com/z-------------/CPod/releases
 
 desktop:
   Desktop Entry:
@@ -30,9 +34,12 @@ desktop:
     X-AppImage-BuildId: 3c228ae0-def5-11a7-0713-c32285fb1fa0
     Categories: Audio
   AppImageHub:
-    X-AppImage-UpdateInformation: 
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
+    X-AppImage-UpdateInformation: 
     X-AppImage-Payload-License: Apache-2.0
 
 electron:
@@ -49,19 +56,21 @@ electron:
     url: https://github.com/z-------------/cumulonimbus/issues
   homepage: https://github.com/z-------------/cumulonimbus
   dependencies:
-    "@polymer/polymer": 1.7.1-npm-test.4
-    audiosearch-client-node: 1.0.1
-    electron-updater: 2.8.9
-    jimp: 0.2.28
-    jquery: 3.2.1
-    js2xmlparser: 1.0.0
-    localforage: 1.5.0
-    moment: 2.18.1
-    nodemailer: "^4.1.0"
-    nodemailer-sendgrid-transport: "^0.2.0"
-    open: "^0.0.5"
-    request: 2.81.0
-    sha1: "^1.1.1"
-    valid-url: "^1.0.9"
-    xml2js: 0.4.19
+    autolinker: "^1.6.2"
+    electron-updater: "^2.20.1"
+    file-url: "^2.0.2"
+    html5sortable: 0.8.1
+    i18n-iso-countries: "^3.7.3"
+    jimp: "^0.2.28"
+    jquery: "^3.3.1"
+    localforage: "^1.6.0"
+    moment: "^2.20.1"
+    mousetrap: "^1.6.1"
+    os-locale: "^2.1.0"
+    request: "^2.87.0"
+    sanitize-filename: "^1.6.1"
+    sanitize-html: "^1.18.5"
+    tippy.js: "^2.1.1"
+  optionalDependencies:
+    mpris-service: "^1.1.3"
 ---
