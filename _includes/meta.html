@@ -21,7 +21,6 @@
     {% endif %}
     <meta name="author" content="{{ site.name }}" />
 
-    {% if page.excerpt %}
     <meta property="og:title" content=" {% if page.title %}{{ page.title }}{% else %}{{ page.name | remove: ".md" }}{% endif %}" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@AppImages">
@@ -29,6 +28,3 @@
     <meta name="twitter:title" content=" {% if page.title %}{{ page.title }}{% else %}{{ page.name | remove: ".md" }}{% endif %}">
     <meta name="twitter:description" content="{{ page.excerpt| strip_html }}">
     <meta name="twitter:image" content="{% if screenshot contains '://' %}{{screenshot}}{% else %}{{ site.url }}{{ site.baseurl }}/database/{{ screenshot }}{% endif %}">
-
-
-    {% endif %}
