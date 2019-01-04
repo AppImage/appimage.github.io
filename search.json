@@ -7,7 +7,7 @@ layout: null
 [
   {% for post in sorted %}
     {
-      "title"    : "{{ post.title | escape }}",
+      "title"    : "{% if post.title %}{{ post.title | jsonify }}{% else %}{{ post.name | remove: ".md" | jsonify }}{% endif %}",
       "category" : "{{ post.category }}",
       "tags"     : "{{ post.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",
