@@ -3,22 +3,23 @@ layout: app
 
 permalink: /QMediathekView/
 description: An alternative front-end to the MediathekView database
+license: GPL-3.0
 
 icons:
-  - QMediathekView/icons/scalable/qmediathekview.svg
+  - QMediathekView/icons/scalable/QMediathekView.svg
 
 screenshots:
   - QMediathekView/screenshot.png
 
 authors:
-  - name: probonopd
-    url: https://github.com/probonopd
+  - name: adamreichold
+    url: https://github.com/adamreichold
 
 links:
   - type: GitHub
-    url: probonopd/QMediathekView
+    url: adamreichold/QMediathekView
   - type: Download
-    url: https://github.com/probonopd/QMediathekView/releases
+    url: https://github.com/adamreichold/QMediathekView/releases
 
 desktop:
   Desktop Entry:
@@ -27,15 +28,15 @@ desktop:
     Name: QMediathekView
     Comment: An alternative front-end to the MediathekView database
     Categories: Qt
+    Icon: QMediathekView
     TryExec: QMediathekView
     Exec: QMediathekView
-    Icon: qmediathekview
-    X-AppImage-Version: ce54b10
+    X-AppImage-Version: af170fd
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|probonopd|QMediathekView|continuous|QMediathekView*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: GPL-3.0
 ---
