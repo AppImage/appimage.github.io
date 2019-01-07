@@ -1,0 +1,20 @@
+{
+  "name": "x-loc",
+  "version": "1.3.5",
+  "author": "Bastien Guyl <bastien@guyl.me>",
+  "description": "Extra localizations/translations manager for Stardew Valley",
+  "license": "MIT",
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "@panter/vue-i18next": "^0.12.0",
+    "font-awesome": "^4.7.0",
+    "hammerjs": "^2.0.8",
+    "i18next": "^11.10.2",
+    "i18next-electron-language-detector": "0.0.10",
+    "jquery": "^3.3.1",
+    "materialize-css": "^0.100.2",
+    "vue": "^2.5.21",
+    "vue-electron": "^1.0.6",
+    "winreg": "^1.2.4"
+  }
+}
