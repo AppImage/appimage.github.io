@@ -35,7 +35,7 @@ Then send a Pull Request to this repository. Travis CI will instantly perform an
 
 As a format, AppImage is designed in a way that does not impose restrictions on the person generating AppImages. Basically you are free to put inside an AppImage whatever you want. For AppImageHub, however, additional rules apply. AppImages submitted to AppImage hub undergo automatic and possibly additional manual review.
 
-* Must be downloadable from an URL. Our testing sysgtem fetches the AppImage using `wget`. Currently we cannot get AppImages from locations behind authentication and/or cookie-protected locations. For commercial applications we recommend to have a generally downloadable demo/trial version. Please contact us if you would like to add your commercial AppImage to the directory and it is not available for general download
+* Must be downloadable from an URL. Our testing system fetches the AppImage using `wget`. Currently we cannot get AppImages from locations behind authentication and/or cookie-protected locations. For commercial applications we recommend to have a generally downloadable demo/trial version. Please contact us if you would like to add your commercial AppImage to the directory and it is not available for general download
 * Must run on the [oldest still-supported Ubuntu LTS release](https://www.ubuntu.com/info/release-end-of-life) (currently Ubuntu 14.04) without the installation of additional packages. Targeting the oldest still-supported LTS is to ensure that the AppImage will run not only on the very latest, but also on older target systems, such as enterprise distributions (not limited to Ubuntu)
 * Must execute in our Travis CI based testing environment
 * Must pass [appdir-lint.sh](https://github.com/AppImage/AppImages/blob/master/appdir-lint.sh)
@@ -44,6 +44,19 @@ As a format, AppImage is designed in a way that does not impose restrictions on 
 * Should have an [AppStream metainfo file](https://people.freedesktop.org/~hughsient/appdata/) in `usr/share/metainfo`. If it does, must pass `appstreamcli` validation
 * Should show a useful screen rather than some crude dialog box since the main window will be used for the main screenshots. Note that you can provide your own screenshots by using an [AppStream metainfo file](https://people.freedesktop.org/~hughsient/appdata/)
 * Should be available under a constant URL that does not contain the version number. Alternatively, should be available on GitHub Releases or the openSUSE Build Service (you are free to suggest additional serices like these)
+* Must display something sensible when there is no network connection (offline/air-gapped use). Electron apps, for example, can use something like
+
+```
+  (async () => {
+    if (await isOnline() === true) {
+      mainWindow.loadURL(HermesURL);
+    } else {
+      mainWindow.loadFile('offline.html')
+    }
+    mainWindow.maximize();
+    mainWindow.show();
+  })();
+  ```
 
 ## How to use
 
@@ -57,4 +70,5 @@ Projects already using this data
 * Nitrux, NX Software Center: https://github.com/nomad-desktop/nx-software-center
 * https://github.com/simoniz0r/spm
 * https://github.com/sillasleal/appcenter
+* https://github.com/lliurex/lliurex-store
 * Please contact us if you are using this data so that we can list your project here

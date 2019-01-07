@@ -1,6 +1,6 @@
 {
-  "name": "cumulonimbus",
-  "version": "1.7.0",
+  "name": "CPod",
+  "version": "1.27.0",
   "description": "A simple, beautiful podcast app.",
   "main": "main.js",
   "repository": {
@@ -18,20 +18,23 @@
   },
   "homepage": "https://github.com/z-------------/cumulonimbus",
   "dependencies": {
-    "@polymer/polymer": "1.7.1-npm-test.4",
-    "audiosearch-client-node": "1.0.1",
-    "electron-updater": "2.8.9",
-    "jimp": "0.2.28",
-    "jquery": "3.2.1",
-    "js2xmlparser": "1.0.0",
-    "localforage": "1.5.0",
-    "moment": "2.18.1",
-    "nodemailer": "^4.1.0",
-    "nodemailer-sendgrid-transport": "^0.2.0",
-    "open": "^0.0.5",
-    "request": "2.81.0",
-    "sha1": "^1.1.1",
-    "valid-url": "^1.0.9",
-    "xml2js": "0.4.19"
+    "autolinker": "^1.6.2",
+    "electron-updater": "^2.20.1",
+    "file-url": "^2.0.2",
+    "html5sortable": "0.8.1",
+    "i18n-iso-countries": "^3.7.3",
+    "jimp": "^0.2.28",
+    "jquery": "^3.3.1",
+    "localforage": "^1.6.0",
+    "moment": "^2.20.1",
+    "mousetrap": "^1.6.1",
+    "os-locale": "^2.1.0",
+    "request": "^2.87.0",
+    "sanitize-filename": "^1.6.1",
+    "sanitize-html": "^1.18.5",
+    "tippy.js": "^2.1.1"
+  },
+  "optionalDependencies": {
+    "mpris-service": "^1.1.3"
   }
 }

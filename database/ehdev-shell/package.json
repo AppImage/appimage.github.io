@@ -1,0 +1,34 @@
+{
+  "name": "ehdev-shell",
+  "version": "0.6.0",
+  "description": "An electron based developing tool for feds.",
+  "main": "./bootstrap.js",
+  "author": {
+    "email": "macisi528@gmail.com",
+    "name": "ryan.bian"
+  },
+  "dependencies": {
+    "add-asset-html-webpack-plugin": "^3.0.0-0",
+    "chalk": "^2.4.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "cwebp-bin": "^4.0.0",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
+    "error-overlay-webpack-plugin": "^0.1.5",
+    "guetzli": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mozjpeg": "^6.0.0",
+    "node-pty": "^0.7.5",
+    "pngquant-bin": "^4.0.0",
+    "stats-webpack-plugin": "^0.6.2",
+    "uglifyjs-webpack-plugin": "^1.2.6",
+    "webpack": "^4.14.0",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-dev-server": "^3.1.4",
+    "zopflipng-bin": "^4.1.0"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EHDFE/ehdev-shell/issues"
+  },
+  "homepage": "https://github.com/EHDFE/ehdev-shell#readme"
+}

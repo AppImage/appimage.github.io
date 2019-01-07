@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>libertem</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0</project_license>
+	<name>LiberTEM</name>
+	<summary>Open software platform for pixelated scanning transmission electron microscopy (STEM)</summary>
+	<description>
+		<p>The LiberTEM project develops an open software platform for pixelated/4D scanning transmission electron microscopy. </p>
+	</description>
+	<launchable type="desktop-id">libertem.desktop</launchable>
+	<url type="homepage">https://libertem.github.io/LiberTEM/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://iffwiki.fz-juelich.de/images/a/ac/Screenshot_of_the_LiberTEM_UI.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>libertem.desktop</id>
+	</provides>
+</component>

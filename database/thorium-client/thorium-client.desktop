@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Thorium Client
+Comment=A client application for Thorium
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=thorium-client
+X-AppImage-Version=1.0.2
+X-AppImage-BuildId=ec2dc9d0-43dc-11a8-28df-e33c25d3e3a2
+Categories=Utility;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

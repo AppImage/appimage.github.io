@@ -1,0 +1,18 @@
+{
+  "name": "spree",
+  "version": "1.0.0",
+  "description": "Spree - The totally accurate ultra realistic trading game.",
+  "main": "main.js",
+  "repository": "https://github.com/Epzilepzi/Trading-Game",
+  "author": {
+    "name": "Epzilepzi",
+    "email": "epzilepzi@gmail.com",
+    "url": "https://epzilepzi.site"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "electron-updater": "^3.1.2",
+    "jquery": "^3.3.1",
+    "jshint": "^2.9.6"
+  }
+}

@@ -53,7 +53,7 @@ echo "URL: $URL"
 
 FILENAME=BeingTested.AppImage
 if [ ! -e "$FILENAME" ] ; then
-  wget -q -c "$URL" -O "$FILENAME"
+  wget -c "$URL" -O "$FILENAME"
 fi
 
 # Check the type of the AppImage
@@ -135,7 +135,7 @@ echo "ICON_NAME: ${ICON_NAME}"
 # Then, try scaleable icon from usr/share
 # matching the Icon= entry in the desktop file
 
-ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.svg*" -path "*/scalable/*")
+ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.svg*" -path "*/scalable/*" | head -n 1)
 
 # Then, try large icons from usr/share
 # matching the Icon= entry in the desktop file

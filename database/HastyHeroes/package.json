@@ -1,0 +1,10 @@
+{
+  "name": "HastyHeroes",
+  "version": "1.0.0",
+  "homepage": "https://aveek-saha.github.io",
+  "description": "An endless 2D jumping game, select a avatar and start playing",
+  "main": "main.js",
+  "repository": "https://github.com/Aveek-Saha/HastyHeroes",
+  "author": "Aveek Saha",
+  "license": "CC0-1.0"
+}

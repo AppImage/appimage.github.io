@@ -4,6 +4,9 @@ layout: app
 permalink: /Black_Chocobo/
 license: GPL-3.0
 
+icons:
+  - Black_Chocobo/icons/512x512/Black_Chocobo.png
+
 screenshots:
   - Black_Chocobo/screenshot.png
 
@@ -39,7 +42,7 @@ desktop:
     Type: Application
     X-KDE-SubstituteUID: false
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|sithlord48|blackchocobo|continuous|Black_Chocobo*-x86_64.AppImage.zsync
+    X-AppImage-UpdateInformation: gh-releases-zsync|sithlord48|blackchocobo|latest|Black_Chocobo*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.

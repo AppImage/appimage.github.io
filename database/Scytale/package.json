@@ -1,0 +1,29 @@
+{
+  "name": "scytale",
+  "version": "1.1.0",
+  "description": "A simple and secure chat app",
+  "main": "build/electron.js",
+  "homepage": "./",
+  "repository": "https://github.com/cpapazaf/scytale",
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/"
+  },
+  "author": "C.P.",
+  "dependencies": {
+    "electron-is-dev": "^1.0.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "simple-peer": "^9.1.2",
+    "socket.io-client": "^2.1.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

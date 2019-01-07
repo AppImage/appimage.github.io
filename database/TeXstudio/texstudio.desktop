@@ -1,12 +1,13 @@
 [Desktop Entry]
 Categories=Office;Publishing;Qt;X-SuSE-Core-Office;X-Mandriva-Office-Publishing;X-Misc;
-Encoding=UTF-8
 Exec=texstudio %F
 GenericName=LaTeX Editor
+GenericName[de]=LaTeX Editor
 GenericName[fr]=Editeur LaTeX
 Comment=LaTeX development environment
+Comment[de]=LaTeX Entwicklungsumgebung
 Comment[fr]=Environnement de développement LaTeX
-Icon=texstudio.svg
+Icon=texstudio
 Keywords=LaTeX;TeX;editor;
 MimeType=text/x-tex;
 Name=TeXstudio
@@ -14,12 +15,12 @@ StartupNotify=false
 Terminal=false
 Type=Application
 
+X-AppImage-Version=linux-2.12.10-201807060809-git_e46e9fc
 
 [AppImageHub]
-X-AppImage-UpdateInformation=
-X-AppImage-Type=1
-# Dear upstream developer, please consider to switch to type 2
-# so that users can benefit from the additional features like digital embedded signatures
-# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
-# or use linuxdeployqt or appimagetool which produce type 2 automatically
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=GPL-3.0
