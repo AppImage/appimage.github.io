@@ -1,12 +1,17 @@
 {
   "name": "hermes",
-  "version": "1.0.0",
+  "version": "v1.0.0-6",
   "description": "Desktop client version of the Hermes Messenger",
   "main": "main.js",
-  "dependencies": {},
+  "dependencies": {
+    "electron-settings": "^3.2.0",
+    "is-online": "^8.0.0",
+    "request": "^2.88.0",
+    "semver": "^5.6.0"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HermesMessenger/HermesDesktop.git"
+    "url": "https://github.com/HermesMessenger/HermesDesktop"
   },
   "author": {
     "name": "Hermes Messenger",
@@ -14,7 +19,7 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HermesMessenger/Hermes/issues"
+    "url": "https://github.com/HermesMessenger/HermesDesktop/issues"
   },
-  "homepage": "https://github.com/HermesMessenger/Hermes#readme"
+  "homepage": "https://github.com/HermesMessenger/HermesDesktop"
 }

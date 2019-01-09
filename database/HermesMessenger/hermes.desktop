@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=hermes
 StartupWMClass=Hermes Messenger
-X-AppImage-Version=1.0.0
+X-AppImage-Version=1.0.0-6.27
 Categories=Network;Chat;
-X-AppImage-BuildId=1DimZO45V18ldL898x27J9GiqXm
+X-AppImage-BuildId=1FWynD30ZDReCyRJpNIfM5GEdcX
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
