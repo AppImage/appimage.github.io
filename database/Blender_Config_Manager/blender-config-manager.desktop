@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=blender-config-manager
-X-AppImage-Version=1.0.1
-X-AppImage-BuildId=bbbe3090-857d-11a8-00ab-3dcd1226dc19
+X-AppImage-Version=1.1.0
+X-AppImage-BuildId=0cd989f0-14ff-11a9-18f7-f1b1ea8f4ac5
 Categories=Graphics;
 
 [AppImageHub]
