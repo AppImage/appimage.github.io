@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=clipboard-to-qrcode
 StartupWMClass=Clipboard to QR-Code
-X-AppImage-Version=0.2.0
+X-AppImage-Version=0.3.1.11
 Categories=Utility;
-X-AppImage-BuildId=1BO0DG6iQLPjtFBd6pivqgxZ1gd
+X-AppImage-BuildId=1FeukDfxKUDrB0IBWaRcIKtrRIy
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

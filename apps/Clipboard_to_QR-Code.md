@@ -30,9 +30,9 @@ desktop:
     Type: Application
     Icon: clipboard-to-qrcode
     StartupWMClass: Clipboard to QR-Code
-    X-AppImage-Version: 0.2.0
+    X-AppImage-Version: 0.3.1.11
     Categories: Utility
-    X-AppImage-BuildId: 1BO0DG6iQLPjtFBd6pivqgxZ1gd
+    X-AppImage-BuildId: 1FeukDfxKUDrB0IBWaRcIKtrRIy
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -47,9 +47,11 @@ electron:
     email: dev@universe-of-solutions.com
   repository:
     url: https://github.com/universeofsolutions/clipboard-to-qrcode
+  homepage: https://github.com/universeofsolutions/clipboard-to-qrcode
   main: main.js
   dependencies:
     "@fortawesome/fontawesome-free": "^5.3.1"
+    about-window: "^1.12.1"
     electron-settings: "^3.2.0"
     electron-updater: "^3.1.2"
     jquery: "^3.3.1"
