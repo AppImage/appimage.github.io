@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=shuttle
 StartupWMClass=Shuttle
-X-AppImage-Version=3.0.6.194
+X-AppImage-Version=3.0.10.226
 Categories=Network;
-X-AppImage-BuildId=1FX3PZ6EAC3VHooZQ4LNcym7BHp
+X-AppImage-BuildId=1FgUbwTIoPK9ywDqx4jI1dv4vXJ
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

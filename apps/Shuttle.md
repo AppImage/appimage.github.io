@@ -5,7 +5,7 @@ permalink: /Shuttle/
 description: The fastest access to your favorite applications
 
 icons:
-  - Shuttle/icons/256x256/shuttle.png
+  - Shuttle/icons/400x400/shuttle.png
 
 screenshots:
   - Shuttle/screenshot.png
@@ -29,9 +29,9 @@ desktop:
     Type: Application
     Icon: shuttle
     StartupWMClass: Shuttle
-    X-AppImage-Version: 3.0.6.194
+    X-AppImage-Version: 3.0.10.226
     Categories: Network
-    X-AppImage-BuildId: 1FX3PZ6EAC3VHooZQ4LNcym7BHp
+    X-AppImage-BuildId: 1FgUbwTIoPK9ywDqx4jI1dv4vXJ
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
