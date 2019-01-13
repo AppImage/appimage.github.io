@@ -1,15 +1,15 @@
 {
   "name": "clipboard-to-qrcode",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "This is a simple app which generates a QR-Code from the Clipboard.",
   "author": {
-    "name": "Universe of Solutions",
+    "name": "Ramon Reschke",
     "email": "dev@universe-of-solutions.com"
   },
   "repository": {
-    "url": "https://github.com/universeofsolutions/clipboard-to-qrcode"
+    "url": "https://github.com/ramonreschke/clipboard-to-qrcode"
   },
-  "homepage": "https://github.com/universeofsolutions/clipboard-to-qrcode",
+  "homepage": "https://github.com/ramonreschke/clipboard-to-qrcode",
   "main": "main.js",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.3.1",

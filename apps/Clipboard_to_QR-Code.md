@@ -6,7 +6,7 @@ description: This is a simple app which generates a QR-Code from the Clipboard.
 license: MIT
 
 icons:
-  - Clipboard_to_QR-Code/icons/1024x1024/clipboard-to-qrcode.png
+  - Clipboard_to_QR-Code/icons/128x128/clipboard-to-qrcode.png
 
 screenshots:
   - Clipboard_to_QR-Code/screenshot.png
@@ -30,9 +30,9 @@ desktop:
     Type: Application
     Icon: clipboard-to-qrcode
     StartupWMClass: Clipboard to QR-Code
-    X-AppImage-Version: 0.3.1.11
+    X-AppImage-Version: 0.3.2.19
     Categories: Utility
-    X-AppImage-BuildId: 1FeukDfxKUDrB0IBWaRcIKtrRIy
+    X-AppImage-BuildId: 1FidDoQ5dQizbNEa8OQT3hg6XcP
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -43,11 +43,11 @@ desktop:
 
 electron:
   author:
-    name: Universe of Solutions
+    name: Ramon Reschke
     email: dev@universe-of-solutions.com
   repository:
-    url: https://github.com/universeofsolutions/clipboard-to-qrcode
-  homepage: https://github.com/universeofsolutions/clipboard-to-qrcode
+    url: https://github.com/ramonreschke/clipboard-to-qrcode
+  homepage: https://github.com/ramonreschke/clipboard-to-qrcode
   main: main.js
   dependencies:
     "@fortawesome/fontawesome-free": "^5.3.1"
