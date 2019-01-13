@@ -1,6 +1,6 @@
 {
   "name": "Photopea",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Photopea in AppImage",
   "main": "lib/main.js",
   "repository": {
@@ -25,5 +25,12 @@
     ],
     "author": "Steven (Spooknik) Phillips",
     "license": "MIT"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "electron-online": "^1.0.0",
+    "is-online": "^8.0.0",
+    "is-reachable": "^3.0.0",
+    "koa": "^2.6.2"
   }
 }

@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=photopea
 StartupWMClass=Photopea
-X-AppImage-Version=1.1.0
+X-AppImage-Version=1.2.0
 Categories=Graphics;
-X-AppImage-BuildId=1FafnkgFZjil7qluyjE5ChB4ymv
+X-AppImage-BuildId=1FiXlfiRc3pqLJIYpB1wrIaFvPd
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

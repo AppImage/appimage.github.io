@@ -29,9 +29,9 @@ desktop:
     Type: Application
     Icon: photopea
     StartupWMClass: Photopea
-    X-AppImage-Version: 1.1.0
+    X-AppImage-Version: 1.2.0
     Categories: Graphics
-    X-AppImage-BuildId: 1FafnkgFZjil7qluyjE5ChB4ymv
+    X-AppImage-BuildId: 1FiXlfiRc3pqLJIYpB1wrIaFvPd
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -60,4 +60,10 @@ electron:
     - Appimage
     author: Steven (Spooknik) Phillips
     license: MIT
+  dependencies:
+    debug: "^4.1.1"
+    electron-online: "^1.0.0"
+    is-online: "^8.0.0"
+    is-reachable: "^3.0.0"
+    koa: "^2.6.2"
 ---
