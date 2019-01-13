@@ -1,6 +1,6 @@
 {
   "name": "clipboard-to-qrcode",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "This is a simple app which generates a QR-Code from the Clipboard.",
   "author": {
     "name": "Ramon Reschke",
@@ -16,6 +16,7 @@
     "about-window": "^1.12.1",
     "electron-settings": "^3.2.0",
     "electron-updater": "^3.1.2",
+    "is-online": "^8.0.0",
     "jquery": "^3.3.1",
     "qrcode": "^1.2.2"
   }
