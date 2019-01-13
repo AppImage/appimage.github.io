@@ -1,0 +1,36 @@
+{
+  "name": "Photopea",
+  "version": "1.2.0",
+  "description": "Photopea in AppImage",
+  "main": "lib/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spooknik/Photopea-Appimage",
+    "dependencies": {
+      "electron-context-menu": "^0.10.0",
+      "electron-dl": "^1.10.0",
+      "electron-window-state": "^4.1.1",
+      "loglevel": "^1.5.1",
+      "source-map-support": "^0.5.0",
+      "wurl": "^2.5.2"
+    },
+    "devDependencies": {
+      "electron": "^4.0.1"
+    },
+    "keywords": [
+      "desktop",
+      "electron",
+      "photopea",
+      "Appimage"
+    ],
+    "author": "Steven (Spooknik) Phillips",
+    "license": "MIT"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "electron-online": "^1.0.0",
+    "is-online": "^8.0.0",
+    "is-reachable": "^3.0.0",
+    "koa": "^2.6.2"
+  }
+}
