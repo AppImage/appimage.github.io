@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /Outline-Client/
+license: Apache-2.0
 
 icons:
   - Outline-Client/icons/128x128/outline-client.png
@@ -27,22 +28,24 @@ desktop:
     Terminal: false
     Type: Application
     Icon: outline-client
-    X-AppImage-Version: 0.0.0-daily-2019-01-07.1860
-    X-AppImage-BuildId: 0554fa60-12d5-11a9-0fa1-959c3671cf52
+    StartupWMClass: Outline
+    X-AppImage-Version: 0.0.0-daily-2019-01-14.1918
     Categories: Network
+    X-AppImage-BuildId: 1FmM42rShoUFeLVV5AczevF5XI8
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: Apache-2.0
 
 electron:
     "@sentry/electron": "^0.8.1"
     ShadowsocksConfig: Jigsaw-Code/outline-shadowsocksconfig#^v0.0.8
     auto-launch: "^5.0.5"
     electron-promise-ipc: "^0.1.3"
-    electron-updater: "^2.21.0"
+    electron-updater: 3.2.3
     fs-extra: "^7.0.0"
     raven: "^2.2.1"
     raven-js: "^3.20.1"
@@ -55,5 +58,5 @@ electron:
   husky:
     hooks:
       pre-commit: yarn tslint --fix 'src/**/*.ts' && yarn git-clang-format
-  version: 0.0.0-daily-2019-01-07
+  version: 0.0.0-daily-2019-01-14
 ---
