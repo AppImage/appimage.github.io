@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=mqtt-explorer
 StartupWMClass=MQTT-Explorer
-X-AppImage-Version=0.0.3.14
+X-AppImage-Version=0.0.5
 Categories=Development;
-X-AppImage-BuildId=1FjDkcMt9x7FbHGSMjAs01DPyCG
+X-AppImage-BuildId=1FnwqNlwtZByhUfWAii8mqmHdvp
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
