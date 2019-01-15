@@ -21,7 +21,7 @@ if [ x"${URL:0:18}" == x"https://github.com" ] && [[ "${URL}" != *"download"* ]]
   echo "GitHub URL detected"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases" # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
+  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases?access_token=$GH_TOKEN" # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
   echo "URL from GitHub: $URL"
 fi
 
@@ -43,7 +43,7 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
   echo "URL from GitHub API: $URL"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" https://api.github.com/repos/$GHUSER/$GHREPO -O - | grep spdx_id | cut -d '"' -f 4 | head -n 1)
+  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" "https://api.github.com/repos/$GHUSER/$GHREPO?access_token=$GH_TOKEN" -O - | grep spdx_id | cut -d '"' -f 4 | head -n 1)
 fi
 
 # Download the file if it is not already there
