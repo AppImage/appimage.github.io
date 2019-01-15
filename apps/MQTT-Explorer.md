@@ -29,9 +29,9 @@ desktop:
     Type: Application
     Icon: mqtt-explorer
     StartupWMClass: MQTT-Explorer
-    X-AppImage-Version: 0.0.3.14
+    X-AppImage-Version: 0.0.5
     Categories: Development
-    X-AppImage-BuildId: 1FjDkcMt9x7FbHGSMjAs01DPyCG
+    X-AppImage-BuildId: 1FnwqNlwtZByhUfWAii8mqmHdvp
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
