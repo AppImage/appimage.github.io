@@ -1,6 +1,6 @@
 {
   "name": "StockStalk",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "author": "FOO BAR",
   "private": true,
   "description": "Your stocks on your desktop",
@@ -19,6 +19,7 @@
     "react": "*",
     "react-countup": "*",
     "react-dom": "*",
+    "react-highcharts": "*",
     "request": "*",
     "request-promise-native": "*"
   }

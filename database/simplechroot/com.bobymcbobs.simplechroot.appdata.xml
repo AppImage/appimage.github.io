@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019 Caleb Woodbine <calebwoodbine.public@gmail.com> -->
+<component type="desktop">
+  <id>com.bobymcbobs.simplechroot.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>simplechroot</name>
+  <developer_name>BobyMCbobs</developer_name>
+  <provides>
+    <binary>simplechroot</binary>
+  </provides>
+  <summary>Chroot with ease</summary>
+  <description>
+    <p>
+      Setup a chroot without having to mount and bind partitions manually.
+    </p>
+  </description>
+  <releases>
+    <release version="1.1.1" date="2018-01-10">
+      <description>
+        <p>This release marks the inital public release of simplechroot.</p>
+      </description>
+    </release>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/BobyMCbobs/simplechroot/master/screenshots/simplechroot-help.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://gitlab.com/BobyMCbobs/simplechroot</url>
+  <url type="bugtracker">https://gitlab.com/BobyMCbobs/simplechroot/issues</url>
+  <url type="help">https://gitlab.com/BobyMCbobs/simplechroot/issues</url>
+  <url type="homepage">https://gitlab.com/BobyMCbobs</url>
+  <update_contact>calebwoodbine.public_AT_gmail.com</update_contact>
+</component>
