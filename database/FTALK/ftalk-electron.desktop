@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=ftalk-electron
 StartupWMClass=FTALK
-X-AppImage-Version=1.1.6
+X-AppImage-Version=1.2.1
 Categories=Utility;
-X-AppImage-BuildId=1Flkvt7olZXIiNaUlJd246QjZVU
+X-AppImage-BuildId=1FwCZEEogkAYf70CezCoCv2dTqq
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

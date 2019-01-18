@@ -29,9 +29,9 @@ desktop:
     Type: Application
     Icon: ftalk-electron
     StartupWMClass: FTALK
-    X-AppImage-Version: 1.1.6
+    X-AppImage-Version: 1.2.1
     Categories: Utility
-    X-AppImage-BuildId: 1Flkvt7olZXIiNaUlJd246QjZVU
+    X-AppImage-BuildId: 1FwCZEEogkAYf70CezCoCv2dTqq
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file

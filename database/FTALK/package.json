@@ -1,7 +1,7 @@
 {
   "name": "ftalk-electron",
   "productName": "FTALK",
-  "version": "1.1.6",
+  "version": "1.2.1",
   "description": "Chat FTALK",
   "main": "index.js",
   "author": "Giovanni Pucci <giobaer2011@live.com> (http://www.finer.com.br)",
