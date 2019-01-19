@@ -5,7 +5,7 @@ permalink: /Chrysalis/
 license: GPL-3.0
 
 icons:
-  - Chrysalis/icons/128x128/chrysalis-bundle-keyboardio.png
+  - Chrysalis/icons/128x128/chrysalis.png
 
 screenshots:
   - Chrysalis/screenshot.png
@@ -27,11 +27,11 @@ desktop:
     Exec: AppRun
     Terminal: false
     Type: Application
-    Icon: chrysalis-bundle-keyboardio
+    Icon: chrysalis
     StartupWMClass: Chrysalis
-    X-AppImage-Version: 0.0.5
+    X-AppImage-Version: 0.3.1
     Categories: Utility
-    X-AppImage-BuildId: 1Cyecakxwi74L6x7m79cK3oFjLQ
+    X-AppImage-BuildId: 1FtIhbn9F7zoprWeJiwCDaix7Rw
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -44,24 +44,30 @@ electron:
   author:
     name: Gergely Nagy
     email: algernon@keyboard.io
-  homepage: https://github.com/keyboardio/chrysalis-bundle-keyboardio
+  homepage: https://github.com/keyboardio/Chrysalis
   husky:
     hooks:
       pre-commit: npm-run-all -p lint:all test
   dependencies:
-    "@material-ui/core": "^3.2.2"
+    "@chrysalis-api/colormap": "~0.0.7"
+    "@chrysalis-api/focus": "~0.0.8"
+    "@chrysalis-api/hardware-dygma-raise": "~0.0.4"
+    "@chrysalis-api/hardware-ez-ergodox": "~0.0.0"
+    "@chrysalis-api/hardware-keyboardio-model01": "~0.0.15"
+    "@chrysalis-api/hardware-technomancy-atreus": "~0.0.10"
+    "@chrysalis-api/keymap": "~0.0.13"
+    "@material-ui/core": "^3.6.0"
     "@material-ui/icons": "^3.0.1"
-    chrysalis-focus: git://github.com/Lepidopterarium/chrysalis-focus.git#master
-    chrysalis-hardware-keyboardio-model01: git://github.com/Lepidopterarium/chrysalis-hardware-keyboardio-model01.git#master
-    chrysalis-keymap: git://github.com/Lepidopterarium/chrysalis-keymap.git#master
-    react: "^16.4.2"
+    "@material-ui/lab": "^3.0.0-alpha.25"
+    electron-devtools-installer: "^2.2.4"
+    notistack: "^0.4.0"
+    react: "^16.5.2"
     react-color: "^2.14.1"
-    react-dom: "^16.4.2"
-    react-dropdown: "^1.6.2"
-    react-select: "^2.1.1"
-    react-spinners: "^0.4.7"
-    react-toastify: "^4.4.0"
+    react-dom: "^16.5.2"
+    react-localization: "^1.0.13"
     source-map-support: "^0.5.5"
-    tweetnacl: "^1.0.0"
+    typeface-roboto: "^0.0.54"
+    typeface-source-code-pro: "^0.0.71"
+    usb: "^1.5.0"
   main: main.js
 ---
