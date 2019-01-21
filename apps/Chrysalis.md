@@ -3,9 +3,10 @@ layout: app
 
 permalink: /Chrysalis/
 license: GPL-3.0
+GPL-3.0
 
 icons:
-  - Chrysalis/icons/128x128/chrysalis.png
+  - Chrysalis/icons/256x256/chrysalis.png
 
 screenshots:
   - Chrysalis/screenshot.png
@@ -29,9 +30,9 @@ desktop:
     Type: Application
     Icon: chrysalis
     StartupWMClass: Chrysalis
-    X-AppImage-Version: 0.3.1
+    X-AppImage-Version: 0.3.2
     Categories: Utility
-    X-AppImage-BuildId: 1FtIhbn9F7zoprWeJiwCDaix7Rw
+    X-AppImage-BuildId: 1G3KkNPPFxlpWz0bFbII2HXq7Tz
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -51,10 +52,7 @@ electron:
   dependencies:
     "@chrysalis-api/colormap": "~0.0.7"
     "@chrysalis-api/focus": "~0.0.8"
-    "@chrysalis-api/hardware-dygma-raise": "~0.0.4"
-    "@chrysalis-api/hardware-ez-ergodox": "~0.0.0"
-    "@chrysalis-api/hardware-keyboardio-model01": "~0.0.15"
-    "@chrysalis-api/hardware-technomancy-atreus": "~0.0.10"
+    "@chrysalis-api/hardware": "^0.0.2"
     "@chrysalis-api/keymap": "~0.0.13"
     "@material-ui/core": "^3.6.0"
     "@material-ui/icons": "^3.0.1"
