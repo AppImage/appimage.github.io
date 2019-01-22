@@ -9,7 +9,7 @@ icons:
   - SciQLOP/icons/scalable/sciqlopLOGO.svg
 
 screenshots:
-  - SciQLOP/screenshot.png
+  - SciQLOP/pictures/screenshot.png
 
 authors:
   - name: LaboratoryOfPlasmaPhysics
