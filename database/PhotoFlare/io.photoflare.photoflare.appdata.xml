@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Dylan Coakley <info@photoflare.io> -->
+<component type="desktop-application">
+  <id>io.photoflare.photoflare</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>PhotoFlare</name>
+  <summary>Simple but powerful Cross Platform Image Editor</summary>
+
+  <description>
+    <p>
+      This is an effort to bring quick, simple but powerful image editing to the masses. PhotoFlare is inspired by the image editor currently only available on Microsoft Windows – PhotoFiltre. However, it will not be a straight clone. It is being built from the ground up to be much improved and cross platform too!
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Easy quick cropping tool.</li>
+      <li>Flip, Rotate and scale images.</li>
+      <li>Lots of unique image filters.</li>
+      <li>Batch processing tool with support for all editor features.</li>
+      <li>Multiple translations are supported.</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.photoflare.photoflare.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main Window</caption>
+      <image>http://photoflare.io/wp-content/uploads/2015/04/CrossPlatform.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">http://photoflare.io</url>
+  <project_group>PhotoFlare</project_group>
+
+  <provides>
+    <binary>photoflare</binary>
+  </provides>
+
+  <releases>
+  <release version="1.5.6.1" date="2018-12-02">
+      <description>
+ 		<ul>
+			<li>Fixed the TextTool wrapping for text more than a single line.</li>
+			<li>Fixed the EraserTool incorrectly showing zero as the initial radius.</li>
+			<li>Fixed issue with the language path not detected correctly.</li>
+		</ul>
+      </description>
+    </release>
+    <release version="1.5.6" date="2018-11-23">
+      <description>
+ 		<ul>
+			<li>Improved layout of the Hue Dialog.</li>
+			<li>Improved rendering of scaled high resolution images. (8K)</li>
+			<li>Fixed Dockpalettes being able to close or float.</li>
+			<li>Fixed Advanced PaintBrush not painting via single click.</li>
+			<li>Fixed Basic PaintBrush not having a default opacity/pressure set.</li>
+			<li>Fixed Contrast increase/decrease not working with the latest graphicsmagick.</li>
+			<li>Fixed Gamma increase/decrease not working with the latest graphicsmagick.</li>
+			<li>Fixed TextDialog font not taking the colour previously selected after first use.</li>
+			<li>Fixed Filterbar being floatable causing issues outside program bounds.</li>
+			<li>Fixed Eraser tool width incorrect on mouse click.</li>
+			<li>Fixed text cut off on Restart button in Preferences for NL translation.</li>
+			<li>Fixed zoom +/- after using Original zoom from View menu.</li>
+			<li>Fixed Show grid with zero causing max consumption of resources.</li>
+			<li>Fixed Show grid without image causing crash.</li>
+			<li>Add 2560 x 1440 to the New dialog presets.</li>
+			<li>Add support for generating Snap installers on 18.04.</li>
+			<li>Add checkbox menu toggle for Fullscreen, Filterbar, Toolpalette and View grid.</li>
+		</ul>
+      </description>
+    </release>
+  </releases>
+</component>
