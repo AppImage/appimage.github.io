@@ -5,7 +5,7 @@ Comment=2D CAD especially designed to draw steam locomotives
 Categories=Graphics;Engineering;
 Icon=steamcad
 Exec=SteamCAD
-X-AppImage-Version=50242a8
+X-AppImage-Version=4af0521
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|oskardolch|SteamCAD|continuous|SteamCAD*-x86_64.AppImage.zsync

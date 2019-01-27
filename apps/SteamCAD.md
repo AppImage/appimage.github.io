@@ -29,7 +29,7 @@ desktop:
     Categories: Graphics
     Icon: steamcad
     Exec: SteamCAD
-    X-AppImage-Version: 50242a8
+    X-AppImage-Version: 4af0521
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|oskardolch|SteamCAD|continuous|SteamCAD*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
