@@ -1,0 +1,21 @@
+{
+  "name": "megascans-bridge",
+  "productName": "Bridge",
+  "version": "2.6.26",
+  "description": "Quixel Bridge",
+  "main": "./main.js",
+  "author": {
+    "name": "Quixel",
+    "email": "support@quixel.se",
+    "url": "https://quixel.se"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^1.6.1",
+    "decompress-zip": "^0.3.0",
+    "ramda": "^0.24.1",
+    "sequelize": "^4.38.0",
+    "sqlite3": "^4.0.2",
+    "underscore": "1.9.0"
+  }
+}
