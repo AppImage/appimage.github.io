@@ -1,0 +1,127 @@
+---
+layout: app
+
+permalink: /Auryo/
+description: Listen to SoundCloud® from the comfort of your desktop. Use keyboard shortcuts to navigate through your music. Be more productive.
+license: GPL-3.0
+
+icons:
+  - Auryo/icons/128x128/auryo.png
+
+screenshots:
+  - Auryo/screenshot.png
+
+authors:
+  - name: Superjo149
+    url: https://github.com/Superjo149
+
+links:
+  - type: GitHub
+    url: Superjo149/auryo
+  - type: Download
+    url: https://github.com/Superjo149/auryo/releases
+
+desktop:
+  Desktop Entry:
+    Name: Auryo
+    Comment: Listen to SoundCloud® from the comfort of your desktop. Use keyboard shortcuts
+      to navigate through your music. Be more productive.
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: auryo
+    StartupWMClass: Auryo
+    X-AppImage-Version: 2.3.1.319
+    Categories: Audio
+    X-AppImage-BuildId: 1EROv7dgPN2YCySHB0106QtuZNP
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: GPL-3.0
+
+electron:
+  productName: Auryo
+  version: 2.3.1
+  author:
+    name: Jonas Snellinckx
+    email: jonas.snellinckx@gmail.com
+  description: Listen to SoundCloud® from the comfort of your desktop. Use keyboard
+    shortcuts to navigate through your music. Be more productive.
+  main: "./dist/main.js"
+  dependencies:
+    "@blueprintjs/core": "^3.2.0"
+    "@blueprintjs/icons": "^3.0.0"
+    "@sentry/browser": "^4.2.4"
+    "@sentry/electron": "^0.12.1"
+    "@sentry/node": "^4.2.4"
+    "@types/electron-store": "^1.3.0"
+    autolinker: Superjo149/Autolinker.js
+    bootstrap: "^4.1.3"
+    boxicons: "^1.7.1"
+    classnames: "^2.2.5"
+    color-hash: "^1.0.3"
+    connected-react-router: "^4.5.0"
+    electron-debug: "^2.0.0"
+    electron-dl: "^1.12.0"
+    electron-is: "^3.0.0"
+    electron-localshortcut: "^3.1.0"
+    electron-store: "^2.0.0"
+    electron-updater: "^3.2.0"
+    electron-window-state: "^5.0.1"
+    history: "^4.7.2"
+    jquery: 1.9.1
+    lodash: "^4.16.6"
+    mac-accessibility-features-check: "^1.0.2"
+    moment: "^2.17.0"
+    normalizr: "^3.2.2"
+    popper.js: "^1.12.9"
+    prop-types: "^15.6.0"
+    react: "^16.6.3"
+    react-addons-css-transition-group: "^15.6.2"
+    react-dom: "^16.6.3"
+    react-dotdotdot: "^1.2.3"
+    react-fast-compare: "^2.0.2"
+    react-hot-loader: "^4.3.11"
+    react-lazy-images: "^1.1.0"
+    react-list: "^0.8.10"
+    react-markdown: "^4.0.3"
+    react-marquee: "^1.0.0"
+    react-masonry-css: "^1.0.11"
+    react-redux: "^5.1.0"
+    react-router: "^4.3.1"
+    react-router-dom: "^4.3.1"
+    reactstrap: "^6.5.0"
+    redux: "^4.0.0"
+    redux-electron-store: "^0.6.2"
+    redux-modal: "^1.5.2"
+    redux-promise-middleware: "^5.1.1"
+    redux-thunk: "^2.3.0"
+    redux-watcher: "^1.0.1"
+    request: "^2.79.0"
+    reselect: "^4.0.0"
+    semver: "^5.3.0"
+    socket.io-client: "^2.1.1"
+    styled-components: "^2.0.1"
+    tslib: "^1.4.0"
+    typesafe-actions: "^2.0.4"
+    universal-analytics: "^0.4.15"
+    winston: "^3.1.0"
+  optionalDependencies:
+    "@nodert-win10/windows.foundation": "^0.2.95"
+    "@nodert-win10/windows.media": "^0.2.95"
+    "@nodert-win10/windows.media.playback": "^0.2.95"
+    "@nodert-win10/windows.storage.streams": "^0.2.95"
+    electron-media-service: "^0.2.2"
+    mac-accessibility-features-check: "^1.0.2"
+    mpris-service: GPMDP/mpris-service
+    dbus: GPMDP/node-dbus#linux-only
+  devEngines:
+    node: ">=8.10"
+    npm: ">=5.6"
+  husky:
+    hooks:
+      pre-commit: npm run lint
+---

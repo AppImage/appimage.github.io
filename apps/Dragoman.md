@@ -3,19 +3,20 @@ layout: app
 
 permalink: /Dragoman/
 description: GUI for polyglot
+license: Apache-2.0
 
 screenshots:
   - Dragoman/screenshot.png
 
 authors:
-  - name: peteboothroyd
-    url: https://github.com/peteboothroyd
+  - name: improbable-eng
+    url: https://github.com/improbable-eng
 
 links:
   - type: GitHub
-    url: peteboothroyd/Dragoman
-  - type: Install
-    url: https://github.com/peteboothroyd/Dragoman/releases
+    url: improbable-eng/Dragoman
+  - type: Download
+    url: https://github.com/improbable-eng/Dragoman/releases
 
 desktop:
   Desktop Entry:
@@ -32,6 +33,7 @@ desktop:
     X-AppImage-UpdateInformation: 
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: Apache-2.0
 
 electron:
   description: GUI for polyglot

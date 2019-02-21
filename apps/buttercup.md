@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: buttercup/buttercup-desktop
-  - type: Install
+  - type: Download
     url: https://github.com/buttercup/buttercup-desktop/releases
 
 desktop:

@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: aricovindanevectone/hari
-  - type: Install
+  - type: Download
     url: https://github.com/aricovindanevectone/hari/releases
 
 desktop:

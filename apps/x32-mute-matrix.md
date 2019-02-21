@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Lange/x32-mute-matrix
-  - type: Install
+  - type: Download
     url: https://github.com/Lange/x32-mute-matrix/releases
 
 desktop:

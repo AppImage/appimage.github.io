@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: darealshinji/mkvtoolnix-AppImage
-  - type: Install
+  - type: Download
     url: https://github.com/darealshinji/mkvtoolnix-AppImage/releases
 
 desktop:
