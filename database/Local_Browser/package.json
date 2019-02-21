@@ -1,7 +1,7 @@
 {
   "name": "local-browser",
   "productName": "Local Browser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Share your localhost in a unique way",
   "author": "",
   "main": "main.js",

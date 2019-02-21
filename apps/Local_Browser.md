@@ -30,9 +30,9 @@ desktop:
     Type: Application
     Icon: local-browser
     StartupWMClass: Local Browser
-    X-AppImage-Version: 1.0.0
+    X-AppImage-Version: 1.0.1
     Categories: Utility
-    X-AppImage-BuildId: 1HRF70KUcn7kpS3cbPiclq67LdH
+    X-AppImage-BuildId: 1HU5Vuv38Je1hH93Xiv44WLZ8dH
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file

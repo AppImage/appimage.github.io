@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=local-browser
 StartupWMClass=Local Browser
-X-AppImage-Version=1.0.0
+X-AppImage-Version=1.0.1
 Categories=Utility;
-X-AppImage-BuildId=1HRF70KUcn7kpS3cbPiclq67LdH
+X-AppImage-BuildId=1HU5Vuv38Je1hH93Xiv44WLZ8dH
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
