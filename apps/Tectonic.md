@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Tectonic/
 description: Tectonic is a modernized, complete, self-contained TeX/LaTeX engine, powered by XeTeX and TeXLive.
+license: NOASSERTION
 
 icons:
   - Tectonic/icons/scalable/tectonic.svg
@@ -40,4 +41,5 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: NOASSERTION
 ---
