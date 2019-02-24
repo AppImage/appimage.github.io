@@ -7,7 +7,7 @@ Name=ScreenDose
 Terminal=false
 Type=Application
 Categories=Utility;Core;Qt;
-X-AppImage-Version=0.1.0
+X-AppImage-Version=0.1.1
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
