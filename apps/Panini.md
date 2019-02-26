@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: lazarus-pkgs/panini
-  - type: Install
+  - type: Download
     url: https://github.com/lazarus-pkgs/panini/releases
 
 desktop:

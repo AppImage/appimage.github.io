@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: DeDop/dedop-studio
-  - type: Install
+  - type: Download
     url: https://github.com/DeDop/dedop-studio/releases
 
 desktop:

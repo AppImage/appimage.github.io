@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: ImaginarySense/Teleprompter-Electron
-  - type: Install
+  - type: Download
     url: https://github.com/ImaginarySense/Teleprompter-Electron/releases
 
 desktop:

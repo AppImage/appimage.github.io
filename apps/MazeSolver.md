@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: Arquanite/MazeSolver
-  - type: Install
+  - type: Download
     url: https://github.com/Arquanite/MazeSolver/releases
 
 desktop:
