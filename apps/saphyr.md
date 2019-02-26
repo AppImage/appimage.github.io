@@ -2,7 +2,6 @@
 layout: app
 
 permalink: /saphyr/
-license: GPL-3.0
 
 icons:
   - saphyr/icons/256x256/logo.png
@@ -34,5 +33,4 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: GPL-3.0
 ---
