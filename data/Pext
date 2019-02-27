@@ -1,2 +1,4 @@
-https://github.com/Pext/Pext
+https://github.com/Pext/Pext/releases/download/continuous/Pext-0.22.84.g03d19bc-x86_64.AppImage
+# Link without version would be better
+# but https://github.com/Pext/Pext is not recognized by worker.sh
 # Last update: 2019-02-01 16:11 (Updated screenshots and URL) #
