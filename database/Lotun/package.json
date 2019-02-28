@@ -1,0 +1,15 @@
+{
+  "name": "lotun-app",
+  "author": "FreshIT, s.r.o.",
+  "version": "0.0.3",
+  "main": "app/main.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lotun-io/lotun/tree/master/packages/lotun-app"
+  },
+  "dependencies": {
+    "@lotun/client": "^0.0.1",
+    "electron-updater": "^4.0.4"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Turntable",
+  "version": "0.2.0-beta",
+  "license": "MIT",
+  "description": "Simple youtube DJ app made with Electron and Angular4",
+  "homepage": "https://github.com/radiium/turntable",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/radiium/turntable.git"
+  },
+  "bugs": {
+    "url": "https://github.com/radiium/turntable/issues",
+    "email": "remip.dev@gmail.com"
+  },
+  "author": {
+    "name": "radiium",
+    "email": "remip.dev@gmail.com",
+    "url": "https://github.com/radiium"
+  },
+  "private": true,
+  "main": "main.js"
+}
