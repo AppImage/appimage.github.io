@@ -1,0 +1,90 @@
+---
+layout: app
+
+permalink: /Rats_on_The_Boat/
+description: P2P BitTorrent search engine
+license: MIT
+
+icons:
+  - Rats_on_The_Boat/icons/256x256/rats-search.png
+
+screenshots:
+  - Rats_on_The_Boat/screenshot.png
+
+authors:
+  - name: DEgITx
+    url: https://github.com/DEgITx
+
+links:
+  - type: GitHub
+    url: DEgITx/rats-search
+  - type: Download
+    url: https://github.com/DEgITx/rats-search/releases
+
+desktop:
+  Desktop Entry:
+    Name: Rats on The Boat
+    Comment: P2P BitTorrent search engine
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: rats-search
+    StartupWMClass: Rats on The Boat
+    X-AppImage-Version: 1.1.4.698
+    Categories: Network
+    X-AppImage-BuildId: 1HP7KDO6ffAeBREvNmGkfP67yyQ
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
+
+electron:
+  version: 1.1.4
+  private: true
+  author: Alexey Kasyanchuk <degitx@gmail.com>
+  copyright: Copyright © 2018 Alexey Kasyanchuk
+  homepage: https://github.com/DEgITx/rats-search
+  main: app/background.js
+  repository:
+    type: git
+    url: https://github.com/DEgITx/rats-search.git
+  serverDataDirectory: "./"
+  dependencies:
+    ansi-256-colors: "^1.1.0"
+    bencode: "^2.0.0"
+    bitfield: "^2.0.0"
+    cheerio: "^1.0.0-rc.2"
+    compare-versions: "^3.1.0"
+    debug: "^3.1.0"
+    detect-onebyte-encoding: "^1.0.2"
+    electron-context-menu: "^0.10.1"
+    electron-log: "^2.2.17"
+    electron-updater: "^4.0.6"
+    fs-jetpack: "^1.2.0"
+    glob: "^7.1.2"
+    google: "^2.1.0"
+    iconv-lite: "^0.4.19"
+    ipaddr.js: "^1.5.4"
+    is-running: "^2.1.0"
+    json-socket: github:DEgITx/node-json-socket
+    lodash: "^4.17.5"
+    material-ui: "^0.20.2"
+    mime: "^2.3.1"
+    mkdirp: "^0.5.1"
+    moment: "^2.20.1"
+    mysql: "^2.15.0"
+    nat-upnp: "^1.1.1"
+    node-fetch: "^2.2.0"
+    object-hash: "^1.3.0"
+    parse-torrent: "^6.1.1"
+    react: 16.5.2
+    react-dom: 16.5.2
+    react-input-range: "^1.3.0"
+    react-markdown: "^3.1.5"
+    simple-encryptor: "^2.0.0"
+    stun: 1.1.0
+    webtorrent: github:DEgITx/webtorrent
+---
