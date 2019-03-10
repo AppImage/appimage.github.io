@@ -5,6 +5,9 @@ permalink: /ser-player/
 description: A video player and processing utility for SER files
 license: GPL-3.0
 
+icons:
+  - ser-player/icons/128x128/ser-player.png
+
 screenshots:
   - ser-player/screenshot.png
 

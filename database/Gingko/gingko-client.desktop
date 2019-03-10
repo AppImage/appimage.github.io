@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Gingko
+Comment=Gingko client rewritten in Elm, packaged with Electron.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=gingko-client
+X-AppImage-Version=2.0.4.80
+X-AppImage-BuildId=5c51eb70-367b-11a8-10cd-1d6a22a835d9
+Categories=WordProcessor;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT
