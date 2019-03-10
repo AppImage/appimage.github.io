@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: zaggino/brackets-electron
-  - type: Install
+  - type: Download
     url: https://github.com/zaggino/brackets-electron/releases
 
 desktop:

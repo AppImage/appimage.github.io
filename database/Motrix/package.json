@@ -1,0 +1,37 @@
+{
+  "name": "Motrix",
+  "version": "1.0.9",
+  "description": "A full-featured download manager",
+  "homepage": "https://motrix.app",
+  "author": {
+    "name": "AGALWOOD",
+    "email": "agalwood.net@gmail.com"
+  },
+  "copyright": "Copyright© AGALWOOD",
+  "license": "MIT",
+  "main": "./dist/electron/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:agalwood/Motrix.git"
+  },
+  "dependencies": {
+    "aria2": "^4.0.3",
+    "axios": "^0.18.0",
+    "clipboard-polyfill": "^2.7.0",
+    "electron-debug": "^2.0.0",
+    "electron-is": "^3.0.0",
+    "electron-log": "^2.2.17",
+    "electron-updater": "^4.0.7",
+    "element-ui": "^2.4.11",
+    "forever-monitor": "^1.7.1",
+    "lodash": "^4.17.11",
+    "normalize.css": "^8.0.1",
+    "parse-torrent": "^6.1.2",
+    "svg-innerhtml": "^1.1.0",
+    "vue": "^2.5.17",
+    "vue-electron": "^1.0.6",
+    "vue-router": "^3.0.2",
+    "vuex": "^3.0.1",
+    "vuex-router-sync": "^5.0.0"
+  }
+}

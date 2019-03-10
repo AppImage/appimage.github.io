@@ -1,0 +1,28 @@
+{
+  "name": "DeDop-studio",
+  "productName": "DeDop-studio",
+  "version": "1.2.0",
+  "description": "DeDop Studio",
+  "main": "main.js",
+  "author": "Brockmann Consult GmbH",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@blueprintjs/core": "~1.13.0",
+    "@blueprintjs/table": "~1.10.0",
+    "cesium": "~1.27.0",
+    "codemirror": "~5.21.0",
+    "electron-devtools-installer": "~2.1.0",
+    "moment": "~2.17.1",
+    "react-addons-css-transition-group": "~15.4.0",
+    "react": "~15.4.0",
+    "react-ace": "~5.2.0",
+    "react-codemirror": "~0.3.0",
+    "react-dom": "~15.4.0",
+    "react-redux": "~4.4.5",
+    "redux": "~3.6.0",
+    "redux-logger": "~2.7.4",
+    "redux-thunk": "~2.1.0",
+    "reselect": "~2.5.4"
+  }
+}

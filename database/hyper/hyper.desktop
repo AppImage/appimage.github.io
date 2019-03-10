@@ -5,9 +5,9 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=hyper
-X-AppImage-Version=1.4.3.2217
-X-AppImage-BuildId=d2bf7810-90c5-11a7-1dee-57d1d0367dbd
-Categories=Development;
+X-AppImage-Version=1.4.4.2266
+X-AppImage-BuildId=cd200620-98b5-11a7-3125-59c1c1e15a37
+Categories=TerminalEmulator;
 
 [AppImageHub]
 X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

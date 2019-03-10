@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Teleprompter by Imaginary Sense
+Comment=Professional grade, free software teleprompter. Built with web technologies so anyone can customize it. Features include: mirroring, dual-screen support, rich text editing, image support, custom styles, tablet mode, webcam mode, auto-save and accelerated graphics.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=imaginary-teleprompter
+X-AppImage-Version=2.3.1
+X-AppImage-BuildId=c746ba80-811f-11a7-3008-5377d4e60388
+Categories=AudioVideo;Video;Sequencer;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+# Dear upstream developer, please include a digital signature in your AppImage
+# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
+X-AppImage-Type=1
+# Dear upstream developer, please consider to switch to type 2
+# so that users can benefit from the additional features like digital embedded signatures
+# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
+# or use linuxdeployqt or appimagetool which produce type 2 automatically
+X-AppImage-Architecture=x86_64
