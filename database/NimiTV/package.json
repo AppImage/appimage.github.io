@@ -2,7 +2,7 @@
 	"name": "nimitv",
 	"description": "Watch your favorite Albanian TV channels through your PC",
 	"productName": "NimiTV",
-	"version": "2.0.5",
+	"version": "2.1.0",
 	"author": "Yuri Bely <yuris@setplex.com>",
 	"main": "main.js"
 }
