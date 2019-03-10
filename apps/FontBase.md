@@ -4,6 +4,9 @@ layout: app
 permalink: /FontBase/
 description: A lightning fast, beautiful and free font manager for designers.
 
+icons:
+  - FontBase/icons/128x128/fontbase.png
+
 screenshots:
   - FontBase/screenshot.png
 
@@ -19,9 +22,10 @@ desktop:
     Terminal: false
     Type: Application
     Icon: fontbase
-    X-AppImage-Version: 2.3.3
-    X-AppImage-BuildId: 0ceb2960-e744-11a7-0a73-8d58265598a8
+    StartupWMClass: FontBase
+    X-AppImage-Version: 2.7.0
     Categories: Graphics
+    X-AppImage-BuildId: 1F28pigAgyHhQjYGZJPFpu1Y17T
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -39,7 +43,7 @@ electron:
     url: http://levits.ky
   license: Dominik Levitsky Studio
   dependencies:
-    fs-extra: "^4.0.2"
+    fs-extra: "^5.0.0"
   optionalDependencies:
     fontsession: git+https://github.com/DominikLevitsky/fontsession.git
     fsevents: "^1.1.2"

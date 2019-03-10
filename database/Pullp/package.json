@@ -1,0 +1,33 @@
+{
+  "name": "pullp",
+  "version": "0.9.2",
+  "private": false,
+  "main": "src/electron-starter.js",
+  "license": "MIT",
+  "author": "Rick Clark <rkingsleyclark@gmail.com>",
+  "description": "Pull request monitoring app for Github",
+  "homepage": "./",
+  "repository": "https://github.com/rkclark/pullp",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "electron-debug": "^1.5.0",
+    "electron-is-dev": "^0.3.0",
+    "electron-updater": "^2.21.8",
+    "express": "^4.15.4",
+    "helmet": "^3.6.1",
+    "node-fetch": "^1.7.3",
+    "prop-types": "^15.5.10",
+    "querystring": "^0.2.0",
+    "react": "^15.6.1",
+    "react-circular-progressbar": "^0.7.0",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.7.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-persist": "^4.9.1",
+    "redux-thunk": "^2.2.0"
+  }
+}
