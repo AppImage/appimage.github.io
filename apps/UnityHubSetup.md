@@ -22,8 +22,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: unityhub
-    X-AppImage-Version: 1.2.0
-    X-AppImage-BuildId: 32fb5090-d87e-11a8-0ba0-31e85e81896d
+    X-AppImage-Version: 1.6.0
+    X-AppImage-BuildId: '06779bb0-3eb7-11a9-3bc5-e720fafacb56'
     MimeType: x-scheme-handler/unityhub
     Categories: Development
   AppImageHub:
@@ -44,7 +44,7 @@ electron:
     url: https://github.com/electron/electron-quick-start/issues
   homepage: https://github.com/electron/electron-quick-start#readme
   dependencies:
-    "@unityhub/hub-generate-releases": "^1.1.6"
+    "@unityhub/hub-generate-releases": "^1.1.19"
     arch: "^2.1.0"
     connect: "^3.3.5"
     diskusage: "^0.2.4"
@@ -79,7 +79,7 @@ electron:
     sudo-prompt: "^7.1.0"
     swagger-connect: "^0.1.0"
     tar: 4.4.6
-    unity-editor-home: https://www.myget.org/F/unity-editor-home_dev/npm/unity-editor-home/-/unity-editor-home-0.30.0.tgz
+    unity-editor-home: https://www.myget.org/F/unity-editor-home_dev/npm/unity-editor-home/-/unity-editor-home-0.33.0.tgz
     unity-editor-license: https://www.myget.org/F/unity-editor-home_dev/npm/unity-editor-license/-/unity-editor-license-1.0.6.tgz
     universal-analytics: "^0.3.11"
     uuid: "^3.3.2"
@@ -100,6 +100,7 @@ electron:
     unity-editor-version: https://www.myget.org/F/unity-editor-home_dev/npm/unity-editor-version/-/unity-editor-version-1.0.2.tgz
     windows-registry: "^0.1.3"
     windows-shortcuts: "^0.1.6"
+    "@unityhub/is-win-process-running": "^1.0.0"
   standard:
     ignore:
     - Unity Hub.app/**

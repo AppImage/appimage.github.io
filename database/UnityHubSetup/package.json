@@ -1,6 +1,6 @@
 {
   "name": "UnityHub",
-  "version": "1.2.0",
+  "version": "1.6.0",
   "description": "The Official Unity Hub",
   "main": "index.js",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/electron/electron-quick-start#readme",
   "dependencies": {
-    "@unityhub/hub-generate-releases": "^1.1.6",
+    "@unityhub/hub-generate-releases": "^1.1.19",
     "arch": "^2.1.0",
     "connect": "^3.3.5",
     "diskusage": "^0.2.4",
@@ -49,7 +49,7 @@
     "sudo-prompt": "^7.1.0",
     "swagger-connect": "^0.1.0",
     "tar": "4.4.6",
-    "unity-editor-home": "https://www.myget.org/F/unity-editor-home_dev/npm/unity-editor-home/-/unity-editor-home-0.30.0.tgz",
+    "unity-editor-home": "https://www.myget.org/F/unity-editor-home_dev/npm/unity-editor-home/-/unity-editor-home-0.33.0.tgz",
     "unity-editor-license": "https://www.myget.org/F/unity-editor-home_dev/npm/unity-editor-license/-/unity-editor-license-1.0.6.tgz",
     "universal-analytics": "^0.3.11",
     "uuid": "^3.3.2",
@@ -70,7 +70,8 @@
     "unity-editor-registry": "https://www.myget.org/F/unity-editor-home_dev/npm/unity-editor-registry/-/unity-editor-registry-1.0.2.tgz",
     "unity-editor-version": "https://www.myget.org/F/unity-editor-home_dev/npm/unity-editor-version/-/unity-editor-version-1.0.2.tgz",
     "windows-registry": "^0.1.3",
-    "windows-shortcuts": "^0.1.6"
+    "windows-shortcuts": "^0.1.6",
+    "@unityhub/is-win-process-running": "^1.0.0"
   },
   "standard": {
     "ignore": [

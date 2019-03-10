@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=unityhub
-X-AppImage-Version=1.2.0
-X-AppImage-BuildId=32fb5090-d87e-11a8-0ba0-31e85e81896d
+X-AppImage-Version=1.6.0
+X-AppImage-BuildId=06779bb0-3eb7-11a9-3bc5-e720fafacb56
 MimeType=x-scheme-handler/unityhub;
 Categories=Development;
 
