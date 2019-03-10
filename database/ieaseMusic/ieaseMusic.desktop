@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=ieaseMusic
+Comment=这应该是最好的网易云音乐播放器了，没有之一，如果有请打醒 🤘
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=ieaseMusic
+StartupWMClass=ieaseMusic
+X-AppImage-Version=1.3.2
+Categories=Music;
+X-AppImage-BuildId=1CWpu5B9ooV8tdxP0H50ad3qzLS
