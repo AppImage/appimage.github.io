@@ -5,6 +5,9 @@ permalink: /Colorpicker/
 description: Colorpicker is a little Electron app that can show colors with hex/rgb code, and generate shading for your color.
 license: GPL-3.0
 
+icons:
+  - Colorpicker/icons/256x256/colorpicker.png
+
 screenshots:
   - Colorpicker/screenshot.png
 

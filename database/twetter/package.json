@@ -1,0 +1,13 @@
+{
+  "name": "twetter",
+  "version": "1.0.0",
+  "description": "Client for the pubsub app",
+  "main": "dist/main.js",
+  "repository": "https://github.com/NiewidzialnyCzlowiek/pubsub-webapp",
+  "author": "Bartłomiej Szal & Piotr Hełminiak",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "net": "^1.0.2"
+  }
+}
