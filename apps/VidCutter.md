@@ -11,7 +11,7 @@ authors:
 links:
   - type: GitHub
     url: ozmartian/vidcutter
-  - type: Install
+  - type: Download
     url: https://github.com/ozmartian/vidcutter/releases
 
 desktop:

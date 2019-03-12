@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: stoplightio/desktop
-  - type: Install
+  - type: Download
     url: https://github.com/stoplightio/desktop/releases
 
 desktop:

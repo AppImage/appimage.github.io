@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: willyb321/media_mate
-  - type: Install
+  - type: Download
     url: https://github.com/willyb321/media_mate/releases
 
 desktop:

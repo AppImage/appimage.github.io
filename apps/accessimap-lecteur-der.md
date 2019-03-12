@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: makinacorpus/accessimap-lecteur-der
-  - type: Install
+  - type: Download
     url: https://github.com/makinacorpus/accessimap-lecteur-der/releases
 
 desktop:

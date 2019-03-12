@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 Martin Rotter <rotter.martinos@gmail.com> -->
+<component type="desktop-application">
+  <id>com.github.textilosaurus.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>Textilosaurus</name>
+  <update_contact>rotter.martinos_AT_gmail.com</update_contact>
+  <summary>Simple cross-platform text editor based on Qt and QScintilla</summary>
+  ​<translation type="qt">textilosaurus</translation>
+  <description>
+    <p>
+      Textilosaurus is simple cross-platform text editor based on Qt and QScintilla. Textilosaurus aims to provide similar workflow as Notepad++ does.
+    </p>
+  </description>
+  <launchable type="desktop-id">textilosaurus.desktop</launchable>
+  <url type="homepage">https://github.com/martinrotter/textilosaurus</url>
+  <provides>
+    <binary>textilosaurus</binary>
+  </provides>
+</component>

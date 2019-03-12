@@ -1,0 +1,19 @@
+{
+  "name": "spherebyhorizen",
+  "version": "1.0.1-beta",
+  "description": "Sphere by Horizen is a light and full mode wallet and messaging application for Horizen with locally store and encrypted files",
+  "license": "MIT",
+  "homepage": "https://horizen.global/github/vault",
+  "author": {
+    "email": "vault@horizen.global",
+    "name": "Horizen Team"
+  },
+  "bin": {
+    "electron": "./node_modules/.bin/electron"
+  },
+  "main": "./main.js",
+  "productName": "Sphere by Horizen",
+  "dependencies": {
+    "electron-log": "2.2.17"
+  }
+}
