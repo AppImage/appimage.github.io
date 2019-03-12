@@ -1,0 +1,24 @@
+{
+  "name": "fraktal",
+  "version": "1.0.1",
+  "description": "Podcast Manager in Electron",
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SirPacker/fraktal.git"
+  },
+  "author": {
+    "name": "SirPacker",
+    "email": "packer@typicalbot.com"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/SirPacker/fraktal/issues"
+  },
+  "homepage": "https://github.com/SirPacker/fraktal#readme",
+  "dependencies": {
+    "fraktal-storage": "github:fraktal-js/fraktal-storage",
+    "node-podcast-parser": "^2.1.0",
+    "snekfetch": "^3.6.4"
+  }
+}

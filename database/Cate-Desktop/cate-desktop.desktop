@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Cate Desktop
+Comment=A graphical user interface for the ESA CCI Toolbox (Cate)
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=cate-desktop
+X-AppImage-Version=2.0.0-dev.24.189
+X-AppImage-BuildId=ddab8580-03aa-11a9-27f6-4b681f10a586
+Categories=Science;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
