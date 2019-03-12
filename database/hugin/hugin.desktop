@@ -30,7 +30,7 @@ StartupNotify=false
 Terminal=false
 Type=Application
 MimeType=application/x-ptoptimizer-script;
-X-AppImage-Version=git-20180929
+X-AppImage-Version=git-20181009
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

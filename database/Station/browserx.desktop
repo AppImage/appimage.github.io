@@ -6,10 +6,10 @@ Terminal=false
 Type=Application
 Icon=browserx
 StartupWMClass=Station
-X-AppImage-Version=1.25.1.2271
+X-AppImage-Version=1.35.0.2899
 MimeType=x-scheme-handler/station;
 Categories=Network;
-X-AppImage-BuildId=1B4hWZQpdAxfWyviMoDzenE3vpH
+X-AppImage-BuildId=1Efa0vf4RoknJnszPem1iZXytmz
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
