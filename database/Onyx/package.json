@@ -1,17 +1,18 @@
 {
   "name": "Onyx",
-  "version": "0.4.0",
+  "version": "0.5.2",
   "description": "Decentralized messaging application based on PSS",
   "main": "index.js",
   "author": "Mainframe",
   "dependencies": {
     "electron-store": "^1.3.0",
-    "electron-util": "^0.2.1",
-    "execa": "^0.8.0",
+    "electron-util": "^0.8.0",
+    "execa": "^0.10.0",
     "fs-extra": "^5.0.0",
     "get-port": "^3.2.0",
     "mkdirp": "^0.5.1",
-    "onyx-server": "^0.4.5",
+    "node-fetch": "^2.1.2",
+    "onyx-server": "^0.5.0",
     "static-server": "^3.0.0"
   }
 }

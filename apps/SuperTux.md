@@ -1,0 +1,64 @@
+---
+layout: app
+
+permalink: /SuperTux/
+description: Play a classic 2D platform game
+
+screenshots:
+  - SuperTux/screenshot.png
+
+authors:
+
+links:
+
+desktop:
+  Desktop Entry:
+    Type: Application
+    Version: 1.0
+    Name: SuperTux 2
+    Name[en]: SuperTux 2
+    GenericName: Platform Game
+    GenericName[en]: Platform Game
+    GenericName[ca]: Videojoc de Plataformes
+    GenericName[cs]: Plošinová hra
+    GenericName[da]: Platformspil
+    GenericName[de]: Jump ’n’ Run
+    GenericName[es]: Juego de Plataformas
+    GenericName[fr]: Jeu de Plate-forme
+    GenericName[hu]: Egy oldalnézeti játék
+    GenericName[it]: Videogioco a Piattaforme
+    GenericName[lt]: Platformos žaidimas
+    GenericName[nb]: Plattformspill
+    GenericName[nn]: Plattformspel
+    GenericName[nl]: Platformspel
+    GenericName[pt]: Jogo de Plataformas
+    GenericName[pt_BR]: Jogo de Plataforma
+    GenericName[ru]: Платформер
+    GenericName[fi]: Tasohyppely
+    GenericName[sv]: Plattformsspel
+    GenericName[tr]: Platform Oyunları
+    Comment: Play a classic 2D platform game
+    Comment[en]: Play a classic 2D platform game
+    Comment[de]: Ein klassisches Jump&Run Spiel
+    Comment[cs]: Plošinovka inspirovaná SuperMariem s tučňákem Tuxem v hlavní roli
+    Comment[fi]: Ohjaa pingviiniä perinteisessä tasohyppelyssä
+    Comment[lt]: Klasikinis 2D platformos žaidimas
+    Comment[nb]: Et klassisk todimensjonalt plattformspill.
+    Comment[nn]: Eit klassisk todimensjonalt plattformspel.
+    Comment[sv]: Ett klassiskt tvådimensionellt plattformsspel
+    Comment[pt]: Joga este clássico de plataformas 2D
+    Comment[pt_BR]: Encarne o pinguin Tux neste jogo inspirado em clássicos de Pular&Correr
+    Comment[hu]: Egy klasszikus 2D-s oldalnézeti játék
+    Icon: supertux
+    Exec: supertux2.wrapper
+    Terminal: false
+    StartupNotify: false
+    Categories: Game
+    Keywords: game
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+---
