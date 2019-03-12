@@ -1,0 +1,32 @@
+{
+  "name": "webcatalog",
+  "version": "12.3.1",
+  "description": "WebCatalog helps you turn any website into desktop app with just one click.",
+  "main": "build/electron.js",
+  "repository": "https://github.com/webcatalog/webcatalog",
+  "author": {
+    "name": "Quang Lam",
+    "email": "quang.lam2807@gmail.com",
+    "url": "https://twitter.com/quanglam2807"
+  },
+  "license": "MPL-2.0",
+  "dependencies": {
+    "command-exists": "1.2.2",
+    "electron-is-dev": "0.3.0",
+    "electron-settings": "3.1.4",
+    "electron-updater": "2.21.4",
+    "electron-window-state": "4.1.1",
+    "file-type": "7.6.0",
+    "follow-redirects": "1.4.1",
+    "fs-extra": "5.0.0",
+    "icon-gen": "1.2.0",
+    "is-url": "1.2.4",
+    "jimp": "0.2.28",
+    "read-chunk": "2.1.0",
+    "tmp": "0.0.33",
+    "windows-shortcuts": "0.1.6",
+    "yargs-parser": "9.0.2"
+  },
+  "homepage": "./",
+  "private": true
+}
