@@ -5,6 +5,9 @@ permalink: /Kitupiikki/
 description: Avoimen lähdekoodin kirjanpitäjä
 license: GPL-3.0
 
+icons:
+  - Kitupiikki/icons/256x256/kitupiikki.png
+
 screenshots:
   - Kitupiikki/screenshot.png
 
