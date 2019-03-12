@@ -1,0 +1,32 @@
+{
+  "name": "giganotes",
+  "version": "1.1.4",
+  "description": "Note taking application",
+  "homepage": "https://giganotes.com",
+  "author": {
+    "name": "FourthByte",
+    "email": "4thbyte@gmail.com"
+  },
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "6.1.7",
+    "@angular/cdk": "^6.4.7",
+    "@angular/common": "6.1.7",
+    "@angular/compiler": "6.1.7",
+    "@angular/core": "6.1.7",
+    "@angular/flex-layout": "6.0.0-beta.18",
+    "@angular/forms": "6.1.7",
+    "@angular/http": "6.1.7",
+    "@angular/material": "6.4.7",
+    "@angular/router": "6.1.7",
+    "@auth0/angular-jwt": "2.0.0",
+    "@tinymce/tinymce-angular": "2.0.1",
+    "angular-draggable-droppable": "^4.0.2",
+    "async-file": "2.0.2",
+    "electron-oauth-helper": "2.0.3",
+    "rxjs": "6.3.2",
+    "sqlite": "3.0.0",
+    "uuid": "3.3.2"
+  }
+}
