@@ -1,0 +1,30 @@
+{
+  "name": "hyperspace",
+  "productName": "Hyperspace",
+  "version": "0.1.0",
+  "description": "A fluffy client for Mastodon in React",
+  "author": "Marquis Kurt <software@marquiskurt.net>",
+  "private": true,
+  "homepage": "./",
+  "main": "build/electron.js",
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.3",
+    "node-sass": "latest",
+    "jquery": "latest",
+    "popper.js": "latest",
+    "react-bootstrap-tabs": "latest",
+    "moment": "^2.24.0",
+    "megalodon": "latest",
+    "office-ui-fabric-react": "^6.132.0",
+    "@uifabric/icons": "^6.3.0",
+    "file-dialog": "^0.0.7"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

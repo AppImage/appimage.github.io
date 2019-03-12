@@ -30,7 +30,7 @@ desktop:
     Type: Application
     Icon: slack-backup
     X-AppImage-Version: 1.0.0
-    X-AppImage-BuildId: 1fd753d0-6130-11a8-333f-c954e5a9d804
+    X-AppImage-BuildId: 401fd380-9e50-11a8-1bcf-ab8777cf1139
     Categories: Development
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
