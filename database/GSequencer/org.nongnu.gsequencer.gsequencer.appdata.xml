@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Joël Krähemann <jkraehemann@gmail.com> -->
+<component type="desktop">
+  <id>org.nongnu.gsequencer.gsequencer</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <content_rating type="oars-1.0">
+    <content_attribute id="social-audio">none</content_attribute>
+  </content_rating>
+  <name>GSequencer</name>
+  <summary>Advanced Gtk+ Sequencer</summary>
+  <description>
+    <p>GSequencer provides you various tools to play, create, edit and mix your own music.
+    It features a step sequencer, piano roll, automation and wave-form editor.</p>
+  </description>
+  
+  <launchable type="desktop-id">gsequencer.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>GSequencer's main window</caption>
+      <image>https://directory.fsf.org/w/images/9/95/Gsequencer-main-window.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://directory.fsf.org/w/images/7/79/Gsequencer-automation-window.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">http://nongnu.org/gsequencer</url>
+</component>
