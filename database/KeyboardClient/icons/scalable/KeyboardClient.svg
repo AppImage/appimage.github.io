@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg1901" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:version="0.47 " sodipodi:docname="Computer_keyboard_German.svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="53.417px"
+	 height="53.99px" viewBox="346.5 473.844 53.417 53.99" enable-background="new 346.5 473.844 53.417 53.99" xml:space="preserve">
+<sodipodi:namedview  id="namedview1769" showgrid="false" pagecolor="#ffffff" bordercolor="#666666" inkscape:cy="346.89278" guidetolerance="10" inkscape:cx="750" gridtolerance="10" inkscape:zoom="1.2586667" objecttolerance="10" borderopacity="1" inkscape:current-layer="layer2" inkscape:window-y="-4" inkscape:window-x="-4" inkscape:snap-grids="true" inkscape:window-height="964" inkscape:window-width="1680" inkscape:pageshadow="2" inkscape:pageopacity="0" inkscape:window-maximized="1">
+	<inkscape:grid  type="xygrid" id="grid4583"></inkscape:grid>
+</sodipodi:namedview>
+<defs>
+	
+	
+		<inkscape:perspective  id="perspective1773" inkscape:persp3d-origin="750 : 250 : 1" inkscape:vp_z="1500 : 375 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_x="0 : 375 : 1" sodipodi:type="inkscape:persp3d">
+		</inkscape:perspective>
+</defs>
+<g id="layer2" transform="translate(115.62417,74.248815)">
+	<path id="rect4895" fill="#656565" d="M236.654,400.587h41.954c2.634,0,4.771,1.797,4.771,4.012v44.021
+		c0,2.216-2.136,4.012-4.771,4.012h-41.954c-2.634,0-4.771-1.796-4.771-4.012v-44.021
+		C231.883,402.384,234.019,400.587,236.654,400.587z"/>
+	<rect id="rect4897" x="272.074" y="404.453" fill="#D6D6D6" width="11.279" height="34.563"/>
+	
+		<linearGradient id="path4899_1_" gradientUnits="userSpaceOnUse" x1="-885.3761" y1="640.0551" x2="-888.4066" y2="652.6821" gradientTransform="matrix(0.2087 0 0 -0.208 461.3392 537.5479)">
+		<stop  offset="0" style="stop-color:#D6D6D6"/>
+		<stop  offset="1" style="stop-color:#656565"/>
+	</linearGradient>
+	<path id="path4899" fill="url(#path4899_1_)" d="M274.235,407.467l9.094-2.972c-0.361-2.856-2.329-3.846-5.069-3.937
+		c-3.646,0.105-7.203,0.26-9.094,1.337L274.235,407.467z"/>
+	<rect id="rect4901" x="240.976" y="439.646" fill="#929292" width="33.469" height="12.975"/>
+	
+		<linearGradient id="path4903_1_" gradientUnits="userSpaceOnUse" x1="2230.7595" y1="454.8979" x2="2250.8057" y2="439.2401" gradientTransform="matrix(-0.2087 0 0 -0.208 744.2323 537.5479)">
+		<stop  offset="0" style="stop-color:#D6D6D6"/>
+		<stop  offset="1" style="stop-color:#939393"/>
+	</linearGradient>
+	<path id="path4903" fill="url(#path4903_1_)" d="M272.535,436.6l10.805,1.155l0.04,10.506c-0.005,2.709-2.167,4.266-4.401,4.359
+		l-4.81-0.052l-5.324-12.345L272.535,436.6z"/>
+	
+		<linearGradient id="path4905_1_" gradientUnits="userSpaceOnUse" x1="-1084.8995" y1="454.4057" x2="-1061.9962" y2="438.7479" gradientTransform="matrix(0.2087 0 0 -0.208 461.3392 537.5479)">
+		<stop  offset="0" style="stop-color:#656565"/>
+		<stop  offset="1" style="stop-color:#939393"/>
+	</linearGradient>
+	<path id="path4905" fill="url(#path4905_1_)" d="M239.395,436.495l-7.484,1.261l-0.04,10.506c0.005,2.709,2.167,4.266,4.401,4.359
+		l4.81-0.052l1.687-12.292L239.395,436.495z"/>
+	<path id="rect4907" fill="#F1F1F1" d="M243.424,401.246h26.994c2.635,0,4.771,2.128,4.771,4.754v30.736
+		c0,2.626-2.136,4.755-4.771,4.755h-26.994c-2.635,0-4.771-2.129-4.771-4.755v-30.736
+		C238.654,403.373,240.789,401.246,243.424,401.246z"/>
+	
+		<linearGradient id="rect4909_1_" gradientUnits="userSpaceOnUse" x1="-1143.3112" y1="401.0522" x2="-1066.7612" y2="401.0522" gradientTransform="matrix(0.2087 0 0 -0.208 488.0692 504.7872)">
+		<stop  offset="0" style="stop-color:#D8D8D8"/>
+		<stop  offset="1" style="stop-color:#B1B1B1"/>
+	</linearGradient>
+	<path id="rect4909" fill="url(#rect4909_1_)" d="M243.424,401.246h25.94c2.635,0,4.771,2.128,4.771,4.754v30.736
+		c0,2.626-2.136,4.755-4.771,4.755h-25.94c-2.635,0-4.771-2.129-4.771-4.755v-30.736
+		C238.654,403.373,240.789,401.246,243.424,401.246z"/>
+	<text transform="matrix(1.0034 0 0 1 243.4012 419.0444)" font-family="'DejaVuSansCondensed'" font-size="13.9762">J</text>
+	<path id="rect4915" fill="none" stroke="#000000" stroke-width="1.5" d="M236.654,400.587h41.954c2.634,0,4.771,1.797,4.771,4.012
+		v44.021c0,2.216-2.136,4.012-4.771,4.012h-41.954c-2.634,0-4.771-1.796-4.771-4.012v-44.021
+		C231.883,402.384,234.019,400.587,236.654,400.587z"/>
+</g>
+</svg>
