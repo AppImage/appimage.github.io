@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /Wire/
-description: Secure messenger for everyone.
+description: The most secure collaboration platform.
 
 icons:
   - Wire/icons/256x256/wire-desktop.png
@@ -22,18 +22,20 @@ links:
 
 desktop:
   Desktop Entry:
-    Name: wire-desktop
-    Comment: Secure messenger for everyone.
+    Name: Wire
+    Comment: The most secure collaboration platform.
     Exec: AppRun
     Terminal: false
     Type: Application
     Icon: wire-desktop
-    X-AppImage-Version: 3.0.2816.2816
-    X-AppImage-BuildId: 2219a1a0-b4a8-11a7-3712-9b9413ffc7e4
     StartupWMClass: Wire
+    X-AppImage-Version: 3.4.2879.2879
     Categories: Network
+    X-AppImage-BuildId: 1DLOfKc7ebPjRcSs2M61kcYwVtd
   AppImageHub:
-    X-AppImage-UpdateInformation: 
-    X-AppImage-Type: 1
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
 ---
