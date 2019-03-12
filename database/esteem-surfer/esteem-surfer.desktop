@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=eSteem Surfer
+Comment=eSteem desktop application reimagined for Windows, Mac, Linux users, start earning cryptocurrency!
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=esteem-surfer
+StartupWMClass=eSteem Surfer
+X-AppImage-Version=2.0.0
+MimeType=x-scheme-handler/steem;x-scheme-handler/esteem;
+Categories=Development;
+X-AppImage-BuildId=1CjyrmxVqlEG7cTiIqy8QVx8Wni
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT

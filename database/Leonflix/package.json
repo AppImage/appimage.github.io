@@ -1,7 +1,7 @@
 {
   "name": "leonflix",
   "productName": "Leonflix",
-  "version": "0.4.2",
+  "version": "0.4.7",
   "description": "A multi-platform desktop application for watching movies and TV shows.",
   "main": "./main.prod.js",
   "author": {
@@ -14,13 +14,13 @@
     "chromecasts": "^1.9.1",
     "electron-window-state": "^4.1.1",
     "getmac": "^1.2.1",
+    "nedb": "^1.8.0",
     "opensubtitles-api": "^4.0.0",
-    "openurl": "^1.1.1",
     "phantomjs-prebuilt": "^2.1.16",
-    "sequelize": "^4.28.7",
-    "sqlite3": "^3.1.13",
+    "sql.js": "^0.5.0",
     "unidecode": "^0.1.8",
     "uuid": "^3.1.0",
+    "vlc-command": "^1.1.1",
     "x-ray": "^2.3.2"
   }
 }
