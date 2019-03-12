@@ -44,6 +44,19 @@ As a format, AppImage is designed in a way that does not impose restrictions on 
 * Should have an [AppStream metainfo file](https://people.freedesktop.org/~hughsient/appdata/) in `usr/share/metainfo`. If it does, must pass `appstreamcli` validation
 * Should show a useful screen rather than some crude dialog box since the main window will be used for the main screenshots. Note that you can provide your own screenshots by using an [AppStream metainfo file](https://people.freedesktop.org/~hughsient/appdata/)
 * Should be available under a constant URL that does not contain the version number. Alternatively, should be available on GitHub Releases or the openSUSE Build Service (you are free to suggest additional serices like these)
+* Must display something sensible when there is no network connection (offline/air-gapped use). Electron apps, for example, can use something like
+
+```
+  (async () => {
+    if (await isOnline() === true) {
+      mainWindow.loadURL(HermesURL);
+    } else {
+      mainWindow.loadFile('offline.html')
+    }
+    mainWindow.maximize();
+    mainWindow.show();
+  })();
+  ```
 
 ## How to use
 
