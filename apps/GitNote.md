@@ -1,0 +1,87 @@
+---
+layout: app
+
+permalink: /GitNote/
+description: A modern note taking app based on GIT.
+
+icons:
+  - GitNote/icons/128x128/gitnote.png
+
+screenshots:
+  - GitNote/screenshot.png
+
+authors:
+  - name: zhaopengme
+    url: https://github.com/zhaopengme
+
+links:
+  - type: GitHub
+    url: zhaopengme/gitnote
+  - type: Download
+    url: https://github.com/zhaopengme/gitnote/releases
+
+desktop:
+  Desktop Entry:
+    Name: GitNote
+    Comment: A modern note taking app based on GIT.
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: gitnote
+    StartupWMClass: GitNote
+    X-AppImage-Version: 3.1.0
+    Categories: Utility
+    X-AppImage-BuildId: 1I7Z6A5iUCvob4gWnnurbYLFCyZ
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+
+electron:
+  description: A modern note taking app based on GIT.
+  license: 
+  main: "./dist/electron/main.js"
+  dependencies:
+    "@hitask/electron-ga": "^3.0.0"
+    assert: "^1.4.1"
+    axios: "^0.18.0"
+    custom-electron-titlebar: "^2.1.0"
+    dayjs: "^1.7.2"
+    decompress: "^4.2.0"
+    decompress-unzip: "^4.0.1"
+    delay: "^4.0.1"
+    directory-tree: "^2.1.0"
+    download: "^7.1.0"
+    electron-baidu-tongji: "^1.0.2"
+    electron-default-menu: "^1.0.1"
+    electron-is: "^3.0.0"
+    electron-log: "^3.0.1"
+    electron-updater: "^4.0.6"
+    element-ui: "^2.5.4"
+    extend: "^3.0.2"
+    file-url: "^2.0.2"
+    fs-extra: "^6.0.1"
+    git-config-path: "^2.0.0"
+    is-invalid-path: "^1.0.2"
+    js-md5: "^0.7.3"
+    keytar: "^4.3.0"
+    local-gitignore: "^1.0.2"
+    log4js: "^3.0.6"
+    mavon-editor: "^2.6.17"
+    mobx: "^5.0.3"
+    movue: "^0.3.0"
+    natsort: "^2.0.0"
+    nedb-promises: "^3.0.0"
+    nodegit: "^0.23.0"
+    parse-git-config: "^3.0.0"
+    parse-github-url: "^1.0.2"
+    qs: "^6.5.2"
+    quill: "^1.3.6"
+    vue: "^2.5.16"
+    vue-electron: "^1.0.6"
+    vue-i18n: "^8.0.0"
+    vue-router: "^3.0.1"
+    vuescroll: "^4.7.4"
+---
