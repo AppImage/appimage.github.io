@@ -4,7 +4,7 @@ layout: app
 permalink: /Plex/
 
 icons:
-  - Plex/icons/256x256/plexmediaplayer.png
+  - Plex/icons/scalable/plexmediaplayer.svg
 
 screenshots:
   - Plex/screenshot.png
@@ -18,10 +18,9 @@ desktop:
     Version: 1.0
     Type: Application
     Name: Plex Media Player
-    Comment: 
     Exec: plexmediaplayer.wrapper
-    Terminal: false
     Icon: plexmediaplayer
+    Terminal: false
     Categories: AudioVideo
     StartupWMClass: plexmediaplayer
   AppImageHub:
