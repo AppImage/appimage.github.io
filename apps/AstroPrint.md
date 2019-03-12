@@ -4,6 +4,9 @@ layout: app
 permalink: /AstroPrint/
 description: AstroPrint Cloud Connected 3D Printing Control and Plating software
 
+icons:
+  - AstroPrint/icons/512x512/astroprint.png
+
 screenshots:
   - AstroPrint/screenshot.png
 
