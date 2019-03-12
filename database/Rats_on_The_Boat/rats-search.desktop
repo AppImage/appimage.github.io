@@ -1,14 +1,14 @@
 [Desktop Entry]
-Name=Sonist
-Comment=Music Player
+Name=Rats on The Boat
+Comment=P2P BitTorrent search engine
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=sonist
-StartupWMClass=Sonist
-X-AppImage-Version=0.9.3
-Categories=AudioVideo;Audio;Player;Music;
-X-AppImage-BuildId=1G4lYx4G1JlqKwXJJsszkSuTgub
+Icon=rats-search
+StartupWMClass=Rats on The Boat
+X-AppImage-Version=1.1.4.698
+Categories=Network;
+X-AppImage-BuildId=1HP7KDO6ffAeBREvNmGkfP67yyQ
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
