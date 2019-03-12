@@ -4,6 +4,9 @@ layout: app
 permalink: /PowerShell/
 description: Microsoft PowerShell
 
+icons:
+  - PowerShell/icons/256x256/powershell.png
+
 screenshots:
   - PowerShell/screenshot.png
 
