@@ -1,0 +1,3 @@
+https://github.com/jdm64/saphyr/releases/download/continuous/saphyr-x86_64.AppImage
+# Why is https://github.com/jdm64/saphyr not properly resolved anymore?
+# AppImage filename is missing the version/git commit; export VERSION=... linuxdeployqt/appimagetool
