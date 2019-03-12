@@ -6,7 +6,7 @@ description: Simple, Cross-Platform calculator built with Electron.
 license: MIT
 
 icons:
-  - elcalc/icons/128x128/elcalc.png
+  - elcalc/icons/1024x1024/elcalc.png
 
 screenshots:
   - elcalc/screenshot.png
@@ -29,9 +29,10 @@ desktop:
     Terminal: false
     Type: Application
     Icon: elcalc
-    X-AppImage-Version: 4.0.3
-    X-AppImage-BuildId: 8c4f0410-84f6-11a8-2b1f-c9b925b7819d
+    StartupWMClass: elcalc
+    X-AppImage-Version: 5.0.0-rc.2
     Categories: Utility
+    X-AppImage-BuildId: 19qmzfH3nalioqe7e95ryM0RH12
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -41,23 +42,22 @@ desktop:
     X-AppImage-Payload-License: MIT
 
 electron:
-  version: 4.0.3
-  files:
-  - "**/*"
-  - build/icon.*
-  - src/*
-  - src/assets/css/*
-  - src/assets/js/*
-  description: Simple, Cross-Platform calculator built with Electron.
-  main: src/main.js
-  electronVersion: 2.0.4
-  author: Antoni Kepinski <a@kepinski.me> (https://kepinski.me)
   license: MIT
-  repository:
-    type: git
-    url: git+https://github.com/elcalc/elcalc.git
-  bugs:
-    url: https://github.com/elcalc/elcalc/issues
+  main: src/main.js
+  repository: elcalc/elcalc
+  author:
+    name: Antoni Kepinski
+    email: a@kepinski.me
+    url: kepinski.me
   dependencies:
-    mathjs: "^5.0.2"
+    electron-timber: "^0.5.1"
+    mathjs: "^5.1.1"
+  stylelint:
+    extends: stylelint-config-xo
+    rules:
+      property-no-vendor-prefix: 
+      property-blacklist: 
+      no-duplicate-selectors: 
+      declaration-property-value-blacklist: 
+      font-weight-notation: 
 ---
