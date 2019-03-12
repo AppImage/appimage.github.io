@@ -1,0 +1,40 @@
+[Desktop Entry]
+Name=Luminance HDR
+GenericName=HDR imaging tool
+GenericName[de]=Workflow für HDR-Bilder
+GenericName[it]=Workflow per immagini HDR
+GenericName[ru]=Работа с HDR-фотографией
+GenericName[tr]=HDR Resim Düzenleyici
+Categories=Graphics;RasterGraphics;2DGraphics;Photography;Viewer;Qt;
+Comment=Create and tonemap HDR images
+Comment[de]=Luminance HDR ist eine grafische Benutzeroberfläche zur Erzeugung von HDR-Bildern und deren Dynamikkompression
+Comment[en_US]=Luminance is a graphical user interface used to create and tonemap HDR images
+Comment[hu_HU]=Ez a program nagy megvilágítástartományú (HDR) képek előállítására és megtekintésére szolgál.
+Comment[it]=Luminance e' una interfaccia grafica usata per creare ed eseguire il tonemapping di immagini HDR
+Comment[ru]=Cоздание HDR-снимков и отображение тонов в LDR
+Comment[tr]=HDR resim dosyaları oluşturun ve ton haritalamalarını düzenleyin
+Exec=luminance-hdr.wrapper %F
+Icon=luminance-hdr
+MimeType=image/x-dcraw;image/tiff;image/jpeg;image/png;image/x-exr;image/x-hdr;image/x-pfs;
+StartupNotify=true
+StartupWMClass=luminance-hdr
+Terminal=false
+Type=Application
+X-DCOP-ServiceType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+#X-StandardInstall=false
+
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+# Dear upstream developer, please include a digital signature in your AppImage
+# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
+X-AppImage-Type=1
+# Dear upstream developer, please consider to switch to type 2
+# so that users can benefit from the additional features like digital embedded signatures
+# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
+# or use linuxdeployqt or appimagetool which produce type 2 automatically
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=GPL-3.0

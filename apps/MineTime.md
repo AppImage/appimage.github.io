@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: marcoancona/MineTime
-  - type: Install
+  - type: Download
     url: https://github.com/marcoancona/MineTime/releases
 
 desktop:

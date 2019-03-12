@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /Qt_DAB/
+description: Software for listening to terrestrial Digital Audio Broadcasting (DAB and DAB+)
 
 screenshots:
   - Qt_DAB/screenshot.png
@@ -13,13 +14,15 @@ authors:
 links:
   - type: GitHub
     url: JvanKatwijk/qt-dab
-  - type: Install
+  - type: Download
     url: https://github.com/JvanKatwijk/qt-dab/releases
 
 desktop:
   Desktop Entry:
     Name: Qt_DAB
     Exec: qt-dab
+    Comment: Software for listening to terrestrial Digital Audio Broadcasting (DAB and
+      DAB+)
     Icon: qt-dab
     Type: Application
     Categories: AudioVideo
