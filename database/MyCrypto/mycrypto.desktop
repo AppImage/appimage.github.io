@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=mycrypto
-X-AppImage-Version=1.0.0.1
-X-AppImage-BuildId=b2189630-4841-11a8-2602-530871e58afa
+X-AppImage-Version=1.0.2.8
+X-AppImage-BuildId=41f04c70-6044-11a8-19d5-1f438250b71f
 Categories=Finance;
 
 [AppImageHub]
@@ -15,3 +15,4 @@ Categories=Finance;
 X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT
