@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: jimevins/glabels-qt
-  - type: Install
+  - type: Download
     url: https://github.com/jimevins/glabels-qt/releases
 
 desktop:

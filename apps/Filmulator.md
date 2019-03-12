@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: CarVac/filmulator-gui
-  - type: Install
+  - type: Download
     url: https://github.com/CarVac/filmulator-gui/releases
 
 desktop:

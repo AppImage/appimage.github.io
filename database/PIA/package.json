@@ -1,0 +1,14 @@
+{
+  "name": "PIA",
+  "version": "1.6.0",
+  "description": "Version Portable Outil PIA",
+  "main": "main.js",
+  "author": "ATNOS",
+  "repository": "https://github.com/LINCnil/pia-app",
+  "dependencies": {
+    "electron-log": "^2.2.14",
+    "electron-updater": "^2.19.1",
+    "electron-window-state": "^4.1.1",
+    "ngx-markdown": "^1.5.1"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Kanon",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "Maturita GPJP",
+  "dependencies": {
+    "bootstrap": "^3.0.0",
+    "csv-parse": "^2.0.4",
+    "electron-json-storage": "^4.0.2",
+    "jquery": "^3.3.1",
+    "mousetrap": "^1.6.1",
+    "popper.js": "^1.12.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpjp-hades/kanon-app.git"
+  },
+  "author": "Keombre <keombre8@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gpjp-hades/kanon-app/issues"
+  },
+  "homepage": "https://github.com/gpjp-hades/kanon-app#readme"
+}
