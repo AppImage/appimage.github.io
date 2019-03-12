@@ -2,7 +2,13 @@
 layout: app
 
 permalink: /Wire/
-description: Modern communication, full privacy.
+description: The most secure collaboration platform.
+
+icons:
+  - Wire/icons/256x256/wire-desktop.png
+
+screenshots:
+  - Wire/screenshot.png
 
 authors:
   - name: wireapp
@@ -16,15 +22,20 @@ links:
 
 desktop:
   Desktop Entry:
-    Name: wire-desktop
-    Comment: Modern communication, full privacy.
+    Name: Wire
+    Comment: The most secure collaboration platform.
     Exec: AppRun
     Terminal: false
     Type: Application
     Icon: wire-desktop
-    X-AppImage-Version: 2.15.2751.154
-    X-AppImage-BuildId: 0740e9a0-6d2d-11a7-2e2f-159280cd3ce9
+    StartupWMClass: Wire
+    X-AppImage-Version: 3.4.2879.2879
     Categories: Network
+    X-AppImage-BuildId: 1DLOfKc7ebPjRcSs2M61kcYwVtd
   AppImageHub:
-    UpdateInformation: false
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
 ---

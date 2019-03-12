@@ -1,0 +1,26 @@
+{
+  "name": "cityhub",
+  "version": "1.0.10",
+  "license": "MIT",
+  "author": {
+    "name": "City Chain Foundation",
+    "email": "citychainmail@gmail.com",
+    "url": "https://citychain.foundation"
+  },
+  "description": "City Hub is your hub into everything on City Chain and the Smart City Platform.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CityChainFoundation/city-hub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CityChainFoundation/city-hub/issues"
+  },
+  "homepage": "https://github.com/CityChainFoundation/city-hub#readme",
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+    "electron-context-menu": "^0.10.0",
+    "electron-log": "^2.2.16",
+    "electron-updater": "^3.0.3"
+  }
+}
