@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: mujx/nheko
-  - type: Install
+  - type: Download
     url: https://github.com/mujx/nheko/releases
 
 desktop:

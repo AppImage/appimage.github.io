@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: develar/onshape-desktop-shell
-  - type: Install
+  - type: Download
     url: https://github.com/develar/onshape-desktop-shell/releases
 
 desktop:

@@ -1,0 +1,21 @@
+{
+  "name": "scraper",
+  "version": "0.1.2",
+  "description": "Simple desktop scraper app.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cedoor/scraper.git"
+  },
+  "author": "Omar Desogus <omardesogus9@gmail.com> (https://cedoor.github.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cedoor/scraper/issues"
+  },
+  "homepage": "https://github.com/cedoor/scraper#readme",
+  "dependencies": {
+    "x-ray": "2.3.2",
+    "electron-log": "2.2.14",
+    "electron-updater": "2.21.10"
+  }
+}

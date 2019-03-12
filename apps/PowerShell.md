@@ -4,6 +4,9 @@ layout: app
 permalink: /PowerShell/
 description: Microsoft PowerShell
 
+icons:
+  - PowerShell/icons/256x256/powershell.png
+
 screenshots:
   - PowerShell/screenshot.png
 
@@ -14,7 +17,7 @@ authors:
 links:
   - type: GitHub
     url: PowerShell/PowerShell
-  - type: Install
+  - type: Download
     url: https://github.com/PowerShell/PowerShell/releases
 
 desktop:

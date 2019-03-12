@@ -1,0 +1,64 @@
+---
+layout: app
+
+permalink: /QElectroTech/
+description: Edit electrical diagrams.
+
+icons:
+  - QElectroTech/icons/scalable/qelectrotech.svgz
+
+screenshots:
+  - QElectroTech/screenshot.png
+
+authors:
+
+links:
+
+desktop:
+  Desktop Entry:
+    Version: 1.0
+    Name: QElectroTech_0.7-r5767
+    TryExec: qelectrotech
+    Exec: qelectrotech %F
+    Icon: qelectrotech
+    Terminal: false
+    Type: Application
+    Categories: Graphics
+    Keywords: Graphics
+    Comment: Edit electrical diagrams.
+    Comment[de]: Schaltpläne erstellen und bearbeiten.
+    Comment[fr]: Éditer des schémas électriques.
+    Comment[ar]: تحرير مخططات كهربائية
+    Comment[es]: Editar esquemas eléctricos
+    Comment[ca]: Editar esquemes elèctrics.
+    Comment[pt]: Criar esquemas eléctricos.
+    Comment[cs]: Editor výkresů elektrických obvodů
+    Comment[pl]: Edycja schematów elektrycznych
+    Comment[it]: Disegnare schemi elettrici
+    Comment[hr]: Uredi elektro sheme
+    Comment[el]: Επεξεργασία ηλεκτρικών διαγραμμάτων
+    Comment[nl]: Bewerken bedradingsdiagrammen.
+    Comment[be]: Bewerken elektrisch schema.
+    Comment[da]: Rediger elektriske diagrammer.
+    GenericName: Electrical diagram editor
+    GenericName[de]: Schaltplaneditor
+    GenericName[fr]: Éditeur de schémas électriques
+    GenericName[ar]: مُحرّر مخططات كهربائية
+    GenericName[es]: Editor de esquemas eléctricos
+    GenericName[ru]: Редактор электрических схем
+    GenericName[pt]: Editor de esquemas eléctricos.
+    GenericName[cs]: Editor výkresů elektrických obvodů
+    GenericName[pl]: Edytor schematów elektrycznych
+    GenericName[it]: Programma per disegnare schemi elettrici
+    GenericName[hr]: Editor elektro sheme
+    GenericName[el]: Επεξεργαστής ηλεκτρικών διαγραμμάτων
+    GenericName[nl]: Elektrische schema editor
+    GenericName[be]: Elektrische schema editor
+    GenericName[da]: Elektrisk diagram redigering
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+---

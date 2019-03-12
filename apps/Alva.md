@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: meetalva/alva
-  - type: Install
+  - type: Download
     url: https://github.com/meetalva/alva/releases
 
 desktop:

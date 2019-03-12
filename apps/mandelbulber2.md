@@ -8,8 +8,12 @@ screenshots:
   - mandelbulber2/screenshot.png
 
 authors:
+  - name: lachs0r
+    url: https://build.opensuse.org/user/show/lachs0r
 
 links:
+  - type: Download
+    url: https://download.opensuse.org/repositories/home:/lachs0r:/mandelbulber2/AppImage/mandelbulber2-latest-x86_64.AppImage.mirrorlist
 
 desktop:
   Desktop Entry:

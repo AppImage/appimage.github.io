@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: gyunaev/spivak
-  - type: Install
+  - type: Download
     url: https://github.com/gyunaev/spivak/releases
 
 desktop:
