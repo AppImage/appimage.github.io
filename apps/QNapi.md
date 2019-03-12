@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: QNapi/qnapi
-  - type: Install
+  - type: Download
     url: https://github.com/QNapi/qnapi/releases
 
 desktop:

@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: tamlok/vnote
-  - type: Install
+  - type: Download
     url: https://github.com/tamlok/vnote/releases
 
 desktop:

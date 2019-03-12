@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: ujiro99/RedmineTimeTracker
-  - type: Install
+  - type: Download
     url: https://github.com/ujiro99/RedmineTimeTracker/releases
 
 desktop:
