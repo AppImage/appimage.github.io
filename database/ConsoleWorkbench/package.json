@@ -1,0 +1,86 @@
+{
+  "name": "console-workbench",
+  "productName": "ConsoleWorkbench",
+  "version": "1.0.2",
+  "description": "Console workbench",
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "cross-env NODE_ENV=development eslint --cache --format=pretty",
+      "prettier --ignore-path .eslintignore --single-quote --write",
+      "git add"
+    ],
+    "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
+      "prettier --ignore-path .eslintignore --parser json --write",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "stylelint --ignore-path .eslintignore --syntax scss --fix",
+      "prettier --ignore-path .eslintignore --single-quote --write",
+      "git add"
+    ],
+    "*.{yml,md}": [
+      "prettier --ignore-path .eslintignore --single-quote --write",
+      "git add"
+    ]
+  },
+  "main": "./app/main.prod.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easyops-cn/console-workbench.git"
+  },
+  "author": {
+    "name": "Wang Shenwei",
+    "email": "wangshenwei@qq.com",
+    "url": "https://www.easyops.cn/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/easyops-cn/console-workbench/issues"
+  },
+  "homepage": "https://github.com/easyops-cn/console-workbench",
+  "jest": {
+    "testURL": "http://localhost/",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js",
+      "\\.(css|less|sass|scss)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "setupFiles": [
+      "./internals/scripts/CheckBuiltsExist.js"
+    ]
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
+    "ansi_up": "^3.0.0",
+    "classnames": "^2.2.6",
+    "default-shell": "^1.0.1",
+    "devtron": "^1.4.0",
+    "electron-debug": "^2.0.0",
+    "electron-log": "^2.2.17",
+    "electron-store": "^2.0.0",
+    "electron-updater": "^3.1.6",
+    "history": "^4.7.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-hot-loader": "^4.3.4",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "shell-env": "^2.1.0",
+    "source-map-support": "^0.5.6"
+  },
+  "engines": {
+    "node": ">=10.x <11",
+    "yarn": ">=1.x"
+  },
+  "browserslist": "electron 1.6"
+}
