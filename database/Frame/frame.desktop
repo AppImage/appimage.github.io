@@ -1,14 +1,14 @@
 [Desktop Entry]
 Name=Frame
-Comment=An Ethereum interface
+Comment=An Ethereum Interface
 Exec=AppRun
 Terminal=false
 Type=Application
 Icon=frame
 StartupWMClass=Frame
-X-AppImage-Version=0.0.7
+X-AppImage-Version=0.1.1
 Categories=Utility;
-X-AppImage-BuildId=1ASmTwqj1P8TxnDkKr1qbBK4C64
+X-AppImage-BuildId=1H0LtORsJ90B8qVPgdx0eSkJaCc
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
