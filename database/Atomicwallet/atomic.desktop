@@ -5,9 +5,10 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=atomic
-X-AppImage-Version=0.1.18-beta
-X-AppImage-BuildId=2177a590-848b-11a8-0ef4-212bbae289e1
+StartupWMClass=Atomic
+X-AppImage-Version=1.38.3
 Categories=Utility;
+X-AppImage-BuildId=1IBeHKopM8BYmmLhBUUXM15RBeD
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
