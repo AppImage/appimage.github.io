@@ -23,6 +23,7 @@ desktop:
     Terminal: false
     Type: Application
     Categories: Utility
+    StartupWMClass: org.cryptomator.launcher.MainApplication
   AppImageHub:
     X-AppImage-UpdateInformation: bintray-zsync|cryptomator|cryptomator|cryptomator-linux|cryptomator-_latestVersion-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
