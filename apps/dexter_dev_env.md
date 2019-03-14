@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: cfry/dde
-  - type: Install
+  - type: Download
     url: https://github.com/cfry/dde/releases
 
 desktop:

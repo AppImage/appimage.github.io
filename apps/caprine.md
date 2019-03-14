@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /caprine/
+description: Unofficial, but elegant and privacy focused Facebook Messenger app with many useful features
 
 screenshots:
   - caprine/screenshot.png
@@ -13,13 +14,14 @@ authors:
 links:
   - type: GitHub
     url: sindresorhus/caprine
-  - type: Install
+  - type: Download
     url: https://github.com/sindresorhus/caprine/releases
 
 desktop:
   Desktop Entry:
     Name: Caprine
-    Comment: 
+    Comment: Unofficial, but elegant and privacy focused Facebook Messenger app with
+      many useful features
     Exec: AppRun
     Terminal: false
     Type: Application

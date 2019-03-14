@@ -1,0 +1,24 @@
+{
+  "name": "wexond",
+  "version": "0.3.0",
+  "description": "Extensible, fast and innovative web browser with material UI.",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nersent/wexond.git"
+  },
+  "homepage": "https://github.com/Nersent/wexond#readme",
+  "bugs": {
+    "url": "https://github.com/Nersent/wexond/issues"
+  },
+  "author": {
+    "name": "Nersent",
+    "email": "sentialx@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "ad-block": "Sential/ad-block",
+    "electron-updater": "2.17.6",
+    "sqlite3": "3.1.13"
+  }
+}

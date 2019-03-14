@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: zeit/hyper
-  - type: Install
+  - type: Download
     url: https://github.com/zeit/hyper/releases
 
 desktop:

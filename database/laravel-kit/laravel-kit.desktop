@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Laravel Kit
+Comment=Easy Laravel application management
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=laravel-kit
+X-AppImage-Version=1.2.2.63
+X-AppImage-BuildId=f6e81160-2095-11a8-3775-0d1679dc897a
+Categories=Development;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT

@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: RetroShare/RetroShare
-  - type: Install
+  - type: Download
     url: https://github.com/RetroShare/RetroShare/releases
 
 desktop:

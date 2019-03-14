@@ -1,0 +1,23 @@
+{
+  "name": "mastervyrn",
+  "version": "0.4.6",
+  "author": "Miau Lightouch <miaulightouch@gmail.com>",
+  "repository": "https://github.com/LightouchDev/MasterVyrn",
+  "description": "MasterVyrn is a clean dedicated GBF loader.",
+  "license": "MIT",
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.3",
+    "@fortawesome/fontawesome-free-regular": "^5.0.6",
+    "@fortawesome/vue-fontawesome": "^0.0.22",
+    "debug": "^3.1.0",
+    "lodash": "^4.17.5",
+    "os-locale": "^2.1.0",
+    "url-parser": "https://github.com/LightouchDev/url-parser",
+    "vue": "^2.5.13",
+    "vue-electron": "^1.0.6",
+    "vue-i18n": "^7.4.2",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  }
+}
