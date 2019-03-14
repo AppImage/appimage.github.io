@@ -1,12 +1,12 @@
 [Desktop Entry]
 Name=ubports-installer
-Comment=UBports Installer
+Comment=UBports Installer: The easy way to install Ubuntu Touch on UBports devices. A friendly cross-platform Installer for Ubuntu Touch. Just connect a supported device to your PC, follow the on-screen instructions and watch this awesome tool do all the rest.
 Exec=AppRun
 Terminal=false
 Type=Application
 Icon=ubports-installer
-X-AppImage-Version=0.1.11-beta.133
-X-AppImage-BuildId=caa6bfa0-1c05-11a8-07d7-c711e8a5e838
+X-AppImage-Version=0.1.21-beta.371
+X-AppImage-BuildId=3defbc40-8cb9-11a8-03c7-4140a3d7d7d1
 Categories=Utility;
 
 [AppImageHub]
@@ -15,4 +15,3 @@ Categories=Utility;
 X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
-X-AppImage-Payload-License=GPL-3.0

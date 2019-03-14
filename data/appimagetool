@@ -4,3 +4,4 @@ https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetoo
 # We also need to think about how we handle multiple architectures... perhaps we should only care about x86_64 and 
 # since we link to the download page, the user could download other architectures from there?
 # But at least we should somehow carry the information that downloads for multiple architectures are available.
+#
