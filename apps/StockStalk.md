@@ -4,6 +4,9 @@ layout: app
 permalink: /StockStalk/
 description: Your stocks on your desktop
 
+icons:
+  - StockStalk/icons/512x512/stockstalk.png
+
 screenshots:
   - StockStalk/screenshot.png
 
@@ -25,8 +28,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: stockstalk
-    X-AppImage-Version: 1.0.1
-    X-AppImage-BuildId: 670b8310-23c4-11a8-18ac-e99bdf298a5b
+    X-AppImage-Version: 1.0.7
+    X-AppImage-BuildId: 83adb3a0-2958-11a8-1134-a502664894c6
     Categories: Finance
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -53,6 +56,7 @@ electron:
     react: "*"
     react-countup: "*"
     react-dom: "*"
+    react-highcharts: "*"
     request: "*"
     request-promise-native: "*"
 ---
