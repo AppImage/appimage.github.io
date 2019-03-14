@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>subtitlecomposer</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-2.0+</project_license>
+	<name>Subtitle Composer</name>
+	<summary>Video subtitle editor that supports basic and advanced editing operations.</summary>
+	<description>
+		<p>Subtitle Composer is an open source text subtitle editor that supports basic and advanced editing operations. It
+			supports:</p>
+		<ul>
+			<li>Loading and saving of multiple text subtitle formats					<li>SubRip/SRT, MicroDVD, SSA/ASS, MPlayer, TMPlayer and YouTube captions
+			<li>Importing image subtitle formats					<li>VobSub, DVD/Vob, DVB, XSUB, HDMV-PGS
+			<li>Speech recognition from audio/video file using PocketSphinx
+			<li>Live preview of subtitles in integrated video player
+			<li>Preview/editing of subtitles on graphical audio waveform
+			<li>Quick and easy subtitle sync by dragging one or more text lines to correct position
+			<li>Time shifting and scaling, lines duration re-calculation, framerate conversion, etc.
+			<li>Joining and splitting of subtitle files
+			<li>Side by side subtitle translations
+			<li>Text styles (italic, bold, underline, stroke, color)
+			<li>Spell checking
+			<li>Detection of timing errors in subtitles
+			<li>Scripting (JavaScript, Python, Ruby and other languages supported by Kross).
+		</ul>
+	</description>
+	<launchable type="desktop-id">subtitlecomposer.desktop</launchable>
+	<url type="homepage">https://github.com/maxrd2/subtitlecomposer</url>
+	<screenshots>
+		<screenshot type="default">
+			<caption>Main application window</caption>
+			<image>http://maxrd2.github.io/subtitlecomposer/images/screenshot.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>subtitlecomposer.desktop</id>
+		<binary>subtitlecomposer</binary>
+	</provides>
+	<releases>
+		<release date="2018-02-11" version="0.6.6">
+			<description>
+				<ul>
+					<li>Fixed open video dialog filters
+					<li>Fixed "Insert Line" on waveform adding at the wrong index - thanks @qsniyg
+					<li>Added MMB seeking on waveform - thanks @qsniyg
+					<li>Fixed some compilation issues
+					<li>Updated translations - thanks @gogogogi, @muzena
+					<li>Fixed vobsub when opening from video file and symbol cache filename
+					<li>Fixed subtitle loading times of huge files
+					<li>Improved vobsub text detection
+					<li>Fixed ASS rich text parsing on import subtitle stream action
+					<li>Replaced buggy mplayer vobsub import code with ffmpeg
+					<li>Fixed memory leaks/usage of WaveformWidget's scroll animation
+					<li>Optimized import subtitle stream from video action
+					<li>Replaced gstreamer with ffmpeg libraries in application core usage
+					<li>Added abort button to speech recognition
+					<li>Waveform smooth scrolling
+					<li>Added join/split lines actions to waveform context menu
+					<li>Fixed some crashes, memory leaks and overall code cleanups
+					<li>Cleaned up settings widget and texts
+				</ul>
+			</description>
+		</release>
+		<release date="2017-09-18" version="0.6.5">
+			<description>
+				<ul>
+					<li>ADD: Added support for binary subtitle formats
+					<li>ADD: fine control video playback speed
+					<li>ADD: controls for video playback speed
+					<li>MOD: GStreamer backend audio improvements.
+					<li>MOD: Moved open video actions under File menu
+					<li>MOD: More tolerant parsing of SubRip subtitles.
+					<li>MOD: Improved split lines command
+					<li>MOD: Updated Czech translation - thanks @goliashcz
+					<li>MOD: Updated Croatian translations - thanks @muzena
+					<li>FIX: Waveform widget dragging and speed improvements, fixed buffer overflow
+					<li>FIX: WaveformWidget: zoom out wasn't working on movies without audio
+					<li>FIX: Fixed cases where subtitle hide time would end up before show time.
+					<li>FIX: Improved context menus.
+					<li>FIX: Fixed moving of anchored lines.
+					<li>FIX: Open subtitle wouldn't autoload video in some cases
+					<li>FIX: Open video now includes .divx and .webm extensions
+					<li>FIX: Tools menu scripts are filtered based on installed kross interpreters
+					<li>FIX: Moved custom icons to more standard location, using QIcon::fromTheme()
+					<li>FIX: Error Check > Absolute Duration config fields were changing incorrect values.
+					<li>FIX: MPV Backend: fixed deprecated options, updated vo devices - thanks @luzfcb
+					<li>FIX: better rendering on high DPI screens.
+					<li>FIX: MPV Backend: framerate/video length  wasn't reported to subtitle composer anymore
+					<li>FIX: detection/handling of current playing line
+					<li>FIX: Parsing text containing &lt;font&gt; without color attribute
+					<li>FIX: compilation without xine - thanks @pinotree
+					<li>FIX: ASS parsing - thanks @Martchus
+				</ul>
+			</description>
+		</release>
+		<release date="2016-05-07" version="0.6.4" />
+		<release date="2016-04-03" version="0.6.3" />
+		<release date="2016-03-25" version="0.6.2" />
+		<release date="2016-03-15" version="0.6.1" />
+		<release date="2016-03-15" version="0.6.0" />
+		<release date="2016-02-08" version="0.5.9" />
+		<release date="2016-02-07" version="0.5.8" />
+	</releases>
+</component>
