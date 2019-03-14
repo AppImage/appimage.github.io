@@ -3,35 +3,36 @@ layout: app
 
 permalink: /Mdyna/
 description: Note notification and productivity app with  markdown support
+A notes app with Markdown support
 
 icons:
-  - Mdyna/icons/128x128/dyna.png
+  - Mdyna/icons/128x128/mdyna.png
 
 screenshots:
   - Mdyna/screenshot.png
 
 authors:
-  - name: psybork
-    url: https://github.com/psybork
+  - name: mdyna
+    url: https://github.com/mdyna
 
 links:
   - type: GitHub
-    url: psybork/dyna
+    url: mdyna/mdyna-app
   - type: Download
-    url: https://github.com/psybork/dyna/releases
+    url: https://github.com/mdyna/mdyna-app/releases
 
 desktop:
   Desktop Entry:
-    Name: dyna
-    Comment: Note notification and productivity app with  markdown support
+    Name: mdyna
+    Comment: A notes app with Markdown support
     Exec: AppRun
     Terminal: false
     Type: Application
-    Icon: dyna
-    StartupWMClass: dyna
-    X-AppImage-Version: 0.1.4.70
+    Icon: mdyna
+    StartupWMClass: mdyna
+    X-AppImage-Version: 0.2.4.21
     Categories: Development
-    X-AppImage-BuildId: 1FjJuHzfD0jycP3VH7067GJAtHm
+    X-AppImage-BuildId: 1IQDIiNuShnOuVx5VjGWaMw7lw1
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
@@ -51,6 +52,7 @@ electron:
     - git add
   dependencies:
     cross-env: 5.0.0
+    electron-log: "^2.2.17"
     electron-reload: "^1.2.2"
     electron-store: "^2.0.0"
     electron-updater: "^4.0.6"
@@ -58,5 +60,5 @@ electron:
     webpack-merge: "^4.1.1"
   repository:
     type: git
-    url: git+git@github.com:psybork/dyna.git
+    url: https://github.com/Mdyna/Mdyna-app.git
 ---

@@ -1,7 +1,7 @@
 {
-  "name": "dyna",
-  "version": "0.1.4",
-  "description": "Note notification and productivity app with  markdown support",
+  "name": "mdyna",
+  "version": "0.2.4",
+  "description": "A notes app with Markdown support",
   "main": "main.js",
   "author": {
     "name": "David Morais",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "cross-env": "5.0.0",
+    "electron-log": "^2.2.17",
     "electron-reload": "^1.2.2",
     "electron-store": "^2.0.0",
     "electron-updater": "^4.0.6",
@@ -24,6 +25,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+git@github.com:psybork/dyna.git"
+    "url": "https://github.com/Mdyna/Mdyna-app.git"
   }
 }
