@@ -1,0 +1,9 @@
+{
+  "name": "blizzard-4",
+  "version": "0.42.0",
+  "license": "GPL-3.0",
+  "description": "Emulator & toolchain for the Blizzard 4 16-bit computer.",
+  "author": "Daniel Spencer <danielfspencer1@gmail.com>",
+  "main": "./electron.js",
+  "homepage": "https://github.com/danielfspencer/blizzard-4"
+}
