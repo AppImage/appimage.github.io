@@ -385,7 +385,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     ./appstreamcli-x86_64.AppImage convert database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
-    SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .)
+    SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .) || true
     if [ x"$SUMMARY" != x"" ] ; then
       echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
     fi
@@ -396,7 +396,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   AS_LICENSE=""
   DT_LICENSE=""
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    AS_LICENSE=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/project_license" -v .)
+    AS_LICENSE=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/project_license" -v .) || true
   fi
   DT_LICENSE=$(grep -r "X-AppImage-Payload-License=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2)
   if [ x"$AS_LICENSE" != x"" ] ; then
