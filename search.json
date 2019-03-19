@@ -1,0 +1,17 @@
+---
+layout: null
+---
+
+{% assign sorted = site.pages | sort: 'permalink' %}
+
+[
+  {% for post in sorted %}
+    {
+      "title"    : {% if post.title %}{{ post.title | jsonify }}{% else %}{{ post.name | remove: ".md" | jsonify }}{% endif %},
+      "category" : "{{ post.desktop["Desktop Entry"].Categories }}",
+      "tags"     : "{{ post.tags | join: ', ' }}",
+      "url"      : "{{ site.url }}{{ site.baseurl }}{{ post.url }}",
+      "date"     : "{{ post.date }}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
