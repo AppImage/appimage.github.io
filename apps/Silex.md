@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Silex/
 description: Free and easy website builder for everyone.
+license: GPL-3.0
 
 icons:
   - Silex/icons/128x128/silex.png
@@ -29,19 +30,20 @@ desktop:
     Type: Application
     Icon: silex
     StartupWMClass: silex
-    X-AppImage-Version: 2.2.7.247
+    X-AppImage-Version: 2.4.0.376
     Categories: Network
-    X-AppImage-BuildId: 19WXnk477ZS5jeFZimdHNhyeze6
+    X-AppImage-BuildId: 1GYKHUdnicDH2AQYG69JpNhIKmI
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: GPL-3.0
 
 electron:
-  version: 2.2.7
-  "<-- ": version is used in BackwardCompat.js -->
+  version:frontend: '2.8'
+  version:backwardcompat: 2.2.8
   author: Alex Hoyau <a.hoyau@silexlabs.org> (https://lexoyo.me/)
   main: dist/server/index.js
   license: GPL-3.0
@@ -66,12 +68,14 @@ electron:
     jade: 1.11.0
     jsdom: 11.6.2
     less: 3.0.1
+    node_modules-path: github:lexoyo/node_modules-path#master
     prodotype: github:silexlabs/Prodotype#master
     promise-sequential: 1.1.1
     request: 2.85.0
     serve-static: 1.13.2
-    silex-blank-templates: github:silexlabs/silex-blank-templates#ec07456
-    silex-templates: github:silexlabs/silex-templates#f9c2dcb
+    silex-blank-templates: github:silexlabs/silex-blank-templates#ccc0c2292ba609dadd89b43710f0a1ed1c9c7cdd
+    silex-templates: github:silexlabs/silex-templates#ed1a0e4e9e46340d6785e97a9fcca21db3077626
+    wysihtml: "^0.6.0-beta1"
   repository:
     type: git
     url: https://github.com/silexlabs/Silex.git
