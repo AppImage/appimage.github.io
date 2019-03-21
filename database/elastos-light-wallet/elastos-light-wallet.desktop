@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=elastos-light-wallet
-X-AppImage-Version=1.0.0
-X-AppImage-BuildId=a31a4120-2729-11a9-0cc1-5bad3e190f69
+X-AppImage-Version=1.0.0-RC5
+X-AppImage-BuildId=f7754540-4b77-11a9-32fe-ffc4594f658c
 Categories=Utility;
 
 [AppImageHub]

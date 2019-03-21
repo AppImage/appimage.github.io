@@ -28,8 +28,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: elastos-light-wallet
-    X-AppImage-Version: 1.0.0
-    X-AppImage-BuildId: a31a4120-2729-11a9-0cc1-5bad3e190f69
+    X-AppImage-Version: 1.0.0-RC5
+    X-AppImage-BuildId: f7754540-4b77-11a9-32fe-ffc4594f658c
     Categories: Utility
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -54,6 +54,7 @@ electron:
     bs58: "^4.0.1"
     check-node-version: "^3.2.0"
     elliptic: "^6.4.1"
+    node: "^8.15.0"
     node-jsx: "^0.13.3"
     react: "^16.5.2"
     react-bootstrap: "^0.32.4"
