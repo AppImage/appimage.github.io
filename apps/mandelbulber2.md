@@ -6,7 +6,7 @@ description: Visit 3D Fractal World
 license: GPL-3.0
 
 icons:
-  - mandelbulber2/icons/256x256/mandelbulber2.png
+  - mandelbulber2/icons/256x256/mandelbulber.png
 
 screenshots:
   - mandelbulber2/screenshot.png
@@ -27,7 +27,7 @@ desktop:
     Comment: Visit 3D Fractal World
     Exec: mandelbulber2
     GenericName: Mandelbulber v2 - Advanced 3D fractal generator
-    Icon: mandelbulber2
+    Icon: mandelbulber
     Name: Mandelbulber v2
     StartupNotify: true
     Terminal: false
@@ -36,7 +36,7 @@ desktop:
     X-DBUS-StartupType: none
     X-KDE-SubstituteUID: false
     X-KDE-Username: 
-    X-AppImage-Version: a86e319
+    X-AppImage-Version: 42688d1
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|probonopd|mandelbulber2|continuous|Mandelbulber_v2*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
