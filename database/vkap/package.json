@@ -1,0 +1,17 @@
+{
+  "name": "vkap",
+  "version": "0.1.2",
+  "description": "Desktop VK Audio Player",
+  "main": "app.js",
+  "author": "hikiko4ern",
+  "repository": "github:hikiko4ern/vkap",
+  "bugs": {
+    "url": "https://github.com/hikiko4ern/vkap/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "request": "^2.85.0",
+    "tinycolor2": "^1.4.1"
+  }
+}
