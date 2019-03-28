@@ -5,6 +5,9 @@ permalink: /Xpiks/
 description: Cross-platform (X) Photo Keywording Software
 license: MPL-2.0
 
+icons:
+  - Xpiks/icons/232x232/xpiks.png
+
 screenshots:
   - Xpiks/screenshot.png
 
