@@ -1,14 +1,14 @@
 [Desktop Entry]
 Name=lescovex
-Comment=Lescovex media explorer and wallet
+Comment=Lescovex decentralized exchange, wallet and contract issuer
 Exec=AppRun
 Terminal=false
 Type=Application
 Icon=lescovex
 StartupWMClass=lescovex
-X-AppImage-Version=1.0.0
+X-AppImage-Version=1.0.14
 Categories=Utility;
-X-AppImage-BuildId=1AV5cMtJvTiP0GYIwcGQR7BdXUw
+X-AppImage-BuildId=1HqxjKeDKouMYUN3u4NTiqr1zVh
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
