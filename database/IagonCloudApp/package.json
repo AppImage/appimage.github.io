@@ -1,0 +1,21 @@
+{
+  "name": "iagon-cloud-app",
+  "productName": "IagonCloudApp",
+  "version": "2.1.2-alpha",
+  "description": "Iagon Cloud Application for Distributed Storage and Processing.",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "Iagon Technologies",
+    "email": "contact@iagon.com",
+    "url": "https://github.com/Iagonorg"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^2.0.4",
+    "diglet": "^2.0.3",
+    "go-ipfs-dep": "^0.4.17",
+    "ipfsd-ctl": "^0.39.1",
+    "webtorrent": "^0.102.4",
+    "webtorrent-hybrid": "^1.0.6"
+  }
+}

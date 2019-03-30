@@ -1,0 +1,41 @@
+---
+- xdg: Audio
+  en: Audio
+  subtitle: Audio applications
+  stocksnap: 4C9TCUEARS
+- xdg: AudioVideo
+  en: Multimedia
+  stocksnap: X3SP1WEE4Z
+- xdg: Development
+  en: Developer Tools
+  stocksnap: 9OQTUSUS0M
+- xdg: Education
+  en: Education
+  stocksnap: FYEZGHNQVR
+- xdg: Game
+  en: Games
+  stocksnap: ZRAPU1GYCI
+- xdg: Graphics
+  en: Graphics and Photography
+  stocksnap: ZE94OW561P
+- xdg: Network
+  en: Communication and News
+  stocksnap: 92E981EC6F
+- xdg: Office
+  en: Productivity
+  stocksnap: 6RHKEELJ8F
+- xdg: Science
+  en: Science
+  stocksnap: OH4YBORCRB
+- xdg: Settings
+  en: Settings
+  stocksnap: 5WFFFULB4G
+- xdg: System
+  en: System
+  stocksnap: IKTONP88LJ
+- xdg: Utility
+  en: Utilities
+  stocksnap: JY874BSKKC
+- xdg: Video
+  en: Video
+  stocksnap: H0O97B44CT
