@@ -1,0 +1,19 @@
+{
+  "name": "imapsyncclient",
+  "displayName": "ImapSync Client",
+  "productName": "ImapSync Client",
+  "version": "0.0.1",
+  "author": "Rida Am. <rida-amirini@gmx.de>",
+  "description": "An electron-vue project",
+  "license": "MIT",
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "axios": "^0.16.1",
+    "element-ui": "^2.0.5",
+    "git-rev-sync": "^1.9.1",
+    "vue": "^2.3.3",
+    "vue-electron": "^1.0.6",
+    "vue-router": "^2.5.3",
+    "vuex": "^2.3.1"
+  }
+}

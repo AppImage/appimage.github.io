@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: mykter/TagTime-desktop
-  - type: Install
+  - type: Download
     url: https://github.com/mykter/TagTime-desktop/releases
 
 desktop:

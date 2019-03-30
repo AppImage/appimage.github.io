@@ -1,0 +1,396 @@
+---
+layout: app
+
+permalink: /LibreOfficePreRelease/
+description: The office productivity suite compatible to the open and standardized ODF document format. Supported by The Document Foundation.
+
+screenshots:
+  - LibreOfficePreRelease/screenshot.png
+
+authors:
+
+links:
+
+desktop:
+  Desktop Entry:
+    Version: 1.0
+    Terminal: false
+    NoDisplay: false
+    Icon: libreoffice6.0-startcenter
+    Type: Application
+    Categories: Office
+    Exec: libreoffice6.0 %U
+    MimeType: application/vnd.openofficeorg.extension
+    Name: LibreOffice
+    GenericName: LibreOffice
+    GenericName[af]: Kantoor
+    GenericName[am]: ቢሮ
+    GenericName[ar]: مكتب
+    GenericName[as]: অফিচ
+    GenericName[ast]: Oficina
+    GenericName[be]: Office
+    GenericName[bg]: Офис пакет
+    GenericName[bn]: অফিস
+    GenericName[bn_IN]: অফিস
+    GenericName[bo]: ཕབ་དོར།
+    GenericName[br]: Burev
+    GenericName[brx]: अफिस
+    GenericName[bs]: Office
+    GenericName[ca]: Oficina
+    GenericName[ca_valencia]: Oficina
+    GenericName[cs]: Kancelář
+    GenericName[cy]: Swyddfa
+    GenericName[da]: Kontor
+    GenericName[de]: Office
+    GenericName[dgo]: दफ्तर
+    GenericName[dz]: ཡིག་ཚང་།
+    GenericName[el]: Γραφείο
+    GenericName[en]: Office
+    GenericName[en_GB]: Office
+    GenericName[en_ZA]: Office
+    GenericName[eo]: Oficejo
+    GenericName[es]: Programas de oficina
+    GenericName[et]: Kontoritöö
+    GenericName[eu]: Bulegoa
+    GenericName[fa]: اداری
+    GenericName[fi]: Toimisto
+    GenericName[fr]: Bureau
+    GenericName[ga]: Oifig
+    GenericName[gd]: Oifis
+    GenericName[gl]: Oficina
+    GenericName[gu]: ઓફિસે
+    GenericName[gug]: Office
+    GenericName[he]: משרד
+    GenericName[hi]: ऑफ़िस
+    GenericName[hr]: Ured
+    GenericName[hsb]: Office
+    GenericName[hu]: Iroda
+    GenericName[id]: Perkantoran
+    GenericName[is]: Skrifstofuforrit
+    GenericName[it]: Ufficio
+    GenericName[ja]: Office
+    GenericName[ka]: ოფისი
+    GenericName[kk]: Офис
+    GenericName[km]: ការិយាល័យ
+    GenericName[kmr_Latn]: Nivîsgeh
+    GenericName[kn]: ಕಛೇರಿ
+    GenericName[ko]: 오피스
+    GenericName[kok]: कार्यालय
+    GenericName[ks]: آفس
+    GenericName[lb]: Office
+    GenericName[lo]: ຫ້ອງການ
+    GenericName[lt]: Raštinės programos
+    GenericName[lv]: Birojs
+    GenericName[mai]: ऑफिस
+    GenericName[mk]: Канцеларија
+    GenericName[ml]: ഓഫീസ്
+    GenericName[mn]: Офис
+    GenericName[mni]: ওফিস
+    GenericName[mr]: ऑफिस
+    GenericName[my]: ရုံး
+    GenericName[nb]: Kontor
+    GenericName[ne]: कार्यालय
+    GenericName[nl]: Kantoor
+    GenericName[nn]: Kontor
+    GenericName[nr]: i-Ofisi
+    GenericName[nso]: Ofisi
+    GenericName[oc]: Burotica
+    GenericName[om]: Waajjira
+    GenericName[or]: କାର୍ଯ୍ୟାଳୟ
+    GenericName[pa_IN]: ਆਫਿਸ
+    GenericName[pl]: Biuro
+    GenericName[pt]: Escritório
+    GenericName[pt_BR]: Office
+    GenericName[ro]: Birou
+    GenericName[ru]: Офис
+    GenericName[rw]: Ofise
+    GenericName[sa_IN]: ऑफिस
+    GenericName[sat]: ओफिसऑफिस
+    GenericName[sd]: آفيس
+    GenericName[si]: කාර්‍යයාලීය
+    GenericName[sid]: Ofiise
+    GenericName[sk]: Kancelária
+    GenericName[sl]: Pisarniški paket
+    GenericName[sq]: Zyrë
+    GenericName[sr]: Канцеларија
+    GenericName[sr_Latn]: Kancelarija
+    GenericName[ss]: Lihhovisi
+    GenericName[st]: Ofisi
+    GenericName[sv]: Kontor
+    GenericName[sw_TZ]: Ofisi
+    GenericName[ta]: அலுவலகம்
+    GenericName[te]: కార్యాలయం
+    GenericName[tg]: Офис
+    GenericName[th]: ที่ทำงาน
+    GenericName[tn]: Kantoro/Ofisi
+    GenericName[tr]: Ofis
+    GenericName[ts]: Ofisi
+    GenericName[tt]: Офис
+    GenericName[ug]: ئىشخانا
+    GenericName[uk]: Офіс
+    GenericName[uz]: Ofis
+    GenericName[ve]: Ofisi
+    GenericName[vec]: Ofisio
+    GenericName[vi]: Văn phòng
+    GenericName[xh]: Iofisi
+    GenericName[zh_CN]: 办公
+    GenericName[zh_TW]: 辦公
+    GenericName[zu]: Ihhovisi
+    Comment: The office productivity suite compatible to the open and standardized ODF
+      document format. Supported by The Document Foundation.
+    Comment[af]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[am]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[ar]: الحقيبة اﻻنتاجية المكتبية متوافقة مع صيغ الوثائق المفتوحة المدعومة
+      من مؤسسة الوثائق المفتوحة المصدر.
+    Comment[as]: মুক্ত আৰু প্ৰামাণিত ODF দস্তাবেজ বিন্যাসৰ লগত সংগত অফিচ উৎপাদনা চুইট।
+      Document Foundation -ৰ দ্বাৰা সমৰ্থিত।
+    Comment[ast]: La suite de productividá d'oficina compatible col formatu de documentos
+      abiertu y estandarizáu ODF. Col sofitu de The Document Foundation.
+    Comment[be]: Комплекс офісных праграм, сумяшчальных з адкрытым стандартам файлаў
+      дакументаў ODF. Падтрымліваецца фондам 'The Document Foundation'.
+    Comment[bg]: Офис пакетът, съвместим с отворения и стандартизиран формат за документи
+      ODF. Поддържа се от The Document Foundation.
+    Comment[bn]: অফিস প্রোডাক্টিভিটি স্যুট মুক্ত ও আদর্শ ODF নথি বিন্যাসের সাথে সঙ্গতিপূর্ণ।
+      নথি ফাউন্ডেশন দ্বারা সমর্থিত।
+    Comment[bn_IN]: অফিস প্রোডাক্টিভিটি স্যুট মুক্ত ও আদর্শ ODF নথি বিন্যাসের সাথে সঙ্গতিপূর্ণ।
+      নথি ফাউন্ডেশন দ্বারা সমর্থিত।
+    Comment[bo]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[br]: An heuliad burevek keverlec'h gant ar mentrezh teul ODF skoueriekaet
+      ha digor. Skoret eo gant The Document Foundation.
+    Comment[brx]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[bs]: Uredski paket kompatibilan sa otvorenim i standardnim ODF formatom
+      dokumenata. Podržan od strane Dokument fondacije.
+    Comment[ca]: El paquet ofimàtic compatible amb el format de document obert i estàndard
+      ODF. Amb el suport de The Document Foundation.
+    Comment[ca_valencia]: El paquet ofimàtic compatible amb el format de document obert
+      i estàndard ODF. Amb el suport de The Document Foundation.
+    Comment[cs]: Kancelářský balík kompatibilní s otevřeným a standardizovaným formátem
+      dokumentů ODF. Podporován The Document Foundation.
+    Comment[cy]: Y casgliad o raglenni swyddfa sy'n gydnaws a'r fformat Dogfen ODF safonol.
+      Cefnogir gan y Document Foundation.
+    Comment[da]: Kontorpakken er kompatibel med den åbne standard ODF. Støttes af The
+      Document Foundation.
+    Comment[de]: Die produktive Bürosoftware ist kompatibel zu dem offenen und standardisierten
+      OpenDocument-Format (ODF). Unterstützt von The Document Foundation.
+    Comment[dgo]: आफिस उत्पादनशीलता सूइट मुक्त ते मानकीकृत ODF दस्तावेज फार्मैट दे अनुकूल
+      ऐ.डाक्युमैंट फांउडेशन द्वारा समर्थनशुदा.
+    Comment[dz]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[el]: Το συμβατό πακέτο παραγωγικότητας γραφείου στην ανοιχτή και τυποποιημένη
+      μορφή εγγράφου ODF. Υποστηρίζεται από το Document Foundation.
+    Comment[en]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[en_GB]: The office productivity suite compatible to the open and standardised
+      ODF document format. Supported by The Document Foundation.
+    Comment[en_ZA]: The office productivity suite compatible to the open and standardised
+      ODF document format. Supported by The Document Foundation.
+    Comment[eo]: La oficeja programaro kongrua kun la malferma kaj norma ODF-dokumenta
+      formato. Subtenata de la Document Foundation.
+    Comment[es]: El conjunto de aplicaciones de productividad ofimática compatible con
+      el formato de documentos abierto y estandarizado ODF. Con el apoyo de The Document
+      Foundation.
+    Comment[et]: Kontoritarkvara komplekt, mis ühildub avatud ja standardiseeritud ODF-dokumendivorminguga.
+      Toetab Document Foundation.
+    Comment[eu]: ODF dokumentu-formatu ireki eta estandarizatuarekin bateragarria den
+      bulegotikako produktibitate-suitea. The Document Foundation fundazioaren babespean.
+    Comment[fa]: مجموعه نرم‌افزار اداری سازگار با قالب سند آزاد و استاندارد شده ODF.
+      پشتیبانی شده توسط بنیاد اسناد.
+    Comment[fi]: Avoimen ODF-asiakirjastandardin kanssa yhteensopiva, The Document Foundationin
+      tukema toimisto-ohjelmisto.
+    Comment[fr]: La suite de productivité bureautique compatible avec le format de document
+      ODF standardisé et ouvert. Prise en charge par The Document Foundation.
+    Comment[ga]: Sraith feidhmchlár le haghaidh táirgiúlachta oifige atá comhoiriúnach
+      don fhormáid oscailte chaighdeánach ODF. Tacaíonn The Document Foundation leis.
+    Comment[gd]: Tha an raon seo de bhathar oifis co-chòrdail leis an fhòrmat fhosgailte
+      is stannardach ODF. Le taic on Document Foundation.
+    Comment[gl]: A suite de produtividade de oficina compatíbel co formato de documento
+      estándar ODF. Promovida por The Document Foundation.
+    Comment[gu]: ઑફિસ પ્રોડક્ટીવીટી સ્યૂટ ઓપન અને મૂળભૂત થયેલ ODF દસ્તાવેજ બંધારણ સાથે
+      સુસંગત છે. દસ્તાવેજ ફાઉન્ડેશન દ્દારા આધારભૂત છે.
+    Comment[gug]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[he]: חבילת כלי המשרד תואמת למבנה הקבצים התקני והפתוח ODF. כאשר התמיכה הנה
+      מצד The Document Foundation (קרן המסמך).
+    Comment[hi]: मुक्त और मानकीकृत ODF दस्तावेज़ प्रारूप के सुसंगत ऑफिस उत्पादकता सूइट.
+      डॉक्यूमेंट फाउंडेशन द्वारा समर्थित.
+    Comment[hr]: Uredski paket je usklađen s otvorenim i standardiziranim ODF formatom
+      dokumenta. Podržan od strane The Document Foundation.
+    Comment[hsb]: Produktiwna běrowowa softwara je kompatibelna z wotewrjenym a standardizowanym
+      formatom OpenDocument (ODF). Podpěruje so wot załožby The Document Foundation.
+    Comment[hu]: Az irodai programcsomag kompatibilis a nyílt és a szabványosított ODF
+      dokumentumformátummal. A The Document Foundation támogatja.
+    Comment[id]: Paket aplikasi kantor ini kompatibel dengan format dokumen ODF. Didukung
+      oleh The Document Foundation.
+    Comment[is]: Skrifstofuhugbúnaður sem samræmist opna og staðlaða ODF skjalasniðinu.
+      Stutt af The Document Foundation.
+    Comment[it]: La suite di produttività per l'ufficio compatibile con il formato standard
+      aperto ODF. Supportata da The Document Foundation.
+    Comment[ja]: オープンで標準化された ODF ドキュメント形式に準拠したオフィススイートです。The Document Foundation によってサポートされています。
+    Comment[ka]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[kk]: Кеңселік бағдарламалар дестесі ашық және стандартталған ODF құжаттар
+      пішімімен үйлесімді. The Document Foundation қолдау көрсетеді.
+    Comment[km]: ឈុតកម្មវិធី​ការិយាល័យ​ឆប​គ្នា​ជា​មួយ​នឹង​ទ្រង់ទ្រាយ​ឯកសារ​ស្តង់ដារ​​
+      និង​ឥតគិត​ថ្លៃ ODF ។ ដែល​បាន​គាំទ្រ​ដោយ The Document Foundation ។
+    Comment[kmr_Latn]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[kn]: ಮುಕ್ತ ಹಾಗು ಶಿಷ್ಟ ಎಂದು ಪರಿಗಣಿಸಲಾದ ODF ದಸ್ತಾವೇಜು ವಿನ್ಯಾಸಕ್ಕೆ ಹೊಂದಿಕೆಯಾಗುವ
+      ಒಂದು ಆಫೀಸ್ ಪ್ರೊಡಕ್ಟೀವ್ ಸೂಟ್ ಆಗಿದೆ. ಡಾಕ್ಯುಮೆಂಟ್ ಫೌಂಡೇಶನ್‌ನಿಂದ ಬೆಂಬಲಿಸಲಾಗುತ್ತದೆ.
+    Comment[ko]: 개방되고 표준화된 ODF 문서 포맷과 호환되는 오피스 생산성 스위트입니다. The Document Foundation에서
+      지원합니다.
+    Comment[kok]: ओफीस प्रोडक्टिवीटी सुट उगडपाक अनुरुप जाला आनी ओडीएफ दस्तावेज फोरमेट
+      प्रमाणभूत केला. डोक्युमेंट फाउंडेशनान आदारभूत केला.doftor utopodok suite ugtem
+      ani promannit ODF dostavez pod'dotek susangot
+    Comment[ks]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[lb]: Die produktive Bürosoftware ist kompatibel zu dem offenen und standardisierten
+      OpenDocument Format (ODF). Unterstützt von The Document Foundation.
+    Comment[lo]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[lt]: Raštinės programų rinkinys, suderinamas su atviruoju standartizuotu
+      ODF dokumentų formatu. Rinkinį kuria „The Document Foundation“ bendruomenė.
+    Comment[lv]: Biroja programmatūras komplekts, kas ir savietojams ar atvērto un standartizēto
+      ODF dokumentu formātu. Atbalsta The Document Foundation.
+    Comment[mai]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[mk]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[ml]: സ്വതന്ത്രവും നിലവാരവുമുള്ള ഒഡിഎഫ് ശൈലിയ്ക്കു് ഉചിതമായ ഓഫീസ് പ്രൊഡക്ടിവിറ്റി
+      സ്യൂട്ട്. ഇതിനെ ഡോക്യുമെന്റ് ഫൌണ്ടേഷന്‍ പിന്തുണയ്ക്കുന്നു.
+    Comment[mn]: Үр ач өндөртэй Офис Програмын цогцолбор нь стандартчилагдсан ODF баримт
+      бичгийн хэлбэржүүлэлттэй баримт бичгийг нээх чадвартай. Энэ The Document Foundation-р
+      дэмжигдсэн.
+    Comment[mni]: ওফিস প্রদক্তিভিতি সুউত অসি ওপন অমসুং স্তেন্দার্দাইজ ODF দোকুমেন্ত
+      ফোর্মেতকা
+    Comment[mr]: ओपन व मानक ODF दस्तऐवज रूपणशी सहत्व ऑफिस प्रोडक्टिविटि संच. डॉक्युमेंट
+      फाँडेशनद्वारे समर्थीत.
+    Comment[my]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[nb]: Kontorpakken som bruker det åpne og standardiserte dokumentformatet
+      ODF. Støttet av The Document Foundation.
+    Comment[ne]: यो कार्यालय उपयोगिता सुइट खुला र स्तरीय ODF कागजातको ढाँचा संग मिल्दो
+      छ। The Document Foundation द्वारा समर्थित।
+    Comment[nl]: Het pakket voor productiviteit op kantoor, compatibel met het open
+      en gestandaardiseerde ODF documentformaat. Ondersteund door The Document Foundation.
+    Comment[nn]: Kontorpakka som bruker det opne og standardiserte dokumentformatet
+      ODF. Støtta av The Document Foundation.
+    Comment[nr]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[nso]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[oc]: La seguida burotica compatibla amb lo format de document ODF estandardizada
+      e dobèrt. Presa en carga per The Document Foundation.
+    Comment[om]: Gartuu sirna offisii gulantaa banaan walsimatee fi ODF fayyadamu. Dokumant
+      Faawundeeshiniin kan deeggaramu.
+    Comment[or]: କାର୍ଯ୍ୟାଳୟ ଉତ୍ପାଦନ ମୁକ୍ତ ଏବଂ ମାନକ ODF ଦଲିଲ ଶୈଳୀ ସହିତ ସୁସଂଗତ ମେଳଖାଇଥାଏ।
+      ଏହା ଦଲିଲ ଅନୁଷ୍ଠାନ ଦ୍ୱାରା ସମର୍ଥିତ।
+    Comment[pa_IN]: ਆਫਿਸ ਪੈਕੇਜ, ਜੋ ਕਿ ਓਪਨ ਤੇ ਸਟੈਂਡਰਡ ODF ਦਸਤਾਵੇਜ਼ ਫਾਰਮੈਟ ਲਈ ਅਨੁਕੂਲ ਹੈ।
+      ਇਹ ਡੌਕੂਮੈਂਟ ਫਾਊਂਡੇਸ਼ਨ ਵਲੋਂ ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਹੈ।
+    Comment[pl]: Wydajny pakiet biurowy, kompatybilny z otwartym i znormalizowanym formatem
+      ODF. Rozwijany przez The Document Foundation.
+    Comment[pt]: O conjunto de aplicações de escritório, compatíveis com o formato de
+      documentos padrão ODF. Suportado pela The Document Foundation.
+    Comment[pt_BR]: A suite de produtividade de escritório compatível com o formato
+      aberto e padronizado ODF. Com o apoio da The Document Foundation.
+    Comment[ro]: Suita de productivitate pentru birou compatibilă cu formatul deschis
+      și standardizat ODF. Sprijinită de The Document Foundation.
+    Comment[ru]: Офисный пакет совместим с открытым и стандартизованным форматом документов
+      ODF. Поддерживается The Document Foundation.
+    Comment[rw]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[sa_IN]: प्रमाणीकृतं ODF लेखापत्ररचनाम् उद्घाटितुम् ओफीस् उत्पन्नता योग्यताम्
+      उचितं
+    Comment[sat]: ऑफिस तेयार ओडोक साजाव  ODF दोलिल  तेयार झिज आर बाताव एम बेस हुय होचोया
+      .
+    Comment[sd]: ان کليل ۽ معياي اوڊي ايف دستاويز جي رچنا ۾ اُتپادڪتا جي سيٽ جي موافقت۔
+      دستاويز فائونڊيشن دواران سمرٿن مليل۔
+    Comment[si]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[sid]: Ofiisete laashshate gari ODF bortaje suudishsha fanatenna mereggisate
+      injaawa sumaanchote. Bortajete Xintinni irkisamino.
+    Comment[sk]: Kancelársky balík kompatibilný s otvoreným a štandardizovným formátom
+      ODF. Podporovaný nadáciou The Document Foundation
+    Comment[sl]: Pisarniški paket, združljiv z odprto in standardizirano vrsto datotek
+      dokumentov ODF. Projekt je podprla The Document Foundation.
+    Comment[sq]: Suita për zyrën në përputhje me formatin e hapur dhe të standardizuar
+      për dokumente ODF. Mbështetur nga The Document Foundation.
+    Comment[sr]: Канцеларијски пакет сагласан са стандардизованим отвореним документ-форматом.
+      Подржан од стране „Документ фондације“.
+    Comment[sr_Latn]: Kancelarijski paket saglasan sa standardizovanim otvorenim dokument-formatom.
+      Podržan od strane „Dokument fondacije“.
+    Comment[ss]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[st]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[sv]: Kontorssviten som är kompatibel med det öppna och standardiserade filformatet
+      ODF. Ges ut av The Document Foundation.
+    Comment[sw_TZ]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[ta]: இந்த அலுவலக உற்பத்தித்திறன் தொகுப்பு, திறந்த மற்றும் செந்தர ODF ஆவண
+      வடிவூட்டத்துடன் ஒத்திசைகிறது. தெ டாகுமெண்ட் பவுண்டேசனால் ஆதரிக்கப்படுகிறது.
+    Comment[te]: కార్యాలయ ఉత్పాదక ఉపకరణాల సమదాయం  అరక్షిత మరియు ప్రామాణీకరించబడిన ODF
+      పత్ర తీరుతో సరిపోలినది. ద డాక్యుమెంట్ ఫౌండేషన్ మద్దతు కలిగినది
+    Comment[tg]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[th]: ชุดโปรแกรมผลิตภาพสำนักงารนที่เข้ากันได้กับรูปแบบเอกสาร ODF ที่เปิดกว้งาและเป็นมาตรฐาน
+      สนับสนุนโดย The Document Foundation.
+    Comment[tn]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[tr]: Ofis üretkenlik takımı açık ve standartlaşmış ODF belge biçemi ile
+      uyumludur. The Document Foundation tarafından desteklenmektedir.
+    Comment[ts]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[tt]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[ug]: بۇ ئىشخانا يۈرۈشلۇك دېتالى ئوچۇق بولغان ODF پۈتۈك پىچىمىنىڭ ئۆلچىمى
+      بىلەن ماسلىشىدۇ. The Document Foundation قوللاش بىلەن تەمىنلەيدۇ.
+    Comment[uk]: Офісний пакет сумісний з відкритим і стандартизованим форматом документів
+      ODF. Підтримується The Document Foundation.
+    Comment[uz]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[ve]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[vec]: Ła suite de produtività par l'ufisio conpatìbiłe co'l formato standard
+      verto ODF. Suportà da The Document Foundation.
+    Comment[vi]: Bộ công cụ văn phòng này tương thích với các chuẩn ODF. Được hỗ trợ
+      bởi The Document Foundation.
+    Comment[xh]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    Comment[zh_CN]: 本办公生产套件与开放的 ODF 文档格式标准兼容。由 The Document Foundation 提供支持。
+    Comment[zh_TW]: 本辦公生產力套裝軟體和開放且標準化的 ODF 文件格式相容，由文件基金會提供支援。
+    Comment[zu]: The office productivity suite compatible to the open and standardized
+      ODF document format. Supported by The Document Foundation.
+    StartupNotify: true
+    X-GIO-NoFuse: true
+    StartupWMClass: libreoffice-startcenter
+    X-KDE-Protocols: file,http,ftp,webdav
+    Actions: Writer
+  Desktop Action Writer:
+    Name: LibreOffice
+    Exec: libreoffice6.0 --writer
+  Desktop Action Calc:
+    Name: LibreOffice
+    Exec: libreoffice6.0 --calc
+  Desktop Action Impress:
+    Name: LibreOffice
+    Exec: libreoffice6.0 --impress
+  Desktop Action Draw:
+    Name: LibreOffice
+    Exec: libreoffice6.0 --draw
+  Desktop Action Base:
+    Name: LibreOffice
+    Exec: libreoffice6.0 --base
+  Desktop Action Math:
+    Name: LibreOffice
+    Exec: libreoffice6.0 --math
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+---

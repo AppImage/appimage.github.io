@@ -1,0 +1,21 @@
+{
+  "name": "webamp-desktop",
+  "version": "0.3.0",
+  "description": "Desktop version of Winamp 2.9 reimplementation in HTML5 and JS",
+  "main": "main.js",
+  "homepage": "https://github.com/durasj/webamp-desktop",
+  "repository": "https://github.com/durasj/webamp-desktop",
+  "author": "Jakub Duras <jakub@duras.me>",
+  "license": "MIT",
+  "dependencies": {
+    "electron-is-dev": "^0.3.0",
+    "electron-log": "^2.2.17",
+    "electron-updater": "^3.1.1",
+    "html-to-text": "^4.0.0",
+    "left-clicky": "0.1.1",
+    "mime-types": "^2.1.19"
+  },
+  "browserslist": [
+    "Chrome 61"
+  ]
+}

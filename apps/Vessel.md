@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: aaroncox/vessel
-  - type: Install
+  - type: Download
     url: https://github.com/aaroncox/vessel/releases
 
 desktop:
