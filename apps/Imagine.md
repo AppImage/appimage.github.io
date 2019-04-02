@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: meowtec/Imagine
-  - type: Install
+  - type: Download
     url: https://github.com/meowtec/Imagine/releases
 
 desktop:

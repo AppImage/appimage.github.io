@@ -1,0 +1,3 @@
+https://github.com/LaboratoryOfPlasmaPhysics/SciQLOP/releases/download/latest/SciQLOP-latest.AppImage
+# Link without version would be better
+# Need to use absolute path because "x86_64" is missing in "latest" filename

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Dmitry Ivanov <dm.vl.ivanov@gmail.com> -->
+<component type="desktop-application">
+    <id type="desktop">Quentier</id>
+    <metadata_license>FSFAP</metadata_license>
+    <project_license>GPL-3.0</project_license>
+    <name>Quentier</name>
+    <summary>Note taking app integrated with Evernote</summary>
+
+    <description>
+        <p>
+            Quentier is a cross-platform note taking app capable of working as Evernote client.
+            It can also be used for local note taking as well, without the necessity to even have
+            the Evernote account.
+
+	    Quentier supports the following features:
+             * Synchronization of user data (notebooks, notes, tags, saved searches) with Evernote servers
+	     * <a href="https://dev.evernote.com/doc/articles/search_grammar.php">Evernote search syntax</a> can be used for data searching within the local database
+	     * Printing of notes and converting them to pdf files
+             * Ability to open several notes simultaneously in either tabbed or windowed interface
+	     * Ability to switch between accounts - both local and Evernote ones
+        </p>
+    </description>
+
+    <launchable type="desktop-id">org.quentier.Quentier.desktop</launchable>
+
+    <screenshots>
+        <screenshot type="default">
+	    <caption>Main window</caption>
+	    <image>https://d1vanov.github.io/quentier/Quentier_sample_screenshot.png</image>
+	</screenshot>
+	<screenshot>
+            <caption>Add account dialog</caption>
+	    <image>https://d1vanov.github.io/quentier/Quentier_add_account.png</image>
+	</screenshot>
+	<screenshot>
+	    <caption>Side panels</caption>
+	    <image>https://d1vanov.github.io/quentier/Quentier_left_panels.png</image>
+	</screenshot>
+	<screenshot>
+	    <caption>Notes list</caption>
+	    <image>https://d1vanov.github.io/quentier/Quentier_note_list_view.png</image>
+	</screenshot>
+    </screenshots>
+
+    <url type="homepage">https://github.com/d1vanov/quentier</url>
+    <updatecontact>dm.vl.ivanov@gmail.com</updatecontact>
+</component>

@@ -3,6 +3,9 @@ layout: app
 
 permalink: /MrWriter/
 
+icons:
+  - MrWriter/icons/1024x1024/.DirIcon
+
 screenshots:
   - MrWriter/screenshot.png
 
@@ -20,7 +23,6 @@ desktop:
     Terminal: false
     Categories: Office
   AppImageHub:
-    X-AppImage-UpdateInformation: 
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
 ---
