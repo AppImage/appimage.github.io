@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>syncthingtray</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-2</project_license>
+  <name>Syncthing Tray</name>
+  <summary>Tray application for Syncthing</summary>
+  <description>
+    <ul>
+      <li>Qt 5-based tray application for Syncthing</li>
+      <li>Provides quick access to most frequently used features but does not intend to replace the official web UI</li>
+      <li>Shows Syncthing notifications</li>
+      <li>Can read the local Syncthing configuration file for quick setup when just connecting to local instance</li>
+      <li>Can show the status of the Syncthing systemd unit and allows to start and stop it</li>
+      <li>Provides quick access to the official web UI</li>
+      <li>Allows quickly switching between multiple Syncthing instances</li>
+  ​  </ul>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Syncthing Tray under Plasma 5</caption>
+      <image>https://github.com/Martchus/syncthingtray/blob/master/tray/resources/screenshots/plasma-2.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Web view, dark theme</caption>
+      <image>https://github.com/Martchus/syncthingtray/blob/master/tray/resources/screenshots/webview-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Settings dialog</caption>
+      <image>https://github.com/Martchus/syncthingtray/blob/master/tray/resources/screenshots/settings.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/Martchus/syncthingtray</url>
+  <url type="bugtracker">https://github.com/Martchus/syncthingtray/issues</url>
+  <launchable type="desktop-id">syncthingtray.desktop</launchable>
+  <developer_name>Martchus</developer_name>
+  <provides>
+    <binary>syncthingtray</binary>
+  </provides>
+  <releases>
+    <release version="0.8.4"/>
+  </releases>
+</component>
