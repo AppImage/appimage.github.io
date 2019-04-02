@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=DBM Network Client
 StartupWMClass=DBM Network Client
-X-AppImage-Version=1.0.0
+X-AppImage-Version=1.1.0
 Categories=Development;
-X-AppImage-BuildId=1IYDo5vwJrssOREAE86Izpquqw0
+X-AppImage-BuildId=1JJtnVGdWwT8oNXHoSXbXN1MuKC
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
