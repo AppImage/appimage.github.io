@@ -1,0 +1,29 @@
+{
+  "name": "sirius-tracker",
+  "productName": "Sirius Tracker",
+  "version": "1.0.0",
+  "description": "A app for track Sirius market information.",
+  "main": "main/index.js",
+  "license": "MIT",
+  "copyright": "Iolar Demartini Junior",
+  "author": {
+    "name": "Iolar Demartini Junior",
+    "email": "iolardemartini@gmail.com",
+    "url": "https://iolardemartini.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/demartini/sirius-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/demartini/sirius-tracker/issues"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "electron-is-dev": "^1.0.1",
+    "electron-log": "^3.0.4",
+    "jquery": "^3.3.1",
+    "numeral": "^2.0.6",
+    "popper.js": "^1.14.7"
+  }
+}
