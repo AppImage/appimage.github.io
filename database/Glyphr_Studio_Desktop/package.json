@@ -1,0 +1,26 @@
+{
+  "name": "glyphr-studio-desktop",
+  "productName": "Glyphr Studio",
+  "version": "0.5.0",
+  "description": "A desktop client for Glyphr Studio",
+  "author": "Glyphr Studio team <mail@glyphrstudio.com>",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glyphr-studio/Glyphr-Studio-Desktop.git"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "Glyphr-Studio": "glyphr-studio/Glyphr-Studio-1#v1.12.01",
+    "electron-editor-context-menu": "1.1.1",
+    "opn": "5.4.0"
+  },
+  "lint-staged": {
+    "*.js": "standard"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
