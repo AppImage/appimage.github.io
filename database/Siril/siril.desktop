@@ -1,0 +1,55 @@
+[Desktop Entry]
+Version=1.0
+Name=Siril
+Name[ar_DZ]=Siril
+Name[de_DE]=Siril
+Name[en_CA]=Siril
+Name[en_GB]=Siril
+Name[es_ES]=Siril
+Name[fr_FR]=Siril
+Name[el_GR]=Siril
+Name[it_IT]=Siril
+Name[nl_BE]=Siril
+Name[pt_PT]=Siril
+Name[tl_PT]=Siril
+Name[zh_CN]=Siril
+Comment=Astronomical image (pre-)processing program
+Comment[ar_DZ]=برنامج معالجة الصور الفلكية
+Comment[de_DE]=Astronomisches Bild(vor-)verarbeitungsprogramm
+Comment[en_CA]=Astronomical image (pre-)processing program
+Comment[en_GB]=Astronomical image (pre-)processing program
+Comment[es_ES]=Programa de (pre-)proceso de imágenes astronómicas
+Comment[fr_FR]=Programme de (pré-)traitement des images astronomiques
+Comment[el_GR]=Πρόγραμμα (προ-)επεξεργασίας αστρονομικών εικόνων
+Comment[it_IT]=Programma di (pre-)elaborazione dell'immagine astronomica
+Comment[nl_BE]=Programma voor (voor)behandeling van astronomische beelden
+Comment[pt_PT]=Programa de tratamento de imagens astronomicas
+Comment[tl_PH]=Programa sa pag(pre-)proseso ng larawang astronomikal
+Comment[zh_CN]=天文图像（预）处理软件
+Keywords=astronomy;stacking;registration;
+Keywords[ar_DZ]=فلك;تراص;إنحياز;
+Keywords[de_DE]=astronomie;stacken;registrierung;
+Keywords[en_CA]=astronomy;stacking;registration;
+Keywords[en_GB]=astronomy;stacking;registration;
+Keywords[es_ES]=astronomía;apilado;registro;
+Keywords[fr_FR]=astronomie;empilement;alignement;
+Keywords[el_GR]=αστρονομία;σώρευση;ευθυγράμμιση;
+Keywords[it_IT]=astronomia;stacking;registrazione;
+Keywords[nl_BE]=astronomie;stacking;afstemming;
+Keywords[pt_PT]=astronomia;empilhamento;alinhamento;
+Keywords[tl_PH]=astronomiya;stacking;rehistrasyon;
+Keywords[zh_CN]=天文;叠加;对齐;
+Exec=siril.wrapper %F
+Icon=siril
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Science;Astronomy;ImageProcessing;
+MimeType=image/fits;image/bmp;image/pic;image/jpeg;image/png;image/tiff;image/x-portable-pixmap;video/ser;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

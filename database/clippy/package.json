@@ -1,0 +1,10 @@
+{
+  "name": "clippy",
+  "version": "1.2.0",
+  "main": "index.js",
+  "description": "Clipboard History",
+  "repository": "https://github.com/ikouchiha47/clippy",
+  "author": {
+    "name": "ikouchiha47"
+  }
+}
