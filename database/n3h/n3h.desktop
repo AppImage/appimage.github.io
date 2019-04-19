@@ -1,14 +1,10 @@
 [Desktop Entry]
-Name=Photopea
-Comment=Photopea in AppImage
-Exec=AppRun
-Terminal=false
+Categories=Utility;
 Type=Application
-Icon=photopea
-StartupWMClass=Photopea
-X-AppImage-Version=1.2.0
-Categories=Graphics;
-X-AppImage-BuildId=1JjD14uwyf7zD0MXVDkhft0XRpx
+Exec=n3h
+Icon=n3h
+Name=n3h
+Terminal=true
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
@@ -16,4 +12,3 @@ X-AppImage-BuildId=1JjD14uwyf7zD0MXVDkhft0XRpx
 X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
-X-AppImage-Payload-License=MIT

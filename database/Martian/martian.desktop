@@ -1,14 +1,14 @@
 [Desktop Entry]
-Name=Photopea
-Comment=Photopea in AppImage
+Name=Martian-alpha
+Comment=Websocket testing tool
 Exec=AppRun
 Terminal=false
 Type=Application
-Icon=photopea
-StartupWMClass=Photopea
-X-AppImage-Version=1.2.0
-Categories=Graphics;
-X-AppImage-BuildId=1JjD14uwyf7zD0MXVDkhft0XRpx
+Icon=martian
+StartupWMClass=Martian-alpha
+X-AppImage-Version=0.5.2
+Categories=Utility;
+X-AppImage-BuildId=1JuJ1xHYftwTDrndMN3kauclFoK
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
