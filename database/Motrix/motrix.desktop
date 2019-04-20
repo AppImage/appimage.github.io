@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=motrix
 StartupWMClass=Motrix
-X-AppImage-Version=1.0.9.17
+X-AppImage-Version=1.1.3.36
 Categories=Utility;
-X-AppImage-BuildId=1FD4ZwWwCZhxqJNwnmYRtPPUVR5
+X-AppImage-BuildId=1GzcbCA02A40HXbAXHKA2uP9IxQ
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
