@@ -1,6 +1,6 @@
 {
   "name": "debuff-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A client used to distribute a website's content via WebTorrent.",
   "main": "./controllers/main.js",
   "author": "Braeden Diaz <braedendiaz@gmail.com>",

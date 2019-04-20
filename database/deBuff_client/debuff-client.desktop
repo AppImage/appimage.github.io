@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=debuff-client
 StartupWMClass=deBuff Client
-X-AppImage-Version=1.0.0
+X-AppImage-Version=1.0.1
 Categories=Network;
-X-AppImage-BuildId=1Jw24zzxSLXzKIHrf6xP0R5oNw0
+X-AppImage-BuildId=1K21cqjbHovSIIE812DM6erfCg9
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

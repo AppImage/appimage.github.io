@@ -29,9 +29,9 @@ desktop:
     Type: Application
     Icon: debuff-client
     StartupWMClass: deBuff Client
-    X-AppImage-Version: 1.0.0
+    X-AppImage-Version: 1.0.1
     Categories: Network
-    X-AppImage-BuildId: 1Jw24zzxSLXzKIHrf6xP0R5oNw0
+    X-AppImage-BuildId: 1K21cqjbHovSIIE812DM6erfCg9
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
