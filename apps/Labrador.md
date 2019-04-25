@@ -3,9 +3,10 @@ layout: app
 
 permalink: /Labrador/
 description: Software Interface for Labrador Board
+Software Interface for Labrador Board
 
 icons:
-  - Labrador/icons/256x247/espotek-labrador.png
+  - Labrador/icons/256x256/espotek-labrador.png
 
 screenshots:
   - Labrador/screenshot.png
