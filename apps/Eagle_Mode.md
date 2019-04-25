@@ -30,7 +30,7 @@ desktop:
     Type: Application
     Categories: System
     StartupNotify: true
-    X-AppImage-Version: 380d0fc
+    X-AppImage-Version: 6209bd4
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|probonopd|eaglemode|continuous|Eagle_Mode*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
