@@ -1,0 +1,14 @@
+{
+  "name": "tea-library",
+  "productName": "TEA Ebook",
+  "description": "Application TEA Ebook pour Mac / Windows / Linux",
+  "version": "1.4.6",
+  "author": "TEA <technique@tea-ebook.com>",
+  "license": "MIT",
+  "homepage": "https://www.tea-ebook.com",
+  "dependencies": {
+    "bindings": "^1.4.0",
+    "raven": "^2.6.4",
+    "winreg": "^1.2.4"
+  }
+}
