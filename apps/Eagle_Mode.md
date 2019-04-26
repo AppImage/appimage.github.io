@@ -5,7 +5,7 @@ permalink: /Eagle_Mode/
 description: Zoomable user interface with plugin applications
 
 icons:
-  - Eagle_Mode/icons/scalable/eaglemode.svg
+  - Eagle_Mode/icons/48x48/eaglemode.png
 
 screenshots:
   - Eagle_Mode/screenshot.png
@@ -30,7 +30,7 @@ desktop:
     Type: Application
     Categories: System
     StartupNotify: true
-    X-AppImage-Version: 6209bd4
+    X-AppImage-Version: ba297f6
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|probonopd|eaglemode|continuous|Eagle_Mode*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
