@@ -2,10 +2,13 @@
 layout: app
 
 permalink: /neovim/
-description: Edit text files
+description: Vim-fork focused on extensibility and usability
+license: Apache-2.0
 
+icons:
+  - neovim/icons/104x128/nvim.png
 screenshots:
-  - neovim/screenshot.png
+- https://neovim.io/images/nvim-screenshot-1.png
 
 authors:
   - name: neovim
@@ -99,7 +102,45 @@ desktop:
     Categories: Utility
     StartupNotify: false
     MimeType: text/english
+    X-AppImage-Version: v0.4.0-43-ga0140da7b.glibc2.17
   AppImageHub:
-    X-AppImage-Type: 1
+    X-AppImage-UpdateInformation: gh-releases-zsync|neovim|neovim|nightly|nvim.appimage.zsync
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+
+appdata:
+  Type: desktop-application
+  ID: nvim
+  Name:
+    C: Neovim
+  Summary:
+    C: Vim-fork focused on extensibility and usability
+  Description:
+    C: >-
+      <p>Neovim is a refactor of the Vim text editor designed to encourage new features, advanced UIs, and powerful extensions.</p>
+  ProjectLicense: Apache-2.0
+  Url:
+    homepage: https://neovim.io/
+    bugtracker: https://github.com/neovim/neovim/issues
+    faq: https://github.com/neovim/neovim/wiki/FAQ
+    help: https://neovim.io/doc/
+    donation: https://neovim.io/#sponsor
+    translate: https://github.com/neovim/neovim/tree/master/src/nvim/po
+  Launchable:
+    desktop-id:
+    - nvim.desktop
+  Provides:
+    binaries:
+    - nvim
+  Screenshots:
+  - default: true
+    caption:
+      C: Live :substitute feature
+    thumbnails: []
+    source-image:
+      url: https://neovim.io/images/nvim-screenshot-1.png
+      lang: C
 ---
