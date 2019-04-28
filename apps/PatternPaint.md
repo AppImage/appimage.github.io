@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: Blinkinlabs/PatternPaint
-  - type: Install
+  - type: Download
     url: https://github.com/Blinkinlabs/PatternPaint/releases
 
 desktop:

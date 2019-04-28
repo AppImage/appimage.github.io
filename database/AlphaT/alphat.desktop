@@ -1,17 +1,16 @@
 [Desktop Entry]
 Name=AlphaT
-Comment=文档翻译工具
+Comment=AlphaT is a free doc tranlation application, it powerd by machine tranlation engines, help you translate your documents quickly and easily.
 Exec=AppRun
 Terminal=false
 Type=Application
 Icon=alphat
-X-AppImage-Version=0.4.0.8
-X-AppImage-BuildId=d7063100-8947-11a7-385f-bfa0425438da
+X-AppImage-Version=0.5.1.10
+X-AppImage-BuildId=9f690720-8c8c-11a7-3821-c7aee184e60d
 Categories=Utility;
 
 [AppImageHub]
 X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-X-AppImage-Signature=false
 # Dear upstream developer, please include a digital signature in your AppImage
 # (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
 X-AppImage-Type=1

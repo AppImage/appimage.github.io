@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: FrogTheFrog/steam-rom-manager
-  - type: Install
+  - type: Download
     url: https://github.com/FrogTheFrog/steam-rom-manager/releases
 
 desktop:
