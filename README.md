@@ -71,4 +71,5 @@ Projects already using this data
 * https://github.com/simoniz0r/spm
 * https://github.com/sillasleal/appcenter
 * https://github.com/lliurex/lliurex-store
+* https://github.com/linuxappstore/linuxappstore-frontend
 * Please contact us if you are using this data so that we can list your project here
