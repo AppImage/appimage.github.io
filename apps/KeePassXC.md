@@ -13,6 +13,25 @@ authors:
 links:
   - type: GitHub
     url: keepassxreboot/keepassxc
-  - type: Install
+  - type: Download
     url: https://github.com/keepassxreboot/keepassxc/releases
+
+desktop:
+  Desktop Entry:
+    Name: KeePassXC
+    GenericName: Community Password Manager
+    GenericName[de]: Passwortverwaltung
+    GenericName[es]: Gestor de contraseñas
+    GenericName[fr]: Gestionnaire de mot de passe
+    GenericName[ru]: менеджер паролей
+    Exec: keepassxc_env.wrapper %f
+    Icon: keepassxc
+    Terminal: false
+    Type: Application
+    Categories: Qt
+    MimeType: application/x-keepass2
+  AppImageHub:
+    X-AppImage-UpdateInformation: 
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
 ---
