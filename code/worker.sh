@@ -214,7 +214,7 @@ echo "==========================================="
 
 # reset does not work here
 if [ x"$TERMINAL" == xfalse ] ; then
-  firejail --noprofile --net=none --appimage ./"$FILENAME" &
+  firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
 else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
 fi
