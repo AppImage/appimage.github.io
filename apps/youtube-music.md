@@ -30,9 +30,9 @@ desktop:
     Type: Application
     Icon: youtube-music
     StartupWMClass: YouTube Music
-    X-AppImage-Version: 1.1.1.5
+    X-AppImage-Version: 1.1.2.6
     Categories: AudioVideo
-    X-AppImage-BuildId: 1KV7bdMlOugAXkgMWIckC2FMQHu
+    X-AppImage-BuildId: 1KdrK9As9VGrKn7UGO04W3UQFRB
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file

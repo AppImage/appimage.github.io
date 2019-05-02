@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=youtube-music
 StartupWMClass=YouTube Music
-X-AppImage-Version=1.1.1.5
+X-AppImage-Version=1.1.2.6
 Categories=AudioVideo;
-X-AppImage-BuildId=1KV7bdMlOugAXkgMWIckC2FMQHu
+X-AppImage-BuildId=1KdrK9As9VGrKn7UGO04W3UQFRB
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
