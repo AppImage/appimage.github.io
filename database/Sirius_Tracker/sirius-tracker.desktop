@@ -6,9 +6,9 @@ Terminal=false
 Type=Application
 Icon=sirius-tracker
 StartupWMClass=Sirius Tracker
-X-AppImage-Version=1.0.0
+X-AppImage-Version=1.2.0.39
 Categories=GNOME;GTK;Network;News;
-X-AppImage-BuildId=1JDit6SGE0vLShoa08hzYLLjzHa
+X-AppImage-BuildId=1JwfCXSrbzum4yvbTbQeFu5Ql4l
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
