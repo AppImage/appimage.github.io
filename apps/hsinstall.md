@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /hsinstall/
+license: ISC
 
 icons:
   - hsinstall/icons/scalable/hsinstall.svg
@@ -33,4 +34,5 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: ISC
 ---

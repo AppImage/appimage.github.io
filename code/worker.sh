@@ -53,7 +53,7 @@ echo "URL: $URL"
 
 FILENAME=BeingTested.AppImage
 if [ ! -e "$FILENAME" ] ; then
-  wget -c "$URL" -O "$FILENAME"
+  wget -c -nv "$URL" -O "$FILENAME"
 fi
 
 # Check the type of the AppImage
@@ -212,9 +212,11 @@ echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
+export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
+
 # reset does not work here
 if [ x"$TERMINAL" == xfalse ] ; then
-  firejail --noprofile --net=none --appimage ./"$FILENAME" &
+  firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
 else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
 fi
