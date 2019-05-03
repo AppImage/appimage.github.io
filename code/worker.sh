@@ -21,7 +21,7 @@ if [ x"${URL:0:18}" == x"https://github.com" ] && [[ "${URL}" != *"download"* ]]
   echo "GitHub URL detected"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases" # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
+  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases?access_token=$GH_TOKEN" # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
   echo "URL from GitHub: $URL"
 fi
 
@@ -32,7 +32,7 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
     GHURL="$URL"
   fi
   echo "GitHub API URL detected"
-  URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | grep -i 64 | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
+  URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | grep -ie 'amd.\?64\|x86.64\|x64\|linux.\?64' | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
   if [ x"" == x"$URL" ] ; then
     URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | head -n 1 | cut -d '"' -f 4) # No 64-bit one found, trying any; TODO: Handle more than one AppImage per release
   fi
@@ -43,7 +43,7 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
   echo "URL from GitHub API: $URL"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" https://api.github.com/repos/$GHUSER/$GHREPO -O - | grep spdx_id | cut -d '"' -f 4 | head -n 1)
+  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" "https://api.github.com/repos/$GHUSER/$GHREPO?access_token=$GH_TOKEN" -O - | grep spdx_id | cut -d '"' -f 4 | head -n 1)
 fi
 
 # Download the file if it is not already there
@@ -53,7 +53,7 @@ echo "URL: $URL"
 
 FILENAME=BeingTested.AppImage
 if [ ! -e "$FILENAME" ] ; then
-  wget -q -c "$URL" -O "$FILENAME"
+  wget -c -nv "$URL" -O "$FILENAME"
 fi
 
 # Check the type of the AppImage
@@ -135,7 +135,7 @@ echo "ICON_NAME: ${ICON_NAME}"
 # Then, try scaleable icon from usr/share
 # matching the Icon= entry in the desktop file
 
-ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.svg*" -path "*/scalable/*")
+ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.svg*" -path "*/scalable/*" | head -n 1)
 
 # Then, try large icons from usr/share
 # matching the Icon= entry in the desktop file
@@ -214,7 +214,7 @@ echo "==========================================="
 
 # reset does not work here
 if [ x"$TERMINAL" == xfalse ] ; then
-  firejail --noprofile --net=none --appimage ./"$FILENAME" &
+  firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
 else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
 fi
@@ -385,7 +385,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     ./appstreamcli-x86_64.AppImage convert database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
-    SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .)
+    SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .) || true
     if [ x"$SUMMARY" != x"" ] ; then
       echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
     fi
@@ -396,7 +396,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   AS_LICENSE=""
   DT_LICENSE=""
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    AS_LICENSE=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/project_license" -v .)
+    AS_LICENSE=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/project_license" -v .) || true
   fi
   DT_LICENSE=$(grep -r "X-AppImage-Payload-License=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2)
   if [ x"$AS_LICENSE" != x"" ] ; then

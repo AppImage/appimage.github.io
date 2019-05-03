@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=odio
+Comment=odio is a free radio streaming software with more than 20,000 radio stations from around the world for Windows, MacOs and Linux.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=odio
+StartupWMClass=odio
+X-AppImage-Version=1.4.0
+Categories=Audio;
+X-AppImage-BuildId=1F9S0xbPrvPXilsbWZKt1qDOBfT
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

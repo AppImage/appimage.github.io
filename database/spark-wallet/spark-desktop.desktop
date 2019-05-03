@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Spark
+Comment=A minimalistic wallet GUI for c-lightning
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=spark-desktop
+StartupWMClass=Spark
+X-AppImage-Version=0.1.3
+MimeType=x-scheme-handler/lightning;
+Categories=Office;Finance;
+X-AppImage-BuildId=1DXUnwnRSD9L64w4ECNHMLE4uRM
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT
