@@ -12,7 +12,7 @@ MimeType=text/plain;inode/directory;
 Actions=new-empty-window;
 Keywords=vscode;
 
-X-AppImage-Version=1.33.1-1555435011.glibc2.17
+X-AppImage-Version=1.33.1-1556929548.glibc2.17
 
 [Desktop Action new-empty-window]
 Name=New Empty Window
