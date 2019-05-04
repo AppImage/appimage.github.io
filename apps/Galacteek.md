@@ -11,8 +11,14 @@ screenshots:
 - https://github.com/eversum/galacteek/raw/master/screenshots/browse-wikipedia.png
 
 authors:
+  - name: eversum
+    url: https://github.com/eversum
 
 links:
+  - type: GitHub
+    url: eversum/galacteek
+  - type: Download
+    url: https://github.com/eversum/galacteek/releases
 
 desktop:
   Desktop Entry:
@@ -30,6 +36,7 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: NOASSERTION
 
 appdata:
   Type: desktop-application

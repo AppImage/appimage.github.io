@@ -1,12 +1,12 @@
 [Desktop Entry]
+Version=1.0
 Type=Application
-Name=Galacteek
-Comment=IPFS Browser
-Icon=galacteek
-Exec=galacteek
+Name=Plex Media Player
+Exec=plexmediaplayer.wrapper
+Icon=plexmediaplayer
 Terminal=false
-Categories=Network;P2P;WebBrowser;Qt;
-StartupWMClass=galacteek
+Categories=AudioVideo;Player;
+StartupWMClass=plexmediaplayer
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
@@ -14,4 +14,3 @@ StartupWMClass=galacteek
 X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
-X-AppImage-Payload-License=NOASSERTION

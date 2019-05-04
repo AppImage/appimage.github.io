@@ -1,23 +1,14 @@
 [Desktop Entry]
-Name=VSCodium
-Comment=Code Editing. Redefined.
-GenericName=Text Editor
-Exec=vscodium --unity-launch %F
-Icon=vscodium
+Name=Scrum-Retroboard
+Comment=Electron application based on React, React Router, Webpack, React Hot Loader for rapid application development
+Exec=AppRun
+Terminal=false
 Type=Application
-StartupNotify=false
-StartupWMClass=VSCodium
-Categories=Utility;TextEditor;Development;IDE;
-MimeType=text/plain;inode/directory;
-Actions=new-empty-window;
-Keywords=vscode;
-
-X-AppImage-Version=1.33.1-1556929548.glibc2.17
-
-[Desktop Action new-empty-window]
-Name=New Empty Window
-Exec=vscodium --new-window %F
-Icon=vscodium
+Icon=scrum-retroboard
+StartupWMClass=Scrum-Retroboard
+X-AppImage-Version=0.1.2.37
+Categories=Development;
+X-AppImage-BuildId=1KlMIDUDVZmBalooX6dQGmq8byh
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

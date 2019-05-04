@@ -12,14 +12,14 @@ screenshots:
   - VSCodium/screenshot.png
 
 authors:
-  - name: stripedpajamas
-    url: https://github.com/stripedpajamas
+  - name: VSCodium
+    url: https://github.com/VSCodium
 
 links:
   - type: GitHub
-    url: stripedpajamas/vscodium
+    url: VSCodium/vscodium
   - type: Download
-    url: https://github.com/stripedpajamas/vscodium/releases
+    url: https://github.com/VSCodium/vscodium/releases
 
 desktop:
   Desktop Entry:
@@ -35,7 +35,7 @@ desktop:
     MimeType: text/plain
     Actions: new-empty-window
     Keywords: vscode
-    X-AppImage-Version: 1.33.1-1555435011.glibc2.17
+    X-AppImage-Version: 1.33.1-1556929548.glibc2.17
   Desktop Action new-empty-window:
     Name: New Empty Window
     Exec: vscodium --new-window %F

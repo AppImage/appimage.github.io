@@ -212,6 +212,8 @@ echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
+export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
+
 # reset does not work here
 if [ x"$TERMINAL" == xfalse ] ; then
   firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
