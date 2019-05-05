@@ -66,10 +66,12 @@ App stores and software centers can consume the metadata collected by this proje
 
 Currently we are providing a JSON feed at https://appimage.github.io/feed.json. If you would like to use this data but need changes, please contact us on #AppImage at irc.freenode.net, so that we can discuss an output format that would serve your needs best. __PLEASE NOTE__ that the data output format is not finalized yet and is subject to change any time without prior notice, until we release a stable version of it.
 
-Projects already using this data
+# Projects using this data
+
 * Nitrux, NX Software Center: https://github.com/nomad-desktop/nx-software-center
 * https://github.com/simoniz0r/spm
 * https://github.com/sillasleal/appcenter
 * https://github.com/lliurex/lliurex-store
-* https://github.com/linuxappstore/linuxappstore-frontend
-* Please contact us if you are using this data so that we can list your project here
+* https://linuxappstore.io/ powered by https://github.com/linuxappstore/linuxappstore-frontend
+
+Please contact us (or send a pull request) if you are using this data so that we can list your project here.
