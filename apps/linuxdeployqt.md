@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: probonopd/linuxdeployqt
-  - type: Install
+  - type: Download
     url: https://github.com/probonopd/linuxdeployqt/releases
 
 desktop:

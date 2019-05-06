@@ -8,8 +8,12 @@ screenshots:
   - ldview/screenshot.png
 
 authors:
+  - name: pbartfai
+    url: https://build.opensuse.org/user/show/pbartfai
 
 links:
+  - type: Download
+    url: https://download.opensuse.org/repositories/home:/pbartfai/AppImage/ldview-latest-x86_64.AppImage.mirrorlist
 
 desktop:
   Desktop Entry:

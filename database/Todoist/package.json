@@ -1,0 +1,16 @@
+{
+  "name": "Todoist",
+  "version": "1.0.1",
+  "description": "Todoist for linux",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyfrost/todoist-linux.git"
+  },
+  "author": "Cyrus Frost <cyrus.frost@hotmail.com>",
+  "email": "cyrus.frost@hotmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "auto-launch": "^5.0.5"
+  }
+}

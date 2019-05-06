@@ -1,0 +1,34 @@
+{
+  "name": "my-jira",
+  "productName": "My Jira",
+  "version": "0.0.4",
+  "author": "donghao@patsnap.com",
+  "description": "A lite jira desktop",
+  "homepage": "http://blog.minws.com",
+  "license": "MIT",
+  "main": "./dist/electron/main.js",
+  "updater": {
+    "url": "https://raw.githubusercontent.com/dhso/my-jira/master/updates.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhso/my-jira.git"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dayjs": "^1.8.12",
+    "electron-simple-updater": "^1.5.0",
+    "electron-store": "^3.2.0",
+    "element-ui": "^2.7.2",
+    "lodash": "^4.17.11",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "vue": "^2.6.10",
+    "vue-cal": "^1.47.0",
+    "vue-electron": "^1.0.6",
+    "vue-events": "^3.1.0",
+    "vue-router": "^3.0.5",
+    "vuex": "^3.1.0",
+    "vuex-electron": "^1.0.3"
+  }
+}
