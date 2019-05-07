@@ -32,7 +32,7 @@ desktop:
     Type: Application
     Categories: Graphics
     Keywords: parametric
-    X-AppImage-Version: d103974
+    X-AppImage-Version: a9a09ef
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|probonopd|solvespace|continuous|SolveSpace*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
