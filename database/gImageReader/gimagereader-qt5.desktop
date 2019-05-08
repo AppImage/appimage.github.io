@@ -28,7 +28,7 @@ StartupWMClass=gimagereader-qt5
 Categories=Graphics;OCR;Scanning;
 MimeType=image/bmp;image/jpeg;image/gif;image/png;image/tiff;image/x-bmp;image/x-ico;image/x-png;image/x-pcx;image/x-tga;image/xpm;image/svg+xml;
 Keywords=OCR;optical character recognition;Scanner;tesseract;
-X-AppImage-Version=21fd3bd
+X-AppImage-Version=f01faae
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|probonopd|gImageReader|continuous|gImageReader*-x86_64.AppImage.zsync
