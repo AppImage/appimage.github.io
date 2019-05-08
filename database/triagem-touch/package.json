@@ -1,0 +1,24 @@
+{
+  "name": "triagem-touch",
+  "description": "Novo SGA triage client",
+  "license": "MIT",
+  "version": "2.0.0",
+  "homepage": "http://novosga.org",
+  "author": {
+    "name": "Rogerio Lino",
+    "email": "rogeriolino@gmail.com",
+    "url": "http://rogeriolino.com"
+  },
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "bulma": "^0.6.0",
+    "font-awesome": "^4.7.0",
+    "moment": "^2.18.1",
+    "vue": "^2.3.3",
+    "vue-electron": "^1.0.6",
+    "vue-router": "^2.5.3",
+    "vue-swal": "0.0.6",
+    "vuex": "^2.3.1"
+  }
+}
