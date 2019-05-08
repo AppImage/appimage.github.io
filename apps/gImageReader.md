@@ -51,7 +51,7 @@ desktop:
     Categories: Graphics
     MimeType: image/bmp
     Keywords: OCR
-    X-AppImage-Version: 6333b21
+    X-AppImage-Version: 21fd3bd
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|probonopd|gImageReader|continuous|gImageReader*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
