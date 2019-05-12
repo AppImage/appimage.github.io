@@ -32,7 +32,7 @@ desktop:
     Categories: Network
     Icon: viper-browser
     MimeType: text/html
-    X-AppImage-Version: 50
+    X-AppImage-Version: 
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|LeFroid|Viper-Browser|continuous|Viper_Browser*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.

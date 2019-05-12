@@ -8,7 +8,7 @@ X-MultipleArgs=false
 Categories=Network;WebBrowser;
 Icon=viper-browser
 MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;
-X-AppImage-Version=50
+X-AppImage-Version=
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|LeFroid|Viper-Browser|continuous|Viper_Browser*-x86_64.AppImage.zsync
