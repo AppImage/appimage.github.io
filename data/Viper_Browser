@@ -1,1 +1,3 @@
-https://github.com/LeFroid/Viper-Browser
+https://github.com/LeFroid/Viper-Browser/releases/download/v0.9.1/Viper_Browser-eec5d9f-x86_64.AppImage
+# Link without version would be better
+# but weird checksum files with .AppImage file extensions are messing up autodetection
