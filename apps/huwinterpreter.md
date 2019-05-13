@@ -3,7 +3,6 @@ layout: app
 
 permalink: /huwinterpreter/
 description: HuwCode interpreter
-license: GPL-3.0
 
 icons:
   - huwinterpreter/icons/256x256/huwcode.png
@@ -37,5 +36,4 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: GPL-3.0
 ---
