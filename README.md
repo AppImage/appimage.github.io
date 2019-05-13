@@ -73,5 +73,6 @@ Currently we are providing a JSON feed at https://appimage.github.io/feed.json. 
 * https://github.com/sillasleal/appcenter
 * https://github.com/lliurex/lliurex-store
 * https://linuxappstore.io/ powered by https://github.com/linuxappstore/linuxappstore-frontend
+* https://github.com/MuhammedKpln/chob command-line tool 
 
 Please contact us (or send a pull request) if you are using this data so that we can list your project here.
