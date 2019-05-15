@@ -8,7 +8,7 @@ license: GPL-3.0+
 icons:
   - Kaidan/icons/scalable/kaidan.svg
 screenshots:
-- https://git.kaidan.im/kaidan/kaidan/uploads/da4886ea50581517bde0278a804b311c/kaidan-screenshot-0.3.png
+  - https://www.kaidan.im/images/screenshot.png
 
 authors:
 
