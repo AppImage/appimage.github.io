@@ -7,7 +7,7 @@ Icon=sync-my-L2P
 Terminal=false
 Type=Application
 Categories=Qt;FileTransfer;Network;
-
+X-AppImage-Version=156f88d
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

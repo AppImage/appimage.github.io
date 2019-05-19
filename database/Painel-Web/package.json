@@ -1,0 +1,27 @@
+{
+  "name": "painel-web",
+  "description": "Novo SGA panel",
+  "license": "MIT",
+  "version": "2.0.1",
+  "homepage": "http://novosga.org",
+  "author": {
+    "name": "Rogerio Lino",
+    "email": "rogeriolino@gmail.com",
+    "url": "http://rogeriolino.com"
+  },
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "vue": "^2.5.16",
+    "axios": "^0.18.0",
+    "vue-electron": "^1.0.6",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-electron": "^1.0.0",
+    "bulma": "^0.7.1",
+    "font-awesome": "^4.7.0",
+    "moment": "^2.18.1",
+    "promise-queue": "^2.2.3",
+    "socket.io-client": "^2.0.3",
+    "vue-swal": "0.0.6"
+  }
+}

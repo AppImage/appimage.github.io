@@ -10,8 +10,14 @@ screenshots:
 - https://github.com/fontforge/fontforge/raw/master/doc/html/ff-screenshot.png
 
 authors:
+  - name: fontforge
+    url: https://github.com/fontforge
 
 links:
+  - type: GitHub
+    url: fontforge/fontforge
+  - type: Download
+    url: https://github.com/fontforge/fontforge/releases
 
 desktop:
   Desktop Entry:
@@ -38,13 +44,14 @@ desktop:
     Categories: Graphics
     MimeType: application/vnd.font-fontforge-sfd
     Keywords: font
-    X-AppImage-Version: 0eafb2c
+    X-AppImage-Version: 1d421d1
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: NOASSERTION
 
 appdata:
   Type: desktop-application
@@ -132,6 +139,8 @@ appdata:
       url: https://github.com/fontforge/fontforge/raw/master/doc/html/ff-screenshot.png
       lang: C
   Releases:
+  - version: '20190317'
+    unix-timestamp: 1552780800
   - version: '20170731'
     unix-timestamp: 1501459200
   - version: '20161005'
