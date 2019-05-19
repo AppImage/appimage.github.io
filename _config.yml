@@ -8,8 +8,8 @@ collections:
     output: true
 
 # Short bio or description (displayed in the header)
-description: Crowd-sourced central AppImage directory
-description_html: Crowd-sourced central <a href="http://appimage.org">AppImage</a> directory
+description: AppImage applications for Linux without installation
+description_html: <a href="http://appimage.org">AppImage</a> applications for Linux without installation
 
 # URL of your avatar or profile pic
 avatar: /img/logo3.svg

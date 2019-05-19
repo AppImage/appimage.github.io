@@ -9,7 +9,7 @@ Categories=Utility;
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|qpdf|qpdf|latest|qpdf-*x86_64.AppImage.zsync
-X-AppImage-Signature=Signature made Sun 25 Feb 2018 09:56:37 PM UTC using RSA key ID 98012C7E Can't check signature: No public key 
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
 X-AppImage-Payload-License=Apache-2.0
