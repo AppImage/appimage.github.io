@@ -1,0 +1,13 @@
+{
+  "name": "nexus_wallet",
+  "productName": "Nexus_Wallet_BETA_v0.8.6",
+  "version": "0.8.6",
+  "description": "Nexus",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "The Nexus Embassy",
+    "email": "TheNexusEmbassy@nexus.io"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}
