@@ -1,0 +1,14 @@
+{
+  "name": "spark-wallet",
+  "description": "A minimalistic wallet GUI for c-lightning",
+  "private": true,
+  "main": "main.js",
+  "author": "Nadav Ivgi <nadav@shesek.info>",
+  "repository": "https://github.com/shesek/spark-wallet",
+  "license": "MIT",
+  "dependencies": {
+    "electron-debug": "^2.0.0",
+    "electron-store": "^2.0.0"
+  },
+  "version": "0.1.3"
+}

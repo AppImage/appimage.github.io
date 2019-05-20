@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2010-2015 Rui Nuno Capela <rncbc@rncbc.org> -->
+<component type="desktop">
+ <id>qmidictl.desktop</id>
+ <metadata_license>GPL-2.0+</metadata_license>
+ <project_license>GPL-2.0+</project_license>
+ <name>QmidiCtl</name>
+ <summary>A MIDI Remote Controller via UDP/IP Multicast</summary>
+ <description>
+  <p>QmidiCtl is a MIDI remote controller application that sends MIDI
+  data over the network, using UDP/IP multicast. Inspired by multimidicast
+  (http://llg.cubic.org/tools) and designed to be compatible with ipMIDI
+  for Windows (http://nerds.de).</p>
+ </description>
+ <screenshots>
+  <screenshot type="default">
+   <image>http://qmidictl.sourceforge.net/qmidictl-nokia-n900-1.png</image>
+   <caption>The main window showing the application in action</caption>
+  </screenshot>
+ </screenshots>
+ <keywords>
+  <keyword>MIDI</keyword>
+  <keyword>Multicast</keyword>
+  <keyword>Network</keyword>
+  <keyword>UDP</keyword>
+  <keyword>IP</keyword>
+  <keyword>Qt</keyword>
+ </keywords>
+ <url type="homepage">http://qmidictl.sourceforge.net</url>
+ <updatecontact>rncbc@rncbc.org</updatecontact>
+ <project_group>rncbc.org</project_group>
+ <kudos>
+  <kudo>ModernToolkit</kudo>
+ </kudos>
+</component>

@@ -1,3 +1,1 @@
-https://rpcs3.net/cdn/builds/rpcs3-v0.0.3-2017-08-18-d6329ea-7707_linux64.AppImage
-# There should be a generic download link without version numbers...
-# The website https://rpcs3.net/download gets dynamically updated when a new Travis CI build is made, cool!
+https://rpcs3.net/latest-appimage

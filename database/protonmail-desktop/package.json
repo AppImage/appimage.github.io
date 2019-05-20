@@ -1,0 +1,33 @@
+{
+  "name": "protonmail-desktop",
+  "productName": "Protonmail Desktop",
+  "description": "Unofficial Electron wrapper for ProtonMail",
+  "version": "0.5.2",
+  "author": {
+    "name": "Matthew Core <matcore@protonmail.com>",
+    "email": "matcore@protonmail.com"
+  },
+  "copyright": "© 2017, M. Core <BeatPlus>.",
+  "homepage": "https://github.com/protonmail-desktop/application",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/protonmail-desktop/application"
+  },
+  "license": "MIT",
+  "main": "app/background.js",
+  "dependencies": {
+    "dragula": "^3.7.2",
+    "electron-context-menu": "^0.9.1",
+    "electron-context-menu-handler": "^1.0.3",
+    "electron-debug": "^1.1.0",
+    "electron-dl": "^1.9.0",
+    "electron-settings": "^3.1.1",
+    "electron-tabs": "^0.7.0",
+    "electron-updater": "^2.10.1",
+    "eslint": "^4.8.0",
+    "fs-jetpack": "^1.2.0",
+    "gulp-sass": "^3.1.0",
+    "minimist": "^1.2.0",
+    "sweetalert": "^1.1.3"
+  }
+}

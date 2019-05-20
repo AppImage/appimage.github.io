@@ -1,0 +1,10 @@
+{
+  "name": "Spark",
+  "productName": "Spark Payments",
+  "version": "1.0.0",
+  "description": "An external terminal application for processing DASH payments in brick and mortar stores.",
+  "author": "kodaxx <kodaxx@gmail.com>",
+  "license": "MIT",
+  "main": "main.js",
+  "repository": "https://github.com/kodaxx/spark-payments-dash"
+}

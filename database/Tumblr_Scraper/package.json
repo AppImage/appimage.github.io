@@ -1,0 +1,19 @@
+{
+  "name": "tumblr-scraper",
+  "productName": "Tumblr Scraper",
+  "version": "1.2.0",
+  "main": "./app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lluisrojass/Tumblr-Scraper"
+  },
+  "description": "a utility to scrape a Tumblr profile for user uploadede posts",
+  "author": "Luis Rojas <lluisrojass@aol.com>",
+  "license": "MIT",
+  "dependencies": {
+    "htmlparser2": "^3.9.2",
+    "pipe-event": "^0.1.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
+  }
+}

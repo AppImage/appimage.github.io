@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: christofferok/langly
-  - type: Install
+  - type: Download
     url: https://github.com/christofferok/langly/releases
 
 desktop:
