@@ -1,0 +1,21 @@
+{
+  "name": "WalletShell",
+  "productName": "TelluriumWallet",
+  "description": "Tellurium GUI Wallet",
+  "version": "v0.2.0",
+  "homepage": "tellurium.cf",
+  "repository": "https://github.com/TelluriumCoin/Tellurium",
+  "main": "main.js",
+  "author": "Rixombea, Macroshock, TurtleCoin Developers",
+  "license": "ISC",
+  "dependencies": {
+    "@trodi/electron-splashscreen": "^0.3.4",
+    "csv-writer": "^1.2.0",
+    "electron-log": "^2.2.17",
+    "electron-store": "^2.0.0",
+    "qr-image": "^3.2.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "postinstall": "./node_modules/.bin/electron-builder install-app-deps"
+}
