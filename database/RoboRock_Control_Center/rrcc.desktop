@@ -5,6 +5,7 @@ Icon=rrcc
 Type=Application
 Categories=Utility;
 Comment=Control Your Xiaomi Vacuum
+X-AppImage-Version=c01d3c7
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
