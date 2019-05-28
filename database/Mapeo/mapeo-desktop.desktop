@@ -1,14 +1,14 @@
 [Desktop Entry]
 Name=Mapeo
-Comment=An experimental offline mapping app based on iD Editor, for indigenous territory mapping in remote environments
+Comment=Mapping and monitoring in remote environments.
 Exec=AppRun
 Terminal=false
 Type=Application
 Icon=mapeo-desktop
 StartupWMClass=Mapeo
-X-AppImage-Version=3.1.4.1072
+X-AppImage-Version=4.0.1-beta.1309
 Categories=Utility;
-X-AppImage-BuildId=1Fxk0omt4MofwPZoed0uFmYsFrP
+X-AppImage-BuildId=1LHMKFI1Low5qpIXw7ue8htE6Op
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
