@@ -30,7 +30,7 @@ desktop:
     Terminal: false
     Categories: System
     Comment: A simple system tray application to watch github notifications
-    X-AppImage-Version: 7efb64f
+    X-AppImage-Version: 713581e
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|antony-jr|blue-glow|continuous|BlueGlow*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
