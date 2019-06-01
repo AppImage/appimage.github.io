@@ -1,0 +1,12 @@
+{
+  "name": "weatherdump",
+  "version": "0.0.0-alpha.3",
+  "description": "WeatherDump GUI",
+  "main": "electron.js",
+  "author": {
+    "name": "Open Satellite Project",
+    "email": "luigifcruz@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

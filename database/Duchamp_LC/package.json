@@ -1,0 +1,15 @@
+{
+  "name": "duchamp-lc",
+  "author": {
+    "name": "Andres Senn",
+    "email": "hola@andressenn.com"
+  },
+  "license": "MIT",
+  "homepage": "http://andressenn.com",
+  "version": "0.0.1-alpha",
+  "description": "p5 livecoding",
+  "main": "main.js",
+  "dependencies": {
+    "js-beautify": "^1.9.0"
+  }
+}
