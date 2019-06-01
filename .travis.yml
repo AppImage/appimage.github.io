@@ -6,6 +6,7 @@ dist: xenial
 env:
   global:
     - DISPLAY=:99
+    - AUDIODEV=null
 
 script:
   - sudo apt-get -qq -y install libasound2-dev alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev fonts-wqy-microhei > /dev/null # appstream # TODO: Cache me!
