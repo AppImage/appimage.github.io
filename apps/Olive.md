@@ -3,12 +3,12 @@ layout: app
 
 permalink: /Olive/
 description: Non-linear video editor
-license: GPLv3
+license: GPL-3.0
 
 icons:
   - Olive/icons/128x128/org.olivevideoeditor.Olive.png
 screenshots:
-- http://images.libregraphicsworld.org/video/2018/12/introducing-olive/olive-alpha-main-window.jpg
+- https://olivevideoeditor.org/img/screenshot.1600.jpg
 
 authors:
   - name: olive-editor
@@ -24,6 +24,8 @@ desktop:
   Desktop Entry:
     Name: Olive
     Comment: Professional open-source non-linear video editor
+    Comment[it]: Programma di montaggio video professionale open-source
+    Comment[id]: Aplikasi edit video yang non-linier, profesional serta sumbernya terbuka.
     Exec: olive-editor
     Icon: org.olivevideoeditor.Olive
     Terminal: false
@@ -31,9 +33,9 @@ desktop:
     Categories: AudioVideo
     MimeType: application/vnd.olive-project
     StartupNotify: true
-    X-AppImage-Version: 7e3f245
+    X-AppImage-Version: 1e3cf53
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|olive-editor|olive|continuous|Olive*-x86_64.AppImage.zsync
+    X-AppImage-UpdateInformation: gh-releases-zsync|olive-editor|olive|latest|Olive*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
@@ -47,25 +49,31 @@ appdata:
   Name:
     C: Olive
   Summary:
-    ru: Нелинейный видеоредактор
-    C: Non-linear video editor
-    es: Editor de video no lineal
+    uk_UA: Нелінійний відеоредактор
     pt_BR: Editor de vídeo não-linear
+    C: Non-linear video editor
+    uk: Нелінійний відеоредактор
+    id: Aplikasi edit video non-linier
+    ru: Нелинейный видеоредактор
+    es: Editor de video no lineal
+    de_DE: Nicht-lineares Videoschnittprogramm
+    it: Editor video non lineare
   Description:
     C: >-
-      <p>Olive — свободный нелинейный видеоредактор, задуманный как полноценная замена закрытым коммерческим продуктам.</p>
+      <p>Olive adalah aplikasi edit video bersifat non-linier yang bebas dan gratis, bertujuan untuk memberikan alternatif yang
+      lengkap untuk aplikasi edit video profesional.</p>
   DeveloperName:
     C: Olive Team
-  ProjectLicense: GPLv3
+  ProjectLicense: GPL-3.0
   Url:
     homepage: https://www.olivevideoeditor.org
-    help: https://github.com/olive-editor/olive/issues
+    bugtracker: https://github.com/olive-editor/olive/issues
     donation: https://www.patreon.com/olivevideoeditor
   Screenshots:
   - default: true
     thumbnails: []
     source-image:
-      url: http://images.libregraphicsworld.org/video/2018/12/introducing-olive/olive-alpha-main-window.jpg
+      url: https://olivevideoeditor.org/img/screenshot.1600.jpg
       lang: C
   Releases:
   - version: '20181223'

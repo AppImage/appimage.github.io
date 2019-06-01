@@ -1,6 +1,8 @@
 [Desktop Entry]
 Name=Olive
 Comment=Professional open-source non-linear video editor
+Comment[it]=Programma di montaggio video professionale open-source
+Comment[id]=Aplikasi edit video yang non-linier, profesional serta sumbernya terbuka.
 Exec=olive-editor
 Icon=org.olivevideoeditor.Olive
 Terminal=false
@@ -8,10 +10,10 @@ Type=Application
 Categories=AudioVideo;Recorder;
 MimeType=application/vnd.olive-project;
 StartupNotify=true
-X-AppImage-Version=7e3f245
+X-AppImage-Version=1e3cf53
 
 [AppImageHub]
-X-AppImage-UpdateInformation=gh-releases-zsync|olive-editor|olive|continuous|Olive*-x86_64.AppImage.zsync
+X-AppImage-UpdateInformation=gh-releases-zsync|olive-editor|olive|latest|Olive*-x86_64.AppImage.zsync
 X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
