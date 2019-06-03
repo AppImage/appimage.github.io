@@ -197,6 +197,12 @@ set +x
 
 echo "==========================================="
 
+find "${APPDIR}"/usr/share/applications/
+echo ""
+find "${APPDIR}"/usr/share/icons/
+
+echo "==========================================="
+
 # If everything succeeded until here, then download Firejail aith Xpra and run the application in it
 # and take screenshots if we don't have them already from AppStream
 
