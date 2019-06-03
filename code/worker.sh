@@ -197,9 +197,9 @@ set +x
 
 echo "==========================================="
 
-find "${APPDIR}"/usr/share/applications/
+find "${APPDIR}"/usr/share/applications/ || true
 echo ""
-find "${APPDIR}"/usr/share/icons/
+find "${APPDIR}"/usr/share/icons/ || true
 
 echo "==========================================="
 
