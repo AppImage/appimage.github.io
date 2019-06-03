@@ -1,13 +1,14 @@
 [Desktop Entry]
+Name=Mapeo
+Comment=Mapping and monitoring in remote environments.
+Exec=AppRun
+Terminal=false
 Type=Application
-Version=1.0
-Name=OpenSCAD
-Icon=openscad
-Exec=openscad %f
-MimeType=application/x-openscad;
-Categories=Graphics;3DGraphics;Engineering;
-Keywords=3d;solid;geometry;csg;model;stl;
-X-AppImage-Version=2019.05
+Icon=mapeo-desktop
+StartupWMClass=Mapeo
+X-AppImage-Version=4.0.1-beta.1309
+Categories=Utility;
+X-AppImage-BuildId=1LHMKFI1Low5qpIXw7ue8htE6Op
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
