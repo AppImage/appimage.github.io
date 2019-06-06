@@ -29,8 +29,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: newlogic
-    X-AppImage-Version: 0.1.3-beta
-    X-AppImage-BuildId: 4f470250-85fb-11a9-2d8a-2dda89ab9f4c
+    X-AppImage-Version: 0.1.4-beta
+    X-AppImage-BuildId: 5103e5e0-87ae-11a9-020e-bdbedac7649f
     Categories: Utility
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
