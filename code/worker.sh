@@ -53,7 +53,7 @@ echo "URL: $URL"
 
 FILENAME=BeingTested.AppImage
 if [ ! -e "$FILENAME" ] ; then
-  wget -c "$URL" -O "$FILENAME"
+  wget -c -nv "$URL" -O "$FILENAME"
 fi
 
 # Check the type of the AppImage
@@ -197,6 +197,12 @@ set +x
 
 echo "==========================================="
 
+find "${APPDIR}"/usr/share/applications/ || true
+echo ""
+find "${APPDIR}"/usr/share/icons/ || true
+
+echo "==========================================="
+
 # If everything succeeded until here, then download Firejail aith Xpra and run the application in it
 # and take screenshots if we don't have them already from AppStream
 
@@ -212,9 +218,15 @@ echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
+file "$APPDIR"/AppRun
+ls -lh "$APPDIR"/AppRun
+
+export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
+sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/appimage.github.io/pull/1564#issuecomment-491591127 https://github.com/electron/electron/issues/17972
+
 # reset does not work here
 if [ x"$TERMINAL" == xfalse ] ; then
-  firejail --noprofile --net=none --appimage ./"$FILENAME" &
+  firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
 else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
 fi

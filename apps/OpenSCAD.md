@@ -11,12 +11,8 @@ screenshots:
 - https://www.openscad.org/images/appdata-screenshot-1.png
 
 authors:
-  - name: t-paul
-    url: https://build.opensuse.org/user/show/t-paul
 
 links:
-  - type: Download
-    url: https://download.opensuse.org/repositories/home:/t-paul/AppImage/OpenSCAD-Nightly-latest-x86_64.AppImage.mirrorlist
 
 desktop:
   Desktop Entry:
@@ -28,10 +24,11 @@ desktop:
     MimeType: application/x-openscad
     Categories: Graphics
     Keywords: 3d
+    X-AppImage-Version: 2019.05
   AppImageHub:
-    X-AppImage-UpdateInformation: zsync|https://download.opensuse.org/repositories/home:/t-paul/AppImage/OpenSCAD-Nightly-latest-x86_64.AppImage.zsync
-    X-AppImage-Signature: 'Signature made Sat 15 Dec 2018 03:10:15 PM UTC using RSA
-      key ID 30EB8E08 Can''t check signature: No public key'
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
 
@@ -65,11 +62,11 @@ appdata:
   - Graphics
   - 3DGraphics
   Url:
-    homepage: http://www.openscad.org/
+    homepage: https://www.openscad.org/
     bugtracker: https://github.com/openscad/openscad/issues
     faq: https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/FAQ
     help: https://en.wikibooks.org/wiki/OpenSCAD_User_Manual
-    donation: http://www.openscad.org/community.html
+    donation: https://www.openscad.org/community.html
   Icon:
     remote:
     - url: https://www.openscad.org/images/openscad.png
