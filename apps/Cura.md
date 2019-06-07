@@ -27,7 +27,7 @@ desktop:
     Icon: cura-icon
     Terminal: false
     Type: Application
-    MimeType: application/sla
+    MimeType: model/stl
     Categories: Graphics
     Keywords: 3D
   AppImageHub:
