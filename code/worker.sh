@@ -218,8 +218,8 @@ echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
-file  ./"$FILENAME"
-ls -lh  ./"$FILENAME"
+file "$APPDIR"/AppRun
+ls -lh "$APPDIR"/AppRun
 
 export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
 sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/appimage.github.io/pull/1564#issuecomment-491591127 https://github.com/electron/electron/issues/17972
