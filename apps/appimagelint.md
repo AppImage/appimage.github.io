@@ -8,7 +8,7 @@ license: MIT
 icons:
   - appimagelint/icons/scalable/appimagelint.svg
 screenshots:
-- https://github.com/TheAssassin/appimagelint/blob/944f85f74ede650a86ce01a18217d8834e2b3bb1/resources/screenshot.png
+- https://raw.githubusercontent.com/TheAssassin/appimagelint/944f85f74ede650a86ce01a18217d8834e2b3bb1/resources/screenshot.png
 
 authors:
   - name: TheAssassin
@@ -57,6 +57,6 @@ appdata:
   - default: true
     thumbnails: []
     source-image:
-      url: https://github.com/TheAssassin/appimagelint/blob/944f85f74ede650a86ce01a18217d8834e2b3bb1/resources/screenshot.png
+      url: https://raw.githubusercontent.com/TheAssassin/appimagelint/944f85f74ede650a86ce01a18217d8834e2b3bb1/resources/screenshot.png
       lang: C
 ---
