@@ -3,6 +3,9 @@ layout: app
 
 permalink: /MieSimulatorGUI/
 
+icons:
+  - MieSimulatorGUI/icons/256x256/MieSimulator.png
+
 screenshots:
   - MieSimulatorGUI/screenshot.png
 
