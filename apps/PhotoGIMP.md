@@ -12,14 +12,14 @@ screenshots:
   - PhotoGIMP/screenshot.png
 
 authors:
-  - name: probonopd
-    url: https://github.com/probonopd
+  - name: sudo-give-me-coffee
+    url: https://github.com/sudo-give-me-coffee
 
 links:
   - type: GitHub
-    url: probonopd/PhotoGIMP
+    url: sudo-give-me-coffee/PhotoGIMP
   - type: Download
-    url: https://github.com/probonopd/PhotoGIMP/releases
+    url: https://github.com/sudo-give-me-coffee/PhotoGIMP/releases
 
 desktop:
   Desktop Entry:
@@ -173,7 +173,7 @@ desktop:
     X-GNOME-Bugzilla-OtherBinaries: gimp-2.10
     StartupNotify: true
     MimeType: image/bmp
-    X-AppImage-Version: git-2.10.11-20190530
+    X-AppImage-Version: 2.10.13-20190620
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
