@@ -27,7 +27,7 @@ desktop:
     Exec: snomcontrol
     Icon: snomcontrol
     Categories: Development
-    X-AppImage-Version: d1cbdf8
+    X-AppImage-Version: 882c1b0
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|ballessay|snomcontrol|continuous|snomcontrol*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
