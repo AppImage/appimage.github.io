@@ -11,14 +11,14 @@ screenshots:
 - https://camo.githubusercontent.com/851ca9188bb22d726e8d06b9e7cfdd16d0f0c128/68747470733a2f2f736f72616d696d692e6769746875622e696f2f4775697461722f73637265656e73686f74732f7562756e74752e706e67
 
 authors:
-  - name: probonopd
-    url: https://github.com/probonopd
+  - name: soramimi
+    url: https://github.com/soramimi
 
 links:
   - type: GitHub
-    url: probonopd/Guitar
+    url: soramimi/Guitar
   - type: Download
-    url: https://github.com/probonopd/Guitar/releases
+    url: https://github.com/soramimi/Guitar/releases
 
 desktop:
   Desktop Entry:
@@ -28,9 +28,9 @@ desktop:
     Categories: Development
     Exec: guitar
     Icon: guitar
-    X-AppImage-Version: 55770000000.0
+    X-AppImage-Version: e8fc538
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|probonopd|Guitar|continuous|Guitar*-x86_64.AppImage.zsync
+    X-AppImage-UpdateInformation: gh-releases-zsync|soramimi|Guitar|continuous|Guitar*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
