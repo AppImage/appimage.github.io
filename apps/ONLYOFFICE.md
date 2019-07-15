@@ -27,13 +27,13 @@ desktop:
     Type: Application
     GenericName: ONLYOFFICE Desktop Editors
     Comment: Edit office documents
-    Exec: onlyoffice-desktopeditors.sh.wrapper
+    Exec: desktopeditors %F
     Terminal: false
     Icon: asc-de
     Keywords: Text
     Categories: Office
     MimeType: application/msword
-    X-AppImage-Version: 5.1.29.350.glibc2.17
+    X-AppImage-Version: 5.3.95.43.glibc2.17
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
