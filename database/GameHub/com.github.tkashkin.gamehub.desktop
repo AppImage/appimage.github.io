@@ -1,0 +1,26 @@
+[Desktop Entry]
+Name=GameHub
+GenericName=GameHub
+Comment[ru]=Все игры в одном месте
+Comment[pt_BR]=Todos os seus jogos em um só lugar
+Comment[id]=Semua permainan Anda di satu tempat
+Comment[nb_NO]=Alle dine spill på ett sted
+Comment[nl]=Al je spellen op één plek
+Comment[de]=Alle Ihre Spiele an einem Ort
+Comment[pl]=Wszystkie twoje gry w jednym miejscu
+Comment=All your games in one place
+Categories=Game;Amusement;
+Keywords=Game;Hub;Steam;GOG;Humble;HumbleBundle;
+Exec=com.github.tkashkin.gamehub
+X-GNOME-Gettext-Domain=com.github.tkashkin.gamehub
+Icon=com.github.tkashkin.gamehub
+Terminal=false
+Type=Application
+X-AppImage-Version=local-0.14.2-master-local-be55ac0
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
