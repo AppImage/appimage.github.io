@@ -2,14 +2,13 @@
 layout: app
 
 permalink: /ONLYOFFICE/
-description: Edit office documents
+description: Create, edit and save text, spreadsheet and presentation documents
 license: AGPL-3.0
 
 icons:
   - ONLYOFFICE/icons/128x128/asc-de.png
-
 screenshots:
-  - ONLYOFFICE/screenshot.png
+- https://raw.githubusercontent.com/ONLYOFFICE/appimage-desktopeditors/master/metainfo/logo.png
 
 authors:
   - name: ONLYOFFICE
@@ -41,4 +40,29 @@ desktop:
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
     X-AppImage-Payload-License: AGPL-3.0
+
+appdata:
+  Type: desktop-application
+  ID: desktopeditors
+  Name:
+    C: ONLYOFFICE Desktop Editors
+  Summary:
+    C: Create, edit and save text, spreadsheet and presentation documents
+  Description:
+    C: >-
+      <p>ONLYOFFICE Desktop Editors is a free office suite that combines text, spreadsheet and presentation editors allowing
+      to create, view and edit documents stored on your Windows/Linux PC or Mac without an Internet connection. It is fully
+      compatible with Office Open XML formats: .docx, .xlsx, .pptx.</p>
+  ProjectLicense: AGPL-3.0
+  Url:
+    homepage: https://github.com/ONLYOFFICE/appimage-desktopeditors
+  Launchable:
+    desktop-id:
+    - desktopeditors.desktop
+  Screenshots:
+  - default: true
+    thumbnails: []
+    source-image:
+      url: https://raw.githubusercontent.com/ONLYOFFICE/appimage-desktopeditors/master/metainfo/logo.png
+      lang: C
 ---
