@@ -2,7 +2,6 @@
 layout: app
 
 permalink: /3Engine/
-license: MIT
 
 icons:
   - 3Engine/icons/78x96/3Engine.png
@@ -35,5 +34,4 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: MIT
 ---
