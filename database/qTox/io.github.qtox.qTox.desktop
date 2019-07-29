@@ -10,7 +10,7 @@ Icon=qtox
 Categories=Network;InstantMessaging;Chat;Telephony;VideoConference;
 Terminal=false
 MimeType=x-scheme-handler/tox;application/x-tox;
-X-AppImage-Version=8eed684
+X-AppImage-Version=56af9c0
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
