@@ -1,10 +1,11 @@
 [Desktop Entry]
 Type=Application
+Comment=Control snom desktop phones
 Name=snomcontrol
 Exec=snomcontrol
 Icon=snomcontrol
-Categories=Development;
-X-AppImage-Version=882c1b0
+Categories=Office;
+X-AppImage-Version=360b4d1
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|ballessay|snomcontrol|continuous|snomcontrol*-x86_64.AppImage.zsync
