@@ -1,0 +1,13 @@
+{
+  "name": "zenroom-studio",
+  "productName": "zenroom-studio",
+  "version": "0.0.1",
+  "description": "Zenroom Studio",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "Dyne.org",
+    "url": "https://github.com/DECODEproject/zenroom-studio"
+  },
+  "license": "GPLv3",
+  "dependencies": {}
+}

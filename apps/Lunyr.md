@@ -1,0 +1,169 @@
+---
+layout: app
+
+permalink: /Lunyr/
+description: Ethereum-based Encyclopedia
+
+screenshots:
+  - Lunyr/screenshot.png
+
+authors:
+
+links:
+
+desktop:
+  Desktop Entry:
+    Name: Lunyr
+    Comment: Ethereum-based Encyclopedia
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: lunyr
+    X-AppImage-Version: 1.0.0
+    X-AppImage-BuildId: e1861810-31ea-11a8-2b0c-fd170feab4a5
+    Categories: Network
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+
+electron:
+  private: true
+  description: Ethereum-based Encyclopedia
+  main: build/electron.js
+  productName: Lunyr
+  dependencies:
+    "@zeit/next-css": "^0.1.4"
+    aphrodite: "^1.2.1"
+    babel-plugin-transform-define: "^1.3.0"
+    babel-plugin-transform-react-constant-elements: "^6.23.0"
+    babel-polyfill: "^6.26.0"
+    bignumber.js: "^4.0.4"
+    bluebird: "^3.5.1"
+    body-parser: "^1.18.2"
+    bs58: "^4.0.1"
+    chart.js: "^2.6.0"
+    compression: "^1.7.2"
+    diff: "^3.3.0"
+    dotenv: "^5.0.1"
+    draft-js: 0.10.4
+    draft-js-alignment-plugin: beta
+    electron-is-dev: "^0.3.0"
+    electron-log: "^2.2.14"
+    electron-updater: "^2.21.3"
+    electron-webpack: "^1.13.0"
+    enzyme-to-json: "^3.0.0-beta6"
+    eslint-config-react-tools: "^1.1.2"
+    ethereumjs-tx: "^1.3.3"
+    ethjs-account: "^0.1.4"
+    ethjs-provider-signer: "^0.1.4"
+    ethjs-signer: "^0.1.1"
+    express: "^4.16.3"
+    gh-pages: "^1.0.0"
+    halogenium: "^2.2.3"
+    history: "^4.6.3"
+    lodash: "^4.17.4"
+    megadraft: 0.4.33
+    megadraft-image-plugin: "^0.4.2"
+    megadraft-section-title: "^0.3.1"
+    megadraft-video-plugin: "^0.4.2"
+    mixpanel-browser: "^2.17.1"
+    mocha: "^3.4.2"
+    moment: "^2.18.1"
+    next: "^5.0.0"
+    next-redux-wrapper: "^1.3.5"
+    nock: "^9.0.14"
+    node-fetch: "^2.1.1"
+    ordered-hashmap: "^1.0.0"
+    prop-types: "^15.6.0"
+    qrcode.react: "^0.7.1"
+    query-string: "^5.0.1"
+    rc-slider: "^8.3.1"
+    rc-tooltip: "^3.7.0"
+    react: "^16.2.0"
+    react-animations: "^0.1.0"
+    react-blockies: "^1.2.2"
+    react-burger-menu: "^2.1.4"
+    react-calendar: "^2.5.0"
+    react-chartjs-2: "^2.6.1"
+    react-collapsible: "^2.0.0"
+    react-copy-to-clipboard: "^5.0.1"
+    react-cropper: "^1.0.1"
+    react-dom: "^16.2.0"
+    react-dotdotdot: "^1.1.0"
+    react-dotdotdotloader: "^1.0.7"
+    react-dropzone: "^4.2.1"
+    react-ga: "^2.2.0"
+    react-helmet: "^5.2.0"
+    react-html-parser: "^2.0.2"
+    react-icons: "^2.2.7"
+    react-infinite-scroller: "^1.1.3"
+    react-loadable: "^4.0.5"
+    react-modal: "^3.1.10"
+    react-month-picker: "^1.3.0"
+    react-motion: "^0.5.2"
+    react-password-strength: "^2.3.1"
+    react-placeholder: "^2.0.0"
+    react-popover: "^0.5.4"
+    react-progress-2: "^4.4.3"
+    react-redux: "^5.0.5"
+    react-router: "^4.1.1"
+    react-router-dom: "^4.1.1"
+    react-router-redux: next
+    react-share: "^1.15.1"
+    react-simple-dropdown: "^3.2.0"
+    react-slick: "^0.14.11"
+    react-slide-menu: "^0.5.0"
+    react-snapshot: "^1.3.0"
+    react-stickynode: "^1.4.1"
+    react-svg: "^2.1.21"
+    react-table: "^6.7.4"
+    react-textarea-autosize: "^5.2.1"
+    react-tooltip: "^3.3.0"
+    react-transition-group: "^1"
+    react-virtualized: "^9.18.5"
+    react-websocket: "^1.2.0"
+    redux: "^3.7.1"
+    redux-logger: "^3.0.6"
+    redux-mock-store: "^1.2.3"
+    redux-persist: "^5.5.0"
+    redux-thunk: "^2.2.0"
+    secure-random: "^1.1.1"
+    through2: "^2.0.3"
+    truffle-contract: "^2.0.5"
+    web3: 0.20.1
+    weighted: "^0.3.0"
+  jest:
+    collectCoverageFrom:
+    - src/**/*.{js,jsx,mjs}
+    setupFiles:
+    - "<rootDir>/config/polyfills.js"
+    setupTestFrameworkScriptFile: "<rootDir>/src/setupTests.js"
+    testMatch:
+    - "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}"
+    - "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
+    testEnvironment: node
+    testURL: http://localhost
+    transform:
+      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest"
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    transformIgnorePatterns:
+    - "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
+    moduleNameMapper:
+      "^react-native$": react-native-web
+    moduleFileExtensions:
+    - web.js
+    - mjs
+    - js
+    - json
+    - web.jsx
+    - jsx
+    - node
+  babel:
+    presets:
+    - react-app
+  homepage: "./"
+---

@@ -5,6 +5,9 @@ permalink: /falcon-sql-client/
 description: Free, open-source SQL client for Windows, Mac and Linux
 license: MIT
 
+icons:
+  - falcon-sql-client/icons/256x256/falcon-sql-client.png
+
 screenshots:
   - falcon-sql-client/screenshot.png
 
@@ -26,8 +29,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: falcon-sql-client
-    X-AppImage-Version: 2.4.0
-    X-AppImage-BuildId: 40285580-e183-11a7-3fef-757c27136cda
+    X-AppImage-Version: 3.0.3
+    X-AppImage-BuildId: bb791440-a78a-11a8-355c-ff758a97d136
     StartupNotify: true
     Categories: Database
   AppImageHub:
@@ -40,6 +43,9 @@ desktop:
 
 electron:
   main: "./backend/main.js"
+  jest:
+    moduleNameMapper:
+      "\\.css$": identity-obj-proxy
   bin:
     electron: "./node_modules/.bin/electron"
   repository:
@@ -56,21 +62,25 @@ electron:
   optionalDependencies:
     fsevents: "*"
   dependencies:
+    alasql: "^0.4.5"
     csv-parse: "^2.0.0"
+    dtrace-provider: "^0.8.6"
     font-awesome: "^4.6.1"
-    ibm_db: git+https://git@github.com/n-riesco/node-ibm_db.git#patched-v2.2.1
+    ibm_db: "^2.3.0"
     mysql: "^2.15.0"
+    oracledb: https://github.com/oracle/node-oracledb/releases/download/v2.2.0/oracledb-src-2.2.0.tgz
+    papaparse: "^4.3.7"
     pg: "^4.5.5"
     pg-hstore: "^2.3.2"
     restify: "^4.3.2"
-    sequelize: "^3.30.4"
+    sequelize: 3.30.4
     source-map-support: "^0.5.0"
     sqlite3: "^3.1.13"
     tedious: "^2.1.4"
   engines:
-    node: '6'
+    node: '8'
     yarn: '1'
   devEngines:
-    node: '6'
+    node: '8'
     yarn: '1'
 ---
