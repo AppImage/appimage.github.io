@@ -110,9 +110,9 @@ Keywords[sl]=Internet;WWW;Browser;Web;Explorer;Brskalnik;Splet;
 Keywords[tr]=İnternet;WWW;Tarayıcı;Web;Gezgin;Web sitesi;Site;sörf;çevrimiçi;tara;
 Keywords[uk]=Internet;WWW;Browser;Web;Explorer;Інтернет;мережа;переглядач;оглядач;браузер;веб;файрфокс;вогнелис;перегляд;
 Keywords[vi]=Internet;WWW;Browser;Web;Explorer;Trình duyệt;Trang web;
-Keywords[zh_CN]=Internet;WWW;Browser;Web;Explorer;网页;浏览;上网;火狐;Waterfox;互联网;网站;
-Keywords[zh_TW]=Internet;WWW;Browser;Web;Explorer;網際網路;網路;瀏覽器;上網;網頁;火狐;
-Exec=waterfox.wrapper %u
+Keywords[zh_CN]=Internet;WWW;Browser;Web;Explorer;网页;浏览;上网;水狐;Waterfox;wf;互联网;网站;
+Keywords[zh_TW]=Internet;WWW;Browser;Web;Explorer;網際網路;網路;瀏覽器;上網;網頁;水狐;
+Exec=waterfox %u
 Terminal=false
 X-MuiltpleArgs=false
 Type=Application
@@ -122,6 +122,8 @@ MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rs
 StartupWMClass=Waterfox
 StartupNotify=true
 Actions=NewWindow;NewPrivateWindow;
+
+X-Desktop-File-Install-Version=0.23
 
 [Desktop Action NewWindow]
 Name=Open a New Window
@@ -161,7 +163,7 @@ Name[uk]=Відкрити нове вікно
 Name[vi]=Mở cửa sổ mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開啟新視窗
-Exec=waterfox.wrapper -new-window
+Exec=waterfox -new-window
 
 [Desktop Action NewPrivateWindow]
 Name=Open a New Private Window
@@ -182,10 +184,10 @@ Name[sl]=Odpri novo okno zasebnega brskanja
 Name[tr]=Yeni bir pencere aç
 Name[uk]=Відкрити нове вікно у потайливому режимі
 Name[zh_TW]=開啟新隱私瀏覽視窗
-Exec=waterfox.wrapper -private-window
+Exec=waterfox -private-window
 
 [AppImageHub]
 X-AppImage-UpdateInformation=zsync|https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/Waterfox-latest-x86_64.AppImage.zsync
-X-AppImage-Signature=Signature made Sat 27 Oct 2018 09:27:57 AM UTC using RSA key ID 625A271E Can't check signature: No public key 
+X-AppImage-Signature=Signature made Sat, 27 Jul 2019, 12:40:22 CEST using RSA key ID 5E62D791625A271E Can't check signature: No public key
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
