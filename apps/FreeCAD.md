@@ -73,7 +73,7 @@ appdata:
       lang: C
   Releases:
   - version: 0.18.13500
-    unix-timestamp: 1554336000
+    unix-timestamp: 1562889600
   ContentRating:
     oars-1.1: {}
 ---
