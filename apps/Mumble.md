@@ -59,7 +59,7 @@ appdata:
       <p>Mumble is an open source, low-latency, high quality voice chat software primarily intended for use while gaming.</p>
   ProjectLicense: BSD-3-Clause
   Url:
-    homepage: https://wiki.mumble.info
+    homepage: https://mumble.info
   Screenshots:
   - default: true
     thumbnails: []
