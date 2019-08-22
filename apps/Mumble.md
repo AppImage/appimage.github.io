@@ -15,7 +15,7 @@ links:
   - type: GitHub
     url: mumble-voip/mumble
   - type: Download
-    url: https://github.com/mumble-voip/mumble/releases
+    url: https://dl.mumble.info
 
 desktop:
   Desktop Entry:
@@ -41,7 +41,7 @@ desktop:
     Version: 1.0
     X-AppImage-Version: 83bca04
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|mumble-voip|mumble|continuous|Mumble*-x86_64.AppImage.zsync
+    X-AppImage-UpdateInformation: https://dl.mumble.info/snapshot/latest-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
