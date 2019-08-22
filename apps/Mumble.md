@@ -7,6 +7,9 @@ license: NOASSERTION
 icons:
   - Mumble/icons/scalable/mumble.svg
 
+screenshots:
+  - Mumble/screenshot.png
+
 authors:
   - name: mumble-voip
     url: https://github.com/mumble-voip
@@ -66,6 +69,6 @@ appdata:
   - default: true
     thumbnails: []
     source-image:
-      url: https://screenshots.debian.net/screenshots/000/001/906/large.png
+      url: https://screenshots.debian.net/screenshots/000/017/126/large.png
       lang: C
 ---
