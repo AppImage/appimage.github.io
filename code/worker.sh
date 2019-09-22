@@ -218,7 +218,9 @@ echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
-touch "$HOME/.local/share/appimagekit/no_desktopintegration" # Suppress desktop integation
+# Suppress desktop integation
+mkdir -p "$HOME/.local/share/appimagekit"
+touch "$HOME/.local/share/appimagekit/no_desktopintegration"
 
 file "$APPDIR"/AppRun
 ls -lh "$APPDIR"/AppRun
