@@ -231,7 +231,7 @@ else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
 fi
 APID=$!
-sleep 10
+sleep 15
 
 # Make a screenshot
 
