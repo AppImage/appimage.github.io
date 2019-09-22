@@ -218,6 +218,8 @@ echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
+export "$HOME/.local/share/appimagekit/no_desktopintegration" # Suppress desktop integation
+
 file "$APPDIR"/AppRun
 ls -lh "$APPDIR"/AppRun
 
