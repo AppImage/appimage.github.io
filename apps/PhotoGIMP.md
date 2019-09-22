@@ -7,6 +7,7 @@ Create images and edit photographs
 license: GPL-3.0
 GPL-3.0
 GPL-3.0
+GPL-3.0
 
 icons:
   - PhotoGIMP/icons/262x256/photogimp.png
