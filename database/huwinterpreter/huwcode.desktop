@@ -6,7 +6,7 @@ Exec=huwcode
 Icon=huwcode
 Terminal=true
 Categories=Utility;
-X-AppImage-Version=20190514
+X-AppImage-Version=20190525
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
