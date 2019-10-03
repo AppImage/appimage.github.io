@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: sindresorhus/caprine
-  - type: Install
+  - type: Download
     url: https://github.com/sindresorhus/caprine/releases
 
 desktop:

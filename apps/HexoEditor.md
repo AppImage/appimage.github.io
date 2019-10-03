@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: zhuzhuyule/HexoEditor
-  - type: Install
+  - type: Download
     url: https://github.com/zhuzhuyule/HexoEditor/releases
 
 desktop:

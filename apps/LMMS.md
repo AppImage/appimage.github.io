@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: LMMS/lmms
-  - type: Install
+  - type: Download
     url: https://github.com/LMMS/lmms/releases
 
 desktop:

@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: yschutz/ThermusQt
-  - type: Install
+  - type: Download
     url: https://github.com/yschutz/ThermusQt/releases
 
 desktop:

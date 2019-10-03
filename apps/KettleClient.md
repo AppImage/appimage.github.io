@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: Arquanite/KettleClient
-  - type: Install
+  - type: Download
     url: https://github.com/Arquanite/KettleClient/releases
 
 desktop:

@@ -1,0 +1,38 @@
+#
+#   Copyright (C) 2018 CASM Organization <https://casm-lang.org>
+#   All rights reserved.
+#
+#   Developed by: Philipp Paulweber
+#                 <https://github.com/casm-lang/casm-lang.pkg.appimage>
+#
+#   This file is part of casm-lang.pkg.appimage.
+#
+#   casm-lang.pkg.appimage is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   casm-lang.pkg.appimage is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with casm-lang.pkg.appimage. If not, see <http://www.gnu.org/licenses/>.
+#
+
+[Desktop Entry]
+Type=Application
+Name=casm
+Exec=casmi
+Comment=Corinthian Abstract State Machine (CASM)
+Icon=casm
+Categories=Development;
+Terminal=true
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

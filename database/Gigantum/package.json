@@ -1,0 +1,30 @@
+{
+  "name": "gigantum",
+  "productName": "Gigantum",
+  "version": "0.1.0",
+  "description": "Gigantum",
+  "main": "__shim.js",
+  "author": "Gigantum <hello@gigantum.com>",
+  "license": "MIT",
+  "publish": {
+    "provider": "github",
+    "owner": "gigantum",
+    "repo": "gigantum-desktop"
+  },
+  "dependencies": {
+    "docker-remote-api": "^5.0.0",
+    "dockerode": "^2.5.5",
+    "electron-compile": "^6.4.2",
+    "electron-is-dev": "^0.3.0",
+    "electron-log": "^2.2.14",
+    "electron-packager": "^12.0.0",
+    "electron-updater": "^2.21.10",
+    "marked": "^0.3.19",
+    "node-fetch": "^2.1.2",
+    "npm": "^5.7.1",
+    "pump": "^3.0.0",
+    "through-json": "^1.1.0",
+    "through2": "^2.0.3"
+  },
+  "originalMain": "src/main.js"
+}

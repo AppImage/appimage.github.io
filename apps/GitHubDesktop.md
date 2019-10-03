@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: shiftkey/desktop
-  - type: Install
+  - type: Download
     url: https://github.com/shiftkey/desktop/releases
 
 desktop:

@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: calculist/calculist-desktop
-  - type: Install
+  - type: Download
     url: https://github.com/calculist/calculist-desktop/releases
 
 desktop:
