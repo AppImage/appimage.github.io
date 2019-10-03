@@ -5,7 +5,7 @@ Comment=Modélisation 2D de la fractale de Von Koch avec différentes variantes
 Exec=Fractale
 Icon=Fractale
 Categories=Science;
-X-AppImage-Version=cd67013
+X-AppImage-Version=cadfc6e
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|PJK136|Fractale|continuous|Fractale*-x86_64.AppImage.zsync
