@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /hotspot/
+description: The Linux perf GUI for performance analysis
 
 screenshots:
   - hotspot/screenshot.png
@@ -20,6 +21,7 @@ desktop:
   Desktop Entry:
     Type: Application
     Name: Hotspot
+    Comment: The Linux perf GUI for performance analysis
     Exec: hotspot
     Icon: hotspot
     Categories: Development

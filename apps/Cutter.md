@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /Cutter/
+description: A Qt and C++ GUI for the radare2 reverse engineering framework
 
 screenshots:
   - Cutter/screenshot.png
@@ -20,6 +21,7 @@ desktop:
   Desktop Entry:
     Type: Application
     Name: Cutter
+    Comment: A Qt and C++ GUI for the radare2 reverse engineering framework
     Exec: cutter
     Icon: cutter-small
     Categories: Development

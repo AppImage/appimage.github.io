@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /SynfigStudio/
+description: A free and open-source 2D animation software
 
 screenshots:
   - SynfigStudio/screenshot.png
@@ -20,6 +21,7 @@ desktop:
   Desktop Entry:
     Type: Application
     Name: Synfig Studio
+    Comment: A free and open-source 2D animation software
     Exec: launch.sh
     Icon: synfigstudio
     Categories: Graphics

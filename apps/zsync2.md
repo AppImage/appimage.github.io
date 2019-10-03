@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /zsync2/
+description: A rewrite of the original zsync tool for advanced file download/syncing
 
 screenshots:
   - zsync2/screenshot.png
@@ -19,6 +20,7 @@ links:
 desktop:
   Desktop Entry:
     Name: zsync2
+    Comment: A rewrite of the original zsync tool for advanced file download/syncing
     Type: Application
     Terminal: true
     Icon: zsync2

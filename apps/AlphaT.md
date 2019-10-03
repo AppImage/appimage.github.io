@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /AlphaT/
-description: 文档翻译工具
+description: Document translation app powered by machine tranlation engines to help translate documents quickly and easily
 
 screenshots:
   - AlphaT/screenshot.png
@@ -20,7 +20,8 @@ links:
 desktop:
   Desktop Entry:
     Name: AlphaT
-    Comment: 文档翻译工具
+    Comment: Document translation app powered by machine tranlation engines to help
+      translate documents quickly and easily
     Exec: AppRun
     Terminal: false
     Type: Application

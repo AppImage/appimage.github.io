@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /OpenSCAD/
+description: The Programmers Solid 3D CAD Modeller
 
 screenshots:
   - OpenSCAD/screenshot.png
@@ -15,6 +16,7 @@ desktop:
     Type: Application
     Version: 1.0
     Name: OpenSCAD
+    Comment: The Programmers Solid 3D CAD Modeller
     Icon: openscad
     Exec: openscad %f
     MimeType: application/x-openscad
