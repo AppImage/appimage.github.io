@@ -6,20 +6,20 @@ description: An advanced desktop MQTT client, suitable for binary protocol devel
 license: BSD-3-Clause
 
 icons:
-  - MQTTCute/icons/scalable/mqttcute.svg
+  - MQTTCute/icons/256x256/mqttcute.png
 
 screenshots:
   - MQTTCute/screenshot.png
 
 authors:
-  - name: probonopd
-    url: https://github.com/probonopd
+  - name: MayaPosch
+    url: https://github.com/MayaPosch
 
 links:
   - type: GitHub
-    url: probonopd/MQTTCute
+    url: MayaPosch/MQTTCute
   - type: Download
-    url: https://github.com/probonopd/MQTTCute/releases
+    url: https://github.com/MayaPosch/MQTTCute/releases
 
 desktop:
   Desktop Entry:
@@ -30,9 +30,9 @@ desktop:
     Exec: MQTTCute
     Icon: mqttcute
     Categories: Network
-    X-AppImage-Version: 88af425
+    X-AppImage-Version: f060f99
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|probonopd|MQTTCute|continuous|MQTTCute*-x86_64.AppImage.zsync
+    X-AppImage-UpdateInformation: gh-releases-zsync|MayaPosch|MQTTCute|continuous|MQTTCute*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
