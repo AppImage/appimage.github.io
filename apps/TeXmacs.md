@@ -35,7 +35,7 @@ desktop:
     Categories: Education
   AppImageHub:
     X-AppImage-UpdateInformation: zsync|https://download.opensuse.org/repositories/home:/slowphil:/texmacs-devel/AppImage/texmacs-latest-x86_64.AppImage.zsync
-    X-AppImage-Signature: 'Signature made Tue 02 Jul 2019 06:50:38 PM UTC using RSA
+    X-AppImage-Signature: 'Signature made Mon 07 Oct 2019 09:51:00 PM UTC using RSA
       key ID C5B8CA84 Can''t check signature: No public key'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
