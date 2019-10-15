@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "alasql": "^0.4.5",
-    "csv-parse": "^2.0.0",
+    "csv-parse": "^4.6.3",
     "dtrace-provider": "^0.8.6",
     "font-awesome": "^4.6.1",
     "ibm_db": "^2.3.0",
