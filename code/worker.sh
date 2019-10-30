@@ -53,7 +53,7 @@ echo "URL: $URL"
 
 FILENAME=BeingTested.AppImage
 if [ ! -e "$FILENAME" ] ; then
-  wget -c -nv "$URL" -O "$FILENAME"
+  wget -c -nv "$URL" -O "$FILENAME" --no-check-certificate
 fi
 
 # Check the type of the AppImage
@@ -230,9 +230,9 @@ sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/app
 
 # reset does not work here
 if [ x"$TERMINAL" == xfalse ] ; then
-  firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
+  firejail --env=LD_LIBRARY_PATH="$LD_LIBRARY_PATH" --quiet --noprofile --net=none --appimage ./"$FILENAME" &
 else
-  xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
+  xterm -hold -e firejail --env=LD_LIBRARY_PATH="$LD_LIBRARY_PATH" --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
 fi
 APID=$!
 sleep 15
