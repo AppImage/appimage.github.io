@@ -53,7 +53,7 @@ echo "URL: $URL"
 
 FILENAME=BeingTested.AppImage
 if [ ! -e "$FILENAME" ] ; then
-  wget -c -nv "$URL" -O "$FILENAME"
+  wget -c -nv "$URL" -O "$FILENAME" --no-check-certificate
 fi
 
 # Check the type of the AppImage
@@ -210,7 +210,14 @@ TERMINAL=false
 grep -r Terminal=true "${APPDIR}"/*.desktop && TERMINAL=true
 echo "TERMINAL: $TERMINAL"
 
-wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/firejail.tar.gz" ; sudo tar xf firejail.tar.gz -C /
+# The simplest and most straightforward way to get the most recent version
+# of Firejail running on a less than recent OS; don't do this at home kids
+FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
+wget -c "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/$FILE"
+FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/" -O - | grep firejail-0 | head -n 1 | cut -d '"' -f 2)
+wget -c "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/$FILE"
+sudo tar xf musl-*.apk -C / 2>/dev/null
+sudo tar xf firejail-*.apk -C / 2>/dev/null
 sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
 
 echo ""
@@ -226,6 +233,7 @@ file "$APPDIR"/AppRun
 ls -lh "$APPDIR"/AppRun
 
 export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
+export QT_DEBUG_PLUGINS=1 # https://github.com/AppImage/appimage.github.io/pull/1809#issuecomment-548399825
 sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/appimage.github.io/pull/1564#issuecomment-491591127 https://github.com/electron/electron/issues/17972
 
 # reset does not work here
