@@ -2,13 +2,13 @@
 layout: app
 
 permalink: /e2designer/
-description: skin editor for enigma2
+description: Skin editor for enigma2 written with Qt5
+license: GPL-3.0
 
 icons:
   - e2designer/icons/256x256/e2designer.png
-
 screenshots:
-  - e2designer/screenshot.png
+- https://gitlab.com/technic93/e2designer/raw/master/screenshot.png
 
 authors:
 
@@ -22,7 +22,7 @@ desktop:
     Comment: skin editor for enigma2
     Exec: e2designer
     Icon: e2designer
-    X-AppImage-Version: v0.1-365-g80ca747
+    X-AppImage-Version: v0.1-470-gf54a451
   AppImageHub:
     X-AppImage-UpdateInformation: bintray-zsync|technic|e2designer|e2designer|e2designer-_latestVersion-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -30,4 +30,27 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+
+appdata:
+  Type: desktop-application
+  ID: e2designer
+  Name:
+    C: e2designer
+  Summary:
+    C: Skin editor for enigma2 written with Qt5
+  Description:
+    C: >-
+      <p>Provides graphical interface for editing skin.xml files used in the enigma2 set-top-box software.</p>
+  ProjectLicense: GPL-3.0
+  Url:
+    homepage: https://gitlab.com/technic93/e2designer
+  Launchable:
+    desktop-id:
+    - e2designer.desktop
+  Screenshots:
+  - default: true
+    thumbnails: []
+    source-image:
+      url: https://gitlab.com/technic93/e2designer/raw/master/screenshot.png
+      lang: C
 ---
