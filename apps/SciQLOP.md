@@ -2,14 +2,13 @@
 layout: app
 
 permalink: /SciQLOP/
-description: SCIentific Qt application for Learning from Observations of Plasmas
+description: SciQLOP (SCIentific Qt application for Learning from Observations of Plasmas)
 license: GPL-3.0
 
 icons:
   - SciQLOP/icons/scalable/sciqlopLOGO.svg
-
 screenshots:
-  - SciQLOP/screenshot.png
+- https://raw.githubusercontent.com/LaboratoryOfPlasmaPhysics/SciQLOP/master/pictures/sciqlop_screenshot.png
 
 authors:
   - name: LaboratoryOfPlasmaPhysics
@@ -32,12 +31,34 @@ desktop:
     Icon: sciqlopLOGO
     Terminal: false
     Categories: Qt
-    X-AppImage-Version: 655463c
+    X-AppImage-Version: 1e6fa82
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: GPL-3.0
+
+appdata:
+  Type: desktop-application
+  ID: SciQLOP
+  Name:
+    C: SciQLOP
+  Summary:
+    C: SciQLOP (SCIentific Qt application for Learning from Observations of Plasmas)
+  Description:
+    C: >-
+      <p>Efficient and Ergonomic application to explore spacecraft in situ plasma data and create catalogs of events.</p>
+  ProjectLicense: GPL-3.0
+  Url:
+    homepage: https://github.com/LaboratoryOfPlasmaPhysics/SciQLOP
+  Launchable:
+    desktop-id:
+    - SciQLOP.desktop
+  Screenshots:
+  - default: true
+    thumbnails: []
+    source-image:
+      url: https://raw.githubusercontent.com/LaboratoryOfPlasmaPhysics/SciQLOP/master/pictures/sciqlop_screenshot.png
+      lang: C
 ---

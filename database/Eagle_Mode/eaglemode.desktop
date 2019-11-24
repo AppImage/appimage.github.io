@@ -7,7 +7,7 @@ Terminal=false
 Type=Application
 Categories=System;FileManager;
 StartupNotify=true
-X-AppImage-Version=380d0fc
+X-AppImage-Version=ba297f6
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|probonopd|eaglemode|continuous|Eagle_Mode*-x86_64.AppImage.zsync

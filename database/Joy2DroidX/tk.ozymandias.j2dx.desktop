@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Joy2DroidX
+GenericName=Virtual Gamepad
+Exec=j2dx
+Icon=tk.ozymandias.j2dx
+Terminal=true
+Type=Application
+Categories=
+Comment=Turn your Android phone into virtual Xbox 360 controller or DualShock 4 gamepad
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=GPL-3.0
