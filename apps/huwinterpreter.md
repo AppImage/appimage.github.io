@@ -17,9 +17,9 @@ authors:
 
 links:
   - type: GitHub
-    url: huwdp/huwinterpreter-mirror
+    url: huwdp/huwinterpreter
   - type: Download
-    url: https://github.com/huwdp/huwinterpreter-mirror/releases
+    url: https://github.com/huwdp/huwinterpreter/releases
 
 desktop:
   Desktop Entry:
@@ -30,7 +30,7 @@ desktop:
     Icon: huwcode
     Terminal: true
     Categories: Utility
-    X-AppImage-Version: 20190514
+    X-AppImage-Version: 20190525
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
