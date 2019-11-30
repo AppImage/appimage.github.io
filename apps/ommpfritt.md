@@ -29,7 +29,7 @@ desktop:
     Exec: ommpfritt
     Icon: ommpfritt
     Categories: Graphics
-    X-AppImage-Version: d75e85a
+    X-AppImage-Version: 2e634f6
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|pasbi|ommpfritt|continuous|ommpfritt*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.

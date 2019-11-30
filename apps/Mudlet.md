@@ -25,7 +25,7 @@ desktop:
     Type: Application
     Icon: mudlet
     Categories: Game
-    X-AppImage-Version: 3.17.1
+    X-AppImage-Version: 4.1.2
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
