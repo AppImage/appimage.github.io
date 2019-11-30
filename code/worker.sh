@@ -291,6 +291,9 @@ xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 killall icewm
 
+# Check if the screenshot is empty and error out if it is
+[ -s database/$INPUTBASENAME/screenshot.jpg ] || echo "Screenshot is empty" && exit 1
+
 echo "==========================================="
 
 # If everything succeeded until here, then put together a "database file" and display it
