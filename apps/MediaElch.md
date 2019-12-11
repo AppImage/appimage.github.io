@@ -10,8 +10,14 @@ screenshots:
   - MediaElch/screenshot.png
 
 authors:
+  - name: Komet
+    url: https://github.com/Komet
 
 links:
+  - type: GitHub
+    url: Komet/MediaElch
+  - type: Download
+    url: https://github.com/Komet/MediaElch/releases
 
 desktop:
   Desktop Entry:

@@ -1,0 +1,29 @@
+# If you want Electrum to appear in a Linux app launcher ("start menu"), install this by doing:
+# sudo desktop-file-install electrum-nmc.desktop
+
+[Desktop Entry]
+Comment=Lightweight Namecoin Client
+Exec=sh -c "PATH=\"\\$HOME/.local/bin:\\$PATH\"; electrum-nmc %u"
+GenericName[en_US]=Namecoin Wallet
+GenericName=Namecoin Wallet
+Icon=electrum_nmc
+Name[en_US]=Electrum Namecoin Wallet
+Name=Electrum Namecoin Wallet
+Categories=Finance;Network;
+StartupNotify=true
+StartupWMClass=electrum-nmc
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/namecoin;
+Actions=Testnet;
+
+[Desktop Action Testnet]
+Exec=sh -c "PATH=\"\\$HOME/.local/bin:\\$PATH\"; electrum-nmc --testnet %u"
+Name=Testnet mode
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
