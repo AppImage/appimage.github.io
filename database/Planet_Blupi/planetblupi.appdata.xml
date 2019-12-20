@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>planetblupi</id>
+	<metadata_license>MIT</metadata_license>
+	<project_license>GPL-3.0+</project_license>
+	<name>Planet Blupi</name>
+	<summary>Planet Blupi - A delirious spell-binding game</summary>
+	<description>
+		<p>Planet Blupi is a strategy and adventure game. It subtly blends action with thought-provoking challenges. Behind the quiet and gentle facade, you'll enjoy a fascinating diversion full of surprises.</p>
+	</description>
+	<launchable type="desktop-id">planetblupi.desktop</launchable>
+	<url type="homepage">http://blupi.org/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>http://devel.schroetersa.ch/blupi.org/download/screen/planetblupi.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>planetblupi.desktop</id>
+	</provides>
+</component>
