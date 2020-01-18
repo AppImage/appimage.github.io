@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: synfig/synfig
-  - type: Install
+  - type: Download
     url: https://github.com/synfig/synfig/releases
 
 desktop:

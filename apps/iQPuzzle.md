@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: ElTh0r0/iqpuzzle
-  - type: Install
+  - type: Download
     url: https://github.com/ElTh0r0/iqpuzzle/releases
 
 desktop:

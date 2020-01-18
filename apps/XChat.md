@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: probonopd/XChat
-  - type: Install
+  - type: Download
     url: https://github.com/probonopd/XChat/releases
 
 desktop:

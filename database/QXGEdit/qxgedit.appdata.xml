@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2005-2015 Rui Nuno Capela <rncbc@rncbc.org> -->
+<!-- Copyright 2015 Olivier Humbert <trebmuh@tuxfamily.org> for the FR translation--> 
+<component type="desktop">
+ <id>qxgedit.desktop</id>
+ <metadata_license>GPL-2.0+</metadata_license>
+ <project_license>GPL-2.0+</project_license>
+ <name>QXGEdit</name>
+ <summary>Qt XG Editor</summary>
+ <summary xml:lang="fr">Éditeur XG Qt</summary> 
+ <description>
+  <p>QXGEdit is a Qt GUI for editing MIDI System Exclusive files
+  for XG devices (eg. Yamaha DB50XG).</p>
+  <p xml:lang="fr">QXGedit est une interface Qt pour l'édition des
+  fichiers MIDI Sysex (System Exclusive) pour les périphériques
+  XG (exemple : Yamaha DB50XG).</p>
+ </description>
+ <screenshots>
+  <screenshot type="default">
+   <image>http://qxgedit.sourceforge.net/image/qxgedit-screenshot2.png</image>
+   <caption>The main window showing the application in action</caption>
+   <caption xml:lang="fr">Fenêtre principale montrant l'application en action</caption>
+  </screenshot>
+ </screenshots>
+ <keywords>
+  <keyword>MIDI</keyword>
+  <keyword>ALSA</keyword>
+  <keyword>DB50XG</keyword>
+  <keyword>Editor</keyword>  
+  <keyword>SYX</keyword>  
+  <keyword>XG</keyword>  
+  <keyword>Qt</keyword>
+ </keywords>
+ <url type="homepage">http://qxgedit.sourceforge.net</url>
+ <updatecontact>rncbc@rncbc.org</updatecontact>
+ <project_group>rncbc.org</project_group>
+ <kudos>
+  <kudo>AppMenu</kudo>
+  <kudo>HiDpiIcon</kudo>
+  <kudo>ModernToolkit</kudo>
+ </kudos>
+</component>

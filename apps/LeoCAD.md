@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: leozide/leocad
-  - type: Install
+  - type: Download
     url: https://github.com/leozide/leocad/releases
 
 desktop:
