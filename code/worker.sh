@@ -292,8 +292,16 @@ xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 killall icewm
 
-# Check if the screenshot is empty and error out if it is
-[ -s database/$INPUTBASENAME/screenshot.png ] || echo "Screenshot is empty" && exit 1
+# Check if the screenshot is unusable and error out if it is
+if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png" ] ; then
+  echo "Could not take a screenshot png file"
+  ls -lh database/$INPUTBASENAME/screenshot.png
+  file database/$INPUTBASENAME/screenshot.png
+  file -b --mime-type database/$INPUTBASENAME/screenshot.png
+  exit 1
+fi
+
+# [ -s database/$INPUTBASENAME/screenshot.png ] || echo "Screenshot is empty" && exit 1
 
 echo "==========================================="
 
