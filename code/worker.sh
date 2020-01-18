@@ -210,6 +210,7 @@ TERMINAL=false
 grep -r Terminal=true "${APPDIR}"/*.desktop && TERMINAL=true
 echo "TERMINAL: $TERMINAL"
 
+# "Install" Firejail
 # The simplest and most straightforward way to get the most recent version
 # of Firejail running on a less than recent OS; don't do this at home kids
 FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
@@ -292,7 +293,7 @@ kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 killall icewm
 
 # Check if the screenshot is empty and error out if it is
-[ -s database/$INPUTBASENAME/screenshot.jpg ] || echo "Screenshot is empty" && exit 1
+[ -s database/$INPUTBASENAME/screenshot.png ] || echo "Screenshot is empty" && exit 1
 
 echo "==========================================="
 
