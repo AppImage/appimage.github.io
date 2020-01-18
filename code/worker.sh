@@ -243,7 +243,8 @@ sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/app
 if [ x"$TERMINAL" == xfalse ] ; then
   firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
 else
-  xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
+  # xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
+  xterm -hold -e ./"$FILENAME" --help & # Try whether screenshots work w/o Firejail
 fi
 APID=$!
 sleep 15
