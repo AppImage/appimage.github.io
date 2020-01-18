@@ -1,5 +1,0 @@
-# Our test is not clever enough to find the real download link on
-# https://inkscape.org/release/inkscape-1.0beta1/gnulinux/appimage/dl/
-# so we help it a bit
-https://media.inkscape.org/dl/resources/file/Inkscape-fe3e306-x86_64.AppImage
-#
