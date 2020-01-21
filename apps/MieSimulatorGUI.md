@@ -2,6 +2,11 @@
 layout: app
 
 permalink: /MieSimulatorGUI/
+description: MieSimulatorGUI by Virtual Photonics
+license: NOASSERTION
+
+icons:
+  - MieSimulatorGUI/icons/256x256/MieSimulatorGUI.png
 
 screenshots:
   - MieSimulatorGUI/screenshot.png
@@ -19,14 +24,18 @@ links:
 desktop:
   Desktop Entry:
     Type: Application
-    Name: MieSimulatorGUI_v1_1
-    Exec: MieSimulator_v1_1
-    Icon: MieSimulator
+    Name: MieSimulatorGUI
+    Comment: MieSimulatorGUI by Virtual Photonics
+    Exec: MieSimulatorGUI_v1_2
+    Icon: MieSimulatorGUI
     Categories: Science
+    X-AppImage-Version: 6f61aeb
   AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|janakarana|MieSimulatorGUI|continuous|MieSimulatorGUI*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: NOASSERTION
 ---

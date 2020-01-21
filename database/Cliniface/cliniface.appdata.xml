@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>cliniface</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0</project_license>
+	<name>Cliniface</name>
+    <summary>3D Facial Image Visualisation and Analysis</summary>
+
+    <description>
+        <p>
+            Cliniface undertakes the visualisation, measurement, analysis, identification, and reporting of
+            phenotypic traits from 3D facial images. These traits, known as Human Phenotype Ontology terms
+            (or HPO terms), can then be used in concert with other phenotypic traits about a subject
+            (e.g., behavoural or cognitive traits) to assist in diagnosing rare and genetic diseases.
+        </p>
+        <p>    
+            Cliniface works by fitting facial landmarks to the 3D model of a face and then taking spatial
+            measurements using the landmarks to demarcate regions of interest. The extracted measurements
+            are then compared to existing statistics from the research literature describing how these
+            measurements are expected to change with age for different demographic cohorts. If measurements
+            are found to fall outside of the expected range, this may indicate the presence of certain
+            facial traits of clinical significance.
+        </p>
+        <p>
+            Cliniface accepts 3D files in a variety of standard formats, and its analysis is saved into the
+            3DF file format which embeds metadata and analytic results as structured plain text alongside
+            the original model data saved in Wavefront OBJ format. Analysis data can also be exported
+            in XML and JSON formats to allow users to undertake further analysis outside of Cliniface.
+        </p>
+    </description>
+
+    <launchable type="desktop-id">cliniface.desktop</launchable>
+
+	<screenshots>
+        <screenshot type="default">
+            <caption>Analysis of facial measurements.</caption>
+            <image>https://i2.wp.com/cliniface.org/wp-content/uploads/2019/02/measurements.png</image>
+        </screenshot>
+
+        <screenshot>
+            <caption>Visualisation of surface curvature.</caption>
+            <image>https://i1.wp.com/cliniface.org/wp-content/uploads/2019/02/curvature.png</image>
+        </screenshot>
+    </screenshots>
+
+    <url type="homepage">https://cliniface.org</url>
+
+	<provides>
+		<id>cliniface.desktop</id>
+	</provides>
+</component>
