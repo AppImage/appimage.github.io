@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=Application
-Name=laigter
-Comment=Simple normal/specular/parallax/occlussion map generator for 2D sprites
-Exec=laigter
-Icon=laigter
+Name=cpeditor
+Comment=The Editor for Competitive Programming
+Exec=cpeditor
+Icon=icon
 Categories=Development;
-X-AppImage-Version=1.8.1
+X-AppImage-Version=6.2.1
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

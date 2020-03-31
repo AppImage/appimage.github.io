@@ -1,11 +1,13 @@
 [Desktop Entry]
+Name=Yuna
+Exec=AppRun
+Terminal=false
 Type=Application
-Name=laigter
-Comment=Simple normal/specular/parallax/occlussion map generator for 2D sprites
-Exec=laigter
-Icon=laigter
-Categories=Development;
-X-AppImage-Version=1.8.1
+Icon=yuna
+StartupWMClass=Yuna
+X-AppImage-Version=1.4.11.1991
+Comment=An anime player that integrates with AniList, Crunchyroll, and Hidive.
+Categories=Video;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
@@ -13,4 +15,3 @@ X-AppImage-Version=1.8.1
 X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
-X-AppImage-Payload-License=GPL-3.0
