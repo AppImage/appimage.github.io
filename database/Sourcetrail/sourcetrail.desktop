@@ -1,11 +1,16 @@
 [Desktop Entry]
+Name=Sourcetrail
+GenericName=Sourcetrail
+X-GNOME-FullName=Sourcetrail
+Comment=Source Code Explorer
+Exec=/usr/bin/sourcetrail
+Icon=sourcetrail
+Terminal=false
 Type=Application
-Name=laigter
-Comment=Simple normal/specular/parallax/occlussion map generator for 2D sprites
-Exec=laigter
-Icon=laigter
+MimeType=application/x-sourcetrail;
 Categories=Development;
-X-AppImage-Version=1.8.1
+StartupNotify=true
+X-AppImage-Version=2020.1.131
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
