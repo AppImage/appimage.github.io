@@ -1,0 +1,42 @@
+---
+layout: app
+
+permalink: /ARAnyM/
+description: Virtual Machine for Atari 32-bit applications
+license: GPL-2.0
+
+icons:
+  - ARAnyM/icons/48x48/aranym.png
+
+screenshots:
+  - ARAnyM/screenshot.png
+
+authors:
+  - name: aranym
+    url: https://github.com/aranym
+
+links:
+  - type: GitHub
+    url: aranym/aranym
+  - type: Download
+    url: https://github.com/aranym/aranym/releases
+
+desktop:
+  Desktop Entry:
+    Encoding: UTF-8
+    Name: ARAnyM
+    Comment: Virtual Machine for Atari 32-bit applications
+    Exec: aranym.wrapper
+    Icon: aranym
+    Terminal: false
+    Type: Application
+    Categories: System
+  AppImageHub:
+    X-AppImage-UpdateInformation: bintray-zsync|aranym|aranym/aranym-files|ARAnyM|ARAnyM-_latestVersion-x86_64.AppImage.zsync
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: GPL-2.0
+---
