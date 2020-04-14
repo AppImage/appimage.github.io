@@ -1,10 +1,12 @@
 [Desktop Entry]
-Name=APK Studio
-Comment=Cross Platform IDE for reverse-engineering APKs
-Type=Application
+Categories=Development;
+Comment=Open-source, cross-platform Qt based IDE for reverse-engineering Android application packages.
 Exec=apkstudio
-Icon=apkstudio
-Categories=IDE;Development;Qt;
+Name=ApkStudio
+Icon=icon
+Terminal=false
+Type=Application
+
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
 # (e.g., with appimagetool -u) so that users can easily update the AppImage

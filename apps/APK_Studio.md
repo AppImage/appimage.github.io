@@ -2,8 +2,11 @@
 layout: app
 
 permalink: /APK_Studio/
-description: Cross Platform IDE for reverse-engineering APKs
+description: Open-source, cross-platform Qt based IDE for reverse-engineering Android application packages.
 license: LGPL-3.0
+
+icons:
+  - APK_Studio/icons/512x512/icon.png
 
 screenshots:
   - APK_Studio/screenshot.png
@@ -20,12 +23,14 @@ links:
 
 desktop:
   Desktop Entry:
-    Name: APK Studio
-    Comment: Cross Platform IDE for reverse-engineering APKs
-    Type: Application
+    Categories: Development
+    Comment: Open-source, cross-platform Qt based IDE for reverse-engineering Android
+      application packages.
     Exec: apkstudio
-    Icon: apkstudio
-    Categories: IDE
+    Name: ApkStudio
+    Icon: icon
+    Terminal: false
+    Type: Application
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
