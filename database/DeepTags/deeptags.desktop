@@ -7,7 +7,7 @@ TryExec=deeptags
 Exec=deeptags %F
 Icon=deeptags
 Terminal=false
-X-AppImage-Version=0.5
+X-AppImage-Version=0.5.2
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|SZinedine|DeepTags|latest|DeepTags*-x86_64.AppImage.zsync
