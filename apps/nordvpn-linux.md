@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /nordvpn-linux/
-description: A Quasar Framework app
+description: NordVPN for Linux
 license: GPL-3.0
 
 icons:
@@ -23,14 +23,14 @@ links:
 
 desktop:
   Desktop Entry:
-    Name: NordVPN Electron
+    Name: NordVPN for Linux
     Exec: AppRun
     Terminal: false
     Type: Application
     Icon: nordvpn-electron
-    StartupWMClass: NordVPN Electron
-    X-AppImage-Version: 0.0.1
-    Comment: A Quasar Framework app
+    StartupWMClass: NordVPN for Linux
+    X-AppImage-Version: 0.6.0
+    Comment: NordVPN for Linux
     Categories: Utility
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.

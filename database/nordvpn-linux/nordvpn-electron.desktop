@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=NordVPN Electron
+Name=NordVPN for Linux
 Exec=AppRun
 Terminal=false
 Type=Application
 Icon=nordvpn-electron
-StartupWMClass=NordVPN Electron
-X-AppImage-Version=0.0.1
-Comment=A Quasar Framework app
+StartupWMClass=NordVPN for Linux
+X-AppImage-Version=0.6.0
+Comment=NordVPN for Linux
 Categories=Utility;
 
 [AppImageHub]
