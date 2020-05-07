@@ -1,13 +1,12 @@
 [Desktop Entry]
-Name=NordVPN for Linux
-Exec=AppRun
-Terminal=false
+Name=guiscrcpy
+Exec=guiscrcpy
 Type=Application
-Icon=nordvpn-electron
-StartupWMClass=NordVPN for Linux
-X-AppImage-Version=0.6.0
-Comment=NordVPN for Linux
-Categories=Utility;
+Icon=guiscrcpy
+Terminal=false
+Categories=Development;
+Keywords=Python;Screen;Mirroring;Android;
+StartupWMClass=guiscrcpy
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

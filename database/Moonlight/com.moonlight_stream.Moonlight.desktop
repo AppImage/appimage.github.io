@@ -1,13 +1,13 @@
 [Desktop Entry]
-Name=NordVPN for Linux
-Exec=AppRun
+Name=Moonlight
+Comment=Stream games from your NVIDIA GameStream-enabled PC
+Exec=moonlight
+Icon=moonlight
 Terminal=false
 Type=Application
-Icon=nordvpn-electron
-StartupWMClass=NordVPN for Linux
-X-AppImage-Version=0.6.0
-Comment=NordVPN for Linux
-Categories=Utility;
+Categories=Qt;Game;
+Keywords=nvidia;gamestream;stream;
+X-AppImage-Version=2.0.0
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
