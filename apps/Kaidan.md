@@ -8,7 +8,7 @@ license: GPL-3.0+
 icons:
   - Kaidan/icons/scalable/kaidan.svg
 screenshots:
-- https://git.kaidan.im/kaidan/kaidan/uploads/da4886ea50581517bde0278a804b311c/kaidan-screenshot-0.3.png
+- https://www.kaidan.im/images/screenshot.png
 
 authors:
 
@@ -101,7 +101,7 @@ desktop:
     MimeType: x-scheme-handler/xmpp
     X-AppImage-Version: continuous
   AppImageHub:
-    X-AppImage-UpdateInformation: zsync|https://git.kaidan.im/kaidan/kaidan/-/jobs/artifacts/master/raw/Kaidan-x86_64.AppImage.zsync?job=linux-appimage
+    X-AppImage-UpdateInformation: zsync|https://invent.kde.org/kde/kaidan/-/jobs/artifacts/master/raw/Kaidan-x86_64.AppImage.zsync?job=linux-appimage
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
@@ -130,6 +130,8 @@ appdata:
   - Network
   Url:
     homepage: https://kaidan.im
+    bugtracker: https://invent.kde.org/KDE/kaidan/issues
+    help: https://invent.kde.org/KDE/kaidan/wikis
   Launchable:
     desktop-id:
     - kaidan.desktop
@@ -141,6 +143,6 @@ appdata:
       C: Example chat on a desktop and on a mobile device
     thumbnails: []
     source-image:
-      url: https://git.kaidan.im/kaidan/kaidan/uploads/da4886ea50581517bde0278a804b311c/kaidan-screenshot-0.3.png
+      url: https://www.kaidan.im/images/screenshot.png
       lang: C
 ---

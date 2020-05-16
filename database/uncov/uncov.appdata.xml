@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>com.github.xaizek.uncov</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>AGPL-3.0-or-later</project_license>
+    <name>uncov</name>
+    <summary>uncov(er) is a tool that collects and processes code coverage reports.</summary>
+
+    <description>
+        <p>By storing history of coverage uncov allows you to monitor code coverage changes over time, view and compare collected reports.</p>
+        <p>The tool integrates with git repository of your projects and thus avoids generation of static reports. Data is bound to repository information, but can be shared among repository clones.</p>
+        <p>Provided command-line interface should be familiar to the majority of git users and helps to avoid switching to a browser to verify code coverage.</p>
+        <p>It's also possible to display coverage information in a browser, say, on your own CI server instead of using some third-party service.</p>
+    </description>
+
+    <launchable type="desktop-id">uncov.desktop</launchable>
+
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/xaizek/uncov/c613ee96a47ceabe917b55f88d3a01571ff95ce6/data/screenshots/example/show.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/xaizek/uncov/c613ee96a47ceabe917b55f88d3a01571ff95ce6/data/screenshots/diff.png</image>
+        </screenshot>
+    </screenshots>
+
+    <url type="homepage">https://github.com/xaizek/uncov</url>
+    <update_contact>xaizek@posteo.net</update_contact>
+    <developer_name>xaizek</developer_name>
+
+    <provides>
+        <id>uncov.desktop</id>
+    </provides>
+
+  <releases>
+      <release version="0.1" date="2017-01-09">
+          <description>
+              <p>First public release</p>
+          </description>
+      </release>
+      <release version="0.2" date="2017-09-23">
+          <description>
+              <p>Add Web-UI</p>
+          </description>
+      </release>
+      <release version="0.3" date="2019-03-25">
+          <description>
+              <p>Intermediate gcov format and other improvements</p>
+          </description>
+      </release>
+  </releases>
+</component>

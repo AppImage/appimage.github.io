@@ -1,0 +1,15 @@
+{
+  "name": "Parom.TV",
+  "version": "1.1.3",
+  "description": "Parom.TV desktop",
+  "main": "main.js",
+  "homepage": "https://www.parom.tv/",
+  "author": {
+    "name": "PAA",
+    "email": "parom.tv@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "electron-updater": "^4.1.2"
+  }
+}
