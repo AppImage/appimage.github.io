@@ -4,8 +4,11 @@ layout: app
 permalink: /qpdf/
 description: Structural, content-preserving transformations on PDF files
 license: Apache-2.0
+
+icons:
+  - qpdf/icons/128x128/qpdf.png
 screenshots:
-- https://i.stack.imgur.com/coCKR.jpg
+- https://raw.githubusercontent.com/qpdf/qpdf/master/appimage/qpdf-screenshot.jpeg
 
 authors:
   - name: qpdf
@@ -28,8 +31,9 @@ desktop:
     Categories: Utility
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|qpdf|qpdf|latest|qpdf-*x86_64.AppImage.zsync
-    X-AppImage-Signature: 'Signature made Sun 25 Feb 2018 09:56:37 PM UTC using RSA
-      key ID 98012C7E Can''t check signature: No public key'
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
     X-AppImage-Payload-License: Apache-2.0
@@ -68,7 +72,7 @@ appdata:
   - default: true
     thumbnails: []
     source-image:
-      url: https://i.stack.imgur.com/coCKR.jpg
+      url: https://raw.githubusercontent.com/qpdf/qpdf/master/appimage/qpdf-screenshot.jpeg
       width: 798
       height: 1550
       lang: C
