@@ -28,7 +28,7 @@ desktop:
     Type: Application
     Icon: tablo-tools
     StartupWMClass: TabloTools
-    X-AppImage-Version: 0.2.0.243
+    X-AppImage-Version: 0.2.2
     Comment: Tools to Bulk Delete and Export from your Tablo DVR
     Categories: AudioVideo
   AppImageHub:
