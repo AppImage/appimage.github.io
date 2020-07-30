@@ -3,6 +3,7 @@ layout: app
 
 permalink: /RPAN_Studio/
 description: OBS Studio with RPAN integration
+license: GPL-2.0
 
 icons:
   - RPAN_Studio/icons/256x256/rpan-studio.png
@@ -35,4 +36,5 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: GPL-2.0
 ---
