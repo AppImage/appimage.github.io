@@ -24,6 +24,7 @@ desktop:
   Desktop Entry:
     Type: Application
     Name: Hotspot
+    Comment: The Linux perf GUI for performance analysis
     Exec: hotspot
     Icon: hotspot
     Categories: Development
