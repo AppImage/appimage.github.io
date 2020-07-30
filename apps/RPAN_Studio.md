@@ -3,6 +3,7 @@ layout: app
 
 permalink: /RPAN_Studio/
 description: OBS Studio with RPAN integration
+license: GPL-2.0
 
 icons:
   - RPAN_Studio/icons/256x256/rpan-studio.png
