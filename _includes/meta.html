@@ -13,15 +13,18 @@
     <meta name="referrer" content="no-referrer" />
     
     {% if page.excerpt %}
-    <meta name="description" content="{{ page.excerpt| strip_html }}" />
-    <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
+    <meta name="description" content="{{ page.excerpt| strip_html }} Ubuntu, Arch Linux, CentOS, Debian, Fedora, openSUSE, Red Hat" />
+    <meta property="og:description" content="{{ page.excerpt| strip_html }} Ubuntu, Arch Linux, CentOS, Debian, Fedora, openSUSE, Red Hat" />
     {% else %}
-    <meta name="description" content="{{ site.description }}">
-    <meta property="og:description" content="{{ site.description }}" />
+    <meta name="description" content="{{ site.description }} Ubuntu, Arch Linux, CentOS, Debian, Fedora, openSUSE, Red Hat">
+    <meta property="og:description" content="{{ site.description }} Ubuntu, Arch Linux, CentOS, Debian, Fedora, openSUSE, Red Hat" />
     {% endif %}
     <meta name="author" content="{{ site.name }}" />
 
-    {% if page.title %}
-    <meta property="og:title" content="{{ page.title }}" />
-    <meta property="twitter:title" content="{{ page.title }}" />
-    {% endif %}
+    <meta property="og:title" content=" {% if page.title %}{{ page.title | replace: "_", " " }}{% else %}{{ page.name | remove: ".md" | replace: "_", " " }}{% endif %}" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AppImages">
+    <meta name="twitter:creator" content="@probonopd">
+    <meta name="twitter:title" content=" {% if page.title %}{% else %}{{ page.name | remove: ".md" | replace: "_", " " }}{% endif %} AppImage for Linux">
+    <meta name="twitter:description" content="{{ page.description| strip_html }} - run on Linux without installation">
+    <meta name="twitter:image" content="{% if page.screenshots[0] contains '://' %}{{page.screenshots[0]}}{% else %}{{ site.url }}{{ site.baseurl }}/database/{{ page.screenshots[0] }}{% endif %}">
