@@ -1,1 +1,3 @@
-https://github.com/ScintillatorSynth/Scintillator/releases/download/0.0.4/scinsynth-x86_64.AppImage
+https://scintillator-synth-coverage.s3-us-west-1.amazonaws.com/builds/scinsynth-12b26fd7cf84f4a0a2ce196e7744a29ea465a82a-x86_64.AppImage
+# The official release of 0.0.8 will happen at the end of August, or thereabouts.
+# But here's a link to a version of 0.0.7 built on Xenial, if you'd like to try it out before then.
