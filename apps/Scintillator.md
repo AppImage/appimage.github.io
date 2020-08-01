@@ -11,14 +11,8 @@ screenshots:
   - Scintillator/screenshot.png
 
 authors:
-  - name: ScintillatorSynth
-    url: https://github.com/ScintillatorSynth
 
 links:
-  - type: GitHub
-    url: ScintillatorSynth/Scintillator
-  - type: Download
-    url: https://github.com/ScintillatorSynth/Scintillator/releases
 
 desktop:
   Desktop Entry:
@@ -29,7 +23,7 @@ desktop:
     Categories: Graphics
     Comment: A video synthesis engine for SuperCollider
     Terminal: true
-    X-AppImage-Version: 9acf850
+    X-AppImage-Version: 12b26fd
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
