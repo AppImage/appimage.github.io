@@ -6,7 +6,7 @@ Comment=skin editor for enigma2
 Exec=e2designer
 Icon=e2designer
 
-X-AppImage-Version=v0.1-365-g80ca747
+X-AppImage-Version=v0.1-470-gf54a451
 
 [AppImageHub]
 X-AppImage-UpdateInformation=bintray-zsync|technic|e2designer|e2designer|e2designer-_latestVersion-x86_64.AppImage.zsync

@@ -1,0 +1,40 @@
+[Desktop Entry]
+Exec=QMPlay2 %F
+Icon=QMPlay2
+Name=QMPlay2
+Comment=Watching movies and listening to music
+Comment[pl]=Oglądanie filmów oraz słuchanie muzyki
+Comment[ru]=Просмотр фильмов и прослушивание музыки
+StartupNotify=false
+StartupWMClass=QMPlay2
+Type=Application
+Categories=Qt;AudioVideo;Player;Audio;Video;
+MimeType=inode/directory;video/mp4;video/mpeg;video/ogg;video/quicktime;video/x-msvideo;video/x-flv;application/x-shockwave-flash;application/vnd.rn-realmedia;video/vnd.rn-realvideo;video/3gpp;video/3gpp2;video/dv;video/webm;video/x-matroska;application/x-matroska;video/x-ms-asf;video/x-ms-wmv;video/x-ogm+ogg;video/x-theora+ogg;video/mp2t;audio/x-ape;audio/mp4;audio/AMR;audio/aac;audio/webm;audio/x-matroska;audio/ac3;audio/flac;audio/mp2;audio/ogg;audio/x-flac+ogg;audio/x-aiff;audio/x-wav;audio/x-vorbis+ogg;audio/x-tta;audio/x-wavpack;audio/x-musepack;audio/x-ms-wma;audio/x-ms-asx;audio/x-mod;audio/x-s3m;audio/x-stm;audio/x-xi;audio/x-xm;audio/x-it;audio/mpeg;audio/x-mpegurl;audio/x-scpls;application/xspf+xml;audio/prs.sid;audio/x-j2b;audio/x-sfx;audio/x-umx;audio/x-gme;video/x-bink;application/x-cue;
+
+Actions=PlayPause;Stop;Prev;Next;
+
+X-AppImage-Version=20.05.02-1
+
+[Desktop Action PlayPause]
+Name=Play/Pause
+Exec=QMPlay2 --toggle
+
+[Desktop Action Stop]
+Name=Stop
+Exec=QMPlay2 --stop
+
+[Desktop Action Prev]
+Name=Previous
+Exec=QMPlay2 --prev
+
+[Desktop Action Next]
+Name=Next
+Exec=QMPlay2 --next
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=LGPL-3.0
