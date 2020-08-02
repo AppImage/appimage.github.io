@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /Tumblr_Downloader_GUI/
+description: Authenticates to your Tumblr account and downloads all liked photos to your computer
 
 icons:
   - Tumblr_Downloader_GUI/icons/128x128/tumblr-downloader-client.png
@@ -23,6 +24,8 @@ desktop:
   Desktop Entry:
     Type: Application
     Name: Tumblr Downloader Client
+    Comment: Authenticates to your Tumblr account and downloads all liked photos to
+      your computer
     Exec: tumblr-downloader-gui
     Icon: tumblr-downloader-client
     Categories: AudioVideo

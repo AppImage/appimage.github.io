@@ -8,7 +8,7 @@ Terminal=false
 Type=Application
 Icon=mudlet
 Categories=Game;AdventureGame;RolePlaying;ActionGame;
-X-AppImage-Version=3.17.1
+X-AppImage-Version=4.1.2
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

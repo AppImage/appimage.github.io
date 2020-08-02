@@ -15,11 +15,13 @@
     <category>Network</category>
   </categories>
   <url type="homepage">https://kaidan.im</url>
+  <url type="bugtracker">https://invent.kde.org/KDE/kaidan/issues</url>
+  <url type="help">https://invent.kde.org/KDE/kaidan/wikis</url>
   <launchable type="desktop-id">kaidan.desktop</launchable>
   <screenshots>
     <screenshot>
       <caption>Example chat on a desktop and on a mobile device</caption>
-      <image type="source">https://git.kaidan.im/kaidan/kaidan/uploads/da4886ea50581517bde0278a804b311c/kaidan-screenshot-0.3.png</image>
+      <image type="source">https://www.kaidan.im/images/screenshot.png</image>
     </screenshot>
   </screenshots>
   <provides>

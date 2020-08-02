@@ -30,7 +30,7 @@ desktop:
     Comment: Create native iOS, Android, Windows 10 and Desktop Applications from a
       singe code base
   AppImageHub:
-    X-AppImage-Signature: 'Signature made Wed 01 May 2019 08:42:47 PM UTC using RSA
+    X-AppImage-Signature: 'Signature made Mon 01 Jul 2019 01:46:51 PM UTC using RSA
       key ID A4C26106 Can''t check signature: No public key'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64

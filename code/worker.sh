@@ -53,7 +53,7 @@ echo "URL: $URL"
 
 FILENAME=BeingTested.AppImage
 if [ ! -e "$FILENAME" ] ; then
-  wget -c -nv "$URL" -O "$FILENAME"
+  wget -c -nv "$URL" -O "$FILENAME" --no-check-certificate
 fi
 
 # Check the type of the AppImage
@@ -197,6 +197,12 @@ set +x
 
 echo "==========================================="
 
+find "${APPDIR}"/usr/share/applications/ || true
+echo ""
+find "${APPDIR}"/usr/share/icons/ || true
+
+echo "==========================================="
+
 # If everything succeeded until here, then download Firejail aith Xpra and run the application in it
 # and take screenshots if we don't have them already from AppStream
 
@@ -204,7 +210,15 @@ TERMINAL=false
 grep -r Terminal=true "${APPDIR}"/*.desktop && TERMINAL=true
 echo "TERMINAL: $TERMINAL"
 
-wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/firejail.tar.gz" ; sudo tar xf firejail.tar.gz -C /
+# "Install" Firejail
+# The simplest and most straightforward way to get the most recent version
+# of Firejail running on a less than recent OS; don't do this at home kids
+FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
+wget -c "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/$FILE"
+FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/" -O - | grep firejail-0 | head -n 1 | cut -d '"' -f 2)
+wget -c "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/$FILE"
+sudo tar xf musl-*.apk -C / 2>/dev/null
+sudo tar xf firejail-*.apk -C / 2>/dev/null
 sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
 
 echo ""
@@ -212,7 +226,16 @@ echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
+# Suppress desktop integation
+mkdir -p "$HOME/.local/share/appimagekit"
+touch "$HOME/.local/share/appimagekit/no_desktopintegration"
+
+file "$APPDIR"/AppRun
+ls -lh "$APPDIR"/AppRun
+
 export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
+export QT_DEBUG_PLUGINS=1 # https://github.com/AppImage/appimage.github.io/pull/1809#issuecomment-548399825
+sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/appimage.github.io/pull/1564#issuecomment-491591127 https://github.com/electron/electron/issues/17972
 
 # reset does not work here
 if [ x"$TERMINAL" == xfalse ] ; then
@@ -221,7 +244,7 @@ else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
 fi
 APID=$!
-sleep 10
+sleep 15
 
 # Make a screenshot
 
@@ -268,6 +291,17 @@ xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 killall icewm
+
+# Check if the screenshot is unusable and error out if it is
+if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png" ] ; then
+  echo "Could not take a screenshot png file"
+  ls -lh database/$INPUTBASENAME/screenshot.png
+  file database/$INPUTBASENAME/screenshot.png
+  file -b --mime-type database/$INPUTBASENAME/screenshot.png
+  exit 1
+fi
+
+# [ -s database/$INPUTBASENAME/screenshot.png ] || echo "Screenshot is empty" && exit 1
 
 echo "==========================================="
 
@@ -500,7 +534,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
   cat "apps/${INPUTBASENAME}.md" || exit 1
   cat "database/${INPUTBASENAME}/"*.desktop || exit 1 # Asterisk must not be inside quotes, https://travis-ci.org/AppImage/appimage.github.io/builds/360847207#L782
   ls -lh "database/${INPUTBASENAME}/screenshot.png" || exit 1
-  curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfer.sh/screenshot.png 
+  curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfersh.com/screenshot.png 
   echo "Since we are on a TRAVIS_PULL_REQUEST and the required files are there, we are assuming the test is OK"
   exit 0
 fi
