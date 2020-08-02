@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=Application
 Name=laigter
-Comment=Simple Normal-Map Generator for 2D Sprites
+Comment=Simple normal/specular/parallax/occlussion map generator for 2D sprites
 Exec=laigter
 Icon=laigter
 Categories=Development;
-X-AppImage-Version=1.4.0-beta
+X-AppImage-Version=1.8.1
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

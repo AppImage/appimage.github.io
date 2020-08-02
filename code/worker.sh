@@ -534,7 +534,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
   cat "apps/${INPUTBASENAME}.md" || exit 1
   cat "database/${INPUTBASENAME}/"*.desktop || exit 1 # Asterisk must not be inside quotes, https://travis-ci.org/AppImage/appimage.github.io/builds/360847207#L782
   ls -lh "database/${INPUTBASENAME}/screenshot.png" || exit 1
-  curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfer.sh/screenshot.png 
+  curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfersh.com/screenshot.png 
   echo "Since we are on a TRAVIS_PULL_REQUEST and the required files are there, we are assuming the test is OK"
   exit 0
 fi
