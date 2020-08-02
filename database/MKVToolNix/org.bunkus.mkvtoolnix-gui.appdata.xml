@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Copyright 2019 Moritz Bunkus -->
+<component type="desktop">
+  <id>org.bunkus.mkvtoolnix-gui</id>
+  <launchable type="desktop-id">org.bunkus.mkvtoolnix-gui.desktop</launchable>
+  <name>MKVToolNix</name>
+  <name xml:lang="de">MKVToolNix</name>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0</project_license>
+  <developer_name>Moritz Bunkus</developer_name>
+  <summary>Matroska files creator and tools</summary>
+  <summary xml:lang="de">Werkzeuge zum Erzeugen und Bearbeiten von Matroska-Dateien</summary>
+  <description>
+    <p>
+      MKVToolNix is a set of tools to create, alter and inspect Matroska files
+      under Linux, other Unices and Windows.
+    </p>
+
+    <p xml:lang="de">
+      MKVToolNix ist eine Sammlung von Werkzeugen für Linux, andere Unixe und Windows, mit denen Matroska-Dateien erzeugt, verändert und
+      begutachtet werden können.
+    </p>
+  </description>
+  <categories>
+   <category>AudioVideo</category>
+  </categories>
+  <mimetypes>
+   <mimetype>application/x-mkvtoolnix-gui-settings</mimetype>
+   <mimetype>video/x-matroska</mimetype>
+   <mimetype>audio/x-matroska</mimetype>
+  </mimetypes>
+  <url type="bugtracker">https://gitlab.com/mbunkus/mkvtoolnix/issues/</url>
+  <url type="contact">https://mkvtoolnix.download/community.html</url>
+  <url type="faq">https://gitlab.com/mbunkus/mkvtoolnix/wikis/FAQ</url>
+  <url type="help">https://mkvtoolnix.download/community.html</url>
+  <url type="homepage">https://mkvtoolnix.download</url>
+  <url type="translate">https://www.transifex.com/moritz-bunkus/mkvtoolnix/dashboard/</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://mkvtoolnix.download/images/mkvtoolnix-gui-official-screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+   <binary>mkvmerge</binary>
+   <binary>mkvinfo</binary>
+   <binary>mkvextract</binary>
+   <binary>mkvpropedit</binary>
+   <binary>mkvtoolnix-gui</binary>
+  </provides>
+  <update_contact>moritz_AT_bunkus.org</update_contact>
+  <translation type="gettext">mkvtoolnix</translation>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="38.0.0" date="2019-10-06"></release>
+    <release version="37.0.0" date="2019-08-24"></release>
+    <release version="36.0.0" date="2019-08-10"></release>
+    <release version="35.0.0" date="2019-06-22"></release>
+    <release version="34.0.0" date="2019-05-18"></release>
+    <release version="33.1.0" date="2019-04-14"></release>
+    <release version="33.0.0" date="2019-04-12"></release>
+    <release version="32.0.0" date="2019-03-12"></release>
+    <release version="31.0.0" date="2019-02-09"></release>
+    <release version="30.1.0" date="2019-01-05"></release>
+    <release version="30.0.0" date="2019-01-04"></release>
+    <release version="29.0.0" date="2018-12-01"></release>
+    <release version="28.2.0" date="2018-10-25"></release>
+    <release version="28.1.0" date="2018-10-23"></release>
+    <release version="28.0.0" date="2018-10-20"></release>
+    <release version="27.0.0" date="2018-09-26"></release>
+    <release version="26.0.0" date="2018-08-26"></release>
+    <release version="25.0.0" date="2018-07-12"></release>
+  </releases>
+</component>
