@@ -5,6 +5,9 @@ permalink: /makoureactor/
 description: Can edit field from Final Fantasy VII (PS & PC)
 license: GPL-3.0
 
+icons:
+  - makoureactor/icons/64x64/logo-shinra.png
+
 screenshots:
   - makoureactor/screenshot.png
 
@@ -32,6 +35,7 @@ desktop:
     Categories: Game
     Keywords: PlayStation
     StartupNotify: false
+    X-AppImage-Version: 0d9c6a8
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|myst6re|makoureactor|continuous|Makou_Reactor*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
