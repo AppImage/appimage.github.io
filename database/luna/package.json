@@ -1,0 +1,13 @@
+{
+  "name": "luna",
+  "productName": "luna",
+  "version": "2.0.0",
+  "description": "Manage your NPM packages.",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "rvpanoz",
+    "email": "rvpanoz@gmail.com",
+    "url": "https://github.com/rvpanoz"
+  },
+  "license": "GPLv3"
+}

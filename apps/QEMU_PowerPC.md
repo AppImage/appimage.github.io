@@ -15,7 +15,7 @@ authors:
 links:
   - type: GitHub
     url: probonopd/qemu-ppc
-  - type: Install
+  - type: Download
     url: https://github.com/probonopd/qemu-ppc/releases
 
 desktop:

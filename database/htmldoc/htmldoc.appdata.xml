@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>htmldoc.desktop</id>
+  <name>htmldoc</name>
+  <summary>Convert HTML and Markdown source files or web pages to PostScript, PDF, EPUB or HTML</summary>
+  <developer_name>Michael R. Sweet</developer_name>
+  <description>
+  <p>
+      HTMLDOC is a program that reads HTML and Markdown source files or web pages and converts these into corresponding EPUB, HTML, PostScript, or PDF files with optional tables of contents.
+  </p>
+  <p>
+      HTMLDOC was developed in the 1990's as a documentation generator for my previous company, and has since seen a lot of usage as a report generator embedded in web servers. However, it does not support many things in "the modern web", such as Cascading Style Sheets (CSS), PDF Encryption (other than 128-bit RC4), PDF forms, complex HTML tables (other than HTML-3.2), Unicode with right-to-left text formatting, Emoji.
+  </p>
+  <p>
+      HTMLDOC can run from the command line (CLI) as well as with a graphical user interface (GUI).
+      It also supports operation as a CGI program for a web server to provide PDF-formatted output from a web page.
+      The GUI starts automatically if you run HTMLDOC without any options.
+      Since support for Markdown input and EPUB output is still under development, both options are not available from the GUI, but only from the CLI.
+  </p>
+</description>
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-2</project_license>
+  <url type="bugtracker">https://github.com/michaelrsweet/htmldoc/issues</url>
+  <url type="help">http://michaelrsweet.github.io/htmldoc/htmldoc.html</url>
+  <url type="homepage">http://michaelrsweet.github.io/htmldoc/index.html</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>HTMLDOC 'input' tab to select source file(s)</caption>
+      <image height="592" width="892">https://raw.githubusercontent.com/KurtPfeifle/htmldoc/master/desktop/screenshot-1.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>HTMLDOC 'help' window</caption>
+      <image height="708" width="876">https://raw.githubusercontent.com/KurtPfeifle/htmldoc/master/desktop/screenshot-3.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>HTMLDOC 'output' tab to select output file type with name+path</caption>
+      <image height="592" width="892">https://raw.githubusercontent.com/KurtPfeifle/htmldoc/master/desktop/screenshot-2.png</image>
+    </screenshot>
+  </screenshots>
+  <update_contact>michael.r.sweet@gmail.com</update_contact>
+</component>

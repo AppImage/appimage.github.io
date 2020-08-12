@@ -2,6 +2,10 @@
 layout: app
 
 permalink: /hotspot/
+license: NOASSERTION
+
+icons:
+  - hotspot/icons/128x128/hotspot.png
 
 screenshots:
   - hotspot/screenshot.png
@@ -13,13 +17,14 @@ authors:
 links:
   - type: GitHub
     url: KDAB/hotspot
-  - type: Install
+  - type: Download
     url: https://github.com/KDAB/hotspot/releases
 
 desktop:
   Desktop Entry:
     Type: Application
     Name: Hotspot
+    Comment: The Linux perf GUI for performance analysis
     Exec: hotspot
     Icon: hotspot
     Categories: Development
@@ -29,4 +34,5 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: NOASSERTION
 ---

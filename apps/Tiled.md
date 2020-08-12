@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: bjorn/tiled
-  - type: Install
+  - type: Download
     url: https://github.com/bjorn/tiled/releases
 
 desktop:

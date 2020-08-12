@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: xx10t4/iota1k
-  - type: Install
+  - type: Download
     url: https://github.com/xx10t4/iota1k/releases
 
 desktop:

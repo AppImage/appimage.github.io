@@ -13,7 +13,10 @@ InitialPreference=9
 Categories=Qt;KDE;Utility;TextEditor;
 
 [AppImageHub]
-X-AppImage-UpdateInformation=
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+# Dear upstream developer, please include a digital signature in your AppImage
+# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
 X-AppImage-Type=1
 # Dear upstream developer, please consider to switch to type 2
 # so that users can benefit from the additional features like digital embedded signatures
