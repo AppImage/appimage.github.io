@@ -195,11 +195,11 @@ fi
 
 set +x
 
-echo "==========================================="
-
-find "${APPDIR}"/usr/share/applications/ || true
-echo ""
-find "${APPDIR}"/usr/share/icons/ || true
+# echo "==========================================="
+#
+# find "${APPDIR}"/usr/share/applications/ || true
+# echo ""
+# find "${APPDIR}"/usr/share/icons/ || true
 
 echo "==========================================="
 
