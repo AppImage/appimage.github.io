@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Ferdi
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=ferdi
+StartupWMClass=Ferdi
+X-AppImage-Version=5.5.0.2116
+Comment=Ferdi is your messaging app / former Emperor of Austria and combines chat & messaging services into one application. Ferdi currently supports Slack, WhatsApp, WeChat, HipChat, Facebook Messenger, Telegram, Google Hangouts, GroupMe, Skype and many more. You can download Ferdi for free for Mac & Windows.
+MimeType=x-scheme-handler/ferdi;
+Categories=Network;InstantMessaging;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
