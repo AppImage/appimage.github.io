@@ -1,6 +1,6 @@
 {
   "name": "BrainVerse",
-  "version": "0.0.3",
+  "version": "0.0.8-alpha",
   "description": "Electronic Lab Notebook for Reproducible Neuro Imaging Research",
   "main": "main.js",
   "author": "Smruti Padhy <smruti@mit.edu>",
@@ -27,7 +27,7 @@
     "jqwidgets-framework": "^4.6.2",
     "load-json-file": "^2.0.0",
     "method-override": "^2.3.9",
-    "moment": "^2.18.1",
+    "moment": "^2.21.0",
     "node-b64": "0.0.3",
     "node-gyp": "^3.6.2",
     "npm": "^5.6.0",

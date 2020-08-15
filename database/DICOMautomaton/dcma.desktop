@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+# Note: version below is version of the *desktop* file, not DCMA. (...)
+Version=1.0
+Name=DICOMautomaton
+Comment=Tools for working with medical physics data
+Path=/usr/bin
+Exec=dicomautomaton_dispatcher
+Icon=DCMA_cycle_opti
+Terminal=true
+Categories=Science;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

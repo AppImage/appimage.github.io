@@ -1,0 +1,23 @@
+{
+  "name": "SpeedyLoader",
+  "version": "0.0.3",
+  "description": "Speeduino universal firmware loader",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noisymime/SpeedyLoader"
+  },
+  "author": "Josh Stewart",
+  "email": "sales@speeduino.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noisymime/SpeedyLoader/issues"
+  },
+  "homepage": "https://github.com/noisymime/SpeedyLoader",
+  "dependencies": {
+    "electron-dl": "^1.12.0",
+    "marked": "^0.6.0",
+    "request": "^2.88.0",
+    "serialport": "^7.1.1"
+  }
+}
