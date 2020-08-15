@@ -1,0 +1,24 @@
+{
+  "name": "explorook",
+  "version": "0.0.19",
+  "description": "Rookout's site addon to support local files and folders",
+  "main": "dist/index.js",
+  "repository": "https://github.com/rookout/explorook",
+  "author": {
+    "email": "support@rookout.com",
+    "name": "Rookout"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "auto-launch": "^5.0.5",
+    "electron-log": "^2.2.15",
+    "electron-store": "^2.0.0",
+    "electron-updater": "^2.21.10",
+    "full-text-search-light": "0.0.17",
+    "graphql-yoga": "^1.14.8",
+    "isomorphic-git": "^0.19.9",
+    "lodash": "^4.17.10",
+    "uuid": "^3.2.1",
+    "walk": "^2.3.13"
+  }
+}

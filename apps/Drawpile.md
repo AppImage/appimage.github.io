@@ -3,6 +3,9 @@ layout: app
 
 permalink: /Drawpile/
 
+icons:
+  - Drawpile/icons/scalable/drawpile.svg
+
 screenshots:
   - Drawpile/screenshot.png
 

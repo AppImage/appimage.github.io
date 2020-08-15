@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>de.mamuck.JKlubTV</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0</project_license>
+	<name>JKlubTV-4.0.67-beta</name>
+	<summary>Chess Tournament Management</summary>
+	<description>
+		<p>Manage chess round robin
+tournaments with JKlubTV
+This application will capture the round-robin tournament
+belonging data into a SQLite database. It is intended for
+webmasters who want to easily manage a club tournament in
+their own chess club. The HTML tables that are to be
+published for the website will be created easily by the
+application. Automatically calculating the total points
+Sonneborn Berger points of each player, as well as their
+sequence DWZ, and sorts the HTML table by the calculated
+ranking. It is also possible the tables to save as a PDF file.
+The software is free (opensource).</p>
+	</description>
+	<launchable type="desktop-id">de.mamuck.JKlubTV.desktop</launchable>
+	<url type="homepage">https://mamuck.de/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://mamuck.de/fileadmin/_processed_/d/8/csm_Bildschirmfoto_vom_2017-09-09_23-50-07_9cfbee400f.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>de.mamuck.JKlubTV.desktop</id>
+	</provides>
+</component>
