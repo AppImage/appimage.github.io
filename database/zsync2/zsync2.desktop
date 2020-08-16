@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=zsync2
+Comment=A rewrite of the original zsync tool for advanced file download/syncing
+Type=Application
+Terminal=true
+Icon=zsync2
+Exec=zsync2
+Categories=Network;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|TheAssassin|zsync2|continuous|zsync2*x86_64.AppImage.zsync
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

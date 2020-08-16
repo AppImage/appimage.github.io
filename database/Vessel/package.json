@@ -1,0 +1,13 @@
+{
+  "name": "vessel",
+  "productName": "vessel",
+  "version": "0.0.7",
+  "description": "A simple wallet for managing your Steem accounts.",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "Aaron Cox",
+    "email": "aaron@greymass.com",
+    "url": "https://github.com/aaroncox"
+  },
+  "license": "MIT"
+}

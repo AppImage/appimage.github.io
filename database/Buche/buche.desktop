@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=buche
+Comment=A logger of sorts
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=buche
+X-AppImage-Version=0.1.5
+X-AppImage-BuildId=b4679520-052b-11a8-1e7e-d3f8089d086c
+Categories=Utility;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

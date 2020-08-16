@@ -1,0 +1,22 @@
+{
+  "name": "invoice-generator",
+  "version": "1.0.0",
+  "description": "Invoice Generator in Electron",
+  "main": "main.js",
+  "productName": "InvoiceGenerator",
+  "engines": {
+    "node": "^9",
+    "npm": "5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhavyaagg/Invoice-Generator-Electron.git"
+  },
+  "author": "bhavyaagg <bhavyaaggarwal1209@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/bhavyaagg/Invoice-Generator-Electron#readme",
+  "dependencies": {
+    "sequelize": "^4.28.6",
+    "sqlite3": "^3.1.13"
+  }
+}
