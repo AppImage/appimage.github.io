@@ -6,7 +6,7 @@ Icon=scinsynth
 Categories=Graphics;
 Comment=A video synthesis engine for SuperCollider
 Terminal=true
-X-AppImage-Version=5c424c5
+X-AppImage-Version=63f9b53
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

@@ -23,7 +23,7 @@ desktop:
     Categories: Graphics
     Comment: A video synthesis engine for SuperCollider
     Terminal: true
-    X-AppImage-Version: 5c424c5
+    X-AppImage-Version: 63f9b53
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
