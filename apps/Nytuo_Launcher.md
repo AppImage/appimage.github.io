@@ -28,7 +28,7 @@ desktop:
     Type: Application
     Icon: nytuolauncher
     StartupWMClass: Nytuo-Launcher
-    X-AppImage-Version: 2.10.0
+    X-AppImage-Version: 2.10.1
     Comment: Permet de télécharger,mettre à jour et jouer à mes jeux de manière simple
       et sans prise de tête.
     Categories: Utility
