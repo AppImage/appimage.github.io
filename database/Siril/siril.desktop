@@ -39,13 +39,14 @@ Keywords[nl_BE]=astronomie;stacking;afstemming;
 Keywords[pt_PT]=astronomia;empilhamento;alinhamento;
 Keywords[tl_PH]=astronomiya;stacking;rehistrasyon;
 Keywords[zh_CN]=天文;叠加;对齐;
-Exec=siril.wrapper %F
+Exec=siril %F
 Icon=siril
 Terminal=false
 Type=Application
 StartupNotify=true
 Categories=Science;Astronomy;ImageProcessing;
-MimeType=image/fits;image/bmp;image/pic;image/jpeg;image/png;image/tiff;image/x-portable-pixmap;video/ser;
+MimeType=text/x-seq;image/fits;application/fits;image/bmp;application/bmp;image/pic;application/pic;image/jpeg;application/jpeg;image/png;application/png;image/tiff;application/tiff;image/x-portable-pixmap;video/ser;image/x-adobe-dng;image/x-canon-cr2;image/x-canon-crw;image/x-fuji-raf;image/x-kodak-dcr;image/x-kodak-k25;image/x-kodak-kdc;image/x-minolta-mrw;image/x-nikon-nef;image/x-olympus-orf;image/x-panasonic-raw;image/x-panasonic-raw2;image/x-pentax-pef;image/x-sigma-x3f;image/x-sony-arw;image/x-sony-sr2;image/x-sony-srf;image/x-xisf;
+X-AppImage-Version=0.9.12.glibc2.15
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
