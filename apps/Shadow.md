@@ -21,7 +21,7 @@ desktop:
     Type: Application
     Icon: shadow
     StartupWMClass: Shadow
-    X-AppImage-Version: 5.0.615.4813
+    X-AppImage-Version: 5.0.673.5124
     MimeType: x-scheme-handler/Shadow
     Categories: Utility
   AppImageHub:
