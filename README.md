@@ -10,6 +10,7 @@ https://appimage.github.io/
 ## This is NOT...
 
 * __A distribution__. AppImageHub __does not distribute AppImages__ or provide them for download. It simply links to the respective author's download pages, from where users will be able to download AppImages. It also __does not keep track of versions__, only of channels such as "release", "beta", "nightly", "continuous" (as defined by the upstream application authors). We think that trying to keep track of all versions in a central repository is futile, since it does not scale.
+* __A guarantee of any sorts__. While we check that an AppImage follows basic AppImage conventions and that it can run on the oldest still-supported LTS release of Ubuntu, this is basically all we check for right now. No explicit or implied guarantees whatsoever. Use at your own risk and only run applications from authors you trust. We do not imply that you should trust applications or their authors just because they are listed here.
 
 ## User stories
 
@@ -73,6 +74,7 @@ Currently we are providing a JSON feed at https://appimage.github.io/feed.json. 
 * https://github.com/sillasleal/appcenter
 * https://github.com/lliurex/lliurex-store
 * https://linuxappstore.io/ powered by https://github.com/linuxappstore/linuxappstore-frontend
-* https://github.com/MuhammedKpln/chob command-line tool 
+* https://github.com/MuhammedKpln/chob command-line tool
+* https://github.com/michaeldelago/aipm
 
 Please contact us (or send a pull request) if you are using this data so that we can list your project here.

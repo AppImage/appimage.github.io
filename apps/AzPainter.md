@@ -24,6 +24,7 @@ desktop:
   Desktop Entry:
     Type: Application
     Name: AzPainter
+    Comment: A full color painting software for illustration drawing
     Exec: azpainter %f
     Icon: azpainter
     Terminal: false

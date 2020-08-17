@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>org.eu.encom.spectral</id>
+
+  <provides>
+    <binary>spectral</binary>
+  </provides>
+
+  <name>Spectral</name>
+  <summary>IM client for the Matrix protocol</summary>
+  <description>
+    <p>
+      Spectral is a glossy, cross-platform client for Matrix, the decentralized communication protocol for instant messaging.
+    </p>
+  </description>
+
+  <url type="homepage">https://gitlab.com/b0/spectral/</url>
+  <url type="bugtracker">https://gitlab.com/b0/spectral/issues/</url>
+  <url type="help">https://spectral.encom.eu.org/docs/</url>
+
+  <categories>
+    <category>Matrix</category>
+    <category>Internet</category>
+  </categories>
+
+  <developer_name>Black Hat</developer_name>
+  <metadata_license>GFDL</metadata_license>
+  <project_license>GPL-3.0</project_license>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Overview</caption>
+      <image>https://gitlab.com/b0/spectral/raw/master/screenshots/1.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Room Timeline</caption>
+      <image>https://gitlab.com/b0/spectral/raw/master/screenshots/2.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Room Config</caption>
+      <image>https://gitlab.com/b0/spectral/raw/master/screenshots/3.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Settings</caption>
+      <image>https://gitlab.com/b0/spectral/raw/master/screenshots/4.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.0">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+  </content_rating>
+
+  <releases>
+    <release version="648" date="2019-05-22"></release>
+    <release version="643" date="2019-05-22"></release>
+    <release version="603" date="2019-05-01"></release>
+    <release version="464" date="2018-10-24"></release>
+    <release version="462" date="2018-10-24"></release>
+    <release version="436" date="2018-10-20"></release>
+  </releases>
+</component>
