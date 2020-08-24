@@ -1,14 +1,13 @@
 [Desktop Entry]
-Categories=Application;Game;
-Encoding=UTF-8
-Exec=/usr/bin/blackchocobo
+Categories=Game;
+Exec=blackchocobo
 GenericName=FF7 Save Game Editor
 GenericName[en]=FF7 Save Game Editor
 GenericName[es]=Editor de partidas guardadas para FF7
 GenericName[fr]=Éditeur de sauvegardes FF7
 GenericName[de]=FF7 Spielstand-Bearbeitungsprogramm
 Icon=Black_Chocobo
-MimeType=application/x-blackchocobo;
+MimeType=application/x-ff7PCSave;application/x-ff7SwitchSave;
 Name=Black Chocobo
 Name[en]=Black Chocobo
 Name[es]=Black Chocobo
@@ -18,6 +17,7 @@ StartupNotify=true
 Terminal=false
 Type=Application
 X-KDE-SubstituteUID=false
+
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|sithlord48|blackchocobo|latest|Black_Chocobo*-x86_64.AppImage.zsync
