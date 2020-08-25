@@ -1,6 +1,13 @@
 #!/bin/bash
 
 URL=$(cat $1 | head -n 1)
+if [[ $(cat $1 | head -n 2 | tail -n 1) == weblink:* ]]; then
+  WEBPAGE=$(cat text | head -n 2 | tail -n 1 | grep -P -o ':\K(.*)' | sed -e 's/^[[:space:]]*//')
+  echo "webpage: $WEBPAGE"
+else
+  WEBPAGE=""
+fi
+
 echo $URL
 
 if [ x"$TRAVIS_PULL_REQUEST" == xfalse ] ; then
@@ -490,6 +497,10 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   if [  x"$OBS_LINK" != x"" ] ; then
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
+  fi
+  if [  x"$WEBPAGE" != x"" ] ; then
+    echo "  - type: Web" >> apps/$INPUTBASENAME.md
+    echo "    url: $WEBPAGE" >> apps/$INPUTBASENAME.md
   fi
   # Add content of desktop file
   if [ -f "database/$INPUTBASENAME/$(dir -C -w 1 database/$INPUTBASENAME | grep -m1 '.desktop')" ]; then
