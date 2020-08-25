@@ -7,6 +7,9 @@ description: An app that lets you automatically backup to Telegram Saved Message
 icons:
   - TeleDrive/icons/1024x1024/teledrive.png
 
+screenshots:
+  - TeleDrive/screenshot.png
+
 authors:
   - name: KhushrajRathod
     url: https://github.com/KhushrajRathod
@@ -25,7 +28,7 @@ desktop:
     Type: Application
     Icon: teledrive
     StartupWMClass: TeleDrive
-    X-AppImage-Version: 0.9.7.71
+    X-AppImage-Version: 0.9.8.88
     Comment: An app that lets you automatically backup to Telegram Saved Messages
     Categories: Utility
   AppImageHub:
