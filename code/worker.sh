@@ -21,7 +21,7 @@ if [ x"${URL:0:18}" == x"https://github.com" ] && [[ "${URL}" != *"download"* ]]
   echo "GitHub URL detected"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases" # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
+  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases?access_token=$GH_TOKEN" # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
   echo "URL from GitHub: $URL"
 fi
 
@@ -32,7 +32,7 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
     GHURL="$URL"
   fi
   echo "GitHub API URL detected"
-  URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | grep -i 64 | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
+  URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | grep -ie 'amd.\?64\|x86.64\|x64\|linux.\?64' | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
   if [ x"" == x"$URL" ] ; then
     URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | head -n 1 | cut -d '"' -f 4) # No 64-bit one found, trying any; TODO: Handle more than one AppImage per release
   fi
@@ -43,7 +43,7 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
   echo "URL from GitHub API: $URL"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" https://api.github.com/repos/$GHUSER/$GHREPO -O - | grep spdx_id | cut -d '"' -f 4 | head -n 1)
+  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" "https://api.github.com/repos/$GHUSER/$GHREPO?access_token=$GH_TOKEN" -O - | grep spdx_id | cut -d '"' -f 4 | head -n 1)
 fi
 
 # Download the file if it is not already there
@@ -53,13 +53,13 @@ echo "URL: $URL"
 
 FILENAME=BeingTested.AppImage
 if [ ! -e "$FILENAME" ] ; then
-  wget -q -c "$URL" -O "$FILENAME"
+  wget -c -nv "$URL" -O "$FILENAME" --no-check-certificate
 fi
 
 # Check the type of the AppImage
 TYPE=""
 ARCHITECTURE=$(file "$FILENAME" | cut -d "," -f 2 | xargs | sed -e 's|-|_|g' )
-echo $ARCHCITECTURE # TODO: Normalize
+echo $ARCHITECTURE # TODO: Normalize
 MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4 2>/dev/null)
 if [ -z "$MAGIC" ] ; then
   echo "Magic number not detected. Dear upstream, please consider to add one to the AppImage as per"
@@ -126,21 +126,99 @@ if [ x"$TYPE" == x1 ] ; then
   # later # sudo umount -l /mnt
 fi
 
+echo "==========================================="
+
+ICON_NAME=$(grep -r "^Icon=*" "${APPDIR}"/*.desktop  | cut -d "=" -f 2-99 | head -n 1)
+
+echo "ICON_NAME: ${ICON_NAME}"
+
+# Then, try scaleable icon from usr/share
+# matching the Icon= entry in the desktop file
+
+ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.svg*" -path "*/scalable/*" | head -n 1)
+
+# Then, try large icons from usr/share
+# matching the Icon= entry in the desktop file
+
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/128x128/*")
+fi
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/256x256/*")
+fi
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/512x512/*")
+fi
+
+# Then, fall back to the icon in the AppImage top level directory
+# matching the Icon= entry in the desktop file
+
+
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.svg*")
+fi
+
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.png")
+fi
+
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.xpm")
+fi
+
+# Finally, fall back to .DirIcon
+# (can be a symlink), regardless of the desktop file
+
+if [ -z "$ICONFILE" ] ; then
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name ".DirIcon")
+fi
+
+if [ -z "$ICONFILE" ] ; then
+    echo "Could not find icon file"
+    exit 1
+fi
+
+ICONFILE=$(readlink -f "$ICONFILE")
+echo "$ICONFILE"
+
+if ([[ "$ICONFILE" == *svg ]] || [[ "$ICONFILE" == *svgz ]]) ; then
+  ICONSIZE="scalable"
+else
+  # Get icon size
+  ICONSIZE=$(file "$ICONFILE" | grep -oe ", [0-9]* x [0-9]*," | sed -e 's|,||g' | sed -e 's| ||g')
+fi
+
+if [ -z "$ICONSIZE" ] ; then
+    echo "Could not determine the size of the icon"
+    exit 1
+fi
+
 set +x
+
+# echo "==========================================="
+#
+# find "${APPDIR}"/usr/share/applications/ || true
+# echo ""
+# find "${APPDIR}"/usr/share/icons/ || true
+
+echo "==========================================="
+
+# If everything succeeded until here, then download Firejail aith Xpra and run the application in it
+# and take screenshots if we don't have them already from AppStream
 
 TERMINAL=false
 grep -r Terminal=true "${APPDIR}"/*.desktop && TERMINAL=true
 echo "TERMINAL: $TERMINAL"
 
-echo "==========================================="
-
-# TODO: If everything succeeded until here, then download Firejail aith Xpra and run the application in it
-# and take screenshots if we don't have them already from AppStream
-
-# LD_DEBUG=libs "$APPDIR/AppRun" & # Getting "Desktop file is missing. Please run /mnt/AppRun from within an AppImage." with wire-2.15.2751-x86_64.AppImage
-# chmod +x "$FILENAME"
-
-wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/firejail.tar.gz" ; sudo tar xf firejail.tar.gz -C /
+# "Install" Firejail
+# The simplest and most straightforward way to get the most recent version
+# of Firejail running on a less than recent OS; don't do this at home kids
+FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
+wget -c "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/$FILE"
+FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/" -O - | grep firejail-0 | head -n 1 | cut -d '"' -f 2)
+wget -c "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/$FILE"
+sudo tar xf musl-*.apk -C / 2>/dev/null
+sudo tar xf firejail-*.apk -C / 2>/dev/null
 sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
 
 echo ""
@@ -148,14 +226,25 @@ echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
+# Suppress desktop integation
+mkdir -p "$HOME/.local/share/appimagekit"
+touch "$HOME/.local/share/appimagekit/no_desktopintegration"
+
+file "$APPDIR"/AppRun
+ls -lh "$APPDIR"/AppRun
+
+export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
+export QT_DEBUG_PLUGINS=1 # https://github.com/AppImage/appimage.github.io/pull/1809#issuecomment-548399825
+sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/appimage.github.io/pull/1564#issuecomment-491591127 https://github.com/electron/electron/issues/17972
+
 # reset does not work here
 if [ x"$TERMINAL" == xfalse ] ; then
-  firejail --noprofile --net=none --appimage ./"$FILENAME" &
+  firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
 else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
 fi
 APID=$!
-sleep 10
+sleep 15
 
 # Make a screenshot
 
@@ -198,10 +287,22 @@ fi
 # xwd -id $(xdotool getactivewindow) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
 mkdir -p database/$INPUTBASENAME/
 # xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
-xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtopng  > database/$INPUTBASENAME/screenshot.png && echo "Snap!"
+# xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtopng  > database/$INPUTBASENAME/screenshot.png && echo "Snap!"
+convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 killall icewm
+
+# Check if the screenshot is unusable and error out if it is
+if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png" ] ; then
+  echo "Could not take a screenshot png file"
+  ls -lh database/$INPUTBASENAME/screenshot.png
+  file database/$INPUTBASENAME/screenshot.png
+  file -b --mime-type database/$INPUTBASENAME/screenshot.png
+  exit 1
+fi
+
+# [ -s database/$INPUTBASENAME/screenshot.png ] || echo "Screenshot is empty" && exit 1
 
 echo "==========================================="
 
@@ -273,6 +374,11 @@ elif [ ! -z "$PJ" ] ; then
   cp "$PJ" database/$INPUTBASENAME/
 fi
 
+# Copy in icon
+
+mkdir -p "database/$INPUTBASENAME/icons/$ICONSIZE/"
+cp "$ICONFILE" "database/$INPUTBASENAME/icons/$ICONSIZE/"
+
 echo "==========================================="
 
 if [ x"$TYPE" == x2 ] ; then
@@ -284,10 +390,17 @@ fi
 
 echo ""
 echo "==========================================="
+echo "============= LISTING FILES ==============="
+echo "==========================================="
+
+ls -lh database/$INPUTBASENAME/
+
+echo ""
+echo "==========================================="
 echo "============ EXPORTING DATA ==============="
 echo "==========================================="
 
-# set -x
+set -x
 
 # Until https://github.com/ximion/appstream/issues/128 is solved
 # This URL was wrong:
@@ -297,7 +410,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
 # ./appstreamcli-x86_64.AppImage --appimage-extract ; mv squashfs-root appstreamcli.AppDir # TODO: remove need for this
 # Does not seem to work # alias appstreamcli='appstreamcli.AppDir/root_overlay/lib/x86_64-linux-gnu/ld-2.23.so --library-path appstreamcli.AppDir/root_overlay/usr/lib/x86_64-linux-gnu/ appstreamcli.AppDir/root_overlay/usr/bin/appstreamcli'
 # For Jekyll Now
-for INPUTBASENAME in database/*; do
+##### for INPUTBASENAME in database/*; do
   INPUTBASENAME=${INPUTBASENAME##*/} # Remove path up to last /
   # echo "Exporting $INPUTBASENAME to apps/$INPUTBASENAME.md for Jekyll"
   touch apps/$INPUTBASENAME.md
@@ -309,7 +422,7 @@ for INPUTBASENAME in database/*; do
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     ./appstreamcli-x86_64.AppImage convert database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
-    SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .)
+    SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .) || true
     if [ x"$SUMMARY" != x"" ] ; then
       echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
     fi
@@ -320,7 +433,7 @@ for INPUTBASENAME in database/*; do
   AS_LICENSE=""
   DT_LICENSE=""
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    AS_LICENSE=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/project_license" -v .)
+    AS_LICENSE=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/project_license" -v .) || true
   fi
   DT_LICENSE=$(grep -r "X-AppImage-Payload-License=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2)
   if [ x"$AS_LICENSE" != x"" ] ; then
@@ -328,6 +441,13 @@ for INPUTBASENAME in database/*; do
   elif [ x"$DT_LICENSE" != x"" ] ; then
     echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
   fi
+  # Icon
+  ICONBASENAME=$(basename "$ICONFILE")
+  if [ -f "database/$INPUTBASENAME/icons/$ICONSIZE/$ICONBASENAME" ] ; then
+    echo "" >> apps/$INPUTBASENAME.md
+    echo "icons:" >> apps/$INPUTBASENAME.md
+    echo "  - $INPUTBASENAME/icons/$ICONSIZE/$ICONBASENAME" >> apps/$INPUTBASENAME.md
+  fi  
   # Screenshot
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     SCREENSHOT=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/screenshots/screenshot[1]/image" -v . || true)
@@ -372,7 +492,7 @@ for INPUTBASENAME in database/*; do
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
   fi
   # Add content of desktop file
-  if [ -e database/$INPUTBASENAME/*.desktop ] ; then
+  if [ -f "database/$INPUTBASENAME/$(dir -C -w 1 database/$INPUTBASENAME | grep -m1 '.desktop')" ]; then
     dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
     echo "" >> apps/$INPUTBASENAME.md
     echo "desktop:" >> apps/$INPUTBASENAME.md
@@ -395,30 +515,50 @@ for INPUTBASENAME in database/*; do
     rm database/$INPUTBASENAME/package.yaml
   fi
   echo "---" >> apps/$INPUTBASENAME.md
-done
+  ls -lh apps/$INPUTBASENAME.md || exit 1
+  ls -lh database/$INPUTBASENAME/ || exit 1
+##### done
 
 # TODO: Convert the "database files" into whatever output formats we need to support
 # e.g., OCS for knsrc/Discover
 
-# set +x
+set +x
 
 echo ""
 echo "==========================================="
 echo "============== PUSHING DATA ==============="
 echo "==========================================="
 
+# If this a PR, then just check whether the files have generated
+# See https://github.com/AppImage/appimage.github.io/issues/476 for more information
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then 
+  cat "apps/${INPUTBASENAME}.md" || exit 1
+  cat "database/${INPUTBASENAME}/"*.desktop || exit 1 # Asterisk must not be inside quotes, https://travis-ci.org/AppImage/appimage.github.io/builds/360847207#L782
+  ls -lh "database/${INPUTBASENAME}/screenshot.png" || exit 1
+  curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfersh.com/screenshot.png 
+  echo "Since we are on a TRAVIS_PULL_REQUEST and the required files are there, we are assuming the test is OK"
+  exit 0
+fi
+
 # If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
-if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
-    git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
-    git config --global user.email "travis@travis-ci.org"
-    git config --global user.name "Travis CI"
-    ( cd database/ ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
-    ( cd apps/ ; git add . || true ) # Recursively add everything in this directory
-    git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
+
+git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
+git config --global user.email "travis@travis-ci.org"
+git config --global user.name "Travis CI"
+set -x
+( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
+( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
+git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
 Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
 [ci skip]
 EOF
-    git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+set +x
+git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+# wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
+    set -x
     git push --set-upstream deploy
-fi
+    set +x
+# wrong logic? # else
+# wrong logic? #     echo "Not runing 'git push --set-upstream deploy' because this build does NOT have TRAVIS_PULL_REQUEST=false"
+# wrong logic? # fi

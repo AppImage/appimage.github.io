@@ -1,0 +1,18 @@
+[Desktop Entry]
+Version=1.0
+Name=UltraGrid
+GenericName=RTP Streamer
+Type=Application
+Exec=uv-qt
+Icon=ultragrid
+StartupNotify=true
+Terminal=false
+Categories=AudioVideo;Recorder;Network;VideoConference;
+
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://github.com/CESNET/UltraGrid/releases/download/nightly/UltraGrid-nightly-x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Tue 25 Aug 2020 02:27:17 PM UTC using RSA key ID 4FE68681 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=NOASSERTION

@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Glyphr Studio
+Comment=Font design has a high barrier of entry. Professional font design programs are very complex, and/or quite expensive. Glyphr Studio is streamlined and made for font design hobbyists... and it's free!
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=glyphr-studio-desktop
+StartupWMClass=Glyphr Studio
+X-AppImage-Version=0.5.0
+Categories=Graphics;
+X-AppImage-BuildId=1Hjx3ubVrdL9J1BeIHzK5Pm8jFV
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=NOASSERTION

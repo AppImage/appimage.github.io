@@ -1,0 +1,3 @@
+https://github.com/yafp/ttth/releases/download/1.0.0/ttth-1.0.0-linux-x86_64.AppImage
+# Link without version would be better
+# but there is an extraneous "linux" in the filename which breaks link autodetection

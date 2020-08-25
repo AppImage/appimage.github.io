@@ -1,0 +1,40 @@
+{
+  "name": "SafeSurfer-Desktop",
+  "version": "1.0.0",
+  "APPBUILD": "10",
+  "description": "Keeping you safe in the digitial surf with Safe Surfer",
+  "main": "./assets/scripts/main.js",
+  "license": "GPL-3.0",
+  "creators": [
+    {
+      "name": "Caleb Woodbine",
+      "reference": "https://gitlab.com/BobyMCbobs"
+    }
+  ],
+  "repository": "https://gitlab.com/safesurfer/SafeSurfer-Desktop",
+  "appOptions": {
+    "BUILDMODE": "dev",
+    "isBeta": false,
+    "enableUpdates": true,
+    "enableNotifications": true,
+    "enableLogging": false,
+    "disableNodeIntegration": true,
+    "testLanguage": null
+  },
+  "author": "Safe Surfer",
+  "dependencies": {
+    "bonjour": "^3.5.0",
+    "connectivity": "^1.0.1",
+    "electron-store": "^2.0.0",
+    "electron-window-state": "^5.0.1",
+    "is-admin": "^2.1.1",
+    "jquery": "^3.3.1",
+    "lets-get-meta": "^2.1.1",
+    "moment": "^2.22.2",
+    "node-dns-sd": "^0.2.0",
+    "node_dns_changer": "^1.1.7",
+    "nodejs-base64-encode": "0.0.2",
+    "request": "^2.88.0",
+    "shelljs": "^0.8.2"
+  }
+}
