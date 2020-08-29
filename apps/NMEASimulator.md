@@ -28,7 +28,7 @@ desktop:
     Type: Application
     Icon: "/usr/share/icons/hicolor/0x0/apps/nmeasimulator.png"
     StartupWMClass: NMEASimulator
-    X-AppImage-Version: 1.0.1
+    X-AppImage-Version: 1.0.2
     Comment: NMEA sentence generator utility that can broadcast via TCP, Web Socket
       or Serial port.
     Categories: Utility
