@@ -8,7 +8,7 @@ license: Apache-2.0
 icons:
   - mapton/icons/256x256/mapton.png
 screenshots:
-- https://mapton.org/mapton.png
+- https://mapton.org/files/screenshots/appstream01.png
 
 authors:
   - name: trixon
@@ -50,16 +50,9 @@ appdata:
   Description:
     C: >-
       <p>Mapton is an easy to use map application that runs on your desktop.
-  
-  
-      The core of Mapton is centered around a rich set of background maps and a toolbox.
-  
-  
-      Mapton combines the simplicity of a mobile app with the capability of being extensible with powerful custom plugins.
-  
-  
-      On its own, Mapton is a capable map application, however, Mapton is also a platform for domain specific GIS related plugin
-      development.</p>
+              Mapton combines the simplicity of a mobile app with the capability of being extensible with powerful custom plugins.</p>
+      <p>On its own, Mapton is a capable map application, however, Mapton is also a platform for domain specific GIS related
+      plugin development.</p>
   ProjectLicense: Apache-2.0
   Url:
     homepage: https://mapton.org/
@@ -68,8 +61,18 @@ appdata:
     - mapton.desktop
   Screenshots:
   - default: true
+    caption:
+      C: Compact mode
     thumbnails: []
     source-image:
-      url: https://mapton.org/mapton.png
+      url: https://mapton.org/files/screenshots/appstream01.png
       lang: C
+  - caption:
+      C: Details mode
+    thumbnails: []
+    source-image:
+      url: https://mapton.org/files/screenshots/appstream02.png
+      lang: C
+  ContentRating:
+    oars-1.1: {}
 ---
