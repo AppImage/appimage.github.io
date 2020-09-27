@@ -59,7 +59,7 @@ fi
 # Check the type of the AppImage
 TYPE=""
 ARCHITECTURE=$(file "$FILENAME" | cut -d "," -f 2 | xargs | sed -e 's|-|_|g' )
-echo $ARCHCITECTURE # TODO: Normalize
+echo $ARCHITECTURE # TODO: Normalize
 MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4 2>/dev/null)
 if [ -z "$MAGIC" ] ; then
   echo "Magic number not detected. Dear upstream, please consider to add one to the AppImage as per"
@@ -195,11 +195,11 @@ fi
 
 set +x
 
-echo "==========================================="
-
-find "${APPDIR}"/usr/share/applications/ || true
-echo ""
-find "${APPDIR}"/usr/share/icons/ || true
+# echo "==========================================="
+#
+# find "${APPDIR}"/usr/share/applications/ || true
+# echo ""
+# find "${APPDIR}"/usr/share/icons/ || true
 
 echo "==========================================="
 
@@ -287,7 +287,8 @@ fi
 # xwd -id $(xdotool getactivewindow) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
 mkdir -p database/$INPUTBASENAME/
 # xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
-xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtopng  > database/$INPUTBASENAME/screenshot.png && echo "Snap!"
+# xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtopng  > database/$INPUTBASENAME/screenshot.png && echo "Snap!"
+convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 killall icewm
