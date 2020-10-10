@@ -7,6 +7,9 @@ description: Front-end for MoarVM's / Rakudo's profilers
 icons:
   - MoarPerf/icons/256x256/moarperf_stolen_icon.png
 
+screenshots:
+  - MoarPerf/screenshot.png
+
 authors:
   - name: timo
     url: https://github.com/timo
@@ -23,7 +26,7 @@ desktop:
     Comment: Front-end for MoarVM's / Rakudo's profilers
     Exec: moarperf-appimage-launcher
     Icon: moarperf_stolen_icon
-    Terminal: false
+    Terminal: true
     Type: Application
     StartupNotify: false
     Categories: Development
