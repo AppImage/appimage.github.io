@@ -30,7 +30,7 @@ desktop:
     Type: Application
     StartupNotify: false
     Categories: Development
-    X-AppImage-Version: ".glibc2.14"
+    X-AppImage-Version: ".glibc2.15"
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|timo|moarperf|continuous|MoarPerf*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
