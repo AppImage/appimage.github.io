@@ -1,14 +1,13 @@
 ---
 layout: app
 
-permalink: /FastTrack/
-description: Fast tracking of multiple objects
+permalink: /nextoncloudLogistic/
 
 icons:
-  - FastTrack/icons/756x756/icon.png
+  - nextoncloudLogistic/icons/256x256/nextoncloudlogistic.png
 
 screenshots:
-  - FastTrack/screenshot.png
+  - nextoncloudLogistic/screenshot.png
 
 authors:
 
@@ -16,13 +15,14 @@ links:
 
 desktop:
   Desktop Entry:
+    Name: nextoncloudLogistic
+    Exec: AppRun
+    Terminal: false
     Type: Application
-    Name: FastTrack
-    Comment: Fast tracking of multiple objects
-    Exec: FastTrack
-    Icon: icon
-    Categories: Science
-    X-AppImage-Version: b84f42a
+    Icon: nextoncloudlogistic
+    StartupWMClass: nextoncloudLogistic
+    X-AppImage-Version: 1.0.0
+    Categories: Utility
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file

@@ -1,11 +1,12 @@
 [Desktop Entry]
+Name=nextoncloudLogistic
+Exec=AppRun
+Terminal=false
 Type=Application
-Name=FastTrack
-Comment=Fast tracking of multiple objects
-Exec=FastTrack
-Icon=icon
-Categories=Science;Qt;
-X-AppImage-Version=b84f42a
+Icon=nextoncloudlogistic
+StartupWMClass=nextoncloudLogistic
+X-AppImage-Version=1.0.0
+Categories=Utility;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
