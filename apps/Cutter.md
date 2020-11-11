@@ -4,6 +4,9 @@ layout: app
 permalink: /Cutter/
 description: A Qt and C++ GUI for the radare2 reverse engineering framework
 
+icons:
+  - Cutter/icons/scalable/cutter.svg
+
 screenshots:
   - Cutter/screenshot.png
 
