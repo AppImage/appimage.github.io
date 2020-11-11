@@ -4,6 +4,9 @@ layout: app
 permalink: /draw.io/
 description: draw.io desktop
 
+icons:
+  - draw.io/icons/scalable/draw.io.svg
+
 screenshots:
   - draw.io/screenshot.png
 
