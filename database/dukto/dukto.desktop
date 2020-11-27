@@ -1,10 +1,16 @@
 [Desktop Entry]
+Encoding=UTF-8
+Version=1.0
 Type=Application
-Name=CaPTk
-Comment=Linux CaPTk
-Exec=CaPTk
-Icon=CaPTk
-Categories=Office;
+Terminal=false
+Name=Dukto
+Comment=Easy and multi-platform file transfer tool
+Exec=./usr/bin/dukto
+Icon=dukto
+X-HildonDesk-ShowInToolbar=true
+X-Osso-Type=application/x-executable
+Categories=Utility;
+
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
 # (e.g., with appimagetool -u) so that users can easily update the AppImage

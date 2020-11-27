@@ -1,33 +1,35 @@
 ---
 layout: app
 
-permalink: /CaPTk/
-description: Linux CaPTk
+permalink: /ngPost/
+description: Edit this default file
 
 icons:
-  - CaPTk/icons/128x128/CaPTk.png
+  - ngPost/icons/512x512/ngPost.png
 
 screenshots:
-  - CaPTk/screenshot.png
+  - ngPost/screenshot.png
 
 authors:
-  - name: CBICA
-    url: https://github.com/CBICA
+  - name: mbruel
+    url: https://github.com/mbruel
 
 links:
   - type: GitHub
-    url: CBICA/precompiledBinaries
+    url: mbruel/ngPost
   - type: Download
-    url: https://github.com/CBICA/precompiledBinaries/releases
+    url: https://github.com/mbruel/ngPost/releases
 
 desktop:
   Desktop Entry:
     Type: Application
-    Name: CaPTk
-    Comment: Linux CaPTk
-    Exec: CaPTk
-    Icon: CaPTk
-    Categories: Office
+    Name: ngPost
+    Exec: ngPost %F
+    Icon: ngPost
+    Comment: Edit this default file
+    Terminal: true
+    Categories: Network
+    X-AppImage-Version: 
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
