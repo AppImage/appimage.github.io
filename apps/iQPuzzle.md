@@ -3,7 +3,12 @@ layout: app
 
 permalink: /iQPuzzle/
 description: A diverting I.Q. challenging pentomino puzzle
+A diverting I.Q. challenging pentomino puzzle
 license: GPL-3.0
+GPL-3.0
+
+icons:
+  - iQPuzzle/icons/scalable/iqpuzzle.svg
 
 screenshots:
   - iQPuzzle/screenshot.png
@@ -30,6 +35,7 @@ desktop:
     Terminal: false
     Categories: Game
     Keywords: Puzzle
+    X-AppImage-Version: 53f8c8b
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
