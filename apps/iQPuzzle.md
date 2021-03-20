@@ -5,7 +5,6 @@ permalink: /iQPuzzle/
 description: A diverting I.Q. challenging pentomino puzzle
 A diverting I.Q. challenging pentomino puzzle
 license: GPL-3.0
-GPL-3.0
 
 icons:
   - iQPuzzle/icons/scalable/iqpuzzle.svg
@@ -14,14 +13,12 @@ screenshots:
   - iQPuzzle/screenshot.png
 
 authors:
-  - name: ElTh0r0
-    url: https://github.com/ElTh0r0
+  - name: ElThoro
+    url: https://build.opensuse.org/user/show/ElThoro
 
 links:
-  - type: GitHub
-    url: ElTh0r0/iqpuzzle
   - type: Download
-    url: https://github.com/ElTh0r0/iqpuzzle/releases
+    url: https://download.opensuse.org/repositories/home:/ElThoro/AppImage/iQPuzzle-latest-x86_64.AppImage.mirrorlist
 
 desktop:
   Desktop Entry:
@@ -35,8 +32,8 @@ desktop:
     Terminal: false
     Categories: Game
     Keywords: Puzzle
-    X-AppImage-Version: 53f8c8b
   AppImageHub:
+    X-AppImage-UpdateInformation: zsync|https://download.opensuse.org/repositories/home:/ElThoro/AppImage/iQPuzzle-latest-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
