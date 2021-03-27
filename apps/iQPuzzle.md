@@ -3,8 +3,6 @@ layout: app
 
 permalink: /iQPuzzle/
 description: A diverting I.Q. challenging pentomino puzzle
-A diverting I.Q. challenging pentomino puzzle
-license: GPL-3.0
 
 icons:
   - iQPuzzle/icons/scalable/iqpuzzle.svg
@@ -34,10 +32,8 @@ desktop:
     Keywords: Puzzle
   AppImageHub:
     X-AppImage-UpdateInformation: zsync|https://download.opensuse.org/repositories/home:/ElThoro/AppImage/iQPuzzle-latest-x86_64.AppImage.zsync
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: 'Signature made Sat 20 Mar 2021 05:14:09 PM UTC using RSA
+      key ID 6A3CC966 Can''t check signature: No public key'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: GPL-3.0
 ---
