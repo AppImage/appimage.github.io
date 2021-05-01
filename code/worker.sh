@@ -214,9 +214,9 @@ echo "TERMINAL: $TERMINAL"
 # The simplest and most straightforward way to get the most recent version
 # of Firejail running on a less than recent OS; don't do this at home kids
 FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
-wget -c "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/$FILE"
+wget -c "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
 FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/" -O - | grep firejail-0 | head -n 1 | cut -d '"' -f 2)
-wget -c "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/$FILE"
+wget -c "http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/$FILE"
 sudo tar xf musl-*.apk -C / 2>/dev/null
 sudo tar xf firejail-*.apk -C / 2>/dev/null
 sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
