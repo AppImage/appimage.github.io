@@ -1,7 +1,7 @@
 language: generic
 
 sudo: true # Otherwise there seems to be no fuse available
-dist: xenial
+dist: bionic
 
 env:
   global:
