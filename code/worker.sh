@@ -256,11 +256,15 @@ NUMBER_OF_WINDOWS=$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[
 echo "NUMBER_OF_WINDOWS: $NUMBER_OF_WINDOWS"
 if [ $(($NUMBER_OF_WINDOWS)) -lt 1 ] ; then
   echo "ERROR: Could not find a single window on screen :-("
+  exit 1
 fi
 
-# Assume the first open window belongs to the application...
-APPWINDOW=`xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -f 1 -d ' '`
-echo "FIRST APPLICATION WINDOW ID: {$APPWINDOW}"
+#Try to guess the application name.
+#TODO: Maybe check the desktop file???
+APPWINDOWNAME=`./appimagetool* -l $FILENAME | grep usr/bin | cut -d '/' -f 3`;
+echo "APPWINDOW NAME IS $APPWINDOWNAME"
+APPWINDOW=`xwininfo -tree -root | grep $APPWINDOWNAME | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -f 1 -d ' '`
+echo "FIRST APPLICATION WINDOW ID BY NAME: ${APPWINDOW}"
 
 # Works with Xvfb but cannot select window by ID
 # sudo apt-get -y install scrot
@@ -286,7 +290,7 @@ if [ x"$INPUTBASENAME" == xSubsurface ] ; then
 fi
 
 echo "Attempting to locate application window..."
-xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | grep "$APPWINDOW" > /dev/null
+xwininfo -tree -root | grep $APPWINDOWNAME | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | grep "$APPWINDOW" > /dev/null
 if [ 0 -ne $? ];
 then
 
@@ -294,6 +298,8 @@ then
 	xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
 	exit 1
 fi
+
+echo "Window found, preparing screenshot..."
 
 # Works with Xvfb
 # sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
@@ -303,7 +309,8 @@ mkdir -p database/$INPUTBASENAME/
 
 # xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
 # xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtopng  > database/$INPUTBASENAME/screenshot.png && echo "Snap!"
-convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
+#convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
+convert x:$APPWINDOW database/$INPUTBASENAME/screenshot.png && echo "Snap!"
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 killall icewm
