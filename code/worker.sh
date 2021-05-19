@@ -1,39 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@TheMarlboroMan
-AppImage /
-appimage.github.io
-
-12
-175
-
-    290
-
-Code
-Issues 93
-Pull requests 793
-Actions
-Wiki
-Security
-
-    Insights
-
-appimage.github.io/code/worker.sh
-@probonopd
-probonopd Change back to transfer.sh
-Latest commit 481ea1b 14 days ago
-History
-5 contributors
-@probonopd
-@KurtPfeifle
-@simoniz0r
-@srevinsaju
-@kaniini
-564 lines (482 sloc) 23.4 KB
 #!/bin/bash
 
 URL=$(cat $1 | head -n 1)
