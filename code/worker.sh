@@ -293,6 +293,29 @@ convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 killall icewm
 
+# If the screenshot does not exist, try to download it from the metadata file.
+if [ ! -s  database/$INPUTBASENAME/screenshot.png ] ; then
+
+  METADATAFILE=$(find ${APPDIR}/usr/share/metainfo/ -name "*.appdata.xml" | sed -n '1p')
+  if [ x"$METADATAFILE" != x ] ; then
+  
+    echo "Metadata File Found: ${METADATAFILE}"
+    METADATAIMAGE=$(sed -n 's,<image>\s*\([^<]*\)\s*</image>,\1,p' ${METADATAFILE} | sed -n '1p')
+    if [ x"${METADATAIMAGE}" != x ] ; then
+    
+      echo "Screenshot found in metadata file: ${METADATAIMAGE}"
+      echo "Downloading screenshot: ${METADATAIMAGE}"
+      WGET=$(wget ${METADATAIMAGE})
+      if [ $? == 0 ] ; then
+	      # If the image is not a *.png this turns it into one.
+        convert $(basename ${METADATAIMAGE}) database/${INPUTBASENAME}/screenshot.png
+      fi
+    else
+        echo "No screenshot found in metadata file"
+    fi
+  fi
+fi
+
 # Check if the screenshot is unusable and error out if it is
 if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png" ] ; then
   echo "Could not take a screenshot png file"
@@ -301,8 +324,6 @@ if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png
   file -b --mime-type database/$INPUTBASENAME/screenshot.png
   exit 1
 fi
-
-# [ -s database/$INPUTBASENAME/screenshot.png ] || echo "Screenshot is empty" && exit 1
 
 echo "==========================================="
 
