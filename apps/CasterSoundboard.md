@@ -1,0 +1,45 @@
+---
+layout: app
+
+permalink: /CasterSoundboard/
+description: A soundboard for hot-keying and playing back sounds
+license: LGPL-3.0
+
+icons:
+  - CasterSoundboard/icons/256x256/CasterSoundboard.png
+
+screenshots:
+  - CasterSoundboard/screenshot.png
+
+authors:
+  - name: covarianttensor
+    url: https://github.com/covarianttensor
+
+links:
+  - type: GitHub
+    url: covarianttensor/CasterSoundboard
+  - type: Download
+    url: https://github.com/covarianttensor/CasterSoundboard/releases
+
+desktop:
+  Desktop Entry:
+    Version: 1.0
+    Type: Application
+    Name: CasterSoundboard
+    Comment: A soundboard for hot-keying and playing back sounds
+    Icon: CasterSoundboard
+    Exec: CasterSoundboard
+    NoDisplay: false
+    Categories: AudioVideo
+    StartupNotify: false
+    Terminal: false
+    X-AppImage-Version: 052f71a
+  AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|covarianttensor|CasterSoundboard|continuous|CasterSoundboard*-x86_64.AppImage.zsync
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: LGPL-3.0
+---

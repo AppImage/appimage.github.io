@@ -5,6 +5,9 @@ permalink: /MLV-App/
 description: Magic Lantern Video Processing Application
 license: GPL-3.0
 
+icons:
+  - MLV-App/icons/512x512/MLVAPP.png
+
 screenshots:
   - MLV-App/screenshot.png
 

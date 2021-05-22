@@ -15,7 +15,7 @@ Categories=Qt;Education;Science;
 #MimeType=text/x-python;
 
 
-X-AppImage-Version=655463c
+X-AppImage-Version=1e6fa82
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
@@ -23,4 +23,3 @@ X-AppImage-Version=655463c
 X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
-X-AppImage-Payload-License=GPL-3.0

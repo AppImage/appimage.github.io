@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Photopea/
 description: Photopea in AppImage
+license: MIT
 
 icons:
   - Photopea/icons/128x128/photopea.png
@@ -31,13 +32,14 @@ desktop:
     StartupWMClass: Photopea
     X-AppImage-Version: 1.2.0
     Categories: Graphics
-    X-AppImage-BuildId: 1FiXlfiRc3pqLJIYpB1wrIaFvPd
+    X-AppImage-BuildId: 1JjD14uwyf7zD0MXVDkhft0XRpx
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
 
 electron:
   main: lib/main.js

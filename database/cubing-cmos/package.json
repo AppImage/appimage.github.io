@@ -1,0 +1,14 @@
+{
+  "name": "cubing-cmos",
+  "productName": "CMOS",
+  "description": "Cubing management and optimizing system",
+  "version": "1.3.0",
+  "private": true,
+  "author": "Frederik Hutfleß <support@speed-cmos.com>",
+  "copyright": "© 2018 CMOS.",
+  "homepage": "https://speed-cmos.com",
+  "main": "app/background.js",
+  "dependencies": {
+    "fs-jetpack": "^1.0.0"
+  }
+}
