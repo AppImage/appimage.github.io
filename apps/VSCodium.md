@@ -3,9 +3,7 @@ layout: app
 
 permalink: /VSCodium/
 description: Code Editing. Redefined.
-Code Editing. Redefined.
 license: MIT
-MIT
 
 icons:
   - VSCodium/icons/128x128/vscodium.png
