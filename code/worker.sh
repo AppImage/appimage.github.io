@@ -291,8 +291,8 @@ mkdir -p database/$INPUTBASENAME/
 
 # Listing windows on screen for debugging purposes
 xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
-
-convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
+convert x:$(xwininfo -tree -root | grep 0x | grep AppRun | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
+#convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 killall icewm
