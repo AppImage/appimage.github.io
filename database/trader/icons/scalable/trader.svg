@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="1.1"
+    width="512"
+    height="512"
+    viewBox="0 0 512 512"
+    id="trader-icon">
+<!--
+*************************************************************************
+*                                                                       *
+*             Star Traders: A Game of Interstellar Trading              *
+*                Copyright (C) 1990-2021, John Zaitseff                 *
+*                                                                       *
+*************************************************************************
+
+Author: John Zaitseff <J.Zaitseff@zap.org.au>
+$Id: 21ff9d7829563f3c8ca40ea6ca2e57868ad30ca5 $
+
+This file, trader.svg, contains the icon image for Star Traders.
+
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program.  If not, see https://www.gnu.org/licenses/.
+-->
+  <title>Star Traders icon</title>
+
+  <defs>
+    <linearGradient id="f-space" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00005F" />
+      <stop offset="1" stop-color="#00002F" />
+    </linearGradient>
+    <radialGradient id="f-galaxy" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#FFFFFF" />
+      <stop offset="0.7" stop-color="#FFFF80" />
+      <stop offset="1"   stop-color="#FFFF00" />
+    </radialGradient>
+    <filter id="f-glow" x="-0.1" y="-0.1" width="1.2" height="1.2" style="color-interpolation-filters:sRGB">
+      <feGaussianBlur stdDeviation="6" />
+    </filter>
+  </defs>
+
+  <g id="space">
+    <circle cx="256" cy="256" r="250" opacity="0.4" fill="#FFFFFF" stroke="none" filter="url(#f-glow)" />
+    <circle cx="256" cy="256" r="250" fill="url(#f-space)" stroke="none" />
+  </g>
+
+  <g id="galaxy">
+    <path fill="url(#f-galaxy)" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+	  d="m 395.4,132.1 c -1.4,0 -2.9,0 -4.3,0.1 -48.4,1.2 -115.8,18.5 -169.5,40.7 -53.4,22.1 -112.7,57.3 -147.8,90.4 25.9,-16 56.3,-32 90,-47.1 8.2,-3.7 16.5,-7.3 25.1,-10.8 74.6,-30.9 149.9,-49.7 194.9,-49.4 23.6,0.1 38.8,5.5 41.4,17.1 2.8,12.8 -12.7,32.6 -41.7,54 -28.9,21.5 -73.3,45.4 -123.9,63.1 -43.9,15.4 -79.5,20.2 -93.3,14.2 -6.9,-3 -7.2,-9.9 4.5,-20.1 5.3,-4.7 12.7,-9.7 21.7,-14.9 -0.3,-1.2 -0.5,-2.5 -0.7,-3.7 -7.9,4.6 -15.1,9.4 -21.6,14.2 -19.7,14.6 -30.9,29 -29,37.6 5.3,24.4 91.3,10.1 175.8,-24.9 96.4,-39.9 164.5,-92.7 162.8,-121 -0.2,-2.6 -1.1,-5.1 -2,-7.4 -8.4,-21.1 -38.1,-32.4 -82.3,-32 z m -55.3,50.3 c -17.5,0 -41.1,3.9 -67.6,10.8 3.8,1 7.4,2.3 11,3.9 6.1,2.9 11.8,6.7 16.7,11.3 21,-4.1 37.2,-4.5 45.4,-0.8 6.9,3 7.2,9.9 -4.5,20.1 -5.3,4.7 -12.7,9.7 -21.6,14.9 0.3,1.2 0.5,2.5 0.7,3.7 7.9,-4.6 15.1,-9.4 21.6,-14.2 19.7,-14.6 30.9,-29 29,-37.6 -1.8,-8.4 -13.2,-12.2 -30.8,-12.2 z m -82.9,29.5 c -13.4,-0.4 -26.3,5.4 -35,15.7 -11.6,13.8 -13.6,33.3 -5,49.2 4.9,6.2 32,-0.9 47.3,-5 12.6,-3.4 26.5,-11 35.6,-15.9 0,-18.5 -11.6,-35.1 -29,-41.4 -4.5,-1.6 -9.1,-2.5 -13.9,-2.6 z m -51.8,3.3 c -3.5,1.4 -6.9,2.7 -10.4,4.2 -96.2,39.8 -164.1,92.5 -162.8,120.8 0.1,2.8 1.1,5.2 2,7.6 18.6,46.1 133.7,42 256.2,-8.7 59.5,-24.7 112.8,-57.3 147.8,-90.5 -26,16 -56.3,32.1 -90,47.2 -8.2,3.7 -16.5,7.3 -25.1,10.8 -113.7,47 -228.8,66.1 -236.2,32.3 -2.8,-12.8 12.7,-32.6 41.7,-54 16.5,-12.3 38.1,-25.3 63.1,-37.6 1.6,-11.7 6.4,-22.8 13.8,-32 z" />
+  </g>
+</svg>

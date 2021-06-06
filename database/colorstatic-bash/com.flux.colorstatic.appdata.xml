@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+	<id>com.flux.colorstatic</id>
+	<metadata_license>FSFAP</metadata_license>
+	<project_license>LGPL-3.0</project_license>
+	<name>colorstatic</name>
+	<summary>Command Line Fun With Color</summary>
+	<description>
+		<p>Fun Linux Bash hybrid function/script to generate a random colorful "Static"/"Matrix" style animation in a command line.</p>
+	</description>
+	<launchable type="desktop-id">colorstatic.desktop</launchable>
+	<url type="homepage">https://github.com/Lateralus138/colorstatic-bash</url>
+	<screenshots>
+		<screenshot type="default">
+            <image>https://raw.githubusercontent.com/Lateralus138/colorstatic-bash/master/docs/media/misc/colorstatic.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>colorstatic.desktop</id>
+		<binary>colorstatic</binary>
+	</provides>
+</component>
