@@ -290,7 +290,7 @@ mkdir -p database/$INPUTBASENAME/
 # Taking screenshot like this fails, https://github.com/AppImage/appimage.github.io/issues/2494
 # convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
 
-import -window "$(xdotool getactivewindow)" screenshot.png  && echo "Screenshot taken"
+import -window "$(xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png  && echo "Screenshot taken"
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 killall icewm
