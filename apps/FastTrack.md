@@ -22,7 +22,7 @@ desktop:
     Exec: FastTrack
     Icon: icon
     Categories: Science
-    X-AppImage-Version: b84f42a
+    X-AppImage-Version: ab747be
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
