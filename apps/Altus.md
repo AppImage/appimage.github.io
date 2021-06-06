@@ -2,37 +2,36 @@
 layout: app
 
 permalink: /Altus/
-description: Electron-based desktop wrapper for Whatsapp Web
+description: Electron-based desktop wrapper for WhatsApp Web
 license: GPL-3.0
 
 icons:
-  - Altus/icons/128x128/altus.png
+  - Altus/icons/256x256/altus.png
 
 screenshots:
   - Altus/screenshot.png
 
 authors:
-  - name: ShadyThGod
-    url: https://github.com/ShadyThGod
+  - name: amanharwara
+    url: https://github.com/amanharwara
 
 links:
   - type: GitHub
-    url: ShadyThGod/altus
+    url: amanharwara/altus
   - type: Download
-    url: https://github.com/ShadyThGod/altus/releases
+    url: https://github.com/amanharwara/altus/releases
 
 desktop:
   Desktop Entry:
     Name: Altus
-    Comment: Electron-based desktop wrapper for Whatsapp Web
     Exec: AppRun
     Terminal: false
     Type: Application
     Icon: altus
     StartupWMClass: Altus
-    X-AppImage-Version: 1.2.4
+    X-AppImage-Version: 3.14.0
+    Comment: Electron-based desktop wrapper for WhatsApp Web
     Categories: Chat
-    X-AppImage-BuildId: 1EyT3dCiG4vSvogCTSBt3ITnHXA
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
