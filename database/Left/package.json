@@ -1,0 +1,21 @@
+{
+  "name": "Left",
+  "productName": "Left",
+  "version": "0.1.0",
+  "main": "main.js",
+  "standard": {
+    "globals": [
+      "terminal",
+      "localStorage",
+      "DOMParser",
+      "onMessage",
+      "postMessage",
+      "FileReader",
+      "performance",
+      "Worker"
+    ],
+    "ignore": [
+      "/node_modules/*"
+    ]
+  }
+}
