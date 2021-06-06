@@ -1,11 +1,11 @@
 [Desktop Entry]
 Name=Antares
-Exec=AppRun
+Exec=AppRun %U
 Terminal=false
 Type=Application
 Icon=antares
 StartupWMClass=Antares
-X-AppImage-Version=0.0.4.80
+X-AppImage-Version=0.0.20.418
 Comment=A cross-platform easy to use SQL client.
 Categories=Development;
 
