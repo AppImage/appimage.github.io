@@ -1,31 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2016 Jean-Baptiste Kempf -->
-
+<!-- Copyright 2016-2017 Jean-Baptiste Kempf CC-0 -->
 <component type="desktop">
-    <id>vlc.desktop</id>
-    <metadata_license>CC0-1.0</metadata_license>
-    <name>VLC</name>
-    <summary>VLC media player, the open-source multimedia player</summary>
-    <description>
-        <p>
+  <id>org.videolan.vlc</id>
+  <launchable type="desktop-id">vlc.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>VLC</name>
+  <name xml:lang="zh_TW">VLC</name>
+  <name xml:lang="zh_CN">VLC</name>
+  <name xml:lang="wa">VLC</name>
+  <name xml:lang="uz">VLC</name>
+  <name xml:lang="uk">VLC</name>
+  <name xml:lang="ug">VLC</name>
+  <name xml:lang="tr">VLC</name>
+  <name xml:lang="th">VLC</name>
+  <name xml:lang="te">VLC</name>
+  <name xml:lang="ta">VLC</name>
+  <name xml:lang="sv">VLC</name>
+  <name xml:lang="sr">VLC</name>
+  <name xml:lang="sl">VLC</name>
+  <name xml:lang="sk">VLC</name>
+  <name xml:lang="si">VLC</name>
+  <name xml:lang="ru">VLC</name>
+  <name xml:lang="ro">VLC</name>
+  <name xml:lang="pt_PT">VLC</name>
+  <name xml:lang="pt_BR">VLC</name>
+  <name xml:lang="pl">VLC</name>
+  <name xml:lang="pa">VLC</name>
+  <name xml:lang="oc">VLC</name>
+  <name xml:lang="nn">VLC</name>
+  <name xml:lang="nl">VLC</name>
+  <name xml:lang="ne">VLC</name>
+  <name xml:lang="nb">VLC</name>
+  <name xml:lang="ms">VLC</name>
+  <name xml:lang="mr">व्हीएलसी</name>
+  <name xml:lang="mn">VLC</name>
+  <name xml:lang="ml">വിഎല്‍സി</name>
+  <name xml:lang="mai">VLC</name>
+  <name xml:lang="lv">VLC</name>
+  <name xml:lang="lt">VLC</name>
+  <name xml:lang="ky">VLC</name>
+  <name xml:lang="ks_IN">VLC</name>
+  <name xml:lang="ko">VLC</name>
+  <name xml:lang="kn">VLC</name>
+  <name xml:lang="km">VLC</name>
+  <name xml:lang="kk">VLC</name>
+  <name xml:lang="kab">VLC</name>
+  <name xml:lang="ja">VLC</name>
+  <name xml:lang="it">VLC</name>
+  <name xml:lang="is">VLC</name>
+  <name xml:lang="id">VLC</name>
+  <name xml:lang="hy">VLC</name>
+  <name xml:lang="hu">VLC</name>
+  <name xml:lang="hr">VLC</name>
+  <name xml:lang="hi">VLC</name>
+  <name xml:lang="he">VLC</name>
+  <name xml:lang="gu">VLC</name>
+  <name xml:lang="gl">VLC</name>
+  <name xml:lang="gd">VLC</name>
+  <name xml:lang="ga">VLC</name>
+  <name xml:lang="fy">VLC</name>
+  <name xml:lang="fr">VLC</name>
+  <name xml:lang="fi">VLC</name>
+  <name xml:lang="fa">VLC</name>
+  <name xml:lang="eu">VLC</name>
+  <name xml:lang="et">VLC</name>
+  <name xml:lang="es_MX">VLC</name>
+  <name xml:lang="es">VLC</name>
+  <name xml:lang="el">VLC</name>
+  <name xml:lang="de">VLC</name>
+  <name xml:lang="da">VLC</name>
+  <name xml:lang="cy">VLC</name>
+  <name xml:lang="cs">VLC</name>
+  <name xml:lang="co">VLC</name>
+  <name xml:lang="ca@valencia">VLC</name>
+  <name xml:lang="ca">VLC</name>
+  <name xml:lang="bs">VLC</name>
+  <name xml:lang="brx">VLC</name>
+  <name xml:lang="br">VLC</name>
+  <name xml:lang="bn">VLC</name>
+  <name xml:lang="bn_IN">VLC</name>
+  <name xml:lang="be">VLC</name>
+  <name xml:lang="ast">VLC</name>
+  <name xml:lang="as_IN">VLC</name>
+  <name xml:lang="ar">VLC</name>
+  <name xml:lang="an">VLC</name>
+  <name xml:lang="am_ET">ቪኤልሲ</name>
+  <name xml:lang="af">VLC</name>
+  <summary>VLC media player, the open-source multimedia player</summary>
+  <description>
+    <p>
             VLC is a free and open source cross-platform multimedia player and
             framework that plays most multimedia files as well as DVDs, Audio CDs,
             VCDs, and various streaming protocols.
         </p>
-    </description>
-    <url type="homepage">https://www.videolan.org/vlc/</url>
-    <url type="bugtracker">https://trac.videolan.org/vlc/</url>
-    <url type="donation">https://www.videolan.org/contribute.html</url>
-    <releases>
-        <release version="$VERSION" />
-    </releases>
-    <project_group>VideoLAN</project_group>
-    <project_license>GPL-2.0+</project_license>
-    <developer_name>VideoLAN et al.</developer_name>
-    <update_contact>vlc-devel -- videolan.org</update_contact>
-    <screenshots>
-        <screenshot type="default">http://images.videolan.org/vlc/screenshots/2.0.0/vlc-2.0-poney.jpg</screenshot>
-        <screenshot type="default">http://images.videolan.org/vlc/screenshots/2.0.0/vlc-2.0-gnome3-open.jpg</screenshot>
-        <screenshot type="default">http://images.videolan.org/vlc/screenshots/2.0.0/vlc-2.0-gnome3-debian.jpg</screenshot>
-    </screenshots>
+  </description>
+  <url type="homepage">https://www.videolan.org/vlc/</url>
+  <url type="bugtracker">https://trac.videolan.org/vlc/</url>
+  <url type="donation">https://www.videolan.org/contribute.html</url>
+  <releases>
+    <release version="3.0.11"/>
+  </releases>
+  <provides>
+    <library>libvlc.so.5</library>
+  </provides>
+  <project_group>VideoLAN</project_group>
+  <project_license>GPL-2.0+</project_license>
+  <developer_name>VideoLAN et al.</developer_name>
+  <update_contact>vlc-devel -- videolan.org</update_contact>
+  <screenshots>
+    <screenshot type="default">
+      <image>http://images.videolan.org/vlc/screenshots/2.0.0/vlc-2.0-poney.jpg</image>
+    </screenshot>
+    <screenshot type="default">
+      <image>http://images.videolan.org/vlc/screenshots/2.0.0/vlc-2.0-gnome3-open.jpg</image>
+    </screenshot>
+    <screenshot type="default">
+      <image>http://images.videolan.org/vlc/screenshots/2.0.0/vlc-2.0-gnome3-debian.jpg</image>
+    </screenshot>
+  </screenshots>
 </component>
