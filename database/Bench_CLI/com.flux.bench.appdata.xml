@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+	<id>com.flux.bench</id>
+	<metadata_license>FSFAP</metadata_license>
+	<project_license>LGPL-3.0</project_license>
+	<name>bench</name>
+	<summary>Benchmark command line commands</summary>
+	<description>
+		<p>Cross-platform command line tool to benchmark commands in command lines written in `Fortran`. Very precise and fast.</p>
+	</description>
+	<launchable type="desktop-id">bench.desktop</launchable>
+	<url type="homepage">https://github.com/Lateralus138/benchmark-commandline-fortran</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/Lateralus138/UniShellect/master/media/demo.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>bench.desktop</id>
+		<binary>bench</binary>
+	</provides>
+</component>
