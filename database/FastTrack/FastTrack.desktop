@@ -5,7 +5,7 @@ Comment=Fast tracking of multiple objects
 Exec=FastTrack
 Icon=icon
 Categories=Science;Qt;
-X-AppImage-Version=b84f42a
+X-AppImage-Version=ab747be
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

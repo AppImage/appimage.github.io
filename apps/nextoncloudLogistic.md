@@ -16,12 +16,12 @@ links:
 desktop:
   Desktop Entry:
     Name: nextoncloudLogistic
-    Exec: AppRun
+    Exec: AppRun %U
     Terminal: false
     Type: Application
     Icon: nextoncloudlogistic
     StartupWMClass: nextoncloudLogistic
-    X-AppImage-Version: 1.0.0
+    X-AppImage-Version: 1.0.7
     Categories: Utility
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
