@@ -5,30 +5,30 @@ permalink: /Antares/
 description: A cross-platform easy to use SQL client.
 
 icons:
-  - Antares/icons/516x516/antares.png
+  - Antares/icons/128x128/antares.png
 
 screenshots:
   - Antares/screenshot.png
 
 authors:
-  - name: EStarium
-    url: https://github.com/EStarium
+  - name: Fabio286
+    url: https://github.com/Fabio286
 
 links:
   - type: GitHub
-    url: EStarium/antares
+    url: Fabio286/antares
   - type: Download
-    url: https://github.com/EStarium/antares/releases
+    url: https://github.com/Fabio286/antares/releases
 
 desktop:
   Desktop Entry:
     Name: Antares
-    Exec: AppRun
+    Exec: AppRun %U
     Terminal: false
     Type: Application
     Icon: antares
     StartupWMClass: Antares
-    X-AppImage-Version: 0.0.4.80
+    X-AppImage-Version: 0.0.20.418
     Comment: A cross-platform easy to use SQL client.
     Categories: Development
   AppImageHub:
