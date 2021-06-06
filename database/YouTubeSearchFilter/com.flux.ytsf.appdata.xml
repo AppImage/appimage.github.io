@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+	<id>com.flux.ytsf</id>
+	<metadata_license>FSFAP</metadata_license>
+	<project_license>LGPL-3.0</project_license>
+	<name>ytsf</name>
+	<summary>YouTube Pre-Filtered Search</summary>
+	<description>
+		<p>Do YouTube searches with (or without) a pre-filter from the Linux Bash command line since we can't do them at YouTube ourselves.</p>
+	</description>
+	<launchable type="desktop-id">ytsf.desktop</launchable>
+	<url type="homepage">https://github.com/Lateralus138/YouTubeSearchFilter</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/Lateralus138/YouTubeSearchFilter/master/media/ytsf.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>ytsf.desktop</id>
+		<binary>ytsf</binary>
+	</provides>
+</component>

@@ -4,33 +4,39 @@ layout: app
 permalink: /hyper/
 description: A terminal built on web technologies
 
+icons:
+  - hyper/icons/128x128/hyper.png
+
 screenshots:
   - hyper/screenshot.png
 
 authors:
-  - name: zeit
-    url: https://github.com/zeit
+  - name: vercel
+    url: https://github.com/vercel
 
 links:
   - type: GitHub
-    url: zeit/hyper
+    url: vercel/hyper
   - type: Download
-    url: https://github.com/zeit/hyper/releases
+    url: https://github.com/vercel/hyper/releases
 
 desktop:
   Desktop Entry:
     Name: Hyper
-    Comment: A terminal built on web technologies
     Exec: AppRun
     Terminal: false
     Type: Application
     Icon: hyper
-    X-AppImage-Version: 1.4.4.2266
-    X-AppImage-BuildId: cd200620-98b5-11a7-3125-59c1c1e15a37
+    StartupWMClass: Hyper
+    X-AppImage-Version: 3.1.0-canary.4.4805
+    Comment: A terminal built on web technologies
+    MimeType: x-scheme-handler/ssh
     Categories: TerminalEmulator
   AppImageHub:
-    X-AppImage-UpdateInformation: 
-    X-AppImage-Type: 1
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
 
 electron:
