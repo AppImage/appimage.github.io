@@ -14,7 +14,7 @@ authors:
 links:
   - type: GitHub
     url: todbot/Blink1Control2
-  - type: Install
+  - type: Download
     url: https://github.com/todbot/Blink1Control2/releases
 
 desktop:

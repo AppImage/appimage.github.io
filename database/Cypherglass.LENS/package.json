@@ -1,0 +1,17 @@
+{
+  "name": "cypherglass-lens-electron",
+  "version": "1.0.0",
+  "description": "Cypherglass Lens: the safest voting tool",
+  "homepage": "https://cypherglass.com",
+  "main": "index.js",
+  "repository": {
+    "url": ""
+  },
+  "author": "Leo Ribeiro",
+  "license": "MIT",
+  "productName": "Cypherglass LENS",
+  "copyright": "Copyright © 2018 Cypherglass",
+  "dependencies": {
+    "open": "0.0.5"
+  }
+}

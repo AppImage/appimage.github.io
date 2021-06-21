@@ -3,6 +3,10 @@ layout: app
 
 permalink: /Turntable/
 description: Simple youtube DJ app made with Electron and Angular4
+license: MIT
+
+icons:
+  - Turntable/icons/126x126/turntable.png
 
 screenshots:
   - Turntable/screenshot.png
@@ -14,7 +18,7 @@ authors:
 links:
   - type: GitHub
     url: radiium/turntable
-  - type: Install
+  - type: Download
     url: https://github.com/radiium/turntable/releases
 
 desktop:
@@ -32,6 +36,7 @@ desktop:
     X-AppImage-UpdateInformation: 
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
 
 electron:
   description: Simple youtube DJ app made with Electron and Angular4

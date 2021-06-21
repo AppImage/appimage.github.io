@@ -1,0 +1,21 @@
+{
+  "name": "AlphaT",
+  "version": "0.5.1",
+  "description": "AlphaT is a free doc tranlation application, it powerd by machine tranlation engines, help you translate your documents quickly and easily.",
+  "main": "src/main.js",
+  "author": "sigoden huang <sigoden@gmail.com> (https://sigoden.com)",
+  "license": "MIT",
+  "dependencies": {
+    "brace": "^0.10.0",
+    "electron-settings": "^3.1.1",
+    "google-translate-api": "^2.3.0",
+    "i18next": "^9.0.0",
+    "i18next-browser-languagedetector": "^2.0.0",
+    "jquery-i18next": "^1.2.0",
+    "md5": "^2.2.1",
+    "require-directory": "^2.1.1",
+    "superagent": "^3.5.2"
+  },
+  "homepage": "https://sigoden-alphat.github.io",
+  "repository": "https://github.com/sigoden/alphat"
+}

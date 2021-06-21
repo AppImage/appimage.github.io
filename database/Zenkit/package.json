@@ -1,0 +1,11 @@
+{
+  "name": "zenkit",
+  "productName": "Zenkit",
+  "description": "A platform for collaboration and project management.",
+  "dependencies": {
+    "keyboard-layout": "^2.0.13"
+  },
+  "author": "Axonic Infromationssysteme <info@zenkit.com>",
+  "version": "1.0.3",
+  "main": "./main.js"
+}
