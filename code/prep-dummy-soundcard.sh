@@ -22,8 +22,8 @@ alias sound-service-0-3 snd-pcm-oss
 alias sound-service-0-8 snd-seq-oss
 alias sound-service-0-12 snd-pcm-oss
 EOF
-# Commenting out this modprobe line for now. Otherwise the workflow fails with:
-# modprobe: FATAL: Module snd-dummy not found in directory /lib/modules/5.8.0-1036-azure
-# modprobe snd-dummy
+# Commenting out this modprobe line for now. Otherwise the workflow fails that
+# the module can't be found.
+modprobe snd-dummy
 # ; modprobe snd-pcm-oss ; modprobe snd-mixer-oss ; modprobe snd-seq-oss
 mkdir -p tmp && chmod 777 tmp
