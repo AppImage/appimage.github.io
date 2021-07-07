@@ -10,20 +10,9 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
-    - name: Cache deb packages
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-deb
-      with:
-        path: /var/cache/apt/archives
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/lockfiles') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
     - name: Install dependencies
       run: |
-        sudo apt-get -qq -y install imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl # appstream
+        sudo apt-get -qq -y install imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl # appstream # TODO: Cache me!
         sudo bash code/prep-dummy-soundcard.sh
         sudo gem install dupervisor -v 1.0.5 # To convert ini to yaml files
         sudo npm install -g asar # to get pacakges.json from resources/app.asar for electron-builder applications
