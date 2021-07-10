@@ -35,6 +35,7 @@ jobs:
         # Find out which files in data/ have been changed in the last commit
         #set -x    # Debug #379
         FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2-| sed -e 's|dev/null||g')
+        echo "Last changed files from the FILES variable:"
         echo "$FILES" ; if [ -z "$FILES" ] ; then echo "Variable FILES is empty." && exit 1 ; fi
         # Work on these files that have been changed in the last commit
         # Check if $FILES is not empty
