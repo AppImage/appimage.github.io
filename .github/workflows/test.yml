@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
+    # https://github.com/actions/checkout#Fetch-all-history-for-all-tags-and-branches
+    # According to the docs for checkout@v2, Only a single commit is fetched by default, but
+    # providing a fetch-depth of 0 should fetch all history.
+      with:
+        fetch-depth: 0
     - name: Install dependencies
       run: |
         sudo apt update
