@@ -558,7 +558,7 @@ Add automatically parsed data ($GITHUB_JOB)
 [ci skip]
 EOF
 set +x
-git remote add deploy https://${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
+git remote add deploy https://${GH_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
 # wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     set -x
     git push --set-upstream deploy
