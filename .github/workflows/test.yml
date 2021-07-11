@@ -11,6 +11,7 @@ on:
 env:
   DISPLAY: :99
   IS_PULLREQUEST: ${{ github.event_name == 'pull_request' }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
