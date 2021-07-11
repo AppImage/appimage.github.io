@@ -1,4 +1,4 @@
-# AppImageHub [![Build Status](https://github.com/AppImage/appimage.github.io.svg/actions/workflows/test.yml/badge.svg)](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml)
+# AppImageHub [![Build Status](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml/badge.svg)](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml)
 
 https://appimage.github.io/
 
