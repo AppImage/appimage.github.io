@@ -256,6 +256,7 @@ NUMBER_OF_WINDOWS=$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[
 echo "NUMBER_OF_WINDOWS: $NUMBER_OF_WINDOWS"
 if [ $(($NUMBER_OF_WINDOWS)) -lt 1 ] ; then
   echo "ERROR: Could not find a single window on screen :-("
+  exit 1
 fi
 
 # Works with Xvfb but cannot select window by ID
@@ -557,7 +558,7 @@ Add automatically parsed data ($GITHUB_JOB)
 [ci skip]
 EOF
 set +x
-git remote add deploy https://${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
+git remote add deploy https://${GH_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
 # wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     set -x
     git push --set-upstream deploy
