@@ -1,11 +1,10 @@
 #!/bin/bash
 
+# verbose output
+set -v
+
 URL=$(cat $1 | head -n 1)
 echo $URL
-
-if [ "$IS_PULLREQUEST" = false ] ; then
-  git checkout "$GITHUB_REF"
-fi
 
 INPUTBASENAME=$(basename $1)
 
