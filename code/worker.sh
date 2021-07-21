@@ -540,28 +540,29 @@ if [ "$IS_PULLREQUEST" = true ]; then
   curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfer.sh/screenshot.png
   echo ""
   echo "We will assume the test is OK (a pull request event was triggered and the required files exist)."
-  exit 0
-fi
+elif [ -z "${GITHUB_REF##*master*}" ]; then # will be true even if GITHUB_REF eq something like "refs/heads/master"
+  # If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
+  # https://gist.github.com/willprice/e07efd73fb7f13f917ea
 
-# If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
-# https://gist.github.com/willprice/e07efd73fb7f13f917ea
-
-git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
-#git config --global user.email "travis@travis-ci.org"
-#git config --global user.name "Travis CI"
-set -x
-( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
-( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
-git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
+  git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
+  #git config --global user.email "travis@travis-ci.org"
+  #git config --global user.name "Travis CI"
+  set -x
+  ( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
+  ( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
+  git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
 Add automatically parsed data ($GITHUB_JOB)
 [ci skip]
 EOF
-set +x
-git remote add deploy https://${GH_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
-# wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
-    set -x
-    git push --set-upstream deploy
-    set +x
-# wrong logic? # else
-# wrong logic? #     echo "Not runing 'git push --set-upstream deploy' because this build does NOT have TRAVIS_PULL_REQUEST=false"
-# wrong logic? # fi
+  set +x
+  git remote add deploy https://${GH_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
+  # wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
+      set -x
+      git push --set-upstream deploy
+      set +x
+  # wrong logic? # else
+  # wrong logic? #     echo "Not runing 'git push --set-upstream deploy' because this build does NOT have TRAVIS_PULL_REQUEST=false"
+  # wrong logic? # fi
+fi
+
+exit 0
