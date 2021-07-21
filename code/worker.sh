@@ -540,7 +540,7 @@ if [ "$IS_PULLREQUEST" = true ]; then
   curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfer.sh/screenshot.png
   echo ""
   echo "We will assume the test is OK (a pull request event was triggered and the required files exist)."
-else
+elif [ -z "${GITHUB_REF##*master*}" ]; then # will be true even if GITHUB_REF eq something like "refs/heads/master"
   # If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
   # https://gist.github.com/willprice/e07efd73fb7f13f917ea
 
