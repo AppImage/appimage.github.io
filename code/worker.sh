@@ -551,9 +551,9 @@ else
   ( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
   ( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
   git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
-  Add automatically parsed data ($GITHUB_JOB)
-  [ci skip]
-  EOF
+Add automatically parsed data ($GITHUB_JOB)
+[ci skip]
+EOF
   set +x
   git remote add deploy https://${GH_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
   # wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
