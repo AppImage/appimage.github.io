@@ -16,6 +16,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-18.04
+    timeout-minutes: 5
     steps:
     - uses: actions/checkout@v2
     # https://github.com/actions/checkout#Fetch-all-history-for-all-tags-and-branches
