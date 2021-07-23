@@ -1,9 +1,17 @@
 
-on: [push, pull_request]
+on:
+  push:
+    # The ignored paths must not include md files for the website itself
+    paths-ignore:
+    - '*.md'
+  pull_request:
+    paths-ignore:
+    - '*.md'
 
 env:
   DISPLAY: :99
   IS_PULLREQUEST: ${{ github.event_name == 'pull_request' }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
@@ -44,7 +52,26 @@ jobs:
         echo "$FILES" ; if [ -z "$FILES" ] ; then echo "Variable FILES is empty." && exit 1 ; fi
         # Work on these files that have been changed in the last commit
         # Check if $FILES is not empty
-        if [ -n "$FILES" ] ; then for FILE in $FILES ; do echo "$FILE" ; sudo -E bash -e code/worker.sh $(readlink -f "$FILE") ; done ; fi
+        if [ -n "$FILES" ] ; then for FILE in $FILES ; do echo "$FILE" ; bash -e code/worker.sh $(readlink -f "$FILE") 2>&1 | tee log.txt ; done ; fi
         # xpra stop :99
         killall Xvfb
         # bundle exec jekyll build # https://help.github.com/en/articles/viewing-jekyll-build-error-messages#configuring-a-third-party-service-to-display-jekyll-build-error-messages
+    - name: Check log
+      shell: bash
+      run: |
+        cat log.txt | wc -l
+        grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)".
+        echo "${MESSAGE}"
+    - name: Post test result to PR
+      # Fails due to missing permissions, https://github.com/actions/first-interaction/issues/10
+      if: 1 == 2
+      # if: github.event_name == 'pull_request'
+      uses: actions/github-script@v4
+      with:
+        script: |
+            await github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'This comment is posted by the test'
+            })
