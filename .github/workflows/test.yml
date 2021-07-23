@@ -62,7 +62,8 @@ jobs:
         cat log.txt | wc -l
         grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)".
         echo "${MESSAGE}"
-    - name: Post
+    - name: Post test result to pr
+      if: github.event_name == 'pull_request'
       uses: actions/github-script@v4
       with:
         script: |
