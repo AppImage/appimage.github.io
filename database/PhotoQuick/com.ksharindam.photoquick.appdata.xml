@@ -38,10 +38,6 @@
       <p>
       Get plugins from github page for more features.
       </p>
-     <p> Usage :</p>
-     <p>
-      Just download the AppImage and mark it executable and then double click to run.
-     </p>
   </description>
 
   <categories>
@@ -65,20 +61,6 @@
       </screenshot>
     </screenshots>
 
-  <url type="homepage">https://github.com/ksharindam/photoquick</url>
-
-  <releases>
-    <release version="4.4.2" date="2021-05-19">
-      <description>
-      <ul>
-        <li>plugins are loaded after first image is shown, reducing startup time</li>
-        <li>added : pencil sketch filter better than plugin</li>
-        <li>added : creating mask using iscissor and eraser</li>
-        <li>added vignette filter</li>
-        <li>added exif info viewer and about dialog</li>
-      </ul>
-      </description>
-    </release>
-  </releases>
+  <url type="homepage">https://ksharindam.github.io/photoquick/</url>
 
 </component>
