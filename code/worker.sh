@@ -510,7 +510,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   fi
   # Add content of Electron package.json file
   if [ -e database/$INPUTBASENAME/package.json ] ; then
-    dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml
+    sudo dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml # Do we need sudo to prevent '`load': cannot load such file'?
     echo "" >> apps/$INPUTBASENAME.md
     echo "electron:" >> apps/$INPUTBASENAME.md
     cat database/$INPUTBASENAME/package.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
