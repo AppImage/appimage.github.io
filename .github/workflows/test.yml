@@ -66,9 +66,9 @@ jobs:
       uses: actions/github-script@v4
       with:
         script: |
-            github.issues.addLabels({
+            await github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['Triage']
+              body: 'This comment is posted by the test'
             })
