@@ -56,6 +56,12 @@ jobs:
         # xpra stop :99
         killall Xvfb
         # bundle exec jekyll build # https://help.github.com/en/articles/viewing-jekyll-build-error-messages#configuring-a-third-party-service-to-display-jekyll-build-error-messages
+  check:
+    runs-on: composite
+    steps:
     - name: Check log
+      shell: bash
       run: |
         cat log.txt | wc -l
+        grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (`Running as root without --no-sandbox is not supported`)".
+        echo "${MESSAGE}"
