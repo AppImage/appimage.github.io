@@ -62,3 +62,13 @@ jobs:
         cat log.txt | wc -l
         grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)".
         echo "${MESSAGE}"
+    - name: Post
+      uses: actions/github-script@v4
+      with:
+        script: |
+            github.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['Triage']
+            })
