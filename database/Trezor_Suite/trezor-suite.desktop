@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Trezor Suite
+Exec=AppRun --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=trezor-suite
+StartupWMClass=Trezor Suite
+X-AppImage-Version=21.5.1.11425
+Comment=Trezor Suite desktop application
+Categories=Utility;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=[don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
