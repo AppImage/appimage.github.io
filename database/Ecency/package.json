@@ -1,0 +1,10 @@
+{
+  "name": "ecency-surfer",
+  "productName": "Ecency",
+  "description": "Ecency desktop application reimagined for Windows, Mac, Linux users, start earning cryptocurrency!",
+  "homepage": "https://ecency.com",
+  "version": "3.0.18",
+  "main": "./main.prod.js",
+  "author": "Ecency <hello@ecency.com>",
+  "dependencies": {}
+}

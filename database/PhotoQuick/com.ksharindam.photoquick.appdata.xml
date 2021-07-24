@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2021 Arindam Chaudhuri <ksharindam@gmail.com> -->
+<component type="desktop-application">
+  <id>com.ksharindam.photoquick</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>PhotoQuick</name>
+  <summary>A handy image viewer and editor with useful features and plugins support</summary>
+
+  <description>
+    <p>
+      A handy image viewer and editor with useful features and plugins support.
+      </p>
+    <p>
+      This program is aimed at ease of use, quick opening, and doing most necessary features.
+      </p>
+
+     <p> Features :</p>
+     <ul>
+      <li>Export to PDF</li>
+      <li>Auto Resize to file size</li>
+      <li>Crop in particular ratio</li>
+      <li>Rotate, mirror, perspective transform</li>
+      <li>Add Border</li>
+      <li>Create photo grid for printing</li>
+      <li>Magic Eraser (inpainting)</li>
+      <li>Intelligent Scissor</li>
+      <li>Filters</li>
+      <li>Scan Page</li>
+      <li>Auto Contrast</li>
+      <li>White Balance</li>
+      <li>Reduce Noise</li>
+     </ul>
+      With Scissor tool you can erase background.
+      You can create mask with scissor tool, thus you can blur or darken the background.
+      Magick eraser (Inpaint) tool can be used to erase cracks or objects in scanned photos.
+      <p>
+      Get plugins from github page for more features.
+      </p>
+  </description>
+
+  <categories>
+    <category>Graphics</category>
+  </categories>
+
+  <launchable type="desktop-id">com.ksharindam.photoquick.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+        <caption>Main Window</caption>
+        <image>https://github.com/ksharindam/photoquick/raw/master/data/screenshots/Screenshot1.jpg</image>
+      </screenshot>
+    <screenshot>
+        <caption>PhotoGrid Dialog</caption>
+        <image>https://github.com/ksharindam/photoquick/raw/master/data/screenshots/Screenshot2.jpg</image>
+      </screenshot>
+    <screenshot>
+        <caption>Scissor Tool Dialog</caption>
+        <image>https://github.com/ksharindam/photoquick/raw/master/data/screenshots/Screenshot3.jpg</image>
+      </screenshot>
+    </screenshots>
+
+  <url type="homepage">https://ksharindam.github.io/photoquick/</url>
+
+</component>
