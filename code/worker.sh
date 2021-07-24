@@ -547,7 +547,7 @@ fi
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
 
 git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
-git config --global user.email "noreply@users.noreply.github.com"
+git config --global user.email "actions@users.noreply.github.com"
 git config --global user.name "GitHub Actions"
 set -x
 ( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
