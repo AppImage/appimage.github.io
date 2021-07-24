@@ -254,7 +254,6 @@ xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
 NUMBER_OF_WINDOWS=$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | wc -l)
 echo "NUMBER_OF_WINDOWS: $NUMBER_OF_WINDOWS"
 if [ $(($NUMBER_OF_WINDOWS)) -lt 1 ] ; then
-  echo "ERROR: Could not find a single window on screen :-("
   exit 1
 fi
 
