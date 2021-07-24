@@ -266,9 +266,10 @@ fi
 mkdir -p database/$INPUTBASENAME/
 
 # Take screenshot
-import -window "$(xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png  && echo "Screenshot taken"
+import -window "$(xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png &
+sleep 1
 
-kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
+kill $APID || exit 1
 killall icewm
 
 # Check if the screenshot is unusable and error out if it is
