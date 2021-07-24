@@ -3,6 +3,9 @@
 # verbose output
 set -v
 
+# exit on errors
+set -e
+
 URL=$(cat $1 | head -n 1)
 echo $URL
 
