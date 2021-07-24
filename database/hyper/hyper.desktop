@@ -1,21 +1,18 @@
 [Desktop Entry]
 Name=Hyper
-Comment=A terminal built on web technologies
 Exec=AppRun
 Terminal=false
 Type=Application
 Icon=hyper
-X-AppImage-Version=1.4.4.2266
-X-AppImage-BuildId=cd200620-98b5-11a7-3125-59c1c1e15a37
+StartupWMClass=Hyper
+X-AppImage-Version=3.1.0-canary.4.4805
+Comment=A terminal built on web technologies
+MimeType=x-scheme-handler/ssh;
 Categories=TerminalEmulator;
 
 [AppImageHub]
-X-AppImage-UpdateInformation=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-# Dear upstream developer, please include a digital signature in your AppImage
-# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
-X-AppImage-Type=1
-# Dear upstream developer, please consider to switch to type 2
-# so that users can benefit from the additional features like digital embedded signatures
-# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
-# or use linuxdeployqt or appimagetool which produce type 2 automatically
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
