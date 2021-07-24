@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+  <id>org.strawberrymusicplayer.strawberry</id>
+  <launchable type="desktop-id">org.strawberrymusicplayer.strawberry.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <provides>
+    <binary>strawberry</binary>
+    <binary>strawberry-tagreader</binary>
+  </provides>
+  <name>Strawberry Music Player</name>
+  <summary>A music player and collection organizer</summary>
+  <url type="homepage">https://www.strawberrymusicplayer.org/</url>
+  <url type="bugtracker">https://github.com/strawberrymusicplayer/strawberry/</url>
+  ​<translation type="qt">strawberry</translation>
+  <description>
+    <p>
+      Strawberry is a music player and music collection organizer. It is a fork of Clementine released in 2018 aimed at music collectors, audio enthusiasts and audiophiles. The name is inspired by the band Strawbs. It's based on a heavily modified version of Clementine created in 2012-2013. It's written in C++ and Qt 5.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Play and organize music</li>
+      <li>Supports most popular audio formats and CD playback</li>
+      <li>Native desktop notifications</li>
+      <li>Playlists in multiple formats</li>
+      <li>Advanced audio output and device configuration for bit-perfect playback on Linux</li>
+      <li>Edit tags on music files</li>
+      <li>Fetch tags from MusicBrainz</li>
+      <li>Album cover art from Last.fm, Musicbrainz, Discogs, Musixmatch, Deezer, Tidal, Qobuz and Spotify</li>
+      <li>Song lyrics from AudD, Genius, Musixmatch, ChartLyrics, lyrics.ovh and lololyrics.com</li>
+      <li>Support for multiple backends</li>
+      <li>Audio analyzer and equalizer</li>
+      <li>Transfer music to iPod, iPhone, MTP or mass-storage USB player</li>
+      <li>Scrobbler with support for Last.fm, Libre.fm and ListenBrainz</li>
+      <li>Streaming support for Subsonic</li>
+    </ul>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Song playing showing context</caption>
+      <image width="1600" height="874">https://www.strawberrymusicplayer.org/pictures/appdata-screenshot-001.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Collection overview</caption>
+      <image width="1600" height="874">https://www.strawberrymusicplayer.org/pictures/appdata-screenshot-002.png</image>
+    </screenshot>
+  </screenshots>
+  <update_contact>eclipseo@fedoraproject.org</update_contact>
+</component>
