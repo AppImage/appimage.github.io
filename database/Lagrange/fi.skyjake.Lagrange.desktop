@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Lagrange
+Comment=A Beautiful Gemini Client
+Categories=Network
+Exec=lagrange %U
+Terminal=false
+Type=Application
+Icon=fi.skyjake.Lagrange
+MimeType=x-scheme-handler/gemini;x-scheme-handler/gopher
+X-AppImage-Version=1.5.1
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|skyjake|lagrange|latest|Lagrange-*x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Sun 06 Jun 2021 12:44:01 PM UTC                using RSA key 15674AE498667047A3EB9431BACCFCFB98DB2EDC Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
