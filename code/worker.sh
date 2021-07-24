@@ -495,7 +495,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   fi
   # Add content of desktop file
   if [ -f "database/$INPUTBASENAME/$(dir -C -w 1 database/$INPUTBASENAME | grep -m1 '.desktop')" ]; then
-    dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
+    sudo dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml # Do we need sudo to prevent '`load': cannot load such file'?
     echo "" >> apps/$INPUTBASENAME.md
     echo "desktop:" >> apps/$INPUTBASENAME.md
     cat database/$INPUTBASENAME/desktop.yaml | sed  's/^/  /' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first line ("---")
@@ -510,7 +510,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   fi
   # Add content of Electron package.json file
   if [ -e database/$INPUTBASENAME/package.json ] ; then
-    dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml
+    sudo dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml # Do we need sudo to prevent '`load': cannot load such file'?
     echo "" >> apps/$INPUTBASENAME.md
     echo "electron:" >> apps/$INPUTBASENAME.md
     cat database/$INPUTBASENAME/package.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
@@ -547,8 +547,8 @@ fi
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
 
 git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
-#git config --global user.email "travis@travis-ci.org"
-#git config --global user.name "Travis CI"
+git config --global user.email "actions@users.noreply.github.com"
+git config --global user.name "GitHub Actions"
 set -x
 ( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
 ( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
