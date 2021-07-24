@@ -24,6 +24,12 @@
     <p>Categories Manager:</p>
     <p>Through the categories tree you will have access to all Category CRUD related operations.</p>
   </description>
+
+  <links>
+    <link type='Downloads'>https://fbalaguer.com/en/basic-page/samanager-project</link>
+  </links>
+
+  <url type='homepage'>https://fbalaguer.com/en/basic-page/samanager-project</url>
   
   <launchable type="desktop-id">SAManager.desktop</launchable>
   <screenshots>
@@ -37,4 +43,12 @@
       <image>https://fbalaguer.com/sites/default/files/images/samanager/sam-image-dialog.png</image>
     </screenshot>
   </screenshots>
+
+  <releases>
+    <release version="0.0.1" date="2021-06-01">
+      <description>
+        <p>Very first version.</p>
+      </description>
+    </release>
+  </releases>
 </component>
