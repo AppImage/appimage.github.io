@@ -24,7 +24,7 @@ desktop:
     Name[en_GB]: SAManager.desktop
   AppImageHub:
     X-AppImage-UpdateInformation: zsync|https://fbalaguer.com/sites/default/files/downloads/linux/SAManager-x86_64.AppImage.zsync
-    X-AppImage-Signature: 'Signature made Mon 24 May 2021 05:22:11 PM UTC                using
+    X-AppImage-Signature: 'Signature made Mon 07 Jun 2021 06:08:46 PM UTC                using
       RSA key 4FBF62B90D1A737ED59A7FFD2002AEFA693B0B72 Can''t check signature: No public
       key'
     X-AppImage-Type: 2
@@ -66,6 +66,8 @@ appdata:
   
       <p>Through the categories tree you will have access to all Category CRUD related operations.</p>
   ProjectLicense: LicenseRef-proprietary
+  Url:
+    homepage: https://fbalaguer.com/en/basic-page/samanager-project
   Launchable:
     desktop-id:
     - SAManager.desktop
@@ -83,4 +85,10 @@ appdata:
     source-image:
       url: https://fbalaguer.com/sites/default/files/images/samanager/sam-image-dialog.png
       lang: C
+  Releases:
+  - version: 0.0.1
+    unix-timestamp: 1622505600
+    description:
+      C: >-
+        <p>Very first version.</p>
 ---

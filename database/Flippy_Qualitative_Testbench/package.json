@@ -1,0 +1,19 @@
+{
+  "name": "flippy-qualitative-testbench",
+  "version": "0.1.1",
+  "description": "Testbench",
+  "license": "GPL-3.0-or-later",
+  "author": "lhl2617 <l.h.lee2617@gmail.com>",
+  "main": "./dist/main.js",
+  "dependencies": {
+    "antd": "^4.15.5",
+    "binary-search-bounds": "^2.0.5",
+    "bluebird": "^3.5.34",
+    "core-js": "^3.12.1",
+    "opensheetmusicdisplay": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "regenerator-runtime": "^0.13.7",
+    "typescript": "^4.2.4"
+  }
+}

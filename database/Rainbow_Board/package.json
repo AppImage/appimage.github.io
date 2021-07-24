@@ -1,0 +1,23 @@
+{
+  "name": "rainbow-board",
+  "version": "0.7.3",
+  "productName": "Rainbow Board",
+  "author": {
+    "name": "Harsh Khandeparkar",
+    "email": "shadowwarriorpro3003@gmail.com"
+  },
+  "repository": "https://github.com/HarshKhandeparkar/rainbow-board",
+  "sideEffects": [
+    "*.css",
+    "*scss"
+  ],
+  "description": "22nd Century Whiteboard App For Linux, Windows and Mac.",
+  "discordInvite": "https://discord.gg/FEpMS43UwR",
+  "main": "build/main.bundle.js",
+  "website": "https://harshkhandeparkar.github.io/rainbow-board",
+  "dependencies": {
+    "electron-is-dev": "^2.0.0",
+    "electron-settings": "^4.0.2",
+    "semver": "^7.3.5"
+  }
+}
