@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>de.lazyt.ubpm</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-2.0+</project_license>
+	<name>Universal Blood Pressure Manager</name>
+	<summary>Manage Blood Pressure Data</summary>
+	<description>
+		<p>
+			Manage your blood pressure data with UBPM.
+			Display data as chart, table or statistics and print for the doctor.
+			Analyze data via SQL queries.
+			The measurements can be entered manually, imported from file or read directly from supported blood pressure monitors and exported to CSV, XML, JSON or SQLite.
+		</p>
+	</description>
+	<screenshots>
+		<screenshot type="default">
+			<caption>Chart View</caption>
+			<image>https://codeberg.org/lazyt/ubpm/raw/branch/master/website/chartview.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Table View</caption>
+			<image>https://codeberg.org/lazyt/ubpm/raw/branch/master/website/tableview.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Statistic View</caption>
+			<image>https://codeberg.org/lazyt/ubpm/raw/branch/master/website/statsview.png</image>
+		</screenshot>
+	</screenshots>
+	<url type="homepage">https://codeberg.org/lazyt/ubpm</url>
+	<url type="donation">https://paypal.me/LazyT</url>
+	<developer_name>Thomas "LazyT" Löwe</developer_name>
+	<provides>
+		<id>ubpm.desktop</id>
+	</provides>
+</component>
