@@ -3,9 +3,6 @@
 # verbose output
 set -v
 
-# exit on errors
-set -e
-
 URL=$(cat $1 | head -n 1)
 echo $URL
 
@@ -248,6 +245,24 @@ fi
 APID=$!
 sleep 15
 
+# Make a screenshot
+
+# Get a list of open windows
+xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
+
+# Count the windows on screen
+NUMBER_OF_WINDOWS=$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | wc -l)
+echo "NUMBER_OF_WINDOWS: $NUMBER_OF_WINDOWS"
+if [ $(($NUMBER_OF_WINDOWS)) -lt 1 ] ; then
+  echo "ERROR: Could not find a single window on screen :-("
+  exit 1
+fi
+
+# Works with Xvfb but cannot select window by ID
+# sudo apt-get -y install scrot
+# scrot -b 'screenshot_$wx$h.jpg' # -u gives "X Error of failed request:  BadDrawable (invalid Pixmap or Window parameter)"
+# mv screenshot_* database/$INPUTBASENAME/
+
 # Getting the active window seems to require a window manager
 icewm &
 sleep 2
@@ -266,14 +281,19 @@ if [ x"$INPUTBASENAME" == xSubsurface ] ; then
   xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
 fi
 
+# Works with Xvfb
+# sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
+# -display :99 needed here?
+# xwd -id $(xdotool getactivewindow) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
 mkdir -p database/$INPUTBASENAME/
 
-# Take screenshot
-import -window "$(xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png &
-sleep 1
+# Taking screenshot like this fails, https://github.com/AppImage/appimage.github.io/issues/2494
+# convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
 
-kill -9 $APID & # Seems to hang forever if no such process?
-killall -9 icewm
+import -window "$(xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png  && echo "Screenshot taken"
+
+kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
+killall icewm
 
 # Check if the screenshot is unusable and error out if it is
 if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png" ] ; then
