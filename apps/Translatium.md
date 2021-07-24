@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Translatium/
 description: Translate Any Languages like a Pro
+license: MPL-2.0
 
 icons:
   - Translatium/icons/844x844/translatium.png
@@ -28,7 +29,7 @@ desktop:
     Type: Application
     Icon: translatium
     StartupWMClass: Translatium
-    X-AppImage-Version: 13.4.0
+    X-AppImage-Version: 13.7.1
     Comment: Translate Any Languages like a Pro
     MimeType: x-scheme-handler/translatium
     Categories: Utility
@@ -38,4 +39,5 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MPL-2.0
 ---

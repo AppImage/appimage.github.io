@@ -1,0 +1,28 @@
+[Desktop Entry]
+#Version=0.9
+Type=Application
+Name=ATSDB
+Comment=Air Traffic Surveillance DataBase
+#TryExec=atsdb-client
+Exec=bin/atsdb_client -f
+#Icon=/usr/local/atsdb/data/icons/atsdb.png
+Icon=atsdb
+Categories=Science;NumericalAnalysis;DataVisualization;
+#MimeType=image/x-foo;
+#Actions=Gallery;Create;
+
+#[Desktop Action Gallery]
+#Exec=fooview --gallery
+#Name=Browse Gallery
+
+#[Desktop Action Create]
+#Exec=fooview --create-new
+#Name=Create a new Foo!
+#Icon=fooview-new
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
