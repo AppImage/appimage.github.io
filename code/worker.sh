@@ -269,8 +269,8 @@ mkdir -p database/$INPUTBASENAME/
 import -window "$(xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png &
 sleep 1
 
-kill $APID || exit 1
-killall icewm
+kill -9 $APID
+killall -9 icewm
 
 # Check if the screenshot is unusable and error out if it is
 if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png" ] ; then
