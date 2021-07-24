@@ -269,7 +269,7 @@ mkdir -p database/$INPUTBASENAME/
 import -window "$(xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png &
 sleep 1
 
-kill -9 $APID
+kill -9 $APID & # Seems to hang forever if no such process?
 killall -9 icewm
 
 # Check if the screenshot is unusable and error out if it is
