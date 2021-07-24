@@ -41,6 +41,7 @@ desktop:
     Terminal: false
     Type: Application
     X-KDE-SubstituteUID: false
+    X-AppImage-Version: continuous
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|sithlord48|blackchocobo|latest|Black_Chocobo*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
