@@ -2,10 +2,10 @@
 layout: app
 
 permalink: /FastTrack/
-description: Tracks multiple animals easily
+description: Fast tracking of multiple objects
 
 icons:
-  - FastTrack/icons/1024x1024/icon.png
+  - FastTrack/icons/756x756/icon.png
 
 screenshots:
   - FastTrack/screenshot.png
@@ -16,15 +16,13 @@ links:
 
 desktop:
   Desktop Entry:
-    Name: Fast Track
-    Comment: Tracks multiple animals easily
-    Exec: FastTrack
-    Terminal: false
     Type: Application
+    Name: FastTrack
+    Comment: Fast tracking of multiple objects
+    Exec: FastTrack
     Icon: icon
-    StartupWMClass: Fast Track
     Categories: Science
-    Name[en_US]: FastTrack.desktop
+    X-AppImage-Version: ab747be
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
