@@ -1,0 +1,14 @@
+{
+  "name": "passky",
+  "version": "2.0.0",
+  "author": "Rabbit Company",
+  "description": "Simple and secure password manager",
+  "main": "main.js",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": "js/forge.config.js"
+  }
+}
