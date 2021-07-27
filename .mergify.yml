@@ -1,7 +1,7 @@
-pull_request_rules:
-  - name: automatic update for PR marked as “Ready-to-Go“
-    conditions:
-      - -conflict # skip PRs with conflicts
-      - -draft # filter-out GH draft PRs
-    actions:
-      update:
+#pull_request_rules:
+#  - name: automatic update for PRs
+#    conditions:
+#      - -conflict # skip PRs with conflicts
+#      - -draft # filter-out GH draft PRs
+#    actions:
+#      update:
