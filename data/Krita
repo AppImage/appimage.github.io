@@ -1,3 +1,3 @@
-https://download.kde.org/stable/krita/3.1.4/krita-3.1.4-x86_64.appimage
+https://download.kde.org/stable/krita/4.3.0/krita-4.3.0-x86_64.appimage
 # This is clearly not an ideal URL since it is specific to one version.
 # Instead it should be specific to one channel, e.g., "release", "continuous", "alpha", "beta", etc.
