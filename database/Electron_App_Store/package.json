@@ -1,0 +1,18 @@
+{
+  "name": "electron-store",
+  "productName": "Electron Store",
+  "appId": "electron-store",
+  "author": {
+    "name": "Patrick Waweru",
+    "email": "pntxall100@gmail.com"
+  },
+  "description": "A Simple App Store for Apps Built with Electron",
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Patrick-web/electron-app-store.git"
+  },
+  "private": true,
+  "main": "background.js",
+  "dependencies": {}
+}
