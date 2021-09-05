@@ -8,9 +8,8 @@ Terminal=true
 Categories=Development;
 
 [AppImageHub]
-# Dear upstream developer, please include update information in your AppImage
-# (e.g., with appimagetool -u) so that users can easily update the AppImage
-X-AppImage-Signature=Signature made Sat 18 May 2019 09:35:32 PM UTC using RSA key ID B05F6BE2 Can't check signature: No public key 
+X-AppImage-UpdateInformation=gh-releases-zsync|xaizek|zograscope|app-image|zs-x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Thu 02 Apr 2020 12:39:06 PM UTC using RSA key ID B05F6BE2 Can't check signature: No public key 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
 X-AppImage-Payload-License=AGPL-3.0

@@ -3,6 +3,9 @@ layout: app
 
 permalink: /Kdevelop/
 
+icons:
+  - Kdevelop/icons/128x128/kdevelop.png
+
 screenshots:
   - Kdevelop/screenshot.png
 
@@ -25,7 +28,6 @@ desktop:
     InitialPreference: 9
     Categories: Qt
   AppImageHub:
-    X-AppImage-UpdateInformation: 
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
 ---
