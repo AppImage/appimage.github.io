@@ -1,0 +1,22 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Gerbv Gerber File Viewer
+Name[ru]=Gerbv — просмотр Gerber-файлов
+GenericName=Gerber File Viewer
+GenericName[ru]=Просмотр Gerber-файлов
+Comment=Gerber file viewer for PCB design
+Comment[ru]=Просмотр Gerber-файлов конструкции печатных плат
+Type=Application
+Exec=gerbv %F
+Icon=gerbv
+MimeType=application/x-gerber;application/x-excellon;
+Categories=Engineering;Electronics;
+X-AppImage-Version=gerbv-2-7-RELEASE
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

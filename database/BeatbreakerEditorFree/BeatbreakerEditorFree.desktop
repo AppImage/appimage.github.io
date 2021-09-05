@@ -14,6 +14,6 @@ Terminal=false
 
 [AppImageHub]
 X-AppImage-UpdateInformation=zsync|https://auto-update.beatbreaker.net/editor/free/linux/BeatbreakerEditorFree-latest.AppImage.zsync
-X-AppImage-Signature=Signature made Sat 07 Mar 2020 11:09:30 PM UTC using RSA key ID 702D7186 Can't check signature: No public key 
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Sun Jul  4 14:26:49 2021 UTC                using DSA key 25A7F1A23D94AA26 Can't check signature: No public key 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64

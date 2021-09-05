@@ -1,0 +1,15 @@
+{
+  "name": "astrofox",
+  "version": "1.2.0",
+  "productName": "Astrofox",
+  "description": "Audio reactive motion graphics program",
+  "author": "Mike Cao <mike@mikecao.com>",
+  "license": "MIT",
+  "homepage": "https://astrofox.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astrofox-io/astrofox"
+  },
+  "main": "main.js",
+  "dependencies": {}
+}
