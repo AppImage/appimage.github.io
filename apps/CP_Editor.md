@@ -2,11 +2,11 @@
 layout: app
 
 permalink: /CP_Editor/
-description: The Editor for Competitive Programming
+description: CP Editor is a Qt-based, lightweight and cross-platform code editor specially designed for competitive programming.
 license: GPL-3.0
 
 icons:
-  - CP_Editor/icons/431x431/icon.png
+  - CP_Editor/icons/512x512/cpeditor.png
 
 screenshots:
   - CP_Editor/screenshot.png
@@ -23,17 +23,29 @@ links:
 
 desktop:
   Desktop Entry:
+    Version: 1.0
     Type: Application
-    Name: cpeditor
-    Comment: The Editor for Competitive Programming
-    Exec: cpeditor
-    Icon: icon
+    Name: CP Editor
+    GenericName: Code editor for competitive programming
+    GenericName[ru]: Редактор кода для спортивного программирования
+    GenericName[zh_CN]: 算法竞赛代码编辑器
+    Exec: "/usr/bin/cpeditor"
+    Comment: CP Editor is a Qt-based, lightweight and cross-platform code editor specially
+      designed for competitive programming.
+    Comment[RU]: CP Editor - это легкий кросс-платформенный редактор кода на базе Qt,
+      специально разработанный для спортивного программирования.
+    Comment[zh_CN]: CP Editor 是一个基于 Qt 的轻量级跨平台代码编辑器，专为算法竞赛设计。
+    Icon: cpeditor
+    Terminal: false
+    StartupNotify: true
+    Encoding: UTF-8
     Categories: Development
-    X-AppImage-Version: 6.2.1
+    X-AppImage-Version: 6.8.4
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
     X-AppImage-Payload-License: GPL-3.0
