@@ -145,3 +145,10 @@ X-Krita-Version=28
 UpdateInformation=false
 # Dear upstream developer, please add update information to your AppImage
 # so that users can easily update the AppImage
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=Signature made Tue 16 Jun 2020 11:43:10 AM UTC using RSA key ID A3ED3406 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

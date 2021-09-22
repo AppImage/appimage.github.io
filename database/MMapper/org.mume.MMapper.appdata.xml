@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>org.mume.MMapper</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>MMapper</name>
+  <summary>MUME Mapper</summary>
+  <description>
+    <p>
+      MMapper is a graphical mapper for a MUD named MUME (Multi-Users in Middle
+      Earth). The game is traditionally played in a text-only mode, but MMapper tries
+      to represent the virtual world in user-friendly graphical environment. It acts
+      as a proxy between a telnet client and a MUD server, being able to analyze game
+      data in real time and show player's position in a map.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Automatic room creation during mapping</li>
+      <li>Automatic connection of new rooms</li>
+      <li>Terrain detection (forest, road, mountain, etc)</li>
+      <li>Exits detections</li>
+      <li>Fast OpenGL rendering</li>
+      <li>Pseudo 3D layers and drag and drop mouse operations</li>
+      <li>Multi platform support</li>
+      <li>Group manager support to see other people on your map</li>
+    </ul>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Screenshot of MMapper</caption>
+      <image height="675" width="1200">https://raw.githubusercontent.com/MUME/MMapper/master/appdata/screenshot1.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <id>mmapper.desktop</id>
+  </provides>
+  <launchable type="desktop-id">org.mume.MMapper.desktop</launchable>
+  <url type="bugtracker">https://github.com/MUME/MMapper/issues</url>
+  <url type="homepage">https://github.com/MUME/MMapper</url>
+</component>

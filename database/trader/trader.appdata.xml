@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*************************************************************************
+*                                                                       *
+*             Star Traders: A Game of Interstellar Trading              *
+*                Copyright (C) 1990-2021, John Zaitseff                 *
+*                                                                       *
+*************************************************************************
+
+Author: John Zaitseff <J.Zaitseff@zap.org.au>
+$Id: deb031fd327b1e609abaf9a26418ffe0dd83abb4 $
+
+This file provides application metadata for Star Traders and conforms to
+the AppStream 0.12 specification.
+
+Copying and distribution of this file, with or without modification, are
+permitted in any medium without royalty provided the copyright notice and
+this notice are preserved.  This file is offered as-is, without any
+warranty.
+-->
+<component type="console-application">
+  <id>au.org.zap.trader</id>
+  <name>Star Traders</name>
+  <name xml:lang="sv">Star Traders</name>
+  <name xml:lang="sr">Звездани трговци</name>
+  <name xml:lang="ru">Звёздные торговцы</name>
+  <name xml:lang="pt_BR">Comerciantes Estelares</name>
+  <name xml:lang="nb">Star Traders</name>
+  <name xml:lang="hu">Star Traders</name>
+  <name xml:lang="hr">Star Traders</name>
+  <name xml:lang="fr">Star Traders</name>
+  <name xml:lang="fi">Tähtikauppiaat</name>
+  <name xml:lang="eo">Star Traders</name>
+  <name xml:lang="de">Star Traders</name>
+  <name xml:lang="da">Star Traders</name>
+  <name xml:lang="en_US">Star Traders</name>
+  <name xml:lang="en_GB">Star Traders</name>
+  <name xml:lang="en_CA">Star Traders</name>
+  <name xml:lang="en_AU">Star Traders</name>
+  <name xml:lang="en@quot">Star Traders</name>
+  <summary>Play Star Traders, a simple game of interstellar trading</summary>
+  <summary xml:lang="sv">Spela Star Traders, ett enkelt spel om interstellär handel</summary>
+  <summary xml:lang="sr">Играјте Звездане трговце, једноставну игру међузвезданог трговања</summary>
+  <summary xml:lang="ru">Играть в «Звёздные торговцы», простую игру о межзвёздной торговле</summary>
+  <summary xml:lang="pt_BR">Jogue Comerciantes Estelares, um jogo simples de comércio interestelar</summary>
+  <summary xml:lang="nb">Spill Star Traders, et enkelt spill med interstellar handel</summary>
+  <summary xml:lang="hu">A Star Traders, egy egyszerű csillagközi kereskedelmi játék indítása</summary>
+  <summary xml:lang="hr">Igrajte Star Traders, jednostavnu igru međuzvjezdanog trgovanja</summary>
+  <summary xml:lang="fr">Jouer à Star Traders, un simple jeu de commerce interstellaire</summary>
+  <summary xml:lang="fi">Pelaa Tähtikauppiaita, yksinkertaista tähtienvälisen kaupan peliä</summary>
+  <summary xml:lang="eo">Ludi Star Traders, simpla ludo pri interstelara komerco</summary>
+  <summary xml:lang="de">Spielen Sie Star Trader, ein einfaches Spiel um interstellaren Handel</summary>
+  <summary xml:lang="da">Spil Star Traders, et simpelt spil med rumhandel</summary>
+  <summary xml:lang="en_US">Play Star Traders, a simple game of interstellar trading</summary>
+  <summary xml:lang="en_GB">Play Star Traders, a simple game of interstellar trading</summary>
+  <summary xml:lang="en_CA">Play Star Traders, a simple game of interstellar trading</summary>
+  <summary xml:lang="en_AU">Play Star Traders, a simple game of interstellar trading</summary>
+  <summary xml:lang="en@quot">Play Star Traders, a simple game of interstellar trading</summary>
+  <description>
+    <p>
+      Star Traders is a simple game of interstellar trading, where the
+      objective is to create companies, buy and sell shares, borrow and
+      repay money, in order to become the wealthiest player (the winner).
+    </p>
+    <p xml:lang="sv">Star Traders är ett enkelt spel om interstellär handel, där spelets mål är att bilda företag, köpa och sälja aktier, låna och betala tillbaka pengar för att bli den rikaste spelaren (vinnaren).</p>
+    <p xml:lang="sr">Звездани трговци је једноставна игра међузвезданог трговања, у којој треба да оснивате предузећа, купујете и продајете акције, позајмљујете и враћате новац, да бисте постали најбогатији играч (победник).</p>
+    <p xml:lang="ru">«Звёздные торговцы» — это простая игра о межзвёздной торговле, где целью игры является создание компаний, покупка и продажа акций, получение и погашение кредита, чтобы стать самым богатым игроком-победителем.</p>
+    <p xml:lang="pt_BR">Comerciantes Estelares é um jogo simples de negociação interestelar, cujo objetivo é criar empresas, comprar e vender ações, emprestar e pagar dinheiro, para se tornar o jogador mais rico (o vencedor).</p>
+    <p xml:lang="nb">Star Traders er et enkelt spill med interstellar handel, der målet med spillet er å opprette firmaer, kjøpe og selge aksjer, låne og betale tilbake penger for å bli den rikeste spilleren (vinneren).</p>
+    <p xml:lang="hu">A Star Traders egy egyszerű csillagközi kereskedelmi játék, ahol a játék célja társaságok létrehozása, részvények vásárlása és eladása, pénz kölcsönkérése és visszafizetése azért, hogy a leggazdagabb játékossá (győztessé) váljon.</p>
+    <p xml:lang="hr">„Star Traders” (Međuzvjezdani trgovci) je jednostavna igra međuzvjezadnog trgovanja, gdje je cilj igre stvarati tvrtke, kupovati i prodavati dionice te posuđivati i vraćati novac kako biste postali najbogatiji igrač (pobjednik).</p>
+    <p xml:lang="fr">Star Traders est un simple jeu de commerce interstellaire où l'objectif du jeu est de créer des compagnies, acheter et vendre des parts, emprunter et rembourser de l'argent dans le but de devenir le joueur le plus riche (le gagnant).</p>
+    <p xml:lang="fi">Tähtikauppiaat on yksinkertainen tähtienvälisen kaupan peli, jossa pelin tarkoitus on luoda yhtiöitä, ostaa ja myydä osakkeita, lainata ja maksaa takaisin rahaa, tarkoituksena tulla varakkaimmaksi pelaajaksi (voittaja).</p>
+    <p xml:lang="eo">Star Traders estas simpla ludo pri interstelara komerco, kie la celo de la ludo estas krei kompaniojn, aĉeti kaj vendi akciojn, pruntepreni kaj repagi monon, por fariĝi la plej riĉa ludanto (la venkanto).</p>
+    <p xml:lang="de">Star Traders ist ein einfaches Spiel um interstellaren Handel.  Das Ziel des Spiels ist es, Firmen zu gründen, Aktien zu kaufen und zu verkaufen, Geld zu leihen und zurück zu zahlen, um der reichste Spieler und damit der Gewinner zu werden.</p>
+    <p xml:lang="da">Star Traders er et simpelt spil med rumhandel, hvor formålet er at oprette firmaer, købe og sælge aktier, låne og betale tilbage på lån, alt sammen for at blive den rigeste spiller (vinderen).</p>
+    <p xml:lang="en_US">Star Traders is a simple game of interstellar trading, where the object of the game is to create companies, buy and sell shares, borrow and repay money, in order to become the wealthiest player (the winner).</p>
+    <p xml:lang="en_GB">Star Traders is a simple game of interstellar trading, where the object of the game is to create companies, buy and sell shares, borrow and repay money, in order to become the wealthiest player (the winner).</p>
+    <p xml:lang="en_CA">Star Traders is a simple game of interstellar trading, where the object of the game is to create companies, buy and sell shares, borrow and repay money, in order to become the wealthiest player (the winner).</p>
+    <p xml:lang="en_AU">Star Traders is a simple game of interstellar trading, where the object of the game is to create companies, buy and sell shares, borrow and repay money, in order to become the wealthiest player (the winner).</p>
+    <p xml:lang="en@quot">Star Traders is a simple game of interstellar trading, where the objective is to create companies, buy and sell shares, borrow and repay money, in order to become the wealthiest player (the winner).</p>
+  </description>
+  <icon>trader.svg</icon>
+  <launchable type="desktop-id">trader.desktop</launchable>
+  <provides>
+    <binary>trader</binary>
+  </provides>
+  <categories>
+    <category>Game</category>
+    <category>StrategyGame</category>
+  </categories>
+  <url type="homepage">https://www.zap.org.au/projects/trader/</url>
+  <developer_name>John Zaitseff</developer_name>
+  <developer_name xml:lang="sv">John Zaitseff</developer_name>
+  <developer_name xml:lang="sr">Џон Зајцеф (John Zaitseff)</developer_name>
+  <developer_name xml:lang="ru">John Zaitseff</developer_name>
+  <developer_name xml:lang="pt_BR">John Zaitseff</developer_name>
+  <developer_name xml:lang="nb">John Zaitseff</developer_name>
+  <developer_name xml:lang="hu">John Zaitseff</developer_name>
+  <developer_name xml:lang="hr">John Zaitseff</developer_name>
+  <developer_name xml:lang="fr">John Zaitseff</developer_name>
+  <developer_name xml:lang="fi">John Zaitseff</developer_name>
+  <developer_name xml:lang="eo">John Zaitseff</developer_name>
+  <developer_name xml:lang="de">John Zaitseff</developer_name>
+  <developer_name xml:lang="da">John Zaitseff</developer_name>
+  <developer_name xml:lang="en_US">John Zaitseff</developer_name>
+  <developer_name xml:lang="en_GB">John Zaitseff</developer_name>
+  <developer_name xml:lang="en_CA">John Zaitseff</developer_name>
+  <developer_name xml:lang="en_AU">John Zaitseff</developer_name>
+  <developer_name xml:lang="en@quot">John Zaitseff</developer_name>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://www.zap.org.au/projects/trader/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <content_rating type="oars-1.0"/>
+</component>

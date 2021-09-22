@@ -149,4 +149,4 @@ X-GNOME-Bugzilla-Version=2.10.11
 X-GNOME-Bugzilla-OtherBinaries=gimp-2.10
 StartupNotify=true
 MimeType=image/bmp;image/g3fax;image/gif;image/x-fits;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-psd;image/x-sgi;image/x-tga;image/x-xbitmap;image/x-xwindowdump;image/x-xcf;image/x-compressed-xcf;image/x-gimp-gbr;image/x-gimp-pat;image/x-gimp-gih;image/tiff;image/jpeg;image/x-psp;application/postscript;image/png;image/x-icon;image/x-xpixmap;image/x-exr;image/x-webp;image/heif;image/heic;image/svg+xml;application/pdf;image/x-wmf;image/jp2;image/x-xcursor;
-X-AppImage-Version=2.10.13-20190912
+X-AppImage-Version=2.10.21-20200813

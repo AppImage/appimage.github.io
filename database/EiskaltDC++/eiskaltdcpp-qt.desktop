@@ -1,0 +1,30 @@
+[Desktop Entry]
+Name=EiskaltDC++ Qt
+Type=Application
+Exec=eiskaltdcpp-qt %U
+Icon=eiskaltdcpp
+Terminal=false
+GenericName=DC++ client
+Comment=Share files over the DC++ network
+Categories=Network;FileTransfer;P2P;Qt;
+MimeType=x-scheme-handler/magnet;x-scheme-handler/dchub;x-scheme-handler/nmdcs;x-scheme-handler/adc;x-scheme-handler/adcs;
+Keywords=FileSharing;Chat;p2p;DirectConnect;ADC;DHT;
+GenericName[be]=Кліент сеткі DC++
+GenericName[es]=Cliente DC++
+GenericName[fr]=Client DC++
+GenericName[ru]=Клиент сетей DC++
+GenericName[sv_SE]=DC++ klient
+GenericName[tr]=DC++ istemcisi
+Comment[be]=Паздяляйцеся файламі праз сетку DC++
+Comment[es]=Compartir archivos bajo la red DC++
+Comment[fr]=Partager des fichiers sur le réseau DC++
+Comment[ru]=Делитесь файлами с помощью сетей DC++
+Comment[sv_SE]=Dela filer över nätverket DC++
+Comment[tr]=DC++ ağında dosya paylaşın
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
