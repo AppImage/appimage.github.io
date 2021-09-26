@@ -28,7 +28,7 @@ desktop:
     Terminal: true
     Categories: Utility
     Icon: qc
-    X-AppImage-Version: v0.1.0
+    X-AppImage-Version: v0.2.0
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature

@@ -6,7 +6,7 @@ Type=Application
 Terminal=true
 Categories=Utility;
 Icon=qc
-X-AppImage-Version=v0.1.0
+X-AppImage-Version=v0.2.0
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
