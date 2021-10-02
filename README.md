@@ -70,15 +70,15 @@ Currently we are providing a JSON feed at https://appimage.github.io/feed.json. 
 ## Projects using this data
 
 #### GUI Apps
-* [NX Software Center](https://github.com/Nitrux/nx-software-center) - A GUI to install and manage AppImages.
-* [AppImage Pool](https://github.com/prateekmedia/appimagepool) - A simple, modern AppImageHub Client, powered by flutter. 
-* (Discontinued) [linuxappstore](https://github.com/linuxappstore/linuxappstore-frontend) - A universal app store for Linux
+* [NX Software Center](https://github.com/Nitrux/nx-software-center)
+* [AppImage Pool](https://github.com/prateekmedia/appimagepool)
+* (Discontinued) [linuxappstore](https://github.com/linuxappstore/linuxappstore-frontend)
 
 #### CLI Tools
-* [chob](https://github.com/MuhammedKpln/chob) - An universal app search tool for Linux
-* [spm](https://github.com/simoniz0r/spm) - Command line tool written in bash
-* [aipm](https://github.com/michaeldelago/aipm) - Package Manager for AppImages 
-* [appcenter](https://github.com/sillasleal/appcenter) : *No description*
-* [LiureX Software store](https://github.com/lliurex/lliurex-store) - Works with repositories, zomandos, snap and appimage. (CLI + GUI)
+* [chob](https://github.com/MuhammedKpln/chob)
+* [spm](https://github.com/simoniz0r/spm)
+* [aipm](https://github.com/michaeldelago/aipm)
+* [appcenter](https://github.com/sillasleal/appcenter)
+* [LiureX Software store](https://github.com/lliurex/lliurex-store)
 
 Please contact us (or send a pull request) if you are using this data so that we can list your project here.
