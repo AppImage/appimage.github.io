@@ -1,6 +1,6 @@
-# AppImageHub [![Build Status](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml/badge.svg)](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml)
+# [AppImageHub](https://appimage.github.io/) [![Build Status](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml/badge.svg)](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml)
 
-https://appimage.github.io/
+<a href="#how-to-submit-appimages-to-the-catalog"><img src="https://img.shields.io/badge/Submit an app-indigo?style=for-the-badge&logo=Github"/></a>
 
 
 ## This is...
@@ -67,14 +67,16 @@ App stores and software centers can consume the metadata collected by this proje
 
 Currently we are providing a JSON feed at https://appimage.github.io/feed.json. If you would like to use this data but need changes, please contact us on #AppImage at irc.libera.chat, so that we can discuss an output format that would serve your needs best. __PLEASE NOTE__ that the data output format is not finalized yet and is subject to change any time without prior notice, until we release a stable version of it.
 
-# Projects using this data
+### Projects using this data
 
-* Nitrux, NX Software Center: https://github.com/nomad-desktop/nx-software-center
-* https://github.com/simoniz0r/spm
-* https://github.com/sillasleal/appcenter
+Here are some examples of projects using this data, to illustrate on how you can use this data in your own projects:
+
 * https://github.com/lliurex/lliurex-store
-* https://linuxappstore.io/ powered by https://github.com/linuxappstore/linuxappstore-frontend
-* https://github.com/MuhammedKpln/chob command-line tool
 * https://github.com/michaeldelago/aipm
+* https://github.com/MuhammedKpln/chob
+* https://github.com/Nitrux/nx-software-center
+* https://github.com/prateekmedia/appimagepool
+* https://github.com/sillasleal/appcenter
+* https://github.com/simoniz0r/spm
 
 Please contact us (or send a pull request) if you are using this data so that we can list your project here.
