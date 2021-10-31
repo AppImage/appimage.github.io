@@ -1,11 +1,11 @@
-# AppImageHub [![Build Status](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml/badge.svg)](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml)
+# [AppImageHub](https://appimage.github.io/) [![Build Status](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml/badge.svg)](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml)
 
-https://appimage.github.io/
+<a href="#how-to-submit-appimages-to-the-catalog"><img src="https://img.shields.io/badge/Submit an app-indigo?style=for-the-badge&logo=Github"/></a>
 
 
 ## This is...
 
-* __A crowd-sourced directory of available, reviewed AppImages__ with data that 3rd party app stores and software centers can use. Given an URL to an AppImage, it inspects the AppImage and puts it into a community-maintained catalog. The idea is that all the metadata travels inside the AppImage, so besides adding an URL to this repository no additional information is asked, since it comes with the AppImage itself.
+* __A crowd-sourced directory of available, reviewed AppImages__ with data that 3rd party app stores and software centers can use. Given a URL to an AppImage, it inspects the AppImage and puts it into a community-maintained catalog. The idea is that all the metadata travels inside the AppImage, so besides adding a URL to this repository no additional information is asked, since it comes with the AppImage itself.
 
 ## This is NOT...
 
@@ -36,7 +36,7 @@ Then send a Pull Request to this repository. GitHub Actions will instantly perfo
 
 As a format, AppImage is designed in a way that does not impose restrictions on the person generating AppImages. Basically you are free to put inside an AppImage whatever you want. For AppImageHub, however, additional rules apply. AppImages submitted to AppImage hub undergo automatic and possibly additional manual review.
 
-* Must be downloadable from an URL. Our testing system fetches the AppImage using `wget`. Currently we cannot get AppImages from locations behind authentication and/or cookie-protected locations. For commercial applications we recommend to have a generally downloadable demo/trial version. Please contact us if you would like to add your commercial AppImage to the directory and it is not available for general download
+* Must be downloadable from a URL. Our testing system fetches the AppImage using `wget`. Currently we cannot get AppImages from locations behind authentication and/or cookie-protected locations. For commercial applications we recommend to have a generally downloadable demo/trial version. Please contact us if you would like to add your commercial AppImage to the directory and it is not available for general download
 * Must run on the [oldest still-supported Ubuntu LTS release](https://www.ubuntu.com/info/release-end-of-life) (currently Ubuntu 18.04) without the installation of additional packages. Targeting the oldest still-supported LTS is to ensure that the AppImage will run not only on the very latest, but also on older target systems, such as enterprise distributions (not limited to Ubuntu)
 * Must execute in our GitHub Actions based testing environment
 * Must pass [appdir-lint.sh](https://github.com/AppImage/AppImages/blob/master/appdir-lint.sh)
@@ -67,14 +67,16 @@ App stores and software centers can consume the metadata collected by this proje
 
 Currently we are providing a JSON feed at https://appimage.github.io/feed.json. If you would like to use this data but need changes, please contact us on #AppImage at irc.libera.chat, so that we can discuss an output format that would serve your needs best. __PLEASE NOTE__ that the data output format is not finalized yet and is subject to change any time without prior notice, until we release a stable version of it.
 
-# Projects using this data
+### Projects using this data
 
-* Nitrux, NX Software Center: https://github.com/nomad-desktop/nx-software-center
-* https://github.com/simoniz0r/spm
-* https://github.com/sillasleal/appcenter
+Here are some examples of projects using this data, to illustrate on how you can use this data in your own projects:
+
 * https://github.com/lliurex/lliurex-store
-* https://linuxappstore.io/ powered by https://github.com/linuxappstore/linuxappstore-frontend
-* https://github.com/MuhammedKpln/chob command-line tool
 * https://github.com/michaeldelago/aipm
+* https://github.com/MuhammedKpln/chob
+* https://github.com/Nitrux/nx-software-center
+* https://github.com/prateekmedia/appimagepool
+* https://github.com/sillasleal/appcenter
+* https://github.com/simoniz0r/spm
 
 Please contact us (or send a pull request) if you are using this data so that we can list your project here.

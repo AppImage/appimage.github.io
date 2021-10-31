@@ -1,18 +1,19 @@
 [Desktop Entry]
-X-SuSE-translate=true
 Name=SocNetV
+X-SuSE-translate=true
 GenericName=Social Network Visualizer 
 Comment=Social Network Analysis and Visualization software
 Exec=socnetv
-Icon=socnetv
-Categories=Education;Science;Math;Qt;
 Terminal=false
 Type=Application
+Icon=socnetv
+Categories=Education;Science;Math;Qt;
+Keywords=Network Analysis,Social Network Analysis,Visualizer;
+X-AppImage-Version=v3.0.3
 
 [AppImageHub]
-# Dear upstream developer, please include update information in your AppImage
-# (e.g., with appimagetool -u) so that users can easily update the AppImage
-X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-UpdateInformation=gh-releases-zsync|socnetv|app|latest|SocNetV*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
 X-AppImage-Payload-License=GPL-3.0
