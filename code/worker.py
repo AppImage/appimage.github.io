@@ -12,7 +12,7 @@ def main() -> None:
     f.close()
     print(url)
     if not url.startswith("http"):
-        print("%s seems not to contain an URL, exiting" % (sys.argv[1]))
+        print("%s seems not to contain a URL, exiting" % (sys.argv[1]))
         exit(1)
 
     req = requests.get(url, stream=True)
