@@ -350,6 +350,6 @@ Exec=waterfox-g4 --ProfileManager
 
 [AppImageHub]
 X-AppImage-UpdateInformation=zsync|https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-g4-latest-x86_64.AppImage.zsync
-X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Tue Dec  7 13:30:53 2021 UTC                using RSA key 5E62D791625A271E Can't check signature: No public key 
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Wed Dec  8 04:26:29 2021 UTC                using RSA key 5E62D791625A271E Can't check signature: No public key 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
