@@ -5,8 +5,8 @@ Terminal=false
 Type=Application
 Icon=passky
 StartupWMClass=passky
-X-AppImage-Version=2.0.0
-Comment=Simple and secure password manager
+X-AppImage-Version=4.3.0
+Comment=Simple, modern, open source and secure password manager.
 Categories=Utility;
 
 [AppImageHub]
