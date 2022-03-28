@@ -1,0 +1,13 @@
+[Desktop Entry]
+X-AppImage-Arch=x86_64
+X-AppImage-Version=2.3.3
+X-AppImage-Name=minecraft-pi-reborn-client
+Name=Minecraft: Pi Edition: Reborn (Client)
+Comment=Fun with Blocks
+Icon=com.thebrokenrail.MCPIRebornClient
+StartupNotify=false
+StartupWMClass=Minecraft: Pi Edition: Reborn
+Exec=minecraft-pi-reborn-client
+Terminal=false
+Type=Application
+Categories=Game;
