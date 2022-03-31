@@ -15,7 +15,7 @@ layout: default
   <header>
  
     <h1 style="text-align:center" id="{{ post.title | replace: "_", " " }}">
-      {% if post.icons[0] %}<img height="128" width="128" src="https://gitcdn.xyz/repo/AppImage/appimage.github.io/master/database/{{post.icons[0]}}"/><br/>{% else %}{% endif %}
+      {% if post.icons[0] %}<img height="128" width="128" src="https://appimage.github.io/database/{{post.icons[0]}}"/><br/>{% else %}{% endif %}
       {% if page.title %}{{ page.title | replace: "_", " " }}{% else %}{{ page.name | remove: ".md" | replace: "_", " " }}{% endif %}</h1>
     {% if post.generic %}<p>{{ post.generic }}</p>{% endif %}
 
