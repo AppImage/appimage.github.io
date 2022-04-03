@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=Waterfox Classic
+Name=Waterfox G4
 Comment=Browse the World Wide Web
 Comment[ar]=تصفح الشبكة العنكبوتية العالمية
 Comment[ast]=Restola pela Rede
@@ -112,13 +112,13 @@ Keywords[uk]=Internet;WWW;Browser;Web;Explorer;Інтернет;мережа;п�
 Keywords[vi]=Internet;WWW;Browser;Web;Explorer;Trình duyệt;Trang web;
 Keywords[zh_CN]=Internet;WWW;Browser;Web;Explorer;网页;浏览;上网;水狐;Waterfox;wf;互联网;网站;
 Keywords[zh_TW]=Internet;WWW;Browser;Web;Explorer;網際網路;網路;瀏覽器;上網;網頁;水狐;
-Exec=waterfox-classic %u
+Exec=waterfox-g4 %u
 Terminal=false
 X-MuiltpleArgs=false
 Type=Application
-Icon=waterfox-classic
+Icon=waterfox-g4
 Categories=Network;WebBrowser;
-MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;application/vnd.mozilla.xul+xml;text/mml;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
 StartupNotify=true
 Actions=NewWindow;NewPrivateWindow;ProfileManagerWindow;
 
@@ -230,7 +230,7 @@ Name[wo]=Palanteer bu bees
 Name[xh]=Ifestile entsha
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開新視窗
-Exec=waterfox-classic --new-window
+Exec=waterfox-g4 --new-window
 
 [Desktop Action NewPrivateWindow]
 Name=Open a New Private Window
@@ -338,7 +338,7 @@ Name[wo]=Panlanteeru biir bu bees
 Name[xh]=Ifestile yangasese entsha
 Name[zh_CN]=新建隐私浏览窗口
 Name[zh_TW]=新增隱私視窗
-Exec=waterfox-classic --private-window
+Exec=waterfox-g4 --private-window
 
 [Desktop Action ProfileManagerWindow]
 Name=Open the Profile Manager
@@ -346,10 +346,10 @@ Name[cs]=Správa profilů
 Name[en_GB]=Profile Manager
 Name[en_US]=Profile Manager
 Name[pl]=Menedżer Profili
-Exec=waterfox-classic --ProfileManager
+Exec=waterfox-g4 --ProfileManager
 
 [AppImageHub]
-X-AppImage-UpdateInformation=zsync|https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-classic-latest-x86_64.AppImage.zsync
-X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Sat Dec 11 15:23:46 2021 UTC                using RSA key 5E62D791625A271E Can't check signature: No public key 
+X-AppImage-UpdateInformation=zsync|https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-g4-latest-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Wed Dec  8 04:26:29 2021 UTC                using RSA key 5E62D791625A271E Can't check signature: No public key 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64

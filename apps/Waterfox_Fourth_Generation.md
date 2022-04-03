@@ -1,14 +1,14 @@
 ---
 layout: app
 
-permalink: /Waterfox_Classic/
+permalink: /Waterfox_Fourth_Generation/
 description: Browse the World Wide Web
 
 icons:
-  - Waterfox_Classic/icons/128x128/waterfox-classic.png
+  - Waterfox_Fourth_Generation/icons/128x128/default128.png
 
 screenshots:
-  - Waterfox_Classic/screenshot.png
+  - Waterfox_Fourth_Generation/screenshot.png
 
 authors:
   - name: hawkeye116477
@@ -16,12 +16,12 @@ authors:
 
 links:
   - type: Download
-    url: https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-classic-latest-x86_64.AppImage.mirrorlist
+    url: https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-g4-latest-x86_64.AppImage.mirrorlist
 
 desktop:
   Desktop Entry:
     Version: 1.0
-    Name: Waterfox Classic
+    Name: Waterfox G4
     Comment: Browse the World Wide Web
     Comment[ar]: تصفح الشبكة العنكبوتية العالمية
     Comment[ast]: Restola pela Rede
@@ -133,11 +133,11 @@ desktop:
     Keywords[vi]: Internet
     Keywords[zh_CN]: Internet
     Keywords[zh_TW]: Internet
-    Exec: waterfox-classic %u
+    Exec: waterfox-g4 %u
     Terminal: false
     X-MuiltpleArgs: false
     Type: Application
-    Icon: waterfox-classic
+    Icon: waterfox-g4
     Categories: Network
     MimeType: text/html
     StartupNotify: true
@@ -249,7 +249,7 @@ desktop:
     Name[xh]: Ifestile entsha
     Name[zh_CN]: 新建窗口
     Name[zh_TW]: 開新視窗
-    Exec: waterfox-classic --new-window
+    Exec: waterfox-g4 --new-window
   Desktop Action NewPrivateWindow:
     Name: Open a New Private Window
     Name[ach]: Dirica manyen me mung
@@ -356,18 +356,18 @@ desktop:
     Name[xh]: Ifestile yangasese entsha
     Name[zh_CN]: 新建隐私浏览窗口
     Name[zh_TW]: 新增隱私視窗
-    Exec: waterfox-classic --private-window
+    Exec: waterfox-g4 --private-window
   Desktop Action ProfileManagerWindow:
     Name: Open the Profile Manager
     Name[cs]: Správa profilů
     Name[en_GB]: Profile Manager
     Name[en_US]: Profile Manager
     Name[pl]: Menedżer Profili
-    Exec: waterfox-classic --ProfileManager
+    Exec: waterfox-g4 --ProfileManager
   AppImageHub:
-    X-AppImage-UpdateInformation: zsync|https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-classic-latest-x86_64.AppImage.zsync
+    X-AppImage-UpdateInformation: zsync|https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-g4-latest-x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
-      created Signature made Sat Dec 11 15:23:46 2021 UTC                using RSA key
+      created Signature made Wed Dec  8 04:26:29 2021 UTC                using RSA key
       5E62D791625A271E Can''t check signature: No public key'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
