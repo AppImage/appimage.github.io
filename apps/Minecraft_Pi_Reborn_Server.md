@@ -1,14 +1,12 @@
 ---
 layout: app
 
-permalink: /Minecraft_Pi_Reborn_Client/
+permalink: /Minecraft_Pi_Reborn_Server/
 description: Fun with Blocks
 license: LicenseRef-proprietary
 
 icons:
-  - Minecraft_Pi_Reborn_Client/icons/348x345/com.thebrokenrail.MCPIRebornClient.png
-screenshots:
-- https://gitea.thebrokenrail.com/TheBrokenRail/minecraft-pi-reborn/raw/branch/master/images/start.png
+  - Minecraft_Pi_Reborn_Server/icons/348x345/com.thebrokenrail.MCPIRebornServer.png
 
 authors:
 
@@ -18,18 +16,17 @@ desktop:
   Desktop Entry:
     X-AppImage-Arch: x86_64
     X-AppImage-Version: 2.3.3
-    X-AppImage-Name: minecraft-pi-reborn-client
-    Name: 'Minecraft: Pi Edition: Reborn (Client)'
+    X-AppImage-Name: minecraft-pi-reborn-server
+    Name: 'Minecraft: Pi Edition: Reborn (Server)'
     Comment: Fun with Blocks
-    Icon: com.thebrokenrail.MCPIRebornClient
-    StartupNotify: false
-    StartupWMClass: 'Minecraft: Pi Edition: Reborn'
-    Exec: minecraft-pi-reborn-client
-    Terminal: false
+    Icon: com.thebrokenrail.MCPIRebornServer
+    Exec: minecraft-pi-reborn-server
+    Terminal: true
     Type: Application
     Categories: Game
+    NoDisplay: true
   AppImageHub:
-    X-AppImage-UpdateInformation: zsync|https://jenkins.thebrokenrail.com/job/minecraft-pi-reborn/job/master/lastSuccessfulBuild/artifact/out/minecraft-pi-reborn-client-latest-amd64.AppImage.zsync
+    X-AppImage-UpdateInformation: zsync|https://jenkins.thebrokenrail.com/job/minecraft-pi-reborn/job/master/lastSuccessfulBuild/artifact/out/minecraft-pi-reborn-server-latest-amd64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)
@@ -39,9 +36,9 @@ desktop:
 
 appdata:
   Type: desktop-application
-  ID: com.thebrokenrail.MCPIRebornClient
+  ID: com.thebrokenrail.MCPIRebornServer
   Name:
-    C: 'Minecraft: Pi Edition: Reborn (Client)'
+    C: 'Minecraft: Pi Edition: Reborn (Server)'
   Summary:
     C: Fun with Blocks
   Description:
@@ -56,13 +53,7 @@ appdata:
     homepage: https://gitea.thebrokenrail.com/TheBrokenRail/minecraft-pi-reborn
   Launchable:
     desktop-id:
-    - com.thebrokenrail.MCPIRebornClient.desktop
-  Screenshots:
-  - default: true
-    thumbnails: []
-    source-image:
-      url: https://gitea.thebrokenrail.com/TheBrokenRail/minecraft-pi-reborn/raw/branch/master/images/start.png
-      lang: C
+    - com.thebrokenrail.MCPIRebornServer.desktop
   ContentRating:
     oars-1.0:
       violence-cartoon: moderate
