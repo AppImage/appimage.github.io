@@ -1,6 +1,8 @@
-
 on:
   push:
+    branches:
+      # Do not build PRs twice
+      - 'master'
     # The ignored paths must not include md files for the website itself
     paths-ignore:
     - '*.md'
@@ -33,6 +35,7 @@ jobs:
         fetch-depth: 0
     - name: Install dependencies
       run: |
+        set -e
         sudo apt update
         sudo apt-get -qq -y install sudo imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl # appstream # TODO: Cache me!
         sudo bash code/prep-dummy-soundcard.sh
@@ -41,6 +44,7 @@ jobs:
         # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
     - name: Main test
       run: |
+        set -e
         mkdir $HOME/.icewm/
         echo "ShowTaskBar = 0" > $HOME/.icewm/preferences
         echo "TaskBarAutoHide = 1" > $HOME/.icewm/preferences
@@ -67,6 +71,7 @@ jobs:
     - name: Check log
       shell: bash
       run: |
+        set -e
         cat log.txt | wc -l
         grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)."
         grep -r "version \`GLIBC_.*' not found" && MESSAGE="This was compiled on a too new system and hence cannot run on all still-supported versions of Ubuntu."
