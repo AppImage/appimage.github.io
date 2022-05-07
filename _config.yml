@@ -1,5 +1,5 @@
 # Name of your site (displayed in the header)
-name: AppImageHub
+name: AppImages
 
 # XDG categories
 # output: true = generate a page for each document in our collection
