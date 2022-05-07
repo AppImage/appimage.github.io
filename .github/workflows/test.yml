@@ -23,7 +23,7 @@ jobs:
     - name: Pass dummy job
       run: |
         echo "passing"
-  build:
+  test:
     runs-on: ubuntu-18.04
     timeout-minutes: 5
     steps:
