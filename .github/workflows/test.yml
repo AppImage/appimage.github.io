@@ -34,6 +34,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Install dependencies
+      shell: bash
       run: |
         set -e
         sudo apt update
@@ -43,6 +44,7 @@ jobs:
         sudo npm install -g asar # to get pacakges.json from resources/app.asar for electron-builder applications
         # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
     - name: Main test
+      shell: bash
       run: |
         set -e
         mkdir $HOME/.icewm/
@@ -73,8 +75,8 @@ jobs:
       run: |
         set -e
         cat log.txt | wc -l
-        grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)."
-        grep -r "version \`GLIBC_.*' not found" && MESSAGE="This was compiled on a too new system and hence cannot run on all still-supported versions of Ubuntu."
+        grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)." && exit 1
+        grep -r "version \`GLIBC_.*' not found" && MESSAGE="This was compiled on a too new system and hence cannot run on all still-supported versions of Ubuntu." && exit 1
         echo "${MESSAGE}"
     - name: Post test result to PR
       # Fails due to missing permissions, https://github.com/actions/first-interaction/issues/10
