@@ -1,7 +1,6 @@
-# [AppImageHub](https://appimage.github.io/) [![Build Status](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml/badge.svg)](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml)
+# [appimage.github.io](https://appimage.github.io/) [![Build Status](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml/badge.svg)](https://github.com/AppImage/appimage.github.io/actions/workflows/test.yml)
 
 <a href="#how-to-submit-appimages-to-the-catalog"><img src="https://img.shields.io/badge/Submit an app-indigo?style=for-the-badge&logo=Github"/></a>
-
 
 ## This is...
 
@@ -9,7 +8,7 @@
 
 ## This is NOT...
 
-* __A distribution__. AppImageHub __does not distribute AppImages__ or provide them for download. It simply links to the respective author's download pages, from where users will be able to download AppImages. It also __does not keep track of versions__, only of channels such as "release", "beta", "nightly", "continuous" (as defined by the upstream application authors). We think that trying to keep track of all versions in a central repository is futile, since it does not scale.
+* __A distribution__. appimage.github.io __does not distribute AppImages__ or provide them for download. It simply links to the respective author's download pages, from where users will be able to download AppImages. It also __does not keep track of versions__, only of channels such as "release", "beta", "nightly", "continuous" (as defined by the upstream application authors). We think that trying to keep track of all versions in a central repository is futile, since it does not scale.
 * __A guarantee of any sorts__. While we check that an AppImage follows basic AppImage conventions and that it can run on the oldest still-supported LTS release of Ubuntu, this is basically all we check for right now. No explicit or implied guarantees whatsoever. Use at your own risk and only run applications from authors you trust. We do not imply that you should trust applications or their authors just because they are listed here.
 
 ## User stories
@@ -22,7 +21,7 @@
 
 Create a new file using
 
-### **[this link](https://github.com/AppImage/AppImageHub/new/master/data)**
+### **[this link](https://github.com/AppImage/appimage.github.io/new/master/data)**
 
 and send a Pull Request.
 
@@ -34,7 +33,7 @@ Then send a Pull Request to this repository. GitHub Actions will instantly perfo
 
 ### Checklist for submitting your own AppImage
 
-As a format, AppImage is designed in a way that does not impose restrictions on the person generating AppImages. Basically you are free to put inside an AppImage whatever you want. For AppImageHub, however, additional rules apply. AppImages submitted to AppImage hub undergo automatic and possibly additional manual review.
+As a format, AppImage is designed in a way that does not impose restrictions on the person generating AppImages. Basically you are free to put inside an AppImage whatever you want. For appimage.github.io, however, additional rules apply. AppImages submitted to AppImage hub undergo automatic and possibly additional manual review.
 
 * Must be downloadable from a URL. Our testing system fetches the AppImage using `wget`. Currently we cannot get AppImages from locations behind authentication and/or cookie-protected locations. For commercial applications we recommend to have a generally downloadable demo/trial version. Please contact us if you would like to add your commercial AppImage to the directory and it is not available for general download
 * Must run on the [oldest still-supported Ubuntu LTS release](https://www.ubuntu.com/info/release-end-of-life) (currently Ubuntu 18.04) without the installation of additional packages. Targeting the oldest still-supported LTS is to ensure that the AppImage will run not only on the very latest, but also on older target systems, such as enterprise distributions (not limited to Ubuntu)
