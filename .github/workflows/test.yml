@@ -1,6 +1,8 @@
-
 on:
   push:
+    branches:
+      # Do not build PRs twice
+      - 'master'
     # The ignored paths must not include md files for the website itself
     paths-ignore:
     - '*.md'
