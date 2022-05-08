@@ -44,7 +44,7 @@ jobs:
         sudo npm install -g asar # to get pacakges.json from resources/app.asar for electron-builder applications
         # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
     - name: Main test
-      shell: bash
+      # shell: bash
       run: |
         # set -e
         mkdir $HOME/.icewm/
