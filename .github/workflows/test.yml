@@ -91,5 +91,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "${{ env.SCREENSHOT_URL }}"
+              body: "<img src=\"${{ env.SCREENSHOT_URL }}\">"
             })
