@@ -78,12 +78,15 @@ jobs:
         SCREENSHOT_URL=$(cat log.txt |  grep -o -e "https://transfer.sh/.*/screenshot.png")
         # echo "{SCREENSHOT_URL}=${SCREENSHOT_URL}" >> $GITHUB_ENV # Does not error
         echo "{SCREENSHOT_URL}="$SCREENSHOT_URL >> $GITHUB_ENV
+        echo "SCREENSHOT_URL: ${SCREENSHOT_URL}"
     - name: Post test result to PR
       # Fails due to missing permissions, https://github.com/actions/first-interaction/issues/10
       if: github.event_name == 'pull_request'
       uses: actions/github-script@v4
       with:
         script: |
+           echo "env.SCREENSHOT_URL: ${{ env.SCREENSHOT_URL }}"
+           echo "SCREENSHOT_URL: ${SCREENSHOT_URL}"
             await github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
