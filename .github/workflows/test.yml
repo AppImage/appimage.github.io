@@ -26,6 +26,9 @@ jobs:
   test:
     runs-on: ubuntu-18.04
     timeout-minutes: 5
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
     - uses: actions/checkout@v2
     # https://github.com/actions/checkout#Fetch-all-history-for-all-tags-and-branches
@@ -78,9 +81,11 @@ jobs:
         grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)." && exit 1
         grep -r "version \`GLIBC_.*' not found" && MESSAGE="This was compiled on a too new system and hence cannot run on all still-supported versions of Ubuntu." && exit 1
         echo "${MESSAGE}"
+        grep -r "https://transfer.sh/" log.txt
+        echo "SCREENSHOT_URL=$(grep -r "https://transfer.sh/" log.txt)" >> $GITHUB_ENV
     - name: Post test result to PR
       # Fails due to missing permissions, https://github.com/actions/first-interaction/issues/10
-      if: 1 == 2
+      if: 1 == 1
       # if: github.event_name == 'pull_request'
       uses: actions/github-script@v4
       with:
@@ -89,5 +94,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'This comment is posted by the test'
+              body: "${SCREENSHOT_URL}"
             })
