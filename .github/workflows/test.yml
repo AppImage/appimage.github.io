@@ -83,7 +83,7 @@ jobs:
         grep -r "version \`GLIBC_.*' not found" && MESSAGE="This was compiled on a too new system and hence cannot run on all still-supported versions of Ubuntu." && exit 1
         echo "${MESSAGE}"
         SCREENSHOT_URL=$(cat log.txt |  grep -o -e "https://transfer.sh/.*/screenshot.png")
-        # echo "{SCREENSHOT_URL}=${SCREENSHOT_URL}" >> $GITHUB_ENV # Does not error but posts '${SCREENSHOT_URL}'
+        # echo "{SCREENSHOT_URL}=${SCREENSHOT_URL}" >> $GITHUB_ENV # Does not error
         echo "{SCREENSHOT_URL}="$SCREENSHOT_URL >> $GITHUB_ENV
     - name: Post test result to PR
       # Fails due to missing permissions, https://github.com/actions/first-interaction/issues/10
@@ -95,5 +95,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "${SCREENSHOT_URL}"
+              body: $SCREENSHOT_URL
             })
