@@ -17,13 +17,6 @@ env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  dummy:
-  # https://github.com/AppImage/appimage.github.io/issues/2593
-    runs-on: ubuntu-latest
-    steps:
-    - name: Pass dummy job
-      run: |
-        echo "passing"
   test:
     runs-on: ubuntu-18.04
     timeout-minutes: 5
