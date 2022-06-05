@@ -82,16 +82,12 @@ jobs:
       # Needs permissions, https://github.com/actions/first-interaction/issues/10
       if: github.event_name == 'pull_request'
       uses: actions/github-script@v4
-      env: 
-        # https://github.com/actions/github-script/issues/220#issuecomment-1007633429
-        MULTILINE_VALUE: ${{ env.SCREENSHOT_URL }}
       with:
         script: |
-            const output = `${{ env.SCREENSHOT_URL }}`;
             echo "env.SCREENSHOT_URL: ${{ env.SCREENSHOT_URL }}"
             await github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: process.env.MULTILINE_VALUE
+              body: process.env.SCREENSHOT_URL
             })
