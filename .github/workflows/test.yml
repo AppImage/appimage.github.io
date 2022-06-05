@@ -80,7 +80,9 @@ jobs:
         echo "SCREENSHOT_URL: ${SCREENSHOT_URL}"
     - name: Post test result to PR
       # Needs permissions, https://github.com/actions/first-interaction/issues/10
-      if: github.event_name == 'pull_request'
+      # if: github.event_name == 'pull_request'
+      #  Unhandled error: SyntaxError: Unexpected string
+      if: 1 == 2
       uses: actions/github-script@v4
       with:
         script: |
