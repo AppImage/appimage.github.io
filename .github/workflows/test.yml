@@ -82,7 +82,7 @@ jobs:
       # Needs permissions, https://github.com/actions/first-interaction/issues/10
       if: github.event_name == 'pull_request'
       uses: actions/github-script@v4
-      # Backticks needed for body, https://stackoverflow.com/a/70655285
+      # Using "'" for body, https://stackoverflow.com/a/70655285
       with:
         script: |
             echo "env.SCREENSHOT_URL: ${{ env.SCREENSHOT_URL }}"
@@ -90,5 +90,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `${{env.SCREENSHOT_URL}}`
+              body: '${{ env.SCREENSHOT_URL }}'
             })
