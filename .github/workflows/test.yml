@@ -6,6 +6,7 @@ on:
     # The ignored paths must not include md files for the website itself
     paths-ignore:
     - '*.md'
+    - '.github/workflows/*'
   pull_request:
     paths-ignore:
     - '*.md'
