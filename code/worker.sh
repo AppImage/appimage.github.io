@@ -232,6 +232,9 @@ touch "$HOME/.local/share/appimagekit/no_desktopintegration"
 file "$APPDIR"/AppRun
 ls -lh "$APPDIR"/AppRun
 
+# Needed for, e.g., SheepShaver
+sudo sysctl vm.mmap_min_addr=0
+
 export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
 export QT_DEBUG_PLUGINS=1 # https://github.com/AppImage/appimage.github.io/pull/1809#issuecomment-548399825
 sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/appimage.github.io/pull/1564#issuecomment-491591127 https://github.com/electron/electron/issues/17972
