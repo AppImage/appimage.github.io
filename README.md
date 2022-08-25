@@ -77,5 +77,6 @@ Here are some examples of projects using this data, to illustrate on how you can
 * https://github.com/prateekmedia/appimagepool
 * https://github.com/sillasleal/appcenter
 * https://github.com/simoniz0r/spm
+* https://software.manjaro.org/appimages
 
 Please contact us (or send a pull request) if you are using this data so that we can list your project here.
