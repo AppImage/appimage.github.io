@@ -25,7 +25,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     # https://github.com/actions/checkout#Fetch-all-history-for-all-tags-and-branches
     # According to the docs for checkout@v2, Only a single commit is fetched by default, but
     # providing a fetch-depth of 0 should fetch all history.
