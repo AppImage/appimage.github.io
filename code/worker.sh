@@ -95,11 +95,11 @@ set -x
 # If we have a type 2 AppImage, then mount it using appimagetool (not using itself for security reasons)
 if [ x"$TYPE" == x2 ] ; then
   if [ ! -e appimagetool-x86_64.AppImage ] ; then
-    wget -c -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
-    chmod +x appimagetool*
+    wget -c -q https://github.com/AppImage/appimage.github.io/releases/download/deps/runtime-fuse2-x86_64
+    chmod +x runtime*
   fi
   # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
-  TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-mount &
+  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-mount &
   PID=$!
   sleep 1
   mount | grep tmp | tail -n 1
@@ -108,8 +108,8 @@ if [ x"$TYPE" == x2 ] ; then
   bash appdir-lint.sh "$APPDIR"
   # later # kill $PID # fuse
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
-  UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-updateinformation) || echo "Could not get update information from the AppImage"
-  TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-signature > sig || echo "Could not get signature from the AppImage"
+  UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-updateinformation) || echo "Could not get update information from the AppImage"
+  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-signature > sig || echo "Could not get signature from the AppImage"
   SIGNATURE=$(gpg2 --verify sig sig 2>&1 | sed -e 's|gpg: ||g' |tr '\n' ' ' || true )
 fi
 
