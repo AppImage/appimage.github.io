@@ -1,12 +1,11 @@
 #!/bin/bash
-
 # verbose output
 set -v
 
-URL=$(cat $1 | head -n 1)
+URL="https://github.com/cryptomator/cryptomator/" #$(cat $1 | head -n 1)
 echo $URL
 
-INPUTBASENAME=$(basename $1)
+INPUTBASENAME="Cryptomator" #$(basename $1)
 
 # Check if $URL starts with "http", otherwise exit
 if [ x"${URL:0:4}" != xhttp ] ; then
@@ -35,6 +34,7 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
   if [ x"" == x"$URL" ] ; then
     URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | head -n 1 | cut -d '"' -f 4) # No 64-bit one found, trying any; TODO: Handle more than one AppImage per release
   fi
+  echot "this is just a test"
   if [ x"" == x"$URL" ] ; then
     echo "Unable to get download URL for the AppImage. Is it really there on GitHub Releases?"
     exit 1
