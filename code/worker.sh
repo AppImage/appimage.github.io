@@ -323,6 +323,13 @@ chmod 644 "$DATAFILE" # https://github.com/AppImage/AppImageHub/issues/19
 echo "" >> "$DATAFILE"
 echo "[AppImageHub]" >> "$DATAFILE"
 
+if [ "$(basename $(dirname $1))" = "official" ]; then
+  OFFICIAL_APPIMAGE="true"
+  echo "X-IsOfficial=true" >> "$DATAFILE"
+else
+  echo "X-IsOfficial=false" >> "$DATAFILE"
+fi
+
 if [ ! -z "$UPDATE_INFORMATION" ] ; then
   echo "X-AppImage-UpdateInformation=${UPDATE_INFORMATION}" >> "$DATAFILE"
 else
@@ -423,6 +430,14 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   echo "layout: app" >> apps/$INPUTBASENAME.md
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
+  echo "" >> apps/$INPUTBASENAME.md
+
+  if [ $OFFICIAL_APPIMAGE ]; then
+    echo "official: true" >> apps/$INPUTBASENAME.md
+  else
+    echo "official: false" >> apps/$INPUTBASENAME.md
+  fi
+
   # Description
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
