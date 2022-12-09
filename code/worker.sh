@@ -368,6 +368,10 @@ if [ -e $APPDIR/usr/share/metainfo/*.appdata.xml ] ; then
   cp $APPDIR/usr/share/metainfo/*.appdata.xml database/$INPUTBASENAME/
 fi
 
+if [ -e $APPDIR/usr/share/metainfo/*.metainfo.xml ] ; then
+  cp $APPDIR/usr/share/metainfo/*.metainfo.xml database/$INPUTBASENAME/
+fi
+
 # Get pacakge.json from resources/app.asar for electron-builder applications
 ASAR=$(find "$APPDIR" -name "app.asar" || true)
 PJ=$(find "$APPDIR" -path "app/package.json" || true)
