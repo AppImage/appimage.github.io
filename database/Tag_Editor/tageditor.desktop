@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Tag Editor
+GenericName=Tag Editor
+Comment=A tageditor with Qt GUI and command line interface. Supports MP4 (iTunes), ID3, Vorbis, Opus, FLAC and Matroska
+Exec=tageditor
+Icon=tageditor
+Terminal=false
+Type=Application
+Categories=AudioVideo;Database;
+
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://download.opensuse.org/repositories/home:/mkittler:/appimage/AppImage/tageditor-latest-x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Fri 08 Feb 2019 09:44:00 AM UTC using RSA key ID 8DF63672 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=onyx
-X-AppImage-Version=0.4.0
-X-AppImage-BuildId=f7ee39b0-e1be-11a7-2e3c-37689a6bebca
+X-AppImage-Version=0.5.2
+X-AppImage-BuildId=898489f0-86d9-11a8-29bd-79e1fd995762
 Categories=Network;
 
 [AppImageHub]
@@ -15,4 +15,3 @@ Categories=Network;
 X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
-X-AppImage-Payload-License=MIT

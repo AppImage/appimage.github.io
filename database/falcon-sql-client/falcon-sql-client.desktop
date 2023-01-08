@@ -5,8 +5,8 @@ Exec=falcon-sql-client
 Terminal=false
 Type=Application
 Icon=falcon-sql-client
-X-AppImage-Version=2.4.0
-X-AppImage-BuildId=40285580-e183-11a7-3fef-757c27136cda
+X-AppImage-Version=3.0.3
+X-AppImage-BuildId=bb791440-a78a-11a8-355c-ff758a97d136
 StartupNotify=true
 Categories=Database;
 

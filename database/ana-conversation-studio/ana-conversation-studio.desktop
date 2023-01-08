@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Ana
+Comment=The Ana app, contains Ana studio, user management, analytics and chatbot publishing.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=ana-conversation-studio
+X-AppImage-Version=0.1.8.65
+X-AppImage-BuildId=0c48c120-85f0-11a8-2566-e95b32cd636c
+Categories=Graphics;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

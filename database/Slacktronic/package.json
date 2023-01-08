@@ -1,0 +1,16 @@
+{
+  "name": "slacktronic",
+  "productName": "Slacktronic",
+  "version": "0.0.7",
+  "description": "Connect your Slack workspace to Arduino",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "Miguel Martinez",
+    "email": "migmartri@gmail.com",
+    "url": "https://github.com/migmartri"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "serialport": "^6.2.0"
+  }
+}

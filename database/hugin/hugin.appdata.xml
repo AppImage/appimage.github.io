@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>hugin</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-2.0</project_license>
+	<name>Hugin</name>
+	<summary>Panorama photo stitcher</summary>
+	<description>
+		<p>An easy to use cross-platform panoramic imaging toolchain based on Panorama Tools.
+With Hugin you can assemble a mosaic of photographs into a complete immersive panorama, stitch any series of overlapping pictures and much more.</p>
+	</description>
+	<launchable type="desktop-id">hugin.desktop</launchable>
+	<url type="homepage">http://hugin.sourceforge.net/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>http://hugin.sourceforge.net/screenshots/screenshot-1400.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>hugin.desktop</id>
+	</provides>
+</component>

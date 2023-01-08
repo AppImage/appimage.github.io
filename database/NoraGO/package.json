@@ -1,0 +1,8 @@
+{
+	"name": "norago",
+	"description": "Watch awesome live channels and great movies through your PC",
+	"productName": "NoraGO",
+	"version": "2.1.2",
+	"author": "Yuri Bely <yuris@setplex.com>",
+	"main": "main.js"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "qr-code-generator-desktop",
+  "version": "1.0.1",
+  "description": "Qr Code Generator",
+  "main": "main.js",
+  "author": "Studio La Cosa Nostra <studiolacosanostra@gmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com/studioLaCosaNostra/qr-code-generator-desktop"
+}

@@ -3,7 +3,9 @@ layout: app
 
 permalink: /Cryplicity/
 description: Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development
-license: MIT
+
+icons:
+  - Cryplicity/icons/128x128/electron-react-boilerplate.png
 
 screenshots:
   - Cryplicity/screenshot.png
@@ -36,7 +38,6 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: MIT
 
 electron:
   description: Electron application boilerplate based on React, React Router, Webpack,

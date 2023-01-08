@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>deeptags</id>
+	<metadata_license>GFDL-1.3</metadata_license>
+	<project_license>GPL-2.0+</project_license>
+	<name>DeepTags</name>
+        <developer_name>SZinedine</developer_name>
+	<summary>DeepTags is a markdown notes manager with support for nested tags</summary>
+	<description>
+		<p>DeepTags supports nested tags and offers simple ways to edit them, for example by dragging and dropping a tag on a note. These notes could be read either with the integrated editor or with one or multiple third party markdown editors installed on your system. Make sure to add them into the the app in Edit -> Markdown Readers.</p>
+	</description>
+	<launchable type="desktop-id">deeptags.desktop</launchable>
+	<url type="homepage">https://github.com/SZinedine/DeepTags</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://github.com/SZinedine/DeepTags/raw/master/Screenshot.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>deeptags.desktop</id>
+	</provides>
+</component>

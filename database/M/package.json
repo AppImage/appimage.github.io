@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "name": "m-textual",
+  "version": "0.0.0",
+  "main": "src-gen/frontend/electron-main.js",
+  "dependencies": {
+    "@theia/callhierarchy": "next",
+    "@theia/electron": "latest",
+    "@theia/file-search": "next",
+    "@theia/git": "next",
+    "@theia/json": "next",
+    "@theia/markers": "next",
+    "@theia/merge-conflicts": "next",
+    "@theia/messages": "next",
+    "@theia/mini-browser": "next",
+    "@theia/navigator": "next",
+    "@theia/node-pty": "0.7.8-theia004",
+    "@theia/outline-view": "next",
+    "@theia/preferences": "next",
+    "@theia/preview": "next",
+    "@theia/search-in-workspace": "next",
+    "@theia/terminal": "next",
+    "@theia/textmate-grammars": "next",
+    "@theia/typescript": "next",
+    "find-git-repositories": "0.1.1",
+    "fs-extra": "^8.1.0",
+    "nsfw": "1.2.5",
+    "typescript": "latest",
+    "xterm": "^2.9.2",
+    "yargs": "^9.0.1"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "rabix-composer",
+  "version": "1.0.1",
+  "executorVersion": "1.0.5",
+  "executorDownloadURL": "https://github.com/rabix/bunny/releases/download/v1.0.5-1/rabix-1.0.5.tar.gz",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/rabix/composer#readme",
+  "description": "Rabix Composer is a desktop IDE for working with Common Workflow Language workflows",
+  "angular-cli": {},
+  "author": "Seven Bridges",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rabix/composer.git"
+  },
+  "private": true,
+  "dependencies": {
+    "async": "^2.4.1",
+    "fix-path": "^2.1.0",
+    "fs-extra": "^4.0.1",
+    "glob": "^7.1.2",
+    "js-yaml": "^3.10.0",
+    "md5": "^2.2.1",
+    "mkdirp": "^0.5.1",
+    "mock-require": "^2.0.2",
+    "proxyquire": "^1.8.0",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4",
+    "rimraf": "^2.6.1",
+    "rwlock": "^5.0.0",
+    "semver": "^5.4.1",
+    "tmp": "^0.0.33",
+    "winston": "^2.3.1",
+    "winston-electron": "0.2.0"
+  },
+  "main": "main.js"
+}

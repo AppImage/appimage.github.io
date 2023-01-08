@@ -1,0 +1,26 @@
+{
+  "name": "Knowte",
+  "version": "2.0.0-beta.1",
+  "description": "Note taking",
+  "homepage": "https://github.com/digimezzo/Knowte2",
+  "author": {
+    "name": "Digimezzo",
+    "email": "info@digimezzo.com"
+  },
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^7.1.4",
+    "@angular/cdk": "^7.2.0",
+    "@angular/material": "^7.2.0",
+    "electron-log": "^2.2.17",
+    "electron-store": "^2.0.0",
+    "electron-window-state": "^5.0.3",
+    "fs-extra": "^7.0.1",
+    "lokijs": "^1.5.5",
+    "moment": "^2.24.0",
+    "nanoid": "^2.0.0",
+    "quill": "^1.3.6",
+    "sanitize-filename": "^1.6.1"
+  }
+}

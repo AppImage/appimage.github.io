@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+	<id>com.flux.procspin</id>
+	<metadata_license>FSFAP</metadata_license>
+	<project_license>LGPL-3.0</project_license>
+	<name>Proc Spin</name>
+	<summary>Attach an animated text spinner to a running process until it dies</summary>
+	<description>
+		<p>Attach a single line animated text/spinner by a comma delimited string or array with with options for prepending and appending strings. There are also ways to adjust the speed by altering the frame amount or the --spread option to spread the frames over INTEGER seconds time.</p>
+	</description>
+	<launchable type="desktop-id">procspin.desktop</launchable>
+	<url type="homepage">https://github.com/Lateralus138/ProcSpin</url>
+	<screenshots>
+		<screenshot type="default">
+			<caption>Help Message</caption>
+			<image>https://raw.githubusercontent.com/Lateralus138/ProcSpin/master/media/screenshots/procspin_help.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Logo</caption>
+			<image>https://raw.githubusercontent.com/Lateralus138/ProcSpin/master/media/icon/procspin.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Easy Demo</caption>
+			<image>https://raw.githubusercontent.com/Lateralus138/ProcSpin/master/media/screenshots/procspin_demo_a.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>procspin.desktop</id>
+		<binary>procspin</binary>
+	</provides>
+</component>

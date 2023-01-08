@@ -9,7 +9,7 @@ Terminal=true
 
 
 [AppImageHub]
-X-AppImage-UpdateInformation=zsync|https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage.zsync
-X-AppImage-Signature=Signature made Sun 20 Aug 2017 10:01:26 PM UTC using RSA key ID 101B2DC4 Can't check signature: No public key 
+X-AppImage-UpdateInformation=gh-releases-zsync|AppImage|AppImageKit|continuous|appimagetool-x86_64.AppImage.zsync
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64

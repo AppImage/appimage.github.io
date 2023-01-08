@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=uncov
+Comment=uncov(er) is a tool for collecting and processing code coverage reports.
+Exec=uncov
+Icon=uncov
+Type=Application
+Terminal=true
+Categories=Development;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|xaizek|uncov|latest|uncov-*x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Sat 25 May 2019 12:45:08 PM UTC using RSA key ID B05F6BE2 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=AGPL-3.0

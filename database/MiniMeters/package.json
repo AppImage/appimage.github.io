@@ -1,0 +1,16 @@
+{
+  "name": "MiniMeters",
+  "version": "0.5.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/directmusic/MiniMeters.git"
+  },
+  "license": "MIT",
+  "description": "MiniMeters",
+  "author": "Joseph Lyncheski",
+  "main": "main.js",
+  "dependencies": {
+    "electron-settings": "^3.2.0",
+    "electron-window-state": "^5.0.2"
+  }
+}

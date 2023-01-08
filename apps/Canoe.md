@@ -4,6 +4,9 @@ layout: app
 permalink: /Canoe/
 description: Nano Wallet
 
+icons:
+  - Canoe/icons/128x128/canoe.png
+
 screenshots:
   - Canoe/screenshot.png
 
@@ -21,7 +24,7 @@ desktop:
     Terminal: false
     Categories: Office
     MimeType: x-scheme-handler/xrb
-    X-Canoe-BuildId: 0.3.5
+    X-Canoe-BuildId: 1.0.1
     X-Ubuntu-Touch: true
     X-Ubuntu-StageHint: SideStage
   AppImageHub:

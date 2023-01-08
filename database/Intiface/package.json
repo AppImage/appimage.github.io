@@ -1,0 +1,29 @@
+{
+  "name": "intiface-desktop",
+  "description": "Desktop Intiface Application",
+  "author": "Nonpolynomial Labs, LLC",
+  "version": "13.0.0",
+  "homepage": "https://github.com/intiface/intiface-desktop",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intiface/intiface-desktop.git"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/intiface/intiface-desktop/issues"
+  },
+  "private": true,
+  "dependencies": {
+    "electron-updater": "^4.0.6",
+    "intiface-core-library": "*",
+    "intiface-protocols": "*",
+    "vee-validate": "^2.2.3",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.0.2",
+    "vue-property-decorator": "^8.1.0",
+    "vue-router": "^3.0.6",
+    "vuetify": "^1.5.12",
+    "vuex": "^3.1.0"
+  },
+  "main": "background.js"
+}

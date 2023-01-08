@@ -1,0 +1,16 @@
+{
+  "name": "local-browser",
+  "productName": "Local Browser",
+  "version": "1.0.1",
+  "description": "Share your localhost in a unique way",
+  "author": "",
+  "main": "main.js",
+  "license": "MIT",
+  "dependencies": {
+    "ajax-request": "^1.2.3",
+    "dropbox-fs": "^0.3.1",
+    "electron-updater": "^4.0.6",
+    "localtunnel": "^1.9.1",
+    "mousetrap": "^1.6.2"
+  }
+}

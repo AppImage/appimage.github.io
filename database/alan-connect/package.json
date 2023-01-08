@@ -1,0 +1,12 @@
+{
+  "name": "alan-connect",
+  "version": "0.19.0",
+  "author": "M-industries",
+  "description": "Connect to the Alan server",
+  "homepage": "https://alan-platform.com",
+  "productName": "Alan Connect",
+  "main": "build/js/main",
+  "dependencies": {
+    "electron-store": "^2.0.0"
+  }
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+    <id>org.kde.breezedark.desktop</id>
+    <name>Breeze Dark</name>
+    <name xml:lang="ar">نسيم داكن</name>
+    <name xml:lang="ast">Breeze Dark</name>
+    <name xml:lang="bs">Breeze tamna</name>
+    <name xml:lang="ca@valencia">Brisa fosca</name>
+    <name xml:lang="ca">Brisa fosca</name>
+    <name xml:lang="cs">Breeze Tmavé</name>
+    <name xml:lang="da">Breeze Dark</name>
+    <name xml:lang="de">Breeze-Dunkel</name>
+    <name xml:lang="el">Σκοτεινό Breeze</name>
+    <name xml:lang="en_GB">Breeze Dark</name>
+    <name xml:lang="es">Brisa oscuro</name>
+    <name xml:lang="et">Breeze Dark</name>
+    <name xml:lang="eu">Breeze Dark</name>
+    <name xml:lang="fi">Breeze Dark</name>
+    <name xml:lang="fr">Brise sombre</name>
+    <name xml:lang="gl">Breeze Dark</name>
+    <name xml:lang="he">Breeze Dark</name>
+    <name xml:lang="hu">Breeze Dark</name>
+    <name xml:lang="ia">Brisa obscure</name>
+    <name xml:lang="id">Breeze Dark</name>
+    <name xml:lang="it">Brezza scuro</name>
+    <name xml:lang="ko">어두운 Breeze</name>
+    <name xml:lang="lt">Breeze tamsi</name>
+    <name xml:lang="nb">Breeze mørk</name>
+    <name xml:lang="nl">Breeze Dark</name>
+    <name xml:lang="nn">Breeze mørk</name>
+    <name xml:lang="pl">Ciemna bryza</name>
+    <name xml:lang="pt">Brisa Escura</name>
+    <name xml:lang="pt_BR">Breeze Dark</name>
+    <name xml:lang="ro">Briză Întunecat</name>
+    <name xml:lang="ru">Breeze, тёмный вариант</name>
+    <name xml:lang="sk">Tmavý vánok</name>
+    <name xml:lang="sl">Sapica (temna)</name>
+    <name xml:lang="sr@ijekavian">Поветарац тамни</name>
+    <name xml:lang="sr@ijekavianlatin">Povetarac tamni</name>
+    <name xml:lang="sr@latin">Povetarac tamni</name>
+    <name xml:lang="sr">Поветарац тамни</name>
+    <name xml:lang="sv">Breeze mörk</name>
+    <name xml:lang="tr">Koyu Esinti</name>
+    <name xml:lang="uk">Breeze Dark</name>
+    <name xml:lang="x-test">xxBreeze Darkxx</name>
+    <name xml:lang="zh_CN">暗色微风</name>
+    <name xml:lang="zh_TW">Breeze Dark</name>
+    <summary>Breeze Dark Desktop Design Language by the KDE VDG</summary>
+    <summary xml:lang="ca@valencia">Llenguatge de disseny d'escriptori Brisa fosca pel VDG del KDE</summary>
+    <summary xml:lang="ca">Llenguatge de disseny d'escriptori Brisa fosca pel VDG del KDE</summary>
+    <summary xml:lang="cs">Jazyk pro návrh pracovní plochy Breeze Dark od KDE VDG</summary>
+    <summary xml:lang="da">Breeze Dark sprog til skrivebordsdesign af KDE VDG</summary>
+    <summary xml:lang="de">Breeze-Dunkel-Arbeitsflächendesign der KDE VDG</summary>
+    <summary xml:lang="el">Γλώσσα σχεδιασμού επιφάνειας εργασίας Breeze Dark από το KDE VDG</summary>
+    <summary xml:lang="en_GB">Breeze Dark Desktop Design Language by the KDE VDG</summary>
+    <summary xml:lang="es">Lenguaje de diseño del escritorio Breeze Dark, por el VDG de KDE</summary>
+    <summary xml:lang="et">Breeze Dark töölauakujunduse keel KDE VDG-lt</summary>
+    <summary xml:lang="eu">Breeze Dark mahaingain diseinurako lengoaia KDE VDG-k egina</summary>
+    <summary xml:lang="fi">Työpöydän design-kieli Breeze Dark KDE VDG:ltä</summary>
+    <summary xml:lang="fr">Thème sombre pour Brise, réalisé par KDE VDG</summary>
+    <summary xml:lang="gl">Linguaxe de deseño do escritorio para Breeze Dark de KDE VDG</summary>
+    <summary xml:lang="he">שפת העיצוב Breeze Dark על ידי KDE VDG</summary>
+    <summary xml:lang="hu">Breeze Dark asztali tervezőnyelv a KDE VDG-től</summary>
+    <summary xml:lang="id">Bahasa Desain Desktop Breeze Dark oleh KDE VDG</summary>
+    <summary xml:lang="it">Breeze Dark Desktop Design Language dal KDE VDG</summary>
+    <summary xml:lang="ko">KDE VDG에서 만든 어두운 Breeze 데스크톱 디자인 언어</summary>
+    <summary xml:lang="nb">Breeze Dark-språk for skrivebordsutforming  fra KDE-gruppa for visuell design</summary>
+    <summary xml:lang="nl">Breeze Dark ontwerptaal van het bureaublad door KDE VDG</summary>
+    <summary xml:lang="nn">Breeze Dark-designspråk av KDE VDG</summary>
+    <summary xml:lang="pl">Język Projektowania Ciemnego Pulpitu Bryzy przez KDE VDG</summary>
+    <summary xml:lang="pt">Linguagem de Desenho do Ecrã Brisa Escuro, da VDG do KDE</summary>
+    <summary xml:lang="pt_BR">Linguagem de desenho da área de trabalho Breeze Dark por KDE VDG</summary>
+    <summary xml:lang="ru">Тёмный вариант оформления рабочей среды Breeze от KDE VDG</summary>
+    <summary xml:lang="sk">Breeze, tmavý dizajn pracovnej plochy od KDE VDG</summary>
+    <summary xml:lang="sl">Sapica (temna), oblikovalni jezik namizja avtorjev KDE VDG</summary>
+    <summary xml:lang="sr@ijekavian">Језик дизајна површи Поветарац тамни од КДЕ‑ВДГ‑а</summary>
+    <summary xml:lang="sr@ijekavianlatin">Jezik dizajna površi Povetarac tamni od KDE VDG‑a</summary>
+    <summary xml:lang="sr@latin">Jezik dizajna površi Povetarac tamni od KDE VDG‑a</summary>
+    <summary xml:lang="sr">Језик дизајна површи Поветарац тамни од КДЕ‑ВДГ‑а</summary>
+    <summary xml:lang="sv">Breeze-konstruktionsspråk för mörkt skrivbord av KDE VDG</summary>
+    <summary xml:lang="tr">KDE VDG tarafından geliştirilen Breeze Koyu Masaüstü Tasarım Dili</summary>
+    <summary xml:lang="uk">Мова розробки стільниці Breeze Dark, створена KDE VDG</summary>
+    <summary xml:lang="x-test">xxBreeze Dark Desktop Design Language by the KDE VDGxx</summary>
+    <summary xml:lang="zh_CN">KDE 视觉设计组设计的暗色微风桌面设计语言</summary>
+    <summary xml:lang="zh_TW">KDE VDG 設計的 Breeze Dark 桌面設計語言</summary>
+    <url type="homepage">http://www.kde.org</url>
+    <url type="donation">https://www.kde.org/donate.php?app=org.kde.breezedark.desktop</url>
+    <developer_name>KDE Visual Design Group &lt;plasma-devel@kde.org&gt;</developer_name>
+    <project_license>GPL-2.0+</project_license>
+    <metadata_license>CC0-1.0</metadata_license>
+</component>

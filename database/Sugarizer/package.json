@@ -1,0 +1,13 @@
+{
+  "name": "Sugarizer",
+  "version": "1.1.0",
+  "main": "main.js",
+  "repository": "https://github.com/llaske/sugarizer",
+  "author": "Lionel Laské <lionel@sugarizer.org>",
+  "description": "A taste of Sugar on any device",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "requirejs": "~2.3.5",
+    "ini": "1.1.x"
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>desktopeditors</id>
+	<metadata_license>AGPL-3.0</metadata_license>
+	<project_license>AGPL-3.0</project_license>
+	<name>ONLYOFFICE Desktop Editors</name>
+	<summary>Create, edit and save text, spreadsheet and presentation documents</summary>
+	<description>
+		<p>ONLYOFFICE Desktop Editors is a free office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit documents stored on your Windows/Linux PC or Mac without an Internet connection. It is fully compatible with Office Open XML formats: .docx, .xlsx, .pptx.</p>
+	</description>
+	<launchable type="desktop-id">desktopeditors.desktop</launchable>
+	<url type="homepage">https://github.com/ONLYOFFICE/appimage-desktopeditors</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/ONLYOFFICE/appimage-desktopeditors/master/metainfo/logo.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>desktopeditors.desktop</id>
+	</provides>
+</component>

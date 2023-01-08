@@ -1,0 +1,37 @@
+{
+  "name": "myvpn",
+  "version": "0.2.1",
+  "author": {
+    "name": "MyVPN",
+    "email": "support@myvpn.run"
+  },
+  "homepage": "https://myvpn.run",
+  "description": "MyVPN - your personal VPN",
+  "category": "Network",
+  "license": null,
+  "main": "./dist/electron/main.js",
+  "release": "build",
+  "dependencies": {
+    "aes-js": "^3.1.2",
+    "axios": "^0.19.0",
+    "axios-retry": "^3.1.2",
+    "@my0419/electron-oauth-helper": "6.0.0",
+    "digitalocean": "^1.2.0",
+    "element-ui": "^2.13.0",
+    "keypair": "^1.0.1",
+    "moment": "^2.24.0",
+    "qrcode.vue": "^1.7.0",
+    "v-clipboard": "^2.2.2",
+    "v-offline": "^1.1.0",
+    "vue": "^2.5.16",
+    "vue-electron": "^1.0.6",
+    "vue-i18n": "^8.14.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "ssh2": "^0.8.7",
+    "vuex-electron": "^1.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

@@ -5,6 +5,9 @@ permalink: /Storaji/
 description: The Light/Responsive Inventory Management System.
 license: MIT
 
+icons:
+  - Storaji/icons/128x128/storaji.png
+
 screenshots:
   - Storaji/screenshot.png
 
@@ -26,8 +29,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: storaji
-    X-AppImage-Version: 1.0.0-beta.7.72
-    X-AppImage-BuildId: 3baa8840-fe50-11a7-3c10-9f6ac83f0998
+    X-AppImage-Version: 1.0.0-beta.9.79
+    X-AppImage-BuildId: efce8ea0-13b5-11a8-1ec0-59e112c8acdc
     Categories: Office
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -59,17 +62,22 @@ electron:
     "@ngui/auto-complete": "^0.16.0"
     "@ngx-translate/core": "^8.0.0"
     "@ngx-translate/http-loader": "^2.0.0"
+    "@types/highcharts": "^5.0.16"
     "@types/lodash": "^4.14.77"
     "@types/tus-js-client": "^1.4.1"
+    angular2-highcharts: "^0.5.5"
     core-js: "^2.4.1"
     electron-is-dev: "~0.3.0"
     electron-log: "~2.2.14"
     electron-updater: "~2.19.1"
     font-awesome: "^4.7.0"
     gasparesganga-jquery-loading-overlay: "^1.5.3"
+    highcharts: "^6.0.6"
     ionicons: "^2.0.1"
     jquery: "^3.2.1"
     jquery.transit: "^0.9.12"
+    lodash: "^4.17.5"
+    moment: "^2.20.1"
     ngx-progressbar: "^2.1.1"
     notyf: "^2.0.1"
     numeral: "^2.0.6"

@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Cura
+Name[de]=Cura
+GenericName=3D Printing Software
+GenericName[de]=3D-Druck-Software
+Comment=Cura converts 3D models into paths for a 3D printer. It prepares your print for maximum accuracy, minimum printing time and good reliability with many extra features that make your print come out great.
+Exec=cura.sh %F
+Icon=cura-icon
+Terminal=false
+Type=Application
+MimeType=model/stl;application/vnd.ms-3mfdocument;application/prs.wavefront-obj;image/bmp;image/gif;image/jpeg;image/png;text/x-gcode;
+Categories=Graphics;
+Keywords=3D;Printing;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

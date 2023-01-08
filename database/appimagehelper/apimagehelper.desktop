@@ -1,0 +1,17 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=appimagehelper
+Comment=Create and organize shortcuts for AppImages
+TryExec=appimagehelper
+Exec=appimagehelper
+Icon=appimagehelper
+Categories=Utility;
+
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=Signature made Sat 22 Aug 2020 03:06:54 PM UTC using RSA key ID 984AB48F Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

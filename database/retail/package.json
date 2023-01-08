@@ -1,0 +1,28 @@
+{
+	"name": "retail-app",
+	"productName": "Retail App",
+	"description": "Retail Desktop App by Evoluzin",
+	"version": "0.0.2",
+	"author": "Evoluzin <info@evoluzin.com>",
+	"copyright": "© 2018, Evoluzin Cloud Storage Solutions Pvt. Ltd.",
+	"homepage": "http://www.evoluzin.com",
+	"license": "MIT",
+	"private": true,
+	"main": "main.js",
+	"engines": {
+		"node": ">=10.15.0"
+	},
+	"dependencies": {
+		"@journeyapps/sqlcipher": "latest",
+		"evo-store": "git+ssh://git@192.168.34.5:util/evo-store.git#dev",
+		"evo-util": "git+ssh://git@192.168.34.5:util/evo-util.git#dev",
+		"evo-util-node": "git+ssh://git@192.168.34.5:util/evo-util-node.git#dev",
+		"exceljs": "latest",
+		"node-pre-gyp": "latest",
+		"node-thermal-printer": "latest",
+		"nodemailer": "latest",
+		"nodemailer-smtp-transport": "latest",
+		"request": "latest",
+		"rxjs": "latest"
+	}
+}

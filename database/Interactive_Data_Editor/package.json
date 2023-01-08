@@ -1,0 +1,15 @@
+{
+  "name": "Interactive_Data_Editor",
+  "version": "1.1.1",
+  "main": "index.js",
+  "description": "A Software to interactively edit data in a graphical manner.",
+  "homepage": "https://github.com/Koushikphy/Interactive-Data-Editor",
+  "author": "Koushik Naskar <koushik.naskar9@gmail.com>",
+  "copyright": "Copyright © Dec,2018 Koushik Naskar",
+  "license": "MIT",
+  "files": [
+    "**/*",
+    "build/icon.*",
+    "!**/AppGIT"
+  ]
+}

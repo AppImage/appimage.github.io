@@ -1,0 +1,32 @@
+{
+  "name": "deployer",
+  "description": "Deployer – Cross-platform application to deploy your applications through Jenkins.",
+  "productName": "Deployer",
+  "author": "Zeeshan Ahmad <ziishaned@gmail.com>",
+  "version": "0.0.1",
+  "private": true,
+  "homepage": "./",
+  "main": "public/electron.js",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
+    "bootstrap": "^4.3.1",
+    "electron-debug": "^2.2.0",
+    "electron-is-dev": "^1.1.0",
+    "electron-updater": "^4.0.6",
+    "formik": "^1.5.2",
+    "jenkins": "^0.25.0",
+    "prettier": "^1.17.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "yup": "^0.27.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

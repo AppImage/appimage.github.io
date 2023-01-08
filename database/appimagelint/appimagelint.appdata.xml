@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>appimagelint</id>
+	<metadata_license>MIT</metadata_license>
+	<project_license>MIT</project_license>
+	<name>appimagelint</name>
+	<summary>Check AppImage files for common issues</summary>
+	<description>
+		<p>Check AppImages for compatibility, best practices etc. Powerful functionality combined with simple usage and human-friendly feedback. </p>
+	</description>
+	<launchable type="desktop-id">appimagelint.desktop</launchable>
+	<url type="homepage">https://github.com/TheAssassin/appimagelint/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/TheAssassin/appimagelint/944f85f74ede650a86ce01a18217d8834e2b3bb1/resources/screenshot.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>appimagelint.desktop</id>
+	</provides>
+</component>

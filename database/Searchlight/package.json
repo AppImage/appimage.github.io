@@ -1,0 +1,39 @@
+{
+  "name": "searchlight",
+  "version": "1.1.5",
+  "description": "A desktop application discovering Axis network video devices on your network.",
+  "homepage": "https://github.com/FantasticFiasco/searchlight",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FantasticFiasco/searchlight.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FantasticFiasco/searchlight/issues"
+  },
+  "author": "Mattias Kindborg <mattias.kindborg@gmail.com> (https://twitter.com/FantasticFiasco)",
+  "license": "GPL-3.0",
+  "main": "main.js",
+  "electronWebpack": {
+    "title": "Searchlight"
+  },
+  "dependencies": {
+    "@fantasticfiasco/expect": "1.0.1",
+    "axis-discovery-ssdp": "5.0.2",
+    "electron-debug": "2.1.0",
+    "electron-log": "3.0.1",
+    "electron-store": "2.0.0",
+    "electron-updater": "4.0.6",
+    "font-awesome": "4.7.0",
+    "simple-line-icons": "2.4.1",
+    "source-map-support": "0.5.10",
+    "universal-analytics": "0.4.20",
+    "uuid": "3.3.2"
+  },
+  "resolutions": {
+    "bootstrap": ">=4.3.1",
+    "cryptiles": ">=4.1.2",
+    "deep-extend": ">=0.5.1",
+    "macaddress": ">=0.2.9",
+    "upath": ">=1.1.0"
+  }
+}

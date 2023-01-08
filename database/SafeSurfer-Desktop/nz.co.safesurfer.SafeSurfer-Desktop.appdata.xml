@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Safe Surfer <info@safesurfer.co.nz> -->
+<component type="desktop">
+  <id>nz.co.safesurfer.SafeSurfer-Desktop.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>Safe Surfer Desktop</name>
+  <developer_name>Safe Surfer</developer_name>
+  <provides>
+    <binary>SafeSurfer-Desktop</binary>
+  </provides>
+  <summary>Keep safe in the digitial surf with Safe Surfer</summary>
+  <description>
+    <p>
+      Safe Surfer Desktop is an Electron based app, which sets the Safe Surfer DNS settings for you (on a device, not network).
+    </p>
+  </description>
+  <releases>
+    <release version="1.0.0" date="2018-12-11">
+      <description>
+        <p>This release marks the inital public release of Safe Surfer's desktop app.</p>
+      </description>
+    </release>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://gitlab.com/safesurfer/SafeSurfer-Desktop/raw/master/screenshots/SafeSurfer-Desktop-Activated-Mid.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/safesurfer/SafeSurfer-Desktop/raw/master/screenshots/SafeSurfer-Desktop-Deactivated-Mid.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/safesurfer/SafeSurfer-Desktop/raw/master/screenshots/SafeSurfer-Desktop-Activated-Mid-LifeGuard.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/safesurfer/SafeSurfer-Desktop/raw/master/screenshots/SafeSurfer-Desktop-Init-Mid.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://gitlab.com/safesurfer/SafeSurfer-Desktop</url>
+  <url type="bugtracker">https://gitlab.com/safesurfer/SafeSurfer-Desktop/issues</url>
+  <url type="help">https://gitlab.com/safesurfer/SafeSurfer-Desktop/issues</url>
+  <url type="homepage">http://safesurfer.co.nz/</url>
+  <update_contact>info_AT_safesurfer.co.nz</update_contact>
+</component>

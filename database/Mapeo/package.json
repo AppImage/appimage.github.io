@@ -1,0 +1,102 @@
+{
+  "name": "mapeo-desktop",
+  "description": "Mapping and monitoring in remote environments.",
+  "productName": "Mapeo",
+  "version": "4.0.1-beta",
+  "productDescription": "Offline Map Editor",
+  "author": {
+    "name": "Digital Democracy",
+    "email": "info@ddem.us"
+  },
+  "main": "index.js",
+  "engine": {
+    "node": "8.11.4"
+  },
+  "license": "GPL-v3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digidem/mapeo-desktop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digidem/mapeo-desktop/issues"
+  },
+  "homepage": "https://github.com/digidem/mapeo-desktop#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.1.2",
+    "@material-ui/core": "^1.5.1",
+    "@material-ui/icons": "^3.0.1",
+    "JSONStream": "^1.3.5",
+    "application-config": "^1.0.1",
+    "application-config-path": "^0.1.0",
+    "asar": "^1.0.0",
+    "blob-to-buffer": "^1.2.6",
+    "body": "^5.1.0",
+    "concat-stream": "^1.5.1",
+    "dialogs": "^1.1.20",
+    "dom-helpers": "^3.3.1",
+    "ecstatic": "^2.2.1",
+    "electron-debug": "^1.0.0",
+    "electron-is-dev": "^1.0.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "end-of-stream": "^1.1.0",
+    "fs-copy-file-sync": "^1.0.1",
+    "glob": "^7.1.2",
+    "gtran-shapefile": "^1.1.3",
+    "html-react-parser": "^0.4.6",
+    "hyperquest": "^2.1.3",
+    "id-mapeo": "^2.0.0",
+    "inherits": "^2.0.3",
+    "insert-css": "^1.0.0",
+    "level": "^1.4.0",
+    "levelup": "^1.3.1",
+    "lodash": "^4.17.4",
+    "mapeo-server": "^15.0.0",
+    "mapeo-styles": "^3.0.0",
+    "minimist": "^1.2.0",
+    "mirror-folder": "^2.1.1",
+    "mkdirp": "^0.5.1",
+    "object-assign": "^4.1.1",
+    "once": "^1.3.3",
+    "osm-p2p": "^4.0.0",
+    "osm-p2p-api": "^2.0.0",
+    "osm-p2p-geojson": "^4.0.0",
+    "osm-p2p-server": "^4.0.0",
+    "prop-types": "^15.6.0",
+    "pump": "^1.0.3",
+    "randombytes": "^2.0.6",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-intl": "^2.7.2",
+    "react-mapfilter": "^1.2.13",
+    "rimraf": "^2.5.2",
+    "run-parallel": "^1.1.9",
+    "run-series": "^1.1.4",
+    "safe-fs-blob-store": "^1.0.0",
+    "semver": "^5.6.0",
+    "split2": "^2.0.1",
+    "statuses": "^1.3.0",
+    "styled-components": "^3.4.4",
+    "subleveldown": "^2.1.0",
+    "tar-fs": "^1.16.0",
+    "through2": "^2.0.3",
+    "to2": "^1.0.0",
+    "traverse": "^0.6.6",
+    "websocket-stream": "^3.1.0",
+    "xhr": "^2.5.0",
+    "xtend": "^4.0.1"
+  },
+  "darwinDependencies": {
+    "appdmg": "0.4.5"
+  },
+  "license-check-config": {
+    "src": [
+      "src/**/*.js",
+      "index.js",
+      "!./node_modules/**/*"
+    ],
+    "path": "license-header.txt",
+    "blocking": false,
+    "logInfo": false,
+    "logError": true
+  }
+}

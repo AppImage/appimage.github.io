@@ -1,0 +1,12 @@
+{
+  "main": "index.js",
+  "name": "vk-desktop",
+  "version": "0.0.5",
+  "author": {
+    "name": "danyadev",
+    "email": "danyadev@mail.ru"
+  },
+  "license": "Apache-2.0",
+  "description": "Кроссплатформенный клиент ВКонтакте",
+  "repository": "https://github.com/danyadev/vk-desktop"
+}

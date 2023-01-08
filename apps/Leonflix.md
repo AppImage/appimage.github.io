@@ -4,6 +4,9 @@ layout: app
 permalink: /Leonflix/
 description: A multi-platform desktop application for watching movies and TV shows.
 
+icons:
+  - Leonflix/icons/128x128/leonflix.png
+
 screenshots:
   - Leonflix/screenshot.png
 
@@ -19,8 +22,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: leonflix
-    X-AppImage-Version: 0.4.2
-    X-AppImage-BuildId: f275eea0-0785-11a8-32ed-c3e0f4f8bf05
+    X-AppImage-Version: 0.4.7
+    X-AppImage-BuildId: 76d8cab0-4231-11a8-0615-115b33d41495
     Categories: Utility
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -41,12 +44,12 @@ electron:
     chromecasts: "^1.9.1"
     electron-window-state: "^4.1.1"
     getmac: "^1.2.1"
+    nedb: "^1.8.0"
     opensubtitles-api: "^4.0.0"
-    openurl: "^1.1.1"
     phantomjs-prebuilt: "^2.1.16"
-    sequelize: "^4.28.7"
-    sqlite3: "^3.1.13"
+    sql.js: "^0.5.0"
     unidecode: "^0.1.8"
     uuid: "^3.1.0"
+    vlc-command: "^1.1.1"
     x-ray: "^2.3.2"
 ---

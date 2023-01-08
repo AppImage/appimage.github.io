@@ -1,0 +1,11 @@
+{
+  "name": "GooboxFileShare",
+  "version": "0.1.0",
+  "description": "Goobox File Share App",
+  "main": "lib/index.js",
+  "author": "Junpei Kawamoto <kawamoto.junpei@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "about-window": "^1.12.1"
+  }
+}

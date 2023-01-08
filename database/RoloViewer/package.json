@@ -1,0 +1,16 @@
+{
+  "name": "roloviewer",
+  "productName": "RoloViewer",
+  "version": "0.7.1",
+  "description": "Image slideshow viewer",
+  "main": "./dist/main.prod.js",
+  "author": {
+    "name": "Raul Rosenlöcher",
+    "email": "roloviewer@rosenloecher-it.de",
+    "url": "https://www.rosenloecher-it/roloviewer/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "exiftool-vendored": "^5.5.0"
+  }
+}

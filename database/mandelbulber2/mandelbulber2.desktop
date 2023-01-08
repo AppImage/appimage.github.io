@@ -3,7 +3,7 @@ Categories=Graphics;3DGraphics;Math;Science;
 Comment=Visit 3D Fractal World
 Exec=mandelbulber2
 GenericName=Mandelbulber v2 - Advanced 3D fractal generator
-Icon=mandelbulber2
+Icon=mandelbulber
 Name=Mandelbulber v2
 StartupNotify=true
 Terminal=false
@@ -12,11 +12,11 @@ X-DBUS-ServiceName=
 X-DBUS-StartupType=none
 X-KDE-SubstituteUID=false
 X-KDE-Username=
-X-Desktop-File-Install-Version=0.22
+X-AppImage-Version=574088d
 
 [AppImageHub]
-X-AppImage-UpdateInformation=false
-# Dear upstream developer, please add update information to your AppImage
-# so that users can easily update the AppImage
+X-AppImage-UpdateInformation=gh-releases-zsync|buddhi1980|mandelbulber2|continuous|Mandelbulber_v2*-x86_64.AppImage.zsync
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=GPL-3.0

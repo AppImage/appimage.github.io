@@ -1,0 +1,13 @@
+{
+  "name": "playme",
+  "version": "1.0.1",
+  "description": "Elegant YouTube Music desktop app",
+  "main": "index.js",
+  "repository": "",
+  "postinstall": "electron-builder install-app-deps",
+  "author": "Filip Luchianenco",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

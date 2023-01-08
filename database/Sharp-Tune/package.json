@@ -1,0 +1,16 @@
+{
+  "name": "sharp-tune",
+  "version": "1.0.2",
+  "Tag version": "v1.0.2",
+  "description": "Lightweight Cross-platform music player build upon the node using the electron framework.",
+  "main": "main.js",
+  "repository": "https://github.com/MD-AZMAL/Sharp-Tune",
+  "dependencies": {
+    "electron-is-dev": "^0.3.0",
+    "electron-log": "^2.2.15",
+    "electron-updater": "^2.21.10",
+    "musicmetadata": "^2.0.5"
+  },
+  "author": "Md Azmal <azmalmd12@gmail.com>",
+  "license": "MIT"
+}

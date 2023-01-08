@@ -1,0 +1,25 @@
+{
+  "main": "main.js",
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "electron-context-menu": "^0.10.0",
+    "about-window": "^1.12.1",
+    "electron-dl": "^1.12.0"
+  },
+  "name": "rise",
+  "productName": "rise",
+  "author": "rise technologies GmbH",
+  "version": "0.40.1",
+  "description": "Digital Communication for the Industrial Service",
+  "homepage": "https://rise.tech",
+  "helpUrl": "https://help.rise.tech",
+  "rootUrl": "https://app.rise.tech",
+  "feedURL": "https://downloads.rise.tech",
+  "portableGithubRepoUrl": "https://api.github.com/repos/risetechnologies/portableApps/releases/latest",
+  "maximize": true,
+  "debug": true,
+  "windowOptions": {
+    "height": 768,
+    "width": 1024
+  }
+}

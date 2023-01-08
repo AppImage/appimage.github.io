@@ -1,0 +1,21 @@
+{
+  "name": "four",
+  "productName": "FOUR",
+  "author": "FreeYourDesktop <ben@freeyourdesktop.com>",
+  "version": "1.0.0",
+  "description": "Electron App to access All4/Channel4 (UK)",
+  "main": "main.js",
+  "license": "GPL-3.0",
+  "repository": "https://github.com/FYDesktop/FOUR",
+  "dependencies": {
+    "about-window": "^1.12.1",
+    "electron-context-menu": "^0.10.0",
+    "npm": "^6.4.1"
+  },
+  "devDependancies": {
+    "electron": "^2.0.11",
+    "electron-builder": "^20.28.4",
+    "electron-context-menu": "^0.10.0",
+    "about-window": "^1.12.1"
+  }
+}

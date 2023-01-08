@@ -1,0 +1,14 @@
+{
+  "name": "dockstation",
+  "productName": "dockstation",
+  "version": "1.5.1",
+  "description": "Working with Docker has never been so easy and convenient.",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "DockStation",
+    "email": "admin@docksattion.io",
+    "url": "https://github.com/dockstation"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

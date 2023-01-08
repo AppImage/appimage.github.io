@@ -1,0 +1,17 @@
+{
+  "name": "heb12",
+  "productName": "Heb12 Bible",
+  "version": "0.2.0",
+  "description": "A simple program for reading the Bible",
+  "main": "main.js",
+  "repository": "https://github.com/heb12/heb12",
+  "author": {
+    "name": "Heb12 Bible Apps",
+    "email": "heb12@protonmail.com"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "chapter-and-verse": "^3.0.2"
+  },
+  "postinstall": "electron-builder install-app-deps"
+}

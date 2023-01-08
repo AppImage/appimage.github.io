@@ -1,0 +1,30 @@
+{
+  "name": "cabal-desktop-mini",
+  "version": "1.0.3",
+  "description": "a minimal Cabal p2p offline-first desktop application",
+  "private": true,
+  "main": "main.js",
+  "productName": "Cabal Mini",
+  "repository": "nikolaiwarner/cabal-desktop-mini",
+  "author": "Cabal Club",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "cabal-core": "^4.0.0",
+    "choo": "^6.13.1",
+    "choo-devtools": "^2.5.1",
+    "collect-stream": "^1.2.1",
+    "cross-script": "^1.0.5",
+    "dat-encoding": "^5.0.1",
+    "discovery-swarm": "^5.1.4",
+    "electron-collection": "^1.2.0",
+    "gh-release": "^3.5.0",
+    "hypercore-crypto": "^1.0.0",
+    "identicon.js": "^2.3.3",
+    "js-yaml": "^3.12.1",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.24.0",
+    "random-access-memory": "^3.1.1",
+    "source-map-support": "^0.5.10",
+    "tachyons": "^4.11.1"
+  }
+}

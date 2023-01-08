@@ -1,0 +1,30 @@
+{
+  "name": "stele",
+  "version": "2.0.1-alpha.2",
+  "private": true,
+  "description": "Kiosk app wrapper for museum media exhibits",
+  "author": "Science Museum of Minnesota <exhibit.media@smm.org>",
+  "main": "./src/main.prod.js",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "depcheck": "^0.6.11",
+    "devtron": "^1.4.0",
+    "electron-debug": "^2.0.0",
+    "electron-log": "^2.2.17",
+    "electron-store": "^2.0.0",
+    "formik": "^1.3.2",
+    "jquery": "3.3.1",
+    "popper.js": "^1.14.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-delay": "^0.1.0",
+    "react-dom": "^16.6.3",
+    "react-hot-loader": "^4.3.12",
+    "react-router-dom": "^4.3.1",
+    "reactstrap": "^6.5.0",
+    "source-map-support": "^0.5.9",
+    "winston": "^3.1.0",
+    "winston-daily-rotate-file": "^3.5.1",
+    "yup": "^0.26.6"
+  }
+}

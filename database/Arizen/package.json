@@ -1,12 +1,15 @@
 {
   "name": "Arizen",
-  "version": "1.1.3",
-  "description": "Wallet for ZenCash (ZEN)",
+  "version": "1.2.0",
+  "description": "Arizen is light API wallet for ZenCash with localy stored and encrypted files.",
   "main": "app/main.js",
-  "homepage": "https://github.com/ZencashOfficial/arizen",
+  "homepage": "https://horizen.global/github/arizen",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zencashofficial/arizen.git"
+    "url": "git+https://github.com/ZencashOfficial/arizen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZencashOfficial/arizen/issues"
   },
   "updater": {
     "url": "https://raw.githubusercontent.com/ZencashOfficial/arizen/master/updates.json"
@@ -17,29 +20,37 @@
     "node": ">=6.0"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.0",
+    "axios-debug-log": "^0.4.0",
     "bip32-utils": "^0.11.0",
     "bitcoinjs-lib": "^3.3.1",
+    "bs58check": "2.1.1",
+    "delay": "^3.0.0",
     "electron-debug": "^1.5.0",
     "electron-download": "^4.1.0",
-    "electron-packager": "^10.1.1",
+    "electron-packager": "^12.1.0",
     "electron-simple-updater": "^1.2.3",
-    "electron-tabs": "^0.9.0",
+    "electron-tabs": "^0.9.1",
     "errors": "^0.3.0",
-    "fs-extra": "^5.0.0",
+    "flatten-packages": "^0.1.4",
+    "fs-extra": "^6.0.1",
     "immutable": "^3.8.2",
-    "jspdf": "^1.3.5",
-    "luxon": "^0.2.12",
-    "node-fetch": "^2.0.0-alpha.9",
+    "is-ip": "^2.0.0",
+    "jspdf": "^1.4.0",
+    "luxon": "^1.2.1",
+    "node-json-rpc2": "^1.1.0",
+    "node-ssh": "^5.1.1",
+    "npm": "^6.1.0",
+    "open-ssh-tunnel": "^0.3.1",
     "password-hash": "^1.2.2",
+    "ping": "^0.2.2",
     "qrcode": "^1.2.0",
-    "request": "^2.83.0",
-    "sql.js": "^0.4.0",
+    "sql.js": "^0.5.0",
     "zencashjs": "^1.1.9-a"
   },
   "optionalDependencies": {
-    "electron-installer-debian": "^0.7.0",
-    "electron-installer-dmg": "^0.2.1",
-    "electron-installer-windows": "^0.2.0"
+    "electron-installer-debian": "^0.8.1",
+    "electron-installer-dmg": "^1.0.0",
+    "electron-installer-windows": "^1.0.2"
   }
 }

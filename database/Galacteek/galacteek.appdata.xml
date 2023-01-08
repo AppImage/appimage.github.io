@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>org.gitlab.galacteek</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <name>Galacteek</name>
+
+    <summary>IPFS browser</summary>
+    <summary xml:lang="es">Navegador IPFS</summary>
+    <summary xml:lang="fr">Navigateur IPFS</summary>
+    <categories>
+        <category>Network</category>
+    </categories>
+    <keywords>
+        <keyword>IPFS</keyword>
+        <keyword>Browser</keyword>
+        <keyword>P2P</keyword>
+    </keywords>
+
+    <description>
+        <p>
+            Galacteek is a simple Qt5-based browser and toolbox for the IPFS peer-to-peer network.
+            It contains tools to access and publish content over IPFS, and allows you to make search queries with the ipfs-search.com search engine.
+        </p>
+        <p>
+            Learn more about IPFS at ipfs.io
+        </p>
+    </description>
+
+    <launchable type="desktop-id">galacteek.desktop</launchable>
+
+    <screenshots>
+        <screenshot type="default">
+            <caption>Browsing the Wikipedia IPFS mirror</caption>
+            <image>https://github.com/eversum/galacteek/raw/master/screenshots/browse-wikipedia.png</image>
+        </screenshot>
+    </screenshots>
+
+    <url type="homepage">https://github.com/eversum/galacteek</url>
+
+    <provides>
+        <binary>galacteek</binary>
+    </provides>
+
+    <releases>
+        <release version="0.3.4" date="2019-01-13">
+            <description>
+                <p>Release 0.3.4</p>
+            </description>
+        </release>
+    </releases>
+</component>

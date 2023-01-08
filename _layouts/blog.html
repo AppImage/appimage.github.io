@@ -1,16 +1,66 @@
 ---
+# index.html in the root directory points here
 layout: default
 ---
 
-<div class="posts">
-  {% assign sorted = site.pages | sort:"permalink" %}
-  <!-- {% assign sorted = site.pages | sort:"updated" | reverse %} -->
-  {% for post in sorted %}
-    {% if post.layout == 'app' && post.published == 'true' %}  
+  <style type="text/css">
+    /* Container holding the categories */
+    .cats {
+      -webkit-columns: 2 400px;
+      -moz-columns: 2 400px;
+      columns: 2 400px;
+    }
+    /* Container holding the image and the text */
+    .moodpic {
+      position: relative;
+      text-align: center;
+      color: white;
+      opacity: 1.0;
+      filter: alpha(opacity=100); /* For IE8 and earlier */
+    }
+    .moodpic:hover {
+      opacity: 0.5;
+      filter: alpha(opacity=50); /* For IE8 and earlier */
+    }
+    /* Centered text */
+    .moodtext {
+      max-width: 80%;
+      position: absolute;
+      font-size: 30px;
+      color: white;
+      font-weight: bold;
+      text-shadow: 0px 0px 4px #000000;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
  
-      {% include loop.html %}
-      
-    {% endif %}
-  {% endfor %}
+  <div align="center"><h3>Willkommen • Welcome • 欢迎 • Bienvenue • Benvenuto • Bienvenido • ようこそ • Mabuhay • Välkommen • أهلا وسهلا • Добро пожаловать • Merhaba • Bonvenon • 歡迎光臨 • ברוכים הבאים • Ласкаво просимо • Dobro došli</h3></div>
+  <div align="center"><p>Here are {{ site.pages | size }} apps that you can run on Linux without installation. And counting</p></div>
 
-</div>
+  <!--
+  <p>
+  <div align="center">
+    <input type="text" id="search-input" placeholder="Search not working yet">
+    <br/>
+    <div id="results-container"></div>
+  </div>
+  </p>
+  -->
+  
+  <div class="cats">
+  {% for category in site.data.categories %}
+      <a href="/categories/{{ category.xdg }}">
+        {% if category.stocksnap %}
+          <div class="moodpic">
+            <img src="https://cdn.stocksnap.io/img-thumbs/280h/{{ category.stocksnap }}.jpg" style="height: 280px; width: 420px;" />
+            <div class="moodtext">{{ category.en }}</div>
+          </div>
+        {% else %}
+          <div>{{ category.en }}</div>
+        {% endif %}
+      </a>
+    
+  {% endfor %}
+  </div>  

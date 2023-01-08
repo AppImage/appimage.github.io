@@ -1,0 +1,23 @@
+{
+  "name": "OVis",
+  "version": "0.2.0",
+  "description": "A visualization tool for OpenMDAO",
+  "main": "main.js",
+  "repository": "https://github.com/OpenMDAO/zune",
+  "author": {
+    "name": "NASA Glenn Research Center",
+    "email": "support@openmdao.org",
+    "url": "http://www.openmdao.org"
+  },
+  "dependencies": {
+    "electron-is": "^2.4.1",
+    "electron-log": "^2.2.14",
+    "electron-updater": "^2.21.10",
+    "is-electron": "^2.1.0",
+    "promise": "^8.0.1",
+    "request": "^2.87.0",
+    "sqlite3": "^4.0.1",
+    "wine": "^0.9.8"
+  },
+  "postinstall": "electron-builder install-app-deps"
+}

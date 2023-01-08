@@ -1,0 +1,20 @@
+[Desktop Entry]
+Type=Application
+Name=Popsicle USB Flasher
+GenericName=Popsicle USB Flasher
+X-GNOME-FullName=Popsicle USB Flasher
+Icon=com.system76.Popsicle
+Categories=System;
+Keywords="USB;Flash;Drive;Popsicle;"
+MimeType=application/x-cd-image;application/x-raw-disk-image;
+Terminal=false
+StartupNotify=true
+Exec=popsicle-gtk %f
+X-AppImage-Version=1.2.0
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=[don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

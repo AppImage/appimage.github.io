@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Carpenters
+Comment=Digital preservation ingest utility
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=carpenters
+X-AppImage-Version=2.3.0
+X-AppImage-BuildId=3042a3c0-91b2-11a8-20ac-6db70120afb4
+Categories=Office;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

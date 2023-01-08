@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=fSpy
+Comment=An open source, cross platform app for still image camera matching
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=fspy
+X-AppImage-Version=1.0.0-alpha.1
+X-AppImage-BuildId=598534c0-7a04-11a8-2077-fb80a86dc567
+Categories=Utility;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

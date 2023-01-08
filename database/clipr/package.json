@@ -1,0 +1,26 @@
+{
+  "name": "clipr",
+  "version": "1.0.26",
+  "description": "The clipboard that syncs!",
+  "homepage": "https://clipr.cloud",
+  "license": "GPL-3.0",
+  "repository": "https://github.com/clipr/clipr",
+  "author": {
+    "name": "clipr.cloud",
+    "email": "hello@clipr.cloud"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "@sentry/electron": "0.11.0",
+    "auto-launch": "5.0.5",
+    "electron-google-analytics": "0.1.0",
+    "electron-positioner": "4.1.0",
+    "electron-store": "2.0.0",
+    "electron-updater": "3.0.4",
+    "extend": "3.0.2",
+    "is-online": "8.0.0",
+    "lodash": "4.17.11",
+    "pouchdb": "7.0.0",
+    "transform-pouch": "1.1.4"
+  }
+}

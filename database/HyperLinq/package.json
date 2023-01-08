@@ -1,0 +1,31 @@
+{
+  "name": "hyperlinq",
+  "productName": "HyperLinq",
+  "version": "0.20.0",
+  "author": {
+    "name": "HyperLinq Inc.",
+    "email": "support@hyperlinq.io",
+    "url": "https://hyperlinq.io"
+  },
+  "copyright": "Copyright © 2019 HyperLinq Inc.",
+  "description": "HyperLinq is your essential tool for cryptocurrency and digital asset trading. Powerful, fast and innovative, HyperLinq enables you to start making better trading decisions today.",
+  "main": "main.js",
+  "repository": "https://github.com/electron/electron-quick-start",
+  "dependencies": {
+    "@babel/runtime": "^7.3.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.14",
+    "@fortawesome/free-regular-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@sentry/browser": "^4.6.2",
+    "@sentry/electron": "^0.15.0",
+    "classnames": "^2.2.6",
+    "electron-is-dev": "^1.0.1",
+    "electron-updater": "^4.0.6",
+    "getmac": "^1.4.6",
+    "jsonrpc-websocket-client": "^0.4.1",
+    "node-fetch": "^2.3.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}

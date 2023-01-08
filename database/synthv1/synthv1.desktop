@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=synthv1
+Version=1.0
+GenericName=MIDI
+Comment=synthv1 is an old school polyphonic synthesizer
+Comment[fr]=synthv1 est un synthétiseur polyphonique à l'ancienne
+Exec=synthv1_jack
+Icon=synthv1
+Categories=Audio;AudioVideo;Midi;X-Alsa;X-Jack;Qt;
+Keywords=Audio;MIDI;ALSA;JACK;Synthesizer;LV2;Qt;
+Terminal=false
+Type=Application
+StartupWMClass=synthv1_jack
+X-Window-Icon=synthv1
+X-SuSE-translate=true
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://download.opensuse.org/repositories/home:/rncbc/AppImage/synthv1-latest-x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Tue 26 Jun 2018 07:33:32 AM UTC using DSA key ID 462E2AF2 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

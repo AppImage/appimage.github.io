@@ -4,7 +4,7 @@
   {% include meta.html %}
 
   <title>
-    {% if page.title %}{{ page.title }} – {% elsif page.generic %}{{ page.name | remove: ".md" }} – {% endif %}{{ site.name }}
+    {{ page.name | remove: ".md" | replace: "_", " " }} – {{ site.name }}
   </title>
 
   <!--[if lt IE 9]>
@@ -16,6 +16,21 @@
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.4/js/jquery.tablesorter.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.4/js/jquery.tablesorter.widgets.min.js"></script>
 
+  <script type="text/javascript" src="https://unpkg.com/simple-jekyll-search@1.5.0/dest/simple-jekyll-search.min.js"></script>
+
+  <script type="text/javascript">
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '{{ site.url }}{{ site.baseurl }}/search.json',
+      searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+      noResultsText: 'No results found',
+      limit: 10,
+      fuzzy: false,
+      exclude: ['Welcome']
+    })
+  </script>
+  
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.min.css" />
 
@@ -24,7 +39,7 @@
   <!-- realfavicongenerator.net -->
   <link rel="shortcut icon" href="{{ site.baseurl }}/img/logo/favicon.ico">
   <meta name="application-name" content="AppImageHub">
-
+  {% seo %}
 </head>
 
 <body>
@@ -39,11 +54,11 @@
         </div>
 
         <nav>
-          <a href="{{ site.baseurl }}/">News</a>
-          <a href="{{ site.baseurl }}/apps">Apps</a>
+          <a href="{{ site.baseurl }}/">Home</a>
+          <a href="{{ site.baseurl }}/apps">All</a>
           <a href="{{ site.baseurl }}/wishlist">Wishlist</a>
+          <a href="https://web.libera.chat/#AppImage">Live support</a>
           <a href="{{ site.baseurl }}/help">Help</a>
-          <a href="{{ site.baseurl }}/readme">About</a>
         </nav>
       </header>
     </div>
@@ -60,7 +75,7 @@
       </footer>
     </div>
   </div>
-
+  
   {% include analytics.html %}
   {% include analytics-piwik.html %}
   <script type="text/javascript" src="{{ site.baseurl }}/script.js"></script>  

@@ -1,0 +1,16 @@
+{
+  "name": "PlaySignage",
+  "version": "1.12.2",
+  "description": "Play Digital Signage player",
+  "main": "main.js",
+  "author": "PlaySignage ApS <sander@playsignage.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "auto-launch": "5.0.1",
+    "electron-json-storage": "4.1.2",
+    "electron-log": "2.2.14",
+    "electron-shutdown-command": "0.0.7",
+    "electron-unhandled": "0.2.0",
+    "electron-updater": "3.0.3"
+  }
+}

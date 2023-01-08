@@ -1,0 +1,65 @@
+---
+layout: app
+
+permalink: /Around/
+description: Video calls designed for energy, ideas and action
+
+icons:
+  - Around/icons/128x128/around.png
+
+screenshots:
+  - Around/screenshot.png
+
+authors:
+
+links:
+
+desktop:
+  Desktop Entry:
+    Name: Around
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: around
+    StartupWMClass: Around
+    X-AppImage-Version: 0.52.11
+    Comment: Video calls designed for energy, ideas and action
+    Categories: AudioVideo
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+
+electron:
+  homepage: https://www.around.co
+  author:
+    name: Teamport Inc.
+    email: support@around.co
+  main: build/index.js
+  config:
+    aroundElectron: bfe7b65c
+    aroundElectronBeta: bdd9f976
+  engines:
+    node: ">=14.0.0"
+    npm: ">=7.0.0"
+  dependencies:
+    "@sentry/electron": "^2.0.4"
+    archiver: "^5.2.0"
+    awaitqueue: "^2.3.3"
+    dotenv: "^8.2.0"
+    electron-prompt: "^1.6.2"
+    electron-store: "^6.0.1"
+    electron-updater: "^4.3.8"
+    execa: "^2.1.0"
+    fs-extra: "^9.0.1"
+    get-folder-size: "^2.0.1"
+    node-machine-id: "^1.1.12"
+    push-receiver: "^2.1.1"
+    robotjs: git+https://github.com/TeamAround/robotjs.git#5fe7ddfedd2bde70cdd91095202bf480860935a7
+    semver: "^7.3.4"
+    systeminformation: 5.7.4
+  productName: Around
+---

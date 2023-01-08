@@ -4,6 +4,9 @@ layout: app
 permalink: /Swift/
 description: Communicate over the Jabber/XMPP network
 
+icons:
+  - Swift/icons/scalable/swift.svg
+
 screenshots:
   - Swift/screenshot.png
 

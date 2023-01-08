@@ -3,6 +3,10 @@ layout: app
 
 permalink: /Astroffers/
 description: Take offers to watch at given nights by the NGC2000 catalog
+license: MIT
+
+icons:
+  - Astroffers/icons/128x128/astroffers.png
 
 screenshots:
   - Astroffers/screenshot.png
@@ -25,8 +29,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: astroffers
-    X-AppImage-Version: 1.1.2
-    X-AppImage-BuildId: 48697450-398e-11a8-0d4d-f7b826d356b1
+    X-AppImage-Version: 1.1.3
+    X-AppImage-BuildId: 239a94d0-74a1-11a8-2178-8775d4828cd7
     Categories: Astronomy
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -34,6 +38,7 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
 
 electron:
   main: lib/main.js
@@ -51,7 +56,7 @@ electron:
     url: https://github.com/jayhasyee/astroffers/issues
   homepage: http://astroffers.org
   dependencies:
-    astroffers-core: 1.0.2
+    astroffers-core: 1.0.3
     classnames: 2.2.5
     clone: 2.1.1
     electron-ga: 1.0.6

@@ -1,0 +1,18 @@
+{
+  "name": "Elements",
+  "version": "1.1.6",
+  "description": "A periodic table viewer desktop app",
+  "main": "main.js",
+  "repository": "https://github.com/FlorianFe/Elements",
+  "author": {
+    "name": "Florian Fechner",
+    "email": "f_fech03@uni-muenster.de",
+    "url": "https://github.com/FlorianFe"
+  },
+  "license": "CC-0",
+  "dependencies": {
+    "electron-localshortcut": "^3.1.0",
+    "ipc": "0.0.1",
+    "path": "^0.12.7"
+  }
+}

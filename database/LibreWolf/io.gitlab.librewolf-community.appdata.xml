@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.gitlab.librewolf-community</id>
+  <launchable type="desktop-id">io.gitlab.librewolf-community.desktop</launchable>
+  <name>LibreWolf</name>
+  <developer_name>LibreWolf Community</developer_name>
+  <summary>LibreWolf Web Browser</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MPL-2.0</project_license>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source" width="1121" height="902">https://librewolf.net/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <description>
+    <p>LibreWolf</p>
+    <p>This project is an independent fork of Firefox, with the primary goals of privacy security and user freedom. It is the community run successor to LibreFox.</p>
+    <p>LibreWolf uses more than 500 privacy/security/performance settings, patches, LibreWolf-Addons (optional) and is designed to minimize data collection and telemetry as much as possible (updater, crashreporter and Firefox’s integrated addons that don’t respect privacy are removed).</p>
+    <p>LibreWolf is NOT associated with Mozilla or its products.</p>
+    <p>Features:</p>
+    <ul>
+      <li>Latest Version of Firefox: LibreWolf is compiled directly from the latest build of Firefox Stable. You will have the the latest features, and security updates.</li>
+      <li>Completely Independent Build: LibreWolf uses a completely independent build from Firefox and has its own settings, profile folder and installation path. As a result, it can be installed alongside Firefox or any other browser.</li>
+      <li>Settings protection: important settings are enforced/locked within librewolf.cfg and policies.json, those settings cannot be changed by addons/updates/LibreWolf itself or unwanted/accidental manipulation; To change those settings you can easily do it by editing librewolf.cfg and policies.json.</li>
+      <li>LibreWolf-addons: set of optional LibreWolf extensions</li>
+      <li>Statistics disabled: telemetry and similar functions are disabled</li>
+      <li>Tested settings: settings are performance aware</li>
+      <li>Recommended and code reviewed addons list</li>
+      <li>Community-Driven</li>
+      <li>And much more…</li>
+    </ul>
+  </description>
+  <releases>
+    <release version="100.0.2-1" date="2022-05-21"/>
+  </releases>
+  <keywords>
+    <keyword>librewolf</keyword>
+    <keyword>internet</keyword>
+    <keyword>web</keyword>
+  </keywords>
+  <url type="homepage">https://librewolf.net/</url>
+  <url type="bugtracker">https://gitlab.com/groups/librewolf-community/-/issues/</url>
+  <provides>
+    <id>io.gitlab.librewolf-community</id>
+  </provides>
+  <content_rating type="oars-1.1" />
+</component>

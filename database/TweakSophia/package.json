@@ -1,0 +1,16 @@
+{
+  "name": "tweaksophia",
+  "version": "1.0.7",
+  "description": "An Tweak for Sophia",
+  "main": "index.js",
+  "author": "GeovaneSchmitz <contato@geovanems.com.br>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GeovaneSchmitz/tweakSophia.git"
+  },
+  "license": "SEE LICENSE FILE",
+  "dependencies": {
+    "auto-launch": "^5.0.5",
+    "uuid": "^3.3.2"
+  }
+}

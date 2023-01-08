@@ -1,0 +1,105 @@
+---
+layout: app
+
+permalink: /Notable/
+description: The markdown-based note-taking app that doesn’t suck.
+license: MIT
+
+icons:
+  - Notable/icons/1024x1024/notable.png
+
+screenshots:
+  - Notable/screenshot.png
+
+authors:
+  - name: fabiospampinato
+    url: https://github.com/fabiospampinato
+
+links:
+  - type: GitHub
+    url: fabiospampinato/notable
+  - type: Download
+    url: https://github.com/fabiospampinato/notable/releases
+
+desktop:
+  Desktop Entry:
+    Name: Notable
+    Comment: The markdown-based note-taking app that doesn’t suck.
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: notable
+    StartupWMClass: Notable
+    X-AppImage-Version: 1.0.0
+    Categories: Utility
+    X-AppImage-BuildId: 1EiDstVK2c8davRRNpp3ZCSEf2f
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
+
+electron:
+  version: 1.0.0
+  electronWebpack:
+    staticSourceDirectory: src/renderer/template/dist
+    main:
+      webpackConfig: webpack.js
+    renderer:
+      webpackConfig: webpack.js
+  license: MIT
+  author:
+    name: Fabio Spampinato
+    email: spampinabio@gmail.com
+  homepage: https://github.com/fabiospampinato/notable
+  repository:
+    type: git
+    url: https://github.com/fabiospampinato/notable.git
+  bugs:
+    url: https://github.com/fabiospampinato/notable/issues
+  tutorial:
+    url: https://github.com/fabiospampinato/notable/tree/master/resources/tutorial/notes
+  dependencies:
+    calls-batch: "^1.0.0"
+    chokidar: "^2.0.4"
+    codemirror: git://github.com/fabiospampinato/CodeMirror.git
+    codemirror-github-light: "^0.4.2"
+    crc-32: "^1.2.0"
+    decompress: "^4.2.0"
+    electron-context-menu: "^0.10.1"
+    electron-dialog: "^1.0.0"
+    electron-is: "^3.0.0"
+    electron-localshortcut: "^3.1.0"
+    electron-store: "^2.0.0"
+    electron-updater: "^4.0.5"
+    electron-window-state: "^4.1.1"
+    enex-dump: "^1.3.0"
+    filenamify: "^2.1.0"
+    globby: "^8.0.1"
+    gray-matter: "^4.0.1"
+    highlight.js: "^9.13.1"
+    js-yaml: "^3.12.0"
+    lodash: "^4.17.11"
+    mkdirp: "^0.5.1"
+    overstated: "^1.1.2"
+    pify: "^4.0.1"
+    primer-markdown: "^3.7.11"
+    react: "^16.6.3"
+    react-codemirror2: "^5.1.0"
+    react-component-identity: "^1.0.1"
+    react-component-renderless: "^1.0.2"
+    react-dom: "^16.6.3"
+    react-router-static: "^1.0.0"
+    react-window: "^1.3.1"
+    recompose: "^0.30.0"
+    remark: "^10.0.1"
+    sha1: "^1.1.1"
+    shallowequal: "^1.1.0"
+    showdown: "^1.9.0"
+    showdown-highlight: "^2.1.3"
+    showdown-target-blank: "^1.0.2"
+    strip-markdown: "^3.0.3"
+  main: main.js
+---

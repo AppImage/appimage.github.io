@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=JKlubTV
+Exec=jklubtv
+Icon=jklubtv
+Type=Application
+Categories=Qt;Graphics;RasterGraphics;Viewer;
+Comment=Chess Round Robin Tournament Manager
+MimeType=inode/directory;
+Terminal=false
+StartupNotify=true
+NoDisplay=false
+Name[de_DE]=de.mamuck.JKlubTV.desktop
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=Signature made Thu 29 Aug 2019 07:23:09 AM UTC using RSA key ID E9BE3CC2 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=GPL-3.0

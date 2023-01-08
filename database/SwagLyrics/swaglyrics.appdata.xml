@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>swaglyrics</id>
+	<name>swaglyrics</name>
+    <metadata_license>MIT</metadata_license>
+    <project_license>GPL3+</project_license>
+    <summary>Get lyrics of currently playing Spotify song</summary>
+    <description>
+        <p> SwagLyrics contains a set of packages and libraries written in Python to dramatically enhance the music listening experience on desktop. The support libraries and utilities have also been made open source to allow for an extensible framework.</p>
+    </description>
+    <launchable type="desktop-id">swaglyrics.desktop</launchable>
+    <url type="homepage">https://swaglyrics.dev</url>
+    <provides>
+        <binary>python3.8</binary>
+    </provides>
+</component>

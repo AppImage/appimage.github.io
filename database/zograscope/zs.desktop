@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=zs
+Comment=Mainly a syntax-aware diff that also provides a number of additional tools.
+Exec=zs
+Icon=zs
+Type=Application
+Terminal=true
+Categories=Development;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|xaizek|zograscope|app-image|zs-x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Thu 02 Apr 2020 12:39:06 PM UTC using RSA key ID B05F6BE2 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=AGPL-3.0

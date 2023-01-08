@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Social Manager Tools
+Comment=Tools for social media managers
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=social-manager-tools
+X-AppImage-Version=0.5.2
+X-AppImage-BuildId=2f2e50f0-b8eb-11a8-2b18-0d7779f58300
+Categories=Network;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

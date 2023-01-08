@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>SciQLOP</id>
+	<metadata_license>CC-BY-SA-4.0</metadata_license>
+	<project_license>GPL-3.0</project_license>
+	<name>SciQLOP</name>
+	<summary>SciQLOP (SCIentific Qt application for Learning from Observations of Plasmas)</summary>
+	<description>
+		<p>Efficient and Ergonomic application to explore spacecraft in situ plasma data and create catalogs of events.</p>
+	</description>
+	<launchable type="desktop-id">SciQLOP.desktop</launchable>
+	<url type="homepage">https://github.com/LaboratoryOfPlasmaPhysics/SciQLOP</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/LaboratoryOfPlasmaPhysics/SciQLOP/master/pictures/sciqlop_screenshot.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>SciQLOP.desktop</id>
+	</provides>
+</component>

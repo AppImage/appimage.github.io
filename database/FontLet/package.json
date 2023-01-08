@@ -1,0 +1,34 @@
+{
+  "name": "FontLet",
+  "description": "A package manager for fonts bringing latest and greatest libre fonts to your desktop ",
+  "version": "0.0.29-alpha",
+  "author": "Friends of Akuru <hello@akurucollective.com>",
+  "license": "MIT",
+  "homepage": "./",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fontlet/fontlet-explorer.git"
+  },
+  "main": "build/electron.js",
+  "dependencies": {
+    "@blueprintjs/core": "^3.4.0",
+    "about-window": "^1.12.1",
+    "axios": "^0.18.0",
+    "child_process": "^1.0.2",
+    "cross-env": "^5.1.3",
+    "electron-is-dev": "^0.3.0",
+    "electron-log": "^2.2.14",
+    "electron-updater": "^3.1.2",
+    "nedb": "^1.8.0",
+    "node-notifier": "^5.2.1",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-svg": "^6.0.5",
+    "request": "^2.88.0",
+    "styled-components": "^3.4.5",
+    "sudo-prompt": "^8.2.0",
+    "update-electron-app": "^1.3.0"
+  }
+}

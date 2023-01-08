@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2018 Jürgen Mülbert -->
+<component type="desktop">
+    <id>https://github.com/jmuelbert/jmbde-QT</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>EUPL-1.2</project_license>
+    <name>jmbde</name>
+    <developer_name>Jürgen Mülbert</developer_name>
+    <update_contact>juergen.muelbert_AT_gmail.com</update_contact>
+    <summary>jmbde is a tool to collect Users, Accounts, Computer and so on in a database...</summary>
+    <translation type="qt">jmbde-QT</translation>
+    <description>
+        <p>jmbde is a tool to collect Users, Accounts, Computer and so on in a database based on QT  </p>
+    </description>
+  <launchable type="desktop-id">io.github.jmuelbert.jmbde.desktop</launchable>
+  <url type="homepage">https://github.com/jmuelbert.jmbde-QT</url>
+  <url type="bugtracker">https://github.com/jmuelbert.jmbde-QT/issues</url>
+  <url type="donation">https://jmuelbert.github.io/donate</url>
+  <provides>
+    <binary>textosaurus</binary>
+  </provides>
+  <releases>
+    <release version="0.4.22" date="2018-10-18" />
+  </releases>
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Linux version</caption>
+      <image>https://raw.githubusercontent.com/jmuelbert/jmbde-QT/master/resources/screenshots/jmbde-QT-linux.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Windows version</caption>
+      <image>https://raw.githubusercontent.com/jmuelbert/jmbde-QT/master/resources/screenshots/jmbde-QT.png</image>
+    </screenshot>
+  </screenshots>
+</component>

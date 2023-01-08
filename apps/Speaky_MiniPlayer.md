@@ -1,0 +1,113 @@
+---
+layout: app
+
+permalink: /Speaky_MiniPlayer/
+description: A miniplayer with a synthetic radio speaker for online streaming radio services
+
+icons:
+  - Speaky_MiniPlayer/icons/128x128/speaky-miniplayer.png
+
+screenshots:
+  - Speaky_MiniPlayer/screenshot.png
+
+authors:
+  - name: fjrd84
+    url: https://github.com/fjrd84
+
+links:
+  - type: GitHub
+    url: fjrd84/speaky-miniplayer
+  - type: Download
+    url: https://github.com/fjrd84/speaky-miniplayer/releases
+
+desktop:
+  Desktop Entry:
+    Name: Speaky MiniPlayer
+    Comment: A miniplayer with a synthetic radio speaker for online streaming radio
+      services
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: speaky-miniplayer
+    StartupWMClass: Speaky MiniPlayer
+    X-AppImage-Version: 0.0.1
+    Categories: Development
+    X-AppImage-BuildId: 1FakQL8rky0HN9VutdBCn7XZY4p
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+
+electron:
+  description: A miniplayer with a synthetic radio speaker for online streaming radio
+    services
+  lint-staged:
+    "*.{js,jsx}":
+    - cross-env NODE_ENV=development eslint --cache --format=pretty
+    - prettier --ignore-path .eslintignore --single-quote --write
+    - git add
+    "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}":
+    - prettier --ignore-path .eslintignore --parser json --write
+    - git add
+    "*.{css,scss}":
+    - stylelint --ignore-path .eslintignore --syntax scss --fix
+    - prettier --ignore-path .eslintignore --single-quote --write
+    - git add
+    "*.{yml,md}":
+    - prettier --ignore-path .eslintignore --single-quote --write
+    - git add
+  main: "./app/main.prod.js"
+  repository:
+    type: git
+    url: git+https://github.com/fjrd84/speaky-miniplayer.git
+  author:
+    name: F. Javier R. Donado
+    email: fjrd84@gmail.com
+    url: https://github.com/fjrd84
+  license: MIT
+  bugs:
+    url: https://github.com/fjrd84/speaky-miniplayer/issues
+  homepage: https://github.com/fjrd84/virtual-radio-speaker#readme
+  jest:
+    testURL: http://localhost/
+    moduleNameMapper:
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js"
+      "\\.(css|less|sass|scss)$": identity-obj-proxy
+    moduleFileExtensions:
+    - js
+    - jsx
+    - json
+    transform:
+      "^.+\\.jsx?$": babel-jest
+    setupFiles:
+    - "./internals/scripts/CheckBuiltsExist.js"
+  dependencies:
+    "@fortawesome/fontawesome-free": "^5.5.0"
+    devtron: "^1.4.0"
+    dotenv: "^6.2.0"
+    electron-debug: "^2.0.0"
+    electron-log: "^2.2.17"
+    electron-updater: "^4.0.0"
+    history: "^4.7.2"
+    node-notifier: "^5.3.0"
+    raw-loader: "^1.0.0"
+    react: "^16.6.3"
+    react-dom: "^16.6.3"
+    react-fontawesome: "^1.6.1"
+    react-hot-loader: "^4.3.12"
+    react-redux: "^5.1.1"
+    react-router: "^4.3.1"
+    react-router-dom: "^4.3.1"
+    react-svg: "^7.2.2"
+    redux: "^4.0.1"
+    redux-thunk: "^2.3.0"
+    source-map-support: "^0.5.9"
+    svg-inline-loader: "^0.8.0"
+  devEngines:
+    node: ">=7.x"
+    npm: ">=4.x"
+    yarn: ">=0.21.3"
+  browserslist: electron 1.6
+---

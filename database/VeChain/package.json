@@ -1,0 +1,12 @@
+{
+  "name": "org.vechain.sync",
+  "version": "1.0.2",
+  "author": "vechain.org",
+  "description": "A browser that empowers DApps on VeChain",
+  "license": "LGPL-3.0",
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "@vechain/connex": "^1.0.0",
+    "thor-devkit": "~0.8.1"
+  }
+}

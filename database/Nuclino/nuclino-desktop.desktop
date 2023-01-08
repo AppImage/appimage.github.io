@@ -5,9 +5,10 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=nuclino-desktop
-X-AppImage-Version=1.0.1
-X-AppImage-BuildId=e9023060-3299-11a8-1b64-8790ffb27a05
+StartupWMClass=Nuclino
+X-AppImage-Version=1.1.1
 Categories=Office;ProjectManagement;
+X-AppImage-BuildId=1EcrXHnGOz6970MJ6iE3n2eydjG
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

@@ -1,0 +1,27 @@
+{
+  "name": "elcalc",
+  "version": "5.0.0-rc.2",
+  "description": "Simple, Cross-Platform calculator built with Electron",
+  "license": "MIT",
+  "main": "src/main.js",
+  "repository": "elcalc/elcalc",
+  "author": {
+    "name": "Antoni Kepinski",
+    "email": "a@kepinski.me",
+    "url": "kepinski.me"
+  },
+  "dependencies": {
+    "electron-timber": "^0.5.1",
+    "mathjs": "^5.1.1"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-xo",
+    "rules": {
+      "property-no-vendor-prefix": null,
+      "property-blacklist": null,
+      "no-duplicate-selectors": null,
+      "declaration-property-value-blacklist": null,
+      "font-weight-notation": null
+    }
+  }
+}

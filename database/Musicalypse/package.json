@@ -1,0 +1,14 @@
+{
+  "name": "Musicalypse",
+  "description": "A modern audio player built with Web technologies.",
+  "version": "0.5.1",
+  "author": "Thomas Gambet <thomas.gambet@gmail.com> (https://github.com/tgambet/)",
+  "license": "MIT",
+  "main": "target/electron/out-tsc/main.js",
+  "private": true,
+  "dependencies": {},
+  "engines": {
+    "node": "8.11.1",
+    "npm": "5.7.1"
+  }
+}

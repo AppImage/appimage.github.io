@@ -1,0 +1,20 @@
+{
+  "name": "PostyBirb",
+  "version": "0.9.1",
+  "description": "Multimedia crossposter for multimedia websites",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://mvdicarlo@github.com/mvdicarlo/postybirb.git"
+  },
+  "author": "Michael DiCarlo (michael.v.dicarlo@gmail.com)",
+  "license": "BSD-3",
+  "homepage": "",
+  "dependencies": {
+    "electron-context-menu": "^0.9.1",
+    "electron-log": "^2.2.14",
+    "electron-updater": "^2.21.10",
+    "express": "^4.16.3",
+    "store": "^2.0.12"
+  }
+}

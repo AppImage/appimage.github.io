@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Opentrons
+Comment=Opentrons desktop application
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=opentrons
+StartupWMClass=Opentrons
+X-AppImage-Version=3.5.1.12362
+Categories=Science;
+X-AppImage-BuildId=1C7m57UNpouhaL063kIKBojNlHr
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

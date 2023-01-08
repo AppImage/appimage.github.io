@@ -1,0 +1,37 @@
+{
+  "name": "bypass-cors",
+  "description": "Unlock browser's full potential!",
+  "version": "0.1.0",
+  "author": "Christopher Chamaletsos",
+  "repository": "https://github.com/chrishham/BypassCors",
+  "private": true,
+  "dependencies": {
+    "auto-launch": "^5.0.5",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "cors": "^2.8.5",
+    "electron-settings": "^3.2.0",
+    "electron-updater": "^4.0.6",
+    "jquery": "^3.3.1",
+    "opn": "^5.4.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "vue": "^2.5.22",
+    "vue-notifyjs": "^0.4.3",
+    "vue-router": "^3.0.1"
+  },
+  "resolutions": {
+    "terser": "3.14.1"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "main": "background.js"
+}

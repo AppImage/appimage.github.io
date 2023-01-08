@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>tageditor</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-2</project_license>
+  <name>Tag Editor</name>
+  <summary>A tageditor with Qt GUI and command line interface. Supports MP4 (iTunes), ID3, Vorbis, Opus, FLAC and Matroska</summary>
+  <description>
+  ​  <p>​A tag editor with Qt GUI and command-line interface.</p>
+  ​  <p>Supports:</p>
+  ​  <ul>
+      ​<li>iTunes-style MP4/M4A tags (MP4-DASH is supported)</li>
+      <li>ID3v1 and ID3v2 tags (conversion between ID3v1 and different versions of ID3v2 is possible)</li>
+      <li>Vorbis, Opus and FLAC comments in Ogg streams (cover art via "METADATA_BLOCK_PICTURE" is supported)</li>
+      <li>Vorbis comments and "METADATA_BLOCK_PICTURE" in raw FLAC streams</li>
+      <li>Matroska/WebM tags and attachments</li>
+  ​  </ul>
+  ​  <p>Additional features:</p>
+  ​  <ul>
+      ​<li>extensive options regarding the file layout (padding, position of tags)</li>
+      ​<li>displaying technical information such as the ID, format, language, bitrate, duration, size, timestamps, sampling frequency, FPS and other information of the tracks</li>
+      ​<li>allows inspecting and validating the element structure of MP4 and Matroska files</li>
+    </ul>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window, dark theme under Plasma 5</caption>
+      <image>https://github.com/Martchus/tageditor/blob/master/resources/screenshots/mainwindow-1366x768.png</image>
+    </screenshot>
+    <screenshot>
+        <caption>Main window, under Openbox/qt5ct with Breeze theme</caption>
+        <image>https://github.com/Martchus/tageditor/blob/master/resources/screenshots/mainwindow.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/Martchus/tageditor</url>
+  <url type="bugtracker">https://github.com/Martchus/tageditor/issues</url>
+  <launchable type="desktop-id">tageditor.desktop</launchable>
+  <developer_name>Martchus</developer_name>
+  <provides>
+    <binary>tageditor</binary>
+  </provides>
+  <releases>
+    <release version="3.1.3"/>
+  </releases>
+</component>

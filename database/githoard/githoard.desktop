@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=githoard
-X-AppImage-Version=0.3.4.10
-X-AppImage-BuildId=1c6a1da0-a5f0-11a7-2e11-1126c17da5f6
+X-AppImage-Version=0.3.7.16
+X-AppImage-BuildId=e11a36f0-4990-11a8-26d8-e1b18e2d29de
 Categories=Development;
 
 [AppImageHub]

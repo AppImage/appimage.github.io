@@ -1,0 +1,29 @@
+{
+  "name": "doki-doki-mod-manager",
+  "productName": "Doki Doki Mod Manager!",
+  "description": "Mod Manager for Doki Doki Literature Club!",
+  "author": "Zudo",
+  "version": "2.9.1",
+  "homepage": "https://doki.space",
+  "main": "src/common/main.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
+    "@types/request": "^2.47.1",
+    "@zudo/unzipper": "0.0.4",
+    "bytes": "^3.0.0",
+    "chalk": "^2.4.1",
+    "chmodr": "latest",
+    "discord-rich-presence": "^0.0.7",
+    "electron-is-dev": "latest",
+    "electron-updater": "^3.1.1",
+    "fs-extra": "latest",
+    "fuse.js": "^3.2.1",
+    "mousetrap": "^1.6.2",
+    "normalize-url": "^3.2.0",
+    "request": "^2.87.0",
+    "sanitize-filename": "latest",
+    "semver": "latest",
+    "sha": "latest",
+    "vue": "^2.5.16"
+  }
+}

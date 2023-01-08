@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>steamcad</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0</project_license>
+	<name>SteamCAD</name>
+	<summary> 2D CAD especially designed to draw steam locomotives</summary>
+	<description>
+		<p>SteamCAD is a drawing tool especially designed to create drawings of steam locomotives. The software is very lightweight, the user interface is minimalistic. As a result, the drawing area is not obscured by controls and can occupy the whole screen. This is what makes SteamCAD different from any other CAD. StreamCAD is focused on productivity, not on the fancy look.</p>
+	</description>
+	<launchable type="desktop-id">steamcad.desktop</launchable>
+	<url type="homepage">https://github.com/oskardolch/SteamCAD</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://user-images.githubusercontent.com/2480569/51800646-28ccec00-222a-11e9-9fd4-aa840fb2aae0.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>steamcad.desktop</id>
+	</provides>
+</component>

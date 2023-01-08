@@ -1,0 +1,39 @@
+---
+layout: app
+
+permalink: /Rufus/
+description: Logiciel de gestion de cabinet d'Ophtalmologie
+
+icons:
+  - Rufus/icons/256x256/rufus.png
+
+screenshots:
+  - Rufus/screenshot.png
+
+authors:
+  - name: ukinoki
+    url: https://github.com/ukinoki
+
+links:
+  - type: GitHub
+    url: ukinoki/Rufus
+  - type: Download
+    url: https://github.com/ukinoki/Rufus/releases
+
+desktop:
+  Desktop Entry:
+    Type: Application
+    Name: Rufus
+    Exec: Rufus
+    Icon: rufus
+    Comment: Logiciel de gestion de cabinet d'Ophtalmologie
+    Categories: Office
+    X-AppImage-Version: dc4af48
+  AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|ukinoki|Rufus|continuous|Rufus*-x86_64.AppImage.zsync
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+---

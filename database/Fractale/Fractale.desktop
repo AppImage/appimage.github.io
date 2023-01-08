@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=Fractale
+Comment=Modélisation 2D de la fractale de Von Koch avec différentes variantes
+Exec=Fractale
+Icon=Fractale
+Categories=Science;
+X-AppImage-Version=cadfc6e
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|PJK136|Fractale|continuous|Fractale*-x86_64.AppImage.zsync
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=GPL-3.0

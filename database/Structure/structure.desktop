@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Structure
+Comment=Structure. For bookmarks, notes and soon everything else.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=structure
+X-AppImage-Version=0.16.1
+X-AppImage-BuildId=7ba1d680-6f0a-11a8-2f58-a7e9cd90694b
+Categories=Office;

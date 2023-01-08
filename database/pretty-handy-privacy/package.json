@@ -1,0 +1,19 @@
+{
+  "name": "pretty-handy-privacy",
+  "version": "0.1.1",
+  "description": "User interface for basic encryption tasks.",
+  "main": "main.js",
+  "repository": "",
+  "author": {
+    "name": "Robert Byrne",
+    "email": "bobbyrne01@gmail.com"
+  },
+  "homepage": "https://bobbyrne01.github.io/pretty-handy-privacy/",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "electron-log": "^2.2.17",
+    "electron-store": "^2.0.0",
+    "node-notifier": "^5.3.0",
+    "openpgp": "^4.2.1"
+  }
+}

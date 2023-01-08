@@ -3,7 +3,9 @@ layout: app
 
 permalink: /tweet-tray/
 description: Tweet quickly from the desktop without any more distractions.
-license: MIT
+
+icons:
+  - tweet-tray/icons/128x128/tweet-tray.png
 
 screenshots:
   - tweet-tray/screenshot.png
@@ -26,8 +28,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: tweet-tray
-    X-AppImage-Version: 1.1.0
-    X-AppImage-BuildId: 9e514130-2e40-11a8-3c18-cd69d2b01007
+    X-AppImage-Version: 1.1.3
+    X-AppImage-BuildId: 6c903f50-3d79-11a8-3a40-df7614ff03cc
     Categories: Development
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -35,7 +37,6 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: MIT
 
 electron:
   description: Tweet quickly from the desktop without any more distractions.
@@ -45,5 +46,6 @@ electron:
     email: jonathontoon@gmail.com
     url: https://github.com/jonathontoon
   license: MIT
-  dependencies: {}
+  dependencies:
+    yargs: "^11.0.0"
 ---

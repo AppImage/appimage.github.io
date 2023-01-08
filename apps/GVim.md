@@ -4,6 +4,9 @@ layout: app
 permalink: /GVim/
 description: Edit text files
 
+icons:
+  - GVim/icons/48x48/gvim.png
+
 screenshots:
   - GVim/screenshot.png
 
@@ -19,9 +22,13 @@ links:
 
 desktop:
   Desktop Entry:
-    Name: GVim
+    Name: gVim
     GenericName: Text Editor
+    GenericName[da]: Teksteditor
     GenericName[de]: Texteditor
+    GenericName[eo]: Tekstoredaktilo
+    GenericName[fr]: Éditeur de texte
+    GenericName[pl]: Edytor tekstu
     Comment: Edit text files
     Comment[af]: Redigeer tekslêers
     Comment[am]: የጽሑፍ ፋይሎች ያስተካክሉ
@@ -34,17 +41,18 @@ desktop:
     Comment[ca]: Edita fitxers de text
     Comment[cs]: Úprava textových souborů
     Comment[cy]: Golygu ffeiliau testun
-    Comment[da]: Redigér tekstfiler
+    Comment[da]: Rediger tekstfiler
     Comment[de]: Textdateien bearbeiten
     Comment[el]: Επεξεργασία αρχείων κειμένου
     Comment[en_CA]: Edit text files
     Comment[en_GB]: Edit text files
+    Comment[eo]: Redakti tekstajn dosierojn
     Comment[es]: Edita archivos de texto
     Comment[et]: Redigeeri tekstifaile
     Comment[eu]: Editatu testu-fitxategiak
     Comment[fa]: ویرایش پرونده‌های متنی
     Comment[fi]: Muokkaa tekstitiedostoja
-    Comment[fr]: Édite des fichiers texte
+    Comment[fr]: Éditer des fichiers textes
     Comment[ga]: Eagar comhad Téacs
     Comment[gu]: લખાણ ફાઇલોમાં ફેરફાર કરો
     Comment[he]: ערוך קבצי טקסט
@@ -70,7 +78,7 @@ desktop:
     Comment[no]: Rediger tekstfiler
     Comment[or]: ପାଠ୍ଯ ଫାଇଲଗୁଡ଼ିକୁ ସମ୍ପାଦନ କରନ୍ତୁ
     Comment[pa]: ਪਾਠ ਫਾਇਲਾਂ ਸੰਪਾਦਨ
-    Comment[pl]: Edytor plików tekstowych
+    Comment[pl]: Edytuj pliki tekstowe
     Comment[pt]: Editar ficheiros de texto
     Comment[pt_BR]: Edite arquivos de texto
     Comment[ro]: Editare fişiere text
@@ -91,7 +99,7 @@ desktop:
     Comment[zh_CN]: 编辑文本文件
     Comment[zh_TW]: 編輯文字檔
     TryExec: gvim
-    Exec: gvim.wrapper -f %F
+    Exec: gvim -f %F
     Terminal: false
     Type: Application
     Keywords: Text
@@ -100,7 +108,6 @@ desktop:
     StartupNotify: true
     MimeType: text/english
   AppImageHub:
-    X-AppImage-UpdateInformation: 
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
 ---

@@ -1,0 +1,13 @@
+{
+  "name": "konjure-desktop-app",
+  "productName": "konjure-desktop-app",
+  "version": "1.0.0",
+  "description": "Konjures primary desktop application, used to build and upload your website to the decentralized web!",
+  "main": "./main.prod.js",
+  "author": "Konjure LLC",
+  "license": "MIT",
+  "dependencies": {
+    "ipfs": "^0.32.3",
+    "ipfsd-ctl": "^0.39.2"
+  }
+}

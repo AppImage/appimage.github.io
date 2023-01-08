@@ -5,21 +5,26 @@ permalink: /VLC/
 description: VLC media player, the open-source multimedia player
 license: GPL-2.0+
 
+icons:
+  - VLC/icons/128x128/vlc.png
+screenshots:
+- http://images.videolan.org/vlc/screenshots/2.0.0/vlc-2.0-poney.jpg
+
 authors:
-  - name: darealshinji
-    url: https://github.com/darealshinji
+  - name: cmatomic
+    url: https://github.com/cmatomic
 
 links:
   - type: GitHub
-    url: darealshinji/vlc-AppImage
+    url: cmatomic/VLCplayer-AppImage
   - type: Download
-    url: https://github.com/darealshinji/vlc-AppImage/releases
+    url: https://github.com/cmatomic/VLCplayer-AppImage/releases
 
 desktop:
   Desktop Entry:
     Version: 1.0
-    Name: VLC media player
-    GenericName: Media player
+    Name: VLC
+    GenericName: VLC media player
     Comment: Read, capture, broadcast your multimedia streams
     Name[bn]: VLC মিডিয়া প্লেয়ার
     Comment[bn]: আপনার মাল্টিমিডিয়া স্ট্রীম পড়ুন, ধরে রাখুন এবং ছড়িয়ে দিন
@@ -29,6 +34,9 @@ desktop:
     Name[ca]: Reproductor multimèdia VLC
     GenericName[ca]: Reproductor multimèdia
     Comment[ca]: Reproduïu, captureu i difoneu fluxos multimèdia
+    Name[da]: VLC media player
+    GenericName[da]: Medieafspiller
+    Comment[da]: Læs, indspil, transmittér dine multimediestreams
     Name[de]: VLC Media Player
     GenericName[de]: Medienwiedergabe
     Comment[de]: Wiedergabe, Aufnahme und Verbreitung Ihrer Multimedia-Streams
@@ -100,8 +108,8 @@ desktop:
     Name[zh_CN]: VLC media player
     GenericName[zh_CN]: 媒体播放器
     Comment[zh_CN]: 为您读取、捕获或发送多媒体流
-    Exec: vlc --started-from-file %U
-    TryExec: vlc
+    Exec: vlc.wrapper
+    TryExec: vlc.wrapper
     Icon: vlc
     Terminal: false
     Type: Application
@@ -109,16 +117,101 @@ desktop:
     MimeType: video/dv
     X-KDE-Protocols: ftp,http,https,mms,rtmp,rtsp,sftp,smb
     Keywords: Player
+    X-AppImage-Version: 3.0.11
   AppImageHub:
-    X-AppImage-UpdateInformation: false
+    X-AppImage-UpdateInformation: gh-releases-zsync|cmatomic|VLCplayer-AppImage|stable|VLC_media_player.*3.0.11*-x86_64.AppImage.zsync
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
 
 appdata:
   Type: desktop-application
-  ID: vlc.desktop
+  ID: org.videolan.vlc
   Name:
+    kab: VLC
+    lv: VLC
+    af: VLC
+    tr: VLC
+    ast: VLC
+    id: VLC
+    an: VLC
+    pt_BR: VLC
+    el: VLC
+    ks_IN: VLC
+    ca@valencia: VLC
+    ar: VLC
+    es: VLC
+    et: VLC
+    eu: VLC
+    ml: വിഎല്‍സി
+    mn: VLC
+    mai: VLC
+    it: VLC
+    ug: VLC
+    mr: व्हीएलसी
+    ms: VLC
+    is: VLC
+    uk: VLC
+    be: VLC
+    fa: VLC
+    zh_CN: VLC
+    ja: VLC
+    fi: VLC
+    bn: VLC
+    nb: VLC
+    uz: VLC
+    bs: VLC
+    ne: VLC
+    br: VLC
+    fr: VLC
+    brx: VLC
+    nl: VLC
+    nn: VLC
+    fy: VLC
+    es_MX: VLC
+    ca: VLC
+    ro: VLC
+    as_IN: VLC
+    ga: VLC
+    ru: VLC
+    gd: VLC
+    co: VLC
+    gl: VLC
+    oc: VLC
+    cs: VLC
+    bn_IN: VLC
+    kk: VLC
+    km: VLC
+    kn: VLC
+    ko: VLC
+    wa: VLC
+    gu: VLC
+    cy: VLC
+    si: VLC
+    am_ET: ቪኤልሲ
+    sk: VLC
+    sl: VLC
+    pt_PT: VLC
     C: VLC
+    ky: VLC
+    da: VLC
+    sr: VLC
+    zh_TW: VLC
+    de: VLC
+    sv: VLC
+    he: VLC
+    hi: VLC
+    pa: VLC
+    ta: VLC
+    hr: VLC
+    te: VLC
+    hu: VLC
+    pl: VLC
+    th: VLC
+    hy: VLC
+    lt: VLC
   Summary:
     C: VLC media player, the open-source multimedia player
   Description:
@@ -134,13 +227,28 @@ appdata:
     homepage: https://www.videolan.org/vlc/
     bugtracker: https://trac.videolan.org/vlc/
     donation: https://www.videolan.org/contribute.html
+  Launchable:
+    desktop-id:
+    - vlc.desktop
+  Provides:
+    libraries:
+    - libvlc.so.5
   Screenshots:
   - default: true
     thumbnails: []
+    source-image:
+      url: http://images.videolan.org/vlc/screenshots/2.0.0/vlc-2.0-poney.jpg
+      lang: C
   - default: true
     thumbnails: []
+    source-image:
+      url: http://images.videolan.org/vlc/screenshots/2.0.0/vlc-2.0-gnome3-open.jpg
+      lang: C
   - default: true
     thumbnails: []
+    source-image:
+      url: http://images.videolan.org/vlc/screenshots/2.0.0/vlc-2.0-gnome3-debian.jpg
+      lang: C
   Releases:
-  - version: 2.2.6
+  - version: 3.0.11
 ---

@@ -1,14 +1,22 @@
 ---
+# This template holds the boilerplate before and after the application details
+# on the product detail pages, but not the application-specific information itself
 layout: default
 ---
 
 {% assign post = page %}
 
+<p>
+  <a href="/">{{ site.name }}</a> > <a href="/categories/{{ page.desktop["Desktop Entry"].Categories }}">{{ page.desktop["Desktop Entry"].Categories }}</a> > {{ page.name | remove: ".md" }}
+</p>
+
 <article class="post">
 
   <header>
-
-    <h1 id="{{ post.title }}">{% if page.title %}{{ page.title }}{% else %}{{ page.name | remove: ".md" }}{% endif %}</h1>
+ 
+    <h1 style="text-align:center" id="{{ post.title | replace: "_", " " }}">
+      {% if post.icons[0] %}<img height="128" width="128" src="https://appimage.github.io/database/{{post.icons[0]}}"/><br/>{% else %}{% endif %}
+      {% if page.title %}{{ page.title | replace: "_", " " }}{% else %}{{ page.name | remove: ".md" | replace: "_", " " }}{% endif %}</h1>
     {% if post.generic %}<p>{{ post.generic }}</p>{% endif %}
 
   </header>
@@ -18,21 +26,6 @@ layout: default
     {{ content }}
 
   </div>
-
-  <footer>
-
-    <a class="date" href="https://github.com/AppImage/AppImageHub/commits/master/{{ page.path }}">
-      <span class="octicon octicon-calendar"></span>
-        {% if post.created != post.updated %}
-          Published {{ post.created }}, last updated {{ post.updated }}
-        {% else %}
-          Published {{ post.created }}
-        {% endif %}
-    </a>
-
-    <p>Improve this entry! Application authors may want to provide their own metadata. This is possible through AppStream, by including an <a href="https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps">AppStream metainfo file</a> inside the AppImage in the <pre><code>usr/share/metainfo</code></pre> directory.</p>
-
-  </footer>
 
   {% include disqus.html %}
 </article>

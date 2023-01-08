@@ -1,7 +1,11 @@
+{% if post.layout != 'xxxxxxxx' %}
+  <a style="font-weight:bold" href="{{ site.baseurl }}{{ post.url }}">
+{% endif %}
+
 {% if post.screenshots %}
   <div id="screenshots">
     {% for screenshot in post.screenshots %}
-      <img src="{{ site.baseurl }}/img/windows/placeholder.png" data-src="{% if screenshot contains '://' %}{{screenshot}}{% else %}{{ site.baseurl }}/database/{{ screenshot }}{% endif %}" alt="Screenshot of {{ post.title }}" />
+      <img src="{{ site.baseurl }}/img/windows/placeholder.png" data-src="{% if screenshot contains '://' %}{{screenshot}}{% else %}{{ site.baseurl }}/database/{{ screenshot }}{% endif %}" alt="Screenshot of {{ page.name | remove: ".md" }}" />
       <noscript>
         <img src="{% if screenshot contains '://' %}{{screenshot}}{% else %}{{ site.baseurl }}/database/{{ screenshot }}{% endif %}" alt="Screenshot" />
       </noscript>
@@ -21,6 +25,10 @@
   </p>
 {% endif %}
 
+{% if post.layout != 'xxxxxxxx' %}
+  </a>
+{% endif %}
+  
 {% if post.appdata.Description.C %}
   <blockquote>{{ post.appdata.Description.C }}</blockquote>
 {% elsif post.description %}
@@ -34,9 +42,6 @@
   </p>
 {% endif %}
 
-{% if post.links %}
-  <p id="links">
-    <b>Links</b>:
-    {% include list_links.html %}
-  </p>
-{% endif %}
+<p id="links">
+  {% include list_links.html %}
+</p>

@@ -1,0 +1,120 @@
+---
+layout: app
+
+permalink: /Scrum-Retroboard/
+description: Electron application based on React, React Router, Webpack, React Hot Loader for rapid application development
+license: MIT
+
+icons:
+  - Scrum-Retroboard/icons/96x96/scrum-retroboard.png
+
+screenshots:
+  - Scrum-Retroboard/screenshot.png
+
+authors:
+  - name: stefanDeveloper
+    url: https://github.com/stefanDeveloper
+
+links:
+  - type: GitHub
+    url: stefanDeveloper/scrum-retroboard
+  - type: Download
+    url: https://github.com/stefanDeveloper/scrum-retroboard/releases
+
+desktop:
+  Desktop Entry:
+    Name: Scrum-Retroboard
+    Comment: Electron application based on React, React Router, Webpack, React Hot Loader
+      for rapid application development
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: scrum-retroboard
+    StartupWMClass: Scrum-Retroboard
+    X-AppImage-Version: 0.1.2.37
+    Categories: Development
+    X-AppImage-BuildId: 1KlMIDUDVZmBalooX6dQGmq8byh
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
+
+electron:
+  description: Electron application based on React, React Router, Webpack, React Hot
+    Loader for rapid application development
+  lint-staged:
+    "*.{js,jsx}":
+    - cross-env NODE_ENV=development eslint --cache --format=pretty
+    - prettier --ignore-path .eslintignore --single-quote --write
+    - git add
+    "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}":
+    - prettier --ignore-path .eslintignore --parser json --write
+    - git add
+    "*.{css,scss}":
+    - stylelint --ignore-path .eslintignore --syntax scss --fix
+    - prettier --ignore-path .eslintignore --single-quote --write
+    - git add
+    "*.{yml,md}":
+    - prettier --ignore-path .eslintignore --single-quote --write
+    - git add
+  main: "./app/main.prod.js"
+  repository:
+    type: git
+    url: git+https://github.com/stefanDeveloper/scrum-retroboard.git
+  author:
+    name: Stefan Machmeier
+    email: stefan-machmeier@outlook.com
+  license: MIT
+  bugs:
+    url: https://github.com/stefanDeveloper/scrum-retroboard/issues
+  homepage: https://github.com/stefanDeveloper/scrum-retroboard#readme
+  jest:
+    testURL: http://localhost/
+    moduleNameMapper:
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js"
+      "\\.(css|less|sass|scss)$": identity-obj-proxy
+    moduleFileExtensions:
+    - js
+    - jsx
+    - json
+    transform:
+      "^.+\\.jsx?$": babel-jest
+    setupFiles:
+    - "./internals/scripts/CheckBuiltsExist.js"
+  dependencies:
+    "@fortawesome/fontawesome-free": "^5.8.1"
+    connected-react-router: "^6.3.2"
+    core-js: '2'
+    devtron: "^1.4.0"
+    electron-debug: "^2.1.0"
+    electron-log: "^3.0.4"
+    electron-updater: "^4.0.6"
+    history: "^4.9.0"
+    react: "^16.8.6"
+    react-dom: "^16.8.6"
+    react-hot-loader: "^4.8.2"
+    react-redux: "^6.0.1"
+    react-router: "^5.0.0"
+    react-router-dom: "^5.0.0"
+    redux: "^4.0.1"
+    redux-thunk: "^2.3.0"
+    source-map-support: "^0.5.11"
+    jquery: "^3.3.1"
+    os: "^0.1.1"
+    react-avatar-editor: "^11.0.4"
+    react-dropzone: "^8.0.3"
+    react-modal: "^3.8.1"
+    reactstrap: "^6.5.0"
+    semantic-ui-react: "^0.83.0"
+  devEngines:
+    node: ">=7.x"
+    npm: ">=4.x"
+    yarn: ">=0.21.3"
+  browserslist: electron 1.6
+  husky:
+    hooks:
+      pre-commit: lint-staged
+---

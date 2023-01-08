@@ -1,0 +1,10 @@
+{
+  "name": "MDL",
+  "productName": "MDL",
+  "author": "MDL.life",
+  "main": "src/electron-main.js",
+  "version": "0.25.1",
+  "description": "MDL wallet",
+  "license": "MIT",
+  "dependencies": {}
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Marvin",
+  "description": "Amazing Marvin desktop app",
+  "main": "index.js",
+  "version": "1.31.1",
+  "author": "Amazing Marvin <amazingmarvinapp@gmail.com>",
+  "homepage": "https://amazingmarvin.com"
+}

@@ -4,6 +4,9 @@ layout: app
 permalink: /QCTools/
 description: QCTools
 
+icons:
+  - QCTools/icons/562x421/qctools.png
+
 screenshots:
   - QCTools/screenshot.png
 

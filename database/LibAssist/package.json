@@ -1,0 +1,23 @@
+{
+  "name": "libassist",
+  "version": "0.2.1",
+  "description": "Library Assistant",
+  "productName": "LibAssist",
+  "main": "dist/app.js",
+  "author": "Daniel Noon <delpinothedragon1@hotmail.com> (https://supermegadex.net)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/supermegadex/libassist-client.git"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "ncp": "^2.0.0",
+    "tempy": "^0.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

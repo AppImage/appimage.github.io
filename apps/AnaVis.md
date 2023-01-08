@@ -5,6 +5,9 @@ permalink: /AnaVis/
 description: AnaVis is a tool to visualize musical form
 license: MIT
 
+icons:
+  - AnaVis/icons/128x128/anavis.png
+
 screenshots:
   - AnaVis/screenshot.png
 
@@ -26,52 +29,51 @@ desktop:
     Terminal: false
     Type: Application
     Icon: anavis
-    X-AppImage-Version: 0.0.0-beta.2.50
-    X-AppImage-BuildId: 6b12d800-ecf1-11a7-2d99-6b1ab48d9d14
+    X-AppImage-Version: 2.0.0-beta.11.176
+    X-AppImage-BuildId: f22bdfc0-4c01-11a8-070a-ed316eee8b96
     Categories: Education
   AppImageHub:
-    X-AppImage-UpdateInformation: 
-    X-AppImage-Type: 1
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
     X-AppImage-Payload-License: MIT
 
 electron:
-  version: 0.0.0-beta.2
-  homepage: http://anavis.de
+  version: 2.0.0-beta.11
   author: The AnaVis Team <info@anavis.de>
-  contributors:
-  - Andreas Helmberger <public@ahelmberger.de>
-  - Ulrich Kaiser <ulrich.kaiser@hmtm.de>
-  private: true
   license: MIT
-  main: server/main.js
-  electronVersion: 1.0.0
+  repository:
+    type: git
+    url: https://github.com/learningmedia/anavis.git
+  private: true
+  main: app/server/main.js
   dependencies:
-    async: "^2.1.5"
-    bignumber.js: "^4.0.1"
-    color: "^1.0.3"
-    color-hash: "^1.0.3"
-    devtron: "^1.4.0"
-    drag-and-drop-files: "^0.0.1"
-    electron-debug: "^1.0.1"
-    electron-is-dev: "^0.1.2"
-    font-awesome: "^4.7.0"
-    glob: "^7.1.1"
-    intempo: "^1.1.0"
-    knockout: "^3.4.0"
-    knockout-mapping: "^2.6.0"
-    less: "^2.7.1"
-    lodash: "^4.16.4"
-    mkdirp: "^0.5.1"
-    normalize.css: "^6.0.0"
-    rimraf: "^2.5.4"
-    tiny-defer: "^2.0.2"
-    uuid: "^3.0.1"
-    xml2js: "^0.4.17"
-    yauzl: "^2.7.0"
-    yazl: "^2.4.2"
-  config:
-    url: index.html
-    update:
-      url: false
+    async: "~2.6.0"
+    bignumber.js: "~5.0.0"
+    color: "~2.0.1"
+    color-hash: "~1.0.3"
+    devtron: "~1.4.0"
+    drag-and-drop-files: "~0.0.1"
+    electron-debug: "~1.4.0"
+    electron-is-dev: "~0.3.0"
+    electron-log: "~2.2.14"
+    font-awesome: "~4.7.0"
+    glob: "~7.1.2"
+    intempo: "~1.1.0"
+    is-electron-renderer: "~2.0.1"
+    knockout: "~3.4.2"
+    knockout-mapping: "~2.6.0"
+    less: "~2.7.3"
+    mkdirp: "~0.5.1"
+    normalize.css: "~7.0.0"
+    rimraf: "~2.6.2"
+    semver: "~5.4.1"
+    superagent: "~3.8.2"
+    tiny-defer: "~2.0.2"
+    uuid: "~3.1.0"
+    xml2js: "~0.4.19"
+    yauzl: "~2.9.1"
+    yazl: "~2.4.3"
 ---

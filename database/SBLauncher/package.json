@@ -1,0 +1,27 @@
+{
+  "name": "samboylauncher",
+  "version": "1.0.9",
+  "description": "Minecraft Launcher - see https://launcher.samboycoding.me",
+  "main": "src/main/index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.3.1",
+    "@types/hasha": "3.0.0",
+    "asar": "^1.0.0",
+    "chalk": "^2.4.1",
+    "download": "^7.1.0",
+    "electron-is-dev": "^1.0.1",
+    "electron-updater": "^4.0.6",
+    "hasha": "^3.0.0",
+    "jsonfile": "^5.0.0",
+    "jszip": "^3.1.5",
+    "lzma": "^2.3.2",
+    "mkdirp": "^0.5.1",
+    "node-fetch": "^2.2.0",
+    "rmfr": "^2.0.0",
+    "semver": "^6.0.0",
+    "unzipper": "^0.9.3",
+    "vue": "^2.5.17"
+  }
+}

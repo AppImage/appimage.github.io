@@ -1,0 +1,17 @@
+{
+  "name": "slack-backup",
+  "productName": "Slack Backup",
+  "version": "1.0.0",
+  "description": "An application to archive Slack messages and perform some simple account maintenance",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "John Colagioia",
+    "email": "john@colagioia.net",
+    "url": "https://github.com/jcolag"
+  },
+  "license": "GPLv3",
+  "dependencies": {
+    "http": "0.0.0",
+    "slack": "^11.0.0"
+  }
+}

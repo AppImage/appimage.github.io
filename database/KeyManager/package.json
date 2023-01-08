@@ -1,0 +1,19 @@
+{
+  "name": "keymanager",
+  "productName": "keymanager",
+  "version": "0.19.10",
+  "description": "keymanager",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "TrustAsia",
+    "email": "beace.li@trustasia.com",
+    "url": "https://github.com/BeAce"
+  },
+  "license": "MIT",
+  "updater": {
+    "url": "https://update.keymanager.org/updates.json"
+  },
+  "dependencies": {
+    "electron-simple-updater": "^1.2.4"
+  }
+}

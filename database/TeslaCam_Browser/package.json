@@ -1,0 +1,16 @@
+{
+  "name": "teslacam-browser",
+  "productName": "TeslaCam Browser",
+  "version": "0.0.85",
+  "description": "A minimal TeslaCam Browser",
+  "main": "main.js",
+  "repository": "https://github.com/BobStrogg/teslacam-browser",
+  "author": "Chris Cavanagh <teslacam@chriscavanagh.com>",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "buffer-alloc-unsafe": "^1.1.0",
+    "electron-updater": "^4.0.6",
+    "flatpickr": "^4.5.7",
+    "yarn": "^1.15.2"
+  }
+}

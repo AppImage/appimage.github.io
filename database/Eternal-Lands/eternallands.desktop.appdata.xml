@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>eternallands.desktop</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>QPL-1.0</project_license>
+	<name>Eternal Lands</name>
+	<developer_name>Paul Broadhead</developer_name>
+	<summary>Eternal Lands is a free to play, graphical MMORPG</summary>
+	<description>
+		<p>
+		Eternal Lands is a free 3D fantasy MMORPG (massively multiplayer online
+		role playing game) that can be played on Windows, Android, Linux and
+		OSX.
+		</p>
+		<p>
+		There are 12 skills in the game: Attack, Defense, Harvest, Alchemy,
+		Magic, Potion, Summoning, Manufacturing, Crafting, Engineering,
+		Tailoring and Ranging.  There are no fixed class restrictions, so you
+		can develop your character in any way you wish.
+		</p>
+		<p>
+		You, as a player, determine exactly how you develop your character. If
+		you make mistakes, or decide to change or adjust your build, you can do
+		so.  Eternal Lands is not just about combat. Many players focus on more
+		peaceful activities such as collecting resources, creating items,
+		summoning monsters and so on. But if you like combat, there is plenty
+		of it as well, both PvP and PvE.
+		</p>
+		<p>
+		Eternal Lands is owned and run by Radu Privantu. This package is built
+		and maintained by one of the client developers known in game as bluap.
+		</p>
+	</description>
+	<x-launchable type="desktop-id">eternallands.desktop.desktop</x-launchable>
+	<url type="homepage">http://www.eternal-lands.com/</url>
+	<url type="help">http://www.eternal-lands.com/forum/index.php?/forum/103-help-and-information</url>
+	<url type="bugtracker">https://github.com/raduprv/Eternal-Lands/issues</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>http://www.eternal-lands.com/forum/uploads/1218074388/med_gallery_4_16_4336.jpg</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>eternallands.desktop.desktop</id>
+	</provides>
+	<categories>
+		<category>Games</category>
+		<category>Role Playing</category>
+		<category>MMORPG</category>
+		<category>Adventure</category>
+		<category>Fantasy</category>
+	</categories>
+	<update_contact>el.appimage@twinmoons.org.uk</update_contact>
+</component>

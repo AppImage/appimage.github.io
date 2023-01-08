@@ -1,0 +1,10 @@
+{
+  "name": "Charticulator",
+  "author": {
+    "name": "Donghao Ren",
+    "email": "donghao.ren@gmail.com"
+  },
+  "description": "Create Custom Charts Interactively",
+  "version": "1.4.0",
+  "main": "index.js"
+}

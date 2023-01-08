@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>io.itch.extremecooling4linux</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0+</project_license>
+	<name>ExtremeCooling4Linux</name>
+	<summary>a Gtk3 program to enable extreme cooling for Lenovo laptops</summary>
+	<description>
+		<p>Extreme cooling is a special fan mode supported in Lenovo Legion laptops. This mode can
+increase the cooling performance of your laptop and reduces its temperature.  However, this feature
+is only supported by Lenovo through its Windows program Lenovo Sense Nerve.</p>
+<p>ExtremeCooling4Linux has been created to enable and support this special feature on Linux.</p>
+	</description>
+	<launchable type="desktop-id">io.itch.extremecooling4linux.desktop</launchable>
+	<url type="homepage">https://odintdh.itch.io/extremecooling4linux/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://gitlab.com/OdinTdh/extremecooling4linux/raw/master/data/img/banner.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>io.itch.extremecooling4linux.desktop</id>
+	</provides>
+</component>

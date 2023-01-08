@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2005-2018 Jay Berkenbilt -->
+<!-- Copyright 2005-2019 Jay Berkenbilt -->
 <component>
 	<id>org.QPDF.qpdf.desktop</id>
 	<metadata_license>MIT</metadata_license>
@@ -35,7 +35,7 @@
 	<url type="bugtracker">https://github.com/qpdf/qpdf/issues</url>
 	<screenshots>
 		<screenshot type="default">
-                    <image width="798" height="1550">https://i.stack.imgur.com/coCKR.jpg</image>
+                    <image width="798" height="1550">https://raw.githubusercontent.com/qpdf/qpdf/master/appimage/qpdf-screenshot.jpeg</image>
 		</screenshot>
 	</screenshots>
 	<provides>

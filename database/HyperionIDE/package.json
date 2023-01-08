@@ -1,0 +1,13 @@
+{
+  "name": "HyperionIDE",
+  "version": "0.1.1",
+  "description": "Hyperion IDE for JIRA",
+  "homepage": "http://hyperionscripting.com/",
+  "author": {
+    "name": "Ion Fraction",
+    "email": "info@hyperionscripting.com"
+  },
+  "main": "main.js",
+  "private": true,
+  "dependencies": {}
+}

@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=DB Browser for SQLite
+Comment=DB Browser for SQLite is a light GUI editor for SQLite databases
+Comment[de]=DB Browser for SQLite ist ein GUI-Editor für SQLite-Datenbanken
+Comment[fr]=Un éditeur graphique léger pour les bases de données SQLite
+Comment[es]=«DB Browser for SQLite» es un editor gráfico de bases de datos SQLite
+Exec=sqlitebrowser %f
+Icon=sqlitebrowser
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Categories=Development;Utility;Database;
+MimeType=application/vnd.db4s-project+xml;application/sqlitebrowser;application/x-sqlitebrowser;application/vnd.sqlite3;application/geopackage+sqlite3;application/x-sqlite2;application/x-sqlite3;text/csv;
+StartupWMClass=sqlitebrowser
+X-AppImage-Version=master-80-9ba1a2e
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|sqlitebrowser|sqlitebrowser|continuous|DB_Browser_for_SQLite*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

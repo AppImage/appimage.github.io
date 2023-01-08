@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019 Aruki -->
+<component type="desktop-application">
+  <id>io.github.arukibree.PrimeWorldEditor</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Prime World Editor</name>
+  <summary>Edit world assets from games by Retro Studios</summary>
+
+  <description>
+    <p>Prime World Editor is a tool used to access and modify assets found in games by Retro Studios.</p>
+  </description>
+
+  <launchable type="desktop-id">io.github.arukibree.PrimeWorldEditor.desktop</launchable>
+
+  <url type="homepage">https://github.com/arukibree/PrimeWorldEditor</url>
+
+  <provides>
+    <binary>PrimeWorldEditor</binary>
+  </provides>
+
+  <releases>
+    <release version="1.2.6" />
+  </releases>
+</component>

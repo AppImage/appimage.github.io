@@ -1,0 +1,31 @@
+{
+  "name": "ryo-wallet-atom",
+  "version": "1.0.2",
+  "description": "Modern GUI interface for Ryo Currency",
+  "productName": "Ryo Wallet Atom",
+  "cordovaId": "com.ryo-currency.ryo-gui-wallet",
+  "author": "Ryo-currency <contact@ryo-currency.com>",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "object-assign-deep": "^0.4.0",
+    "portscanner": "^2.2.0",
+    "qrcode.vue": "^1.6.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "vue-i18n": "^7.3.3",
+    "vue-timeago": "^5.0.0",
+    "vuelidate": "^0.7.4"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
+  "main": "./electron-main.js"
+}

@@ -12,44 +12,37 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
       <th>Name</th>
       <th>Description</th>
       <th>Authors</th>
-      <th>License</th>
       <th>Update Information</th>
-      <th>Signature</th>
     </tr>
   </thead>
   <tbody>
-    {% assign sorted = site.pages | sort: 'permalink' %}
+    {% assign sorted = site.pages | sort: 'title' %}
     {% for post in sorted %}
       {% if post.layout == 'app' && post.published != 'false' %}
         <tr id="{{ post.url }}">
-          <td>
+          <td style="vertical-align: top;">
             <a href="{{ site.baseurl }}{{ post.url }}" style="font-weight:bold">
+            {% if post.icons[0] %}<img height="64" width="64" src="https://appimage.github.io/database/{{post.icons[0]}}"/>{% else %}<img style="opacity: 0.5;" height="64" width="64" src="https://img.icons8.com/ios/1600/ios-application-placeholder.png"/>{% endif %}<br>
               {% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md" }}{% endif %}
             </a>
             {% if post.installation %}<span class="octicon octicon-package" title="Package available"></span>{% endif %}
             {% if post.screenshots %} {% else %}<span class="octicon octicon-device-desktop" title="Screenshot missing" style="color:#c00;"></span>{% endif %}
-            <br/>
-            {% include list_links.html %}
           </td>
-          <td>
+          <td style="vertical-align: top;">
             {{ post.desktop["Desktop Entry"].Categories }}:<br/>
             {% if post.desktop["Desktop Entry"].Comment %}{{ post.desktop["Desktop Entry"].Comment }}<br/>
             {% elsif post.desktop["Desktop Entry"].GenericName %}{{ post.desktop["Desktop Entry"].GenericName }}<br/>
             {% elsif post.electron.description %}{{ post.electron.description }}<br/>
             {% endif %}
           </td>
-          <td>
-            {% include list_authors.html %}
-          </td>
-          <td>
+          <td style="vertical-align: top;">
+            {% include list_authors.html %}<br>
             {% if post.license %}<span class="octicon octicon-law"></span> {{ post.license }}
             {% elsif post.electron.license %}<span class="octicon octicon-law"></span> {{ post.electron.license }}
             {% endif %}
           </td>
-          <td>
-            {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}<span class="octicon octicon-check" style="color:green;"></span> Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>{% endif %}
-          </td>
-          <td>
+          <td style="vertical-align: top;">
+            {% if post.desktop.AppImageHub.X-AppImage-UpdateInformation %}<span class="octicon octicon-check" style="color:green;"></span> Yes, can use <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a><br>{% endif %}
             {% if post.desktop.AppImageHub.X-AppImage-Signature %}
               {% assign shortsig = post.desktop.AppImageHub.X-AppImage-Signature | split: '.' %}
               <span class="octicon octicon-key"></span> {{ shortsig[0] }}

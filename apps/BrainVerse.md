@@ -4,6 +4,9 @@ layout: app
 permalink: /BrainVerse/
 description: Electronic Lab Notebook for Reproducible Neuro Imaging Research
 
+icons:
+  - BrainVerse/icons/128x128/brainverse.png
+
 screenshots:
   - BrainVerse/screenshot.png
 
@@ -25,8 +28,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: brainverse
-    X-AppImage-Version: 0.0.3
-    X-AppImage-BuildId: 35d81610-101d-11a8-2052-0d08596f84ff
+    X-AppImage-Version: 0.0.8-alpha
+    X-AppImage-BuildId: 949a5350-9ada-11a8-1d5c-094e8faf1daa
     Categories: Education
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -61,7 +64,7 @@ electron:
     jqwidgets-framework: "^4.6.2"
     load-json-file: "^2.0.0"
     method-override: "^2.3.9"
-    moment: "^2.18.1"
+    moment: "^2.21.0"
     node-b64: 0.0.3
     node-gyp: "^3.6.2"
     npm: "^5.6.0"
