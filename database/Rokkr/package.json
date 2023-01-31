@@ -1,0 +1,17 @@
+{
+  "name": "Rokkr",
+  "version": "1.8.3",
+  "private": true,
+  "dependencies": {
+    "mpv.js": "github:maximilize/mpv.js#b9e0ff4",
+    "realm": "6.1.0",
+    "source-map-support": "0.5.19",
+    "sqlite3": "5.0.0"
+  },
+  "description": "Rokkr",
+  "author": {
+    "name": "Rokkr AG",
+    "email": "support@watched.com"
+  },
+  "main": "main.js"
+}

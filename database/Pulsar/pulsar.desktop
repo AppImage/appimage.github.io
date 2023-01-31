@@ -1,14 +1,13 @@
 [Desktop Entry]
-Name=Papercraft
-Icon=papercraft
-Exec=papercraft %F
+Name=Pulsar
+Exec=AppRun --no-sandbox %U
 Terminal=false
 Type=Application
-MimeType=application/x-papercraft
-Categories=Graphics;3DGraphics;
-Keywords=3D;Papercraft;craft
-StartupNotify=false
-X-AppImage-Version=v2.0
+Icon=pulsar
+StartupWMClass=Pulsar
+X-AppImage-Version=1.101.0-beta
+Comment=A Community-led Hyper-Hackable Text Editor
+Categories=Development;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
