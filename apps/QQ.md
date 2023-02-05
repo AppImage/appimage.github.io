@@ -22,7 +22,7 @@ desktop:
     Type: Application
     Icon: "/opt/QQ/resources/app/512x512.png"
     StartupWMClass: QQ
-    X-AppImage-Version: 543
+    X-AppImage-Version: 571
     Categories: Network
     Comment: QQ
   AppImageHub:
