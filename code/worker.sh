@@ -217,8 +217,9 @@ FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | 
 wget -c "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
 FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/" -O - | grep firejail-0 | head -n 1 | cut -d '"' -f 2)
 wget -c "http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/$FILE"
-sudo tar xf musl-*.apk -C / 2>/dev/null
-sudo tar xf firejail-*.apk -C / 2>/dev/null
+sudo tar xf musl-*.apk -C /
+sudo tar xf firejail-*.apk -C /
+echo "Setting firejail permissions"
 sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
 
 echo ""
