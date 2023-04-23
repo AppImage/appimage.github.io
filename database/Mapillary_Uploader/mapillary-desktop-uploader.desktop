@@ -1,14 +1,14 @@
 [Desktop Entry]
-Name=Papercraft
-Icon=papercraft
-Exec=papercraft %F
+Name=Mapillary Uploader
+Exec=AppRun --no-sandbox %U
 Terminal=false
 Type=Application
-MimeType=application/x-papercraft
-Categories=Graphics;3DGraphics;
-Keywords=3D;Papercraft;craft
-StartupNotify=false
-X-AppImage-Version=v2.0
+Icon=mapillary-desktop-uploader
+StartupWMClass=Mapillary Uploader
+X-AppImage-Version=3.2.2
+Comment=Upload imagery to the Mapillary platform
+MimeType=x-scheme-handler/com.mapillary.uploader;
+Categories=Utility;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
