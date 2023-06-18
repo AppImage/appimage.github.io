@@ -80,17 +80,17 @@ jobs:
         SCREENSHOT_URL=$(cat log.txt |  grep -o -e "https://transfer.sh/.*/screenshot.png") || true
         echo "SCREENSHOT_URL="$SCREENSHOT_URL >> $GITHUB_ENV || true
         echo "SCREENSHOT_URL: ${SCREENSHOT_URL}" || true
-    - name: Post test result to PR
-      # Needs permissions, https://github.com/actions/first-interaction/issues/10
-      # if: 1 == 2
-      if: github.event_name == 'pull_request'
-      uses: actions/github-script@v4
+    - name: Post Screenshot URL
+      uses: actions/github-script@v5
       with:
         script: |
-            echo "env.SCREENSHOT_URL: ${{ env.SCREENSHOT_URL }}"
-            await github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: process.env.SCREENSHOT_URL
-            })
+          const prNumber = context.payload.pull_request.number;
+          const screenshotURL = process.env.SCREENSHOT_URL;
+          const commentBody = `Screenshot URL: ${screenshotURL}`;
+
+          github.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: prNumber,
+            body: commentBody
+          });
