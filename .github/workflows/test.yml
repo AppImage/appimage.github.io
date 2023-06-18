@@ -81,14 +81,15 @@ jobs:
         echo "SCREENSHOT_URL="$SCREENSHOT_URL >> $GITHUB_ENV || true
         echo "SCREENSHOT_URL: ${SCREENSHOT_URL}" || true
     - name: Post Screenshot URL
-      uses: actions/github-script@v5
+      if: env.SCREENSHOT_URL != ''
+      uses: actions/github-script@4
       with:
         script: |
           const prNumber = context.payload.pull_request.number;
           const screenshotURL = process.env.SCREENSHOT_URL;
           const commentBody = `Screenshot URL: ${screenshotURL}`;
 
-          github.issues.createComment({
+          await github.issues.createComment({
             owner: context.repo.owner,
             repo: context.repo.repo,
             issue_number: prNumber,
