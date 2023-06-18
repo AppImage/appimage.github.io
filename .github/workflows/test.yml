@@ -19,8 +19,8 @@ env:
 
 jobs:
   test:
-    runs-on: ubuntu-18.04
-    timeout-minutes: 5
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
     permissions:
       contents: write
       pull-requests: write
@@ -59,7 +59,8 @@ jobs:
         # until xset -q; do echo "Waiting for X server to start..."; sleep 1; done # We are not immediately using it anyway
         # Find out which files in data/ have been changed in the last commit
         #set -x    # Debug #379
-        FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2-| sed -e 's|dev/null||g')
+        # FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2-| sed -e 's|dev/null||g')
+        FILES=$(git log -10 --name-status --diff-filter=AR --pretty=format: -- data/ | awk '/^A/ || /^R/ {file=$2} END {print file}') # Most recent addition or renaming within the last 10 commits
         echo "Last changed files from the FILES variable:"
         echo "$FILES" ; if [ -z "$FILES" ] ; then echo "Variable FILES is empty." && exit 1 ; fi
         # Work on these files that have been changed in the last commit
