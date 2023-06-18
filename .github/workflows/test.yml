@@ -82,7 +82,7 @@ jobs:
         echo "SCREENSHOT_URL: ${SCREENSHOT_URL}" || true
     - name: Post Screenshot URL
       if: env.SCREENSHOT_URL != ''
-      uses: actions/github-script@5
+      uses: actions/github-script@v4
       with:
         script: |
           const prNumber = context.payload.pull_request.number;
