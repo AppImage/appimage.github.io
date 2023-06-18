@@ -1,14 +1,13 @@
 [Desktop Entry]
-Name=Papercraft
-Icon=papercraft
-Exec=papercraft %F
+Name=Rokkr
+Exec=AppRun --no-sandbox %U
 Terminal=false
 Type=Application
-MimeType=application/x-papercraft
-Categories=Graphics;3DGraphics;
-Keywords=3D;Papercraft;craft
-StartupNotify=false
-X-AppImage-Version=v2.0
+Icon=rokkr
+StartupWMClass=Rokkr
+X-AppImage-Version=1.8.3
+Comment=Rokkr
+Categories=AudioVideo;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
