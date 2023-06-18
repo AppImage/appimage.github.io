@@ -87,7 +87,7 @@ jobs:
         script: |
           const prNumber = context.payload.pull_request.number;
           const screenshotURL = process.env.SCREENSHOT_URL;
-          const commentBody = `Screenshot URL: ${screenshotURL}`;
+          const commentBody = `Seems like the test succeeded. Temporary screenshot URL: ${screenshotURL}`;
 
           await github.issues.createComment({
             owner: context.repo.owner,
