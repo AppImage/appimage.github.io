@@ -32,10 +32,10 @@ and send a Pull Request.
 Ideally, the file in `data/` contains a link to https://github.com/User/App/ (not to a specific AppImage!), and if the AppImage follows the standard nomenclature, then https://github.com/User/App/releases/whatever/App-1.0-x86_64.AppImage, https://github.com/User/App/releases/whatever/App-1.1-x86_64.AppImage,... will automatically be picked up.
 
 Standard nomenclature:
-* AppImage filename consists of pieces: Application name, hyphen, version, hypen, architecture, dot, AppImage suffix
+* AppImage filename consists of pieces: Application name, hyphen, version, hyphen, architecture, dot, AppImage suffix
 * First piece of the AppImage filename, "App" == name of the repo
 * Blanks in the app name become _
-* Respecrt uppercase. If the app is called "App", do NOT use "app"
+* Respect uppercase. If the app is called "App", do NOT use "app"
 * Example: `App-1.1-x86_64.AppImage` in a repo called "App"
 
 Then send a Pull Request to this repository. GitHub Actions will instantly perform an automated review of the AppImage, and in case it succeeds, you will see a __green__ result in your pull request. If you get a __red__ result, check the log of the GitHub Actions build, and fix it.
