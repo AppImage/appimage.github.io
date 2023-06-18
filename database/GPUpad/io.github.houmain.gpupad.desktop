@@ -1,14 +1,14 @@
 [Desktop Entry]
-Name=Papercraft
-Icon=papercraft
-Exec=papercraft %F
-Terminal=false
 Type=Application
-MimeType=application/x-papercraft
-Categories=Graphics;3DGraphics;
-Keywords=3D;Papercraft;craft
-StartupNotify=false
-X-AppImage-Version=v2.0
+Name=GPUpad
+Comment=GLSL Shader Editor
+Exec=gpupad %F
+Icon=io.github.houmain.gpupad
+Terminal=false
+Categories=Development;IDE;
+StartupNotify=true
+Keywords=Text;Editor;
+X-AppImage-Version=
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
