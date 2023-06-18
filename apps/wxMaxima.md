@@ -11,8 +11,14 @@ screenshots:
 - https://wxmaxima-developers.github.io/wxmaxima/images/linux_1.jpg
 
 authors:
+  - name: wxMaxima-developers
+    url: https://github.com/wxMaxima-developers
 
 links:
+  - type: GitHub
+    url: wxMaxima-developers/docker-wxmaxima
+  - type: Download
+    url: https://github.com/wxMaxima-developers/docker-wxmaxima/releases
 
 desktop:
   Desktop Entry:

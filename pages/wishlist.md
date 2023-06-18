@@ -35,4 +35,4 @@ Please see [https://docs.appimage.org/](https://docs.appimage.org/) for how to g
 
 Once your AppImage is available for download, please [file an issue at GitHub](https://github.com/AppImage/AppImageHub/issues/new) to get it added to have it tested and added to the list.
 
-If you have questions, AppImage developers are on #AppImage on irc.freenode.net.
+If you have questions, AppImage developers are on #AppImage on irc.libera.chat.

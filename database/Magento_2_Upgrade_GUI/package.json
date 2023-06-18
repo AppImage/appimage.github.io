@@ -1,0 +1,21 @@
+{
+  "name": "magento2-upgrade-gui",
+  "version": "1.1.0",
+  "description": "A GUI tool to help you visually and easily spot differences in a three-way comparison between the version you upgraded from, the version you upgraded to, and your Magento preferences, plugins and overrides.",
+  "author": "Peter Jaap Blaakmeer / elgentos",
+  "license": "MIT",
+  "private": false,
+  "main": "background.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elgentos/magento2-upgrade-gui.git"
+  },
+  "dependencies": {
+    "electron-store": "^6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

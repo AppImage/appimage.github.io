@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016 Richard Hughes <richard@hughsie.com> -->
+<!-- SPDX-License-Identifier: GPL-2.0-or-later -->
+<component type="desktop">
+  <id>org.inkscape.Inkscape</id>
+  <launchable type="desktop-id">org.inkscape.Inkscape.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <translation type="gettext">inkscape</translation>
+  <name>Inkscape</name>
+  <name xml:lang="zh_TW">Inkscape</name>
+  <name xml:lang="zh_CN">Inkscape</name>
+  <name xml:lang="vi">Inkscape</name>
+  <name xml:lang="ur">انك اسكیپ</name>
+  <name xml:lang="uk">Inkscape</name>
+  <name xml:lang="tr">Inkscape</name>
+  <name xml:lang="te">ఇంక్‌స్కేప్</name>
+  <name xml:lang="ta">Inkscape</name>
+  <name xml:lang="sv">Inkscape</name>
+  <name xml:lang="sr">Inkscape</name>
+  <name xml:lang="sr@latin">Inkscape</name>
+  <name xml:lang="sl">Inkscape</name>
+  <name xml:lang="sk">Inkscape</name>
+  <name xml:lang="sd@deva">इंकस्केप</name>
+  <name xml:lang="sd">اِنڪسڪيپ</name>
+  <name xml:lang="sat">ᱠᱟᱞᱤ ᱧᱮᱱᱮᱞ</name>
+  <name xml:lang="sat@deva">काली ञेनेल</name>
+  <name xml:lang="sa">इङ्क्स्केप् </name>
+  <name xml:lang="ru">Inkscape</name>
+  <name xml:lang="ro">Inkscape</name>
+  <name xml:lang="pt">Inkscape</name>
+  <name xml:lang="pt_BR">Inkscape</name>
+  <name xml:lang="pl">Inkscape</name>
+  <name xml:lang="or">ଇଙ୍କ୍ସ୍କେପ  </name>
+  <name xml:lang="nl">Inkscape</name>
+  <name xml:lang="nb">Inkscape</name>
+  <name xml:lang="mr">इंकस्केप</name>
+  <name xml:lang="mni@beng">ইঙ্কস্কেপ</name>
+  <name xml:lang="mni">ꯏꯪꯛꯁ꯭ꯀꯦꯞ</name>
+  <name xml:lang="ml">ഇങ്ക്സ്കെയ്പ്</name>
+  <name xml:lang="mai">Inkscape</name>
+  <name xml:lang="lv">Inkscape</name>
+  <name xml:lang="ks@deva">इनकसकेप </name>
+  <name xml:lang="ks@aran">اِنکسکیپ</name>
+  <name xml:lang="kok@latin">Inkscape</name>
+  <name xml:lang="kok">इंकस्केप</name>
+  <name xml:lang="ko">잉크스케이프</name>
+  <name xml:lang="kn">ಇಂಕ್‌ಸ್ಕೇಪ್</name>
+  <name xml:lang="km">Inkscape</name>
+  <name xml:lang="ja">Inkscape</name>
+  <name xml:lang="it">Inkscape</name>
+  <name xml:lang="is">Inkscape</name>
+  <name xml:lang="id">Inkscape</name>
+  <name xml:lang="hu">Inkscape</name>
+  <name xml:lang="hr">Inkscape</name>
+  <name xml:lang="hi">इंकस्केप</name>
+  <name xml:lang="he">אינקסקייפ</name>
+  <name xml:lang="gu">Inkscape</name>
+  <name xml:lang="gl">Inkscape</name>
+  <name xml:lang="fr">Inkscape</name>
+  <name xml:lang="fi">Inkscape</name>
+  <name xml:lang="eu">Inkscape</name>
+  <name xml:lang="es">Inkscape</name>
+  <name xml:lang="en_GB">Inkscape</name>
+  <name xml:lang="el">Inkscape</name>
+  <name xml:lang="doi">इंकस्केप </name>
+  <name xml:lang="de">Inkscape</name>
+  <name xml:lang="da">Inkscape</name>
+  <name xml:lang="cs">Inkscape</name>
+  <name xml:lang="ca@valencia">Inkscape</name>
+  <name xml:lang="ca">Inkscape</name>
+  <name xml:lang="brx">इङ्कस्केप</name>
+  <name xml:lang="br">Inkscape</name>
+  <name xml:lang="bn_BD">ইন্কস্কেপ</name>
+  <name xml:lang="bg">Inkscape</name>
+  <name xml:lang="be">Inkscape</name>
+  <name xml:lang="as">ইনস্কেপ</name>
+  <name xml:lang="ar">إنكسكيب</name>
+  <summary>Vector Graphics Editor</summary>
+  <summary xml:lang="zh_TW">向量繪圖軟體</summary>
+  <summary xml:lang="zh_CN">矢量图形编辑器</summary>
+  <summary xml:lang="vi">Trình xử lý ảnh Véc-tơ</summary>
+  <summary xml:lang="ur">انك اسكیپ ویكٹر گرافیكس ایڈیٹر</summary>
+  <summary xml:lang="uk">Редактор векторної графіки</summary>
+  <summary xml:lang="tr">Vektör Grafik Düzenleyici</summary>
+  <summary xml:lang="te">సదిశ రేఖాచిత్రాల కూర్పరి</summary>
+  <summary xml:lang="ta">வெக்டார் வரைகலை எடிட்டர்</summary>
+  <summary xml:lang="sr">Програм за векторско цртање</summary>
+  <summary xml:lang="sr@latin">Program za vektorsko crtanje</summary>
+  <summary xml:lang="sl">Urejevalnik vektorskih slik</summary>
+  <summary xml:lang="sk">editor vektorovej grafiky</summary>
+  <summary xml:lang="sd@deva">वेक्टर अखिरी चिट संपादकु</summary>
+  <summary xml:lang="sd">ويڪٽر اکري چٽ سمپادڪ</summary>
+  <summary xml:lang="sat">ᱣᱮᱠᱴᱨ  ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱥᱟᱥᱟᱯᱲᱟᱣ </summary>
+  <summary xml:lang="sat@deva">वेक्टर  गार चिता़र सासापड़ाव </summary>
+  <summary xml:lang="sa">वेक्टर् सुचित्रीयसंपादकः </summary>
+  <summary xml:lang="ru">Редактор векторной графики</summary>
+  <summary xml:lang="ro">Editor de grafică vectorială</summary>
+  <summary xml:lang="pt">Editor de Imagens Vetoriais</summary>
+  <summary xml:lang="pt_BR">Editor de Imagens Vetoriais</summary>
+  <summary xml:lang="pl">Edytor grafiki wektorowej</summary>
+  <summary xml:lang="or">ଭେକ୍ଟର ଗ୍ରାଫିକ୍ସ ସଂପାଦ୍କ</summary>
+  <summary xml:lang="nl">Vector tekenpakket</summary>
+  <summary xml:lang="nb">Tegneprogram for vektorgrafikk</summary>
+  <summary xml:lang="mr">व्हेक्टर ग्राफिक्स संपादक</summary>
+  <summary xml:lang="mni@beng">ভেক্তর গ্রাফিক্স ইদিতর</summary>
+  <summary xml:lang="mni">ꯚꯦꯛꯇꯔ ꯒ꯭ꯔꯥꯐꯤꯛꯁ ꯏꯗꯤꯇꯔ</summary>
+  <summary xml:lang="ml">വെക്ടര്‍ ഗ്രാഫിക്സ് എഡിറ്റര്‍</summary>
+  <summary xml:lang="mai">सदिश आलेखी संपादक </summary>
+  <summary xml:lang="lv">Vektoru grafikas redaktors</summary>
+  <summary xml:lang="ks@deva">वयक्टर ग्राफ़िक्स अडीटर</summary>
+  <summary xml:lang="ks@aran">ویکٹر گرافکس اڈیٹر</summary>
+  <summary xml:lang="kok@latin">vekttor grafiks edittor</summary>
+  <summary xml:lang="kok">व्हेक्टर ग्राफिक्स संपादक</summary>
+  <summary xml:lang="ko">벡터 그래픽 편집기</summary>
+  <summary xml:lang="kn">ವೆಕ್ಟರ್ ಗ್ರಾಫಿಕ್ಸ್ ಸಂಪಾದಕ</summary>
+  <summary xml:lang="km">កម្មវិធី​កែ​សម្រួល​ក្រាហ្វិក​វ៉ិចទ័រ</summary>
+  <summary xml:lang="ja">ベクターグラフィックエディター</summary>
+  <summary xml:lang="it">Grafica vettoriale SVG</summary>
+  <summary xml:lang="is">Teikniforrit fyrir vigramyndir / línuteikningar</summary>
+  <summary xml:lang="id">Penyunting Grafik Vektor</summary>
+  <summary xml:lang="hu">Vektorgrafikai szerkesztő</summary>
+  <summary xml:lang="hr">Uređivač vektorskih grafika</summary>
+  <summary xml:lang="hi">वेक्टर ग्राफिक्स संपादक </summary>
+  <summary xml:lang="he">עורך גרפיקה וקטורית</summary>
+  <summary xml:lang="gu">વ્હેક્ટર ગ્રાફિક્સ સંપાદક</summary>
+  <summary xml:lang="gl">Editor de imaxes vectoriais</summary>
+  <summary xml:lang="fr">Éditeur d'images vectorielles SVG Inkscape</summary>
+  <summary xml:lang="fi">vektorigrafiikkaeditori</summary>
+  <summary xml:lang="eu">Grafiko bektorialen editorea</summary>
+  <summary xml:lang="es">Editor de gráficos vectoriales</summary>
+  <summary xml:lang="en_GB">Vector Graphics Editor</summary>
+  <summary xml:lang="el">Επεξεργαστής διανυσματικών γραφικών</summary>
+  <summary xml:lang="doi">वैक्टर  ग्राफिक्स संपादक</summary>
+  <summary xml:lang="de">Vektorgrafikeditor</summary>
+  <summary xml:lang="da">Editor til vektorgrafik</summary>
+  <summary xml:lang="cs">Editor vektorové grafiky</summary>
+  <summary xml:lang="ca@valencia">Editor de gràfics vectorials</summary>
+  <summary xml:lang="ca">Editor de gràfics vectorials</summary>
+  <summary xml:lang="brx">भेक्टर ग्राफिक्स सुजुगिरि </summary>
+  <summary xml:lang="br">Embanner kevregadoù sturiadel</summary>
+  <summary xml:lang="bn_BD">ভেক্টর গ্রাফিক্স সম্পাদক</summary>
+  <summary xml:lang="bg">Редактор за векторна графика</summary>
+  <summary xml:lang="be">Рэдактар вэктарнай ґрафікі</summary>
+  <summary xml:lang="as">ভেক্টৰ গ্ৰাফিক্স সম্পাদনকৰ্তা </summary>
+  <summary xml:lang="ar">محرر الرسومات الشعاعية</summary>
+  <description>
+    <p>
+      A Free and open source vector graphics editor. It offers a rich set of features and is widely used for both artistic and technical illustrations such as cartoons, clip art, logos, typography, diagramming and flowcharting.
+    </p>
+    <p xml:lang="nl">Een gratis en open source vectortekenprogramma. Het biedt een scala aan functies en wordt alom gebruikt voor zowel artistieke als technische illustraties zoals cartoons, clip art, logo's, typografie, diagrammen en stroomschema's.</p>
+    <p xml:lang="is">Frjálst og ókeypis forrit til að vinna vigurteikningar, með opnum grunnkóða. Það býður upp á úrval verkfæra og er mikið notað við bæði listrænar og tæknilegar teikningar á borð við teiknimyndasögur, myndklippur (clip art), vörumerki, leturgerð, skýringamyndir og flæðirit.</p>
+    <p>
+      It uses vector graphics to allow for sharp printouts and renderings at unlimited resolution and is not bound to a fixed number of pixels like raster graphics. Inkscape uses the standardized SVG file format as its main format, which is supported by many other applications including web browsers.
+    </p>
+    <p xml:lang="nl">Er worden vector illustraties gebruikt voor haarscherpe afdrukken en weergaven op eindeloze resolutie, zonder de beperking van een vast aantal pixels zoals bij rasterillustraties. Inkscape gebruikt standaard SVG als voornaamste bestandsformaat. Dit wordt ondersteund door vele andere applicaties, inclusief webbrowsers.</p>
+    <p xml:lang="is">Það notar vigurmyndir (vector graphics) til að gefa kost á skörpum útprentunum og myndgerð sem ekki er bundin takmörkunum á föstum fjölda mynddíla, líkt og rastamyndir gera. Inkscape notar staðlaða SVG-skráasniðið sem sitt aðalsnið, en það er stutt af mörgum öðrum forritum eins og til dæmis netvöfrum.</p>
+    <p>
+      Inkscape supports many advanced SVG features (markers, clones, alpha blending,
+      etc.) and great care is taken in designing a streamlined interface.
+      It is very easy to edit nodes, perform complex path operations, trace
+      bitmaps and much more.
+      We also aim to maintain a thriving user and developer community by using
+      open, community-oriented development.
+    </p>
+    <p xml:lang="zh_TW">Inkscape 支援許多進階的 SVG 特性 (標記、仿製、透明混合等等) 並著重流暢操作性所設計的使用介面。此軟體能夠簡單編輯節點、操作複雜的路徑、描繪點陣圖等許多功能。我們積極經營使用者與開發人員的社群，秉持開放、社群導向開發理念。</p>
+    <p xml:lang="zh_CN">Inkscape 支持众多高级 SVG 特性（标记、克隆等），并且注重保证流水线式的界面。因而易于进行编辑节点、执行复杂的路径操作、临摹位图等工作。我们还致力于采用开放的社区开发方式维护一个健康活跃的用户和开发者社区。</p>
+    <p xml:lang="uk">У Inkscape передбачено підтримку багатьох складних можливостей SVG (маркерів, клонів, накладань із прозорістю тощо) та приділено значну увагу створенню якомога простішого інтерфейсу. За допомогою цієї програми дуже просто редагувати розташування вузлів контуру, виконувати складні дії з контуром, перетворювати растрові зображення на векторні (трасувати зображення) тощо. Супровід програми здійснюється зацікавленою у цьому спільнотою користувачів та розробників на основі принципів відкритої розробки із орієнтацією на потреби спільноти.</p>
+    <p xml:lang="sk">Inkscape podporuje mnohé pokročilé funkcie SVG (značky, klony, zmiešavanie priesvitnosti, atď.) a veľmi starostlivo navrhnuté moderné grafické používateľské rozhranie. Je veľmi jednoduché upravovať uzly, vykonávať zložité operácie s cestami, trasovať bitmapy a mnoho ďalšieho. Tiež sa snažíme udržiavať prosperujúcu komunitu používateľov a vývojárov pomocou otvoreného, komunitne orientovaného vývoja.</p>
+    <p xml:lang="ru">Inkscape поддерживает многие дополнительные возможности SVG (маркеры, клоны, сведение альфа-канала). Немало внимания уделяется удобству интерфейса. В программе очень просто изменять кривые, превращать растровые рисунки в векторные и решать иные задачи. Мы также полагаемся на открытую модель разработки, чтобы создать развитое сообщество пользователей и программистов.</p>
+    <p xml:lang="ro">Inkscape suportă multe caracteristici SVG (markeri, clone, amestec alfa etc.) și scordă o atenție deosebită la proiectarea unei interfețe raționalizate. Se poate folosi foarte ușor la editarea de noduri, la efectuarea de operații de traseu complexe, la urmărirea bitmap-urilor precum și multe altele. Ne propunem de asemenea să menținem o comunitate înfloritoare de utilizatori și dezvoltatori, printr-o dezvoltare deschisă, orientată spre comunitate.</p>
+    <p xml:lang="pt">O Inkscape suporta muitas funcionalidades SVG avançadas (marcadores, clones, mistura de transparência, etc.) e é empregado bastante cuidado na concepção de uma interface simples. É bastante fácil editar nós, fazer operações complexas em linhas, vetorizar imagens bitmap e muito mais. Também procuramos manter uma comunidade bem sucedida de utilizadores e programadores ao utilizar um desenvolvimento transparente do programa voltado para a comunidade.</p>
+    <p xml:lang="pt_BR">Inkscape é compatível com muitas funcionalidades avançadas do formato SVG (marcadores, clones, mistura alfa, etc.) e um grande cuidado é tomado na concepção de uma interface simplificada. É muito fácil editar nós, executar operações complexas de caminho, rastrear bitmaps e muito mais. Temos também como objetivo manter uma comunidade próspera de usuários e desenvolvedores usando desenvolvimento aberto, voltado para a comunidade.</p>
+    <p xml:lang="pl">Inkscape obsługuje wiele zaawansowanych funkcji SVG (markery, klony, mieszanie alfa, itp.) i wielką starannością jest podejmowane w projektowaniu usprawnionego interfejsu. Jest to bardzo łatwe do edycji węzłów, wykonywania operacji złożonych ścieżki, mapy bitowe śledzenia i wiele więcej. Dążymy również do utrzymania kwitnącej społeczności użytkowników i deweloperów za pomocą otwartego, zorientowanego na społeczność rozwoju.</p>
+    <p xml:lang="nl">Inkscape ondersteunt veel geavanceerde SVG features (markeringen, klonen, alfa blending, etc.). Veel zorg ging naar het ontwerp van een gestroomlijnde interface. Het is zeer eenvoudig om knooppunten te bewerken, complexe  padoperaties uit te voeren, bitmaps over te trekken, ... We beogen een actieve gebruikers- en ontwikkelgemeenschap door middel van open, gemeenschapsgerichte ontwikkeling.</p>
+    <p xml:lang="lv">Inkscape atbalsta dažādas paplašinātas SVG iespējas (marķieri, kloni, alfa sajaukšanu utml.), pievēršot lielu uzmanību lietotāja saskarnei. Ir ļoti vienkārši rediģēt mezglus, veikt sarežģītas darbības ar ceļiem, vektorizēt bitkartes un daudz ko citu. Mēs tāpat cenšamies uzturēt plaukstošu lietotāju un izstrādātāju kopienu, izmantojot atvērtu, uz kopienu orientētu izstrādes procesu.</p>
+    <p xml:lang="ko">잉크스케이프는 많은 고급 SVG 기능(마커, 복제복, 알파 혼합 등등)을 지원합니다. 그리고 간소화된 인테페이스를 설계하는 데에 대단히 주의에 기울였습니다. 노드를 편집하고, 복잡한 경로 작업을 수행하고, 비트맵을 따라 그리는 것 그리고 이외에 더 많은 것을 하는 것이 매우 쉽습니다. 우리는 또한, 열린·공동체-지향의 개발을 사용하여 번창하는 사용자 및 개발자 공동체를 유지하는 것을 목표로 하고 있습니다.</p>
+    <p xml:lang="it">Inkscape supporta molte funzionalità avanzate del formato SVG e offre una semplice interfaccia di uso. Si possono modificare nodi, eseguire complesse operazioni su tracciati, tracciare bitmap e molto altro. Inoltre Inkscape supporta un'attiva comunità di utenti e sviluppatori.</p>
+    <p xml:lang="is">Inkscape styður marga af framsæknustu eiginleikum SVG (línumerki, klóna, gegnsæisblöndun, o.s.frv.), einnig er mikil áhersla lögð á að straumlínulaga viðmótið. Mjög auðvelt er að breyta hnútum, framkvæma flóknar aðgerðir á ferlum, línuteikna bitamyndir auk margs annars. Markmið okkar er líka að viðhalda blómlegu samfélagi notenda og hönnuða og er það gert með opinni, félagsmiðaðri framþróun.</p>
+    <p xml:lang="hu">Az Inkscape számos fejlett SVG funkciót támogat (jelzők, klónok, alfa keverés, stb.) és nagy gond lett fordítva a letisztult felületre. Nagyon könnyű a csomópontok szerkesztése, az összetett útvonalműveletek elvégzése, a bitképek körberajzolása, és még sok más. Arra is törekszünk, hogy virágzó felhasználói és fejlesztői közösséget tartsunk fenn, a nyílt és közösségközpontú fejlesztéssel.</p>
+    <p xml:lang="hr">Inkscape podržava mnoge napredne SVG funkcije (markere, klonove, alfa stapanje, itd.). Velika pažnja je posvećena dizajniranju modernog sučelja. Na jednostavan način je moguće uređivati čvorove, izvesti složene operacije na stazi, precrtavati bitmape i još mnogo toga. Također želimo održati uspješnu korisničku i razvojnu zajednicu, koristeći otvoreni način razvoja, usmjeren na zajednicu.</p>
+    <p xml:lang="fr">Inkscape prend en charge de nombreuses fonctionnalités avancées du SVG (marqueurs, clones, mélange alpha, etc.) et un grand soin est porté à l'ergonomie de l'interface. Il est très facile d'éditer des notes, d'effectuer des opérations de chemin complexes, de vectoriser du matriciel et bien plus. Nous cherchons également à faire prospérer une communauté d'utilisateurs et de développeurs avec un développement ouvert et communautaire.</p>
+    <p xml:lang="fi">Inkscape tukee monia edistyneitä SVG ominaisuuksia (markers, clones, alpha blending, jne.) ja sen käyttöliittymä on suunniteltu suoraviivaiseksi suurella huolella. It is very easy to edit nodes, perform complex path operations, trace bitmaps and much more. Me pyrimme kukoistavan käyttäjä- ja kehitysyhteisön ylläpitämiseen avoimella, yhteisölähtöisellä kehitysmallilla.</p>
+    <p xml:lang="eu">Inkscapek SVG ezaugarri aurreratu anitz onartzen ditu (markatzaileak, klonak, alfa nahastea,e tab.) eta interfaze aratza diseinatzeko arreta handia jarri da. Erraza da nodoak editatzea, bideen eragiketa konplexuak gauzatzea, bit-mapak trazatzea eta askoz eragiketa gehiago egitea. Erabiltzaileen eta garatzaileen komunitate biziari eusten ere saiatzen gara, komunitatearei zuzendutako garapen irekia erabilita.</p>
+    <p xml:lang="es">Inkscape soporta muchas características avanzadas de SVG (marcadores, clones, mezcla alfa, etc.) y se pone mucho cuidado en el diseño de una interfaz optimizada. Es muy fácil de editar nodos, realizar operaciones complejas con rutas, mapas de bits y mucho más. También tenemos como objetivo mantener una  próspera comunidad de desarrolladores y usuarios mediante el uso de desarrollo abierto, orientado a la comunidad.</p>
+    <p xml:lang="en_GB">Inkscape supports many advanced SVG features (markers, clones, alpha blending, etc.) and great care is taken in designing a streamlined interface. It is very easy to edit nodes, perform complex path operations, trace bitmaps and much more. We also aim to maintain a thriving user and developer community by using open, community-oriented development.</p>
+    <p xml:lang="el">Το Inkscape υποστηρίζει πολλά προηγμένα γνωρίσματα SVG (σημειωτές, κλώνους, άλφα ανάμειξη, κλπ.) και έχει φροντίσει για τη σχεδίαση απλοποιημένης διεπαφής. Η επεξεργασία κόμβων, η εκτέλεση σύνθετων λειτουργιών μονοπατιών, ο εντοπισμός ψηφιογραφιών (bitmaps) και πολλά άλλα είναι πολύ εύκολα. Σκοπεύουμε επίσης στη διατήρηση μιας αναπτυσσόμενης κοινότητας χρηστών και προγραμματιστών, χρησιμοποιώντας ανοικτή ανάπτυξη προσανατολισμένη στην κοινότητα.</p>
+    <p xml:lang="de">Inkscape unterstützt viele fortgeschrittene SVG-Eigenschaften (Knotenmarkierungen, Klone, Alpha Blending usw.) und legt viel Wert auf eine auf übliche Arbeitsabläufe optimierte Benutzeroberfläche. Knotenbearbeitung, komplexe Pfadoperationen, das Vektorisieren von Rastergrafiken und noch vieles mehr lassen sich so ganz einfach ausführen.</p>
+    <p xml:lang="cs">Inkscape podporuje mnoho pokročilých funkcí SVG (markery, klony, alpha blending atd.) A velkou pozornost věnuje při navrhování efektivního rozhraní. Je snadné upravovat uzly, provádět složité operace s cestami, sledovat bitové mapy a mnoho dalšího. Cílem je také udržet prosperující komunitu uživatelů a vývojářů pomocí otevřeného a komunitně orientovaného vývoje.</p>
+    <p xml:lang="ca">L'Inkscape té moltes funcionalitats SVG avançades (marcadors, clons, alfa, mescla, etc.). S'ha tingut molta cura en dissenyar la seva interfície d'usuari. És molt senzill editar nodes, i fer operacions complexes amb camins, o dibuixar mapes de bits. Mantenim també una comunitat d'usuaris i desenvolupadors activa al voltant del seu desenvolupament comunitari.</p>
+  </description>
+  <categories>
+    <category>Graphics</category>
+  </categories>
+  <url type="homepage">https://inkscape.org</url>
+  <url type="bugtracker">https://inkscape.org/contribute/report-bugs</url>
+  <url type="help">https://inkscape.org/learn</url>
+  <url type="donation">https://inkscape.org/support-us/donate</url>
+  <url type="translate">https://inkscape.org/contribute/translations</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://media.inkscape.org/media/resources/file/Screenshot_Freedom_Machine_Inkscape_master_FB3NeUU.png</image>
+      <caption>Main application window</caption>
+      <caption xml:lang="zh_TW">主要應用程式視窗</caption>
+      <caption xml:lang="zh_CN">主应用程序窗口</caption>
+      <caption xml:lang="uk">Основне вікно програми</caption>
+      <caption xml:lang="tr">Ana uygulama penceresi</caption>
+      <caption xml:lang="sk">Hlavné okno aplikácie</caption>
+      <caption xml:lang="ru">Главное окно приложения</caption>
+      <caption xml:lang="ro">Fereastra principală a aplicației</caption>
+      <caption xml:lang="pt">Janela principal da aplicação</caption>
+      <caption xml:lang="pt_BR">Janela principal da aplição</caption>
+      <caption xml:lang="pl">Główne okno aplikacji</caption>
+      <caption xml:lang="nl">Hoofdvenster</caption>
+      <caption xml:lang="nb">Programmets hovedvindu</caption>
+      <caption xml:lang="lv">Galvenais lietotnes logs</caption>
+      <caption xml:lang="ko">주 애플리케이션 창</caption>
+      <caption xml:lang="it">Finestra applicazione</caption>
+      <caption xml:lang="is">Aðalgluggi forritsins</caption>
+      <caption xml:lang="id">Jendela utama aplikasi</caption>
+      <caption xml:lang="hu">Fő alkalmazásablak</caption>
+      <caption xml:lang="hr">Glavni prozor programa</caption>
+      <caption xml:lang="fr">Fenêtre principale de l'application</caption>
+      <caption xml:lang="fi">Pääikkuna</caption>
+      <caption xml:lang="eu">Aplikazioaren leiho nagusia</caption>
+      <caption xml:lang="es">Ventana principal de la aplicación</caption>
+      <caption xml:lang="en_GB">Main application window</caption>
+      <caption xml:lang="el">Παράθυρο κύριας εφαρμογής</caption>
+      <caption xml:lang="de">Hauptfenster</caption>
+      <caption xml:lang="da">Hovedprogramvindue</caption>
+      <caption xml:lang="cs">Hlavní okno aplikace</caption>
+      <caption xml:lang="ca@valencia">Finestra principal de l'aplicació</caption>
+      <caption xml:lang="ca">Finestra principal de l'aplicació</caption>
+      <caption xml:lang="bg">Основен прозорец на приложението</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.0" date="2020-05-01">
+      <description>
+        <p>Inkscape 1.0</p>
+        <ul>
+          <li>Theming support and more new customization options</li>
+          <li>Better HiDPI (high resolution) screen support</li>
+          <li>Native support for macOS with a signed and notarized .dmg file</li>
+          <li>Coordinate origin in top left corner by default</li>
+          <li>Canvas rotation and mirroring</li>
+          <li>On-Canvas alignment of objects</li>
+          <li>Split view and X-Ray modes</li>
+          <li>PowerPencil for drawing editable, variable width strokes with a pressure sensitive graphics tablet</li>
+          <li>New PNG export options</li>
+          <li>Integrated centerline tracing for vectorizing line drawings</li>
+          <li>Searchable Symbols dialog</li>
+          <li>New Live Path Effect (LPE) selection dialog</li>
+          <li>New Corners (Fillet/chamfer) LPE, (lossless) Boolean Operation LPE (experimental), Offset LPE and Measure Segments LPE (and more!)</li>
+          <li>Path operations, deselection of a large number of paths as well as grouping/ungrouping are much faster now</li>
+          <li>Much improved text line-height settings</li>
+          <li>Variable fonts support (only if compiled with pango library version &gt;= 1.41.1)</li>
+          <li>Browser-compatible flowed text</li>
+          <li>Extensions programming interface updated, with many new options - Note: this introduces breaking changes, some third-party extensions will have to be updated to work with Inkscape 1.0</li>
+          <li>Python 3 support for extensions</li>
+        </ul>
+      </description>
+      <url>http://wiki.inkscape.org/wiki/index.php/Release_notes/1.0</url>
+    </release>
+    <release version="0.92.5" date="2020-04-08">
+      <description>
+        <ul>
+          <li>Bugfix release</li>
+          <li>More python3 compatibility for extensions</li>
+        </ul>
+      </description>
+      <url>https://wiki.inkscape.org/wiki/index.php/Release_notes/0.92.5</url>
+    </release>
+    <release version="0.92.4" date="2019-01-16">
+      <description>
+        <p>New 0.92.x bugfix release.</p>
+        <ul>
+          <li>Improvements to the align and distribute tool</li>
+          <li>Support for piping standard input and output</li>
+          <li>The color slider can be constrained to stepped values</li>
+          <li>Performance improvements</li>
+          <li>And many more bugfixes</li>
+        </ul>
+      </description>
+      <url>http://wiki.inkscape.org/wiki/index.php/Release_notes/0.92.4</url>
+    </release>
+    <release version="0.92.3" date="2018-03-23">
+      <description>
+        <p>New 0.92.x bugfix release.</p>
+        <ul>
+          <li>New command-line options to control page size when exporting to SVG</li>
+          <li>Support for left-to-right languages in the text tool</li>
+          <li>Improvements to the circle/ellipse/arc tool</li>
+          <li>Support for multi-line text when exporting to PDF+LaTeX</li>
+          <li>And many more bugfixes</li>
+        </ul>
+      </description>
+      <url>http://wiki.inkscape.org/wiki/index.php/Release_notes/0.92.3</url>
+    </release>
+    <release version="0.92.2" date="2017-08-07">
+      <description>
+        <p>New 0.92.x bugfix release.</p>
+        <ul>
+          <li>Better importing and exporting</li>
+          <li>Greater stability when printing on Windows</li>
+          <li>Improved fill and stroke HSL color selection</li>
+          <li>Greater stability when reverting and saving files</li>
+          <li>An additional handle at the center of shapes</li>
+          <li>A command line option for updating the file's DPI</li>
+          <li>Improvements to user-defined shortcuts</li>
+          <li>Migration to Gitlab to make contribution easier</li>
+          <li>And many more bugfixes!</li>
+        </ul>
+      </description>
+      <url>http://wiki.inkscape.org/wiki/index.php/Release_notes/0.92.2</url>
+    </release>
+  </releases>
+  <provides>
+    <id>inkscape.desktop</id>
+  </provides>
+  <content_rating type="oars-1.1"/>
+</component>
