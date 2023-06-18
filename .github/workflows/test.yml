@@ -81,17 +81,25 @@ jobs:
         echo "SCREENSHOT_URL="$SCREENSHOT_URL >> $GITHUB_ENV || true
         echo "SCREENSHOT_URL: ${SCREENSHOT_URL}" || true
     - name: Post Screenshot URL
-      if: env.SCREENSHOT_URL != ''
       uses: actions/github-script@v4
       with:
         script: |
           const prNumber = context.payload.pull_request.number;
           const screenshotURL = process.env.SCREENSHOT_URL;
-          const commentBody = `Seems like the test succeeded. Temporary screenshot URL: ${screenshotURL}`;
-
-          await github.issues.createComment({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            issue_number: prNumber,
-            body: commentBody
-          });
+          if (screenshotURL) {
+            const commentBody = `Seems like the test succeeded. Temporary screenshot URL: ${screenshotURL}`;
+            await github.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: commentBody
+            });
+          } else {
+            const commentBody = "No screenshot URL available. Most likely the test did not succeed. Please check the logs of the test run, even though it might be green or yellow.";
+            await github.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: commentBody
+            });
+          }
