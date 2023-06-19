@@ -60,12 +60,17 @@ jobs:
         # Find out which files in data/ have been changed in the last commit
         #set -x    # Debug #379
         FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2-| sed -e 's|dev/null||g')
-        # Finds wrong files in PRs! # FILES=$(git log -1 --name-status --diff-filter=AR --pretty=format: -- data/ | awk '/^A/ || /^R/ {file=$2} END {print file}') # Most recent addition or renaming within the last commit
         echo "Last changed files from the FILES variable:"
-        echo "$FILES" ; if [ -z "$FILES" ] ; then echo "Variable FILES is empty." && exit 1 ; fi
+        echo "$FILES"
+        if [ -z "$FILES" ] ; then
+          echo "Variable FILES is empty."
+          exit 1
+        fi
         # Work on these files that have been changed in the last commit
-        # Check if $FILES is not empty
-        if [ -n "$FILES" ] ; then for FILE in $FILES ; do echo "$FILE" ; bash -e code/worker.sh $(readlink -f "$FILE") 2>&1 | tee log.txt ; done ; fi
+        for FILE in $FILES ; do
+          echo "$FILE"
+          bash -e code/worker.sh $(readlink -f "$FILE") 2>&1 | tee log.txt
+        done
         # xpra stop :99
         killall Xvfb
         # bundle exec jekyll build # https://help.github.com/en/articles/viewing-jekyll-build-error-messages#configuring-a-third-party-service-to-display-jekyll-build-error-messages
