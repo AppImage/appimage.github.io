@@ -95,7 +95,7 @@ jobs:
               body: commentBody
             });
           } else {
-            const commentBody = "No screenshot URL available. Most likely the test did not succeed. Please check the logs of the test run, even though it might be green or yellow.";
+            const commentBody = "The test was unable to make a screenshot. Most likely the test did not succeed. Please check the logs of the test run, even though it might be green or yellow.";
             await github.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
