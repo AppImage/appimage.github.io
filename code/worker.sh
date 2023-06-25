@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# verbose output
-set -v
+set -euxov pipefail
 
 URL=$(cat $1 | head -n 1)
 echo $URL
