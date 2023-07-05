@@ -5,6 +5,8 @@ set -euxov pipefail
 URL=$(cat $1 | head -n 1)
 echo $URL
 
+GHURL="" # Workaround for: "GHURL: unbound variable"
+
 INPUTBASENAME=$(basename $1)
 
 # Check if $URL starts with "http", otherwise exit
