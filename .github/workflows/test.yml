@@ -81,6 +81,7 @@ jobs:
         echo "SCREENSHOT_URL="$SCREENSHOT_URL >> $GITHUB_ENV || true
         echo "SCREENSHOT_URL: ${SCREENSHOT_URL}" || true
     - name: Post Screenshot URL
+      if: github.event_name == 'pull_request'
       uses: actions/github-script@v4
       with:
         script: |
