@@ -1,6 +1,7 @@
 #!/bin/bash
 
-set -euxov pipefail
+# set -euxov pipefail
+set -e -v
 
 URL=$(cat $1 | head -n 1)
 echo $URL
