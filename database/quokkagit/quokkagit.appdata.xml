@@ -1,0 +1,20 @@
+<component type="desktop-application">
+	<id>quokkagit</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0</project_license>
+	<name>quokkagit</name>
+	<summary>A small, TortoiseGit inspired git log viewer for linux</summary>
+	<description>
+		<p>quokkagit is a TortoiseGit inspired git log viewer for linux, which provides basic repository operations.</p>
+	</description>
+	<launchable type="desktop-id">quokkagit.desktop</launchable>
+	<url type="homepage">https://github.com/ballessay/quokkagit</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/ballessay/quokkagit/master/resources/screenshot.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>quokkagit.desktop</id>
+	</provides>
+</component>

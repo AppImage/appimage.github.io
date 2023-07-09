@@ -22,7 +22,7 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
         <tr id="{{ post.url }}">
           <td style="vertical-align: top;">
             <a href="{{ site.baseurl }}{{ post.url }}" style="font-weight:bold">
-            {% if post.icons[0] %}<img height="64" width="64" src="https://gitcdn.xyz/repo/AppImage/appimage.github.io/master/database/{{post.icons[0]}}"/>{% else %}<img style="opacity: 0.5;" height="64" width="64" src="https://img.icons8.com/ios/1600/ios-application-placeholder.png"/>{% endif %}<br>
+            {% if post.icons[0] %}<img height="64" width="64" src="https://appimage.github.io/database/{{post.icons[0]}}"/>{% else %}<img style="opacity: 0.5;" height="64" width="64" src="https://img.icons8.com/ios/1600/ios-application-placeholder.png"/>{% endif %}<br>
               {% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md" }}{% endif %}
             </a>
             {% if post.installation %}<span class="octicon octicon-package" title="Package available"></span>{% endif %}

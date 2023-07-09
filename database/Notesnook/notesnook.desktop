@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Notesnook
+Exec=AppRun --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=notesnook
+StartupWMClass=Notesnook
+X-AppImage-Version=2.2.1
+Comment=Your private note taking space
+Categories=Office;

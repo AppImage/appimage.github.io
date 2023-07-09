@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop">
+  <id>io.github.antimicrox.antimicrox</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>AntiMicroX</name>
+  <summary>Graphical program used to map gamepad buttons to keyboard, mouse, scripts and macros</summary>
+  <description>
+    <p>
+     AntiMicroX is a graphical program used to map gamepad buttons/joysticks
+     to keyboard, mouse, scripts and macros.
+     It can be also used for generating SLD2 configuration (useful for mapping 
+     atypical gamepads to generic ones like xbox360).
+    </p>
+    <p>
+    It allows mapping of gamepads/joystick buttons to:
+    </p>
+    <ul>
+    <li>keyboard buttons</li>
+    <li>mouse buttons and moves</li>
+    <li>scripts and launching apps</li>
+    <li>macros consisting of elements mentioned above</li>
+    </ul>
+    <p>
+     AntiMicroX was inspired by QJoyPad.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/AntiMicroX/antimicrox/</url>
+  <launchable type="desktop-id">io.github.antimicrox.antimicrox.desktop</launchable>
+  <releases>
+    <release version="3.1.1" date="2020-09-15"/>
+    <release version="3.1.0" date="2020-09-09"/>
+    <release version="3.0.1" date="2020-08-23"/>
+    <release version="3.0" date="2020-06-11"/>
+    <release version="2.25" date="2020-01-07"/>
+    <release version="2.24" date="2018-06-16"/>
+    <release version="2.23" date="2016-11-06"/>
+    <release version="2.22" date="2016-07-30"/>
+    <release version="2.21" date="2016-01-10"/>
+    <release version="2.20" date="2015-10-10"/>
+  </releases>
+  <provides>
+    <binary>antimicrox</binary>
+  </provides>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/other/appdata/screenshots/app_light.png</image>
+      <caption>Main Window (Light Theme)</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/other/appdata/screenshots/app_dark.png</image>
+      <caption>Main Window (Dark Theme)</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/other/appdata/screenshots/calibration.png</image>
+      <caption>Controller Calibration (Dark Theme)</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/other/appdata/screenshots/controllermapping.png</image>
+      <caption>Controller Mapping (Dark Theme)</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/other/appdata/screenshots/advanced.png</image>
+      <caption>Advanced Settings (Dark Theme)</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/other/appdata/screenshots/about.png</image>
+      <caption>About Window (Dark Theme)</caption>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/AntiMicroX/antimicrox/</url>
+  <keywords>
+    <keyword>game</keyword>
+    <keyword>controller</keyword>
+    <keyword>joystick</keyword>
+    <keyword>keyboard</keyword>
+    <keyword>mouse</keyword>
+  </keywords>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <mimetypes>
+    <mimetype>application/x-amgp</mimetype>
+  </mimetypes>
+  <content_rating type="oars-1.0">
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+</component>

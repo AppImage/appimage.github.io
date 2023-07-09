@@ -8,9 +8,10 @@ license: GPL-3.0
 GPL-3.0
 GPL-3.0
 GPL-3.0
+GPL-3.0
 
 icons:
-  - PhotoGIMP/icons/262x256/photogimp.png
+  - PhotoGIMP/icons/256x256/photogimp.png
 
 screenshots:
   - PhotoGIMP/screenshot.png
@@ -177,7 +178,7 @@ desktop:
     X-GNOME-Bugzilla-OtherBinaries: gimp-2.10
     StartupNotify: true
     MimeType: image/bmp
-    X-AppImage-Version: 2.10.13-20190912
+    X-AppImage-Version: 2.10.21-20200813
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file

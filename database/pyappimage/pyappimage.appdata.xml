@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>pyappimage</id>
+	<name>pyappimage</name>
+    <metadata_license>MIT</metadata_license>
+    <project_license>MIT</project_license>
+    <summary>Python AppImage builder</summary>
+    <description>
+	<p> Simple appimage builder for Python applications
+        </p>
+    </description>
+    <launchable type="desktop-id">pyappimage.desktop</launchable>
+    <url type="homepage">https://github.com/srevinsaju/pyappimage</url>
+    <provides>
+        <binary>python3.6</binary>
+    </provides>
+</component>

@@ -1,0 +1,16 @@
+# Desktop Entry Specification: https://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+[Desktop Entry]
+Type=Application
+Name=osu!
+Comment=Rhythm is just a *click* away.
+Icon=osu!
+Exec=osu!
+Path=~
+Terminal=true
+Categories=Game;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|ppy|osu|latest|osu.AppImage.zsync
+X-AppImage-Signature=Signature made Fri 14 Aug 2020 01:33:15 PM UTC using RSA key ID 117D6549 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

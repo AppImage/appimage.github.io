@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2020 Ingemar Ceicer <ic_0002@ceicer.com> -->
+<component type="desktop-application">
+  <id>appimagehelper</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>appImageHelper</name>
+  <summary>Desctop integrations for AppImage</summary>
+  <description>
+    <p>
+       A program for creating, deleting, controlling and organizing shortcuts to AppImage.
+    </p>
+    <p>Create, edit and delete:</p>
+    <ul>
+      <li>*.desktop files</li>
+      <li>Symbolik links</li>
+    </ul>
+  </description>
+    <launchable type="desktop-id">appimagehelper.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The options dialog</caption>
+      <image>http://bin.ceicer.com/appimagehelper/images/program.png</image>
+    </screenshot>
+    <screenshot>
+      <image>http://bin.ceicer.com/appimagehelper/images/program2.png</image>
+    </screenshot>
+    <screenshot>
+      <image>http://bin.ceicer.com/appimagehelper/images/program3.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://gitlab.com/posktomten/appimagehelper/-/wikis/home</url>
+  <project_group>appImageHelper</project_group>
+  <provides>
+    <binary>appImagehelper</binary>
+  </provides>
+  <releases>
+    <release version="2.4.0" date="2020-08-22">
+      <description>
+        <p>Self-updating AppImage</p>
+      </description>
+    </release>
+  </releases>
+</component>

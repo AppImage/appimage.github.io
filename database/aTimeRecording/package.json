@@ -1,0 +1,17 @@
+{
+  "name": "atimerecording",
+  "version": "1.2.1",
+  "description": "Online time tracking program for activities, work, self-employed, sports, leisure.",
+  "main": "app/main.js",
+  "author": "Gerold Penz <gerold@gp-softwaretechnik.at>",
+  "homepage": "https://activity-time-recording.com",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-serve": "^1.1.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-store": "^8.0.1",
+    "electron-window-state": "^5.0.3"
+  }
+}

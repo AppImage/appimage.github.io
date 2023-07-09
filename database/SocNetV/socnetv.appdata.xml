@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+        <id>org.socnetv.social_network_visualizer</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-2.0+</project_license>
+	<name>Social Network Visualizer</name>
+	<summary>Social Network Analysis and Visualization software application</summary>
+	<description>
+                <p>Social Network Visualizer (SocNetV) is a cross-platform, user-friendly free software tool for social network analysis and visualization. </p>
+                <p>With SocNetV you can draw social networks with a few clicks on a virtual canvas, load field data from a file in a supported format (GraphML, GraphViz, Adjacency, EdgeList, GML, Pajek, UCINET, etc) or crawl the internet to create a social network of connected webpages.</p>
+                <p>You can edit actors and ties through point-and-click, analyse graph and social network properties, produce beautiful HTML reports and embed visualization layouts to the network.</p>
+	</description>
+	<launchable type="desktop-id">socnetv.desktop</launchable>
+	<url type="homepage">https://socnetv.org</url>
+	<url type="bugtracker">https://github.com/socnetv/app/issues</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://socnetv.org/data/uploads/screenshots/25/socnetv-25-padget-power-centrality-size-distribution.png</image>
+		</screenshot>
+	</screenshots>
+        <releases>
+          <release version="2.9" date="2021-06-14" />
+          <release version="3.0" date="2021-07-30" />
+          <release version="3.0.1" date="2021-07-30" />
+          <release version="3.0.2" date="2021-07-30" />
+          <release version="3.0.3" date="2021-07-30" />
+        </releases>
+        <developer_name>Dimitris V. Kalamaras</developer_name>
+        <update_contact>dimitris.kalamaras_AT_gmail.com</update_contact>
+        <provides>
+          <binary>socnetv</binary>
+        </provides>
+</component>

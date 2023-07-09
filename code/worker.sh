@@ -1,11 +1,12 @@
 #!/bin/bash
 
+# set -euxov pipefail
+set -e -v
+
 URL=$(cat $1 | head -n 1)
 echo $URL
 
-if [ x"$TRAVIS_PULL_REQUEST" == xfalse ] ; then
-  git checkout "$TRAVIS_BRANCH"
-fi
+GHURL="" # Workaround for: "GHURL: unbound variable"
 
 INPUTBASENAME=$(basename $1)
 
@@ -21,7 +22,7 @@ if [ x"${URL:0:18}" == x"https://github.com" ] && [[ "${URL}" != *"download"* ]]
   echo "GitHub URL detected"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases?access_token=$GH_TOKEN" # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
+  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases" # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
   echo "URL from GitHub: $URL"
 fi
 
@@ -32,9 +33,10 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
     GHURL="$URL"
   fi
   echo "GitHub API URL detected"
-  URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | grep -ie 'amd.\?64\|x86.64\|x64\|linux.\?64' | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
+  API_JSON="$(wget -O - --header "Accept: application/vnd.github+json" --header "Authorization: Bearer $GH_TOKEN" --header "X-GitHub-Api-Version: 2022-11-28" "$GHURL")"
+  URL=$(echo "$API_JSON" | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | grep -ie 'amd.\?64\|x86.64\|x64\|linux.\?64' | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
   if [ x"" == x"$URL" ] ; then
-    URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | head -n 1 | cut -d '"' -f 4) # No 64-bit one found, trying any; TODO: Handle more than one AppImage per release
+    URL=$(echo "$API_JSON"| grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | head -n 1 | cut -d '"' -f 4) # No 64-bit one found, trying any; TODO: Handle more than one AppImage per release
   fi
   if [ x"" == x"$URL" ] ; then
     echo "Unable to get download URL for the AppImage. Is it really there on GitHub Releases?"
@@ -43,7 +45,7 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
   echo "URL from GitHub API: $URL"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" "https://api.github.com/repos/$GHUSER/$GHREPO?access_token=$GH_TOKEN" -O - | grep spdx_id | cut -d '"' -f 4 | head -n 1)
+  LICENSE=$(echo "$API_JSON" | grep spdx_id | cut -d '"' -f 4 | head -n 1)
 fi
 
 # Download the file if it is not already there
@@ -59,7 +61,7 @@ fi
 # Check the type of the AppImage
 TYPE=""
 ARCHITECTURE=$(file "$FILENAME" | cut -d "," -f 2 | xargs | sed -e 's|-|_|g' )
-echo $ARCHCITECTURE # TODO: Normalize
+echo $ARCHITECTURE # TODO: Normalize
 MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4 2>/dev/null)
 if [ -z "$MAGIC" ] ; then
   echo "Magic number not detected. Dear upstream, please consider to add one to the AppImage as per"
@@ -92,15 +94,15 @@ if [ ! -f appdir-lint.sh ] ; then
 fi
 
 set -x
-  
+
 # If we have a type 2 AppImage, then mount it using appimagetool (not using itself for security reasons)
 if [ x"$TYPE" == x2 ] ; then
   if [ ! -e appimagetool-x86_64.AppImage ] ; then
-    wget -c -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
-    chmod +x appimagetool*
+    wget -c -q https://github.com/AppImage/appimage.github.io/releases/download/deps/runtime-fuse2-x86_64
+    chmod +x runtime*
   fi
   # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
-  TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-mount &
+  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-mount &
   PID=$!
   sleep 1
   mount | grep tmp | tail -n 1
@@ -109,8 +111,8 @@ if [ x"$TYPE" == x2 ] ; then
   bash appdir-lint.sh "$APPDIR"
   # later # kill $PID # fuse
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
-  UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-updateinformation) || echo "Could not get update information from the AppImage"
-  TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-signature > sig || echo "Could not get signature from the AppImage"
+  UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-updateinformation) || echo "Could not get update information from the AppImage"
+  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-signature > sig || echo "Could not get signature from the AppImage"
   SIGNATURE=$(gpg2 --verify sig sig 2>&1 | sed -e 's|gpg: ||g' |tr '\n' ' ' || true )
 fi
 
@@ -120,7 +122,7 @@ if [ x"$TYPE" == x1 ] ; then
   sudo mount "$FILENAME" -o ro,loop /mnt
   APPDIR=/mnt
   echo $APPDIR
-  bash appdir-lint.sh "$APPDIR"  
+  bash appdir-lint.sh "$APPDIR"
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
   UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null) || echo "Could not get update information from the AppImage"
   # later # sudo umount -l /mnt
@@ -195,11 +197,11 @@ fi
 
 set +x
 
-echo "==========================================="
-
-find "${APPDIR}"/usr/share/applications/ || true
-echo ""
-find "${APPDIR}"/usr/share/icons/ || true
+# echo "==========================================="
+#
+# find "${APPDIR}"/usr/share/applications/ || true
+# echo ""
+# find "${APPDIR}"/usr/share/icons/ || true
 
 echo "==========================================="
 
@@ -210,14 +212,20 @@ TERMINAL=false
 grep -r Terminal=true "${APPDIR}"/*.desktop && TERMINAL=true
 echo "TERMINAL: $TERMINAL"
 
+# "Install" Firejail
 # The simplest and most straightforward way to get the most recent version
 # of Firejail running on a less than recent OS; don't do this at home kids
-FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
-wget -c "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/$FILE"
-FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/" -O - | grep firejail-0 | head -n 1 | cut -d '"' -f 2)
-wget -c "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/$FILE"
-sudo tar xf musl-*.apk -C / 2>/dev/null
-sudo tar xf firejail-*.apk -C / 2>/dev/null
+mkdir -p firejail
+FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
+wget -c "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
+FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/" -O - | grep firejail-0 | head -n 1 | cut -d '"' -f 2)
+wget -c "http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/$FILE"
+sudo tar xf musl-*.apk -C ./firejail/
+sudo tar xf firejail-*.apk -C ./firejail/
+sudo cp -Rf ./firejail/etc/* /etc/
+sudo cp -Rf ./firejail/lib/* /lib/
+sudo cp -Rf ./firejail/usr/* /usr/
+echo "Setting firejail permissions"
 sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
 
 echo ""
@@ -232,6 +240,9 @@ touch "$HOME/.local/share/appimagekit/no_desktopintegration"
 file "$APPDIR"/AppRun
 ls -lh "$APPDIR"/AppRun
 
+# Needed for, e.g., SheepShaver
+sudo sysctl vm.mmap_min_addr=0
+
 export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
 export QT_DEBUG_PLUGINS=1 # https://github.com/AppImage/appimage.github.io/pull/1809#issuecomment-548399825
 sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/appimage.github.io/pull/1564#issuecomment-491591127 https://github.com/electron/electron/issues/17972
@@ -243,7 +254,7 @@ else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
 fi
 APID=$!
-sleep 15
+sleep 30
 
 # Make a screenshot
 
@@ -255,10 +266,12 @@ NUMBER_OF_WINDOWS=$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[
 echo "NUMBER_OF_WINDOWS: $NUMBER_OF_WINDOWS"
 if [ $(($NUMBER_OF_WINDOWS)) -lt 1 ] ; then
   echo "ERROR: Could not find a single window on screen :-("
+  kill -9 $$
+  exit 1
 fi
 
 # Works with Xvfb but cannot select window by ID
-# sudo apt-get -y install scrot 
+# sudo apt-get -y install scrot
 # scrot -b 'screenshot_$wx$h.jpg' # -u gives "X Error of failed request:  BadDrawable (invalid Pixmap or Window parameter)"
 # mv screenshot_* database/$INPUTBASENAME/
 
@@ -282,14 +295,28 @@ fi
 
 # Works with Xvfb
 # sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
-# -display :99 needed here? 
+# -display :99 needed here?
 # xwd -id $(xdotool getactivewindow) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
 mkdir -p database/$INPUTBASENAME/
-# xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
-xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtopng  > database/$INPUTBASENAME/screenshot.png && echo "Snap!"
+
+# Taking screenshot like this fails, https://github.com/AppImage/appimage.github.io/issues/2494
+# convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
+
+import -window "$(xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png  && echo "Screenshot taken"
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 killall icewm
+
+# Check if the screenshot is unusable and error out if it is
+if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png" ] ; then
+  echo "Could not take a screenshot png file"
+  ls -lh database/$INPUTBASENAME/screenshot.png
+  file database/$INPUTBASENAME/screenshot.png
+  file -b --mime-type database/$INPUTBASENAME/screenshot.png
+  exit 1
+fi
+
+# [ -s database/$INPUTBASENAME/screenshot.png ] || echo "Screenshot is empty" && exit 1
 
 echo "==========================================="
 
@@ -348,6 +375,10 @@ fi
 
 if [ -e $APPDIR/usr/share/metainfo/*.appdata.xml ] ; then
   cp $APPDIR/usr/share/metainfo/*.appdata.xml database/$INPUTBASENAME/
+fi
+
+if [ -e $APPDIR/usr/share/metainfo/*.metainfo.xml ] ; then
+  cp $APPDIR/usr/share/metainfo/*.metainfo.xml database/$INPUTBASENAME/
 fi
 
 # Get pacakge.json from resources/app.asar for electron-builder applications
@@ -434,7 +465,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "" >> apps/$INPUTBASENAME.md
     echo "icons:" >> apps/$INPUTBASENAME.md
     echo "  - $INPUTBASENAME/icons/$ICONSIZE/$ICONBASENAME" >> apps/$INPUTBASENAME.md
-  fi  
+  fi
   # Screenshot
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     SCREENSHOT=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/screenshots/screenshot[1]/image" -v . || true)
@@ -480,7 +511,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   fi
   # Add content of desktop file
   if [ -f "database/$INPUTBASENAME/$(dir -C -w 1 database/$INPUTBASENAME | grep -m1 '.desktop')" ]; then
-    dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
+    sudo dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml # Do we need sudo to prevent '`load': cannot load such file'?
     echo "" >> apps/$INPUTBASENAME.md
     echo "desktop:" >> apps/$INPUTBASENAME.md
     cat database/$INPUTBASENAME/desktop.yaml | sed  's/^/  /' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first line ("---")
@@ -495,7 +526,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   fi
   # Add content of Electron package.json file
   if [ -e database/$INPUTBASENAME/package.json ] ; then
-    dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml
+    sudo dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml # Do we need sudo to prevent '`load': cannot load such file'?
     echo "" >> apps/$INPUTBASENAME.md
     echo "electron:" >> apps/$INPUTBASENAME.md
     cat database/$INPUTBASENAME/package.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
@@ -518,12 +549,13 @@ echo "==========================================="
 
 # If this a PR, then just check whether the files have generated
 # See https://github.com/AppImage/appimage.github.io/issues/476 for more information
-if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then 
+if [ "$IS_PULLREQUEST" = true ]; then
   cat "apps/${INPUTBASENAME}.md" || exit 1
   cat "database/${INPUTBASENAME}/"*.desktop || exit 1 # Asterisk must not be inside quotes, https://travis-ci.org/AppImage/appimage.github.io/builds/360847207#L782
   ls -lh "database/${INPUTBASENAME}/screenshot.png" || exit 1
-  curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfer.sh/screenshot.png 
-  echo "Since we are on a TRAVIS_PULL_REQUEST and the required files are there, we are assuming the test is OK"
+  curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfer.sh/screenshot.png
+  echo ""
+  echo "We will assume the test is OK (a pull request event was triggered and the required files exist)."
   exit 0
 fi
 
@@ -531,17 +563,17 @@ fi
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
 
 git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
-git config --global user.email "travis@travis-ci.org"
-git config --global user.name "Travis CI"
+git config --global user.email "actions@users.noreply.github.com"
+git config --global user.name "GitHub Actions"
 set -x
 ( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
 ( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
 git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
-Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
+Add automatically parsed data ($GITHUB_JOB)
 [ci skip]
 EOF
 set +x
-git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+git remote add deploy https://${GH_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
 # wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     set -x
     git push --set-upstream deploy

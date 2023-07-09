@@ -1,0 +1,20 @@
+# have a look at freedesktop desktop specifications
+
+[Desktop Entry]
+Type=Application
+Name=Sayonara Player
+GenericName=Media player
+Comment=Music player and music library admininstration
+Exec=sayonara %F
+Icon=sayonara
+Terminal=false
+Categories=Qt;Audio;Music;Player;AudioVideo;
+MimeType=audio/mpeg;audio/x-mpegurl;audio/wav;audio/x-wav;audio/basic;application/x-ogg;application/ogg;audio/x-vorbis+ogg;audio/x-scpls;audio/x-mp3;audio/x-mpeg;audio/x-flac;x-content/audio-player;
+Keywords=audio;music;player;tag;library;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
