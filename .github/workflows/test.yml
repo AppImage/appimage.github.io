@@ -76,7 +76,7 @@ jobs:
             for FILE in $FILES; do
               echo "$FILE"
               bash -e code/worker.sh $(readlink -f "$FILE") 2>&1 | tee log.txt
-              EXIT_CODE=$?
+              EXIT_CODE=${PIPESTATUS[0]} # bashism; get the return code of the leftmost element of the pipe
               if [ $EXIT_CODE -ne 0 ]; then
                 echo "worker.sh exited with a non-zero code: $EXIT_CODE"
                 exit $EXIT_CODE
