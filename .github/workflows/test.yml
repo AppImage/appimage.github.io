@@ -4,13 +4,16 @@ on:
       # Do not build PRs twice
       - 'master'
     # The ignored paths must not include md files for the website itself
-    paths-ignore:
-    - '*.md'
-    - '.github/workflows/**'
-    - 'code/**'
+    paths:
+      - 'data/**'
   pull_request:
-    paths-ignore:
-    - '*.md'
+    types:
+      # NOT on "synchonize"
+      - opened
+      - edited
+      - reopened
+    paths:
+      - 'data/**'
 
 env:
   DISPLAY: :99
