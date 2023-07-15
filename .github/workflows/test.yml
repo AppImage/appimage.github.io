@@ -31,8 +31,8 @@ jobs:
           fetch-depth: 0
       - name: Auto-cancel builds triggered by branch updates
         run: |
-          env | grep -i branch || true
           COMMIT_MSG="$(git show -s --format=%s)"
+          echo "$COMMIT_MSG"
           if [[ $COMMIT_MSG == 'Merge branch'* ]]; then
             echo "The workflow will not run as the commit message starts with 'Merge branch'."
             exit 0
@@ -76,7 +76,7 @@ jobs:
             for FILE in $FILES; do
               echo "$FILE"
               bash -e code/worker.sh $(readlink -f "$FILE") 2>&1 | tee log.txt
-              EXIT_CODE=$?
+              EXIT_CODE=${PIPESTATUS[0]} # bashism; get the return code of the leftmost element of the pipe
               if [ $EXIT_CODE -ne 0 ]; then
                 echo "worker.sh exited with a non-zero code: $EXIT_CODE"
                 exit $EXIT_CODE
