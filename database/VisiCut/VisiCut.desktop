@@ -1,12 +1,15 @@
 [Desktop Entry]
+Name=VisiCut
+Comment=A userfriendly tool to create, save and send Jobs to a Lasercutter
+Comment[de]=Ein benutzerfreundliches Tool zum Erstellen, Speichern und Senden von Jobs an einen Lasercutter
+Icon=visicut
+Exec=visicut %F
+Terminal=false
 Type=Application
-Name=appimagetool
-Exec=appimagetool
-Comment=Tool to generate AppImages from AppDirs
-Icon=appimagetool
-Categories=Development;
-Terminal=true
-
+Categories=Graphics;VectorGraphics;GTK;
+MimeType=image/vnd.dxf;image/svg+xml;image/x-eps;image/jpeg;image/png;application/x-plf;application/x-ls;
+StartupNotify=true
+X-AppImage-Version=1.9-184-gd9f022b8+devel
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

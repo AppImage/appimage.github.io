@@ -1,7 +1,6 @@
-https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
 # https://api.github.com/repos/AppImage/AppImageKit/releases/tags/continuous
 # Need to handle multiple AppImages per release for this? (to be decided)
 # We also need to think about how we handle multiple architectures... perhaps we should only care about x86_64 and 
 # since we link to the download page, the user could download other architectures from there?
 # But at least we should somehow carry the information that downloads for multiple architectures are available.
-#

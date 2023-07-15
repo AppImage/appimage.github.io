@@ -1,12 +1,12 @@
 [Desktop Entry]
+Version=1.0
 Type=Application
-Name=appimagetool
-Exec=appimagetool
-Comment=Tool to generate AppImages from AppDirs
-Icon=appimagetool
-Categories=Development;
-Terminal=true
-
+Terminal=false
+Name=Tipitaka Pali Reader
+Exec=tipitaka_pali_reader %u
+Icon=logo
+Categories=Utility;
+StartupWMClass="tipitaka_pali_reader"
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

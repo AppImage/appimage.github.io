@@ -3,14 +3,11 @@ on:
     branches:
       # Do not build PRs twice
       - 'master'
-    # The ignored paths must not include md files for the website itself
-    paths-ignore:
-    - '*.md'
-    - '.github/workflows/**'
-    - 'code/**'
+    paths:
+      - 'data/**'
   pull_request:
-    paths-ignore:
-    - '*.md'
+    paths:
+      - 'data/**'
 
 env:
   DISPLAY: :99
@@ -25,81 +22,100 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-    - uses: actions/checkout@v3
-    # https://github.com/actions/checkout#Fetch-all-history-for-all-tags-and-branches
-    # According to the docs for checkout@v2, Only a single commit is fetched by default, but
-    # providing a fetch-depth of 0 should fetch all history.
-      with:
-        fetch-depth: 0
-    - name: Install dependencies
-      shell: bash
-      run: |
-        # set -e
-        sudo apt update
-        sudo apt-get -qq -y install sudo imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl # appstream # TODO: Cache me!
-        sudo bash code/prep-dummy-soundcard.sh
-        sudo gem install dupervisor -v 1.0.5 # To convert ini to yaml files
-        sudo npm install -g asar # to get pacakges.json from resources/app.asar for electron-builder applications
-        # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
-    - name: Main test
-      # shell: bash
-      run: |
-        # set -e
-        mkdir $HOME/.icewm/
-        echo "ShowTaskBar = 0" > $HOME/.icewm/preferences
-        echo "TaskBarAutoHide = 1" > $HOME/.icewm/preferences
-        echo "TaskBarShowWorkspaces = 0" > $HOME/.icewm/preferences
-        echo "TaskBarShowAllWindows = 0" > $HOME/.icewm/preferences
-        echo "TaskBarShowClock = 0" > $HOME/.icewm/preferences
-        echo "TaskBarShowMailboxStatus = 0" > $HOME/.icewm/preferences
-        echo "TaskBarShowCPUStatus = 0" > $HOME/.icewm/preferences
-        echo "TaskBarShowWindowListMenu = 0" > $HOME/.icewm/preferences
-        # xpra start :99 # Cannot get screenshots to work
-        Xvfb :99 -screen 0 800x600x24 >/dev/null 2>&1 & # Need to set bit depth, otherwise get some black screenshots
-        # until xset -q; do echo "Waiting for X server to start..."; sleep 1; done # We are not immediately using it anyway
-        # Find out which files in data/ have been changed in the last commit
-        #set -x    # Debug #379
-        FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2-| sed -e 's|dev/null||g')
-        # Finds wrong files in PRs! # FILES=$(git log -1 --name-status --diff-filter=AR --pretty=format: -- data/ | awk '/^A/ || /^R/ {file=$2} END {print file}') # Most recent addition or renaming within the last commit
-        echo "Last changed files from the FILES variable:"
-        echo "$FILES" ; if [ -z "$FILES" ] ; then echo "Variable FILES is empty." && exit 1 ; fi
-        # Work on these files that have been changed in the last commit
-        # Check if $FILES is not empty
-        if [ -n "$FILES" ] ; then for FILE in $FILES ; do echo "$FILE" ; bash -e code/worker.sh $(readlink -f "$FILE") 2>&1 | tee log.txt ; done ; fi
-        # xpra stop :99
-        killall Xvfb
-        # bundle exec jekyll build # https://help.github.com/en/articles/viewing-jekyll-build-error-messages#configuring-a-third-party-service-to-display-jekyll-build-error-messages
-    - name: Check log
-      shell: bash
-      run: |
-        # set -e
-        cat log.txt | wc -l
-        grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)." && exit 1
-        grep -r "version \`GLIBC_.*' not found" && MESSAGE="This was compiled on a too new system and hence cannot run on all still-supported versions of Ubuntu." && exit 1
-        echo "${MESSAGE}"
-        SCREENSHOT_URL=$(cat log.txt |  grep -o -e "https://transfer.sh/.*/screenshot.png") || true
-        echo "SCREENSHOT_URL="$SCREENSHOT_URL >> $GITHUB_ENV || true
-        echo "SCREENSHOT_URL: ${SCREENSHOT_URL}" || true
-    - name: Post Screenshot URL
-      uses: actions/github-script@v4
-      with:
-        script: |
-          const prNumber = context.payload.pull_request.number;
-          const screenshotURL = process.env.SCREENSHOT_URL;
-          if (screenshotURL) {
-            const commentBody = `Seems like the test succeeded. Temporary screenshot URL: ${screenshotURL}`;
-            await github.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: prNumber,
-              body: commentBody
-            });
-          } else {
-            const commentBody = "No screenshot URL available. Most likely the test did not succeed. Please check the logs of the test run, even though it might be green or yellow.";
-            await github.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: prNumber,
-              body: commentBody
-            });
-          }
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        # https://github.com/actions/checkout#Fetch-all-history-for-all-tags-and-branches
+        # According to the docs for checkout@v2, Only a single commit is fetched by default, but
+        # providing a fetch-depth of 0 should fetch all history.
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        shell: bash
+        run: |
+          # set -e
+          sudo apt update
+          sudo apt-get -qq -y install sudo imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl # appstream # TODO: Cache me!
+          sudo bash code/prep-dummy-soundcard.sh
+          sudo gem install dupervisor -v 1.0.5 # To convert ini to yaml files
+          sudo npm install -g asar # to get pacakges.json from resources/app.asar for electron-builder applications
+          # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
+      - name: Main test
+        # shell: bash
+        run: |
+          # set -e
+          mkdir $HOME/.icewm/
+          echo "ShowTaskBar = 0" > $HOME/.icewm/preferences
+          echo "TaskBarAutoHide = 1" > $HOME/.icewm/preferences
+          echo "TaskBarShowWorkspaces = 0" > $HOME/.icewm/preferences
+          echo "TaskBarShowAllWindows = 0" > $HOME/.icewm/preferences
+          echo "TaskBarShowClock = 0" > $HOME/.icewm/preferences
+          echo "TaskBarShowMailboxStatus = 0" > $HOME/.icewm/preferences
+          echo "TaskBarShowCPUStatus = 0" > $HOME/.icewm/preferences
+          echo "TaskBarShowWindowListMenu = 0" > $HOME/.icewm/preferences
+          # xpra start :99 # Cannot get screenshots to work
+          Xvfb :99 -screen 0 800x600x24 >/dev/null 2>&1 & # Need to set bit depth, otherwise get some black screenshots
+          # until xset -q; do echo "Waiting for X server to start..."; sleep 1; done # We are not immediately using it anyway
+          # Find out which files in data/ have been changed in the last commit
+          #set -x    # Debug #379
+          #FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2-| sed -e 's|dev/null||g')
+          FILES=$(git log -1 --format= --name-only --diff-filter=d -- data/ | head -1)
+          # Finds wrong files in PRs! # FILES=$(git log -1 --name-status --diff-filter=AR --pretty=format: -- data/ | awk '/^A/ || /^R/ {file=$2} END {print file}') # Most recent addition or renaming within the last commit
+          echo "Last changed files from the FILES variable:"
+          echo "$FILES" ; if [ -z "$FILES" ] ; then echo "Variable FILES is empty." && exit 1 ; fi
+          # Work on these files that have been changed in the last commit
+          if [ -n "$FILES" ]; then
+            for FILE in $FILES; do
+              echo "$FILE"
+              bash -e code/worker.sh $(readlink -f "$FILE") 2>&1 | tee log.txt
+              EXIT_CODE=${PIPESTATUS[0]} # bashism; get the return code of the leftmost element of the pipe
+              if [ $EXIT_CODE -ne 0 ]; then
+                echo "worker.sh exited with a non-zero code: $EXIT_CODE"
+                exit $EXIT_CODE
+              fi
+            done
+          fi
+          # xpra stop :99
+          killall Xvfb
+          # bundle exec jekyll build # https://help.github.com/en/articles/viewing-jekyll-build-error-messages#configuring-a-third-party-service-to-display-jekyll-build-error-messages
+      - name: Check log
+        shell: bash
+        run: |
+          cat log.txt | wc -l
+          grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)." && exit 1
+          grep -r "version \`GLIBC_.*' not found" && MESSAGE="This was compiled on a too new system and hence cannot run on all still-supported versions of Ubuntu." && exit 1
+          echo "${MESSAGE}"
+          SCREENSHOT_URL=$(cat log.txt | grep -o -e "https://transfer.sh/.*/screenshot.png") || true
+          if [[ -z "${SCREENSHOT_URL}" ]]; then
+            echo "No screenshot URL found."
+            exit 1
+          fi
+          echo "SCREENSHOT_URL=$SCREENSHOT_URL" >> $GITHUB_ENV || true
+          echo "SCREENSHOT_URL: ${SCREENSHOT_URL}" || true
+      - name: Post Screenshot URL
+        if: ${{ always() && github.event_name == 'pull_request' && github.run_status != 'cancelled' }}
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const screenshotURL = process.env.SCREENSHOT_URL;
+            if (screenshotURL) {
+              const commentBody = `Seems like the test succeeded. Temporary screenshot URL: ${screenshotURL}`;
+              await github.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: commentBody
+              });
+            } else {
+              const runURL = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${{ github.run_id }}`;
+              const commentBody = `The test was unable to make a screenshot. Most likely, the test did not succeed. Please check the [logs of the test run](${runURL}).`;
+              await github.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: commentBody
+              });
+              core.setFailed("Unable to post screenshot");
+            }
+
+

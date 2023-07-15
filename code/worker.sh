@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# verbose output
-set -v
+# set -euxov pipefail
+set -e -v
 
 URL=$(cat $1 | head -n 1)
 echo $URL
+
+GHURL="" # Workaround for: "GHURL: unbound variable"
 
 INPUTBASENAME=$(basename $1)
 
@@ -264,6 +266,7 @@ NUMBER_OF_WINDOWS=$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[
 echo "NUMBER_OF_WINDOWS: $NUMBER_OF_WINDOWS"
 if [ $(($NUMBER_OF_WINDOWS)) -lt 1 ] ; then
   echo "ERROR: Could not find a single window on screen :-("
+  kill -9 $$
   exit 1
 fi
 
