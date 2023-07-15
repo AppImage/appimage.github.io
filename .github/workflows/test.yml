@@ -7,11 +7,6 @@ on:
     paths:
       - 'data/**'
   pull_request:
-    types:
-      # NOT on "synchonize"
-      - opened
-      - edited
-      - reopened
     paths:
       - 'data/**'
 
@@ -111,7 +106,9 @@ jobs:
               body: commentBody
             });
           } else {
-            const runURL = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}/jobs/${process.env.GITHUB_JOB}`;
+            const workflowRunID = process.env.GITHUB_RUN_ID;
+            const jobID = process.env.GITHUB_JOB;
+            const runURL = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${workflowRunID}/jobs/${jobID}`;
             const commentBody = `The test was unable to make a screenshot. Most likely the test did not succeed. Please check the [logs of the test run](${runURL}).`;
             await github.issues.createComment({
               owner: context.repo.owner,
@@ -121,3 +118,4 @@ jobs:
             });
             core.setFailed("Unable to post screenshot");
           }
+
