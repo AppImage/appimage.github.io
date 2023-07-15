@@ -31,6 +31,7 @@ jobs:
           fetch-depth: 0
       - name: Auto-cancel builds triggered by branch updates
         run: |
+          env | grep -i branch || true
           COMMIT_MSG="${{ github.event.pull_request.head.commit.message }}"
           if [[ $COMMIT_MSG == 'Merge branch'* ]]; then
             echo "The workflow will not run as the commit message starts with 'Merge branch'."
@@ -115,7 +116,7 @@ jobs:
                 body: commentBody
               });
             } else {
-              const runURL = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${github.run_id}`;
+              const runURL = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${{ github.run_number }}`;
               const commentBody = `The test was unable to make a screenshot. Most likely, the test did not succeed. Please check the [logs of the test run](${runURL}).`;
               await github.issues.createComment({
                 owner: context.repo.owner,
@@ -125,4 +126,5 @@ jobs:
               });
               core.setFailed("Unable to post screenshot");
             }
+
 
