@@ -33,11 +33,11 @@ jobs:
         run: |
           COMMIT_MSG="$(git show -s --format=%s)"
           echo "$COMMIT_MSG"
-          if [[ $COMMIT_MSG == 'Merge branch'* ]]; then
-            echo "The workflow will not run as the commit message starts with 'Merge branch'."
-            exit 0
+          if [[ $variable =~ ^Merge[[:space:]][[:xdigit:]]{40}[[:space:]]into[[:space:]][[:xdigit:]]{40}$ ]]; then
+            echo "The workflow will not run as it was triggered by 'Update branch'."
+            exit 78 # Skipped
           else
-            echo "The workflow will continue as the commit message does not start with 'Merge branch'."
+            echo "The workflow will continue."
           fi
       - name: Install dependencies
         shell: bash
