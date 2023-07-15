@@ -103,4 +103,5 @@ jobs:
               issue_number: prNumber,
               body: commentBody
             });
+            core.setFailed("Unable to post screenshot")
           }
