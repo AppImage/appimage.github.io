@@ -93,7 +93,7 @@ jobs:
         echo "SCREENSHOT_URL=$SCREENSHOT_URL" >> $GITHUB_ENV || true
         echo "SCREENSHOT_URL: ${SCREENSHOT_URL}" || true
     - name: Post Screenshot URL
-      if: ${{ always() && github.event_name == 'pull_request' }}
+      if: ${{ always() && github.event_name == 'pull_request' && github.run_status != 'cancelled' }}
       uses: actions/github-script@v4
       with:
         script: |
@@ -108,8 +108,8 @@ jobs:
               body: commentBody
             });
           } else {
-            const logURL = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`;
-            const commentBody = `The test was unable to make a screenshot. Most likely the test did not succeed. Please check the [logs of the test run](${logURL}).`;
+            const runURL = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}/jobs/${process.env.GITHUB_JOB}`;
+            const commentBody = `The test was unable to make a screenshot. Most likely the test did not succeed. Please check the [logs of the test run](${runURL}).`;
             await github.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -118,4 +118,3 @@ jobs:
             });
             core.setFailed("Unable to post screenshot");
           }
-
