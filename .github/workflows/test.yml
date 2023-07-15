@@ -33,7 +33,7 @@ jobs:
         run: |
           COMMIT_MSG="$(git show -s --format=%s)"
           echo "$COMMIT_MSG"
-          if [[ $variable =~ ^Merge[[:space:]][[:xdigit:]]{40}[[:space:]]into[[:space:]][[:xdigit:]]{40}$ ]]; then
+          if [[ "$COMMIT_MSG" =~ ^Merge[[:space:]][[:xdigit:]]{40}[[:space:]]into[[:space:]][[:xdigit:]]{40}$ ]]; then
             echo "The workflow will not run as it was triggered by 'Update branch'."
             exit 78 # Skipped
           else
