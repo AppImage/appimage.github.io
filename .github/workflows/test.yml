@@ -31,7 +31,7 @@ jobs:
           fetch-depth: 0
       - name: Auto-cancel builds triggered by branch updates
         run: |
-          COMMIT_MSG="${{ github.event.commits[0].message }}"
+          COMMIT_MSG="${{ github.event.pull_request.head.commit.message }}"
           if [[ $COMMIT_MSG == 'Merge branch'* ]]; then
             echo "The workflow will not run as the commit message starts with 'Merge branch'."
             exit 0
