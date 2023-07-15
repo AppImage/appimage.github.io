@@ -57,8 +57,7 @@ jobs:
           # until xset -q; do echo "Waiting for X server to start..."; sleep 1; done # We are not immediately using it anyway
           # Find out which files in data/ have been changed in the last commit
           #set -x    # Debug #379
-          #FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2-| sed -e 's|dev/null||g')
-          FILES=$(git log -1 --format= --name-only --diff-filter=d -- data/ | head -1)
+          FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2-| sed -e 's|dev/null||g')
           # Finds wrong files in PRs! # FILES=$(git log -1 --name-status --diff-filter=AR --pretty=format: -- data/ | awk '/^A/ || /^R/ {file=$2} END {print file}') # Most recent addition or renaming within the last commit
           echo "Last changed files from the FILES variable:"
           echo "$FILES" ; if [ -z "$FILES" ] ; then echo "Variable FILES is empty." && exit 1 ; fi
