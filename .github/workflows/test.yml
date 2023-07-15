@@ -29,16 +29,6 @@ jobs:
         # providing a fetch-depth of 0 should fetch all history.
         with:
           fetch-depth: 0
-      - name: Auto-cancel builds triggered by branch updates
-        run: |
-          COMMIT_MSG="$(git show -s --format=%s)"
-          echo "$COMMIT_MSG"
-          if [[ "$COMMIT_MSG" =~ ^Merge[[:space:]][[:xdigit:]]{40}[[:space:]]into[[:space:]][[:xdigit:]]{40}$ ]]; then
-            echo "The workflow will not run as it was triggered by 'Update branch'."
-            exit 78 # Skipped
-          else
-            echo "The workflow will continue."
-          fi
       - name: Install dependencies
         shell: bash
         run: |
