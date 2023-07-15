@@ -29,16 +29,6 @@ jobs:
         # providing a fetch-depth of 0 should fetch all history.
         with:
           fetch-depth: 0
-      - name: Auto-cancel builds triggered by branch updates
-        run: |
-          COMMIT_MSG="$(git show -s --format=%s)"
-          echo "$COMMIT_MSG"
-          if [[ "$COMMIT_MSG" =~ ^Merge[[:space:]][[:xdigit:]]{40}[[:space:]]into[[:space:]][[:xdigit:]]{40}$ ]]; then
-            echo "The workflow will not run as it was triggered by 'Update branch'."
-            exit 78 # Skipped
-          else
-            echo "The workflow will continue."
-          fi
       - name: Install dependencies
         shell: bash
         run: |
@@ -67,7 +57,8 @@ jobs:
           # until xset -q; do echo "Waiting for X server to start..."; sleep 1; done # We are not immediately using it anyway
           # Find out which files in data/ have been changed in the last commit
           #set -x    # Debug #379
-          FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2-| sed -e 's|dev/null||g')
+          #FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2-| sed -e 's|dev/null||g')
+          FILES=$(git log -1 --format= --name-only --diff-filter=d -- data/ | head -1)
           # Finds wrong files in PRs! # FILES=$(git log -1 --name-status --diff-filter=AR --pretty=format: -- data/ | awk '/^A/ || /^R/ {file=$2} END {print file}') # Most recent addition or renaming within the last commit
           echo "Last changed files from the FILES variable:"
           echo "$FILES" ; if [ -z "$FILES" ] ; then echo "Variable FILES is empty." && exit 1 ; fi
