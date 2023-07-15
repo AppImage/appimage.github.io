@@ -64,21 +64,33 @@ jobs:
         echo "Last changed files from the FILES variable:"
         echo "$FILES" ; if [ -z "$FILES" ] ; then echo "Variable FILES is empty." && exit 1 ; fi
         # Work on these files that have been changed in the last commit
-        # Check if $FILES is not empty
-        if [ -n "$FILES" ] ; then for FILE in $FILES ; do echo "$FILE" ; bash -e code/worker.sh $(readlink -f "$FILE") 2>&1 | tee log.txt ; done ; fi
+        if [ -n "$FILES" ]; then
+          for FILE in $FILES; do
+            echo "$FILE"
+            bash -e code/worker.sh $(readlink -f "$FILE") 2>&1 | tee log.txt
+            EXIT_CODE=$?
+            if [ $EXIT_CODE -ne 0 ]; then
+              echo "worker.sh exited with a non-zero code: $EXIT_CODE"
+              exit $EXIT_CODE
+            fi
+          done
+        fi
         # xpra stop :99
         killall Xvfb
         # bundle exec jekyll build # https://help.github.com/en/articles/viewing-jekyll-build-error-messages#configuring-a-third-party-service-to-display-jekyll-build-error-messages
     - name: Check log
       shell: bash
       run: |
-        # set -e
         cat log.txt | wc -l
         grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)." && exit 1
         grep -r "version \`GLIBC_.*' not found" && MESSAGE="This was compiled on a too new system and hence cannot run on all still-supported versions of Ubuntu." && exit 1
         echo "${MESSAGE}"
-        SCREENSHOT_URL=$(cat log.txt |  grep -o -e "https://transfer.sh/.*/screenshot.png") || true
-        echo "SCREENSHOT_URL="$SCREENSHOT_URL >> $GITHUB_ENV || true
+        SCREENSHOT_URL=$(cat log.txt | grep -o -e "https://transfer.sh/.*/screenshot.png") || true
+        if [[ -z "${SCREENSHOT_URL}" ]]; then
+          echo "No screenshot URL found."
+          exit 1
+        fi
+        echo "SCREENSHOT_URL=$SCREENSHOT_URL" >> $GITHUB_ENV || true
         echo "SCREENSHOT_URL: ${SCREENSHOT_URL}" || true
     - name: Post Screenshot URL
       if: github.event_name == 'pull_request'
@@ -103,4 +115,5 @@ jobs:
               issue_number: prNumber,
               body: commentBody
             });
+            core.setFailed("Unable to post screenshot")
           }
