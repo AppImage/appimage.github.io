@@ -8,7 +8,7 @@ Icon=sticker-convert
 Type=Application
 Terminal=false
 Categories=Utility;
-Comment=
+Comment=Convert (animated) stickers between WhatsApp, Telegram, Signal, Line, Kakao, iMessage
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
