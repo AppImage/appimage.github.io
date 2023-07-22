@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# verbose output
-set -v
+# set -euxov pipefail
+set -e -v
 
 URL=$(cat $1 | head -n 1)
 echo $URL
+
+GHURL="" # Workaround for: "GHURL: unbound variable"
 
 INPUTBASENAME=$(basename $1)
 
@@ -218,8 +220,8 @@ FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | 
 wget -c "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
 FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/" -O - | grep firejail-0 | head -n 1 | cut -d '"' -f 2)
 wget -c "http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/$FILE"
-sudo tar xf musl-*.apk -C ./firejail/
-sudo tar xf firejail-*.apk -C ./firejail/
+sudo tar xf musl-*.apk -C ./firejail/ 2>/dev/null
+sudo tar xf firejail-*.apk -C ./firejail/ 2>/dev/null
 sudo cp -Rf ./firejail/etc/* /etc/
 sudo cp -Rf ./firejail/lib/* /lib/
 sudo cp -Rf ./firejail/usr/* /usr/
@@ -264,6 +266,7 @@ NUMBER_OF_WINDOWS=$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[
 echo "NUMBER_OF_WINDOWS: $NUMBER_OF_WINDOWS"
 if [ $(($NUMBER_OF_WINDOWS)) -lt 1 ] ; then
   echo "ERROR: Could not find a single window on screen :-("
+  kill -9 $$
   exit 1
 fi
 
