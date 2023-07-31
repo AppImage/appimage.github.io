@@ -1,3 +1,6 @@
 https://bitbucket.org/kfj/pv/downloads/lux-master-x86_64.AppImage
 # This URL provides an AppImage built from lux master and is updated
 # at irregular intervals. Versioned AppImages reside in the same folder.
+# The latest version has a modified AppRun which may help with the
+# creation of a default snapshot during the test of the Appimage
+# and the metadata.xml file has been fleshed out.
