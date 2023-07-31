@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.bitbucket.kfj.lux</id>
+  
+  <name>lux</name>
+  <summary>image and panorama viewer</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  
+  <description>
+    <p>
+      lux is a viewer for &apos;ordinary&apos; images, panoramas and panorama specifications in PTO format. The view can be zoomed, panned, rotated, made brighter/darker etc. It supports a wide range of image formats, like JPG, PNG, TIFF and openEXR - image I/O is done with libvigraimpex. It supports &apos;flat&apos; images and several panoramic projections: spherical, cylindrical, stereographic, fisheye and rectilinear, both for the image and the view. For images made with a camera or smartphone which have appropriate metadata, lux will show a perspective-corrected view - lux uses libexiv2. lux  can also stitch panoramas, and fuse or HDR-merge exposure brackets specified in a PTO file made with, e.g., hugin. It can not do image registration. What&apos;s seen on-screen can be exported as a &apos;snapshot&apos;. lux is also good for slide shows. Many PTO features are supported, including panoramas with stacks. lux provides it&apos;s own implementation of the Burt&amp;Adelson image splining algorithm for seamless stitching and exposure fusion, working directly from the source image set with no intermediate images.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">org.bitbucket.kfj.lux.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://kfj.bitbucket.io/lux_screenshot_2.png</image>
+    </screenshot>
+  </screenshots>
+</component>
