@@ -20,7 +20,7 @@ X-DBUS-ServiceName=
 X-DBUS-StartupType=
 X-KDE-SubstituteUID=false
 X-KDE-Username=
-X-AppImage-Version=1.1.7
+X-AppImage-Version=1.1.8
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
