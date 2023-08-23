@@ -516,8 +516,8 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   fi
   BB_LINK=$(grep "^http.*://bitbucket.org/$BB_USER/$BB_REPO/downloads.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g')
   if [  x"$BB_LINK" != x"" ] ; then
-    echo "  - type: Download" # >> apps/$INPUTBASENAME.md
-    echo "    url: $BB_LINK" # >> apps/$INPUTBASENAME.md
+    echo "  - type: Download" >> apps/$INPUTBASENAME.md
+    echo "    url: $BB_LINK" >> apps/$INPUTBASENAME.md
   fi
   # Add content of desktop file
   if [ -f "database/$INPUTBASENAME/$(dir -C -w 1 database/$INPUTBASENAME | grep -m1 '.desktop')" ]; then
