@@ -217,11 +217,11 @@ echo "TERMINAL: $TERMINAL"
 # of Firejail running on a less than recent OS; don't do this at home kids
 mkdir -p firejail
 FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
-wget -c "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
-FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/" -O - | grep firejail-0 | head -n 1 | cut -d '"' -f 2)
-wget -c "http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/$FILE"
+wget -c -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
+# https://github.com/AppImage/appimage.github.io/issues/3229#issuecomment-1694325639
+wget -c -q "https://github.com/AppImage/appimage.github.io/files/12445302/alpine-firejail-0.9.72.tar.gz"
 sudo tar xf musl-*.apk -C ./firejail/ 2>/dev/null
-sudo tar xf firejail-*.apk -C ./firejail/ 2>/dev/null
+sudo tar xf firejail-0*.apk -C ./firejail/ 2>/dev/null
 sudo cp -Rf ./firejail/etc/* /etc/
 sudo cp -Rf ./firejail/lib/* /lib/
 sudo cp -Rf ./firejail/usr/* /usr/
