@@ -220,6 +220,7 @@ FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | 
 wget -c -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
 # https://github.com/AppImage/appimage.github.io/issues/3229#issuecomment-1694325639
 wget -c -q "https://github.com/AppImage/appimage.github.io/files/12445302/alpine-firejail-0.9.72.tar.gz"
+sudo tar xf alpine-firejail-0.9.72.tar.gz && sudo rm alpine-firejail-0.9.72.tar.gz
 sudo tar xf musl-*.apk -C ./firejail/ 2>/dev/null
 sudo tar xf firejail-0*.apk -C ./firejail/ 2>/dev/null
 sudo cp -Rf ./firejail/etc/* /etc/
