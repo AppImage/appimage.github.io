@@ -4,4 +4,3 @@ https://bitbucket.org/kfj/pv/downloads/lux-master-x86_64.AppImage
 # The latest upload has a new build from the lux master branch which
 # should fix the bug in tinyfiledialogs resulting in the 'INVALID
 # MESSAGE WITH QUOTES' default screenshot.
-#
