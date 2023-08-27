@@ -6,7 +6,7 @@ description: Create AppImage files
 license: MIT
 
 icons:
-  - appimagetool/icons/scalable/appimagetool.svg
+  - appimagetool/icons/128x128/appimagetool.png
 
 authors:
   - name: AppImage
@@ -14,9 +14,9 @@ authors:
 
 links:
   - type: GitHub
-    url: AppImage/AppImageKit
+    url: AppImage/appimagetool
   - type: Download
-    url: https://github.com/AppImage/AppImageKit/releases
+    url: https://github.com/AppImage/appimagetool/releases
 
 desktop:
   Desktop Entry:
@@ -28,10 +28,10 @@ desktop:
     Categories: Development
     Terminal: true
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|AppImage|AppImageKit|continuous|appimagetool-x86_64.AppImage.zsync
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
 
