@@ -219,7 +219,7 @@ mkdir -p firejail
 FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
 wget -c -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
 # https://github.com/AppImage/appimage.github.io/issues/3229#issuecomment-1694325639
-wget -c -q "https://github.com/AppImage/appimage.github.io/files/12447814/alpine-firejail-git20230825.tar.gz"
+wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/alpine-firejail-git20230825.tar.gz"
 sudo tar xf alpine-firejail-*.tar.gz && sudo rm alpine-firejail-*.tar.gz
 sudo tar xf musl-*.apk -C ./firejail/ 2>/dev/null
 sudo tar xf firejail-0*.apk -C ./firejail/ 2>/dev/null
