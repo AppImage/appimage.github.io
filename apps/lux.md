@@ -15,6 +15,8 @@ authors:
     url: https://bitbucket.org/kfj
 
 links:
+  - type: Download
+    url: https://bitbucket.org/kfj/pv/downloads/lux-master-x86_64.AppImage
 
 desktop:
   Desktop Entry:
