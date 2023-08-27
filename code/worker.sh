@@ -217,11 +217,12 @@ echo "TERMINAL: $TERMINAL"
 # of Firejail running on a less than recent OS; don't do this at home kids
 mkdir -p firejail
 FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
-wget -c "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
-FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/" -O - | grep firejail-0 | head -n 1 | cut -d '"' -f 2)
-wget -c "http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/$FILE"
-sudo tar xf musl-*.apk -C ./firejail/
-sudo tar xf firejail-*.apk -C ./firejail/
+wget -c -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
+# https://github.com/AppImage/appimage.github.io/issues/3229#issuecomment-1694325639
+wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/alpine-firejail-git20230825.tar.gz"
+sudo tar xf alpine-firejail-*.tar.gz && sudo rm alpine-firejail-*.tar.gz
+sudo tar xf musl-*.apk -C ./firejail/ 2>/dev/null
+sudo tar xf firejail-0*.apk -C ./firejail/ 2>/dev/null
 sudo cp -Rf ./firejail/etc/* /etc/
 sudo cp -Rf ./firejail/lib/* /lib/
 sudo cp -Rf ./firejail/usr/* /usr/
@@ -484,6 +485,8 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   GH_USER=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
   GH_REPO=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
   OBS_USER=$(grep "^http.*://download.opensuse.org/repositories/home:/" data/$INPUTBASENAME | cut -d "/" -f 6 | sed -e 's|:||g')
+  BB_USER=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
+  BB_REPO=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
   if [  x"$GH_USER" == x"" ] ; then
     GH_USER=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
     GH_REPO=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 6 )
@@ -494,6 +497,9 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   elif [  x"$OBS_USER" != x"" ] ; then
     echo "  - name: $OBS_USER" >> apps/$INPUTBASENAME.md
     echo "    url: https://build.opensuse.org/user/show/$OBS_USER" >> apps/$INPUTBASENAME.md
+  elif [  x"$BB_USER" != x"" ] ; then
+    echo "  - name: $BB_USER" >> apps/$INPUTBASENAME.md
+    echo "    url: https://bitbucket.org/$BB_USER" >> apps/$INPUTBASENAME.md
   fi
   # Links
   echo "" >> apps/$INPUTBASENAME.md
@@ -508,6 +514,11 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   if [  x"$OBS_LINK" != x"" ] ; then
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
+  fi
+  BB_LINK=$(grep "^http.*://bitbucket.org/$BB_USER/$BB_REPO/downloads.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g')
+  if [  x"$BB_LINK" != x"" ] ; then
+    echo "  - type: Download" >> apps/$INPUTBASENAME.md
+    echo "    url: $BB_LINK" >> apps/$INPUTBASENAME.md
   fi
   # Add content of desktop file
   if [ -f "database/$INPUTBASENAME/$(dir -C -w 1 database/$INPUTBASENAME | grep -m1 '.desktop')" ]; then
@@ -553,7 +564,8 @@ if [ "$IS_PULLREQUEST" = true ]; then
   cat "apps/${INPUTBASENAME}.md" || exit 1
   cat "database/${INPUTBASENAME}/"*.desktop || exit 1 # Asterisk must not be inside quotes, https://travis-ci.org/AppImage/appimage.github.io/builds/360847207#L782
   ls -lh "database/${INPUTBASENAME}/screenshot.png" || exit 1
-  curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfer.sh/screenshot.png
+  wget -q https://raw.githubusercontent.com/tremby/imgur.sh/1c64feeefb6590741eb3d034575f9c788469b0a8/imgur.sh
+  bash imgur.sh "database/${INPUTBASENAME}/screenshot.png"
   echo ""
   echo "We will assume the test is OK (a pull request event was triggered and the required files exist)."
   exit 0

@@ -83,7 +83,7 @@ jobs:
           grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)." && exit 1
           grep -r "version \`GLIBC_.*' not found" && MESSAGE="This was compiled on a too new system and hence cannot run on all still-supported versions of Ubuntu." && exit 1
           echo "${MESSAGE}"
-          SCREENSHOT_URL=$(cat log.txt | grep -o -e "https://transfer.sh/.*/screenshot.png") || true
+          SCREENSHOT_URL=$(cat log.txt | grep -o -e "https://i.imgur.com.*.png") || true
           if [[ -z "${SCREENSHOT_URL}" ]]; then
             echo "No screenshot URL found."
             exit 1
