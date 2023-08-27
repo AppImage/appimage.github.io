@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /WebCatalog/
-description: WebCatalog helps you turn any website into desktop app with just one click.
+description: Run Web Apps like Real Apps
 license: MPL-2.0
 
 icons:
@@ -12,25 +12,26 @@ screenshots:
   - WebCatalog/screenshot.png
 
 authors:
-  - name: webcatalog
-    url: https://github.com/webcatalog
+  - name: atomery
+    url: https://github.com/atomery
 
 links:
   - type: GitHub
-    url: webcatalog/webcatalog
+    url: atomery/webcatalog
   - type: Download
-    url: https://github.com/webcatalog/webcatalog/releases
+    url: https://github.com/atomery/webcatalog/releases
 
 desktop:
   Desktop Entry:
     Name: WebCatalog
-    Comment: WebCatalog helps you turn any website into desktop app with just one click.
     Exec: AppRun
     Terminal: false
     Type: Application
     Icon: webcatalog
-    X-AppImage-Version: 12.3.1.223
-    X-AppImage-BuildId: 8f251f70-558b-11a8-229d-4f724fc923e9
+    StartupWMClass: WebCatalog
+    X-AppImage-Version: 24.3.0
+    Comment: Run Web Apps like Real Apps
+    MimeType: x-scheme-handler/webcatalog
     Categories: Utility
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.

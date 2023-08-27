@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /Shotcut/
-description: Video Editor
+description: Shotcut is a free, open source, cross-platform video editor.
 license: GPL-3.0
 
 icons:
@@ -27,18 +27,18 @@ desktop:
     Name: Shotcut
     GenericName: Video Editor
     GenericName[de]: Video-Bearbeitungsprogramm
+    GenericName[fr]: Logiciel de montage vidéo
     GenericName[ru]: Видеоредактор
-    Comment: Video Editor
+    Comment: Shotcut is a free, open source, cross-platform video editor.
     Comment[de]: Programm zum Bearbeiten und Abspielen von Videodateien.
-    Comment[ru]: Видеоредактор
-    Exec: shotcut.wrapper
+    Exec: shotcut
     Icon: shotcut
     Terminal: false
     Categories: AudioVideo
     Keywords: video
     MimeType: application/vnd.mlt+xml
-    X-Desktop-File-Install-Version: 0.23
-    X-AppImage-Version: ".glibc2.14"
+    X-Desktop-File-Install-Version: 0.24
+    X-AppImage-Version: 20.07.11.glibc2.14
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file

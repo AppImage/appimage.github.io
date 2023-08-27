@@ -36,7 +36,7 @@ desktop:
     StartupNotify: false
     StartupWMClass: allegro
     MimeType: image/bmp
-    X-AppImage-Version: f11b78a
+    X-AppImage-Version: 73f138f
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|LibreSprite|LibreSprite|continuous|LibreSprite*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.

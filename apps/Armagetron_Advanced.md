@@ -6,13 +6,19 @@ description: 3D Lightcycle Game
 license: GPL-2.0-or-later
 
 icons:
-  - Armagetron_Advanced/icons/16x16/armagetronad.png
+  - Armagetron_Advanced/icons/48x48/armagetronad.png
 screenshots:
 - http://www.armagetronad.org/screenshots/ss_fort_1.png
 
 authors:
+  - name: ArmagetronAd
+    url: https://github.com/ArmagetronAd
 
 links:
+  - type: GitHub
+    url: ArmagetronAd/armagetronad
+  - type: Download
+    url: https://github.com/ArmagetronAd/armagetronad/releases
 
 desktop:
   Desktop Entry:
@@ -33,6 +39,7 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: GPL-2.0
 
 appdata:
   Type: desktop-application

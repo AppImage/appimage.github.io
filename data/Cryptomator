@@ -1,2 +1,2 @@
-https://dl.bintray.com/cryptomator/cryptomator/cryptomator-1.4.1-x86_64.AppImage
-# Link without version would be better
+https://github.com/cryptomator/cryptomator/releases/download/1.6.5/cryptomator-1.6.5-x86_64.AppImage
+# Link without version would be better (currently blocked, see #2827)

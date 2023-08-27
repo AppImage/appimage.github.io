@@ -1,14 +1,13 @@
 [Desktop Entry]
 Name=Altus
-Comment=Electron-based desktop wrapper for Whatsapp Web
 Exec=AppRun
 Terminal=false
 Type=Application
 Icon=altus
 StartupWMClass=Altus
-X-AppImage-Version=1.2.4
+X-AppImage-Version=3.14.0
+Comment=Electron-based desktop wrapper for WhatsApp Web
 Categories=Chat;
-X-AppImage-BuildId=1EyT3dCiG4vSvogCTSBt3ITnHXA
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

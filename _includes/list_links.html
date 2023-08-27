@@ -1,32 +1,34 @@
-{% for link in post.links %}
-  {% case link.type %}
-  {% when "Launchpad" %}
-    {% assign prefix = "https://launchpad.net/" %}
-  {% when "Download" %}
-    {% assign prefix = nil %}
-    {% assign octicon = "octicon-desktop-download" %}
-  {% when "GitHub" %}
-    {% assign prefix = "https://github.com/" %}
-    {% assign octicon = "octicon-mark-github" %}
-  {% when "Twitter" %}
-    {% assign prefix = "https://twitter.com/" %}
-  {% when "Google+" %}
-    {% assign prefix = "https://plus.google.com/" %}
-  {% when "Bitbucket" %}
-    {% assign prefix = "https://bitbucket.org/" %}
-  {% when "Build" or "License" %}
-    {% assign prefix = nil %}
-  {% when "Screenshots" or "Videos" %}
-    {% continue %}
-  {% else %}
-    {% assign prefix = nil %}
-    {% assign octicon = nil %}
-  {% endcase %}
-  <a href="{{ prefix }}{{ link.url }}" class="button {% if link.name == "Download" or link.type == "Download" %}green{% else %}white{% endif %}">
-    {% if octicon %}<span class="octicon {{ octicon }}"></span> {% endif %}{% if link.name %}{{ link.name }}{% else %}{{ link.type }}{% endif %}
-  </a>
-{% if forloop.last == false %} {% endif %}
-{% endfor %}
+{% if post.links %}
+  {% for link in post.links %}
+    {% case link.type %}
+    {% when "Launchpad" %}
+      {% assign prefix = "https://launchpad.net/" %}
+    {% when "Download" %}
+      {% assign prefix = nil %}
+      {% assign octicon = "octicon-desktop-download" %}
+    {% when "GitHub" %}
+      {% assign prefix = "https://github.com/" %}
+      {% assign octicon = "octicon-mark-github" %}
+    {% when "Twitter" %}
+      {% assign prefix = "https://twitter.com/" %}
+    {% when "Google+" %}
+      {% assign prefix = "https://plus.google.com/" %}
+    {% when "Bitbucket" %}
+      {% assign prefix = "https://bitbucket.org/" %}
+    {% when "Build" or "License" %}
+      {% assign prefix = nil %}
+    {% when "Screenshots" or "Videos" %}
+      {% continue %}
+    {% else %}
+      {% assign prefix = nil %}
+      {% assign octicon = nil %}
+    {% endcase %}
+    <a href="{{ prefix }}{{ link.url }}" class="button {% if link.name == "Download" or link.type == "Download" %}green{% else %}white{% endif %}">
+      {% if octicon %}<span class="octicon {{ octicon }}"></span> {% endif %}{% if link.name %}{{ link.name }}{% else %}{{ link.type }}{% endif %}
+    </a>
+  {% if forloop.last == false %} {% endif %}
+  {% endfor %}
+{% endif %}
 
 
 {% if post.appdata.Url.homepage %}

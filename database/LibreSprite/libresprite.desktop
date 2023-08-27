@@ -12,7 +12,7 @@ Terminal=false
 StartupNotify=false
 StartupWMClass=allegro
 MimeType=image/bmp;image/gif;image/jpeg;image/png;image/x-pcx;image/x-tga;image/vnd.microsoft.icon;video/x-flic;image/webp;image/x-aseprite;
-X-AppImage-Version=f11b78a
+X-AppImage-Version=73f138f
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|LibreSprite|LibreSprite|continuous|LibreSprite*-x86_64.AppImage.zsync
