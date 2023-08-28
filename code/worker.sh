@@ -515,10 +515,12 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
   fi
-  BB_LINK=$(grep "^http.*://bitbucket.org/$BB_USER/$BB_REPO/downloads.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g')
+  # Does the repo offer AppImages in it's download section?
+  BB_LINK=$(grep "^https://bitbucket.org/$BB_USER/$BB_REPO/downloads/.*AppImage$" data/$INPUTBASENAME) 
   if [  x"$BB_LINK" != x"" ] ; then
+    # if so, we'd like to see a download button pointing to the download page
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
-    echo "    url: $BB_LINK" >> apps/$INPUTBASENAME.md
+    echo "    url: https://bitbucket.org/$BB_USER/$BB_REPO/downloads" >> apps/$INPUTBASENAME.md
   fi
   # Add content of desktop file
   if [ -f "database/$INPUTBASENAME/$(dir -C -w 1 database/$INPUTBASENAME | grep -m1 '.desktop')" ]; then
