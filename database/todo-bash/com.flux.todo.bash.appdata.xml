@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+	<id>com.flux.todo.bash</id>
+	<metadata_license>FSFAP</metadata_license>
+	<project_license>LGPL-3.0</project_license>
+	<name>todo</name>
+	<summary>Benchmark command line commands</summary>
+	<description>
+		<p>Cross-platform command line tool to benchmark commands in command lines written in `Fortran`. Very precise and fast.</p>
+	</description>
+	<launchable type="desktop-id">todo.desktop</launchable>
+	<url type="homepage">https://github.com/Lateralus138/todo-bash</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/Lateralus138/todo-bash/master/images/todo.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>todo.desktop</id>
+		<binary>todo</binary>
+	</provides>
+</component>
