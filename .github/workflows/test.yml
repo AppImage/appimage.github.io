@@ -77,6 +77,7 @@ jobs:
           killall Xvfb
           # bundle exec jekyll build # https://help.github.com/en/articles/viewing-jekyll-build-error-messages#configuring-a-third-party-service-to-display-jekyll-build-error-messages
       - name: Check log
+        if: github.event_name == 'pull_request' && github.event.pull_request.user.login == 'probonopd'
         shell: bash
         run: |
           cat log.txt | wc -l
