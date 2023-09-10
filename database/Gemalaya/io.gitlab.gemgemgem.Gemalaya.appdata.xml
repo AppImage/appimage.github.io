@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>io.gitlab.gemgemgem.Gemalaya</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>LGPL-3.0+</project_license>
+    <update_contact>galacteek@protonmail.com</update_contact>
+    <name>Gemalaya</name>
+
+    <translation type="qt">en</translation>
+
+    <summary>Gemini browser</summary>
+    <categories>
+        <category>Network</category>
+    </categories>
+    <keywords>
+        <keyword>Browser</keyword>
+        <keyword>Gemini</keyword>
+        <keyword>QML</keyword>
+    </keywords>
+
+    <description>
+        <p>Gemalaya is a keyboard-driven Gemini browser written in
+            QML (PySide6). Links can be navigated from the keyboard using
+            simple key sequences.
+           Gemalaya can render websites as gemtext by using the builtin
+            web-to-gemini proxy (levior).
+            Visit <a href="https://gemalaya.gitlab.io">gemalaya's website</a>
+            for more!
+        </p>
+    </description>
+
+    <launchable type="desktop-id">gemalaya.desktop</launchable>
+
+    <screenshots>
+        <screenshot type="default">
+            <caption>Browsing bbs.geminispace.org</caption>
+            <image>https://gemalaya.gitlab.io/screenshots/gemalaya-20230906195444.png</image>
+        </screenshot>
+
+        <screenshot type="default">
+            <caption>Viewing an image on BBS</caption>
+            <image>https://gemalaya.gitlab.io/screenshots/gemalaya-20230906195803.png</image>
+        </screenshot>
+        <screenshot type="default">
+            <caption>Accessing an RSS feed as a gemini tinylog</caption>
+            <image>https://gemalaya.gitlab.io/screenshots/gemalaya-20230909212055.png</image>
+        </screenshot>
+    </screenshots>
+
+    <url type="homepage">https://gitlab.com/cipres/gemgemgem</url>
+    <url type="donation">https://liberapay.com/galacteek</url>
+
+    <provides>
+        <binary>gemalaya</binary>
+    </provides>
+
+    <releases>
+        <release version="0.4.3" date="2023-09-09">
+        </release>
+        <release version="0.4.2" date="2023-09-07">
+        </release>
+        <release version="0.4.1" date="2023-09-06">
+        </release>
+        <release version="0.4.0" date="2023-09-05">
+        </release>
+        <release version="0.3.9" date="2023-08-25">
+        </release>
+        <release version="0.3.8" date="2023-08-20">
+        </release>
+        <release version="0.3.7" date="2023-08-19">
+        </release>
+        <release version="0.3.6" date="2023-08-18">
+        </release>
+        <release version="0.3.5" date="2023-08-17">
+        </release>
+        <release version="0.3.4" date="2023-08-16">
+        </release>
+        <release version="0.3.3" date="2023-08-15">
+        </release>
+    </releases>
+</component>
