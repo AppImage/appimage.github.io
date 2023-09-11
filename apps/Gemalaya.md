@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /Gemalaya/
-description: Gemini browser
+description: Keyboard-driven Gemini browser
 license: LGPL-3.0+
 
 icons:
@@ -38,13 +38,15 @@ appdata:
   Name:
     C: Gemalaya
   Summary:
-    C: Gemini browser
+    fr: Navigateur Gemini
+    C: Keyboard-driven Gemini browser
+    es: Navegador Gemini
   Description:
     C: >-
       <p>Gemalaya is a keyboard-driven Gemini browser written in
                   QML (PySide6). Links can be navigated from the keyboard using
                   simple key sequences.
-                 Gemalaya can render websites as gemtext by using the builtin
+                 Gemalaya can render regular websites as gemtext by using the builtin
                   web-to-gemini proxy (levior).
                   Visit gemalaya&apos;s website
                   for more!</p>
@@ -56,8 +58,10 @@ appdata:
     - Browser
     - Gemini
     - QML
+    - Qt
+    - Proxy
   Url:
-    homepage: https://gitlab.com/cipres/gemgemgem
+    homepage: https://gemalaya.gitlab.io
     donation: https://liberapay.com/galacteek
   Launchable:
     desktop-id:
