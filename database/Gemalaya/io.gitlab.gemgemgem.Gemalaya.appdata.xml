@@ -8,7 +8,10 @@
 
     <translation type="qt">en</translation>
 
-    <summary>Gemini browser</summary>
+    <summary>Keyboard-driven Gemini browser</summary>
+    <summary xml:lang="fr">Navigateur Gemini</summary>
+    <summary xml:lang="es">Navegador Gemini</summary>
+
     <categories>
         <category>Network</category>
     </categories>
@@ -16,13 +19,15 @@
         <keyword>Browser</keyword>
         <keyword>Gemini</keyword>
         <keyword>QML</keyword>
+        <keyword>Qt</keyword>
+        <keyword>Proxy</keyword>
     </keywords>
 
     <description>
         <p>Gemalaya is a keyboard-driven Gemini browser written in
             QML (PySide6). Links can be navigated from the keyboard using
             simple key sequences.
-           Gemalaya can render websites as gemtext by using the builtin
+           Gemalaya can render regular websites as gemtext by using the builtin
             web-to-gemini proxy (levior).
             Visit <a href="https://gemalaya.gitlab.io">gemalaya's website</a>
             for more!
@@ -47,7 +52,8 @@
         </screenshot>
     </screenshots>
 
-    <url type="homepage">https://gitlab.com/cipres/gemgemgem</url>
+    <url type="homepage">https://gemalaya.gitlab.io</url>
+    <url type="donation">https://ko-fi.com/cipres</url>
     <url type="donation">https://liberapay.com/galacteek</url>
 
     <provides>
