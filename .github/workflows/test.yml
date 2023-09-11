@@ -29,20 +29,13 @@ jobs:
         # providing a fetch-depth of 0 should fetch all history.
         with:
           fetch-depth: 0
-      - name: Configure APT Packages
-        uses: awalsh128/cache-apt-pkgs-action@v1.3.0
-        # This action handles caching APT packages, and leaves the option for package configuration scripts to be run if needed,
-        # saving a boat-load of time, if needed bump the action version.
-        with:
-          packages: sudo imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xsel xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl
-          version: 1.0
-          # Bump me ^ if you have added any new packages
       - name: Install dependencies
         shell: bash
         run: |
           # set -e
+          sudo apt update
+          sudo apt-get -qq -y install sudo imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl # appstream # TODO: Cache me!
           sudo bash code/prep-dummy-soundcard.sh
-          # TODO Cache gem and npm packages
           sudo gem install dupervisor -v 1.0.5 # To convert ini to yaml files
           sudo npm install -g asar # to get pacakges.json from resources/app.asar for electron-builder applications
           # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
@@ -100,14 +93,14 @@ jobs:
           echo "SCREENSHOT_URL: ${SCREENSHOT_URL}" || true
       - name: Post Screenshot URL
         if: ${{ always() && github.event_name == 'pull_request' && github.run_status != 'cancelled' }}
-        uses: actions/github-script@v6
+        uses: actions/github-script@v4
         with:
           script: |
             const prNumber = context.payload.pull_request.number;
             const screenshotURL = process.env.SCREENSHOT_URL;
             if (screenshotURL) {
               const commentBody = `Seems like the test succeeded. Temporary screenshot URL: ${screenshotURL}`;
-              await github.rest.issues.createComment({
+              await github.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: prNumber,
@@ -116,7 +109,7 @@ jobs:
             } else {
               const runURL = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${{ github.run_id }}`;
               const commentBody = `The test was unable to make a screenshot. Most likely, the test did not succeed. Please check the [logs of the test run](${runURL}).`;
-              await github.rest.issues.createComment({
+              await github.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: prNumber,
