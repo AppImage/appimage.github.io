@@ -516,7 +516,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
   fi
   # Does the repo offer AppImages in it's download section?
-  # BB_LINK=$(grep "^https://bitbucket.org/$BB_USER/$BB_REPO/downloads/.*AppImage$" data/$INPUTBASENAME) 
+  BB_LINK=$(grep "^https://bitbucket.org/$BB_USER/$BB_REPO/downloads/.*AppImage$" data/$INPUTBASENAME) 
   if [  x"$BB_LINK" != x"" ] ; then
     # if so, we'd like to see a download button pointing to the download page
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
