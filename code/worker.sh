@@ -485,8 +485,8 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   GH_USER=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
   GH_REPO=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
   OBS_USER=$(grep "^http.*://download.opensuse.org/repositories/home:/" data/$INPUTBASENAME | cut -d "/" -f 6 | sed -e 's|:||g')
-  # BB_USER=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
-  # BB_REPO=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
+  BB_USER=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
+  BB_REPO=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
   if [  x"$GH_USER" == x"" ] ; then
     GH_USER=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
     GH_REPO=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 6 )
@@ -497,9 +497,9 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   elif [  x"$OBS_USER" != x"" ] ; then
     echo "  - name: $OBS_USER" >> apps/$INPUTBASENAME.md
     echo "    url: https://build.opensuse.org/user/show/$OBS_USER" >> apps/$INPUTBASENAME.md
-  # elif [  x"$BB_USER" != x"" ] ; then
-    # echo "  - name: $BB_USER" >> apps/$INPUTBASENAME.md
-    # echo "    url: https://bitbucket.org/$BB_USER" >> apps/$INPUTBASENAME.md
+  elif [  x"$BB_USER" != x"" ] ; then
+    echo "  - name: $BB_USER" >> apps/$INPUTBASENAME.md
+    echo "    url: https://bitbucket.org/$BB_USER" >> apps/$INPUTBASENAME.md
   fi
   # Links
   echo "" >> apps/$INPUTBASENAME.md
@@ -516,12 +516,12 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
   fi
   # Does the repo offer AppImages in it's download section?
-  # BB_LINK=$(grep "^https://bitbucket.org/$BB_USER/$BB_REPO/downloads/.*AppImage$" data/$INPUTBASENAME) 
-  # if [  x"$BB_LINK" != x"" ] ; then
-    # # if so, we'd like to see a download button pointing to the download page
-    # echo "  - type: Download" >> apps/$INPUTBASENAME.md
-    # echo "    url: https://bitbucket.org/$BB_USER/$BB_REPO/downloads" >> apps/$INPUTBASENAME.md
-  # fi
+  BB_LINK=$(grep "^https://bitbucket.org/$BB_USER/$BB_REPO/downloads/.*AppImage$" data/$INPUTBASENAME) 
+  if [  x"$BB_LINK" != x"" ] ; then
+    # if so, we'd like to see a download button pointing to the download page
+    echo "  - type: Download" >> apps/$INPUTBASENAME.md
+    echo "    url: https://bitbucket.org/$BB_USER/$BB_REPO/downloads" >> apps/$INPUTBASENAME.md
+  fi
   # Add content of desktop file
   if [ -f "database/$INPUTBASENAME/$(dir -C -w 1 database/$INPUTBASENAME | grep -m1 '.desktop')" ]; then
     sudo dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml # Do we need sudo to prevent '`load': cannot load such file'?
