@@ -28,7 +28,7 @@ desktop:
     Type: Application
     Icon: openstreammusic
     StartupWMClass: OpenStream Music
-    X-AppImage-Version: 1.3.1
+    X-AppImage-Version: 1.3.2
     Comment: Freeing the world of freemium streaming services.
     Categories: AudioVideo
   AppImageHub:
@@ -48,6 +48,6 @@ electron:
   dependencies:
     fontawesome-free: "^1.0.4"
     node-fetch: "^3.3.1"
-    youtube-music-api: "^1.0.6"
+    youtube-music-api: "^1.0.5"
     ytdl-core: "^4.11.5"
 ---
