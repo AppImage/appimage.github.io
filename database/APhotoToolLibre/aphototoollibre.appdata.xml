@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>aphototoollibre</id>
+
+  <name>A Photo Tool (Libre)</name>
+  <summary>Photo editor for Linux</summary>
+
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <description>
+    <p>
+      Easy to use photo editing software.
+    </p>
+    <p>
+      Fix and modify your jpeg photos to look even greater.
+      Supports several other imageformats also.
+    </p>
+    <p>
+      Change exposure, contrast and color.
+      Turn color photos in to black and white images with control how color is handled.
+      Rotate, crop, straighten and resize photos.
+    </p>
+    <p>
+       Copyright (C) 2022 Jari Ahola
+    </p>
+    <p>
+       Lisensed under GNU GPLv3. Full source code available at https://github.com/aphototool/A-Photo-Tool-Libre
+    </p>
+  </description>
+
+  <categories>
+    <category>Graphics</category>
+  </categories>
+
+  <icon type="local">/usr/share/icons/hicolor/scalable/apps/aphototoollibre.svg</icon>
+
+  <keywords>
+    <keyword>photography</keyword>
+    <keyword>photo</keyword>
+    <keyword>image</keyword>
+    <keyword>editor</keyword>
+    <keyword>converter</keyword>
+  </keywords>
+
+  <provides>
+    <mediatype>image/jpeg</mediatype>
+    <mediatype>image/png</mediatype>
+    <id>aphototoollibre.desktop</id>
+ </provides>
+
+  <launchable type="desktop-id">aphototoollibre.desktop</launchable>
+
+  <url type="homepage">https://www.ahola.me/aphototoollibre.html</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>A Photo Tool (Libre) on Gnome desktop</caption>
+      <image>https://raw.githubusercontent.com/aphototool/A-Photo-Tool-Libre/main/pics/APhotoTool(Libre)Debian.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Light mode</caption>
+      <image>https://raw.githubusercontent.com/aphototool/A-Photo-Tool-Libre/main/pics/APhotoTool(Libre)LightModeScreenShot.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Crop tool</caption>
+      <image>https://raw.githubusercontent.com/aphototool/A-Photo-Tool-Libre/main/pics/APhotoTool(Libre)ToolsScreenShot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.0.4" date="2022-09-30">
+      <description>
+        <p>1.0.4-3 2022-09-30: Fix to apply changed dark/light mode to new windows</p>
+        <p>1.0.4-2 2022-09-23: Fix to changing from dark to light mode</p>
+        <p>1.0.4-1 2022-09-12: PNG image preview improvement</p>
+      </description>
+    </release>
+  </releases>
+
+</component>

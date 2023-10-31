@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>se.trixon.yaya</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>Apache-2.0</project_license>
+	<name>Yaya</name>
+	<summary>Yet Another Yahtzee-esque Application</summary>
+	<description>
+		<p>Enjoy classic family dice games with up to 8 players.</p>
+		<p></p>
+		<p>Ready, Set, Roll!</p>
+	</description>
+	<launchable type="desktop-id">yaya.desktop</launchable>
+	<url type="homepage">https://trixon.se/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://trixon.se/files/screenshots/yaya_appstream01.png</image>
+            <caption>Scorecard with new game dialog</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://trixon.se/files/screenshots/yaya_appstream02.png</image>
+            <caption>Help window with rules</caption>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>yaya.desktop</id>
+	</provides>
+  <content_rating type="oars-1.1" />
+</component>

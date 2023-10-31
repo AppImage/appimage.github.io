@@ -43,7 +43,7 @@ Unlike other applications, AppImages do not need to be installed before they can
 {% if post.appdata.ID %}
     <p>Thanks for shipping AppStream metainfo inside your AppImage. Please open a pull request on <a href="https://github.com/AppImage/appimage.github.io/blob/master/data/{{ page.name | remove: ".md" }}">https://github.com/AppImage/appimage.github.io/blob/master/data/{{ page.name | remove: ".md" }}</a> if you have changed it and would like to see this page updated accordingly.</p>
 {% else %}
-    <p>Improve this entry by shipping an <a href="https://docs.appimage.org/packaging-guide/optional/appstream.html">AppStream metainfo file</a> inside the AppImage in the <code>usr/share/metainfo</code> directory. We have an <a href="http://output.jsbin.com/qoqukof">online tool</a> that makes it easy to make one.</p>
+    <p>Improve this entry by shipping an <a href="https://docs.appimage.org/packaging-guide/optional/appstream.html">AppStream metainfo file</a> inside the AppImage in the <code>usr/share/metainfo</code> directory. There is an <a href="https://appimage.github.io/simple-appstream-generator/">online tool</a> that makes it easy to make one.</p>
     <p>The screenshot for {{ page.name | remove: ".md" }} has been automatically taken during a fully automated test. You can specify the URL to a nicer one by shipping an <a href="https://docs.appimage.org/packaging-guide/appstream.html">AppStream metainfo file</a>.</p>
 {% endif %}
 
