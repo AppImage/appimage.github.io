@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Gospel PDF
+Comment=PopplerQt4 based PDF Reader
+Exec=gospel-pdf %f
+Icon=gospel-pdf
+Categories= Office;
+Terminal=false
+StartupNotify=false
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://github.com/ksharindam/gospel-pdf-viewer/releases/latest/download/Gospel_PDF-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
