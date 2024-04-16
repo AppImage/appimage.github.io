@@ -1,0 +1,66 @@
+---
+layout: app
+
+permalink: /KDiskMark/
+description: A disk drive benchmark tool
+
+icons:
+  - KDiskMark/icons/128x128/kdiskmark.png
+
+screenshots:
+  - KDiskMark/screenshot.png
+
+authors:
+  - name: JonMagon
+    url: https://github.com/JonMagon
+
+links:
+  - type: GitHub
+    url: JonMagon/KDiskMark
+  - type: Download
+    url: https://github.com/JonMagon/KDiskMark/releases
+
+desktop:
+  Desktop Entry:
+    Name: KDiskMark
+    GenericName: KDiskMark
+    Comment: A disk drive benchmark tool
+    Comment[cs]: Nástroj pro otestování výkonnosti datového úložiště
+    Comment[de]: Ein Festplatten-Benchmark-Tool
+    Comment[es_MX]: Una herramienta para benchmark de unidades de disco
+    Comment[fr]: Un outil pour mesurer la performance des disques physiques
+    Comment[hu]: Lemezek teljesítményét mérő alkalmazás
+    Comment[it]: Uno strumento per misurare le prestazioni di dischi e memorie fisiche
+    Comment[pl]: Narzędzie do testowania wydajności dysków
+    Comment[pt_BR]: Uma ferramenta de benchmark de discos
+    Comment[ru]: Тестирование производительности накопителей
+    Comment[sv]: Prestandatest för hårddiskar
+    Comment[tr]: Disk Sürücü performans ölçüm aracı
+    Comment[zh_CN]: 磁盘测速工具
+    Keywords: benchmark
+    Keywords[es_MX]: benchmark
+    Keywords[de]: benchmark
+    Keywords[fr]: benchmark
+    Keywords[hu]: benchmark
+    Keywords[it]: benchmark
+    Keywords[pl]: benchmark
+    Keywords[pt_BR]: benchmark
+    Keywords[ru]: производительность
+    Keywords[sv]: prestandatest
+    Keywords[tr]: benchmark
+    Keywords[zh_CN]: 基准测试
+    Exec: kdiskmark
+    Icon: kdiskmark
+    Terminal: false
+    StartupNotify: false
+    Type: Application
+    Categories: System
+    X-AppImage-Version: 266a078
+  AppImageHub:
+    X-AppImage-Signature: 'keybox ''/home/runner/.gnupg/pubring.kbx'' created [don''t
+      know]: invalid packet (ctb=0a) no signature found the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+---
