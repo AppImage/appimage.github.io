@@ -1,12 +1,15 @@
 [Desktop Entry]
+Name=Bitwarden
+Exec=AppRun --no-sandbox %U
+Terminal=false
 Type=Application
-Name=Gridcoin
-Exec=AppRun %F
-Icon=default
-Comment=Edit this default file
-Terminal=true
+Icon=bitwarden
+StartupWMClass=Bitwarden
+X-AppImage-Version=2024.3.0
+GenericName=Password Manager
+Comment=A secure and free password manager for all of your devices.
+MimeType=x-scheme-handler/bitwarden;
 Categories=Utility;
-X-AppImage-Version=f214b727f
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
