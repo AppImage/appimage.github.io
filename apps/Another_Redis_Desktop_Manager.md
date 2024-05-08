@@ -3,7 +3,6 @@ layout: app
 
 permalink: /Another_Redis_Desktop_Manager/
 description: A faster, better and more stable redis desktop manager.
-A faster, better and more stable redis desktop manager.
 license: MIT
 
 icons:
