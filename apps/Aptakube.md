@@ -3,12 +3,12 @@ layout: app
 
 permalink: /Aptakube/
 description: Modern, lightweight and multi-cluster Kubernetes management UI
+license: LicenseRef-proprietary
 
 icons:
   - Aptakube/icons/128x128/aptakube.png
-
 screenshots:
-  - Aptakube/screenshot.png
+- https://aptakube.com/screenshot.png
 
 authors:
 
@@ -30,4 +30,28 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+
+appdata:
+  Type: desktop-application
+  ID: com.aptakube
+  Name:
+    C: Aptakube
+  Summary:
+    C: Modern, lightweight and multi-cluster Kubernetes management UI
+  Description:
+    C: >-
+      <p>Aptakube is a Desktop Client for Kubernetes. You can connect to multiple clusters, manage workloads, view logs, compare
+      resources, and a lot more.</p>
+  ProjectLicense: LicenseRef-proprietary
+  Url:
+    homepage: https://aptakube.com
+  Launchable:
+    desktop-id:
+    - aptakube.desktop
+  Screenshots:
+  - default: true
+    thumbnails: []
+    source-image:
+      url: https://aptakube.com/screenshot.png
+      lang: C
 ---
