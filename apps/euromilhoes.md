@@ -1,28 +1,31 @@
 ---
 layout: app
 
-permalink: /AzPainter/
+permalink: /euromilhoes/
 
 icons:
-  - AzPainter/icons/scalable/azpainter.svg
+  - euromilhoes/icons/512x512/myapp.png
 
 screenshots:
-  - AzPainter/screenshot.png
+  - euromilhoes/screenshot.png
 
 authors:
+  - name: eduardosilva75
+    url: https://github.com/eduardosilva75
 
 links:
+  - type: GitHub
+    url: eduardosilva75/appimage.github.io
+  - type: Download
+    url: https://github.com/eduardosilva75/appimage.github.io/releases
 
 desktop:
   Desktop Entry:
+    Name: euromilhoes
+    Exec: AppRun
+    Icon: myapp
     Type: Application
-    Name: AzPainter
-    Exec: azpainter %f
-    Icon: azpainter
-    Terminal: false
-    Categories: Graphics
-    MimeType: application/x-azpainter-apd
-    StartupNotify: true
+    Categories: Utility
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature

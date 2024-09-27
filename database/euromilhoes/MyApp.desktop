@@ -1,12 +1,9 @@
 [Desktop Entry]
+Name=euromilhoes
+Exec=AppRun
+Icon=myapp
 Type=Application
-Name=AzPainter
-Exec=azpainter %f
-Icon=azpainter
-Terminal=false
-Categories=Graphics;
-MimeType=application/x-azpainter-apd;
-StartupNotify=true
+Categories=Utility;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

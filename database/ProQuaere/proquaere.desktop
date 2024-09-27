@@ -1,12 +1,14 @@
 [Desktop Entry]
-Type=Application
-Name=AzPainter
-Exec=azpainter %f
-Icon=azpainter
+Name=ProQuaere
+Exec=AppRun --no-sandbox %U
 Terminal=false
-Categories=Graphics;
-MimeType=application/x-azpainter-apd;
-StartupNotify=true
+Type=Application
+Icon=proquaere
+StartupWMClass=ProQuaere
+X-AppImage-Version=2.0.13
+Comment=Ask a professional!
+MimeType=x-scheme-handler/proquaere;
+Categories=Utility;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

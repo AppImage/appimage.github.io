@@ -1,12 +1,14 @@
 [Desktop Entry]
+X-AppImage-Arch=x86_64
+X-AppImage-Version=4.0.6
+X-AppImage-Name=Basic_chess_endgames
+Name=Basic_chess_endgames
+Exec=basicchessendgamestrainer
+Icon=icon
 Type=Application
-Name=AzPainter
-Exec=azpainter %f
-Icon=azpainter
 Terminal=false
-Categories=Graphics;
-MimeType=application/x-azpainter-apd;
-StartupNotify=true
+Categories=Utility;
+Comment=
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

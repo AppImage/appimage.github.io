@@ -1,12 +1,11 @@
 [Desktop Entry]
-Type=Application
-Name=AzPainter
-Exec=azpainter %f
-Icon=azpainter
+Categories=Development;
+Comment=Modern, lightweight and multi-cluster Kubernetes management UI
+Exec=aptakube
+Icon=aptakube
+Name=Aptakube
 Terminal=false
-Categories=Graphics;
-MimeType=application/x-azpainter-apd;
-StartupNotify=true
+Type=Application
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

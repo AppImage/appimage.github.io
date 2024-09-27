@@ -1,28 +1,33 @@
 ---
 layout: app
 
-permalink: /AzPainter/
+permalink: /MCP2210_Configurator/
 
 icons:
-  - AzPainter/icons/scalable/azpainter.svg
+  - MCP2210_Configurator/icons/128x128/mcp2210-conf.png
 
 screenshots:
-  - AzPainter/screenshot.png
+  - MCP2210_Configurator/screenshot.png
 
 authors:
+  - name: bloguetronica
+    url: https://github.com/bloguetronica
 
 links:
+  - type: GitHub
+    url: bloguetronica/mcp2210-conf
+  - type: Download
+    url: https://github.com/bloguetronica/mcp2210-conf/releases
 
 desktop:
   Desktop Entry:
     Type: Application
-    Name: AzPainter
-    Exec: azpainter %f
-    Icon: azpainter
+    Version: 1.0
+    Name: MCP2210 Configurator
+    Icon: mcp2210-conf
+    Exec: mcp2210-conf
     Terminal: false
-    Categories: Graphics
-    MimeType: application/x-azpainter-apd
-    StartupNotify: true
+    Categories: Development
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature

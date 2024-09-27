@@ -1,28 +1,31 @@
 ---
 layout: app
 
-permalink: /AzPainter/
+permalink: /OwlPlug/
 
 icons:
-  - AzPainter/icons/scalable/azpainter.svg
+  - OwlPlug/icons/512x512/owlplug.png
 
 screenshots:
-  - AzPainter/screenshot.png
+  - OwlPlug/screenshot.png
 
 authors:
+  - name: DropSnorz
+    url: https://github.com/DropSnorz
 
 links:
+  - type: GitHub
+    url: DropSnorz/OwlPlug
+  - type: Download
+    url: https://github.com/DropSnorz/OwlPlug/releases
 
 desktop:
   Desktop Entry:
+    Name: OwlPlug
+    Exec: OwlPlug
+    Icon: owlplug
     Type: Application
-    Name: AzPainter
-    Exec: azpainter %f
-    Icon: azpainter
-    Terminal: false
-    Categories: Graphics
-    MimeType: application/x-azpainter-apd
-    StartupNotify: true
+    Categories: AudioVideo
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature

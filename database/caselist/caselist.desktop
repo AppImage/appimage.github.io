@@ -1,12 +1,13 @@
 [Desktop Entry]
-Type=Application
-Name=AzPainter
-Exec=azpainter %f
-Icon=azpainter
+Name=Caselist Free BETA
+Exec=AppRun --no-sandbox %U
 Terminal=false
-Categories=Graphics;
-MimeType=application/x-azpainter-apd;
-StartupNotify=true
+Type=Application
+Icon=caselist
+StartupWMClass=Caselist Free BETA
+X-AppImage-Version=2.1.12
+Comment=Caselist allows users to batch download legal cases from the Internet. No more clicking on links one by one to download every case!
+Categories=Utility;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

@@ -1,12 +1,13 @@
 [Desktop Entry]
-Type=Application
-Name=AzPainter
-Exec=azpainter %f
-Icon=azpainter
+Name=Posnet OPS
+Exec=AppRun --no-sandbox %U
 Terminal=false
-Categories=Graphics;
-MimeType=application/x-azpainter-apd;
-StartupNotify=true
+Type=Application
+Icon=posnet-ops
+StartupWMClass=Posnet OPS
+X-AppImage-Version=11.29.70
+Comment=Online’owy Program Serwisowy
+Categories=Utility;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

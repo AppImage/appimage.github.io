@@ -1,13 +1,10 @@
 [Desktop Entry]
 Type=Application
-Name=AzPainter
-Exec=azpainter %f
-Icon=azpainter
-Terminal=false
-Categories=Graphics;
-MimeType=application/x-azpainter-apd;
-StartupNotify=true
-
+Name=Janice
+Exec=janice
+Icon=Janice
+Keywords=fyne
+Categories=Utility;
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
 # (e.g., with appimagetool -u) so that users can easily update the AppImage

@@ -1,12 +1,13 @@
 [Desktop Entry]
 Type=Application
-Name=AzPainter
-Exec=azpainter %f
-Icon=azpainter
-Terminal=false
-Categories=Graphics;
-MimeType=application/x-azpainter-apd;
-StartupNotify=true
+Name=Alpine Client
+Comment=A lightweight multi-version Minecraft modpack
+Exec=/usr/bin/alpine-client
+Icon=alpine-client
+Terminal=true
+Categories=Game
+Keywords=alpine;client;minecraft;
+X-AppImage-Version=1.8.1
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

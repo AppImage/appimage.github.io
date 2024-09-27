@@ -1,28 +1,33 @@
 ---
 layout: app
 
-permalink: /AzPainter/
+permalink: /CP2130_Configurator/
 
 icons:
-  - AzPainter/icons/scalable/azpainter.svg
+  - CP2130_Configurator/icons/128x128/cp2130-conf.png
 
 screenshots:
-  - AzPainter/screenshot.png
+  - CP2130_Configurator/screenshot.png
 
 authors:
+  - name: bloguetronica
+    url: https://github.com/bloguetronica
 
 links:
+  - type: GitHub
+    url: bloguetronica/cp2130-conf
+  - type: Download
+    url: https://github.com/bloguetronica/cp2130-conf/releases
 
 desktop:
   Desktop Entry:
     Type: Application
-    Name: AzPainter
-    Exec: azpainter %f
-    Icon: azpainter
+    Version: 1.0
+    Name: CP2130 Configurator
+    Icon: cp2130-conf
+    Exec: cp2130-conf
     Terminal: false
-    Categories: Graphics
-    MimeType: application/x-azpainter-apd
-    StartupNotify: true
+    Categories: Development
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature

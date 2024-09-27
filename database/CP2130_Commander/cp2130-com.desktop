@@ -1,12 +1,11 @@
 [Desktop Entry]
 Type=Application
-Name=AzPainter
-Exec=azpainter %f
-Icon=azpainter
+Version=1.0
+Name=CP2130 Commander
+Icon=cp2130-com
+Exec=cp2130-com
 Terminal=false
-Categories=Graphics;
-MimeType=application/x-azpainter-apd;
-StartupNotify=true
+Categories=Development;Electronics;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

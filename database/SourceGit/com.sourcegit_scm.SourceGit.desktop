@@ -1,12 +1,14 @@
 [Desktop Entry]
-Type=Application
-Name=AzPainter
-Exec=azpainter %f
-Icon=azpainter
+Name=Source Git
+Comment=Open-source & Free Git GUI Client
+Exec=AppRun
+Icon=com.sourcegit_scm.SourceGit
 Terminal=false
-Categories=Graphics;
-MimeType=application/x-azpainter-apd;
-StartupNotify=true
+Type=Application
+Categories=Development
+MimeType=inode/directory;
+X-Desktop-File-Install-Version=0.26
+X-AppImage-Version=8.26
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

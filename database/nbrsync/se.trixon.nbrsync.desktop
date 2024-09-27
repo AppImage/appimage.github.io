@@ -1,12 +1,15 @@
 [Desktop Entry]
+Version=1.0
 Type=Application
-Name=AzPainter
-Exec=azpainter %f
-Icon=azpainter
+Name=nbRsync
+Comment=rsync GUI with an integrated scheduler, and a CLI
+Exec=nbrsync %F
+Icon=se.trixon.nbrsync
 Terminal=false
-Categories=Graphics;
-MimeType=application/x-azpainter-apd;
+Categories=System;
 StartupNotify=true
+StartupWMClass=nbRsync
+
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
