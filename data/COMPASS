@@ -1,1 +1,2 @@
-https://github.com/hpuhr/COMPASS/releases
+# If _oldos doesn't run on newer distributions, it is a bug
+https://github.com/hpuhr/COMPASS/releases/download/v0.7.5/COMPASS-v0.7.5_hf2_oldos.AppImage
