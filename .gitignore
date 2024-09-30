@@ -3,7 +3,15 @@
 appdir-lint.sh
 excludelist
 firejail.tar.gz
-  
+alpine-firejail-*.tar.gz
+firejail*.apk
+firejail/
+log.txt
+log.txt.save
+musl*.apk
+runtime-fuse2-x86_64
+sig
+
 # Prerequisites
 *.d
 
