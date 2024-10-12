@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=podman
+Comment=Tool and library for running OCI-based containers in pods
+TryExec=podman
+Exec=podman
+Icon=podman
+Terminal=true
+Categories=System;Development;Building;ConsoleOnly;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Thu Sep 15 08:39:26 2022 UTC                using EDDSA key C6CD3438A5517494F03F1A308DECB02C9406DC24 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

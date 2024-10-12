@@ -1,0 +1,13 @@
+{
+  "name": "EmuDeck",
+  "version": "2.1.4",
+  "description": "Play all your RetroGames",
+  "license": "MIT",
+  "author": {
+    "name": "EmuDeck",
+    "email": "-",
+    "url": "https://github.com/EmuDeck"
+  },
+  "main": "./dist/main/main.js",
+  "dependencies": {}
+}

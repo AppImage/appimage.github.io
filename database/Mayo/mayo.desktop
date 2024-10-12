@@ -1,0 +1,29 @@
+[Desktop Entry]
+Version=1.0
+Name=Mayo
+Comment=Mayo - opensource 3D CAD viewer and converter
+Exec=mayo %U
+StartupWMClass="AppRun.wrapped", "Mayo"
+Icon=mayo
+Terminal=false
+Type=Application
+Categories=Graphics;3DGraphics;Viewer;Engineering;
+Keywords=Converter;stl;cad;ply;MeshViewer;amf;dxf;gltf;opencascade;step;iges;wavefront-obj;brep;vrml;3d-viewer;converter-cli;
+MimeType=model/step;model/iges;model/gltf+json;model/gltf.binary;application/vnd.ms-pki.stl;model/x.stl-ascii;model/x.stl-binary;application/x-wavefront-obj;model/x-brep;model/x-ply;
+X-AppImage-Name=Mayo
+X-AppImage-Version=0.7.0.1113-f88a35d
+X-AppImage-Arch=x86_64
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

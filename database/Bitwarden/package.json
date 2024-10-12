@@ -1,0 +1,18 @@
+{
+  "name": "bitwarden",
+  "productName": "Bitwarden",
+  "description": "A secure and free password manager for all of your devices.",
+  "version": "2024.3.0",
+  "author": "Bitwarden Inc. <hello@bitwarden.com> (https://bitwarden.com)",
+  "homepage": "https://bitwarden.com",
+  "license": "GPL-3.0",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitwarden/clients.git"
+  },
+  "dependencies": {
+    "@bitwarden/desktop-native": "file:../desktop_native",
+    "argon2": "0.31.0"
+  }
+}
