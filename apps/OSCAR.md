@@ -15,19 +15,19 @@ authors:
 
 links:
   - type: Download
-    url: https://download.opensuse.org/repositories/home:/emendonca:/oscar/AppImage/OSCAR-latest-x86_64.AppImage.mirrorlist
+    url: https://mirrorcache-us.opensuse.org/repositories/home:/emendonca:/oscar/AppImage/OSCAR-latest-x86_64.AppImage
 
 desktop:
   Desktop Entry:
-    Version: 1.1
+    Version: 1.5.3
     Name: OSCAR
-    GenericName: CPAP Reporter
+    GenericName: The Open Source CPAP Analysis Reporter
     TryExec: OSCAR
     Exec: OSCAR
     Terminal: true
     Icon: com.sleepfiles.OSCAR
     Type: Application
-    Categories: X-SuSE-Core-Science
+    Categories: Science
     StartupNotify: true
     X-GNOME-UsesNotifications: true
     Name[en_CA]: OSCAR
