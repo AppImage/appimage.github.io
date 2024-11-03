@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.biblemulti.thelife</id>
+  <developer_name>hotlittlewhitedog</developer_name>
+  <update_contact>hotlittlewhitedog@gmail.com</update_contact>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <url type="homepage">https://www.biblemulti.org</url>
+  <url type="bugtracker">https://gitlab.com/hotlittlewhitedog/BibleTheLife/-/issues</url>
+  <name>BibleMultiTheLife</name>
+  <summary>Bible multi languages, free, offline, no advertising</summary>
+  <launchable type="desktop-id">org.biblemulti.thelife.desktop</launchable>
+  <description>
+<p>Aka BibleMultiTheLife. Bible multi languages, free, offline, no advertising, in English, French, Italian, Spanish, Portuguese.</p>
+<p>The Life is a powerful study tool to learn the Word of God.</p>
+<p>For Android, iPhone, iPad, Big Sur, Mac and Linux.</p>
+<p>The Life has two brothers for various configurations. Please also check my website: biblemulti.org</p>
+<ul>
+<li>Bibles included: King James Version, Louis Segond, Ostervald, Diodati, Reina Valera, Almeida, Schlachter, Elberfelder, Romanian Bible, Polish Bible, Russian Bible, Turkish Bible, Swahili Bible, Arabic Bible, Hindi Bible, Bengali Bible, Chinese Bible, Japanese Bible.</li>
+<li>The application uses a modern and clean interface.</li>
+<li>Easy to use with quick searches and shares, favorites, parables, articles, cross-references, but also includes several fonts for people having visibility impairs and a rich clipboard functionality allowing you to copy several verses and chapters of different books before sharing the result.</li>
+<li>You can browse your search history (containing opened books, parables, cross references...) and let you navigate through in an infinite way.</li>
+</ul>
+<p>Please share the info with your friends. Time is short. Tribulations are at the door. ** All The Glory To God.</p>
+<ul><li>If characters are missing, please install the utf8 characters with "sudo dpkg-reconfigure locales": select en_US, es_ES, fr_FR, it_IT, pt_PT...</li></ul>
+</description>
+  <categories>
+    <category>Education</category>
+    <category>Spirituality</category>
+  </categories>
+  <provides>
+    <binary>biblemultithelife</binary>
+  </provides>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://gitlab.com/hotlittlewhitedog/BibleTheLife/-/raw/master/screenshots/screen02.png</image>
+      <caption>Several Bibles</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/hotlittlewhitedog/BibleTheLife/-/raw/master/screenshots/screen01.png</image>
+      <caption>Several Bibles</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/hotlittlewhitedog/BibleTheLife/-/raw/master/screenshots/screen03.png</image>
+      <caption>Several Bibles</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/hotlittlewhitedog/BibleTheLife/-/raw/master/screenshots/screen04.png</image>
+      <caption>Several Bibles</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/hotlittlewhitedog/BibleTheLife/-/raw/master/screenshots/screen05.png</image>
+      <caption>Several Bibles</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+  <releases>
+    <release version="1.27.4" date="2024-10-03">
+      <description>
+        <ul>
+            <li>Flatpak package</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>
