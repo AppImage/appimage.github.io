@@ -1,15 +1,11 @@
 [Desktop Entry]
-Version=1.0
+Name=BibleMultiTheLife
+Exec=biblemultithelife
 Type=Application
-Name=CRIC
-Comment=Custom Runtime Image Creator
-Exec=cric %F
-Icon=cric
+Icon=org.biblemulti.thelife
 Terminal=false
-Categories=Development;
-StartupNotify=true
-StartupWMClass=se.trixon.cric.App
-
+Categories=Education
+Keywords=Bible;Biblia;Bíblia;Bibbia;Bibel;multi;languages;study;education;save;history;kjv;word;christian;platform;offline;life;reading;Jesus;Jésus;christ;mac;iOS;iPad;android;linux;french;italian;spanish;portugese;chinese;russian;japanese;arabic;hindi;german;russian;polish;romanian;flutter;gpl;gpl3;open;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
