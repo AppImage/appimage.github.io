@@ -69,7 +69,7 @@ appdata:
   Url:
     homepage: https://trixon.se/projects/nbrsync/
     bugtracker: https://github.com/trixon/nbrsync/issues
-    donation: https://github.com/sponsors/trixon
+    donation: https://buymeacoffee.com/trixon
   Launchable:
     desktop-id:
     - se.trixon.nbrsync.desktop
@@ -106,8 +106,24 @@ appdata:
       url: https://trixon.se/files/screenshots/nbrsync_appstream05.png
       lang: C
   Releases:
-  - version: 0.7.0
-    unix-timestamp: 1722729600
+  - version: '24.12'
+    unix-timestamp: 1734134400
+    description:
+      C: >-
+        <p>Rebuild with updated dependencies</p>
+  - version: 24.09.0
+    unix-timestamp: 1726963200
+    description:
+      C: >-
+        <p>Small update</p>
+  
+        <ul>
+          <li>Fixed minor bugs</li>
+          <li>Added a stopwatch</li>
+          <li>Bundled Java 23</li>
+        </ul>
+  - version: 24.08.0
+    unix-timestamp: 1723939200
     description:
       C: >-
         <p>Initial release with the new base</p>

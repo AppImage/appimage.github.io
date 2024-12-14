@@ -18,7 +18,7 @@
     <launchable type="desktop-id">se.trixon.nbrsync.desktop</launchable>
     <url type="homepage">https://trixon.se/projects/nbrsync/</url>
     <url type="bugtracker">https://github.com/trixon/nbrsync/issues</url>
-    <url type="donation">https://github.com/sponsors/trixon</url>
+    <url type="donation">https://buymeacoffee.com/trixon</url>
     <provides>
         <id>nbrsync.desktop</id>
     </provides>
@@ -59,7 +59,22 @@
     </screenshots>
 
     <releases>
-        <release version="0.7.0" date="2024-08-04">
+        <release version="24.12" date="2024-12-14">
+            <description>
+                <p>Rebuild with updated dependencies</p>
+            </description>
+        </release>
+        <release version="24.09.0" date="2024-09-22">
+            <description>
+                <p>Small update</p>
+                <ul>
+                    <li>Fixed minor bugs</li>
+                    <li>Added a stopwatch</li>
+                    <li>Bundled Java 23</li>
+                </ul>
+            </description>
+        </release>
+        <release version="24.08.0" date="2024-08-18">
             <description>
                 <p>Initial release with the new base</p>
                 <ul>
