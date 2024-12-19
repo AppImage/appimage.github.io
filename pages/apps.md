@@ -16,7 +16,7 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
     </tr>
   </thead>
   <tbody>
-    {% assign sorted = site.pages | sort: 'title' %}
+    {% assign sorted = site.pages | sort_natural: 'title' %}
     {% for post in sorted %}
       {% if post.layout == 'app' && post.published != 'false' %}
         <tr id="{{ post.url }}">
