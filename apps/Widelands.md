@@ -43,6 +43,7 @@ desktop:
     GenericName[fy]: Strategyspultsje
     GenericName[gd]: Geama ro-innleachd
     GenericName[he]: משחק אסטרטגיה
+    GenericName[hr]: Strateška igra
     GenericName[hu]: Stratégiai játék
     GenericName[id]: Permainan Strategi
     GenericName[ig]: Egwuregwu atụmatụ
@@ -81,6 +82,7 @@ desktop:
     Comment[fr]: Un jeu de stratégie et de construction en temps réel
     Comment[fy]: In strategysk bouwspultsje mei rinnende tiid
     Comment[gd]: Geama ro-innleachd togail fìor-ama
+    Comment[hr]: Strateška igra građenja u stvarnom vremenu
     Comment[hu]: Valós idejű építkező stratégiai játék
     Comment[id]: Sebuah permainan pembangunan strategi dalam waktu nyata
     Comment[it]: Un gioco di costruzione e strategia in tempo reale
@@ -96,7 +98,7 @@ desktop:
     Comment[pt_BR]: Um jogo em tempo real de estratégia e evolução
     Comment[ro]: Un joc strategic de construire în timp real
     Comment[ru]: Стратегия развития в реальном времени
-    Comment[sk]: Budovateľská stretegická hra v reálnom čase
+    Comment[sk]: Budovateľská strategická hra v reálnom čase
     Comment[sl]: Graditeljska strateška igra v realnem času
     Comment[sr]: Graditeljska strateška igra u realnom vremenu
     Comment[sv]: Ett uppbyggnadsstrategispel i realtid
@@ -113,7 +115,7 @@ desktop:
     StartupNotify: true
     StartupWMClass: widelands
     X-Flatpak-RenamedFrom: widelands.desktop
-    X-AppImage-Version: 98e30234167b1172fd876fffd8ffbd90762cf385-Release-clang-10
+    X-AppImage-Version: 63c0e5c1246cc39a6b48189c1b18731ba23b9741-Release-clang-10
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
@@ -131,13 +133,14 @@ appdata:
   Summary:
     ja: リアルタイム発展型ストラテジーゲーム
     zh_CN: 即时战略游戏
-    sk: Budovateľská stretegická hra v reálnom čase
+    sk: Budovateľská strategická hra v reálnom čase
     sl: Graditeljska strateška igra v realnem času
     la: Ludus strategicae exstructionis in tempore vero
     C: A real-time build-up strategy game
     fr: Un jeu de stratégie et de construction en temps réel
     sr: Graditeljska strateška igra u realnom vremenu
     uk: Стратегічна гра у режимі реального часу
+    hr: Strateška igra građenja u stvarnom vremenu
     ca: Un joc d’estratègia i construcció a temps real
     fy: In strategysk bouwspultsje mei rinnende tiid
     hu: Valós idejű építkező stratégiai játék
@@ -226,6 +229,13 @@ appdata:
       dans l&apos;univers de Widelands. Ceci dit, le jeu commence vraiment quand vous vous unissez avec vos amis sur internet
       ou en réseau pour bâtir de nouveaux empires ensemble – ou pour vous détruire les uns les autres dans les poussières de
       la guerre. Widelands offre aussi une intelligence artificielle pour vous mettre au défi.</p>
+    hr: >-
+      <p>Postali ste poglavica malenog plemena. Vaš zadatak je da sagradite naselje koje stalno raste i širi se. Svaki član
+      vašeg plemena će učiniti svoj dio kako bi proizveo više resursa za daljnji rast.</p>
+  
+      <p>Widelands možete igrati sami protiv umjetne inteligencije u fino razrađenim i ispričanim pohodima (kampanjama) smještenim
+      u Widelands svijet. Ipak, zabava stvarno počinje kad se udružite sa vašim prijateljima i zaigrate preko interneta ili
+      LAN-a, stvarajte nova carstva zajedno ili se uništite u sveopćem ratu!</p>
     sv: >-
       <p>Du är ledaren för en liten klan. Din uppgift är att bygga en ständigt växande bosättning. Varje medlem i din klan gör
       sin del i att tillverka mer resurser för ytterligare tillväxt.</p>
@@ -370,8 +380,8 @@ appdata:
       inperio berriak elkarrekin eraikitzeko edo elkar erasotzeko gerraren hautsen artean. Widelans-ek adimen artifizialeko
       etsaiak ere eskeintzen dizkizu erronka bezala.</p>
     ru: >-
-      <p>Вы представитель правления небольшого клана. Ваша задача строить постоянно растущее поселение. Каждый участник клана
-      развивает его или его часть, чтобы производить дополнительные ресурсы для дальнейшего роста.</p>
+      <p>Вы правитель небольшого клана. Ваша задача - строить постоянно растущее поселение. Каждый участник клана будет вносить
+      свой вклад в производство ресурсов, необходимых для дальнейшего роста.</p>
   
       <p>Widelands предлагает режим одного игрока с кампаниями, которые повествуют о племенах и их борьбе во вселенной Widelands.
       И всё-таки, самое интересное действительно начинается, когда вы объединяетесь с друзьями через Интернет или локальную
@@ -626,6 +636,10 @@ appdata:
   - locale: zh_TW
     percentage: 0
   Releases:
+  - version: 1.2.1
+    unix-timestamp: 1731628800
+  - version: '1.2'
+    unix-timestamp: 1711756800
   - version: '1.1'
     unix-timestamp: 1666483200
   - version: '1.0'
