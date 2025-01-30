@@ -294,6 +294,11 @@ if [ x"$INPUTBASENAME" == xSubsurface ] ; then
   xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
 fi
 
+# Clean residue from previous runs, avoiding issue #3438
+if [ -n "$INPUTBASENAME" ] && [ -d "database/$INPUTBASENAME" ]; then
+    rm -r "database/$INPUTBASENAME"
+fi
+
 # Works with Xvfb
 # sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
 # -display :99 needed here?
