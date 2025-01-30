@@ -300,6 +300,9 @@ fi
 # xwd -id $(xdotool getactivewindow) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
 mkdir -p database/$INPUTBASENAME/
 
+# Clean residue from previous runs, avoiding issue #3438
+rm -r database/$INPUTBASENAME/*
+
 # Taking screenshot like this fails, https://github.com/AppImage/appimage.github.io/issues/2494
 # convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
 
