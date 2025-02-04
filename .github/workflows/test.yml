@@ -30,7 +30,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Configure APT Packages
-        uses: awalsh128/cache-apt-pkgs-action@v1.3.0
+        uses: awalsh128/cache-apt-pkgs-action@v1.4.3
         # This action handles caching APT packages, and leaves the option for package configuration scripts to be run if needed,
         # saving a boat-load of time, if needed bump the action version.
         with:
