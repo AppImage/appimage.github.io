@@ -3,16 +3,23 @@ layout: app
 
 permalink: /Cryptomator/
 description: Cloud Storage Encryption Utility
+Cloud Storage Encryption Utility
 
 icons:
-  - Cryptomator/icons/scalable/cryptomator.svg
+  - Cryptomator/icons/scalable/org.cryptomator.Cryptomator.svg
 
 screenshots:
   - Cryptomator/screenshot.png
 
 authors:
+  - name: cryptomator
+    url: https://github.com/cryptomator
 
 links:
+  - type: GitHub
+    url: cryptomator/cryptomator
+  - type: Download
+    url: https://github.com/cryptomator/cryptomator/releases
 
 desktop:
   Desktop Entry:
@@ -23,7 +30,9 @@ desktop:
     Terminal: false
     Type: Application
     Categories: Utility
+    StartupNotify: true
     StartupWMClass: org.cryptomator.launcher.MainApplication
+    MimeType: application/vnd.cryptomator.encrypted
   AppImageHub:
     X-AppImage-UpdateInformation: bintray-zsync|cryptomator|cryptomator|cryptomator-linux|cryptomator-_latestVersion-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.

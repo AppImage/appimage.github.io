@@ -31,6 +31,8 @@ desktop:
     Comment[fr]: Un outil pour mesurer la performance des disques physiques
     Comment[hu]: Lemezek teljesítményét mérő alkalmazás
     Comment[it]: Uno strumento per misurare le prestazioni di dischi e memorie fisiche
+    Comment[ja]: ディスクドライブのベンチマークツール
+    Comment[nl]: Een hulpmiddel voor het benchmarken van schijven
     Comment[pl]: Narzędzie do testowania wydajności dysków
     Comment[pt_BR]: Uma ferramenta de benchmark de discos
     Comment[ru]: Тестирование производительности накопителей
@@ -43,6 +45,8 @@ desktop:
     Keywords[fr]: benchmark
     Keywords[hu]: benchmark
     Keywords[it]: benchmark
+    Keywords[ja]: ベンチマーク
+    Keywords[nl]: benchmark
     Keywords[pl]: benchmark
     Keywords[pt_BR]: benchmark
     Keywords[ru]: производительность
@@ -55,12 +59,13 @@ desktop:
     StartupNotify: false
     Type: Application
     Categories: System
-    X-AppImage-Version: 266a078
+    X-AppImage-Version: 3.1.4-fio-3.35
   AppImageHub:
-    X-AppImage-Signature: 'keybox ''/home/runner/.gnupg/pubring.kbx'' created [don''t
-      know]: invalid packet (ctb=0a) no signature found the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.'
+    X-AppImage-UpdateInformation: gh-releases-zsync|JonMagon|KDiskMark|latest|*.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
 ---
