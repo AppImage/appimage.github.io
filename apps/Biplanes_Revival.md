@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /Biplanes_Revival/
-description: An old cellphone arcade "BlueTooth BiPlanes" recreated for PC
+description: Old cellphone arcade recreation
 license: GPL-3.0-only
 
 icons:
@@ -31,7 +31,7 @@ desktop:
     Icon: org.regular_dev.biplanes_revival
     Terminal: false
     X-AppImage-Name: Biplanes Revival
-    X-AppImage-Version: 1.1
+    X-AppImage-Version: 1.2.1
     X-AppImage-Arch: x86_64
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
@@ -47,9 +47,13 @@ appdata:
   Name:
     C: Biplanes Revival
   Summary:
-    C: An old cellphone arcade "BlueTooth BiPlanes" recreated for PC
+    C: Old cellphone arcade recreation
   Description:
     C: >-
+      <p>An old cellphone arcade &quot;BlueTooth BiPlanes&quot; recreated for PC.</p>
+  
+      <p>Features:</p>
+  
       <ul>
         <li>Easy to learn, hard to master gameplay</li>
         <li>Immerse yourself in quick &amp; intense dogfights</li>
@@ -75,19 +79,52 @@ appdata:
     - BiplanesRevival
   Screenshots:
   - default: true
+    caption:
+      C: Game logo
     thumbnails: []
     source-image:
       url: https://raw.githubusercontent.com/regular-dev/biplanes-revival/master/assets/menu/screen_logo.png
       lang: C
-  - thumbnails: []
+  - caption:
+      C: Dogfighting
+    thumbnails: []
     source-image:
       url: https://regular-dev.org/system/refinery/images/W1siZiIsIjIwMjQvMDQvMTQvNHY5N3phZHk5Z19CaXBsYW5lc1Jldml2YWxfc2NyZWVuc2hvdF8xLnBuZyJdXQ/BiplanesRevival_screenshot_1.png?sha=ac4d807051bc375e
       lang: C
-  - thumbnails: []
+  - caption:
+      C: Bailing out
+    thumbnails: []
     source-image:
       url: https://regular-dev.org/system/refinery/images/W1siZiIsIjIwMjQvMDQvMTQvNW13dXc1cHFja19CaXBsYW5lc1Jldml2YWxfc2NyZWVuc2hvdF8yLnBuZyJdXQ/BiplanesRevival_screenshot_2.png?sha=2157c2ac2626cf29
       lang: C
   Releases:
+  - version: 1.2.1
+    unix-timestamp: 1737072000
+    description:
+      C: >-
+        <p>Fixes:</p>
+  
+        <ul>
+          <li>AI is more resistant to player abuse</li>
+        </ul>
+  - version: '1.2'
+    unix-timestamp: 1734998400
+    description:
+      C: >-
+        <p>New features:</p>
+  
+        <ul>
+          <li>Added hotseat multiplayer mode</li>
+          <li>Support for background animation layer (e.g. snowfall)</li>
+        </ul>
+  
+        <p>Fixes:</p>
+  
+        <ul>
+          <li>Broken UI input fields</li>
+          <li>Audio volume reduction over time</li>
+          <li>Menu text offsets</li>
+        </ul>
   - version: '1.1'
     unix-timestamp: 1713052800
     description:
