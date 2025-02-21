@@ -1,0 +1,28 @@
+---
+name: Feishu
+github: as181920/TencentMeeting-AppImage
+license: Proprietary
+description: |
+  Efficient collaboration and sharing.
+
+  The whiteboard feature makes presentations clearer and more interactive.
+
+  This AppImage package allows you to run Feishu on any Linux distribution without installation.
+
+categories:
+  - Office
+  - Communication
+
+screenshots:
+  - https://github.com/as181920/TencentMeeting-AppImage/blob/main/Screenshots/Screenshot1.png
+
+icons:
+  - https://github.com/as181920/TencentMeeting-AppImage/blob/main/AppDir/wemeet.svg
+
+authors:
+  - name: Andersen Fan
+    role: Developer
+
+sources:
+  - https://github.com/as181920/TencentMeeting-AppImage/releases/download/v0.1.0/WemeetApp-x86_64.AppImage
+
