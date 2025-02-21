@@ -1,0 +1,26 @@
+---
+name: Feishu
+github: your-github/feishu-appimage
+license: Proprietary
+description: |
+  Feishu is an advanced, seamless collaboration and management platform. With messaging, video conferencing, cloud docs, and a smart calendar, as well as management tools that can be used to set goals, streamline approvals, and much more.
+
+  This AppImage package allows you to run Feishu on any Linux distribution without installation.
+
+categories:
+  - Office
+  - Communication
+
+screenshots:
+  - https://github.com/as181920/Feishu-AppImage/blob/main/Screenshots/Screenshot1.jpeg
+
+icons:
+  - https://github.com/as181920/Feishu-AppImage/blob/main/AppDir/bytedance-feishu.png
+
+authors:
+  - name: Andersen Fan
+    role: Developer
+
+sources:
+  - https://github.com/as181920/Feishu-AppImage/releases/download/v0.1.0/Feishu-x86_64.AppImage
+
