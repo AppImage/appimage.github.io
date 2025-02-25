@@ -90,7 +90,7 @@ fi
 
 # Get lint (consider moving it to this repository at some point)
 if [ ! -f appdir-lint.sh ] ; then
-  wget -c -q https://raw.githubusercontent.com/AppImage/AppImages/master/appdir-lint.sh https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist
+  wget -c -q https://raw.githubusercontent.com/AppImageCommunity/pkg2appimage/master/appdir-lint.sh https://raw.githubusercontent.com/AppImageCommunity/pkg2appimage/master/excludelist
 fi
 
 set -x

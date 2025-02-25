@@ -16,14 +16,14 @@ env:
 
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
       contents: write
       pull-requests: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         # https://github.com/actions/checkout#Fetch-all-history-for-all-tags-and-branches
         # According to the docs for checkout@v2, Only a single commit is fetched by default, but
         # providing a fetch-depth of 0 should fetch all history.
