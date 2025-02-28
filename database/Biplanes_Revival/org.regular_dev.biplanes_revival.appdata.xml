@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2024 Regular-dev community regular.dev.org@gmail.com -->
 <component type="desktop-application">
   <id>org.regular_dev.biplanes_revival</id>
 
   <name>Biplanes Revival</name>
-  <summary>An old cellphone arcade &quot;BlueTooth BiPlanes&quot; recreated for PC</summary>
+  <summary>Old cellphone arcade recreation</summary>
 
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-3.0-only</project_license>
 
   <description>
+    <p>An old cellphone arcade &quot;BlueTooth BiPlanes&quot; recreated for PC.</p>
+    <p>Features:</p>
     <ul>
       <li>Easy to learn, hard to master gameplay</li>
       <li>Immerse yourself in quick &amp; intense dogfights</li>
@@ -22,6 +23,11 @@
     </ul>
   </description>
 
+  <branding>
+    <color type="primary" scheme_preference="light">#009aef</color>
+    <color type="primary" scheme_preference="dark">#009aef</color>
+  </branding>
+
   <categories>
     <category>Game</category>
     <category>ArcadeGame</category>
@@ -30,12 +36,15 @@
   <launchable type="desktop-id">org.regular_dev.biplanes_revival.desktop</launchable>
   <screenshots>
     <screenshot type="default">
+      <caption>Game logo</caption>
       <image>https://raw.githubusercontent.com/regular-dev/biplanes-revival/master/assets/menu/screen_logo.png</image>
     </screenshot>
     <screenshot>
+      <caption>Dogfighting</caption>
       <image>https://regular-dev.org/system/refinery/images/W1siZiIsIjIwMjQvMDQvMTQvNHY5N3phZHk5Z19CaXBsYW5lc1Jldml2YWxfc2NyZWVuc2hvdF8xLnBuZyJdXQ/BiplanesRevival_screenshot_1.png?sha=ac4d807051bc375e</image>
     </screenshot>
     <screenshot>
+      <caption>Bailing out</caption>
       <image>https://regular-dev.org/system/refinery/images/W1siZiIsIjIwMjQvMDQvMTQvNW13dXc1cHFja19CaXBsYW5lc1Jldml2YWxfc2NyZWVuc2hvdF8yLnBuZyJdXQ/BiplanesRevival_screenshot_2.png?sha=2157c2ac2626cf29</image>
     </screenshot>
   </screenshots>
@@ -47,11 +56,44 @@
   <content_rating type="oars-1.0">
   </content_rating>
 
+  <recommends>
+    <control>keyboard</control>
+  </recommends>
+
   <provides>
     <binary>BiplanesRevival</binary>
   </provides>
 
   <releases>
+    <release version="1.2.1" type="stable" date="2025-01-17">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>AI is more resistant to player abuse</li>
+        </ul>
+      </description>
+
+      <url>https://github.com/regular-dev/biplanes-revival/releases/tag/v1.2.1</url>
+    </release>
+
+    <release version="1.2" type="stable" date="2024-12-24">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Added hotseat multiplayer mode</li>
+          <li>Support for background animation layer (e.g. snowfall)</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Broken UI input fields</li>
+          <li>Audio volume reduction over time</li>
+          <li>Menu text offsets</li>
+        </ul>
+      </description>
+
+      <url>https://github.com/regular-dev/biplanes-revival/releases/tag/v1.2</url>
+    </release>
+
     <release version="1.1" type="stable" date="2024-04-14">
       <description>
         <p>5th-year anniversary release bringing AI and lots of little improvements</p>

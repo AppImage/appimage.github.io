@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Icon=clownmdemu
+Exec=clownmdemu-frontend
+Terminal=false
+Type=Application
+MimeType=application/x-genesis-rom
+Categories=Game;Emulator;
+Name=clownmdemu
+GenericName=Sega Mega Drive Emulator
+Keywords=emulator;genesis;mega drive;megadrive
