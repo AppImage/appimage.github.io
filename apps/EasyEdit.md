@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /EasyEdit/
+description: A lightweight Markdown editor built with Electron
 
 icons:
   - EasyEdit/icons/512x512/easyedit.png
@@ -27,8 +28,9 @@ desktop:
     Type: Application
     Icon: easyedit
     StartupWMClass: EasyEdit
-    X-AppImage-Version: 1.0.6
+    X-AppImage-Version: 1.3.5
     Categories: Development
+    Comment: A lightweight Markdown editor built with Electron
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
