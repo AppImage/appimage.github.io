@@ -16,6 +16,7 @@
   <url type="homepage">https://github.com/LabOzzy/vosk-dictation</url>
   <url type="bugtracker">https://github.com/LabOzzy/vosk-dictation/issues</url>
   <url type="donation">mailto:billkodji1@gmail.com</url>
+  <url type="download">https://github.com/LabOzzy/vosk-dictation/releases/download/v1.0/VOSK_Dictation-x86_64.AppImage</url>
   <releases>
     <release version="1.0" date="2025-04-20">
       <description>
