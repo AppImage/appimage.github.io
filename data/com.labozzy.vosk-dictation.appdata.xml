@@ -2,25 +2,24 @@
 <component type="desktop-application">
   <id>com.labozzy.vosk-dictation</id>
   <name>VOSK Dictation</name>
-  <summary>Говоришь голосом — получаешь текст. Офлайн. Прямо туда, где мигает курсор.</summary>
+  <summary>Dictate with your voice — get text. Offline. Straight into the cursor position.</summary>
   <description>
-    <p>🎤 Удерживай Alt 1.2 секунды — начнётся запись. Повторно удержи Alt 1.2 секунды — запись остановится. Текст будет распознан и вставлен туда, где находился курсор.</p>
-    <p>📢 Отображаются системные уведомления и звуковые сигналы при: включении программы, старте записи, завершении и распознавании, вставке текста.</p>
-    <p>📌 Работает полностью оффлайн, ничего никуда не передаёт.</p>
-    <p>🧠 Использует VOSK (Kaldi), AppImage не требует установки, полностью автономен.</p>
-    <p>🧩 Особенности: лёгкая модель vosk-model-small-ru-0.22, иконка в трее с кнопкой "Остановить", автоматическая вставка текста с помощью xdotool, уведомления и звук через notify-send и paplay, нет встроенной пунктуации.</p>
-    <p>🖥️ Поддерживаются любые дистрибутивы с возможностью запуска AppImage: Ubuntu, Mint, Debian, Arch, Manjaro, Fedora, openSUSE, Elementary, Pop!_OS.</p>
+    <p>🎤 Hold Alt for 1.2 seconds to start recording. Hold Alt again to stop. Recognized text will be inserted into the active window where the cursor was.</p>
+    <p>📢 Shows system notifications and plays sounds for: program start, recording start/stop, recognition, and text insertion.</p>
+    <p>📌 Fully offline, nothing is sent anywhere.</p>
+    <p>🧠 Uses VOSK (Kaldi), runs standalone via AppImage without installation.</p>
+    <p>🧩 Features: lightweight model vosk-model-small-ru-0.22, tray icon with "Stop" button, auto-insertion via xdotool, notifications via notify-send and paplay, no built-in punctuation.</p>
+    <p>🖥️ Compatible with any Linux distro supporting AppImage: Ubuntu, Mint, Debian, Arch, Manjaro, Fedora, openSUSE, Elementary, Pop!_OS.</p>
   </description>
   <developer_name>Ozzy</developer_name>
   <project_license>MIT</project_license>
   <url type="homepage">https://github.com/LabOzzy/vosk-dictation</url>
   <url type="bugtracker">https://github.com/LabOzzy/vosk-dictation/issues</url>
   <url type="donation">mailto:billkodji1@gmail.com</url>
-  <url type="download">https://github.com/LabOzzy/vosk-dictation/releases/download/v1.0/VOSK_Dictation-x86_64.AppImage</url>
   <releases>
     <release version="1.0" date="2025-04-20">
       <description>
-        <p>🔹 Первый релиз: AppImage, оффлайн-распознавание, запись по Alt, уведомления и звук, вставка текста, иконка в трее.</p>
+        <p>🔹 First release: AppImage, offline recognition, Alt-based input, notifications & sound, text insertion, tray icon.</p>
       </description>
     </release>
   </releases>
