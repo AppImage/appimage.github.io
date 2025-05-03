@@ -3,6 +3,8 @@
 # set -euxov pipefail
 set -e -v
 
+sudo apt-get -y install libfuse2
+
 URL=$(cat $1 | head -n 1)
 echo $URL
 
