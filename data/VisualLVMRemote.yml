@@ -4,13 +4,13 @@ categories:
   - "Utility"
 license: "MIT"authors:
   - name: "weLees"
-    url: "https://www.welees.com"
+    url: "http://www.welees.com"
 links:
   - type: "GitHub"
-    url: "https://github.com/welees/visual-lvm"
+    url: "http://github.com/welees/visual-lvm"
 icons:
-  - src: "https://github.com/welees/visual-lvm/blob/main/icon2.png"
+  - src: "http://github.com/welees/visual-lvm/blob/main/icon2.png"
     size: "320x320"
 sources:
   - type: "GitHub"
-    url: "https://github.com/welees/visual-lvm/blob/main/visual-lvm-remote_5.6.1408_x86_64.AppImage"
+    url: "http://github.com/welees/visual-lvm/blob/main/visual-lvm-remote_5.6.1408_x86_64.AppImage"
