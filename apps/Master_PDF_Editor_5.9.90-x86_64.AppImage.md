@@ -2,6 +2,7 @@
 layout: app
 
 permalink: /Master_PDF_Editor_5.9.90-x86_64.AppImage/
+description: Master PDF Editor is a full solutions for work with PDF documents
 
 icons:
   - Master_PDF_Editor_5.9.90-x86_64.AppImage/icons/128x128/mpe5.png
