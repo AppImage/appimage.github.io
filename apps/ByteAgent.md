@@ -16,9 +16,9 @@ authors:
 
 links:
   - type: GitHub
-    url: sebastianaldrin/byte-agent
+    url: sebastianaldrin/byte-agent-releases
   - type: Download
-    url: https://github.com/sebastianaldrin/byte-agent/releases
+    url: https://github.com/sebastianaldrin/byte-agent-releases/releases
 
 desktop:
   Desktop Entry:
@@ -32,7 +32,7 @@ desktop:
     StartupNotify: true
     StartupWMClass: ByteAgent
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|sebastianaldrin|byte-agent|latest|ByteAgent*.AppImage.zsync
+    X-AppImage-UpdateInformation: gh-releases-zsync|sebastianaldrin|byte-agent-releases|latest|ByteAgent*.AppImage.zsync
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
 ---
