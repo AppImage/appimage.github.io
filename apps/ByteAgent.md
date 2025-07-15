@@ -11,14 +11,14 @@ screenshots:
   - ByteAgent/screenshot.png
 
 authors:
-  - name: aldrin-labs
-    url: https://github.com/aldrin-labs
+  - name: sebastianaldrin
+    url: https://github.com/sebastianaldrin
 
 links:
   - type: GitHub
-    url: aldrin-labs/byte-agent
+    url: sebastianaldrin/byte-agent
   - type: Download
-    url: https://github.com/aldrin-labs/byte-agent/releases
+    url: https://github.com/sebastianaldrin/byte-agent/releases
 
 desktop:
   Desktop Entry:
@@ -32,7 +32,7 @@ desktop:
     StartupNotify: true
     StartupWMClass: ByteAgent
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|aldrin-labs|byte-agent|latest|ByteAgent*.AppImage.zsync
+    X-AppImage-UpdateInformation: gh-releases-zsync|sebastianaldrin|byte-agent|latest|ByteAgent*.AppImage.zsync
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
 ---
