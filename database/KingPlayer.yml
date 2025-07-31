@@ -1,0 +1,24 @@
+# Basic Information
+name: KingPlayer
+description: Minimalistic yet powerful local movie player for Linux. Features a media library with automatic metadata from TMDB, playlist support, and more.
+license: CC-BY-NC-ND-4.0
+
+# Links
+links:
+  - CZECH_README: https://github.com/Shortyss/MacaTheKingPlayer/blob/master/README%20-%20CZ.md
+  - ENGLISH_README: https://github.com/Shortyss/MacaTheKingPlayer/blob/master/README-ENG.md
+  - GitHub: https://github.com/Shortyss/MacaTheKingPlayer
+  - Download: https://github.com/Shortyss/MacaTheKingPlayer/releases/latest
+
+# Icon
+icon: https://github.com/Shortyss/MacaTheKingPlayer/blob/master/assets/icons/KingPlayer6.png
+
+# Categories
+categories:
+  - AudioVideo
+  - Player
+
+# Authors
+authors:
+  - name: Shortyss
+    url: https://github.com/Shortyss
