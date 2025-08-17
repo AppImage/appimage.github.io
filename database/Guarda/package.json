@@ -1,0 +1,20 @@
+{
+  "name": "Guarda",
+  "version": "1.0.20",
+  "description": "Guarda is a web-based light wallet for top blockchains: Ethereum, Bitcoin, Litecoin and lots more. Clear design, built-in exchange, full control and security over your funds",
+  "main": "index.js",
+  "author": "Guardarian OU <hello@guarda.co>",
+  "license": "ISC",
+  "homepage": "https://guarda.co/",
+  "dependencies": {
+    "about-window": "^1.13.2",
+    "dotenv": "^8.2.0",
+    "electron-updater": "^4.3.8",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0"
+  },
+  "engines": {
+    "node": "^12"
+  }
+}
