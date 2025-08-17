@@ -1,0 +1,36 @@
+{
+  "name": "owatron",
+  "productName": "owatron",
+  "version": "0.4.6",
+  "description": "Linux Desktop App for Outlook Web App",
+  "main": "main-process.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roggenbrot/owatron"
+  },
+  "bugs": {
+    "url": "https://github.com/roggenbrot/owatron/issues"
+  },
+  "homepage": "https://github.com/roggenbrot/owatron#readme",
+  "author": {
+    "name": "Sascha D.",
+    "email": "41467575+roggenbrot@users.noreply.github.com"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@fluentui/react": "^7.159.0",
+    "@fluentui/react-theme-provider": "^0.18.3",
+    "@hot-loader/react-dom": "^17.0.1",
+    "@uifabric/icons": "^7.5.20",
+    "@uifabric/react-hooks": "^7.13.10",
+    "electron-context-menu": "^2.4.0",
+    "electron-store": "^7.0.1",
+    "fontsource-roboto": "^4.0.0",
+    "i18next": "^19.8.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hot-loader": "^4.13.0",
+    "react-i18next": "^11.8.6",
+    "react-use": "^17.1.1"
+  }
+}
