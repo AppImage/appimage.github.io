@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2021 Arindam Chaudhuri <ksharindam@gmail.com> -->
+<!-- Copyright (C) 2021-2022 Arindam Chaudhuri <ksharindam@gmail.com> -->
 <component type="desktop-application">
   <id>com.ksharindam.photoquick</id>
   <metadata_license>FSFAP</metadata_license>
@@ -18,23 +18,15 @@
 
      <p> Features :</p>
      <ul>
-      <li>Export to PDF</li>
-      <li>Auto Resize to file size</li>
-      <li>Crop in particular ratio</li>
-      <li>Rotate, mirror, perspective transform</li>
-      <li>Add Border</li>
-      <li>Create photo grid for printing</li>
-      <li>Magic Eraser (inpainting)</li>
-      <li>Intelligent Scissor</li>
-      <li>Filters</li>
-      <li>Scan Page</li>
-      <li>Auto Contrast</li>
-      <li>White Balance</li>
-      <li>Reduce Noise</li>
+      <li>Save as PDF, WebP</li>
+      <li>Save with target file size</li>
+      <li>Perspective transform</li>
+      <li>Photo Collage, Photo Grid for printing</li>
+      <li>Magic Eraser or Heal Tool (inpainting)</li>
+      <li>Intelligent Scissor (Background Remover)</li>
+      <li>Filters (Scanned Page, Sharpen, Pencil Sketch, Vignette)</li>
+      <li>Add more features with plugins</li>
      </ul>
-      With Scissor tool you can erase background.
-      You can create mask with scissor tool, thus you can blur or darken the background.
-      Magick eraser (Inpaint) tool can be used to erase cracks or objects in scanned photos.
       <p>
       Get plugins from github page for more features.
       </p>
@@ -49,15 +41,15 @@
   <screenshots>
     <screenshot type="default">
         <caption>Main Window</caption>
-        <image>https://github.com/ksharindam/photoquick/raw/master/data/screenshots/Screenshot1.jpg</image>
+        <image>https://github.com/ksharindam/photoquick/raw/main/data/screenshots/Screenshot1.jpg</image>
       </screenshot>
     <screenshot>
         <caption>PhotoGrid Dialog</caption>
-        <image>https://github.com/ksharindam/photoquick/raw/master/data/screenshots/Screenshot2.jpg</image>
+        <image>https://github.com/ksharindam/photoquick/raw/main/data/screenshots/Screenshot2.jpg</image>
       </screenshot>
     <screenshot>
         <caption>Scissor Tool Dialog</caption>
-        <image>https://github.com/ksharindam/photoquick/raw/master/data/screenshots/Screenshot3.jpg</image>
+        <image>https://github.com/ksharindam/photoquick/raw/main/data/screenshots/Screenshot3.jpg</image>
       </screenshot>
     </screenshots>
 

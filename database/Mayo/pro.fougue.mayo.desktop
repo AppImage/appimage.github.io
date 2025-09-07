@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Name=Mayo
+Comment=Mayo - opensource 3D CAD viewer and converter
+Exec=mayo %U
+StartupWMClass="AppRun.wrapped", "Mayo"
+Icon=mayo
+Terminal=false
+Type=Application
+Categories=Graphics;3DGraphics;Viewer;Engineering;
+Keywords=Converter;stl;cad;ply;MeshViewer;amf;dxf;gltf;opencascade;step;iges;wavefront-obj;brep;vrml;3d-viewer;converter-cli;
+MimeType=model/step;model/iges;model/gltf+json;model/gltf.binary;application/vnd.ms-pki.stl;model/x.stl-ascii;model/x.stl-binary;application/x-wavefront-obj;model/x-brep;model/x-ply;
+X-AppImage-Name=Mayo
+X-AppImage-Version=0.8.0
+X-AppImage-Arch=x86_64

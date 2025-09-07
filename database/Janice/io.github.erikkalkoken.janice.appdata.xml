@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.erikkalkoken.janice</id>
+
+  <name>Janice</name>
+  <summary>A desktop app for viewing large JSON files</summary>
+
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+
+  <description>
+    <p>
+      Janice is a desktop app for viewing large JSON files. Please see website for details.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.erikkalkoken.janice.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://cdn.imgpile.com/f/bdQBc3q_xl.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/ErikKalkoken/janice</url>
+
+   <content_rating type="oars-1.1" />
+</component>

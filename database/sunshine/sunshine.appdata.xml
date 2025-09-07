@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>Sunshine.desktop</id>
+    <metadata_license>GPL-3.0</metadata_license>
+    <project_license>GPL-3.0</project_license>
+    <name>Sunshine</name>
+    <url type="homepage">https://app.lizardbyte.dev/Sunshine</url>
+    <summary>Sunshine is a self-hosted game stream host for Moonlight.</summary>
+    <description>
+        <p>
+            Offering low latency, cloud gaming server capabilities with support for AMD, Intel, and Nvidia GPUs for hardware encoding. Software encoding is also available. You can connect to Sunshine from any Moonlight client on a variety of devices. A web UI is provided to allow configuration, and client pairing, from your favorite web browser. Pair from the local server or any mobile device.
+        </p>
+    </description>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://app.lizardbyte.dev/Sunshine/assets/images/AdobeStock_305732536_1920x1280.jpg</image>
+            <caption>Sunshine</caption>
+        </screenshot>
+    </screenshots>
+</component>

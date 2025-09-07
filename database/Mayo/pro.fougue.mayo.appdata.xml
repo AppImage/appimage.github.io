@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>pro.fougue.mayo</id>
+	<metadata_license>FSFAP</metadata_license>
+	<project_license>BSD-2-Clause</project_license>
+	<name>Mayo</name>
+	<summary>Open-source 3D CAD viewer and converter</summary>
+	<description>
+		<p>Mayo is an open-source application for visualizing and converting 3D CAD and mesh files. Mayo supports clip planes, exploding of assemblies, measurement of shapes, show/hide parts, ...
+It can read/write 3D files from/to STEP, IGES, DXF, STL and many other formats.</p>
+	</description>
+	<launchable type="desktop-id">pro.fougue.mayo.desktop</launchable>
+	<url type="homepage">https://github.com/fougue/mayo</url>
+	<screenshots>
+		<screenshot type="default">
+			<caption>STEP file visualized in Mayo</caption>
+			<image>https://github.com/fougue/mayo/blob/develop/doc/screenshot_ubuntu_main.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Exploded parts in assembly</caption>
+			<image>https://github.com/fougue/mayo/blob/develop/doc/screenshot_ubuntu_1.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Measuring some circle diameters</caption>
+			<image>https://github.com/fougue/mayo/blob/develop/doc/screenshot_ubuntu_2.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Measuring distance between two surfaces</caption>
+			<image>https://github.com/fougue/mayo/blob/develop/doc/screenshot_ubuntu_3.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Clipping plane to see internals of a part</caption>
+			<image>https://github.com/fougue/mayo/blob/develop/doc/screenshot_ubuntu_4.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>FBX file with textures rendered in Mayo</caption>
+			<image>https://github.com/fougue/mayo/blob/develop/doc/screenshot_ubuntu_5.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>mayo.desktop</id>
+	</provides>
+</component>
+
