@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>org.Alamahant.TarotCaster</id>
+  <name>TarotCaster</name>
+  <summary>Tarot card reading and AI-assisted interpretations</summary>
+  <description>
+    TarotCaster is an AI-powered tarot reading application.
+  </description>
+  <url type="homepage">https://github.com/alamahant/TarotCaster</url>
+  <license>GPL-3.0-or-later</license>
+  <project_license>GPL-3.0-or-later</project_license>
+</component>
