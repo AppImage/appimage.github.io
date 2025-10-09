@@ -1,10 +1,11 @@
 [Desktop Entry]
 Type=Application
 Name=Avant Garde
-Icon=zone.kuiper.AvantGarde
+Icon=zone.kuiper.avantgarde
+StartupWMClass=AvantGarde
 Comment=A cross-platform XAML Previewer for the Avalonia .NET Framework
-Exec=usr/bin/AvantGarde
-TryExec=usr/bin/AvantGarde
+Exec=/usr/bin/AvantGarde
+TryExec=/usr/bin/AvantGarde
 NoDisplay=false
 X-AppImage-Integrate=true
 Terminal=false
@@ -14,6 +15,6 @@ Keywords=
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
 # (e.g., with appimagetool -u) so that users can easily update the AppImage
-X-AppImage-Signature=keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
