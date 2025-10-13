@@ -1,0 +1,22 @@
+{
+  "name": "TalkType",
+  "description": "AI-powered speech recognition and dictation for Wayland using OpenAI's Faster-Whisper",
+  "categories": ["Utility", "AudioVideo", "Audio", "Accessibility"],
+  "authors": [
+    {
+      "name": "ronb1964",
+      "url": "https://github.com/ronb1964"
+    }
+  ],
+  "license": "MIT",
+  "links": [
+    {
+      "type": "GitHub",
+      "url": "https://github.com/ronb1964/TalkType"
+    }
+  ],
+  "icons": [
+    "io.github.ronb1964.TalkType"
+  ],
+  "screenshots": []
+}
