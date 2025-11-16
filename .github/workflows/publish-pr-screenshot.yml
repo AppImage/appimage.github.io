@@ -1,0 +1,95 @@
+name: Publish PR Screenshot
+
+on:
+  workflow_run:
+    workflows: ["Test"]
+    types: [completed]
+
+jobs:
+  publish:
+    if: >
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Extract PR number from event
+        id: extract-pr
+        shell: bash
+        run: |
+          PR_NUMBER=$(jq -r '.workflow_run.pull_requests[0].number // empty' "$GITHUB_EVENT_PATH")
+          echo "PR_NUMBER=${PR_NUMBER}" >> $GITHUB_ENV
+          echo "PR_NUMBER=${PR_NUMBER}"
+          echo "pr_number=${PR_NUMBER}" >> $GITHUB_OUTPUT
+      - name: Download screenshot artifacts
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          run_id: ${{ github.event.workflow_run.id }}
+          name: pr-screenshots
+          path: ./out
+          if_no_artifact_found: ignore
+
+      - name: Prepare files
+        id: prep
+        shell: bash
+        run: |
+          set -e
+          mkdir -p upload
+          : > upload/list.txt
+          SHORT="${HEAD_SHA::8}"
+          COUNT=0
+          FALLBACK="run-${{ github.event.workflow_run.id }}"
+          for f in out/database/*/screenshot.png; do
+            [ -f "$f" ] || continue
+            base="$(basename "$f")"
+            ext="${base##*.}"
+            appname="$(basename "$(dirname "$f")")"
+            # Produce deterministic upload name with app name
+            PN="${PR_NUMBER:-$FALLBACK}"
+            name="pr-${PN}-${SHORT}-${appname}.${ext}"
+            cp "$f" "upload/${name}"
+            echo "${name}" >> upload/list.txt
+            COUNT=$((COUNT+1))
+          done
+          echo "COUNT=${COUNT}" >> $GITHUB_ENV
+          echo "count=${COUNT}" >> $GITHUB_OUTPUT
+
+      - name: Ensure draft release exists
+        shell: bash
+        run: |
+          gh release view ci-screenshots >/dev/null 2>&1 || \
+          gh release create ci-screenshots --draft -t "CI Screenshots" -n "Automated screenshots from PRs"
+
+      - name: Upload assets
+        if: ${{ steps.prep.outputs.count != '0' }}
+        shell: bash
+        run: |
+          while IFS= read -r name; do
+            gh release upload ci-screenshots "upload/${name}" --clobber
+          done < upload/list.txt
+
+      - name: Comment on PR with images
+        if: ${{ steps.prep.outputs.count != '0' && steps.extract-pr.outputs.pr_number != '' }}
+        shell: bash
+        run: |
+          repo="${{ github.repository }}"
+          {
+            echo "Automated screenshot(s) for PR #${PR_NUMBER} (commit ${HEAD_SHA}):"
+            echo ""
+            while IFS= read -r name; do
+              url="https://github.com/${repo}/releases/download/ci-screenshots/${name}"
+              echo "![Screenshot](${url})"
+              echo ""
+            done < upload/list.txt
+          } > comment.txt
+          gh api "repos/${repo}/issues/${PR_NUMBER}/comments" -F body=@comment.txt
+
