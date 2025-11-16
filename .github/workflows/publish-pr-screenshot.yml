@@ -48,14 +48,13 @@ jobs:
           SHORT="${HEAD_SHA::8}"
           COUNT=0
           FALLBACK="run-${{ github.event.workflow_run.id }}"
-          for f in out/database/*/screenshot.png; do
+          for f in out/screenshots-upload/*.png; do
             [ -f "$f" ] || continue
             base="$(basename "$f")"
-            ext="${base##*.}"
-            appname="$(basename "$(dirname "$f")")"
+            appname="${base%.png}"  # Remove .png extension to get app name
             # Produce deterministic upload name with app name
             PN="${PR_NUMBER:-$FALLBACK}"
-            name="pr-${PN}-${SHORT}-${appname}.${ext}"
+            name="pr-${PN}-${SHORT}-${appname}.png"
             cp "$f" "upload/${name}"
             echo "${name}" >> upload/list.txt
             COUNT=$((COUNT+1))

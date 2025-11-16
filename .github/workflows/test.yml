@@ -49,6 +49,10 @@ jobs:
           sudo gem install dupervisor -v 1.0.5 # To convert ini to yaml files
           sudo npm install -g asar # to get pacakges.json from resources/app.asar for electron-builder applications
           # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
+      - name: Mark screenshot start (PR only)
+        if: github.event_name == 'pull_request'
+        run: |
+          touch .screenshots_start
       - name: Main test
         # shell: bash
         run: |
@@ -86,13 +90,26 @@ jobs:
           # xpra stop :99
           killall Xvfb
           # bundle exec jekyll build # https://help.github.com/en/articles/viewing-jekyll-build-error-messages#configuring-a-third-party-service-to-display-jekyll-build-error-messages
+      - name: Prepare screenshots for upload
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          mkdir -p screenshots-upload
+          # only files modified during this run
+          while IFS= read -r screenshot; do
+            [ -f "$screenshot" ] || continue
+            appname=$(basename "$(dirname "$screenshot")")
+            # Sanitize filename: allow letters, digits, dot, underscore, hyphen
+            safe_name=$(echo "$appname" | tr '[:upper:]' '[:lower:]' | tr -cd 'a-z0-9._-')
+            cp "$screenshot" "screenshots-upload/${safe_name}.png"
+          done < <(find database -type f -path '*/screenshot.png' -newer .screenshots_start -print)
+          ls -la screenshots-upload/ || true
       - name: Upload screenshot artifact
         if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: pr-screenshots
-          path: |
-            database/*/screenshot.png
+          path: screenshots-upload/*.png
           if-no-files-found: ignore
           retention-days: 7
       - name: Check log
