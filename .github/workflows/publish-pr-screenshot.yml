@@ -9,7 +9,8 @@ jobs:
   publish:
     if: >
       github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.event == 'pull_request'
+      github.event.workflow_run.event == 'pull_request' &&
+      github.repository == 'AppImage/appimage.github.io'
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -48,7 +49,7 @@ jobs:
           SHORT="${HEAD_SHA::8}"
           COUNT=0
           FALLBACK="run-${{ github.event.workflow_run.id }}"
-          for f in out/screenshots-upload/*.png; do
+          for f in out/*.png; do
             [ -f "$f" ] || continue
             base="$(basename "$f")"
             appname="${base%.png}"  # Remove .png extension to get app name
@@ -62,11 +63,12 @@ jobs:
           echo "COUNT=${COUNT}" >> $GITHUB_ENV
           echo "count=${COUNT}" >> $GITHUB_OUTPUT
 
-      - name: Ensure draft release exists
+      - name: Ensure release exists (published)
         shell: bash
         run: |
           gh release view ci-screenshots >/dev/null 2>&1 || \
-          gh release create ci-screenshots --draft -t "CI Screenshots" -n "Automated screenshots from PRs"
+          gh release create ci-screenshots -t "CI Screenshots" -n "Automated screenshots from PRs" --prerelease
+          gh release edit ci-screenshots --draft=false
 
       - name: Upload assets
         if: ${{ steps.prep.outputs.count != '0' }}
