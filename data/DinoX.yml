@@ -1,0 +1,16 @@
+name: DinoX
+categories:
+  - Network
+  - Chat
+authors:
+  - name: Ralf Peter
+links:
+  - type: GitHub
+    url: rallep71/dinox
+  - type: Download
+    url: https://github.com/rallep71/dinox/releases
+icons:
+  - https://raw.githubusercontent.com/rallep71/dinox/master/main/data/icons/hicolor/scalable/apps/im.github.rallep71.DinoX.svg
+screenshots:
+  - https://dinox.handwerker.jetzt/assets/mucji.png
+
