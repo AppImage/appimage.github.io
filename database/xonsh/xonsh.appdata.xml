@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
     <id>xonsh</id>
-    <metadata_license>MIT</metadata_license>
-    <project_license>Python-2.0</project_license>
+    <metadata_license>BSD</metadata_license>
+    <project_license>BSD</project_license>
     <name>Xonsh</name>
-    <summary>Xonsh on Python 3.8.5</summary>
+    <summary>Xonsh on Python 3.11.14</summary>
     <description>
-        <p>  Python 3.8.5 + Xonsh bundled in an AppImage.
+        <p>  Python 3.11.14 + Xonsh bundled in an AppImage.
         </p>
     </description>
     <launchable type="desktop-id">xonsh.desktop</launchable>
     <url type="homepage">http://xon.sh</url>
     <provides>
-        <binary>python3.8</binary>
+        <binary>python3.11</binary>
     </provides>
 </component>

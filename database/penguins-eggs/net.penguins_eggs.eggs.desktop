@@ -1,12 +1,12 @@
 [Desktop Entry]
+Name=Penguins Eggs
+Comment=CLI tool for Linux remastering and live system creation
+Exec=eggs
+Icon=penguins-eggs
 Type=Application
-Name=xonsh
-Exec=xonsh
-Comment=Xonsh on Python 3.11.14
-Icon=xonsh_terminal_icon_256x256_cropped
-Categories=System;
+Categories=System;ConsoleOnly;
 Terminal=true
-
+NoDisplay=false
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
 # (e.g., with appimagetool -u) so that users can easily update the AppImage
