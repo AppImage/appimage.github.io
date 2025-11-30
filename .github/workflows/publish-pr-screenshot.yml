@@ -2,7 +2,8 @@ name: Publish PR Screenshot
 
 on:
   workflow_run:
-    workflows: ["Test"]
+    workflows:
+      - ".github/workflows/test.yml"
     types: [completed]
 
 jobs:
