@@ -1,11 +1,10 @@
 [Desktop Entry]
 Type=Application
-Name=xonsh
-Exec=xonsh
-Comment=Xonsh on Python 3.11.14
-Icon=xonsh_terminal_icon_256x256_cropped
-Categories=System;
-Terminal=true
+Name=FireMinipro
+Exec=fireminipro
+Icon=fireminipro
+Categories=Development;Utility;
+X-AppImage-Version=0.1.0
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

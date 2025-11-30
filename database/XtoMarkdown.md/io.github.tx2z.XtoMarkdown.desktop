@@ -1,11 +1,16 @@
 [Desktop Entry]
+Name=XtoMarkdown
+Comment=Convert documents to Markdown
+GenericName=Document Converter
+Exec=xtomarkdown %F
+Icon=io.github.tx2z.XtoMarkdown
+Terminal=false
 Type=Application
-Name=xonsh
-Exec=xonsh
-Comment=Xonsh on Python 3.11.14
-Icon=xonsh_terminal_icon_256x256_cropped
-Categories=System;
-Terminal=true
+Categories=Utility;Office;TextTools;
+Keywords=markdown;convert;docx;pdf;pptx;document;
+StartupWMClass=xtomarkdown
+StartupNotify=true
+MimeType=application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/pdf;application/vnd.openxmlformats-officedocument.presentationml.presentation;text/html;application/rtf;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
