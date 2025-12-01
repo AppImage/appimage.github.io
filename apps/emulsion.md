@@ -43,4 +43,4 @@ Display your games collection into responsive galleries, manage game metadata, c
 
 - **License**: GPLv3
 - **Homepage**: [https://yphil.gitlab.io/emulsion](https://yphil.gitlab.io/emulsion)
-- **Author**: yPhil <yphil@gnu.org>
+- **Author**: yPhil https://yphil.gitlab.io
