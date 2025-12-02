@@ -1,15 +1,1 @@
-name: SmartClip
-categories:
-  - Utility
-authors:
-  - name: skfrost19
-    url: https://github.com/skfrost19
-links:
-  - type: GitHub
-    url: https://github.com/skfrost19/Clipbuddy
-  - type: Download
-    url: https://github.com/skfrost19/Clipbuddy/releases
-description: |
-  A lightweight clipboard manager with global hotkey support, 
-  system tray integration, and persistent history.
-license: MIT
+https://github.com/skfrost19/Clipbuddy/releases/download/v1.0.0/SmartClip-1.0.0-x86_64.AppImage
