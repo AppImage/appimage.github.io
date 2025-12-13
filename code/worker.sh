@@ -2,6 +2,7 @@
 
 # set -euxov pipefail
 set -e -v
+set -o pipefail
 
 sudo apt-get -y install libfuse2
 
