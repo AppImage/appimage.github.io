@@ -1,0 +1,34 @@
+# apps/ChatGPT-Electron.desktop.yml
+app: ChatGPT-Electron
+binpatch: false
+categories:
+  - Utility
+description: |
+  Electron-basierter Wrapper für die ChatGPT Web-App (https://chat.openai.com).
+  Keine API-Schlüssel erforderlich. Unterstützt RPM und AppImage.
+authors:
+  - name: schlozybaer
+    url: https://github.com/schlozybaer
+license: MIT
+links:
+  homepage: https://github.com/schlozybaer/ChatGPT-electron
+  bugtracker: https://github.com/schlozybaer/ChatGPT-electron/issues
+  download: https://github.com/schlozybaer/ChatGPT-electron/releases/latest
+provides:
+  - ChatGPT-Electron
+screenshots:
+  - https://raw.githubusercontent.com/schlozybaer/ChatGPT-electron/stable/screenshots/screenshot-1.png
+icons:
+  - src: https://raw.githubusercontent.com/schlozybaer/ChatGPT-electron/stable/assets/icons/png/favicon.png
+    type: fixed
+    width: 256
+    height: 256
+desktop:
+  file: chatgpt-electron.desktop
+  icons:
+    - chatgpt-electron
+appimage:
+  type: 2
+  url: https://github.com/schlozybaer/ChatGPT-electron/releases/latest/download/ChatGPT-x86_64.AppImage
+  # optional falls vorhanden:
+  # zsync: https://github.com/schlozybaer/ChatGPT-electron/releases/latest/download/ChatGPT-x86_64.AppImage.zsync
