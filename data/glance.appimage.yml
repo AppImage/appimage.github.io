@@ -12,6 +12,7 @@ links:
     url: "https://github.com/WRVbit/glance/releases"
 screenshots:
   - "https://github.com/WRVbit/glance/raw/master/assets/screenshots/dashboard.png"
-  - "https://github.com/WRVbit/glance/raw/master/assets/screenshots/performance.png"
+  - "https://github.com/WRVbit/glance/raw/master/assets/screenshots/system-monitor.png"
+  - "https://github.com/WRVbit/glance/raw/master/assets/screenshots/system-cleaner.png"
 icons:
   - "https://github.com/WRVbit/glance/raw/master/src-tauri/icons/128x128.png"
