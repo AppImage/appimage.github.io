@@ -1,0 +1,15 @@
+name: Glance
+description: "A beautiful, modern Linux system optimizer"
+categories:
+  - System
+  - Utility
+license: GPL-3.0
+author: WRVbit
+links:
+  type: github
+  github: WRVbit/glance
+screenshots:
+  - https://github.com/WRVbit/glance/raw/master/assets/screenshots/screenshot-10.png
+  - https://github.com/WRVbit/glance/raw/master/assets/screenshots/screenshot-03.png
+icons:
+  - https://github.com/WRVbit/glance/raw/master/src-tauri/icons/128x128.png
