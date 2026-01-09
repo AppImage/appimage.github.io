@@ -20,11 +20,11 @@ icons:
 license: CC-BY-4.0
 
 author:
-  name: "bendeb creations"
-  email: "contact@bendebcreations.com"
+  name: "mangoban"
+  email: "mangoban@users.noreply.github.com"
 
 download:
-  x86_64: https://github.com/mangoban/StemWeaver/releases/download/v1.1.0/StemWeaver-v1.1-x86_64.AppImage
+  x86_64: https://github.com/mangoban/StemWeaver/releases/download/v1.1.0/StemWeaver_v1.1-x86_64.AppImage
 
 build:
   type: github-actions
