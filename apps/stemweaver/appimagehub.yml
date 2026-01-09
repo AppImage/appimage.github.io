@@ -1,0 +1,57 @@
+# AppImageHub submission for StemWeaver
+# Submit to: https://github.com/AppImage/appimage.github.io
+
+name: StemWeaver
+description: "Professional AI-powered audio stem separation tool using Meta Demucs models"
+categories:
+  - Audio
+  - AudioVideo
+  - Music
+  - Production
+
+links:
+  website: https://github.com/mangoban/StemWeaver
+  donate: https://buymeacoffee.com/mangoban
+
+icons:
+  - url: https://raw.githubusercontent.com/mangoban/StemWeaver/main/packaging/AppDir/usr/share/icons/hicolor/256x256/apps/stemweaver.svg
+    size: 256x256
+
+license: CC-BY-4.0
+
+author:
+  name: "bendeb creations"
+  email: "contact@bendebcreations.com"
+
+download:
+  x86_64: https://github.com/mangoban/StemWeaver/releases/download/v1.1.0/StemWeaver-v1.1-x86_64.AppImage
+
+build:
+  type: github-actions
+  script: packaging/build_appimage.sh
+
+features:
+  - "AI-powered stem separation (vocals, drums, bass, piano, guitar, other)"
+  - "Meta Demucs v4 models"
+  - "GPU acceleration support (CUDA)"
+  - "Batch processing"
+  - "MIDI export"
+  - "Denoising"
+  - "Modern GUI with DearPyGui"
+  - "Portable - no installation required"
+
+notes: |
+  StemWeaver is a professional audio stem separation tool that uses advanced AI models to extract individual instruments from audio files.
+  
+  Key features:
+  - Multiple AI models (Demucs, MDX, VR networks)
+  - Support for 4-stem and 6-stem separation
+  - GPU acceleration with CUDA
+  - Batch processing capabilities
+  - MIDI export for melodic instruments
+  - Post-processing denoising
+  - Modern, intuitive GUI
+  
+  The AppImage is built using GitHub Actions and includes all necessary dependencies.
+  
+  First-time users will need to download AI models (~1-2GB) on first run, which requires an internet connection.
