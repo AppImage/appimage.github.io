@@ -530,7 +530,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: https://github.com/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
   fi
-  OBS_LINK=$(grep "^http.*://download.opensuse.org.*latest.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g')
+  OBS_LINK=$(grep "^http.*://download.opensuse.org.*latest.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g') || true
   if [  x"$OBS_LINK" != x"" ] ; then
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
