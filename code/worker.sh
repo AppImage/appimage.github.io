@@ -459,14 +459,22 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # License
   AS_LICENSE=""
   DT_LICENSE=""
-  if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    AS_LICENSE=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/project_license" -v .) || true
-  fi
-  DT_LICENSE=$(grep -r "X-AppImage-Payload-License=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2)
+  AS_LICENSE=$(
+    xmlstarlet sel -t \
+      -m "/component/project_license" -v . \
+      $(ls database/$INPUTBASENAME/*.{appdata,metainfo}.xml 2>/dev/null)
+  ) || true
+  DT_LICENSE=$(
+    grep -h "X-AppImage-Payload-License=" database/$INPUTBASENAME/*.desktop 2>/dev/null \
+    | cut -d '=' -f 2
+  ) || true
   if [ x"$AS_LICENSE" != x"" ] ; then
     echo "license: $AS_LICENSE" >> apps/$INPUTBASENAME.md
   elif [ x"$DT_LICENSE" != x"" ] ; then
     echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
+  else
+    echo "No license found!"
+    exit 1
   fi
   # Icon
   ICONBASENAME=$(basename "$ICONFILE")
