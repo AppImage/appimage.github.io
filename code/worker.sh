@@ -498,9 +498,13 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # Authors
   echo "" >> apps/$INPUTBASENAME.md
   echo "authors:" >> apps/$INPUTBASENAME.md
-  GH_USER=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
-  GH_REPO=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
-  OBS_USER=$(grep "^http.*://download.opensuse.org/repositories/home:/" data/$INPUTBASENAME | cut -d "/" -f 6 | sed -e 's|:||g')
+  GH_USER=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
+  GH_REPO=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+  OBS_USER=$(
+    grep -h "^http.*://download.opensuse.org/repositories/home:/" "data/$INPUTBASENAME" 2>/dev/null \
+    | cut -d "/" -f 6 \
+    | sed 's|:||g'
+  ) || true
   # BB_USER=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
   # BB_REPO=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
   if [  x"$GH_USER" == x"" ] ; then
