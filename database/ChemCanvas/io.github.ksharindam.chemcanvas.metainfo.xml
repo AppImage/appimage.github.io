@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2023-2025 Arindam Chaudhuri <ksharindam@gmail.com> -->
+<component type="desktop-application">
+  <id>io.github.ksharindam.chemcanvas</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="io.github.ksharindam">
+    <name>Arindam Chaudhuri</name>
+  </developer>
+
+  <name>ChemCanvas</name>
+  <summary>Chemical structure drawing tool</summary>
+  <description>
+    <p>
+      A very intuitive and easy to use 2D chemical structure drawing tool.
+      You can draw molecules and reactions, mechanisms, generate SMILES, save drawings as PNG or SVG. Or you can calculate various properties of molecules.
+    </p>
+
+     <p> Features :</p>
+     <ul>
+      <li>Supports most popular file formats</li>
+      <li>Supports modern file formats like Marvin MRV, Chemdraw CDXML</li>
+      <li>Export to PNG, SVG, and Editable SVG</li>
+      <li>Many bond types including wavy bond, Cis/Trans, Bold double, Any Bond etc</li>
+      <li>Easy coloring tool</li>
+      <li>Aromaticity detection and add delocalization ring</li>
+     </ul>
+  </description>
+
+  <categories>
+    <category>Science</category>
+  </categories>
+  <launchable type="desktop-id">io.github.ksharindam.chemcanvas.desktop</launchable>
+  <url type="homepage">https://ksharindam.github.io/chemcanvas/</url>
+  <content_rating type="oars-1.0" />
+
+  <branding>
+    <color type="primary" scheme_preference="light">#f5f5b4</color>
+    <color type="primary" scheme_preference="dark">#757500</color>
+  </branding>
+
+  <screenshots>
+    <screenshot type="default">
+        <caption>Draw Mechanism</caption>
+        <image>https://github.com/ksharindam/chemcanvas-data/raw/main/Screenshots/screenshot1.png</image>
+      </screenshot>
+    <screenshot>
+        <caption>Draw Structures</caption>
+        <image>https://github.com/ksharindam/chemcanvas-data/raw/main/Screenshots/screenshot2.png</image>
+      </screenshot>
+    <screenshot>
+        <caption>User Templates</caption>
+        <image>https://github.com/ksharindam/chemcanvas-data/raw/main/Screenshots/screenshot3.png</image>
+      </screenshot>
+    <screenshot>
+        <caption>Generate Smiles</caption>
+        <image>https://github.com/ksharindam/chemcanvas-data/raw/main/Screenshots/screenshot4.png</image>
+      </screenshot>
+    </screenshots>
+
+</component>

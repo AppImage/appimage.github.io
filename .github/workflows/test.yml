@@ -1,3 +1,5 @@
+name: Test
+
 on:
   push:
     branches:
@@ -16,9 +18,10 @@ env:
 
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     timeout-minutes: 10
     permissions:
+      actions: write
       contents: write
       pull-requests: write
     steps:
@@ -30,7 +33,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Configure APT Packages
-        uses: awalsh128/cache-apt-pkgs-action@v1.3.0
+        uses: awalsh128/cache-apt-pkgs-action@v1.4.3
         # This action handles caching APT packages, and leaves the option for package configuration scripts to be run if needed,
         # saving a boat-load of time, if needed bump the action version.
         with:
@@ -46,6 +49,10 @@ jobs:
           sudo gem install dupervisor -v 1.0.5 # To convert ini to yaml files
           sudo npm install -g asar # to get pacakges.json from resources/app.asar for electron-builder applications
           # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
+      - name: Mark screenshot start (PR only)
+        if: github.event_name == 'pull_request'
+        run: |
+          touch .screenshots_start
       - name: Main test
         # shell: bash
         run: |
@@ -83,6 +90,28 @@ jobs:
           # xpra stop :99
           killall Xvfb
           # bundle exec jekyll build # https://help.github.com/en/articles/viewing-jekyll-build-error-messages#configuring-a-third-party-service-to-display-jekyll-build-error-messages
+      - name: Prepare screenshots for upload
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          mkdir -p screenshots-upload
+          # only files modified during this run
+          while IFS= read -r screenshot; do
+            [ -f "$screenshot" ] || continue
+            appname=$(basename "$(dirname "$screenshot")")
+            # Sanitize filename: allow letters, digits, dot, underscore, hyphen
+            safe_name=$(echo "$appname" | tr '[:upper:]' '[:lower:]' | tr -cd 'a-z0-9._-')
+            cp "$screenshot" "screenshots-upload/${safe_name}.png"
+          done < <(find database -type f -path '*/screenshot.png' -newer .screenshots_start -print)
+          ls -la screenshots-upload/ || true
+      - name: Upload screenshot artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-screenshots
+          path: screenshots-upload/*.png
+          if-no-files-found: ignore
+          retention-days: 7
       - name: Check log
         if: github.event_name == 'pull_request' && github.event.pull_request.user.login == 'probonopd'
         shell: bash
@@ -91,13 +120,12 @@ jobs:
           grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)." && exit 1
           grep -r "version \`GLIBC_.*' not found" && MESSAGE="This was compiled on a too new system and hence cannot run on all still-supported versions of Ubuntu." && exit 1
           echo "${MESSAGE}"
-          SCREENSHOT_URL=$(cat log.txt | grep -o -e "https://i.imgur.com.*.png") || true
-          if [[ -z "${SCREENSHOT_URL}" ]]; then
-            echo "No screenshot URL found."
+          COUNT=$(ls database/*/screenshot.png 2>/dev/null | wc -l)
+          if [[ "${COUNT}" -eq 0 ]]; then
+            echo "No screenshot file found."
             exit 1
           fi
-          echo "SCREENSHOT_URL=$SCREENSHOT_URL" >> $GITHUB_ENV || true
-          echo "SCREENSHOT_URL: ${SCREENSHOT_URL}" || true
+          echo "Found ${COUNT} screenshot file(s)."
 # The following is disabled because it gives errors about missing permissions
 # whenever a PR is made by anyone but the repo maintainer
 #      - name: Post Screenshot URL

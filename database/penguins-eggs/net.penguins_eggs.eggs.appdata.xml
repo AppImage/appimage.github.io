@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>net.penguins_eggs.eggs.desktop</id>
+  
+  <metadata_license>FSFAP</metadata_license>
+  
+  <project_license>GPL-3.0-only</project_license>
+  
+  <name>Penguins Eggs</name>
+  <summary>CLI tool for Linux remastering and live system creation</summary>
+  
+  <description>
+    <p>A console tool that allows you to remaster your system and redistribute it as live images on USB sticks or via PXE.</p>
+  </description>
+  
+  <developer id="net.penguins_eggs">
+    <name>Piero Proietti</name>
+  </developer>
+  
+  <categories>
+    <category>System</category>
+    <category>Utility</category>
+  </categories>
+  
+  <url type="homepage">https://penguins-eggs.net</url>
+  <url type="bugtracker">https://github.com/pieroproietti/penguins-eggs/issues</url>
+  <url type="vcs-browser">https://github.com/pieroproietti/penguins-eggs</url>
+  
+  <provides>
+    <binary>penguins-eggs</binary>
+    <binary>eggs</binary>
+  </provides>
+  
+  <launchable type="desktop-id">net.penguins_eggs.eggs.desktop</launchable>
+  
+  <content_rating type="oars-1.1" />
+  
+  <update_contact>piero.proietti_AT_gmail.com</update_contact>
+  
+  <releases>
+    <release version="25.11.29" date="2025-11-30"/>
+  </releases>
+</component>

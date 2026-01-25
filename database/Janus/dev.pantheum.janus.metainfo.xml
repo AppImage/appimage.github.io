@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>dev.pantheum.janus</id>
+  
+  <name>Janus</name>
+  <summary>Simple Linux notepad</summary>
+  
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LGPL-3.0-or-later</project_license>
+  
+  <description>
+    <p>
+      Simple native Linux notepad meant for text editing. Supports UTF-8 and binary data.
+    </p>
+  </description>
+
+  <url type="homepage">https://github.com/gholmann16/janus</url>
+
+  <launchable type="desktop-id">dev.pantheum.janus.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/gholmann16/Janus/main/data/screenshot.png</image>
+      <caption>Picture of a simple notepad application (janus) reading a c file with syntax highlighting displayed</caption>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1" />
+
+  <developer id="dev.pantheum">
+    <name>Gabriel Holmann</name>
+  </developer>
+
+  <releases>
+  <release version="0.9.7" date="2024-06-28"></release>
+  </releases>
+</component>
