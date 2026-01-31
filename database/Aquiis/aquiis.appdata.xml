@@ -3,7 +3,7 @@
   <id>com.aquiis.propertymanagement</id>
   <metadata_license>MIT</metadata_license>
   <project_license>MIT</project_license>
-  <name>Aquiis Property Management</name>
+  <name>Aquiis</name>
   <summary>Modern property management software for small landlords</summary>
   
   <description>
@@ -29,7 +29,7 @@
     </p>
   </description>
   
-  <launchable type="desktop-id">com.aquiis.propertymanagement.desktop</launchable>
+  <launchable type="desktop-id">aquiis.desktop</launchable>
   
   <screenshots>
     <screenshot type="default">
@@ -59,10 +59,22 @@
   </developer>
   
   <provides>
-    <binary>AquiisPropertyManagement</binary>
+    <binary>Aquiis</binary>
   </provides>
   
   <releases>
+    <release version="1.0.1" date="2026-01-29">
+      <description>
+        <p>Hotfix release with stability improvements</p>
+        <ul>
+          <li>Fixed invoice late fee processing race condition</li>
+          <li>Fixed AppImage naming convention for AppImageHub compliance</li>
+          <li>Improved Notification Center accessibility</li>
+          <li>Updated email/SMS notification UI with Coming Soon badges</li>
+          <li>Cleaned up navigation menu structure</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.0" date="2026-01-28">
       <description>
         <p>First stable release for public distribution</p>
