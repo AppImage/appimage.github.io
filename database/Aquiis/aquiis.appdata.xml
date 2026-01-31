@@ -29,7 +29,7 @@
     </p>
   </description>
   
-  <launchable type="desktop-id">aquiis.desktop</launchable>
+  <launchable type="desktop-id">aquiis-property-management.desktop</launchable>
   
   <screenshots>
     <screenshot type="default">
@@ -59,7 +59,7 @@
   </developer>
   
   <provides>
-    <binary>Aquiis</binary>
+    <binary>aquiis-property-management</binary>
   </provides>
   
   <releases>

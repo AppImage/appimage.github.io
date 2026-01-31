@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=Aquiis
 Comment=Multi-tenant property management system for small landlords
-Exec=Aquiis
-Icon=aquiis
+Exec=aquiis-property-management
+Icon=aquiis-property-management
 Type=Application
 Categories=Office;Finance;
 Terminal=false
