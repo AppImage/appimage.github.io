@@ -29,7 +29,6 @@ desktop:
     Exec: MieSimulatorGUI_v2_0
     Icon: MieSimulatorGUI
     Categories: Science
-    X-AppImage-Version: 359f6d9
   AppImageHub:
     X-AppImage-Signature: no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)
