@@ -29,7 +29,7 @@
     </p>
   </description>
   
-  <launchable type="desktop-id">com.aquiis.propertymanagement.desktop</launchable>
+  <launchable type="desktop-id">aquiis.desktop</launchable>
   
   <screenshots>
     <screenshot type="default">
