@@ -29,7 +29,7 @@ desktop:
     Type: Application
     Terminal: false
     Categories: Office;Finance
-    Comment: Property management for small landlords
+    Comment: Property management for DIY landlords and property managers
   AppImageHub:
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64

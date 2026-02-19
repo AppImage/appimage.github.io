@@ -4,7 +4,7 @@
   <metadata_license>MIT</metadata_license>
   <project_license>MIT</project_license>
   <name>Aquiis Property Management</name>
-  <summary>Modern property management software for small landlords</summary>
+  <summary>Modern property management software for DIY landlords and property managers</summary>
   
   <description>
     <p>
@@ -29,7 +29,7 @@
     </p>
   </description>
   
-  <launchable type="desktop-id">com.aquiis.propertymanagement.desktop</launchable>
+  <launchable type="desktop-id">aquiis.desktop</launchable>
   
   <screenshots>
     <screenshot type="default">

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Aquiis Property Management
-Comment=Multi-tenant property management system for small landlords
-Exec=Aquiis-1.1.0-x86_64.AppImage
+Comment=Multi-tenant property management system for DIY landlords and property managers
+Exec=Aquiis.AppImage
 Icon=aquiis
 Type=Application
 Categories=Office;Finance;
