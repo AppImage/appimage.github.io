@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.1
+Name=OSCAR
+GenericName=CPAP Reporter
+TryExec=OSCAR
+Exec=OSCAR
+Terminal=false
+Icon=com.sleepfiles.OSCAR
+Type=Application
+Categories=X-SuSE-Core-Science;Science;MedicalSoftware;
+StartupNotify=true
+X-GNOME-UsesNotifications=true
+Name[en_CA]=OSCAR
+
+
+X-Desktop-File-Install-Version=0.26
