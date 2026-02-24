@@ -1,0 +1,7 @@
+name: Blazefox
+categories: [Utility, FileManagement]
+description: Smart and efficient file deduplication tool with conflict resolution, regex filtering, hashing and undo capabilities.
+license: MIT
+url: https://github.com/crystallinecore/Blazefox
+icon: https://github.com/CrystallineCore/Blazefox/blob/main/assets/blazefox.png
+download: https://github.com/CrystallineCore/Blazefox/releases/download/v1.2.0/BlazeFox-x86_64.AppImage
