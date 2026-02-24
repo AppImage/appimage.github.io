@@ -1,0 +1,33 @@
+{
+  "name": "ModernDeck",
+  "productName": "ModernDeck",
+  "version": "9.4.4",
+  "description": "ModernDeck",
+  "copyright": "Copyright 2014-2022 dangeredwolf, et al. Released under the MIT license.",
+  "homepage": "https://github.com/dangeredwolf/ModernDeck",
+  "bugs": {
+    "url": "https://github.com/dangeredwolf/ModernDeck/issues"
+  },
+  "author": "dangeredwolf",
+  "license": "MIT",
+  "main": "main.js",
+  "repository": "https://github.com/dangeredwolf/ModernDeck",
+  "dependencies": {
+    "@electron/remote": "^2.0.8",
+    "@sentry/browser": "^6.19.2",
+    "@sentry/tracing": "^6.19.2",
+    "asar": "^3.1.0",
+    "electron-log": "^4.4.6",
+    "electron-store": "^8.0.1",
+    "electron-updater": "^4.6.5",
+    "through2": "^4.0.2"
+  },
+  "optionalDependencies": {
+    "electron-builder-notarize": "^1.4.0",
+    "stylelint": "^14.6.1",
+    "stylelint-config-recommended": "^7.0.0"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-recommended"
+  }
+}
