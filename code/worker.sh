@@ -2,6 +2,9 @@
 
 # set -euxov pipefail
 set -e -v
+set -o pipefail
+
+sudo apt-get -y install libfuse2
 
 URL=$(cat $1 | head -n 1)
 echo $URL
@@ -45,7 +48,7 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
   echo "URL from GitHub API: $URL"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  LICENSE=$(echo "$API_JSON" | grep spdx_id | cut -d '"' -f 4 | head -n 1)
+  LICENSE=$(echo "$API_JSON" | grep spdx_id | cut -d '"' -f 4 | head -n 1) || true
 fi
 
 # Download the file if it is not already there
@@ -456,14 +459,22 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # License
   AS_LICENSE=""
   DT_LICENSE=""
-  if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    AS_LICENSE=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/project_license" -v .) || true
-  fi
-  DT_LICENSE=$(grep -r "X-AppImage-Payload-License=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2)
+  AS_LICENSE=$(
+    xmlstarlet sel -t \
+      -m "/component/project_license" -v . \
+      $(ls database/$INPUTBASENAME/*.{appdata,metainfo}.xml 2>/dev/null)
+  ) || true
+  DT_LICENSE=$(
+    grep -h "X-AppImage-Payload-License=" database/$INPUTBASENAME/*.desktop 2>/dev/null \
+    | cut -d '=' -f 2
+  ) || true
   if [ x"$AS_LICENSE" != x"" ] ; then
     echo "license: $AS_LICENSE" >> apps/$INPUTBASENAME.md
   elif [ x"$DT_LICENSE" != x"" ] ; then
     echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
+  else
+    echo "No license found!"
+    exit 1
   fi
   # Icon
   ICONBASENAME=$(basename "$ICONFILE")
@@ -487,9 +498,13 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # Authors
   echo "" >> apps/$INPUTBASENAME.md
   echo "authors:" >> apps/$INPUTBASENAME.md
-  GH_USER=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
-  GH_REPO=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
-  OBS_USER=$(grep "^http.*://download.opensuse.org/repositories/home:/" data/$INPUTBASENAME | cut -d "/" -f 6 | sed -e 's|:||g')
+  GH_USER=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
+  GH_REPO=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+  OBS_USER=$(
+    grep -h "^http.*://download.opensuse.org/repositories/home:/" "data/$INPUTBASENAME" 2>/dev/null \
+    | cut -d "/" -f 6 \
+    | sed 's|:||g'
+  ) || true
   # BB_USER=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
   # BB_REPO=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
   if [  x"$GH_USER" == x"" ] ; then
@@ -515,7 +530,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: https://github.com/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
   fi
-  OBS_LINK=$(grep "^http.*://download.opensuse.org.*latest.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g')
+  OBS_LINK=$(grep "^http.*://download.opensuse.org.*latest.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g') || true
   if [  x"$OBS_LINK" != x"" ] ; then
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
@@ -571,8 +586,6 @@ if [ "$IS_PULLREQUEST" = true ]; then
   cat "apps/${INPUTBASENAME}.md" || exit 1
   cat "database/${INPUTBASENAME}/"*.desktop || exit 1 # Asterisk must not be inside quotes, https://travis-ci.org/AppImage/appimage.github.io/builds/360847207#L782
   ls -lh "database/${INPUTBASENAME}/screenshot.png" || exit 1
-  wget -q https://raw.githubusercontent.com/tremby/imgur.sh/1c64feeefb6590741eb3d034575f9c788469b0a8/imgur.sh
-  bash imgur.sh "database/${INPUTBASENAME}/screenshot.png"
   echo ""
   echo "We will assume the test is OK (a pull request event was triggered and the required files exist)."
   exit 0
