@@ -2,6 +2,9 @@
 layout: app
 permalink: /Aquiis/
 
+description: Multi-tenant property management system for DIY landlords
+license: MIT
+
 icons:
   - Aquiis/aquiis.png
 
@@ -31,6 +34,7 @@ desktop:
     Categories: Office;Finance
     Comment: Multi-tenant property management system for DIY landlords
   AppImageHub:
+    X-AppImage-Payload-License: MIT
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
 ---
