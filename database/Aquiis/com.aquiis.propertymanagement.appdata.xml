@@ -4,7 +4,7 @@
   <metadata_license>MIT</metadata_license>
   <project_license>MIT</project_license>
   <name>Aquiis Property Management</name>
-  <summary>Modern property management software for DIY landlords and property managers</summary>
+  <summary>Modern property management software for DIY landlords</summary>
   
   <description>
     <p>
@@ -63,6 +63,20 @@
   </provides>
   
   <releases>
+    <release version="1.1.1" date="2026-02-28">
+      <description>
+        <p>Bug Fix and Enhancement Release</p>
+        <ul>
+          <li>Fixed brand theme flicker on repeated NavLink clicks</li>
+          <li>Fixed login double-submit causing blank page redirect</li>
+          <li>Windows database encryption implementation using DPAPI</li>
+          <li>Windows installer deployment (replaced portable executable)</li>
+          <li>Hidden Electron menu bar for native desktop experience</li>
+          <li>Optimized MutationObserver for improved performance</li>
+          <li>Enhanced documentation with cross-references</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.1.0" date="2026-02-19">
       <description>
         <p>Security and Schema Enhancement Release</p>

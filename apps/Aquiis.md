@@ -21,15 +21,15 @@ links:
 desktop:
   Desktop Entry:
     X-AppImage-Arch: x86_64
-    X-AppImage-Version: 1.1.0
-    X-AppImage-Name: Aquiis
-    Name: Aquiis
+    X-AppImage-Version: 1.1.1
+    X-AppImage-Name: Aquiis Property Management
+    Name: Aquiis Property Management
     Exec: Aquiis.AppImage
     Icon: aquiis
     Type: Application
     Terminal: false
     Categories: Office;Finance
-    Comment: Property management for DIY landlords and property managers
+    Comment: Multi-tenant property management system for DIY landlords
   AppImageHub:
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
