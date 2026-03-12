@@ -474,7 +474,6 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
   else
     echo "No license found!"
-    exit 1
   fi
   # Icon
   ICONBASENAME=$(basename "$ICONFILE")
