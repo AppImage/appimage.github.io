@@ -1,0 +1,18 @@
+app: lazyllama
+binpatch: true
+
+ingredients:
+  dist: jammy
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ jammy main universe
+  packages:
+    - libssl3
+  script:
+    - wget -q "https://github.com/Pommersche92/lazyllama/releases/download/v0.5.0/lazyllama-0.5.0-x86_64.AppImage"
+    - chmod +x lazyllama-0.5.0-x86_64.AppImage
+    - ./lazyllama-0.5.0-x86_64.AppImage --appimage-extract
+    - mv squashfs-root AppDir
+
+script:
+  - cp -r AppDir/usr/share/applications/*.desktop .
+  - cp -r AppDir/usr/share/icons/hicolor/256x256/apps/*.png .
