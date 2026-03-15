@@ -10,6 +10,7 @@ on:
   pull_request:
     paths:
       - 'data/**'
+  workflow_dispatch:
 
 env:
   DISPLAY: :99
