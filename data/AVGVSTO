@@ -1,1 +1,18 @@
-https://github.com/RoyMerlo/AVGVSTO-USB 
+app: AVGVSTO
+
+authors:
+  - name: RoyMerlo
+    url: https://github.com/RoyMerlo
+
+license: unknown
+
+links:
+  - type: GitHub
+    url: https://github.com/RoyMerlo/AVGVSTO-USB
+  - type: Download
+    url: https://github.com/RoyMerlo/AVGVSTO-USB/releases/latest/download/AVGVSTO-3.1.3-x86_64.AppImage
+
+description: Hardware-Bound Encryption tool for Linux.
+
+categories:
+  - Utility
