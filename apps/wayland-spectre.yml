@@ -1,0 +1,31 @@
+---
+# AppImageHub descriptor for wayland-spectre
+# PR target: apps/wayland-spectre.yml in github.com/AppImage/appimage.github.io
+#
+# NOTE — Forgejo hosting vs GitHub-centric CI:
+#   AppImageHub CI autodiscovers AppImages from GitHub Releases. This app is
+#   hosted on self-managed Forgejo. The CI must follow the explicit
+#   type: Download URL below rather than autodiscovering via GitHub API.
+#
+#   Forgejo release asset URL pattern:
+#     https://forgejo.wanderingmonster.dev/WanderingMonster/wayland-spectre/
+#       releases/download/v{version}/wayland-spectre_{version}_amd64.AppImage
+
+- name: wayland-spectre
+  description: >
+    Wayland screen sharing diagnostic tool for KDE Plasma on Bazzite / Fedora.
+    Checks seven known failure modes — tiled display CRTC mismatches, missing
+    Wayland protocol globals, portal configuration, PipeWire graph state,
+    Flatpak permissions, and KWin plugin activation — and reports pass/warn/fail
+    per layer with suggested fixes. Built with Tauri v2 + Svelte 5.
+  categories:
+    - Utility
+  authors:
+    - name: WanderingM0nster
+      url: https://github.com/WanderingM0nster
+  license: GPL-3.0-or-later
+  links:
+    - type: GitHub
+      url: WanderingM0nster/wayland-spectre
+  screenshots:
+    - https://raw.githubusercontent.com/WanderingM0nster/wayland-spectre/main/docs/screenshot.jpg
