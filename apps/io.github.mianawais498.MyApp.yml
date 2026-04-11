@@ -1,0 +1,20 @@
+AppBundle:
+  id: io.github.mianawais498.MyApp
+  name: MyApp
+  icon: MyApp.png
+  summary: Inventory Management Application
+  developer:
+    name: Mian Awais
+  categories:
+  - Office
+  - Utility
+  license: MIT
+  url: https://github.com/mianawais498/MyApp
+  github:
+    owner: mianawais498
+    repo: MyApp
+  releases:
+  - version: v1.0
+    type: stable
+    unix_timestamp: 1744368000
+    description: Initial release of MyApp inventory management application.
