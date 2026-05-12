@@ -1,0 +1,197 @@
+---
+layout: app
+
+permalink: /OpenCloud_Desktop/
+description: OpenCloud Desktop desktop synchronization client
+
+icons:
+  - OpenCloud_Desktop/icons/128x128/opencloud.png
+
+screenshots:
+  - OpenCloud_Desktop/screenshot.png
+
+authors:
+  - name: opencloud-eu
+    url: https://github.com/opencloud-eu
+
+links:
+  - type: GitHub
+    url: opencloud-eu/desktop
+  - type: Download
+    url: https://github.com/opencloud-eu/desktop/releases
+
+desktop:
+  Desktop Entry:
+    Categories: Utility
+    Type: Application
+    Exec: opencloud --showsettings
+    Name: OpenCloud Desktop desktop sync client
+    Comment: OpenCloud Desktop desktop synchronization client
+    GenericName: Folder Sync
+    Icon: opencloud
+    Keywords: OpenCloud Desktop
+    X-GNOME-Autostart-Delay: 3
+    MimeType: application/vnd.opencloud
+    Actions: Settings
+    StartupWMClass: opencloud
+    Comment[oc]: OpenCloud Desktop sincronizacion del client
+    GenericName[oc]: Dorsièr de Sincronizacion
+    Name[oc]: OpenCloud Desktop sincronizacion del client
+    Comment[ar]: OpenCloud Desktop زبون مزامنة مكتبي
+    GenericName[ar]: مزامنة المجلد
+    Name[ar]: OpenCloud Desktop زبون مزامنة مكتبي
+    Comment[bg_BG]: OpenCloud Desktop клиент за десктоп синхронизация
+    GenericName[bg_BG]: Синхронизиране на папката
+    Name[bg_BG]: OpenCloud Desktop клиент десктоп синхронизация
+    Comment[ca]: Client de sincronització d'escriptori OpenCloud Desktop
+    GenericName[ca]: Sincronització de carpetes
+    Name[ca]: Client de sincronització d'escriptori OpenCloud Desktop
+    Comment[da]: OpenCloud Desktop skrivebordsklient til synkronisering
+    GenericName[da]: Mappesynkronisering
+    Name[da]: OpenCloud Desktop skrivebordsklient til synk
+    Comment[de]: OpenCloud Desktop Desktop-Synchronisationsclient
+    GenericName[de]: Ordner-Synchronisation
+    Name[de]: OpenCloud Desktop Desktop-Synchronisationsclient
+    Comment[ja_JP]: OpenCloud Desktop デスクトップ同期クライアント
+    GenericName[ja_JP]: フォルダー同期
+    Name[ja_JP]: OpenCloud Desktop デスクトップ同期クライアント
+    Comment[el]: OpenCloud Desktop συγχρονισμός επιφάνειας εργασίας πελάτη
+    GenericName[el]: Συγχρονισμός φακέλου
+    Name[el]: OpenCloud Desktop συγχρονισμός επιφάνειας εργασίας πελάτη
+    Comment[en_GB]: OpenCloud Desktop desktop synchronisation client
+    GenericName[en_GB]: Folder Sync
+    Name[en_GB]: OpenCloud Desktop desktop sync client
+    Comment[es]: OpenCloud Desktop cliente de sincronización de escritorio
+    GenericName[es]: Sincronización de carpeta
+    Name[es]: OpenCloud Desktop cliente de sincronización de escritorio
+    Comment[de_DE]: OpenCloud Desktop Desktop-Synchronisationsclient
+    GenericName[de_DE]: Ordner-Synchronisation
+    Name[de_DE]: OpenCloud Desktop Desktop-Synchronisationsclient
+    Comment[eu]: OpenCloud Desktop mahaigaineko sinkronizazio bezeroa
+    GenericName[eu]: Karpetaren sinkronizazioa
+    Name[eu]: OpenCloud Desktop mahaigaineko sinkronizazio bezeroa
+    GenericName[fa]: همسان سازی پوشه‌ها
+    Name[fa]: opencloud نسخه‌ی همسان سازی مشتری
+    Comment[fr]: Client de synchronisation OpenCloud Desktop
+    GenericName[fr]: Synchronisation de dossier
+    Name[fr]: Client de synchronisation OpenCloud Desktop
+    Comment[gl]: OpenCloud Desktop cliente de sincronización para escritorio
+    GenericName[gl]: Sincronizar Cartafol
+    Name[gl]: OpenCloud Desktop cliente de sincronización para escritorio
+    Comment[he]: OpenCloud Desktop לקוח סנכון שולחן עבודה
+    GenericName[he]: סנכון תיקייה
+    Name[he]: OpenCloud Desktop לקוח סנכרון שולחן עבודה
+    Comment[ia]: OpenCloud Desktop cliente de synchronisation pro scriptorio
+    GenericName[ia]: Synchronisar Dossier
+    Name[ia]: OpenCloud Desktop cliente de synchronisation pro scriptorio
+    Comment[id]: Klien sinkronisasi desktop OpenCloud Desktop
+    GenericName[id]: Folder Sync
+    Name[id]: Klien sync desktop OpenCloud Desktop
+    Comment[is]: OpenCloud Desktop skjáborðsforrit samstillingar
+    GenericName[is]: Samstilling möppu
+    Name[is]: OpenCloud Desktop skjáborðsforrit samstillingar
+    Comment[it]: Client di sincronizzazione del desktop di OpenCloud Desktop
+    GenericName[it]: Sincronizzazione cartella
+    Name[it]: Client di sincronizzazione del desktop di OpenCloud Desktop
+    Comment[ko]: OpenCloud Desktop 데스크톱 동기화 클라이언트
+    GenericName[ko]: 폴더 동기화
+    Name[ko]: OpenCloud Desktop 데스크톱 동기화 클라이언트
+    Comment[lo]: OpenCloud Desktop ການປະສານຂໍ້ມູນຄອມພິວເຕີລູກຂ່າຍ
+    GenericName[lo]: ໂຟນເດີຊິງ
+    Name[lo]: OpenCloud Desktop ຊິງຄອມພິວເຕີລູກຂ່າຍ
+    Comment[mk]: OpenCloud Desktop десктор клиент за синхронизација
+    GenericName[mk]: Папка за синхронизација
+    Name[mk]: OpenCloud Desktop десктор клиент за синхронизација
+    Comment[hu_HU]: OpenCloud Desktop asztali szinkronizációs kliens
+    GenericName[hu_HU]: Mappaszinkronizálás
+    Name[hu_HU]: OpenCloud Desktop asztali szinkronizációs kliens
+    Comment[af_ZA]: OpenCloud Desktop werkskermsinchroniseerkliënt
+    GenericName[af_ZA]: Vouersinchronisering
+    Name[af_ZA]: OpenCloud Desktop werkskermsinchroniseerkliënt
+    Comment[nl]: OpenCloud Desktop desktop synchronisatie client
+    GenericName[nl]: Mappen sync
+    Name[nl]: OpenCloud Desktop desktop sync client
+    Comment[et_EE]: OpenCloud Desktop sünkroonimise klient töölauale
+    GenericName[et_EE]: Kaustade sünkroonimine
+    Name[et_EE]: OpenCloud Desktop sünkroonimise klient töölauale
+    Comment[pl]: OpenCloud Desktop klient synchronizacji dla komputerów stacjonarnych
+    GenericName[pl]: Folder Synchronizacji
+    Name[pl]: OpenCloud Desktop klient synchronizacji dla komputerów stacjonarnych
+    Comment[pt_BR]: OpenCloud Desktop cliente de sincronização do computador
+    GenericName[pt_BR]: Sincronização de Pasta
+    Name[pt_BR]: OpenCloud Desktop cliente de sincronização de desktop
+    Comment[cs_CZ]: OpenCloud Desktop počítačový synchronizační klient
+    GenericName[cs_CZ]: Synchronizace adresáře
+    Name[cs_CZ]: OpenCloud Desktop počítačový synchronizační klient
+    Comment[ru]: Настольный клиент синхронизации OpenCloud Desktop
+    GenericName[ru]: Синхронизация каталогов
+    Name[ru]: Настольный клиент синхронизации OpenCloud Desktop
+    Comment[sl]: OpenCloud Desktop ‒ Program za usklajevanje datotek z namizjem
+    GenericName[sl]: Usklajevanje map
+    Name[sl]: OpenCloud Desktop ‒ Program za usklajevanje datotek z namizjem
+    Comment[sq]: Klient njëkohësimesh OpenCloud Desktop për desktop
+    GenericName[sq]: Njëkohësim Dosjesh
+    Name[sq]: Klient njëkohësimesh OpenCloud Desktop për desktop
+    Comment[fi_FI]: OpenCloud Desktop työpöytäsynkronointisovellus
+    GenericName[fi_FI]: Kansion synkronointi
+    Name[fi_FI]: OpenCloud Desktop työpöytäsynkronointisovellus
+    Comment[sv]: OpenCloud Desktop desktop synkroniseringsklient
+    GenericName[sv]: Mappsynk
+    Name[sv]: OpenCloud Desktop desktop synk-klient
+    Comment[tr]: OpenCloud Desktop masaüstü eşitleme istemcisi
+    GenericName[tr]: Dosya Eşitleme
+    Name[tr]: OpenCloud Desktop masaüstü eşitleme istemcisi
+    Comment[uk]: Настільний клієнт синхронізації OpenCloud Desktop
+    GenericName[uk]: Синхронізація теки
+    Name[uk]: Настільний клієнт синхронізації OpenCloud Desktop
+    Comment[ro]: OpenCloud Desktop client de sincronizare pe desktop
+    GenericName[ro]: Sincronizare director
+    Name[ro]: OpenCloud Desktop client de sincronizare pe desktop
+    Comment[zh_CN]: OpenCloud Desktop 桌面同步客户端
+    GenericName[zh_CN]: 文件夹同步
+    Name[zh_CN]: OpenCloud Desktop 桌面同步客户端
+    Comment[zh_HK]: 桌面版同步客户端
+    Comment[zh_TW]: OpenCloud Desktop 桌面同步客戶端
+    GenericName[zh_TW]: 資料夾同步
+    Name[zh_TW]: OpenCloud Desktop 桌面同步客戶端
+    Comment[es_AR]: Cliente de sincronización para escritorio OpenCloud Desktop
+    GenericName[es_AR]: Sincronización de directorio
+    Name[es_AR]: Cliente de sincronización para escritorio OpenCloud Desktop
+    Comment[lt_LT]: OpenCloud Desktop darbalaukio sinchronizavimo programa
+    GenericName[lt_LT]: Katalogo sinchnorizacija
+    Name[lt_LT]: OpenCloud Desktop darbalaukio programa
+    Comment[th_TH]: OpenCloud Desktop ประสานข้อมูลด้วยโปรแกรมบนเดสก์ท็อป
+    GenericName[th_TH]: ประสานข้อมูลโฟลเดอร์
+    Name[th_TH]: OpenCloud Desktop ประสานข้อมูลด้วยโปรแกรมบนเดสก์ท็อป
+    Comment[es_MX]: Cliente de escritorio para  sincronziación de OpenCloud Desktop
+    GenericName[es_MX]: Sincronización de Carpetas
+    Name[es_MX]: Cliente de escritorio para  sincronziación de OpenCloud Desktop
+    Comment[nb_NO]: OpenCloud Desktop skrivebordssynkroniseringsklient
+    GenericName[nb_NO]: Mappesynkronisering
+    Name[nb_NO]: OpenCloud Desktop skrivebordssynkroniseringsklient
+    Comment[nn_NO]: OpenCloud Desktop klient for å synkronisera frå skrivebord
+    GenericName[nn_NO]: Mappe synkronisering
+    Name[nn_NO]: OpenCloud Desktop klient for å synkronisera frå skrivebord
+    Comment[pt_PT]: OpenCloud Desktop - Cliente de Sincronização para PC
+    GenericName[pt_PT]: Sincronizar Pasta
+    Name[pt_PT]: OpenCloud Desktop - Cliente de Sincronização para PC
+    Comment[lb]: OpenCloud Desktop Desktop Synchronisatioun Client
+    GenericName[lb]: Dossier Dync
+    Name[lb]: OpenCloud Desktop Desktop Sync Client
+    X-AppImage-Version: 3.0.3.2073
+  Desktop Action Settings:
+    Exec: opencloud --showsettings
+    Name: Show OpenCloud Desktop settings
+    Icon: opencloud
+  Desktop Action Quit:
+    Exec: opencloud --quit
+    Name: Quit OpenCloud Desktop
+    Icon: opencloud
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+---
