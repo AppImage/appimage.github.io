@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>app.pommersche.LazyLlama</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <name>LazyLlama</name>
+  <summary>A fast LLM client for the terminal</summary>
+  
+  <description>
+    <p>
+      LazyLlama is a lightweight, fast Terminal User Interface (TUI) client for Ollama.
+      It is designed for running local AI models with minimal overhead and intuitive,
+      Emacs-inspired controls directly in your terminal.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Real-time streaming responses</li>
+      <li>Markdown support with syntax highlighting</li>
+      <li>Smart scrolling with autoscroll and manual modes</li>
+      <li>Model management with separate buffers per model</li>
+      <li>Automatic session logging</li>
+      <li>Ultra-low latency and minimal resource footprint</li>
+    </ul>
+  </description>
+  
+  <launchable type="desktop-id">lazyllama.desktop</launchable>
+  
+  <url type="homepage">https://pommersche.github.io/lazyllama/</url>
+  <url type="bugtracker">https://github.com/Pommersche92/lazyllama/issues</url>
+  <url type="donation">https://github.com/sponsors/Pommersche92</url>
+  
+  <developer id="app.pommersche">
+    <name>Pommersche92</name>
+  </developer>
+  
+  <releases>
+    <release version="0.5.0" date="2026-02-24">
+      <description>
+        <p>Latest release of LazyLlama</p>
+      </description>
+    </release>
+  </releases>
+  
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Pommersche92/lazyllama/main/docs/images/screenshot.png</image>
+      <caption>LazyLlama in action</caption>
+    </screenshot>
+  </screenshots>
+  
+  <categories>
+    <category>Utility</category>
+    <category>ConsoleOnly</category>
+  </categories>
+  
+  <keywords>
+    <keyword>llm</keyword>
+    <keyword>ai</keyword>
+    <keyword>ollama</keyword>
+    <keyword>terminal</keyword>
+    <keyword>tui</keyword>
+  </keywords>
+  
+  <content_rating type="oars-1.1" />
+</component>
