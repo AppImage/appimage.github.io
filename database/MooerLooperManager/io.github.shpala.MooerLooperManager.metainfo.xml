@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.shpala.MooerLooperManager</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Mooer Looper Manager</name>
+  <summary>Manage tracks on Mooer GL100/GL200 looper pedals</summary>
+  <developer_name>Pavel Ferencz</developer_name>
+  <description>
+    <p>Mooer Looper Manager is a utility to manage your looper tracks on Mooer GL100 and GL200 pedals. It allows you to export tracks as WAV files and import new tracks into the device.</p>
+    <p>To access the device, install udev rules by running:</p>
+    <p>sudo sh -c 'echo "SUBSYSTEM==\"usb\", ATTRS{idVendor}==\"34db\", ATTRS{idProduct}==\"0008\", MODE=\"0666\", TAG+=\"uaccess\"" > /etc/udev/rules.d/99-mooer-looper.rules' &amp;&amp; sudo udevadm control --reload-rules</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window</caption>
+      <image>https://raw.githubusercontent.com/shpala/MooerLooperManager/main/assets/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/shpala/MooerLooperManager</url>
+  <url type="bugtracker">https://github.com/shpala/MooerLooperManager/issues</url>
+  <provides>
+    <binary>MooerLooperManager</binary>
+  </provides>
+  <launchable type="desktop-id">MooerLooperManager.desktop</launchable>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="1.0.0" date="2025-01-11">
+      <description>
+        <p>Initial release</p>
+      </description>
+    </release>
+  </releases>
+</component>
