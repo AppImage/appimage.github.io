@@ -1,0 +1,15 @@
+name: FlatCAM
+category: Utility
+description: PCB CAM tool distributed as an unofficial AppImage build.
+license: MIT
+links:
+  - type: Download
+    url: https://github.com/caiotizio/flatcam-appimage/releases/download/v1/FlatCAM_Evo-x86_64.AppImage
+
+authors:
+  - name: FlatCAM developers
+
+icons:
+  - https://raw.githubusercontent.com/Denvi/FlatCAM/master/share/flatcam_icon.png
+
+screenshots: []
