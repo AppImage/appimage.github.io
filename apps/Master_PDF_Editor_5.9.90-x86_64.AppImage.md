@@ -1,17 +1,20 @@
 ---
 layout: app
 
-permalink: /Master_PDF_Editor_5.9.90-x86_64.AppImage/
+permalink: /Master_PDF_Editor_5/
+description: Master PDF Editor is a full solutions for work with PDF documents
 
 icons:
   - Master_PDF_Editor_5.9.90-x86_64.AppImage/icons/128x128/mpe5.png
 
 screenshots:
-  - Master_PDF_Editor_5.9.90-x86_64.AppImage/screenshot.png
+  - Master_PDF_Editor_5/screenshot.png
 
 authors:
 
 links:
+ - type: Download
+    url: https://code-industry.net/free-pdf-editor/
 
 desktop:
   Desktop Entry:
