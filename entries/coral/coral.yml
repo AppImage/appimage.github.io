@@ -1,0 +1,7 @@
+name: Coral
+appimage: "https://github.com/eswarib/coralapp/releases/download/coral-0.1.0/CoralApp-x86_64.AppImage"
+version: "0.1.0"
+homepage: "https://github.com/eswarib/coralapp"
+license: "MIT"
+description: "Dictation app for linux"
+icon: "https://github.com/eswarib/coralapp/blob/master/coral_icon.png"
