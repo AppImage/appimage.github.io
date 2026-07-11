@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Name=sponge256sum
+Exec=sponge256sum
+Comment=A sponge-based secure hash function that uses AES-256 as its internal PRF
+Icon=sponge256sum
+Categories=Utility;
+Terminal=true
+X-AppImage-Payload-License=BSD-0-Clause
+X-AppImage-Version=1.8.6
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
