@@ -1,0 +1,5 @@
+https://github.com/Es00bac/signal-loom/releases/download/v0.9.11/SloomStudio-0.9.11-x86_64.AppImage
+# Sloom Studio. Repo: https://github.com/Es00bac/signal-loom
+# Direct-asset link (not a bare repo link) because the AppImage filename ("SloomStudio-...")
+# does not start with the repo name ("signal-loom"), so repo-link auto-detection would not
+# track future releases.
