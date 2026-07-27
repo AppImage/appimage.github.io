@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.sonm.monfree</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://github.com/sonm/monfree/blob/main/LICENSE.txt</project_license>
+  <name>Monfree</name>
+  <summary>Create music with a sample-based sequencer</summary>
+  <url type="homepage">https://github.com/sonm/monfree</url>
+  <url type="donation">https://github.com/sonm/monfree#donate</url>
+  <url type="bugtracker">https://github.com/sonm/monfree/issues</url>
+  <description>
+    <p>Monfree is a sample-based audio sequencer where you trigger sounds, build step patterns, and put them together into a track.</p>
+    <p>Core Features:</p>
+    <ul>
+      <li>32-pad grid with hands-on keyboard control</li>
+      <li>Step sequencer with 16 steps per pattern and 32 patterns per project</li>
+      <li>Real-time effects including EQ, Compressor, and Saturator</li>
+      <li>Built-in resampling and WAV export</li>
+    </ul>
+    <p>Sequencer:</p>
+    <ul>
+      <li>32 Pads</li>
+      <li>16 Steps per Pattern</li>
+      <li>32 Patterns</li>
+    </ul>
+    <p>Samples:</p>
+    <ul>
+      <li>32 Samples</li>
+      <li>Max 10 seconds per Sample</li>
+      <li>WAV format</li>
+    </ul>
+    <p>Effects / Options:</p>
+    <ul>
+      <li>Pattern and Song Effects: Gain, BPM, High Pass, Low Pass, EQ Pre, Compressor, Saturator, EQ Post</li>
+      <li>Pad and Step Effects: Gain, Pitch, High Pass, Low Pass, EQ Pre, Compressor, Saturator, EQ Post</li>
+    </ul>
+    <p>Presets:</p>
+    <ul>
+      <li>LoFi, EDM, Hardstyle, Phonk, Trap</li>
+    </ul>
+    <p>Resampling:</p>
+    <ul>
+      <li>Mono Mix, Reverse, 8 bit 10 kHz, 12 bit 15 kHz</li>
+    </ul>
+    <p>Export:</p>
+    <ul>
+      <li>WAV</li>
+    </ul>
+    <p>Controls and Shortcuts:</p>
+    <ul>
+      <li>Play / Pause: Spacebar</li>
+      <li>Record: M</li>
+      <li>Stop: N</li>
+      <li>Pad control: 1 2 3 4 | Q W E R | A S D F | Z X C V</li>
+    </ul>
+  </description>
+  <content_rating type="oars-1.1" />
+  <launchable type="desktop-id">io.github.sonm.monfree.desktop</launchable>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Music</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main sequencer interface</caption>
+      <image>https://raw.githubusercontent.com/sonm/monfree/main/screenshots/pic-monfree-00.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Monfree Demo</caption>
+      <video container="webm" width="1200" height="874" codec="vp9">
+        https://sonm.github.io/monfree/videos/monfree.webm
+      </video>
+    </screenshot>
+    <screenshot>
+      <caption>Pad mode</caption>
+      <image>https://raw.githubusercontent.com/sonm/monfree/main/screenshots/pic-monfree-01.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Step mode</caption>
+      <image>https://raw.githubusercontent.com/sonm/monfree/main/screenshots/pic-monfree-02.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Patt. mode</caption>
+      <image>https://raw.githubusercontent.com/sonm/monfree/main/screenshots/pic-monfree-03.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Song mode</caption>
+      <image>https://raw.githubusercontent.com/sonm/monfree/main/screenshots/pic-monfree-04.png</image>
+    </screenshot>
+  </screenshots>
+  <developer_name>sonm</developer_name>
+  <provides>
+    <binary>monfree</binary>
+  </provides>
+  <releases>
+    <release version="1.0.0" date="2026-05-01">
+      <description>
+        <p>Initial stable release of Monfree.</p>
+      </description>
+    </release>
+  </releases>
+</component>
