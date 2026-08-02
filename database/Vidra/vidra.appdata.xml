@@ -1,0 +1,28 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!-- Copyright 2026 Chomusuke <7k9mc4urn@mozmail.com> -->
+<component type="desktop-application">
+  <id>dev.chomusuke.vidra</id>
+  <name>Vidra</name>
+  <summary>Video Downloader</summary>
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPLv3</project_license>
+
+  <description>
+    <p>Vidra is a video downloader for the Linux desktop.</p>
+  </description>
+
+  <launchable type="desktop-id">vidra.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/chomusuke-mk/vidra/refs/heads/main/assets/screenshots/linux-screenshot-1.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/chomusuke-mk/vidra/refs/heads/main/assets/screenshots/linux-screenshot-2.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/chomusuke-mk/vidra/refs/heads/main/assets/screenshots/linux-screenshot-3.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/chomusuke-mk</url>
+  <developer_name>Chomusuke</developer_name>
+</component>
