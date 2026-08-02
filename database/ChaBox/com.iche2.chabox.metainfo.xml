@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://www.freedesktop.org/software/appstream/metainfocreator/#/guiapp -->
+
+<component type="desktop-application">
+  <id>com.iche2.chabox</id>
+  
+  <name>ChaBox</name>
+  <summary>Offline file security workstation for encrypt/decrypt, archiving, and secure wipe</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>PolyForm-Noncommercial-1.0.0</project_license>
+
+  <requires>
+    <internet>offline-only</internet>
+  </requires>
+
+  <recommends>
+    <!-- Mobile/tablet AND desktop supported -->  
+    <display_length compare="ge">360</display_length>
+  </recommends>
+
+  <!-- Desktop AND mobile supported -->
+  <supports>  
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>    
+  </supports>
+  
+  <description>
+    <p>
+      ChaBox is an open-source, free, no-sign-up, zero-preset offline file security tool for personal and professional use. It supports local encryption, decryption, archiving, unarchiving, and secure wipe. It is ad-free, does not collect data in the background, does not rely on cloud services, and your local files and passwords always stay under your control.
+    </p>
+    <p>
+      This app follows the principle of least privilege and uses a secure sandbox for file operations. In sandboxed mode, use the built-in file picker for files or directories instead of drag-and-drop from the system file manager.
+    </p>
+    <p>Quick Start (3 core features you can use right away)</p>
+    <ul>
+      <li>Secure Note: write like a Markdown notebook with immersive editing and live preview, while notes are automatically encrypted at rest.</li>
+      <li>One-click smart encrypt/decrypt: add files or directories for fast protection, with automatic workflow detection for quick file recovery.</li>
+      <li>Secure wipe (overwrite deletion): securely overwrite sensitive data to reduce plaintext residue risk.</li>
+    </ul>
+    <p>Advanced Usage (freely combine tools your way)</p>
+    <ul>
+      <li>De-preset design: no built-in use-case constraints and no fixed workflow boundaries.</li>
+      <li>Atomic toolchain: Archive, Unarchive, Encrypt, Decrypt, and Wipe can be used independently or composed into custom flows.</li>
+      <li>Batch and directory governance: native directory organization plus parameterized batch processing for migration, backup, and auditing.</li>
+    </ul>
+    <p>Security and Automation</p>
+    <ul>
+      <li>Core engine: ChaCha20-Poly1305 authenticated encryption with streaming processing, combining high performance with strict integrity verification. Tampered ciphertext is rejected immediately during decryption.</li>
+      <li>Cross-end workflow: the companion CLI, chapose, uses the same encryption format and core mechanism, suitable for server deployment, scheduled periodic jobs, and scripted pipelines.</li>
+    </ul>
+    <p>Starting now, download and use ChaBox to truly take control of your privacy data.</p>
+  </description>
+  
+  <launchable type="desktop-id">com.iche2.chabox.desktop</launchable>
+  <url type="homepage">https://github.com/huanguan1978/chacrypt</url>
+  <url type="help">https://github.com/huanguan1978/chacrypt/tree/main/chabox/doc/en</url>
+  <url type="faq">https://github.com/huanguan1978/chacrypt/tree/main/chabox/doc/en/faq.md</url>  
+  <url type="vcs-browser">https://github.com/huanguan1978/chacrypt/tree/main/chabox</url>
+  <url type="bugtracker">https://github.com/huanguan1978/chacrypt/issues</url>
+  <url type="donation">https://github.com/sponsors/huanguan1978</url>
+  
+  <screenshots>
+    <screenshot type="default">
+      <image>https://webpath.iche2.com/screenshots/chabox/linux/en/home-default.png</image>
+    <caption>Encrypt files, take Secure Notes, and run Secure Erase from one privacy-focused home screen.</caption>
+    </screenshot>
+
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/chabox/linux/en/home-auto-encrypt.png</image>
+	    <caption>Drag in files for automatic detection and one-step encryption to protect sensitive data quickly. </caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/chabox/linux/en/vault-list.png</image>
+      <caption>File Vault provides visual listing and categories for centralized encrypted file management.</caption>
+    </screenshot>    
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/chabox/linux/en/vault-filter.png</image>
+	    <caption>Filter by path, type, size, and time to locate target files accurately, even in large datasets. </caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/chabox/linux/en/note-list.png</image>
+	    <caption>Keep private notes encrypted in one place with a clear, efficient list-based management view. </caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/chabox/linux/en/note-preview.png</image>
+      <caption>Write and preview Markdown in real time in a secure workspace for private note taking.</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/chabox/linux/en/wipe-example.png</image>
+	    <caption>Use deep overwrite-based Secure Erase to remove sensitive files and reduce recovery risk. </caption>
+    </screenshot>
+
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/chabox/linux/en/home-settings.png</image>
+      <caption>Manage passwords, lock settings, and anti-leak protections in one safer settings center.</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/chabox/linux/en/archive-example.png</image>
+      <caption>Archive provides a standardized workflow for efficient and controllable batch processing.</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/chabox/linux/en/archive-source-manage.png</image>
+	    <caption>Import and edit source paths in batch to reduce preparation time before execution. </caption>
+    </screenshot>
+
+
+  </screenshots>
+
+  <icon type="stock">com.iche2.chabox</icon>
+  <categories>
+
+    <category>System</category>
+    <category>Security</category>
+  </categories>
+  <provides>
+    <mediatype>application/x-chabox-encrypted</mediatype>
+    <mediatype>inode/directory</mediatype>
+    <binary>chabox</binary>
+  </provides>
+  <branding>
+    <color type="primary" scheme_preference="light">#fef7ff</color>
+    <color type="primary" scheme_preference="dark">#141218</color>
+  </branding>
+
+  <developer id="com.iche2.chabox">
+    <name>Heshan Aisipai E-commerce Co., Ltd</name>
+  </developer>
+  <update_contact>crown.hg@gmail.com</update_contact>
+  <content_rating type="oars-1.0" />
+  <keywords>
+    <keyword>privacy</keyword>
+    <keyword>security</keyword>
+    <keyword>encryption</keyword>
+    <keyword>password</keyword>
+    <keyword>markdown</keyword>
+    <keyword>notes</keyword>
+    <keyword>archive</keyword>
+    <keyword>backup</keyword>
+    <keyword>delete</keyword>
+  </keywords>
+
+  <releases>
+    <release version="1.0.0" date="2026-06-28">
+        <description translate="no">
+          <ul>
+            <li>the first cross-platform release.</li>
+          </ul>
+        </description>
+    </release>
+  </releases>
+
+</component>
