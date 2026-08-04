@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>cloud.torreader.TorReader</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>TorReader PDF</name>
+  <summary>Fast offline PDF reader, editor and merger</summary>
+  <description>
+    <p>
+      TorReader PDF is a fast, offline, portable PDF reader and editor for large documents.
+      Open 200 MB files in 1&#8211;2 seconds, scroll continuously, and view crisp text at any zoom level.
+    </p>
+    <ul>
+      <li>Merge PDFs with bookmark remapping &#8212; preserves bookmark page numbers</li>
+      <li>Split by page count or file size, extract or insert pages from other files</li>
+      <li>Digital signature (PKCS#7 detached, SHA-256, user certificate)</li>
+      <li>Free in-app text translation</li>
+      <li>Annotations: freehand, highlight, line/arrow (Shift for straight/45&#176;), text, note, rectangle</li>
+      <li>Full-text search (Ctrl+F, result count, sidebar Search tab)</li>
+      <li>Reorder / delete pages, dark mode</li>
+      <li>100 % offline, local &#8212; no account, no ads, no watermark</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">cloud.torreader.TorReader.desktop</launchable>
+  <url type="homepage">https://torreader.cloud</url>
+  <url type="bugtracker">https://github.com/FelixNgH/TorreaderPDF/issues</url>
+  <url type="vcs-browser">https://github.com/FelixNgH/TorreaderPDF</url>
+  <url type="contribute">https://github.com/FelixNgH/TorreaderPDF</url>
+  <developer id="cloud.torreader">
+    <name>FelixNgH</name>
+  </developer>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://torreader.cloud/assets/feat_zoom.png</image>
+      <caption>Sharp at any zoom level</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://torreader.cloud/assets/feat_markup.png</image>
+      <caption>Annotation and markup tools</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://torreader.cloud/assets/feat_find.png</image>
+      <caption>Full-text search</caption>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Office</category>
+    <category>Viewer</category>
+    <category>Graphics</category>
+    <category>Qt</category>
+  </categories>
+  <keywords>
+    <keyword>pdf</keyword>
+    <keyword>viewer</keyword>
+    <keyword>editor</keyword>
+    <keyword>reader</keyword>
+    <keyword>merge</keyword>
+    <keyword>split</keyword>
+    <keyword>sign</keyword>
+    <keyword>annotate</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="2.2.4" date="2026-07-26">
+      <description>
+        <p>Improved large CAD drawing performance; added page thumbnails; bug fixes.</p>
+      </description>
+      <url>https://github.com/FelixNgH/TorreaderPDF/releases/tag/v2.2.4</url>
+    </release>
+    <release version="2.2.3" date="2026-07-22">
+      <description>
+        <p>Digital signature feature; faster split for huge files; dark mode toggle.</p>
+      </description>
+      <url>https://github.com/FelixNgH/TorreaderPDF/releases/tag/v2.2.3</url>
+    </release>
+    <release version="2.2" date="2026-07-20">
+      <description>
+        <p>Major release: merge with bookmark remapping, annotation tools, full-text search.</p>
+      </description>
+      <url>https://github.com/FelixNgH/TorreaderPDF/releases/tag/v2.2</url>
+    </release>
+  </releases>
+  <provides>
+    <binary>TorReader</binary>
+  </provides>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <branding>
+    <color type="primary" scheme_preference="light">#2d8c6b</color>
+    <color type="primary" scheme_preference="dark">#1a6b4e</color>
+  </branding>
+</component>

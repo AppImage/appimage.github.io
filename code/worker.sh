@@ -446,7 +446,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
   # Description
-  DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
+  DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- ) || true
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     ./appstreamcli-x86_64.AppImage convert database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
     SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .) || true
@@ -474,7 +474,6 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
   else
     echo "No license found!"
-    exit 1
   fi
   # Icon
   ICONBASENAME=$(basename "$ICONFILE")
@@ -508,8 +507,8 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # BB_USER=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
   # BB_REPO=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
   if [  x"$GH_USER" == x"" ] ; then
-    GH_USER=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
-    GH_REPO=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 6 )
+    GH_USER=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 ) || true
+    GH_REPO=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 6 ) || true
   fi
   if [  x"$GH_USER" != x"" ] ; then
     echo "  - name: $GH_USER" >> apps/$INPUTBASENAME.md
