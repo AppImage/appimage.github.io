@@ -2,13 +2,13 @@
 layout: app
 
 permalink: /Datinium/
-description: Datinium application
+description: The privacy-respecting dataset workbench. Load, store, tidy, analyse, sync, share, query, &amp; API-ify your datasets. With non-intrusive AI-assist.
+license: LicenseRef-proprietary
 
 icons:
   - Datinium/icons/512x512/datinium.png
-
 screenshots:
-  - Datinium/screenshot.png
+- https://desktop.datinium.com/screenshot.png
 
 authors:
 
@@ -32,6 +32,24 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+
+appdata:
+  Type: desktop-application
+  ID: com.datinium.desktop
+  Name:
+    C: Datinium
+  Summary:
+    C: The privacy-respecting dataset workbench. Load, store, tidy, analyse, sync, share, query, & API-ify your datasets. With
+      non-intrusive AI-assist.
+  ProjectLicense: LicenseRef-proprietary
+  Url:
+    homepage: https://datinium.com/
+  Screenshots:
+  - default: true
+    thumbnails: []
+    source-image:
+      url: https://desktop.datinium.com/screenshot.png
+      lang: C
 
 electron:
   description: Datinium application
