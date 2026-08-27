@@ -1,7 +1,7 @@
 ---
 name: Media Downloader
 description: A graphical application for downloading videos and audio from YouTube, Facebook, Instagram, and X.com using yt-dlp.
-category: Network
+category: Utility
 Websites:
   - URL: "https://github.com/hmidani-abdelilah/Media_Downloader"
 
