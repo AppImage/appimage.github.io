@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: CC0-1.0 -->
+<component type="desktop-application">
+  <id>com.ivmm.imgconvert</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0</project_license>
+  <name>ImgConvert</name>
+  <summary>Local-first batch image converter</summary>
+  <summary xml:lang="zh-CN">本地优先的批量图片转换工具</summary>
+  <developer id="io.github.web-casa">
+    <name>ImgConvert contributors</name>
+  </developer>
+  <description>
+    <p>Convert batches of JPEG, PNG, WebP, and AVIF images locally, and import SVG, static GIF, and BMP files, without uploading files.</p>
+    <p>Choose the input files, output format, and destination; ImgConvert performs the conversion on your device.</p>
+  </description>
+  <launchable type="desktop-id">ImgConvert.desktop</launchable>
+  <categories>
+    <category>Graphics</category>
+    <category>Photography</category>
+  </categories>
+  <url type="homepage">https://imgconvert.web.casa/</url>
+  <url type="vcs-browser">https://github.com/web-casa/ImgConvert</url>
+  <url type="bugtracker">https://github.com/web-casa/ImgConvert/issues</url>
+  <content_rating type="oars-1.1" />
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/web-casa/ImgConvert/v0.2.22/packaging/flatpak/screenshots/main.png</image>
+      <caption>Batch conversion queue and output settings</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.2.22" date="2026-08-28">
+      <description>
+        <p>Fixes Windows HEIC CI coverage for the shared decoded-image dimension guardrail and publishes the conversion-first direct packages.</p>
+      </description>
+    </release>
+    <release version="0.2.21" date="2026-08-27">
+      <description>
+        <p>Makes requested format conversion the default: larger outputs and lossy re-encodes are skipped only when their optional compression policies are enabled.</p>
+      </description>
+    </release>
+    <release version="0.2.20" date="2026-08-27">
+      <description>
+        <p>Fixes SVG conversions being incorrectly skipped by the larger-output safeguard and improves dialog loading and host file-picker resilience.</p>
+      </description>
+    </release>
+    <release version="0.2.19" date="2026-08-27">
+      <description>
+        <p>Publishes the verified Mac App Store candidate with the SVG, static GIF, BMP, privacy, and resource-safety improvements.</p>
+      </description>
+    </release>
+    <release version="0.2.18" date="2026-08-27">
+      <description>
+        <p>Adds SVG, static GIF, and BMP import, and hardens image resource limits and Mac App Store privacy safeguards.</p>
+      </description>
+    </release>
+    <release version="0.2.17" date="2026-08-26">
+      <description>
+        <p>Clarifies the local image-import purpose of the macOS Media Library permission and validates it in release artifacts.</p>
+      </description>
+    </release>
+    <release version="0.2.16" date="2026-08-25">
+      <description>
+        <p>Adds an in-app privacy and support entry point and clarifies Mac App Store privacy boundaries.</p>
+      </description>
+    </release>
+    <release version="0.2.15" date="2026-08-25">
+      <description>
+        <p>Removes unused update-related macOS automation from the Mac App Store build.</p>
+      </description>
+    </release>
+    <release version="0.2.14" date="2026-08-25">
+      <description>
+        <p>Adds safer output naming, configurable suffixes, output-folder authorization, and explicit source-overwrite protection.</p>
+      </description>
+    </release>
+    <release version="0.2.13" date="2026-08-25">
+      <description>
+        <p>Fixes Mac App Store sandbox output-folder access and clearly reports output permission failures.</p>
+      </description>
+    </release>
+    <release version="0.2.12" date="2026-08-24">
+      <description>
+        <p>Fixes Mac App Store startup stability and verifies the signed sandbox entitlements used for release builds.</p>
+      </description>
+    </release>
+    <release version="0.2.11" date="2026-08-24">
+      <description>
+        <p>Hardens release asset verification and preserves existing output files if a replacement write fails.</p>
+      </description>
+    </release>
+    <release version="0.2.10" date="2026-08-24">
+      <description>
+        <p>Keeps AUR package metadata synchronized with the official project website.</p>
+      </description>
+    </release>
+    <release version="0.2.9" date="2026-08-23">
+      <description>
+        <p>Improves conversion path handling and release reliability across supported platforms.</p>
+      </description>
+    </release>
+    <release version="0.2.8" date="2026-08-22">
+      <description>
+        <p>Normalizes AppImage launcher permissions for sandboxed catalog validation.</p>
+      </description>
+    </release>
+    <release version="0.2.7" date="2026-08-22">
+      <description>
+        <p>Includes complete AUR submission metadata in the downloadable release artifact.</p>
+      </description>
+    </release>
+    <release version="0.2.6" date="2026-08-22">
+      <description>
+        <p>Fixes Snap builds by sanitizing the GNOME SDK environment and enabling Tauri's embedded production frontend.</p>
+      </description>
+    </release>
+    <release version="0.2.5" date="2026-08-22">
+      <description>
+        <p>Provides the Rustup build dependency required by the Snapcraft Rust plugin on all supported architectures.</p>
+      </description>
+    </release>
+    <release version="0.2.4" date="2026-08-22">
+      <description>
+        <p>Aligns all Linux package builders with the Ubuntu 22.04 compatibility baseline and fixes tool detection on that baseline.</p>
+      </description>
+    </release>
+    <release version="0.2.3" date="2026-08-22">
+      <description>
+        <p>Adds strict Snap packaging, an Ubuntu 22.04 AppImageHub compatibility baseline, and reproducible AUR package metadata.</p>
+      </description>
+    </release>
+    <release version="0.2.2" date="2026-08-22">
+      <description>
+        <p>Improves release packaging and keeps image conversion local to the device.</p>
+      </description>
+    </release>
+  </releases>
+</component>
