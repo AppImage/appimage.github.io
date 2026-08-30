@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainsMarbles</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Budbrain's Marbles</name>
+  <summary>Sort the marbles by colour, a hundred puzzles on a sunny beach</summary>
+  <summary xml:lang="de">Murmeln nach Farbe sortieren — hundert Rätsel am sonnigen Strand</summary>
+
+  <description>
+    <p>
+      Pick a tube, then pick another one. The top marble flies over in an arc
+      and lands. A marble may only go onto an empty tube or onto one of its own
+      colour. Sort every tube into a single colour and the puzzle is yours.
+    </p>
+    <p xml:lang="de">
+      Eine Röhre wählen, dann eine zweite. Die oberste Murmel fliegt im Bogen
+      hinüber und landet. Eine Murmel darf nur in eine leere Röhre oder auf
+      ihre eigene Farbe. Wer jede Röhre einfarbig bekommt, hat das Rätsel.
+    </p>
+    <p>
+      The first puzzles are done in three moves. Later ones hold fifteen
+      colours and take a while to think through — a hundred and five of them,
+      and every single one can be solved.
+    </p>
+    <p xml:lang="de">
+      Die ersten Rätsel sind in drei Zügen erledigt. Später kommen fünfzehn
+      Farben zusammen und es will überlegt sein — hundertfünf Stück, und jedes
+      einzelne ist lösbar.
+    </p>
+    <ul>
+      <li>A hundred and five puzzles, from a quick round to a long think</li>
+      <li>Five beaches, each with its own colours and its own marbles</li>
+      <li>An undo and a restart whenever you like</li>
+      <li>Up to three stars for solving in the fewest moves</li>
+      <li>Every solved puzzle stays on the achievements wall</li>
+      <li>Available in 22 languages</li>
+    </ul>
+    <ul xml:lang="de">
+      <li>Hundertfünf Rätsel, von der kurzen Runde bis zum langen Grübeln</li>
+      <li>Fünf Strände, jeder mit eigenen Farben und eigenen Murmeln</li>
+      <li>Zurück und Neustart, wann immer man mag</li>
+      <li>Bis zu drei Sterne für den kürzesten Weg</li>
+      <li>Jedes gelöste Rätsel bleibt auf der Erfolgs-Wand</li>
+      <li>In 22 Sprachen</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">de.budbrain.jsBudbrainsMarbles.desktop</launchable>
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <categories>
+    <category>Game</category>
+    <category>LogicGame</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main menu on the beach</caption>
+      <caption xml:lang="de">Das Hauptmenü am Strand</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsmarbles_01-menu.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A puzzle in play, with undo and restart</caption>
+      <caption xml:lang="de">Ein Rätsel im Spiel, mit Zurück und Neustart</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsmarbles_02-playing.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The level list, with a look at each puzzle and your stars</caption>
+      <caption xml:lang="de">Die Levelauswahl mit einem Blick auf jedes Rätsel und die Sterne</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsmarbles_03-levels.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A solved puzzle with moves, time and stars</caption>
+      <caption xml:lang="de">Ein gelöstes Rätsel mit Zügen, Zeit und Sternen</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsmarbles_04-solved.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The achievements wall of the solved puzzles</caption>
+      <caption xml:lang="de">Die Erfolgs-Wand der gelösten Rätsel</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsmarbles_05-gallery.png</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>jsBudbrainsMarbles</binary>
+  </provides>
+
+  <releases>
+    <release version="1.1.0" date="2026-08-22">
+      <description>
+        <p>First Linux release — the port of the phone game to the desktop.</p>
+        <p xml:lang="de">Erste Linux-Fassung — die Portierung des Telefonspiels auf den Rechner.</p>
+      </description>
+    </release>
+  </releases>
+</component>
