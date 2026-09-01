@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.aquiis.propertymanagement</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Aquiis Property Management</name>
+  <summary>Modern property management software for DIY landlords</summary>
+  
+  <description>
+    <p>
+      Aquiis SimpleStart is a standalone desktop application designed for landlords managing 1-9 residential rental properties. 
+      Built with modern technology, it provides professional-grade property management features without the complexity or 
+      subscription costs of enterprise solutions.
+    </p>
+    <p>Key Features:</p>
+    <ul>
+      <li>Property Management - Track up to 9 residential properties with photos and documents</li>
+      <li>Tenant Lifecycle - Complete prospect-to-tenant journey with digital applications and screening</li>
+      <li>Lease Management - Digital lease creation with acceptance tracking and multi-lease support</li>
+      <li>Financial Management - Automated rent invoicing, payment tracking, and late fee application</li>
+      <li>Maintenance Tracking - Work order management with vendor assignment and scheduling</li>
+      <li>Inspections - Comprehensive 26-item checklist with PDF report generation</li>
+      <li>Security Deposit Investment - Track annual dividends distributed to tenants</li>
+      <li>Multi-user Support - Role-based access control for administrators and property managers</li>
+    </ul>
+    <p>
+      Perfect for independent landlords, property owners who self-manage their rentals, and anyone seeking 
+      affordable, easy-to-use property management software.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">aquiis.desktop</launchable>
+  
+  <screenshots>
+    <screenshot type="default">
+      <caption>Dashboard with property overview and metrics</caption>
+      <image>https://raw.githubusercontent.com/xnodeoncode/Aquiis/main/Documentation/Screenshots/dashboard.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Property management interface</caption>
+      <image>https://raw.githubusercontent.com/xnodeoncode/Aquiis/main/Documentation/Screenshots/property-management.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Lease workflow and tenant management</caption>
+      <image>https://raw.githubusercontent.com/xnodeoncode/Aquiis/main/Documentation/Screenshots/lease-workflow.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Invoice and payment tracking</caption>
+      <image>https://raw.githubusercontent.com/xnodeoncode/Aquiis/main/Documentation/Screenshots/invoice-tracking.png</image>
+    </screenshot>
+  </screenshots>
+  
+  <url type="homepage">https://github.com/xnodeoncode/Aquiis</url>
+  <url type="bugtracker">https://github.com/xnodeoncode/Aquiis/issues</url>
+  <url type="help">https://github.com/xnodeoncode/Aquiis/blob/main/README.md</url>
+  
+  <developer id="com.github.xnodeoncode">
+    <name>xnodeoncode</name>
+  </developer>
+  
+  <provides>
+    <binary>AquiisPropertyManagement</binary>
+  </provides>
+  
+  <releases>
+    <release version="1.1.1" date="2026-02-28">
+      <description>
+        <p>Bug Fix and Enhancement Release</p>
+        <ul>
+          <li>Fixed brand theme flicker on repeated NavLink clicks</li>
+          <li>Fixed login double-submit causing blank page redirect</li>
+          <li>Windows database encryption implementation using DPAPI</li>
+          <li>Windows installer deployment (replaced portable executable)</li>
+          <li>Hidden Electron menu bar for native desktop experience</li>
+          <li>Optimized MutationObserver for improved performance</li>
+          <li>Enhanced documentation with cross-references</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-02-19">
+      <description>
+        <p>Security and Schema Enhancement Release</p>
+        <ul>
+          <li>Database encryption at rest with SQLCipher AES-256</li>
+          <li>Sample data management system with IsSampleData flags</li>
+          <li>Content Security Policy (CSP) headers for web security</li>
+          <li>Multi-tenant data integrity enhancements</li>
+          <li>Database schema v1.1.0 with automatic migrations</li>
+          <li>OS keychain integration for password caching (Linux)</li>
+          <li>Automatic database location migration</li>
+          <li>New application naming convention</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-01-28">
+      <description>
+        <p>First stable release for public distribution</p>
+        <ul>
+          <li>Complete property, tenant, and lease management</li>
+          <li>Automated invoicing and payment tracking</li>
+          <li>Maintenance request tracking with vendor management</li>
+          <li>Comprehensive property inspections with PDF reports</li>
+          <li>Security deposit investment tracking with dividends</li>
+          <li>Multi-user support with role-based access control</li>
+          <li>Linux AppImage with 2-second startup (performance optimized)</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  
+  <content_rating type="oars-1.1">
+    <content_attribute id="money-purchasing">mild</content_attribute>
+  </content_rating>
+  
+  <categories>
+    <category>Office</category>
+    <category>Finance</category>
+  </categories>
+  
+  <keywords>
+    <keyword>property</keyword>
+    <keyword>management</keyword>
+    <keyword>landlord</keyword>
+    <keyword>rental</keyword>
+    <keyword>lease</keyword>
+    <keyword>tenant</keyword>
+    <keyword>invoice</keyword>
+    <keyword>payment</keyword>
+    <keyword>maintenance</keyword>
+    <keyword>inspection</keyword>
+  </keywords>
+  
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  
+  <requires>
+    <display_length compare="ge">1024</display_length>
+  </requires>
+</component>

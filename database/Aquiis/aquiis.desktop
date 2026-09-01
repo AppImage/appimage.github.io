@@ -1,0 +1,22 @@
+[Desktop Entry]
+Name=Aquiis Property Management
+Comment=Multi-tenant property management system for DIY landlords
+Exec=Aquiis.AppImage
+Icon=aquiis
+Type=Application
+Categories=Office;Finance;
+Terminal=false
+StartupWMClass=Aquiis Property Management
+X-AppImage-Version=1.1.1
+X-AppImage-Name=Aquiis Property Management
+X-AppImage-Arch=x86_64
+Keywords=property;management;landlord;rental;lease;tenant;invoice;
+
+[AppImageHub]
+X-AppImage-Payload-License=MIT
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+# Dear upstream developer, please include a digital signature in your AppImage
+# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
