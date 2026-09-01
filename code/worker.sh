@@ -445,11 +445,16 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   echo "layout: app" >> apps/$INPUTBASENAME.md
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
+  # AppStream metainfo is named either <id>.appdata.xml (legacy) or
+  # <id>.metainfo.xml (current); both are copied in above, so use whichever is
+  # there. Applications shipping the current name would otherwise silently fall
+  # back to the .desktop Comment and to the automatically taken screenshot.
+  AS_XML=$(ls database/$INPUTBASENAME/*.appdata.xml database/$INPUTBASENAME/*.metainfo.xml 2>/dev/null | head -n 1)
   # Description
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- ) || true
-  if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    ./appstreamcli-x86_64.AppImage convert database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
-    SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .) || true
+  if [ -n "$AS_XML" ] ; then
+    ./appstreamcli-x86_64.AppImage convert "$AS_XML" database/$INPUTBASENAME/appdata.yaml
+    SUMMARY=$(xmlstarlet sel -t -m "/component/summary[1]" -v . "$AS_XML") || true
     if [ x"$SUMMARY" != x"" ] ; then
       echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
     fi
@@ -483,8 +488,8 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "  - $INPUTBASENAME/icons/$ICONSIZE/$ICONBASENAME" >> apps/$INPUTBASENAME.md
   fi
   # Screenshot
-  if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    SCREENSHOT=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/screenshots/screenshot[1]/image" -v . || true)
+  if [ -n "$AS_XML" ] ; then
+    SCREENSHOT=$(xmlstarlet sel -t -m "/component/screenshots/screenshot[1]/image" -v . "$AS_XML" || true)
     if [ x"$SCREENSHOT" != x"" ] ; then
       echo "screenshots:" >> apps/$INPUTBASENAME.md
       echo "- $SCREENSHOT" >> apps/$INPUTBASENAME.md
