@@ -1,0 +1,28 @@
+[Desktop Entry]
+Terminal=false
+Icon=org.mpz_player.mpz
+StartupWMClass=org.mpz_player.mpz
+Type=Application
+Categories=AudioVideo;Audio;Player;
+Exec=mpz %F
+Name=mpz Music Player
+GenericName=Music Player
+GenericName[ja]=音楽プレーヤー
+GenericName[ru]=Музыкальный проигрыватель
+GenericName[sr]=Музички плејер
+Comment=Music player for large local collections
+Comment[ja]=大規模なローカルコレクション向けの音楽プレーヤー
+Comment[ru]=Музыкальный проигрыватель для больших локальных коллекций
+Comment[sr]=Музички плејер за велике локалне колекције
+Keywords=music;audio;player;mpd;playlist;collection;library;
+Keywords[ja]=音楽;オーディオ;プレーヤー;mpd;プレイリスト;コレクション;ライブラリ;
+Keywords[ru]=музыка;аудио;плеер;mpd;плейлист;коллекция;библиотека;
+Keywords[sr]=музика;аудио;плејер;mpd;плејлиста;колекција;библиотека;
+MimeType=application/ogg;application/vnd.ms-asf;application/x-cue;application/x-ogg;application/x-ogm-audio;application/x-shorten;audio/aac;audio/flac;audio/mp4;audio/mpeg;audio/mpegurl;audio/ogg;audio/opus;audio/vorbis;audio/wav;audio/x-aifc;audio/x-aiff;audio/x-ape;audio/x-dff;audio/x-dsf;audio/x-flac;audio/x-flac+ogg;audio/x-m4a;audio/x-m4b;audio/x-matroska;audio/x-mp3;audio/x-mpeg;audio/x-mpegurl;audio/x-ms-wma;audio/x-musepack;audio/x-oggflac;audio/x-opus+ogg;audio/x-scpls;audio/x-speex;audio/x-speex+ogg;audio/x-tta;audio/x-vorbis;audio/x-vorbis+ogg;audio/x-wav;audio/x-wavpack;x-content/audio-player;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

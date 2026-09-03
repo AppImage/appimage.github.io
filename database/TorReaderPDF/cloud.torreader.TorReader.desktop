@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=TorReader PDF
+GenericName=PDF Viewer and Editor
+Comment=Fast offline PDF reader, editor and merger
+Exec=TorReader %f
+Icon=cloud.torreader.TorReader
+Terminal=false
+Type=Application
+Categories=Office;Viewer;Qt;
+MimeType=application/pdf;
+Keywords=pdf;viewer;editor;reader;merge;split;sign;annotate;acrobat;
+StartupWMClass=TorReader
+StartupNotify=true
+X-AppImage-Version=2.2.4
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
