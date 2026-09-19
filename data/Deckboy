@@ -1,1 +1,4 @@
 https://github.com/Utopian-Academy/Deckboy/
+# AppImages from v0.99.369 onwards are built on Ubuntu 22.04: the highest
+# glibc anything inside needs is 2.35, checked with objdump over every ELF
+# in the packaged AppImage as part of the build.
