@@ -58,6 +58,9 @@ HINTS=(
   "^WARNING: The screenshot may show an error message"
   "The screenshot may show an error message; please check it."
 
+  "^FATAL: .* (is missing|not found|missing in)"
+  "The AppImage is missing a required file (see below). See https://docs.appimage.org/reference/appdir.html for what an AppImage must contain."
+
   "^Could not find icon file"
   "No icon was found. The AppImage needs an icon matching the Icon= entry of its desktop file."
 )
