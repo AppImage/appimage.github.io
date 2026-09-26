@@ -152,6 +152,28 @@ jobs:
               echo "![${base}](${url})"
               echo
             done < images.txt
+            if [ -s out/libc.txt ] ; then
+              # Untrusted: only take values of the expected form
+              val() { grep -xE "X-AppImage-$1=($2)" out/libc.txt | head -n 1 | cut -d = -f 2 || true ; }
+              LIBC=$(val Libc 'none|bundled|host')
+              RUNTIME=$(val Runtime 'static|dynamic')
+              SELF=$(val Self-Contained 'true|false')
+              GLIBC=$(val Glibc-Required '[0-9]{1,2}(\.[0-9]{1,3}){1,2}')
+              if [ "$SELF" = true ] && [ -n "$LIBC" ] ; then
+                case "$LIBC" in
+                  none) echo "**Compatibility:** self-contained (contains no dynamically linked code)" ;;
+                  *) echo "**Compatibility:** self-contained (ships its own C library)" ;;
+                esac
+                echo
+              elif [ -n "$LIBC" ] ; then
+                REASONS=()
+                [ "$LIBC" = host ] && REASONS+=("uses the C library of the system")
+                [ "$RUNTIME" = dynamic ] && REASONS+=("uses an old AppImage runtime that needs the C library (and libfuse2) of the system")
+                [ -n "$GLIBC" ] && REASONS+=("needs glibc $GLIBC or later")
+                echo "**Compatibility:** not self-contained: $(IFS=';' ; echo "${REASONS[*]}" | sed 's/;/; /g')"
+                echo
+              fi
+            fi
             if [ -s out/hints.md ] ; then
               # Hints are fixed strings from code/diagnose.sh, but the artifact
               # is untrusted, so only accept lines we know

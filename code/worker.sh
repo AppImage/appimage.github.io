@@ -238,6 +238,10 @@ echo "==========================================="
 # If everything succeeded until here, then download Firejail aith Xpra and run the application in it
 # and take screenshots if we don't have them already from AppStream
 
+# Does the AppImage need a compatible C library on the host?
+LIBC_INFO=$(bash "$(dirname "$0")/check-libc.sh" "$FILENAME" "$APPDIR" || true)
+echo "$LIBC_INFO"
+
 TERMINAL=false
 grep -r Terminal=true "${APPDIR}"/*.desktop && TERMINAL=true
 echo "TERMINAL: $TERMINAL"
@@ -410,6 +414,10 @@ if [ x2 == x"$TYPE" ] ; then
 fi
 
 echo "X-AppImage-Architecture=$ARCHITECTURE" >> "$DATAFILE"
+
+if [ -n "$LIBC_INFO" ] ; then
+  echo "$LIBC_INFO" >> "$DATAFILE"
+fi
 
 if [ x"" != x"$LICENSE" ] ; then
   echo "X-AppImage-Payload-License=$LICENSE" >> "$DATAFILE"

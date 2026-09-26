@@ -17,9 +17,9 @@ layout: null
     },{% else %}"{{ site.author }}",{% endif %}
     {% endif %}
 "items": [
-    {% assign sorted = site.pages | sort: 'permalink' %}
-    {% for post in sorted %}
-        {% if post.layout == 'app' && post.published != 'false' %}
+    {% comment %}Filter first, so that forloop.last is the last app (no trailing comma){% endcomment %}
+    {% assign apps = site.pages | where: "layout", "app" | where_exp: "p", "p.published != false" | where_exp: "p", "p.published != 'false'" | sort: 'permalink' %}
+    {% for post in apps %}
         {
         "name": {% if post.title %}{{ post.title | jsonify }}{% else %}{{ post.name | remove: ".md" | jsonify  }}{% endif %},
     {% if post.appdata.Description.C %}
@@ -32,9 +32,10 @@ layout: null
         "license" : {{ post.license | jsonify }},
         "links": {{ post.links | jsonify }},
         "icons": {{ post.icons | jsonify }},
-        "screenshots" : {{ post.screenshots | jsonify }}
+        "screenshots" : {{ post.screenshots | jsonify }}{% if post.desktop.AppImageHub.X-AppImage-Libc %},
+        "libc": {{ post.desktop.AppImageHub.X-AppImage-Libc | jsonify }},
+        "self_contained": {{ post.desktop.AppImageHub.X-AppImage-Self-Contained | jsonify }}{% endif %}
         }{% if forloop.last == false %},{% endif %}
-        {% endif %}
     {% endfor %}
     ]
 }

@@ -46,6 +46,9 @@ HINTS=(
   "doesn't look like a squashfs image|AppRun is missing"
   "The downloaded file is not a valid AppImage."
 
+  "^ERROR: A pull request must change exactly one file in data/"
+  "Please submit each application in a pull request of its own that adds or changes only its file in data/, as described in the README."
+
   "^ERROR: The window appears to be empty"
   "The window is empty, e.g., only a menu bar on a blank background. The application must show its content when started without arguments and without network access."
 
