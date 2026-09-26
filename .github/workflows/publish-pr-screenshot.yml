@@ -64,10 +64,26 @@ jobs:
         if: steps.pr.outputs.number != ''
         env:
           PR: ${{ steps.pr.outputs.number }}
+          REPO_ID: ${{ github.event.repository.id }}
         run: |
-          gh release view ci-screenshots -R "$REPO" >/dev/null 2>&1 || \
-            gh release create ci-screenshots -R "$REPO" --prerelease \
-              -t "CI Screenshots" -n "Automated screenshots from PRs; used in PR comments"
+          # Upload the way pasting an image into a comment does, so GitHub
+          # hosts it with the comment. This endpoint is undocumented and only
+          # documented to work with user tokens, so fall back to assets of the
+          # ci-screenshots release if it refuses the workflow token.
+          upload_attachment() {
+            curl -sS -X POST \
+              "https://uploads.github.com/user-attachments/assets?name=$(basename "$1")&content_type=image/png&repository_id=${REPO_ID}" \
+              -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/json" \
+              --data-binary "@$1" \
+              | grep -oE 'https://github\.com/user-attachments/assets/[A-Za-z0-9-]+' | head -n 1
+          }
+          upload_release_asset() {
+            gh release view ci-screenshots -R "$REPO" >/dev/null 2>&1 || \
+              gh release create ci-screenshots -R "$REPO" --prerelease \
+                -t "CI Screenshots" -n "Automated screenshots from PRs; used in PR comments" >&2
+            gh release upload ci-screenshots -R "$REPO" "$1" --clobber >&2
+            echo "https://github.com/$REPO/releases/download/ci-screenshots/$(basename "$1")"
+          }
           : > images.txt
           for f in out/*.png ; do
             [ -f "$f" ] || continue
@@ -76,8 +92,14 @@ jobs:
             [ "$(file -b --mime-type "$f")" = image/png ] || continue
             name="pr-${PR}-${HEAD_SHA::8}-${base}.png"
             cp "$f" "$name"
-            gh release upload ci-screenshots -R "$REPO" "$name" --clobber
-            echo "$base $name" >> images.txt
+            url=$(upload_attachment "$name" || true)
+            if [ -n "$url" ] ; then
+              echo "Uploaded $name as a GitHub attachment"
+            else
+              echo "::warning::Attachment upload refused, using the ci-screenshots release for $name"
+              url=$(upload_release_asset "$name")
+            fi
+            echo "$base $url" >> images.txt
           done
           cat images.txt
 
@@ -87,7 +109,6 @@ jobs:
           PR: ${{ steps.pr.outputs.number }}
         run: |
           MARKER='<!-- appimagehub-test-result -->'
-          DL="https://github.com/$REPO/releases/download/ci-screenshots"
           {
             echo "$MARKER"
             if [ "$CONCLUSION" = success ] ; then
@@ -98,10 +119,10 @@ jobs:
               echo "### :x: Test ${CONCLUSION}"
             fi
             echo
-            while read -r base name ; do
+            while read -r base url ; do
               echo "**${base}**"
               echo
-              echo "![${base}](${DL}/${name})"
+              echo "![${base}](${url})"
               echo
             done < images.txt
             if [ -s out/hints.md ] ; then
