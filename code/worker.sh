@@ -4,6 +4,29 @@
 set -e -v
 set -o pipefail
 
+# Background processes (FUSE mount, firejail, icewm) must never outlive this
+# script: they inherit its stdout, so the "| tee" in the workflow would wait
+# for them forever and the job would hang until the Actions timeout instead
+# of failing. On failure, also capture the screen for the PR comment.
+cleanup() {
+  RC=$?
+  set +e +v
+  if [ $RC -ne 0 ] && [ -n "$APID" ] && [ -n "$INPUTBASENAME" ] ; then
+    mkdir -p failure-screens
+    timeout 15 import -window root "failure-screens/${INPUTBASENAME}.png" 2>/dev/null
+  fi
+  # TERM first so that firejail can take down its sandbox, then make sure
+  PIDS="$APID $PID $(jobs -p)"
+  kill $PIDS 2>/dev/null && sleep 2
+  kill -9 $PIDS 2>/dev/null
+  killall -9 icewm 2>/dev/null
+  if [ -n "$APPDIR" ] ; then fusermount -u -z "$APPDIR" 2>/dev/null ; fi
+  [ x"$TYPE" == x1 ] && sudo umount -l /mnt 2>/dev/null
+  exit $RC
+}
+trap cleanup EXIT
+trap "exit 143" TERM # Sent by "timeout" in the workflow; still clean up
+
 sudo apt-get -y install libfuse2
 
 URL=$(cat $1 | head -n 1)
@@ -105,7 +128,7 @@ if [ x"$TYPE" == x2 ] ; then
     chmod +x runtime*
   fi
   # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
-  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-mount &
+  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-mount > /dev/null 2>&1 &
   PID=$!
   sleep 1
   mount | grep tmp | tail -n 1
@@ -260,17 +283,22 @@ fi
 APID=$!
 sleep 30
 
+if ! kill -0 $APID 2>/dev/null ; then
+  echo "ERROR: The application exited within 30 seconds instead of showing a window"
+  exit 1
+fi
+
 # Make a screenshot
 
-# Get a list of open windows
-xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
+# Get a list of open windows (grep finding nothing must not abort the script here)
+WINDOWS=$(timeout 20 xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' || true)
+echo "$WINDOWS"
 
 # Count the windows on screen
-NUMBER_OF_WINDOWS=$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | wc -l)
+NUMBER_OF_WINDOWS=$(echo -n "$WINDOWS" | grep -c . || true)
 echo "NUMBER_OF_WINDOWS: $NUMBER_OF_WINDOWS"
 if [ $(($NUMBER_OF_WINDOWS)) -lt 1 ] ; then
   echo "ERROR: Could not find a single window on screen :-("
-  kill -9 $$
   exit 1
 fi
 
@@ -280,7 +308,7 @@ fi
 # mv screenshot_* database/$INPUTBASENAME/
 
 # Getting the active window seems to require a window manager
-icewm &
+icewm > /dev/null 2>&1 &
 sleep 2
 
 # We could simulate X11 keyboard/mouse input with xdotool here if needed;
@@ -294,7 +322,7 @@ if [ x"$INPUTBASENAME" == xSubsurface ] ; then
   xdotool sleep 0.1 key Escape # Click away the update check window
   sleep 1
   # Get a list of open windows
-  xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
+  timeout 20 xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' || true
 fi
 
 # Clean residue from previous runs, avoiding issue #3438
@@ -311,9 +339,10 @@ mkdir -p database/$INPUTBASENAME/
 # Taking screenshot like this fails, https://github.com/AppImage/appimage.github.io/issues/2494
 # convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
 
-import -window "$(xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png  && echo "Screenshot taken"
+timeout 30 import -window "$(timeout 10 xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png  && echo "Screenshot taken"
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
+APID=""
 killall icewm
 
 # Check if the screenshot is unusable and error out if it is
