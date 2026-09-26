@@ -39,6 +39,7 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: GPL-3.0
 
 appdata:
   Type: desktop-application
