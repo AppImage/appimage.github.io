@@ -112,28 +112,38 @@ jobs:
           done
           cat images.txt
 
-      - name: Update error labels
+      - name: Update labels
         if: steps.pr.outputs.number != ''
         env:
           PR: ${{ steps.pr.outputs.number }}
         run: |
-          # error-* labels name the known causes of a failed test; replace the
-          # previous ones. Untrusted artifact: only accept labels listed by
+          # error-* labels name the known causes of a failed test, screenshot-ok
+          # marks a good screenshot; replace the previous ones. Untrusted artifact: only accept labels listed by
           # code/diagnose.sh from master
           NEW=""
           if [ "$CONCLUSION" != success ] && [ -s out/labels.txt ] ; then
             NEW=$(grep -xF -f <(bash code/diagnose.sh --list-labels) out/labels.txt | sort -u || true)
           fi
-          OLD=$(gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name | select(startswith("error-"))' | sort -u)
+          # screenshot-ok: the test passed, took a screenshot and found nothing wrong with it
+          if [ "$CONCLUSION" = success ] && [ -e out/screenshot-ok ] && [ -s images.txt ] ; then
+            NEW=$(printf '%s\nscreenshot-ok\n' "$NEW" | grep . | sort -u)
+          fi
+          OLD=$(gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name | select(startswith("error-") or . == "screenshot-ok")' | sort -u)
           for L in $(comm -13 <(echo "$NEW") <(echo "$OLD")) ; do
             echo "Removing $L"
             gh api -X DELETE "repos/$REPO/issues/$PR/labels/$L" > /dev/null
           done
           for L in $(comm -23 <(echo "$NEW") <(echo "$OLD")) ; do
             echo "Adding $L"
-            gh api "repos/$REPO/labels/$L" > /dev/null 2>&1 || \
-              gh api "repos/$REPO/labels" -f name="$L" -f color=b60205 \
-                -f description="Test failed: see the test result comment" > /dev/null
+            if ! gh api "repos/$REPO/labels/$L" > /dev/null 2>&1 ; then
+              if [ "$L" = screenshot-ok ] ; then
+                gh api "repos/$REPO/labels" -f name="$L" -f color=0e8a16 \
+                  -f description="Test passed; the screenshot was checked and looks fine" > /dev/null
+              else
+                gh api "repos/$REPO/labels" -f name="$L" -f color=b60205 \
+                  -f description="Test failed: see the test result comment" > /dev/null
+              fi
+            fi
             gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=$L" > /dev/null
           done
 

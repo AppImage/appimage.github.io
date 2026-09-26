@@ -136,6 +136,10 @@ jobs:
               appname=$(basename "$(dirname "$screenshot")" | tr -cd 'A-Za-z0-9._-')
               cp "$screenshot" "pr-result/${appname}.png"
             done
+            # For the screenshot-ok label: a screenshot, and code/check-screenshot.sh had no remarks
+            if ls pr-result/*.png >/dev/null 2>&1 && ! grep -qE '^(WARNING|ERROR): The (window|screenshot)' log.txt ; then
+              touch pr-result/screenshot-ok
+            fi
           else
             cp failure-screens/*.png pr-result/ 2>/dev/null || true
             bash code/diagnose.sh --excerpt log.txt > pr-result/error.txt

@@ -49,7 +49,9 @@ GitHub Pages (Jekyll) from this repository.
    Renewing the token: see `MAINTAINER.md`. It also sets red `error-*` labels on
    the PR for the known causes of a failed test (defined next to the hints in
    `code/diagnose.sh`, which holds triples of pattern, label and hint) and
-   removes `error-*` labels that no longer apply.
+   removes `error-*` labels that no longer apply; the green `screenshot-ok` label
+   marks a passed test whose screenshot `code/check-screenshot.sh` found fine
+   (no warnings).
 
 ## Rules that are easy to get wrong
 
