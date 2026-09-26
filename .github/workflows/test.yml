@@ -38,6 +38,19 @@ jobs:
         # providing a fetch-depth of 0 should fetch all history.
         with:
           fetch-depth: 0
+      - name: Check that the pull request changes exactly one file in data/
+        # Not for branches in this repository, so that maintainers can test
+        # changes to the test together with a change in data/
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+        run: |
+          CHANGED=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
+          if [ "$(echo "$CHANGED" | grep -c .)" -ne 1 ] || ! echo "$CHANGED" | grep -qxE 'data/[^/]+' ; then
+            {
+              echo "ERROR: A pull request must change exactly one file in data/ and nothing else, but this one changes:"
+              echo "$CHANGED" | sed 's/^/  /'
+            } | tee log.txt
+            exit 1
+          fi
       - name: Configure APT Packages
         uses: awalsh128/cache-apt-pkgs-action@v1.4.3
         # This action handles caching APT packages, and leaves the option for package configuration scripts to be run if needed,

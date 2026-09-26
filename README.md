@@ -29,6 +29,8 @@ and send a Pull Request.
 
 **Alternatively, a link to the AppImage. Nothing else.**
 
+**The pull request must add (or change) exactly this one file in `data/` and nothing else; one application per pull request.** Otherwise the test fails.
+
 Ideally, the file in `data/` contains a link to https://github.com/User/App/ (not to a specific AppImage!), and if the AppImage follows the standard nomenclature, then https://github.com/User/App/releases/whatever/App-1.0-x86_64.AppImage, https://github.com/User/App/releases/whatever/App-1.1-x86_64.AppImage,... will automatically be picked up.
 
 Standard nomenclature:

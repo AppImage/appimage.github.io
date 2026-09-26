@@ -88,6 +88,8 @@ GitHub Pages (Jekyll) from this repository.
   `bundle exec jekyll build` on a copy with only a few `apps/*.md` for speed.
   Note: `feed.json` is only valid JSON if the last page in permalink order is an
   app (pre-existing quirk of its comma logic).
+- PRs from forks must change exactly one file in `data/` and nothing else (checked
+  first in `test.yml`); PRs from branches in this repository are exempt.
 - End-to-end: the Test workflow only runs when the PR touches `data/**`. Add a
   throwaway change to a `data/` file (e.g., a trailing newline; only the first
   line is read), push, check the run and the PR comment, and revert it before
