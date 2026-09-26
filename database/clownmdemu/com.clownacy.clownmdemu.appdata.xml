@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.clownacy.clownmdemu</id>
+  
+  <name>clownmdemu</name>
+  <summary>Sega Mega Drive Emulator</summary>
+  
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+  
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>gamepad</control>
+  </supports>
+  
+  <description>
+    <p>
+      An emulator for the Sega Mega Drive/Sega Genesis, featuring a suite of debugging tools to assist in the development of homebrew and ROM-hacks.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">com.clownacy.clownmdemu.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Clownacy/clownmdemu-frontend/refs/heads/master/assets/screenshot-debug.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Clownacy/clownmdemu-frontend/refs/heads/master/assets/screenshot-minimal.png</image>
+    </screenshot>
+  </screenshots>
+</component>

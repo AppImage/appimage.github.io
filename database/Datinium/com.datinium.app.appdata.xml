@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>com.datinium.desktop</id>
+
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>LicenseRef-proprietary</project_license>
+
+    <name>Datinium</name>
+    <summary>The privacy-respecting dataset workbench. Load, store, tidy, analyse, sync, share, query, &amp; API-ify your datasets. With non-intrusive AI-assist.</summary>
+
+    <screenshots>
+        <screenshot type="default">
+            <image>https://desktop.datinium.com/screenshot.png</image>
+        </screenshot>
+    </screenshots>
+
+    <url type="homepage">https://datinium.com/</url>
+</component>

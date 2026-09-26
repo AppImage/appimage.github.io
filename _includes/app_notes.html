@@ -4,9 +4,16 @@
 <p>{{ page.name | remove: ".md" }} is available as an <a href="https://appimage.org">AppImage</a> which means "one app = one file", which you can download and run on your Linux system while you don't need a package manager and nothing gets changed in your system. Awesome!</p>
 <p>AppImages are single-file applications that run on most Linux distributions. Download an application, make it executable, and run! No need to install. No system libraries or system preferences are altered.
 Most AppImages run on recent versions of Arch Linux, CentOS, Debian, Fedora, openSUSE, Red Hat, Ubuntu, and other common desktop distributions.</p>
+{% assign hub = post.desktop.AppImageHub %}
+{% if hub.X-AppImage-Self-Contained == true %}
+<p>This AppImage is self-contained: it does not need a compatible C library (such as glibc) on the system, because it {% if hub.X-AppImage-Libc == 'none' %}contains no dynamically linked code{% else %}ships its own C library{% endif %}. Hence it should also run on older distributions and on distributions that use a different C library (such as musl on Alpine Linux).</p>
+{% elsif hub.X-AppImage-Libc %}
+<p>This AppImage uses the C library of the system{% if hub.X-AppImage-Glibc-Required %} and may need glibc {{ hub.X-AppImage-Glibc-Required | remove: "GLIBC_" }} or later{% endif %}. It does not run on distributions that use a different C library (such as musl on Alpine Linux){% if hub.X-AppImage-Glibc-Required %} or an older glibc{% endif %}.</p>
+{% endif %}
+
 <h3>Running {{ page.name | remove: ".md" }} on Linux without installation</h3>
 Unlike other applications, AppImages do not need to be installed before they can be used. However, they need to be marked as executable before they can be run. This is a Linux security feature.</p>
-<p><b>Behold!</b> AppImages are usually not verified by others. Follow these instructions only if you trust the developer of the software. Use at your own risk!</p>
+<p><b>Beware!</b> AppImages are usually not verified by others. Follow these instructions only if you trust the developer of the software. Use at your own risk!</p>
 <p>Download the {{ page.name | remove: ".md" }} AppImage and <a href="https://discourse.appimage.org/t/how-to-run-an-appimage/80">make it executable using your file manager</a> or by entering the following commands in a terminal:</p>
 <div class="highlight">
   <span class="mega-octicon octicon-terminal"></span>
@@ -40,11 +47,15 @@ Unlike other applications, AppImages do not need to be installed before they can
     <p>Please consider to add <a href="https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information">update information</a> to the {{ page.name | remove: ".md" }} AppImage and ship a <code>.zsync</code> file so that it can be updated using <a href="https://github.com/AppImage/AppImageUpdate">AppImageUpdate</a>. Tools like <a href="https://github.com/AppImage/AppImageKit#appimagetool-usage">appimagetool</a> and <a href="https://github.com/probonopd/linuxdeployqt#usage">linuxdeployqt</a> can do this for you easily.</p>
 {% endif %}
 
+{% if hub.X-AppImage-Libc and hub.X-AppImage-Self-Contained != true %}
+    <p>Please consider making the {{ page.name | remove: ".md" }} AppImage self-contained, so that it does not depend on the C library of the system and runs on more distributions: {% if hub.X-AppImage-Libc == 'host' %}ship the C library including its loader (<code>ld-linux-*.so.*</code>) and use it to launch the application, or link statically{% endif %}{% if hub.X-AppImage-Libc == 'host' and hub.X-AppImage-Runtime == 'dynamic' %}, and {% endif %}{% if hub.X-AppImage-Runtime == 'dynamic' %}use the current, statically linked <a href="https://github.com/AppImage/type2-runtime">AppImage runtime</a>{% endif %}.</p>
+{% endif %}
+
 {% if post.appdata.ID %}
     <p>Thanks for shipping AppStream metainfo inside your AppImage. Please open a pull request on <a href="https://github.com/AppImage/appimage.github.io/blob/master/data/{{ page.name | remove: ".md" }}">https://github.com/AppImage/appimage.github.io/blob/master/data/{{ page.name | remove: ".md" }}</a> if you have changed it and would like to see this page updated accordingly.</p>
 {% else %}
     <p>Improve this entry by shipping an <a href="https://docs.appimage.org/packaging-guide/optional/appstream.html">AppStream metainfo file</a> inside the AppImage in the <code>usr/share/metainfo</code> directory. There is an <a href="https://appimage.github.io/simple-appstream-generator/">online tool</a> that makes it easy to make one.</p>
-    <p>The screenshot for {{ page.name | remove: ".md" }} has been automatically taken during a fully automated test. You can specify the URL to a nicer one by shipping an <a href="https://docs.appimage.org/packaging-guide/appstream.html">AppStream metainfo file</a>.</p>
+    <p>The screenshot for {{ page.name | remove: ".md" }} has been automatically taken during a fully automated test. You can specify the URL to a nicer one by shipping an <a href="https://docs.appimage.org/packaging-guide/index.html">AppStream metainfo file</a>.</p>
 {% endif %}
 
 {% if post.appdata.Url.donation %}
