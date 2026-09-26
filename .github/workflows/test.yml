@@ -120,6 +120,8 @@ jobs:
           fi
           # Also on success, e.g., a helper failing because of a too new glibc
           bash code/diagnose.sh log.txt > pr-result/hints.md
+          # Whether the AppImage needs a compatible C library on the host
+          grep -h '^X-AppImage-\(Libc\|Runtime\|Self-Contained\|Glibc-Required\)=' log.txt | sort -u > pr-result/libc.txt || true
           ls -la pr-result/
       - name: Upload result
         if: always() && github.event_name == 'pull_request' && hashFiles('pr-result/**') != ''

@@ -32,7 +32,9 @@ layout: null
         "license" : {{ post.license | jsonify }},
         "links": {{ post.links | jsonify }},
         "icons": {{ post.icons | jsonify }},
-        "screenshots" : {{ post.screenshots | jsonify }}
+        "screenshots" : {{ post.screenshots | jsonify }}{% if post.desktop.AppImageHub.X-AppImage-Libc %},
+        "libc": {{ post.desktop.AppImageHub.X-AppImage-Libc | jsonify }},
+        "self_contained": {{ post.desktop.AppImageHub.X-AppImage-Self-Contained | jsonify }}{% endif %}
         }{% if forloop.last == false %},{% endif %}
         {% endif %}
     {% endfor %}
