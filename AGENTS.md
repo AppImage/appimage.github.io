@@ -44,6 +44,7 @@ GitHub Pages (Jekyll) from this repository.
    the PR, marked `<!-- appimagehub-test-result -->`. Screenshots are uploaded as
    GitHub attachments with the `SCREENSHOT_UPLOAD_TOKEN` secret (classic PAT),
    falling back to assets of the `ci-screenshots` release, which it prunes.
+   Renewing the token: see `MAINTAINER.md`.
 
 ## Rules that are easy to get wrong
 
