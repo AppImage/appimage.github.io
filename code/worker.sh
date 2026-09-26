@@ -10,7 +10,7 @@ set -o pipefail
 # of failing. On failure, also capture the screen for the PR comment.
 cleanup() {
   RC=$?
-  set +e +v
+  { set +e +v +x ; } 2>/dev/null
   if [ $RC -ne 0 ] && [ -n "$APID" ] && [ -n "$INPUTBASENAME" ] ; then
     mkdir -p failure-screens
     timeout 15 import -window root "failure-screens/${INPUTBASENAME}.png" 2>/dev/null
