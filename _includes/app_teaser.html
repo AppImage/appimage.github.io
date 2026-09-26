@@ -50,7 +50,7 @@
       Self-contained, does not depend on the C library of the system
       ({% if hub.X-AppImage-Libc == 'none' %}contains no dynamically linked code{% else %}ships its own C library{% endif %})
     {% elsif hub.X-AppImage-Glibc-Required %}
-      Requires glibc {{ hub.X-AppImage-Glibc-Required }} or later on the system
+      Uses the C library of the system (may need glibc {{ hub.X-AppImage-Glibc-Required | remove: "GLIBC_" }} or later)
     {% else %}
       Uses the C library of the system
     {% endif %}

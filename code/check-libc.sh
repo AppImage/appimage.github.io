@@ -17,9 +17,11 @@
 #   X-AppImage-Self-Contained=true|false
 #                             true if neither the payload nor the runtime
 #                             needs the host's C library
-#   X-AppImage-Glibc-Required=2.xx
+#   X-AppImage-Glibc-Required=GLIBC_2.xx
 #                             for "host": the newest glibc symbol version
-#                             that any ELF file (or the runtime) needs
+#                             that any ELF file (or the runtime) references;
+#                             an upper bound, since not every library in the
+#                             AppImage is necessarily loaded
 #
 # A payload without any ELF files (e.g., only scripts) uses programs of the
 # host and hence counts as "host".
@@ -78,5 +80,5 @@ fi
 # Only what uses the host's C library counts
 [ "$LIBC_MODE" == host ] || : > "$PAYLOAD_VERSIONS"
 GLIBC=$(sort -uV "$PAYLOAD_VERSIONS" "$RUNTIME_VERSIONS" | tail -n 1)
-[ -z "$GLIBC" ] || echo "X-AppImage-Glibc-Required=$GLIBC"
+[ -z "$GLIBC" ] || echo "X-AppImage-Glibc-Required=GLIBC_$GLIBC" # not a number, which YAML would round (2.40 -> 2.4)
 rm -f "$PAYLOAD_VERSIONS" "$RUNTIME_VERSIONS"

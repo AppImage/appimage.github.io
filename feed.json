@@ -34,7 +34,8 @@ layout: null
         "icons": {{ post.icons | jsonify }},
         "screenshots" : {{ post.screenshots | jsonify }}{% if post.desktop.AppImageHub.X-AppImage-Libc %},
         "libc": {{ post.desktop.AppImageHub.X-AppImage-Libc | jsonify }},
-        "self_contained": {{ post.desktop.AppImageHub.X-AppImage-Self-Contained | jsonify }}{% endif %}
+        "self_contained": {{ post.desktop.AppImageHub.X-AppImage-Self-Contained | jsonify }}{% if post.desktop.AppImageHub.X-AppImage-Glibc-Required %},
+        "glibc_required": {{ post.desktop.AppImageHub.X-AppImage-Glibc-Required | remove: "GLIBC_" | jsonify }}{% endif %}{% endif %}
         }{% if forloop.last == false %},{% endif %}
     {% endfor %}
     ]
