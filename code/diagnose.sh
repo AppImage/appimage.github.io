@@ -46,6 +46,21 @@ HINTS=(
   "doesn't look like a squashfs image|AppRun is missing"
   "The downloaded file is not a valid AppImage."
 
+  "^ERROR: The window appears to be empty"
+  "The window is empty, e.g., only a menu bar on a blank background. The application must show its content when started without arguments and without network access."
+
+  "^ERROR: The screenshot shows an error message"
+  "The screenshot shows an error message (see below)."
+
+  "^WARNING: The window is mostly empty"
+  "The window is mostly empty; please check that the screenshot shows the application's main window."
+
+  "^WARNING: The screenshot may show an error message"
+  "The screenshot may show an error message; please check it."
+
+  "^FATAL: .* (is missing|not found|missing in)"
+  "The AppImage is missing a required file (see below). See https://docs.appimage.org/reference/appdir.html for what an AppImage must contain."
+
   "^Could not find icon file"
   "No icon was found. The AppImage needs an icon matching the Icon= entry of its desktop file."
 )
@@ -67,13 +82,19 @@ if [ "$1" == "--excerpt" ] ; then
   for ((i = 0; i < ${#HINTS[@]}; i += 2)) ; do
     PATTERN="$PATTERN|${HINTS[$i]}"
   done
-  FIRST=$(grep -nE -m 1 -- "$PATTERN" "$LOG" | cut -d : -f 1)
+  # Drop the source lines that "set -v" echoes, the commands that "set -x"
+  # traces and the EXIT trap, so that only output remains; then squeeze runs
+  # of empty lines
+  CLEAN=$(mktemp)
+  grep -vxF -f <(grep -v '^[[:space:]]*$' "$(dirname "$0")/worker.sh") "$LOG" \
+    | grep -vE '^\++ |^cleanup$' | cat -s > "$CLEAN"
+  FIRST=$(grep -nE -m 1 -- "$PATTERN" "$CLEAN" | cut -d : -f 1)
   if [ -n "$FIRST" ] ; then
-    START=$((FIRST > 3 ? FIRST - 3 : 1))
-    sed -n "${START},$((FIRST + 12))p" "$LOG"
+    sed -n "${FIRST},$((FIRST + 15))p" "$CLEAN"
   else
-    tail -n 15 "$LOG"
+    tail -n 15 "$CLEAN"
   fi
+  rm -f "$CLEAN"
   exit 0
 fi
 

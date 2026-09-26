@@ -10,7 +10,7 @@ set -o pipefail
 # of failing. On failure, also capture the screen for the PR comment.
 cleanup() {
   RC=$?
-  set +e +v
+  { set +e +v +x ; } 2>/dev/null
   if [ $RC -ne 0 ] && [ -n "$APID" ] && [ -n "$INPUTBASENAME" ] ; then
     mkdir -p failure-screens
     timeout 15 import -window root "failure-screens/${INPUTBASENAME}.png" 2>/dev/null
@@ -355,6 +355,13 @@ if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png
   ls -lh database/$INPUTBASENAME/screenshot.png
   file database/$INPUTBASENAME/screenshot.png
   file -b --mime-type database/$INPUTBASENAME/screenshot.png
+  exit 1
+fi
+
+# Fail on an empty window or an error message on screen
+if ! bash "$(dirname "$0")/check-screenshot.sh" database/$INPUTBASENAME/screenshot.png $([ x"$TERMINAL" == xtrue ] && echo terminal) ; then
+  mkdir -p failure-screens
+  cp database/$INPUTBASENAME/screenshot.png "failure-screens/${INPUTBASENAME}.png"
   exit 1
 fi
 
