@@ -90,10 +90,12 @@ GitHub Pages (Jekyll) from this repository.
   app (pre-existing quirk of its comma logic).
 - PRs from forks must change exactly one file in `data/` and nothing else (checked
   first in `test.yml`); PRs from branches in this repository are exempt.
-- End-to-end: the Test workflow only runs when the PR touches `data/**`. Add a
+- End-to-end: the Test workflow only runs when the PR touches `data/**`. Test in
+  a separate throwaway PR (from a branch in this repository) that adds a
   throwaway change to a `data/` file (e.g., a trailing newline; only the first
-  line is read), push, check the run and the PR comment, and revert it before
-  merging. New PR comments from `master`'s publish workflow appear only for PRs
+  line is read) on top of your change; check the run and the PR comment, then
+  close it. Doing this in the real PR leaves a test-result comment there that
+  nothing removes once the PR no longer touches `data/`. New PR comments from `master`'s publish workflow appear only for PRs
   whose head is still the tested commit.
 - To re-test an existing contributor PR with new workflow code, close and reopen
   it (a re-run would reuse the old workflow files).
