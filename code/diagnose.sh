@@ -99,9 +99,12 @@ if [ "$1" == "--list" ] ; then
 fi
 
 if [ "$1" == "--list-labels" ] ; then
-  for ((i = 1; i < ${#HINTS[@]}; i += 3)) ; do
-    [ "${HINTS[$i]}" == - ] || echo "${HINTS[$i]}"
-  done | sort -u
+  {
+    for ((i = 1; i < ${#HINTS[@]}; i += 3)) ; do
+      [ "${HINTS[$i]}" == - ] || echo "${HINTS[$i]}"
+    done
+    echo error-other # A failure with none of the known causes
+  } | sort -u
   exit 0
 fi
 
