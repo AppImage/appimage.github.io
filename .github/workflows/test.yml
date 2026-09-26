@@ -41,7 +41,7 @@ jobs:
       - name: Check that the pull request changes exactly one file in data/
         # Not for branches in this repository, so that maintainers can test
         # changes to the test together with a change in data/
-        if: github.event_name == 'pull_request' # TEST ONLY: also for this repository
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
         run: |
           CHANGED=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
           if [ "$(echo "$CHANGED" | grep -c .)" -ne 1 ] || ! echo "$CHANGED" | grep -qxE 'data/[^/]+' ; then
