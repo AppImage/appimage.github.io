@@ -81,7 +81,12 @@ jobs:
           fi
           echo "Changed files:"
           echo "$FILES"
-          if [ -z "$FILES" ] ; then echo "ERROR: No added or changed files in data/" | tee log.txt ; exit 1 ; fi
+          if [ -z "$FILES" ] ; then
+            # E.g. a PR that only removes an application
+            echo "No added or changed files in data/, nothing to test"
+            touch .nothing-tested
+            exit 0
+          fi
           for FILE in $FILES; do
             echo "$FILE"
             # The timeout keeps a hanging application from running into the job
@@ -101,6 +106,7 @@ jobs:
         if: always() && github.event_name == 'pull_request'
         run: |
           # Read by publish-pr-screenshot.yml, which has the permissions to comment on PRs from forks
+          [ -e .nothing-tested ] && exit 0 # No artifact, no comment
           mkdir -p pr-result
           echo "${{ github.event.pull_request.number }}" > pr-result/pr-number
           if [ "${{ steps.main.outcome }}" = success ] ; then
@@ -116,7 +122,7 @@ jobs:
           bash code/diagnose.sh log.txt > pr-result/hints.md
           ls -la pr-result/
       - name: Upload result
-        if: always() && github.event_name == 'pull_request'
+        if: always() && github.event_name == 'pull_request' && hashFiles('pr-result/**') != ''
         uses: actions/upload-artifact@v4
         with:
           name: pr-result
