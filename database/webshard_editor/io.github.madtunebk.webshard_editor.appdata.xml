@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.madtunebk.webshard_editor</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>WebShard Editor</name>
+  <summary>Real-time WGSL shader editor</summary>
+  <description>
+    <p>
+      A modern WGSL shader editor built with Rust and egui, featuring
+      real-time multi-pass shader compilation, syntax highlighting, and
+      audio-reactive capabilities.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.madtunebk.webshard_editor.desktop</launchable>
+  <url type="homepage">https://github.com/madtunebk/wgsls_editor</url>
+  <developer id="io.github.madtunebk">
+    <name>madtunebk</name>
+  </developer>
+  <content_rating type="oars-1.1" />
+</component>
