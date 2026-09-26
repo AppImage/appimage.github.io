@@ -14,6 +14,10 @@ cleanup() {
   if [ $RC -ne 0 ] && [ -n "$APID" ] && [ -n "$INPUTBASENAME" ] ; then
     mkdir -p failure-screens
     timeout 15 import -window root "failure-screens/${INPUTBASENAME}.png" 2>/dev/null
+    # An empty screen (the application crashed before drawing) tells nothing
+    if [ "$(convert "failure-screens/${INPUTBASENAME}.png" -format '%[fx:standard_deviation]' info: 2>/dev/null)" == 0 ] ; then
+      rm -f "failure-screens/${INPUTBASENAME}.png"
+    fi
   fi
   # TERM first so that firejail can take down its sandbox, then make sure
   PIDS="$APID $PID $(jobs -p)"
