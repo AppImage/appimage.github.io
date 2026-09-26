@@ -28,7 +28,9 @@ GitHub Pages (Jekyll) from this repository.
      AppImage's own runtime), runs `appdir-lint.sh`, finds the icon;
    - `code/check-libc.sh`: does it need a compatible C library on the host?
      (`X-AppImage-Libc=none|bundled|host`, `X-AppImage-Runtime`,
-     `X-AppImage-Self-Contained`, `X-AppImage-Glibc-Required`);
+     `X-AppImage-Self-Contained`, `X-AppImage-Glibc-Required=GLIBC_2.xx`, stored
+     with the prefix because YAML would turn 2.40 into the number 2.4; an upper
+     bound, as not every library in an AppImage is necessarily loaded);
    - runs the application in firejail **without network**, waits 30 s, takes a
      screenshot of the active window;
    - `code/check-screenshot.sh`: fails on an (almost) empty window or an error
@@ -98,7 +100,9 @@ GitHub Pages (Jekyll) from this repository.
   nothing removes once the PR no longer touches `data/`. New PR comments from `master`'s publish workflow appear only for PRs
   whose head is still the tested commit.
 - To re-test an existing contributor PR with new workflow code, close and reopen
-  it (a re-run would reuse the old workflow files).
+  it (a re-run would reuse the old workflow files). `code/retest-prs.sh` does this
+  for all open PRs that change one file in `data/` and last tested green
+  (`-n` to only list them).
 
 ## Conventions
 

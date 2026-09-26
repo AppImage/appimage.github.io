@@ -655,7 +655,12 @@ set +x
 git remote add deploy https://${GH_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
 # wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     set -x
-    git push --set-upstream deploy
+    # Several runs on master (one per merged PR) may push at the same time
+    for TRY in 1 2 3 4 5 ; do
+      git push --set-upstream deploy HEAD:master && break
+      sleep $((TRY * 5))
+      git pull --rebase deploy master
+    done
     set +x
 # wrong logic? # else
 # wrong logic? #     echo "Not runing 'git push --set-upstream deploy' because this build does NOT have TRAVIS_PULL_REQUEST=false"

@@ -8,7 +8,7 @@ Most AppImages run on recent versions of Arch Linux, CentOS, Debian, Fedora, ope
 {% if hub.X-AppImage-Self-Contained == true %}
 <p>This AppImage is self-contained: it does not need a compatible C library (such as glibc) on the system, because it {% if hub.X-AppImage-Libc == 'none' %}contains no dynamically linked code{% else %}ships its own C library{% endif %}. Hence it should also run on older distributions and on distributions that use a different C library (such as musl on Alpine Linux).</p>
 {% elsif hub.X-AppImage-Libc %}
-<p>This AppImage uses the C library of the system{% if hub.X-AppImage-Glibc-Required %} and needs glibc {{ hub.X-AppImage-Glibc-Required }} or later{% endif %}. It does not run on distributions that use a different C library (such as musl on Alpine Linux){% if hub.X-AppImage-Glibc-Required %} or an older glibc{% endif %}.</p>
+<p>This AppImage uses the C library of the system{% if hub.X-AppImage-Glibc-Required %} and may need glibc {{ hub.X-AppImage-Glibc-Required | remove: "GLIBC_" }} or later{% endif %}. It does not run on distributions that use a different C library (such as musl on Alpine Linux){% if hub.X-AppImage-Glibc-Required %} or an older glibc{% endif %}.</p>
 {% endif %}
 
 <h3>Running {{ page.name | remove: ".md" }} on Linux without installation</h3>
