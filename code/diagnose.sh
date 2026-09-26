@@ -30,7 +30,7 @@ HINTS=(
   "error-not-executable"
   "A file inside the AppImage is not executable. Please check the file permissions before packaging the AppImage."
 
-  "^ERROR: The application exited within 30 seconds"
+  "^ERROR: The application exited within [0-9]+ seconds"
   "error-app-exits"
   "The application quit or crashed right after starting. The error below usually shows why."
 
