@@ -130,6 +130,7 @@ jobs:
           else
             cp failure-screens/*.png pr-result/ 2>/dev/null || true
             bash code/diagnose.sh --excerpt log.txt > pr-result/error.txt
+            bash code/diagnose.sh --labels log.txt > pr-result/labels.txt
           fi
           # Also on success, e.g., a helper failing because of a too new glibc
           bash code/diagnose.sh log.txt > pr-result/hints.md

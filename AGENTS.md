@@ -46,7 +46,10 @@ GitHub Pages (Jekyll) from this repository.
    the PR, marked `<!-- appimagehub-test-result -->`. Screenshots are uploaded as
    GitHub attachments with the `SCREENSHOT_UPLOAD_TOKEN` secret (classic PAT),
    falling back to assets of the `ci-screenshots` release, which it prunes.
-   Renewing the token: see `MAINTAINER.md`.
+   Renewing the token: see `MAINTAINER.md`. It also sets red `error-*` labels on
+   the PR for the known causes of a failed test (defined next to the hints in
+   `code/diagnose.sh`, which holds triples of pattern, label and hint) and
+   removes `error-*` labels that no longer apply.
 
 ## Rules that are easy to get wrong
 
