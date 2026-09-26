@@ -67,13 +67,18 @@ if [ "$1" == "--excerpt" ] ; then
   for ((i = 0; i < ${#HINTS[@]}; i += 2)) ; do
     PATTERN="$PATTERN|${HINTS[$i]}"
   done
-  FIRST=$(grep -nE -m 1 -- "$PATTERN" "$LOG" | cut -d : -f 1)
+  # Drop the source lines that "set -v" echoes (and the EXIT trap), so that
+  # only output remains; then squeeze runs of empty lines
+  CLEAN=$(mktemp)
+  grep -vxF -f <(grep -v '^[[:space:]]*$' "$(dirname "$0")/worker.sh") "$LOG" \
+    | grep -vx 'cleanup' | cat -s > "$CLEAN"
+  FIRST=$(grep -nE -m 1 -- "$PATTERN" "$CLEAN" | cut -d : -f 1)
   if [ -n "$FIRST" ] ; then
-    START=$((FIRST > 3 ? FIRST - 3 : 1))
-    sed -n "${START},$((FIRST + 12))p" "$LOG"
+    sed -n "${FIRST},$((FIRST + 15))p" "$CLEAN"
   else
-    tail -n 15 "$LOG"
+    tail -n 15 "$CLEAN"
   fi
+  rm -f "$CLEAN"
   exit 0
 fi
 

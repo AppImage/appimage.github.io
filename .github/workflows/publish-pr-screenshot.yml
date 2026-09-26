@@ -65,17 +65,26 @@ jobs:
         env:
           PR: ${{ steps.pr.outputs.number }}
           REPO_ID: ${{ github.event.repository.id }}
+          # Classic personal access token with only the public_repo scope, of
+          # an account with write access to this repository. Optional: without
+          # it (or when it expires) the ci-screenshots release is used instead.
+          UPLOAD_TOKEN: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
         run: |
           # Upload the way pasting an image into a comment does, so GitHub
-          # hosts it with the comment. This endpoint is undocumented and only
-          # documented to work with user tokens, so fall back to assets of the
-          # ci-screenshots release if it refuses the workflow token.
+          # hosts it with the comment. This endpoint is undocumented and does
+          # not accept the workflow token (GITHUB_TOKEN).
           upload_attachment() {
-            curl -sS -X POST \
+            [ -n "$UPLOAD_TOKEN" ] || return 1
+            curl -sS -o response.json -w '%{http_code}' -X POST \
               "https://uploads.github.com/user-attachments/assets?name=$(basename "$1")&content_type=image/png&repository_id=${REPO_ID}" \
-              -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/json" \
-              --data-binary "@$1" \
-              | grep -oE 'https://github\.com/user-attachments/assets/[A-Za-z0-9-]+' | head -n 1
+              -H "Authorization: Bearer $UPLOAD_TOKEN" -H "Accept: application/json" \
+              --data-binary "@$1" > status.txt || true
+            URL=$(grep -oE 'https://github\.com/user-attachments/assets/[A-Za-z0-9-]+' response.json | head -n 1)
+            if [ -z "$URL" ] ; then
+              echo "::warning::Attachment upload failed (HTTP $(cat status.txt)): $(head -c 300 response.json)" >&2
+              return 1
+            fi
+            echo "$URL"
           }
           upload_release_asset() {
             gh release view ci-screenshots -R "$REPO" >/dev/null 2>&1 || \
@@ -84,6 +93,7 @@ jobs:
             gh release upload ci-screenshots -R "$REPO" "$1" --clobber >&2
             echo "https://github.com/$REPO/releases/download/ci-screenshots/$(basename "$1")"
           }
+          [ -n "$UPLOAD_TOKEN" ] || echo "SCREENSHOT_UPLOAD_TOKEN is not set, using the ci-screenshots release"
           : > images.txt
           for f in out/*.png ; do
             [ -f "$f" ] || continue
@@ -92,16 +102,33 @@ jobs:
             [ "$(file -b --mime-type "$f")" = image/png ] || continue
             name="pr-${PR}-${HEAD_SHA::8}-${base}.png"
             cp "$f" "$name"
-            url=$(upload_attachment "$name" || true)
-            if [ -n "$url" ] ; then
+            if url=$(upload_attachment "$name") ; then
               echo "Uploaded $name as a GitHub attachment"
             else
-              echo "::warning::Attachment upload refused, using the ci-screenshots release for $name"
               url=$(upload_release_asset "$name")
+              echo "Uploaded $name to the ci-screenshots release"
             fi
             echo "$base $url" >> images.txt
           done
           cat images.txt
+
+      - name: Prune old release screenshots
+        if: steps.pr.outputs.number != ''
+        env:
+          PR: ${{ steps.pr.outputs.number }}
+        run: |
+          # The comment on a PR is updated in place, so screenshots of its
+          # earlier commits are no longer shown; others expire after 30 days.
+          # (Releases hold at most 1000 files.)
+          gh release view ci-screenshots -R "$REPO" >/dev/null 2>&1 || exit 0
+          CUTOFF=$(date -u -d '30 days ago' +%Y-%m-%dT%H:%M:%SZ)
+          RELEASE_ID=$(gh api "repos/$REPO/releases/tags/ci-screenshots" --jq .id)
+          gh api --paginate "repos/$REPO/releases/$RELEASE_ID/assets" \
+            --jq ".[] | select(.created_at < \"$CUTOFF\" or ((.name | startswith(\"pr-$PR-\")) and (.name | startswith(\"pr-$PR-${HEAD_SHA::8}-\") | not))) | \"\(.id) \(.name)\"" \
+            | while read -r id name ; do
+                echo "Deleting $name"
+                gh api -X DELETE "repos/$REPO/releases/assets/$id"
+              done
 
       - name: Comment on PR
         if: steps.pr.outputs.number != ''
