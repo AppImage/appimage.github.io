@@ -31,7 +31,7 @@ cleanup() {
 trap cleanup EXIT
 trap "exit 143" TERM # Sent by "timeout" in the workflow; still clean up
 
-sudo apt-get -y install libfuse2
+dpkg -s libfuse2 >/dev/null 2>&1 || sudo apt-get -y install libfuse2 # Normally installed by the workflow
 
 URL=$(cat $1 | head -n 1)
 echo $URL
@@ -127,7 +127,7 @@ set -x
 
 # If we have a type 2 AppImage, then mount it using appimagetool (not using itself for security reasons)
 if [ x"$TYPE" == x2 ] ; then
-  if [ ! -e appimagetool-x86_64.AppImage ] ; then
+  if [ ! -e runtime-fuse2-x86_64 ] ; then # Normally provided by code/fetch-deps.sh
     wget -c -q https://github.com/AppImage/appimage.github.io/releases/download/deps/runtime-fuse2-x86_64
     chmod +x runtime*
   fi
@@ -250,11 +250,14 @@ echo "TERMINAL: $TERMINAL"
 # The simplest and most straightforward way to get the most recent version
 # of Firejail running on a less than recent OS; don't do this at home kids
 mkdir -p firejail
-FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
-wget -c -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
+# The downloads are normally provided by code/fetch-deps.sh
+if ! ls musl-1*.apk >/dev/null 2>&1 ; then
+  FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
+  wget -c -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
+fi
 # https://github.com/AppImage/appimage.github.io/issues/3229#issuecomment-1694325639
-wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/alpine-firejail-git20230825.tar.gz"
-sudo tar xf alpine-firejail-*.tar.gz && sudo rm alpine-firejail-*.tar.gz
+[ -s alpine-firejail-git20230825.tar.gz ] || wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/alpine-firejail-git20230825.tar.gz"
+sudo tar xf alpine-firejail-git20230825.tar.gz
 sudo tar xf musl-*.apk -C ./firejail/ 2>/dev/null
 sudo tar xf firejail-0*.apk -C ./firejail/ 2>/dev/null
 sudo cp -Rf ./firejail/etc/* /etc/
@@ -289,10 +292,19 @@ else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
 fi
 APID=$!
-sleep 30
+# Give the application at least 10 seconds (some take long to start), then
+# take the screenshot as soon as there is a window, but wait 30 seconds at most
+sleep 10
+for WAIT in $(seq 1 20) ; do
+  kill -0 $APID 2>/dev/null || break
+  WINDOWS=$(timeout 5 xwininfo -tree -root 2>/dev/null || true)
+  grep -qE '0x.*": \(' <<< "$WINDOWS" && break # Not in a pipe: pipefail
+  sleep 1
+done
+[ "$WAIT" -gt 1 ] && sleep 2 # A window just appeared; let it finish drawing
 
 if ! kill -0 $APID 2>/dev/null ; then
-  echo "ERROR: The application exited within 30 seconds instead of showing a window"
+  echo "ERROR: The application exited within $((10 + WAIT)) seconds instead of showing a window"
   exit 1
 fi
 
@@ -480,7 +492,7 @@ set -x
 # Until https://github.com/ximion/appstream/issues/128 is solved
 # This URL was wrong:
 #sudo wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/appstreamcli-x86_64.AppImage"
-sudo wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/appstreamcli-x86_64.AppImage"
+[ -s appstreamcli-x86_64.AppImage ] || sudo wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/appstreamcli-x86_64.AppImage"
 sudo chmod a+x appstreamcli-x86_64.AppImage
 # ./appstreamcli-x86_64.AppImage --appimage-extract ; mv squashfs-root appstreamcli.AppDir # TODO: remove need for this
 # Does not seem to work # alias appstreamcli='appstreamcli.AppDir/root_overlay/lib/x86_64-linux-gnu/ld-2.23.so --library-path appstreamcli.AppDir/root_overlay/usr/lib/x86_64-linux-gnu/ appstreamcli.AppDir/root_overlay/usr/bin/appstreamcli'
