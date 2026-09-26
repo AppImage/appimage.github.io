@@ -358,6 +358,13 @@ if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png
   exit 1
 fi
 
+# Fail on an empty window or an error message on screen
+if ! bash "$(dirname "$0")/check-screenshot.sh" database/$INPUTBASENAME/screenshot.png $([ x"$TERMINAL" == xtrue ] && echo terminal) ; then
+  mkdir -p failure-screens
+  cp database/$INPUTBASENAME/screenshot.png "failure-screens/${INPUTBASENAME}.png"
+  exit 1
+fi
+
 # [ -s database/$INPUTBASENAME/screenshot.png ] || echo "Screenshot is empty" && exit 1
 
 echo "==========================================="

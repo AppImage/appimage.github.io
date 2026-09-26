@@ -46,6 +46,18 @@ HINTS=(
   "doesn't look like a squashfs image|AppRun is missing"
   "The downloaded file is not a valid AppImage."
 
+  "^ERROR: The window appears to be empty"
+  "The window is empty, e.g., only a menu bar on a blank background. The application must show its content when started without arguments and without network access."
+
+  "^ERROR: The screenshot shows an error message"
+  "The screenshot shows an error message (see below)."
+
+  "^WARNING: The window is mostly empty"
+  "The window is mostly empty; please check that the screenshot shows the application's main window."
+
+  "^WARNING: The screenshot may show an error message"
+  "The screenshot may show an error message; please check it."
+
   "^Could not find icon file"
   "No icon was found. The AppImage needs an icon matching the Icon= entry of its desktop file."
 )
