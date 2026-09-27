@@ -364,8 +364,58 @@ for WAIT in $(seq 1 20) ; do
 done
 [ "$WAIT" -gt 1 ] && sleep 2 # A window just appeared; let it finish drawing
 
+NO_WINDOW=""
 if ! kill -0 $APID 2>/dev/null ; then
-  echo "ERROR: The application exited within $((10 + WAIT)) seconds instead of showing a window"
+  NO_WINDOW="ERROR: The application exited within $((10 + WAIT)) seconds instead of showing a window"
+elif ! grep -qE '0x.*": \(' <<< "$(timeout 5 xwininfo -tree -root 2>/dev/null || true)" ; then
+  NO_WINDOW="ERROR: Could not find a single window on screen :-("
+fi
+
+# System tray applications (#4441) show only an icon in the system tray, and
+# some exit when there is none; Xvfb has no tray. So only if the application
+# showed no window and its files mention a tray API (code/tray-hint.sh), run
+# it again with a tray (stalonetray). It counts as a tray application only if
+# its icon then appears in the tray.
+TRAY=false
+if [ -n "$NO_WINDOW" ] && [ x"$TERMINAL" == xfalse ] ; then
+  TRAY_HINT=$(bash "$(dirname "$0")/tray-hint.sh" "$APPDIR" || true)
+  if [ -n "$TRAY_HINT" ] ; then
+    echo "The application showed no window, but may be a system tray application ($TRAY_HINT); running it again with a system tray"
+    kill $APID 2>/dev/null && sleep 2 || true
+    kill -9 $APID 2>/dev/null || true
+    stalonetray --geometry 1x1+0+0 --icon-size 48 -bg white --window-type dock --decorations none --skip-taskbar > stalonetray.log 2>&1 &
+    TRAYWIN=""
+    for _ in 1 2 3 4 5 6 7 8 9 10 ; do
+      sleep 1
+      TRAYWIN=$(timeout 5 xdotool search --classname stalonetray 2>/dev/null | head -n 1 || true)
+      [ -n "$TRAYWIN" ] && break
+    done
+    if [ -n "$TRAYWIN" ] ; then
+      firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
+      APID=$!
+      # Docked icons are windows inside the tray's window (it always has a 1x1 one)
+      TRAYICON=""
+      for WAIT in $(seq 1 30) ; do
+        sleep 1
+        kill -0 $APID 2>/dev/null || break
+        TRAYICON=$(timeout 5 xwininfo -tree -id "$TRAYWIN" 2>/dev/null | grep -E '^ +0x' | grep -v ' 1x1+' | tail -n 1 | awk '{ print $1 }' || true)
+        [ -n "$TRAYICON" ] && break
+      done
+      if [ -n "$TRAYICON" ] && kill -0 $APID 2>/dev/null ; then
+        sleep 2 # Let it draw its icon
+        echo "Tray application: its icon appeared in the system tray"
+        TRAY=true
+        NO_WINDOW=""
+      else
+        echo "No icon appeared in the system tray either"
+      fi
+    else
+      echo "Could not start the system tray"
+    fi
+  fi
+fi
+if [ -n "$NO_WINDOW" ] ; then
+  echo "$NO_WINDOW"
   exit 1
 fi
 
@@ -422,11 +472,37 @@ mkdir -p database/$INPUTBASENAME/
 
 # The active window; if it cannot be read itself (e.g. OpenGL/SDL games, #75),
 # its area of the screen, else the whole screen
-bash "$(dirname "$0")/take-screenshot.sh" database/$INPUTBASENAME/screenshot.png || true
+if [ "$TRAY" == true ] ; then
+  # Click the icon: most tray applications then open their window; if none
+  # became active, right-click it for its menu and take the part of the
+  # screen that shows anything (the tray, and the menu if one opened)
+  read -r X Y W H < <(timeout 5 xwininfo -id "$TRAYICON" | awk '/Absolute upper-left X/ { x = $NF } /Absolute upper-left Y/ { y = $NF }
+    /Width/ { w = $NF } /Height/ { h = $NF } END { print x, y, w, h }' || true)
+  timeout 5 xdotool mousemove $((X + W / 2)) $((Y + H / 2)) click 1 || true
+  sleep 3
+  if timeout 5 xdotool getactivewindow > /dev/null 2>&1 ; then
+    echo "Clicking the tray icon opened a window"
+    bash "$(dirname "$0")/take-screenshot.sh" database/$INPUTBASENAME/screenshot.png || true
+  else
+    timeout 5 xdotool click 3 || true
+    sleep 2
+    timeout 30 import -window root database/$INPUTBASENAME/screenshot.png || true
+    convert database/$INPUTBASENAME/screenshot.png -trim +repage database/$INPUTBASENAME/screenshot.png || true
+    # Only the icon: make it visible
+    if [ "$(identify -format '%w' database/$INPUTBASENAME/screenshot.png 2>/dev/null || echo 0)" -lt 100 ] ; then
+      convert database/$INPUTBASENAME/screenshot.png -filter point -resize 400% database/$INPUTBASENAME/screenshot.png || true
+    fi
+    echo "Screenshot taken (system tray)"
+  fi
+  echo "WARNING: The screenshot shows a system tray application (its tray icon, or what clicking it opened); please check it"
+else
+  bash "$(dirname "$0")/take-screenshot.sh" database/$INPUTBASENAME/screenshot.png || true
+fi
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 APID=""
 killall icewm
+killall stalonetray 2>/dev/null || true
 
 # Check if the screenshot is unusable and error out if it is
 if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png" ] ; then
@@ -438,7 +514,7 @@ if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png
 fi
 
 # Fail on an empty window or an error message on screen
-if ! bash "$(dirname "$0")/check-screenshot.sh" database/$INPUTBASENAME/screenshot.png $([ x"$TERMINAL" == xtrue ] && echo terminal) ; then
+if ! bash "$(dirname "$0")/check-screenshot.sh" database/$INPUTBASENAME/screenshot.png $([ x"$TERMINAL" == xtrue ] && echo terminal) $([ "$TRAY" == true ] && echo tray) ; then
   mkdir -p failure-screens
   cp database/$INPUTBASENAME/screenshot.png "failure-screens/${INPUTBASENAME}.png"
   exit 1
