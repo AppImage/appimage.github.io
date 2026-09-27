@@ -19,6 +19,7 @@ desktop:
     Type: Application
     Version: 1.0
     Name: OpenSCAD
+    Comment: The Programmers Solid 3D CAD Modeller
     Icon: openscad
     Exec: openscad %f
     MimeType: application/x-openscad

@@ -1,0 +1,1 @@
+https://github.com/hn-88/OCVvid2fulldome/releases/download/v1.00/OCVvid2fulldome-1.00-x86_64.AppImage

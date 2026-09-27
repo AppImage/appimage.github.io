@@ -1,0 +1,23 @@
+[Desktop Entry]
+Version=1.0
+Name=RetroArch
+GenericName=Frontend for the libretro API
+Type=Application
+Comment=Frontend for emulators, game engines and media players
+Comment[ru]=Графический интерфейс для эмуляторов, игровых движков и медиаплееров
+Comment[fr]=Interface graphique pour émulateurs, moteurs de jeu et lecteurs multimédia
+Comment[de]=Front-End für Emulatoren, Spiel-Engines und Mediaplayer
+Icon=retroarch
+Exec=retroarch
+Terminal=false
+StartupNotify=false
+Keywords=multi;engine;emulator;xmb;
+Categories=Game;Emulator;
+X-AppImage-Version=5ca666acee
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>tk.ozymandias.j2dx</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0</project_license>
+	<name>Joy2DroidX server</name>
+	<summary>Virtual gamepad server</summary>
+	<description>
+		<p>Turn your Android phone into virtual Xbox 360 controller or DualShock 4 gamepad.</p>
+	</description>
+	<launchable type="desktop-id">tk.ozymandias.j2dx.desktop</launchable>
+	<url type="homepage">https://github.com/OzymandiasTheGreat/Joy2DroidX-server</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/OzymandiasTheGreat/Joy2DroidX-server/master/assets/screenshot.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>tk.ozymandias.j2dx.desktop</id>
+	</provides>
+</component>

@@ -1,13 +1,11 @@
 [Desktop Entry]
-Name=Fast Track
-Comment=Tracks multiple animals easily
-Exec=FastTrack
-Terminal=false
 Type=Application
+Name=FastTrack
+Comment=Fast tracking of multiple objects
+Exec=FastTrack
 Icon=icon
-StartupWMClass=Fast Track
-Categories=Science;
-Name[en_US]=FastTrack.desktop
+Categories=Science;Qt;
+X-AppImage-Version=ab747be
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

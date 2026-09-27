@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+        <id>e2designer</id>
+        <metadata_license>CC0-1.0</metadata_license>
+        <project_license>GPL-3.0</project_license>
+        <name>e2designer</name>
+        <summary>Skin editor for enigma2 written with Qt5</summary>
+        <description>
+                <p>Provides graphical interface for editing skin.xml files used in the enigma2 set-top-box software.</p>
+        </description>
+        <launchable type="desktop-id">e2designer.desktop</launchable>
+        <url type="homepage">https://gitlab.com/technic93/e2designer</url>
+        <screenshots>
+                <screenshot type="default">
+                        <image>https://gitlab.com/technic93/e2designer/raw/master/screenshot.png</image>
+                </screenshot>
+        </screenshots>
+        <provides>
+                <id>e2designer.desktop</id>
+        </provides>
+</component>

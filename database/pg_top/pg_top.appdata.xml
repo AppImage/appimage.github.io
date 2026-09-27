@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019 PostgreSQL Global Development Group-->
+<component type="desktop-application">
+  <id>org.postgresql.pg_top</id>
+  <metadata_license>PostgreSQL</metadata_license>
+  <project_license>PostgreSQL</project_license>
+  <name>pg_top</name>
+  <summary>'top' for PostgreSQL</summary>
+
+  <description>
+    <p>
+	  pg_top is a terminal program used to view top PostgreSQL processes.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">org.postgresql.pg_top</launchable>
+
+  <screenshots>
+   <screenshot type="default">
+      <caption>Screenshot</caption>
+      <image>https://pg_top.gitlab.io/pg_top-2.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://pg_top.gitlab.io/</url>
+  <project_group>PostgreSQL</project_group>
+
+  <provides>
+    <binary>pg_top</binary>
+  </provides>
+
+  <releases>
+    <release version="4.0beta1" date="2020-08-05">
+      <description>
+        <p>4.0 Beta 1 release.</p>
+      </description>
+    </release>
+  </releases>
+</component>
