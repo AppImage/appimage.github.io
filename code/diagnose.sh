@@ -64,7 +64,7 @@ HINTS=(
 
   "^ERROR: Could not mount the AppImage"
   "error-not-squashfs"
-  "The AppImage could not be mounted. AppImageHub currently supports only AppImages with a SquashFS file system; other formats such as DwarFS (used, e.g., by uruntime and quick-sharun) are not supported yet."
+  "The AppImage could not be mounted. AppImageHub supports AppImages with a SquashFS or DwarFS file system; other formats are not supported."
 
   "^ERROR: File name "
   "error-filename"

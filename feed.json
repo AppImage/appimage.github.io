@@ -32,7 +32,8 @@ layout: null
         "license" : {{ post.license | jsonify }},
         "links": {{ post.links | jsonify }},
         "icons": {{ post.icons | jsonify }},
-        "screenshots" : {{ post.screenshots | jsonify }}{% if post.desktop.AppImageHub.X-AppImage-Libc %},
+        "screenshots" : {{ post.screenshots | jsonify }}{% if post.desktop.AppImageHub.X-AppImage-Filesystem %},
+        "filesystem": {{ post.desktop.AppImageHub.X-AppImage-Filesystem | jsonify }}{% endif %}{% if post.desktop.AppImageHub.X-AppImage-Libc %},
         "libc": {{ post.desktop.AppImageHub.X-AppImage-Libc | jsonify }},
         "self_contained": {{ post.desktop.AppImageHub.X-AppImage-Self-Contained | jsonify }}{% if post.desktop.AppImageHub.X-AppImage-Glibc-Required %},
         "glibc_required": {{ post.desktop.AppImageHub.X-AppImage-Glibc-Required | remove: "GLIBC_" | jsonify }}{% endif %}{% endif %}

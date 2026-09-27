@@ -5,6 +5,11 @@
 <p>AppImages are single-file applications that run on most Linux distributions. Download an application, make it executable, and run! No need to install. No system libraries or system preferences are altered.
 Most AppImages run on recent versions of Arch Linux, CentOS, Debian, Fedora, openSUSE, Red Hat, Ubuntu, and other common desktop distributions.</p>
 {% assign hub = post.desktop.AppImageHub %}
+{% if hub.X-AppImage-Filesystem == 'dwarfs' %}
+<p>This AppImage uses a DwarFS file system for its payload.</p>
+{% elsif hub.X-AppImage-Filesystem == 'squashfs' %}
+<p>This AppImage uses a SquashFS file system for its payload.</p>
+{% endif %}
 {% if hub.X-AppImage-Self-Contained == true %}
 <p>This AppImage is self-contained: it does not need a compatible C library (such as glibc) on the system, because it {% if hub.X-AppImage-Libc == 'none' %}contains no dynamically linked code{% else %}ships its own C library{% endif %}. Hence it should also run on older distributions and on distributions that use a different C library (such as musl on Alpine Linux).</p>
 {% elsif hub.X-AppImage-Libc %}
