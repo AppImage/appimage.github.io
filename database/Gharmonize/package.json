@@ -1,0 +1,30 @@
+{
+  "name": "Gharmonize",
+  "desktopName": "gharmonize.desktop",
+  "version": "1.4.0",
+  "description": "Gharmonize is a desktop application that brings together third-party tools from various platforms to help you build and manage your local music library.",
+  "author": "G-grbz <gkhn.gurbuz@hotmail.com>",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "main": "electron/main.mjs",
+  "dependencies": {
+    "archiver": "^8.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.2",
+    "multer": "^2.2.0",
+    "music-metadata": "^11.13.0",
+    "node-fetch": "^3.3.2",
+    "node-id3": "^0.2.9",
+    "spotify-web-api-node": "^5.0.2"
+  },
+  "overrides": {
+    "lodash": "4.18.1"
+  },
+  "allowScripts": {
+    "electron-winstaller@5.4.0": true
+  }
+}
