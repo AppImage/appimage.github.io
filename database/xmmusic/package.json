@@ -1,0 +1,45 @@
+{
+  "name": "xmmusic",
+  "productName": "xmmusic",
+  "version": "1.2.4",
+  "description": "音乐播放器",
+  "main": "dist/electron/main/main.js",
+  "author": {
+    "name": "rosesmall2010",
+    "email": "rosesmall2010@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rosesmall2010/xmmusic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rosesmall2010/xmmusic/issues"
+  },
+  "homepage": "https://github.com/rosesmall2010/xmmusic#readme",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "overrides": {
+    "node-abi": "^4.33.0",
+    "shell-quote": "^1.10.0",
+    "rollup": "^4.62.2",
+    "axios": "^1.18.1",
+    "uuid": "^11.1.1"
+  },
+  "dependencies": {
+    "@tanstack/vue-virtual": "^3.13.12",
+    "@vueuse/core": "^14.3.0",
+    "better-sqlite3": "^12.11.1",
+    "howler": "^2.2.4",
+    "iconv-lite": "^0.7.3",
+    "lucide-vue-next": "^1.0.0",
+    "music-metadata": "^11.14.0",
+    "node-id3": "^0.2.9",
+    "pinia": "^4.0.2",
+    "pinyin-pro": "^3.29.4",
+    "vue-i18n": "^11.4.7",
+    "vue-router": "^5.2.0",
+    "vuedraggable": "^4.1.0"
+  }
+}
