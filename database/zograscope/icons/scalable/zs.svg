@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="400"
+   height="400"
+   viewBox="0 0 105.83333 105.83334"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
+   sodipodi:docname="icon7.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient2285"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#7d5d5d;stop-opacity:1;"
+         offset="0"
+         id="stop2283" />
+    </linearGradient>
+    <meshgradient
+       inkscape:collect="always"
+       id="meshgradient840"
+       gradientUnits="userSpaceOnUse"
+       x="23.562161"
+       y="214.46388"
+       gradientTransform="translate(-0.37417734,-0.68415596)">
+      <meshrow
+         id="meshrow842">
+        <meshpatch
+           id="meshpatch844">
+          <stop
+             path="c 16.272,-16.8332  42.6541,-16.8332  58.926,0"
+             style="stop-color:#ffffff;stop-opacity:1"
+             id="stop846" />
+          <stop
+             path="c 16.272,16.8332  16.272,44.1252  0,60.9584"
+             style="stop-color:#14f1f1;stop-opacity:1"
+             id="stop848" />
+          <stop
+             path="c -16.272,16.8332  -42.6541,16.8332  -58.926,0"
+             style="stop-color:#ffffff;stop-opacity:1"
+             id="stop850" />
+          <stop
+             path="c -16.272,-16.8332  -16.272,-44.1252  -1.06581e-14,-60.9584"
+             style="stop-color:#14f1f1;stop-opacity:1"
+             id="stop852" />
+        </meshpatch>
+      </meshrow>
+    </meshgradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="-208.96102"
+     inkscape:cy="10.714271"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-191.16665)">
+    <ellipse
+       style="opacity:1;fill:url(#meshgradient840);fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       id="path817"
+       cx="52.651009"
+       cy="244.25893"
+       rx="41.667007"
+       ry="43.10408"
+       inkscape:export-filename="/home/xaizek/dev/projects/cxx11/zograscope/app-image/zs.png"
+       inkscape:export-xdpi="30.506409"
+       inkscape:export-ydpi="30.506409" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:125%;font-family:'URW Bookman L';-inkscape-font-specification:'URW Bookman L';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="21.601402"
+       y="259.47021"
+       id="text3422"
+       inkscape:export-filename="/home/xaizek/dev/projects/cxx11/zograscope/app-image/zs.png"
+       inkscape:export-xdpi="30.506409"
+       inkscape:export-ydpi="30.506409"><tspan
+         sodipodi:role="line"
+         id="tspan3420"
+         x="21.601402"
+         y="259.47021"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45.15555573px;font-family:'URW Bookman L';-inkscape-font-specification:'URW Bookman L';fill:#000000;stroke-width:0.26458332px">Z</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.974823px;line-height:125%;font-family:'URW Bookman L';-inkscape-font-specification:'URW Bookman L';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.27437055px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="51.335812"
+       y="269.33435"
+       id="text3422-3"
+       inkscape:export-filename="/home/xaizek/dev/projects/cxx11/zograscope/app-image/zs.png"
+       inkscape:export-xdpi="30.506409"
+       inkscape:export-ydpi="30.506409"
+       transform="scale(1.0369912,0.96432834)"><tspan
+         sodipodi:role="line"
+         id="tspan3420-6"
+         x="51.335812"
+         y="269.33435"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:46.82591629px;font-family:'URW Bookman L';-inkscape-font-specification:'URW Bookman L';fill:#000000;stroke-width:0.27437055px">S</tspan></text>
+  </g>
+</svg>

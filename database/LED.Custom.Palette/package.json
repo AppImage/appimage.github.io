@@ -1,0 +1,30 @@
+{
+  "name": "keyboardio-led-custom-palette",
+  "version": "1.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Jakub Beneš",
+    "email": "jukben@gmail.com"
+  },
+  "homepage": "https://github.com/jukben/keyboardio-led-custom-palette",
+  "dependencies": {
+    "@babel/core": "7.0.0-beta.47",
+    "@babel/plugin-proposal-class-properties": "7.0.0-beta.47",
+    "@babel/preset-env": "7.0.0-beta.47",
+    "@babel/preset-react": "7.0.0-beta.47",
+    "@babel/runtime": "7.0.0-beta.47",
+    "babel-loader": "^7.1.5",
+    "most": "^1.7.3",
+    "ramda": "^0.25.0",
+    "react": "^16.4.2",
+    "react-color": "^2.14.1",
+    "react-dom": "^16.4.2",
+    "serialport": "^6.2.2",
+    "source-map-support": "^0.5.5",
+    "styled-components": "^3.4.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "main": "main.js"
+}

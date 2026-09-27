@@ -5,9 +5,10 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=fontbase
-X-AppImage-Version=2.3.3
-X-AppImage-BuildId=0ceb2960-e744-11a7-0a73-8d58265598a8
+StartupWMClass=FontBase
+X-AppImage-Version=2.7.0
 Categories=Graphics;
+X-AppImage-BuildId=1F28pigAgyHhQjYGZJPFpu1Y17T
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

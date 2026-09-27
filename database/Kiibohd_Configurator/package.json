@@ -1,0 +1,46 @@
+{
+  "name": "kiibohd-configurator",
+  "version": "1.0.0",
+  "description": "Configuration utility for Input Club keyboards",
+  "author": "Jeremy Bondeson <jbondeson@gmail.com> (https://input.club)",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiibohd/configurator"
+  },
+  "electronWebpack": {
+    "title": true,
+    "renderer": {
+      "webpackConfig": "webpack.renderer.additions.js"
+    }
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.8.1",
+    "@material-ui/icons": "^3.0.1",
+    "@material-ui/lab": "^3.0.0-alpha.27",
+    "@mdi/font": "^3.3.92",
+    "bluebird": "^3.5.3",
+    "chroma-js": "^2.0.2",
+    "classnames": "^2.2.6",
+    "command-exists": "^1.2.8",
+    "compare-versions": "^3.4.0",
+    "he": "^1.2.0",
+    "jszip": "^3.1.5",
+    "localforage": "^1.7.3",
+    "lodash": "^4.17.11",
+    "loglevel": "^1.6.1",
+    "mdi-material-ui": "^5.7.0",
+    "mkdirp": "^0.5.1",
+    "prop-types": "15.6.2",
+    "react": "next",
+    "react-color": "^2.17.0",
+    "react-dom": "next",
+    "source-map-support": "^0.5.9",
+    "url-join": "^4.0.0",
+    "usb": "^1.5.0"
+  },
+  "resolutions": {
+    "upath": "^1.0.5"
+  },
+  "main": "main.js"
+}

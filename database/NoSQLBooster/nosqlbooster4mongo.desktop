@@ -5,9 +5,10 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=nosqlbooster4mongo
-X-AppImage-Version=4.3.1
-X-AppImage-BuildId=03695070-f503-11a7-2d44-9316b6674755
+StartupWMClass=NoSQLBooster for MongoDB
+X-AppImage-Version=5.0.3
 Categories=Development;
+X-AppImage-BuildId=1DxZKO8T2TVFKhWE30xJEtqKVFM
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

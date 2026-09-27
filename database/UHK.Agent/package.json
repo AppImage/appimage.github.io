@@ -1,7 +1,7 @@
 {
   "name": "uhk-agent",
   "main": "electron-main.js",
-  "version": "1.2.0",
+  "version": "1.2.12",
   "description": "Agent is the configuration application of the Ultimate Hacking Keyboard.",
   "author": "Ultimate Gadget Laboratories",
   "repository": {
@@ -14,6 +14,6 @@
     "npm": ">=5.1.0 <6.0.0"
   },
   "dependencies": {
-    "node-hid": "0.5.7"
+    "node-hid": "0.7.3"
   }
 }

@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Nimbus Weather
+Comment=The desktop app for Nimbus Weather.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=nimbus-weather-electron
+X-AppImage-Version=0.4.0.21
+X-AppImage-BuildId=402b63f0-8530-11a8-1394-091cd12776af
+Categories=Development;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT

@@ -1,0 +1,23 @@
+{
+  "name": "crgdatatool",
+  "version": "0.2.0",
+  "description": "A tool for working with Games Data files from CRG",
+  "main": "main.js",
+  "author": "Adam Smasher <dan@fnerk.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "electron-debug": "^2.0.0",
+    "electron-is-dev": "^0.3.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.1",
+    "popper.js": "1.14.0",
+    "typeface-raleway": "^0.0.54",
+    "uuid": "^3.2.1",
+    "xlsx": "^0.12.10",
+    "xlsx-populate": "^1.14.0",
+    "xlsx-style": "^0.8.13"
+  }
+}

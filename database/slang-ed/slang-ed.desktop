@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=slang-ed
+Comment=Simple Lang files Editor
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=slang-ed
+StartupWMClass=slang-ed
+X-AppImage-Version=0.2.0
+Categories=Utility;
+X-AppImage-BuildId=1L0ZTpkPNkbEnAwlOZmS8k91x01
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

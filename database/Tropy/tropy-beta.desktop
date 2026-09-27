@@ -1,0 +1,17 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Tropy Beta
+Exec=tropy-beta %u
+Icon=tropy-beta
+MimeType=application/vnd.tropy.tpy;x-scheme-handler/tropy;image/gif;image/heic;image/heic-sequence;image/heif;image/heif-sequence;image/jpeg;image/jp2;image/jpeg2000;image/jpx;image/png;application/pdf;image/svg+xml;image/tiff;image/webp;
+Categories=Graphics;Viewer;Science;
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=NOASSERTION

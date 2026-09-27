@@ -1,1 +1,3 @@
-https://gitlab.com/luspi/photoqt/-/jobs/artifacts/master/raw/PhotoQt-x86_64.AppImage?job=trusty
+https://gitlab.com/luspi/photoqt/-/jobs/673132417/artifacts/raw/PhotoQt-nightly.AppImage
+# The next line apparently fails when the latst build was not successful...
+# https://gitlab.com/luspi/photoqt/-/jobs/artifacts/master/raw/PhotoQt-x86_64.AppImage?job=trusty

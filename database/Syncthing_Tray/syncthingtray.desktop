@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Syncthing Tray
+GenericName=Syncthing Tray
+Comment=Tray application for Syncthing
+Exec=syncthingtray
+Icon=syncthingtray
+Terminal=false
+Type=Application
+Categories=Network;FileTransfer;
+
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://download.opensuse.org/repositories/home:/mkittler:/appimage/AppImage/syncthingtray-latest-x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Sat 09 Feb 2019 07:50:17 PM UTC using RSA key ID 8DF63672 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

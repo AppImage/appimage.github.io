@@ -1,0 +1,22 @@
+{
+  "name": "Eplee",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Sweat,Simple ePub reader",
+  "author": "Patel Meru <merupatel123@gmail.com> (janglee123.github.io)",
+  "main": "./src/js/main.js",
+  "dependencies": {
+    "electron-localshortcut": "^3.1.0",
+    "epub-cover-extractor": "^1.0.3",
+    "epub-metadata-parser": "^1.1.14",
+    "nedb": "^1.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Janglee123/eplee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Janglee123/eplee/issues"
+  },
+  "homepage": "https://github.com/Janglee123/eplee#readme"
+}

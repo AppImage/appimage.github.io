@@ -1,0 +1,14 @@
+{
+  "name": "liskish-wallet",
+  "version": "2.0.0-alpha-ledger-rc.3",
+  "description": "Liskish Wallet",
+  "main": "./build/main.js",
+  "author": {
+    "name": "Matteo Ferrari (hirish), Lisk Foundation",
+    "email": "matteo.ferrari@sapiensproject.io"
+  },
+  "dependencies": {
+    "node-hid": "0.7.2",
+    "usb": "1.3.3"
+  }
+}

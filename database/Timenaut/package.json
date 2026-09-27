@@ -1,0 +1,21 @@
+{
+  "name": "timenaut",
+  "version": "0.0.6",
+  "author": "Karl Martin Teras",
+  "description": "Timenaut is software to monitor your computer usage and give you feedback to help you improve.",
+  "private": true,
+  "main": "background.js",
+  "dependencies": {
+    "active-win": "^5.1.2",
+    "better-sqlite3": "^5.4.2"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

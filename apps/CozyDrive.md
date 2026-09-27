@@ -3,7 +3,9 @@ layout: app
 
 permalink: /CozyDrive/
 description: Save them safely in your open source personal cloud, access them anywhere, anytime with the mobile application and share them with the world or just your friends and colleagues. You can host your own Cozy Cloud, and or use the hosting services. Your freedom to chose is why you can trust us.
-license: AGPL-3.0
+
+icons:
+  - CozyDrive/icons/128x128/cozydrive.png
 
 screenshots:
   - CozyDrive/screenshot.png
@@ -29,8 +31,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: cozydrive
-    X-AppImage-Version: 3.4.2-beta.4.4513
-    X-AppImage-BuildId: e4950840-fd51-11a7-2b77-95a3cff6b30a
+    X-AppImage-Version: 3.11.2-beta.1.6728
+    X-AppImage-BuildId: f4798970-0502-11a9-012d-b50635d6b931
     StartupNotify: true
     Categories: Network
   AppImageHub:
@@ -39,10 +41,9 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: AGPL-3.0
 
 electron:
-  version: 3.4.2-beta.4
+  version: 3.11.2-beta.1
   description: Cozy Drive is a synchronization tool for your files and folders with
     Cozy Cloud.
   homepage: https://github.com/cozy-labs/cozy-desktop
@@ -54,38 +55,39 @@ electron:
   repository:
     type: git
     url: git://github.com/cozy-labs/cozy-desktop.git
+  engines:
+    node: ">=8.2.1"
   dependencies:
-    async: "^2.1.5"
+    "@atom/watcher": "^1.2.1"
+    async: "^2.6.1"
+    auto-bind: "^1.2.0"
     auto-launch: "^5.0.3"
-    babel-polyfill: "^6.26.0"
     bluebird: "^3.5.0"
     btoa: 1.1.2
-    bunyan: "^1.8.10"
-    chokidar: 1.7.0
+    bunyan: "^1.8.12"
+    chokidar: "^2.0.4"
     commander: 2.9.0
-    cozy-client-js: "^0.3.13"
+    cozy-client-js: "^0.13.0"
+    deep-diff: "^1.0.1"
+    dtrace-provider: ">=0.8.6"
     electron-fetch: "^1.1.0"
-    electron-main-notification: "^1.0.1"
     electron-positioner: "^3.0.0"
     electron-proxy-agent: "^1.0.2"
-    electron-updater: 2.17.6
+    electron-updater: "^2.18.2"
     fs-extra: "^3.0.0"
     isomorphic-fetch: 2.2.1
     lnk: "^1.1.0"
-    lodash: "^4.17.4"
-    lodash.debounce: "^4.0.8"
+    lodash: "^4.17.11"
     micromatch: 3.0.2
     mime: "^1.3.4"
-    node-fetch: 1.7.0
-    node-uuid: "^1.4.8"
     opn: 5.0.0
-    pouchdb: "^6.2.0"
-    pouchdb-find: "^6.2.0"
-    progress: "^2.0.0"
+    pouchdb: "^7.0.0"
+    pouchdb-find: "^7.0.0"
+    raven: "^2.6.4"
     read: 1.0.7
-    readdirp: 2.1.0
-    request-json-light: 0.5.25
     trash: "^4.0.1"
-    uuid: "^3.0.1"
+    uuid: "^3.2.1"
     yargs: "^10.0.3"
+  optionalDependencies:
+    "@gyselroth/windows-fsstat": "^0.0.7"
 ---

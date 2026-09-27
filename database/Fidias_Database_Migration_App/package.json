@@ -1,0 +1,24 @@
+{
+  "name": "db-migration-app",
+  "productName": "db-migration-app",
+  "version": "0.1.3",
+  "description": "Desktop app to migrate databases based on SQL files",
+  "homepage": "https://github.com/open-fidias/db-migration-app",
+  "main": "./dist/main.js",
+  "dependencies": {
+    "@open-fidias/marv-better-sqlite3-driver": "^1.0.1",
+    "better-sqlite3": "^5.4.0",
+    "bulma": "^0.4.2",
+    "date-fns": "^1.29.0",
+    "electron-settings": "^3.2.0",
+    "hirestime": "^3.2.1",
+    "marv": "^2.0.1",
+    "marv-pg-driver": "^2.0.0",
+    "pg": "^7.4.3",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.2",
+    "vuex": "^3.1.0"
+  },
+  "author": "Átila Camurça <camurca.home@gmail.com>",
+  "license": "GPL-3.0"
+}

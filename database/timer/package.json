@@ -1,0 +1,8 @@
+{
+  "name": "timer",
+  "version": "1.0.0",
+  "description": "Time recurring events",
+  "main": "main.js",
+  "author": "Thierry Deo <thierry.deo@gmail.com>",
+  "license": "ISC"
+}

@@ -5,8 +5,8 @@ Exec=AppRun
 Terminal=false
 Type=Application
 Icon=stockstalk
-X-AppImage-Version=1.0.1
-X-AppImage-BuildId=670b8310-23c4-11a8-18ac-e99bdf298a5b
+X-AppImage-Version=1.0.7
+X-AppImage-BuildId=83adb3a0-2958-11a8-1134-a502664894c6
 Categories=Finance;
 
 [AppImageHub]

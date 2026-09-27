@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Giada
+Name[es]=Giada
+GenericName=Drum machine and loop sequencer
+GenericName[es]=Caja de ritmos y secuenciador de loops
+Icon=giada_lin
+Type=Application
+Exec=/usr/bin/giada_lin.AppImage
+Terminal=false
+Categories=AudioVideo;Audio;X-Digital_Processing;X-Jack;X-MIDI;Midi;
+Keywords=Giada;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

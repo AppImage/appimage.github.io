@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Elite Dangerous Websites Companion
+Comment=An Electron app that puts every Elite: Dangerous community websites at the same place.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=edwc
+X-AppImage-Version=0.1.9.31
+X-AppImage-BuildId=b891f920-0845-11a8-0701-071273020d89
+Categories=Utility;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT

@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Name=mini_analyser
+Comment=Analyze your multimedia files!
+Exec=mini_analyser %U
+Icon=mini_analyser
+Categories=AudioVideo;
+MimeType=video/mp4;video/quicktime;video/mp4v-es;application/x-extension-mp4;audio/mp4;application/x-matroska;audio/x-matroska;video/x-matroska;video/webm;video/dv;video/mpeg;video/x-mpeg;video/mp2t;video/avi;video/x-avi;video/msvideo;video/x-ms-asf;video/x-ms-wmv;video/x-msvideo;audio/webm;application/ogg;audio/ogg;video/ogg;audio/x-mp3;audio/x-mpeg;audio/mpeg;audio/x-wav;audio/x-m4a;audio/x-ms-asf;audio/x-vorbis+ogg;
+X-AppImage-Version=f48018c
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

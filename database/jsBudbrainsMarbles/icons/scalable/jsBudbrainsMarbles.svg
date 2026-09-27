@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Kein Kommentar VOR dem svg-Element: appstreamcli compose bricht sonst im
+       Flatpak-Bau mit file-read-error ab, ohne Datei oder Zeile zu nennen. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9fd9f2"/>
+      <stop offset="1" stop-color="#dcf2fb"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbe8c2"/>
+      <stop offset="1" stop-color="#e8c98a"/>
+    </linearGradient>
+    <radialGradient id="m1" cx="0.35" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#ffc0c0"/>
+      <stop offset="0.55" stop-color="#ff6b6b"/>
+      <stop offset="1" stop-color="#8c3a3a"/>
+    </radialGradient>
+    <radialGradient id="m2" cx="0.35" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#fff0a8"/>
+      <stop offset="0.55" stop-color="#ffd23d"/>
+      <stop offset="1" stop-color="#8c7321"/>
+    </radialGradient>
+    <radialGradient id="m3" cx="0.35" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#b6f0f6"/>
+      <stop offset="0.55" stop-color="#3fc8d4"/>
+      <stop offset="1" stop-color="#226e75"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="96" fill="url(#sky)"/>
+  <path d="M0 300 h512 v212 H0 z" fill="url(#sand)"/>
+  <path d="M0 300 q64 -18 128 0 t128 0 t128 0 t128 0 v14 H0 z" fill="#ffffff" opacity="0.85"/>
+  <circle cx="392" cy="112" r="52" fill="#ffe89a"/>
+
+  <g>
+    <ellipse cx="256" cy="430" rx="150" ry="22" fill="#8a6a30" opacity="0.22"/>
+    <path d="M132 128 v212 a52 52 0 0 0 104 0 V128 z" fill="#c2e6f0" opacity="0.42"/>
+    <path d="M132 128 v212 a52 52 0 0 0 104 0 V128 z" fill="url(#glass)"/>
+    <path d="M276 128 v212 a52 52 0 0 0 104 0 V128 z" fill="#c2e6f0" opacity="0.42"/>
+    <path d="M276 128 v212 a52 52 0 0 0 104 0 V128 z" fill="url(#glass)"/>
+
+    <circle cx="184" cy="300" r="44" fill="url(#m1)"/>
+    <circle cx="170" cy="284" r="12" fill="#ffffff" opacity="0.8"/>
+    <circle cx="184" cy="212" r="44" fill="url(#m2)"/>
+    <circle cx="170" cy="196" r="12" fill="#ffffff" opacity="0.8"/>
+    <circle cx="328" cy="300" r="44" fill="url(#m3)"/>
+    <circle cx="314" cy="284" r="12" fill="#ffffff" opacity="0.8"/>
+
+    <path d="M132 128 v212 a52 52 0 0 0 104 0 V128" fill="none" stroke="#6e5834"
+          stroke-opacity="0.7" stroke-width="9" stroke-linecap="round"/>
+    <path d="M276 128 v212 a52 52 0 0 0 104 0 V128" fill="none" stroke="#6e5834"
+          stroke-opacity="0.7" stroke-width="9" stroke-linecap="round"/>
+    <ellipse cx="184" cy="128" rx="52" ry="14" fill="#463219" opacity="0.28"/>
+    <ellipse cx="184" cy="128" rx="52" ry="14" fill="none" stroke="#ffffff"
+             stroke-opacity="0.6" stroke-width="6"/>
+    <ellipse cx="328" cy="128" rx="52" ry="14" fill="#463219" opacity="0.28"/>
+    <ellipse cx="328" cy="128" rx="52" ry="14" fill="none" stroke="#ffffff"
+             stroke-opacity="0.6" stroke-width="6"/>
+  </g>
+</svg>

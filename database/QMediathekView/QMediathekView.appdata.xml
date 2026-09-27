@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>QMediathekView</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0+</project_license>
+	<name>QMediathekView</name>
+	<summary>Access online video of German-speaking public TV stations</summary>
+	<description>
+		<p>Qt-based front-end for the database maintained by the MediathekView project.</p>
+	</description>
+	<launchable type="desktop-id">QMediathekView.desktop</launchable>
+	<url type="homepage">https://github.com/adamreichold/QMediathekView</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://user-images.githubusercontent.com/2480569/50730843-f1997c80-114e-11e9-8f25-2c137f453bbb.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>QMediathekView.desktop</id>
+	</provides>
+</component>

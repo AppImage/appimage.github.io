@@ -1,0 +1,23 @@
+{
+  "name": "simple-s3-uploader",
+  "version": "0.1.0",
+  "description": "simple-uploader",
+  "main": "index.js",
+  "repository": "git+https://github.com/rBurgett/simple-uploader.git",
+  "author": "Ryan Burgett <ryan@burgettweb.net>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/rBurgett/simple-uploader/issues"
+  },
+  "homepage": "https://github.com/rBurgett/simple-uploader#readme",
+  "private": true,
+  "dependencies": {
+    "electron-context-menu": "^0.10.0",
+    "electron-is-dev": "^0.3.0",
+    "electron-updater": "^3.0.3",
+    "fs-extra-promise": "^1.0.1",
+    "jquery": "^3.3.1",
+    "s3": "^4.4.0",
+    "sweetalert2": "^7.26.10"
+  }
+}

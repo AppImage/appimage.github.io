@@ -1,11 +1,42 @@
 #!/bin/bash
 
+# set -euxov pipefail
+set -e -v
+set -o pipefail
+
+# Background processes (FUSE mount, firejail, icewm) must never outlive this
+# script: they inherit its stdout, so the "| tee" in the workflow would wait
+# for them forever and the job would hang until the Actions timeout instead
+# of failing. On failure, also capture the screen for the PR comment.
+cleanup() {
+  RC=$?
+  { set +e +v +x ; } 2>/dev/null
+  if [ $RC -ne 0 ] && [ -n "$APID" ] && [ -n "$INPUTBASENAME" ] ; then
+    mkdir -p failure-screens
+    timeout 15 import -window root "failure-screens/${INPUTBASENAME}.png" 2>/dev/null
+    # An empty screen (the application crashed before drawing) tells nothing
+    if [ "$(convert "failure-screens/${INPUTBASENAME}.png" -format '%[fx:standard_deviation]' info: 2>/dev/null)" == 0 ] ; then
+      rm -f "failure-screens/${INPUTBASENAME}.png"
+    fi
+  fi
+  # TERM first so that firejail can take down its sandbox, then make sure
+  PIDS="$APID $PID $(jobs -p)"
+  kill $PIDS 2>/dev/null && sleep 2
+  kill -9 $PIDS 2>/dev/null
+  killall -9 icewm 2>/dev/null
+  if [ -n "$APPDIR" ] ; then fusermount -u -z "$APPDIR" 2>/dev/null ; fi
+  [ x"$TYPE" == x1 ] && sudo umount -l /mnt 2>/dev/null
+  exit $RC
+}
+trap cleanup EXIT
+trap "exit 143" TERM # Sent by "timeout" in the workflow; still clean up
+
+dpkg -s libfuse2 >/dev/null 2>&1 || sudo apt-get -y install libfuse2 # Normally installed by the workflow
+
 URL=$(cat $1 | head -n 1)
 echo $URL
 
-if [ x"$TRAVIS_PULL_REQUEST" == xfalse ] ; then
-  git checkout "$TRAVIS_BRANCH"
-fi
+GHURL="" # Workaround for: "GHURL: unbound variable"
 
 INPUTBASENAME=$(basename $1)
 
@@ -14,6 +45,9 @@ if [ x"${URL:0:4}" != xhttp ] ; then
   echo "No http link detected in $1"
   exit 1
 fi
+
+# The name of the file in data/ (STRICT=true for new files in a PR)
+bash "$(dirname "$0")/check-name.sh" "$INPUTBASENAME" "$(dirname "$1")" || exit 1
 
 # If the URL begins with https://github.com, then treat it specially
 # https://github.com/egoist/devdocs-desktop/
@@ -32,34 +66,41 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
     GHURL="$URL"
   fi
   echo "GitHub API URL detected"
-  URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | grep -i 64 | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
+  API_JSON=$(mktemp)
+  wget -O "$API_JSON" --header "Accept: application/vnd.github+json" --header "Authorization: Bearer $GH_TOKEN" --header "X-GitHub-Api-Version: 2022-11-28" "$GHURL"
+  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME") || true
+  echo "$FOUND" | grep -v '^URL ' || true
+  URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
   if [ x"" == x"$URL" ] ; then
-    URL=$(wget -q "$GHURL" -O - | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | head -n 1 | cut -d '"' -f 4) # No 64-bit one found, trying any; TODO: Handle more than one AppImage per release
-  fi
-  if [ x"" == x"$URL" ] ; then
-    echo "Unable to get download URL for the AppImage. Is it really there on GitHub Releases?"
+    if echo "$FOUND" | grep -q 'several AppImages' ; then
+      echo "Unable to decide which AppImage of the GitHub release to test. Please link to the AppImage directly"
+    else
+      echo "Unable to get download URL for the AppImage. Is it really there on GitHub Releases?"
+    fi
     exit 1
   fi
   echo "URL from GitHub API: $URL"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  LICENSE=$(wget --header "Accept: application/vnd.github.drax-preview+json" https://api.github.com/repos/$GHUSER/$GHREPO -O - | grep spdx_id | cut -d '"' -f 4 | head -n 1)
+  LICENSE=$(wget -q -O - --header "Accept: application/vnd.github+json" --header "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/$GHUSER/$GHREPO" | jq -r '.license.spdx_id // empty' | grep -v NOASSERTION) || true
+  rm -f "$API_JSON"
 fi
 
 # Download the file if it is not already there
 # This may get replaced by mounting the file with fuse httpfs
 # if we find an implementation that supports https
 echo "URL: $URL"
+bash "$(dirname "$0")/check-name.sh" --appimage "$(basename "${URL%%\?*}")"
 
 FILENAME=BeingTested.AppImage
 if [ ! -e "$FILENAME" ] ; then
-  wget -q -c "$URL" -O "$FILENAME"
+  wget -c -nv "$URL" -O "$FILENAME" --no-check-certificate
 fi
 
 # Check the type of the AppImage
 TYPE=""
 ARCHITECTURE=$(file "$FILENAME" | cut -d "," -f 2 | xargs | sed -e 's|-|_|g' )
-echo $ARCHCITECTURE # TODO: Normalize
+echo $ARCHITECTURE # TODO: Normalize
 MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4 2>/dev/null)
 if [ -z "$MAGIC" ] ; then
   echo "Magic number not detected. Dear upstream, please consider to add one to the AppImage as per"
@@ -92,25 +133,36 @@ if [ ! -f appdir-lint.sh ] ; then
 fi
 
 set -x
-  
+
 # If we have a type 2 AppImage, then mount it using appimagetool (not using itself for security reasons)
 if [ x"$TYPE" == x2 ] ; then
-  if [ ! -e appimagetool-x86_64.AppImage ] ; then
-    wget -c -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
-    chmod +x appimagetool*
+  if [ ! -e runtime-fuse2-x86_64 ] ; then # Normally provided by code/fetch-deps.sh
+    wget -c -q https://github.com/AppImage/appimage.github.io/releases/download/deps/runtime-fuse2-x86_64
+    chmod +x runtime*
   fi
   # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
-  TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-mount &
+  # Output to a file: in the background it must not hold on to our stdout
+  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-mount > runtime-mount.log 2>&1 &
   PID=$!
-  sleep 1
-  mount | grep tmp | tail -n 1
-  APPDIR=$(mount | grep tmp | tail -n 1 | cut -d " " -f 3)
+  # Wait for the mount of this AppImage (not just any mount)
+  APPDIR=""
+  for WAIT in 1 2 3 4 5 6 7 8 9 10 ; do
+    sleep 1
+    APPDIR=$(mount | grep -F " type fuse.$FILENAME " | tail -n 1 | cut -d " " -f 3 || true) # No match yet is fine (set -e, pipefail)
+    [ -n "$APPDIR" ] && break
+    kill -0 $PID 2>/dev/null || break
+  done
+  if [ -z "$APPDIR" ] ; then
+    cat runtime-mount.log
+    echo "ERROR: Could not mount the AppImage. AppImageHub currently supports only AppImages with a SquashFS file system"
+    exit 1
+  fi
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"
   # later # kill $PID # fuse
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
-  UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-updateinformation) || echo "Could not get update information from the AppImage"
-  TARGET_APPIMAGE="$FILENAME" ./appimagetool* --appimage-signature > sig || echo "Could not get signature from the AppImage"
+  UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-updateinformation) || echo "Could not get update information from the AppImage"
+  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-signature > sig || echo "Could not get signature from the AppImage"
   SIGNATURE=$(gpg2 --verify sig sig 2>&1 | sed -e 's|gpg: ||g' |tr '\n' ' ' || true )
 fi
 
@@ -120,13 +172,16 @@ if [ x"$TYPE" == x1 ] ; then
   sudo mount "$FILENAME" -o ro,loop /mnt
   APPDIR=/mnt
   echo $APPDIR
-  bash appdir-lint.sh "$APPDIR"  
+  bash appdir-lint.sh "$APPDIR"
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
   UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null) || echo "Could not get update information from the AppImage"
   # later # sudo umount -l /mnt
 fi
 
 echo "==========================================="
+
+# The name of the file in data/ compared with the application's name
+bash "$(dirname "$0")/check-name.sh" "$INPUTBASENAME" "$(dirname "$1")" "$(ls "${APPDIR}"/*.desktop | head -n 1)" || exit 1
 
 ICON_NAME=$(grep -r "^Icon=*" "${APPDIR}"/*.desktop  | cut -d "=" -f 2-99 | head -n 1)
 
@@ -135,19 +190,19 @@ echo "ICON_NAME: ${ICON_NAME}"
 # Then, try scaleable icon from usr/share
 # matching the Icon= entry in the desktop file
 
-ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.svg*" -path "*/scalable/*")
+ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.svg*" -path "*/scalable/*" -print -quit)
 
 # Then, try large icons from usr/share
 # matching the Icon= entry in the desktop file
 
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/128x128/*")
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/128x128/*" -print -quit)
 fi
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/256x256/*")
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/256x256/*" -print -quit)
 fi
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/512x512/*")
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/512x512/*" -print -quit)
 fi
 
 # Then, fall back to the icon in the AppImage top level directory
@@ -155,22 +210,22 @@ fi
 
 
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.svg*")
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.svg*" -print -quit)
 fi
 
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.png")
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.png" -print -quit)
 fi
 
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.xpm")
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.xpm" -print -quit)
 fi
 
 # Finally, fall back to .DirIcon
 # (can be a symlink), regardless of the desktop file
 
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name ".DirIcon")
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name ".DirIcon" -print -quit)
 fi
 
 if [ -z "$ICONFILE" ] ; then
@@ -195,16 +250,43 @@ fi
 
 set +x
 
+# echo "==========================================="
+#
+# find "${APPDIR}"/usr/share/applications/ || true
+# echo ""
+# find "${APPDIR}"/usr/share/icons/ || true
+
 echo "==========================================="
 
 # If everything succeeded until here, then download Firejail aith Xpra and run the application in it
 # and take screenshots if we don't have them already from AppStream
 
+# Does the AppImage need a compatible C library on the host?
+LIBC_INFO=$(bash "$(dirname "$0")/check-libc.sh" "$FILENAME" "$APPDIR" || true)
+echo "$LIBC_INFO"
+
 TERMINAL=false
 grep -r Terminal=true "${APPDIR}"/*.desktop && TERMINAL=true
 echo "TERMINAL: $TERMINAL"
 
-wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/firejail.tar.gz" ; sudo tar xf firejail.tar.gz -C /
+# "Install" Firejail
+# The simplest and most straightforward way to get the most recent version
+# of Firejail running on a less than recent OS; don't do this at home kids
+mkdir -p firejail
+# The downloads are normally provided by code/fetch-deps.sh
+if ! ls musl-1*.apk >/dev/null 2>&1 ; then
+  FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
+  wget -c -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
+fi
+# https://github.com/AppImage/appimage.github.io/issues/3229#issuecomment-1694325639
+[ -s alpine-firejail-git20230825.tar.gz ] || wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/alpine-firejail-git20230825.tar.gz"
+sudo tar xf alpine-firejail-git20230825.tar.gz
+sudo tar xf musl-*.apk -C ./firejail/ 2>/dev/null
+sudo tar xf firejail-0*.apk -C ./firejail/ 2>/dev/null
+sudo cp -Rf ./firejail/etc/* /etc/
+sudo cp -Rf ./firejail/lib/* /lib/
+sudo cp -Rf ./firejail/usr/* /usr/
+echo "Setting firejail permissions"
 sudo chown root:root /usr/bin/firejail ; sudo chmod u+s /usr/bin/firejail # suid
 
 echo ""
@@ -212,34 +294,64 @@ echo "==========================================="
 echo "============= TRYING TO RUN ==============="
 echo "==========================================="
 
+# Suppress desktop integation
+mkdir -p "$HOME/.local/share/appimagekit"
+touch "$HOME/.local/share/appimagekit/no_desktopintegration"
+
+file "$APPDIR"/AppRun
+ls -lh "$APPDIR"/AppRun
+
+# Needed for, e.g., SheepShaver
+sudo sysctl vm.mmap_min_addr=0
+
+export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
+export QT_DEBUG_PLUGINS=1 # https://github.com/AppImage/appimage.github.io/pull/1809#issuecomment-548399825
+sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/appimage.github.io/pull/1564#issuecomment-491591127 https://github.com/electron/electron/issues/17972
+
 # reset does not work here
 if [ x"$TERMINAL" == xfalse ] ; then
-  firejail --noprofile --net=none --appimage ./"$FILENAME" &
+  firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
 else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
 fi
 APID=$!
+# Give the application at least 10 seconds (some take long to start), then
+# take the screenshot as soon as there is a window, but wait 30 seconds at most
 sleep 10
+for WAIT in $(seq 1 20) ; do
+  kill -0 $APID 2>/dev/null || break
+  WINDOWS=$(timeout 5 xwininfo -tree -root 2>/dev/null || true)
+  grep -qE '0x.*": \(' <<< "$WINDOWS" && break # Not in a pipe: pipefail
+  sleep 1
+done
+[ "$WAIT" -gt 1 ] && sleep 2 # A window just appeared; let it finish drawing
+
+if ! kill -0 $APID 2>/dev/null ; then
+  echo "ERROR: The application exited within $((10 + WAIT)) seconds instead of showing a window"
+  exit 1
+fi
 
 # Make a screenshot
 
-# Get a list of open windows
-xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
+# Get a list of open windows (grep finding nothing must not abort the script here)
+WINDOWS=$(timeout 20 xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' || true)
+echo "$WINDOWS"
 
 # Count the windows on screen
-NUMBER_OF_WINDOWS=$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | wc -l)
+NUMBER_OF_WINDOWS=$(echo -n "$WINDOWS" | grep -c . || true)
 echo "NUMBER_OF_WINDOWS: $NUMBER_OF_WINDOWS"
 if [ $(($NUMBER_OF_WINDOWS)) -lt 1 ] ; then
   echo "ERROR: Could not find a single window on screen :-("
+  exit 1
 fi
 
 # Works with Xvfb but cannot select window by ID
-# sudo apt-get -y install scrot 
+# sudo apt-get -y install scrot
 # scrot -b 'screenshot_$wx$h.jpg' # -u gives "X Error of failed request:  BadDrawable (invalid Pixmap or Window parameter)"
 # mv screenshot_* database/$INPUTBASENAME/
 
 # Getting the active window seems to require a window manager
-icewm &
+icewm > /dev/null 2>&1 &
 sleep 2
 
 # We could simulate X11 keyboard/mouse input with xdotool here if needed;
@@ -253,19 +365,46 @@ if [ x"$INPUTBASENAME" == xSubsurface ] ; then
   xdotool sleep 0.1 key Escape # Click away the update check window
   sleep 1
   # Get a list of open windows
-  xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
+  timeout 20 xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' || true
+fi
+
+# Clean residue from previous runs, avoiding issue #3438
+if [ -n "$INPUTBASENAME" ] && [ -d "database/$INPUTBASENAME" ]; then
+    rm -r "database/$INPUTBASENAME"
 fi
 
 # Works with Xvfb
 # sudo apt-get -y install x11-apps netpbm xdotool # We do this in .travis.yml
-# -display :99 needed here? 
+# -display :99 needed here?
 # xwd -id $(xdotool getactivewindow) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
 mkdir -p database/$INPUTBASENAME/
-# xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtojpeg  > database/$INPUTBASENAME/screenshot.jpg && echo "Snap!"
-xwd -id $(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) -silent | xwdtopnm | pnmtopng  > database/$INPUTBASENAME/screenshot.png && echo "Snap!"
+
+# Taking screenshot like this fails, https://github.com/AppImage/appimage.github.io/issues/2494
+# convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
+
+timeout 30 import -window "$(timeout 10 xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png  && echo "Screenshot taken"
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
+APID=""
 killall icewm
+
+# Check if the screenshot is unusable and error out if it is
+if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png" ] ; then
+  echo "Could not take a screenshot png file"
+  ls -lh database/$INPUTBASENAME/screenshot.png
+  file database/$INPUTBASENAME/screenshot.png
+  file -b --mime-type database/$INPUTBASENAME/screenshot.png
+  exit 1
+fi
+
+# Fail on an empty window or an error message on screen
+if ! bash "$(dirname "$0")/check-screenshot.sh" database/$INPUTBASENAME/screenshot.png $([ x"$TERMINAL" == xtrue ] && echo terminal) ; then
+  mkdir -p failure-screens
+  cp database/$INPUTBASENAME/screenshot.png "failure-screens/${INPUTBASENAME}.png"
+  exit 1
+fi
+
+# [ -s database/$INPUTBASENAME/screenshot.png ] || echo "Screenshot is empty" && exit 1
 
 echo "==========================================="
 
@@ -311,6 +450,10 @@ fi
 
 echo "X-AppImage-Architecture=$ARCHITECTURE" >> "$DATAFILE"
 
+if [ -n "$LIBC_INFO" ] ; then
+  echo "$LIBC_INFO" >> "$DATAFILE"
+fi
+
 if [ x"" != x"$LICENSE" ] ; then
   echo "X-AppImage-Payload-License=$LICENSE" >> "$DATAFILE"
 fi
@@ -324,6 +467,10 @@ fi
 
 if [ -e $APPDIR/usr/share/metainfo/*.appdata.xml ] ; then
   cp $APPDIR/usr/share/metainfo/*.appdata.xml database/$INPUTBASENAME/
+fi
+
+if [ -e $APPDIR/usr/share/metainfo/*.metainfo.xml ] ; then
+  cp $APPDIR/usr/share/metainfo/*.metainfo.xml database/$INPUTBASENAME/
 fi
 
 # Get pacakge.json from resources/app.asar for electron-builder applications
@@ -368,7 +515,7 @@ set -x
 # Until https://github.com/ximion/appstream/issues/128 is solved
 # This URL was wrong:
 #sudo wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/appstreamcli-x86_64.AppImage"
-sudo wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/appstreamcli-x86_64.AppImage"
+[ -s appstreamcli-x86_64.AppImage ] || sudo wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/appstreamcli-x86_64.AppImage"
 sudo chmod a+x appstreamcli-x86_64.AppImage
 # ./appstreamcli-x86_64.AppImage --appimage-extract ; mv squashfs-root appstreamcli.AppDir # TODO: remove need for this
 # Does not seem to work # alias appstreamcli='appstreamcli.AppDir/root_overlay/lib/x86_64-linux-gnu/ld-2.23.so --library-path appstreamcli.AppDir/root_overlay/usr/lib/x86_64-linux-gnu/ appstreamcli.AppDir/root_overlay/usr/bin/appstreamcli'
@@ -382,10 +529,10 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
   # Description
-  DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- )
+  DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- ) || true
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     ./appstreamcli-x86_64.AppImage convert database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
-    SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .)
+    SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .) || true
     if [ x"$SUMMARY" != x"" ] ; then
       echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
     fi
@@ -395,14 +542,21 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # License
   AS_LICENSE=""
   DT_LICENSE=""
-  if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    AS_LICENSE=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/project_license" -v .)
-  fi
-  DT_LICENSE=$(grep -r "X-AppImage-Payload-License=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2)
+  AS_LICENSE=$(
+    xmlstarlet sel -t \
+      -m "/component/project_license" -v . \
+      $(ls database/$INPUTBASENAME/*.{appdata,metainfo}.xml 2>/dev/null)
+  ) || true
+  DT_LICENSE=$(
+    grep -h "X-AppImage-Payload-License=" database/$INPUTBASENAME/*.desktop 2>/dev/null \
+    | cut -d '=' -f 2
+  ) || true
   if [ x"$AS_LICENSE" != x"" ] ; then
     echo "license: $AS_LICENSE" >> apps/$INPUTBASENAME.md
   elif [ x"$DT_LICENSE" != x"" ] ; then
     echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
+  else
+    echo "No license found!"
   fi
   # Icon
   ICONBASENAME=$(basename "$ICONFILE")
@@ -410,7 +564,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "" >> apps/$INPUTBASENAME.md
     echo "icons:" >> apps/$INPUTBASENAME.md
     echo "  - $INPUTBASENAME/icons/$ICONSIZE/$ICONBASENAME" >> apps/$INPUTBASENAME.md
-  fi  
+  fi
   # Screenshot
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     SCREENSHOT=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/screenshots/screenshot[1]/image" -v . || true)
@@ -426,12 +580,18 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # Authors
   echo "" >> apps/$INPUTBASENAME.md
   echo "authors:" >> apps/$INPUTBASENAME.md
-  GH_USER=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
-  GH_REPO=$(grep "^https://github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
-  OBS_USER=$(grep "^http.*://download.opensuse.org/repositories/home:/" data/$INPUTBASENAME | cut -d "/" -f 6 | sed -e 's|:||g')
+  GH_USER=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
+  GH_REPO=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+  OBS_USER=$(
+    grep -h "^http.*://download.opensuse.org/repositories/home:/" "data/$INPUTBASENAME" 2>/dev/null \
+    | cut -d "/" -f 6 \
+    | sed 's|:||g'
+  ) || true
+  # BB_USER=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 4 )
+  # BB_REPO=$(grep "^https://bitbucket.org.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
   if [  x"$GH_USER" == x"" ] ; then
-    GH_USER=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 )
-    GH_REPO=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 6 )
+    GH_USER=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 ) || true
+    GH_REPO=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 6 ) || true
   fi
   if [  x"$GH_USER" != x"" ] ; then
     echo "  - name: $GH_USER" >> apps/$INPUTBASENAME.md
@@ -439,6 +599,9 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   elif [  x"$OBS_USER" != x"" ] ; then
     echo "  - name: $OBS_USER" >> apps/$INPUTBASENAME.md
     echo "    url: https://build.opensuse.org/user/show/$OBS_USER" >> apps/$INPUTBASENAME.md
+  # elif [  x"$BB_USER" != x"" ] ; then
+    # echo "  - name: $BB_USER" >> apps/$INPUTBASENAME.md
+    # echo "    url: https://bitbucket.org/$BB_USER" >> apps/$INPUTBASENAME.md
   fi
   # Links
   echo "" >> apps/$INPUTBASENAME.md
@@ -449,14 +612,21 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: https://github.com/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
   fi
-  OBS_LINK=$(grep "^http.*://download.opensuse.org.*latest.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g')
+  OBS_LINK=$(grep "^http.*://download.opensuse.org.*latest.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g') || true
   if [  x"$OBS_LINK" != x"" ] ; then
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
   fi
+  # Does the repo offer AppImages in it's download section?
+  # BB_LINK=$(grep "^https://bitbucket.org/$BB_USER/$BB_REPO/downloads/.*AppImage$" data/$INPUTBASENAME) 
+  # if [  x"$BB_LINK" != x"" ] ; then
+    # # if so, we'd like to see a download button pointing to the download page
+    # echo "  - type: Download" >> apps/$INPUTBASENAME.md
+    # echo "    url: https://bitbucket.org/$BB_USER/$BB_REPO/downloads" >> apps/$INPUTBASENAME.md
+  # fi
   # Add content of desktop file
   if [ -f "database/$INPUTBASENAME/$(dir -C -w 1 database/$INPUTBASENAME | grep -m1 '.desktop')" ]; then
-    dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml
+    sudo dv database/$INPUTBASENAME/*.desktop --yaml -o database/$INPUTBASENAME/desktop.yaml # Do we need sudo to prevent '`load': cannot load such file'?
     echo "" >> apps/$INPUTBASENAME.md
     echo "desktop:" >> apps/$INPUTBASENAME.md
     cat database/$INPUTBASENAME/desktop.yaml | sed  's/^/  /' | tail -n +2 >> apps/$INPUTBASENAME.md # tail -n +2 = skip first line ("---")
@@ -471,7 +641,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   fi
   # Add content of Electron package.json file
   if [ -e database/$INPUTBASENAME/package.json ] ; then
-    dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml
+    sudo dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml # Do we need sudo to prevent '`load': cannot load such file'?
     echo "" >> apps/$INPUTBASENAME.md
     echo "electron:" >> apps/$INPUTBASENAME.md
     cat database/$INPUTBASENAME/package.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
@@ -494,12 +664,12 @@ echo "==========================================="
 
 # If this a PR, then just check whether the files have generated
 # See https://github.com/AppImage/appimage.github.io/issues/476 for more information
-if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then 
+if [ "$IS_PULLREQUEST" = true ]; then
   cat "apps/${INPUTBASENAME}.md" || exit 1
   cat "database/${INPUTBASENAME}/"*.desktop || exit 1 # Asterisk must not be inside quotes, https://travis-ci.org/AppImage/appimage.github.io/builds/360847207#L782
   ls -lh "database/${INPUTBASENAME}/screenshot.png" || exit 1
-  curl --upload-file "database/${INPUTBASENAME}/screenshot.png" https://transfer.sh/screenshot.png 
-  echo "Since we are on a TRAVIS_PULL_REQUEST and the required files are there, we are assuming the test is OK"
+  echo ""
+  echo "We will assume the test is OK (a pull request event was triggered and the required files exist)."
   exit 0
 fi
 
@@ -507,20 +677,25 @@ fi
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
 
 git pull # To prevent from: error: failed to push some refs to 'https://[secure]@github.com/AppImage/AppImageHub.git'
-git config --global user.email "travis@travis-ci.org"
-git config --global user.name "Travis CI"
+git config --global user.email "actions@users.noreply.github.com"
+git config --global user.name "GitHub Actions"
 set -x
 ( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
 ( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
 git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
-Add automatically parsed data ($TRAVIS_BUILD_NUMBER)
+Add automatically parsed data ($GITHUB_JOB)
 [ci skip]
 EOF
 set +x
-git remote add deploy https://${GITHUB_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+git remote add deploy https://${GH_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
 # wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     set -x
-    git push --set-upstream deploy
+    # Several runs on master (one per merged PR) may push at the same time
+    for TRY in 1 2 3 4 5 ; do
+      git push --set-upstream deploy HEAD:master && break
+      sleep $((TRY * 5))
+      git pull --rebase deploy master
+    done
     set +x
 # wrong logic? # else
 # wrong logic? #     echo "Not runing 'git push --set-upstream deploy' because this build does NOT have TRAVIS_PULL_REQUEST=false"

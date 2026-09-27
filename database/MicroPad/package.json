@@ -1,0 +1,26 @@
+{
+  "name": "micropad",
+  "version": "3.5.9",
+  "description": "µPad is an open digital note taking app.",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MicroPad/Electron.git"
+  },
+  "author": {
+    "name": "Nick Webster",
+    "email": "nick@nick.geek.nz"
+  },
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/MicroPad/Electron/issues"
+  },
+  "homepage": "https://getmicropad.com",
+  "dependencies": {
+    "dictionary-en-au": "^2.0.0",
+    "dictionary-en-us": "^2.0.0",
+    "electron-context-menu": "^0.9.1",
+    "localforage": "^1.7.1",
+    "typo-js": "^1.0.3"
+  }
+}

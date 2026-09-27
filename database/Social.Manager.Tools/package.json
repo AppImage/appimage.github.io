@@ -1,0 +1,31 @@
+{
+  "name": "social-manager-tools",
+  "description": "Tools for social media managers",
+  "version": "0.5.2",
+  "main": "main.js",
+  "author": "Patryk Rzucidlo [@ptkdev] <support@ptkdev.io> (https://ptkdev.it)",
+  "license": "AGPL-3.0",
+  "homepage": "https://socialmanagertools.ptkdev.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/social-manager-tools/social-manager-tools.git"
+  },
+  "pre-commit": [
+    "precommit-lint-check",
+    "lint"
+  ],
+  "dependencies": {
+    "electron-context-menu": "^0.10.0",
+    "eslint": "^4.19.1",
+    "instagrambotlib": "^0.9.2",
+    "jquery": "^3.3.1",
+    "json-token-replace": "^1.1.0",
+    "path": "^0.12.7",
+    "sqlite3": "^4.0.2",
+    "puppeteer": "1.4.0",
+    "twitterbotlib": "^0.2.3"
+  },
+  "engines": {
+    "node": ">=7.6.0"
+  }
+}

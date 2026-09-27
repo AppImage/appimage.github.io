@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Stereo Photo View
+Name[ru]=Просмотр стерео фотографий
+GenericName=Stereo Photo View
+GenericName[ru]=Просмотр стерео фотографий
+Comment=A cross-platform 3d stereoscopic photo/video viewer and editor
+Comment[ru]=Кроссплатформенная программа для просмотра и редактирования стереоскопических фотографий и видео
+Exec=stereophotoview %U
+Terminal=false
+Icon=stereophotoview
+Type=Application
+Categories=Qt;Graphics;Viewer;Photography;
+MimeType=image/mpo;image/jpeg;image/jps;video/mpeg;video/x-mpeg;video/x-mpeg2;video/mp4;video/msvideo;video/x-msvideo;video/quicktime;video/vnd.rn-realvideo;video/x-ms-afs;video/x-ms-asf;video/x-ms-wmv;video/x-ms-wmx;video/x-ms-wvxvideo;video/x-avi;video/x-fli;video/x-flv;video/x-theora;video/x-matroska;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=[don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

@@ -2,7 +2,10 @@
 layout: app
 
 permalink: /hotspot/
-description: The Linux perf GUI for performance analysis
+license: NOASSERTION
+
+icons:
+  - hotspot/icons/128x128/hotspot.png
 
 screenshots:
   - hotspot/screenshot.png
@@ -31,4 +34,5 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: NOASSERTION
 ---

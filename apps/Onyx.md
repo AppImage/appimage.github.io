@@ -3,7 +3,9 @@ layout: app
 
 permalink: /Onyx/
 description: Decentralized messaging application based on PSS
-license: MIT
+
+icons:
+  - Onyx/icons/128x128/onyx.png
 
 screenshots:
   - Onyx/screenshot.png
@@ -26,8 +28,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: onyx
-    X-AppImage-Version: 0.4.0
-    X-AppImage-BuildId: f7ee39b0-e1be-11a7-2e3c-37689a6bebca
+    X-AppImage-Version: 0.5.2
+    X-AppImage-BuildId: 898489f0-86d9-11a8-29bd-79e1fd995762
     Categories: Network
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -35,18 +37,18 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: MIT
 
 electron:
   main: index.js
   author: Mainframe
   dependencies:
     electron-store: "^1.3.0"
-    electron-util: "^0.2.1"
-    execa: "^0.8.0"
+    electron-util: "^0.8.0"
+    execa: "^0.10.0"
     fs-extra: "^5.0.0"
     get-port: "^3.2.0"
     mkdirp: "^0.5.1"
-    onyx-server: "^0.4.5"
+    node-fetch: "^2.1.2"
+    onyx-server: "^0.5.0"
     static-server: "^3.0.0"
 ---

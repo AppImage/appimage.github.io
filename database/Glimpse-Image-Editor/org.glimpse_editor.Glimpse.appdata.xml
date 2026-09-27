@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>org.glimpse_editor.Glimpse</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+ AND LGPL-3.0+</project_license>
+  <name>Glimpse</name>
+  <name xml:lang="ar">جمب</name>
+  <name xml:lang="ast">Glimpse</name>
+  <name xml:lang="br">Kuitaat Glimpse</name>
+  <name xml:lang="bs">Zatvori Glimpse</name>
+  <name xml:lang="ca">Surt de Glimpse</name>
+  <name xml:lang="da">Afslut Glimpse</name>
+  <name xml:lang="en_GB">Glimpse</name>
+  <name xml:lang="ka">Glimpse</name>
+  <summary>Create images and edit photographs</summary>
+  <summary xml:lang="ar">أنشئ صورا وحرّر لقطات</summary>
+  <summary xml:lang="ast">Cree imáxenes y edite semeyes</summary>
+  <summary xml:lang="be">Стварэньне відарысаў і праўленьне фатаздымкаў</summary>
+  <summary xml:lang="bg">Създаване на изображения и редакция на снимки</summary>
+  <summary xml:lang="br">Krouiñ hag embann skeudennoù pe luc'hskeudennoù</summary>
+  <summary xml:lang="bs">Napravite slike i obradite fotografije</summary>
+  <summary xml:lang="ca">Creeu imatges i editeu fotografies</summary>
+  <summary xml:lang="ca@valencia">Creeu imatges i editeu fotografies</summary>
+  <summary xml:lang="cs">Vytvářejte obrázky a upravujte fotografie</summary>
+  <summary xml:lang="da">Opret billeder og redigér fotografier</summary>
+  <summary xml:lang="de">Bilder erstellen und Fotografien bearbeiten</summary>
+  <summary xml:lang="dz">གཟུགས་བརྙན་ཚུ་ གསར་བསྐྲུན་འབད་ནི་དང་ དཔར་ཚུ་ཞུན་དག་འབད།</summary>
+  <summary xml:lang="el">Δημιουργία εικόνων και επεξεργασία φωτογραφιών</summary>
+  <summary xml:lang="en_CA">Create images and edit photographs</summary>
+  <summary xml:lang="en_GB">Create images and edit photographs</summary>
+  <summary xml:lang="eo">Krei bildojn aŭ redakti fotaĵojn</summary>
+  <summary xml:lang="es">Cree imágenes y edite fotografías</summary>
+  <summary xml:lang="et">Joonistamine ja fotode töötlemine</summary>
+  <summary xml:lang="eu">Sortu irudiak eta editatu argazkiak</summary>
+  <summary xml:lang="fi">Luo kuvia ja muokkaa valokuvia</summary>
+  <summary xml:lang="fr">Créer des images et modifier des photographies</summary>
+  <summary xml:lang="gd">Cruthaich dealbhan is deasaich dealbhan camara</summary>
+  <summary xml:lang="gl">Crear imaxes e editar fotografías</summary>
+  <summary xml:lang="gu">ચિત્રો બનાવો અને ફોટાઓમાં ફેરફાર કરો</summary>
+  <summary xml:lang="hr">Stvarajte slike i uređujte fotografije</summary>
+  <summary xml:lang="hu">Képek létrehozása és fotók szerkesztése</summary>
+  <summary xml:lang="id">Buat gambar dan sunting foto</summary>
+  <summary xml:lang="is">Búa til myndir og breyta ljósmyndum</summary>
+  <summary xml:lang="it">Crea immagini e modifica fotografie</summary>
+  <summary xml:lang="ja">画像の作成と写真の編集を行います</summary>
+  <summary xml:lang="kk">Суреттерді жасау және фотоларды түзету</summary>
+  <summary xml:lang="km">បង្កើត​រូបភាព និង កែសម្រួល​រូបថត</summary>
+  <summary xml:lang="kn">ಚಿತ್ರಗಳನ್ನು ರಚಿಸಿ ಹಾಗು ಫೋಟೋಗ್ರಾಫ್‌ಗಳನ್ನು ಸಂಪಾದಿಸಿ</summary>
+  <summary xml:lang="ko">이미지를 만들고 사진을 편집합니다</summary>
+  <summary xml:lang="lt">Kurti paveikslėlius ir redaguoti fotografijas</summary>
+  <summary xml:lang="lv">Veido attēlus vai rediģē fotogrāfijas</summary>
+  <summary xml:lang="mk">Направи слики и уреди фотографии</summary>
+  <summary xml:lang="mr">प्रतिमा तयार करा आणि छायाचित्रे संपादित करा</summary>
+  <summary xml:lang="my">ရုပ်ပုံများကို ဖန်တီးပြီး ဓါတ်ပုံများကို တည်းဖြတ်ပါ</summary>
+  <summary xml:lang="nb">Lag bilder og rediger fotografier</summary>
+  <summary xml:lang="ne">छवि सिर्जना गर्नुहोस् र फोटोग्राफ सम्पादन गर्नुहोस्</summary>
+  <summary xml:lang="nl">Afbeeldingen aanmaken en foto's bewerken</summary>
+  <summary xml:lang="nn">Lag teikningar eller rediger foto</summary>
+  <summary xml:lang="oc">Crear d'imatges e modificar de fotografias</summary>
+  <summary xml:lang="pa">ਚਿੱਤਰ ਬਣਾਓ ਅਤੇ ਤਸਵੀਰਾਂ ਸੋਧੋ</summary>
+  <summary xml:lang="pl">Tworzenie oraz obróbka obrazów i fotografii</summary>
+  <summary xml:lang="pt">Criar imagens e editar fotografias</summary>
+  <summary xml:lang="pt_BR">Crie e edite imagens ou fotografias</summary>
+  <summary xml:lang="ro">Creează imagini și editează fotografii</summary>
+  <summary xml:lang="ru">Создание изображений и редактирование фотографий</summary>
+  <summary xml:lang="sk">Vytvárajte a upravujte obrázky alebo fotografie</summary>
+  <summary xml:lang="sl">Ustvari slike in uredi fotografije</summary>
+  <summary xml:lang="sr">Направите нове сличице и средите ваше фотографије</summary>
+  <summary xml:lang="sr@latin">Napravite slike i uredite fotografije</summary>
+  <summary xml:lang="sv">Skapa bilder och redigera fotografier</summary>
+  <summary xml:lang="ta">பிம்பங்களை உருவாக்கவும் மற்றும் படங்களை திருத்தவும்</summary>
+  <summary xml:lang="te">బొమ్మలను సృష్టించు మరియు చిత్రాలను సవరించు</summary>
+  <summary xml:lang="tr">Görüntü oluşturur ve fotoğraf düzenler</summary>
+  <summary xml:lang="uk">Створення зображень та редагування фотографій</summary>
+  <summary xml:lang="vi">Tạo và biên soạn ảnh hay ảnh chụp</summary>
+  <summary xml:lang="zh_CN">创建图像或编辑照片</summary>
+  <summary xml:lang="zh_HK">建立圖像與編輯照片</summary>
+  <summary xml:lang="zh_TW">建立圖像與編輯照片</summary>
+  <description>
+    <p>Glimpse Image Editor is a usability-focused free software application capable of expert level image manipulation.</p>
+    <p>Simple tasks like cropping, transforming and retouching photos can be achieved in just a few clicks. Professional features like batch image processing, color balance correction and automated format conversions are also included.</p>
+    <p>Glimpse is based on the GNU Image Manipulation Program 2.10, so it is extensible and fully compatible with the same plug-ins, themes and save files. It is available for Windows and Linux.</p>
+  </description>
+  <url type="homepage">https://glimpse-editor.github.io</url>
+  
+  <url type="donation">https://opencollective.com/glimpse</url>
+  <url type="bugtracker">https://github.com/glimpse-editor/Glimpse/issues/new</url>
+  <update_contact>glimpse.editor_AT_icloud.com</update_contact>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://glimpse-editor.github.io/flatpak/0.2/dark-theme1.png</image>
+      <caption>Crop and transform images in just a few clicks</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://glimpse-editor.github.io/flatpak/0.2/light-theme2.png</image>
+      <caption>Apply professional filters and create animations</caption>
+    </screenshot>
+  </screenshots>
+
+  <keywords>
+    <keyword>GIMP</keyword>
+    <keyword>Photoshop</keyword>
+  </keywords>
+  <translation type="gettext">gimp20</translation>
+
+  <launchable type="desktop-id">org.glimpse_editor.Glimpse.desktop</launchable>
+
+  <releases>
+    <release version="0.2.0" date="2020-08-25">
+      <url type="details">https://glimpse-editor.github.io/posts/glimpse-0-2-0-release-notes/</url>
+      <description>
+        <p>Glimpse 0.2.0 rebases on a newer version of the GNU Image Manipulation Program and makes minor tweaks and improvements.</p>
+        <ul><li> Every feature in the GNU Image Manipulation Program 2.10.18 </li> <li> Customized icon packs with the Glimpse logo </li> <li> Backported security fixes </li> <li> Updated documentation and in-app links </li> <li> Fully reproducible builds </li></ul>
+      </description>
+    </release>
+    <release version="0.1.2" date="2020-03-02">
+      <url type="details">https://glimpse-editor.github.io/posts/glimpse-0-1-2-release-notes/</url>
+      <description>
+        <p>Glimpse 0.1.2 builds on our very first "minimum viable product" release with minor tweaks and bug fixes.</p>
+        <ul><li> Improved non-English translations and rebranding </li> <li> Upstream contributors are better credited in the UI </li> <li> "Color" icon pack and the "Gray" UI theme are back </li> <li> Rebranded "Gimpressionist" plug-in and text color chooser </li> <li> Unnecessary "fun" brushes have been removed </li></ul>
+      </description>
+    </release>
+    <release version="0.1.0" date="2019-11-20">
+      <url type="details">https://glimpse-editor.github.io/posts/glimpse-0-1-0-release-notes/</url>
+      <description>
+        <p>After four months of intensive effort, Glimpse 0.1.0 is our very first binary release. We would like to thank everyone that has supported the project so far and look forward to building on this work in future releases.</p>
+        <ul><li> Every feature in the GNU Image Manipulation Program 2.10.12 </li> <li> Professional branding throughout the application </li> <li> De-cluttered user interface without animal mascots and "easter eggs" </li> <li> Full plug-in, theme and save file compatibility with the GNU Image Manipulation Program </li> <li> Improved build/packaging tools and developer documentation </li></ul>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

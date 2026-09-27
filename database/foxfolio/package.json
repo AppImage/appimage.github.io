@@ -1,12 +1,12 @@
 {
   "name": "foxfolio",
   "productName": "Foxfolio",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "Cryptocurrency portfolio management application which automatically retrieves balances and trades using exchange APIs",
   "main": "./main.prod.js",
   "author": {
     "name": "Andreas Greimel",
-    "email": "andreas@greimel.de",
+    "email": "info@foxfolio.app",
     "url": "https://github.com/greimela"
   },
   "license": "MIT",

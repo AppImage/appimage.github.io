@@ -1,0 +1,18 @@
+{
+  "name": "@archipel/electron",
+  "productName": "archipel",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Archipel Desktop App",
+  "author": {
+    "name": "Archipel:Somoco Team",
+    "email": "archipel@riseup.net"
+  },
+  "homepage": "https://arso.xyz/archipel",
+  "main": "index.js",
+  "dependencies": {
+    "@archipel/backend": "^0.1.0",
+    "mkdirp": "^0.5.1",
+    "find-free-port": "^2.0.0"
+  }
+}

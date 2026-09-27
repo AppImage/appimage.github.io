@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Hardware Probe
+Comment=Probe for hardware and upload result to the Linux hardware database
+Exec=hw-probe -appimage
+Icon=hw-probe
+Terminal=true
+Type=Application
+StartupNotify=true
+Categories=System;
+Keywords=HW Probe;Hardware;Probe;
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://download.opensuse.org/repositories/home:/linuxbuild/AppImage/hw-probe-latest-x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Sun 02 Sep 2018 09:11:47 PM UTC using RSA key ID AB90EF52 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

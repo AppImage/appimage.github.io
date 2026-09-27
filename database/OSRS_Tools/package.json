@@ -1,0 +1,21 @@
+{
+  "name": "osrs-tools",
+  "version": "1.0.0",
+  "main": "build/electron.js",
+  "private": true,
+  "homepage": "./",
+  "dependencies": {
+    "electron-is-dev": "^1.0.1",
+    "osrs-wrapper": "^1.0.5",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-scripts": "^2.1.5",
+    "styled-components": "^4.1.3"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

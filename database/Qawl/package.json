@@ -1,0 +1,22 @@
+{
+  "name": "qawl",
+  "version": "3.0.0",
+  "description": "Read the Holy Qur'ān whenever, wherever, however you like.",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mr-islam/qawl.git"
+  },
+  "author": "mrislam",
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "dragscroll": "^0.0.8",
+    "electron-window-state": "^5.0.1",
+    "mousetrap": "^1.6.2",
+    "tippy.js": "^2.6.0"
+  },
+  "bugs": {
+    "url": "https://github.com/mr-islam/qawl/issues"
+  },
+  "homepage": "https://github.com/mr-islam/qawl#readme"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "leparc-lc",
+  "author": {
+    "name": "Andres Senn",
+    "email": "hola@andressenn.com"
+  },
+  "license": "MIT",
+  "homepage": "http://andressenn.com",
+  "version": "0.0.3-alpha",
+  "description": "p5 livecoding",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "ip": "^1.1.5",
+    "js-beautify": "^1.9.0",
+    "socket.io": "^2.2.0"
+  }
+}

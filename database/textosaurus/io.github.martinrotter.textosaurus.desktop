@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Exec=textosaurus %F
+Name=Textosaurus
+GenericName=Text editor
+Comment=Simple cross-platform text editor based on Qt and QScintilla
+Icon=textosaurus
+Terminal=false
+Categories=Office;Development;
+MimeType=text/plain;text/xml;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

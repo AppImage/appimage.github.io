@@ -1,6 +1,6 @@
 {
   "name": "alduin",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "An Atom and RSS feed aggregator",
   "main": "main.js",
   "repository": {
@@ -32,5 +32,8 @@
     "tld-extract": "1.0.1",
     "util.promisify": "1.0.0",
     "xmldoc": "1.1.0"
+  },
+  "optionalDependencies": {
+    "7zip-bin-linux": "1.1.0"
   }
 }

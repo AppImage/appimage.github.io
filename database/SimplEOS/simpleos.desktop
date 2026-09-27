@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=simpleos
+Comment=EOS Blockchain Interface & Wallet
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=simpleos
+X-AppImage-Version=0.5.1
+X-AppImage-BuildId=0dbd5c00-71f5-11a8-30f6-a93e10c8c223
+Categories=Network;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

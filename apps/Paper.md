@@ -1,0 +1,42 @@
+---
+layout: app
+
+permalink: /Paper/
+description: A CLI Tool to set a random wallpaper from Unsplash.com
+license: MIT
+
+icons:
+  - Paper/icons/scalable/paper.svg
+
+screenshots:
+  - Paper/screenshot.png
+
+authors:
+  - name: anupam-git
+    url: https://github.com/anupam-git
+
+links:
+  - type: GitHub
+    url: anupam-git/paper
+  - type: Download
+    url: https://github.com/anupam-git/paper/releases
+
+desktop:
+  Desktop Entry:
+    Type: Application
+    Name: paper
+    Exec: paper
+    Icon: paper
+    Comment: A CLI Tool to set a random wallpaper from Unsplash.com
+    Terminal: true
+    Categories: Utility
+    X-AppImage-Version: 022d4bb
+  AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|anupam-git|paper|continuous|paper*-x86_64.AppImage.zsync
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
+---

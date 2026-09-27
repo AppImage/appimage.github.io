@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+    <id>io.gitlab.levior</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <update_contact>galacteek@protonmail.com</update_contact>
+    <name>levior</name>
+    <developer_name>cipres</developer_name>
+
+    <summary>HTTP to Gemini proxy</summary>
+    <categories>
+        <category>Network</category>
+    </categories>
+    <keywords>
+        <keyword>Gemini</keyword>
+        <keyword>Proxy</keyword>
+    </keywords>
+
+    <description>
+        <p>
+            levior is a web-to-Gemini proxy written in Python3 with asyncio
+            and aiogemini. It converts web pages on-the-fly to the gemtext format,
+            allowing you to browse regular web pages with
+            any Gemini browser without having to suffer the heavyness associated
+            with certain technologies of the modern web.
+        </p>
+    </description>
+
+    <launchable type="desktop-id">io.gitlab.levior.desktop</launchable>
+
+    <screenshots>
+        <screenshot type="default">
+            <caption>Using Lagrange with levior</caption>
+            <image>https://gitlab.com/cipres/levior/-/raw/master/media/screenshots/levior-lagrange.png</image>
+        </screenshot>
+    </screenshots>
+
+    <url type="homepage">https://gitlab.com/cipres/levior</url>
+    <url type="donation">https://ko-fi.com/cipres</url>
+    <url type="donation">https://liberapay.com/galacteek</url>
+
+    <provides>
+        <binary>levior</binary>
+    </provides>
+
+    <releases>
+        <release version="1.2.0" date="2023-09-02">
+        </release>
+        <release version="1.0.0" date="2022-06-18">
+        </release>
+    </releases>
+</component>

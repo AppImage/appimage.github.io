@@ -1,0 +1,25 @@
+{
+  "name": "meta-grabber",
+  "version": "0.1.3",
+  "description": "A tool to grab meta data for tv shows and rename files on your hard disk.",
+  "main": "main.js",
+  "homepage": "./",
+  "repository": "https://github.com/andreaswilli/meta-grabber",
+  "author": "Andreas Willi",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "7",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "classnames": "^2.2.6",
+    "react": "^16.4.1",
+    "react-animate-height": "^2.0.4",
+    "react-autocomplete": "^1.8.1",
+    "react-dom": "^16.4.1",
+    "webpack": "^4.17.2"
+  }
+}

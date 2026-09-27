@@ -2,7 +2,9 @@
 layout: app
 
 permalink: /Postman/
-license: MIT
+
+icons:
+  - Postman/icons/128x128/postman.png
 
 screenshots:
   - Postman/screenshot.png
@@ -33,5 +35,4 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: MIT
 ---

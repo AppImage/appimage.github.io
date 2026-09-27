@@ -1,0 +1,103 @@
+---
+layout: app
+
+permalink: /TeamSQL/
+description: TeamSQL Desktop
+
+icons:
+  - TeamSQL/icons/555x512/teamsql.png
+
+screenshots:
+  - TeamSQL/screenshot.png
+
+authors:
+
+links:
+
+desktop:
+  Desktop Entry:
+    Name: TeamSQL
+    Comment: TeamSQL Desktop
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: teamsql
+    X-AppImage-Version: 4.0.392.392
+    X-AppImage-BuildId: f56026a0-d915-11a8-298d-4d4533017bce
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+
+electron:
+  main: main.js
+  repository:
+    type: git
+    url: git+https://github.com/electron/electron-quick-start.git
+  author:
+    name: TeamSQL, Inc.
+    email: admin@teamsql.io
+    url: http://www.teamsql.io/
+  license: CC0-1.0
+  bugs:
+    url: https://github.com/atom/electron-quick-start/issues
+  homepage: https://github.com/electron/electron-quick-start#readme
+  dependencies:
+    "@teamsqlio/electron-shortcut-normalizer": 1.0.3
+    "@teamsqlio/monaco-editor": 0.13.4
+    "@teamsqlio/ts-data-layer": 1.7.7
+    "@teamsqlio/ts-extension-sdk": 0.4.6
+    "@teamsqlio/ts-language-higlighters": 1.0.4
+    "@teamsqlio/ts-snippets": 1.4.5
+    "@types/async": 2.0.49
+    "@types/md5": "^2.1.32"
+    "@types/uuid": "^3.4.3"
+    aes256: "^1.0.2"
+    async: 2.6.0
+    bcrypt-nodejs: 0.0.3
+    bluebird: "^3.3.5"
+    connectivity: "^0.1.2"
+    dateformat: "^1.0.12"
+    electron-squirrel-startup: "^1.0.0"
+    electron-updater: "^2.21.4"
+    email-validator: "^1.0.7"
+    fs-extra: "^4.0.1"
+    get-port: "^3.2.0"
+    highlight.js: "^9.6.0"
+    intro.js: "^2.5.0"
+    jquery: "^2.2.3"
+    jquery-jsonview: "^1.2.3"
+    jquery-ui: "^1.10.5"
+    js-base64: "^2.1.9"
+    js-md5: "^0.4.1"
+    js2xmlparser: "^1.0.0"
+    keyboardjs: "^2.2.1"
+    keymaster: "^1.6.2"
+    lodash: 4.11.1
+    md5: "^2.2.1"
+    mkdirp: "^0.5.1"
+    moment: "^2.14.1"
+    mssql: https://github.com/TeamSQL/node-mssql/archive/3.3.5.tar.gz
+    mysql: https://github.com/TeamSQL/mysql/archive/2.13.3.tar.gz
+    node-rsa: "^0.4.2"
+    once: "^1.3.3"
+    open: 0.0.5
+    password-generator: "^2.0.6"
+    pg: https://github.com/TeamSQL/node-postgres/archive/6.1.3.tar.gz
+    request: "^2.81.0"
+    showdown: "^1.4.3"
+    socket.io-client: "^2.0.2"
+    sprintf-js: "^1.0.3"
+    terminal-tree: 0.0.3
+    toastr: "^2.1.2"
+    ts-host-parser: "^1.0.0"
+    ts-md5: "^1.2.0"
+    tsparser: 1.0.2
+    tunnel-ssh: https://github.com/TeamSQL/tunnel-ssh/archive/14.1.4.tar.gz
+    unzip: "^0.1.11"
+    unzip-stream: "^0.3.0"
+    uuid: "^3.2.1"
+---

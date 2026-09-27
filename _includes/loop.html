@@ -16,14 +16,6 @@
   </div>
 
   <p>
-    <div class="date">
-      <span class="octicon octicon-calendar"></span>
-      {% if post.created != post.updated %}
-        Published {{ post.created }}, last updated {{ post.updated }}
-      {% else %}
-        Published {{ post.created }}
-      {% endif %}
-    </div>
     <a style="font-weight:bold" href="{{ site.baseurl }}{{ post.url }}">
       Read more...
     </a>

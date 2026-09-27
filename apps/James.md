@@ -1,0 +1,89 @@
+---
+layout: app
+
+permalink: /James/
+description: HTTP/HTTPS proxy built in Electron and React
+
+icons:
+  - James/icons/512x512/james.png
+
+screenshots:
+  - James/screenshot.png
+
+authors:
+  - name: james-proxy
+    url: https://github.com/james-proxy
+
+links:
+  - type: GitHub
+    url: james-proxy/james
+  - type: Download
+    url: https://github.com/james-proxy/james/releases
+
+desktop:
+  Desktop Entry:
+    Name: James
+    Comment: HTTP/HTTPS proxy built in Electron and React
+    Exec: AppRun
+    Terminal: false
+    Type: Application
+    Icon: james
+    StartupWMClass: James
+    X-AppImage-Version: 2.1.1.1555
+    Categories: WebDevelopment
+    X-AppImage-BuildId: 1ES91zZgzPOWFHjPbYjQNSK9wdo
+  AppImageHub:
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+
+electron:
+  author: Julian Hollmann <hollmann@uxebu.com>
+  license: MIT
+  repository:
+    type: git
+    url: https://github.com/james-proxy/james.git
+  main: main.js
+  dependencies:
+    "@james-proxy/james-browser-launcher": "^1.3.2"
+    "@sentry/browser": "^4.0.2"
+    "@sentry/node": "^4.0.1"
+    electron-updater: 3.1.2
+    font-awesome: "^4.5.0"
+    history: "^4.7.2"
+    hoxy: "^3.3.1"
+    lodash.throttle: "^4.1.0"
+    materialize-css: "^0.100.2"
+    nedb: "^1.7.1"
+    prop-types: "^15.6.2"
+    react: "^16.2.0"
+    react-dom: "^16.2.0"
+    react-loadable: "^5.3.1"
+    react-redux: "^5.0.6"
+    react-router-dom: "^4.2.2"
+    react-router-redux: "^5.0.0-alpha.9"
+    redux: "^3.5.2"
+    redux-logger: "^3.0.6"
+    redux-thunk: "^2.0.1"
+    reselect: "^4.0.0"
+    source-map-support: "^0.5.3"
+    uniqid: "^4.0.0"
+  electronWebpack:
+    title: James Proxy
+    renderer:
+      dll:
+      - react
+      - react-dom
+      - react-router-dom
+      - react-loadable
+      - redux
+      - redux-thunk
+      - redux-logger
+      - react-router-redux
+      - history
+      - font-awesome
+      - materialize-css
+      - source-map-support
+---

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component PUBLIC "-//freedesktop//DTD AppStream Metadata 1.0//EN"
+ "https://www.freedesktop.org/standards/appstream/1.0/appstream.dtd">
+<component type="desktop-application">
+  <id>kubeterm</id>
+  <name>Kubeterm</name>
+  <summary>Manage Kubernetes clusters with a modern GUI</summary>
+  <description>
+    <p>
+      Kubeterm is a powerful and intuitive GUI application for managing Kubernetes clusters.
+    </p>
+    <p>
+      It provides real-time resource views, logs, shell access, and Helm release management in a single unified interface. Connect to clusters easily and perform common operations like scaling, draining, and debugging without needing extra cluster-side components.
+    </p>
+  </description>
+  <content_rating type="oars-1.1"/>
+
+  <metadata_license>CC0-1.0</metadata_license>
+
+  <url type="homepage">https://www.kubeterm.com/</url>
+  <url type="vcs-browser">https://github.com/kbterm/kubeterm</url>
+
+  <developer id="com.kubeterm">
+    <name>Kubeterm Team</name>
+  </developer>
+
+  <icon type="stock">kubeterm</icon>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/kbterm/kubeterm/blob/main/images/screenshot.png?raw=true</image>
+      <caption>Kubeterm cluster view</caption>
+    </screenshot>
+  </screenshots>
+
+  <launchable type="desktop-id">kubeterm.desktop</launchable>
+
+  <update_contact>contact@kubeterm.com</update_contact>
+</component>

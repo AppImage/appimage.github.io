@@ -1,0 +1,11 @@
+{
+  "name": "delir",
+  "version": "0.6.1",
+  "author": "Ragg <ragg.devpr@gmail.com>",
+  "main": "delir/browser.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "font-manager": "0.3.0"
+  }
+}

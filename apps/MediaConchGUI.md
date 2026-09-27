@@ -4,6 +4,9 @@ layout: app
 permalink: /MediaConchGUI/
 description: Implementation checker, policy checker, reporter, and fixer
 
+icons:
+  - MediaConchGUI/icons/256x256/mediaconch.png
+
 screenshots:
   - MediaConchGUI/screenshot.png
 

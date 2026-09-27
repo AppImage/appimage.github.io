@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>gaiasky</id>
+  <url type="homepage">https://zah.uni-heidelberg.de/gaia/outreach/gaiasky/</url>
+  <url type="help">https://gaia.ari.uni-heidelberg.de/gaiasky/docs</url>
+  <url type="bugtracker">https://gitlab.com/langurmonkey/gaiasky/-/issues</url>
+  
+  <name>Gaia Sky</name>
+  <summary>Open Source 3D universe simulator for desktop and VR with support for more than a billion objects</summary>
+  
+  <metadata_license>CC-BY-SA-4.0</metadata_license>
+  <project_license>MPL-2.0</project_license>
+  <developer_name>ARI/Zentrum für Astronomie Heidelberg</developer_name>
+  <launchable type="desktop-id">gaiasky</launchable>
+  
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>gamepad</control>
+  </recommends>
+  
+  <description>
+    <p>
+      Gaia Sky is a real-time, 3D, astronomy visualisation software for desktop and VR that runs on Linux, Windows and macOS. It is developed in the framework of ESA&apos;s Gaia mission to chart about 1 billion stars of our Galaxy in the Gaia group of the Astronomisches Rechen-Institut (ZAH, Universität Heidelberg). Explore the Solar System, the Milky Way or even the most distant galaxies of the Universe.
+    </p>
+  </description>
+  
+   <releases>
+      <release version="3.1.6" date="2021-09-22" urgency="high">
+        <url>https://gitlab.com/langurmonkey/gaiasky/blob/master/CHANGELOG.md</url>
+      </release>
+  </releases>
+
+  <content_rating type="oars-1.1" />
+
+  <launchable type="desktop-id">de.uni_heidelberg.zah.GaiaSky.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>View from the Gaia spacecraft</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00000.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Earthrise</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00002.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Earth surface</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00003.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Black hole</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00014.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>SDSS galaxies</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00005.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>The inner Solar System</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00006.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Spacecraft in planetarium mode</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00011.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Europa and Saturn</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00007.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Phobos and Mars</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00008.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Saturn and its moons</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00009.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Isosurface maps</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00010.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>The outer Solar System</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00013.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>The Milky Way</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00004.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Panorama mode</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20201125/00012.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Scripting</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20200706/00014.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Scripting</caption>
+      <image>https://gaia.ari.uni-heidelberg.de/gaiasky/files/screenshots/20210225/00000.jpg</image>
+    </screenshot>
+  </screenshots>
+</component>

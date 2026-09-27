@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=QOwnNotes
+Comment=Plain text notepad and todo list manager with markdown support that works together with ownCloud/Nextcloud
+Exec=QOwnNotes
+Keywords=markdown;owncloud;nextcloud;notes;
+Icon=QOwnNotes
+Type=Application
+Terminal=false
+StartupNotify=true
+Categories=Utility;TextEditor;
+StartupWMClass=QOwnNotes
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/AppImage/QOwnNotes-latest-x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Thu 06 Jun 2019 05:06:11 PM UTC using RSA key ID 4539B8B0 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

@@ -1,0 +1,19 @@
+{
+  "name": "doxm_remote_control",
+  "productName": "DoXM Remote Control",
+  "version": "2018.11.12",
+  "description": "The remote control client for DoXM.",
+  "main": "Main.js",
+  "author": {
+    "name": "Translucency Software",
+    "email": "translucency_software@outlook.com",
+    "url": "https://lucency.co"
+  },
+  "homepage": "https://doxm.app",
+  "dependencies": {
+    "@aspnet/signalr": "^1.0.4",
+    "robotjs": "^0.5.1",
+    "tslib": "^1.9.3",
+    "typescript": "^3.1.3"
+  }
+}

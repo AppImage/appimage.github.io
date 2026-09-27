@@ -1,0 +1,30 @@
+{
+  "name": "liveme-pro-tools",
+  "version": "1.300.20190110",
+  "description": "Tools for Live.me video network",
+  "homepage": "https://github.com/thecoder75/liveme-pro-tools",
+  "main": "src/electron/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thecoder1975/liveme-pro-tools"
+  },
+  "author": "TheCoder75",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "async": "^2.6.0",
+    "axios": "^0.17.1",
+    "electron-is-dev": "^0.3.0",
+    "electron-settings": "^3.1.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "format-duration": "^1.0.0",
+    "hlsdownloader": "^2.1.0",
+    "node-fetch": "^2.3.0",
+    "pretty-date": "^0.2.0",
+    "ps-node": "^0.1.6",
+    "remarkable": "^1.7.1",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5",
+    "shelljs": "^0.8.2",
+    "tar-fs": "^1.16.2"
+  }
+}

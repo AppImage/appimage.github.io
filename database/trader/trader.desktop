@@ -1,0 +1,87 @@
+#########################################################################
+#                                                                       #
+#             Star Traders: A Game of Interstellar Trading              #
+#                Copyright (C) 1990-2021, John Zaitseff                 #
+#                                                                       #
+#########################################################################
+
+# Author: John Zaitseff <J.Zaitseff@zap.org.au>
+# $Id: 84bd58568359cf5a7738f8c6758aeb89d2b219a0 $
+
+# This file provides a translated desktop entry for Star Traders and
+# conforms to the Desktop Entry Specification v1.5.
+#
+# This file is distributed under the same licence as Star Traders itself:
+# the GNU General Public License, version 3 or later.
+
+[Desktop Entry]
+# TRANSLATORS: The name of the game.  You may choose to translate it into
+# your own language (recommended) or keep it the same as the English
+# version.  Feel free to look through other translations to see how
+# others have done this.
+Name[en@quot]=Star Traders
+Name[en_AU]=Star Traders
+Name[en_CA]=Star Traders
+Name[en_GB]=Star Traders
+Name[en_US]=Star Traders
+Name[da]=Star Traders
+Name[de]=Star Traders
+Name[eo]=Star Traders
+Name[fi]=Tähtikauppiaat
+Name[fr]=Star Traders
+Name[hr]=Star Traders
+Name[hu]=Star Traders
+Name[nb]=Star Traders
+Name[pt_BR]=Comerciantes Estelares
+Name[ru]=Звёздные торговцы
+Name[sr]=Звездани трговци
+Name[sv]=Star Traders
+Name=Star Traders
+Comment[en@quot]=Play Star Traders, a simple game of interstellar trading
+Comment[en_AU]=Play Star Traders, a simple game of interstellar trading
+Comment[en_CA]=Play Star Traders, a simple game of interstellar trading
+Comment[en_GB]=Play Star Traders, a simple game of interstellar trading
+Comment[en_US]=Play Star Traders, a simple game of interstellar trading
+Comment[da]=Spil Star Traders, et simpelt spil med rumhandel
+Comment[de]=Spielen Sie Star Trader, ein einfaches Spiel um interstellaren Handel
+Comment[eo]=Ludi Star Traders, simpla ludo pri interstelara komerco
+Comment[fi]=Pelaa Tähtikauppiaita, yksinkertaista tähtienvälisen kaupan peliä
+Comment[fr]=Jouer à Star Traders, un simple jeu de commerce interstellaire
+Comment[hr]=Igrajte Star Traders, jednostavnu igru međuzvjezdanog trgovanja
+Comment[hu]=A Star Traders, egy egyszerű csillagközi kereskedelmi játék indítása
+Comment[nb]=Spill Star Traders, et enkelt spill med interstellar handel
+Comment[pt_BR]=Jogue Comerciantes Estelares, um jogo simples de comércio interestelar
+Comment[ru]=Играть в «Звёздные торговцы», простую игру о межзвёздной торговле
+Comment[sr]=Играјте Звездане трговце, једноставну игру међузвезданог трговања
+Comment[sv]=Spela Star Traders, ett enkelt spel om interstellär handel
+Comment=Play Star Traders, a simple game of interstellar trading
+# TRANSLATORS: A list of keywords describing Star Traders.  By all means
+# add your own keywords!
+Keywords[en@quot]=game;interstellar;trading;strategy;
+Keywords[en_AU]=game;interstellar;trading;strategy;
+Keywords[en_CA]=game;interstellar;trading;strategy;
+Keywords[en_GB]=game;interstellar;trading;strategy;
+Keywords[en_US]=game;interstellar;trading;strategy;
+Keywords[da]=spil;interstellar;handel;strategi;
+Keywords[de]=spiel;universum;galaxie;handel;strategie;
+Keywords[eo]=ludo;kosmo;negoco;strategio;
+Keywords[fr]=jeu;interstellaire;commerce;stratégie;
+Keywords[hu]=játék;csillagközi;kereskedés;stratégia;
+Keywords[nb]=spill;interstellar;handel;strategi;
+Keywords[pt_BR]=jogo;interestelar;comércio;estratégia;
+Keywords[ru]=игра;межзвёздная;торговля;стратегия;
+Keywords[sr]=игра;међузвездано;трговање;стратегиј;
+Keywords[sv]=spel;interstellär;handel;strategi;
+Keywords=game;interstellar;trading;strategy;
+Icon=trader
+Exec=trader
+TryExec=trader
+Type=Application
+Terminal=true
+Categories=Game;StrategyGame;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://ftp.zap.org.au/pub/trader/unix/binary/appimage/trader-latest-x86_64.AppImage.zsync
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Lens
+Exec=AppRun --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=lens
+StartupWMClass=Lens
+X-AppImage-Version=2022.10.131529-latest
+Comment=Lens - The way the world runs Kubernetes
+MimeType=x-scheme-handler/lens;
+Categories=Network;

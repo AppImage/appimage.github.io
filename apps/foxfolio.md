@@ -5,6 +5,9 @@ permalink: /foxfolio/
 description: Cryptocurrency portfolio management application which automatically retrieves balances and trades using exchange APIs
 license: MIT
 
+icons:
+  - foxfolio/icons/128x128/foxfolio.png
+
 screenshots:
   - foxfolio/screenshot.png
 
@@ -27,8 +30,8 @@ desktop:
     Terminal: false
     Type: Application
     Icon: foxfolio
-    X-AppImage-Version: 0.0.5.88
-    X-AppImage-BuildId: c0164f50-1b3e-11a8-1db8-71825fabd63e
+    X-AppImage-Version: 0.0.8.136
+    X-AppImage-BuildId: 7dc4c3c0-053a-11a9-1ab9-65fdc96d611b
     Categories: Finance
   AppImageHub:
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
@@ -44,7 +47,7 @@ electron:
   main: "./main.prod.js"
   author:
     name: Andreas Greimel
-    email: andreas@greimel.de
+    email: info@foxfolio.app
     url: https://github.com/greimela
   license: MIT
   dependencies: {}

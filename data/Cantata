@@ -1,3 +1,4 @@
 https://dl.opendesktop.org/api/files/download/id/1485789691/Cantata-2.0.1-x86_64.AppImage
+# https://www.appimagehub.com/p/1169560/startdownload?file_id=1520326486&file_name=cantata-2.2.0-x86_64.AppImage&file_type=application/x-executable&file_size=36367224
 # We need a better handler for opendesktop.org 
 # so that we don't have to link to URLs with version numbers in them

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>io.github.streamlink.streamlink</id>
+  <metadata_license>BSD-2-Clause</metadata_license>
+  <project_license>BSD-2-Clause</project_license>
+  <name>Streamlink</name>
+  <summary>A command-line utility that extracts streams from various services and pipes them into a video player of choice.</summary>
+  <description>
+    <p>Streamlink is a command-line utility which pipes video streams from various services into a video player, such as VLC. The main purpose of Streamlink is to avoid resource-heavy and unoptimized websites, while still allowing the user to enjoy various streamed content.</p>
+  </description>
+  <launchable type="desktop-id">streamlink.desktop</launchable>
+  <url type="homepage">https://streamlink.github.io/</url>
+  <provides>
+    <binary>python3.9</binary>
+    <python3>streamlink</python3>
+  </provides>
+</component>

@@ -1,0 +1,32 @@
+{
+  "name": "criptext",
+  "version": "0.13.6",
+  "author": {
+    "name": "Criptext Inc.",
+    "email": "info@criptext.com",
+    "url": "https://criptext.com"
+  },
+  "homepage": "https://criptext.com",
+  "private": true,
+  "productName": "Criptext",
+  "main": "./electron-starter.js",
+  "description": "Email service encrypted with signal",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Criptext/Criptext-Email-React-Client.git"
+  },
+  "dependencies": {
+    "@criptext/api": "^0.14.8",
+    "@criptext/data-transfer-client": "^0.1.1",
+    "@criptext/electron-better-ipc": "^0.1.2-rc4",
+    "electron-updater": "^3.0.3",
+    "electron-window-state": "^4.1.1",
+    "knex": "^0.14.2",
+    "line-by-line": "^0.1.6",
+    "moment": "^2.22.2",
+    "node-notifier": "^5.2.1",
+    "opn": "^5.3.0",
+    "sqlite3": "^4.0.2",
+    "websocket": "^1.0.25"
+  }
+}

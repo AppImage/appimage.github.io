@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>protracker</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-2.0+</project_license>
+	<name>Protracker</name>
+	<summary>Amiga ProTracker v2.3D clone for modern computers</summary>
+	<description>
+		<p>Multi-platform clone of the classic music making software
+ "ProTracker" (version 2.3D) from the Commodore Amiga days.
+ Aims to work exactly like you remember it, with added features and fixes.
+</p>
+	</description>
+	<launchable type="desktop-id">protracker.desktop</launchable>
+	<url type="homepage">https://16-bits.org/pt.php</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>http://screenshots.debian.net/screenshots/000/015/839/large.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>protracker.desktop</id>
+	</provides>
+</component>

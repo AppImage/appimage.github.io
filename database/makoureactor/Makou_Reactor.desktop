@@ -11,6 +11,7 @@ Terminal=false
 Categories=Game;
 Keywords=PlayStation;Final Fantasy;
 StartupNotify=false
+X-AppImage-Version=0d9c6a8
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|myst6re|makoureactor|continuous|Makou_Reactor*-x86_64.AppImage.zsync

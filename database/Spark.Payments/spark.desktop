@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Spark Payments
+Comment=An external terminal application for processing DASH payments in brick and mortar stores.
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=spark
+X-AppImage-Version=1.0.0
+X-AppImage-BuildId=3b1cfcf0-8ca8-11a8-1890-1bc397b45949
+Categories=Finance;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=MIT

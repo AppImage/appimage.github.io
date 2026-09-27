@@ -3,6 +3,10 @@ layout: app
 
 permalink: /Alduin/
 description: An Atom and RSS feed aggregator
+license: MIT
+
+icons:
+  - Alduin/icons/514x512/alduin.png
 
 screenshots:
   - Alduin/screenshot.png
@@ -25,13 +29,14 @@ desktop:
     Terminal: false
     Type: Application
     Icon: alduin
-    X-AppImage-Version: 2.0.0
-    X-AppImage-BuildId: 1d1b8600-9e1e-11a7-0c94-336614b712a1
+    X-AppImage-Version: 2.0.1
+    X-AppImage-BuildId: 38d125f0-afe2-11a7-2ee0-a3e50630e98b
     Categories: Utility
   AppImageHub:
     X-AppImage-UpdateInformation: 
     X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: MIT
 
 electron:
   main: main.js
@@ -62,4 +67,6 @@ electron:
     tld-extract: 1.0.1
     util.promisify: 1.0.0
     xmldoc: 1.1.0
+  optionalDependencies:
+    7zip-bin-linux: 1.1.0
 ---

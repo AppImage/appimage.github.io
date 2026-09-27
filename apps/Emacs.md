@@ -3,7 +3,9 @@ layout: app
 
 permalink: /Emacs/
 description: Edit text
-license: GPL-3.0
+
+icons:
+  - Emacs/icons/scalable/emacs.svg
 
 screenshots:
   - Emacs/screenshot.png
@@ -31,12 +33,11 @@ desktop:
     Categories: Development
     StartupWMClass: Emacs
     Keywords: Text
+    X-AppImage-Version: 26.1.glibc2.17
   AppImageHub:
-    X-AppImage-UpdateInformation: false
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: GPL-3.0
 ---

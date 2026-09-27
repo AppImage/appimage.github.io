@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2012-2015 Rui Nuno Capela <rncbc@rncbc.org> -->
+<component type="desktop">
+ <id>synthv1.desktop</id>
+ <metadata_license>GPL-2.0+</metadata_license>
+ <project_license>GPL-2.0+</project_license>
+ <name>synthv1</name>
+ <summary>an old-school polyphonic synthesizer</summary>
+ <description>
+  <p>synthv1 is an old-school 4-oscillator subtractive polyphonic synthesizer
+  with stereo fx.</p>
+  <p>features:<ul>
+  <li>pure stand-alone JACK client with JACK-session, NSM and both JACK MIDI
+    and ALSA MIDI input support;</li>
+  <li>LV2 instrument plugin.
+    URI: http://synthv1.sourceforge.net/lv2</li>
+  </ul></p>
+ </description>
+ <screenshots>
+  <screenshot type="default">
+   <image>http://synthv1.sourceforge.net/image/synthv1-screenshot4.png</image>
+   <caption>The main window showing the application in action</caption>
+  </screenshot>
+ </screenshots>
+ <keywords>
+  <keyword>Audio</keyword>
+  <keyword>MIDI</keyword>
+  <keyword>ALSA</keyword>
+  <keyword>JACK</keyword>
+  <keyword>Synthesizer</keyword>
+  <keyword>LV2</keyword>
+  <keyword>Qt</keyword>
+ </keywords>
+ <url type="homepage">http://synthv1.sourceforge.net</url>
+ <updatecontact>rncbc@rncbc.org</updatecontact>
+ <project_group>rncbc.org</project_group>
+ <kudos>
+  <kudo>HiDpiIcon</kudo>
+  <kudo>ModernToolkit</kudo>
+ </kudos>
+</component>

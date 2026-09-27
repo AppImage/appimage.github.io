@@ -1,0 +1,32 @@
+{
+  "name": "loginized",
+  "description": "Loginized Gnome GDM Login Theme Manager",
+  "homepage": "https://github.com/juhaku/loginized",
+  "version": "1.0.0",
+  "private": true,
+  "license": "GPL-3.0",
+  "author": {
+    "name": "Juha Kukkonen",
+    "email": "juha7kukkonen@gmail.com",
+    "url": "https://github.com/juhaku/loginized"
+  },
+  "dependencies": {
+    "luxon": "^1.9.0",
+    "vue": "^2.5.17",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.2",
+    "vuex": "^3.0.1"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "main": "background.js"
+}
