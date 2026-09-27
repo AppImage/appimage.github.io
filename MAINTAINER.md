@@ -65,7 +65,9 @@ a pull request per qualifying repository (labeled `auto-discovered`) for a
 maintainer to review; it never merges these itself.
 
 To run it: Actions tab → "Discover apps" → *Run workflow*. `count` caps how
-many pull requests that run opens (default 1, max 5). `dry_run: true` prints
+many pull requests that run opens (default 1, max 5); the run goes on until
+it has found that many (or has searched every month since 2012), which can
+take a while: its log shows each search and each repository it checks. `dry_run: true` prints
 what would be opened in the job log and the step summary without pushing a
 branch, opening a pull request, or changing the state file at all; the
 default is a real run. Locally: `code/discover-apps.sh --dry-run` (needs
@@ -73,9 +75,10 @@ default is a real run. Locally: `code/discover-apps.sh --dry-run` (needs
 
 It keeps a small state file (`discover-state.tsv`, on its own orphan
 `discover-state` branch) recording every repository it has checked and a
-cursor, so repeated runs rotate through a different one-month slice of
-GitHub's history instead of finding the same repositories, and a repository
-that had no usable AppImage is not checked again for 90 days.
+cursor, so each run continues where the previous one stopped instead of
+finding the same repositories. A repository that had no usable AppImage is
+not checked again for 90 days; one with too few stars (under 5) after 30
+days, as it may have gained some.
 
 **Configuring `DISCOVER_TOKEN` (optional)**
 

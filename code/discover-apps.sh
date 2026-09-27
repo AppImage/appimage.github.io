@@ -10,25 +10,28 @@
 #              and does not touch the discover-state branch at all.
 #   --count N  Open at most N pull requests in this run (default 1, max 5).
 #
-# Candidates come from the GitHub search API, restricted each run to a
-# rotating one-month slice of repository creation dates (a cursor kept in
-# the state file), so that repeated runs eventually cover GitHub's history
-# instead of hammering the same popular results. Two query shapes
-# (topic:appimage, and "appimage" in name/description/readme) alternate.
+# Candidates come from the GitHub search API (most stars first), one month
+# of repository creation dates at a time, both query shapes per month
+# (topic:appimage, and "appimage" in name/description/readme), going back
+# month after month until N apps qualify, every month since 2012 has been
+# searched once, or 5.5 hours have passed. Rate limits are waited out. The
+# cursor (kept in the state file, saved after every PR and every 10 months)
+# makes the next run continue where this one stopped.
 #
 # A repository is skipped when it: is already in data/ (any capitalization,
 # github.com/OWNER/REPO or api.github.com/repos/OWNER/REPO); appears as an
 # added data/ file in an open pull request; was proposed before in a pull
 # request labeled auto-discovered (any state: merged means it is in the
 # catalog, closed unmerged means it was rejected, and neither is retried);
-# or was checked in the last 90 days without a usable AppImage.
+# or was checked in the last 90 days without a usable AppImage (in the last
+# 30 days, if it had too few stars: it may have gained some since).
 #
 # Candidates that remain are checked (in random order): fetch-releases.sh +
 # find-appimage.sh must find exactly one x86_64 AppImage in a release less
 # than 2 years old, and the repository name must pass check-name.sh
 # (STRICT=true) and not already exist in data/. Every repository checked is
 # recorded in the state file with an outcome (added, no-appimage,
-# ambiguous, name, old), so it is not checked again for 90 days.
+# ambiguous, name, old; stars for fewer than 5 stars).
 #
 # State: discover-state.tsv on the orphan branch "discover-state" (never on
 # master). First line: "#cursor=YYYY-MM query=N". Then repo<TAB>date<TAB>outcome.
@@ -224,53 +227,155 @@ else
 fi
 
 CURSOR_LINE=$(head -n 1 "$STATE_FILE")
+tail -n +2 "$STATE_FILE" > "$WORKDIR/base-rows.tsv" 2>/dev/null || : > "$WORKDIR/base-rows.tsv"
 CURSOR_MONTH=$(sed -n 's/^#cursor=\([0-9-]*\) .*/\1/p' <<<"$CURSOR_LINE")
 QUERY_IDX=$(sed -n 's/.*query=\([0-9]*\)/\1/p' <<<"$CURSOR_LINE")
 [[ "$CURSOR_MONTH" =~ ^[0-9]{4}-[0-9]{2}$ ]] || CURSOR_MONTH=$(date -u +%Y-%m)
 [[ "$QUERY_IDX" =~ ^[0-9]+$ ]] || QUERY_IDX=0
 
+# Checked recently: skip for 90 days; declined for too few stars: only 30 days,
+# as a repository may have gained stars since
 CUTOFF=$(date -u -d '90 days ago' +%Y-%m-%d 2>/dev/null || date -u -v-90d +%Y-%m-%d)
+CUTOFF_STARS=$(date -u -d '30 days ago' +%Y-%m-%d 2>/dev/null || date -u -v-30d +%Y-%m-%d)
 tail -n +2 "$STATE_FILE" 2>/dev/null | while IFS=$'\t' read -r OR DATE OUTCOME ; do
   [ -z "$OR" ] && continue
   [ "$OUTCOME" == added ] && continue # already handled via SKIP_KNOWN/data or the PR trail
-  [[ "$DATE" > "$CUTOFF" ]] && echo "$OR"
+  if [ "$OUTCOME" == stars ] ; then
+    [[ "$DATE" > "$CUTOFF_STARS" ]] && echo "$OR"
+  else
+    [[ "$DATE" > "$CUTOFF" ]] && echo "$OR"
+  fi
 done > "$WORKDIR/recent.txt"
 while read -r OR ; do [ -n "$OR" ] && SKIP_RECENT["$OR"]=1 ; done < "$WORKDIR/recent.txt"
 
-# --- 5. Build the search queries for this run's rotating slice -----------
+# --- 9. Persist the state file -------------------------------------------
+# Called after every opened PR, every 10 slices and at the end, so that a
+# long run that is cut off does not lose its progress.
 
+STATE_SAVED=false
+save_state() {
+  [ "$DRY_RUN" == true ] && return 0
+  NEXT_MONTH="$CURSOR_MONTH"
+  NEXT_QUERY="$QUERY_IDX"
+  write_state() { # write_state FILE BASEROWS
+    { echo "#cursor=$NEXT_MONTH query=$NEXT_QUERY" ; cat "$2" "$WORKDIR/new-state-rows.tsv" | awk 'NF && !seen[$0]++' ; } > "$1.new"
+    mv "$1.new" "$1"
+  }
+  write_state "$STATE_FILE" "$WORKDIR/base-rows.tsv"
+  [ "$MANAGE_STATE_GIT" == true ] || { STATE_SAVED=true ; return 0 ; }
+  STATE_SAVED=false
+  local _ATTEMPT
+  for _ATTEMPT in 1 2 3 ; do
+    ( cd "$STATE_CLONE" || exit 1
+      git config user.name "GitHub Actions"
+      git config user.email "actions@users.noreply.github.com"
+      git add "$STATE_FILE_NAME"
+      git commit -q -m "Update discover-apps state" || true
+    )
+    if ( cd "$STATE_CLONE" && git push -q "https://x-access-token:$GH_TOKEN@github.com/$REPO.git" "HEAD:$STATE_BRANCH" 2>/dev/null || git push -q origin "HEAD:$STATE_BRANCH" ) ; then
+      STATE_SAVED=true
+      echo "  (state saved: next start $NEXT_MONTH)"
+      return 0
+    fi
+    ( cd "$STATE_CLONE" || exit 1
+      git fetch -q origin "$STATE_BRANCH" 2>/dev/null
+      git reset -q --hard "origin/$STATE_BRANCH" 2>/dev/null || true
+      tail -n +2 "$STATE_FILE_NAME" > "$WORKDIR/remote-rows.tsv" 2>/dev/null
+      write_state "$STATE_FILE_NAME" "$WORKDIR/remote-rows.tsv"
+    )
+  done
+  return 1
+}
+
+# --- 5.-8. Search slice after slice until COUNT apps qualify -------------
+# Each slice is one month of repository creation dates, searched with both
+# queries (page 1 each); the cursor moves back one month per slice (wrapping
+# from 2012 to now) and is saved where this run stopped, so the next run
+# continues with new repositories instead of the same top results.
+
+PUSHED_SINCE=$(date -u -d '1 year ago' +%Y-%m-%d 2>/dev/null || date -u -v-1y +%Y-%m-%d)
+QUERY_TEMPLATES=(
+  "topic:appimage fork:false archived:false pushed:>=$PUSHED_SINCE"
+  "appimage in:name,description,readme fork:false archived:false pushed:>=$PUSHED_SINCE"
+)
+# No fixed budget: go on until COUNT apps qualify, until every month back to
+# 2012 has been searched once (then there is nothing new to find), or until
+# the time limit (the job may run 6 hours; stop in time to save the state)
+START_MONTH="$CURSOR_MONTH"
+DEADLINE=$(( $(date +%s) + ${DISCOVER_MAX_SECONDS:-19800} ))
+SEARCHES=0
+WRAPPED=false
+STOP_REASON=""
+SLICES_SEARCHED=()
+CANDIDATES_FOUND=0
+N_KNOWN=0 N_OPENPR=0 N_LABELED=0 N_RECENT=0
+FAILED=false
+: > "$WORKDIR/seen.txt"
+
+declare -A OUTCOME_COUNT=([added]=0 [no-appimage]=0 [ambiguous]=0 [name]=0 [old]=0 [stars]=0)
+# Too few stars is decided here, not in the search query, so that such a
+# repository is recorded and reconsidered after 30 days (it may have gained stars)
+MIN_STARS=${DISCOVER_MIN_STARS:-5}
+declare -A STARS_OF=()
+OPENED=0
+CHECKED=0
+: > "$WORKDIR/new-state-rows.tsv"
+TODAY=$(date -u +%Y-%m-%d)
+PR_URLS=()
+
+record() { # record OWNER/REPO OUTCOME
+  printf '%s\t%s\t%s\n' "$1" "$TODAY" "$2" >> "$WORKDIR/new-state-rows.tsv"
+  OUTCOME_COUNT["$2"]=$(( ${OUTCOME_COUNT["$2"]:-0} + 1 ))
+  echo "    $1: $2"
+}
+
+prev_month() { date -u -d "$1-01 -1 month" +%Y-%m 2>/dev/null || date -u -v-1m -f %Y-%m-%d -j "$1-01" +%Y-%m ; }
+
+# Wait while the API's rate limit is used up (search: 30/min; core: ~1000/h
+# for the workflow's token), instead of mistaking refusals for results
+wait_for_rate() { # wait_for_rate search|core
+  [ -n "${DISCOVER_API_STUB:-}" ] && return 0
+  local R REMAINING RESET NOW
+  R=$(api GET rate_limit)
+  REMAINING=$(jq -r --arg k "$1" '.resources[$k].remaining // 1' <<<"$R" 2>/dev/null)
+  RESET=$(jq -r --arg k "$1" '.resources[$k].reset // 0' <<<"$R" 2>/dev/null)
+  if [[ "$REMAINING" =~ ^[0-9]+$ ]] && [ "$REMAINING" -lt 3 ] ; then
+    NOW=$(date +%s)
+    if [[ "$RESET" =~ ^[0-9]+$ ]] && [ "$RESET" -gt "$NOW" ] ; then
+      echo "  (rate limit for $1 used up; waiting $(( RESET - NOW + 5 )) s)"
+      sleep $(( RESET - NOW + 5 ))
+    fi
+  fi
+}
+
+SLICES_SINCE_SAVE=0
+while [ "$OPENED" -lt "$COUNT" ] ; do
+if [ "$(date +%s)" -ge "$DEADLINE" ] ; then STOP_REASON="time limit" ; break ; fi
+if [ "$WRAPPED" == true ] && [ "$CURSOR_MONTH" == "$START_MONTH" ] ; then STOP_REASON="searched every month since 2012" ; break ; fi
 LAST_DAY=$(date -u -d "$CURSOR_MONTH-01 +1 month -1 day" +%d 2>/dev/null || \
            date -u -j -v+1m -v-1d -f %Y-%m-%d "$CURSOR_MONTH-01" +%d)
 SLICE="created:$CURSOR_MONTH-01..$CURSOR_MONTH-$LAST_DAY"
-
-QUERIES=(
-  "topic:appimage fork:false archived:false stars:>=5 pushed:>=2024-01-01 $SLICE"
-  "appimage in:name,description,readme fork:false archived:false stars:>=5 pushed:>=2024-01-01 $SLICE"
-)
-# "pushed at least in the last year" is relative to today, not the slice
-PUSHED_SINCE=$(date -u -d '1 year ago' +%Y-%m-%d 2>/dev/null || date -u -v-1y +%Y-%m-%d)
-QUERIES=("${QUERIES[@]//2024-01-01/$PUSHED_SINCE}")
-QUERY="${QUERIES[$((QUERY_IDX % ${#QUERIES[@]}))]}"
-
-echo "Search slice: $SLICE, query: $QUERY" >&2
-
-# --- 6. Search for candidates (at most 2 pages, sleeping between) --------
-
+SLICES_SEARCHED+=("$CURSOR_MONTH")
 : > "$WORKDIR/candidates.txt"
-for PAGE in 1 2 ; do
-  RESP=$(api GET "search/repositories?q=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$QUERY" 2>/dev/null || echo "$QUERY")&per_page=30&page=$PAGE")
-  ITEMS=$(jq -r '.items[]? | "\(.full_name)"' <<<"$RESP" 2>/dev/null)
-  [ -n "$ITEMS" ] || break
-  echo "$ITEMS" >> "$WORKDIR/candidates.txt"
-  TOTAL=$(jq -r '.total_count // 0' <<<"$RESP" 2>/dev/null)
-  [ "$PAGE" -lt 2 ] && [ "${TOTAL:-0}" -gt $((PAGE * 30)) ] && sleep 3
+for Q in 0 1 ; do
+  QUERY="${QUERY_TEMPLATES[$(( (QUERY_IDX + Q) % ${#QUERY_TEMPLATES[@]} ))]} $SLICE"
+  [ "$SEARCHES" -gt 0 ] && [ -z "${DISCOVER_API_STUB:-}" ] && sleep 3
+  wait_for_rate search
+  SEARCHES=$((SEARCHES + 1))
+  RESP=$(api GET "search/repositories?q=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$QUERY")&per_page=30&sort=stars&order=desc")
+  ITEMS=$(jq -r '.items[]? | .full_name' <<<"$RESP" 2>/dev/null)
+  while IFS=$'\t' read -r FN ST ; do
+    [ -n "$FN" ] && STARS_OF["$(lower "$FN")"]=$ST
+  done < <(jq -r '.items[]? | "\(.full_name)\t\(.stargazers_count // 0)"' <<<"$RESP" 2>/dev/null)
+  echo "Searching repositories created in $CURSOR_MONTH: $QUERY"
+  echo "  $(jq -r '.total_count // 0' <<<"$RESP" 2>/dev/null) results, $(grep -c . <<<"$ITEMS") on the first page$(jq -r 'if .message then " (" + .message + ")" else "" end' <<<"$RESP" 2>/dev/null)"
+  [ -n "$ITEMS" ] && echo "$ITEMS" >> "$WORKDIR/candidates.txt"
 done
-sort -u -o "$WORKDIR/candidates.txt" "$WORKDIR/candidates.txt"
-CANDIDATES_FOUND=$(wc -l < "$WORKDIR/candidates.txt")
+sort -u "$WORKDIR/candidates.txt" | grep -vxFf "$WORKDIR/seen.txt" > "$WORKDIR/candidates.new" || true
+cat "$WORKDIR/candidates.new" >> "$WORKDIR/seen.txt"
+CANDIDATES_FOUND=$((CANDIDATES_FOUND + $(grep -c . "$WORKDIR/candidates.new")))
 
-# --- 7. Filter out everything we should skip ------------------------------
-
-N_KNOWN=0 N_OPENPR=0 N_LABELED=0 N_RECENT=0
+# Filter out everything we should skip
 : > "$WORKDIR/remaining.txt"
 while read -r FULLNAME ; do
   [ -z "$FULLNAME" ] && continue
@@ -280,33 +385,24 @@ while read -r FULLNAME ; do
   if [ -n "${SKIP_OPENPR[$OR]:-}" ] ; then N_OPENPR=$((N_OPENPR + 1)) ; continue ; fi
   if [ -n "${SKIP_LABELED[$OR]:-}" ] ; then N_LABELED=$((N_LABELED + 1)) ; continue ; fi
   if [ -n "${SKIP_RECENT[$OR]:-}" ] ; then N_RECENT=$((N_RECENT + 1)) ; continue ; fi
+  if [[ "${STARS_OF[$OR]:-0}" =~ ^[0-9]+$ ]] && [ "${STARS_OF[$OR]:-0}" -lt "$MIN_STARS" ] ; then
+    record "$OR" stars
+    continue
+  fi
   echo "$FULLNAME" >> "$WORKDIR/remaining.txt"
-done < "$WORKDIR/candidates.txt"
-
+done < "$WORKDIR/candidates.new"
+echo "  $(grep -c . "$WORKDIR/remaining.txt") new to check (the others are in the catalog, in an open PR, proposed before or checked recently)"
 if command -v shuf >/dev/null 2>&1 ; then
   shuf "$WORKDIR/remaining.txt" -o "$WORKDIR/remaining.txt" 2>/dev/null || true
 fi
 
-# --- 8. Check candidates until COUNT qualify (or the pool is exhausted) ---
-
-declare -A OUTCOME_COUNT=([added]=0 [no-appimage]=0 [ambiguous]=0 [name]=0 [old]=0)
-OPENED=0
-MAX_CHECK=20
-CHECKED=0
-: > "$WORKDIR/new-state-rows.tsv"
-TODAY=$(date -u +%Y-%m-%d)
-PR_URLS=()
-
-record() { # record OWNER/REPO OUTCOME
-  printf '%s\t%s\t%s\n' "$1" "$TODAY" "$2" >> "$WORKDIR/new-state-rows.tsv"
-  OUTCOME_COUNT["$2"]=$(( ${OUTCOME_COUNT["$2"]:-0} + 1 ))
-}
-
+# Check candidates until COUNT qualify (or this slice is exhausted)
 while read -r FULLNAME ; do
   [ -z "$FULLNAME" ] && continue
   [ "$OPENED" -ge "$COUNT" ] && break
-  [ "$CHECKED" -ge "$MAX_CHECK" ] && break
+  [ "$(date +%s)" -ge "$DEADLINE" ] && break
   CHECKED=$((CHECKED + 1))
+  echo "  Checking $FULLNAME ($CHECKED)"
   OWNER=${FULLNAME%%/*}
   RNAME=${FULLNAME#*/}
   OR=$(lower "$FULLNAME")
@@ -320,6 +416,7 @@ while read -r FULLNAME ; do
     fi
     cp "$SRC" "$RELEASES_JSON"
   else
+    wait_for_rate core
     if ! bash "$SCRIPT_DIR/fetch-releases.sh" "https://github.com/$OWNER/$RNAME" "$RELEASES_JSON" >/dev/null ; then
       record "$OR" no-appimage
       continue
@@ -407,7 +504,12 @@ EOF
 
   BRANCH="discover/$NAME"
   git fetch -q origin master
-  git checkout -q -B "$BRANCH" origin/master
+  # Never commit anywhere else: if the branch cannot be set up, skip this one
+  if ! git checkout -q -B "$BRANCH" origin/master || [ "$(git branch --show-current)" != "$BRANCH" ] ; then
+    echo "    Could not create the branch $BRANCH (uncommitted changes?)"
+    FAILED=true
+    continue
+  fi
   echo "https://github.com/$OWNER/$RNAME" > "data/$NAME"
   git config user.name "GitHub Actions"
   git config user.email "actions@users.noreply.github.com"
@@ -432,63 +534,48 @@ discover-apps.yml. Needs a maintainer's review."
   git checkout -q -
   git branch -q -D "$BRANCH" >/dev/null 2>&1 || true
 
-  echo "Opened ${PR_URL:-<unknown>} for $NAME"
-  PR_URLS+=("${PR_URL:-}")
+  if [ -z "$PR_NUMBER" ] ; then
+    echo "    Could not open the pull request for $NAME: $(jq -r '.message // "?"' <<<"$PR_RESP" | head -c 200)"
+    FAILED=true
+    continue
+  fi
+  echo "    Opened $PR_URL for $NAME"
+  PR_URLS+=("$PR_URL")
   record "$OR" added
   OPENED=$((OPENED + 1))
+  save_state || true
 done < "$WORKDIR/remaining.txt"
 
-# --- 9. Advance the cursor and persist the state file ---------------------
+# Next slice: one month earlier (wrapping), and the other query first
+CURSOR_MONTH=$(prev_month "$CURSOR_MONTH")
+if [[ "$CURSOR_MONTH" < "2012-01" ]] ; then CURSOR_MONTH=$(date -u +%Y-%m) ; WRAPPED=true ; fi
+QUERY_IDX=$(( (QUERY_IDX + 1) % ${#QUERY_TEMPLATES[@]} ))
+SLICES_SINCE_SAVE=$((SLICES_SINCE_SAVE + 1))
+if [ "$SLICES_SINCE_SAVE" -ge 10 ] ; then save_state || true ; SLICES_SINCE_SAVE=0 ; fi
+done # slices
 
-NEXT_MONTH=$(date -u -d "$CURSOR_MONTH-01 -1 month" +%Y-%m 2>/dev/null || date -u -v-1m -f %Y-%m-%d -j "$CURSOR_MONTH-01" +%Y-%m)
-if [[ "$NEXT_MONTH" < "2012-01" ]] ; then
-  NEXT_MONTH=$(date -u +%Y-%m)
-fi
-NEXT_QUERY=$(( (QUERY_IDX + 1) % ${#QUERIES[@]} ))
-
-if [ "$DRY_RUN" != true ] ; then
-  {
-    echo "#cursor=$NEXT_MONTH query=$NEXT_QUERY"
-    tail -n +2 "$STATE_FILE" 2>/dev/null
-    cat "$WORKDIR/new-state-rows.tsv"
-  } > "$STATE_FILE.new"
-  mv "$STATE_FILE.new" "$STATE_FILE"
-
-  if [ "$MANAGE_STATE_GIT" == true ] ; then
-    for _ATTEMPT in 1 2 3 ; do
-      ( cd "$STATE_CLONE" || exit 1
-        git add "$STATE_FILE_NAME"
-        git commit -q -m "Update discover-apps state" >/dev/null 2>&1 || true
-      )
-      if ( cd "$STATE_CLONE" && git push -q "https://x-access-token:$GH_TOKEN@github.com/$REPO.git" "HEAD:$STATE_BRANCH" 2>/dev/null || git push -q origin "HEAD:$STATE_BRANCH" ) ; then
-        break
-      fi
-      ( cd "$STATE_CLONE" || exit 1
-        git fetch -q origin "$STATE_BRANCH" 2>/dev/null
-        git reset -q --hard "origin/$STATE_BRANCH" 2>/dev/null || true
-        {
-          echo "#cursor=$NEXT_MONTH query=$NEXT_QUERY"
-          tail -n +2 "$STATE_FILE_NAME" 2>/dev/null
-          cat "$WORKDIR/new-state-rows.tsv"
-        } > "$STATE_FILE_NAME.new"
-        mv "$STATE_FILE_NAME.new" "$STATE_FILE_NAME"
-      )
-    done
-  fi
-fi
+save_state || true
 
 # --- 10. Summary -----------------------------------------------------------
 
 {
   echo "## Discover apps"
   echo
-  echo "Slice: \`$SLICE\`, query: \`$QUERY\`"
+  echo "Searched repositories created from ${SLICES_SEARCHED[0]:-?} back to ${SLICES_SEARCHED[-1]:-?} (${#SLICES_SEARCHED[@]} months, $SEARCHES searches); the next run starts at ${NEXT_MONTH:-$CURSOR_MONTH}"
   echo
   echo "Candidates found: $CANDIDATES_FOUND"
+  [ "$OPENED" -lt "$COUNT" ] && echo "Found $OPENED of the $COUNT requested; stopped: $STOP_REASON."
   echo "Skipped: $N_KNOWN already in the catalog, $N_OPENPR in an open PR, $N_LABELED proposed before, $N_RECENT checked recently"
   echo "Checked this run: $CHECKED"
-  echo "Outcomes: added ${OUTCOME_COUNT[added]:-0}, no-appimage ${OUTCOME_COUNT[no-appimage]:-0}, ambiguous ${OUTCOME_COUNT[ambiguous]:-0}, name ${OUTCOME_COUNT[name]:-0}, old ${OUTCOME_COUNT[old]:-0}"
+  echo "Outcomes: added ${OUTCOME_COUNT[added]:-0}, no-appimage ${OUTCOME_COUNT[no-appimage]:-0}, ambiguous ${OUTCOME_COUNT[ambiguous]:-0}, name ${OUTCOME_COUNT[name]:-0}, old ${OUTCOME_COUNT[old]:-0}, too few stars ${OUTCOME_COUNT[stars]:-0} (reconsidered after 30 days)"
   echo "Pull requests opened: $OPENED"
   [ "$DRY_RUN" == true ] && echo
   [ "$DRY_RUN" == true ] && echo "(dry run: nothing was pushed, no state was changed)"
 } | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
+
+if [ "$DRY_RUN" != true ] && [ "$MANAGE_STATE_GIT" == true ] && [ "${STATE_SAVED:-false}" != true ] ; then
+  echo "ERROR: could not save the state to the $STATE_BRANCH branch; the next run would repeat this one"
+  exit 1
+fi
+[ "$FAILED" == true ] && exit 1
+exit 0
