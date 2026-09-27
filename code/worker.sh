@@ -167,19 +167,19 @@ echo "ICON_NAME: ${ICON_NAME}"
 # Then, try scaleable icon from usr/share
 # matching the Icon= entry in the desktop file
 
-ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.svg*" -path "*/scalable/*" | head -n 1)
+ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.svg*" -path "*/scalable/*" -print -quit)
 
 # Then, try large icons from usr/share
 # matching the Icon= entry in the desktop file
 
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/128x128/*")
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/128x128/*" -print -quit)
 fi
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/256x256/*")
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/256x256/*" -print -quit)
 fi
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/512x512/*")
+    ICONFILE=$(find "$APPDIR" -name "$ICON_NAME.png" -path "*/512x512/*" -print -quit)
 fi
 
 # Then, fall back to the icon in the AppImage top level directory
@@ -187,22 +187,22 @@ fi
 
 
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.svg*")
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.svg*" -print -quit)
 fi
 
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.png")
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.png" -print -quit)
 fi
 
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.xpm")
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name "$ICON_NAME.xpm" -print -quit)
 fi
 
 # Finally, fall back to .DirIcon
 # (can be a symlink), regardless of the desktop file
 
 if [ -z "$ICONFILE" ] ; then
-    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name ".DirIcon")
+    ICONFILE=$(find "$APPDIR" -maxdepth 1 -name ".DirIcon" -print -quit)
 fi
 
 if [ -z "$ICONFILE" ] ; then
