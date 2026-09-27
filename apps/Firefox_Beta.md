@@ -3,9 +3,10 @@ layout: app
 
 permalink: /Firefox_Beta/
 description: Browse the Web
+license: MIT
 
 icons:
-  - Firefox_Beta/icons/128x128/firefox-beta.png
+  - Firefox_Beta/icons/128x128/default128.png
 
 screenshots:
   - Firefox_Beta/screenshot.png
@@ -22,8 +23,7 @@ links:
 
 desktop:
   Desktop Entry:
-    Version: 1.0
-    Name: Firefox Beta
+    Name: Firefox Nightly
     GenericName: Web Browser
     GenericName[ar]: متصفح وِب
     GenericName[ast]: Restolador Web
@@ -106,12 +106,13 @@ desktop:
     Comment[vi]: Để duyệt các trang web
     Comment[zh_CN]: 浏览互联网
     Comment[zh_TW]: 瀏覽網際網路
-    Exec: firefox-beta %u
-    Icon: firefox-beta
+    Exec: "/opt/firefox-nightly/firefox %u"
+    Icon: firefox-nightly
     Terminal: false
     Type: Application
     MimeType: text/html
-    StartupWMClass: Firefox Beta
+    StartupNotify: true
+    StartupWMClass: Nightly
     Categories: Network
     Keywords: web
     Actions: new-window
@@ -221,7 +222,7 @@ desktop:
     Name[xh]: Ifestile entsha
     Name[zh_CN]: 新建窗口
     Name[zh_TW]: 開新視窗
-    Exec: firefox-beta --new-window %u
+    Exec: "/opt/firefox-nightly/firefox --new-window %u"
   Desktop Action new-private-window:
     Name: New Private Window
     Name[ach]: Dirica manyen me mung
@@ -328,12 +329,17 @@ desktop:
     Name[xh]: Ifestile yangasese entsha
     Name[zh_CN]: 新建隐私浏览窗口
     Name[zh_TW]: 新增隱私視窗
-    Exec: firefox-beta --private-window %u
+    Exec: "/opt/firefox-nightly/firefox --private-window %u"
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|srevinsaju|Firefox-AppImage|beta|Firefox*.AppImage.zsync
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-UpdateInformation: gh-releases-zsync|srevinsaju|Firefox-Appimage|firefox-nightly|firefox-nightly*.AppImage.zsync
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.18
+    X-AppImage-Payload-License: MIT
 ---
