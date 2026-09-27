@@ -1,0 +1,17 @@
+{
+  "name": "Water",
+  "version": "1.2.0",
+  "description": "Fresh Water",
+  "author": "Ghosty",
+  "main": "js/launch.js",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.101.1",
+    "chokidar": "^3.5.3",
+    "discord-rpc-revamp": "^2.0.3",
+    "dotenv": "^17.4.1",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.8.3",
+    "msgpack-lite": "^0.1.26",
+    "typescript": "^5.9.3"
+  }
+}
