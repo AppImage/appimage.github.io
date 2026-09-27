@@ -3,9 +3,10 @@ layout: app
 
 permalink: /HEAT1D/
 description: HEAT1D
+license: GPL-3.0
 
 icons:
-  - HEAT1D/icons/256x256/HEAT1D.png
+  - HEAT1D/icons/128x128/HEAT1D.png
 
 screenshots:
   - HEAT1D/screenshot.png
@@ -35,4 +36,9 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: GPL-3.0
 ---
