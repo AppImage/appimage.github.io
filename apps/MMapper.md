@@ -6,7 +6,7 @@ description: MUME Mapper
 license: GPL-2.0+
 
 icons:
-  - MMapper/icons/128x128/org.mume.MMapper.png
+  - MMapper/icons/scalable/org.mume.MMapper.svg
 screenshots:
 - https://raw.githubusercontent.com/MUME/MMapper/master/appdata/screenshot1.png
 
@@ -30,13 +30,19 @@ desktop:
     Terminal: false
     Type: Application
     Categories: Qt
-    X-AppImage-Version: v20.05.0
+    X-AppImage-Version: 26.06.0
   AppImageHub:
-    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
-      the signature could not be verified. Please remember that the signature file (.sig
-      or .asc) should be the first file given on the command line."
+    X-AppImage-UpdateInformation: gh-releases-zsync|MUME|MMapper|latest|MMapper-*-x86_64.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.35
 
 appdata:
   Type: desktop-application
@@ -61,13 +67,12 @@ appdata:
         <li>Exits detections</li>
         <li>Fast OpenGL rendering</li>
         <li>Pseudo 3D layers and drag and drop mouse operations</li>
-        <li>Multi platform support</li>
         <li>Group manager support to see other people on your map</li>
       </ul>
   ProjectLicense: GPL-2.0+
   Url:
     bugtracker: https://github.com/MUME/MMapper/issues
-    homepage: https://github.com/MUME/MMapper
+    homepage: https://mume.github.io/MMapper/
   Launchable:
     desktop-id:
     - org.mume.MMapper.desktop
@@ -81,4 +86,34 @@ appdata:
       width: 1200
       height: 675
       lang: C
+  Releases:
+  - version: v26.06.0
+    unix-timestamp: 1780617600
+    description:
+      C: >-
+        <p>See the full changelog on GitHub.</p>
+  ContentRating:
+    oars-1.1:
+      drugs-alcohol: mild
+      drugs-narcotics: none
+      drugs-tobacco: mild
+      language-discrimination: none
+      language-humor: none
+      language-profanity: moderate
+      money-gambling: moderate
+      money-purchasing: none
+      sex-nudity: none
+      sex-themes: none
+      social-audio: none
+      social-chat: intense
+      social-contacts: none
+      social-info: none
+      social-location: none
+      violence-bloodshed: moderate
+      violence-cartoon: none
+      violence-desecration: moderate
+      violence-fantasy: moderate
+      violence-realistic: moderate
+      violence-sexual: none
+      violence-slavery: mild
 ---
