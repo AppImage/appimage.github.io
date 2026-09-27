@@ -701,6 +701,8 @@ Add automatically parsed data ($GITHUB_JOB)
 [ci skip]
 EOF
 set +x
+# The remote exists already from the previous file when a run tests several (set -e would end the script here)
+git remote remove deploy > /dev/null 2>&1 || true
 git remote add deploy https://${GH_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
 # wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     set -x
