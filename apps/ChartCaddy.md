@@ -31,13 +31,12 @@ desktop:
     Terminal: false
     X-AppImage-Arch: x86_64
     X-AppImage-Name: ChartCaddy
-    X-AppImage-Version: 2.0.7
+    X-AppImage-Version: 2.0.8
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|jbearden0|pub.neocaddy.com|latest|ChartCaddy-*.AppImage.zsync
-    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
-      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
-      could not be verified. Please remember that the signature file (.sig or .asc)
-      should be the first file given on the command line.'
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
     X-AppImage-Libc: host
@@ -139,8 +138,8 @@ appdata:
       url: https://raw.githubusercontent.com/jbearden0/pub.neocaddy.com/refs/heads/main/screenshots/cc_login_dark_mode.png
       lang: C
   Releases:
-  - version: 2.0.7
-    unix-timestamp: 1782345600
+  - version: 2.0.8
+    unix-timestamp: 1785888000
   ContentRating:
     oars-1.1: {}
 ---
