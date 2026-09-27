@@ -26,7 +26,7 @@ jobs:
   discover-apps:
     if: github.repository == 'AppImage/appimage.github.io'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 360 # runs until the requested number is found; the script stops after 5.5 h to save its state
     # One run at a time, so that two runs cannot propose the same repository
     # or race on the state file.
     concurrency:

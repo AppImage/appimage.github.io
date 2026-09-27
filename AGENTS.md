@@ -120,17 +120,18 @@ GitHub Pages (Jekyll) from this repository.
    find GitHub repositories that publish AppImages on their releases but are
    not in the catalog yet, and proposes each as a new entry in its own pull
    request, labeled `auto-discovered`, for a maintainer to review. Candidates
-   come from the GitHub search API, restricted each run to a rotating
-   one-month slice of repository creation dates (a cursor kept in a state
-   file), alternating between a `topic:appimage` query and an
-   `appimage in:name,description,readme` one, so that repeated runs cover
-   GitHub's history instead of the same popular results, and stay within the
-   search API's rate limit (at most 2 pages per run, with a sleep between
-   them). A repository is skipped when it is already in `data/`, is added by
+   come from the GitHub search API (most stars first), one month of
+   repository creation dates at a time with both a `topic:appimage` and an
+   `appimage in:name,description,readme` query, going back month after month
+   until `count` apps qualify (or every month since 2012 was searched, or
+   5.5 h passed; rate limits are waited out). A cursor in the state file,
+   saved after every PR and every 10 months, lets the next run continue
+   where this one stopped. A repository is skipped when it is already in `data/`, is added by
    an open pull request, was proposed before (any pull request labeled
    `auto-discovered`, in any state: merged means it is in the catalog, closed
    unmerged means it was rejected, and neither is retried), or was checked in
-   the last 90 days without a usable AppImage. What remains is checked (in
+   the last 90 days without a usable AppImage (30 days if it had fewer than
+   5 stars, as it may have gained some). What remains is checked (in
    random order) with `code/fetch-releases.sh` and `code/find-appimage.sh`
    (exactly one x86_64 AppImage, in a release less than 2 years old) and
    `code/check-name.sh` (`STRICT=true`); every repository checked is recorded
