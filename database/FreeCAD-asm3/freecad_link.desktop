@@ -1,0 +1,18 @@
+[Desktop Entry]
+Version=1.0
+Name=FreeCAD Link Branch
+Exec=AppRun %F
+Icon=freecad_link
+Type=Application
+Categories=Engineering;
+Comment=Feature based Parametric Modeler
+Terminal=false
+StartupNotify=true
+NoDisplay=false
+MimeType=application/x-extension-fcstd;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|realthunder|FreeCAD|latest|FreeCAD-asm3-Stable-Conda-Py3-Qt5-*-x86_64.AppImage.zsync
+X-AppImage-Signature=keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

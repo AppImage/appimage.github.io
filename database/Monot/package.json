@@ -1,0 +1,13 @@
+{
+  "name": "monot",
+  "homepage": "https://sorakime.github.io/mncr/project/monot",
+  "version": "1.0.0",
+  "description": "The new web browser \"Monot\" by monochrome.",
+  "main": "src/main/main.js",
+  "repository": "https://github.com/Sorakime/monot/",
+  "author": "monochrome Project.",
+  "license": "ISC",
+  "engines": {
+    "node": ">=15.0.0"
+  }
+}

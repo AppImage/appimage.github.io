@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.clownacy.ClownMapEd</id>
+
+  <name>ClownMapEd</name>
+  <summary>Sprite editor for the Mega Drive Sonic the Hedgehog games</summary>
+
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+
+  <description>
+    <p>
+      A sprite editor for Sonic 1, Sonic 2, Sonic 3, and Sonic &amp; Knuckles, intended to provide a free software, multiplatform drop-in replacement for SonMapEd. It is able to modify tiles, palettes, sprite mappings, and dynamic pattern load cues (DPLCs).
+    </p>
+  </description>
+
+  <launchable type="desktop-id">com.clownacy.ClownMapEd.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Clownacy/ClownMapEd/20494fb0c484ab4a77ef3053ba58ddb527574acf/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+</component>

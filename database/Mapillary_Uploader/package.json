@@ -1,0 +1,26 @@
+{
+  "name": "mapillary-desktop-uploader",
+  "productName": "Mapillary Uploader",
+  "description": "Upload imagery to the Mapillary platform",
+  "version": "3.2.2",
+  "author": {
+    "email": "support@mapillary.zendesk.com",
+    "name": "Mapillary",
+    "url": "https://www.mapillary.com/"
+  },
+  "dependencies": {
+    "source-map-support": "^0.5.13"
+  },
+  "resolutions": {
+    "webpack-sources": "1.0.1"
+  },
+  "electronWebpack": {
+    "renderer": {
+      "webpackConfig": "webpack.renderer.additions.js"
+    },
+    "main": {
+      "webpackConfig": "webpack.main.additions.js"
+    }
+  },
+  "main": "main.js"
+}

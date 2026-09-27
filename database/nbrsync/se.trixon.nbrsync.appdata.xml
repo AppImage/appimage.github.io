@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>se.trixon.nbrsync</id>
+    <name>nbRsync</name>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>Apache-2.0</project_license>
+    <content_rating type="oars-1.1" />
+    <developer id="se.trixon.patrik">
+        <name>Patrik Karlström</name>
+    </developer>
+    <summary>Control rsync with ease</summary>
+    <description>
+        <p>nbRsync is a GUI for rsync that simplifies synchronization of files and directories while preserving the details of the rsync options.</p>
+        <p>nbRsync works with the concept of Jobs and Tasks. Jobs can contain zero or more Tasks and Tasks can belong to zero or more Jobs.</p>
+        <p>It is possible to execute commands before and after jobs and tasks.</p>
+        <p>nbRsync also comes with a built-in scheduler, a scheduler that has to be started from the command line.</p>
+    </description>
+    <launchable type="desktop-id">se.trixon.nbrsync.desktop</launchable>
+    <url type="homepage">https://trixon.se/projects/nbrsync/</url>
+    <url type="bugtracker">https://github.com/trixon/nbrsync/issues</url>
+    <url type="donation">https://buymeacoffee.com/trixon</url>
+    <provides>
+        <id>nbrsync.desktop</id>
+    </provides>
+    <keywords>
+        <keyword translate="no">java</keyword>
+        <keyword translate="no">javafx</keyword>
+        <keyword translate="no">rsync</keyword>
+        <keyword translate="no">jotasync</keyword>
+        <keyword translate="no">netbeans</keyword>
+    </keywords>
+
+    <branding>
+        <color type="primary" scheme_preference="light">#ff96ff</color>
+        <color type="primary" scheme_preference="dark">#600060</color>
+    </branding>
+
+    <screenshots>
+        <screenshot type="default">
+            <image>https://trixon.se/files/screenshots/nbrsync_appstream01.png</image>
+            <caption>Main window - Jobs</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://trixon.se/files/screenshots/nbrsync_appstream02.png</image>
+            <caption>Job editor</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://trixon.se/files/screenshots/nbrsync_appstream03.png</image>
+            <caption>Main window - Tasks</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://trixon.se/files/screenshots/nbrsync_appstream04.png</image>
+            <caption>Task editor</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://trixon.se/files/screenshots/nbrsync_appstream05.png</image>
+            <caption>Main window - Job editor in dark mode</caption>
+        </screenshot>
+    </screenshots>
+
+    <releases>
+        <release version="24.12" date="2024-12-14">
+            <description>
+                <p>Rebuild with updated dependencies</p>
+            </description>
+        </release>
+        <release version="24.09.0" date="2024-09-22">
+            <description>
+                <p>Small update</p>
+                <ul>
+                    <li>Fixed minor bugs</li>
+                    <li>Added a stopwatch</li>
+                    <li>Bundled Java 23</li>
+                </ul>
+            </description>
+        </release>
+        <release version="24.08.0" date="2024-08-18">
+            <description>
+                <p>Initial release with the new base</p>
+                <ul>
+                    <li>Uses NetBeans Platform</li>
+                    <li>Uses JavaFX</li>
+                </ul>
+            </description>
+        </release>
+    </releases>
+</component>

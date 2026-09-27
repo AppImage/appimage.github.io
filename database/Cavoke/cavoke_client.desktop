@@ -1,0 +1,19 @@
+[Desktop Entry]
+Categories=Game;
+Type=Application
+Exec=cavoke_client
+Name=Cavoke Client
+Comment=An online board games platform
+Icon=cavoke
+GenericName=Online board games platform
+Keywords=cavoke;games;
+Terminal=false
+StartupWMClass=cavoke_client
+X-AppImage-Version=HEAD-4d75068
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

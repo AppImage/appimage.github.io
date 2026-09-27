@@ -1,0 +1,23 @@
+{
+  "name": "vrest-electron",
+  "productName": "vREST NG",
+  "description": "vREST NG - Enterprise ready application for Automated API Testing",
+  "version": "2.1.0",
+  "private": true,
+  "author": "Dheeraj Aggarwal <dheeraj.aggarwal@optimizory.com>",
+  "copyright": "© 2021 Optimizory Technologies Pvt. Ltd.",
+  "homepage": "https://vrest.io",
+  "main": "dist/background.js",
+  "dependencies": {
+    "debug": "^4.3.1",
+    "dotenv": "^8.2.0",
+    "electron-find": "^1.0.6",
+    "electron-localshortcut": "^3.1.0",
+    "electron-log": "^4.3.1",
+    "electron-store": "^4.0.0",
+    "electron-updater": "^4.3.7",
+    "supports-color": "^8.1.1",
+    "yargs": "12.0.5",
+    "vagent": "0.0.1"
+  }
+}
