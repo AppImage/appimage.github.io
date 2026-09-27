@@ -1,14 +1,15 @@
 [Desktop Entry]
 Version=1.0
-Name=Avogadro2
-Comment=Advanced molecular editor
-Exec=avogadro2 %f
-Icon=avogadro2
-Terminal=false
 Type=Application
-Categories=Qt;Science;Chemistry;Physics;Education;
-StartupNotify=true
+Name=Avogadro
+Comment=Advanced molecular editor
+Comment[hu]=Fejlett molekuláris szerkesztő
+Icon=org.openchemistry.Avogadro2
+Categories=Science;Chemistry;Physics;Education;Qt;
 MimeType=chemical/x-cml;chemical/x-xyz;
+Exec=avogadro2 %f
+Terminal=false
+StartupNotify=true
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
@@ -16,3 +17,8 @@ MimeType=chemical/x-cml;chemical/x-xyz;
 X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=BSD-3-Clause
