@@ -1,1 +1,4 @@
-https://www.rpdev.net/public/appimages/linux/x86_64/OpenTodoList-stable.AppImage
+https://github.com/mhoeher/opentodolist/releases/download/3.11.0/OpenTodoList-x86_64.AppImage
+# https://gitlab.com/rpdev/opentodolist/-/jobs/72637984/artifacts/raw/build-ubuntu/OpenTodoList-x86_64.AppImage
+# https://www.rpdev.net/public/appimages/linux/x86_64/OpenTodoList-stable.AppImage
+# Link without version would be better

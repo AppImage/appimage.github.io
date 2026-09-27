@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>de.lazyt.rrcc</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-2.0+</project_license>
+	<name>RoboRock Control Center</name>
+	<summary>Control Your Xiaomi Vacuum</summary>
+	<description>
+		<p>
+			Xiaomi vacuum cleaners are really nice, but need a cloud connection to use all features.
+			You don't like your data in chinese hands?
+			Then try RRCC for free and use it on Windows, Linux and MacOS!
+		</p>
+	</description>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/LazyT/rrcc/gh-pages/screenshots/mainwindow.png</image>
+		</screenshot>
+	</screenshots>
+	<url type="homepage">https://www.roboter-forum.com/index.php?thread/30309-roborock-control-center-desktop-app-f%C3%BCr-win-lin-osx</url>
+	<url type="donation">https://paypal.me/LazyT</url>
+	<developer_name>Thomas "LazyT" Löwe</developer_name>
+	<provides>
+		<id>rrcc.desktop</id>
+	</provides>
+</component>

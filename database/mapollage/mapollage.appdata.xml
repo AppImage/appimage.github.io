@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>se.trixon.mapollage</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>Apache-2.0</project_license>
+	<name>Mapollage</name>
+	<summary>A photo kml generator for Google Earth</summary>
+	<description>
+		<p>Mapollage is aphoto kml generator for Google Earth.</p>
+	</description>
+	<launchable type="desktop-id">mapollage.desktop</launchable>
+	<url type="homepage">https://trixon.se/projects/mapollage/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://trixon.se/files/screenshots/mapollage_appstream01.png</image>
+            <caption>User interface</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://trixon.se/files/screenshots/mapollage_appstream02.png</image>
+            <caption>The result</caption>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>mapollage.desktop</id>
+	</provides>
+  <content_rating type="oars-1.1" />
+</component>

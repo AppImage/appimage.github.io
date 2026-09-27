@@ -33,7 +33,7 @@ desktop:
     StartupWMClass: QOwnNotes
   AppImageHub:
     X-AppImage-UpdateInformation: false
-    X-AppImage-Signature: 'Signature made Mon 31 Dec 2018 05:19:58 AM UTC using RSA
+    X-AppImage-Signature: 'Signature made Thu 06 Jun 2019 05:06:11 PM UTC using RSA
       key ID 4539B8B0 Can''t check signature: No public key'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64

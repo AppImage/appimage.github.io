@@ -1,0 +1,117 @@
+# Flags PRs that change an entry in data/ to a download location of someone
+# else (another GitHub user or organization, another domain): this could be
+# an attempt to take over the entry. Adds the manual-check-needed label and a
+# comment for the maintainers.
+#
+# pull_request_target runs this file and code/ from master, with write
+# permissions, also for PRs from forks. It must never check out or run
+# anything from the PR: the PR's files are only read as text via the API.
+name: Check origin
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'data/**'
+
+concurrency:
+  group: check-origin-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  check-origin:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.pull_request.number }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      LABEL: manual-check-needed
+    steps:
+      # The default branch, not the PR
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: code
+
+      - name: Compare the download locations
+        run: |
+          MARKER='<!-- appimagehub-origin-check -->'
+          first_line() { # first_line PATH REF: first line of a file, as text
+            gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$1?ref=$2" 2>/dev/null \
+              | head -n 1 | tr -d '\r' | cut -c1-300 || true
+          }
+          # Changed (not added) files in data/, with their previous name if renamed
+          gh api --paginate "repos/$REPO/pulls/$PR/files" \
+            --jq '.[] | select(.filename | startswith("data/")) | select(.status == "modified" or .status == "renamed")
+                  | [.filename, (.previous_filename // .filename)] | @tsv' > files.tsv
+          : > changes.md
+          : > urls.txt
+          while IFS=$'\t' read -r FILE PREVIOUS ; do
+            OLD=$(first_line "$PREVIOUS" "$BASE_SHA")
+            NEW=$(first_line "$FILE" "$HEAD_SHA")
+            [ -n "$OLD" ] && [ -n "$NEW" ] || continue
+            if ! RESULT=$(bash code/check-origin.sh "$OLD" "$NEW") ; then
+              # File names and origins contain only safe characters
+              SAFE_FILE=$(echo "$FILE" | tr -cd 'A-Za-z0-9._/+-')
+              echo "- \`$SAFE_FILE\`: \`${RESULT% *}\` → \`${RESULT#* }\`" >> changes.md
+              printf '%s\nold: %s\nnew: %s\n' "$SAFE_FILE" "$OLD" "$NEW" >> urls.txt
+            fi
+          done < files.tsv
+          cat changes.md
+
+          ID=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
+                 --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .id" \
+               | tail -n 1)
+          HAS_LABEL=$(gh api "repos/$REPO/issues/$PR/labels" --jq ".[] | select(.name == \"$LABEL\") | .name")
+
+          if [ -s changes.md ] ; then
+            {
+              echo "$MARKER"
+              echo "### :warning: Manual check needed: the download location changes owner"
+              echo
+              echo "This PR changes where the AppImage is downloaded from, to a different owner or site:"
+              echo
+              cat changes.md
+              echo
+              echo '````text'
+              # Untrusted text: neutralize anything that could close the code block
+              sed 's/````*/```/g' urls.txt
+              echo '````'
+              echo
+              echo "This is often fine (e.g. the project moved to an organization or to its own website), but it could also be an attempt to take over the entry."
+              echo
+              echo "- **Contributor:** please explain in this PR why the location changed, ideally with a link where the project announces the new location."
+              echo "- **Maintainers:** please check that the new location belongs to the same project before merging."
+              echo
+              echo "Commit ${HEAD_SHA::8}."
+            } > comment.md
+            if [ -n "$ID" ] ; then
+              gh api -X PATCH "repos/$REPO/issues/comments/$ID" -F body=@comment.md > /dev/null
+            else
+              gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md > /dev/null
+            fi
+            if [ -z "$HAS_LABEL" ] ; then
+              if ! gh api "repos/$REPO/labels/$LABEL" > /dev/null 2>&1 ; then
+                gh api "repos/$REPO/labels" -f name="$LABEL" -f color=fbca04 \
+                  -f description="A maintainer needs to check this PR, see its comments" > /dev/null
+              fi
+              gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=$LABEL" > /dev/null
+            fi
+          else
+            # No (more) change of owner: withdraw an earlier warning
+            if [ -n "$ID" ] ; then
+              printf '%s\n### Download location: no change of owner\n\nAn earlier commit of this PR changed the download location to a different owner; as of commit %s, it no longer does.\n' \
+                "$MARKER" "${HEAD_SHA::8}" > comment.md
+              gh api -X PATCH "repos/$REPO/issues/comments/$ID" -F body=@comment.md > /dev/null
+            fi
+            if [ -n "$HAS_LABEL" ] && [ -n "$ID" ] ; then
+              gh api -X DELETE "repos/$REPO/issues/$PR/labels/$LABEL" > /dev/null
+            fi
+          fi

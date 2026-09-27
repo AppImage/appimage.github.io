@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>org.mapton.mapton</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>Apache-2.0</project_license>
+	<name>Mapton</name>
+	<summary>Some kind of map application</summary>
+	<description>
+		<p>Mapton is an easy to use map application that runs on your desktop.
+        Mapton combines the simplicity of a mobile app with the capability of being extensible with powerful custom plugins.</p>
+        <p>On its own, Mapton is a capable map application, however, Mapton is also a platform for domain specific GIS related plugin development.</p>
+	</description>
+	<launchable type="desktop-id">mapton.desktop</launchable>
+	<url type="homepage">https://mapton.org/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://mapton.org/files/screenshots/appstream01.png</image>
+            <caption>Compact mode</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://mapton.org/files/screenshots/appstream02.png</image>
+            <caption>Details mode</caption>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>mapton.desktop</id>
+	</provides>
+  <content_rating type="oars-1.1" />
+</component>

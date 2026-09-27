@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.corsixth.corsixth</id>
+  <!-- Copyright 2019 Artem Polishchuk <ego.cordatus@gmail.com> -->
+  <metadata_license>CC0</metadata_license>
+  <project_license>BSD-3-Clause AND MIT</project_license>
+  <name>CorsixTH</name>
+  <summary>Open source clone of Theme Hospital</summary>
+  <description>
+    <p>CorsixTH aims to reimplement the game engine of Theme Hospital, and be
+       able to load the original game data files. This means that you will need
+       a purchased copy of Theme Hospital, or a copy of the demo, in order to
+       use CorsixTH. After most of the original engine has been reimplemented in
+       open source code, the project will serve as a base from which extensions
+       and improvements to the original game can be made.</p>
+  </description>
+  <provides>
+    <binary>corsix-th</binary>
+    <id>com.corsixth.CorsixTH</id>
+  </provides>
+  <launchable type="desktop-id">com.corsixth.corsixth.desktop</launchable>
+  <releases>
+    <release version="0.70.1" date="2026-08-27" type="stable">
+      <description>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Prevent game crashes when using a MIDI API, such as JACK</li>
+          <li>Prevent game crashes when checking for missing staff in rooms,
+              such as Psychiatry</li>
+          <li>Prevented a game crash with the bottom drawer when loading a game
+              from 0.69.2 or earlier</li>
+        </ul>
+        <p>Packager Notes:</p>
+        <ul>
+          <li>Fixed a build error on Mac by linking libatomic if atomics are
+              not built in</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.70.0" date="2026-07-10" type="stable">
+      <description>
+        <p>New Features:</p>
+        <ul>
+          <li>Support for the official Russian edition of Theme Hospital
+              has been added (Soft Club edition)</li>
+          <li>2x and 3x UI Scaling is finally available, no more tiny text
+              on 4k screens!</li>
+          <li>Accessibility improvements added, such as subtitles for the
+              announcer, and ability to turn off screen shake</li>
+          <li>Initial support for blocking off areas in the hospital has
+              been added. Currently this is limited to within rooms only</li>
+          <li>Support added for midi devices</li>
+          <li>Added automatic detection for music folders in
+              CorsixTH&apos;s own directories (game and config)</li>
+          <li>Added unicode font support out of the box for Windows users
+              (for real this time)</li>
+          <li>Falling is now enabled for everyone</li>
+          <li>Multiple new cheats added</li>
+          <li>Newspaper headlines now in lose movies</li>
+          <li>Movies can now be paused with &apos;P&apos;</li>
+          <li>Research Policy window now plays its background sound effect</li>
+          <li>You can now view adviser message history. This can be opened from
+              the charts menu or with a hotkey (default Ctrl + H)</li>
+        </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Improved performance for large hospitals</li>
+          <li>Screenshots are now in png format and timestamped. Bye bye
+              bitmap!</li>
+          <li>The staff management window can now be ordered by attribute</li>
+          <li>Windows can be removed during a room&apos;s build phase using
+              right click</li>
+          <li>Active graph is now remembered in the graph window</li>
+          <li>Windows installer is now DPI aware, and ensures Start Menu
+              and Desktop icons show for all users</li>
+          <li>Missing hover sounds have been added</li>
+          <li>Improved machine menu</li>
+          <li>Improved finding player name</li>
+          <li>Improved rejection calculations for patient overcharging</li>
+          <li>Improved rat holes</li>
+          <li>Improved dying</li>
+          <li>Added ability to cancel an accidentally grabbed object with
+              Escape. Selling a grabbed item also now has a hotkey (default
+              Delete)</li>
+        </ul>
+        <p>Changes:</p>
+        <ul>
+          <li>Added shadow for truetype fonts</li>
+          <li>Machine menu button added to the bottom panel and machine
+              dialogs</li>
+          <li>Patients will get up less often when changing queue position</li>
+          <li>The way doctors are trained has been overhauled</li>
+          <li>Some window layouts, texts, and behaviours in the settings
+              menus have been adjusted</li>
+          <li>Unavailable resolutions when UI scaled will be greyed out</li>
+          <li>Dropdowns lists now have scrollbars where appropriate</li>
+          <li>Autosave frequency can now be adjusted</li>
+          <li>After the win movie plays, the player will be returned to the
+              main menu</li>
+          <li>Better aspect ratio for some movies</li>
+          <li>Disease start cure price is now properly applied from the
+              level config</li>
+          <li>Last selected disease in the casebook is now remembered</li>
+          <li>Minimum threshold for average calculations adjusted</li>
+          <li>Suppress mood icons for VIP and Inspector</li>
+          <li>Ignored VIP requests now automatically invite them instead of
+              refuse</li>
+          <li>Adjusted margins on the text area of the fax</li>
+          <li>Changed message drawer so only one fax of each type will
+              populate it</li>
+          <li>Prevented some &apos;fullscreen&apos; windows from being unpaused
+              while present e.g. fax</li>
+          <li>Patients can now be vaccinated in epidemics without
+              activating vaccination mode</li>
+          <li>Players are no longer warned of empty action queues</li>
+          <li>Reworked nearby object calculations</li>
+          <li>Stopped emergency patients from drinking, vomiting, or using
+              the toilet</li>
+          <li>Machine usage count no longer increases during earthquakes</li>
+          <li>Panel keys in the hotkey assignment menu now utilise two pages</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>Japanese announcement audio will now be used if available
+              when playing in that language</li>
+          <li>Spanish translation updated. Thanks @sraaronrock and
+              @ShiroAka</li>
+          <li>Italian translation updated. Thanks @dodero4</li>
+          <li>French translation updated. Thanks @PierreRic and @Ouaz</li>
+          <li>Czech translation updated. Thanks @jansakos</li>
+          <li>Russian translation updated. Thanks @ARGAMX</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Better error handling for non-existent languages</li>
+          <li>Fixed some non-capitalised text in dialogs</li>
+          <li>Fixed some bugs with music playback</li>
+          <li>Fixed bug in diagnosis termination</li>
+          <li>Patients no longer try to enter a room if staff member is
+              going to rest</li>
+          <li>Adjusted happiness impacts when staff are resting</li>
+          <li>Minimised disruption to rooms during change of staff</li>
+          <li>Fixed doctors being unable to return to training room</li>
+          <li>Fixed patients not leaving a bench when they die</li>
+          <li>Fixed a crash with exploded rooms and picked up staff</li>
+          <li>Game will no longer crash when hovering on an exploded room</li>
+          <li>Prevented patients visiting incorrect/same diagnosis room
+              more than once</li>
+          <li>Undressing patients no longer crash game when editing a room</li>
+          <li>Machine repair icon is now shown when a handyman is sent to
+              repair</li>
+          <li>And more... Check out the project changelog for the full list</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.70.0~rc2" date="2026-06-28" type="development">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Panel keys in the hotkey assignment menu now utilise two pages</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>French translation updated. Thanks @Ouaz</li>
+          <li>Czech translation updated. Thanks @jansakos</li>
+        </ul>
+        <p>Bug Fixes from RC1:</p>
+        <ul>
+          <li>Fixed regression where a machine&apos;s maximum strength never
+              decreased</li>
+          <li>Fixed regression where patient&apos;s dying moods were no longer
+              shown</li>
+          <li>Fixed regression where loading a save failed if the a window with
+              a staff profile photo was open (such as Staff Management)</li>
+          <li>Fixed regression where mousewheel scroll did not work consistently
+              with UI Scaling enabled</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Fixed an issue where stopping music led to a crash on the level
+              progression movie</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.70.0~rc1" date="2026-06-19" type="development">
+      <description>
+        <p>Translations:</p>
+        <ul>
+          <li>Russian translation updated. Thanks @ARGAMX</li>
+        </ul>
+        <p>Bug Fixes from Beta 2:</p>
+        <ul>
+          <li>Fixed regression with in game menu bar and dynamic info panel
+              having unreadable text with unicode fonts when not using direct
+              zoom</li>
+          <li>Fixed a misfire of the new fax sound when a message wasn&apos;t to be
+              shown yet in the bottom panel</li>
+          <li>Fixed the adviser history window breaking when deleting messages</li>
+          <li>Fixed regression where fully rested staff would not answer calls
+              if unable to return to Training or Research</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Fixed a null pointer crash when trying to process an empty string</li>
+          <li>Fixed an issue handling multiple windows when loading save games</li>
+          <li>Fixed a crash in the Machine Menu when updating repair states</li>
+          <li>Fixed fully rested staff trying to return to the staffroom upon
+              entering a room</li>
+        </ul>
+        <p>Packager Notes:</p>
+        <ul>
+          <li>vcpkg registry bumped</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.70.0~beta2" date="2026-06-10" type="development">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Restored early loading functionality of music on Windows in
+              certain scenarios removed in Beta 1</li>
+          <li>Changed soundfont file path in Sound Settings to use unicode
+              font, if available</li>
+        </ul>
+        <p>Bug Fixes from Beta 1:</p>
+        <ul>
+          <li>Fixed regression with some objects being picked up becoming
+              no longer usable</li>
+          <li>Fixed regression with some consistency issues with the bottom
+              panel</li>
+          <li>Stopped regression where the sell hotkey made Edit Room go back
+              to doors phase from placing objects</li>
+          <li>Fixed regression that led to crash on loading a game after
+              previously moving objects</li>
+          <li>Fixed regression in a specific scenario where side objects could
+              allow humanoids to walk through walls</li>
+          <li>Stopped regression in Staff Dialog window that led to a crash</li>
+          <li>Stopped regression where faxes not related to a humanoid
+              crashing the game (such as the new disease fax)</li>
+          <li>Fixed regression where Operating Table becoming unreachable for
+              the second surgeon</li>
+          <li>Fixed some typos in the codebase</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.70.0~beta1" date="2026-05-31" type="development">
+      <description>
+        <p>New Features:</p>
+        <ul>
+          <li>Support for the official Russian edition of Theme Hospital
+              has been added (Soft Club edition)</li>
+          <li>2x and 3x UI Scaling is finally available, no more tiny text
+              on 4k screens!</li>
+          <li>Accessibility improvements added, such as subtitles for the
+              announcer, and ability to turn off screen shake</li>
+          <li>Initial support for blocking off areas in the hospital has
+              been added. Currently this is limited to within rooms only</li>
+          <li>Support added for midi devices</li>
+          <li>Added automatic detection for music folders in
+              CorsixTH&apos;s own directories (game and config)</li>
+          <li>Added unicode font support out of the box for Windows users
+              (for real this time)</li>
+          <li>Falling is now enabled for everyone</li>
+          <li>Multiple new cheats added</li>
+          <li>Newspaper headlines now in lose movies</li>
+          <li>Movies can now be paused with &apos;P&apos;</li>
+          <li>Research Policy window now plays its background sound effect</li>
+          <li>You can now view adviser message history. This can be opened from
+              the charts menu or with a hotkey (default Ctrl + H)</li>
+        </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Improved performance for large hospitals</li>
+          <li>Screenshots are now in png format and timestamped. Bye bye
+              bitmap!</li>
+          <li>The staff management window can now be ordered by attribute</li>
+          <li>Windows can be removed during a room&apos;s build phase using
+              right click</li>
+          <li>Active graph is now remembered in the graph window</li>
+          <li>Windows installer is now DPI aware, and ensures Start Menu
+              and Desktop icons show for all users</li>
+          <li>Missing hover sounds have been added</li>
+          <li>Improved machine menu</li>
+          <li>Improved finding player name</li>
+          <li>Improved rejection calculations for patient overcharging</li>
+          <li>Improved rat holes</li>
+          <li>Improved dying</li>
+          <li>Added ability to cancel an accidentally grabbed object with
+              Escape. Selling a grabbed item also now has a hotkey (default
+              Delete)</li>
+        </ul>
+        <p>Changes:</p>
+        <ul>
+          <li>Added shadow for truetype fonts</li>
+          <li>Machine menu button added to the bottom panel and machine
+              dialogs</li>
+          <li>Patients will get up less often when changing queue position</li>
+          <li>The way doctors are trained has been overhauled</li>
+          <li>Some window layouts, texts, and behaviours in the settings
+              menus have been adjusted</li>
+          <li>Unavailable resolutions when UI scaled will be greyed out</li>
+          <li>Dropdowns lists now have scrollbars where appropriate</li>
+          <li>Autosave frequency can now be adjusted</li>
+          <li>After the win movie plays, the player will be returned to the
+              main menu</li>
+          <li>Better aspect ratio for some movies</li>
+          <li>Disease start cure price is now properly applied from the
+              level config</li>
+          <li>Last selected disease in the casebook is now remembered</li>
+          <li>Minimum threshold for average calculations adjusted</li>
+          <li>Suppress mood icons for VIP and Inspector</li>
+          <li>Ignored VIP requests now automatically invite them instead of
+              refuse</li>
+          <li>Adjusted margins on the text area of the fax</li>
+          <li>Changed message drawer so only one fax of each type will
+              populate it</li>
+          <li>Prevented some &apos;fullscreen&apos; windows from being unpaused
+              while present e.g. fax</li>
+          <li>Patients can now be vaccinated in epidemics without
+              activating vaccination mode</li>
+          <li>Players are no longer warned of empty action queues</li>
+          <li>Reworked nearby object calculations</li>
+          <li>Stopped emergency patients from drinking, vomiting, or using
+              the toilet</li>
+          <li>Machine usage count no longer increases during earthquakes</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>Japanese announcement audio will now be used if available
+              when playing in that language</li>
+          <li>Spanish translation updated. Thanks @sraaronrock and
+              @ShiroAka</li>
+          <li>Italian translation updated. Thanks @dodero4</li>
+          <li>French translation updated. Thanks @PierreRic</li>
+          <li>Czech translation updated. Thanks @jansakos</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Better error handling for non-existent languages</li>
+          <li>Fixed some non-capitalised text in dialogs</li>
+          <li>Fixed some bugs with music playback</li>
+          <li>Fixed bug in diagnosis termination</li>
+          <li>Patients no longer try to enter a room if staff member is
+              going to rest</li>
+          <li>Adjusted happiness impacts when staff are resting</li>
+          <li>Minimised disruption to rooms during change of staff</li>
+          <li>Fixed doctors being unable to return to training room</li>
+          <li>Fixed patients not leaving a bench when they die</li>
+          <li>Fixed a crash with exploded rooms and picked up staff</li>
+          <li>Game will no longer crash when hovering on an exploded room</li>
+          <li>Prevented patients visiting incorrect/same diagnosis room
+              more than once</li>
+          <li>Undressing patients no longer crash game when editing a room</li>
+          <li>Machine repair icon is now shown when a handyman is sent to
+              repair</li>
+          <li>And more... Check out the project changelog for the full list</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.69.2" date="2026-01-10" type="stable">
+      <description>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Fixed stuck Operating Theatre after rerouting patients</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.69.1" date="2025-08-16" type="stable">
+      <description>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Fixed a crash when placing staff in a room while a patient is being
+            treated</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.69.0" date="2025-07-26" type="stable">
+      <description>
+        <p>New Features/Enhancements:</p>
+        <ul>
+          <li>A new machine menu has been added. Now you can view the status of
+              all your hospital machines in one place!</li>
+          <li>Changing speed in game now happens immediately</li>
+          <li>Patient happiness can now be a win/lose factor in custom games</li>
+          <li>Transparent walls can now be toggled using Shift + X</li>
+          <li>Soda price can now be configured in the level file</li>
+          <li>Improvements and fixes for the ChirzmanTV custom campaign</li>
+        </ul>
+        <p>Changes:</p>
+        <ul>
+          <li>Improved how staff look for work if idle</li>
+          <li>Machine strength reduction after repair now more closely aligned
+              with the original game</li>
+          <li>Machine strength now has a minimum value of 2 after repair</li>
+          <li>Mouse is now only captured when in game, or using the map editor</li>
+          <li>Improved measurement on the progress report chart columns</li>
+          <li>Annual rewards and trophies now have more robust evaluation
+              criteria</li>
+          <li>A patient&apos;s treatment cost is now decided at the point they agree
+              to pay</li>
+          <li>VIPs now walk slower, as in the original game</li>
+          <li>Gamelogs now include the date and time of the crash in their file
+              name, and the last 10 logs are now held in the Logs folder</li>
+          <li>Finding files for custom campaigns is now more reliable, and
+              supports storing your campaign inside its own folder</li>
+          <li>Custom Campaigns can no longer be played in Free Build mode, as they
+              could break campaign progression</li>
+          <li>For games compiled using fluidsynth (such as our Windows and Flatpak
+              builds), you can now set the soundfont in the configuration file</li>
+          <li>Video files can now be missing during TH installation corruption
+              checks</li>
+          <li>You can now hear patients vomiting, instead of just the vomit
+              splatters</li>
+          <li>Lakes no longer show in the Town Map as per the original game</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>The original game&apos;s numerals for the money bar can now be
+              toggled by translators using the isArabicNumerals flag. This setting
+              is set to off currently for CJK languages</li>
+          <li>Reworded cheat failure messages, some translations still require
+              updating</li>
+          <li>Improved hotkey window and research tooltips, some translations
+              still require updating</li>
+          <li>A new Japanese translation has been added. Thanks @ShimaKen523</li>
+          <li>Brazilian Portuguese translation has been updated. Thanks
+              @altiereslima</li>
+          <li>Russian translation has been updated. Thanks @ARGAMX @Matroftt</li>
+          <li>French translation has been updated. Thanks @Sanndow @legluondunet</li>
+          <li>Dutch translation has been updated. Thanks @Alberth289346 &amp;
+              @jetenergy</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Game speed tick rates have been smoothed out again, improving
+              animations and sound playback for objects</li>
+          <li>Improved colour accuracy for fonts in unicode languages now means
+              you can actually read when your game is paused</li>
+          <li>Many fixes for the position of staff and patient moods in the game!
+              More are scheduled to come in future</li>
+          <li>Fixed a (very annoying) bug with walks that caused new patients to
+              enter rooms along their path</li>
+          <li>Rework to the operating theatre room to prevent patient/staff
+              lockups</li>
+          <li>Free build now always comes with free heating and free parcel
+              purchases!</li>
+          <li>Epidemic timer now ends once all patients are resolved</li>
+          <li>Old serious radiation epidemics can no longer cause a game crash.
+              In future, this epidemic type will be reinstated again</li>
+          <li>Failed cheats will now always provide feedback messages</li>
+          <li>Spawning a contagious patient via cheating now works in levels
+              without a helipad</li>
+          <li>Long windows now correctly count as a window</li>
+          <li>Dynamic info for machines now displays correctly when cycling between
+              them</li>
+          <li>Fixed a bug where changing doctor in General Diagnosis could break
+              the room and patient</li>
+          <li>Fixed a scenario where clicking on a staff member in an exploding
+              room caused a game crash</li>
+          <li>Fixed some anomalies in the original campaign&apos;s map files</li>
+          <li>And more... Check out the project changelog for the full list</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.69.0~rc1" date="2025-07-12" type="development">
+      <description>
+        <p>Translations:</p>
+        <ul>
+          <li>Russian translation has been updated. Thanks @Matroftt</li>
+          <li>French translation has been updated. Thanks @legluondunet</li>
+        </ul>
+        <p>Packager Notes:</p>
+        <ul>
+          <li>Fixed a regression with CORSIXTH_SEARCH_LOCAL_DATADIRS cmake
+              option</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.69.0~beta2" date="2025-06-21" type="development">
+      <description>
+        <p>Features:</p>
+        <ul>
+          <li>Custom level/campaign creators can now use an existing level file
+              as an overlay to copy and extend their level file with the
+              #overlay variable. See the &apos;Custom Level&apos; Wiki page
+              for more information.</li>
+        </ul>
+        <p>Changes:</p>
+        <ul>
+          <li>You can now hear patients vomiting, instead of just the vomit
+              splatters</li>
+          <li>Lakes no longer show in the Town Map as per the original game</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>Russian translation has been updated. Thanks @ARGAMX</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Fixed some anomalies in the original campaign&apos;s map files</li>
+        </ul>
+        <p>Regressions from 0.69.0 Beta 1:</p>
+        <ul>
+          <li>Fixed a crash in General Diagnosis</li>
+          <li>Fixed a compatibility issue with mood markers on old saves</li>
+          <li>Fixed a crash with the grim reaper</li>
+          <li>Fixed a bug with the hotkey assignment menu</li>
+          <li>Fixed an issue with handymen ignoring cleaning duties. Please note
+              existing saves from Beta 1 currently have no fix implemented for
+              those duties already broken.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.69.0~beta1" date="2025-06-07" type="development">
+      <description>
+        <p>New Features/Enhancements:</p>
+        <ul>
+          <li>A new machine menu has been added. Now you can view the status of
+              all your hospital machines in one place!</li>
+          <li>Changing speed in game now happens immediately</li>
+          <li>Patient happiness can now be a win/lose factor in custom games</li>
+          <li>Transparent walls can now be toggled using Shift + X</li>
+          <li>Soda price can now be configured in the level file</li>
+          <li>Improvements and fixes for the ChirzmanTV custom campaign</li>
+        </ul>
+        <p>Changes:</p>
+        <ul>
+          <li>Improved how staff look for work if idle</li>
+          <li>Machine strength reduction after repair now more closely aligned
+              with the original game</li>
+          <li>Machine strength now has a minimum value of 2 after repair</li>
+          <li>Mouse is now only captured when in game, or using the map editor</li>
+          <li>Improved measurement on the progress report chart columns</li>
+          <li>Annual rewards and trophies now have more robust evaluation
+              criteria</li>
+          <li>A patient&apos;s treatment cost is now decided at the point they agree
+              to pay</li>
+          <li>VIPs now walk slower, as in the original game</li>
+          <li>Gamelogs now include the date and time of the crash in their file
+              name, and the last 10 logs are now held in the Logs folder</li>
+          <li>Finding files for custom campaigns is now more reliable, and
+              supports storing your campaign inside its own folder</li>
+          <li>Custom Campaigns can no longer be played in Free Build mode, as they
+              could break campaign progression</li>
+          <li>For games compiled using fluidsynth (such as our Windows and Flatpak
+              builds), you can now set the soundfont in the configuration file</li>
+          <li>Video files can now be missing during TH installation corruption
+              checks</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>The original game&apos;s numerals for the money bar can now be
+              toggled by translators using the isArabicNumerals flag. This setting
+              is set to off currently for CJK languages</li>
+          <li>Reworded cheat failure messages, some translations still require
+              updating</li>
+          <li>Improved hotkey window and research tooltips, some translations
+              still require updating</li>
+          <li>A new Japanese translation has been added. Thanks @ShimaKen523</li>
+          <li>Brazilian Portuguese translation has been updated. Thanks
+              @altiereslima</li>
+          <li>Russian translation has been updated. Thanks @ARGAMX</li>
+          <li>French translation has been updated. Thanks @Sanndow</li>
+          <li>Dutch translation has been updated. Thanks @Alberth289346 &amp;
+              @jetenergy</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Game speed tick rates have been smoothed out again, improving
+              animations and sound playback for objects</li>
+          <li>Improved colour accuracy for fonts in unicode languages now means
+              you can actually read when your game is paused</li>
+          <li>Many fixes for the position of staff and patient moods in the game!
+              More are scheduled to come in future</li>
+          <li>Fixed a (very annoying) bug with walks that caused new patients to
+              enter rooms along their path</li>
+          <li>Rework to the operating theatre room to prevent patient/staff
+              lockups</li>
+          <li>Free build now always comes with free heating and free parcel
+              purchases!</li>
+          <li>Epidemic timer now ends once all patients are resolved</li>
+          <li>Old serious radiation epidemics can no longer cause a game crash.
+              In future, this epidemic type will be reinstated again</li>
+          <li>Failed cheats will now always provide feedback messages</li>
+          <li>Spawning a contagious patient via cheating now works in levels
+              without a helipad</li>
+          <li>Long windows now correctly count as a window</li>
+          <li>Dynamic info for machines now displays correctly when cycling between
+              them</li>
+          <li>Fixed a bug where changing doctor in General Diagnosis could break
+              the room and patient</li>
+          <li>Fixed a scenario where clicking on a staff member in an exploding
+              room caused a game crash</li>
+          <li>And more... Check out the project changelog for the full list</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.68.0" date="2024-10-01" type="stable">
+      <description>
+        <p>New Features:</p>
+        <ul>
+          <li>In-game movies now play for users using TH Data directly from a
+              .ISO file</li>
+          <li>Custom campaign creators can now optionally use the original
+              level advance movie when progressing through the campaign</li>
+          <li>The Map Editor has received some love including new features,
+              fixes, and jukebox controls</li>
+          <li>Long windows now behave properly in the game if they get
+              intersected by an adjacent wall</li>
+          <li>You can now control the Jukebox from the Main Menu by going to
+              Options &gt; Jukebox</li>
+          <li>External (non-TH) XMI files are now supported by the Jukebox</li>
+          <li>The adviser now tells you the cost of replacing your machine if
+              you cannot currently afford it</li>
+          <li>More cheats!</li>
+          <li>[Experimental] Right mouse panning can now be used instead of
+              using the middle mouse button. Enable it in the configuration
+              file</li>
+          <li>[Experimental] We&apos;re closer to fully implementing falling
+              actions! Get a sneak peek and get the chance to push people over
+              by enabling it in the configuration file/debug menu</li>
+        </ul>
+        <p>Changes:</p>
+        <ul>
+          <li>The demo movie will no longer play and cause jumpscares at the
+              main menu if the CorsixTH window is not in focus</li>
+          <li>Game speeds are now more closely aligned with the original
+              game</li>
+          <li>Improvements to handling of win/lose conditions, and the
+              progress report</li>
+          <li>Staff tiredness levels are now taken from the level config file
+              based on difficulty level of the main campaign</li>
+          <li>You can no longer win a level if you still have outstanding
+              loans</li>
+          <li>Emergencies will now be announced once patients actually begin
+              arriving instead of at the start</li>
+          <li>Errors with music playback will now attempt to provide more
+              helpful information in the console</li>
+          <li>Level briefings now show before the in-game tutorial</li>
+          <li>The first patient of a level will now arrive faster after
+              opening the hospital</li>
+          <li>The information dialog box is now more closely aligned with the
+              original game</li>
+          <li>The tip of the day window should no longer be obscured in the
+              main menu</li>
+          <li>The load/save windows now have better labelling</li>
+          <li>Unavailable languages are shown as disabled until you select a
+              Unicode font</li>
+          <li>Support is added to auto-detect a Theme Hospital install via GOG
+              Galaxy</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>Ukrainian translation added</li>
+          <li>Dutch translation has been updated</li>
+          <li>Italian translation has been updated</li>
+          <li>Russian translation has been updated</li>
+          <li>Spanish translation has been updated</li>
+          <li>French translation has been updated</li>
+          <li>Brazilian-Portuguese translation has been updated</li>
+          <li>Some unused language strings have been cleaned up</li>
+          <li>Custom campaign and level creators can now optionally add
+              translated strings for campaign description, level briefing, and
+              winning text</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Swing (double) doors will no longer crash your game if you built
+              rooms that used them while paused</li>
+          <li>Fixed a bug for NVIDIA users who didn&apos;t like graphical
+              corruption when playing fullscreen at non-native resolutions</li>
+          <li>Games should no longer crash irrecoverably because you have a
+              4k monitor :)</li>
+          <li>The game will now exit to the main menu cleanly if a problem
+              occurred trying to load a new level or map</li>
+          <li>Staff who have left the hospital can no longer ask for a
+              raise</li>
+          <li>Fixed a bug where some staff may have no initial before
+              surname</li>
+          <li>Patients can no longer litter outdoors</li>
+          <li>Patients waiting for a player decision no longer lose their mood icon
+              on vomit/pee</li>
+          <li>Fixed a bug where an unreachable reception desk could cause a
+              crash</li>
+          <li>The Computer and Atom Analyser now make button sounds as
+              originally intended</li>
+          <li>The mark for vaccination action now makes a sound as originally
+              intended</li>
+          <li>Fixed a rare bug where edges of map tiles for parcels could
+              cause unintended behaviour when purchasing plots</li>
+          <li>Active cheats will now persist across saves</li>
+          <li>Audio settings have better safeguards against no audio enabled/
+              no background music</li>
+          <li>Movies will no longer attempt to play audio when global audio is
+              off</li>
+          <li>Config values using brackets (such as a custom music directory)
+              will now work properly</li>
+          <li>Custom campaigns menu now will use a scrollbar for long campaign
+              descriptions</li>
+          <li>Continue Game now properly targets files explicitly ending in
+              the .sav format</li>
+          <li>Tooltips for language menu now align with list items. Please note we
+              are aware of an issue where some languages don&apos;t show a
+              tooltip</li>
+          <li>Fixed an instance where information boxes could load pink from
+              older savegames</li>
+          <li>Implemented a more permanent fix for the money bar being drawn
+              incorrectly in some CJK and Cyrillic languages</li>
+          <li>Fixed a crash on exit that could occur in some systems</li>
+          <li>Mouse panning behaviour has been made more responsive and
+              accurate</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.68.0~rc2" date="2024-09-25" type="development">
+      <description>
+        <p>Translations:</p>
+        <ul>
+          <li>Dutch translation has been updated</li>
+          <li>Ukrainian translation has been updated</li>
+          <li>Russian translation has been updated</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Added a safeguard to prevent a crash of games previously using the
+              old cheat system</li>
+          <li>Patients waiting for a player decision no longer lose their mood icon
+              on vomit/pee</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.68.0~rc1" date="2024-09-14" type="development">
+      <description>
+        <p>New Features:</p>
+        <ul>
+          <li>Long windows now behave properly in the game if they get intersected
+              by an adjacent wall</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>Ukrainian translation added</li>
+          <li>Brazilian-Portuguese translation has been updated</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Tooltips for language menu now align with list items. Please note we
+             are aware of an issue where some languages don&apos;t show a tooltip</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.68.0~beta1" date="2024-09-01" type="development">
+      <description>
+        <p>New Features:</p>
+      <ul>
+        <li>In-game movies now play for users using TH Data directly from a .ISO
+            file</li>
+        <li>Custom campaign creators can now optionally use the original level
+            advance movie when progressing through the campaign</li>
+        <li>The Map Editor has received some love including new features, fixes,
+            and jukebox controls</li>
+        <li>You can now control the Jukebox from the Main Menu by going to Options
+            &gt; Jukebox</li>
+        <li>External (non-TH) XMI files are now supported by the Jukebox</li>
+        <li>The adviser now tells you the cost of replacing your machine if you
+            cannot currently afford it</li>
+        <li>More cheats!</li>
+        <li>[Experimental] Right mouse panning can now be used instead of using the
+            middle mouse button. Enable it in the configuration file</li>
+        <li>[Experimental] We&apos;re closer to fully implementing falling actions!
+            Get a sneak peek and get the chance to push people over by enabling it
+            in the configuration file/debug menu</li>
+      </ul>
+      <p>Changes:</p>
+      <ul>
+        <li>The demo movie will no longer play and cause jumpscares at the main menu
+            if the CorsixTH window is not in focus</li>
+        <li>Game speeds are now more closely aligned with the original game</li>
+        <li>Improvements to handling of win/lose conditions, and the progress
+            report</li>
+        <li>Staff tiredness levels are now taken from the level config file based on
+            difficulty level of the main campaign</li>
+        <li>You can no longer win a level if you still have outstanding loans</li>
+        <li>Emergencies will now be announced once patients actually begin arriving
+            instead of at the start</li>
+        <li>Errors with music playback will now attempt to provide more helpful
+            information in the console</li>
+        <li>Level briefings now show before the in-game tutorial</li>
+        <li>The first patient of a level will now arrive faster after opening the
+            hospital</li>
+        <li>The information dialog box is now more closely aligned with the original
+            game</li>
+        <li>The tip of the day window should no longer be obscured in the main
+            menu</li>
+        <li>The load/save windows now have better labelling</li>
+        <li>Unavailable languages are shown as disabled until you select a Unicode
+            font</li>
+        <li>Support is added to auto-detect a Theme Hospital install via GOG
+            Galaxy</li>
+      </ul>
+      <p>Translations:</p>
+      <ul>
+        <li>Dutch translation has been updated</li>
+        <li>Italian translation has been updated</li>
+        <li>Russian translation has been updated</li>
+        <li>Spanish translation has been updated</li>
+        <li>French translation has been updated</li>
+        <li>Some unused language strings have been cleaned up</li>
+        <li>Custom campaign and level creators can now optionally add translated
+            strings for campaign description, level briefing, and winning text</li>
+      </ul>
+      <p>Bug Fixes:</p>
+      <ul>
+        <li>Swing (double) doors will no longer crash your game if you built rooms
+            that used them while paused</li>
+        <li>Fixed a bug for NVIDIA users who didn&apos;t like graphical corruption
+            when playing fullscreen at non-native resolutions</li>
+        <li>Games should no longer crash irrecoverably because you have a 4k monitor
+            :) </li>
+        <li>The game will now exit to the main menu cleanly if a problem occurred
+            trying to load a new level or map</li>
+        <li>Staff who have left the hospital can no longer ask for a raise</li>
+        <li>Fixed a bug where some staff may have no initial before surname</li>
+        <li>Patients can no longer litter outdoors</li>
+        <li>Fixed a bug where an unreachable reception desk could cause a crash</li>
+        <li>The Computer and Atom Analyser now make button sounds as originally
+            intended</li>
+        <li>The mark for vaccination action now makes a sound as originally
+            intended</li>
+        <li>Fixed a rare bug where edges of map tiles for parcels could cause
+            unintended behaviour when purchasing plots</li>
+        <li>Active cheats will now persist across saves</li>
+        <li>Audio settings have better safeguards against no audio enabled/no
+            background music</li>
+        <li>Movies will no longer attempt to play audio when global audio is off</li>
+        <li>Config values using brackets (such as a custom music directory) will now
+            work properly</li>
+        <li>Custom campaigns menu now will use a scrollbar for long campaign
+            descriptions</li>
+        <li>Continue Game now properly targets files explicitly ending in the .sav
+            format</li>
+        <li>Fixed an instance where information boxes could load pink from older
+            savegames</li>
+        <li>Implemented a more permanent fix for the money bar being drawn
+            incorrectly in some CJK and Cyrillic languages</li>
+        <li>Fixed a crash on exit that could occur in some systems</li>
+        <li>Mouse panning behaviour has been made more responsive and accurate</li>
+      </ul>
+      </description>
+    </release>
+    <release version="0.67" date="2023-08-12" type="stable">
+      <description>
+        <p>New Features:</p>
+        <ul>
+          <li>The original demo gameplay video now plays when the CorsixTH main
+              menu is idle (this can be disabled in the configuration file)</li>
+          <li>File browser menus now have an OK button</li>
+          <li>Selecting an existing file in the Save Game/Map browsers will now
+              update the text input box to that file name</li>
+        </ul>
+        <p>Changes:</p>
+        <ul>
+          <li>Handymen now always stay in their assigned plots, except when
+              going to rest</li>
+          <li>Staff members now have a maximum salary, which can be configured
+              in custom levels</li>
+          <li>The game will now always use the GP&apos;s choice of next
+              diagnosis room for the patient, if available.</li>
+          <li>Queueing patients are now shown when hovering a door</li>
+          <li>Epidemics can no longer fail because an infected patient left
+              before the epidemic was revealed</li>
+          <li>Balance changes to drug improvement research</li>
+          <li>Check for updates can now be disabled in Settings</li>
+          <li>Check for updates timeout duration significantly shortened</li>
+          <li>&quot;Pause&quot; now shows up when the &quot;Build while
+              paused&quot; setting is on and the game is paused</li>
+          <li>The gamelog now includes a timestamp</li>
+          <li>Theme Hospital installs in the default location for the EA Store
+              are now automatically detected, like GOG and Origin.</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>Chinese Traditional and Simplified translations have been
+              updated</li>
+          <li>Russian has been updated</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Fixed an instance where objects could disappear from the map</li>
+          <li>Fixed a bug where the empty action queue message was prevented
+              from happening</li>
+          <li>Fixed a bug where dying patients became undead and would have a
+              habit of ruining everything</li>
+          <li>Fixed broken dynamic info during epidemics</li>
+          <li>Handymen will no longer try to repair machinery while a patient
+              is using it</li>
+          <li>Psychiatrist couch has less chance of causing blocked paths</li>
+          <li>Roujin&apos;s challenge is now properly applied (read:
+              harder)</li>
+          <li>Serious Radiation is no longer contagious</li>
+          <li>Room blueprints can no longer go beyond external walls</li>
+          <li>Fixed incorrect button sounds in the Staff Management Window</li>
+          <li>Fixed back button behaviour in Font Picker</li>
+          <li>Fixed a bug where word-wrapping text on dialogs could crash the
+              game</li>
+          <li>Fixed a rare case where the next VIP date may be scheduled in the
+              past</li>
+          <li>Fixed a rare case where awarded research points could be
+              negative</li>
+          <li>Fixed a rare case of the balance sheet being victim of a green
+              highlighter</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.67~rc1" date="2023-07-29" type="development">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Theme Hospital installs in the default location for the EA Store
+              are now automatically detected, like GOG and Origin.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.67~beta1" date="2023-07-08" type="development">
+      <description>
+        <p>New Features:</p>
+        <ul>
+          <li>The original demo gameplay video now plays when the CorsixTH main
+              menu is idle (this can be disabled in the configuration file)</li>
+          <li>File browser menus now have an OK button</li>
+          <li>Selecting an existing file in the Save Game/Map browsers will now
+              update the text input box to that file name</li>
+        </ul>
+        <p>Changes:</p>
+        <ul>
+          <li>Handymen now always stay in their assigned plots, except when
+              going to rest</li>
+          <li>Staff members now have a maximum salary, which can be configured
+              in custom levels</li>
+          <li>The game will now always use the GP&apos;s choice of next
+              diagnosis room for the patient, if available.</li>
+          <li>Queueing patients are now shown when hovering a door</li>
+          <li>Epidemics can no longer fail because an infected patient left
+              before the epidemic was revealed</li>
+          <li>Balance changes to drug improvement research</li>
+          <li>Check for updates can now be disabled in Settings</li>
+          <li>&quot;Pause&quot; now shows up when the &quot;Build while
+              paused&quot; setting is on and the game is paused</li>
+          <li>The gamelog now includes a timestamp</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>Chinese Traditional and Simplified translations have been
+              updated</li>
+          <li>Russian has been updated</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Fixed an instance where objects could disappear from the map</li>
+          <li>Fixed a bug where the empty action queue message was prevented
+              from happening</li>
+          <li>Fixed a bug where dying patients became undead and would have a
+              habit of ruining everything</li>
+          <li>Fixed broken dynamic info during epidemics</li>
+          <li>Handymen will no longer try to repair machinery while a patient
+              is using it</li>
+          <li>Psychiatrist couch has less chance of causing blocked paths</li>
+          <li>Roujin&apos;s challenge is now properly applied (read:
+              harder)</li>
+          <li>Serious Radiation is no longer contagious</li>
+          <li>Room blueprints can no longer go beyond external walls</li>
+          <li>Fixed incorrect button sounds in the Staff Management Window</li>
+          <li>Fixed back button behaviour in Font Picker</li>
+          <li>Fixed a bug where word-wrapping text on dialogs could crash the
+              game</li>
+          <li>Fixed a rare case where the next VIP date may be scheduled in the
+              past</li>
+          <li>Fixed a rare case where awarded research points could be
+              negative</li>
+          <li>Fixed a rare case of the balance sheet being victim of a green
+              highlighter</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.66" date="2022-06-25" type="stable">
+      <description>
+        <p>New Features:</p>
+        <ul>
+          <li>Direct Zoom has been improved and is now enabled by default</li>
+          <li>Nurses can now leave the ward without disturbing her patients</li>
+          <li>Patients with Serious Radiation now glow a beautiful shade of green</li>
+          <li>Patients with Jellyitis now wobble wobble wobble</li>
+          <li>The Hotkeys menu has been overhauled to make it easier to use</li>
+          <li>You can now reset your zoom level by pressing 0</li>
+          <li>A new fax code cheat has been added!</li>
+          <li>The replace machine prompt can now tell you the new strength before purchase</li>
+          <li>A machine's dynamic info will tell you the strength a machine can be upgraded
+            to if you replaced it (can be disabled in configuration settings)</li>
+        </ul>
+        <p>Changes:</p>
+        <ul>
+          <li>Improved pee and vomit conditions</li>
+          <li>Patients will no longer queue for reception until nearby</li>
+          <li>The Adviser will no longer queue repetitive messages</li>
+          <li>Dropdown menus will now close when clicked outside of</li>
+          <li>Non-visual diseases can now be delayed in the level config of a custom game</li>
+          <li>Gamelog.txt will now contain system information instead of within the window
+            title</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>Translations should no longer show random '/' on new lines</li>
+          <li>Russian language updated (Thanks @Matvey1705 !)</li>
+          <li>Czech language updated (Thanks @jansakos !)</li>
+          <li>German language updated (Thanks @Manuel-K !)</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Checking for updates should now work moving forward (promise)</li>
+          <li>All cured trophy bugfix now properly applied from 0.65.1</li>
+          <li>Firing staff from a multi-use object now ensures they leave the hospital</li>
+          <li>Missing config and hotkey values will now use default values</li>
+          <li>Fixed an instance where an emergency fax could show the wrong cure</li>
+          <li>Sound effect boundary is now properly applied on window resize</li>
+          <li>The cheats menu is now immediately usable after typing the cheat code on a
+            fax</li>
+          <li>User action while paused setting no longer uses configuration default</li>
+          <li>Quick Save and Quick Load behaviour has been improved</li>
+          <li>The cheats menu dialog will no longer slide off the screen</li>
+          <li>You can now purchase plots while wall transparency is on</li>
+          <li>Fixed playback of movie audio on surround sound systems is the most accurate</li>
+          <li>Patients no longer leave or become unhappy waiting too long when
+              they are in their treatment room</li>
+          <li>Resolved formatting issues with numbers after loading a save</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.66~rc1" date="2022-06-18" type="development">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Patients no longer leave or become unhappy waiting too long when
+              they are in their treatment room</li>
+          <li>Loading a save game containing a graph would crash</li>
+          <li>More crashing advisor statements have been corrected</li>
+          <li>Resolved formatting issues with numbers after loading a save</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.66~beta2" date="2022-06-04" type="development">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Crashing advisor statements introduced in 0.66-beta1</li>
+          <li>Issue loading 0.65.1 and earlier saves with VIP faxes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.66~beta1" date="2022-05-21" type="development">
+      <description>
+        <p>New Features:</p>
+        <ul>
+          <li>Direct Zoom has been improved and is now enabled by default</li>
+          <li>Nurses can now leave the ward without disturbing her patients</li>
+          <li>Patients with Serious Radiation now glow a beautiful shade of green</li>
+          <li>Patients with Jellyitis now wobble wobble wobble</li>
+          <li>The Hotkeys menu has been overhauled to make it easier to use</li>
+          <li>You can now reset your zoom level by pressing 0</li>
+          <li>A new fax code cheat has been added!</li>
+          <li>The replace machine prompt can now tell you the new strength before purchase</li>
+          <li>A machine's dynamic info will tell you the strength a machine can be upgraded
+            to if you replaced it (can be disabled in configuration settings)</li>
+        </ul>
+        <p>Changes:</p>
+        <ul>
+          <li>Improved pee and vomit conditions</li>
+          <li>Patients will no longer queue for reception until nearby</li>
+          <li>The Adviser will no longer queue repetitive messages</li>
+          <li>Dropdown menus will now close when clicked outside of</li>
+          <li>Non-visual diseases can now be delayed in the level config of a custom game</li>
+          <li>Gamelog.txt will now contain system information instead of within the window
+            title</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>Translations should no longer show random '/' on new lines</li>
+          <li>Russian language updated (Thanks @Matvey1705 !)</li>
+          <li>Czech language updated (Thanks @jansakos !)</li>
+          <li>German language updated (Thanks @Manuel-K !)</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Checking for updates should now work moving forward (promise)</li>
+          <li>All cured trophy bugfix now properly applied from 0.65.1</li>
+          <li>Firing staff from a multi-use object now ensures they leave the hospital</li>
+          <li>Missing config and hotkey values will now use default values</li>
+          <li>Fixed an instance where an emergency fax could show the wrong cure</li>
+          <li>Sound effect boundary is now properly applied on window resize</li>
+          <li>The cheats menu is now immediately usable after typing the cheat code on a
+            fax</li>
+          <li>User action while paused setting no longer uses configuration default</li>
+          <li>Quick Save and Quick Load behaviour has been improved</li>
+          <li>The cheats menu dialog will no longer slide off the screen</li>
+          <li>You can now purchase plots while wall transparency is on</li>
+          <li>Fixed playback of movie audio on surround sound systems is the most accurate</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.65.1" date="2021-07-17" type="stable">
+      <description>
+        <p>This is a hotfix release of 0.65 and replaces the June 2021 release</p>
+        <ul>
+          <li>Fixes a bug where the game would crash if you got the All Cured trophy at the
+            end of year awards, when loading a save from 0.64 or earlier</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.65" date="2021-06-19" type="stable">
+      <description>
+        <p>New Features:</p>
+        <ul>
+          <li>On MacOS DMG files are now supported as disk images for Theme
+            Hospital data</li>
+          <li>Hospital policies will now carry over to your next level in the
+            campaign</li>
+          <li>You can now remove destroyed rooms for a fee (config option)</li>
+          <li>The information dialogs that appear when a room is first built
+            can be disabled in the configuration file</li>
+          <li>Fire extinguishers in rooms now have a chance to save a smoking
+            machine from exploding</li>
+          <li>Advisor has more advice</li>
+          <li>Additional trophy of the original game is implemented</li>
+          <li>Windows and room size now impact staff happiness</li>
+          <li>Roujin's challenge cheat is back</li>
+          <li>Experimental direct_zoom config option, for more efficient zoom.
+            Fixes zoom on some hardware. Defaults off.</li>
+        </ul>
+        <p>Changes:</p>
+        <ul>
+          <li>Emergencies with unknown diseases will no longer occur</li>
+          <li>The VIP system has been overhauled to provide more balanced
+            ratings</li>
+          <li>Overpriced/Underpriced treatments now scale with difficulty</li>
+          <li>Placing a receptionist on a desk will now call her to the
+            desk</li>
+          <li>Boiler breakdowns now depend on handymen</li>
+          <li>Faxes can no longer be opened while paused (unless editing while
+            paused is enabled)</li>
+          <li>Improvements to receptionist announcement frequency and
+            behaviour</li>
+          <li>The game will now check common locations for Theme Hospital on
+            startup if it has not been configured</li>
+          <li>Games compiled without movie/audio can no longer access these
+            settings</li>
+          <li>Update check now occurs over TLS for better security</li>
+          <li>English names are now shown in a tooltip when hovering over a
+            language option</li>
+          <li>Improved TTF font rendering</li>
+        </ul>
+        <p>Translations:</p>
+        <ul>
+          <li>Greek language added! (thanks to dimitrios-iliadis!)</li>
+          <li>Updates to Brazilian-Portuguese language</li>
+          <li>Updates to English language</li>
+          <li>Fixes to Chinese unicode encoding</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Issues scheduling emergencies have been resolved</li>
+          <li>Games will no longer crash on load if the jukebox was open</li>
+          <li>Games will no longer crash because of an empty music folder</li>
+          <li>Fixed a scenario where editing a room caused staff to get
+            stuck</li>
+          <li>Games that scrolled while saving stop scrolling on load</li>
+          <li>Psychiatrists in the Operating Theatre are now properly
+            counted</li>
+          <li>Losing a game now gives the reason if the movie is skipped</li>
+          <li>Exiting the game will no longer hang when using the Wayland
+            backend</li>
+          <li>The mouse will now be freed on game crash</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.65~beta2" date="2021-05-29" type="development"></release>
+    <release version="0.65~beta1" date="2021-05-23" type="development"></release>
+    <release version="0.64" date="2020-06-16" type="stable"></release>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Welcome dialog for first hospital</caption>
+      <image>https://corsixth.com/media/screenshots/1-medium.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>First level in progress</caption>
+      <image>https://corsixth.com/media/screenshots/2-medium.jpg</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">intense</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">mild</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="sex-homosexuality">none</content_attribute>
+    <content_attribute id="sex-prostitution">none</content_attribute>
+    <content_attribute id="sex-adultery">none</content_attribute>
+    <content_attribute id="sex-appearance">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">moderate</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+  <developer id="com.corsixth">
+    <name>CorsixTH developers</name>
+  </developer>
+  <url type="homepage">https://corsixth.com</url>
+  <url type="vcs-browser">https://github.com/CorsixTH/CorsixTH</url>
+  <url type="bugtracker">https://github.com/CorsixTH/CorsixTH/issues</url>
+  <url type="contact">https://discord.gg/Mxeztvh</url>
+  <url type="help">https://github.com/CorsixTH/CorsixTH/wiki</url>
+</component>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2022 Rodrigo Rivas Costa <rodrigorivascosta@gmail.com> -->
+<component type="desktop-application">
+  <id>com.rodrigorc.papercraft</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Papercraft</name>
+  <summary>Tool to unwrap paper 3D models to build them in paper</summary>
+
+  <description>
+    <p>
+      Papercraft is a tool to unwrap paper 3D models, so that you can cut and glue them together and get a real world paper model.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">papercraft.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main UI</caption>
+      <image>https://user-images.githubusercontent.com/1128630/168819283-d1918ef0-6298-4230-b25c-64d02a021dce.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Dialog options</caption>
+      <image>https://user-images.githubusercontent.com/1128630/170358231-37c8d240-bc70-4d68-af88-53dfba44f361.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/rodrigorc/papercraft</url>
+  <content_rating type="oars-1.0" />
+
+  <releases>
+      <release version="1.1" date="2022-05-25" />
+  </releases>
+</component>

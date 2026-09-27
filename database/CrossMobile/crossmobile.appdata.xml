@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>crossmobile.manager</id>
+  <name>CrossMobile</name>
+  <summary>Create native iOS, Android, Windows 10 and Desktop Applications from a singe code base</summary>
+  <developer_name>Panayotis Katsaloulis</developer_name>
+  <description>
+  <p>
+Create native iOS, Android, Windows Phone and Desktop applications in Java.
+Just write it once and produce sophisticated multiplatform applications
+  </p>
+</description>
+  <metadata_license>(c) 2019 by Panayotis Katsaloulis</metadata_license>
+  <project_license>(c) 2019 by Panayotis Katsaloulis</project_license>
+  <url type="faq">https://crossmobile.tech/about/</url>
+  <url type="help">https://crossmobile.tech/initialize//</url>
+  <url type="homepage">https://crossmobile.tech</url>
+  <project_group>none</project_group>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Hello World manager</caption>
+      <image height="712" width="912">https://crossmobile.tech/wp-content/uploads/2016/12/FirstRun10.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Hello World application</caption>
+      <image height="480" width="328">https://crossmobile.tech/wp-content/uploads/2016/12/phonebOld15.png</image>
+    </screenshot>
+  </screenshots>
+  <update_contact>info@crossmobile.tech</update_contact>
+</component>

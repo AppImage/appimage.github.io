@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2022 Roland Hughes <roland@logikalsolutions.com> -->
+
+<component type="desktop">
+    <id>net.projects.reddiamond</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-2.0</project_license>
+	<name>RedDiamond</name>
+	<summary>Tabbed text editor with EDT keypad navigation and multiple main windows</summary>
+	<description>
+		<p>Programmer's text editor supporting EDT keypad navigation, multiple main windows, themes, syntax highlighting, sorting, and numerous other capabilities.</p>
+	</description>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://a.fsdn.com/con/app/proj/reddiamond/screenshots/reddiamond-cobalt.png/245/183/1</image>
+		</screenshot>
+	</screenshots>
+	<url type="homepage">https://sourceforge.net/projects/reddiamond/</url>
+    <update_contact>roland_at_logikalsolutions.com</update_contact>
+</component>

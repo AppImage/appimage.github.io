@@ -1,0 +1,28 @@
+{
+  "name": "moniteur-admin",
+  "version": "0.3.6",
+  "private": true,
+  "author": {
+    "name": "AUEB CSLab",
+    "email": "cslab@aueb.gr"
+  },
+  "main": "background.js",
+  "dependencies": {
+    "js-yaml": "^3.13.1",
+    "node-sass": "^4.13.1"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "homepage": "https://cslab.aueb.gr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aueb-cslabs/moniteur-admin.git"
+  }
+}

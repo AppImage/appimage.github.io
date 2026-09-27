@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=SAManager
+Exec=SAManager
+Icon=SAManager
+Type=Application
+Categories=Utility;
+
+Name[en_GB]=SAManager.desktop
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://fbalaguer.com/sites/default/files/downloads/linux/SAManager-x86_64.AppImage.zsync
+X-AppImage-Signature=Signature made Mon 07 Jun 2021 06:08:46 PM UTC                using RSA key 4FBF62B90D1A737ED59A7FFD2002AEFA693B0B72 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
