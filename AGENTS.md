@@ -139,7 +139,13 @@ GitHub Pages (Jekyll) from this repository.
    5 stars, as it may have gained some). What remains is checked (in
    random order) with `code/fetch-releases.sh` and `code/find-appimage.sh`
    (exactly one x86_64 AppImage, in a release less than 2 years old) and
-   `code/check-name.sh` (`STRICT=true`); every repository checked is recorded
+   `code/check-name.sh` (`STRICT=true`). The name (file in `data/`, branch
+   and PR title) is the proper spelling picked by `code/pick-name.sh` from the
+   repository name, the AppImage's name and the description (same letters
+   and digits as the repository name; most capitals win, blanks become `_`:
+   photoapp + `PhotoApp-1.2.AppImage` gives `PhotoApp`, photo-app + "Photo
+   App is …" gives `Photo_App`); an app already in `data/` in any spelling is
+   skipped; every repository checked is recorded
    in the state file with its outcome, so it is not checked again for 90
    days. The state file (`discover-state.tsv`, with the cursor on its first
    line) lives on its own orphan branch, `discover-state`, never on `master`.
