@@ -30,6 +30,10 @@ HINTS=(
   "error-not-executable"
   "A file inside the AppImage is not executable. Please check the file permissions before packaging the AppImage."
 
+  "error while loading shared libraries"
+  "error-missing-library"
+  "The application needs a library that is neither in the AppImage nor on the test system (\"error while loading shared libraries\", the first error below names it). Please bundle this library, and what it depends on, in the AppImage: an AppImage cannot rely on libraries that are not installed on every target system."
+
   "^ERROR: The application exited within [0-9]+ seconds"
   "error-app-exits"
   "The application quit or crashed right after starting. The error below usually shows why."
@@ -156,8 +160,13 @@ GENERIC="error while loading shared libraries|Segmentation fault|Traceback \\(mo
 if [ "$1" == "--excerpt" ] ; then
   LOG="$2"
   [ -f "$LOG" ] || exit 0
+  # A missing library is almost always the real cause, wherever it appears;
+  # otherwise the first line matching an error (not a warning or a remark:
+  # hints without a label)
+  PRIORITY="error while loading shared libraries"
   PATTERN="$GENERIC"
   for ((i = 0; i < ${#HINTS[@]}; i += 3)) ; do
+    [ "${HINTS[$((i + 1))]}" == "-" ] && continue
     PATTERN="$PATTERN|${HINTS[$i]}"
   done
   # Drop the source lines that "set -v" echoes, the commands that "set -x"
@@ -166,7 +175,8 @@ if [ "$1" == "--excerpt" ] ; then
   CLEAN=$(mktemp)
   grep -vxF -f <(grep -v '^[[:space:]]*$' "$(dirname "$0")/worker.sh") "$LOG" \
     | grep -vE '^\++ |^cleanup$' | cat -s > "$CLEAN"
-  FIRST=$(grep -nE -m 1 -- "$PATTERN" "$CLEAN" | cut -d : -f 1)
+  FIRST=$(grep -nE -m 1 -- "$PRIORITY" "$CLEAN" | cut -d : -f 1)
+  [ -n "$FIRST" ] || FIRST=$(grep -nE -m 1 -- "$PATTERN" "$CLEAN" | cut -d : -f 1)
   if [ -n "$FIRST" ] ; then
     sed -n "${FIRST},$((FIRST + 15))p" "$CLEAN"
   else
