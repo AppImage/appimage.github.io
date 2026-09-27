@@ -81,7 +81,7 @@ GitHub Pages (Jekyll) from this repository.
    withdrawn when a later push undoes the change. This does not depend on the
    PR's own test run, which a PR could alter.
 
-4. `.github/workflows/ping-authors.yml` (monthly `schedule`, and
+4. `.github/workflows/ping-authors.yml` (monthly `schedule`, a real run, and
    `workflow_dispatch` with `dry_run` (default true), `max_issues`
    (default 5) and `full_scan`) runs `code/check-entry.sh` over the files in
    `data/` (10 in parallel, 10 s timeouts; it stops once `max_issues` new dead
@@ -89,11 +89,18 @@ GitHub Pages (Jekyll) from this repository.
    entries whose AppImage is gone (repository not found, no AppImage in its
    releases, or a direct download URL returning 404/410; timeouts and other
    errors are `unknown` and are never pinged), writes a summary, and runs
-   `code/ping-authors.sh` to open (at most `max_issues`) issues labeled
+   `code/ping-authors.sh`. A dead link to a GitHub release asset whose
+   repository still has an AppImage (`find-appimage.sh`) is `fixable`: it
+   opens a pull request (branch `ping-authors/fixes-*`, at most 5 entries per
+   run, none already in an open fix PR) that points those entries to the
+   repository and closes open issues about them when merged; PRs opened with
+   the workflow's token start no workflows, so close and reopen it to test.
+   Only the rest is pinged:
+   `code/ping-authors.sh` opens (at most `max_issues`) issues labeled
    `entry-unavailable` for dead entries that never had one (open or closed),
    @-mentioning the author of the commit that added the entry and the
-   upstream GitHub owner (never `probonopd` or bots). It never edits or
-   removes an entry itself. Run it by hand from the Actions tab (dry run
+   upstream GitHub owner (never `probonopd` or bots), each entry at most
+   once. It never removes an entry. One run at a time (`concurrency`). Run it by hand from the Actions tab (dry run
    first); see `MAINTAINER.md`.
 
 ## Rules that are easy to get wrong

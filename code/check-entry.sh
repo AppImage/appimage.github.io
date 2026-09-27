@@ -9,11 +9,15 @@
 #   ok
 #   dead: REASON
 #   unknown: REASON
-# and exits 0 in all three cases (the caller decides what to do). "dead"
+#   fixable: https://github.com/OWNER/REPO
+# and exits 0 in all cases (the caller decides what to do). "dead"
 # means: the GitHub repository does not exist, its releases have no
 # AppImage, or a direct download URL answered 404/410. Anything else
 # (timeout, 5xx, DNS failure, ambiguous releases) is "unknown", since it may
 # just be a temporary problem, and the caller must never ping authors for it.
+# "fixable" means: a GitHub release asset is gone, but the repository's
+# releases have an AppImage that code/find-appimage.sh picks unambiguously,
+# so the entry can point to the repository instead.
 #
 # Uses GH_TOKEN (if set) for api.github.com, like worker.sh does.
 
@@ -76,6 +80,23 @@ case "$HTTP_CODE" in
   200|206|301|302|303|307|308)
     echo ok ;;
   404|410)
+    # A release asset that is gone: maybe the repository has a newer release
+    # with the AppImage; then the entry can point to the repository instead
+    if [[ "$URL" =~ ^https://github\.com/([^/]+)/([^/]+)/releases/download/ ]] ; then
+      GHUSER=${BASH_REMATCH[1]}
+      GHREPO=${BASH_REMATCH[2]}
+      API_JSON=$(mktemp)
+      trap 'rm -f "$API_JSON"' EXIT
+      API_CODE=$(curl -sS -o "$API_JSON" -w '%{http_code}' --connect-timeout 5 --max-time 10 \
+        -H "Accept: application/vnd.github+json" \
+        ${GH_TOKEN:+-H "Authorization: Bearer $GH_TOKEN"} \
+        -H "X-GitHub-Api-Version: 2022-11-28" \
+        "https://api.github.com/repos/$GHUSER/$GHREPO/releases") || API_CODE=000
+      if [ "$API_CODE" == 200 ] && bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$(basename "$FILE")" | grep -q '^URL ' ; then
+        echo "fixable: https://github.com/$GHUSER/$GHREPO"
+        exit 0
+      fi
+    fi
     echo "dead: download URL returned $HTTP_CODE ($URL)" ;;
   000)
     echo "unknown: host unreachable ($URL)" ;;

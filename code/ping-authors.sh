@@ -12,6 +12,14 @@
 #     once it has found N dead entries without an issue yet, so each run
 #     continues where the issues of the previous ones leave off.
 #
+# Before pinging anyone, it tries to fix the entry: when a GitHub release
+# asset is gone but the repository still has an AppImage (check-entry.sh
+# reports "fixable"), it opens a pull request that points the entry to the
+# repository (at most MAX_FIXES, default 5, per run; entries already in an
+# open fix PR are left out), closing open issues about them when merged.
+# Only entries that cannot be fixed like this are pinged, and each at most
+# once (any issue, open or closed).
+#
 # Entries are checked in parallel (PARALLEL, default 10) in chunks.
 #
 # Needs GH_TOKEN (repo scope on this repository) and, to actually create
@@ -29,6 +37,7 @@ MAX_ISSUES=5
 FULL=false
 PARALLEL=${PARALLEL:-10}
 CHUNK=50
+MAX_FIXES=${MAX_FIXES:-5}
 while [ $# -gt 0 ] ; do
   case "$1" in
     --dry-run) DRY_RUN=true ; shift ;;
@@ -61,16 +70,21 @@ codespan() { echo "\`$(sanitize "$1")\`" ; }
 
 title_of() { echo "Where did the AppImage of $(sanitize "$1") go?" ; }
 
-# Titles of all issues ever opened by this check (open or closed): an entry
-# is pinged only once; a maintainer closes the issue when it is dealt with
-: > /tmp/ping-authors-existing.txt
-PAGE=1
-while : ; do
-  TITLES=$(api GET "repos/$REPO/issues?labels=$LABEL&state=all&per_page=100&page=$PAGE" | jq -r '.[].title' 2>/dev/null)
-  [ -n "$TITLES" ] || break
-  echo "$TITLES" >> /tmp/ping-authors-existing.txt
-  PAGE=$((PAGE + 1))
+# All issues ever opened by this check (open or closed), as number<TAB>state<TAB>title:
+# found by label, and by title among the bot's issues in case the label was removed
+: > /tmp/ping-authors-existing.tsv
+for QUERY in "labels=$LABEL" "creator=github-actions%5Bbot%5D" ; do
+  PAGE=1
+  while : ; do
+    ISSUES=$(api GET "repos/$REPO/issues?$QUERY&state=all&per_page=100&page=$PAGE" \
+      | jq -r '.[] | select(.pull_request == null) | select(.title | startswith("Where did the AppImage of ")) | "\(.number)\t\(.state)\t\(.title)"' 2>/dev/null)
+    [ -n "$ISSUES" ] || break
+    echo "$ISSUES" >> /tmp/ping-authors-existing.tsv
+    PAGE=$((PAGE + 1))
+  done
 done
+sort -u -o /tmp/ping-authors-existing.tsv /tmp/ping-authors-existing.tsv
+cut -f 3 /tmp/ping-authors-existing.tsv > /tmp/ping-authors-existing.txt
 
 echo "Scanning data/ ($PARALLEL at a time) ..."
 : > /tmp/ping-authors-results.tsv
@@ -96,13 +110,14 @@ sort -o /tmp/ping-authors-results.tsv /tmp/ping-authors-results.tsv
 COUNT=$(wc -l < /tmp/ping-authors-results.tsv)
 
 OK_N=$(grep -cP '\tok$' /tmp/ping-authors-results.tsv || true)
+FIX_N=$(grep -cP '\tfixable: ' /tmp/ping-authors-results.tsv || true)
 DEAD_N=$(grep -cP '\tdead:' /tmp/ping-authors-results.tsv || true)
 UNKNOWN_N=$(grep -cP '\tunknown:' /tmp/ping-authors-results.tsv || true)
 
 {
   echo "## Ping authors: entry check"
   echo
-  echo "Checked $COUNT entries: $OK_N ok, $DEAD_N dead, $UNKNOWN_N unknown (not pinged)."
+  echo "Checked $COUNT entries: $OK_N ok, $FIX_N fixable (AppImage found in the repository), $DEAD_N dead, $UNKNOWN_N unknown (not pinged)."
   [ -z "$STOPPED" ] || { echo ; echo "$STOPPED" ; }
   echo
   if [ "$DEAD_N" -gt 0 ] ; then
@@ -114,7 +129,71 @@ UNKNOWN_N=$(grep -cP '\tunknown:' /tmp/ping-authors-results.tsv || true)
   fi
 } | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
 
-# --- 2. Ping authors of dead entries ------------------------------------
+# --- 2. Fix entries whose repository still has an AppImage -------------
+# In a pull request (not on master): changes to data/ are reviewed like any
+# other. Entries already in an open fix PR are left out.
+
+: > /tmp/ping-authors-inpr.txt
+api GET "repos/$REPO/pulls?state=open&per_page=100" \
+  | jq -r '.[] | select(.head.ref | startswith("ping-authors/")) | .number' 2>/dev/null \
+  | while read -r NUMBER ; do
+      api GET "repos/$REPO/pulls/$NUMBER/files?per_page=100" | jq -r '.[].filename | ltrimstr("data/")' 2>/dev/null
+    done > /tmp/ping-authors-inpr.txt
+
+: > /tmp/ping-authors-fixed.tsv
+grep -P '\tfixable: ' /tmp/ping-authors-results.tsv | while IFS=$'\t' read -r NAME STATUS ; do
+  grep -qxF "$NAME" /tmp/ping-authors-inpr.txt && continue
+  NEWURL=${STATUS#fixable: }
+  [[ "$NEWURL" =~ ^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]] || continue
+  printf '%s\t%s\t%s\n' "$NAME" "$(head -n 1 "data/$NAME" | tr -d '\r')" "$NEWURL"
+done | head -n "$MAX_FIXES" > /tmp/ping-authors-fixed.tsv
+
+if [ -s /tmp/ping-authors-fixed.tsv ] ; then
+  FIXED_N=$(wc -l < /tmp/ping-authors-fixed.tsv)
+  {
+    echo "The AppImages these entries link to are gone, but the releases of their GitHub repositories have one (found by \`code/find-appimage.sh\`), so the entries can point to the repository and follow new releases:"
+    echo
+    echo "| Entry | Was | Now |"
+    echo "| --- | --- | --- |"
+    while IFS=$'\t' read -r NAME OLDURL NEWURL ; do
+      echo "| \`data/$(sanitize "$NAME")\` | $(codespan "$OLDURL") | $NEWURL |"
+    done < /tmp/ping-authors-fixed.tsv
+    echo
+    # Open issues about these entries close when this is merged
+    while IFS=$'\t' read -r NAME OLDURL NEWURL ; do
+      awk -F '\t' -v t="$(title_of "$NAME")" '$2 == "open" && $3 == t { print "Closes #" $1 }' /tmp/ping-authors-existing.tsv
+    done < /tmp/ping-authors-fixed.tsv
+    echo
+    echo "Opened by \`.github/workflows/ping-authors.yml\`. A PR opened by a workflow does not start the Test workflow: close and reopen this PR to test the entries (or they are tested on master when it is merged)."
+  } > /tmp/ping-authors-pr.md
+  echo "Fixes ($FIXED_N):" | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
+  cut -f 1,3 /tmp/ping-authors-fixed.tsv | sed 's/\t/ -> /' | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
+  if [ "$DRY_RUN" == true ] ; then
+    echo "--- Would open this pull request ---"
+    cat /tmp/ping-authors-pr.md
+    echo "---"
+  else
+    BRANCH="ping-authors/fixes-$(date -u +%Y%m%d-%H%M%S)"
+    git checkout -q -b "$BRANCH"
+    while IFS=$'\t' read -r NAME OLDURL NEWURL ; do
+      { echo "$NEWURL" ; tail -n +2 "data/$NAME" ; } > /tmp/ping-authors-entry && cat /tmp/ping-authors-entry > "data/$NAME"
+    done < /tmp/ping-authors-fixed.tsv
+    git config user.name "GitHub Actions"
+    git config user.email "actions@users.noreply.github.com"
+    git add data/
+    git commit -q -m "Point $FIXED_N entries to their GitHub repository
+
+The AppImages they linked to are gone, but the repositories' releases have
+one (found by code/find-appimage.sh); by ping-authors.yml."
+    git push -q origin "$BRANCH"
+    PR_URL=$(api POST "repos/$REPO/pulls" -d "$(jq -n --arg h "$BRANCH" --arg t "Point $FIXED_N entries to their GitHub repository" --rawfile b /tmp/ping-authors-pr.md \
+      '{title:$t, head:$h, base:"master", body:$b}')" | jq -r '.html_url // .message')
+    echo "Pull request: $PR_URL" | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
+    git checkout -q -
+  fi
+fi
+
+# --- 3. Ping authors of dead entries ------------------------------------
 
 OPENED=0
 grep -P '\tdead:' /tmp/ping-authors-results.tsv | while IFS=$'\t' read -r NAME STATUS ; do
