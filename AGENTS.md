@@ -29,9 +29,8 @@ GitHub Pages (Jekyll) from this repository.
    - `code/check-libc.sh`: does it need a compatible C library on the host?
      (`X-AppImage-Libc=none|bundled|host`, `X-AppImage-Runtime`,
      `X-AppImage-Self-Contained`, `X-AppImage-Glibc-Required=GLIBC_2.xx`, stored
-     with the prefix because YAML would turn 2.40 into the number 2.4; what 99%
-     of the ELF files need, so that a few optional files, e.g. a debugger helper
-     in a 1400-file AppImage, do not decide it; those are listed in the log);
+     with the prefix because YAML would turn 2.40 into the number 2.4; an upper
+     bound, as not every library in an AppImage is necessarily loaded);
    - runs the application in firejail **without network**, waits 30 s, takes a
      screenshot of the active window;
    - `code/check-screenshot.sh`: fails on an (almost) empty window or an error
