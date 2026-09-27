@@ -108,7 +108,42 @@ GitHub Pages (Jekyll) from this repository.
 - To re-test an existing contributor PR with new workflow code, close and reopen
   it (a re-run would reuse the old workflow files). `code/retest-prs.sh` does this
   for all open PRs that change one file in `data/` and last tested green
-  (`-n` to only list them).
+  (`-u`: instead those without a test result label; `-n` to only list them).
+
+## Investigating and answering in pull requests
+
+**Only when the maintainer explicitly asks for it** (e.g. "look into the
+complaint in PR #123 and answer"). Never comment on, close, label or merge
+PRs on your own initiative, and never start conversations with contributors.
+
+Investigate before answering, and keep the context small:
+- Read the comment, the PR's `data/` file and the bot's test result comment
+  (`<!-- appimagehub-test-result -->`).
+- Download the job log (`repos/…/actions/jobs/<id>/logs`, the job of the run
+  linked from the test result) and grep it locally instead of reading it:
+  `URL from GitHub API:` (the release asset that was tested), `X-AppImage-`,
+  `Screenshot:`, `^ERROR`, `^WARNING`.
+- Which release is current: `https://github.com/<owner>/<repo>/releases/latest`
+  redirects to it.
+- Claims about the AppImage itself (e.g. which glibc it needs): download it,
+  extract it with `unsquashfs -o <offset>` (see "Testing changes"), and find
+  the files responsible, e.g. with `objdump -T` for `*UND*` `GLIBC_` symbols.
+  Everything inside the AppImage counts, even a rarely loaded library, as
+  long as whatever loads it is also in the AppImage (not on the host).
+- Remember how the test runs the app: without network, `--help` in xterm for
+  `Terminal=true`, screenshot after at least 10 s.
+- If our test or wording is wrong, fix it (in a PR as usual) and re-test the
+  contributor's PR by closing and reopening it.
+
+Write the answer:
+- Show the draft to the maintainer first; post only after they approve it,
+  or hand it to them to post themselves.
+- Be very polite: thank them, apologize if the PR waited long, agree where
+  they are right.
+- State facts with evidence: the exact version, file path, symbol or log
+  line. No guesses; say what they can do (e.g. remove or rebuild a file),
+  and mention further findings only as friendly suggestions.
+- Follow the attribution rules of the environment the agent runs in.
 
 ## Conventions
 
