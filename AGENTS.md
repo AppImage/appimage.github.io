@@ -27,7 +27,13 @@ GitHub Pages (Jekyll) from this repository.
      `code/find-appimage.sh`, which picks the AppImage from the releases by
      rules and fails rather than guesses when several fit),
      checks its type, mounts it with a separate runtime (never executes the
-     AppImage's own runtime), runs `appdir-lint.sh`, finds the icon;
+     AppImage's own runtime), runs `appdir-lint.sh`, finds the icon; the
+     payload's file system (SquashFS or DwarFS, detected by magic number at
+     the offset right after the runtime's ELF section headers) is mounted
+     accordingly and recorded as `X-AppImage-Filesystem=squashfs|dwarfs`; for
+     DwarFS, update information and the signature are read from the runtime's
+     `.upd_info`/`.sha256_sig` ELF sections (with `objcopy`) since the dwarfs
+     FUSE driver has no equivalent of `--appimage-updateinformation`;
    - `code/check-libc.sh`: does it need a compatible C library on the host?
      (`X-AppImage-Libc=none|bundled|host`, `X-AppImage-Runtime`,
      `X-AppImage-Self-Contained`, `X-AppImage-Glibc-Required=GLIBC_2.xx`, stored
