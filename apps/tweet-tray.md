@@ -3,12 +3,10 @@ layout: app
 
 permalink: /tweet-tray/
 description: Tweet quickly from the desktop without any more distractions.
+license: MIT
 
 icons:
   - tweet-tray/icons/128x128/tweet-tray.png
-
-screenshots:
-  - tweet-tray/screenshot.png
 
 authors:
   - name: jonathontoon
@@ -28,15 +26,20 @@ desktop:
     Terminal: false
     Type: Application
     Icon: tweet-tray
-    X-AppImage-Version: 1.1.3
-    X-AppImage-BuildId: 6c903f50-3d79-11a8-3a40-df7614ff03cc
+    X-AppImage-Version: 1.1.5
+    X-AppImage-BuildId: 53ed2de0-3261-11a9-036d-f5b699f783f7
     Categories: Development
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.15
+    X-AppImage-Payload-License: MIT
 
 electron:
   description: Tweet quickly from the desktop without any more distractions.
