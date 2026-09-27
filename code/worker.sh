@@ -93,6 +93,7 @@ echo "URL: $URL"
 bash "$(dirname "$0")/check-name.sh" --appimage "$(basename "${URL%%\?*}")"
 
 FILENAME=BeingTested.AppImage
+rm -f "$FILENAME" # Left over from the previous file when a run tests several; must not be tested again
 if [ ! -e "$FILENAME" ] ; then
   wget -c -nv "$URL" -O "$FILENAME" --no-check-certificate
 fi
