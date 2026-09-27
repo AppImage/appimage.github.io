@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>io.github.dark574.Retromind</id>
+  <name>Retromind</name>
+  <summary>Portable media manager for games, movies, books, and more</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <developer id="io.github.dark574">
+    <name>Retromind contributors</name>
+  </developer>
+  <description>
+    <p>Retromind is a Linux-first, portable media manager for organizing and launching media libraries.</p>
+    <p>It supports games, movies, books, comics, and more with a three-pane layout, cover grid, and detailed metadata.</p>
+  </description>
+  <launchable type="desktop-id">io.github.dark574.Retromind.desktop</launchable>
+  <url type="homepage">https://dark574.github.io/Retromind/</url>
+  <provides>
+    <binary>Retromind</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+</component>
