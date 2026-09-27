@@ -98,6 +98,10 @@ HINTS=(
   "-"
   "The screenshot may show an error message; please check it."
 
+  "^WARNING: The screenshot shows text mostly not in English"
+  "-"
+  "The text on the screenshot is mostly not in English. AppImageHub is in English: please make the application start in English when the system language is English or not set (the test runs it with the C locale), e.g. by falling back to English instead of to another language."
+
   "^FATAL: .* (is missing|not found|missing in)"
   "error-missing-file"
   "The AppImage is missing a required file (see below). See https://docs.appimage.org/reference/appdir.html for what an AppImage must contain."
