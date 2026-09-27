@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+	<id>net.jacksum.jacksum</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0-or-later</project_license>
+        <developer id="net.loefflmann.johann">
+            <name>Johann N. Löfflmann</name>
+        </developer>
+	<name>Jacksum</name>
+	<summary>A powerful hash tool, supports 489 hash functions</summary>
+	<description>
+		<p>Jacksum is a powerful hash tool. Calculate hashes, verify data integrity, find files by their fingerprints, find hash functions to a hash, and get detailed info about hash functions.</p>
+	</description>
+	<launchable type="desktop-id">net.jacksum.jacksum.desktop</launchable>
+	<url type="homepage">https://jacksum.net</url>
+	<screenshots>
+		<screenshot type="default">
+			<caption>Jacksum in action on the command line.</caption>
+			<image>https://raw.githubusercontent.com/jonelo/jacksum/main/docs/images/screenshot-jacksum_on_ubuntu-cli_examples.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+                <binary>jacksum</binary>
+		<id>net.jacksum.jacksum.desktop</id>
+	</provides>
+	<content_rating type="oars-1.0" />
+	<releases>
+            <release version="3.7.0" date="2023-08-26">
+                <description>
+			<p>See github.com/jonelo/jacksum/releases/tag/v3.7.0</p>
+                </description>
+            </release>
+        </releases>
+</component>

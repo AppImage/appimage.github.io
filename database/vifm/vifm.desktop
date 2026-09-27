@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=System;FileTools;FileManager;Utility;ConsoleOnly;
+Comment=Vi[m] like ncurses based file manager
+Exec=vifm %F
+GenericName=File Manager
+Icon=vifm
+Name=Vifm
+Terminal=true
+TryExec=vifm
+Type=Application
+Keywords=File;Directory;Browse;
+MimeType=inode/directory;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|vifm|vifm|latest|vifm-*x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Wed Sep 29 10:55:19 2021 UTC                using RSA key 99DC5E4DB05F6BE2 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

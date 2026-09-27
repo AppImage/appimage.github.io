@@ -1,0 +1,22 @@
+[Desktop Entry]
+Name=Jacksum
+Version=1.0
+Exec=jacksum
+Comment=Professional hash tool, supports hundreds of hash algorithms
+Comment[de]=Professionelles Hash Werkzeug, unterstützt hunderte von Hash Algorithmen
+Icon=Jacksum
+Type=Application
+Terminal=true
+StartupNotify=true
+Categories=Utility;ConsoleOnly
+MimeType=inode/directory
+X-AppImage-Name=Jacksum
+X-AppImage-Version=3.7.0
+X-AppImage-Arch=x86_64
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Fri Nov 15 22:08:09 2024 UTC                using EDDSA key 1DC82A86AE55FD2B97E92C0763F84C61889BAC2E Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
