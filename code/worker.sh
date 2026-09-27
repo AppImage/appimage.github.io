@@ -137,24 +137,26 @@ fi
 TYPE=""
 ARCHITECTURE=$(file "$FILENAME" | cut -d "," -f 2 | xargs | sed -e 's|-|_|g' )
 echo $ARCHITECTURE # TODO: Normalize
-MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4 2>/dev/null)
-if [ -z "$MAGIC" ] ; then
+# Compare bytes as hex: a variable cannot hold NUL bytes ("ignored null byte")
+hexbytes() { od -An -tx1 -j "$2" -N "$3" "$1" 2>/dev/null | tr -d ' \n' ; } # hexbytes FILE OFFSET COUNT
+MAGIC=$(hexbytes "$FILENAME" 8 3) # "AI" and the AppImage type, https://github.com/AppImage/AppImageSpec/blob/master/draft.md
+if [ x"$MAGIC" == x000000 ] || [ -z "$MAGIC" ] ; then
   echo "Magic number not detected. Dear upstream, please consider to add one to the AppImage as per"
   echo "https://github.com/AppImage/AppImageSpec/blob/master/draft.md"
-  ELFMAGIC=$(dd if="$FILENAME" bs=1 skip=0 count=4  2>/dev/null)
-  if [ x"$ELFMAGIC" == x$(echo -ne "\x7f\x45\x4c\x46") ] ; then
+  ELFMAGIC=$(hexbytes "$FILENAME" 0 4)
+  if [ x"$ELFMAGIC" == x7f454c46 ] ; then
     echo "ELF file detected"
-    ISOMAGIC=$(dd if="$FILENAME" bs=1 skip=32769 count=5 2>/dev/null)
-    if [ x"$ISOMAGIC" == x$(echo -ne "CD001") ] ; then
+    ISOMAGIC=$(hexbytes "$FILENAME" 32769 5)
+    if [ x"$ISOMAGIC" == x4344303031 ] ; then # "CD001"
       echo "ISO9660 file detected"
       echo "Hence assuming AppImage type 1"
       TYPE=1
     fi
   fi
-elif [ x"$MAGIC" == x$(echo -ne "\x41\x49\x02") ] ; then
+elif [ x"$MAGIC" == x414902 ] ; then # "AI", 2
   echo "AppImage type 2 detected"
   TYPE=2
-elif [ x"$MAGIC" == x$(echo -ne "\x41\x49\x01") ] ; then
+elif [ x"$MAGIC" == x414901 ] ; then # "AI", 1
   echo "AppImage type 1 detected"
   TYPE=1
 else
@@ -210,7 +212,7 @@ if [ x"$TYPE" == x1 ] ; then
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
-  UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null) || echo "Could not get update information from the AppImage"
+  UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null | tr -d '\000') || echo "Could not get update information from the AppImage"
   # later # sudo umount -l /mnt
 fi
 
