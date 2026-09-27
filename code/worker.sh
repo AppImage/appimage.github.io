@@ -139,7 +139,7 @@ if [ x"$TYPE" == x2 ] ; then
   APPDIR=""
   for WAIT in 1 2 3 4 5 6 7 8 9 10 ; do
     sleep 1
-    APPDIR=$(mount | grep -F " type fuse.$FILENAME " | tail -n 1 | cut -d " " -f 3)
+    APPDIR=$(mount | grep -F " type fuse.$FILENAME " | tail -n 1 | cut -d " " -f 3 || true) # No match yet is fine (set -e, pipefail)
     [ -n "$APPDIR" ] && break
     kill -0 $PID 2>/dev/null || break
   done
