@@ -6,7 +6,7 @@ description: A quick 3D modeling tool
 license: MIT
 
 icons:
-  - Dust3D/icons/250x250/icon.png
+  - Dust3D/icons/250x250/dust3d.png
 screenshots:
 - https://raw.githubusercontent.com/huxingyi/dust3d/master/ci/screenshot.png
 
@@ -24,16 +24,22 @@ desktop:
   Desktop Entry:
     Type: Application
     Name: Dust3D
-    Icon: icon
+    Icon: dust3d
     Exec: dust3d
     Categories: Graphics
     Comment: A quick 3D modeling tool
+    X-AppImage-Version: debug
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: MIT
 
 appdata:
   Type: desktop-application
