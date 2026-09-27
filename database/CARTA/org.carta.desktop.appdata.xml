@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2022 CARTA team <support@carta.freshdesk.com> -->
+<component type="desktop-application">
+  <id>org.carta.desktop</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>CARTA</name>
+  <summary>Visualisation and analysis tool for radio astronomy</summary>
+
+  <description>
+    <p>
+      The Cube Analysis and Rendering Tool for Astronomy is a next-generation image visualization and analysis tool designed for ALMA, VLA, and SKA pathfinders.
+    </p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Spectral Line Analysis</caption>
+      <image>https://cartavis.org/images/gallery-images/spectral_line_analysis.png</image>
+    </screenshot>
+    <screenshot>	    
+      <caption>Catalog Rendering</caption>
+      <image>https://cartavis.org/images/gallery-images/catalog_rendering.png</image>
+    </screenshot>	    
+    <screenshot>
+      <caption>Polarization analysis</caption>
+      <image>https://cartavis.org/images/gallery-images/polarization_analysis.png</image>
+    </screenshot>	    
+  </screenshots>
+
+  <url type="homepage">https://cartavis.org/</url>
+  <url type="help">https://carta.readthedocs.io</url>
+  <project_group>Science</project_group>
+
+  <releases>
+    <release version="3.0.0" date="2013-04-12">
+    <url>https://carta.readthedocs.io/en/3.0/appendix_a_version_history.html#version-3-0</url>
+    </release>
+  </releases>
+</component>

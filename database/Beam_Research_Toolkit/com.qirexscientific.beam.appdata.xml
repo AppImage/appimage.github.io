@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.qirexscientific.beam</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Beam Research Toolkit</name>
+  <summary>Interactive Geant4 explorer for particle-beam simulation</summary>
+  <description>
+    <p>
+      Beam Research Toolkit is a desktop application with a bundled Geant4 runtime.
+      Configure a beam, run a simulation, inspect hits and dose, and export results
+      without compiling Geant4 yourself.
+    </p>
+    <p>
+      Built for students learning particle physics and for researchers who want a
+      managed Geant4 instance with visual analysis and common lab export formats.
+    </p>
+    <p>
+      A 14-day trial is included. Subscription is handled inside the application.
+    </p>
+  </description>
+  <url type="homepage">https://qirexscientific.com/</url>
+  <launchable type="desktop-id">BeamApp.desktop</launchable>
+  <provides>
+    <binary>BeamApp</binary>
+  </provides>
+  <developer_name>Qirex Scientific OÜ</developer_name>
+  <categories>
+    <category>Science</category>
+    <category>Education</category>
+    <category>Physics</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <caption>3D dose viewer</caption>
+      <image type="source" width="2862" height="1578">https://qirexscientific.com/images/dose-3d.png</image>
+    </screenshot>
+  </screenshots>
+</component>
