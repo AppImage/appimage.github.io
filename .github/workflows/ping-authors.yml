@@ -1,0 +1,46 @@
+# Monthly check for entries in data/ whose AppImage is no longer available
+# (repository gone, no AppImage in its releases, or a direct download URL
+# answered 404/410) and pings the people who can fix them: the author of the
+# commit that added the entry, and the upstream GitHub owner. Never removes
+# or edits an entry itself.
+#
+# Runs code/check-entry.sh over every file in data/, then code/ping-authors.sh
+# to open (at most `max_issues`) issues labeled `entry-unavailable` for dead
+# entries that do not already have one open.
+name: Ping authors
+
+on:
+  schedule:
+    - cron: '0 6 1 * *' # 06:00 UTC on the 1st of each month
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (only print what would be opened)'
+        type: boolean
+        default: true
+      max_issues:
+        description: 'Maximum number of issues to open in this run'
+        type: number
+        default: 5
+
+jobs:
+  ping-authors:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: read
+      issues: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      DRY_RUN: ${{ github.event.inputs.dry_run != 'false' }} # default true (schedule has no input)
+      MAX_ISSUES: ${{ github.event.inputs.max_issues || '5' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check entries and ping authors of dead ones
+        run: |
+          ARGS="--max-issues $MAX_ISSUES"
+          [ "$DRY_RUN" == true ] && ARGS="$ARGS --dry-run"
+          bash code/ping-authors.sh $ARGS

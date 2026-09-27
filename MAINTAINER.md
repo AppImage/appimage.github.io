@@ -26,3 +26,20 @@ To renew, create a new token of the same kind as before, with the same account.
 3. Delete the old token in the account's token settings.
 
 **Check it**: after the next PR test, the comment's image URL starts with `https://github.com/user-attachments/assets/`, and the "Upload images" log says `Uploaded ... as a GitHub attachment`. To check right away, close and reopen an open PR whose test passes.
+
+## Running "Ping authors" manually
+
+`.github/workflows/ping-authors.yml` checks every entry in `data/` for a
+missing AppImage and opens issues asking the author (and the upstream GitHub
+owner) about it. It also runs monthly on its own.
+
+To run it by hand: Actions tab → "Ping authors" → *Run workflow*. Always do a
+dry run first (`dry_run: true`, the default): it prints what it would open in
+the job log and the step summary, without creating anything. Once the dry run
+looks right, run it again with `dry_run: false`; `max_issues` caps how many
+issues that run opens (default 5), so a first real run does not flood the
+issue tracker.
+
+`code/check-entry.sh data/<Name>` checks a single entry the same way, and
+`code/ping-authors.sh --dry-run` runs the whole thing locally (needs
+`GH_TOKEN`).
