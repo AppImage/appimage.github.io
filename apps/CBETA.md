@@ -3,6 +3,7 @@ layout: app
 
 permalink: /CBETA/
 description: CBETA 電子佛典閱讀器2(非官方)，使用 CBETA API 存取電子佛經。
+license: MIT
 
 icons:
   - CBETA/icons/128x128/cbetar2.png
@@ -28,7 +29,7 @@ desktop:
     Type: Application
     Icon: cbetar2
     StartupWMClass: cbetar2
-    X-AppImage-Version: 22.0.0
+    X-AppImage-Version: 24.0.0
     Comment: CBETA 電子佛典閱讀器2(非官方)，使用 CBETA API 存取電子佛經。
     Categories: Education
   AppImageHub:
@@ -38,10 +39,15 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: MIT
 
 electron:
-  pwaVersion: 10.10.0
-  version: 22.0.0
+  pwaVersion: 10.12.0
+  version: 24.0.0
   license: MIT
   description: CBETA 電子佛典閱讀器2(非官方)，使用 CBETA API 存取電子佛經。
   repository: https://github.com/MrMYHuang/cbetar2
@@ -53,17 +59,16 @@ electron:
   - README.md
   main: buildElectron/main.js
   dependencies:
-    axios: "^0.26.1"
+    axios: "^1.12.2"
     electron-window-state: "^5.0.3"
     node-downloader-helper: "^2.1.1"
     semver: "^7.3.7"
   browserslist:
-    production:
-    - ">0.2%"
-    - not dead
-    - not op_mini all
-    development:
-    - last 1 chrome version
-    - last 1 firefox version
-    - last 1 safari version
+  - Chrome >=79
+  - ChromeAndroid >=79
+  - Edge >=79
+  - Firefox >=70
+  - Firefox ESR
+  - iOS >=15
+  - Safari >=15
 ---
