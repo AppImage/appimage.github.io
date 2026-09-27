@@ -144,7 +144,8 @@ GitHub Pages (Jekyll) from this repository.
 - To re-test an existing contributor PR with new workflow code, close and reopen
   it (a re-run would reuse the old workflow files). `code/retest-prs.sh` does this
   for all open PRs that change one file in `data/` and last tested green
-  (`-u`: instead those without a test result label; `-n` to only list them).
+  (`-u`: instead those without a test result label; `-f`: instead those whose
+  test failed and that have no labels at all; `-n` to only list them).
 
 ## Investigating and answering in pull requests
 
