@@ -12,6 +12,14 @@
 #     once it has found N dead entries without an issue yet, so each run
 #     continues where the issues of the previous ones leave off.
 #
+# Before pinging anyone, it tries to fix the entry: when a GitHub release
+# asset is gone but the repository still has an AppImage (check-entry.sh
+# reports "fixable"), the entry's first line becomes the repository URL
+# (at most MAX_FIXES, default 20, per run), committed to master, the Test
+# workflow re-tests those entries (writing database/), and an open issue
+# about the entry is closed with a note. Only entries that cannot be fixed
+# like this are pinged, and each at most once (any issue, open or closed).
+#
 # Entries are checked in parallel (PARALLEL, default 10) in chunks.
 #
 # Needs GH_TOKEN (repo scope on this repository) and, to actually create
@@ -29,6 +37,7 @@ MAX_ISSUES=5
 FULL=false
 PARALLEL=${PARALLEL:-10}
 CHUNK=50
+MAX_FIXES=${MAX_FIXES:-20}
 while [ $# -gt 0 ] ; do
   case "$1" in
     --dry-run) DRY_RUN=true ; shift ;;
@@ -61,16 +70,21 @@ codespan() { echo "\`$(sanitize "$1")\`" ; }
 
 title_of() { echo "Where did the AppImage of $(sanitize "$1") go?" ; }
 
-# Titles of all issues ever opened by this check (open or closed): an entry
-# is pinged only once; a maintainer closes the issue when it is dealt with
-: > /tmp/ping-authors-existing.txt
-PAGE=1
-while : ; do
-  TITLES=$(api GET "repos/$REPO/issues?labels=$LABEL&state=all&per_page=100&page=$PAGE" | jq -r '.[].title' 2>/dev/null)
-  [ -n "$TITLES" ] || break
-  echo "$TITLES" >> /tmp/ping-authors-existing.txt
-  PAGE=$((PAGE + 1))
+# All issues ever opened by this check (open or closed), as number<TAB>state<TAB>title:
+# found by label, and by title among the bot's issues in case the label was removed
+: > /tmp/ping-authors-existing.tsv
+for QUERY in "labels=$LABEL" "creator=github-actions%5Bbot%5D" ; do
+  PAGE=1
+  while : ; do
+    ISSUES=$(api GET "repos/$REPO/issues?$QUERY&state=all&per_page=100&page=$PAGE" \
+      | jq -r '.[] | select(.pull_request == null) | select(.title | startswith("Where did the AppImage of ")) | "\(.number)\t\(.state)\t\(.title)"' 2>/dev/null)
+    [ -n "$ISSUES" ] || break
+    echo "$ISSUES" >> /tmp/ping-authors-existing.tsv
+    PAGE=$((PAGE + 1))
+  done
 done
+sort -u -o /tmp/ping-authors-existing.tsv /tmp/ping-authors-existing.tsv
+cut -f 3 /tmp/ping-authors-existing.tsv > /tmp/ping-authors-existing.txt
 
 echo "Scanning data/ ($PARALLEL at a time) ..."
 : > /tmp/ping-authors-results.tsv
@@ -96,13 +110,14 @@ sort -o /tmp/ping-authors-results.tsv /tmp/ping-authors-results.tsv
 COUNT=$(wc -l < /tmp/ping-authors-results.tsv)
 
 OK_N=$(grep -cP '\tok$' /tmp/ping-authors-results.tsv || true)
+FIX_N=$(grep -cP '\tfixable: ' /tmp/ping-authors-results.tsv || true)
 DEAD_N=$(grep -cP '\tdead:' /tmp/ping-authors-results.tsv || true)
 UNKNOWN_N=$(grep -cP '\tunknown:' /tmp/ping-authors-results.tsv || true)
 
 {
   echo "## Ping authors: entry check"
   echo
-  echo "Checked $COUNT entries: $OK_N ok, $DEAD_N dead, $UNKNOWN_N unknown (not pinged)."
+  echo "Checked $COUNT entries: $OK_N ok, $FIX_N fixable (AppImage found in the repository), $DEAD_N dead, $UNKNOWN_N unknown (not pinged)."
   [ -z "$STOPPED" ] || { echo ; echo "$STOPPED" ; }
   echo
   if [ "$DEAD_N" -gt 0 ] ; then
@@ -114,7 +129,53 @@ UNKNOWN_N=$(grep -cP '\tunknown:' /tmp/ping-authors-results.tsv || true)
   fi
 } | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
 
-# --- 2. Ping authors of dead entries ------------------------------------
+# --- 2. Fix entries whose repository still has an AppImage -------------
+
+: > /tmp/ping-authors-fixed.txt
+grep -P '\tfixable: ' /tmp/ping-authors-results.tsv | head -n "$MAX_FIXES" | while IFS=$'\t' read -r NAME STATUS ; do
+  NEWURL=${STATUS#fixable: }
+  [[ "$NEWURL" =~ ^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]] || continue
+  echo "data/$NAME: $(head -n 1 "data/$NAME" | tr -d '\r') -> $NEWURL"
+  if [ "$DRY_RUN" != true ] ; then
+    { echo "$NEWURL" ; tail -n +2 "data/$NAME" ; } > "/tmp/ping-authors-entry" && cat /tmp/ping-authors-entry > "data/$NAME"
+    echo "$NAME" >> /tmp/ping-authors-fixed.txt
+  fi
+done | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
+
+if [ -s /tmp/ping-authors-fixed.txt ] ; then
+  FIXED_N=$(wc -l < /tmp/ping-authors-fixed.txt)
+  git config user.name "GitHub Actions"
+  git config user.email "actions@users.noreply.github.com"
+  git add data/
+  git commit -q -m "Point $FIXED_N entries to their GitHub repository
+
+The AppImage they linked to is gone, but the repository's releases have
+one (found by code/find-appimage.sh); by ping-authors.yml." || true
+  for TRY in 1 2 3 4 5 ; do
+    git push -q origin HEAD:master && break
+    sleep $((TRY * 5))
+    git pull -q --rebase origin master
+  done
+  # A push with the workflow's token triggers no workflows: re-test the
+  # entries (which writes database/) with the Test workflow's files input
+  grep -xE '[A-Za-z0-9._+-]+' /tmp/ping-authors-fixed.txt | xargs -n 6 | while read -r BATCH ; do
+    api POST "repos/$REPO/actions/workflows/test.yml/dispatches" \
+      -d "$(jq -n --arg f "$BATCH" '{ref:"master", inputs:{files:$f}}')" > /dev/null
+  done
+  # Close the open issues about entries fixed now
+  while read -r NAME ; do
+    TITLE=$(title_of "$NAME")
+    awk -F '\t' -v t="$TITLE" '$2 == "open" && $3 == t { print $1 }' /tmp/ping-authors-existing.tsv | while read -r NUMBER ; do
+      [[ "$NUMBER" =~ ^[0-9]+$ ]] || continue
+      api POST "repos/$REPO/issues/$NUMBER/comments" -d "$(jq -n --arg n "$(sanitize "$NAME")" --arg u "$(head -n 1 "data/$NAME")" \
+        '{body: ("Found it: the releases of " + $u + " have an AppImage, so `data/" + $n + "` points to the repository now and follows new releases. Closing; thank you!")}')" > /dev/null
+      api PATCH "repos/$REPO/issues/$NUMBER" -d '{"state":"closed","state_reason":"completed"}' > /dev/null
+      echo "Closed issue #$NUMBER about $NAME"
+    done
+  done < /tmp/ping-authors-fixed.txt
+fi
+
+# --- 3. Ping authors of dead entries ------------------------------------
 
 OPENED=0
 grep -P '\tdead:' /tmp/ping-authors-results.tsv | while IFS=$'\t' read -r NAME STATUS ; do

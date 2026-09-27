@@ -44,6 +44,12 @@ continues from there. `full_scan: true` checks all entries for a complete
 summary (a few minutes). An entry is pinged only once: closing its issue
 does not lead to a new one. The monthly scheduled run is a dry run.
 
+Before pinging, it fixes what it can: when an entry links to a GitHub release
+asset that is gone but the repository still has an AppImage, a real run
+(`dry_run: false`) points the entry to the repository, commits that to
+`master`, re-tests those entries, and closes an open issue about them. The
+dry run lists these fixes too.
+
 `code/check-entry.sh data/<Name>` checks a single entry the same way, and
 `code/ping-authors.sh --dry-run` runs the whole thing locally (needs
 `GH_TOKEN`).

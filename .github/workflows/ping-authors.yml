@@ -32,8 +32,13 @@ jobs:
     if: github.repository == 'AppImage/appimage.github.io'
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    # One run at a time, so that two runs cannot ping or fix the same entries
+    concurrency:
+      group: ping-authors
+      cancel-in-progress: false
     permissions:
-      contents: read
+      contents: write # fix entries whose repository still has an AppImage
+      actions: write # re-test the fixed entries (Test workflow's files input)
       issues: write
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -89,11 +89,16 @@ GitHub Pages (Jekyll) from this repository.
    entries whose AppImage is gone (repository not found, no AppImage in its
    releases, or a direct download URL returning 404/410; timeouts and other
    errors are `unknown` and are never pinged), writes a summary, and runs
-   `code/ping-authors.sh` to open (at most `max_issues`) issues labeled
+   `code/ping-authors.sh`. A dead link to a GitHub release asset whose
+   repository still has an AppImage (`find-appimage.sh`) is `fixable`: the
+   entry then points to the repository instead (at most 20 per run, committed
+   to `master`, re-tested with the Test workflow's `files` input, an open issue
+   about it closed with a note). Only the rest is pinged:
+   `code/ping-authors.sh` opens (at most `max_issues`) issues labeled
    `entry-unavailable` for dead entries that never had one (open or closed),
    @-mentioning the author of the commit that added the entry and the
-   upstream GitHub owner (never `probonopd` or bots). It never edits or
-   removes an entry itself. Run it by hand from the Actions tab (dry run
+   upstream GitHub owner (never `probonopd` or bots), each entry at most
+   once. It never removes an entry. One run at a time (`concurrency`). Run it by hand from the Actions tab (dry run
    first); see `MAINTAINER.md`.
 
 ## Rules that are easy to get wrong
