@@ -19,12 +19,13 @@ jobs:
               case "$u" in https://github.com/*/releases/download/*) [ "$1" == direct ] && printf '%s\t%s\n' "$(basename "$f")" "$u" ;;
                 https://github.com/*) [ "$1" == repo ] && printf '%s\t%s\n' "$(basename "$f")" "$u" ;; esac
             done
+            true
           }
           { list direct ; list repo ; } > out/list.tsv
           while IFS=$'\t' read -r name u ; do
             owner=$(echo "$u" | cut -d / -f 4) ; repo=$(echo "$u" | cut -d / -f 5)
             code=$(curl -sSL -o "out/json/$name.json" -w '%{http_code}' -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/$owner/$repo/releases?per_page=30")
+              "https://api.github.com/repos/$owner/$repo/releases?per_page=30") || true
             if [ "$code" == 403 ] || [ "$code" == 429 ] ; then echo "Rate limited at $name" ; rm -f "out/json/$name.json" ; break ; fi
           done < out/list.tsv
           ls out/json | wc -l

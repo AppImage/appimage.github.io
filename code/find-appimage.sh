@@ -2,9 +2,10 @@
 
 # Find the AppImage to test in the releases of a GitHub repository.
 #
-# Usage: find-appimage.sh releases.json
+# Usage: find-appimage.sh releases.json [NAME]
 #   releases.json: the output of the GitHub API for
 #   repos/OWNER/REPO/releases (newest first)
+#   NAME: the name of the entry (the file in data/)
 #
 # Prints "URL <download URL>" and exits 0 when exactly one AppImage fits,
 # or "ERROR: ..." (and the candidates) and exits 1 when there is none or
@@ -18,9 +19,13 @@
 # 3. Without other architectures (aarch64, arm64, armhf, armv7, i386, i686, ...).
 # 4. If several remain: those that name x86_64 (or amd64, x64, x86-64).
 # 5. If several remain: those without debug/nightly/test/... in the name.
+# 6. If several remain: the one whose name without version, architecture and
+#    punctuation is NAME (releases with AppImages of several applications).
+# 7. If several remain and they differ only in version: the highest version.
 # More than one left means the choice would be a guess: an error.
 
 JSON="$1"
+NAME="$2"
 
 # Releases with at least one AppImage, as "prerelease<TAB>index"
 RELEASE=$(jq -r '[to_entries[] | select(.value.draft | not)
@@ -55,6 +60,22 @@ if [ "$(wc -l < "$JSON.candidates")" -gt 1 ] ; then
 fi
 if [ "$(wc -l < "$JSON.candidates")" -gt 1 ] ; then
   narrow "Leaving out debug, test and nightly builds" '(^|[^a-z0-9])(debug|dbg|test|nightly|symbols)([^a-z0-9]|$)' v
+fi
+
+# Name without extension, architectures, "linux", versions and punctuation
+stem() { echo "$1" | tr 'A-Z' 'a-z' | sed -E 's/\.appimage$//; s/(^|[^a-z])v([0-9])/\1\2/g; s/(x86[-_]64|amd64|x64|linux64|linux|[0-9]+)//g' | tr -cd 'a-z' ; }
+if [ "$(wc -l < "$JSON.candidates")" -gt 1 ] && [ -n "$NAME" ] ; then
+  WANT=$(stem "$NAME")
+  KEPT=$(while IFS=$'\t' read -r N U ; do [ "$(stem "$N")" == "$WANT" ] && printf '%s\t%s\n' "$N" "$U" ; done < "$JSON.candidates")
+  if [ -n "$KEPT" ] && [ -n "$WANT" ] ; then
+    [ "$(echo "$KEPT" | wc -l)" -lt "$(wc -l < "$JSON.candidates")" ] && echo "NOTE: Preferring the AppImage named like the entry, $NAME"
+    echo "$KEPT" > "$JSON.candidates"
+  fi
+fi
+if [ "$(wc -l < "$JSON.candidates")" -gt 1 ] && [ "$(cut -f 1 "$JSON.candidates" | while read -r N ; do stem "$N" ; echo ; done | sort -u | wc -l)" -eq 1 ] ; then
+  echo "NOTE: The AppImages differ only in version; using the highest"
+  sort -V -t $'\t' -k 1,1 "$JSON.candidates" | tail -n 1 > "$JSON.candidates.new"
+  mv "$JSON.candidates.new" "$JSON.candidates"
 fi
 
 if [ "$(wc -l < "$JSON.candidates")" -ne 1 ] ; then
