@@ -5,9 +5,14 @@
 # changes an entry. Used by .github/workflows/ping-authors.yml, and runnable
 # by hand (see MAINTAINER.md).
 #
-# Usage: ping-authors.sh [--dry-run] [--max-issues N]
+# Usage: ping-authors.sh [--dry-run] [--max-issues N] [--full]
 #   --dry-run: only print what would be opened; opens nothing.
 #   --max-issues N: open at most N issues in this run (default 5).
+#   --full: check all entries (for the summary); by default the scan stops
+#     once it has found N dead entries without an issue yet, so each run
+#     continues where the issues of the previous ones leave off.
+#
+# Entries are checked in parallel (PARALLEL, default 10) in chunks.
 #
 # Needs GH_TOKEN (repo scope on this repository) and, to actually create
 # issues/labels, GITHUB_REPOSITORY (owner/repo of this repository; falls
@@ -21,10 +26,14 @@ set -u
 
 DRY_RUN=false
 MAX_ISSUES=5
+FULL=false
+PARALLEL=${PARALLEL:-10}
+CHUNK=50
 while [ $# -gt 0 ] ; do
   case "$1" in
     --dry-run) DRY_RUN=true ; shift ;;
     --max-issues) MAX_ISSUES="$2" ; shift 2 ;;
+    --full) FULL=true ; shift ;;
     *) echo "Unknown argument: $1" >&2 ; exit 2 ;;
   esac
 done
@@ -50,18 +59,41 @@ codespan() { echo "\`$(sanitize "$1")\`" ; }
 
 # --- 1. Scan data/ -----------------------------------------------------
 
-echo "Scanning data/ ..."
-: > /tmp/ping-authors-results.tsv
-COUNT=0
-for f in data/*; do
-  [ -f "$f" ] || continue
-  NAME=$(basename "$f")
-  STATUS=$(bash "$SCRIPT_DIR/check-entry.sh" "$f" 2>/dev/null)
-  printf '%s\t%s\n' "$NAME" "$STATUS" >> /tmp/ping-authors-results.tsv
-  COUNT=$((COUNT + 1))
-  # Be gentle with the GitHub API: a short pause after each entry that used it
-  case "$STATUS" in dead:*|unknown:*) sleep 0.3 ;; esac
+title_of() { echo "Where did the AppImage of $(sanitize "$1") go?" ; }
+
+# Titles of all issues ever opened by this check (open or closed): an entry
+# is pinged only once; a maintainer closes the issue when it is dealt with
+: > /tmp/ping-authors-existing.txt
+PAGE=1
+while : ; do
+  TITLES=$(api GET "repos/$REPO/issues?labels=$LABEL&state=all&per_page=100&page=$PAGE" | jq -r '.[].title' 2>/dev/null)
+  [ -n "$TITLES" ] || break
+  echo "$TITLES" >> /tmp/ping-authors-existing.txt
+  PAGE=$((PAGE + 1))
 done
+
+echo "Scanning data/ ($PARALLEL at a time) ..."
+: > /tmp/ping-authors-results.tsv
+ls data/ | split -l "$CHUNK" - /tmp/ping-authors-chunk.
+STOPPED=""
+for CHUNKFILE in /tmp/ping-authors-chunk.* ; do
+  # One line per entry; short lines, so parallel writers do not mix them up
+  sed 's|^|data/|' "$CHUNKFILE" | xargs -d '\n' -P "$PARALLEL" -n 1 bash -c \
+    '[ -f "$1" ] && printf "%s\t%s\n" "${1##*/}" "$(bash "$0" "$1" 2>/dev/null)"' "$SCRIPT_DIR/check-entry.sh" \
+    >> /tmp/ping-authors-results.tsv
+  if [ "$FULL" != true ] ; then
+    NEW=$(grep -P '\tdead:' /tmp/ping-authors-results.tsv | while IFS=$'\t' read -r NAME STATUS ; do
+      grep -qxF "$(title_of "$NAME")" /tmp/ping-authors-existing.txt || echo "$NAME"
+    done | wc -l)
+    if [ "$NEW" -ge "$MAX_ISSUES" ] ; then
+      STOPPED="Stopped early: found $NEW dead entries without an issue yet (--max-issues $MAX_ISSUES; --full checks all)."
+      break
+    fi
+  fi
+done
+rm -f /tmp/ping-authors-chunk.*
+sort -o /tmp/ping-authors-results.tsv /tmp/ping-authors-results.tsv
+COUNT=$(wc -l < /tmp/ping-authors-results.tsv)
 
 OK_N=$(grep -cP '\tok$' /tmp/ping-authors-results.tsv || true)
 DEAD_N=$(grep -cP '\tdead:' /tmp/ping-authors-results.tsv || true)
@@ -71,6 +103,7 @@ UNKNOWN_N=$(grep -cP '\tunknown:' /tmp/ping-authors-results.tsv || true)
   echo "## Ping authors: entry check"
   echo
   echo "Checked $COUNT entries: $OK_N ok, $DEAD_N dead, $UNKNOWN_N unknown (not pinged)."
+  [ -z "$STOPPED" ] || { echo ; echo "$STOPPED" ; }
   echo
   if [ "$DEAD_N" -gt 0 ] ; then
     echo "| Entry | Reason |"
@@ -89,13 +122,10 @@ grep -P '\tdead:' /tmp/ping-authors-results.tsv | while IFS=$'\t' read -r NAME S
   REASON=${STATUS#dead: }
   FILE="data/$NAME"
   URL=$(head -n 1 "$FILE" | tr -d '\r')
-  TITLE="Where did the AppImage of $(sanitize "$NAME") go?"
+  TITLE=$(title_of "$NAME")
 
-  # Skip if an open issue with this exact title and label already exists
-  EXISTING=$(api GET "repos/$REPO/issues?labels=$LABEL&state=open&per_page=100" \
-    | jq -r --arg t "$TITLE" 'map(select(.title == $t)) | length')
-  if [ "${EXISTING:-0}" -gt 0 ] ; then
-    echo "Skipping $NAME: an open issue already exists"
+  # Pinged before (open or closed issue): not again
+  if grep -qxF "$TITLE" /tmp/ping-authors-existing.txt ; then
     continue
   fi
 
