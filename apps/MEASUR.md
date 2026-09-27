@@ -28,20 +28,19 @@ desktop:
     Type: Application
     Icon: MEASUR
     StartupWMClass: MEASUR
-    X-AppImage-Version: 1.4.0
+    X-AppImage-Version: 1.9.0
     Comment: MEASUR
     Categories: Science
   AppImageHub:
-    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
-      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
-      could not be verified. Please remember that the signature file (.sig or .asc)
-      should be the first file given on the command line.'
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
     X-AppImage-Libc: host
     X-AppImage-Runtime: dynamic
     X-AppImage-Self-Contained: false
-    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Glibc-Required: GLIBC_2.25
 
 electron:
   license: MIT
@@ -50,41 +49,52 @@ electron:
   repository: https://github.com/ORNL-AMO/AMO-Tools-Desktop.git
   angular-cli: {}
   engines:
-    node: 16.14.2
-    npm: 8.5.0
+    node: 24.11.0
+    npm: 11.5.1
   private: true
   dependencies:
-    "@angular/animations": 16.1.6
-    "@angular/common": 16.1.6
-    "@angular/compiler": 16.1.6
-    "@angular/compiler-cli": 16.1.6
-    "@angular/core": 16.1.6
-    "@angular/forms": 16.1.6
-    "@angular/localize": 16.1.6
-    "@angular/platform-browser": 16.1.6
-    "@angular/platform-browser-dynamic": 16.1.6
-    "@angular/platform-server": 16.1.6
-    "@angular/router": 16.1.6
-    "@angular/service-worker": "^16.1.6"
-    "@ng-bootstrap/ng-bootstrap": 14.0.1
-    "@popperjs/core": "^2.11.2"
-    ajv: 8.12.0
-    amo-tools-suite: 1.0.4
-    billboard.js: "^3.7.2"
+    "@angular/animations": 20.3.17
+    "@angular/cdk": 20.2.14
+    "@angular/common": 20.3.17
+    "@angular/compiler": 20.3.17
+    "@angular/core": 20.3.17
+    "@angular/forms": 20.3.17
+    "@angular/localize": 20.3.17
+    "@angular/platform-browser": 20.3.17
+    "@angular/platform-browser-dynamic": 20.3.17
+    "@angular/platform-server": 20.3.17
+    "@angular/router": 20.3.17
+    "@angular/service-worker": 20.3.17
+    "@ng-bootstrap/ng-bootstrap": 19.0.1
+    "@popperjs/core": 2.11.8
+    angular-plotly.js: 5.2.1
+    billboard.js: 3.17.0
     bootstrap: 4.3.1
     core-js: 3.21.1
-    electron-log: "^4.4.8"
-    electron-updater: "^6.1.1"
-    exceljs: "^4.3.0"
-    file-saver: "^2.0.5"
-    font-awesome: "^4.7.0"
-    ngx-indexed-db: "^16.0.0"
-    pako: "^2.1.0"
-    pptxgenjs: "^3.10.0"
-    regression: "^2.0.0"
-    rxjs: "^7.5.5"
+    electron-log: 5.4.3
+    electron-updater: 6.8.3
+    exceljs: 4.3.0
+    file-saver: 2.0.5
+    font-awesome: 4.7.0
+    fs-jetpack: 5.1.0
+    jspdf: 4.2.1
+    jspdf-autotable: 5.0.7
+    lodash.foreach: 4.5.0
+    measur-tools-suite: 1.2.5
+    ngx-bootstrap: 20.0.2
+    ngx-indexed-db: 16.0.0
+    ngx-webstorage: 20.0.0
+    pako: 2.1.0
+    papaparse: 5.2.0
+    plotly.js-dist: 2.9.0
+    pptxgenjs: 3.10.0
+    process-flow-diagram-component: file:process-flow-diagram-component
+    process-flow-lib: file:src/process-flow-lib
+    regression: 2.0.0
+    rxjs: 7.5.5
     rxjs-compat: 6.6.3
-    uuid: "^9.0.0"
-    xlsx: https://cdn.sheetjs.com/xlsx-0.20.0/xlsx-0.20.0.tgz
-    zone.js: 0.13.1
+    stream-browserify: 3.0.0
+    uuid: 9.0.0
+    xlsx: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
+    zone.js: 0.15.0
 ---
