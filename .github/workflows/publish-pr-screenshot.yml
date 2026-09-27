@@ -20,7 +20,7 @@ jobs:
       github.repository == 'AppImage/appimage.github.io'
     runs-on: ubuntu-latest
     permissions:
-      actions: read
+      actions: write # read the artifact; start the Test run after an auto-merge
       contents: write
       pull-requests: write
     env:
@@ -253,3 +253,45 @@ jobs:
           else
             gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md >/dev/null
           fi
+
+      # Merge PRs that need no maintainer: a returning contributor, one file in
+      # data/, test passed with a good screenshot, same owner of the download
+      # location. Everything is checked via the API, not the (untrusted)
+      # artifact. Switch off with the repository variable AUTO_MERGE=false.
+      - name: Auto-merge
+        if: steps.pr.outputs.number != '' && vars.AUTO_MERGE != 'false'
+        env:
+          PR: ${{ steps.pr.outputs.number }}
+        run: |
+          skip() { echo "Not auto-merging: $1" ; exit 0 ; }
+          [ "$CONCLUSION" = success ] || skip "the test did not pass"
+          gh api "repos/$REPO/pulls/$PR" > pr.json
+          [ "$(jq -r .state pr.json)" = open ] || skip "not open"
+          [ "$(jq -r .draft pr.json)" = false ] || skip "draft"
+          [ "$(jq -r .head.sha pr.json)" = "$HEAD_SHA" ] || skip "newer commits than the tested one"
+          case "$(jq -r .author_association pr.json)" in
+            CONTRIBUTOR|COLLABORATOR|MEMBER|OWNER) ;;
+            *) skip "first contribution (author association $(jq -r .author_association pr.json)); a maintainer reviews it" ;;
+          esac
+          LABELS=$(gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name')
+          echo "$LABELS" | grep -qx screenshot-ok || skip "no screenshot-ok label"
+          ! echo "$LABELS" | grep -qxE 'manual-check-needed|do-not-merge' || skip "labeled for a manual check"
+          gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | [.filename, .status] | @tsv' > files.tsv
+          [ "$(wc -l < files.tsv)" -eq 1 ] || skip "changes more than one file"
+          IFS=$'\t' read -r FILE STATUS < files.tsv
+          [[ "$FILE" == data/* ]] || skip "does not change a file in data/"
+          case "$STATUS" in
+            added) ;;
+            modified)
+              first_line() { gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$1?ref=$2" | head -n 1 | tr -d '\r' ; }
+              OLD=$(first_line "$FILE" "$(jq -r .base.sha pr.json)")
+              NEW=$(first_line "$FILE" "$HEAD_SHA")
+              bash code/check-origin.sh "$OLD" "$NEW" || skip "the download location changes owner"
+              ;;
+            *) skip "$STATUS file" ;;
+          esac
+          MERGED=$(gh api -X PUT "repos/$REPO/pulls/$PR/merge" -f sha="$HEAD_SHA" -f merge_method=squash --jq .sha) \
+            || skip "GitHub refused the merge"
+          echo "Merged PR #$PR as $MERGED"
+          # A merge with this workflow's token does not trigger the push run that writes database/
+          gh workflow run test.yml -R "$REPO" --ref master -f commit="$MERGED"

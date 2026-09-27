@@ -67,7 +67,10 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
   fi
   echo "GitHub API URL detected"
   API_JSON=$(mktemp)
-  wget -O "$API_JSON" --header "Accept: application/vnd.github+json" --header "Authorization: Bearer $GH_TOKEN" --header "X-GitHub-Api-Version: 2022-11-28" "$GHURL"
+  if ! wget -q -O "$API_JSON" --header "Accept: application/vnd.github+json" --header "Authorization: Bearer $GH_TOKEN" --header "X-GitHub-Api-Version: 2022-11-28" "$GHURL" ; then
+    echo "Unable to get the releases of the GitHub repository $GHUSER/$GHREPO. Does the repository exist, and is it public?"
+    exit 1
+  fi
   FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME") || true
   echo "$FOUND" | grep -v '^URL ' || true
   URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
@@ -417,6 +420,16 @@ cp "$APPDIR"/*.desktop database/$INPUTBASENAME/
 DATAFILE=$(readlink -f database/$INPUTBASENAME/*.desktop | head -n 1)
 sudo chown $USER "$DATAFILE" # https://github.com/AppImage/AppImageHub/issues/19
 chmod 644 "$DATAFILE" # https://github.com/AppImage/AppImageHub/issues/19
+
+# Update information lets users update with AppImageUpdate; the section is often padded with blanks or NULs
+UPDATE_INFORMATION=$(echo "${UPDATE_INFORMATION:-}" | tr -d '\000' | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
+[ x"$UPDATE_INFORMATION" == xfalse ] && UPDATE_INFORMATION=""
+case "$UPDATE_INFORMATION" in
+  "") echo "WARNING: The AppImage contains no update information" ;;
+  bintray-zsync\|*) echo "WARNING: The update information of the AppImage points to Bintray, which has shut down: $UPDATE_INFORMATION" ;;
+  gh-releases-zsync\|*|zsync\|*|pling-v1-zsync\|*|gh-releases-direct\|*) ;;
+  *) echo "WARNING: The update information of the AppImage has an unknown format: $UPDATE_INFORMATION" ;;
+esac
 
 echo "" >> "$DATAFILE"
 echo "[AppImageHub]" >> "$DATAFILE"

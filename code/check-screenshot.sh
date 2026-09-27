@@ -54,25 +54,31 @@ else
   [ -z "$MATCH" ] || echo "WARNING: The screenshot may show an error message: ${MATCH}"
 fi
 
-# Script of the text: AppImageHub is in English, so an application should
+# Script of the text: AppImageHub is in English, so an application must
 # start in English (the test runs with the C locale). OCR with models for
-# Latin, Chinese, Arabic and Cyrillic, counting only letters of words
+# Latin, Chinese, Arabic, Cyrillic and Greek (Japanese and Korean models
+# made up characters from icons and textures), counting only letters of words
 # recognized with a confidence of at least 80 (below, icons and grids turn
 # into random characters). Chinese characters count three times, as one
-# stands for about a word. On the ~1500 screenshots in database/, this flags
-# 13, all of them indeed Chinese, Arabic or Russian.
+# stands for about a word. On the ~1600 screenshots in database/, this flags
+# 16, all of them indeed Chinese, Arabic, Russian or Greek.
 LANGS=$(tesseract --list-langs 2>/dev/null)
-if echo "$LANGS" | grep -qx chi_sim && echo "$LANGS" | grep -qx ara && echo "$LANGS" | grep -qx rus ; then
+if echo "$LANGS" | grep -qx chi_sim && echo "$LANGS" | grep -qx ara && echo "$LANGS" | grep -qx rus && echo "$LANGS" | grep -qx ell ; then
   read -r LATIN HAN ARABIC CYRILLIC < <(convert "$SCREENSHOT" -resize 200% -colorspace Gray png:- \
-    | OMP_THREAD_LIMIT=1 timeout 120 tesseract stdin stdout -l eng+chi_sim+ara+rus --psm 11 tsv 2>/dev/null \
+    | OMP_THREAD_LIMIT=1 timeout 120 tesseract stdin stdout -l eng+chi_sim+ara+rus+ell --psm 11 tsv 2>/dev/null \
     | awk -F '\t' 'NR > 1 && $11 + 0 >= 80 && $12 != "" { print $12 }' \
     | perl -CSD -ne '$l += () = /\p{Latin}/g; $h += () = /[\p{Han}\p{Hiragana}\p{Katakana}\p{Hangul}]/g;
         $a += () = /\p{Arabic}/g; $c += () = /[\p{Cyrillic}\p{Greek}]/g;
         END { printf "%d %d %d %d\n", $l, $h, $a, $c }')
   echo "Screenshot: letters by script: ${LATIN:-0} Latin, ${HAN:-0} Chinese/Japanese/Korean, ${ARABIC:-0} Arabic, ${CYRILLIC:-0} Cyrillic/Greek"
   if [ $((HAN + ARABIC + CYRILLIC)) -ge 10 ] && [ $((3 * HAN + ARABIC + CYRILLIC)) -gt "${LATIN:-0}" ] ; then
-    SCRIPT=$( { echo "$((3 * HAN)) Chinese" ; echo "$ARABIC Arabic" ; echo "$CYRILLIC Cyrillic" ; } | sort -rn | head -n 1 | cut -d ' ' -f 2)
-    echo "WARNING: The screenshot shows text mostly not in English but in $SCRIPT script"
+    SCRIPT=$( { echo "$((3 * HAN)) Chinese" ; echo "$ARABIC Arabic" ; echo "$CYRILLIC Cyrillic or Greek" ; } | sort -rn | head -n 1 | cut -d " " -f 2-)
+    if [ "$TERMINAL" != terminal ] ; then
+      echo "ERROR: The screenshot shows text mostly not in English but in $SCRIPT script"
+      RESULT=1
+    else
+      echo "WARNING: The screenshot shows text mostly not in English but in $SCRIPT script"
+    fi
   fi
 fi
 
