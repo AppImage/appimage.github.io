@@ -131,7 +131,7 @@ Our monthly check found that \`data/$(sanitize "$NAME")\` points to $(codespan "
 Could you help us fix this?
 
 - If the AppImage moved, please open a pull request updating \`data/$(sanitize "$NAME")\` with the new download or repository URL. You can edit it directly here: $EDIT_URL
-- If the project was discontinued or no longer publishes an AppImage, just let us know by replying here, and we'll remove the entry.
+- If the project was discontinued or no longer publishes an AppImage, please let us know by replying here, we are interested in the reasons.
 
 Sorry if this entry has been broken for a while, and thanks again for contributing it!
 EOF
