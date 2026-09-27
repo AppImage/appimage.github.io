@@ -48,6 +48,11 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.2.15" date="2026-09-28">
+      <description>
+        <p>App metadata now uses the .appdata.xml file name so AppImageHub shows the description and screenshots.</p>
+      </description>
+    </release>
     <release version="0.2.14" date="2026-09-28">
       <description>
         <p>Ollie now uses its own llama icon instead of the Tauri placeholder.</p>
