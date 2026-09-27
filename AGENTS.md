@@ -31,6 +31,9 @@ GitHub Pages (Jekyll) from this repository.
      `X-AppImage-Self-Contained`, `X-AppImage-Glibc-Required=GLIBC_2.xx`, stored
      with the prefix because YAML would turn 2.40 into the number 2.4; an upper
      bound, as not every library in an AppImage is necessarily loaded);
+   - `code/check-name.sh`: rules for the name of the file in `data/` (errors
+     only for files a PR adds, `STRICT=true`; warnings otherwise), and
+     remarks about the AppImage's file name;
    - runs the application in firejail **without network**, waits 30 s, takes a
      screenshot of the active window;
    - `code/check-screenshot.sh`: fails on an (almost) empty window or an error

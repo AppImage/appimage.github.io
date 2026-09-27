@@ -113,6 +113,12 @@ jobs:
             echo "$FILE"
             # The timeout keeps a hanging application from running into the job
             # timeout, which would cancel the job without a report on the PR
+            # Name rules are errors only for files a PR adds (existing entries may have older names)
+            STRICT=false
+            if [ "$IS_PULLREQUEST" = true ] && [ -n "$(git diff --name-only --diff-filter=A "origin/${{ github.base_ref }}...HEAD" -- "$FILE")" ] ; then
+              STRICT=true
+            fi
+            export STRICT
             timeout --kill-after=30 "$WORKER_TIMEOUT" bash -e code/worker.sh "$(readlink -f "$FILE")" 2>&1 | tee -a log.txt
             EXIT_CODE=${PIPESTATUS[0]} # bashism; get the return code of the leftmost element of the pipe
             if [ $EXIT_CODE -eq 124 ] || [ $EXIT_CODE -eq 137 ] ; then
@@ -148,6 +154,8 @@ jobs:
           fi
           # Also on success, e.g., a helper failing because of a too new glibc
           bash code/diagnose.sh log.txt > pr-result/hints.md
+          # Remarks about the name of the file in data/ and of the AppImage
+          grep -hE "^(ERROR|WARNING): (File name|AppImage name) '" log.txt | sort -u > pr-result/names.txt || true
           # Whether the AppImage needs a compatible C library on the host
           grep -h '^X-AppImage-\(Libc\|Runtime\|Self-Contained\|Glibc-Required\)=' log.txt | sort -u > pr-result/libc.txt || true
           ls -la pr-result/
