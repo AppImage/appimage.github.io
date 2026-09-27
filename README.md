@@ -31,7 +31,9 @@ and send a Pull Request.
 
 **The pull request must add (or change) exactly this one file in `data/` and nothing else; one application per pull request.** Otherwise the test fails.
 
-Ideally, the file in `data/` contains a link to https://github.com/User/App/ (not to a specific AppImage!), and if the AppImage follows the standard nomenclature, then https://github.com/User/App/releases/whatever/App-1.0-x86_64.AppImage, https://github.com/User/App/releases/whatever/App-1.1-x86_64.AppImage,... will automatically be picked up.
+Ideally, the file in `data/` contains a link to https://github.com/User/App/ (not to a specific AppImage!). The test then picks the AppImage from the newest release (or, if no release has an AppImage, the newest pre-release): among its files ending in `.AppImage`, the one for x86_64 (other architectures such as aarch64 or i686 are left out), not a debug or nightly build, and, if the release contains AppImages of several applications, the one named like the file in `data/`. If it is still not clear which AppImage to test (e.g. `App-qt5-x86_64.AppImage` and `App-qt6-x86_64.AppImage`), the test fails; then put the link to the AppImage itself into the file in `data/`.
+
+If a PR changes the file in `data/` to a download location of a different owner (another GitHub user or organization, or another website), it gets the `manual-check-needed` label and a comment: please explain in the PR why the location changed, ideally with a link where the project announces it.
 
 Name of the file in `data/` (checked by the test; new files that break these rules fail with the `error-filename` label):
 * The name of the application, as in its desktop file, e.g. `data/Krita`
