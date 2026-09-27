@@ -137,7 +137,7 @@ fi
 TYPE=""
 ARCHITECTURE=$(file "$FILENAME" | cut -d "," -f 2 | xargs | sed -e 's|-|_|g' )
 echo $ARCHITECTURE # TODO: Normalize
-# Compare bytes as hex: a variable cannot hold NUL bytes ("ignored null byte")
+# Compare bytes as hex: a shell variable cannot hold NUL bytes
 hexbytes() { od -An -tx1 -j "$2" -N "$3" "$1" 2>/dev/null | tr -d ' \n' ; } # hexbytes FILE OFFSET COUNT
 MAGIC=$(hexbytes "$FILENAME" 8 3) # "AI" and the AppImage type, https://github.com/AppImage/AppImageSpec/blob/master/draft.md
 if [ x"$MAGIC" == x000000 ] || [ -z "$MAGIC" ] ; then
