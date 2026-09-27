@@ -2,10 +2,13 @@
 layout: app
 
 permalink: /clippy/
-description: A Tauri App
+description: Clipboard History
 
 icons:
-  - clippy/icons/128x128/clippy.png
+  - clippy/icons/512x512/clippy.png
+
+screenshots:
+  - clippy/screenshot.png
 
 authors:
   - name: ikouchiha47
@@ -19,21 +22,25 @@ links:
 
 desktop:
   Desktop Entry:
-    Categories: 
-    Comment: A Tauri App
-    Exec: clippy
-    Icon: clippy
     Name: clippy
+    Comment: Clipboard History
+    Exec: AppRun
     Terminal: false
     Type: Application
+    Icon: clippy
+    X-AppImage-Version: 1.2.0.5
+    X-AppImage-BuildId: 8ac6c260-7aae-11a8-026a-f583afc56f80
+    Categories: Development
   AppImageHub:
-    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
-      the signature could not be verified. Please remember that the signature file (.sig
-      or .asc) should be the first file given on the command line."
+    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Libc: host
-    X-AppImage-Runtime: dynamic
-    X-AppImage-Self-Contained: false
-    X-AppImage-Glibc-Required: GLIBC_2.35
+
+electron:
+  description: Clipboard History
+  repository: https://github.com/ikouchiha47/clippy
+  author:
+    name: ikouchiha47
 ---

@@ -149,7 +149,13 @@ jobs:
             if [ $EXIT_CODE -ne 0 ]; then
               echo "worker.sh exited with a non-zero code: $EXIT_CODE"
               # Re-testing chosen entries: go on with the others
-              if [ -n "$DISPATCH_FILES" ] ; then FAILED="${FAILED:-} $FILE" ; continue ; fi
+              if [ -n "$DISPATCH_FILES" ] ; then
+                FAILED="${FAILED:-} $FILE"
+                # Drop what the failed file left in database/ and apps/, so that nothing commits it
+                git checkout -q -- database apps 2>/dev/null || true
+                git clean -fdq -- database apps
+                continue
+              fi
               exit $EXIT_CODE
             fi
           done
