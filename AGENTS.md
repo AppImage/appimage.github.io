@@ -107,6 +107,14 @@ GitHub Pages (Jekyll) from this repository.
    once. It never removes an entry. One run at a time (`concurrency`). Run it by hand from the Actions tab (dry run
    first); see `MAINTAINER.md`.
 
+5. `.github/workflows/remove-entry.yml` removes entries completely with
+   `code/remove-entry.sh` (`data/NAME`, `database/NAME/`, `apps/NAME.md`): on
+   a maintainer's `/remove` comment on a "Where did the AppImage of NAME go?"
+   issue (the name comes from the title, never from the comment; the issue is
+   then closed), by hand with names, and on pushes to `master` that delete or
+   rename files in `data/` (it removes what is left of them). Deleting only
+   `data/NAME` used to leave the page on the site.
+
 ## Rules that are easy to get wrong
 
 - **`pull_request_target` workflows must never check out or run code from

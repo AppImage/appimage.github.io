@@ -1,0 +1,101 @@
+# Removes applications from the catalog completely (data/NAME, database/NAME/,
+# apps/NAME.md) with code/remove-entry.sh, in three ways:
+# - a maintainer comments "/remove" on an issue about an entry (the
+#   "Where did the AppImage of NAME go?" issues of ping-authors.yml);
+#   the issue is closed afterwards
+# - a push to master deletes or renames a file in data/: its database/ and
+#   apps/ entries are removed too (deleting only data/NAME left the page)
+# - by hand: Actions tab -> "Remove entry" -> names separated by blanks
+name: Remove entry
+
+on:
+  issue_comment:
+    types: [created]
+  push:
+    branches:
+      - master
+    paths:
+      - 'data/**'
+  workflow_dispatch:
+    inputs:
+      names:
+        description: 'Names of the entries in data/ to remove, separated by blanks'
+        required: true
+
+concurrency:
+  group: remove-entry
+  cancel-in-progress: false
+
+jobs:
+  remove:
+    if: >-
+      github.repository == 'AppImage/appimage.github.io' && (
+        github.event_name != 'issue_comment' || (
+          !github.event.issue.pull_request &&
+          startsWith(github.event.comment.body, '/remove') &&
+          contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association)))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      EVENT: ${{ github.event_name }}
+      ISSUE: ${{ github.event.issue.number }}
+      ISSUE_TITLE: ${{ github.event.issue.title }}
+      INPUT_NAMES: ${{ inputs.names }}
+      BEFORE: ${{ github.event.before }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Remove
+        run: |
+          case "$EVENT" in
+            issue_comment)
+              # The entry is named in the issue title (never taken from the comment)
+              NAME=$(echo "$ISSUE_TITLE" | sed -n 's/^Where did the AppImage of \([A-Za-z0-9._+-]*\) go?$/\1/p')
+              if [ -z "$NAME" ] ; then
+                gh issue comment "$ISSUE" -R "$REPO" --body "Could not tell which entry to remove: \`/remove\` works on issues titled \"Where did the AppImage of NAME go?\". Remove other entries from the Actions tab (\"Remove entry\")."
+                exit 1
+              fi
+              NAMES="$NAME"
+              REASON="as discussed in #$ISSUE"
+              ;;
+            push)
+              # Entries whose file in data/ this push deleted or renamed away
+              git cat-file -e "$BEFORE" 2>/dev/null || BEFORE=HEAD~1
+              NAMES=$(git diff --name-status --diff-filter=DR "$BEFORE" HEAD -- data/ | awk '{ print $2 }' | sed 's|^data/||')
+              # Only what is left of them in database/ and apps/
+              NAMES=$(for N in $NAMES ; do
+                if [ ! -e "data/$N" ] && { [ -e "database/$N" ] || [ -e "apps/$N.md" ] ; } ; then echo "$N" ; fi
+              done)
+              [ -n "$NAMES" ] || { echo "Nothing left over from removed entries" ; exit 0 ; }
+              REASON="its file in data/ was removed"
+              ;;
+            workflow_dispatch)
+              NAMES="$INPUT_NAMES"
+              REASON="removed by hand from the Actions tab"
+              ;;
+          esac
+          # shellcheck disable=SC2086 # names are validated by the script
+          RC=0
+          bash code/remove-entry.sh $NAMES || RC=1 # e.g. a mistyped name; remove the others anyway
+          git diff --cached --quiet && { echo "Nothing to remove" ; exit $RC ; }
+          git config user.name "GitHub Actions"
+          git config user.email "actions@users.noreply.github.com"
+          git commit -q -m "Remove $(echo $NAMES | tr ' ' ',' | sed 's/,/, /g') from the catalog" -m "$REASON"
+          PUSHED=false
+          for TRY in 1 2 3 4 5 ; do
+            git push -q origin HEAD:master && { PUSHED=true ; break ; }
+            sleep $((TRY * 5))
+            git pull -q --rebase origin master
+          done
+          $PUSHED || { echo "Could not push the removal" ; exit 1 ; }
+          if [ "$EVENT" = issue_comment ] ; then
+            gh issue close "$ISSUE" -R "$REPO" --reason completed \
+              --comment "Removed \`data/$NAMES\` and its page from the catalog ($(git rev-parse --short HEAD)). Thank you!"
+          fi
+          exit $RC

@@ -56,3 +56,13 @@ and approve pull requests". The dry run shows the PR it would open.
 `code/check-entry.sh data/<Name>` checks a single entry the same way, and
 `code/ping-authors.sh --dry-run` runs the whole thing locally (needs
 `GH_TOKEN`).
+
+## Removing an application
+
+Comment `/remove` on its "Where did the AppImage of NAME go?" issue (only
+owners, members and collaborators can), or run *Actions → Remove entry* with
+the name(s). `.github/workflows/remove-entry.yml` then removes `data/NAME`,
+`database/NAME/` and `apps/NAME.md` in one commit on `master` and closes the
+issue. Deleting just `data/NAME` (e.g. in the web UI or a merged PR) also
+works: the workflow removes the rest. Locally: `code/remove-entry.sh NAME`
+(`--orphans` removes `database/` and `apps/` entries without a data file).

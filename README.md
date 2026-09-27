@@ -85,6 +85,11 @@ As a format, AppImage is designed in a way that does not impose restrictions on 
   })();
   ```
 
+## How to remove an application from the catalog
+
+- Maintainers: comment `/remove` on the issue about the entry ("Where did the AppImage of NAME go?"), or run "Remove entry" in the Actions tab with the name(s). This removes `data/NAME`, `database/NAME/` and `apps/NAME.md` and closes the issue.
+- Anyone: delete the file in `data/` in a pull request; once it is merged, the rest of the entry is removed automatically.
+
 ## How to use
 
 App stores and software centers can consume the metadata collected by this project. See [AppImage ecosystem](https://github.com/AppImage/AppImageKit/wiki/Ecosystem).
