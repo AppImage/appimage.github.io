@@ -10,6 +10,16 @@ on:
   pull_request:
     paths:
       - 'data/**'
+  # Merges by a workflow (auto-merge in publish-pr-screenshot.yml) do not
+  # trigger push runs, so it starts this with the merge commit
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: 'Commit on master whose changed files in data/ to test'
+        required: false
+      files:
+        description: 'Or: names of entries in data/ to re-test, separated by blanks (e.g. to regenerate database/)'
+        required: false
 
 # A new push to a PR makes the previous test run obsolete
 concurrency:
@@ -56,8 +66,8 @@ jobs:
         # This action handles caching APT packages, and leaves the option for package configuration scripts to be run if needed,
         # saving a boat-load of time, if needed bump the action version.
         with:
-          packages: sudo imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xsel xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim tesseract-ocr-ara tesseract-ocr-rus libfuse2
-          version: 1.3
+          packages: sudo imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xsel xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim tesseract-ocr-ara tesseract-ocr-rus tesseract-ocr-ell libfuse2
+          version: 1.4
           # Bump me ^ if you have added any new packages
       - name: Cache test dependencies
         uses: actions/cache@v4
@@ -79,6 +89,9 @@ jobs:
           # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
       - name: Main test
         id: main
+        env:
+          DISPATCH_COMMIT: ${{ inputs.commit }}
+          DISPATCH_FILES: ${{ inputs.files }}
         run: |
           touch .test-start # Screenshots newer than this are from this run
           mkdir $HOME/.icewm/
@@ -96,6 +109,15 @@ jobs:
           # Files in data/ added or changed by this PR (or by this push)
           if [ "$IS_PULLREQUEST" = true ] ; then
             FILES=$(git diff --name-only --diff-filter=AMR "origin/${{ github.base_ref }}...HEAD" -- data/)
+          elif [ -n "$DISPATCH_FILES" ] ; then
+            FILES=""
+            for NAME in $DISPATCH_FILES ; do
+              [[ "$NAME" =~ ^[A-Za-z0-9._+-]+$ ]] && [ -f "data/$NAME" ] || { echo "Not an entry in data/: $NAME" ; exit 1 ; }
+              FILES="$FILES data/$NAME"
+            done
+          elif [ -n "$DISPATCH_COMMIT" ] ; then
+            [[ "$DISPATCH_COMMIT" =~ ^[0-9a-f]{7,40}$ ]] || { echo "Not a commit: $DISPATCH_COMMIT" ; exit 1 ; }
+            FILES=$(git diff --name-only --diff-filter=AMR "$DISPATCH_COMMIT~1" "$DISPATCH_COMMIT" -- data/)
           elif [ -n "${{ github.event.before }}" ] && git cat-file -e "${{ github.event.before }}" 2>/dev/null ; then
             FILES=$(git diff --name-only --diff-filter=AMR "${{ github.event.before }}" HEAD -- data/)
           else
@@ -126,10 +148,16 @@ jobs:
             fi
             if [ $EXIT_CODE -ne 0 ]; then
               echo "worker.sh exited with a non-zero code: $EXIT_CODE"
+              # Re-testing chosen entries: go on with the others
+              if [ -n "$DISPATCH_FILES" ] ; then FAILED="${FAILED:-} $FILE" ; continue ; fi
               exit $EXIT_CODE
             fi
           done
           killall Xvfb
+          if [ -n "${FAILED:-}" ] ; then
+            echo "Failed:$FAILED"
+            exit 1
+          fi
       - name: Collect result for the PR comment
         if: always() && github.event_name == 'pull_request'
         run: |

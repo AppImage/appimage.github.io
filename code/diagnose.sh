@@ -46,6 +46,10 @@ HINTS=(
   "error-data-file"
   "The first line of the file in data/ must be the download URL (or GitHub repository URL) of the AppImage."
 
+  "^Unable to get the releases of the GitHub repository"
+  "error-download"
+  "The GitHub repository in the file in data/ was not found (it may have been renamed, deleted or made private). Please put the current repository URL (or the download URL of the AppImage) into the file in data/."
+
   "^Unable to get download URL for the AppImage"
   "error-no-appimage-in-release"
   "No AppImage was found in the GitHub releases of this project. The file name of the AppImage must contain \"AppImage\"."
@@ -98,8 +102,16 @@ HINTS=(
   "-"
   "The screenshot may show an error message; please check it."
 
-  "^WARNING: The screenshot shows text mostly not in English"
+  "^WARNING: The AppImage contains no update information"
   "-"
+  "The AppImage contains no update information, so users cannot update it with AppImageUpdate or similar tools. Please consider embedding it when building the AppImage (e.g., appimagetool -u) and publishing the .zsync file next to the AppImage; see https://docs.appimage.org/packaging-guide/optional/updates.html"
+
+  "^WARNING: The update information of the AppImage (points to Bintray|has an unknown format)"
+  "-"
+  "The update information embedded in the AppImage does not work (see the log), so users cannot update it with AppImageUpdate. Please fix it when building the AppImage; see https://docs.appimage.org/packaging-guide/optional/updates.html"
+
+  "^(ERROR|WARNING): The screenshot shows text mostly not in English"
+  "error-not-english"
   "The text on the screenshot is mostly not in English. AppImageHub is in English: please make the application start in English when the system language is English or not set (the test runs it with the C locale), e.g. by falling back to English instead of to another language."
 
   "^FATAL: .* (is missing|not found|missing in)"
