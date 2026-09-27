@@ -1,12 +1,14 @@
 [Desktop Entry]
 Name=LaTeX Editor
-Comment=LaTeX editörü ve derleyici
+Comment=LaTeX editor with live PDF preview
+Comment[tr]=Canlı PDF önizlemeli LaTeX editörü
 Exec=latex-editor %F
 Icon=latex-editor
 Type=Application
 Categories=Development;IDE;
 MimeType=text/x-tex;
 Keywords=latex;tex;editor;pdf;
+Keywords[tr]=latex;tex;editör;pdf;tez;
 StartupNotify=true
 
 [AppImageHub]
@@ -17,4 +19,4 @@ X-AppImage-Architecture=x86_64
 X-AppImage-Libc=host
 X-AppImage-Runtime=static
 X-AppImage-Self-Contained=false
-X-AppImage-Glibc-Required=2.35
+X-AppImage-Glibc-Required=GLIBC_2.35
