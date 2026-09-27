@@ -1,0 +1,17 @@
+{
+  "name": "claude-usage-widget",
+  "version": "1.7.6",
+  "description": "Desktop widget for Claude.ai usage monitoring",
+  "main": "main.js",
+  "author": "Slavomir Durej",
+  "license": "MIT",
+  "copyright": "Copyright © 2025 Slavomir Durej",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "electron-store": "^8.1.0"
+  }
+}
