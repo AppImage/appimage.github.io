@@ -2,10 +2,11 @@
 layout: app
 
 permalink: /Firefox/
-description: Browse the World Wide Web
+description: Browse the Web
+license: MIT
 
 icons:
-  - Firefox/icons/128x128/firefox.png
+  - Firefox/icons/128x128/default128.png
 
 screenshots:
   - Firefox/screenshot.png
@@ -22,10 +23,9 @@ links:
 
 desktop:
   Desktop Entry:
-    Version: 1.0
-    Name: Firefox
+    Name: Firefox Nightly
     GenericName: Web Browser
-    GenericName[ar]: متصفح ويب
+    GenericName[ar]: متصفح وِب
     GenericName[ast]: Restolador Web
     GenericName[bn]: ওয়েব ব্রাউজার
     GenericName[ca]: Navegador web
@@ -42,7 +42,7 @@ desktop:
     GenericName[he]: דפדפן אינטרנט
     GenericName[hr]: Web preglednik
     GenericName[hu]: Webböngésző
-    GenericName[it]: Browser web
+    GenericName[it]: Browser Web
     GenericName[ja]: ウェブ・ブラウザ
     GenericName[ko]: 웹 브라우저
     GenericName[ku]: Geroka torê
@@ -65,8 +65,8 @@ desktop:
     GenericName[vi]: Trình duyệt Web
     GenericName[zh_CN]: 网络浏览器
     GenericName[zh_TW]: 網路瀏覽器
-    Comment: Browse the World Wide Web
-    Comment[ar]: تصفح الشبكة العنكبوتية العالمية
+    Comment: Browse the Web
+    Comment[ar]: تصفح الوِب
     Comment[ast]: Restola pela Rede
     Comment[bn]: ইন্টারনেট ব্রাউজ করুন
     Comment[ca]: Navegueu per el web
@@ -106,44 +106,15 @@ desktop:
     Comment[vi]: Để duyệt các trang web
     Comment[zh_CN]: 浏览互联网
     Comment[zh_TW]: 瀏覽網際網路
-    Keywords: Internet
-    Keywords[ar]: انترنت
-    Keywords[ast]: Internet
-    Keywords[ca]: Internet
-    Keywords[cs]: Internet
-    Keywords[da]: Internet
-    Keywords[de]: Internet
-    Keywords[el]: Internet
-    Keywords[es]: Explorador
-    Keywords[fi]: Internet
-    Keywords[fr]: Internet
-    Keywords[he]: דפדפן
-    Keywords[hr]: Internet
-    Keywords[hu]: Internet
-    Keywords[it]: Internet
-    Keywords[is]: Internet
-    Keywords[ja]: Internet
-    Keywords[nb]: Internett
-    Keywords[nl]: Internet
-    Keywords[pt]: Internet
-    Keywords[pt_BR]: Internet
-    Keywords[ru]: Internet
-    Keywords[sk]: Internet
-    Keywords[sl]: Internet
-    Keywords[tr]: İnternet
-    Keywords[uk]: Internet
-    Keywords[vi]: Internet
-    Keywords[zh_CN]: Internet
-    Keywords[zh_TW]: Internet
-    Exec: firefox %u
-    Icon: firefox
+    Exec: "/opt/firefox-nightly/firefox %u"
+    Icon: firefox-nightly
     Terminal: false
-    X-MultipleArgs: false
     Type: Application
     MimeType: text/html
     StartupNotify: true
-    StartupWMClass: firefox
+    StartupWMClass: Nightly
     Categories: Network
+    Keywords: web
     Actions: new-window
   Desktop Action new-window:
     Name: New Window
@@ -251,7 +222,7 @@ desktop:
     Name[xh]: Ifestile entsha
     Name[zh_CN]: 新建窗口
     Name[zh_TW]: 開新視窗
-    Exec: firefox --new-window %u
+    Exec: "/opt/firefox-nightly/firefox --new-window %u"
   Desktop Action new-private-window:
     Name: New Private Window
     Name[ach]: Dirica manyen me mung
@@ -358,12 +329,17 @@ desktop:
     Name[xh]: Ifestile yangasese entsha
     Name[zh_CN]: 新建隐私浏览窗口
     Name[zh_TW]: 新增隱私視窗
-    Exec: firefox --private-window %u
+    Exec: "/opt/firefox-nightly/firefox --private-window %u"
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|srevinsaju|Firefox-AppImage|stable|Firefox*.AppImage.zsync
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-UpdateInformation: gh-releases-zsync|srevinsaju|Firefox-Appimage|firefox-nightly|firefox-nightly*.AppImage.zsync
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.18
+    X-AppImage-Payload-License: MIT
 ---
