@@ -4,11 +4,11 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT</project_license>
   <name>TorReader PDF</name>
-  <summary>Fast offline PDF reader, editor and merger</summary>
+  <summary>Fast offline PDF reader and editor</summary>
   <description>
     <p>
       TorReader PDF is a fast, offline, portable PDF reader and editor for large documents.
-      Open 200 MB files in 1&#8211;2 seconds, scroll continuously, and view crisp text at any zoom level.
+      Open       900 MB files in 1&#8211;2 seconds, scroll continuously, and view crisp text at any zoom level.
     </p>
     <ul>
       <li>Merge PDFs with bookmark remapping &#8212; preserves bookmark page numbers</li>
@@ -47,7 +47,6 @@
     <category>Office</category>
     <category>Viewer</category>
     <category>Graphics</category>
-    <category>Qt</category>
   </categories>
   <keywords>
     <keyword>pdf</keyword>
@@ -58,9 +57,59 @@
     <keyword>split</keyword>
     <keyword>sign</keyword>
     <keyword>annotate</keyword>
+    <keyword>markup</keyword>
+    <keyword>comment</keyword>
+    <keyword>bookmark</keyword>
+    <keyword>cad</keyword>
+    <keyword>drawing</keyword>
+    <keyword>document</keyword>
+    <keyword>offline</keyword>
+    <keyword>acrobat</keyword>
   </keywords>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="2.4.2" date="2026-09-03">
+      <description>
+        <p>The Text tool now writes a real FreeText annotation, so text you add is a proper PDF comment that other PDF software can read and edit. Vietnamese can be typed into annotations with any input method. Text wraps to its box and the box can be resized by dragging a corner. Fixes striped text over vector pages, a crash when closing a tab, and very large drawings that previously fell back to a blurred raster page. The Note button was removed and the markup grid rearranged to 5 by 2.</p>
+      </description>
+      <url>https://github.com/FelixNgH/TorreaderPDF/releases/tag/v2.4.2</url>
+    </release>
+    <release version="2.4.1" date="2026-09-01">
+      <description>
+        <p>Markups now appear instantly instead of re-rendering the page, and stay visible through zoom and in continuous mode. Comments made in other PDF software are drawn by the PDF engine itself, so they keep their own font and background, and pages carrying them stay sharp when zoomed. Large CAD drawings reopen in a fraction of a second instead of a minute and a half. Fixes opening files whose names contain Vietnamese letters with two diacritics, the missing highlight on the current thumbnail, a crash when opening a second tab, and noise blocks in embedded logos on merged documents.</p>
+      </description>
+      <url>https://github.com/FelixNgH/TorreaderPDF/releases/tag/v2.4.1</url>
+    </release>
+    <release version="2.4.0" date="2026-08-17">
+      <description>
+        <p>New high-contrast interface in light and dark mode. OCR for scanned documents — 10 languages, fully offline, your file is never modified. Select, find (diacritic-insensitive) and copy text in PDFs and scans. Links inside PDFs now work. Opening and flipping pages no longer wait on background work.</p>
+      </description>
+      <url>https://github.com/FelixNgH/TorreaderPDF/releases/tag/v2.4.0</url>
+    </release>
+    <release version="2.3.3" date="2026-08-10">
+      <description>
+        <p>Fixes drawing display for PDFs exported from CAD: black blocks and colour noise on pages with transparency, missing frame lines, markups hidden behind hatching, and a blank page when turning pages on large drawings. Tidies the menu to make room for upcoming features.</p>
+      </description>
+      <url>https://github.com/FelixNgH/TorreaderPDF/releases/tag/v2.3.3</url>
+    </release>
+    <release version="2.3.2" date="2026-08-09">
+      <description>
+        <p>Fixes drawing display for PDFs exported from CAD: black blocks and colour noise on pages with transparency, missing frame lines, markups hidden behind hatching, and a blank page when turning pages on large drawings. Tidies the menu to make room for upcoming features.</p>
+      </description>
+      <url>https://github.com/FelixNgH/TorreaderPDF/releases/tag/v2.3.2</url>
+    </release>
+    <release version="2.3.1" date="2026-08-07">
+      <description>
+        <p>Fixes markups and comments appearing outside the drawing frame on PDFs whose page box does not start at the origin, and restores annotations made in other PDF software on heavy drawings.</p>
+      </description>
+      <url>https://github.com/FelixNgH/TorreaderPDF/releases/tag/v2.3.1</url>
+    </release>
+    <release version="2.3.0" date="2026-08-03">
+      <description>
+        <p>GPU vector rendering for heavy CAD drawings: zoom and pan stay sharp instantly, in single-page and continuous scroll. True line weights, dashes, fills and clipping. Text drawn with the document embedded fonts. Popup text on every markup type, editable inline in the Comments list.</p>
+      </description>
+      <url>https://github.com/FelixNgH/TorreaderPDF/releases/tag/v2.3.0</url>
+    </release>
     <release version="2.2.4" date="2026-07-26">
       <description>
         <p>Improved large CAD drawing performance; added page thumbnails; bug fixes.</p>
