@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Juggernaut/
 description: Decentralized messaging and payments
+license: MIT
 
 icons:
   - Juggernaut/icons/256x256/juggernaut-desktop.png
@@ -33,9 +34,105 @@ desktop:
     StartupNotify: true
     Categories: Development
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.16
+    X-AppImage-Payload-License: MIT
+
+electron:
+  description: Decentralized messaging and payments
+  lint-staged:
+    "*.{js,jsx}":
+    - cross-env NODE_ENV=development eslint --cache --format=pretty
+    - git add
+    "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}":
+    - prettier --ignore-path .eslintignore --parser json --write
+    - git add
+    "*.{css,scss}":
+    - stylelint --ignore-path .eslintignore --syntax scss --fix
+    - prettier --ignore-path .eslintignore --single-quote --write
+    - git add
+    "*.{html,md,yml}":
+    - prettier --ignore-path .eslintignore --single-quote --write
+    - git add
+  repository:
+    type: git
+    url: git+https://github.com/LN-Juggernaut/juggernaut-desktop.git
+  author:
+    name: John Cantrell
+    email: johncantrell97@protonmail.com
+    url: https://github.com/LN-Juggernaut/juggernaut-desktop
+  license: MIT
+  bugs:
+    url: https://github.com/LN-Juggernaut/juggernaut-desktop/issues
+  homepage: https://github.com/LN-Juggernaut/juggernaut-desktop#readme
+  jest:
+    testURL: http://localhost/
+    moduleNameMapper:
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js"
+      "\\.(css|less|sass|scss)$": identity-obj-proxy
+    moduleFileExtensions:
+    - js
+    - jsx
+    - json
+    moduleDirectories:
+    - node_modules
+    transform:
+      "^.+\\.jsx?$": babel-jest
+    setupFiles:
+    - "./internals/scripts/CheckBuildsExist.js"
+  dependencies:
+    "@fortawesome/fontawesome-free": "^5.12.0"
+    "@hot-loader/react-dom": "^16.11.0"
+    "@ln-juggernaut/lnd-grpc": 0.4.0-beta.10
+    "@reduxjs/toolkit": "^1.1.0"
+    bitcoinjs-lib: "^5.1.7"
+    bolt11: "^1.2.7"
+    comlinkjs: "^3.2.0"
+    config: "^3.2.5"
+    connected-react-router: "^6.6.1"
+    core-js: "^3.6.1"
+    debug: "^4.1.1"
+    debug-logger: "^0.4.1"
+    devtron: "^1.4.0"
+    dexie: "^2.0.4"
+    electron-is-dev: "^1.1.0"
+    emoji-mart: "^3.0.0"
+    final-form: "^4.18.6"
+    final-form-arrays: "^3.0.2"
+    final-form-focus: "^1.1.2"
+    flexsearch: "^0.6.32"
+    history: "^4.10.1"
+    moment: "^2.24.0"
+    qrcode.react: "^1.0.0"
+    react: "^16.12.0"
+    react-dom: "^16.12.0"
+    react-final-form: "^6.3.3"
+    react-hot-loader: "^4.12.18"
+    react-redux: "^7.1.3"
+    react-router: "^5.1.2"
+    react-router-dom: "^5.1.2"
+    react-scroll-to: "^3.0.0-beta.4"
+    react-transition-group: "^4.3.0"
+    redux-electron-ipc: https://github.com/LN-Juggernaut/redux-electron-ipc#b513220d085ad3e96e459d7efcdfc37bf75417b6
+    rmwc: "^6.0.8"
+    source-map-support: "^0.5.16"
+  engines:
+    node: ">=12.0.0"
+    npm: ">=5.x"
+    yarn: ">=1.0.0"
+  collective:
+    url: https://opencollective.com/juggernaut-594
+  browserslist:
+  - electron 6.0.2
+  husky:
+    hooks:
+      pre-commit: lint-staged
+  main: "./dist/main.js"
 ---
