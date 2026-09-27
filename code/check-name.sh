@@ -62,7 +62,8 @@ if [ -z "$DESKTOP" ] ; then
       break
     fi
   done
-  if echo "$NAME" | grep -qE '[0-9]+\.[0-9]+|[-_ ][vV]?[0-9]+([.][0-9]+)*$' ; then
+  # (architectures such as x86_64 are reported above, not as a version number)
+  if echo "$NAME" | sed -E 's/(x86[-_]64|amd64|aarch64|arm64|i[36]86)//Ig' | grep -qE '[0-9]+\.[0-9]+|[-_ ][vV]?[0-9]+([.][0-9]+)*$' ; then
     remark "seems to contain a version number; the name should not change with new versions (if the number is part of the application's name, this is fine)"
   fi
   if echo "$NAME" | grep -q '[^A-Za-z0-9._[:space:]-]' ; then
