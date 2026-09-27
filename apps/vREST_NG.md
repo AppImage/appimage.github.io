@@ -5,7 +5,7 @@ permalink: /vREST_NG/
 description: vREST NG - Enterprise ready application for Automated API Testing
 
 icons:
-  - vREST_NG/icons/128x128/vrest-electron.png
+  - vREST_NG/icons/512x512/vrest-electron.png
 
 screenshots:
   - vREST_NG/screenshot.png
@@ -28,34 +28,42 @@ desktop:
     Type: Application
     Icon: vrest-electron
     StartupWMClass: vREST NG
-    X-AppImage-Version: 2.1.0
+    X-AppImage-Version: 3.11.0
     Comment: vREST NG - Enterprise ready application for Automated API Testing
-    MimeType: x-scheme-handler/vrest
     Categories: Development
   AppImageHub:
-    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
-      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
-      could not be verified. Please remember that the signature file (.sig or .asc)
-      should be the first file given on the command line.'
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
 
 electron:
-  version: 2.1.0
+  version: 3.11.0
   private: true
-  author: Dheeraj Aggarwal <dheeraj.aggarwal@optimizory.com>
-  copyright: "© 2021 Optimizory Technologies Pvt. Ltd."
+  author: Optimizory Technologies Private Limited
+  copyright: Copyright © 2025 Optimizory Technologies Private Limited
   homepage: https://vrest.io
-  main: dist/background.js
+  main: dist/main.js
+  resolutions:
+    loader-utils: 2.0.3
   dependencies:
+    "@ewsjs/ntlm-client": 1.0.0
+    client-oauth2: "^4.3.3"
     debug: "^4.3.1"
     dotenv: "^8.2.0"
     electron-find: "^1.0.6"
     electron-localshortcut: "^3.1.0"
     electron-log: "^4.3.1"
-    electron-store: "^4.0.0"
-    electron-updater: "^4.3.7"
+    electron-store: "^7.0.0"
+    electron-updater: "^5.0.0"
+    lossless-json: "^1.0.5"
+    node-machine-uid: "^1.0.2"
     supports-color: "^8.1.1"
-    yargs: 12.0.5
     vagent: 0.0.1
+    yargs: 12.0.5
 ---
