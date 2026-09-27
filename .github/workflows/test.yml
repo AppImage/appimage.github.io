@@ -34,6 +34,11 @@ env:
 
 jobs:
   test:
+    # Pushes (and manual runs) write database/ and commit it: only here. In a
+    # fork, a push to its master would commit "Add automatically parsed data"
+    # to the fork, and a PR from that branch would carry the commit (#3948).
+    # PRs are tested wherever they are opened.
+    if: github.event_name == 'pull_request' || github.repository == 'AppImage/appimage.github.io'
     runs-on: ubuntu-22.04
     timeout-minutes: 20
     permissions:

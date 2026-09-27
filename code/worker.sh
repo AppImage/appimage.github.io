@@ -687,6 +687,13 @@ if [ "$IS_PULLREQUEST" = true ]; then
   exit 0
 fi
 
+# Only the upstream repository commits the result; in a fork, the commit would
+# end up in pull requests made from the fork's branch (#3948)
+if [ x"$GITHUB_REPOSITORY" != x"AppImage/appimage.github.io" ] ; then
+  echo "Not committing the result: this is $GITHUB_REPOSITORY, not AppImage/appimage.github.io"
+  exit 0
+fi
+
 # If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
 
