@@ -49,26 +49,58 @@ fi
 # The name of the file in data/ (STRICT=true for new files in a PR)
 bash "$(dirname "$0")/check-name.sh" "$INPUTBASENAME" "$(dirname "$1")" || exit 1
 
-# If the URL begins with https://github.com, then treat it specially
+# If the URL is the front page of a repository on a supported forge (GitHub,
+# Codeberg, GitLab), resolve it to the AppImage in its releases.
 # https://github.com/egoist/devdocs-desktop/
-if [ x"${URL:0:18}" == x"https://github.com" ] && [[ "${URL}" != *"download"* ]] ; then # do not redirect direct links
-  echo "GitHub URL detected"
-  GHUSER=$(echo "$URL" | cut -d '/' -f 4)
-  GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases" # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
-  echo "URL from GitHub: $URL"
+# https://codeberg.org/OWNER/REPO
+# https://gitlab.com/OWNER/REPO
+FORGE=""
+if [[ "$URL" == https://github.com/*/* || "$URL" == https://codeberg.org/*/* || "$URL" == https://gitlab.com/*/* ]] && [[ "${URL}" != *"download"* ]] ; then # do not redirect direct links
+  echo "Repository URL detected"
+  API_JSON=$(mktemp)
+  set +e
+  FORGE_INFO=$(bash "$(dirname "$0")/fetch-releases.sh" "$URL" "$API_JSON")
+  FETCH_RC=$?
+  set -e
+  if [ $FETCH_RC -ne 0 ] ; then
+    echo "Unable to get the releases of the repository $URL. Does the repository exist, and is it public?"
+    exit 1
+  fi
+  FORGE=$(echo "$FORGE_INFO" | cut -d ' ' -f 1)
+  GHUSER=$(echo "$FORGE_INFO" | cut -d ' ' -f 2)
+  GHREPO=$(echo "$FORGE_INFO" | cut -d ' ' -f 3)
+  case "$FORGE" in
+    github) FORGE_NAME="GitHub" ;;
+    codeberg) FORGE_NAME="Codeberg" ;;
+    gitlab) FORGE_NAME="GitLab" ;;
+    *) FORGE_NAME="$FORGE" ;;
+  esac
+  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME") || true
+  echo "$FOUND" | grep -v '^URL ' || true
+  URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
+  if [ x"" == x"$URL" ] ; then
+    if echo "$FOUND" | grep -q 'several AppImages' ; then
+      echo "Unable to decide which AppImage of the release to test. Please link to the AppImage directly"
+    else
+      echo "Unable to get download URL for the AppImage. Is it really there on the repository's Releases?"
+    fi
+    exit 1
+  fi
+  # AGENTS.md and diagnose.sh rely on "URL from GitHub API:" verbatim for GitHub
+  echo "URL from $FORGE_NAME API: $URL"
+  LICENSE=$(bash "$(dirname "$0")/fetch-releases.sh" --license "$FORGE" "$GHUSER" "$GHREPO") || true
+  rm -f "$API_JSON"
 fi
 
 # If $URL begins with https://api.github.com, then treat it specially
 # This allows us to have generic URLs rather than URLs to specific releases
-if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"https://api.github.com" ] ; then
-  if [ x"${URL:0:22}" == x"https://api.github.com" ] ; then
-    GHURL="$URL"
-  fi
+if [ x"${URL:0:22}" == x"https://api.github.com" ] ; then
+  GHURL="$URL"
   echo "GitHub API URL detected"
+  FORGE=github
   API_JSON=$(mktemp)
   if ! wget -q -O "$API_JSON" --header "Accept: application/vnd.github+json" --header "Authorization: Bearer $GH_TOKEN" --header "X-GitHub-Api-Version: 2022-11-28" "$GHURL" ; then
-    echo "Unable to get the releases of the GitHub repository $GHUSER/$GHREPO. Does the repository exist, and is it public?"
+    echo "Unable to get the releases of the GitHub repository $GHURL. Does the repository exist, and is it public?"
     exit 1
   fi
   FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME") || true
@@ -76,9 +108,9 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
   URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
   if [ x"" == x"$URL" ] ; then
     if echo "$FOUND" | grep -q 'several AppImages' ; then
-      echo "Unable to decide which AppImage of the GitHub release to test. Please link to the AppImage directly"
+      echo "Unable to decide which AppImage of the release to test. Please link to the AppImage directly"
     else
-      echo "Unable to get download URL for the AppImage. Is it really there on GitHub Releases?"
+      echo "Unable to get download URL for the AppImage. Is it really there on the repository's Releases?"
     fi
     exit 1
   fi
@@ -594,8 +626,22 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # Authors
   echo "" >> apps/$INPUTBASENAME.md
   echo "authors:" >> apps/$INPUTBASENAME.md
+  # Repository (GitHub, Codeberg or GitLab); GH_HOST/GH_USER/GH_REPO name the
+  # winning one, kept as "GH_*" for compatibility with the rest of the script
+  GH_HOST=""
   GH_USER=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
   GH_REPO=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+  [ x"$GH_USER" != x"" ] && GH_HOST="github.com"
+  if [  x"$GH_USER" == x"" ] ; then
+    GH_USER=$(grep "^https://codeberg.org/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
+    GH_REPO=$(grep "^https://codeberg.org/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+    [ x"$GH_USER" != x"" ] && GH_HOST="codeberg.org"
+  fi
+  if [  x"$GH_USER" == x"" ] ; then
+    GH_USER=$(grep "^https://gitlab.com/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
+    GH_REPO=$(grep "^https://gitlab.com/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+    [ x"$GH_USER" != x"" ] && GH_HOST="gitlab.com"
+  fi
   OBS_USER=$(
     grep -h "^http.*://download.opensuse.org/repositories/home:/" "data/$INPUTBASENAME" 2>/dev/null \
     | cut -d "/" -f 6 \
@@ -606,10 +652,17 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   if [  x"$GH_USER" == x"" ] ; then
     GH_USER=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 ) || true
     GH_REPO=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 6 ) || true
+    [ x"$GH_USER" != x"" ] && GH_HOST="github.com"
   fi
+  LINK_TYPE=""
+  case "$GH_HOST" in
+    github.com) LINK_TYPE="GitHub" ;;
+    codeberg.org) LINK_TYPE="Codeberg" ;;
+    gitlab.com) LINK_TYPE="GitLab" ;;
+  esac
   if [  x"$GH_USER" != x"" ] ; then
     echo "  - name: $GH_USER" >> apps/$INPUTBASENAME.md
-    echo "    url: https://github.com/$GH_USER" >> apps/$INPUTBASENAME.md
+    echo "    url: https://$GH_HOST/$GH_USER" >> apps/$INPUTBASENAME.md
   elif [  x"$OBS_USER" != x"" ] ; then
     echo "  - name: $OBS_USER" >> apps/$INPUTBASENAME.md
     echo "    url: https://build.opensuse.org/user/show/$OBS_USER" >> apps/$INPUTBASENAME.md
@@ -621,10 +674,10 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   echo "" >> apps/$INPUTBASENAME.md
   echo "links:" >> apps/$INPUTBASENAME.md
   if [  x"$GH_USER" != x"" ] ; then
-    echo "  - type: GitHub" >> apps/$INPUTBASENAME.md
+    echo "  - type: $LINK_TYPE" >> apps/$INPUTBASENAME.md
     echo "    url: $GH_USER/$GH_REPO" >> apps/$INPUTBASENAME.md
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
-    echo "    url: https://github.com/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
+    echo "    url: https://$GH_HOST/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
   fi
   OBS_LINK=$(grep "^http.*://download.opensuse.org.*latest.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g') || true
   if [  x"$OBS_LINK" != x"" ] ; then

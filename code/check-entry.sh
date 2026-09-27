@@ -9,17 +9,18 @@
 #   ok
 #   dead: REASON
 #   unknown: REASON
-#   fixable: https://github.com/OWNER/REPO
+#   fixable: https://github.com/OWNER/REPO (or codeberg.org/gitlab.com)
 # and exits 0 in all cases (the caller decides what to do). "dead"
-# means: the GitHub repository does not exist, its releases have no
-# AppImage, or a direct download URL answered 404/410. Anything else
-# (timeout, 5xx, DNS failure, ambiguous releases) is "unknown", since it may
-# just be a temporary problem, and the caller must never ping authors for it.
-# "fixable" means: a GitHub release asset is gone, but the repository's
-# releases have an AppImage that code/find-appimage.sh picks unambiguously,
-# so the entry can point to the repository instead.
+# means: the repository does not exist, its releases have no AppImage, or a
+# direct download URL answered 404/410. Anything else (timeout, 5xx, DNS
+# failure, ambiguous releases) is "unknown", since it may just be a
+# temporary problem, and the caller must never ping authors for it.
+# "fixable" means: a release asset is gone, but the repository's releases
+# have an AppImage that code/find-appimage.sh picks unambiguously, so the
+# entry can point to the repository instead.
 #
-# Uses GH_TOKEN (if set) for api.github.com, like worker.sh does.
+# Uses GH_TOKEN (if set) for api.github.com, like worker.sh does; never sent
+# to Codeberg or GitLab (see fetch-releases.sh).
 
 set -u
 
@@ -31,40 +32,40 @@ if [ x"${URL:0:4}" != xhttp ] ; then
   exit 0
 fi
 
-if [ x"${URL:0:18}" == x"https://github.com" ] && [[ "$URL" != *"download"* ]] ; then
-  GHUSER=$(echo "$URL" | cut -d '/' -f 4)
-  GHREPO=$(echo "$URL" | cut -d '/' -f 5)
+if [[ "$URL" == https://github.com/*/* || "$URL" == https://codeberg.org/*/* || "$URL" == https://gitlab.com/*/* ]] && [[ "$URL" != *"download"* ]] ; then
   API_JSON=$(mktemp)
-  trap 'rm -f "$API_JSON"' EXIT
-  HTTP_CODE=$(curl -sS -o "$API_JSON" -w '%{http_code}' --connect-timeout 5 --max-time 10 \
-    -H "Accept: application/vnd.github+json" \
-    ${GH_TOKEN:+-H "Authorization: Bearer $GH_TOKEN"} \
-    -H "X-GitHub-Api-Version: 2022-11-28" \
-    "https://api.github.com/repos/$GHUSER/$GHREPO/releases") || HTTP_CODE=000
-  case "$HTTP_CODE" in
-    200)
-      NAME=$(basename "$FILE")
-      FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$NAME") || true
-      if echo "$FOUND" | grep -q '^URL '; then
-        echo ok
-      elif echo "$FOUND" | grep -q 'No AppImage found in the GitHub releases'; then
-        echo "dead: no AppImage in releases (github.com/$GHUSER/$GHREPO)"
-      else
-        # Several AppImages and it is not clear which one: ambiguous, not
-        # necessarily dead
-        echo "unknown: could not pick an AppImage from github.com/$GHUSER/$GHREPO releases"
-      fi
-      ;;
-    404)
-      echo "dead: repository not found (github.com/$GHUSER/$GHREPO)"
-      ;;
-    403|429)
-      echo "unknown: GitHub API rate-limited or forbidden (github.com/$GHUSER/$GHREPO)"
-      ;;
-    *)
-      echo "unknown: GitHub API returned $HTTP_CODE for github.com/$GHUSER/$GHREPO"
-      ;;
-  esac
+  ERR_FILE=$(mktemp)
+  trap 'rm -f "$API_JSON" "$ERR_FILE"' EXIT
+  set +e
+  FORGE_INFO=$(bash "$(dirname "$0")/fetch-releases.sh" "$URL" "$API_JSON" 2>"$ERR_FILE")
+  FETCH_RC=$?
+  ERR=$(cat "$ERR_FILE") ; rm -f "$ERR_FILE"
+  set -e
+  FORGE=$(echo "$FORGE_INFO" | cut -d ' ' -f 1)
+  GHUSER=$(echo "$FORGE_INFO" | cut -d ' ' -f 2)
+  GHREPO=$(echo "$FORGE_INFO" | cut -d ' ' -f 3)
+  REPOID="$FORGE/$GHUSER/$GHREPO"
+  # A repository page URL always matches the glob above, so a non-zero
+  # FETCH_RC here means a fetch error, not "not a repository URL" (exit 2)
+  if [ $FETCH_RC -eq 0 ] ; then
+    NAME=$(basename "$FILE")
+    FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$NAME") || true
+    if echo "$FOUND" | grep -q '^URL '; then
+      echo ok
+    elif echo "$FOUND" | grep -q 'No AppImage found'; then
+      echo "dead: no AppImage in releases ($REPOID)"
+    else
+      # Several AppImages and it is not clear which one: ambiguous, not
+      # necessarily dead
+      echo "unknown: could not pick an AppImage from $REPOID releases"
+    fi
+  else
+    case "$ERR" in
+      "HTTP 404") echo "dead: repository not found ($URL)" ;;
+      "HTTP 403"|"HTTP 429") echo "unknown: API rate-limited or forbidden ($URL)" ;;
+      *) echo "unknown: fetching releases returned '$ERR' for $URL" ;;
+    esac
+  fi
   exit 0
 fi
 
@@ -82,18 +83,20 @@ case "$HTTP_CODE" in
   404|410)
     # A release asset that is gone: maybe the repository has a newer release
     # with the AppImage; then the entry can point to the repository instead
+    REPO_URL=""
     if [[ "$URL" =~ ^https://github\.com/([^/]+)/([^/]+)/releases/download/ ]] ; then
-      GHUSER=${BASH_REMATCH[1]}
-      GHREPO=${BASH_REMATCH[2]}
+      REPO_URL="https://github.com/${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+    elif [[ "$URL" =~ ^https://codeberg\.org/([^/]+)/([^/]+)/releases/download/ ]] ; then
+      REPO_URL="https://codeberg.org/${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+    elif [[ "$URL" =~ ^https://gitlab\.com/([^/]+)/([^/]+)/-/releases/ ]] ; then
+      REPO_URL="https://gitlab.com/${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+    fi
+    if [ -n "$REPO_URL" ] ; then
       API_JSON=$(mktemp)
       trap 'rm -f "$API_JSON"' EXIT
-      API_CODE=$(curl -sS -o "$API_JSON" -w '%{http_code}' --connect-timeout 5 --max-time 10 \
-        -H "Accept: application/vnd.github+json" \
-        ${GH_TOKEN:+-H "Authorization: Bearer $GH_TOKEN"} \
-        -H "X-GitHub-Api-Version: 2022-11-28" \
-        "https://api.github.com/repos/$GHUSER/$GHREPO/releases") || API_CODE=000
-      if [ "$API_CODE" == 200 ] && bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$(basename "$FILE")" | grep -q '^URL ' ; then
-        echo "fixable: https://github.com/$GHUSER/$GHREPO"
+      if bash "$(dirname "$0")/fetch-releases.sh" "$REPO_URL" "$API_JSON" >/dev/null 2>&1 \
+        && bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$(basename "$FILE")" | grep -q '^URL ' ; then
+        echo "fixable: $REPO_URL"
         exit 0
       fi
     fi
