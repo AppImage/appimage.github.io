@@ -58,7 +58,11 @@ HINTS=(
   "error-not-an-appimage"
   "The downloaded file is not an AppImage (maybe an HTML page). Please use a direct download link."
 
-  "doesn't look like a squashfs image|AppRun is missing"
+  "^ERROR: Could not mount the AppImage"
+  "error-not-squashfs"
+  "The AppImage could not be mounted. AppImageHub currently supports only AppImages with a SquashFS file system; other formats such as DwarFS (used, e.g., by uruntime and quick-sharun) are not supported yet."
+
+  "^FATAL: AppRun is missing"
   "error-not-an-appimage"
   "The downloaded file is not a valid AppImage."
 

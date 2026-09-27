@@ -132,11 +132,22 @@ if [ x"$TYPE" == x2 ] ; then
     chmod +x runtime*
   fi
   # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
-  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-mount > /dev/null 2>&1 &
+  # Output to a file: in the background it must not hold on to our stdout
+  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-mount > runtime-mount.log 2>&1 &
   PID=$!
-  sleep 1
-  mount | grep tmp | tail -n 1
-  APPDIR=$(mount | grep tmp | tail -n 1 | cut -d " " -f 3)
+  # Wait for the mount of this AppImage (not just any mount)
+  APPDIR=""
+  for WAIT in 1 2 3 4 5 6 7 8 9 10 ; do
+    sleep 1
+    APPDIR=$(mount | grep -F " type fuse.$FILENAME " | tail -n 1 | cut -d " " -f 3)
+    [ -n "$APPDIR" ] && break
+    kill -0 $PID 2>/dev/null || break
+  done
+  if [ -z "$APPDIR" ] ; then
+    cat runtime-mount.log
+    echo "ERROR: Could not mount the AppImage. AppImageHub currently supports only AppImages with a SquashFS file system"
+    exit 1
+  fi
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"
   # later # kill $PID # fuse
