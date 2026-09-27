@@ -1,0 +1,33 @@
+{
+  "name": "tutanota-desktop",
+  "main": "./desktop/DesktopMain.js",
+  "version": "3.106.5",
+  "author": "Tutao GmbH",
+  "description": "The desktop client for Tutanota, the secure e-mail service.",
+  "tutao-config": {
+    "pubKeys": [
+      "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhFrLW999Y/ODqGfGKSzh\n7SFm6UgIj5scpb1r+KmEgVr/3zmd973+u2z5gG/wtayUbdVUGlzTgxqTE76BGTBR\nszq932uTsPfjRbtbyjIOzfzPvkyAB1Ew91gQk5ubrO1VCbXAZyuFi7RxDibuklLO\nlzHyjKyEIVTTdOqOTE+mg/vr41MxDW0X4nZw5MT1mIV/aYGeOSdtNdFsL69aR+d7\nKufD43J60FUS9G0tf4KmyQInmGqC8MSXCO0SMwwEJZDxDzkBsSensKfS0HzIjCXS\nor/Ahu6RwhEhjm7MyXbhiDyis+kGHSfatsO5KWWuZ4xgCEUO0L6vMQwr5M/qYOj1\n7QIDAQAB\n-----END PUBLIC KEY-----",
+      "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk4NkSbs41KjuNZfFco2l\nunXXFOIkrdBfDmIiVfVTYagEk2cN9HkjCkiNsHucLHPuHb0reHsaxrDVE1lWGTPI\n0Lh5diLYdxJ+AGy/8j9jsO51hONqTujdD0mJs14YkVfOUXyHQh1z6WJCLc9jrN9+\n3dgKOlQRYW2mYise8ggYYcrRs/CY40s3/cQvrFSprFMPS6E+9lmIDp0hPKr9q90t\nIXmzihQyc8Q0VmAfCqEwUtx6RY6BGkqKiDoMh4Qs5ZwFxhoSfgrJiwBmv0HcX1yv\nQGNSdxrpLuMA/afCPdf49x3iwy+p+paXHKirgM5z6rnikk10Lko7dNXV0735PsZd\ndQIDAQAB\n-----END PUBLIC KEY-----",
+      null
+    ],
+    "pollingInterval": 10800000,
+    "webAssetsPath": ".",
+    "iconName": "logo-solo-red.png",
+    "fileManagerTimeout": 30000,
+    "checkUpdateSignature": true,
+    "appUserModelId": "de.tutao.tutanota",
+    "initialSseConnectTimeoutInSeconds": 60,
+    "maxSseConnectTimeoutInSeconds": 2400,
+    "configMigrationFunction": "migrateClient",
+    "updateUrl": "https://mail.tutanota.com/desktop",
+    "defaultDesktopConfig": {
+      "heartbeatTimeoutInSeconds": 30,
+      "defaultDownloadPath": null,
+      "enableAutoUpdate": true,
+      "runAsTrayApp": true
+    }
+  },
+  "dependencies": {
+    "electron-updater": "5.3.0"
+  }
+}

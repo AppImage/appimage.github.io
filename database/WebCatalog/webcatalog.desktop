@@ -1,12 +1,13 @@
 [Desktop Entry]
 Name=WebCatalog
-Comment=WebCatalog helps you turn any website into desktop app with just one click.
 Exec=AppRun
 Terminal=false
 Type=Application
 Icon=webcatalog
-X-AppImage-Version=12.3.1.223
-X-AppImage-BuildId=8f251f70-558b-11a8-229d-4f724fc923e9
+StartupWMClass=WebCatalog
+X-AppImage-Version=24.3.0
+Comment=Run Web Apps like Real Apps
+MimeType=x-scheme-handler/webcatalog;
 Categories=Utility;
 
 [AppImageHub]

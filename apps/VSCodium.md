@@ -3,7 +3,9 @@ layout: app
 
 permalink: /VSCodium/
 description: Code Editing. Redefined.
+Code Editing. Redefined.
 license: MIT
+MIT
 
 icons:
   - VSCodium/icons/128x128/vscodium.png
@@ -41,6 +43,7 @@ desktop:
     Exec: vscodium --new-window %F
     Icon: vscodium
   AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|VSCodium|vscodium|latest|*.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.

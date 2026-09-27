@@ -13,16 +13,17 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
       <th>Description</th>
       <th>Authors</th>
       <th>Update Information</th>
+      <th title="Runs without a compatible C library (glibc) on the system">Self-contained</th>
     </tr>
   </thead>
   <tbody>
-    {% assign sorted = site.pages | sort: 'title' %}
+    {% assign sorted = site.pages | sort_natural: 'title' %}
     {% for post in sorted %}
       {% if post.layout == 'app' && post.published != 'false' %}
         <tr id="{{ post.url }}">
           <td style="vertical-align: top;">
             <a href="{{ site.baseurl }}{{ post.url }}" style="font-weight:bold">
-            {% if post.icons[0] %}<img height="64" width="64" src="https://gitcdn.xyz/repo/AppImage/appimage.github.io/master/database/{{post.icons[0]}}"/>{% else %}<img style="opacity: 0.5;" height="64" width="64" src="https://img.icons8.com/ios/1600/ios-application-placeholder.png"/>{% endif %}<br>
+            {% if post.icons[0] %}<img height="64" width="64" src="https://appimage.github.io/database/{{post.icons[0]}}"/>{% else %}<img style="opacity: 0.5;" height="64" width="64" src="https://img.icons8.com/ios/1600/ios-application-placeholder.png"/>{% endif %}<br>
               {% if post.title %}{{ post.title }}{% else %}{{ post.name | remove: ".md" }}{% endif %}
             </a>
             {% if post.installation %}<span class="octicon octicon-package" title="Package available"></span>{% endif %}
@@ -46,6 +47,16 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             {% if post.desktop.AppImageHub.X-AppImage-Signature %}
               {% assign shortsig = post.desktop.AppImageHub.X-AppImage-Signature | split: '.' %}
               <span class="octicon octicon-key"></span> {{ shortsig[0] }}
+            {% endif %}
+          </td>
+          <td style="vertical-align: top;">
+            {% assign hub = post.desktop.AppImageHub %}
+            {% if hub.X-AppImage-Self-Contained == true %}
+              <span class="octicon octicon-check" style="color:green;"></span> Yes
+            {% elsif hub.X-AppImage-Libc %}
+              No{% if hub.X-AppImage-Glibc-Required %}, may need glibc {{ hub.X-AppImage-Glibc-Required | remove: "GLIBC_" }}+{% endif %}{% if hub.X-AppImage-Libc != 'host' and hub.X-AppImage-Runtime == 'dynamic' %} (old AppImage runtime){% endif %}
+            {% else %}
+              <span title="Not checked yet">&ndash;</span>
             {% endif %}
           </td>
           </tr>

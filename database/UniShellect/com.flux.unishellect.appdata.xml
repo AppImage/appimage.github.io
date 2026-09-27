@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+	<id>com.flux.unishellect</id>
+	<metadata_license>FSFAP</metadata_license>
+	<project_license>LGPL-3.0</project_license>
+	<name>unishellect</name>
+	<summary>Load a menu of shells/files from a provided JSON configuration file</summary>
+	<description>
+		<p>Version 2 of a command line tool to load a menu of commands to help load shells/consoles/interpreters/files with arguments. This is inspired by the "hyper-shellect" plug-in for the "Hyper" terminal.
+
+This tool parses a JSON config file and loads a menu of shells, interpreters, files, commands and possible arguments into any cli.</p>
+	</description>
+	<launchable type="desktop-id">unishellect.desktop</launchable>
+	<url type="homepage">https://github.com/Lateralus138/unishellectv2</url>
+	<screenshots>
+		<screenshot type="default">
+			<caption>Demonstration of listing a menu</caption>
+			<image>https://raw.githubusercontent.com/Lateralus138/UniShellect/master/media/demo.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>The icon</caption>
+			<image>https://raw.githubusercontent.com/Lateralus138/UniShellect/master/media/icon/unishellect.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>unishellect.desktop</id>
+		<binary>unishellect</binary>
+	</provides>
+</component>

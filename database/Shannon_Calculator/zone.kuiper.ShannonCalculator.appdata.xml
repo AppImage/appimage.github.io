@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>zone.kuiper.ShannonCalculator</id>
+    <metadata_license>MIT</metadata_license>
+    <name>Shannon Calculator</name>
+    <summary>Calculates Shannon self-information content of a message text or file byte data</summary>
+    <project_license>GPL-3.0</project_license>
+
+    <description>
+        <p>Shannon Calculator calculates the Shannon self-information content of a message text or file byte data.</p>
+        <p>Shannon information is a measure of the information content contained in a message. The theory underpins many
+            developments in compression, message transmission and error correction.</p>
+    </description>
+
+    <releases>
+        <release version="1.0.0" date="2021-10-05">
+            <description><p>Initial release.</p></description>
+        </release>
+    </releases>
+
+    <screenshots>
+
+        <screenshot type="default">
+            <image>https://i.postimg.cc/ZRjdv8rQ/zone-kuiper-Shannon-Calculator-1-0-0.png</image>
+        </screenshot>
+
+    </screenshots>
+
+    <developer_name>Andy Thomas</developer_name>
+    <url type="homepage">https://kuiper.zone/shannon-calculator-avalonia</url>
+    <content_rating type="oars-1.1" />
+</component>
