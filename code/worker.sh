@@ -46,6 +46,9 @@ if [ x"${URL:0:4}" != xhttp ] ; then
   exit 1
 fi
 
+# The name of the file in data/ (STRICT=true for new files in a PR)
+bash "$(dirname "$0")/check-name.sh" "$INPUTBASENAME" "$(dirname "$1")" || exit 1
+
 # If the URL begins with https://github.com, then treat it specially
 # https://github.com/egoist/devdocs-desktop/
 if [ x"${URL:0:18}" == x"https://github.com" ] && [[ "${URL}" != *"download"* ]] ; then # do not redirect direct links
@@ -82,6 +85,7 @@ fi
 # This may get replaced by mounting the file with fuse httpfs
 # if we find an implementation that supports https
 echo "URL: $URL"
+bash "$(dirname "$0")/check-name.sh" --appimage "$(basename "${URL%%\?*}")"
 
 FILENAME=BeingTested.AppImage
 if [ ! -e "$FILENAME" ] ; then
@@ -132,11 +136,22 @@ if [ x"$TYPE" == x2 ] ; then
     chmod +x runtime*
   fi
   # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
-  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-mount > /dev/null 2>&1 &
+  # Output to a file: in the background it must not hold on to our stdout
+  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-mount > runtime-mount.log 2>&1 &
   PID=$!
-  sleep 1
-  mount | grep tmp | tail -n 1
-  APPDIR=$(mount | grep tmp | tail -n 1 | cut -d " " -f 3)
+  # Wait for the mount of this AppImage (not just any mount)
+  APPDIR=""
+  for WAIT in 1 2 3 4 5 6 7 8 9 10 ; do
+    sleep 1
+    APPDIR=$(mount | grep -F " type fuse.$FILENAME " | tail -n 1 | cut -d " " -f 3 || true) # No match yet is fine (set -e, pipefail)
+    [ -n "$APPDIR" ] && break
+    kill -0 $PID 2>/dev/null || break
+  done
+  if [ -z "$APPDIR" ] ; then
+    cat runtime-mount.log
+    echo "ERROR: Could not mount the AppImage. AppImageHub currently supports only AppImages with a SquashFS file system"
+    exit 1
+  fi
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"
   # later # kill $PID # fuse
@@ -159,6 +174,9 @@ if [ x"$TYPE" == x1 ] ; then
 fi
 
 echo "==========================================="
+
+# The name of the file in data/ compared with the application's name
+bash "$(dirname "$0")/check-name.sh" "$INPUTBASENAME" "$(dirname "$1")" "$(ls "${APPDIR}"/*.desktop | head -n 1)" || exit 1
 
 ICON_NAME=$(grep -r "^Icon=*" "${APPDIR}"/*.desktop  | cut -d "=" -f 2-99 | head -n 1)
 

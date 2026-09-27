@@ -209,6 +209,18 @@ jobs:
                 echo
               fi
             fi
+            if [ -s out/names.txt ] ; then
+              # Untrusted: only lines of the form the test writes, in a code block
+              NAMES=$(grep -E "^(ERROR|WARNING): (File name|AppImage name) '" out/names.txt | head -n 10 | cut -c1-300 | sed 's/````*/```/g' || true)
+              if [ -n "$NAMES" ] ; then
+                echo "**Names:**"
+                echo
+                echo '````text'
+                echo "$NAMES"
+                echo '````'
+                echo
+              fi
+            fi
             if [ -s out/hints.md ] ; then
               # Hints are fixed strings from code/diagnose.sh, but the artifact
               # is untrusted, so only accept lines we know
