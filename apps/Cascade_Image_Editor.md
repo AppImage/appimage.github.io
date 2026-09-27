@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Cascade_Image_Editor/
 description: Node-based image editor
+license: GPL-3.0
 
 icons:
   - Cascade_Image_Editor/icons/256x256/Cascade.png
@@ -35,4 +36,9 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.27
+    X-AppImage-Payload-License: GPL-3.0
 ---
