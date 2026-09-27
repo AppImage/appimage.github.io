@@ -1,89 +1,168 @@
+name: Test
 
 on:
   push:
-    # The ignored paths must not include md files for the website itself
-    paths-ignore:
-    - '*.md'
+    branches:
+      # Do not build PRs twice
+      - 'master'
+    paths:
+      - 'data/**'
   pull_request:
-    paths-ignore:
-    - '*.md'
+    paths:
+      - 'data/**'
+
+# A new push to a PR makes the previous test run obsolete
+concurrency:
+  group: test-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
 
 env:
   DISPLAY: :99
   IS_PULLREQUEST: ${{ github.event_name == 'pull_request' }}
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  WORKER_TIMEOUT: 600 # seconds per app; must stay below the job's timeout-minutes
 
 jobs:
-  dummy:
-  # https://github.com/AppImage/appimage.github.io/issues/2593
-    runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    permissions:
+      actions: write
+      contents: write
+      pull-requests: write
     steps:
-    - name: Pass dummy job
-      run: |
-        echo "passing"
-  build:
-    runs-on: ubuntu-18.04
-    timeout-minutes: 5
-    steps:
-    - uses: actions/checkout@v2
-    # https://github.com/actions/checkout#Fetch-all-history-for-all-tags-and-branches
-    # According to the docs for checkout@v2, Only a single commit is fetched by default, but
-    # providing a fetch-depth of 0 should fetch all history.
-      with:
-        fetch-depth: 0
-    - name: Install dependencies
-      run: |
-        set -e
-        sudo apt update
-        sudo apt-get -qq -y install sudo imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl # appstream # TODO: Cache me!
-        sudo bash code/prep-dummy-soundcard.sh
-        sudo gem install dupervisor -v 1.0.5 # To convert ini to yaml files
-        sudo npm install -g asar # to get pacakges.json from resources/app.asar for electron-builder applications
-        # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
-    - name: Main test
-      run: |
-        set -e
-        mkdir $HOME/.icewm/
-        echo "ShowTaskBar = 0" > $HOME/.icewm/preferences
-        echo "TaskBarAutoHide = 1" > $HOME/.icewm/preferences
-        echo "TaskBarShowWorkspaces = 0" > $HOME/.icewm/preferences
-        echo "TaskBarShowAllWindows = 0" > $HOME/.icewm/preferences
-        echo "TaskBarShowClock = 0" > $HOME/.icewm/preferences
-        echo "TaskBarShowMailboxStatus = 0" > $HOME/.icewm/preferences
-        echo "TaskBarShowCPUStatus = 0" > $HOME/.icewm/preferences
-        echo "TaskBarShowWindowListMenu = 0" > $HOME/.icewm/preferences
-        # xpra start :99 # Cannot get screenshots to work
-        Xvfb :99 -screen 0 800x600x24 >/dev/null 2>&1 & # Need to set bit depth, otherwise get some black screenshots
-        # until xset -q; do echo "Waiting for X server to start..."; sleep 1; done # We are not immediately using it anyway
-        # Find out which files in data/ have been changed in the last commit
-        #set -x    # Debug #379
-        FILES=$(git log -1 -p data/ | grep +++ | cut -d '/' -f 2-| sed -e 's|dev/null||g')
-        echo "Last changed files from the FILES variable:"
-        echo "$FILES" ; if [ -z "$FILES" ] ; then echo "Variable FILES is empty." && exit 1 ; fi
-        # Work on these files that have been changed in the last commit
-        # Check if $FILES is not empty
-        if [ -n "$FILES" ] ; then for FILE in $FILES ; do echo "$FILE" ; bash -e code/worker.sh $(readlink -f "$FILE") 2>&1 | tee log.txt ; done ; fi
-        # xpra stop :99
-        killall Xvfb
-        # bundle exec jekyll build # https://help.github.com/en/articles/viewing-jekyll-build-error-messages#configuring-a-third-party-service-to-display-jekyll-build-error-messages
-    - name: Check log
-      shell: bash
-      run: |
-        set -e
-        cat log.txt | wc -l
-        grep -r "Running as root without --no-sandbox is not supported" log.txt && MESSAGE="Pending #2563 (\`Running as root without --no-sandbox is not supported\`)."
-        grep -r "version \`GLIBC_.*' not found" && MESSAGE="This was compiled on a too new system and hence cannot run on all still-supported versions of Ubuntu."
-        echo "${MESSAGE}"
-    - name: Post test result to PR
-      # Fails due to missing permissions, https://github.com/actions/first-interaction/issues/10
-      if: 1 == 2
-      # if: github.event_name == 'pull_request'
-      uses: actions/github-script@v4
-      with:
-        script: |
-            await github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'This comment is posted by the test'
-            })
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        # https://github.com/actions/checkout#Fetch-all-history-for-all-tags-and-branches
+        # According to the docs for checkout@v2, Only a single commit is fetched by default, but
+        # providing a fetch-depth of 0 should fetch all history.
+        with:
+          fetch-depth: 0
+      - name: Check that the pull request changes exactly one file in data/
+        # Not for branches in this repository, so that maintainers can test
+        # changes to the test together with a change in data/
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+        run: |
+          CHANGED=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
+          if [ "$(echo "$CHANGED" | grep -c .)" -ne 1 ] || ! echo "$CHANGED" | grep -qxE 'data/[^/]+' ; then
+            {
+              echo "ERROR: A pull request must change exactly one file in data/ and nothing else, but this one changes:"
+              echo "$CHANGED" | sed 's/^/  /'
+            } | tee log.txt
+            exit 1
+          fi
+      - name: Configure APT Packages
+        uses: awalsh128/cache-apt-pkgs-action@v1.4.3
+        # This action handles caching APT packages, and leaves the option for package configuration scripts to be run if needed,
+        # saving a boat-load of time, if needed bump the action version.
+        with:
+          packages: sudo imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xsel xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl tesseract-ocr tesseract-ocr-eng libfuse2
+          version: 1.2
+          # Bump me ^ if you have added any new packages
+      - name: Cache test dependencies
+        uses: actions/cache@v4
+        with:
+          path: deps
+          key: test-deps-${{ hashFiles('code/fetch-deps.sh') }}
+      - name: Fetch test dependencies
+        run: |
+          bash code/fetch-deps.sh # No-op when restored from the cache
+          cp -a deps/. . # worker.sh expects them in the working directory
+      - name: Install dependencies
+        shell: bash
+        run: |
+          # set -e
+          sudo bash code/prep-dummy-soundcard.sh
+          # TODO Cache gem and npm packages
+          sudo gem install dupervisor -v 1.0.5 # To convert ini to yaml files
+          sudo npm install -g asar # to get pacakges.json from resources/app.asar for electron-builder applications
+          # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
+      - name: Main test
+        id: main
+        run: |
+          touch .test-start # Screenshots newer than this are from this run
+          mkdir $HOME/.icewm/
+          cat > $HOME/.icewm/preferences <<EOF
+          ShowTaskBar = 0
+          TaskBarAutoHide = 1
+          TaskBarShowWorkspaces = 0
+          TaskBarShowAllWindows = 0
+          TaskBarShowClock = 0
+          TaskBarShowMailboxStatus = 0
+          TaskBarShowCPUStatus = 0
+          TaskBarShowWindowListMenu = 0
+          EOF
+          Xvfb :99 -screen 0 800x600x24 >/dev/null 2>&1 & # Need to set bit depth, otherwise get some black screenshots
+          # Files in data/ added or changed by this PR (or by this push)
+          if [ "$IS_PULLREQUEST" = true ] ; then
+            FILES=$(git diff --name-only --diff-filter=AMR "origin/${{ github.base_ref }}...HEAD" -- data/)
+          elif [ -n "${{ github.event.before }}" ] && git cat-file -e "${{ github.event.before }}" 2>/dev/null ; then
+            FILES=$(git diff --name-only --diff-filter=AMR "${{ github.event.before }}" HEAD -- data/)
+          else
+            FILES=$(git diff --name-only --diff-filter=AMR HEAD~1 HEAD -- data/)
+          fi
+          echo "Changed files:"
+          echo "$FILES"
+          if [ -z "$FILES" ] ; then
+            # E.g. a PR that only removes an application
+            echo "No added or changed files in data/, nothing to test"
+            touch .nothing-tested
+            exit 0
+          fi
+          for FILE in $FILES; do
+            echo "$FILE"
+            # The timeout keeps a hanging application from running into the job
+            # timeout, which would cancel the job without a report on the PR
+            # Name rules are errors only for files a PR adds (existing entries may have older names)
+            STRICT=false
+            if [ "$IS_PULLREQUEST" = true ] && [ -n "$(git diff --name-only --diff-filter=A "origin/${{ github.base_ref }}...HEAD" -- "$FILE")" ] ; then
+              STRICT=true
+            fi
+            export STRICT
+            timeout --kill-after=30 "$WORKER_TIMEOUT" bash -e code/worker.sh "$(readlink -f "$FILE")" 2>&1 | tee -a log.txt
+            EXIT_CODE=${PIPESTATUS[0]} # bashism; get the return code of the leftmost element of the pipe
+            if [ $EXIT_CODE -eq 124 ] || [ $EXIT_CODE -eq 137 ] ; then
+              echo "ERROR: Timed out after $WORKER_TIMEOUT seconds while testing $FILE" | tee -a log.txt
+            fi
+            if [ $EXIT_CODE -ne 0 ]; then
+              echo "worker.sh exited with a non-zero code: $EXIT_CODE"
+              exit $EXIT_CODE
+            fi
+          done
+          killall Xvfb
+      - name: Collect result for the PR comment
+        if: always() && github.event_name == 'pull_request'
+        run: |
+          # Read by publish-pr-screenshot.yml, which has the permissions to comment on PRs from forks
+          [ -e .nothing-tested ] && exit 0 # No artifact, no comment
+          mkdir -p pr-result
+          echo "${{ github.event.pull_request.number }}" > pr-result/pr-number
+          if [ "${{ steps.main.outcome }}" = success ] ; then
+            find database -type f -path '*/screenshot.png' -newer .test-start -print | while IFS= read -r screenshot ; do
+              appname=$(basename "$(dirname "$screenshot")" | tr -cd 'A-Za-z0-9._-')
+              cp "$screenshot" "pr-result/${appname}.png"
+            done
+            # For the screenshot-ok label: a screenshot, and code/check-screenshot.sh had no remarks
+            if ls pr-result/*.png >/dev/null 2>&1 && ! grep -qE '^(WARNING|ERROR): The (window|screenshot)' log.txt ; then
+              touch pr-result/screenshot-ok
+            fi
+          else
+            cp failure-screens/*.png pr-result/ 2>/dev/null || true
+            bash code/diagnose.sh --excerpt log.txt > pr-result/error.txt
+            bash code/diagnose.sh --labels log.txt > pr-result/labels.txt
+            [ -s pr-result/labels.txt ] || echo error-other > pr-result/labels.txt
+          fi
+          # Also on success, e.g., a helper failing because of a too new glibc
+          bash code/diagnose.sh log.txt > pr-result/hints.md
+          # Remarks about the name of the file in data/ and of the AppImage
+          grep -hE "^(ERROR|WARNING): (File name|AppImage name) '" log.txt | sort -u > pr-result/names.txt || true
+          # Whether the AppImage needs a compatible C library on the host
+          grep -h '^X-AppImage-\(Libc\|Runtime\|Self-Contained\|Glibc-Required\)=' log.txt | sort -u > pr-result/libc.txt || true
+          ls -la pr-result/
+      - name: Upload result
+        if: always() && github.event_name == 'pull_request' && hashFiles('pr-result/**') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-result
+          path: pr-result/
+          retention-days: 7
