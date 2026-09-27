@@ -420,7 +420,9 @@ mkdir -p database/$INPUTBASENAME/
 # Taking screenshot like this fails, https://github.com/AppImage/appimage.github.io/issues/2494
 # convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
 
-timeout 30 import -window "$(timeout 10 xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png  && echo "Screenshot taken"
+# The active window; if it cannot be read itself (e.g. OpenGL/SDL games, #75),
+# its area of the screen, else the whole screen
+bash "$(dirname "$0")/take-screenshot.sh" database/$INPUTBASENAME/screenshot.png || true
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 APID=""
