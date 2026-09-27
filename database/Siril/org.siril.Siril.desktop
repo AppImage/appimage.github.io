@@ -40,17 +40,20 @@ Keywords[pt_PT]=astronomia;empilhamento;alinhamento;
 Keywords[tl_PH]=astronomiya;stacking;rehistrasyon;
 Keywords[zh_CN]=天文;叠加;对齐;
 Exec=siril %F
-Icon=siril
+StartupWMClass=siril
+Icon=org.siril.Siril
 Terminal=false
 Type=Application
 StartupNotify=true
 Categories=Science;Astronomy;ImageProcessing;
 MimeType=text/x-seq;image/fits;application/fits;image/bmp;application/bmp;image/pic;application/pic;image/jpeg;application/jpeg;image/png;application/png;image/tiff;application/tiff;image/x-portable-pixmap;video/ser;image/x-adobe-dng;image/x-canon-cr2;image/x-canon-crw;image/x-fuji-raf;image/x-kodak-dcr;image/x-kodak-k25;image/x-kodak-kdc;image/x-minolta-mrw;image/x-nikon-nef;image/x-olympus-orf;image/x-panasonic-raw;image/x-panasonic-raw2;image/x-pentax-pef;image/x-sigma-x3f;image/x-sony-arw;image/x-sony-sr2;image/x-sony-srf;image/x-xisf;
-X-AppImage-Version=0.9.12.glibc2.15
+X-AppImage-Version=e89421c
 
 [AppImageHub]
-# Dear upstream developer, please include update information in your AppImage
-# (e.g., with appimagetool -u) so that users can easily update the AppImage
-X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-UpdateInformation=zsync|https://gitlab.com/free-astro/siril/-/jobs/artifacts/1.4.4/raw/Siril-x86_64.AppImage.zsync?job=appimage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
+X-AppImage-Libc=bundled
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=true
