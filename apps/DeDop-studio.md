@@ -3,10 +3,9 @@ layout: app
 
 permalink: /DeDop-studio/
 description: DeDop Studio
-license: MIT
 
-icons:
-  - DeDop-studio/icons/128x128/dedop-studio.png
+screenshots:
+  - DeDop-studio/screenshot.png
 
 authors:
   - name: DeDop
@@ -26,20 +25,13 @@ desktop:
     Terminal: false
     Type: Application
     Icon: dedop-studio
-    X-AppImage-Version: 1.5.1.109
-    X-AppImage-BuildId: a54fcd30-b0e5-11a8-10cd-91e66636aaa2
+    X-AppImage-Version: 1.2.0.61
+    X-AppImage-BuildId: 77b50370-b985-11a7-0071-2f16bd94bf60
     Categories: Science
   AppImageHub:
-    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
-      the signature could not be verified. Please remember that the signature file (.sig
-      or .asc) should be the first file given on the command line."
-    X-AppImage-Type: 2
+    X-AppImage-UpdateInformation: 
+    X-AppImage-Type: 1
     X-AppImage-Architecture: x86_64
-    X-AppImage-Libc: host
-    X-AppImage-Runtime: dynamic
-    X-AppImage-Self-Contained: false
-    X-AppImage-Glibc-Required: GLIBC_2.15
-    X-AppImage-Payload-License: MIT
 
 electron:
   description: DeDop Studio
@@ -48,15 +40,17 @@ electron:
   license: MIT
   private: true
   dependencies:
-    "@blueprintjs/core": "~1.35.3"
-    "@blueprintjs/table": "~1.31.2"
+    "@blueprintjs/core": "~1.13.0"
+    "@blueprintjs/table": "~1.10.0"
     cesium: "~1.27.0"
-    electron-devtools-installer: "~2.2.1"
-    moment: "~2.21.0"
-    react: "~16.2.0"
-    react-ace: "~5.9.0"
-    react-addons-css-transition-group: "~15.6.2"
-    react-dom: "~16.2.0"
+    codemirror: "~5.21.0"
+    electron-devtools-installer: "~2.1.0"
+    moment: "~2.17.1"
+    react-addons-css-transition-group: "~15.4.0"
+    react: "~15.4.0"
+    react-ace: "~5.2.0"
+    react-codemirror: "~0.3.0"
+    react-dom: "~15.4.0"
     react-redux: "~4.4.5"
     redux: "~3.6.0"
     redux-logger: "~2.7.4"

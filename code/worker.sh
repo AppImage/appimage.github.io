@@ -694,8 +694,9 @@ git pull # To prevent from: error: failed to push some refs to 'https://[secure]
 git config --global user.email "actions@users.noreply.github.com"
 git config --global user.name "GitHub Actions"
 set -x
-( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
-( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
+# Only this entry: when a run tests several files, one that failed may have left a partial entry behind
+git add -A "database/$INPUTBASENAME" "apps/$INPUTBASENAME.md" || true
+git rm --cached -q "database/$INPUTBASENAME/*.yaml" 2>/dev/null || true
 git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
 Add automatically parsed data ($GITHUB_JOB)
 [ci skip]
