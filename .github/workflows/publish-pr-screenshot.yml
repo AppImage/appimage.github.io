@@ -1,15 +1,21 @@
+# Posts the result of the "Test" workflow (screenshot on success; screen
+# capture, error summary and hints on failure) as a comment on the PR.
+#
+# This runs via workflow_run because PRs come from forks, whose "Test" runs
+# only get a read-only token. Everything read from the artifact is untrusted:
+# the PR number is cross-checked against the triggering commit, and text is
+# only ever placed inside a code block.
+
 name: Publish PR Screenshot
 
 on:
   workflow_run:
-    workflows:
-      - ".github/workflows/test.yml"
+    workflows: [Test]  # Must be the workflow *name*, not its path
     types: [completed]
 
 jobs:
   publish:
     if: >
-      github.event.workflow_run.conclusion == 'success' &&
       github.event.workflow_run.event == 'pull_request' &&
       github.repository == 'AppImage/appimage.github.io'
     runs-on: ubuntu-latest
@@ -19,79 +25,231 @@ jobs:
       pull-requests: write
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      RUN_ID: ${{ github.event.workflow_run.id }}
+      RUN_URL: ${{ github.event.workflow_run.html_url }}
       HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+      CONCLUSION: ${{ github.event.workflow_run.conclusion }}
     steps:
+      # The default branch, not the PR: only its code/diagnose.sh is trusted
       - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Extract PR number from event
-        id: extract-pr
-        shell: bash
-        run: |
-          PR_NUMBER=$(jq -r '.workflow_run.pull_requests[0].number // empty' "$GITHUB_EVENT_PATH")
-          echo "PR_NUMBER=${PR_NUMBER}" >> $GITHUB_ENV
-          echo "PR_NUMBER=${PR_NUMBER}"
-          echo "pr_number=${PR_NUMBER}" >> $GITHUB_OUTPUT
-      - name: Download screenshot artifacts
-        uses: dawidd6/action-download-artifact@v2
+        uses: actions/checkout@v4
         with:
-          run_id: ${{ github.event.workflow_run.id }}
-          name: pr-screenshots
-          path: ./out
-          if_no_artifact_found: ignore
+          sparse-checkout: code
 
-      - name: Prepare files
-        id: prep
-        shell: bash
+      - name: Download test result
         run: |
-          set -e
-          mkdir -p upload
-          : > upload/list.txt
-          SHORT="${HEAD_SHA::8}"
-          COUNT=0
-          FALLBACK="run-${{ github.event.workflow_run.id }}"
-          for f in out/*.png; do
+          if ! gh run download "$RUN_ID" -R "$REPO" -n pr-result -D out ; then
+            echo "No pr-result artifact (the test did not get far enough); nothing to post."
+            exit 0
+          fi
+          ls -laR out
+
+      - name: Find the PR
+        id: pr
+        run: |
+          [ -f out/pr-number ] || exit 0
+          # workflow_run.pull_requests is always empty for PRs from forks, so
+          # the number comes from the artifact; verify it really is this commit
+          PR=$(tr -cd '0-9' < out/pr-number)
+          [ -n "$PR" ] || exit 0
+          PR_SHA=$(gh api "repos/$REPO/pulls/$PR" --jq .head.sha)
+          if [ "$PR_SHA" != "$HEAD_SHA" ] ; then
+            echo "PR #$PR head is $PR_SHA, not $HEAD_SHA (newer push?); not posting."
+            exit 0
+          fi
+          echo "number=$PR" >> "$GITHUB_OUTPUT"
+
+      - name: Upload images
+        if: steps.pr.outputs.number != ''
+        env:
+          PR: ${{ steps.pr.outputs.number }}
+          REPO_ID: ${{ github.event.repository.id }}
+          # Classic personal access token with only the public_repo scope, of
+          # an account with write access to this repository. Optional: without
+          # it (or when it expires) the ci-screenshots release is used instead.
+          UPLOAD_TOKEN: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
+        run: |
+          # Upload the way pasting an image into a comment does, so GitHub
+          # hosts it with the comment. This endpoint is undocumented and does
+          # not accept the workflow token (GITHUB_TOKEN).
+          upload_attachment() {
+            [ -n "$UPLOAD_TOKEN" ] || return 1
+            curl -sS -o response.json -w '%{http_code}' -X POST \
+              "https://uploads.github.com/user-attachments/assets?name=$(basename "$1")&content_type=image/png&repository_id=${REPO_ID}" \
+              -H "Authorization: Bearer $UPLOAD_TOKEN" -H "Accept: application/json" \
+              --data-binary "@$1" > status.txt || true
+            URL=$(grep -oE 'https://github\.com/user-attachments/assets/[A-Za-z0-9-]+' response.json | head -n 1)
+            if [ -z "$URL" ] ; then
+              echo "::warning::Attachment upload failed (HTTP $(cat status.txt)): $(head -c 300 response.json)" >&2
+              return 1
+            fi
+            echo "$URL"
+          }
+          upload_release_asset() {
+            gh release view ci-screenshots -R "$REPO" >/dev/null 2>&1 || \
+              gh release create ci-screenshots -R "$REPO" --prerelease \
+                -t "CI Screenshots" -n "Automated screenshots from PRs; used in PR comments" >&2
+            gh release upload ci-screenshots -R "$REPO" "$1" --clobber >&2
+            echo "https://github.com/$REPO/releases/download/ci-screenshots/$(basename "$1")"
+          }
+          [ -n "$UPLOAD_TOKEN" ] || echo "SCREENSHOT_UPLOAD_TOKEN is not set, using the ci-screenshots release"
+          : > images.txt
+          for f in out/*.png ; do
             [ -f "$f" ] || continue
-            base="$(basename "$f")"
-            appname="${base%.png}"  # Remove .png extension to get app name
-            # Produce deterministic upload name with app name
-            PN="${PR_NUMBER:-$FALLBACK}"
-            name="pr-${PN}-${SHORT}-${appname}.png"
-            cp "$f" "upload/${name}"
-            echo "${name}" >> upload/list.txt
-            COUNT=$((COUNT+1))
+            # Only allow safe names, and make sure it is really a PNG
+            base=$(basename "$f" .png | tr -cd 'A-Za-z0-9._-' | cut -c1-80)
+            [ "$(file -b --mime-type "$f")" = image/png ] || continue
+            name="pr-${PR}-${HEAD_SHA::8}-${base}.png"
+            cp "$f" "$name"
+            if url=$(upload_attachment "$name") ; then
+              echo "Uploaded $name as a GitHub attachment"
+            else
+              url=$(upload_release_asset "$name")
+              echo "Uploaded $name to the ci-screenshots release"
+            fi
+            echo "$base $url" >> images.txt
           done
-          echo "COUNT=${COUNT}" >> $GITHUB_ENV
-          echo "count=${COUNT}" >> $GITHUB_OUTPUT
+          cat images.txt
 
-      - name: Ensure release exists (published)
-        shell: bash
+      - name: Update labels
+        if: steps.pr.outputs.number != ''
+        env:
+          PR: ${{ steps.pr.outputs.number }}
         run: |
-          gh release view ci-screenshots >/dev/null 2>&1 || \
-          gh release create ci-screenshots -t "CI Screenshots" -n "Automated screenshots from PRs" --prerelease
-          gh release edit ci-screenshots --draft=false
+          # error-* labels name the known causes of a failed test, screenshot-ok
+          # marks a good screenshot; replace the previous ones. Untrusted artifact: only accept labels listed by
+          # code/diagnose.sh from master
+          NEW=""
+          if [ "$CONCLUSION" != success ] && [ -s out/labels.txt ] ; then
+            NEW=$(grep -xF -f <(bash code/diagnose.sh --list-labels) out/labels.txt | sort -u || true)
+          fi
+          # screenshot-ok: the test passed, took a screenshot and found nothing wrong with it
+          if [ "$CONCLUSION" = success ] && [ -e out/screenshot-ok ] && [ -s images.txt ] ; then
+            NEW=$(printf '%s\nscreenshot-ok\n' "$NEW" | grep . | sort -u)
+          fi
+          OLD=$(gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name | select(startswith("error-") or . == "screenshot-ok")' | sort -u)
+          for L in $(comm -13 <(echo "$NEW") <(echo "$OLD")) ; do
+            echo "Removing $L"
+            gh api -X DELETE "repos/$REPO/issues/$PR/labels/$L" > /dev/null
+          done
+          for L in $(comm -23 <(echo "$NEW") <(echo "$OLD")) ; do
+            echo "Adding $L"
+            if ! gh api "repos/$REPO/labels/$L" > /dev/null 2>&1 ; then
+              if [ "$L" = screenshot-ok ] ; then
+                gh api "repos/$REPO/labels" -f name="$L" -f color=0e8a16 \
+                  -f description="Test passed; the screenshot was checked and looks fine" > /dev/null
+              else
+                gh api "repos/$REPO/labels" -f name="$L" -f color=b60205 \
+                  -f description="Test failed: see the test result comment" > /dev/null
+              fi
+            fi
+            gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=$L" > /dev/null
+          done
 
-      - name: Upload assets
-        if: ${{ steps.prep.outputs.count != '0' }}
-        shell: bash
+      - name: Prune old release screenshots
+        if: steps.pr.outputs.number != ''
+        env:
+          PR: ${{ steps.pr.outputs.number }}
         run: |
-          while IFS= read -r name; do
-            gh release upload ci-screenshots "upload/${name}" --clobber
-          done < upload/list.txt
+          # The comment on a PR is updated in place, so screenshots of its
+          # earlier commits are no longer shown; others expire after 30 days.
+          # (Releases hold at most 1000 files.)
+          gh release view ci-screenshots -R "$REPO" >/dev/null 2>&1 || exit 0
+          CUTOFF=$(date -u -d '30 days ago' +%Y-%m-%dT%H:%M:%SZ)
+          RELEASE_ID=$(gh api "repos/$REPO/releases/tags/ci-screenshots" --jq .id)
+          gh api --paginate "repos/$REPO/releases/$RELEASE_ID/assets" \
+            --jq ".[] | select(.created_at < \"$CUTOFF\" or ((.name | startswith(\"pr-$PR-\")) and (.name | startswith(\"pr-$PR-${HEAD_SHA::8}-\") | not))) | \"\(.id) \(.name)\"" \
+            | while read -r id name ; do
+                echo "Deleting $name"
+                gh api -X DELETE "repos/$REPO/releases/assets/$id"
+              done
 
-      - name: Comment on PR with images
-        if: ${{ steps.prep.outputs.count != '0' && steps.extract-pr.outputs.pr_number != '' }}
-        shell: bash
+      - name: Comment on PR
+        if: steps.pr.outputs.number != ''
+        env:
+          PR: ${{ steps.pr.outputs.number }}
         run: |
-          repo="${{ github.repository }}"
+          MARKER='<!-- appimagehub-test-result -->'
           {
-            echo "Automated screenshot(s) for PR #${PR_NUMBER} (commit ${HEAD_SHA}):"
-            echo ""
-            while IFS= read -r name; do
-              url="https://github.com/${repo}/releases/download/ci-screenshots/${name}"
-              echo "![Screenshot](${url})"
-              echo ""
-            done < upload/list.txt
-          } > comment.txt
-          gh api "repos/${repo}/issues/${PR_NUMBER}/comments" -F body=@comment.txt
+            echo "$MARKER"
+            if [ "$CONCLUSION" = success ] ; then
+              echo "### :white_check_mark: Test passed"
+              echo
+              echo "Please check that the screenshot shows the application's main window."
+            else
+              echo "### :x: Test ${CONCLUSION}"
+            fi
+            echo
+            while read -r base url ; do
+              echo "**${base}**"
+              echo
+              echo "![${base}](${url})"
+              echo
+            done < images.txt
+            if [ -s out/libc.txt ] ; then
+              # Untrusted: only take values of the expected form
+              val() { grep -xE "X-AppImage-$1=($2)" out/libc.txt | head -n 1 | cut -d = -f 2 || true ; }
+              LIBC=$(val Libc 'none|bundled|host')
+              RUNTIME=$(val Runtime 'static|dynamic')
+              SELF=$(val Self-Contained 'true|false')
+              GLIBC=$(val Glibc-Required '(GLIBC_)?[0-9]{1,2}(\.[0-9]{1,3}){1,2}' | sed 's/^GLIBC_//')
+              if [ "$SELF" = true ] && [ -n "$LIBC" ] ; then
+                case "$LIBC" in
+                  none) echo "**Compatibility:** self-contained (contains no dynamically linked code)" ;;
+                  *) echo "**Compatibility:** self-contained (ships its own C library)" ;;
+                esac
+                echo
+              elif [ -n "$LIBC" ] ; then
+                REASONS=()
+                [ "$LIBC" = host ] && REASONS+=("uses the C library of the system")
+                [ "$RUNTIME" = dynamic ] && REASONS+=("uses an old AppImage runtime that needs the C library (and libfuse2) of the system")
+                [ -n "$GLIBC" ] && REASONS+=("references glibc $GLIBC")
+                echo "**Compatibility:** not self-contained: $(IFS=';' ; echo "${REASONS[*]}" | sed 's/;/; /g')"
+                echo
+              fi
+            fi
+            if [ -s out/names.txt ] ; then
+              # Untrusted: only lines of the form the test writes, in a code block
+              NAMES=$(grep -E "^(ERROR|WARNING): (File name|AppImage name) '" out/names.txt | head -n 10 | cut -c1-300 | sed 's/````*/```/g' || true)
+              if [ -n "$NAMES" ] ; then
+                echo "**Names:**"
+                echo
+                echo '````text'
+                echo "$NAMES"
+                echo '````'
+                echo
+              fi
+            fi
+            if [ -s out/hints.md ] ; then
+              # Hints are fixed strings from code/diagnose.sh, but the artifact
+              # is untrusted, so only accept lines we know
+              HINTS=$(grep -xF -f <(bash code/diagnose.sh --list) out/hints.md || true)
+              if [ -n "$HINTS" ] ; then
+                [ "$CONCLUSION" = success ] && echo "**Warnings:**" && echo
+                echo "$HINTS" | sed 's/^/- /'
+                echo
+              fi
+            fi
+            if [ "$CONCLUSION" != success ] && [ -s out/error.txt ] ; then
+              echo "**First error in the log:**"
+              echo
+              echo '````text'
+              # Neutralize anything that could close the code block
+              head -n 25 out/error.txt | cut -c1-300 | sed 's/````*/```/g'
+              echo '````'
+              echo
+            fi
+            echo "Commit ${HEAD_SHA::8}. [Full log](${RUN_URL})"
+          } > comment.md
+          cat comment.md
 
+          # Update our previous comment instead of adding a new one each push
+          ID=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
+                 --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .id" \
+               | tail -n 1)
+          if [ -n "$ID" ] ; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$ID" -F body=@comment.md >/dev/null
+          else
+            gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md >/dev/null
+          fi

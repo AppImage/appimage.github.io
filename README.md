@@ -29,7 +29,19 @@ and send a Pull Request.
 
 **Alternatively, a link to the AppImage. Nothing else.**
 
-Ideally, the file in `data/` contains a link to https://github.com/User/App/ (not to a specific AppImage!), and if the AppImage follows the standard nomenclature, then https://github.com/User/App/releases/whatever/App-1.0-x86_64.AppImage, https://github.com/User/App/releases/whatever/App-1.1-x86_64.AppImage,... will automatically be picked up.
+**The pull request must add (or change) exactly this one file in `data/` and nothing else; one application per pull request.** Otherwise the test fails.
+
+Ideally, the file in `data/` contains a link to https://github.com/User/App/ (not to a specific AppImage!). The test then picks the AppImage from the newest release (or, if no release has an AppImage, the newest pre-release): among its files ending in `.AppImage`, the one for x86_64 (other architectures such as aarch64 or i686 are left out), not a debug or nightly build, and, if the release contains AppImages of several applications, the one named like the file in `data/`. If it is still not clear which AppImage to test (e.g. `App-qt5-x86_64.AppImage` and `App-qt6-x86_64.AppImage`), the test fails; then put the link to the AppImage itself into the file in `data/`.
+
+If a PR changes the file in `data/` to a download location of a different owner (another GitHub user or organization, or another website), it gets the `manual-check-needed` label and a comment: please explain in the PR why the location changed, ideally with a link where the project announces it.
+
+Name of the file in `data/` (checked by the test; new files that break these rules fail with the `error-filename` label):
+* The name of the application, as in its desktop file, e.g. `data/Krita`
+* No blanks; use `_` instead, e.g. `data/Linux_Device_Manager`
+* No version number, architecture or `.AppImage`, e.g. not `data/App-1.0-x86_64.AppImage`
+* No "AppImage" or "Linux" unless they are part of the application's name (all AppImages are for Linux)
+* No file extension such as `.md` or `.txt`
+* Not an existing name in different capitalization; to update an entry, change its existing file
 
 Standard nomenclature:
 * AppImage filename consists of pieces: Application name, hyphen, version, hyphen, architecture, dot, AppImage suffix
@@ -38,7 +50,7 @@ Standard nomenclature:
 * Respect uppercase. If the app is called "App", do NOT use "app"
 * Example: `App-1.1-x86_64.AppImage` in a repo called "App"
 
-Then send a Pull Request to this repository. GitHub Actions will instantly perform an automated review of the AppImage, and in case it succeeds, you will see a __green__ result in your pull request. If you get a __red__ result, check the log of the GitHub Actions build, and fix it.
+Then send a Pull Request to this repository. GitHub Actions will instantly perform an automated review of the AppImage and post the result as a comment in your pull request: a screenshot of your application if it succeeds, or the error (with hints on how to fix it) if it fails. Please check that the screenshot shows the main window of your application.
 
 Then the autodetection works.
 
@@ -47,12 +59,16 @@ Then the autodetection works.
 As a format, AppImage is designed in a way that does not impose restrictions on the person generating AppImages. Basically you are free to put inside an AppImage whatever you want. For appimage.github.io, however, additional rules apply. AppImages submitted to AppImage hub undergo automatic and possibly additional manual review.
 
 * Must be downloadable from a URL. Our testing system fetches the AppImage using `wget`. Currently we cannot get AppImages from locations behind authentication and/or cookie-protected locations. For commercial applications we recommend to have a generally downloadable demo/trial version. Please contact us if you would like to add your commercial AppImage to the directory and it is not available for general download
+* Must be a type 2 AppImage with a **SquashFS** file system. Other file systems, such as DwarFS (used, e.g., by uruntime and quick-sharun), are currently not supported: the test cannot mount such AppImages
 * Must run on the [oldest still-supported Ubuntu LTS release](https://www.ubuntu.com/info/release-end-of-life) without the installation of additional packages. Targeting the oldest still-supported LTS is to ensure that the AppImage will run not only on the very latest, but also on older target systems, such as enterprise distributions (not limited to Ubuntu)
+* Should ideally be self-contained, i.e., not need a compatible C library (glibc) on the system, either because it contains no dynamically linked code or because it ships its own C library including the loader (`ld-linux-*.so.*`), and use the statically linked [AppImage runtime](https://github.com/AppImage/type2-runtime). The test detects this and the directory shows it on the page of the application
 * Must execute in our GitHub Actions based testing environment
+* Must work with X11 (we don't have tests for Wayland as it is [broken, fragmented, and unsupportable])(https://gist.github.com/probonopd/9feb7c20257af5dd915e3a9f2d1f2277)
 * Must pass [appdir-lint.sh](https://github.com/AppImage/AppImages/blob/master/appdir-lint.sh)
 * Must have a desktop file that passes `desktop-file-validate`
 * Must run without active Internet connection (and at least show some information)
 * Should have an [AppStream metainfo file](https://people.freedesktop.org/~hughsient/appdata/) in `usr/share/metainfo`. If it does, must pass `appstreamcli` validation
+* Must show its main window within 30 seconds, without network access. The test fails if the window is empty (e.g., only a menu bar on a blank background) or shows an error message
 * Should show a useful screen rather than some crude dialog box since the main window will be used for the main screenshots. Note that you can provide your own screenshots by using an [AppStream metainfo file](https://people.freedesktop.org/~hughsient/appdata/)
 * Should be available under a constant URL that does not contain the version number. Alternatively, should be available on GitHub Releases or the openSUSE Build Service (you are free to suggest additional serices like these)
 * Must display something sensible when there is no network connection (offline/air-gapped use). Electron apps, for example, can use something like
