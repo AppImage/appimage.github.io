@@ -66,19 +66,24 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"ht
     GHURL="$URL"
   fi
   echo "GitHub API URL detected"
-  API_JSON="$(wget -O - --header "Accept: application/vnd.github+json" --header "Authorization: Bearer $GH_TOKEN" --header "X-GitHub-Api-Version: 2022-11-28" "$GHURL")"
-  URL=$(echo "$API_JSON" | grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | grep -ie 'amd.\?64\|x86.64\|x64\|linux.\?64' | head -n 1 | cut -d '"' -f 4) # TODO: Handle more than one AppImage per release
+  API_JSON=$(mktemp)
+  wget -O "$API_JSON" --header "Accept: application/vnd.github+json" --header "Authorization: Bearer $GH_TOKEN" --header "X-GitHub-Api-Version: 2022-11-28" "$GHURL"
+  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON") || true
+  echo "$FOUND" | grep -v '^URL ' || true
+  URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
   if [ x"" == x"$URL" ] ; then
-    URL=$(echo "$API_JSON"| grep browser_download_url | grep -i AppImage | grep -v 'AppImage\.' | head -n 1 | cut -d '"' -f 4) # No 64-bit one found, trying any; TODO: Handle more than one AppImage per release
-  fi
-  if [ x"" == x"$URL" ] ; then
-    echo "Unable to get download URL for the AppImage. Is it really there on GitHub Releases?"
+    if echo "$FOUND" | grep -q 'several AppImages' ; then
+      echo "Unable to decide which AppImage of the GitHub release to test. Please link to the AppImage directly"
+    else
+      echo "Unable to get download URL for the AppImage. Is it really there on GitHub Releases?"
+    fi
     exit 1
   fi
   echo "URL from GitHub API: $URL"
   GHUSER=$(echo "$URL" | cut -d '/' -f 4)
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  LICENSE=$(echo "$API_JSON" | grep spdx_id | cut -d '"' -f 4 | head -n 1) || true
+  LICENSE=$(wget -q -O - --header "Accept: application/vnd.github+json" --header "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/$GHUSER/$GHREPO" | jq -r '.license.spdx_id // empty' | grep -v NOASSERTION) || true
+  rm -f "$API_JSON"
 fi
 
 # Download the file if it is not already there
