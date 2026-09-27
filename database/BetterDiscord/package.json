@@ -3,7 +3,7 @@
   "productName": "BetterDiscord Installer",
   "description": "A simple standalone program which automates the installation, removal and maintenance of BetterDiscord.",
   "author": "BetterDiscord",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "license": "MIT",
   "dependencies": {
     "source-map-support": "^0.5.16"
@@ -12,6 +12,9 @@
     "staticSourceDirectory": "assets",
     "renderer": {
       "webpackConfig": "webpack.renderer.js"
+    },
+    "main": {
+      "webpackConfig": "webpack.main.js"
     }
   },
   "main": "main.js"
