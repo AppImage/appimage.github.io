@@ -3,7 +3,7 @@ layout: app
 
 permalink: /XtoMarkdown.md/
 description: Convert documents to Markdown
-license: GPL-3.0-or-later
+license: GPL-3.0-or-laterGPL-3.0-or-later
 
 icons:
   - XtoMarkdown.md/icons/2048x2048/io.github.tx2z.XtoMarkdown.png
@@ -41,6 +41,11 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.35
+    X-AppImage-Payload-License: GPL-3.0
 
 appdata:
   Type: desktop-application
