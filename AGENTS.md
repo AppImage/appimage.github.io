@@ -39,9 +39,10 @@ GitHub Pages (Jekyll) from this repository.
    - runs the application in firejail **without network**, waits 30 s, takes a
      screenshot of the active window;
    - `code/check-screenshot.sh`: fails on an (almost) empty window or an error
-     message found by OCR (tesseract); warns when the text is mostly in
-     Chinese, Arabic or Cyrillic script (OCR with those models, confident words
-     only);
+     message found by OCR (tesseract), or text mostly in Chinese, Arabic,
+     Cyrillic or Greek script (OCR with those models, confident words only;
+     label `error-not-english`);
+   - warns when the AppImage has no (or broken) update information;
    - writes `database/` and `apps/`. On PRs it stops there; on `master` it
      commits the result (`[ci skip]`).
    Afterwards the workflow collects a `pr-result` artifact: PR number,
@@ -60,6 +61,15 @@ GitHub Pages (Jekyll) from this repository.
    removes `error-*` labels that no longer apply; the green `screenshot-ok` label
    marks a passed test whose screenshot `code/check-screenshot.sh` found fine
    (no warnings).
+   Finally it **auto-merges** (squash) a PR from a returning contributor
+   (`author_association` CONTRIBUTOR or above) that changes exactly one file in
+   `data/`, passed with `screenshot-ok`, has no `manual-check-needed` or
+   `do-not-merge` label, and does not move the download location to another
+   owner (checked itself via the API, not via the artifact). A merge with the
+   workflow's token does not trigger push workflows, so it starts `test.yml`
+   by `workflow_dispatch` with the merge commit (input `commit`), which writes
+   `database/` as a push would. Switch off: repository variable
+   `AUTO_MERGE=false`.
 
 3. `.github/workflows/check-origin.yml` (`pull_request_target`, from `master`)
    compares the first line of each changed file in `data/` with `master`
