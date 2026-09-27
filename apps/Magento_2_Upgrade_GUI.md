@@ -28,31 +28,34 @@ desktop:
     Type: Application
     Icon: magento2-upgrade-gui
     StartupWMClass: magento2-upgrade-gui
-    X-AppImage-Version: 1.1.0
+    X-AppImage-Version: 1.3.5
     Comment: A GUI tool to help you visually and easily spot differences in a three-way
       comparison between the version you upgraded from, the version you upgraded to,
       and your Magento preferences, plugins and overrides.
     Categories: Utility
   AppImageHub:
-    X-AppImage-Signature: 'keybox ''/home/runner/.gnupg/pubring.kbx'' created [don''t
-      know]: invalid packet (ctb=0a) no signature found the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.'
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
 
 electron:
     comparison between the version you upgraded from, the version you upgraded to, and
     your Magento preferences, plugins and overrides.
   author: Peter Jaap Blaakmeer / elgentos
+  main: background.js
   license: MIT
   private: false
-  main: background.js
   repository:
     type: git
     url: https://github.com/elgentos/magento2-upgrade-gui.git
   dependencies:
-    electron-store: "^6.0.0"
+    electron-store: "^8.1.0"
   browserslist:
   - "> 1%"
   - last 2 versions
