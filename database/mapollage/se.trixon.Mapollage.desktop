@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mapollage
+Comment=photo kml generator for Google Earth
+Exec=mapollage %F
+Icon=se.trixon.Mapollage
+Terminal=false
+Categories=Graphics;
+StartupNotify=true
+StartupWMClass=Mapollage
+

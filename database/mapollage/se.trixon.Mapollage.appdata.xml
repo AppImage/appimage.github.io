@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>se.trixon.Mapollage</id>
+    <name>Mapollage</name>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>Apache-2.0</project_license>
+    <content_rating type="oars-1.1" />
+    <developer id="se.trixon.patrik">
+        <name>Patrik Karlström</name>
+    </developer>
+    <summary>Generate location based photo albums of your geo tagged images</summary>
+    <description>
+        <p>Mapollage is a photo kml generator for Google Earth and the like. Itallows you to expplore your albums on a map.</p>
+        <p>It has a wide range of settings putting you in control of the details such as:</p>
+        <ul>
+            <li>Source:What files to include</li>
+            <li>Folders:The structure of the generated album</li>
+            <li>Tracks:If an how tracks are created</li>
+            <li>Placemark:Style of pins and labels</li>
+            <li>Description:The detailed description of each photo</li>
+            <li>Photo:How photos are created and referenced</li>
+        </ul>
+    </description>
+    <launchable type="desktop-id">se.trixon.Mapollage.desktop</launchable>
+    <url type="homepage">https://trixon.se/projects/mapollage/</url>
+    <url type="bugtracker">https://github.com/trixon/mapollage/issues</url>
+    <url type="donation">https://github.com/sponsors/trixon</url>
+    <provides>
+        <id>Mapollage.desktop</id>
+    </provides>
+    <keywords>
+        <keyword translate="no">java</keyword>
+        <keyword translate="no">javafx</keyword>
+        <keyword translate="no">netbeans</keyword>
+    </keywords>
+
+    <branding>
+        <color type="primary" scheme_preference="light">#ff96ff</color>
+        <color type="primary" scheme_preference="dark">#600060</color>
+    </branding>
+
+    <screenshots>
+        <screenshot type="default">
+            <image>https://trixon.se/files/screenshots/mapollage_appstream01.png</image>
+            <caption>Main window - Albums</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://trixon.se/files/screenshots/mapollage_appstream02.png</image>
+            <caption>Exampel of generated ouput</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://trixon.se/files/screenshots/mapollage_appstream03.png</image>
+            <caption>Album editor</caption>
+        </screenshot>
+    </screenshots>
+
+    <releases>
+        <release version="24.10.06" date="2024-10-06"/>
+        <release version="3.0.0" date="2024-02-26"/>
+    </releases>
+</component>

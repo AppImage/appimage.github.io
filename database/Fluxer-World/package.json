@@ -1,0 +1,13 @@
+{
+  "name": "fluxer-desktop",
+  "productName": "Fluxer World",
+  "version": "1.0.86",
+  "description": "Fluxer World – desktop client",
+  "main": "dist/main.js",
+  "author": "Fluxer Contributors <xuruh@fluxer.world>",
+  "license": "AGPL-3.0",
+  "private": true,
+  "dependencies": {
+    "electron-updater": "^6.8.3"
+  }
+}

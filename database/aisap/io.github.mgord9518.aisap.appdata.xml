@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>io.github.mgord9518.aisap</id>
+  
+  <name>aisap</name>
+  <summary>Sandbox helper for AppImages</summary>
+  
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>MIT</project_license>
+  
+  <description>
+    <p>
+      aisap is a console application that allows easy sandboxing of AppImages in bwrap. It intends to make sandboxing AppImages as simple as how both Flatpak and Android do, and keep full transparency to the user as to what personal files the application has access to. Currently in heavy development and should only be used for testing purposes
+    </p>
+  </description>
+  
+  <categories>
+    <category>System</category>
+    <category>Security</category>
+  </categories>
+  
+  <provides>
+    <binary>aisap</binary>
+  </provides>
+</component>

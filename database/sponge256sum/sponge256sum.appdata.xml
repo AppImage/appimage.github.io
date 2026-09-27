@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>io.github.lordmulder.sponge_hash_aes256.sponge256sum</id>
+	<developer id="io.github.lordmulder">
+		<name>LoRd_MuldeR</name>
+	</developer>
+	<metadata_license>0BSD</metadata_license>
+	<project_license>0BSD</project_license>
+	<name>sponge256sum</name>
+	<summary>A sponge-based secure hash function that uses AES-256 as its internal PRF</summary>
+	<description>
+		<p>This hash function has a variable output size and can produce outputs of any non-zero size.</p>
+		<p>Please see the documentation for details!</p>
+	</description>
+	<launchable type="desktop-id">sponge256sum.desktop</launchable>
+	<url type="homepage">https://lordmulder.github.io/sponge-hash-aes256/sponge256sum/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>
+				https://raw.githubusercontent.com/lordmulder/sponge-hash-aes256/refs/heads/main/.assets/images/sponge256sum.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>sponge256sum.desktop</id>
+	</provides>
+	<content_rating type="oars-1.0" />
+	<releases>
+		<release version="1.10.7" date="2026-09-12" />
+	</releases>
+</component>
