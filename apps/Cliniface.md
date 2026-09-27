@@ -2,13 +2,13 @@
 layout: app
 
 permalink: /Cliniface/
-description: 3D Facial Image Visualisation and Analysis
+description: 3D Facial Image Visualisation, Measurement, Analysis
 license: GPL-3.0
 
 icons:
-  - Cliniface/icons/256x256/cliniface.png
+  - Cliniface/icons/128x128/cliniface.png
 screenshots:
-- https://i2.wp.com/cliniface.org/wp-content/uploads/2019/02/measurements.png
+- https://i1.wp.com/cliniface.org/wp-content/uploads/2020/06/max_raw_post_landmarks.png
 
 authors:
   - name: frontiersi
@@ -26,19 +26,24 @@ desktop:
     Name: Cliniface
     Version: 1.0
     Comment: 3D Facial Image Visualisation and Analysis
-    TryExec: Cliniface
-    Exec: Cliniface %f
-    Icon: Cliniface
+    TryExec: cliniface
+    Exec: cliniface %f
+    Icon: cliniface
     MimeType: application/x-3df
-    Terminal: false
-    Categories: Graphics
+    Terminal: true
+    Categories: Qt
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-UpdateInformation: zsync|https://github.com/frontiersi/cliniface/releases/download/continuous/Cliniface-x86_64.AppImage.zsync
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: NOASSERTION
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: GPL-3.0
 
 appdata:
   Type: desktop-application
@@ -46,23 +51,25 @@ appdata:
   Name:
     C: Cliniface
   Summary:
-    C: 3D Facial Image Visualisation and Analysis
+    C: 3D Facial Image Visualisation, Measurement, Analysis
   Description:
     C: >-
-      <p>Cliniface undertakes the visualisation, measurement, analysis, identification, and reporting of
-                  phenotypic traits from 3D facial images. These traits, known as Human Phenotype Ontology terms
-                  (or HPO terms), can then be used in concert with other phenotypic traits about a subject
-                  (e.g., behavoural or cognitive traits) to assist in diagnosing rare and genetic diseases.</p>
-      <p>Cliniface works by fitting facial landmarks to the 3D model of a face and then taking spatial
-                  measurements using the landmarks to demarcate regions of interest. The extracted measurements
-                  are then compared to existing statistics from the research literature describing how these
-                  measurements are expected to change with age for different demographic cohorts. If measurements
-                  are found to fall outside of the expected range, this may indicate the presence of certain
-                  facial traits of clinical significance.</p>
-      <p>Cliniface accepts 3D files in a variety of standard formats, and its analysis is saved into the
-                  3DF file format which embeds metadata and analytic results as structured plain text alongside
-                  the original model data saved in Wavefront OBJ format. Analysis data can also be exported
-                  in XML and JSON formats to allow users to undertake further analysis outside of Cliniface.</p>
+      <p>Cliniface lets clinicians interactively visualise, measure, analyse, and export data and reports
+                  about 3D facial images taken of their patients. Cliniface records a comprehensive range of facial
+                  measurements and compares these against known statistics of facial growth to automatically identify
+                  significant dysmorphic traits as standard Human Phenotype Ontology (HPO) terms which have
+                  disease/gene associations. By combining the HPO terms reported by Cliniface with other phenotypic
+                  information (including medical/family histories etc), a clinician is better able to quickly and
+                  accurately arrive at a potential diagnosis. Cliniface can then summarise the analysis in a PDF
+                  report, or export the analysis to CSV (or other text formats) for detailed follow-up investigations if required.</p>
+      <p>Cliniface takes over fifty measurements from different parts of the face including distances,
+                  depth, angles, and asymmetry. In addition, Cliniface offers clinicians the ability to record their
+                  own measurements on the 3D facial image in an intuitive and easy manner using &quot;virtual callipers&quot;.
+                  Visualisations of asymmetry and curvature are also provided to help clinicians more effectively
+                  interpret the facial surface.</p>
+      <p>Cliniface works with 3D facial models stored in a wide variety of formats including formats without
+                  texture information. The protection and privacy of subject information is ensured because all
+                  processing is carried out on your own machine.</p>
   ProjectLicense: GPL-3.0
   Url:
     homepage: https://cliniface.org
@@ -72,15 +79,39 @@ appdata:
   Screenshots:
   - default: true
     caption:
-      C: Analysis of facial measurements.
+      C: Automatically place 40 different anatomical landmarks.
     thumbnails: []
     source-image:
-      url: https://i2.wp.com/cliniface.org/wp-content/uploads/2019/02/measurements.png
+      url: https://i1.wp.com/cliniface.org/wp-content/uploads/2020/06/max_raw_post_landmarks.png
       lang: C
   - caption:
-      C: Visualisation of surface curvature.
+      C: Visualise and analyse facial measurements directly on the model.
     thumbnails: []
     source-image:
-      url: https://i1.wp.com/cliniface.org/wp-content/uploads/2019/02/curvature.png
+      url: https://i1.wp.com/cliniface.org/wp-content/uploads/2020/06/bella_nasolabial-1.png
+      lang: C
+  - caption:
+      C: Interactively investigate your own measurements.
+    thumbnails: []
+    source-image:
+      url: https://i2.wp.com/cliniface.org/wp-content/uploads/2020/06/rich_measurement.png
+      lang: C
+  - caption:
+      C: Visualise and measure asymmetry in all three dimensions.
+    thumbnails: []
+    source-image:
+      url: https://i1.wp.com/cliniface.org/wp-content/uploads/2020/06/rich_asymmetry_Z.png
+      lang: C
+  - caption:
+      C: Compare measurements between two or three faces at once.
+    thumbnails: []
+    source-image:
+      url: https://i1.wp.com/cliniface.org/wp-content/uploads/2020/06/face_compare.png
+      lang: C
+  - caption:
+      C: Be advised of atypical facial traits and related clinical phenotypic terms.
+    thumbnails: []
+    source-image:
+      url: https://i1.wp.com/cliniface.org/wp-content/uploads/2020/06/flag_measures.png
       lang: C
 ---
