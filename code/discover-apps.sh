@@ -444,12 +444,21 @@ while read -r FULLNAME ; do
     fi
   fi
 
-  NAME="$RNAME"
+  # The name in its proper spelling (capitalization, blanks as _): from the
+  # repository name, the AppImage's name and the description, see
+  # code/pick-name.sh; e.g. photoapp + PhotoApp-1.2.AppImage -> PhotoApp,
+  # photo-app + "Photo App is ..." -> Photo_App
+  META=$(api GET "repos/$OWNER/$RNAME")
+  NAME=$(bash "$SCRIPT_DIR/pick-name.sh" "$RNAME" "$(basename "$ASSET_URL")" "$(jq -r '.description // ""' <<<"$META")")
+  [ -n "$NAME" ] || NAME="$RNAME"
+  echo "    name: $NAME"
   if grep -qiE 'appimage|linux' <<<"$NAME" ; then
     record "$OR" name
     continue
   fi
-  if [ -e "data/$NAME" ] || find data -iname "$NAME" 2>/dev/null | grep -q . ; then
+  # Already in the catalog under any spelling (photoapp, Photo-App, Photo_App)
+  NAME_KEY=$(tr 'A-Z' 'a-z' <<<"$NAME" | tr -cd 'a-z0-9')
+  if [ -e "data/$NAME" ] || ls data | tr 'A-Z' 'a-z' | tr -cd 'a-z0-9\n' | grep -qxF "$NAME_KEY" ; then
     record "$OR" name
     continue
   fi
@@ -459,7 +468,6 @@ while read -r FULLNAME ; do
   fi
 
   # Qualifies: gather metadata for the PR body
-  META=$(api GET "repos/$OWNER/$RNAME")
   DESC=$(jq -r '.description // ""' <<<"$META")
   STARS=$(jq -r '.stargazers_count // 0' <<<"$META")
   LICENSE=$(jq -r '.license.spdx_id // empty' <<<"$META" | grep -v NOASSERTION || true)
