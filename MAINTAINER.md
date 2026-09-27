@@ -46,10 +46,12 @@ does not lead to a new one. The monthly scheduled run is a real run (fixes
 entries and opens up to 5 issues); only manual runs default to a dry run.
 
 Before pinging, it fixes what it can: when an entry links to a GitHub release
-asset that is gone but the repository still has an AppImage, a real run
-(`dry_run: false`) points the entry to the repository, commits that to
-`master`, re-tests those entries, and closes an open issue about them. The
-dry run lists these fixes too.
+asset that is gone but the repository still has an AppImage, it opens a pull
+request (at most 5 entries per run) that points those entries to the
+repository; merging it closes open issues about them. The workflow's token
+cannot start the Test workflow on its own PR: close and reopen the PR to test
+it. This needs Settings → Actions → General → "Allow GitHub Actions to create
+and approve pull requests". The dry run shows the PR it would open.
 
 `code/check-entry.sh data/<Name>` checks a single entry the same way, and
 `code/ping-authors.sh --dry-run` runs the whole thing locally (needs

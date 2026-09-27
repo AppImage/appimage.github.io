@@ -90,10 +90,12 @@ GitHub Pages (Jekyll) from this repository.
    releases, or a direct download URL returning 404/410; timeouts and other
    errors are `unknown` and are never pinged), writes a summary, and runs
    `code/ping-authors.sh`. A dead link to a GitHub release asset whose
-   repository still has an AppImage (`find-appimage.sh`) is `fixable`: the
-   entry then points to the repository instead (at most 20 per run, committed
-   to `master`, re-tested with the Test workflow's `files` input, an open issue
-   about it closed with a note). Only the rest is pinged:
+   repository still has an AppImage (`find-appimage.sh`) is `fixable`: it
+   opens a pull request (branch `ping-authors/fixes-*`, at most 5 entries per
+   run, none already in an open fix PR) that points those entries to the
+   repository and closes open issues about them when merged; PRs opened with
+   the workflow's token start no workflows, so close and reopen it to test.
+   Only the rest is pinged:
    `code/ping-authors.sh` opens (at most `max_issues`) issues labeled
    `entry-unavailable` for dead entries that never had one (open or closed),
    @-mentioning the author of the commit that added the entry and the

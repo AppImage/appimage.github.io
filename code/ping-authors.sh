@@ -14,11 +14,11 @@
 #
 # Before pinging anyone, it tries to fix the entry: when a GitHub release
 # asset is gone but the repository still has an AppImage (check-entry.sh
-# reports "fixable"), the entry's first line becomes the repository URL
-# (at most MAX_FIXES, default 20, per run), committed to master, the Test
-# workflow re-tests those entries (writing database/), and an open issue
-# about the entry is closed with a note. Only entries that cannot be fixed
-# like this are pinged, and each at most once (any issue, open or closed).
+# reports "fixable"), it opens a pull request that points the entry to the
+# repository (at most MAX_FIXES, default 5, per run; entries already in an
+# open fix PR are left out), closing open issues about them when merged.
+# Only entries that cannot be fixed like this are pinged, and each at most
+# once (any issue, open or closed).
 #
 # Entries are checked in parallel (PARALLEL, default 10) in chunks.
 #
@@ -37,7 +37,7 @@ MAX_ISSUES=5
 FULL=false
 PARALLEL=${PARALLEL:-10}
 CHUNK=50
-MAX_FIXES=${MAX_FIXES:-20}
+MAX_FIXES=${MAX_FIXES:-5}
 while [ $# -gt 0 ] ; do
   case "$1" in
     --dry-run) DRY_RUN=true ; shift ;;
@@ -130,49 +130,67 @@ UNKNOWN_N=$(grep -cP '\tunknown:' /tmp/ping-authors-results.tsv || true)
 } | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
 
 # --- 2. Fix entries whose repository still has an AppImage -------------
+# In a pull request (not on master): changes to data/ are reviewed like any
+# other. Entries already in an open fix PR are left out.
 
-: > /tmp/ping-authors-fixed.txt
-grep -P '\tfixable: ' /tmp/ping-authors-results.tsv | head -n "$MAX_FIXES" | while IFS=$'\t' read -r NAME STATUS ; do
+: > /tmp/ping-authors-inpr.txt
+api GET "repos/$REPO/pulls?state=open&per_page=100" \
+  | jq -r '.[] | select(.head.ref | startswith("ping-authors/")) | .number' 2>/dev/null \
+  | while read -r NUMBER ; do
+      api GET "repos/$REPO/pulls/$NUMBER/files?per_page=100" | jq -r '.[].filename | ltrimstr("data/")' 2>/dev/null
+    done > /tmp/ping-authors-inpr.txt
+
+: > /tmp/ping-authors-fixed.tsv
+grep -P '\tfixable: ' /tmp/ping-authors-results.tsv | while IFS=$'\t' read -r NAME STATUS ; do
+  grep -qxF "$NAME" /tmp/ping-authors-inpr.txt && continue
   NEWURL=${STATUS#fixable: }
   [[ "$NEWURL" =~ ^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]] || continue
-  echo "data/$NAME: $(head -n 1 "data/$NAME" | tr -d '\r') -> $NEWURL"
-  if [ "$DRY_RUN" != true ] ; then
-    { echo "$NEWURL" ; tail -n +2 "data/$NAME" ; } > "/tmp/ping-authors-entry" && cat /tmp/ping-authors-entry > "data/$NAME"
-    echo "$NAME" >> /tmp/ping-authors-fixed.txt
+  printf '%s\t%s\t%s\n' "$NAME" "$(head -n 1 "data/$NAME" | tr -d '\r')" "$NEWURL"
+done | head -n "$MAX_FIXES" > /tmp/ping-authors-fixed.tsv
+
+if [ -s /tmp/ping-authors-fixed.tsv ] ; then
+  FIXED_N=$(wc -l < /tmp/ping-authors-fixed.tsv)
+  {
+    echo "The AppImages these entries link to are gone, but the releases of their GitHub repositories have one (found by \`code/find-appimage.sh\`), so the entries can point to the repository and follow new releases:"
+    echo
+    echo "| Entry | Was | Now |"
+    echo "| --- | --- | --- |"
+    while IFS=$'\t' read -r NAME OLDURL NEWURL ; do
+      echo "| \`data/$(sanitize "$NAME")\` | $(codespan "$OLDURL") | $NEWURL |"
+    done < /tmp/ping-authors-fixed.tsv
+    echo
+    # Open issues about these entries close when this is merged
+    while IFS=$'\t' read -r NAME OLDURL NEWURL ; do
+      awk -F '\t' -v t="$(title_of "$NAME")" '$2 == "open" && $3 == t { print "Closes #" $1 }' /tmp/ping-authors-existing.tsv
+    done < /tmp/ping-authors-fixed.tsv
+    echo
+    echo "Opened by \`.github/workflows/ping-authors.yml\`. A PR opened by a workflow does not start the Test workflow: close and reopen this PR to test the entries (or they are tested on master when it is merged)."
+  } > /tmp/ping-authors-pr.md
+  echo "Fixes ($FIXED_N):" | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
+  cut -f 1,3 /tmp/ping-authors-fixed.tsv | sed 's/\t/ -> /' | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
+  if [ "$DRY_RUN" == true ] ; then
+    echo "--- Would open this pull request ---"
+    cat /tmp/ping-authors-pr.md
+    echo "---"
+  else
+    BRANCH="ping-authors/fixes-$(date -u +%Y%m%d-%H%M%S)"
+    git checkout -q -b "$BRANCH"
+    while IFS=$'\t' read -r NAME OLDURL NEWURL ; do
+      { echo "$NEWURL" ; tail -n +2 "data/$NAME" ; } > /tmp/ping-authors-entry && cat /tmp/ping-authors-entry > "data/$NAME"
+    done < /tmp/ping-authors-fixed.tsv
+    git config user.name "GitHub Actions"
+    git config user.email "actions@users.noreply.github.com"
+    git add data/
+    git commit -q -m "Point $FIXED_N entries to their GitHub repository
+
+The AppImages they linked to are gone, but the repositories' releases have
+one (found by code/find-appimage.sh); by ping-authors.yml."
+    git push -q origin "$BRANCH"
+    PR_URL=$(api POST "repos/$REPO/pulls" -d "$(jq -n --arg h "$BRANCH" --arg t "Point $FIXED_N entries to their GitHub repository" --rawfile b /tmp/ping-authors-pr.md \
+      '{title:$t, head:$h, base:"master", body:$b}')" | jq -r '.html_url // .message')
+    echo "Pull request: $PR_URL" | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
+    git checkout -q -
   fi
-done | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
-
-if [ -s /tmp/ping-authors-fixed.txt ] ; then
-  FIXED_N=$(wc -l < /tmp/ping-authors-fixed.txt)
-  git config user.name "GitHub Actions"
-  git config user.email "actions@users.noreply.github.com"
-  git add data/
-  git commit -q -m "Point $FIXED_N entries to their GitHub repository
-
-The AppImage they linked to is gone, but the repository's releases have
-one (found by code/find-appimage.sh); by ping-authors.yml." || true
-  for TRY in 1 2 3 4 5 ; do
-    git push -q origin HEAD:master && break
-    sleep $((TRY * 5))
-    git pull -q --rebase origin master
-  done
-  # A push with the workflow's token triggers no workflows: re-test the
-  # entries (which writes database/) with the Test workflow's files input
-  grep -xE '[A-Za-z0-9._+-]+' /tmp/ping-authors-fixed.txt | xargs -n 6 | while read -r BATCH ; do
-    api POST "repos/$REPO/actions/workflows/test.yml/dispatches" \
-      -d "$(jq -n --arg f "$BATCH" '{ref:"master", inputs:{files:$f}}')" > /dev/null
-  done
-  # Close the open issues about entries fixed now
-  while read -r NAME ; do
-    TITLE=$(title_of "$NAME")
-    awk -F '\t' -v t="$TITLE" '$2 == "open" && $3 == t { print $1 }' /tmp/ping-authors-existing.tsv | while read -r NUMBER ; do
-      [[ "$NUMBER" =~ ^[0-9]+$ ]] || continue
-      api POST "repos/$REPO/issues/$NUMBER/comments" -d "$(jq -n --arg n "$(sanitize "$NAME")" --arg u "$(head -n 1 "data/$NAME")" \
-        '{body: ("Found it: the releases of " + $u + " have an AppImage, so `data/" + $n + "` points to the repository now and follows new releases. Closing; thank you!")}')" > /dev/null
-      api PATCH "repos/$REPO/issues/$NUMBER" -d '{"state":"closed","state_reason":"completed"}' > /dev/null
-      echo "Closed issue #$NUMBER about $NAME"
-    done
-  done < /tmp/ping-authors-fixed.txt
 fi
 
 # --- 3. Ping authors of dead entries ------------------------------------

@@ -37,8 +37,8 @@ jobs:
       group: ping-authors
       cancel-in-progress: false
     permissions:
-      contents: write # fix entries whose repository still has an AppImage
-      actions: write # re-test the fixed entries (Test workflow's files input)
+      contents: write # push the branch of the pull request with fixes
+      pull-requests: write # open that pull request
       issues: write
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
