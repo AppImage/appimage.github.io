@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.medgm.ollie</id>
+  <name>Ollie</name>
+  <summary>Local-first desktop AI assistant for Ollama and cloud LLMs</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="io.github.medgm">
+    <name>MedGm</name>
+  </developer>
+  <description>
+    <p>Ollie is a fast, Linux-native desktop app for chatting with local LLMs through Ollama, with optional support for OpenAI, Anthropic, Google Gemini and GroqCloud. Chats and models stay on your machine.</p>
+    <ul>
+      <li>Chat interface with Markdown, code highlighting, tables and math</li>
+      <li>Pull, delete and manage Ollama models without the terminal</li>
+      <li>Vision models and PDF/text file attachments</li>
+      <li>Monitoring dashboard for CPU, memory and running models</li>
+      <li>Cloud provider API keys stored in the system keyring</li>
+      <li>Light, dark and system themes</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">Ollie.desktop</launchable>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <url type="homepage">https://github.com/MedGm/Ollie</url>
+  <url type="bugtracker">https://github.com/MedGm/Ollie/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/MedGm/Ollie/main/docs/screenshots/overview.png</image>
+      <caption>Chat with a local model</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/MedGm/Ollie/main/docs/screenshots/models.png</image>
+      <caption>Model management</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/MedGm/Ollie/main/docs/screenshots/vision-model.png</image>
+      <caption>Image analysis with a vision model</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/MedGm/Ollie/main/docs/screenshots/monitoring.png</image>
+      <caption>Monitoring dashboard</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/MedGm/Ollie/main/docs/screenshots/settings.png</image>
+      <caption>Settings</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.2.14" date="2026-09-28">
+      <description>
+        <p>Ollie now uses its own llama icon instead of the Tauri placeholder.</p>
+      </description>
+    </release>
+    <release version="0.2.13" date="2026-09-28">
+      <description>
+        <p>Adds a menu category and complete app metadata for software centers and the AppImageHub catalog.</p>
+      </description>
+    </release>
+    <release version="0.2.12" date="2026-09-28">
+      <description>
+        <p>AppImage is now built on Ubuntu 22.04, so it runs on distributions with glibc 2.35 or newer.</p>
+      </description>
+    </release>
+    <release version="0.2.11" date="2026-09-27">
+      <description>
+        <p>Cloud provider API keys are stored in the system keyring instead of plain text, with automatic migration. Fixed AppImage file permissions.</p>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

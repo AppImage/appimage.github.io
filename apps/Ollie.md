@@ -23,7 +23,7 @@ links:
 
 desktop:
   Desktop Entry:
-    Categories: 
+    Categories: Utility
     Comment: Your Friendly Local AI Companion
     Exec: ollie
     StartupWMClass: ollie
