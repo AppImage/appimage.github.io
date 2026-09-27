@@ -4,7 +4,34 @@
 set -e -v
 set -o pipefail
 
-sudo apt-get -y install libfuse2
+# Background processes (FUSE mount, firejail, icewm) must never outlive this
+# script: they inherit its stdout, so the "| tee" in the workflow would wait
+# for them forever and the job would hang until the Actions timeout instead
+# of failing. On failure, also capture the screen for the PR comment.
+cleanup() {
+  RC=$?
+  { set +e +v +x ; } 2>/dev/null
+  if [ $RC -ne 0 ] && [ -n "$APID" ] && [ -n "$INPUTBASENAME" ] ; then
+    mkdir -p failure-screens
+    timeout 15 import -window root "failure-screens/${INPUTBASENAME}.png" 2>/dev/null
+    # An empty screen (the application crashed before drawing) tells nothing
+    if [ "$(convert "failure-screens/${INPUTBASENAME}.png" -format '%[fx:standard_deviation]' info: 2>/dev/null)" == 0 ] ; then
+      rm -f "failure-screens/${INPUTBASENAME}.png"
+    fi
+  fi
+  # TERM first so that firejail can take down its sandbox, then make sure
+  PIDS="$APID $PID $(jobs -p)"
+  kill $PIDS 2>/dev/null && sleep 2
+  kill -9 $PIDS 2>/dev/null
+  killall -9 icewm 2>/dev/null
+  if [ -n "$APPDIR" ] ; then fusermount -u -z "$APPDIR" 2>/dev/null ; fi
+  [ x"$TYPE" == x1 ] && sudo umount -l /mnt 2>/dev/null
+  exit $RC
+}
+trap cleanup EXIT
+trap "exit 143" TERM # Sent by "timeout" in the workflow; still clean up
+
+dpkg -s libfuse2 >/dev/null 2>&1 || sudo apt-get -y install libfuse2 # Normally installed by the workflow
 
 URL=$(cat $1 | head -n 1)
 echo $URL
@@ -100,12 +127,12 @@ set -x
 
 # If we have a type 2 AppImage, then mount it using appimagetool (not using itself for security reasons)
 if [ x"$TYPE" == x2 ] ; then
-  if [ ! -e appimagetool-x86_64.AppImage ] ; then
+  if [ ! -e runtime-fuse2-x86_64 ] ; then # Normally provided by code/fetch-deps.sh
     wget -c -q https://github.com/AppImage/appimage.github.io/releases/download/deps/runtime-fuse2-x86_64
     chmod +x runtime*
   fi
   # if [ -d squashfs-root ] ; then rm -rf squashfs-root/ ; fi
-  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-mount &
+  TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-mount > /dev/null 2>&1 &
   PID=$!
   sleep 1
   mount | grep tmp | tail -n 1
@@ -211,6 +238,10 @@ echo "==========================================="
 # If everything succeeded until here, then download Firejail aith Xpra and run the application in it
 # and take screenshots if we don't have them already from AppStream
 
+# Does the AppImage need a compatible C library on the host?
+LIBC_INFO=$(bash "$(dirname "$0")/check-libc.sh" "$FILENAME" "$APPDIR" || true)
+echo "$LIBC_INFO"
+
 TERMINAL=false
 grep -r Terminal=true "${APPDIR}"/*.desktop && TERMINAL=true
 echo "TERMINAL: $TERMINAL"
@@ -219,11 +250,14 @@ echo "TERMINAL: $TERMINAL"
 # The simplest and most straightforward way to get the most recent version
 # of Firejail running on a less than recent OS; don't do this at home kids
 mkdir -p firejail
-FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
-wget -c -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
+# The downloads are normally provided by code/fetch-deps.sh
+if ! ls musl-1*.apk >/dev/null 2>&1 ; then
+  FILE=$(wget -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/" -O - | grep musl-1 | head -n 1 | cut -d '"' -f 2)
+  wget -c -q "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/$FILE"
+fi
 # https://github.com/AppImage/appimage.github.io/issues/3229#issuecomment-1694325639
-wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/alpine-firejail-git20230825.tar.gz"
-sudo tar xf alpine-firejail-*.tar.gz && sudo rm alpine-firejail-*.tar.gz
+[ -s alpine-firejail-git20230825.tar.gz ] || wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/alpine-firejail-git20230825.tar.gz"
+sudo tar xf alpine-firejail-git20230825.tar.gz
 sudo tar xf musl-*.apk -C ./firejail/ 2>/dev/null
 sudo tar xf firejail-0*.apk -C ./firejail/ 2>/dev/null
 sudo cp -Rf ./firejail/etc/* /etc/
@@ -258,19 +292,33 @@ else
   xterm -hold -e firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" --help &
 fi
 APID=$!
-sleep 30
+# Give the application at least 10 seconds (some take long to start), then
+# take the screenshot as soon as there is a window, but wait 30 seconds at most
+sleep 10
+for WAIT in $(seq 1 20) ; do
+  kill -0 $APID 2>/dev/null || break
+  WINDOWS=$(timeout 5 xwininfo -tree -root 2>/dev/null || true)
+  grep -qE '0x.*": \(' <<< "$WINDOWS" && break # Not in a pipe: pipefail
+  sleep 1
+done
+[ "$WAIT" -gt 1 ] && sleep 2 # A window just appeared; let it finish drawing
+
+if ! kill -0 $APID 2>/dev/null ; then
+  echo "ERROR: The application exited within $((10 + WAIT)) seconds instead of showing a window"
+  exit 1
+fi
 
 # Make a screenshot
 
-# Get a list of open windows
-xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
+# Get a list of open windows (grep finding nothing must not abort the script here)
+WINDOWS=$(timeout 20 xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' || true)
+echo "$WINDOWS"
 
 # Count the windows on screen
-NUMBER_OF_WINDOWS=$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | wc -l)
+NUMBER_OF_WINDOWS=$(echo -n "$WINDOWS" | grep -c . || true)
 echo "NUMBER_OF_WINDOWS: $NUMBER_OF_WINDOWS"
 if [ $(($NUMBER_OF_WINDOWS)) -lt 1 ] ; then
   echo "ERROR: Could not find a single window on screen :-("
-  kill -9 $$
   exit 1
 fi
 
@@ -280,7 +328,7 @@ fi
 # mv screenshot_* database/$INPUTBASENAME/
 
 # Getting the active window seems to require a window manager
-icewm &
+icewm > /dev/null 2>&1 &
 sleep 2
 
 # We could simulate X11 keyboard/mouse input with xdotool here if needed;
@@ -294,7 +342,7 @@ if [ x"$INPUTBASENAME" == xSubsurface ] ; then
   xdotool sleep 0.1 key Escape # Click away the update check window
   sleep 1
   # Get a list of open windows
-  xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//'
+  timeout 20 xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' || true
 fi
 
 # Clean residue from previous runs, avoiding issue #3438
@@ -311,9 +359,10 @@ mkdir -p database/$INPUTBASENAME/
 # Taking screenshot like this fails, https://github.com/AppImage/appimage.github.io/issues/2494
 # convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
 
-import -window "$(xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png  && echo "Screenshot taken"
+timeout 30 import -window "$(timeout 10 xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png  && echo "Screenshot taken"
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
+APID=""
 killall icewm
 
 # Check if the screenshot is unusable and error out if it is
@@ -322,6 +371,13 @@ if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png
   ls -lh database/$INPUTBASENAME/screenshot.png
   file database/$INPUTBASENAME/screenshot.png
   file -b --mime-type database/$INPUTBASENAME/screenshot.png
+  exit 1
+fi
+
+# Fail on an empty window or an error message on screen
+if ! bash "$(dirname "$0")/check-screenshot.sh" database/$INPUTBASENAME/screenshot.png $([ x"$TERMINAL" == xtrue ] && echo terminal) ; then
+  mkdir -p failure-screens
+  cp database/$INPUTBASENAME/screenshot.png "failure-screens/${INPUTBASENAME}.png"
   exit 1
 fi
 
@@ -370,6 +426,10 @@ if [ x2 == x"$TYPE" ] ; then
 fi
 
 echo "X-AppImage-Architecture=$ARCHITECTURE" >> "$DATAFILE"
+
+if [ -n "$LIBC_INFO" ] ; then
+  echo "$LIBC_INFO" >> "$DATAFILE"
+fi
 
 if [ x"" != x"$LICENSE" ] ; then
   echo "X-AppImage-Payload-License=$LICENSE" >> "$DATAFILE"
@@ -432,7 +492,7 @@ set -x
 # Until https://github.com/ximion/appstream/issues/128 is solved
 # This URL was wrong:
 #sudo wget -c -q "https://github.com/AppImage/AppImageHub/releases/download/deps/appstreamcli-x86_64.AppImage"
-sudo wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/appstreamcli-x86_64.AppImage"
+[ -s appstreamcli-x86_64.AppImage ] || sudo wget -c -q "https://github.com/AppImage/appimage.github.io/releases/download/deps/appstreamcli-x86_64.AppImage"
 sudo chmod a+x appstreamcli-x86_64.AppImage
 # ./appstreamcli-x86_64.AppImage --appimage-extract ; mv squashfs-root appstreamcli.AppDir # TODO: remove need for this
 # Does not seem to work # alias appstreamcli='appstreamcli.AppDir/root_overlay/lib/x86_64-linux-gnu/ld-2.23.so --library-path appstreamcli.AppDir/root_overlay/usr/lib/x86_64-linux-gnu/ appstreamcli.AppDir/root_overlay/usr/bin/appstreamcli'
@@ -607,7 +667,12 @@ set +x
 git remote add deploy https://${GH_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
 # wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     set -x
-    git push --set-upstream deploy
+    # Several runs on master (one per merged PR) may push at the same time
+    for TRY in 1 2 3 4 5 ; do
+      git push --set-upstream deploy HEAD:master && break
+      sleep $((TRY * 5))
+      git pull --rebase deploy master
+    done
     set +x
 # wrong logic? # else
 # wrong logic? #     echo "Not runing 'git push --set-upstream deploy' because this build does NOT have TRAVIS_PULL_REQUEST=false"

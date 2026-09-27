@@ -28,7 +28,7 @@ desktop:
     Type: Application
     Icon: openstreammusic
     StartupWMClass: OpenStream Music
-    X-AppImage-Version: 1.3.2
+    X-AppImage-Version: 1.3.3
     Comment: Freeing the world of freemium streaming services.
     Categories: AudioVideo
   AppImageHub:
@@ -38,6 +38,10 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
 
 electron:
   main: main.js

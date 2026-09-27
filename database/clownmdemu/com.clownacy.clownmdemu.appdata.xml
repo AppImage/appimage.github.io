@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <id>com.clownacy.clownmdemu</id>
   
-  <name>clownmdemu</name>
+  <name>ClownMDEmu</name>
   <summary>Sega Mega Drive Emulator</summary>
   
   <metadata_license>FSFAP</metadata_license>
