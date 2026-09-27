@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://www.freedesktop.org/software/appstream/metainfocreator/#/guiapp -->
+
+<component type="desktop-application">
+  <id>com.iche2.fileshows</id>
+  
+  <name>FileShows</name>
+  <summary>A file explorer with glob patterns and file streams</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <requires>
+    <internet>always</internet>
+  </requires>
+
+  <recommends>
+    <!-- Mobile/tablet AND desktop supported -->  
+    <display_length compare="ge">360</display_length>
+  </recommends>
+
+  <!-- Desktop AND mobile supported -->
+  <supports>  
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>    
+  </supports>
+  
+  <description>
+    <p>
+      No Ads, No Registration, No Network Access, Minimal Permissions; Local Data Storage, Privacy Guaranteed.
+    </p>
+    <ul>
+      <li>Smart Matching: Supports file/path wildcards and content regular expressions for recursive, precise targeting.</li>
+      <li>Batch Processing: Incremental mirroring, duplicate finding, searching, replacing, archiving, unarchiving, one-click cleaning, and more, for convenient operations.</li>
+      <li>Secure Deletion: Multi-pass overwrite mechanisms ensure files are permanently unrecoverable.</li>
+      <li>Scheduled Tasks: Execute file management tasks at scheduled times, compatible with CRON expressions.</li>
+    </ul>
+    <p>Customisation: Write custom rule scripts for complete command over file operations, similar to writing a Makefile, via the open-source CLI tool.</p>
+  </description>
+  
+  <launchable type="desktop-id">com.iche2.fileshows.desktop</launchable>
+  <url type="homepage">https://webpath.iche2.com/app/fileshows/download_en.html</url>
+  <url type="help">https://webpath.iche2.com/fssdoc/en/</url>
+  <url type="vcs-browser">https://github.com/huanguan1978/ft</url>
+  <url type="bugtracker">https://github.com/huanguan1978/ft/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://webpath.iche2.com/screenshots/fileshows/linux/en/home-default.png</image>
+	  <caption>Intuitive Interface, Rapid File/Directory Discovery.</caption>
+    </screenshot>
+
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/fileshows/linux/en/prefs-filter.png</image>
+	    <caption>Granular Filtering: Supporting Glob Path Matching, Stat Attributes, and Custom Output.</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/fileshows/linux/en/home-list-pictures.png</image>
+	    <caption>[Feature Example] Smart Matching in Action: Picture File Search with Real-time CLI Echo.</caption>
+    </screenshot>    
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/fileshows/linux/en/cli-list-pictures.png</image>
+	    <caption>CLI Integration Example] GUI-Configured Parameters Directly Executable via Command Line.</caption>
+    </screenshot>
+
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/fileshows/linux/en/shortcut-default.png</image>
+	    <caption>Comprehensive Built-in Commands: Drag-and-Drop for One-Click File Management.</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/fileshows/linux/en/prefs-target-to.png</image>
+	    <caption>Flexible Output Paths: Custom Directory Specification for Incremental Mirroring, Archiving, and Unarchiving.</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/fileshows/linux/en/shortcut-archive-runnow.png</image>
+	    <caption>[Operation Example] Efficient File Archiving: Picture File Batch Archiving Demo, Parameters Clearly Visible.</caption>
+    </screenshot>
+
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/fileshows/linux/en/prefs-scheduler-cust.png</image>
+	    <caption>Programmable File Streams: Custom Scripting for Pattern-Based Task Orchestration.</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/screenshots/fileshows/linux/en/crontab-customize.png</image>
+	    <caption>Automated Task Scheduling: CRON-Compatible Execution of Configured Scripts.</caption>
+    </screenshot>
+
+
+  </screenshots>
+
+  <icon type="stock">com.iche2.fileshows</icon>
+  <categories>
+    <category>Utility</category>
+    <category>FileTools</category>
+    <category>FileManager</category>
+    <category>Archiving</category>
+    <category>Compression</category>
+    <category>Security</category>    
+  </categories>
+  <provides>
+    <binary>fileshows</binary>
+  </provides>
+  <branding>
+    <color type="primary" scheme_preference="light">#fef7ff</color>
+    <color type="primary" scheme_preference="dark">#141218</color>
+  </branding>
+
+  <developer id="com.iche2.fileshows">
+    <name>Heshan Aisipai E-commerce Co., Ltd</name>
+  </developer>
+  <update_contact>crown.hg@gmail.com</update_contact>
+  <content_rating type="oars-1.0" />
+  <keywords>
+    <keyword>file tools</keyword>
+    <keyword>file manager</keyword>
+    <keyword>file explorer</keyword>
+    <keyword>file stream</keyword>
+    <keyword>make file</keyword>    
+    <keyword>glob</keyword>
+    <keyword>regexp</keyword>
+    <keyword>mirror</keyword>
+    <keyword>sync</keyword>    
+    <keyword>backup</keyword>    
+    <keyword>archiving</keyword>
+    <keyword>compression</keyword>
+    <keyword>decompression</keyword>    
+    <keyword>delete</keyword>
+    <keyword>secure deletion</keyword>
+    <keyword>clean</keyword>
+    <keyword>rmdir</keyword>
+    <keyword>find</keyword>
+    <keyword>find duplicate</keyword>    
+    <keyword>replace</keyword>
+  </keywords>
+
+  <releases>
+    <release version="1.0.0" date="2025-11-11">
+        <description translate="no">
+          <ul>
+            <li>the first cross-platform release</li>
+          </ul>
+        </description>
+    </release>
+  </releases>
+
+</component>

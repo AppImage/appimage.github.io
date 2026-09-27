@@ -1,0 +1,34 @@
+{
+  "name": "DragonDrop",
+  "version": "2.0.0",
+  "author": {
+    "name": "DigiPen Institute of Technology",
+    "email": "digiblocks@digipen.edu",
+    "url": "wwwprod5.digipen.edu"
+  },
+  "description": "Blockly based visual programming IDE",
+  "homepage": "wwwwprod5.digipen.edu",
+  "main": "main.js",
+  "dependencies": {
+    "angular": "1.7.0",
+    "angular-animate": "1.7.0",
+    "angular-aria": "1.7.0",
+    "angular-material": "^1.1.5",
+    "electron-log": "^2.2.11",
+    "electron-store": "2.0.0",
+    "electron-updater": "^2.21.10",
+    "fs-extra": "^4.0.3",
+    "golden-layout": "^1.5.8",
+    "gulp-install": "^1.1.0",
+    "jszip": "^3.1.5",
+    "promisepipe": "^2.1.1",
+    "rxjs": "^5.5.7",
+    "semver": "^5.5.0",
+    "serialport": "^6.0.4",
+    "username": "^3.0.0",
+    "yargs": "^11.0.0",
+    "zip-folder": "1.0.0"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}

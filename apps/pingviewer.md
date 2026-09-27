@@ -4,6 +4,9 @@ layout: app
 permalink: /pingviewer/
 description: ping viewer interface
 
+icons:
+  - pingviewer/icons/800x800/pingviewer.png
+
 screenshots:
   - pingviewer/screenshot.png
 
@@ -13,9 +16,9 @@ authors:
 
 links:
   - type: GitHub
-    url: bluerobotics/ping-components
+    url: bluerobotics/ping-viewer
   - type: Download
-    url: https://github.com/bluerobotics/ping-components/releases
+    url: https://github.com/bluerobotics/ping-viewer/releases
 
 desktop:
   Desktop Entry:
@@ -28,8 +31,9 @@ desktop:
     Terminal: false
     Categories: Utility
     Keywords: computer
+    X-AppImage-Version: b1b1c7f
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|bluerobotics|ping-components|continuous|pingviewer*-x86_64.AppImage.zsync
+    X-AppImage-UpdateInformation: gh-releases-zsync|bluerobotics|ping-viewer|latest|pingviewer*-x86_64.AppImage.zsync
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.

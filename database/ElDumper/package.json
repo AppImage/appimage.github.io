@@ -1,0 +1,32 @@
+{
+  "name": "eldumper",
+  "version": "1.0.0",
+  "description": "A GB Cartridge Dumper",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodri042/gb-cartridge-dumper"
+  },
+  "author": {
+    "name": "[r]artworks"
+  },
+  "license": "UNLICENSED",
+  "main": "desktop.js",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.10",
+    "rc-progress": "^2.3.0",
+    "react": "^15.5.4",
+    "react-bootstrap": "^0.31.0",
+    "react-dom": "^15.5.4",
+    "serialport": "^7.1.5"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

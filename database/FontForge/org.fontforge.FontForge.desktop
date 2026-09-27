@@ -1,0 +1,33 @@
+[Desktop Entry]
+Name=FontForge
+Name[zh_TW]=字型鍛造廠
+GenericName=Font Editor
+Comment=An outline font editor
+Comment[ru]=Редактор шрифтов
+Comment[fr]=Un constructeur des polices
+Comment[zh_TW]=FontForge 描邊字型編輯器
+Comment[pl_PL]=Edytor fontów
+Comment[uk]=Редактор шрифтів
+Comment[de]=Ein Font-Editor
+Comment[eo]=Tipar dosiero-redaktilo
+Comment[es]=Un editor de fuentes
+Comment[it]=Un profilo editor di font
+Comment[pt]=Um editor de fontes
+Exec=fontforge %U
+TryExec=fontforge
+Icon=org.fontforge.FontForge
+StartupWMClass=fontforge
+Terminal=false
+Type=Application
+Categories=Graphics;
+MimeType=application/vnd.font-fontforge-sfd;application/x-font-ttf;application/x-font-otf;application/x-font-type1;application/x-font-bdf;application/x-font-pcf;application/x-font-tex;
+Keywords=font;fonts;editor;TTF;OTF;typeface;
+X-AppImage-Version=1d421d1
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Payload-License=NOASSERTION

@@ -1,0 +1,7 @@
+https://bitbucket.org/kfj/pv/downloads/lux-master-x86_64.AppImage
+# This URL provides an AppImage built from lux master and is updated
+# at irregular intervals. Versioned AppImages reside in the same folder.
+# The latest upload has a new build from the lux master branch which
+# should fix the bug in tinyfiledialogs resulting in the 'INVALID
+# MESSAGE WITH QUOTES' default screenshot.
+#

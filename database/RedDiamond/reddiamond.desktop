@@ -1,0 +1,24 @@
+[Desktop Entry]
+Name=RedDiamond
+Name[en]=RedDiamond
+Comment=Programmers Editor
+GenericName=Text Editor
+GenericName[en]=Text Editor
+Exec=./opt/reddiamond/reddiamond
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+Icon=reddiamond
+Categories=Utility;TextEditor;Development;
+Keywords=TextEditor;Development;Utility
+X-GNOME-Gettext-Domain=RedDiamond
+X-GNOME-Fullname=RedDiamond Text Editor
+X-Ubuntu-Gettext-Domain=RedDiamond
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

@@ -1,0 +1,24 @@
+{
+  "name": "kage",
+  "version": "0.1.1-beta",
+  "author": "WayzDev <ifalah@protonmail.com>",
+  "description": "Metasploit GUI ",
+  "homepage": "https://github.com/WayzDev/Kage",
+  "license": "MIT",
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
+    "@fortawesome/vue-fontawesome": "^0.1.2",
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.3",
+    "element-ui": "^2.5.4",
+    "msgpack5": "^4.2.1",
+    "vue": "^2.5.16",
+    "vue-electron": "^1.0.6",
+    "vue-progressbar": "^0.7.5",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-electron": "^1.0.0"
+  }
+}

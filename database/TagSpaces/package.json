@@ -1,0 +1,17 @@
+{
+  "name": "tagspaces",
+  "productName": "TagSpaces",
+  "version": "3.11.6",
+  "description": "Offline file organizer and browser with tagging support.",
+  "homepage": "https://www.tagspaces.org",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "TagSpaces UG (haftungsbeschraenkt)",
+    "email": "info@tagspaces.org",
+    "url": "https://www.tagspaces.org"
+  },
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "@tagspaces/extensions": "https://github.com/tagspaces/tagspaces-extensions#main"
+  }
+}

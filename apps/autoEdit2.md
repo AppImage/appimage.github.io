@@ -3,7 +3,6 @@ layout: app
 
 permalink: /autoEdit2/
 description: autoEdit2 Desktop Client for Linux
-license: MIT
 
 screenshots:
   - autoEdit2/screenshot.png
@@ -35,5 +34,4 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: MIT
 ---

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Andreas Pehnack <andreas@hexinator.com> -->
+<component type="desktop-application">
+  <id>com.hexinator.Hexinator</id>
+  <metadata_license>MIT</metadata_license>
+  <name>Hexinator</name>
+  <summary>Hex Editor for Reverse Engineering</summary>
+
+  <description>
+    <p>
+      Hexinator is a hex editor that is specialized on reverse engineering and binary file analysis.
+    </p>
+    <p>
+      It allows you to any of the 70+ existing "grammars" to decode file formats like PNG, JPEG, MP3, and others
+      automatically. Additionally it supports you in the analysis of unknown file formats.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Edit files of unlimited size</li>
+      <li>Parse binary files automatically</li>
+      <li>Incremental search</li>
+      <li>Lua and Python scripting builtin</li>
+      <li>Binary file comparison</li>
+      <li>Data panel with little/big endian display</li>
+      <li>Histogram (byte distribution)</li>
+      <li>Checksum computation of byte selection</li>
+      <li>Text encoding comparison</li>
+      <li>Display all strings in file</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">com.hexinator.Hexinator.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window with parsed MP3 file</caption>
+      <image type="source" width="1600" height="900">https://hexinator.com/images/ScreenShot_Hexinator_Linux_1.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Comparison of text/bytes in different encodings</caption>
+      <image type="source" width="1600" height="900">https://hexinator.com/images/ScreenShot_Hexinator_Linux_2.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Histogram, checksums and data panel</caption>
+      <image type="source" width="1600" height="900">https://hexinator.com/images/ScreenShot_Hexinator_Linux_3.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://hexinator.com</url>
+  <url type="faq">https://hexinator.com/faq/</url>
+
+  <developer_name>Andreas Pehnack</developer_name>
+  <update_contact>andreas_AT_hexinator.com</update_contact>
+
+  <provides>
+    <binary>hexinator</binary>
+  </provides>
+
+  <releases>
+    <release version="1.10" date="2018-01-21">
+      <description>
+        <ul>
+        <li>New: Highlighting of invalid bytes can be disabled</li>
+        <li>Change: Better multi-byte editing (UTF-8 and others)</li>
+        <li>Fix: Files are now always closed upon window close</li>
+        <li>Fix: Menus for recent installed files now correctly filled</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

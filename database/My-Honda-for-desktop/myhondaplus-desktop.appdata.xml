@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>myhondaplus-desktop</id>
+  <name>My Honda+ for desktop</name>
+  <summary>Unofficial GUI for Honda Connect Europe</summary>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <description>
+    <p>
+      Unofficial desktop application for Honda Connect Europe (My Honda+).
+      Monitor your vehicle's battery, range, charge status, door locks,
+      climate, and trip history. Send remote commands and manage geofences
+      on an interactive map. Not affiliated with Honda Motor Co., Ltd.
+    </p>
+  </description>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <url type="homepage">https://github.com/enricobattocchi/myhondaplus-desktop</url>
+  <url type="bugtracker">https://github.com/enricobattocchi/myhondaplus-desktop/issues</url>
+  <launchable type="desktop-id">myhondaplus-desktop.desktop</launchable>
+  <provides>
+    <binary>My Honda+ for desktop</binary>
+  </provides>
+  <content_rating type="oars-1.1" />
+</component>

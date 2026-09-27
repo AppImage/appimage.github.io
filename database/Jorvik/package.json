@@ -1,0 +1,10 @@
+{
+  "name": "@heorot/desktop",
+  "version": "1.0.13",
+  "private": true,
+  "author": "Jorvik contributors <admin@jorvik.app>",
+  "description": "Jorvik Desktop Client",
+  "homepage": "https://chat.jorvik.app",
+  "license": "AGPL-3.0-only",
+  "main": "dist/electron/main.js"
+}
