@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <metadata_license>MIT</metadata_license>
+
+    <id>zone.kuiper.shannon-calculator</id>
+    <name>Shannon Calculator</name>
+    <summary>Calculates information content in a message</summary>
+    <url type="homepage">https://github.com/kuiperzone</url>
+    <project_license>GPL-3.0-or-later</project_license>
+    <content_rating type="oars-1.1" />
+
+    <developer id="zone.kuiper">
+        <name>Kuiper Zone</name>
+    </developer>
+
+    <launchable type="desktop-id">zone.kuiper.shannon-calculator.desktop</launchable>
+
+    <description>
+        <p>Shannon Calculator calculates the information content of message text or file byte data.</p>
+
+<p>Shannon information is a measure of the information content contained in a message. The theory underpins many
+developments in compression, message transmission and error correction.</p>
+    </description>
+
+    <!-- Freedesktop Categories -->
+    <categories>
+        <category>Utility</category>
+    </categories>
+
+    <keywords>
+        <keyword translate="no">shannon</keyword>
+        <keyword translate="yes">information</keyword>
+        <keyword translate="yes">calculator</keyword>
+    </keywords>
+
+    <screenshots>
+        <screenshot type="default">
+            <image>https://github.com/kuiperzone/Shannon-Calculator/blob/0d4df0620a3dce474420905caa31070acae1badf/Screenshot.png</image>
+        </screenshot>
+    </screenshots>
+
+    <releases>
+        <release version="VERSION 1.1.0" date="2025-07-04"><description><ul>
+<li>Updated to Avalonia 11.3.2</li>
+<li>Many changes to bring codebase up to date</li>
+</ul></description></release>
+
+<release version="VERSION 1.0.0" date="2021-06-10"><description><ul>
+<li>Initial release</li>
+<li>Built with early Avalonia 0.10.7</li>
+</ul></description></release>
+    </releases>
+
+</component>
