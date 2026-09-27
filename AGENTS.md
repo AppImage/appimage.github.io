@@ -39,7 +39,9 @@ GitHub Pages (Jekyll) from this repository.
    - runs the application in firejail **without network**, waits 30 s, takes a
      screenshot of the active window;
    - `code/check-screenshot.sh`: fails on an (almost) empty window or an error
-     message found by OCR (tesseract);
+     message found by OCR (tesseract); warns when the text is mostly in
+     Chinese, Arabic or Cyrillic script (OCR with those models, confident words
+     only);
    - writes `database/` and `apps/`. On PRs it stops there; on `master` it
      commits the result (`[ci skip]`).
    Afterwards the workflow collects a `pr-result` artifact: PR number,
