@@ -33,6 +33,14 @@ and send a Pull Request.
 
 Ideally, the file in `data/` contains a link to https://github.com/User/App/ (not to a specific AppImage!), and if the AppImage follows the standard nomenclature, then https://github.com/User/App/releases/whatever/App-1.0-x86_64.AppImage, https://github.com/User/App/releases/whatever/App-1.1-x86_64.AppImage,... will automatically be picked up.
 
+Name of the file in `data/` (checked by the test; new files that break these rules fail with the `error-filename` label):
+* The name of the application, as in its desktop file, e.g. `data/Krita`
+* No blanks; use `_` instead, e.g. `data/Linux_Device_Manager`
+* No version number, architecture or `.AppImage`, e.g. not `data/App-1.0-x86_64.AppImage`
+* No "AppImage" or "Linux" unless they are part of the application's name (all AppImages are for Linux)
+* No file extension such as `.md` or `.txt`
+* Not an existing name in different capitalization; to update an entry, change its existing file
+
 Standard nomenclature:
 * AppImage filename consists of pieces: Application name, hyphen, version, hyphen, architecture, dot, AppImage suffix
 * First piece of the AppImage filename, "App" == name of the repo

@@ -46,6 +46,9 @@ if [ x"${URL:0:4}" != xhttp ] ; then
   exit 1
 fi
 
+# The name of the file in data/ (STRICT=true for new files in a PR)
+bash "$(dirname "$0")/check-name.sh" "$INPUTBASENAME" "$(dirname "$1")" || exit 1
+
 # If the URL begins with https://github.com, then treat it specially
 # https://github.com/egoist/devdocs-desktop/
 if [ x"${URL:0:18}" == x"https://github.com" ] && [[ "${URL}" != *"download"* ]] ; then # do not redirect direct links
@@ -82,6 +85,7 @@ fi
 # This may get replaced by mounting the file with fuse httpfs
 # if we find an implementation that supports https
 echo "URL: $URL"
+bash "$(dirname "$0")/check-name.sh" --appimage "$(basename "${URL%%\?*}")"
 
 FILENAME=BeingTested.AppImage
 if [ ! -e "$FILENAME" ] ; then
@@ -170,6 +174,9 @@ if [ x"$TYPE" == x1 ] ; then
 fi
 
 echo "==========================================="
+
+# The name of the file in data/ compared with the application's name
+bash "$(dirname "$0")/check-name.sh" "$INPUTBASENAME" "$(dirname "$1")" "$(ls "${APPDIR}"/*.desktop | head -n 1)" || exit 1
 
 ICON_NAME=$(grep -r "^Icon=*" "${APPDIR}"/*.desktop  | cut -d "=" -f 2-99 | head -n 1)
 
