@@ -110,6 +110,7 @@ jobs:
           TaskBarShowCPUStatus = 0
           TaskBarShowWindowListMenu = 0
           EOF
+          sudo apt-get install -y -q libxcb-cursor0 >/dev/null # THROWAWAY: only to prove tray docking for #4441
           Xvfb :99 -screen 0 800x600x24 >/dev/null 2>&1 & # Need to set bit depth, otherwise get some black screenshots
           # Files in data/ added or changed by this PR (or by this push)
           if [ "$IS_PULLREQUEST" = true ] ; then
