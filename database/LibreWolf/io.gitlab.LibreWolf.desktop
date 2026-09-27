@@ -1,0 +1,31 @@
+[Desktop Entry]
+Name=LibreWolf
+Exec=librewolf %u
+Icon=librewolf
+Type=Application
+MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;application/x-xpinstall;application/pdf;application/json;
+StartupWMClass=LibreWolf
+Categories=Network;WebBrowser;
+StartupNotify=true
+Terminal=false
+X-MultipleArgs=false
+Keywords=Internet;WWW;Browser;Web;Explorer;
+Actions=new-window;new-private-window;profilemanager;
+
+[Desktop Action new-window]
+Name=Open a New Window
+Exec=librewolf %u
+
+[Desktop Action new-private-window]
+Name=Open a New Private Window
+Exec=librewolf --private-window %u
+
+[Desktop Action profilemanager]
+Name=Open the Profile Manager
+Exec=librewolf --ProfileManager %u
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://gitlab.com/api/v4/projects/24386000/packages/generic/librewolf/latest/LibreWolf.x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Sun May 22 09:15:42 2022 UTC                using RSA key 43A83048DF19C075A55266A78A74EAAF89C17944 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

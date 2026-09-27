@@ -1,0 +1,26 @@
+{
+  "name": "fat-wallet",
+  "version": "0.1.2",
+  "private": true,
+  "author": {
+    "name": "Luciap Technology Inc.",
+    "email": "contact@luciap.ca"
+  },
+  "description": "Wallet for FAT tokens. Factom Asset Tokens (FAT) is a protocol of tokenization built on top of the Factom blockchain.",
+  "license": "MIT",
+  "dependencies": {},
+  "main": "background.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

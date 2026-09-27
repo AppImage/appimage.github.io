@@ -1,0 +1,29 @@
+{
+  "name": "cordlauncher",
+  "version": "0.0.4-alpha.1",
+  "description": "Cord launcher based on Electron and Wep Application",
+  "productName": "qilincord",
+  "author": "borisbutenko <iamborisbutenko@gmail.com>",
+  "license": "MIT",
+  "main": "./electron-main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ProtocolONE/cord.launcher.git"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "electron-log": "^3.0.1",
+    "electron-packager": "^13.1.1",
+    "electron-updater": "^4.0.6",
+    "lodash-es": "^4.17.11",
+    "vue-i18n": "^7.3.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
+  "resolutions": {
+    "ajv": "6.8.1"
+  }
+}

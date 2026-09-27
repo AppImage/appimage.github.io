@@ -3,6 +3,7 @@ layout: app
 
 permalink: /ARAnyM/
 description: Virtual Machine for Atari 32-bit applications
+license: GPL-2.0
 
 icons:
   - ARAnyM/icons/48x48/aranym.png
@@ -11,8 +12,14 @@ screenshots:
   - ARAnyM/screenshot.png
 
 authors:
+  - name: aranym
+    url: https://github.com/aranym
 
 links:
+  - type: GitHub
+    url: aranym/aranym
+  - type: Download
+    url: https://github.com/aranym/aranym/releases
 
 desktop:
   Desktop Entry:
@@ -31,4 +38,5 @@ desktop:
       given on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Payload-License: GPL-2.0
 ---

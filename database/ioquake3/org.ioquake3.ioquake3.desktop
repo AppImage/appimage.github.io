@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=ioquake3
+Exec=ioquake3.x86_64 --uri %u
+Icon=quake3
+Type=Application
+Terminal=false
+Encoding=UTF-8
+Categories=Game;ActionGame;Shooter;
+MimeType=x-scheme-handler/quake3;
+X-SuSE-translate=false
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Sun Feb  9 10:54:54 2025 UTC                using RSA key 6E9137E3B0FE3FDC67D70F2ECDC41982C027BAAA Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

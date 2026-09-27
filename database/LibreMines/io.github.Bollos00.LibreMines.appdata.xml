@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.Bollos00.LibreMines</id>
+  <metadata_license>CC-BY-SA-4.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>LibreMines</name>
+  <summary>A Free/Libre and Open Source Software Qt based Minesweeper game</summary>
+  
+  <description>
+    <p>
+      LibreMines is a Free/Libre and Open Source Qt based Minesweeper game available for 
+      GNU/Linux, FreeBSD, macOS and Windows systems.
+    </p>
+    <p>
+      The game includes classic minesweeper gameplay with modern enhancements such as:
+    </p>
+    <ul>
+      <li>Multiple minefield themes (classic, alternative, flowerfield, twemoji)</li>
+      <li>Customizable face reaction themes</li>
+      <li>Sound effects</li>
+      <li>Keyboard play mode</li>
+      <li>Score tracking</li>
+      <li>Cross-platform compatibility</li>
+    </ul>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/Bollos00/LibreMines/master/share/Screenshots/Screenshot0.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/Bollos00/LibreMines/master/share/Screenshots/Screenshot1.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/Bollos00/LibreMines/master/share/Screenshots/Screenshot2.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/Bollos00/LibreMines/master/share/Screenshots/Screenshot3.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/Bollos00/LibreMines/master/share/Screenshots/Screenshot4.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/Bollos00/LibreMines/master/share/Screenshots/Screenshot5.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/Bollos00/LibreMines/master/share/Screenshots/Screenshot6.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/Bollos00/LibreMines/master/share/Screenshots/Screenshot7.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/Bollos00/LibreMines/master/share/Screenshots/Screenshot8.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Game</category>
+    <category>LogicGame</category>
+  </categories>
+
+  <launchable type="desktop-id">io.github.Bollos00.LibreMines.desktop</launchable>
+  <content_rating type="oars-1.1" />
+
+  <url type="homepage">https://github.com/Bollos00/LibreMines</url>
+  <url type="bugtracker">https://github.com/Bollos00/LibreMines/issues</url>
+  <url type="translate">https://github.com/Bollos00/LibreMines/blob/master/etc/translations/README.md</url>
+  
+  <releases>
+    <release version="2.3.0" date="2026-03-29">
+      <url type="details">https://github.com/Bollos00/LibreMines/releases/tag/v2.3.0</url>
+    </release>
+    <release version="2.2.1" date="2025-10-16">
+      <url type="details">https://github.com/Bollos00/LibreMines/releases/tag/v2.2.1</url>
+    </release>
+    <release version="2.2.0" date="2025-09-20">
+      <url type="details">https://github.com/Bollos00/LibreMines/releases/tag/v2.2.0</url>
+    </release>
+    <release version="2.1.0" date="2025-08-31">
+      <url type="details">https://github.com/Bollos00/LibreMines/releases/tag/v2.1.0</url>
+    </release>
+    <release version="2.0.1" date="2024-03-29">
+      <url type="details">https://github.com/Bollos00/LibreMines/releases/tag/v2.0.1</url>
+    </release>
+    <release version="2.0.0" date="2024-02-24">
+      <url type="details">https://github.com/Bollos00/LibreMines/releases/tag/v2.0.0</url>
+    </release>
+    <release version="1.9.1" date="2022-03-13">
+      <url type="details">https://github.com/Bollos00/LibreMines/releases/tag/v1.9.1</url>
+    </release>
+    <release version="1.9.0" date="2022-02-07">
+      <url type="details">https://github.com/Bollos00/LibreMines/releases/tag/v1.9.0</url>   
+    </release>
+    <release version="1.8.0" date="2021-12-07">
+      <url type="details">https://github.com/Bollos00/LibreMines/releases/tag/v1.8.0</url>
+    </release>
+    <release version="1.7.1" date="2021-11-12">
+      <url type="details">https://github.com/Bollos00/LibreMines/releases/tag/v1.7.1</url>
+    </release>
+  </releases>
+
+  <keywords>
+    <keyword>Minesweeper</keyword>
+    <keyword>Mines</keyword>
+    <keyword>Puzzle</keyword>
+    <keyword>Logic</keyword>
+    <keyword>Game</keyword>
+    <keyword>Qt</keyword>
+    <keyword>Cross-platform</keyword>
+  </keywords>
+
+  <developer_name>Bruno Bollos Correa</developer_name>
+</component>

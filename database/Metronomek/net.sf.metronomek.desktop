@@ -1,0 +1,23 @@
+[Desktop Entry]
+Name=MetronomeK
+GenericName=The Rhythmic Perfection
+GenericName[pl]=Rytmiczna doskonałość
+
+Type=Application
+Comment=Simple metronome with natural sounds
+Comment[pl]=Prosty metronom z naturalnymi dźwiękami
+Exec=metronomek %f
+Icon=metronomek
+Terminal=false
+Categories=Qt;Education;Music;
+X-AppImage-Version=9f01c04
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://www.opencode.net/seelook/metronomek/-/jobs/artifacts/v0.6.0/raw/MetronomeK-x86_64.AppImage.zsync?job=appimage-amd64
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.27

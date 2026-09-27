@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2015 Martin Gansser <martinkg@fedoraproject.org> -->
+	<component type="desktop">
+		<id>com.sayonara-player.Sayonara</id>
+		<metadata_license>CC0</metadata_license>
+		<project_license>GPL-3.0+</project_license>
+		<launchable type="desktop-id">com.sayonara-player.Sayonara.desktop</launchable>
+		<name>Sayonara</name>
+		<developer_name>Michael Lugmair</developer_name>
+		<update_contact>sayonara-player_at_posteo.org</update_contact>
+		<summary>A lightweight Qt Audio player</summary>
+		<description>
+			<p> 
+				Sayonara is a small, clear, not yet platform-independent music player. Low CPU usage, low memory consumption and no long loading times are only three benefits of this player.
+			</p>
+			<p> 
+				Sayonara should be easy and intuitive to use and therefore it should be able to compete with the most popular music players.
+			</p>
+		</description>
+		<screenshots>
+			<screenshot type="default">
+				<image>https://sayonara-player.com/images/screenshots/Screenshot1.png</image>
+			</screenshot>
+			<screenshot>
+				<image>https://sayonara-player.com/images/screenshots/Screenshot2.png</image>
+			</screenshot>
+			<screenshot>
+				<image>https://sayonara-player.com/images/screenshots/Screenshot3.png</image>
+			</screenshot>
+			<screenshot>
+				<image>https://sayonara-player.com/images/screenshots/Screenshot4.png</image>
+			</screenshot>
+		</screenshots>
+		<url type="homepage">https://sayonara-player.com</url>
+		<url type="bugtracker">https://gitlab.com/luciocarreras/sayonara-player</url>
+		<url type="translate">https://www.transifex.com/sayonara/sayonara-player</url>
+		<url type="donation">https://sayonara-player.com/donations.php</url>
+		<kudos>
+			<kudo>HiDpiIcon</kudo>
+			<kudo>ModernToolkit</kudo>
+			<kudo>Notifications</kudo>
+		</kudos>
+		<keywords>
+			<keyword>sayonara</keyword>
+			<keyword>audio</keyword>
+			<keyword>music</keyword>
+			<keyword>player</keyword>
+			<keyword>tag</keyword>
+			<keyword>library</keyword>
+		</keywords>
+	</component>
+
