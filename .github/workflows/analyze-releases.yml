@@ -29,7 +29,8 @@ jobs:
             if [ "$code" == 403 ] || [ "$code" == 429 ] ; then echo "Rate limited at $name" ; rm -f "out/json/$name.json" ; break ; fi
           done < out/list.tsv
           ls out/json | wc -l
+          tar czf releases.tgz out
       - uses: actions/upload-artifact@v4
         with:
           name: releases
-          path: out/
+          path: releases.tgz
