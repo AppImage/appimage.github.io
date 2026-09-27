@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Digitales_Klassenzimmer/
 description: HOPP Foundation - Digitales Klassenzimmer
+license: Apache-2.0
 
 icons:
   - Digitales_Klassenzimmer/icons/512x512/digitales-klassenzimmer.png
@@ -28,23 +29,27 @@ desktop:
     Type: Application
     Icon: digitales-klassenzimmer
     StartupWMClass: Digitales Klassenzimmer
-    X-AppImage-Version: 2.8.12
+    X-AppImage-Version: 2022.9.1
     Comment: HOPP Foundation - Digitales Klassenzimmer
     MimeType: x-scheme-handler/jitsi-meet
     Categories: VideoConference
   AppImageHub:
-    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
-      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
-      could not be verified. Please remember that the signature file (.sig or .asc)
-      should be the first file given on the command line.'
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: Apache-2.0
 
 electron:
   main: "./build/main.js"
   productName: Digitales Klassenzimmer
   engines:
-    node: ">=12.0.0"
+    node: ">=14.0.0"
   pre-commit:
   - lint
   repository:
@@ -54,7 +59,7 @@ electron:
   readmeFilename: README.md
   license: Apache-2.0
   dependencies:
+    "@jitsi/electron-sdk": 3.3.1
     electron-debug: "^3.2.0"
     electron-reload: "^1.5.0"
-    jitsi-meet-electron-utils: github:jitsi/jitsi-meet-electron-utils#v2.0.22
 ---
