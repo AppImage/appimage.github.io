@@ -42,7 +42,8 @@ jobs:
       issues: write
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      DRY_RUN: ${{ github.event.inputs.dry_run != 'false' }} # default true (schedule has no input)
+      # Scheduled runs are real; manual runs are dry runs unless dry_run is unchecked
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run != 'false' }}
       MAX_ISSUES: ${{ github.event.inputs.max_issues || '5' }}
       FULL_SCAN: ${{ github.event.inputs.full_scan == 'true' }}
     steps:

@@ -42,7 +42,8 @@ issue tracker. The scan checks 10 entries at a time and stops once it has
 found `max_issues` dead entries that were not pinged before; the next run
 continues from there. `full_scan: true` checks all entries for a complete
 summary (a few minutes). An entry is pinged only once: closing its issue
-does not lead to a new one. The monthly scheduled run is a dry run.
+does not lead to a new one. The monthly scheduled run is a real run (fixes
+entries and opens up to 5 issues); only manual runs default to a dry run.
 
 Before pinging, it fixes what it can: when an entry links to a GitHub release
 asset that is gone but the repository still has an AppImage, a real run

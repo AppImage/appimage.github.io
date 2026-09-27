@@ -81,7 +81,7 @@ GitHub Pages (Jekyll) from this repository.
    withdrawn when a later push undoes the change. This does not depend on the
    PR's own test run, which a PR could alter.
 
-4. `.github/workflows/ping-authors.yml` (monthly `schedule`, and
+4. `.github/workflows/ping-authors.yml` (monthly `schedule`, a real run, and
    `workflow_dispatch` with `dry_run` (default true), `max_issues`
    (default 5) and `full_scan`) runs `code/check-entry.sh` over the files in
    `data/` (10 in parallel, 10 s timeouts; it stops once `max_issues` new dead
