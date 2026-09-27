@@ -22,12 +22,16 @@ on:
         description: 'Maximum number of issues to open in this run'
         type: number
         default: 5
+      full_scan:
+        description: 'Check all entries (for the summary) instead of stopping once enough dead ones are found'
+        type: boolean
+        default: false
 
 jobs:
   ping-authors:
     if: github.repository == 'AppImage/appimage.github.io'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 30
     permissions:
       contents: read
       issues: write
@@ -35,6 +39,7 @@ jobs:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       DRY_RUN: ${{ github.event.inputs.dry_run != 'false' }} # default true (schedule has no input)
       MAX_ISSUES: ${{ github.event.inputs.max_issues || '5' }}
+      FULL_SCAN: ${{ github.event.inputs.full_scan == 'true' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -43,4 +48,5 @@ jobs:
         run: |
           ARGS="--max-issues $MAX_ISSUES"
           [ "$DRY_RUN" == true ] && ARGS="$ARGS --dry-run"
+          [ "$FULL_SCAN" == true ] && ARGS="$ARGS --full"
           bash code/ping-authors.sh $ARGS

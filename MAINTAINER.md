@@ -38,7 +38,11 @@ dry run first (`dry_run: true`, the default): it prints what it would open in
 the job log and the step summary, without creating anything. Once the dry run
 looks right, run it again with `dry_run: false`; `max_issues` caps how many
 issues that run opens (default 5), so a first real run does not flood the
-issue tracker.
+issue tracker. The scan checks 10 entries at a time and stops once it has
+found `max_issues` dead entries that were not pinged before; the next run
+continues from there. `full_scan: true` checks all entries for a complete
+summary (a few minutes). An entry is pinged only once: closing its issue
+does not lead to a new one. The monthly scheduled run is a dry run.
 
 `code/check-entry.sh data/<Name>` checks a single entry the same way, and
 `code/ping-authors.sh --dry-run` runs the whole thing locally (needs

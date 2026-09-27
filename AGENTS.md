@@ -82,13 +82,15 @@ GitHub Pages (Jekyll) from this repository.
    PR's own test run, which a PR could alter.
 
 4. `.github/workflows/ping-authors.yml` (monthly `schedule`, and
-   `workflow_dispatch` with `dry_run` (default true) and `max_issues`
-   (default 5)) runs `code/check-entry.sh` over every file in `data/` to find
+   `workflow_dispatch` with `dry_run` (default true), `max_issues`
+   (default 5) and `full_scan`) runs `code/check-entry.sh` over the files in
+   `data/` (10 in parallel, 10 s timeouts; it stops once `max_issues` new dead
+   entries are found unless `full_scan`) to find
    entries whose AppImage is gone (repository not found, no AppImage in its
    releases, or a direct download URL returning 404/410; timeouts and other
    errors are `unknown` and are never pinged), writes a summary, and runs
    `code/ping-authors.sh` to open (at most `max_issues`) issues labeled
-   `entry-unavailable` for dead entries that do not already have one open,
+   `entry-unavailable` for dead entries that never had one (open or closed),
    @-mentioning the author of the commit that added the entry and the
    upstream GitHub owner (never `probonopd` or bots). It never edits or
    removes an entry itself. Run it by hand from the Actions tab (dry run

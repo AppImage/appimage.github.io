@@ -32,7 +32,7 @@ if [ x"${URL:0:18}" == x"https://github.com" ] && [[ "$URL" != *"download"* ]] ;
   GHREPO=$(echo "$URL" | cut -d '/' -f 5)
   API_JSON=$(mktemp)
   trap 'rm -f "$API_JSON"' EXIT
-  HTTP_CODE=$(curl -sS -o "$API_JSON" -w '%{http_code}' --max-time 30 \
+  HTTP_CODE=$(curl -sS -o "$API_JSON" -w '%{http_code}' --connect-timeout 5 --max-time 10 \
     -H "Accept: application/vnd.github+json" \
     ${GH_TOKEN:+-H "Authorization: Bearer $GH_TOKEN"} \
     -H "X-GitHub-Api-Version: 2022-11-28" \
@@ -67,9 +67,9 @@ fi
 # A direct download URL (or a non-releases github.com/.../download/... link):
 # HEAD, following redirects; some servers reject HEAD, so fall back to a
 # ranged GET that only asks for the first byte.
-HTTP_CODE=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 30 -L -I "$URL") || HTTP_CODE=000
+HTTP_CODE=$(curl -sS -o /dev/null -w '%{http_code}' --connect-timeout 5 --max-time 10 -L -I "$URL") || HTTP_CODE=000
 if [ "$HTTP_CODE" == 405 ] || [ "$HTTP_CODE" == 501 ] || [ "$HTTP_CODE" == 000 ] ; then
-  HTTP_CODE=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 30 -L -r 0-0 "$URL") || HTTP_CODE=000
+  HTTP_CODE=$(curl -sS -o /dev/null -w '%{http_code}' --connect-timeout 5 --max-time 10 -L -r 0-0 "$URL") || HTTP_CODE=000
 fi
 
 case "$HTTP_CODE" in
