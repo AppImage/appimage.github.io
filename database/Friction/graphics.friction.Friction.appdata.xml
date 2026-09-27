@@ -14,6 +14,18 @@
     <p>Powerful and versatile motion graphics and animation application that allows you to create vector and raster animations for web and video.</p>
   </description>
   <releases>
+    <release date="2025-12-31" version="1.0.0-rc.3">
+      <description>
+        <p>Third release candidate for v1.0.0 is now available. Features gizmos, snapping and grid. And of course many fixes!</p>
+      </description>
+      <url type="details">https://friction.graphics/releases/friction-100-rc3.html</url>
+    </release>
+    <release date="2025-08-06" version="1.0.0-rc.2">
+      <description>
+        <p>Second release candidate for v1.0.0 is now available.</p>
+      </description>
+      <url type="details">https://friction.graphics/releases/friction-100-rc2.html</url>
+    </release>
     <release date="2025-03-10" version="1.0.0-rc.1">
       <description>
         <p>First release candidate for v1.0.0 is now available.</p>
