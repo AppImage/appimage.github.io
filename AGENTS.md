@@ -145,7 +145,10 @@ GitHub Pages (Jekyll) from this repository.
    and digits as the repository name; most capitals win, blanks become `_`:
    photoapp + `PhotoApp-1.2.AppImage` gives `PhotoApp`, photo-app + "Photo
    App is …" gives `Photo_App`); an app already in `data/` in any spelling is
-   skipped; every repository checked is recorded
+   skipped. If the repository or AppImage name, the description or the README
+   (first 50 KB) says "unofficial", "not official", "not affiliated",
+   "repackaged" or the like, the PR also gets the `not-upstream` label and a
+   note naming the phrase and where it was found; every repository checked is recorded
    in the state file with its outcome, so it is not checked again for 90
    days. The state file (`discover-state.tsv`, with the cursor on its first
    line) lives on its own orphan branch, `discover-state`, never on `master`.
