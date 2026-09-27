@@ -269,6 +269,8 @@ jobs:
           [ "$(jq -r .state pr.json)" = open ] || skip "not open"
           [ "$(jq -r .draft pr.json)" = false ] || skip "draft"
           [ "$(jq -r .head.sha pr.json)" = "$HEAD_SHA" ] || skip "newer commits than the tested one"
+          case "$(jq -r .head.ref pr.json)" in discover/*) skip "discovered automatically; a maintainer reviews it" ;; esac
+          gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name' | grep -qx auto-discovered && skip "discovered automatically; a maintainer reviews it"
           case "$(jq -r .author_association pr.json)" in
             CONTRIBUTOR|COLLABORATOR|MEMBER|OWNER) ;;
             *) skip "first contribution (author association $(jq -r .author_association pr.json)); a maintainer reviews it" ;;

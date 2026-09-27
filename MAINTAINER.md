@@ -57,6 +57,58 @@ and approve pull requests". The dry run shows the PR it would open.
 `code/ping-authors.sh --dry-run` runs the whole thing locally (needs
 `GH_TOKEN`).
 
+## Running "Discover apps" manually
+
+`.github/workflows/discover-apps.yml` searches GitHub for repositories that
+publish AppImages on their releases but are not in the catalog yet, and opens
+a pull request per qualifying repository (labeled `auto-discovered`) for a
+maintainer to review; it never merges these itself.
+
+To run it: Actions tab → "Discover apps" → *Run workflow*. `count` caps how
+many pull requests that run opens (default 1, max 5). `dry_run: true` prints
+what would be opened in the job log and the step summary without pushing a
+branch, opening a pull request, or changing the state file at all; the
+default is a real run. Locally: `code/discover-apps.sh --dry-run` (needs
+`GH_TOKEN`).
+
+It keeps a small state file (`discover-state.tsv`, on its own orphan
+`discover-state` branch) recording every repository it has checked and a
+cursor, so repeated runs rotate through a different one-month slice of
+GitHub's history instead of finding the same repositories, and a repository
+that had no usable AppImage is not checked again for 90 days.
+
+**Configuring `DISCOVER_TOKEN` (optional)**
+
+A pull request opened with this workflow's own `GITHUB_TOKEN` starts no
+workflows, so its Test run would not happen automatically (the pull request
+body then says to close and reopen it); a personal access token avoids that.
+Without `DISCOVER_TOKEN`, the workflow falls back to the `SCREENSHOT_UPLOAD_TOKEN`
+secret (also a personal token with write access to this repository) before
+falling back to `GITHUB_TOKEN`. The pull requests appear as opened by that
+token's account either way; auto-merge skips them regardless, since they
+always need a maintainer's review.
+
+1. Sign in as the account that should open these pull requests (ideally a
+   bot account with Write access to this repository).
+2. [github.com/settings/personal-access-tokens/new](https://github.com/settings/personal-access-tokens/new)
+   (Settings → Developer settings → Personal access tokens → Fine-grained
+   tokens → *Generate new token*).
+3. Token name: `appimage.github.io discover-apps`. Resource owner: `AppImage`
+   (the organization may have to approve it:
+   [github.com/organizations/AppImage/settings/personal-access-token-requests](https://github.com/organizations/AppImage/settings/personal-access-token-requests)).
+   Expiration: e.g. 1 year. Repository access: *Only select repositories* →
+   `AppImage/appimage.github.io`.
+4. Repository permissions, set to *Read and write*: Contents, Pull requests
+   (Metadata is added automatically as Read-only).
+5. *Generate token*, then copy it.
+6. [github.com/AppImage/appimage.github.io/settings/secrets/actions](https://github.com/AppImage/appimage.github.io/settings/secrets/actions)
+   → *New repository secret* → name `DISCOVER_TOKEN`, paste the token → *Add secret*.
+
+**Renewing it**: GitHub emails the token's owner before it expires; generate
+a new one the same way and update the secret. If it is left to expire, the
+workflow silently falls back to `SCREENSHOT_UPLOAD_TOKEN` or `GITHUB_TOKEN`
+(the job log's first line says which token was used, never its value).
+
 ## Removing an application
 
 Comment `/remove` on its "Where did the AppImage of NAME go?" issue (only

@@ -1,0 +1,60 @@
+# Finds GitHub repositories that publish AppImages on their releases but are
+# not in the catalog yet, and proposes each as a new entry in its own pull
+# request (label auto-discovered), for a maintainer to review. Never merges
+# on its own: publish-pr-screenshot.yml's auto-merge skips these PRs.
+#
+# code/discover-apps.sh keeps a state file (cursor + recently-checked
+# repositories) on the orphan "discover-state" branch, so repeated runs
+# rotate through GitHub's search results and history instead of proposing
+# or re-checking the same repositories. Manual only; see MAINTAINER.md.
+
+name: Discover apps
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Maximum number of pull requests to open in this run'
+        type: number
+        default: 1
+      dry_run:
+        description: 'Dry run (only print what would be opened; nothing is pushed or changed)'
+        type: boolean
+        default: false
+
+jobs:
+  discover-apps:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # One run at a time, so that two runs cannot propose the same repository
+    # or race on the state file.
+    concurrency:
+      group: discover-apps
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      # A personal token lets the opened PR's Test workflow actually start
+      # (a PR opened with this workflow's own token starts none): DISCOVER_TOKEN
+      # if set, else the SCREENSHOT_UPLOAD_TOKEN secret, else GITHUB_TOKEN (then
+      # the PR body says to close and reopen it). See MAINTAINER.md.
+      DISCOVER_TOKEN: ${{ secrets.DISCOVER_TOKEN }}
+      SCREENSHOT_UPLOAD_TOKEN: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Discover and propose new entries
+        env:
+          COUNT: ${{ github.event.inputs.count || '1' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          ARGS=(--count "$COUNT")
+          [ "$DRY_RUN" == "true" ] && ARGS+=(--dry-run)
+          bash code/discover-apps.sh "${ARGS[@]}"

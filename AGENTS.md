@@ -115,6 +115,36 @@ GitHub Pages (Jekyll) from this repository.
    rename files in `data/` (it removes what is left of them). Deleting only
    `data/NAME` used to leave the page on the site.
 
+6. `.github/workflows/discover-apps.yml` (`workflow_dispatch` only; inputs
+   `count`, default 1, max 5, and `dry_run`) runs `code/discover-apps.sh` to
+   find GitHub repositories that publish AppImages on their releases but are
+   not in the catalog yet, and proposes each as a new entry in its own pull
+   request, labeled `auto-discovered`, for a maintainer to review. Candidates
+   come from the GitHub search API, restricted each run to a rotating
+   one-month slice of repository creation dates (a cursor kept in a state
+   file), alternating between a `topic:appimage` query and an
+   `appimage in:name,description,readme` one, so that repeated runs cover
+   GitHub's history instead of the same popular results, and stay within the
+   search API's rate limit (at most 2 pages per run, with a sleep between
+   them). A repository is skipped when it is already in `data/`, is added by
+   an open pull request, was proposed before (any pull request labeled
+   `auto-discovered`, in any state: merged means it is in the catalog, closed
+   unmerged means it was rejected, and neither is retried), or was checked in
+   the last 90 days without a usable AppImage. What remains is checked (in
+   random order) with `code/fetch-releases.sh` and `code/find-appimage.sh`
+   (exactly one x86_64 AppImage, in a release less than 2 years old) and
+   `code/check-name.sh` (`STRICT=true`); every repository checked is recorded
+   in the state file with its outcome, so it is not checked again for 90
+   days. The state file (`discover-state.tsv`, with the cursor on its first
+   line) lives on its own orphan branch, `discover-state`, never on `master`.
+   The pull request's branch (`discover/<name>`) is pushed, and the pull
+   request opened, with `DISCOVER_TOKEN` or `SCREENSHOT_UPLOAD_TOKEN` when
+   set (see `MAINTAINER.md`), so its Test workflow actually starts; otherwise
+   `GITHUB_TOKEN` is used and the pull request body says to close and reopen
+   it. `publish-pr-screenshot.yml`'s auto-merge skips pull requests whose
+   branch starts with `discover/` or that are labeled `auto-discovered`: a
+   maintainer always reviews these.
+
 ## Rules that are easy to get wrong
 
 - **`pull_request_target` workflows must never check out or run code from
