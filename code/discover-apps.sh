@@ -474,12 +474,32 @@ while read -r FULLNAME ; do
   TAG=$(jq -r '[.[] | select(.draft | not)][0].tag_name // ""' "$RELEASES_JSON")
   ASSET_NAME=$(basename "$ASSET_URL")
 
+  # Not from the application's own authors? ("unofficial", "not affiliated",
+  # "repackaged", ...) in the repository or AppImage name, the description
+  # or the README (first 50 KB): then label the PR not-upstream
+  UPSTREAM_PATTERN='(^|[^a-z])(unofficial|not (an )?official|non-?official|not affiliated|unaffiliated|not endorsed|community[- ](maintained|built|build|package|packaged)|third[- ]party (build|package|appimage)|repackag(ed|e|ing))([^a-z]|$)'
+  NOT_UPSTREAM=""
+  README=$(api GET "repos/$OWNER/$RNAME/readme" 2>/dev/null | jq -r '.content // empty' 2>/dev/null | base64 -d 2>/dev/null | head -c 50000 | tr -d '\000')
+  for SRC in "repository name:$RNAME" "AppImage name:$ASSET_URL" "description:$DESC" "README:$README" ; do
+    PHRASE=$(grep -oiE -m 1 "$UPSTREAM_PATTERN" <<<"${SRC#*:}" | head -n 1 | sed -E 's/^[^a-zA-Z]+//; s/[^a-zA-Z]+$//' | tr -cd 'A-Za-z -')
+    if [ -n "$PHRASE" ] ; then
+      NOT_UPSTREAM="the ${SRC%%:*} says \"$PHRASE\""
+      echo "    not upstream? $NOT_UPSTREAM"
+      break
+    fi
+  done
+
   SDESC=$(sanitize "$DESC" | tr -d '<>' | cut -c1-300)
   QUOTE=$(sed 's/^/> /' <<<"$SDESC")
 
   NOTE=""
-  if [ "$TOKEN_IS_FALLBACK" == true ] ; then
+  if [ -n "$NOT_UPSTREAM" ] ; then
     NOTE="
+
+**Possibly not from the application's authors:** $NOT_UPSTREAM (label \`not-upstream\`). Please check whether the catalog should list this AppImage, or rather one from the application's own project."
+  fi
+  if [ "$TOKEN_IS_FALLBACK" == true ] ; then
+    NOTE="$NOTE
 
 A pull request opened by a workflow does not start the Test workflow: close and reopen this PR to test the entry."
   fi
@@ -537,7 +557,13 @@ discover-apps.yml. Needs a maintainer's review."
   PR_URL=$(jq -r '.html_url // empty' <<<"$PR_RESP")
   PR_NUMBER=$(jq -r '.number // empty' <<<"$PR_RESP")
   if [ -n "$PR_NUMBER" ] ; then
-    API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/issues/$PR_NUMBER/labels" -d "$(jq -n --arg l "$LABEL" '{labels:[$l]}')" >/dev/null
+    LABELS=("$LABEL")
+    if [ -n "$NOT_UPSTREAM" ] ; then
+      LABELS+=(not-upstream)
+      API_TOKEN="$PR_TOKEN" api GET "repos/$REPO/labels/not-upstream" >/dev/null 2>&1 || \
+        API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/labels" -d "$(jq -n '{name:"not-upstream", color:"d93f0b", description:"The AppImage may not come from the application'"'"'s own authors (unofficial, repackaged, ...)"}')" >/dev/null
+    fi
+    API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/issues/$PR_NUMBER/labels" -d "$(jq -n '{labels:$ARGS.positional}' --args "${LABELS[@]}")" >/dev/null
   fi
   git checkout -q -
   git branch -q -D "$BRANCH" >/dev/null 2>&1 || true
