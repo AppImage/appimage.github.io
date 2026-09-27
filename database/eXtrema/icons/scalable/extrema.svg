@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="153.6729mm"
+   height="153.91269mm"
+   viewBox="0 0 153.67289 153.91269"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="eXtrema.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   inkscape:export-filename="/home/edik/triumf/eXtrema/icons/hicolor/32x32/apps/eXtrema.png"
+   inkscape:export-xdpi="5.2843385"
+   inkscape:export-ydpi="5.2843385">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient6099"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop6097" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4645"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4643" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4567"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#7ecdff;stop-opacity:1;"
+         offset="0"
+         id="stop4563" />
+      <stop
+         style="stop-color:#7ecdff;stop-opacity:0;"
+         offset="1"
+         id="stop4565" />
+    </linearGradient>
+    <filter
+       inkscape:label="Warm Inside"
+       inkscape:menu="Morphology"
+       inkscape:menu-tooltip="Blurred colorized contour, filled inside"
+       style="color-interpolation-filters:sRGB"
+       id="filter4601">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 "
+         result="fbSourceGraphic"
+         id="feColorMatrix4585" />
+      <feGaussianBlur
+         stdDeviation="3"
+         result="result1"
+         id="feGaussianBlur4587" />
+      <feOffset
+         dx="2"
+         dy="2"
+         result="result6"
+         id="feOffset4589" />
+      <feComposite
+         operator="in"
+         result="result2"
+         in="result6"
+         in2="result1"
+         id="feComposite4591" />
+      <feColorMatrix
+         values="110"
+         result="result3"
+         type="hueRotate"
+         id="feColorMatrix4593" />
+      <feBlend
+         mode="screen"
+         in="result2"
+         in2="result3"
+         result="result4"
+         id="feBlend4595" />
+      <feConvolveMatrix
+         order="3 3"
+         kernelMatrix="-2 0 2 0 4 0 2 0 2"
+         divisor="2"
+         bias="0"
+         targetX="0"
+         in="result4"
+         result="result5"
+         id="feConvolveMatrix4597" />
+      <feComposite
+         operator="atop"
+         in="result2"
+         in2="result5"
+         id="feComposite4599" />
+    </filter>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4567"
+       id="radialGradient4627"
+       cx="99.648254"
+       cy="130.78656"
+       fx="99.648254"
+       fy="130.78656"
+       r="64"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.2700719,1.6559511e-4,-1.7972653e-4,1.3782762,-28.701976,-46.802372)" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4567"
+       id="radialGradient4631"
+       cx="99.640106"
+       cy="130.79684"
+       fx="99.640106"
+       fy="130.79684"
+       r="64.1325"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.2674479,1.6509924e-4,-1.7916246e-4,1.3754288,-28.43024,-46.444055)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.3158766"
+     inkscape:cx="50.413566"
+     inkscape:cy="291.65133"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:object-nodes="false"
+     inkscape:window-width="1543"
+     inkscape:window-height="997"
+     inkscape:window-x="76"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-26.498194,-48.934534)">
+    <circle
+       style="fill:url(#radialGradient4631);fill-opacity:1;stroke:url(#radialGradient4627);stroke-width:0.26499999;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path3713"
+       cx="103.56119"
+       cy="125.83917"
+       r="64" />
+    <path
+       style="fill:none;stroke:#ec2020;stroke-width:10;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4601)"
+       d="m 55.137961,79.2761 c -0.311729,-4.559696 2.663256,41.93243 2.708347,42.37358 1.206157,11.79232 2.47072,25.49367 6.303707,37.90869 1.227185,3.97486 2.956147,8.09833 5.342945,11.6369 1.456432,2.15925 3.200038,4.23125 5.362499,5.68291 1.741544,1.1691 3.774727,2.20162 5.871366,2.26383 3.178716,0.0943 6.349359,-1.28432 9.08942,-2.89839 2.470013,-1.45499 4.410088,-4.05252 6.257346,-5.89977 2.974281,-2.97428 5.051559,-6.22783 7.115989,-9.16204 2.0835,-2.96131 4.84648,-7.97991 7.48594,-12.40549 4.06003,-6.06413 8.47556,-11.15054 8.47556,-11.15054 0,0 5.11478,-2.09353 8.56419,0.24939 l 3.76267,3.09907 6.16116,5.82017 5.4315,5.62962 5.84518,5.30964 9.61011,6.75044"
+       id="path3715"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssaaaasscccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:114.65277863px;line-height:1.25;font-family:FreeSerif;-inkscape-font-specification:'FreeSerif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="66.665794"
+       y="142.80077"
+       id="text4527"><tspan
+         sodipodi:role="line"
+         id="tspan4525"
+         x="66.665794"
+         y="142.80077"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:114.65277863px;font-family:FreeSerif;-inkscape-font-specification:'FreeSerif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">e</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.09722137px;line-height:1.25;font-family:Georgia;-inkscape-font-specification:'Georgia, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff5f22;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       x="116.536"
+       y="103.80849"
+       id="text4531"><tspan
+         sodipodi:role="line"
+         id="tspan4529"
+         x="116.536"
+         y="103.80849"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.09722137px;font-family:Georgia;-inkscape-font-specification:'Georgia, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ff5f22;fill-opacity:1;stroke-width:0.26458332;">x</tspan></text>
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#008dff;stroke-width:12.74383163;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4541"
+       cx="103.33464"
+       cy="125.89088"
+       rx="70.464531"
+       ry="70.584427" />
+  </g>
+</svg>

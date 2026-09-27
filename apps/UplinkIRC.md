@@ -1,0 +1,40 @@
+---
+layout: app
+
+permalink: /UplinkIRC/
+description: Fast, secure IRC client
+
+icons:
+  - UplinkIRC/icons/1254x1254/uplink.png
+
+screenshots:
+  - UplinkIRC/screenshot.png
+
+authors:
+  - name: noderelay
+    url: https://github.com/noderelay
+
+links:
+  - type: GitHub
+    url: noderelay/UplinkIRC
+  - type: Download
+    url: https://github.com/noderelay/UplinkIRC/releases
+
+desktop:
+  Desktop Entry:
+    Type: Application
+    Name: Uplink
+    Comment: Fast, secure IRC client
+    Exec: Uplink
+    Icon: uplink
+    Categories: Network
+    Terminal: false
+  AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|noderelay|UplinkIRC|latest|Uplink-*-x86_64.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+---

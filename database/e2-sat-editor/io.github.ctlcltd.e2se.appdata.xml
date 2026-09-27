@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.ctlcltd.e2se</id>
+  <name>e2 SAT Editor</name>
+  <summary>Satellite channel lists editor: Enigma2, Neutrino, dreambox</summary>
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <description>
+    <p>
+      e2 SAT Editor is a satellite channel lists editor with tabbed nav, for Enigma2, Neutrino, dreambox lists.
+    </p>
+  </description>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Video</category>
+    <category>TV</category>
+  </categories>
+  <launchable type="desktop-id">io.github.ctlcltd.e2se.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://ctlcltd.github.io/e2se/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://ctlcltd.github.io/e2-sat-editor/</url>
+  <url type="bugtracker">https://github.com/ctlcltd/e2-sat-editor/issues</url>
+  <content_rating type="oars-1.1" />
+  <provides>
+    <binary>e2-sat-editor</binary>
+    <binary>e2se-cli</binary>
+  </provides>
+  <releases>
+    <release version="0.8.0" date="2023-06-13" />
+    <release version="0.7.0" date="2023-05-21" />
+    <release version="0.6.0-pre" type="development" date="2023-04-07" />
+    <release version="0.5.0-pre" type="development" date="2023-03-18" />
+    <release version="0.4.0-pre" type="development" date="2023-02-25" />
+    <release version="0.3.0-pre" type="development" date="2023-01-24" />
+  </releases>
+</component>

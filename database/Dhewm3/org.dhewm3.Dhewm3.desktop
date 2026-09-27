@@ -1,0 +1,17 @@
+[Desktop Entry]
+Comment=dhewm 3 is a Doom 3 GPL source port
+Categories=Game;Shooter;
+Exec=dhewm3
+Icon=org.dhewm3.Dhewm3
+Name=Dhewm3
+StartupNotify=true
+Terminal=false
+Type=Application
+Keywords=doom;first;person;shooter;dark;singleplayer;multiplayer;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Sun Feb  9 16:36:50 2025 UTC                using RSA key 6E9137E3B0FE3FDC67D70F2ECDC41982C027BAAA Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

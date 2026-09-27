@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>TarotCaster</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-2.0+</project_license>
+	<name>TarotCaster</name>
+	<summary>Tarot Casting Application with AI Interpretation of Spreads </summary>
+	<description>
+		<p>An AI-powered tarot reading application built with Qt that combines traditional tarot wisdom with modern artificial intelligence.
+
+Features
+
+    Multiple Tarot Decks Support: Includes the classic Rider-Waite deck with support for adding your own custom decks
+    Various Spread Types: Choose from multiple layouts including:
+        1-card draw
+        3-card spread
+        Celtic Cross spread
+        Horseshoe spread
+        More spreads coming soon!
+    AI-Generated Readings: Powered by Mistral AI for insightful and personalized card interpretations
+    Traditional Card Meanings: Built-in traditional interpretations for all cards
+    Show Full Deck Feature: Browse and explore the entire deck of cards
+    Enhanced Randomization: Shuffle button gathers system entropy for truly random card selection
+    Save/Load Functionality: Save your readings to revisit them later
+    Intuitive Interface: Clean, user-friendly design suitable for both beginners and experienced readers.
+</p>
+	</description>
+	<launchable type="desktop-id">TarotCaster.desktop</launchable>
+	<url type="homepage">https://github.com/alamahant/TarotCaster.git</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/alamahant/TarotCaster/master/screenshots/full-rws.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>TarotCaster.desktop</id>
+	</provides>
+</component>

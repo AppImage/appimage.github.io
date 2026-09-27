@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright Friction contributors -->
+<component type="desktop">
+  <id>graphics.friction.Friction</id>
+  <launchable type="desktop-id">graphics.friction.Friction.desktop</launchable>
+  <name>Friction</name>
+  <developer id="graphics.friction">
+    <name>Friction</name>
+  </developer>
+  <summary>Motion graphics and animation</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <description>
+    <p>Powerful and versatile motion graphics and animation application that allows you to create vector and raster animations for web and video.</p>
+  </description>
+  <releases>
+    <release date="2025-03-10" version="1.0.0-rc.1">
+      <description>
+        <p>First release candidate for v1.0.0 is now available.</p>
+      </description>
+      <url type="details">https://friction.graphics/releases/friction-100-rc1.html</url>
+    </release>
+    <release date="2024-12-02" version="1.0.0-beta.2">
+      <description>
+        <p>This release includes several fixes, some new features and several UI/UX changes.</p>
+      </description>
+      <url type="details">https://friction.graphics/releases/friction-100-beta2.html</url>
+    </release>
+    <release date="2024-10-16" version="1.0.0-beta.1">
+      <description>
+        <p>This release includes several new features and many UI/UX improvements.</p>
+      </description>
+      <url type="details">https://friction.graphics/releases/friction-100-beta1.html</url>
+    </release>
+    <release date="2024-08-22" version="0.9.6.1">
+      <description>
+        <p>The first maintenance release for Friction 0.9.6 is now available.</p>
+      </description>
+      <url type="details">https://friction.graphics/releases/friction-0961.html</url>
+    </release>
+    <release date="2024-06-24" version="0.9.6">
+      <description>
+        <p>This release includes new features, critical fixes and generic UI/UX improvements.</p>
+      </description>
+      <url type="details">https://friction.graphics/releases/friction-096.html</url>
+    </release>
+    <release date="2023-12-24" version="0.9.5">
+      <description>
+        <p>This release includes new features, fixes and generic improvements.</p>
+      </description>
+      <url type="details">https://friction.graphics/releases/friction-095.html</url>
+    </release>
+    <release date="2023-09-04" version="0.9.4">
+      <description>
+        <p>This release includes several fixes and improvements to the user experience.</p>
+      </description>
+      <url type="details">https://friction.graphics/releases/friction-094.html</url>
+    </release>
+    <release date="2023-08-05" version="0.9.3">
+      <description>
+        <p>This release includes several fixes and improvements to the user experience.</p>
+      </description>
+      <url type="details">https://friction.graphics/releases/friction-093.html</url>
+    </release>
+    <release date="2023-07-23" version="0.9.2">
+      <description>
+        <p>This release includes several fixes and improvements to the user experience.</p>
+      </description>
+      <url>https://friction.graphics/releases/friction-092.html</url>
+    </release>
+    <release date="2023-07-04" version="0.9.1">
+      <description>
+        <p>First public release.</p>
+      </description>
+      <url type="details">https://friction.graphics/releases/friction-091.html</url>
+    </release>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://friction.graphics/assets/screenshots/100/friction-100b2-screenshot.png</image>
+      <caption>Default user interface</caption>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://friction.graphics</url>
+  <url type="bugtracker">https://github.com/friction2d/friction/issues</url>
+  <url type="help">https://friction.graphics/documentation/</url>
+  <url type="faq">https://friction.graphics/documentation/faq.html</url>
+  <url type="donation">https://friction.graphics/donate.html</url>
+  <url type="contribute">https://github.com/friction2d/friction/discussions</url>
+  <url type="vcs-browser">https://github.com/friction2d/friction</url>
+  <update_contact>support@friction.graphics</update_contact>
+  <content_rating type="oars-1.1"/>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Graphics</category>
+  </categories>
+  <keywords>
+    <keyword>2d</keyword>
+    <keyword>graphics</keyword>
+    <keyword>motion graphics</keyword>
+    <keyword>mograph</keyword>
+    <keyword>animation</keyword>
+    <keyword>web animation</keyword>
+    <keyword>video</keyword>
+    <keyword>svg</keyword>
+    <keyword>vector</keyword>
+    <keyword>raster</keyword>
+    <keyword>vfx</keyword>
+    <keyword>editing</keyword>
+  </keywords>
+</component>
