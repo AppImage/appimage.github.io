@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
     inputs:
       count:
-        description: 'Maximum number of pull requests to open in this run'
+        description: 'Number of pull requests to open; the run searches until it has found that many (or searched every month since 2012, or 5.5 hours passed)'
         type: number
         default: 1
       dry_run:

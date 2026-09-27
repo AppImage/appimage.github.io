@@ -8,7 +8,8 @@
 # Usage: discover-apps.sh [--dry-run] [--count N]
 #   --dry-run  Only print what would be opened; pushes nothing, opens no PR,
 #              and does not touch the discover-state branch at all.
-#   --count N  Open at most N pull requests in this run (default 1, max 5).
+#   --count N  Open N pull requests in this run (default 1), searching until
+#              they are found (or every month was searched, or the time limit).
 #
 # Candidates come from the GitHub search API (most stars first), one month
 # of repository creation dates at a time, both query shapes per month
@@ -66,7 +67,8 @@ while [ $# -gt 0 ] ; do
   esac
 done
 case "$COUNT" in ''|*[!0-9]*) echo "Bad --count: $COUNT" >&2 ; exit 2 ;; esac
-[ "$COUNT" -gt 5 ] && COUNT=5
+# No upper limit: the run goes on until COUNT apps are found, every month since
+# 2012 was searched, or the time limit
 [ "$COUNT" -lt 1 ] && COUNT=1
 
 REPO="${GITHUB_REPOSITORY:-AppImage/appimage.github.io}"
@@ -362,14 +364,24 @@ for Q in 0 1 ; do
   [ "$SEARCHES" -gt 0 ] && [ -z "${DISCOVER_API_STUB:-}" ] && sleep 3
   wait_for_rate search
   SEARCHES=$((SEARCHES + 1))
-  RESP=$(api GET "search/repositories?q=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$QUERY")&per_page=30&sort=stars&order=desc")
-  ITEMS=$(jq -r '.items[]? | .full_name' <<<"$RESP" 2>/dev/null)
-  while IFS=$'\t' read -r FN ST ; do
-    [ -n "$FN" ] && STARS_OF["$(lower "$FN")"]=$ST
-  done < <(jq -r '.items[]? | "\(.full_name)\t\(.stargazers_count // 0)"' <<<"$RESP" 2>/dev/null)
+  # Up to 10 pages of 100 (the search API returns at most 1000 results)
   echo "Searching repositories created in $CURSOR_MONTH: $QUERY"
-  echo "  $(jq -r '.total_count // 0' <<<"$RESP" 2>/dev/null) results, $(grep -c . <<<"$ITEMS") on the first page$(jq -r 'if .message then " (" + .message + ")" else "" end' <<<"$RESP" 2>/dev/null)"
-  [ -n "$ITEMS" ] && echo "$ITEMS" >> "$WORKDIR/candidates.txt"
+  for PAGE in 1 2 3 4 5 6 7 8 9 10 ; do
+    if [ "$PAGE" -gt 1 ] ; then
+      [ -z "${DISCOVER_API_STUB:-}" ] && sleep 3
+      wait_for_rate search
+      SEARCHES=$((SEARCHES + 1))
+    fi
+    RESP=$(api GET "search/repositories?q=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$QUERY")&per_page=100&page=$PAGE&sort=stars&order=desc")
+    ITEMS=$(jq -r '.items[]? | .full_name' <<<"$RESP" 2>/dev/null)
+    while IFS=$'\t' read -r FN ST ; do
+      [ -n "$FN" ] && STARS_OF["$(lower "$FN")"]=$ST
+    done < <(jq -r '.items[]? | "\(.full_name)\t\(.stargazers_count // 0)"' <<<"$RESP" 2>/dev/null)
+    N_ITEMS=$(grep -c . <<<"$ITEMS")
+    [ "$PAGE" -eq 1 ] && echo "  $(jq -r '.total_count // 0' <<<"$RESP" 2>/dev/null) results$(jq -r 'if .message then " (" + .message + ")" else "" end' <<<"$RESP" 2>/dev/null)"
+    [ -n "$ITEMS" ] && echo "$ITEMS" >> "$WORKDIR/candidates.txt"
+    [ "$N_ITEMS" -lt 100 ] && break
+  done
 done
 sort -u "$WORKDIR/candidates.txt" | grep -vxFf "$WORKDIR/seen.txt" > "$WORKDIR/candidates.new" || true
 cat "$WORKDIR/candidates.new" >> "$WORKDIR/seen.txt"

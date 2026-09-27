@@ -65,7 +65,7 @@ a pull request per qualifying repository (labeled `auto-discovered`) for a
 maintainer to review; it never merges these itself.
 
 To run it: Actions tab → "Discover apps" → *Run workflow*. `count` caps how
-many pull requests that run opens (default 1, max 5); the run goes on until
+many pull requests that run opens (default 1, no upper limit); the run goes on until
 it has found that many (or has searched every month since 2012), which can
 take a while: its log shows each search and each repository it checks. `dry_run: true` prints
 what would be opened in the job log and the step summary without pushing a

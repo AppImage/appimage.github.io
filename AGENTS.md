@@ -121,7 +121,7 @@ GitHub Pages (Jekyll) from this repository.
    `data/NAME` used to leave the page on the site.
 
 6. `.github/workflows/discover-apps.yml` (`workflow_dispatch` only; inputs
-   `count`, default 1, max 5, and `dry_run`) runs `code/discover-apps.sh` to
+   `count`, default 1, no upper limit, and `dry_run`) runs `code/discover-apps.sh` to
    find GitHub repositories that publish AppImages on their releases but are
    not in the catalog yet, and proposes each as a new entry in its own pull
    request, labeled `auto-discovered`, for a maintainer to review. Candidates
