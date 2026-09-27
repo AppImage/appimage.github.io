@@ -169,6 +169,11 @@ GitHub Pages (Jekyll) from this repository.
   own source lines and traces. Patterns in `code/diagnose.sh` for the worker's own
   messages are anchored with `^`, and the excerpt drops lines that are verbatim
   lines of `worker.sh` or traces (`^+`).
+- The "first error" excerpt (`code/diagnose.sh --excerpt`) starts at a line
+  with `error while loading shared libraries` wherever it is (a missing
+  library is almost always the real cause; label `error-missing-library`),
+  else at the first line matching an error pattern; patterns of hints
+  without a label (warnings, remarks) never start it.
 - The test runs **without network** (`firejail --net=none`); many applications
   show "update check failed" and similar. That is why soft error words only warn.
 - Terminal applications (`Terminal=true`) run with `--help` in xterm; screenshot
