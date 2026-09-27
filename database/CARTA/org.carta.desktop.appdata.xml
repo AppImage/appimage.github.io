@@ -33,8 +33,8 @@
   <project_group>Science</project_group>
 
   <releases>
-    <release version="3.0.0" date="2013-04-12">
-    <url>https://carta.readthedocs.io/en/3.0/appendix_a_version_history.html#version-3-0</url>
+    <release version="4.1.0" date="2024-01-19">
+    <url>https://carta.readthedocs.io/en/4.0/appendix_a_version_history.html#version-4-0</url>
     </release>
   </releases>
 </component>
