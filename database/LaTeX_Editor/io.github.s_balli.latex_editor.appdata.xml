@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream uygulama bilgisi. appimagetool bu dosyayi masaustu dosyasinin
+     adiyla ariyor (usr/share/metainfo/<masaustu adi>.appdata.xml), dosya adi
+     da bilesen kimligiyle ayni olmali (bkz. build_appimage.sh). AppImageHub
+     aciklamayi, lisansi ve ekran goruntusunu buradan aliyor. Surum cikarken
+     <releases> en uste yeni surumle guncellenmeli (test_linux_masaustu). -->
+<component type="desktop-application">
+  <id>io.github.s_balli.latex_editor</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+
+  <name>LaTeX Editor</name>
+  <summary>LaTeX editor with live PDF preview</summary>
+  <summary xml:lang="tr">Canlı PDF önizlemeli LaTeX editörü</summary>
+
+  <description>
+    <p>
+      LaTeX Editor is a lightweight desktop editor that compiles your document
+      and shows the PDF next to the source. Click a line to jump to it in the
+      PDF, click the PDF to jump back to the source (SyncTeX).
+    </p>
+    <p xml:lang="tr">
+      LaTeX Editor, belgenizi derleyip PDF'i kaynağın yanında gösteren hafif
+      bir masaüstü editörüdür. Bir satıra tıklayınca PDF'te oraya, PDF'e
+      tıklayınca kaynağa gidilir (SyncTeX).
+    </p>
+    <ul>
+      <li>pdflatex, xelatex and lualatex; the engine is picked from the document</li>
+      <li xml:lang="tr">pdflatex, xelatex ve lualatex; motor belgeden seçilir</li>
+      <li>Build the whole document from any chapter file</li>
+      <li xml:lang="tr">Herhangi bir bölüm dosyasından bütün belgeyi derleme</li>
+      <li>Autocompletion for commands, \ref and \cite keys and file paths</li>
+      <li xml:lang="tr">Komutlar, \ref ve \cite anahtarları ve dosya yolları için tamamlama</li>
+      <li>PDF search, bookmarks, text selection and a presentation mode</li>
+      <li xml:lang="tr">PDF'te arama, yer imleri, metin seçimi ve sunum modu</li>
+      <li>Spell check with bundled Turkish and English dictionaries</li>
+      <li xml:lang="tr">Türkçe ve İngilizce sözlüklerle gelen yazım denetimi</li>
+      <li>Reference audit, a bibliography tab and adding sources by DOI</li>
+      <li xml:lang="tr">Referans denetimi, kaynakça sekmesi ve DOI ile kaynak ekleme</li>
+      <li>Named snapshots of your files without git, crash recovery and autosave</li>
+      <li xml:lang="tr">Git bilmeden adlı sürümler, çökme kurtarma ve otomatik kaydetme</li>
+      <li>Turkish and English interface, seven themes</li>
+      <li xml:lang="tr">Türkçe ve İngilizce arayüz, yedi tema</li>
+    </ul>
+    <p>A TeX distribution such as TeX Live has to be installed separately.</p>
+    <p xml:lang="tr">TeX Live gibi bir TeX dağıtımının ayrıca kurulu olması gerekir.</p>
+  </description>
+
+  <launchable type="desktop-id">io.github.s_balli.latex_editor.desktop</launchable>
+
+  <url type="homepage">https://s-balli.github.io/latex-editor/</url>
+  <url type="bugtracker">https://github.com/s-balli/latex-editor/issues</url>
+
+  <!-- Iki alan BILEREK eski bicimde. Yayin kosucusu ubuntu-22.04 ve orada
+       appstreamcli 0.15: `url type="vcs-browser"`a UYARI veriyor, uyarida
+       appimagetool paketlemeyi durduruyor; `<developer>` etiketini de
+       tanimiyor. Olculdu (2026-09-26, gecici PR on ucusu, appstreamcli
+       kurulu kol): "Failed to validate AppStream information". 1.0.2
+       `developer_name`e yalniz bilgi notu dusuyor, dogrulama geciyor. -->
+  <developer_name>s-balli</developer_name>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Source, live PDF preview, document outline and the reference audit</caption>
+      <caption xml:lang="tr">Kaynak, canlı PDF önizleme, belge anahatı ve referans denetimi</caption>
+      <image>https://s-balli.github.io/latex-editor/assets/01.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.1.1" date="2026-09-26"/>
+    <release version="1.1.0" date="2026-09-25"/>
+  </releases>
+</component>

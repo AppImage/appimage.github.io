@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   id="svg2985"
+   height="64"
+   width="64">
+  <defs
+     id="defs2987">
+    <linearGradient
+       id="linearGradient3808">
+      <stop
+         style="stop-color:#d8d8d8;stop-opacity:1;"
+         offset="0"
+         id="stop3810" />
+      <stop
+         id="stop3833"
+         offset="0.25"
+         style="stop-color:#ebebeb;stop-opacity:1;" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop3812" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3906">
+      <stop
+         id="stop3908"
+         offset="0"
+         style="stop-color:#335795;stop-opacity:1;" />
+      <stop
+         id="stop3910"
+         offset="1"
+         style="stop-color:#5387e1;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3898">
+      <stop
+         id="stop3900"
+         offset="0"
+         style="stop-color:#3a316f;stop-opacity:1;" />
+      <stop
+         id="stop3902"
+         offset="1"
+         style="stop-color:#321dab;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3880">
+      <stop
+         id="stop3882"
+         offset="0"
+         style="stop-color:#ffffff;stop-opacity:0;" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="0.69999999"
+         id="stop3896" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.3137255;"
+         offset="0.69999999"
+         id="stop3890" />
+      <stop
+         id="stop3894"
+         offset="0.89999998"
+         style="stop-color:#ffffff;stop-opacity:0.54901963;" />
+      <stop
+         id="stop3892"
+         offset="0.89999998"
+         style="stop-color:#ffffff;stop-opacity:0.70588237;" />
+      <stop
+         id="stop3884"
+         offset="1"
+         style="stop-color:#ffffff;stop-opacity:0.96470588;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3839">
+      <stop
+         id="stop3841"
+         offset="0"
+         style="stop-color:#dcdcdc;stop-opacity:1;" />
+      <stop
+         id="stop3843"
+         offset="1"
+         style="stop-color:#f0f0f0;stop-opacity:1;" />
+    </linearGradient>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter2998">
+      <feFlood
+         flood-opacity="0.40000000000000002"
+         flood-color="rgb(0,0,0)"
+         id="feFlood3010" />
+      <feComposite
+         operator="in"
+         in2="SourceGraphic"
+         id="feComposite3012" />
+      <feOffset
+         result="result2"
+         id="feOffset3008"
+         dy="1"
+         dx="0" />
+      <feGaussianBlur
+         dy="0.5"
+         flood-opacity="0.5"
+         result="result1"
+         in="result2"
+         id="feGaussianBlur3000"
+         stdDeviation="1" />
+      <feMerge
+         result="result3"
+         id="feMerge3002">
+        <feMergeNode
+           in="result1"
+           id="feMergeNode3004" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode3006" />
+      </feMerge>
+    </filter>
+    <linearGradient
+       gradientTransform="matrix(1.0769231,0,0,1.0769231,-2.4615385,-59.076923)"
+       gradientUnits="userSpaceOnUse"
+       y2="790.28571"
+       x2="39.42857"
+       y1="745.71429"
+       x1="24.571428"
+       id="linearGradient3845"
+       xlink:href="#linearGradient3839" />
+    <filter
+       height="1.3999999999999999"
+       width="1.3999999999999999"
+       id="filter3859">
+      <feFlood
+         flood-opacity="0.20000000000000001"
+         result="result1"
+         id="feFlood3861" />
+      <feComposite
+         operator="in"
+         in2="SourceGraphic"
+         id="feComposite3863" />
+      <feOffset
+         id="feOffset3865"
+         dy="40"
+         dx="0" />
+      <feGaussianBlur
+         result="result2"
+         id="feGaussianBlur3867"
+         stdDeviation="16" />
+      <feMerge
+         id="feMerge3869">
+        <feMergeNode
+           in="result2"
+           id="feMergeNode3871" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode3873" />
+      </feMerge>
+    </filter>
+    <radialGradient
+       gradientTransform="matrix(2.7177791,-1.698612,1.4814814,2.3703703,-95.695955,-32.121499)"
+       gradientUnits="userSpaceOnUse"
+       r="27"
+       fy="60.349998"
+       fx="22.918917"
+       cy="60.349998"
+       cx="22.918917"
+       id="radialGradient3888"
+       xlink:href="#linearGradient3880" />
+    <linearGradient
+       y2="775.42853"
+       x2="32"
+       y1="790.28571"
+       x1="32"
+       gradientTransform="matrix(1.0769231,0,0,1.0769231,-2.4615385,-59.076923)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3806"
+       xlink:href="#linearGradient3808" />
+    <filter
+       height="1.2817779"
+       y="-0.14088897"
+       width="1.3077703"
+       x="-0.15388516"
+       id="filter1008"
+       style="color-interpolation-filters:sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur1010"
+         stdDeviation="12.7356" />
+    </filter>
+    <filter
+       height="1.2847973"
+       y="-0.14239864"
+       width="1.3114584"
+       x="-0.15572921"
+       id="filter1012"
+       style="color-interpolation-filters:sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur1014"
+         stdDeviation="12.7356" />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     style="display:inline"
+     transform="translate(0,-736)"
+     id="layer1">
+    <rect
+       transform="matrix(1.0714286,0,0,1.0714286,-0.14285714,-57)"
+       ry="5.5999999"
+       rx="5.5999999"
+       y="742"
+       x="2"
+       height="56"
+       width="56"
+       id="rect3055"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;filter:url(#filter2998)" />
+    <rect
+       ry="4"
+       rx="4"
+       y="740"
+       x="4"
+       height="56"
+       width="56"
+       id="rect3837"
+       style="fill:url(#linearGradient3845);fill-opacity:1;stroke:none" />
+  </g>
+  <g
+     style="display:inline"
+     id="g3026"
+     transform="translate(0,-736)">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;filter:url(#filter2998)"
+       id="rect3030"
+       width="60"
+       height="60"
+       x="2"
+       y="738"
+       rx="6"
+       ry="6" />
+    <rect
+       style="fill:url(#linearGradient3806);fill-opacity:1;stroke:none;display:inline"
+       id="rect3803"
+       width="56"
+       height="56"
+       x="4"
+       y="740"
+       rx="4"
+       ry="4" />
+  </g>
+  <g
+     id="g3808"
+     style="display:inline">
+    <g
+       id="g1026">
+      <polygon
+         id="polygon874"
+         points="410.31,179.153 492.716,229.463 388.616,293.003 377.76,349.984 378.352,350.346 576.385,229.471 419.029,133.399 "
+         style="display:inline;opacity:0.33000004;fill:#020203;fill-opacity:1;stroke:#0b0b0b;stroke-width:11.42552853;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter1008)"
+         transform="matrix(0.13128495,0,0,0.13128495,-17.670677,1.8046584)" />
+      <polygon
+         id="polygon876"
+         points="263.978,229.463 365.557,167.449 376.573,109.651 180.3,229.471 335.671,324.298 344.392,278.541 "
+         style="display:inline;opacity:0.33000004;fill:#020203;fill-opacity:1;stroke:#0b0b0b;stroke-width:11.42552853;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter1012)"
+         transform="matrix(0.13128495,0,0,0.13128495,-17.670677,1.8046584)" />
+    </g>
+  </g>
+  <g
+     style="display:inline"
+     id="layer4">
+    <g
+       id="g1022">
+      <polygon
+         transform="matrix(0.13128495,0,0,0.13128495,-17.670677,1.8046584)"
+         style="display:inline;fill:#3f3e85;fill-opacity:1;stroke:#ffffff;stroke-width:11.42552853;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         points="410.31,179.153 492.716,229.463 388.616,293.003 377.76,349.984 378.352,350.346 576.385,229.471 419.029,133.399 "
+         id="polygon63" />
+      <polygon
+         transform="matrix(0.13128495,0,0,0.13128495,-17.670677,1.8046584)"
+         style="display:inline;fill:#3f3e85;fill-opacity:1;stroke:#ffffff;stroke-width:11.42552853;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         points="263.978,229.463 365.557,167.449 376.573,109.651 180.3,229.471 335.671,324.298 344.392,278.541 "
+         id="polygon65" />
+    </g>
+  </g>
+  <g
+     style="display:inline"
+     id="layer2">
+    <g
+       id="g1018">
+      <polygon
+         id="polygon4"
+         points="576.385,229.471 419.029,133.399 410.31,179.153 492.716,229.463 388.616,293.003 377.76,349.984 378.352,350.346 "
+         style="fill:#3f3e85;fill-opacity:1;stroke:none"
+         transform="matrix(0.13128495,0,0,0.13128495,-17.670677,1.8046584)" />
+      <polygon
+         id="polygon6"
+         points="335.671,324.298 344.392,278.541 263.978,229.463 365.557,167.449 376.573,109.651 180.3,229.471 "
+         style="fill:#3f3e85;fill-opacity:1;stroke:none"
+         transform="matrix(0.13128495,0,0,0.13128495,-17.670677,1.8046584)" />
+    </g>
+  </g>
+  <g
+     style="display:none"
+     id="layer3">
+    <rect
+       ry="3"
+       rx="3"
+       y="5"
+       x="5"
+       height="54"
+       width="54"
+       id="rect3878"
+       style="fill:url(#radialGradient3888);fill-opacity:1;stroke:none" />
+  </g>
+</svg>

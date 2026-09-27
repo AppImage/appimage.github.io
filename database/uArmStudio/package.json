@@ -1,0 +1,59 @@
+{
+  "name": "uArmStudio",
+  "version": "1.1.20",
+  "minimumFirmware": "3.2.0",
+  "main": "./dist/main.js",
+  "description": "uArm Studio",
+  "private": true,
+  "homepage": "http://ufactory.cc",
+  "copyright": "@2018 UFACTORY",
+  "socialUrl": {
+    "forum": "https://forum.ufactory.cc",
+    "github": "https://github.com/uArm-Developer",
+    "facebook": "https://www.facebook.com/groups/1653721141585397"
+  },
+  "issueUrl": {
+    "cn": "https://www.ufactory.cc/#/cn/ticket",
+    "en": "https://www.ufactory.cc/#/en/ticket"
+  },
+  "faq": "http://issue.ufactory.cc/faq.html",
+  "remoteUrl": {
+    "pro": "http://update.ufactory.cc/releases/studio",
+    "beta": "http://beta.ufactory.cc/releases/studio",
+    "dev": "http://uarm.studio/releases/studio"
+  },
+  "author": "UFACTORY <developer@ufactory.cc>",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "babel-core": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.23.0",
+    "bagpipe": "^0.3.5",
+    "bootstrap": "^3.3.7",
+    "color-convert": "^1.9.0",
+    "electron-dl": "^1.10.0",
+    "fabric-webpack": "^1.6.0-rc.1",
+    "general-version-compare": "^1.0.4",
+    "html2canvas": "^0.5.0-beta4",
+    "js-beautify": "^1.6.14",
+    "lodash": "^4.17.4",
+    "muse-ui": "^2.1.0",
+    "node-blockly": "^1.0.26",
+    "opentype.js": "^0.6.9",
+    "prismjs": "^1.6.0",
+    "readline": "^1.3.0",
+    "request": "^2.81.0",
+    "string-format": "^0.5.0",
+    "sweetalert2": "^6.6.10",
+    "url-join": "^2.0.1",
+    "vue": "^2.4.2",
+    "vue-color": "^2.4.0",
+    "vue-date": "^1.1.6",
+    "vue-i18n": "^7.0.5",
+    "vue-router": "^2.7.0",
+    "vue-slider-component": "^2.2.2",
+    "vuex": "^2.3.1",
+    "winston": "^2.3.1"
+  }
+}

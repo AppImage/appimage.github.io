@@ -1,0 +1,30 @@
+{
+  "name": "mdyna",
+  "version": "0.2.4",
+  "description": "A notes app with Markdown support",
+  "main": "main.js",
+  "author": {
+    "name": "David Morais",
+    "email": "davidmorais92@gmail.com"
+  },
+  "license": "MIT",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "cross-env": "5.0.0",
+    "electron-log": "^2.2.17",
+    "electron-reload": "^1.2.2",
+    "electron-store": "^2.0.0",
+    "electron-updater": "^4.0.6",
+    "lint-staged": "^8.1.0",
+    "webpack-merge": "^4.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mdyna/Mdyna-app.git"
+  }
+}

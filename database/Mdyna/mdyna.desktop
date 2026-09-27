@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=mdyna
+Comment=A notes app with Markdown support
+Exec=AppRun
+Terminal=false
+Type=Application
+Icon=mdyna
+StartupWMClass=mdyna
+X-AppImage-Version=0.2.4.21
+Categories=Development;
+X-AppImage-BuildId=1IQDIiNuShnOuVx5VjGWaMw7lw1

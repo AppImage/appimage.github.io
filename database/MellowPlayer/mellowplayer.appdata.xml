@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>mellowplayer.desktop</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPLv2</project_license>
+    <name>MellowPlayer</name>
+    <summary>Cloud music integration for your desktop</summary>
+    <description>
+        <p>
+            MellowPlayer is a free, open source and cross-platform desktop application that
+            integrates online music services with your desktop.
+        </p>
+    </description>
+    <url type="homepage">https://colinduquesnoy.gitlab.io/MellowPlayer/</url>
+    <url type="bugtracker">https://gitlab.com/ColinDuquesnoy/MellowPlayer/issues/</url>
+    <url type="help">https://media.readthedocs.org/pdf/mellowplayer/latest/mellowplayer.pdf</url>
+</component>

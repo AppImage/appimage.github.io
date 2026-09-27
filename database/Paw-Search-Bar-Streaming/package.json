@@ -1,0 +1,16 @@
+{
+  "name": "paw-search-bar-streaming",
+  "version": "1.0.0",
+  "author": "Miguel Teixeira <mteixeira88013@gmail.com>",
+  "description": "An electron-vue project",
+  "license": null,
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "vue": "^2.5.16",
+    "axios": "^0.18.0",
+    "vue-electron": "^1.0.6",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-electron": "^1.0.0"
+  }
+}

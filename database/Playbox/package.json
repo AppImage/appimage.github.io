@@ -1,0 +1,19 @@
+{
+  "name": "playbox",
+  "productName": "Playbox",
+  "version": "0.2.1",
+  "description": "An audio playback system for the live production industry.",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cjdenio/playbox.git"
+  },
+  "author": {
+    "name": "Caleb Denio",
+    "email": "cdenio@fusion6763.org"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "electron-json-storage": "^4.1.6"
+  }
+}

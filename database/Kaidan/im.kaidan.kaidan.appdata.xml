@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>im.kaidan.kaidan</id>
+  <name>Kaidan</name>
+  <summary>Kaidan, a simple and user-friendly Jabber/XMPP client for every device and platform</summary>
+  <project_license>GPL-3.0+</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <developer_name>Kaidan Developers &amp; Contributors</developer_name>
+  <description>
+    <p>Kaidan is a simple, user-friendly Jabber/XMPP client providing a modern user-interface using Kirigami and  QtQuick. The back-end of Kaidan is entirely written in C++ using the qxmpp XMPP client library and Qt 5.</p>
+    <p>Kaidan is not finished yet, so don’t expect it working as well as a finished client will do.</p>
+    <p>For a list of supported XEPs, have a look at the Wiki.</p>
+  </description>
+  <categories>
+    <category>Network</category>
+  </categories>
+  <url type="homepage">https://kaidan.im</url>
+  <url type="bugtracker">https://invent.kde.org/KDE/kaidan/issues</url>
+  <url type="help">https://invent.kde.org/KDE/kaidan/wikis</url>
+  <launchable type="desktop-id">kaidan.desktop</launchable>
+  <screenshots>
+    <screenshot>
+      <caption>Example chat on a desktop and on a mobile device</caption>
+      <image type="source">https://www.kaidan.im/images/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>kaidan</binary>
+  </provides>
+</component>

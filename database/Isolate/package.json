@@ -1,0 +1,10 @@
+{
+  "name": "isolate",
+  "version": "2.0.2",
+  "description": "",
+  "main": "index.js",
+  "author": "Seena Burns",
+  "dependencies": {
+    "reason-react": "^0.4.2"
+  }
+}

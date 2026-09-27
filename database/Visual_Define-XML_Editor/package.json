@@ -1,0 +1,15 @@
+{
+  "name": "defineEditor",
+  "productName": "Visual Define-XML Editor",
+  "private": "true",
+  "version": "1.0.0-beta.4",
+  "description": "Editor for CDISC Define-XML standard",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "Dmitry Kolosov",
+    "email": "dmitry.m.kolosov@gmail.com",
+    "url": ""
+  },
+  "license": "AGPL-3.0-only",
+  "dependencies": {}
+}

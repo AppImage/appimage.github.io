@@ -1,0 +1,36 @@
+{
+  "name": "running-dinner-tool",
+  "author": {
+    "name": "Jonathan Kloss"
+  },
+  "description": "Running Dinner Tool",
+  "repository": {
+    "url": "github.com/john-kloss/Running-Dinner-Tool"
+  },
+  "version": "2.1.1",
+  "homepage": "./",
+  "main": "build/electron.js",
+  "dependencies": {
+    "@material-ui/core": "^1.4.2",
+    "@material-ui/icons": "^2.0.0",
+    "babel-preset-react": "^6.5.0",
+    "concurrently": "^4.0.1",
+    "electron-webpack": "^2.3.0",
+    "electron-updater": "^4.0.6",
+    "eslint": "^5.2.0",
+    "fast-csv": "^2.4.1",
+    "lodash": "^4.17.4",
+    "material-ui-time-picker": "^1.0.0",
+    "materialize-css": "^0.100.2",
+    "moment": "^2.20.1",
+    "papaparse": "^4.5.1",
+    "react": "^16.4.1",
+    "react-autocomplete": "1.8.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "^1.1.5",
+    "wait-on": "^2.1.0",
+    "watchify": "^3.11.0",
+    "babelify": "^7.2.0",
+    "electron-reload": "^1.2.5"
+  }
+}

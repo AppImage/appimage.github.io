@@ -1,0 +1,65 @@
+---
+layout: app
+
+permalink: /Rolisteam/
+description: Manage your role playing game
+
+icons:
+  - Rolisteam/icons/scalable/rolisteam.svg
+
+screenshots:
+  - Rolisteam/screenshot.png
+
+authors:
+
+links:
+
+desktop:
+  Desktop Entry:
+    X-AppInstall-Package: rolisteam
+    X-AppInstall-Section: universe
+    Type: Application
+    Name: Rolisteam
+    Name[ca]: Rolisteam
+    Name[ca@valencia]: Rolisteam
+    Name[cs]: Rolisteam
+    Name[de]: Rolisteam
+    Name[es]: Rolisteam
+    Name[fr]: Rolisteam
+    Name[gl]: Rolisteam
+    Name[nl]: Rolisteam
+    Name[pl]: Rolisteam
+    Name[pt]: Rolisteam
+    Name[sk]: Rolisteam
+    Name[sv]: Rolisteam
+    Name[uk]: Rolisteam
+    Name[x-test]: xxRolisteamxx
+    Icon: rolisteam
+    Comment: Manage your role playing game
+    Comment[ca]: Gestiona la partida de joc de rol
+    Comment[ca@valencia]: Gestiona la partida de joc de rol
+    Comment[de]: Verwaltung eines Rollenspiels
+    Comment[es]: Gestionar su papel en el juego
+    Comment[fr]: Gérez votre jeu de rôle
+    Comment[gl]: Xestionar o seu xogo de rol
+    Comment[nl]: Uw rollenspelspel beheren
+    Comment[pl]: Zarządzaj swoją grą rpg
+    Comment[pt]: Faça a gestão do seu jogo de personagens
+    Comment[sv]: Hantera rollspel
+    Comment[uk]: Керування вашою рольовою грою
+    Comment[x-test]: xxManage your role playing gamexx
+    Exec: rolisteam
+    Terminal: false
+    Categories: Game
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.27
+---

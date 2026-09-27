@@ -1,0 +1,14 @@
+{
+  "name": "Sia-UI",
+  "productName": "Sia-UI",
+  "version": "1.4.0",
+  "description": "A electron webapp to manage and interface with the Sia daemon",
+  "main": "./main.js",
+  "author": {
+    "name": "Eddie Wang",
+    "email": "eddie@sia.tech",
+    "url": "https://github.com/eddiewang"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

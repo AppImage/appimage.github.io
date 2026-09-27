@@ -1,0 +1,16 @@
+{
+  "name": "sonist",
+  "version": "0.9.3",
+  "description": "Music Player",
+  "main": "src/main.js",
+  "author": {
+    "name": "yutent",
+    "email": "yutent@doui.cc"
+  },
+  "homepage": "https://yutent.me",
+  "license": "MIT",
+  "dependencies": {
+    "crypto.js": "^1.2.0",
+    "iofs": "^1.1.0"
+  }
+}

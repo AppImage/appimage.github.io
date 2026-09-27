@@ -55,8 +55,9 @@ desktop:
     Terminal: false
     Categories: Graphics
     MimeType: image/bmp
+    X-AppImage-Version: 76179c3
   AppImageHub:
-    X-AppImage-UpdateInformation: zsync|https://gitlab.com/luspi/photoqt/-/jobs/artifacts/master/raw/PhotoQt-x86_64.AppImage.zsync?job=trusty
+    X-AppImage-UpdateInformation: zsync|https://gitlab.com/luspi/photoqt/-/jobs/artifacts/photoqt2/raw/PhotoQt-x86_64.AppImage.zsync?job=appimage
     X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
       Please remember that the signature file (.sig or .asc) should be the first file
       given on the command line.

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>com.github.xaizek.zograscope</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>AGPL-3.0-only</project_license>
+    <name>zograscope</name>
+    <summary>Primarily a syntax-aware diff, but also a collection of tools for dealing with source code built on top of that</summary>
+
+    <description>
+        <p>Main purpose of zograscope is implementation of syntax-aware diff (currently for C, C++ and GNU Makefile languages).</p>
+        <p>However, the infrastructure for doing this makes it possible to implement various other tools that don't require precise understanding of the code like compilers do.</p>
+        <p>There are additional tools for highlighting, searching and collecting statistics about source code.</p>
+    </description>
+
+    <launchable type="desktop-id">zs.desktop</launchable>
+
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/xaizek/zograscope/master/data/examples/c/screenshot.png</image>
+        </screenshot>
+    </screenshots>
+
+    <url type="homepage">https://github.com/xaizek/zograscope</url>
+    <update_contact>xaizek@posteo.net</update_contact>
+    <developer_name>xaizek</developer_name>
+
+    <provides>
+        <id>zs.desktop</id>
+    </provides>
+</component>

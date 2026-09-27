@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>io.itch.pyLinuxWheel</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-2.0+</project_license>
+	<name>pyLinuxWheel</name>
+	<summary>Configure your Logitech Steering Wheel on Linux</summary>
+	<description>
+		<p>pyLinuxWheel is an open source program developed in Python and Gtk3 to configure Logitech steering wheels on Linux. You can change the default values of Logitech driver such as range, combine pedals, alternate modes with pyLinuxWheel through its graphical interface. Also pyLinuxwheel can make an automatic installation of the udev rules for your steering wheel so you don't need become root to configure your device.</p>
+	</description>
+	<launchable type="desktop-id">io.itch.pyLinuxWheel.desktop</launchable>
+	<url type="homepage">https://odintdh.itch.io/pylinuxwheel/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://gitlab.com/OdinTdh/pyLinuxWheel/raw/b98e52bb70b13ceb65ca7518d188e0b963eb2afd/data/img/banner.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>io.itch.pyLinuxWheel.desktop</id>
+	</provides>
+</component>

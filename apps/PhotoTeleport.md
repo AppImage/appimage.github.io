@@ -3,6 +3,9 @@ layout: app
 
 permalink: /PhotoTeleport/
 
+icons:
+  - PhotoTeleport/icons/512x512/photokinesis.png
+
 screenshots:
   - PhotoTeleport/screenshot.png
 
@@ -12,18 +15,21 @@ links:
 
 desktop:
   Desktop Entry:
+    Version: 1.0
     Name: PhotoTeleport
-    Exec: "/opt/bin/Photokinesis"
+    Exec: "/usr/bin/Photokinesis %F"
     Icon: photokinesis
-    Path: "/opt/share"
+    Path: "/usr/share/Photokinesis"
     Terminal: false
     Type: Application
     Categories: Graphics
-    X-Application-Version: 0.6
+    MimeType: image/jpeg
+    X-Application-Version: 0.12
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
 ---

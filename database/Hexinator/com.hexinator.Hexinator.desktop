@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=Hexinator
+Comment=Hexinator from https://hexinator.com
+GenericName=Hex Editor
+Keywords=Hex;Editor;Binary;File;Analysis;Reverse;
+Exec=/opt/hexinator/bin/hexinator
+Icon=hexinator
+Terminal=false
+Type=Application
+Categories=Development;Security;ComputerScience;
+MimeType=application/octet-stream;x-scheme-handler/synalyzeitscript;x-scheme-handler/grammar;
+StartupNotify=false
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=Signature made Tue 06 Feb 2018 01:47:34 PM UTC using RSA key ID 3B0329D2 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

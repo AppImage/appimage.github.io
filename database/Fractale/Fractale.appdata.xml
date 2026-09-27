@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>Fractale</id>
+	<metadata_license>GPL-3.0</metadata_license>
+	<project_license>GPL-3.0</project_license>
+	<name>Fractale</name>
+	<summary>Modélisation 2D de la fractale de Von Koch et variantes</summary>
+	<description>
+		<p>Fractale est un programme de modélisation 2D de la fractale de Von Koch avec différentes variantes et différents modes de représentation possibles.</p>
+	</description>
+	<launchable type="desktop-id">Fractale.desktop</launchable>
+	<url type="homepage">https://github.com/PJK136/Fractale</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/PJK136/Fractale/master/screenshots/triangle.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>Fractale.desktop</id>
+	</provides>
+</component>
