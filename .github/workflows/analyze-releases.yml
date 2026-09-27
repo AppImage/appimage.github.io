@@ -1,0 +1,39 @@
+# TEST ONLY (throwaway): compare the old and the new way of finding the
+# AppImage in GitHub releases with the AppImages that data/ files link to
+name: Analyze releases
+on: pull_request
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Analyze
+        run: |
+          norm() { basename "$1" | tr 'A-Z' 'a-z' | sed -E 's/[0-9]+/#/g' ; }
+          mkdir -p out
+          for f in data/* ; do
+            u=$(head -n 1 "$f" | tr -d '\r')
+            case "$u" in https://github.com/*/releases/download/*) ;; *) continue ;; esac
+            owner=$(echo "$u" | cut -d / -f 4) ; repo=$(echo "$u" | cut -d / -f 5)
+            curl -sS -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/$owner/$repo/releases?per_page=30" > rel.json
+            if ! jq -e 'type == "array"' rel.json > /dev/null 2>&1 ; then
+              printf '%s\t%s\tAPI-ERROR\t%s\t\t\n' "$(basename "$f")" "$u" "$(jq -r '.message? // "?"' rel.json 2>/dev/null)" >> out/results.tsv ; continue
+            fi
+            # Old matcher (as in worker.sh)
+            OLD=$(grep -o '"browser_download_url": *"[^"]*"' rel.json | cut -d '"' -f 4 | grep -i AppImage | grep -v 'AppImage\.' | grep -ie 'amd.\?64\|x86.64\|x64\|linux.\?64' | head -n 1)
+            [ -n "$OLD" ] || OLD=$(grep -o '"browser_download_url": *"[^"]*"' rel.json | cut -d '"' -f 4 | grep -i AppImage | grep -v 'AppImage\.' | head -n 1)
+            NEWOUT=$(bash code/find-appimage.sh rel.json) && NEW=$(echo "$NEWOUT" | grep '^URL ' | cut -d ' ' -f 2) || NEW=""
+            want=$(norm "$u")
+            s_old=$([ -z "$OLD" ] && echo none || { [ "$(norm "$OLD")" == "$want" ] && echo same || echo different ; })
+            s_new=$([ -z "$NEW" ] && echo error || { [ "$(norm "$NEW")" == "$want" ] && echo same || echo different ; })
+            printf '%s\t%s\t%s\t%s\t%s\t%s\n' "$(basename "$f")" "$u" "$s_old" "$s_new" "$NEW" "$(echo "$NEWOUT" | grep -v '^URL ' | tr '\n' '|')" >> out/results.tsv
+          done
+          cut -f 3,4 out/results.tsv | sort | uniq -c
+      - uses: actions/upload-artifact@v4
+        with:
+          name: results
+          path: out/
