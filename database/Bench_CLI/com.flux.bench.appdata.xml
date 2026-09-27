@@ -9,10 +9,10 @@
 		<p>Cross-platform command line tool to benchmark commands in command lines written in `Fortran`. Very precise and fast.</p>
 	</description>
 	<launchable type="desktop-id">bench.desktop</launchable>
-	<url type="homepage">https://github.com/Lateralus138/benchmark-commandline-fortran</url>
+	<url type="homepage">https://github.com/Lateralus138/bench-cli</url>
 	<screenshots>
 		<screenshot type="default">
-			<image>https://raw.githubusercontent.com/Lateralus138/UniShellect/master/media/demo.png</image>
+			<image>https://raw.githubusercontent.com/Lateralus138/bench-cli/master/media/help.png</image>
 		</screenshot>
 	</screenshots>
 	<provides>
