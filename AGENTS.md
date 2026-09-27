@@ -23,7 +23,9 @@ GitHub Pages (Jekyll) from this repository.
 1. `.github/workflows/test.yml` (on PRs and pushes touching `data/**`) runs
    `code/worker.sh data/<Name>` for each added or changed file, under a per-app
    `timeout`, on Xvfb:
-   - downloads the AppImage (resolving GitHub repository URLs via the API),
+   - downloads the AppImage (resolving GitHub repository URLs via the API and
+     `code/find-appimage.sh`, which picks the AppImage from the releases by
+     rules and fails rather than guesses when several fit),
      checks its type, mounts it with a separate runtime (never executes the
      AppImage's own runtime), runs `appdir-lint.sh`, finds the icon;
    - `code/check-libc.sh`: does it need a compatible C library on the host?
@@ -57,7 +59,20 @@ GitHub Pages (Jekyll) from this repository.
    marks a passed test whose screenshot `code/check-screenshot.sh` found fine
    (no warnings).
 
+3. `.github/workflows/check-origin.yml` (`pull_request_target`, from `master`)
+   compares the first line of each changed file in `data/` with `master`
+   (`code/check-origin.sh`: the GitHub user or organization, the project on
+   other forges, the owner on shared hosting, else the domain). If it points
+   to a different owner, it posts a comment marked
+   `<!-- appimagehub-origin-check -->` and sets the yellow
+   `manual-check-needed` label (possible takeover of an entry); both are
+   withdrawn when a later push undoes the change. This does not depend on the
+   PR's own test run, which a PR could alter.
+
 ## Rules that are easy to get wrong
+
+- **`pull_request_target` workflows must never check out or run code from
+  the PR.** `check-origin.yml` only reads the PR's files as text via the API.
 
 - **The artifact is untrusted** (it comes from a PR's test run). In the publish
   workflow never execute or `eval` anything from it; cross-check the PR number
@@ -95,6 +110,12 @@ GitHub Pages (Jekyll) from this repository.
   locally on a saved log, a PNG, or an AppImage plus its extracted AppDir
   (`unsquashfs -o <offset>`, where the offset is the end of the runtime's ELF
   section headers).
+- `code/check-origin.sh OLD_URL NEW_URL` (or `--origin URL`) runs locally; over
+  the history of `data/` (`git log --diff-filter=M -- data/`), about a quarter
+  of the URL changes move to another owner.
+- `code/find-appimage.sh releases.json NAME` runs on a saved
+  `repos/OWNER/REPO/releases` response. When changing its rules, compare its picks
+  with the AppImages that the `data/` files with direct links point to.
 - Site: `bundle install` (Gemfile: `github-pages`), then
   `bundle exec jekyll build` on a copy with only a few `apps/*.md` for speed.
   Note: `feed.json` is only valid JSON if the last page in permalink order is an

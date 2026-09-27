@@ -50,6 +50,10 @@ HINTS=(
   "error-no-appimage-in-release"
   "No AppImage was found in the GitHub releases of this project. The file name of the AppImage must contain \"AppImage\"."
 
+  "^Unable to decide which AppImage of the GitHub release to test"
+  "error-no-appimage-in-release"
+  "The latest GitHub release has several AppImages for x86_64, and it is not clear which one to test (they are listed in the log). Put the direct download URL of the AppImage into the file in data/ instead of the repository URL, or publish only one x86_64 AppImage per release."
+
   "ERROR (40[0-9]|50[0-9]):"
   "error-download"
   "The AppImage could not be downloaded. The URL must be publicly downloadable with wget, without login or cookies."
