@@ -44,19 +44,19 @@ HINTS=(
 
   "^No http link detected"
   "error-data-file"
-  "The first line of the file in data/ must be the download URL (or GitHub repository URL) of the AppImage."
+  "The first line of the file in data/ must be the download URL (or GitHub, Codeberg or GitLab repository URL) of the AppImage."
 
-  "^Unable to get the releases of the GitHub repository"
+  "^Unable to get the releases of the (GitHub )?repository"
   "error-download"
-  "The GitHub repository in the file in data/ was not found (it may have been renamed, deleted or made private). Please put the current repository URL (or the download URL of the AppImage) into the file in data/."
+  "The repository in the file in data/ was not found (it may have been renamed, deleted or made private). Please put the current repository URL (or the download URL of the AppImage) into the file in data/."
 
   "^Unable to get download URL for the AppImage"
   "error-no-appimage-in-release"
-  "No AppImage was found in the GitHub releases of this project. The file name of the AppImage must contain \"AppImage\"."
+  "No AppImage was found in the releases of this project. The file name of the AppImage must contain \"AppImage\"."
 
-  "^Unable to decide which AppImage of the GitHub release to test"
+  "^Unable to decide which AppImage of the( GitHub)? release to test"
   "error-no-appimage-in-release"
-  "The latest GitHub release has several AppImages for x86_64, and it is not clear which one to test (they are listed in the log). Put the direct download URL of the AppImage into the file in data/ instead of the repository URL, or publish only one x86_64 AppImage per release."
+  "The latest release has several AppImages for x86_64, and it is not clear which one to test (they are listed in the log). Put the direct download URL of the AppImage into the file in data/ instead of the repository URL, or publish only one x86_64 AppImage per release."
 
   "ERROR (40[0-9]|50[0-9]):"
   "error-download"
