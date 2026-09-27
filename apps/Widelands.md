@@ -133,4 +133,5 @@ desktop:
     X-AppImage-Runtime: static
     X-AppImage-Self-Contained: false
     X-AppImage-Glibc-Required: GLIBC_2.35
+    X-AppImage-Payload-License: GPL-2.0
 ---
