@@ -1,0 +1,15 @@
+{
+  "name": "socialsox",
+  "version": "0.3.0",
+  "description": "A simple, local-only web application for posting short messages to Mastodon, Twitter, and Bluesky simultaneously.",
+  "main": "main.js",
+  "author": "André Klein (https://github.com/burninc0de/socialsox)",
+  "license": "MIT",
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "copilot": "^0.0.2",
+    "lucide": "^0.554.0",
+    "sharp": "^0.34.5",
+    "twitter-api-v2": "^1.28.0"
+  }
+}
