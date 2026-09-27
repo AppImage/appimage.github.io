@@ -242,6 +242,31 @@ jobs:
             fi
             echo "Commit ${HEAD_SHA::8}. [Full log](${RUN_URL})"
           } > comment.md
+
+          # Errors or findings: @mention the GitHub account the AppImage comes
+          # from, unless that is who opened the PR (or a bot). The URL is read
+          # from the PR's data/ files at the tested commit, not from the artifact.
+          if [ "$CONCLUSION" != success ] || grep -qE '^\*\*(Warnings|Names):\*\*' comment.md ; then
+            AUTHOR=$(gh api "repos/$REPO/pulls/$PR" --jq '.user.login' | tr 'A-Z' 'a-z')
+            OWNERS=$(gh api --paginate "repos/$REPO/pulls/$PR/files" \
+                       --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' \
+                     | head -n 5 | while read -r FILE ; do
+                         URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$HEAD_SHA" 2>/dev/null | head -n 1)
+                         bash code/upstream-owner.sh "$URL"
+                       done | sort -fu)
+            MENTIONS=""
+            for OWNER in $OWNERS ; do
+              LOWER=$(echo "$OWNER" | tr 'A-Z' 'a-z')
+              [ "$LOWER" = "$AUTHOR" ] && continue
+              case "$LOWER" in *-bot|*\[bot\]) continue ;; esac
+              MENTIONS="$MENTIONS @$OWNER"
+            done
+            if [ -n "$MENTIONS" ] ; then
+              LINE="${MENTIONS# }: this pull request adds the AppImage from your GitHub repository to the [AppImage catalog](https://appimage.github.io); the test reports the following. Could you have a look?"
+              # After the heading (line 2 of the comment)
+              awk -v l="$LINE" 'NR == 3 { print ; print l ; print "" ; next } { print }' comment.md > comment.new && mv comment.new comment.md
+            fi
+          fi
           cat comment.md
 
           # Update our previous comment instead of adding a new one each push

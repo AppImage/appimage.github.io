@@ -64,6 +64,11 @@ GitHub Pages (Jekyll) from this repository.
    removes `error-*` labels that no longer apply; the green `screenshot-ok` label
    marks a passed test whose screenshot `code/check-screenshot.sh` found fine
    (no warnings).
+   When the test failed or reports warnings or name remarks, the comment
+   @mentions the GitHub account the AppImage comes from
+   (`code/upstream-owner.sh` on the first line of the PR's `data/` files,
+   read via the API at the tested commit, not from the artifact), unless it
+   is the PR's author or a bot; other hosts have no GitHub account to mention.
    Finally it **auto-merges** (squash) a PR from a returning contributor
    (`author_association` CONTRIBUTOR or above) that changes exactly one file in
    `data/`, passed with `screenshot-ok`, has no `manual-check-needed` or
