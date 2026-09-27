@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.moalyousef.diskfmt</id>
+  
+  <name>diskfmt</name>
+  <summary>A GUI utility for formatting disks using UDisks2</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  
+  <description>
+    <p>
+      A disk formatting utility for linux that is similar to the windows format utility. Currently it uses the UDisks2 system service (via the <code>udisks2</code> crate) for the heavy lifting. Other backends can be conceptually added later.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">diskfmt.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/MoAlyousef/diskfmt/blob/main/screenshots/diskfmt.png</image>
+    </screenshot>
+  </screenshots>
+</component>
