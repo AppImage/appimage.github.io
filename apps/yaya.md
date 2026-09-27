@@ -6,7 +6,7 @@ description: Yet Another Yahtzee-esque Application
 license: Apache-2.0
 
 icons:
-  - yaya/icons/256x256/yaya.png
+  - yaya/icons/256x256/se.trixon.yaya.png
 screenshots:
 - https://trixon.se/files/screenshots/yaya_appstream01.png
 
@@ -27,7 +27,7 @@ desktop:
     Name: Yaya
     Comment: Yet Another Yahtzee-esque Application
     Exec: yaya %F
-    Icon: yaya
+    Icon: se.trixon.yaya
     Terminal: false
     Categories: Game
     StartupNotify: true
@@ -39,6 +39,11 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.27
+    X-AppImage-Payload-License: Apache-2.0
 
 appdata:
   Type: desktop-application
@@ -49,17 +54,22 @@ appdata:
     C: Yet Another Yahtzee-esque Application
   Description:
     C: >-
-      <p>Enjoy classic family dice games with up to 8 players.</p>
-  
-      <p></p>
+      <p>Enjoy a collection of classic family dice games with up to 8 players. If you know your way around games like Yahtzee,
+      Yatzy, Yacht and Crag you will do fine.</p>
   
       <p>Ready, Set, Roll!</p>
   ProjectLicense: Apache-2.0
+  Keywords:
+    C:
+    - java
+    - netbeans
   Url:
     homepage: https://trixon.se/
+    bugtracker: https://github.com/trixon/yaya/issues
+    donation: https://buymeacoffee.com/trixon
   Launchable:
     desktop-id:
-    - yaya.desktop
+    - se.trixon.yaya.desktop
   Screenshots:
   - default: true
     caption:
