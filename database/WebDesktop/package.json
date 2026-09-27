@@ -1,6 +1,6 @@
 {
   "name": "wdos",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "WebDesktop make apps with just a text editor and nodejs.",
   "main": "main.js",
   "repository": {
@@ -22,6 +22,7 @@
     "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
     "cookie-parser": "^1.4.4",
+    "crypto-js": "^3.1.9-1",
     "dat": "^13.13.1",
     "debug": "^4.1.1",
     "express": "^4.17.1",

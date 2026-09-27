@@ -3,6 +3,7 @@ layout: app
 
 permalink: /WebDesktop/
 description: WebDesktop make apps with just a text editor and nodejs.
+license: GPL-3.0
 
 icons:
   - WebDesktop/icons/128x128/wdos.png
@@ -28,15 +29,21 @@ desktop:
     Type: Application
     Icon: wdos
     StartupWMClass: WebDesktop
-    X-AppImage-Version: 1.1.0
+    X-AppImage-Version: 1.1.2
     Comment: WebDesktop make apps with just a text editor and nodejs.
     Categories: Utility
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: GPL-3.0
 
 electron:
   main: main.js
@@ -56,6 +63,7 @@ electron:
     body-parser: "^1.19.0"
     bootstrap: "^4.3.1"
     cookie-parser: "^1.4.4"
+    crypto-js: "^3.1.9-1"
     dat: "^13.13.1"
     debug: "^4.1.1"
     express: "^4.17.1"
