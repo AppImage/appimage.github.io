@@ -256,6 +256,12 @@ GitHub Pages (Jekyll) from this repository.
   `SCREENSHOT_UPLOAD_TOKEN` (a reopen with `GITHUB_TOKEN` starts no
   workflows), or without that secret re-runs its last Test run (old workflow
   files); it reacts 👀, then 🚀 once the test is started.
+- `/appstream` (maintainers, or the author of the issue or PR):
+  `.github/workflows/appstream-help.yml` posts `code/appstream-help.md` from
+  `master`, how to ship an AppStream metainfo file with screenshots. The
+  catalog shows the metainfo's screenshot (`type="default"`, else the first;
+  from `*.metainfo.xml` or `*.appdata.xml`) instead of the automated one,
+  which the test still takes and checks.
 
 ## Investigating and answering in pull requests
 

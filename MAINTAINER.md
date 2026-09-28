@@ -67,6 +67,13 @@ Without that secret it re-runs the last Test run instead, which uses the
 workflow files of that run. For all open pull requests at once, see
 `code/retest-prs.sh`.
 
+## Explaining AppStream metadata
+
+Comment `/appstream` on an issue or pull request to post instructions for
+shipping an AppStream metainfo file (description, links, and screenshots of
+the author's choice, which the catalog shows instead of the automated one).
+The text is `code/appstream-help.md`; edit it there.
+
 ## Running "Discover apps" manually
 
 `.github/workflows/discover-apps.yml` searches GitHub for repositories that
