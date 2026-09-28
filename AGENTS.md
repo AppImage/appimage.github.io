@@ -125,8 +125,11 @@ GitHub Pages (Jekyll) from this repository.
    `code/remove-entry.sh` (`data/NAME`, `database/NAME/`, `apps/NAME.md`): on
    a maintainer's `/remove` comment on a "Where did the AppImage of NAME go?"
    issue (the name comes from the title, never from the comment; the issue is
-   then closed), by hand with names, and on pushes to `master` that delete or
-   rename files in `data/` (it removes what is left of them). Deleting only
+   then closed), on a maintainer's `/remove` comment on a pull request (it is
+   closed and labeled `opt-out`; the entries it adds or changes are removed
+   if they are in the catalog), by hand with names, and on pushes to
+   `master` that delete or rename files in `data/` (it removes what is left
+   of them). Deleting only
    `data/NAME` used to leave the page on the site.
 
 6. `.github/workflows/discover-apps.yml` (`workflow_dispatch` only; inputs
