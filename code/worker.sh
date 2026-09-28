@@ -25,6 +25,7 @@ cleanup() {
   kill -9 $PIDS 2>/dev/null
   killall -9 icewm 2>/dev/null
   if [ -n "$APPDIR" ] ; then fusermount -u -z "$APPDIR" 2>/dev/null ; fi
+  [ -n "${EXTRACTED:-}" ] && rm -rf "$EXTRACTED"
   [ x"$TYPE" == x1 ] && sudo umount -l /mnt 2>/dev/null
   exit $RC
 }
@@ -216,6 +217,20 @@ if [ x"$TYPE" == x2 ] ; then
     [ -n "$APPDIR" ] && break
     kill -0 $PID 2>/dev/null || break
   done
+  # Our runtime's squashfuse reads only zlib and zstd; SquashFS with other
+  # compressions (xz, e.g. many KDE AppImages; lzo, lz4) is extracted with
+  # unsquashfs instead, from where the runtime's ELF file ends. (Running the
+  # application is not affected: firejail mounts the AppImage itself.)
+  if [ -z "$APPDIR" ] && grep -q "compression, this version supports only" runtime-mount.log ; then
+    cat runtime-mount.log
+    OFFSET=$(python3 -c 'import struct, sys; h = open(sys.argv[1], "rb").read(64); o, = struct.unpack("<Q", h[40:48]); s, n = struct.unpack("<HH", h[58:62]); print(o + s * n)' "$FILENAME")
+    rm -rf squashfs-root
+    if timeout 600 unsquashfs -q -n -o "$OFFSET" -d squashfs-root "$FILENAME" > /dev/null 2>&1 && [ -d squashfs-root ] ; then
+      APPDIR="$PWD/squashfs-root"
+      EXTRACTED="$APPDIR"
+      echo "Extracted the AppImage (not mountable with our runtime) to $APPDIR"
+    fi
+  fi
   if [ -z "$APPDIR" ] ; then
     cat runtime-mount.log
     echo "ERROR: Could not mount the AppImage. AppImageHub currently supports only AppImages with a SquashFS file system"
