@@ -59,8 +59,12 @@ GitHub Pages (Jekyll) from this repository.
      Cyrillic or Greek script (OCR with those models, confident words only;
      label `error-not-english`);
    - warns when the AppImage has no (or broken) update information;
-   - writes `database/` and `apps/`. On PRs it stops there; on `master` it
-     commits the result (`[ci skip]`).
+   - writes `database/` and `apps/`. `links:` in `apps/<Name>.md` (shown on
+     the page and in `feed.json`) gets the repository and its releases for
+     GitHub, Codeberg and GitLab entries, and otherwise a `Download` link to
+     the URL in `data/` if it stays valid for new versions (a download
+     directory or a "latest" link: no version number in its path). On PRs it
+     stops there; on `master` it commits the result (`[ci skip]`).
    Afterwards the workflow collects a `pr-result` artifact: PR number,
    screenshot (or screen capture on failure), `code/diagnose.sh` hints and the
    excerpt of the log around the first error, and the libc flags.

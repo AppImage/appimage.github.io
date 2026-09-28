@@ -797,6 +797,17 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
   fi
+  # Anything else: the page and feed.json link to where the AppImage is
+  # downloaded from, if that link stays valid for new versions (a download
+  # directory such as https://download.kde.org/stable/krita/, or a "latest"
+  # link), i.e. its path contains no version number (4.3.0, 16.12, v2, /12/)
+  DATA_URL=$(head -n 1 "data/$INPUTBASENAME" | tr -d '\r' | sed -E 's/[[:space:]].*//')
+  DATA_PATH=$(echo "$DATA_URL" | cut -d / -f 4- | cut -d '?' -f 1)
+  if [ x"$GH_USER" == x"" ] && [ x"$OBS_LINK" == x"" ] && [[ "$DATA_URL" =~ ^https?://[^[:space:]\"]+$ ]] \
+    && ! echo "/$DATA_PATH" | grep -qiE '[0-9]+\.[0-9]+|(^|[^a-z0-9])v[0-9]+([^a-z0-9]|$)|/[0-9]+(/|$)' ; then
+    echo "  - type: Download" >> apps/$INPUTBASENAME.md
+    echo "    url: $DATA_URL" >> apps/$INPUTBASENAME.md
+  fi
   # Does the repo offer AppImages in it's download section?
   # BB_LINK=$(grep "^https://bitbucket.org/$BB_USER/$BB_REPO/downloads/.*AppImage$" data/$INPUTBASENAME) 
   # if [  x"$BB_LINK" != x"" ] ; then
