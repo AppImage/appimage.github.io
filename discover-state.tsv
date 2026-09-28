@@ -1,4 +1,4 @@
-#cursor=2021-12 query=1
+#cursor=2021-11 query=0
 arkaikus/unofficial-comfyui-launcher	2026-09-27	stars
 bluscream/steam-cli	2026-09-27	stars
 jadrt22/soberix	2026-09-27	stars
@@ -7401,3 +7401,6 @@ liudonghua123/hoppscotch-app	2026-09-28	added
 zilliztech/attu	2026-09-28	added
 deinalbtraumtv/dnd-client	2026-09-28	added
 bro2020/acestream-appimage	2026-09-28	added
+nlpsuge/gnome-shell-extension-another-window-session-manager	2026-09-28	no-appimage
+spleen1981/retroarch-kodi-addon-coreelec	2026-09-28	ambiguous
+devilxd/twitchdropsminer	2026-09-28	no-appimage
