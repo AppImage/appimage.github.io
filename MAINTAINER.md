@@ -66,8 +66,10 @@ auto-discovered pull requests, that is the application's author).
 the pull request with `SCREENSHOT_UPLOAD_TOKEN`, so that the Test workflow runs
 again with the current workflow files from `master`, and reacts with 🚀.
 Without that secret it re-runs the last Test run instead, which uses the
-workflow files of that run. For all open pull requests at once, see
-`code/retest-prs.sh`.
+workflow files of that run. On a merged pull request, `/retest` opens a new
+pull request instead that changes only the trailing newline of its files in
+`data/`, so the entries are tested again. For all open pull requests at once,
+see `code/retest-prs.sh`.
 
 ### Automatic re-tests
 

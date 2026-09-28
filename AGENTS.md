@@ -279,7 +279,11 @@ GitHub Pages (Jekyll) from this repository.
   `.github/workflows/retest.yml` closes and reopens it with
   `SCREENSHOT_UPLOAD_TOKEN` (a reopen with `GITHUB_TOKEN` starts no
   workflows), or without that secret re-runs its last Test run (old workflow
-  files); it reacts 👀, then 🚀 once the test is started.
+  files); it reacts 👀, then 🚀 once the test is started. On a merged PR it
+  opens a new PR (branch `retest/<PR>-<time>`, with the personal token) that
+  only toggles the trailing newline of the merged PR's files in `data/`, so
+  that Test runs for those entries again (and, if green, auto-merge takes
+  it, which refreshes `database/`); one open re-test PR per merged PR.
   Failed PRs are also re-tested when their author says it is fixed (item 7
   above), and `code/retest-pr.sh [-n] NUMBER` re-tests one PR by hand (needs
   `PAT`). The comment patterns: `echo "v1.2 is out" | code/retest-comment.sh`.
