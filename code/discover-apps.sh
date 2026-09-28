@@ -23,16 +23,25 @@
 # github.com/OWNER/REPO or api.github.com/repos/OWNER/REPO); appears as an
 # added data/ file in an open pull request; was proposed before in a pull
 # request labeled auto-discovered (any state: merged means it is in the
-# catalog, closed unmerged means it was rejected, and neither is retried);
+# catalog, closed unmerged means it was rejected, and neither is retried;
+# all of them are read, from the "Repository:" line of the PR bodies); was
+# opted out: a pull request labeled opt-out (any PR, any state) names the
+# repository, or adds a data/ file with the same name as the app (letters
+# and digits), so it is not proposed again from another repository either;
 # or was checked in the last 90 days without a usable AppImage (in the last
 # 30 days, if it had too few stars: it may have gained some since).
 #
 # Candidates that remain are checked (in random order): fetch-releases.sh +
 # find-appimage.sh must find exactly one x86_64 AppImage in a release less
 # than 2 years old, and the repository name must pass check-name.sh
-# (STRICT=true) and not already exist in data/. Every repository checked is
-# recorded in the state file with an outcome (added, no-appimage,
-# ambiguous, name, old; stars for fewer than 5 stars).
+# (STRICT=true) and not already exist in data/. If the repository is a fork
+# or a copy of another that publishes an AppImage too (its source or parent,
+# or a repository with the same name linked from its description, homepage
+# or README, or found by name with more stars), that one, the application's
+# own, is proposed instead (unless it is known already); a fork whose source
+# publishes no AppImage gets the not-upstream label. Every repository checked
+# is recorded in the state file with an outcome (added, no-appimage,
+# ambiguous, name, old, copy; stars for fewer than 5 stars).
 #
 # State: discover-state.tsv on the orphan branch "discover-state" (never on
 # master). First line: "#cursor=YYYY-MM query=N". Then repo<TAB>date<TAB>outcome.
@@ -124,6 +133,7 @@ sanitize() {
 }
 
 lower() { tr 'A-Z' 'a-z' <<<"$1" ; }
+key_of() { tr 'A-Z' 'a-z' <<<"$1" | tr -cd 'a-z0-9' ; }
 
 # Parse "owner/repo" (lowercased) out of the first line of a data/ file:
 # github.com/OWNER/REPO, .../releases/download/... links, or
@@ -162,46 +172,90 @@ done
 # Cheap: read the added lines straight out of the "files" diff instead of an
 # extra request per file.
 
+# Our own PRs (label auto-discovered, about two thirds of the open ones) are
+# covered by step 3 without a request each; the others' files are read 8 at
+# a time (there are around a thousand).
+open_pr_repos() { # open_pr_repos NUMBER
+  api GET "repos/$REPO/pulls/$1/files?per_page=30" 2>/dev/null | jq -r '
+    .[] | select(.status == "added") | select(.filename | startswith("data/")) | .patch // empty' \
+  | grep -m 1 '^+' | grep -v '^+++' | sed 's/^+//' | while read -r LINE ; do
+    parse_owner_repo "$(tr -d '\r' <<<"$LINE")"
+  done
+}
+export -f api open_pr_repos parse_owner_repo lower
+export REPO GH_TOKEN
+export API_TOKEN="${API_TOKEN:-}" DISCOVER_API_STUB="${DISCOVER_API_STUB:-}"
 PR_PAGE=1
-OPEN_PRS_SEEN=0
-while [ "$OPEN_PRS_SEEN" -lt 50 ] ; do
-  PRS=$(api GET "repos/$REPO/pulls?state=open&per_page=50&page=$PR_PAGE" | jq -r '.[].number' 2>/dev/null)
-  [ -n "$PRS" ] || break
-  while read -r N ; do
-    [ -z "$N" ] && continue
-    OPEN_PRS_SEEN=$((OPEN_PRS_SEEN + 1))
-    api GET "repos/$REPO/pulls/$N/files?per_page=30" 2>/dev/null | jq -r '
-      .[] | select(.status == "added") | select(.filename | startswith("data/")) | .patch // empty' \
-    | grep -m 1 '^+' | grep -v '^+++' | sed 's/^+//' | while read -r LINE ; do
-      OR=$(parse_owner_repo "$(tr -d '\r' <<<"$LINE")") && echo "$OR"
-    done
-  done <<<"$PRS" >> "$WORKDIR/openpr.txt"
-  [ "$(wc -l < <(echo "$PRS"))" -lt 50 ] && break
+while : ; do
+  PAGE_JSON=$(api GET "repos/$REPO/pulls?state=open&per_page=100&page=$PR_PAGE")
+  N_THIS_PAGE=$(jq 'if type == "array" then length else 0 end' <<<"$PAGE_JSON" 2>/dev/null || echo 0)
+  [ "${N_THIS_PAGE:-0}" -gt 0 ] || break
+  jq -r --arg l "$LABEL" '.[] | select([.labels[]?.name] | index($l) | not) | .number' <<<"$PAGE_JSON" 2>/dev/null \
+    | grep -xE '[0-9]+' >> "$WORKDIR/openpr-numbers.txt"
+  [ "$N_THIS_PAGE" -lt 100 ] && break
   PR_PAGE=$((PR_PAGE + 1))
 done
+if [ -s "$WORKDIR/openpr-numbers.txt" ] ; then
+  xargs -P 8 -I {} bash -c 'open_pr_repos "$1"' _ {} < "$WORKDIR/openpr-numbers.txt" > "$WORKDIR/openpr.txt"
+fi
+echo "$(grep -c . "$WORKDIR/openpr-numbers.txt" 2>/dev/null || echo 0) open pull requests not labeled $LABEL read" >&2
 [ -f "$WORKDIR/openpr.txt" ] && while read -r OR ; do [ -n "$OR" ] && SKIP_OPENPR["$OR"]=1 ; done < "$WORKDIR/openpr.txt"
 
 # --- 3. Repositories proposed before (label auto-discovered, any state) --
+# All of them (there are well over 1000, more than the search API returns):
+# the issues endpoint lists them 100 at a time, and the "Repository:" line
+# this script writes into every PR body names the repository, so no extra
+# request per PR is needed.
 
 LABELED_PAGE=1
-LABELED_SEEN=0
-while [ "$LABELED_SEEN" -lt 50 ] ; do
-  ISSUES=$(api GET "search/issues?q=repo:$REPO+is:pr+label:$LABEL&per_page=50&page=$LABELED_PAGE" | jq -r '.items[].number' 2>/dev/null)
-  [ -n "$ISSUES" ] || break
-  while read -r N ; do
-    [ -z "$N" ] && continue
-    LABELED_SEEN=$((LABELED_SEEN + 1))
-    api GET "repos/$REPO/pulls/$N/files?per_page=30" 2>/dev/null | jq -r '
-      .[] | select(.filename | startswith("data/")) | .patch // empty' \
-    | grep '^+' | grep -v '^+++' | sed 's/^+//' | while read -r LINE ; do
-      OR=$(parse_owner_repo "$(tr -d '\r' <<<"$LINE")") && echo "$OR"
-    done
-  done <<<"$ISSUES" >> "$WORKDIR/labeled.txt"
-  N_THIS_PAGE=$(wc -l < <(echo "$ISSUES"))
-  [ "$N_THIS_PAGE" -lt 50 ] && break
+while : ; do
+  PAGE_JSON=$(api GET "repos/$REPO/issues?labels=$LABEL&state=all&per_page=100&page=$LABELED_PAGE")
+  N_THIS_PAGE=$(jq 'if type == "array" then length else 0 end' <<<"$PAGE_JSON" 2>/dev/null || echo 0)
+  [ "${N_THIS_PAGE:-0}" -gt 0 ] || break
+  jq -r '.[] | select(.pull_request) | .body // ""' <<<"$PAGE_JSON" 2>/dev/null \
+    | sed -n 's/^Repository: *\(https:\/\/github\.com\/[^ ]*\).*/\1/p' | tr -d '\r' \
+    | while read -r LINE ; do parse_owner_repo "$LINE" ; done >> "$WORKDIR/labeled.txt"
+  [ "$N_THIS_PAGE" -lt 100 ] && break
   LABELED_PAGE=$((LABELED_PAGE + 1))
 done
 [ -f "$WORKDIR/labeled.txt" ] && while read -r OR ; do [ -n "$OR" ] && SKIP_LABELED["$OR"]=1 ; done < "$WORKDIR/labeled.txt"
+echo "$(sort -u "$WORKDIR/labeled.txt" 2>/dev/null | grep -c .) repositories were proposed before (label $LABEL)" >&2
+
+# --- 3b. Apps a maintainer opted out (label opt-out on any PR) -------------
+# Never proposed again: neither the repositories the PR names (the
+# "Repository:" line of its body, the first line of its data/ files) nor the
+# app under another repository (the names of its data/ files, compared by
+# letters and digits, e.g. a fork or a copy).
+
+declare -A SKIP_OPTOUT=() OPTOUT_NAME=()
+OPTOUT_LABEL=opt-out
+OPTOUT_PAGE=1
+while : ; do
+  PAGE_JSON=$(api GET "repos/$REPO/issues?labels=$OPTOUT_LABEL&state=all&per_page=100&page=$OPTOUT_PAGE")
+  N_THIS_PAGE=$(jq 'if type == "array" then length else 0 end' <<<"$PAGE_JSON" 2>/dev/null || echo 0)
+  [ "${N_THIS_PAGE:-0}" -gt 0 ] || break
+  jq -r '.[] | select(.pull_request) | .body // ""' <<<"$PAGE_JSON" 2>/dev/null \
+    | sed -n 's/^Repository: *\(https:\/\/github\.com\/[^ ]*\).*/\1/p' | tr -d '\r' \
+    | while read -r LINE ; do OR=$(parse_owner_repo "$LINE") && printf 'repo\t%s\n' "$OR" ; done >> "$WORKDIR/optout.txt"
+  for N in $(jq -r '.[] | select(.pull_request) | .number' <<<"$PAGE_JSON" 2>/dev/null) ; do
+    [[ "$N" =~ ^[0-9]+$ ]] || continue
+    api GET "repos/$REPO/pulls/$N/files?per_page=30" 2>/dev/null \
+      | jq -r '.[] | select(.filename | startswith("data/")) | [.filename, (.patch // "" | split("\n") | map(select(startswith("+") and (startswith("+++") | not))) | .[0] // "" | ltrimstr("+"))] | @tsv' 2>/dev/null \
+      | while IFS=$'\t' read -r FILE LINE ; do
+        printf 'name\t%s\n' "$(key_of "${FILE#data/}")"
+        OR=$(parse_owner_repo "$(tr -d '\r' <<<"$LINE")") && printf 'repo\t%s\n' "$OR"
+      done >> "$WORKDIR/optout.txt"
+  done
+  [ "$N_THIS_PAGE" -lt 100 ] && break
+  OPTOUT_PAGE=$((OPTOUT_PAGE + 1))
+done
+if [ -f "$WORKDIR/optout.txt" ] ; then
+  while IFS=$'\t' read -r KIND VALUE ; do
+    [ -n "$VALUE" ] || continue
+    if [ "$KIND" == repo ] ; then SKIP_OPTOUT["$VALUE"]=1 ; else OPTOUT_NAME["$VALUE"]=1 ; fi
+  done < "$WORKDIR/optout.txt"
+fi
+echo "${#OPTOUT_NAME[@]} apps and ${#SKIP_OPTOUT[@]} repositories opted out (label $OPTOUT_LABEL)" >&2
 
 # --- 4. State file (discover-state branch): cursor + recently-checked ----
 
@@ -314,7 +368,8 @@ N_KNOWN=0 N_OPENPR=0 N_LABELED=0 N_RECENT=0
 FAILED=false
 : > "$WORKDIR/seen.txt"
 
-declare -A OUTCOME_COUNT=([added]=0 [no-appimage]=0 [ambiguous]=0 [name]=0 [old]=0 [stars]=0)
+declare -A OUTCOME_COUNT=([added]=0 [no-appimage]=0 [ambiguous]=0 [name]=0 [old]=0 [stars]=0 [copy]=0 [opt-out]=0)
+declare -A DONE_THIS_RUN=()
 # Too few stars is decided here, not in the search query, so that such a
 # repository is recorded and reconsidered after 30 days (it may have gained stars)
 MIN_STARS=${DISCOVER_MIN_STARS:-5}
@@ -349,6 +404,50 @@ wait_for_rate() { # wait_for_rate search|core
     fi
   fi
 }
+
+# The application's own repository, if the candidate is a fork or a copy of
+# it that publishes an AppImage too (#4572: a copy "just in case" was proposed
+# instead of the original). Looks at the fork's source and parent, at GitHub
+# repositories with the same name (letters and digits) linked from the
+# description, homepage or README, and at those that the search finds by name
+# with more stars. The first of them (at most 6) whose releases have an
+# AppImage wins. Prints "OWNER/REPO<TAB>why<TAB>releases.json", or nothing.
+find_original() { # find_original OWNER/REPO META README
+  local FULL="$1" META="$2" README="$3" RNAME KEY STARS C N=0 WHY F Q
+  RNAME=${FULL#*/}
+  KEY=$(key_of "$RNAME")
+  STARS=$(jq -r '.stargazers_count // 0' <<<"$META")
+  {
+    if [ "$(jq -r '.fork // false' <<<"$META")" == true ] ; then
+      jq -r '.source.full_name // empty, .parent.full_name // empty' <<<"$META" | sed 's/$/\tfork/'
+    fi
+    { jq -r '.description // "", .homepage // ""' <<<"$META" ; echo "$README" ; } \
+      | grep -oE 'github\.com/[A-Za-z0-9-]+/[A-Za-z0-9._-]+' | cut -d / -f 2,3 | sed -E 's/\.git$//; s/[.]+$//' \
+      | while read -r C ; do [ "$(key_of "${C#*/}")" == "$KEY" ] && printf '%s\tlink\n' "$C" ; done
+    Q=$(tr -c 'A-Za-z0-9\n' ' ' <<<"$RNAME")
+    wait_for_rate search
+    api GET "search/repositories?q=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$Q in:name fork:false")&sort=stars&order=desc&per_page=10" \
+      | jq -r --argjson s "$STARS" '.items[]? | select(.stargazers_count > $s) | .full_name' 2>/dev/null \
+      | while read -r C ; do [ "$(key_of "${C#*/}")" == "$KEY" ] && printf '%s\tname\n' "$C" ; done
+  } | awk -F '\t' -v self="$(lower "$FULL")" 'tolower($1) != self && !seen[tolower($1)]++' | head -n 6 > "$WORKDIR/originals.txt"
+  while IFS=$'\t' read -r C WHY ; do
+    [[ "$C" =~ ^[A-Za-z0-9-]+/[A-Za-z0-9._-]+$ ]] || continue
+    N=$((N + 1))
+    F="$WORKDIR/original-$CHECKED-$N.json"
+    if [ -n "${DISCOVER_RELEASES_DIR:-}" ] ; then
+      cp "$DISCOVER_RELEASES_DIR/${C%%/*}-${C#*/}.json" "$F" 2>/dev/null || continue
+    else
+      wait_for_rate core
+      bash "$SCRIPT_DIR/fetch-releases.sh" "https://github.com/$C" "$F" >/dev/null 2>&1 || continue
+    fi
+    if bash "$SCRIPT_DIR/find-appimage.sh" "$F" "${C#*/}" 2>/dev/null | grep -q '^URL ' ; then
+      printf '%s\t%s\t%s\n' "$C" "$WHY" "$F"
+      return 0
+    fi
+  done < "$WORKDIR/originals.txt"
+  return 0
+}
+
 
 SLICES_SINCE_SAVE=0
 while [ "$OPENED" -lt "$COUNT" ] ; do
@@ -395,7 +494,7 @@ while read -r FULLNAME ; do
   [[ "$OR" =~ ^[a-z0-9._-]+/[a-z0-9._-]+$ ]] || continue
   if [ -n "${SKIP_KNOWN[$OR]:-}" ] ; then N_KNOWN=$((N_KNOWN + 1)) ; continue ; fi
   if [ -n "${SKIP_OPENPR[$OR]:-}" ] ; then N_OPENPR=$((N_OPENPR + 1)) ; continue ; fi
-  if [ -n "${SKIP_LABELED[$OR]:-}" ] ; then N_LABELED=$((N_LABELED + 1)) ; continue ; fi
+  if [ -n "${SKIP_LABELED[$OR]:-}${SKIP_OPTOUT[$OR]:-}" ] ; then N_LABELED=$((N_LABELED + 1)) ; continue ; fi
   if [ -n "${SKIP_RECENT[$OR]:-}" ] ; then N_RECENT=$((N_RECENT + 1)) ; continue ; fi
   if [[ "${STARS_OF[$OR]:-0}" =~ ^[0-9]+$ ]] && [ "${STARS_OF[$OR]:-0}" -lt "$MIN_STARS" ] ; then
     record "$OR" stars
@@ -413,11 +512,12 @@ while read -r FULLNAME ; do
   [ -z "$FULLNAME" ] && continue
   [ "$OPENED" -ge "$COUNT" ] && break
   [ "$(date +%s)" -ge "$DEADLINE" ] && break
+  OR=$(lower "$FULLNAME")
+  [ -n "${DONE_THIS_RUN[$OR]:-}" ] && continue # e.g. proposed as the original of a copy
   CHECKED=$((CHECKED + 1))
   echo "  Checking $FULLNAME ($CHECKED)"
   OWNER=${FULLNAME%%/*}
   RNAME=${FULLNAME#*/}
-  OR=$(lower "$FULLNAME")
 
   RELEASES_JSON="$WORKDIR/releases-$CHECKED.json"
   if [ -n "${DISCOVER_RELEASES_DIR:-}" ] ; then
@@ -446,6 +546,38 @@ while read -r FULLNAME ; do
   fi
   ASSET_URL=$(sed -n 's/^URL //p' <<<"$FIND_OUT")
 
+  # A fork or copy of a repository that publishes the AppImage too: propose
+  # that one, the application's own (unless it is known already)
+  META=$(api GET "repos/$OWNER/$RNAME")
+  README=$(api GET "repos/$OWNER/$RNAME/readme" 2>/dev/null | jq -r '.content // empty' 2>/dev/null | base64 -d 2>/dev/null | head -c 50000 | tr -d '\000')
+  VIA=""
+  ORIGINAL=$(find_original "$OWNER/$RNAME" "$META" "$README")
+  if [ -n "$ORIGINAL" ] ; then
+    IFS=$'\t' read -r ORIG_FULL ORIG_WHY ORIG_RELEASES <<<"$ORIGINAL"
+    ORIG_OR=$(lower "$ORIG_FULL")
+    case "$ORIG_WHY" in
+      fork) VIA="a fork of it" ;;
+      link) VIA="which links to it and has the same name" ;;
+      *) VIA="which has the same name (and fewer stars)" ;;
+    esac
+    record "$OR" copy
+    if [ -n "${SKIP_KNOWN[$ORIG_OR]:-}${SKIP_OPENPR[$ORIG_OR]:-}${SKIP_LABELED[$ORIG_OR]:-}${SKIP_OPTOUT[$ORIG_OR]:-}${DONE_THIS_RUN[$ORIG_OR]:-}" ] ; then
+      echo "    $ORIG_FULL, which also publishes the AppImage, is in the catalog, in an open PR, was proposed before or opted out"
+      continue
+    fi
+    echo "    $ORIG_FULL also publishes the AppImage ($ORIG_WHY): checking that one instead"
+    VIA="https://github.com/$OWNER/$RNAME, $VIA"
+    OWNER=${ORIG_FULL%%/*}
+    RNAME=${ORIG_FULL#*/}
+    OR="$ORIG_OR"
+    RELEASES_JSON="$ORIG_RELEASES"
+    FIND_OUT=$(bash "$SCRIPT_DIR/find-appimage.sh" "$RELEASES_JSON" "$RNAME" 2>/dev/null)
+    ASSET_URL=$(sed -n 's/^URL //p' <<<"$FIND_OUT")
+    META=$(api GET "repos/$OWNER/$RNAME")
+    README=$(api GET "repos/$OWNER/$RNAME/readme" 2>/dev/null | jq -r '.content // empty' 2>/dev/null | base64 -d 2>/dev/null | head -c 50000 | tr -d '\000')
+  fi
+  DONE_THIS_RUN["$OR"]=1
+
   LATEST_DATE=$(jq -r '[.[] | select(.draft | not)][0].published_at // [.[] | select(.draft | not)][0].created_at // empty' "$RELEASES_JSON" 2>/dev/null)
   if [ -n "$LATEST_DATE" ] ; then
     LATEST_DAY=${LATEST_DATE%%T*}
@@ -460,7 +592,6 @@ while read -r FULLNAME ; do
   # repository name, the AppImage's name and the description, see
   # code/pick-name.sh; e.g. photoapp + PhotoApp-1.2.AppImage -> PhotoApp,
   # photo-app + "Photo App is ..." -> Photo_App
-  META=$(api GET "repos/$OWNER/$RNAME")
   NAME=$(bash "$SCRIPT_DIR/pick-name.sh" "$RNAME" "$(basename "$ASSET_URL")" "$(jq -r '.description // ""' <<<"$META")")
   [ -n "$NAME" ] || NAME="$RNAME"
   echo "    name: $NAME"
@@ -470,6 +601,11 @@ while read -r FULLNAME ; do
   fi
   # Already in the catalog under any spelling (photoapp, Photo-App, Photo_App)
   NAME_KEY=$(tr 'A-Z' 'a-z' <<<"$NAME" | tr -cd 'a-z0-9')
+  # A maintainer opted this app out (label opt-out), maybe from another repository
+  if [ -n "$NAME_KEY" ] && [ -n "${OPTOUT_NAME[$NAME_KEY]:-}" ] ; then
+    record "$OR" opt-out
+    continue
+  fi
   if [ -e "data/$NAME" ] || ls data | tr 'A-Z' 'a-z' | tr -cd 'a-z0-9\n' | grep -qxF "$NAME_KEY" ; then
     record "$OR" name
     continue
@@ -491,8 +627,12 @@ while read -r FULLNAME ; do
   # or the README (first 50 KB): then label the PR not-upstream
   UPSTREAM_PATTERN='(^|[^a-z])(unofficial|not (an )?official|non-?official|not affiliated|unaffiliated|not endorsed|community[- ](maintained|built|build|package|packaged)|third[- ]party (build|package|appimage)|repackag(ed|e|ing))([^a-z]|$)'
   NOT_UPSTREAM=""
-  README=$(api GET "repos/$OWNER/$RNAME/readme" 2>/dev/null | jq -r '.content // empty' 2>/dev/null | base64 -d 2>/dev/null | head -c 50000 | tr -d '\000')
+  # A fork whose own source publishes no AppImage is not the application's
+  if [ "$(jq -r '.fork // false' <<<"$META")" == true ] ; then
+    NOT_UPSTREAM="it is a fork of $(sanitize "$(jq -r '.source.full_name // .parent.full_name // "another repository"' <<<"$META")" | tr -cd 'A-Za-z0-9._/ -'), which publishes no AppImage"
+  fi
   for SRC in "repository name:$RNAME" "AppImage name:$ASSET_URL" "description:$DESC" "README:$README" ; do
+    [ -n "$NOT_UPSTREAM" ] && break
     PHRASE=$(grep -oiE -m 1 "$UPSTREAM_PATTERN" <<<"${SRC#*:}" | head -n 1 | sed -E 's/^[^a-zA-Z]+//; s/[^a-zA-Z]+$//' | tr -cd 'A-Za-z -')
     if [ -n "$PHRASE" ] ; then
       NOT_UPSTREAM="the ${SRC%%:*} says \"$PHRASE\""
@@ -509,6 +649,11 @@ while read -r FULLNAME ; do
     NOTE="
 
 **Possibly not from the application's authors:** $NOT_UPSTREAM (label \`not-upstream\`). Please check whether the catalog should list this AppImage, or rather one from the application's own project."
+  fi
+  if [ -n "$VIA" ] ; then
+    NOTE="$NOTE
+
+Found via $VIA; this is the repository it comes from."
   fi
   if [ "$TOKEN_IS_FALLBACK" == true ] ; then
     NOTE="$NOTE
@@ -613,7 +758,7 @@ save_state || true
   [ "$OPENED" -lt "$COUNT" ] && echo "Found $OPENED of the $COUNT requested; stopped: $STOP_REASON."
   echo "Skipped: $N_KNOWN already in the catalog, $N_OPENPR in an open PR, $N_LABELED proposed before, $N_RECENT checked recently"
   echo "Checked this run: $CHECKED"
-  echo "Outcomes: added ${OUTCOME_COUNT[added]:-0}, no-appimage ${OUTCOME_COUNT[no-appimage]:-0}, ambiguous ${OUTCOME_COUNT[ambiguous]:-0}, name ${OUTCOME_COUNT[name]:-0}, old ${OUTCOME_COUNT[old]:-0}, too few stars ${OUTCOME_COUNT[stars]:-0} (reconsidered after 30 days)"
+  echo "Outcomes: added ${OUTCOME_COUNT[added]:-0}, no-appimage ${OUTCOME_COUNT[no-appimage]:-0}, ambiguous ${OUTCOME_COUNT[ambiguous]:-0}, name ${OUTCOME_COUNT[name]:-0}, old ${OUTCOME_COUNT[old]:-0}, fork or copy ${OUTCOME_COUNT[copy]:-0}, opted out ${OUTCOME_COUNT[opt-out]:-0}, too few stars ${OUTCOME_COUNT[stars]:-0} (reconsidered after 30 days)"
   echo "Pull requests opened: $OPENED"
   [ "$DRY_RUN" == true ] && echo
   [ "$DRY_RUN" == true ] && echo "(dry run: nothing was pushed, no state was changed)"
