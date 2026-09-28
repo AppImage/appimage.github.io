@@ -67,6 +67,25 @@ Without that secret it re-runs the last Test run instead, which uses the
 workflow files of that run. For all open pull requests at once, see
 `code/retest-prs.sh`.
 
+### Automatic re-tests
+
+`.github/workflows/auto-retest.yml` re-tests failed pull requests on its
+own, the same way (close and reopen with `SCREENSHOT_UPLOAD_TOKEN`):
+
+- when the pull request's author, or the GitHub account the AppImage comes
+  from, comments that it is fixed or asks for a re-test ("v1.2 is out",
+  "fixed in 1.2", "could you re-run the test?"); it reacts with 🚀. The
+  phrases are in `code/retest-comment.sh`.
+- daily, for pull requests with an `error-*` label whose AppImage was
+  published after their last test. Actions tab → "Auto retest" → *Run
+  workflow* runs it by hand (dry run by default; `max` caps the re-tests).
+  The step summary lists what was re-tested and why.
+
+It never re-tests a pull request whose Test run started less than 15 minutes
+ago. To switch it off, disable the workflow in the Actions tab.
+`code/retest-pr.sh NUMBER` re-tests one pull request from a shell (with the
+token in `PAT`).
+
 ## Explaining AppStream metadata
 
 Comment `/appstream` on an issue or pull request to post instructions for

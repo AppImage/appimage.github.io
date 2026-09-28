@@ -185,6 +185,36 @@ GitHub Pages (Jekyll) from this repository.
    branch starts with `discover/` or that are labeled `auto-discovered`: a
    maintainer always reviews these.
 
+7. `.github/workflows/auto-retest.yml` re-tests failed pull requests without
+   anyone asking, by closing and reopening them with `code/retest-pr.sh`
+   (`SCREENSHOT_UPLOAD_TOKEN`; reopens with `GITHUB_TOKEN` should that fail,
+   never leaves a PR closed; skips a PR whose Test run for its current
+   commit started less than 15 minutes ago). Nothing from the PR is checked
+   out or run; it reads the PR's files as text via the API.
+   - `issue_comment`: a comment (not starting with `/`, not by a bot) from
+     the PR's author or from the GitHub account the AppImage comes from
+     (`code/upstream-owner.sh` on the first line of the PR's `data/` files
+     at its head commit) that says it is fixed or asks for a re-test
+     (`code/retest-comment.sh`: "retest", "re-run", "is out", "new
+     release", "fixed in", "should now work", ...; quoted lines, code and
+     sentences about the future such as "will fix" or "in the next release"
+     do not count), on a PR whose latest test did not pass cleanly (an
+     `error-*` label, or no `screenshot-ok`). It reacts 🚀.
+   - daily `schedule` (a real run) and `workflow_dispatch` (`dry_run`,
+     default true; `max`, default 30): `code/auto-retest.sh` looks at open
+     PRs with an `error-*` label that change one file in `data/` pointing to
+     a GitHub, Codeberg or GitLab repository or one of its release assets,
+     finds the AppImage the test would download (`code/fetch-releases.sh`
+     and `code/find-appimage.sh`; for a direct asset link that asset, for
+     `releases/latest/download/` the newest release's) and re-tests the PR
+     if that release was published (or the asset uploaded) after the latest
+     Test run for the PR's head commit (else the latest test result
+     comment). There are thousands of such PRs, more than the API rate limit
+     allows daily: those opened in the last 30 days (not `auto-discovered`)
+     are checked every day, the others every 14th day (PR number modulo 14),
+     and it stops when fewer than 100 API requests are left. The step
+     summary lists what was re-tested and why.
+
 ## Rules that are easy to get wrong
 
 - **`pull_request_target` workflows must never check out or run code from
@@ -261,6 +291,12 @@ GitHub Pages (Jekyll) from this repository.
   `SCREENSHOT_UPLOAD_TOKEN` (a reopen with `GITHUB_TOKEN` starts no
   workflows), or without that secret re-runs its last Test run (old workflow
   files); it reacts 👀, then 🚀 once the test is started.
+  Failed PRs are also re-tested automatically (item 7 above), and
+  `code/retest-pr.sh [-n] NUMBER` re-tests one PR by hand (needs `PAT`).
+  Local dry run of the daily scan without network access to other forges:
+  `RETEST_RELEASES_DIR=dir RETEST_PRS="1 2" code/auto-retest.sh -n` with
+  `dir/OWNER-REPO.json` releases files; the comment patterns:
+  `echo "v1.2 is out" | code/retest-comment.sh`.
 - `/appstream` (maintainers, or the author of the issue or PR):
   `.github/workflows/appstream-help.yml` posts `code/appstream-help.md` from
   `master`, how to ship an AppStream metainfo file with screenshots. The
