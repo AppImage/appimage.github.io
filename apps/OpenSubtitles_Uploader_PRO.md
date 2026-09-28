@@ -3,12 +3,12 @@ layout: app
 
 permalink: /OpenSubtitles_Uploader_PRO/
 description: OpenSubtitles Uploader PRO - Professional subtitle uploader
+license: MIT
 
 icons:
   - OpenSubtitles_Uploader_PRO/icons/128x128/opensubtitles-uploader-pro.png
-
 screenshots:
-  - OpenSubtitles_Uploader_PRO/screenshot.png
+- https://raw.githubusercontent.com/opensubtitles/OpenSubtitles-Uploader-PRO/main/screenshots/main-window.png
 
 authors:
   - name: opensubtitles
