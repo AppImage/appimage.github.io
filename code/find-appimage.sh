@@ -22,6 +22,8 @@
 # 3. Without other architectures (aarch64, arm64, armhf, armv7, i386, i686, ...).
 # 4. If several remain: those that name x86_64 (or amd64, x64, x86-64, 64bit).
 # 5. If several remain: those without debug/nightly/test/... in the name.
+# 5b. If several remain: those that name "latest" (openSUSE Build Service
+#     publishes NAME-latest-x86_64.AppImage beside dated builds).
 # 6. If several remain: the one whose name without version, architecture and
 #    punctuation is NAME (releases with AppImages of several applications).
 # 6b. If several remain that differ in the major version of their toolkit
@@ -80,6 +82,12 @@ if [ "$(wc -l < "$JSON.candidates")" -gt 1 ] ; then
 fi
 if [ "$(wc -l < "$JSON.candidates")" -gt 1 ] ; then
   narrow "Leaving out debug, test and nightly builds" '(^|[^a-z0-9])(debug|dbg|test|nightly|symbols)([^a-z0-9]|$)' v
+fi
+# A "latest" AppImage next to versioned or timestamped ones (openSUSE Build
+# Service publishes NAME-latest-x86_64.AppImage beside dated builds): prefer
+# it, as it is the stable link to the newest build.
+if [ "$(wc -l < "$JSON.candidates")" -gt 1 ] ; then
+  narrow "Preferring the AppImage that names \"latest\"" '(^|[^a-z0-9])latest([^a-z0-9]|$)'
 fi
 
 # Builds for several major versions of a toolkit (e.g. digiKam's Qt5 and Qt6

@@ -44,6 +44,7 @@ entries() {
   # One entry per line: split before each link
   sed 's/<a /\n<a /g' "$TMP/page.html" | while IFS= read -r L ; do
     NAME=$(echo "$L" | sed -nE 's/^<a [^>]*href="([^"?#]+)".*/\1/p')
+    NAME=${NAME#./} # some servers (e.g. openSUSE download) prefix links with ./
     [ -n "$NAME" ] || continue
     # Only entries inside this directory (no parent, absolute or external links)
     case "$NAME" in /*|*://*|../*|./|.|mailto:*) continue ;; esac
