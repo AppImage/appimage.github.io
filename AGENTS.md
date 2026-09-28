@@ -85,7 +85,10 @@ GitHub Pages (Jekyll) from this repository.
    owner (checked itself via the API, not via the artifact). A merge with the
    workflow's token does not trigger push workflows, so it starts `test.yml`
    by `workflow_dispatch` with the merge commit (input `commit`), which writes
-   `database/` as a push would. Switch off: repository variable
+   `database/` as a push would. Re-test PRs (branch `retest/*` in this
+   repository, opened by `/retest` on a merged PR) are merged whenever their
+   test passes, even with warnings, as long as they only modify existing files
+   in `data/` and keep each file's first line. Switch off: repository variable
    `AUTO_MERGE=false`.
 
 3. `.github/workflows/check-origin.yml` (`pull_request_target`, from `master`)
