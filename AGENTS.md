@@ -60,8 +60,9 @@ GitHub Pages (Jekyll) from this repository.
    excerpt of the log around the first error, and the libc flags.
 2. `.github/workflows/publish-pr-screenshot.yml` runs on `workflow_run` of
    "Test" (from `master`, with write permissions, because PRs come from forks
-   whose runs have a read-only token) and posts or updates **one** comment on
-   the PR, marked `<!-- appimagehub-test-result -->`. Screenshots are uploaded as
+   whose runs have a read-only token) and posts a **new** comment on the PR
+   for every test run (earlier results stay as they were), marked
+   `<!-- appimagehub-test-result -->`. Screenshots are uploaded as
    GitHub attachments with the `SCREENSHOT_UPLOAD_TOKEN` secret (classic PAT),
    falling back to assets of the `ci-screenshots` release, which it prunes.
    Renewing the token: see `MAINTAINER.md`. It also sets red `error-*` labels on
@@ -75,7 +76,8 @@ GitHub Pages (Jekyll) from this repository.
    @mentions the GitHub account the AppImage comes from
    (`code/upstream-owner.sh` on the first line of the PR's `data/` files,
    read via the API at the tested commit, not from the artifact), unless it
-   is the PR's author or a bot; other hosts have no GitHub account to mention.
+   is the PR's author or a bot, or was mentioned in an earlier test result
+   comment already; other hosts have no GitHub account to mention.
    Finally it **auto-merges** (squash) a PR from a returning contributor
    (`author_association` CONTRIBUTOR or above) that changes exactly one file in
    `data/`, passed with `screenshot-ok`, has no `manual-check-needed` or
@@ -123,8 +125,11 @@ GitHub Pages (Jekyll) from this repository.
    `code/remove-entry.sh` (`data/NAME`, `database/NAME/`, `apps/NAME.md`): on
    a maintainer's `/remove` comment on a "Where did the AppImage of NAME go?"
    issue (the name comes from the title, never from the comment; the issue is
-   then closed), by hand with names, and on pushes to `master` that delete or
-   rename files in `data/` (it removes what is left of them). Deleting only
+   then closed), on a maintainer's `/remove` comment on a pull request (it is
+   closed and labeled `opt-out`; the entries it adds or changes are removed
+   if they are in the catalog), by hand with names, and on pushes to
+   `master` that delete or rename files in `data/` (it removes what is left
+   of them). Deleting only
    `data/NAME` used to leave the page on the site.
 
 6. `.github/workflows/discover-apps.yml` (`workflow_dispatch` only; inputs
@@ -141,7 +146,12 @@ GitHub Pages (Jekyll) from this repository.
    where this one stopped. A repository is skipped when it is already in `data/`, is added by
    an open pull request, was proposed before (any pull request labeled
    `auto-discovered`, in any state: merged means it is in the catalog, closed
-   unmerged means it was rejected, and neither is retried), or was checked in
+   unmerged means it was rejected, and neither is retried; all of them are
+   read, via the issues endpoint and the `Repository:` line of the PR
+   bodies), was opted out (a PR labeled black `opt-out`, any PR in any state,
+   names the repository or adds a `data/` file with the app's name, compared
+   by letters and digits, so the app is not proposed from another repository
+   either; outcome `opt-out`), or was checked in
    the last 90 days without a usable AppImage (30 days if it had fewer than
    5 stars, as it may have gained some). What remains is checked (in
    random order) with `code/fetch-releases.sh` and `code/find-appimage.sh`
@@ -246,6 +256,17 @@ GitHub Pages (Jekyll) from this repository.
   for all open PRs that change one file in `data/` and last tested green
   (`-u`: instead those without a test result label; `-f`: instead those whose
   test failed and that have no labels at all; `-n` to only list them).
+  For one PR, comment `/retest` on it (maintainers and the PR's author):
+  `.github/workflows/retest.yml` closes and reopens it with
+  `SCREENSHOT_UPLOAD_TOKEN` (a reopen with `GITHUB_TOKEN` starts no
+  workflows), or without that secret re-runs its last Test run (old workflow
+  files); it reacts 👀, then 🚀 once the test is started.
+- `/appstream` (maintainers, or the author of the issue or PR):
+  `.github/workflows/appstream-help.yml` posts `code/appstream-help.md` from
+  `master`, how to ship an AppStream metainfo file with screenshots. The
+  catalog shows the metainfo's screenshot (`type="default"`, else the first;
+  from `*.metainfo.xml` or `*.appdata.xml`) instead of the automated one,
+  which the test still takes and checks.
 
 ## Investigating and answering in pull requests
 
