@@ -19,9 +19,13 @@
 # blanks, and a few legitimately contain "AppImage" (AppImageUpdate) or
 # numbers (Play_2048), so those only warn.
 
+# "Linux" other than in "Anylinux", the name of the project that builds
+# some AppImages (https://github.com/pkgforge-dev/Anylinux-AppImages)
+has_linux() { echo "$1" | sed -E 's/anylinux//Ig' | grep -qi linux ; }
+
 if [ "$1" == "--appimage" ] ; then
   # All AppImages are for Linux, so "Linux" in the name tells nothing
-  if echo "$2" | grep -qi linux ; then
+  if has_linux "$2" ; then
     echo "WARNING: AppImage name '$2': should not contain 'Linux', since all AppImages are for Linux (e.g. 'App-1.0-x86_64.AppImage', not 'App-1.0-linux-x86_64.AppImage')"
   fi
   exit 0
