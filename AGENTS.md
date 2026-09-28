@@ -146,7 +146,15 @@ GitHub Pages (Jekyll) from this repository.
    5 stars, as it may have gained some). What remains is checked (in
    random order) with `code/fetch-releases.sh` and `code/find-appimage.sh`
    (exactly one x86_64 AppImage, in a release less than 2 years old) and
-   `code/check-name.sh` (`STRICT=true`). The name (file in `data/`, branch
+   `code/check-name.sh` (`STRICT=true`). If the repository is a fork or a
+   copy of another that publishes an AppImage too (the fork's source or
+   parent, a repository with the same letters and digits in its name linked
+   from the description, homepage or README, or one the search finds by name
+   with more stars), that repository, the application's own, is checked and
+   proposed instead (outcome `copy` for the fork or copy; skipped if the
+   original is known already), and the PR says which repository led to it;
+   a fork whose source publishes no AppImage gets the `not-upstream` label.
+   The name (file in `data/`, branch
    and PR title) is the proper spelling picked by `code/pick-name.sh` from the
    repository name, the AppImage's name and the description (same letters
    and digits as the repository name; most capitals win, blanks become `_`:

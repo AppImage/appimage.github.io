@@ -30,9 +30,14 @@
 # Candidates that remain are checked (in random order): fetch-releases.sh +
 # find-appimage.sh must find exactly one x86_64 AppImage in a release less
 # than 2 years old, and the repository name must pass check-name.sh
-# (STRICT=true) and not already exist in data/. Every repository checked is
-# recorded in the state file with an outcome (added, no-appimage,
-# ambiguous, name, old; stars for fewer than 5 stars).
+# (STRICT=true) and not already exist in data/. If the repository is a fork
+# or a copy of another that publishes an AppImage too (its source or parent,
+# or a repository with the same name linked from its description, homepage
+# or README, or found by name with more stars), that one, the application's
+# own, is proposed instead (unless it is known already); a fork whose source
+# publishes no AppImage gets the not-upstream label. Every repository checked
+# is recorded in the state file with an outcome (added, no-appimage,
+# ambiguous, name, old, copy; stars for fewer than 5 stars).
 #
 # State: discover-state.tsv on the orphan branch "discover-state" (never on
 # master). First line: "#cursor=YYYY-MM query=N". Then repo<TAB>date<TAB>outcome.
@@ -314,7 +319,8 @@ N_KNOWN=0 N_OPENPR=0 N_LABELED=0 N_RECENT=0
 FAILED=false
 : > "$WORKDIR/seen.txt"
 
-declare -A OUTCOME_COUNT=([added]=0 [no-appimage]=0 [ambiguous]=0 [name]=0 [old]=0 [stars]=0)
+declare -A OUTCOME_COUNT=([added]=0 [no-appimage]=0 [ambiguous]=0 [name]=0 [old]=0 [stars]=0 [copy]=0)
+declare -A DONE_THIS_RUN=()
 # Too few stars is decided here, not in the search query, so that such a
 # repository is recorded and reconsidered after 30 days (it may have gained stars)
 MIN_STARS=${DISCOVER_MIN_STARS:-5}
@@ -349,6 +355,51 @@ wait_for_rate() { # wait_for_rate search|core
     fi
   fi
 }
+
+# The application's own repository, if the candidate is a fork or a copy of
+# it that publishes an AppImage too (#4572: a copy "just in case" was proposed
+# instead of the original). Looks at the fork's source and parent, at GitHub
+# repositories with the same name (letters and digits) linked from the
+# description, homepage or README, and at those that the search finds by name
+# with more stars. The first of them (at most 6) whose releases have an
+# AppImage wins. Prints "OWNER/REPO<TAB>why<TAB>releases.json", or nothing.
+find_original() { # find_original OWNER/REPO META README
+  local FULL="$1" META="$2" README="$3" RNAME KEY STARS C N=0 WHY F Q
+  RNAME=${FULL#*/}
+  KEY=$(key_of "$RNAME")
+  STARS=$(jq -r '.stargazers_count // 0' <<<"$META")
+  {
+    if [ "$(jq -r '.fork // false' <<<"$META")" == true ] ; then
+      jq -r '.source.full_name // empty, .parent.full_name // empty' <<<"$META" | sed 's/$/\tfork/'
+    fi
+    { jq -r '.description // "", .homepage // ""' <<<"$META" ; echo "$README" ; } \
+      | grep -oE 'github\.com/[A-Za-z0-9-]+/[A-Za-z0-9._-]+' | cut -d / -f 2,3 | sed -E 's/\.git$//; s/[.]+$//' \
+      | while read -r C ; do [ "$(key_of "${C#*/}")" == "$KEY" ] && printf '%s\tlink\n' "$C" ; done
+    Q=$(tr -c 'A-Za-z0-9\n' ' ' <<<"$RNAME")
+    wait_for_rate search
+    api GET "search/repositories?q=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$Q in:name fork:false")&sort=stars&order=desc&per_page=10" \
+      | jq -r --argjson s "$STARS" '.items[]? | select(.stargazers_count > $s) | .full_name' 2>/dev/null \
+      | while read -r C ; do [ "$(key_of "${C#*/}")" == "$KEY" ] && printf '%s\tname\n' "$C" ; done
+  } | awk -F '\t' -v self="$(lower "$FULL")" 'tolower($1) != self && !seen[tolower($1)]++' | head -n 6 > "$WORKDIR/originals.txt"
+  while IFS=$'\t' read -r C WHY ; do
+    [[ "$C" =~ ^[A-Za-z0-9-]+/[A-Za-z0-9._-]+$ ]] || continue
+    N=$((N + 1))
+    F="$WORKDIR/original-$CHECKED-$N.json"
+    if [ -n "${DISCOVER_RELEASES_DIR:-}" ] ; then
+      cp "$DISCOVER_RELEASES_DIR/${C%%/*}-${C#*/}.json" "$F" 2>/dev/null || continue
+    else
+      wait_for_rate core
+      bash "$SCRIPT_DIR/fetch-releases.sh" "https://github.com/$C" "$F" >/dev/null 2>&1 || continue
+    fi
+    if bash "$SCRIPT_DIR/find-appimage.sh" "$F" "${C#*/}" 2>/dev/null | grep -q '^URL ' ; then
+      printf '%s\t%s\t%s\n' "$C" "$WHY" "$F"
+      return 0
+    fi
+  done < "$WORKDIR/originals.txt"
+  return 0
+}
+
+key_of() { tr 'A-Z' 'a-z' <<<"$1" | tr -cd 'a-z0-9' ; }
 
 SLICES_SINCE_SAVE=0
 while [ "$OPENED" -lt "$COUNT" ] ; do
@@ -413,11 +464,12 @@ while read -r FULLNAME ; do
   [ -z "$FULLNAME" ] && continue
   [ "$OPENED" -ge "$COUNT" ] && break
   [ "$(date +%s)" -ge "$DEADLINE" ] && break
+  OR=$(lower "$FULLNAME")
+  [ -n "${DONE_THIS_RUN[$OR]:-}" ] && continue # e.g. proposed as the original of a copy
   CHECKED=$((CHECKED + 1))
   echo "  Checking $FULLNAME ($CHECKED)"
   OWNER=${FULLNAME%%/*}
   RNAME=${FULLNAME#*/}
-  OR=$(lower "$FULLNAME")
 
   RELEASES_JSON="$WORKDIR/releases-$CHECKED.json"
   if [ -n "${DISCOVER_RELEASES_DIR:-}" ] ; then
@@ -446,6 +498,38 @@ while read -r FULLNAME ; do
   fi
   ASSET_URL=$(sed -n 's/^URL //p' <<<"$FIND_OUT")
 
+  # A fork or copy of a repository that publishes the AppImage too: propose
+  # that one, the application's own (unless it is known already)
+  META=$(api GET "repos/$OWNER/$RNAME")
+  README=$(api GET "repos/$OWNER/$RNAME/readme" 2>/dev/null | jq -r '.content // empty' 2>/dev/null | base64 -d 2>/dev/null | head -c 50000 | tr -d '\000')
+  VIA=""
+  ORIGINAL=$(find_original "$OWNER/$RNAME" "$META" "$README")
+  if [ -n "$ORIGINAL" ] ; then
+    IFS=$'\t' read -r ORIG_FULL ORIG_WHY ORIG_RELEASES <<<"$ORIGINAL"
+    ORIG_OR=$(lower "$ORIG_FULL")
+    case "$ORIG_WHY" in
+      fork) VIA="a fork of it" ;;
+      link) VIA="which links to it and has the same name" ;;
+      *) VIA="which has the same name (and fewer stars)" ;;
+    esac
+    record "$OR" copy
+    if [ -n "${SKIP_KNOWN[$ORIG_OR]:-}${SKIP_OPENPR[$ORIG_OR]:-}${SKIP_LABELED[$ORIG_OR]:-}${DONE_THIS_RUN[$ORIG_OR]:-}" ] ; then
+      echo "    $ORIG_FULL, which also publishes the AppImage, is in the catalog, in an open PR or was proposed before"
+      continue
+    fi
+    echo "    $ORIG_FULL also publishes the AppImage ($ORIG_WHY): checking that one instead"
+    VIA="https://github.com/$OWNER/$RNAME, $VIA"
+    OWNER=${ORIG_FULL%%/*}
+    RNAME=${ORIG_FULL#*/}
+    OR="$ORIG_OR"
+    RELEASES_JSON="$ORIG_RELEASES"
+    FIND_OUT=$(bash "$SCRIPT_DIR/find-appimage.sh" "$RELEASES_JSON" "$RNAME" 2>/dev/null)
+    ASSET_URL=$(sed -n 's/^URL //p' <<<"$FIND_OUT")
+    META=$(api GET "repos/$OWNER/$RNAME")
+    README=$(api GET "repos/$OWNER/$RNAME/readme" 2>/dev/null | jq -r '.content // empty' 2>/dev/null | base64 -d 2>/dev/null | head -c 50000 | tr -d '\000')
+  fi
+  DONE_THIS_RUN["$OR"]=1
+
   LATEST_DATE=$(jq -r '[.[] | select(.draft | not)][0].published_at // [.[] | select(.draft | not)][0].created_at // empty' "$RELEASES_JSON" 2>/dev/null)
   if [ -n "$LATEST_DATE" ] ; then
     LATEST_DAY=${LATEST_DATE%%T*}
@@ -460,7 +544,6 @@ while read -r FULLNAME ; do
   # repository name, the AppImage's name and the description, see
   # code/pick-name.sh; e.g. photoapp + PhotoApp-1.2.AppImage -> PhotoApp,
   # photo-app + "Photo App is ..." -> Photo_App
-  META=$(api GET "repos/$OWNER/$RNAME")
   NAME=$(bash "$SCRIPT_DIR/pick-name.sh" "$RNAME" "$(basename "$ASSET_URL")" "$(jq -r '.description // ""' <<<"$META")")
   [ -n "$NAME" ] || NAME="$RNAME"
   echo "    name: $NAME"
@@ -491,8 +574,12 @@ while read -r FULLNAME ; do
   # or the README (first 50 KB): then label the PR not-upstream
   UPSTREAM_PATTERN='(^|[^a-z])(unofficial|not (an )?official|non-?official|not affiliated|unaffiliated|not endorsed|community[- ](maintained|built|build|package|packaged)|third[- ]party (build|package|appimage)|repackag(ed|e|ing))([^a-z]|$)'
   NOT_UPSTREAM=""
-  README=$(api GET "repos/$OWNER/$RNAME/readme" 2>/dev/null | jq -r '.content // empty' 2>/dev/null | base64 -d 2>/dev/null | head -c 50000 | tr -d '\000')
+  # A fork whose own source publishes no AppImage is not the application's
+  if [ "$(jq -r '.fork // false' <<<"$META")" == true ] ; then
+    NOT_UPSTREAM="it is a fork of $(sanitize "$(jq -r '.source.full_name // .parent.full_name // "another repository"' <<<"$META")" | tr -cd 'A-Za-z0-9._/ -'), which publishes no AppImage"
+  fi
   for SRC in "repository name:$RNAME" "AppImage name:$ASSET_URL" "description:$DESC" "README:$README" ; do
+    [ -n "$NOT_UPSTREAM" ] && break
     PHRASE=$(grep -oiE -m 1 "$UPSTREAM_PATTERN" <<<"${SRC#*:}" | head -n 1 | sed -E 's/^[^a-zA-Z]+//; s/[^a-zA-Z]+$//' | tr -cd 'A-Za-z -')
     if [ -n "$PHRASE" ] ; then
       NOT_UPSTREAM="the ${SRC%%:*} says \"$PHRASE\""
@@ -509,6 +596,11 @@ while read -r FULLNAME ; do
     NOTE="
 
 **Possibly not from the application's authors:** $NOT_UPSTREAM (label \`not-upstream\`). Please check whether the catalog should list this AppImage, or rather one from the application's own project."
+  fi
+  if [ -n "$VIA" ] ; then
+    NOTE="$NOTE
+
+Found via $VIA; this is the repository it comes from."
   fi
   if [ "$TOKEN_IS_FALLBACK" == true ] ; then
     NOTE="$NOTE
@@ -613,7 +705,7 @@ save_state || true
   [ "$OPENED" -lt "$COUNT" ] && echo "Found $OPENED of the $COUNT requested; stopped: $STOP_REASON."
   echo "Skipped: $N_KNOWN already in the catalog, $N_OPENPR in an open PR, $N_LABELED proposed before, $N_RECENT checked recently"
   echo "Checked this run: $CHECKED"
-  echo "Outcomes: added ${OUTCOME_COUNT[added]:-0}, no-appimage ${OUTCOME_COUNT[no-appimage]:-0}, ambiguous ${OUTCOME_COUNT[ambiguous]:-0}, name ${OUTCOME_COUNT[name]:-0}, old ${OUTCOME_COUNT[old]:-0}, too few stars ${OUTCOME_COUNT[stars]:-0} (reconsidered after 30 days)"
+  echo "Outcomes: added ${OUTCOME_COUNT[added]:-0}, no-appimage ${OUTCOME_COUNT[no-appimage]:-0}, ambiguous ${OUTCOME_COUNT[ambiguous]:-0}, name ${OUTCOME_COUNT[name]:-0}, old ${OUTCOME_COUNT[old]:-0}, fork or copy ${OUTCOME_COUNT[copy]:-0}, too few stars ${OUTCOME_COUNT[stars]:-0} (reconsidered after 30 days)"
   echo "Pull requests opened: $OPENED"
   [ "$DRY_RUN" == true ] && echo
   [ "$DRY_RUN" == true ] && echo "(dry run: nothing was pushed, no state was changed)"
