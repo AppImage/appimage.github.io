@@ -224,6 +224,25 @@ GitHub Pages (Jekyll) from this repository.
    and reacts 🚀. Nothing from the PR is checked out or run; it reads the
    PR's files as text via the API.
 
+8. `.github/workflows/discover-obs.yml` (`workflow_dispatch` only; inputs
+   `count` (default 1, 0 = no limit) and `dry_run`) runs `code/discover-obs.sh`
+   to find apps published as AppImages on the openSUSE Build Service and
+   propose the missing ones as pull requests (labeled `auto-discovered`),
+   like `discover-apps.yml` does for GitHub. No openSUSE account is needed:
+   `https://download.opensuse.org/rest/folder` lists every mirrored folder as
+   JSON, and projects that build AppImages publish them under
+   `<project>/AppImage/`; the folders whose path ends in `/AppImage` are the
+   candidates (personal `branches`, the `OBS:/AppImage` demo/template
+   projects, and `xterm`/`leafpad` demos are skipped). Each is resolved with
+   `code/fetch-listing.sh` + `code/find-appimage.sh`; the entry points to the
+   versionless `NAME-latest-x86_64.AppImage` file. It skips apps already in
+   `data/` (by name), variant builds (`nightly`, `-git`, `-svn`, `-beta`) and
+   version-pinned copies, and merges a project's toolkit variants
+   (`-gtk`/`-qt`) into one. It cannot always tell that a differently named OBS
+   build duplicates an existing entry (e.g. `waterfox-g` vs `Waterfox_Current`),
+   so a maintainer reviews these as usual. Tokens work as in `discover-apps`
+   (`DISCOVER_TOKEN` / `SCREENSHOT_UPLOAD_TOKEN` / `GITHUB_TOKEN`).
+
 ## Rules that are easy to get wrong
 
 - **`pull_request_target` workflows must never check out or run code from
