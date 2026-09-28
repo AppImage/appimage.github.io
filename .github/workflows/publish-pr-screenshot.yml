@@ -297,6 +297,24 @@ jobs:
           [ "$(jq -r .draft pr.json)" = false ] || skip "draft"
           [ "$(jq -r .head.sha pr.json)" = "$HEAD_SHA" ] || skip "newer commits than the tested one"
           case "$(jq -r .head.ref pr.json)" in discover/*) skip "discovered automatically; a maintainer reviews it" ;; esac
+          first_line() { gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$1?ref=$2" | head -n 1 | tr -d '\r' ; }
+          # Re-test PRs (retest.yml opens them for /retest on a merged PR):
+          # the entries are listed already, so a passed test is enough, even
+          # with warnings; but only if they change nothing but existing files
+          # in data/ and keep each file's first line (the download location)
+          if [[ "$(jq -r .head.ref pr.json)" == retest/* ]] && [ "$(jq -r .head.repo.full_name pr.json)" = "$REPO" ] ; then
+            gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | [.filename, .status] | @tsv' > files.tsv
+            [ -s files.tsv ] || skip "re-test PR without changes"
+            while IFS=$'\t' read -r FILE STATUS ; do
+              [[ "$FILE" == data/* ]] && [ "$STATUS" = modified ] || skip "re-test PR changes $FILE ($STATUS), not only existing files in data/"
+              [ "$(first_line "$FILE" "$(jq -r .base.sha pr.json)")" = "$(first_line "$FILE" "$HEAD_SHA")" ] || skip "re-test PR changes the download location in $FILE"
+            done < files.tsv
+            MERGED=$(gh api -X PUT "repos/$REPO/pulls/$PR/merge" -f sha="$HEAD_SHA" -f merge_method=squash --jq .sha) \
+              || skip "GitHub refused the merge"
+            echo "Merged re-test PR #$PR as $MERGED"
+            gh workflow run test.yml -R "$REPO" --ref master -f commit="$MERGED"
+            exit 0
+          fi
           gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name' | grep -qx auto-discovered && skip "discovered automatically; a maintainer reviews it"
           case "$(jq -r .author_association pr.json)" in
             CONTRIBUTOR|COLLABORATOR|MEMBER|OWNER) ;;
@@ -312,7 +330,6 @@ jobs:
           case "$STATUS" in
             added) ;;
             modified)
-              first_line() { gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$1?ref=$2" | head -n 1 | tr -d '\r' ; }
               OLD=$(first_line "$FILE" "$(jq -r .base.sha pr.json)")
               NEW=$(first_line "$FILE" "$HEAD_SHA")
               bash code/check-origin.sh "$OLD" "$NEW" || skip "the download location changes owner"
