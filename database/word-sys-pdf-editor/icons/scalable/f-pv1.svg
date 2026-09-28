@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg">
+  <g id="layer1" transform="matrix(3.98482, 0, 0, 3.855789, -1.738144, -0.645681)" style="">
+    <rect style="fill:#da3030;fill-opacity:1;stroke-width:0.284186" id="rect1" width="12.770535" height="15.652084" x="2.081399" y="0.64062446" ry="0.27343735"/>
+    <rect style="fill:#f5f6f7;fill-opacity:1;stroke-width:0.23386" id="rect2-3" width="9.0560169" height="1.3889598" x="3.9386582" y="11.07015" ry="0.27343735"/>
+    <rect style="fill:#f5f6f7;fill-opacity:1;stroke-width:0.23386" id="rect2" width="9.0560169" height="1.3889598" x="3.9386582" y="8.3013535" ry="0.27343735"/>
+    <rect style="fill:#f5f6f7;fill-opacity:1;stroke-width:0.23386" id="rect2-7" width="9.0560169" height="1.3889598" x="3.9386582" y="2.7756062" ry="0.27343735"/>
+    <rect style="fill:#f5f6f7;fill-opacity:1;stroke-width:0.23386" id="rect2-2" width="9.0560169" height="1.3889598" x="3.9386582" y="5.516624" ry="0.27343735"/>
+    <rect style="fill:#bebebe;fill-opacity:1;stroke-width:0.158826" id="rect3" width="9.0999126" height="1.3167862" x="-12.987286" y="10.152533" transform="matrix(0.4904955,-0.87144373,0.92607142,0.37734827,0,0)" ry="0.26579171"/>
+    <g id="g3" transform="matrix(0.00388482,0.00151342,-0.00157955,0.00378068,7.9215651,5.1926071)">
+      <g id="g2">
+        <path d="M 499.77701,242.5895 249.14614,46.588659 c -3.92283,-3.057051 -9.29019,-3.105883 -13.1359,-0.119508 L -11.10795,237.94159 c -3.631039,2.83328 -5.079683,7.73821 -3.589664,12.20578 l 97.712427,292.29584 c 1.512937,4.53393 5.67314,7.59313 10.347649,7.63566 l 307.630008,2.79875 c 4.65321,0.0423 8.78073,-2.96318 10.21087,-7.44863 l 92.42691,-290.566 c 1.36845,-4.4643 -0.16922,-9.37366 -3.85324,-12.27349 z" id="path1" style="fill:#1e1e1e;fill-opacity:1;stroke-width:1.02399"/>
+      </g>
+    </g>
+    <rect style="fill:#f0c75e;fill-opacity:1;stroke-width:0.246531" id="rect5" width="1.3208628" height="0.85822266" x="10.176175" y="9.41436" transform="matrix(0.86973241,0.49352359,-0.50000869,0.86602039,0,0)"/>
+  </g>
+</svg>
