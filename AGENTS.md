@@ -187,6 +187,22 @@ GitHub Pages (Jekyll) from this repository.
    branch starts with `discover/` or that are labeled `auto-discovered`: a
    maintainer always reviews these.
 
+7. `.github/workflows/auto-retest.yml` (`issue_comment` only) re-tests a
+   failed pull request without anyone typing `/retest`: on a comment (not
+   starting with `/`, not by a bot) from the PR's author or from the GitHub
+   account the AppImage comes from (`code/upstream-owner.sh` on the first
+   line of the PR's `data/` files at its head commit) that says it is fixed
+   or asks for a re-test (`code/retest-comment.sh`: "retest", "re-run", "is
+   out", "new release", "fixed in", "should now work", ...; quoted lines,
+   code and sentences about the future such as "will fix" or "in the next
+   release" do not count), on a PR whose latest test did not pass cleanly
+   (an `error-*` label, or no `screenshot-ok`). It closes and reopens the PR
+   with `code/retest-pr.sh` (`SCREENSHOT_UPLOAD_TOKEN`; reopens with
+   `GITHUB_TOKEN` should that fail, never leaves a PR closed; skips a PR
+   whose Test run for its current commit started less than 15 minutes ago)
+   and reacts 🚀. Nothing from the PR is checked out or run; it reads the
+   PR's files as text via the API.
+
 ## Rules that are easy to get wrong
 
 - **`pull_request_target` workflows must never check out or run code from
@@ -263,6 +279,9 @@ GitHub Pages (Jekyll) from this repository.
   `SCREENSHOT_UPLOAD_TOKEN` (a reopen with `GITHUB_TOKEN` starts no
   workflows), or without that secret re-runs its last Test run (old workflow
   files); it reacts 👀, then 🚀 once the test is started.
+  Failed PRs are also re-tested when their author says it is fixed (item 7
+  above), and `code/retest-pr.sh [-n] NUMBER` re-tests one PR by hand (needs
+  `PAT`). The comment patterns: `echo "v1.2 is out" | code/retest-comment.sh`.
 - `/appstream` (maintainers, or the author of the issue or PR):
   `.github/workflows/appstream-help.yml` posts `code/appstream-help.md` from
   `master`, how to ship an AppStream metainfo file with screenshots. The

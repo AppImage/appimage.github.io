@@ -1,0 +1,106 @@
+# Re-tests a pull request whose test failed, without anyone having to type
+# "/retest": when the PR's author, or the GitHub account the AppImage comes
+# from, says in a comment that the problem is fixed or asks for a re-test
+# ("v1.2 is out", "fixed in 1.2", "could you re-run the test?"; see
+# code/retest-comment.sh), and the PR's latest test did not pass cleanly
+# (an error-* label, or no screenshot-ok). Reacts 🚀 to the comment.
+#
+# It closes and reopens the PR with code/retest-pr.sh, using
+# SCREENSHOT_UPLOAD_TOKEN (a reopen with GITHUB_TOKEN starts no workflows),
+# and skips PRs whose Test run for the current commit started in the last
+# 15 minutes. "/retest" (retest.yml) remains for explicit requests.
+#
+# Nothing from the PR is checked out or run here: this runs from master and
+# reads the PR's files as text via the API. The comment is untrusted text: it
+# is passed via the environment and only matched against fixed patterns.
+name: Auto retest
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  comment:
+    if: >-
+      github.repository == 'AppImage/appimage.github.io' &&
+      github.event_name == 'issue_comment' &&
+      github.event.issue.pull_request &&
+      github.event.issue.state == 'open' &&
+      !startsWith(github.event.comment.body, '/') &&
+      github.event.comment.user.type != 'Bot' &&
+      !endsWith(github.event.comment.user.login, '[bot]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: auto-retest-pr-${{ github.event.issue.number }}
+      cancel-in-progress: false
+    permissions:
+      actions: read # find the latest Test run
+      contents: read # read the PR's data/ file via the API
+      issues: write # react to the comment
+      pull-requests: write # reopen with GITHUB_TOKEN should the PAT fail
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PAT: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.issue.number }}
+      COMMENT_ID: ${{ github.event.comment.id }}
+      COMMENTER: ${{ github.event.comment.user.login }}
+      BODY: ${{ github.event.comment.body }}
+    steps:
+      # master, not the PR
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: code
+
+      - name: Re-test if the comment says it is fixed
+        run: |
+          if ! PHRASE=$(printf '%s\n' "$BODY" | bash code/retest-comment.sh) ; then
+            echo "The comment does not ask for a re-test."
+            exit 0
+          fi
+          echo "The comment says: \"$PHRASE\""
+          INFO=$(gh api "repos/$REPO/pulls/$PR")
+          AUTHOR=$(echo "$INFO" | jq -r .user.login)
+          SHA=$(echo "$INFO" | jq -r .head.sha)
+          LABELS=$(echo "$INFO" | jq -r '.labels[].name')
+          if echo "$LABELS" | grep -qx screenshot-ok && ! echo "$LABELS" | grep -q '^error-' ; then
+            echo "The latest test passed (screenshot-ok); nothing to do."
+            exit 0
+          fi
+          # The PR's data/ files; the test runs only for PRs that change some
+          FILES=$(gh api --paginate "repos/$REPO/pulls/$PR/files" \
+                    --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename')
+          if [ -z "$FILES" ] ; then
+            echo "The pull request changes no file in data/; the test does not run for it."
+            exit 0
+          fi
+          lower() { echo "$1" | tr '[:upper:]' '[:lower:]' ; }
+          WHO=""
+          if [ "$(lower "$COMMENTER")" == "$(lower "$AUTHOR")" ] ; then
+            WHO="the pull request's author"
+          else
+            # The GitHub account the AppImage comes from, from the first line
+            # of the PR's data/ files at its head commit (text via the API)
+            for FILE in $(echo "$FILES" | head -n 5) ; do
+              URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$SHA" 2>/dev/null | head -n 1 || true)
+              OWNER=$(bash code/upstream-owner.sh "$URL")
+              if [ -n "$OWNER" ] && [ "$(lower "$OWNER")" == "$(lower "$COMMENTER")" ] ; then
+                WHO="the account the AppImage comes from"
+              fi
+            done
+          fi
+          if [ -z "$WHO" ] ; then
+            echo "$COMMENTER is neither the author of the pull request nor the account the AppImage comes from."
+            exit 0
+          fi
+          echo "$COMMENTER is $WHO."
+          RC=0
+          bash code/retest-pr.sh "$PR" || RC=$?
+          case "$RC" in
+            0) gh api -X POST "repos/$REPO/issues/comments/$COMMENT_ID/reactions" -f content=rocket >/dev/null || true ;;
+            3) ;; # skipped (see the log), e.g. a test is running already
+            *) exit 1 ;;
+          esac
+
