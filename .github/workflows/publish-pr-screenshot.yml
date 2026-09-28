@@ -240,6 +240,10 @@ jobs:
               echo '````'
               echo
             fi
+            if [ "$CONCLUSION" != success ] ; then
+              echo "**What next:** once the AppImage is fixed (e.g. in a new release), comment \`/retest\` here to test it again. If it should not be in the catalog after all, close this pull request; an app that is already in the catalog can be removed by a maintainer with \`/remove\`."
+              echo
+            fi
             echo "Commit ${HEAD_SHA::8}. [Full log](${RUN_URL})"
           } > comment.md
 
