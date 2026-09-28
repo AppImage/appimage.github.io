@@ -59,8 +59,10 @@ and approve pull requests". The dry run shows the PR it would open.
 
 ## Re-testing a pull request
 
-Comment `/retest` on the pull request (maintainers and the pull request's
-author can). `.github/workflows/retest.yml` reacts with 👀, closes and reopens
+Comment `/retest` on the pull request (maintainers, the pull request's
+author, and the GitHub account the AppImage comes from can; on
+auto-discovered pull requests, that is the application's author).
+`.github/workflows/retest.yml` reacts with 👀, closes and reopens
 the pull request with `SCREENSHOT_UPLOAD_TOKEN`, so that the Test workflow runs
 again with the current workflow files from `master`, and reacts with 🚀.
 Without that secret it re-runs the last Test run instead, which uses the
