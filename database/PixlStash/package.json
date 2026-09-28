@@ -1,0 +1,20 @@
+{
+  "name": "pixlstash-desktop",
+  "productName": "PixlStash",
+  "desktopName": "pixlstash.desktop",
+  "version": "1.11.3",
+  "description": "PixlStash desktop app: a native window around the local PixlStash server, with downloadable, hardware-matched compute backends.",
+  "author": {
+    "name": "Gaute Lindkvist",
+    "email": "lindkvis@gmail.com"
+  },
+  "homepage": "https://pixlstash.dev",
+  "license": "GPL-3.0-only",
+  "main": "dist/main.js",
+  "type": "commonjs",
+  "dependencies": {},
+  "overrides": {
+    "brace-expansion@5": "^5.0.8",
+    "fast-uri": "^3.1.7"
+  }
+}
