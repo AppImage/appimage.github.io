@@ -92,6 +92,32 @@ if [[ "$URL" == https://github.com/*/* || "$URL" == https://codeberg.org/*/* || 
   rm -f "$API_JSON"
 fi
 
+# If the URL is a directory (ends with /) on another server, e.g.
+# https://download.kde.org/stable/digikam/, look for the AppImage of the newest
+# version in its listing (code/fetch-listing.sh) and pick it with the same
+# rules as for releases. If the listing has none (or it is a download link
+# that happens to end with /), the URL is downloaded as it is.
+if [ -z "$FORGE" ] && [[ "$URL" == http*://*/ ]] && [[ "$URL" != *github.com/* ]] ; then
+  LISTING_JSON=$(mktemp)
+  if LISTING_INFO=$(bash "$(dirname "$0")/fetch-listing.sh" "$URL" "$LISTING_JSON") ; then
+    echo "Directory listing detected: $LISTING_INFO"
+    FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$LISTING_JSON" "$INPUTBASENAME") || true
+    echo "$FOUND" | grep -v '^URL ' || true
+    LISTED_URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
+    if [ -z "$LISTED_URL" ] ; then
+      echo "Unable to decide which AppImage in the directory listing to test. Please link to the AppImage directly"
+      exit 1
+    fi
+    URL="$LISTED_URL"
+    echo "URL from directory listing: $URL"
+  elif [ $? -eq 3 ] ; then
+    echo "$LISTING_INFO"
+    echo "Unable to find an AppImage in the directory listing $URL or in its newest version directories"
+    exit 1
+  fi
+  rm -f "$LISTING_JSON"
+fi
+
 # If $URL begins with https://api.github.com, then treat it specially
 # This allows us to have generic URLs rather than URLs to specific releases
 if [ x"${URL:0:22}" == x"https://api.github.com" ] ; then

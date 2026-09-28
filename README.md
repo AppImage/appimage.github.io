@@ -27,7 +27,7 @@ and send a Pull Request.
 
 **The file should contain one line with a link to the GitHub, Codeberg or GitLab repository that hosts AppImages on its Releases page.**
 
-**Alternatively, a link to the AppImage. Nothing else.**
+**Alternatively, a link to the download directory where new versions appear, e.g. `https://download.kde.org/stable/digikam/` (the test picks the AppImage of the newest version from its listing), or a link to the AppImage. Nothing else.**
 
 **The pull request must add (or change) exactly this one file in `data/` and nothing else; one application per pull request.** Otherwise the test fails.
 
