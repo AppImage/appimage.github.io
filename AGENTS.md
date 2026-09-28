@@ -180,6 +180,10 @@ GitHub Pages (Jekyll) from this repository.
    proposed instead (outcome `copy` for the fork or copy; skipped if the
    original is known already), and the PR says which repository led to it;
    a fork whose source publishes no AppImage gets the `not-upstream` label.
+   A very high star count for a brand-new repository (more than ~15 stars per
+   day since it was created, at least 300, under ~2 years old) can mean bought
+   or botted stars, so the PR gets the yellow `manual-check-needed` label and
+   a note (which also keeps it out of auto-merge).
    The name (file in `data/`, branch
    and PR title) is the proper spelling picked by `code/pick-name.sh` from the
    repository name, the AppImage's name, the description and the README's
