@@ -57,6 +57,16 @@ and approve pull requests". The dry run shows the PR it would open.
 `code/ping-authors.sh --dry-run` runs the whole thing locally (needs
 `GH_TOKEN`).
 
+## Re-testing a pull request
+
+Comment `/retest` on the pull request (maintainers and the pull request's
+author can). `.github/workflows/retest.yml` reacts with 👀, closes and reopens
+the pull request with `SCREENSHOT_UPLOAD_TOKEN`, so that the Test workflow runs
+again with the current workflow files from `master`, and reacts with 🚀.
+Without that secret it re-runs the last Test run instead, which uses the
+workflow files of that run. For all open pull requests at once, see
+`code/retest-prs.sh`.
+
 ## Running "Discover apps" manually
 
 `.github/workflows/discover-apps.yml` searches GitHub for repositories that
