@@ -24,6 +24,8 @@
 # 5. If several remain: those without debug/nightly/test/... in the name.
 # 6. If several remain: the one whose name without version, architecture and
 #    punctuation is NAME (releases with AppImages of several applications).
+# 6b. If several remain that differ in the major version of their toolkit
+#    (Qt5/Qt6, GTK3/GTK4): those for the newest one.
 # 7. If several remain and they differ only in version or build: the one
 #    uploaded last.
 # More than one left means the choice would be a guess: an error.
@@ -78,6 +80,16 @@ if [ "$(wc -l < "$JSON.candidates")" -gt 1 ] ; then
 fi
 if [ "$(wc -l < "$JSON.candidates")" -gt 1 ] ; then
   narrow "Leaving out debug, test and nightly builds" '(^|[^a-z0-9])(debug|dbg|test|nightly|symbols)([^a-z0-9]|$)' v
+fi
+
+# Builds for several major versions of a toolkit (e.g. digiKam's Qt5 and Qt6
+# AppImages): the newest toolkit
+if [ "$(wc -l < "$JSON.candidates")" -gt 1 ] ; then
+  TK=$(cut -f 1 "$JSON.candidates" | grep -oiE '(^|[^a-z])(qt|gtk)[-_]?[0-9]+' | tr 'A-Z' 'a-z' | sed -E 's/^[^a-z]//; s/[-_]//' | sort -u)
+  if [ "$(echo "$TK" | sed -E 's/[0-9]+$//' | sort -u | grep -c .)" -eq 1 ] && [ "$(echo "$TK" | grep -c .)" -gt 1 ] ; then
+    NEWEST=$(echo "$TK" | sort -V | tail -n 1)
+    narrow "Preferring the build for the newest toolkit version, $NEWEST" "(^|[^a-z])${NEWEST%%[0-9]*}[-_]?${NEWEST##*[a-z]}([^0-9]|$)"
+  fi
 fi
 
 # Name without extension, architectures, "linux", "glibc", git hashes, versions and punctuation
