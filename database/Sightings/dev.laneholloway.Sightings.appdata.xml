@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>dev.laneholloway.Sightings</id>
+  <name>Sightings</name>
+  <summary>DCA75 Workbench: identify, curve-trace and catalogue semiconductors</summary>
+  <developer_name>Cryptid Effects</developer_name>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-PolyForm-Shield-1.0.0</project_license>
+  <description>
+    <p>Companion app for the Peak Atlas DCA75 (DCA Pro) semiconductor analyzer. Connects over USB, runs identify tests and curve sweeps, and keeps every reading in a local database so parts can be compared, binned and matched.</p>
+    <p>Includes DCA55-equivalent gain figures, nanoamp reverse-leakage measurement, and Pedal Builder, which tells you which classic pedal circuit positions a transistor or diode is valid for. A demo device lets you try everything without a unit.</p>
+    <p>Not affiliated with Peak Electronic Design Ltd. To open the unit as a normal user, install the udev rule on the host once: the command is in the app under Settings, in the project README, and the rules file is attached to every release.</p>
+  </description>
+  <launchable type="desktop-id">dev.laneholloway.Sightings.desktop</launchable>
+  <url type="homepage">https://github.com/drlholloway/sightings</url>
+  <url type="bugtracker">https://github.com/drlholloway/sightings/issues</url>
+  <url type="help">https://github.com/drlholloway/sightings/wiki</url>
+  <url type="donation">https://buymeacoffee.com/drlholloway</url>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="0.3.6" date="2026-09-28" />
+    <release version="0.3.5" date="2026-09-27" />
+    <release version="0.3.4" date="2026-09-12" />
+    <release version="0.3.3" date="2026-09-09" />
+    <release version="0.3.2" date="2026-09-08" />
+    <release version="0.3.1" date="2026-09-08" />
+    <release version="0.3.0" date="2026-09-07" />
+  </releases>
+</component>
