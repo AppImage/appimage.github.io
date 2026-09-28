@@ -64,6 +64,12 @@ publish AppImages on their releases but are not in the catalog yet, and opens
 a pull request per qualifying repository (labeled `auto-discovered`) for a
 maintainer to review; it never merges these itself.
 
+A repository proposed once is never proposed again, whether its pull request
+was merged or closed. To make sure an app is never proposed again, not even
+from another repository (a fork, a copy, a move), add the black `opt-out`
+label to its pull request (any pull request that adds its file in `data/`,
+open or closed), e.g. when its authors asked not to be listed.
+
 To run it: Actions tab → "Discover apps" → *Run workflow*. `count` caps how
 many pull requests that run opens (default 1, no upper limit); the run goes on until
 it has found that many (or has searched every month since 2012), which can
