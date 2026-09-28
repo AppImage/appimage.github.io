@@ -41,6 +41,13 @@ GitHub Pages (Jekyll) from this repository.
      remarks about the AppImage's file name;
    - runs the application in firejail **without network**, waits 30 s, takes a
      screenshot of the active window;
+   - system tray applications: only if the application showed no window (or
+     exited) and `code/tray-hint.sh` finds a tray API in its files (Qt, GTK,
+     libappindicator, Electron `new Tray(`, XEmbed, StatusNotifierItem), it
+     runs it again with a tray (`stalonetray`, XEmbed). If its icon docks there,
+     it clicks the icon and takes the window that opens, else right-clicks it
+     and takes the tray and menu; `check-screenshot.sh` gets `tray` (no
+     empty-window check) and a warning asks the maintainer to check it;
    - `code/check-screenshot.sh`: fails on an (almost) empty window or an error
      message found by OCR (tesseract), or text mostly in Chinese, Arabic,
      Cyrillic or Greek script (OCR with those models, confident words only;
