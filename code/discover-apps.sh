@@ -23,7 +23,11 @@
 # github.com/OWNER/REPO or api.github.com/repos/OWNER/REPO); appears as an
 # added data/ file in an open pull request; was proposed before in a pull
 # request labeled auto-discovered (any state: merged means it is in the
-# catalog, closed unmerged means it was rejected, and neither is retried);
+# catalog, closed unmerged means it was rejected, and neither is retried;
+# all of them are read, from the "Repository:" line of the PR bodies); was
+# opted out: a pull request labeled opt-out (any PR, any state) names the
+# repository, or adds a data/ file with the same name as the app (letters
+# and digits), so it is not proposed again from another repository either;
 # or was checked in the last 90 days without a usable AppImage (in the last
 # 30 days, if it had too few stars: it may have gained some since).
 #
@@ -129,6 +133,7 @@ sanitize() {
 }
 
 lower() { tr 'A-Z' 'a-z' <<<"$1" ; }
+key_of() { tr 'A-Z' 'a-z' <<<"$1" | tr -cd 'a-z0-9' ; }
 
 # Parse "owner/repo" (lowercased) out of the first line of a data/ file:
 # github.com/OWNER/REPO, .../releases/download/... links, or
@@ -168,45 +173,77 @@ done
 # extra request per file.
 
 PR_PAGE=1
-OPEN_PRS_SEEN=0
-while [ "$OPEN_PRS_SEEN" -lt 50 ] ; do
-  PRS=$(api GET "repos/$REPO/pulls?state=open&per_page=50&page=$PR_PAGE" | jq -r '.[].number' 2>/dev/null)
+while : ; do
+  PRS=$(api GET "repos/$REPO/pulls?state=open&per_page=100&page=$PR_PAGE" | jq -r '.[].number' 2>/dev/null)
   [ -n "$PRS" ] || break
   while read -r N ; do
-    [ -z "$N" ] && continue
-    OPEN_PRS_SEEN=$((OPEN_PRS_SEEN + 1))
+    [[ "$N" =~ ^[0-9]+$ ]] || continue
     api GET "repos/$REPO/pulls/$N/files?per_page=30" 2>/dev/null | jq -r '
       .[] | select(.status == "added") | select(.filename | startswith("data/")) | .patch // empty' \
     | grep -m 1 '^+' | grep -v '^+++' | sed 's/^+//' | while read -r LINE ; do
       OR=$(parse_owner_repo "$(tr -d '\r' <<<"$LINE")") && echo "$OR"
     done
   done <<<"$PRS" >> "$WORKDIR/openpr.txt"
-  [ "$(wc -l < <(echo "$PRS"))" -lt 50 ] && break
+  [ "$(wc -l < <(echo "$PRS"))" -lt 100 ] && break
   PR_PAGE=$((PR_PAGE + 1))
 done
 [ -f "$WORKDIR/openpr.txt" ] && while read -r OR ; do [ -n "$OR" ] && SKIP_OPENPR["$OR"]=1 ; done < "$WORKDIR/openpr.txt"
 
 # --- 3. Repositories proposed before (label auto-discovered, any state) --
+# All of them (there are well over 1000, more than the search API returns):
+# the issues endpoint lists them 100 at a time, and the "Repository:" line
+# this script writes into every PR body names the repository, so no extra
+# request per PR is needed.
 
 LABELED_PAGE=1
-LABELED_SEEN=0
-while [ "$LABELED_SEEN" -lt 50 ] ; do
-  ISSUES=$(api GET "search/issues?q=repo:$REPO+is:pr+label:$LABEL&per_page=50&page=$LABELED_PAGE" | jq -r '.items[].number' 2>/dev/null)
-  [ -n "$ISSUES" ] || break
-  while read -r N ; do
-    [ -z "$N" ] && continue
-    LABELED_SEEN=$((LABELED_SEEN + 1))
-    api GET "repos/$REPO/pulls/$N/files?per_page=30" 2>/dev/null | jq -r '
-      .[] | select(.filename | startswith("data/")) | .patch // empty' \
-    | grep '^+' | grep -v '^+++' | sed 's/^+//' | while read -r LINE ; do
-      OR=$(parse_owner_repo "$(tr -d '\r' <<<"$LINE")") && echo "$OR"
-    done
-  done <<<"$ISSUES" >> "$WORKDIR/labeled.txt"
-  N_THIS_PAGE=$(wc -l < <(echo "$ISSUES"))
-  [ "$N_THIS_PAGE" -lt 50 ] && break
+while : ; do
+  PAGE_JSON=$(api GET "repos/$REPO/issues?labels=$LABEL&state=all&per_page=100&page=$LABELED_PAGE")
+  N_THIS_PAGE=$(jq 'if type == "array" then length else 0 end' <<<"$PAGE_JSON" 2>/dev/null || echo 0)
+  [ "${N_THIS_PAGE:-0}" -gt 0 ] || break
+  jq -r '.[] | select(.pull_request) | .body // ""' <<<"$PAGE_JSON" 2>/dev/null \
+    | sed -n 's/^Repository: *\(https:\/\/github\.com\/[^ ]*\).*/\1/p' | tr -d '\r' \
+    | while read -r LINE ; do parse_owner_repo "$LINE" ; done >> "$WORKDIR/labeled.txt"
+  [ "$N_THIS_PAGE" -lt 100 ] && break
   LABELED_PAGE=$((LABELED_PAGE + 1))
 done
 [ -f "$WORKDIR/labeled.txt" ] && while read -r OR ; do [ -n "$OR" ] && SKIP_LABELED["$OR"]=1 ; done < "$WORKDIR/labeled.txt"
+echo "$(sort -u "$WORKDIR/labeled.txt" 2>/dev/null | grep -c .) repositories were proposed before (label $LABEL)" >&2
+
+# --- 3b. Apps a maintainer opted out (label opt-out on any PR) -------------
+# Never proposed again: neither the repositories the PR names (the
+# "Repository:" line of its body, the first line of its data/ files) nor the
+# app under another repository (the names of its data/ files, compared by
+# letters and digits, e.g. a fork or a copy).
+
+declare -A SKIP_OPTOUT=() OPTOUT_NAME=()
+OPTOUT_LABEL=opt-out
+OPTOUT_PAGE=1
+while : ; do
+  PAGE_JSON=$(api GET "repos/$REPO/issues?labels=$OPTOUT_LABEL&state=all&per_page=100&page=$OPTOUT_PAGE")
+  N_THIS_PAGE=$(jq 'if type == "array" then length else 0 end' <<<"$PAGE_JSON" 2>/dev/null || echo 0)
+  [ "${N_THIS_PAGE:-0}" -gt 0 ] || break
+  jq -r '.[] | select(.pull_request) | .body // ""' <<<"$PAGE_JSON" 2>/dev/null \
+    | sed -n 's/^Repository: *\(https:\/\/github\.com\/[^ ]*\).*/\1/p' | tr -d '\r' \
+    | while read -r LINE ; do OR=$(parse_owner_repo "$LINE") && printf 'repo\t%s\n' "$OR" ; done >> "$WORKDIR/optout.txt"
+  for N in $(jq -r '.[] | select(.pull_request) | .number' <<<"$PAGE_JSON" 2>/dev/null) ; do
+    [[ "$N" =~ ^[0-9]+$ ]] || continue
+    api GET "repos/$REPO/pulls/$N/files?per_page=30" 2>/dev/null \
+      | jq -r '.[] | select(.filename | startswith("data/")) | [.filename, (.patch // "" | split("\n") | map(select(startswith("+") and (startswith("+++") | not))) | .[0] // "" | ltrimstr("+"))] | @tsv' 2>/dev/null \
+      | while IFS=$'\t' read -r FILE LINE ; do
+        printf 'name\t%s\n' "$(key_of "${FILE#data/}")"
+        OR=$(parse_owner_repo "$(tr -d '\r' <<<"$LINE")") && printf 'repo\t%s\n' "$OR"
+      done >> "$WORKDIR/optout.txt"
+  done
+  [ "$N_THIS_PAGE" -lt 100 ] && break
+  OPTOUT_PAGE=$((OPTOUT_PAGE + 1))
+done
+if [ -f "$WORKDIR/optout.txt" ] ; then
+  while IFS=$'\t' read -r KIND VALUE ; do
+    [ -n "$VALUE" ] || continue
+    if [ "$KIND" == repo ] ; then SKIP_OPTOUT["$VALUE"]=1 ; else OPTOUT_NAME["$VALUE"]=1 ; fi
+  done < "$WORKDIR/optout.txt"
+fi
+echo "${#OPTOUT_NAME[@]} apps and ${#SKIP_OPTOUT[@]} repositories opted out (label $OPTOUT_LABEL)" >&2
 
 # --- 4. State file (discover-state branch): cursor + recently-checked ----
 
@@ -319,7 +356,7 @@ N_KNOWN=0 N_OPENPR=0 N_LABELED=0 N_RECENT=0
 FAILED=false
 : > "$WORKDIR/seen.txt"
 
-declare -A OUTCOME_COUNT=([added]=0 [no-appimage]=0 [ambiguous]=0 [name]=0 [old]=0 [stars]=0 [copy]=0)
+declare -A OUTCOME_COUNT=([added]=0 [no-appimage]=0 [ambiguous]=0 [name]=0 [old]=0 [stars]=0 [copy]=0 [opt-out]=0)
 declare -A DONE_THIS_RUN=()
 # Too few stars is decided here, not in the search query, so that such a
 # repository is recorded and reconsidered after 30 days (it may have gained stars)
@@ -399,7 +436,6 @@ find_original() { # find_original OWNER/REPO META README
   return 0
 }
 
-key_of() { tr 'A-Z' 'a-z' <<<"$1" | tr -cd 'a-z0-9' ; }
 
 SLICES_SINCE_SAVE=0
 while [ "$OPENED" -lt "$COUNT" ] ; do
@@ -446,7 +482,7 @@ while read -r FULLNAME ; do
   [[ "$OR" =~ ^[a-z0-9._-]+/[a-z0-9._-]+$ ]] || continue
   if [ -n "${SKIP_KNOWN[$OR]:-}" ] ; then N_KNOWN=$((N_KNOWN + 1)) ; continue ; fi
   if [ -n "${SKIP_OPENPR[$OR]:-}" ] ; then N_OPENPR=$((N_OPENPR + 1)) ; continue ; fi
-  if [ -n "${SKIP_LABELED[$OR]:-}" ] ; then N_LABELED=$((N_LABELED + 1)) ; continue ; fi
+  if [ -n "${SKIP_LABELED[$OR]:-}${SKIP_OPTOUT[$OR]:-}" ] ; then N_LABELED=$((N_LABELED + 1)) ; continue ; fi
   if [ -n "${SKIP_RECENT[$OR]:-}" ] ; then N_RECENT=$((N_RECENT + 1)) ; continue ; fi
   if [[ "${STARS_OF[$OR]:-0}" =~ ^[0-9]+$ ]] && [ "${STARS_OF[$OR]:-0}" -lt "$MIN_STARS" ] ; then
     record "$OR" stars
@@ -513,8 +549,8 @@ while read -r FULLNAME ; do
       *) VIA="which has the same name (and fewer stars)" ;;
     esac
     record "$OR" copy
-    if [ -n "${SKIP_KNOWN[$ORIG_OR]:-}${SKIP_OPENPR[$ORIG_OR]:-}${SKIP_LABELED[$ORIG_OR]:-}${DONE_THIS_RUN[$ORIG_OR]:-}" ] ; then
-      echo "    $ORIG_FULL, which also publishes the AppImage, is in the catalog, in an open PR or was proposed before"
+    if [ -n "${SKIP_KNOWN[$ORIG_OR]:-}${SKIP_OPENPR[$ORIG_OR]:-}${SKIP_LABELED[$ORIG_OR]:-}${SKIP_OPTOUT[$ORIG_OR]:-}${DONE_THIS_RUN[$ORIG_OR]:-}" ] ; then
+      echo "    $ORIG_FULL, which also publishes the AppImage, is in the catalog, in an open PR, was proposed before or opted out"
       continue
     fi
     echo "    $ORIG_FULL also publishes the AppImage ($ORIG_WHY): checking that one instead"
@@ -553,6 +589,11 @@ while read -r FULLNAME ; do
   fi
   # Already in the catalog under any spelling (photoapp, Photo-App, Photo_App)
   NAME_KEY=$(tr 'A-Z' 'a-z' <<<"$NAME" | tr -cd 'a-z0-9')
+  # A maintainer opted this app out (label opt-out), maybe from another repository
+  if [ -n "$NAME_KEY" ] && [ -n "${OPTOUT_NAME[$NAME_KEY]:-}" ] ; then
+    record "$OR" opt-out
+    continue
+  fi
   if [ -e "data/$NAME" ] || ls data | tr 'A-Z' 'a-z' | tr -cd 'a-z0-9\n' | grep -qxF "$NAME_KEY" ; then
     record "$OR" name
     continue
@@ -705,7 +746,7 @@ save_state || true
   [ "$OPENED" -lt "$COUNT" ] && echo "Found $OPENED of the $COUNT requested; stopped: $STOP_REASON."
   echo "Skipped: $N_KNOWN already in the catalog, $N_OPENPR in an open PR, $N_LABELED proposed before, $N_RECENT checked recently"
   echo "Checked this run: $CHECKED"
-  echo "Outcomes: added ${OUTCOME_COUNT[added]:-0}, no-appimage ${OUTCOME_COUNT[no-appimage]:-0}, ambiguous ${OUTCOME_COUNT[ambiguous]:-0}, name ${OUTCOME_COUNT[name]:-0}, old ${OUTCOME_COUNT[old]:-0}, fork or copy ${OUTCOME_COUNT[copy]:-0}, too few stars ${OUTCOME_COUNT[stars]:-0} (reconsidered after 30 days)"
+  echo "Outcomes: added ${OUTCOME_COUNT[added]:-0}, no-appimage ${OUTCOME_COUNT[no-appimage]:-0}, ambiguous ${OUTCOME_COUNT[ambiguous]:-0}, name ${OUTCOME_COUNT[name]:-0}, old ${OUTCOME_COUNT[old]:-0}, fork or copy ${OUTCOME_COUNT[copy]:-0}, opted out ${OUTCOME_COUNT[opt-out]:-0}, too few stars ${OUTCOME_COUNT[stars]:-0} (reconsidered after 30 days)"
   echo "Pull requests opened: $OPENED"
   [ "$DRY_RUN" == true ] && echo
   [ "$DRY_RUN" == true ] && echo "(dry run: nothing was pushed, no state was changed)"

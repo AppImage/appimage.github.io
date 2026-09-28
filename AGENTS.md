@@ -141,7 +141,12 @@ GitHub Pages (Jekyll) from this repository.
    where this one stopped. A repository is skipped when it is already in `data/`, is added by
    an open pull request, was proposed before (any pull request labeled
    `auto-discovered`, in any state: merged means it is in the catalog, closed
-   unmerged means it was rejected, and neither is retried), or was checked in
+   unmerged means it was rejected, and neither is retried; all of them are
+   read, via the issues endpoint and the `Repository:` line of the PR
+   bodies), was opted out (a PR labeled black `opt-out`, any PR in any state,
+   names the repository or adds a `data/` file with the app's name, compared
+   by letters and digits, so the app is not proposed from another repository
+   either; outcome `opt-out`), or was checked in
    the last 90 days without a usable AppImage (30 days if it had fewer than
    5 stars, as it may have gained some). What remains is checked (in
    random order) with `code/fetch-releases.sh` and `code/find-appimage.sh`
