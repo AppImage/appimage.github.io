@@ -1,5 +1,6 @@
-# Re-tests a pull request when a maintainer or the PR's author comments
-# "/retest" on it, e.g. after a new upstream release or a fix to the test.
+# Re-tests a pull request when a maintainer, the PR's author or the GitHub
+# account the AppImage comes from comments "/retest" on it, e.g. after a new
+# upstream release or a fix to the test.
 #
 # Like code/retest-prs.sh it closes and reopens the PR, so that the Test
 # workflow runs again with the current workflow files from master (re-running
@@ -23,9 +24,8 @@ jobs:
     if: >-
       github.repository == 'AppImage/appimage.github.io' &&
       github.event.issue.pull_request &&
-      startsWith(github.event.comment.body, '/retest') && (
-        contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association) ||
-        github.event.comment.user.login == github.event.issue.user.login)
+      startsWith(github.event.comment.body, '/retest') &&
+      github.event.comment.user.type != 'Bot'
     runs-on: ubuntu-latest
     permissions:
       actions: write
@@ -37,11 +37,42 @@ jobs:
       REPO: ${{ github.repository }}
       PR: ${{ github.event.issue.number }}
       COMMENT_ID: ${{ github.event.comment.id }}
+      COMMENTER: ${{ github.event.comment.user.login }}
+      ASSOCIATION: ${{ github.event.comment.author_association }}
+      PR_AUTHOR: ${{ github.event.issue.user.login }}
     steps:
+      # master, never the PR: only for code/upstream-owner.sh
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          sparse-checkout: code/upstream-owner.sh
+          sparse-checkout-cone-mode: false
+
       - name: Retest
         run: |
           react() { gh api -X POST "repos/$REPO/issues/comments/$COMMENT_ID/reactions" -f content="$1" >/dev/null || true ; }
           reply() { gh pr comment "$PR" -R "$REPO" --body "$1" ; }
+          lc() { tr 'A-Z' 'a-z' <<<"$1" ; }
+          # Who may: maintainers, the PR's author, and the GitHub account the
+          # AppImage comes from (auto-discovered PRs are opened by a
+          # maintainer, so there the upstream author is not the PR's author).
+          # The URL is read from the PR's data/ files via the API.
+          ALLOWED=false
+          case "$ASSOCIATION" in OWNER|MEMBER|COLLABORATOR) ALLOWED=true ;; esac
+          [ "$(lc "$COMMENTER")" = "$(lc "$PR_AUTHOR")" ] && ALLOWED=true
+          if [ "$ALLOWED" != true ] ; then
+            SHA=$(gh api "repos/$REPO/pulls/$PR" --jq .head.sha)
+            for FILE in $(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' | head -n 5) ; do
+              URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$SHA" 2>/dev/null | head -n 1)
+              OWNER=$(bash code/upstream-owner.sh "$URL")
+              [ -n "$OWNER" ] && [ "$(lc "$OWNER")" = "$(lc "$COMMENTER")" ] && ALLOWED=true
+            done
+          fi
+          if [ "$ALLOWED" != true ] ; then
+            react confused
+            reply "\`/retest\` can be used by the author of this pull request, by the GitHub account the AppImage comes from, and by maintainers."
+            exit 0
+          fi
           react eyes
           STATE=$(gh api "repos/$REPO/pulls/$PR" --jq .state)
           if [ "$STATE" != open ] ; then

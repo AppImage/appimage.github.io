@@ -256,7 +256,8 @@ GitHub Pages (Jekyll) from this repository.
   for all open PRs that change one file in `data/` and last tested green
   (`-u`: instead those without a test result label; `-f`: instead those whose
   test failed and that have no labels at all; `-n` to only list them).
-  For one PR, comment `/retest` on it (maintainers and the PR's author):
+  For one PR, comment `/retest` on it (maintainers, the PR's author, and the
+  GitHub account the AppImage comes from, per `code/upstream-owner.sh`):
   `.github/workflows/retest.yml` closes and reopens it with
   `SCREENSHOT_UPLOAD_TOKEN` (a reopen with `GITHUB_TOKEN` starts no
   workflows), or without that secret re-runs its last Test run (old workflow
