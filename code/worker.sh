@@ -692,12 +692,19 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "  - $INPUTBASENAME/icons/$ICONSIZE/$ICONBASENAME" >> apps/$INPUTBASENAME.md
   fi
   # Screenshot
-  if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    SCREENSHOT=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/screenshots/screenshot[1]/image" -v . || true)
-    if [ x"$SCREENSHOT" != x"" ] ; then
-      echo "screenshots:" >> apps/$INPUTBASENAME.md
-      echo "- $SCREENSHOT" >> apps/$INPUTBASENAME.md
-    fi
+  # The AppStream screenshot (the default one, else the first; from a
+  # .metainfo.xml or an .appdata.xml file) if there is one, else ours
+  SCREENSHOT=""
+  METAINFO=$(ls database/$INPUTBASENAME/*.metainfo.xml database/$INPUTBASENAME/*.appdata.xml 2>/dev/null | head -n 1 || true)
+  if [ -n "$METAINFO" ] ; then
+    SCREENSHOT=$(xmlstarlet sel -t -v "/component/screenshots/screenshot[@type='default'][1]/image[1]" "$METAINFO" 2>/dev/null | head -n 1 || true)
+    [ -n "$SCREENSHOT" ] || SCREENSHOT=$(xmlstarlet sel -t -v "/component/screenshots/screenshot[1]/image[1]" "$METAINFO" 2>/dev/null | head -n 1 || true)
+    # Only a web address can be shown on the site
+    [[ "$SCREENSHOT" =~ ^https?://[^[:space:]]+$ ]] || SCREENSHOT=""
+  fi
+  if [ -n "$SCREENSHOT" ] ; then
+    echo "screenshots:" >> apps/$INPUTBASENAME.md
+    echo "- $SCREENSHOT" >> apps/$INPUTBASENAME.md
   elif [ -f database/$INPUTBASENAME/screenshot.png ] ; then
     echo "" >> apps/$INPUTBASENAME.md
     echo "screenshots:" >> apps/$INPUTBASENAME.md
