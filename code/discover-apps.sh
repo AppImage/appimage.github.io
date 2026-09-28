@@ -645,6 +645,26 @@ while read -r FULLNAME ; do
     fi
   done
 
+  # Very high star count for a brand-new project: a sign of bought or
+  # botted stars, so a maintainer should look (label manual-check-needed).
+  # Suspicious when the repository gathered stars implausibly fast: created
+  # not long ago yet already highly starred (age in days from .created_at).
+  SUSPICIOUS_STARS=""
+  CREATED=$(jq -r '.created_at // empty' <<<"$META")
+  if [[ "$CREATED" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2} ]] && [[ "$STARS" =~ ^[0-9]+$ ]] ; then
+    CREATED_S=$(date -u -d "${CREATED%%T*}" +%s 2>/dev/null || date -u -j -f %Y-%m-%d "${CREATED%%T*}" +%s 2>/dev/null || echo 0)
+    if [ "$CREATED_S" -gt 0 ] ; then
+      AGE_DAYS=$(( ( $(date -u +%s) - CREATED_S ) / 86400 ))
+      [ "$AGE_DAYS" -lt 1 ] && AGE_DAYS=1
+      # More than 15 stars per day on average, and young enough that this is
+      # not just an old popular project (under ~2 years): flag it
+      if [ "$AGE_DAYS" -lt 730 ] && [ "$STARS" -ge $(( AGE_DAYS * 15 )) ] && [ "$STARS" -ge 300 ] ; then
+        SUSPICIOUS_STARS="$STARS stars for a repository created $AGE_DAYS day(s) ago ($(sanitize "${CREATED%%T*}"))"
+        echo "    suspicious stars? $SUSPICIOUS_STARS"
+      fi
+    fi
+  fi
+
   SDESC=$(sanitize "$DESC" | tr -d '<>' | cut -c1-300)
   QUOTE=$(sed 's/^/> /' <<<"$SDESC")
 
@@ -653,6 +673,11 @@ while read -r FULLNAME ; do
     NOTE="
 
 **Possibly not from the application's authors:** $NOT_UPSTREAM (label \`not-upstream\`). Please check whether the catalog should list this AppImage, or rather one from the application's own project."
+  fi
+  if [ -n "$SUSPICIOUS_STARS" ] ; then
+    NOTE="$NOTE
+
+**Unusual star count:** $SUSPICIOUS_STARS (label \`manual-check-needed\`). A very high star count on a brand-new project can mean bought or botted stars; please check that the project is genuine before merging."
   fi
   if [ -n "$VIA" ] ; then
     NOTE="$NOTE
@@ -723,6 +748,11 @@ discover-apps.yml. Needs a maintainer's review."
       LABELS+=(not-upstream)
       API_TOKEN="$PR_TOKEN" api GET "repos/$REPO/labels/not-upstream" >/dev/null 2>&1 || \
         API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/labels" -d "$(jq -n '{name:"not-upstream", color:"d93f0b", description:"The AppImage may not come from the application'"'"'s own authors (unofficial, repackaged, ...)"}')" >/dev/null
+    fi
+    if [ -n "$SUSPICIOUS_STARS" ] ; then
+      LABELS+=(manual-check-needed)
+      API_TOKEN="$PR_TOKEN" api GET "repos/$REPO/labels/manual-check-needed" >/dev/null 2>&1 || \
+        API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/labels" -d "$(jq -n '{name:"manual-check-needed", color:"fbca04", description:"A maintainer should check this before merging"}')" >/dev/null
     fi
     API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/issues/$PR_NUMBER/labels" -d "$(jq -n '{labels:$ARGS.positional}' --args "${LABELS[@]}")" >/dev/null
   fi
