@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.openchemistry.Avogadro2</id>
+  <launchable type="desktop-id">org.openchemistry.Avogadro2.desktop</launchable>
+  <name>Avogadro</name>
+  <summary>Advanced molecular editor</summary>
+  <developer id="cc.avogadro">
+    <name>The Avogadro team</name>
+  </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>BSD-3-Clause</project_license>
+  <description>
+    <p>
+      Avogadro is an advanced molecular editor designed for cross-platform use
+      in computational chemistry, molecular modeling, bioinformatics, materials
+      science, and related areas. It offers flexible rendering and a powerful
+      plugin architecture.
+    </p>
+    <p>
+      Core features and goals of the Avogadro project include:
+    </p>
+    <ul>
+      <li>Open-source, distributed under the liberal 3-clause BSD license</li>
+      <li>Cross-platform, with nightly builds on Linux, Mac OS X and Windows</li>
+      <li>An intuitive interface designed to be useful to whole community</li>
+      <li>Fast and efficient, embracing the latest technologies</li>
+      <li>Extensible, making extensive use of a plugin architecture</li>
+      <li>Flexible, supporting a range of chemical data formats and packages</li>
+    </ul>
+  </description>
+  <project_group>Open Chemistry</project_group>
+  <branding>
+    <color type="primary" scheme_preference="light">#00bdeb</color>
+    <color type="primary" scheme_preference="dark">#00bdeb</color>
+  </branding>
+  <content_rating type="oars-1.1"/>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <display_length compare="ge">768</display_length>
+  </recommends>
+  <url type="homepage">https://avogadro.cc/</url>
+  <url type="help">https://avogadro.cc/docs</url>
+  <url type="faq">https://discuss.avogadro.cc/</url>
+  <url type="bugtracker">https://github.com/OpenChemistry/avogadrolibs/issues</url>
+  <url type="translate">https://hosted.weblate.org/engage/avogadro/</url>
+  <url type="donation">https://opencollective.com/open-chemistry</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://avogadro.cc/_images/home_screenshot_1.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://avogadro.cc/_images/home_splash_1.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://avogadro.cc/_images/bondcentric.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://avogadro.cc/_images/ferrocene.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://avogadro.cc/_images/covid-spike.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://avogadro.cc/_images/benzene-mo.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://avogadro.cc/_images/zeolite.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://avogadro.cc/_images/AuNP.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://avogadro.cc/_images/C180.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://avogadro.cc/_images/phenol-qtaim.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+      <release version="2.0.0" date="2026-04-01">
+      <url type="details">https://avogadro.cc/install/versions/v200.html</url>
+      <description>
+        <p>Highlights</p>
+        <ul>
+        <li>New plugin system will load menu commands, input generators, file formats, energy and electrostatic models, including installation of any required libraries and tools using [`pixi`](https://pixi.prefix.dev/latest/installation/) on Mac and Windows. (Highly recommended on Linux too)</li>
+        <li>New plugin install window and index, including over 20 plugins (and growing)</li>
+        <li>Faster geometry optimizations ~50% faster on all models, and up to 5-10x faster on large molecules using UFF.</li>
+        <li>Added a faster protocol for using external energy models, including ML potentials, XTB, and more.</li>
+        <li>Added a simple molecular dynamics mode to the AutoOpt tool, including with energy models.</li>
+        <li>Improved ORCA input generator, including syntax highlighting</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.103.0" date="2026-02-06">
+      <url type="details">https://avogadro.cc/install/versions/v1103.html</url>
+      <description>
+        <p>Highlights</p>
+        <ul>
+        <li>Switch to use OpenGL 4.0 core profile for improved rendering speed</li>
+        <li>Volumetric rendering style for surfaces (orbitals, electron density, spin density)</li>
+        <li>Add peptide builder</li>
+        <li>Add keyboard shortcuts for functional groups and ligands to template tool</li>
+        <li>Display both alpha / beta orbitals in the orbital window</li>
+        <li>Performance optimizations for basis set calculations</li>
+        <li>Improved heuristics for opening CIF and crystallographic files</li>
+        <li>Update conformer plots for RMSD and energy</li>
+        <li>Support for isotope specification for atoms</li>
+        <li>Improved LAMMPS and Turbomole support</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.102.1" date="2025-10-27">
+      <url type="details">https://avogadro.cc/install/versions/v11021.html</url>
+      <description>
+        <p>Highlights</p>
+        <ul>
+        <li>This release fixes a number of bugs in the recent 1.102.0 release.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.102.0" date="2025-10-23">
+      <url type="details">https://avogadro.cc/install/versions/v1102.html</url>
+      <description>
+        <p>Highlights</p>
+        <ul>
+        <li>This release is intended as a final beta before a 2.0 stable release</li>
+        <li>Add the popular auto optimize tool</li>
+        <li>Updated charts, including spectra using the JKQtPlotter framework</li>
+        <li>Use `pixi` if available to install Python and plugins</li>
+        <li>A pile of bug fixes, updated language translations, and more</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.101.0" date="2025-09-14">
+      <url type="details">https://avogadro.cc/install/versions/v1101.html</url>
+      <description>
+        <p>Highlights</p>
+        <ul>
+          <li>This release is intended to fix key problems with 1.100 on Windows (missing Open Babel) as well as on macOS 26 "Tahoe" (save dialogs)</li>
+          <li>Should more easily find Python installs on Windows</li>
+          <li>Added support for constraints for geometry optimizations</li>
+          <li>Added an internal UFF implementation</li>
+          <li>Tweaked the edit tool to adjust bond lengths when the bond order or element change via click</li>
+          <li>A pile of bug fixes, updated language translations, and more</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.100.0" date="2025-01-21">
+      <url type="details">https://avogadro.cc/install/versions/v1100.html</url>
+      <description>
+        <p>Highlights</p>
+        <ul>
+          <li>New rendering options, including depth-of-field blur and fog from @perminder-17</li>
+          <li>Faster surface mesh generation using the flying edges algorithm @perminder-17</li>
+          <li>Brought back the “molecular orbitals” panel @ghutchis</li>
+          <li>Support for translucent balls-and-sticks, van der Waals spheres, and licorice rendering including per-layer customization @ghutchis</li>
+          <li>New, improved Flatpak package from @matterhorn103 including support for ARM</li>
+          <li>New conformer properties window @ghutchis</li>
+          <li>New improved molecular properties window, including charge and spin multiplicity, HOMO and LUMO energies, total energies and other properties (depending on file format) @ghutchis</li>
+          <li>Many more properties parsed from ORCA output files including Hirshfeld, MBIS, and CHELPG charges @ghutchis</li>
+          <li>Code signing on Windows to minimize Defender warnings @ghutchis thanks to SignPath</li>
+          <li>Support for latest Qt6 on Linux @matterhorn103</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.99.0" date="2024-02-10">
+          <url type="details">https://avogadro.cc/install/versions/v199.html</url>
+      <description>
+        <p>Highlights</p>
+        <ul>
+          <li>Further improvements to the new optimization framework, including default integrated Open Babel force fields (MMFF94, UFF, GAFF)</li>
+          <li>New toolbar icons with light / dark theme from @matterhorn103</li>
+          <li>Significantly faster molecular and orbital surfaces</li>
+          <li>Vibrational spectra plotting</li>
+          <li>Support for installing Python packages with plugins via pip or conda</li>
+          <li>Improved selection of conda environments</li>
+          <li>Conformer search dialog through Open Babel</li>
+          <li>Improved template tool for inserting ligands and functional groups</li>
+          <li>Significant improvements from @nbehrnd for the ligand library</li>
+          <li>Logging debugging / error messages to a file for Windows users</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.98.1" date="2023-11-02">
+      <url type="details">https://avogadro.cc/install/versions/v1981.html</url>
+      <description>
+        <p>This is a bug-fix release, particularly for Windows users, removing a filename filter that affected opening and saving files.</p>
+        <p>This also includes the openbabel-3.dll which was left out of Windows releases.</p>
+      </description>
+    </release>
+    <release version="1.98.0" date="2023-10-27">
+          <url type="details">https://avogadro.cc/install/versions/v198.html</url>
+      <description>
+        <p>Highlights</p>
+        <ul>
+          <li>Integration with 3Dconnexion input devices on Mac and Windows</li>
+          <li>Improved rendering including ambient occlusion and real-time shadows</li>
+          <li>New template tool for assembly of inorganic complexes and ligands or attaching functional groups (e.g, “click to add phenyl group”) (#1075)</li>
+          <li>New forcefield framework supporting external Python scripts (e.g., XTB, ASE, ANI-2x, etc.) (#1370)</li>
+          <li>Better perception of bond orders</li>
+          <li>Align tool (#1364)</li>
+          <li>Manual translate / rotate dialog</li>
+          <li>Fetch molecule names from PubChem, including markup</li>
+          <li>Commands to create centroid and center-of-mass points</li>
+          <li>Improved “fill unit cell” (#1375)</li>
+          <li>Preview images of insert molecule fragments and import crystals</li>
+          <li>Build improvements, including initial support for Qt6 and VTK9 fixes @cryos</li>
+          <li>Integrated Orca ouputfile support (from Orca-enhanced Avogadro) (#1326)</li>
+          <li>Add a generic compchem output reader (i.e., should automatically handle .out and .log files) (#1347)</li>
+          <li>Initial scripting support (e.g., used to generate preview images through a directory) (#1344)</li>
+          <li>Several updated toolbar icons</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.97.0" date="2022-07-21">
+          <url type="details">https://avogadro.cc/install/versions/v197.html</url>
+      <description>
+        <p>Highlights</p>
+        <ul>
+          <li>Adds molecular surfaces, solvent-accessible, and solvent-excluded surfaces</li>
+          <li>Adds support for a range of partial charge models, including coloring electrostatic potentials on surfaces.</li>
+          <li>This includes writing Python scripts to assign atomic charges or electrostatic potential</li>
+          <li>Adds improved hydrogen-bond, chalcogen, and halogen bond rendering.</li>
+          <li>Add improved close-contact and salt-bridge rendering</li>
+          <li>Significantly improves interface translation, properly loading translation files, and including a dialog to choose your preferred user interface language (thanks to @ovari for significant help)</li>
+          <li>Includes English, Hungarian, Serbian, Esperanto, Portuguese, Turkish, German, Georgian, French, and Japanese translations with at least 45% coverage. Anyone can help via Weblate</li>
+          <li>Now supports VTK-9 and Mac and Windows packages are updated to use Qt 5.15.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.96.0" date="2022-06-02">
+          <url type="details">https://avogadro.cc/install/versions/v196.html</url>
+      <description>
+        <p>New features</p>
+        <ul>
+          <li>Insert DNA/RNA dialog @ghutchis (#909)</li>
+          <li>Render close contacts @aerkiaga (#898)</li>
+          <li>Create new layer from selection @ghutchis (#899)</li>
+          <li>Tweak the mesh lighting … now lights “from the top” @ghutchis (#880)</li>
+          <li>Add an initial config widget to set mesh colors and opacity @ghutchis (#877)</li>
+          <li>Import and retain space group information @ghutchis (#875)</li>
+          <li>Write Gaussian cube files @ghutchis (#873)</li>
+          <li>Add plugin to focus or unfocus selection @aerkiaga (#868)</li>
+          <li>Implement close contact perception logic @aerkiaga (#862)</li>
+          <li>Add formal charge to atom property tables @ghutchis (#839)</li>
+          <li>Add support for formal charges @aerkiaga (#831)</li>
+          <li>Add setting to reverse direction of scroll-to-zoom @ghutchis (#778)</li>
+          <li>Tweak icons for label editor and selection @ghutchis (#776)</li>
+          <li>Add tooltips to tools @ghutchis (#777)</li>
+          <li>Add label editor to create custom labels @serk12 (#740)</li>
+          <li>Add a copy graphics action</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.95.1" date="2021-08-27">
+          <url type="details">https://avogadro.cc/install/versions/v1951.html</url>
+      <description>
+      <p>This release fixes several bugs in the recent 1.95.0 release and is recommended for all users.</p>
+        <p>New features</p>
+        <ul>
+          <li>Initial display-only property tables @ghutchis (#711)</li>
+          <li>Improve selection tool for layers @serk12 (#729)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.95.0" date="2021-08-20">
+          <url type="details">https://avogadro.cc/install/versions/v195.html</url>
+      <description>
+      <p>This release includes many new features, including new protein ribbon / cartoon renderings and the new “Layer” system as part of Google Summer of Code by @serk12.</p>
+        <p>New features</p>
+        <ul>
+          <li>New “Layer” system, including custom rendering, locking and hiding parts of the molecule @serk12 (#709)</li>
+          <li>Atom and residue labels @serk12 (#715)</li>
+          <li>New protein cartoon / ribbon display @serk12 (#660 #694 #716)</li>
+          <li>Update render options for Wireframe and Ball-and-Sticks @ghutchis (#700 #720)</li>
+          <li>Use MMTF downloads - more efficient than PDB format @ghutchis (#699)</li>
+          <li>Add back support for importing crystals @ghutchis (#658 #659)</li>
+          <li>Add CJSON support for save/load residues and atom colors @ghutchis (#646)</li>
+          <li>Refactor of Python command and input generators, including tabs @ghutchis (#667)</li>
+          <li>New View => Apply Colors menu @ghutchis (#640 #723)</li>
+          <li>Apply color schemes for residues @ghutchis (#638 #688)</li>
+          <li>Add more selection commands, including select by residue @ghutchis (#632 #634)</li>
+          <li>Render selected atoms in VdW and licorice modes @ghutchis (#702)</li>
+          <li>Detect secondary structure from residues / backbones @ghutchis (#685)</li>
+          <li>Save enabled / disabled state of scene / rendering plugins on quit @ghutchis</li>
+          <li>Should now download and install translations for @ghutchis</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.94.0" date="2021-06-03">
+          <url type="details">https://avogadro.cc/install/versions/v194.html</url>
+      <description>
+      <p>As part of the release, we've made it easier to download scripts and data, including new input generators, molecule fragments, and build and analysis commands. These scripts make it much easier to integrate Avogadro with many open source chemistry Python tools, including RDKit, ASE, etc.</p>
+        <p>New features</p>
+        <ul>
+          <li>Bring back “insert framgent” builder from Avogadro v1 @ghutchis (#591)</li>
+          <li>New docs @ghutchis (#568)</li>
+          <li>Remove dependency on MoleQueue @cryos (#596)</li>
+          <li>Initial Flatpak package @kevinsmia1939</li>
+          <li>Improved download widget @ghutchis (#534)</li>
+          <li>Reorganize menus - fix #474 @ghutchis (#564)</li>
+          <li>Export to SVG @serk12 (#588)</li>
+          <li>Symmetry enhancements @ghutchis (#553)</li>
+          <li>Added yaehmop with band structure calc @psavery (#339)</li>
+          <li>Cp2k input @ghutchis (#383)</li>
+          <li>OpenMM script builder plugin @badarsh2 (#343)</li>
+          <li>Handle drag-and-drop of files to the window @ghutchis</li>
+          <li>Use native message / dialog boxes on Mac @ghutchis</li>
+          <li>Download entries from PDB @ghutchis (#575)</li>
+          <li>Allow manipulate to rotate selected fragments @ghutchis (#594)</li>
+          <li>Add bestFitPlane on Molecule @dvermd (#500)</li>
+          <li>Add centerOfGeometry, centerOfMass and radius methods on Molecule @dvermd (#499)</li>
+          <li>Reset view (camera) @serk12 (#450)</li>
+          <li>Transparent support for ASE “extended XYZ” files @ghutchis (#603)</li>
+        </ul>
+      </description>
+    </release>
+        <release version="1.93.0" date="2020-02-05">
+          <url type="details">https://avogadro.cc/install/versions/v193.html</url>
+      <description>
+        <ul>
+          <li>Support for Open Babel 3.0</li>
+          <li>New rendering using VTK including volumetric orbitals and electron density</li>
+          <li>Use VTK charts for rendering band structures and other plots</li>
+          <li>Use MongoChem to access databases from servers</li>
+        </ul>
+      </description>
+    </release>
+        <release version="1.92.0" date="2018-10-31">
+          <url type="details">https://avogadro.cc/install/versions/v192.html</url>
+      <description>
+        <ul>
+          <li>Added support for the MMTF format form use with the Protein Data Bank</li>
+          <li>Added support for rendering atom forces</li>
+          <li>Added setting bond orders for common amino acid residues</li>
+          <li>New implementation of Python library using the Avogadro core for file IO and calculating orbitals and electron density</li>
+        </ul>
+      </description>
+    </release>
+        <release version="1.91.0" date="2018-08-22">
+          <url type="details">https://avogadro.cc/install/versions/v193.html</url>
+      <description>
+        <p>This release has a lot of new work completed over the last year, including the results of our first Google Summer of Code where two students worked on projects under the program.</p>
+      </description>
+    </release>
+        <release version="1.90.0" date="2016-12-03">
+          <url type="details">https://avogadro.cc/install/versions/v193.html</url>
+      <description>
+        <p>In particular v1.90 includes substantial improvements for handling crystallographic unit cells, including space group symmetry, and handling VASP calculations, as a result of a Google Summer of Code project of Patrick Avery.</p>
+      </description>
+    </release>
+  </releases>
+</component>
