@@ -1,0 +1,28 @@
+{
+  "name": "latte",
+  "version": "1.6.0",
+  "private": true,
+  "description": "Latte - An Agent Marketing Platform. Local-first desktop workspace for directing coding/marketing agents around brands and deliverables.",
+  "license": "MIT",
+  "author": "Oh My Latte <hola@ohmylatte.app>",
+  "homepage": "https://ohmylatte.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohmylatte/latte.git"
+  },
+  "main": "dist-electron/main.cjs",
+  "dependencies": {
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "electron-updater": "^6.8.9",
+    "lucide-react": "^1.41.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "sql.js": "^1.14.0"
+  },
+  "optionalDependencies": {
+    "node-pty": "^1.1.0"
+  }
+}
