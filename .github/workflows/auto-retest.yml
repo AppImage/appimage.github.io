@@ -1,6 +1,7 @@
 # Re-tests a pull request whose test failed, without anyone having to type
-# "/retest": when the PR's author, or the GitHub account the AppImage comes
-# from, says in a comment that the problem is fixed or asks for a re-test
+# "/retest": when a maintainer, the PR's author, or the GitHub account the
+# AppImage comes from says in a comment that the problem is fixed or asks
+# for a re-test
 # ("v1.2 is out", "fixed in 1.2", "could you re-run the test?"; see
 # code/retest-comment.sh), and the PR's latest test did not pass cleanly
 # (an error-* label, or no screenshot-ok). Reacts 🚀 to the comment.
@@ -46,6 +47,7 @@ jobs:
       PR: ${{ github.event.issue.number }}
       COMMENT_ID: ${{ github.event.comment.id }}
       COMMENTER: ${{ github.event.comment.user.login }}
+      ASSOCIATION: ${{ github.event.comment.author_association }}
       BODY: ${{ github.event.comment.body }}
     steps:
       # master, not the PR
@@ -78,7 +80,10 @@ jobs:
           fi
           lower() { echo "$1" | tr '[:upper:]' '[:lower:]' ; }
           WHO=""
-          if [ "$(lower "$COMMENTER")" == "$(lower "$AUTHOR")" ] ; then
+          case "$ASSOCIATION" in OWNER|MEMBER|COLLABORATOR) WHO="a maintainer" ;; esac
+          if [ -n "$WHO" ] ; then
+            :
+          elif [ "$(lower "$COMMENTER")" == "$(lower "$AUTHOR")" ] ; then
             WHO="the pull request's author"
           else
             # The GitHub account the AppImage comes from, from the first line
@@ -92,7 +97,7 @@ jobs:
             done
           fi
           if [ -z "$WHO" ] ; then
-            echo "$COMMENTER is neither the author of the pull request nor the account the AppImage comes from."
+            echo "$COMMENTER is neither a maintainer, nor the author of the pull request, nor the account the AppImage comes from."
             exit 0
           fi
           echo "$COMMENTER is $WHO."

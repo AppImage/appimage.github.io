@@ -189,8 +189,8 @@ GitHub Pages (Jekyll) from this repository.
 
 7. `.github/workflows/auto-retest.yml` (`issue_comment` only) re-tests a
    failed pull request without anyone typing `/retest`: on a comment (not
-   starting with `/`, not by a bot) from the PR's author or from the GitHub
-   account the AppImage comes from (`code/upstream-owner.sh` on the first
+   starting with `/`, not by a bot) from a maintainer, the PR's author or the
+   GitHub account the AppImage comes from (`code/upstream-owner.sh` on the first
    line of the PR's `data/` files at its head commit) that says it is fixed
    or asks for a re-test (`code/retest-comment.sh`: "retest", "re-run", "is
    out", "new release", "fixed in", "should now work", ...; quoted lines,
