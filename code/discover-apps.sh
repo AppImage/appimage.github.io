@@ -578,7 +578,8 @@ while read -r FULLNAME ; do
   fi
   DONE_THIS_RUN["$OR"]=1
 
-  LATEST_DATE=$(jq -r '[.[] | select(.draft | not)][0].published_at // [.[] | select(.draft | not)][0].created_at // empty' "$RELEASES_JSON" 2>/dev/null)
+  # The release the AppImage comes from (not necessarily the newest one)
+  LATEST_DATE=$(jq -r --arg u "$ASSET_URL" '[.[] | select(.draft | not) | select([.assets[]?.browser_download_url] | index($u))][0] | .published_at // .created_at // empty' "$RELEASES_JSON" 2>/dev/null)
   if [ -n "$LATEST_DATE" ] ; then
     LATEST_DAY=${LATEST_DATE%%T*}
     TWO_YEARS_AGO=$(date -u -d '2 years ago' +%Y-%m-%d 2>/dev/null || date -u -v-2y +%Y-%m-%d)
@@ -619,7 +620,10 @@ while read -r FULLNAME ; do
   DESC=$(jq -r '.description // ""' <<<"$META")
   STARS=$(jq -r '.stargazers_count // 0' <<<"$META")
   LICENSE=$(jq -r '.license.spdx_id // empty' <<<"$META" | grep -v NOASSERTION || true)
-  TAG=$(jq -r '[.[] | select(.draft | not)][0].tag_name // ""' "$RELEASES_JSON")
+  TAG=$(jq -r --arg u "$ASSET_URL" '[.[] | select(.draft | not) | select([.assets[]?.browser_download_url] | index($u))][0].tag_name // ""' "$RELEASES_JSON")
+  NEWEST_TAG=$(jq -r '[.[] | select(.draft | not)][0].tag_name // ""' "$RELEASES_JSON")
+  NEWER=""
+  [ -n "$NEWEST_TAG" ] && [ "$NEWEST_TAG" != "$TAG" ] && NEWER="; newest release: $(sanitize "$NEWEST_TAG")"
   ASSET_NAME=$(basename "$ASSET_URL")
 
   # Not from the application's own authors? ("unofficial", "not affiliated",
@@ -667,7 +671,7 @@ Repository: https://github.com/$OWNER/$RNAME
 $QUOTE
 
 - Stars: $STARS
-- Latest release: $(sanitize "$TAG") ($(sanitize "$LATEST_DATE"))
+- Release with the AppImage: $(sanitize "$TAG") ($(sanitize "$LATEST_DATE"))$NEWER
 - AppImage asset: \`$(sanitize "$ASSET_NAME")\`
 - License: ${LICENSE:-unknown}
 
