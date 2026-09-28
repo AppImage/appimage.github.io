@@ -258,11 +258,15 @@ jobs:
                          URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$HEAD_SHA" 2>/dev/null | head -n 1)
                          bash code/upstream-owner.sh "$URL"
                        done | sort -fu)
+            EARLIER=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
+                        --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .body" || true)
             MENTIONS=""
             for OWNER in $OWNERS ; do
               LOWER=$(echo "$OWNER" | tr 'A-Z' 'a-z')
               [ "$LOWER" = "$AUTHOR" ] && continue
               case "$LOWER" in *-bot|*\[bot\]) continue ;; esac
+              # Every run posts a new comment: mention each account only once
+              grep -qiE "@${OWNER}([^A-Za-z0-9-]|$)" <<<"$EARLIER" && continue # OWNER: login characters only
               MENTIONS="$MENTIONS @$OWNER"
             done
             if [ -n "$MENTIONS" ] ; then
@@ -273,15 +277,9 @@ jobs:
           fi
           cat comment.md
 
-          # Update our previous comment instead of adding a new one each push
-          ID=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
-                 --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .id" \
-               | tail -n 1)
-          if [ -n "$ID" ] ; then
-            gh api -X PATCH "repos/$REPO/issues/comments/$ID" -F body=@comment.md >/dev/null
-          else
-            gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md >/dev/null
-          fi
+          # A new comment for every test run, so that earlier results stay
+          # readable in the conversation
+          gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md >/dev/null
 
       # Merge PRs that need no maintainer: a returning contributor, one file in
       # data/, test passed with a good screenshot, same owner of the download

@@ -60,8 +60,9 @@ GitHub Pages (Jekyll) from this repository.
    excerpt of the log around the first error, and the libc flags.
 2. `.github/workflows/publish-pr-screenshot.yml` runs on `workflow_run` of
    "Test" (from `master`, with write permissions, because PRs come from forks
-   whose runs have a read-only token) and posts or updates **one** comment on
-   the PR, marked `<!-- appimagehub-test-result -->`. Screenshots are uploaded as
+   whose runs have a read-only token) and posts a **new** comment on the PR
+   for every test run (earlier results stay as they were), marked
+   `<!-- appimagehub-test-result -->`. Screenshots are uploaded as
    GitHub attachments with the `SCREENSHOT_UPLOAD_TOKEN` secret (classic PAT),
    falling back to assets of the `ci-screenshots` release, which it prunes.
    Renewing the token: see `MAINTAINER.md`. It also sets red `error-*` labels on
@@ -75,7 +76,8 @@ GitHub Pages (Jekyll) from this repository.
    @mentions the GitHub account the AppImage comes from
    (`code/upstream-owner.sh` on the first line of the PR's `data/` files,
    read via the API at the tested commit, not from the artifact), unless it
-   is the PR's author or a bot; other hosts have no GitHub account to mention.
+   is the PR's author or a bot, or was mentioned in an earlier test result
+   comment already; other hosts have no GitHub account to mention.
    Finally it **auto-merges** (squash) a PR from a returning contributor
    (`author_association` CONTRIBUTOR or above) that changes exactly one file in
    `data/`, passed with `screenshot-ok`, has no `manual-check-needed` or
