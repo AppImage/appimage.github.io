@@ -50,7 +50,7 @@ Standard nomenclature:
 * Respect uppercase. If the app is called "App", do NOT use "app"
 * Example: `App-1.1-x86_64.AppImage` in a repo called "App"
 
-Then send a Pull Request to this repository. GitHub Actions will instantly perform an automated review of the AppImage and post the result as a comment in your pull request: a screenshot of your application if it succeeds, or the error (with hints on how to fix it) if it fails. Please check that the screenshot shows the main window of your application. To test your pull request again (e.g., after publishing a new release), comment `/retest` on it. If the test failed, it also runs again automatically when you publish a new release (if the file in `data/` points to your GitHub, Codeberg or GitLab repository), or when you comment that the problem is fixed (e.g., "Fixed in 1.2.3, please test again").
+Then send a Pull Request to this repository. GitHub Actions will instantly perform an automated review of the AppImage and post the result as a comment in your pull request: a screenshot of your application if it succeeds, or the error (with hints on how to fix it) if it fails. Please check that the screenshot shows the main window of your application. To test your pull request again (e.g., after publishing a new release), comment `/retest` on it. If the test failed, it also runs again automatically when you comment that the problem is fixed (e.g., "Fixed in 1.2.3, please test again").
 
 Then the autodetection works.
 

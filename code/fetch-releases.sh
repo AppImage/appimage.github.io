@@ -10,8 +10,8 @@
 #     https://gitlab.com/OWNER/REPO
 #   OUT_JSON: file to write the releases to (newest first), normalized to
 #     the shape of GitHub's repos/OWNER/REPO/releases: an array of
-#     {tag_name, draft, prerelease, published_at, assets: [{name,
-#     browser_download_url, updated_at}]}.
+#     {tag_name, draft, prerelease, assets: [{name, browser_download_url,
+#     updated_at}]}.
 #
 # On success, prints "FORGE OWNER REPO" (FORGE is github, codeberg or
 # gitlab) to stdout and exits 0.
@@ -92,7 +92,7 @@ case "$FORGE" in
       echo "HTTP $HTTP_CODE" >&2
       exit 1
     fi
-    jq '[.[] | {tag_name, draft, prerelease, published_at: (.published_at // .created_at), assets: [.assets[] | {name, browser_download_url, updated_at: (.updated_at // .created_at)}]}]' "$OUT_JSON" > "$OUT_JSON.norm" && mv "$OUT_JSON.norm" "$OUT_JSON"
+    jq '[.[] | {tag_name, draft, prerelease, assets: [.assets[] | {name, browser_download_url, updated_at: (.updated_at // .created_at)}]}]' "$OUT_JSON" > "$OUT_JSON.norm" && mv "$OUT_JSON.norm" "$OUT_JSON"
     ;;
   gitlab)
     ENCODED=$(printf '%s' "$OWNER/$REPO" | jq -sRr '@uri' | tr -d '\n')
@@ -109,7 +109,6 @@ case "$FORGE" in
       tag_name: .tag_name,
       draft: false,
       prerelease: (.upcoming_release // false),
-      published_at: (.released_at // .created_at),
       assets: [ (.assets.links // [])[] | {
         name: .name,
         browser_download_url: (.direct_asset_url // .url),

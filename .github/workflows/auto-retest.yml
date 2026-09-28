@@ -1,17 +1,14 @@
-# Re-tests pull requests whose test failed, without anyone having to ask:
+# Re-tests a pull request whose test failed, without anyone having to type
+# "/retest": when the PR's author, or the GitHub account the AppImage comes
+# from, says in a comment that the problem is fixed or asks for a re-test
+# ("v1.2 is out", "fixed in 1.2", "could you re-run the test?"; see
+# code/retest-comment.sh), and the PR's latest test did not pass cleanly
+# (an error-* label, or no screenshot-ok). Reacts 🚀 to the comment.
 #
-# - comment: when the PR's author, or the GitHub account the AppImage comes
-#   from, says in a comment that the problem is fixed or asks for a re-test
-#   ("v1.2 is out", "fixed in 1.2", "could you re-run the test?"; see
-#   code/retest-comment.sh), and the PR's latest test did not pass cleanly
-#   (an error-* label, or no screenshot-ok). Reacts 🚀 to the comment.
-# - scan (daily, or by hand): open PRs with an error-* label whose AppImage
-#   was published after their last test (code/auto-retest.sh).
-#
-# Both close and reopen the PR with code/retest-pr.sh, using
+# It closes and reopens the PR with code/retest-pr.sh, using
 # SCREENSHOT_UPLOAD_TOKEN (a reopen with GITHUB_TOKEN starts no workflows),
-# and skip PRs whose Test run for the current commit started in the last
-# 15 minutes. "/retest" (retest.yml) remains for maintainers and authors.
+# and skips PRs whose Test run for the current commit started in the last
+# 15 minutes. "/retest" (retest.yml) remains for explicit requests.
 #
 # Nothing from the PR is checked out or run here: this runs from master and
 # reads the PR's files as text via the API. The comment is untrusted text: it
@@ -21,18 +18,6 @@ name: Auto retest
 on:
   issue_comment:
     types: [created]
-  schedule:
-    - cron: '23 5 * * *' # daily, 05:23 UTC
-  workflow_dispatch:
-    inputs:
-      dry_run:
-        description: 'Dry run (only list what would be re-tested)'
-        type: boolean
-        default: true
-      max:
-        description: 'Re-test at most this many pull requests'
-        type: number
-        default: 30
 
 jobs:
   comment:
@@ -119,41 +104,3 @@ jobs:
             *) exit 1 ;;
           esac
 
-  scan:
-    if: >-
-      github.repository == 'AppImage/appimage.github.io' &&
-      github.event_name != 'issue_comment'
-    runs-on: ubuntu-latest
-    timeout-minutes: 90
-    concurrency:
-      group: auto-retest-scan
-      cancel-in-progress: false
-    permissions:
-      actions: read # find the latest Test runs
-      contents: read # read the PRs' data/ files via the API
-      pull-requests: write # reopen with GITHUB_TOKEN should the PAT fail
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      PAT: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
-      REPO: ${{ github.repository }}
-      # Scheduled runs are real; manual runs default to a dry run
-      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
-      MAX: ${{ inputs.max || 30 }}
-    steps:
-      # master, not a PR
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          sparse-checkout: code
-
-      - name: Re-test pull requests with a newer AppImage
-        run: |
-          if [ "$DRY_RUN" == true ] ; then
-            bash code/auto-retest.sh -n "$MAX"
-          else
-            if [ -z "$PAT" ] ; then
-              echo "::error::SCREENSHOT_UPLOAD_TOKEN is not set; a reopen with GITHUB_TOKEN starts no Test run."
-              exit 1
-            fi
-            bash code/auto-retest.sh "$MAX"
-          fi
