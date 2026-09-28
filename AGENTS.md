@@ -166,8 +166,10 @@ GitHub Pages (Jekyll) from this repository.
    a fork whose source publishes no AppImage gets the `not-upstream` label.
    The name (file in `data/`, branch
    and PR title) is the proper spelling picked by `code/pick-name.sh` from the
-   repository name, the AppImage's name and the description (same letters
-   and digits as the repository name; most capitals win, blanks become `_`:
+   repository name, the AppImage's name, the description and the README's
+   headline (same letters and digits as the repository name; most capitals
+   win, then the headline; blanks, and dots between words as in
+   `Uploader.PRO`, become `_`:
    photoapp + `PhotoApp-1.2.AppImage` gives `PhotoApp`, photo-app + "Photo
    App is …" gives `Photo_App`); an app already in `data/` in any spelling is
    skipped. If the repository or AppImage name, the description or the README

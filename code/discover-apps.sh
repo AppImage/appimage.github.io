@@ -589,10 +589,10 @@ while read -r FULLNAME ; do
   fi
 
   # The name in its proper spelling (capitalization, blanks as _): from the
-  # repository name, the AppImage's name and the description, see
-  # code/pick-name.sh; e.g. photoapp + PhotoApp-1.2.AppImage -> PhotoApp,
-  # photo-app + "Photo App is ..." -> Photo_App
-  NAME=$(bash "$SCRIPT_DIR/pick-name.sh" "$RNAME" "$(basename "$ASSET_URL")" "$(jq -r '.description // ""' <<<"$META")")
+  # repository name, the AppImage's name, the description and the README's
+  # headline, see code/pick-name.sh; e.g. photoapp + PhotoApp-1.2.AppImage ->
+  # PhotoApp, photo-app + "Photo App is ..." -> Photo_App
+  NAME=$(bash "$SCRIPT_DIR/pick-name.sh" "$RNAME" "$(basename "$ASSET_URL")" "$(jq -r '.description // ""' <<<"$META")" "$README")
   [ -n "$NAME" ] || NAME="$RNAME"
   echo "    name: $NAME"
   if grep -qiE 'appimage|linux' <<<"$NAME" ; then

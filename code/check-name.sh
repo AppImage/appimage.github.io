@@ -66,6 +66,11 @@ if [ -z "$DESKTOP" ] ; then
   if echo "$NAME" | sed -E 's/(x86[-_]64|amd64|aarch64|arm64|i[36]86)//Ig' | grep -qE '[0-9]+\.[0-9]+|[-_ ][vV]?[0-9]+([.][0-9]+)*$' ; then
     remark "seems to contain a version number; the name should not change with new versions (if the number is part of the application's name, this is fine)"
   fi
+  # Dots between words ("Photo.App", usually from an AppImage's file name)
+  # rather than in names like draw.io or snake.js
+  if echo "$NAME" | grep -qE '[A-Za-z0-9]\.[A-Z]' ; then
+    remark "contains a dot between words; use _ between words instead (e.g. '$(echo "$NAME" | sed -E 's/\.([A-Z])/_\1/g')'), unless the dot is part of the application's name"
+  fi
   if echo "$NAME" | grep -q '[^A-Za-z0-9._[:space:]-]' ; then
     remark "contains characters other than letters, digits, '.', '_' and '-'; please check that they are part of the application's name"
   fi
