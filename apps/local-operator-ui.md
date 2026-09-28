@@ -29,12 +29,13 @@ desktop:
     Type: Application
     Icon: local-operator-ui
     StartupWMClass: Local Operator
-    X-AppImage-Version: 0.31.5
+    X-AppImage-Version: 0.31.13
     Comment: User interface for AI agent assistants that run Python code safely on your
       device through an intuitive chat interface. Supports local and cloud LLM models
       with built-in security features.
     Categories: ArtificialIntelligence
   AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|damianvtran|local-operator-ui|latest|local-operator-ui-*-x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)
