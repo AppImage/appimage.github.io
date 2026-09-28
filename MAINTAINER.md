@@ -137,6 +137,10 @@ workflow silently falls back to `SCREENSHOT_UPLOAD_TOKEN` or `GITHUB_TOKEN`
 
 ## Removing an application
 
+On a pull request (e.g. an auto-discovered one), comment `/remove`: the pull
+request is closed and labeled `opt-out`, so the app is never proposed again,
+and its entry is removed if it is in the catalog already.
+
 Comment `/remove` on its "Where did the AppImage of NAME go?" issue (only
 owners, members and collaborators can), or run *Actions → Remove entry* with
 the name(s). `.github/workflows/remove-entry.yml` then removes `data/NAME`,
