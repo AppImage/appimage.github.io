@@ -1,4 +1,4 @@
-#cursor=2018-06 query=1
+#cursor=2018-05 query=0
 arkaikus/unofficial-comfyui-launcher	2026-09-27	stars
 bluscream/steam-cli	2026-09-27	stars
 jadrt22/soberix	2026-09-27	stars
@@ -8199,3 +8199,9 @@ kondoumh/sbe	2026-09-28	added
 mysteryx93/synthmultiviewer	2026-09-28	added
 minecraft-linux/mcpelauncher-manifest	2026-09-28	added
 bitfinexcom/bfx-report-electron	2026-09-28	added
+getpublii/publii	2026-09-28	no-appimage
+linuxdeploy/linuxdeploy-plugin-appimage	2026-09-28	name
+linuxdeploy/linuxdeploy-plugin-qt	2026-09-28	name
+squalou/google-chat-linux	2026-09-28	no-appimage
+andresandoval/bash-tools	2026-09-28	stars
+sandialabs/interspec	2026-09-28	added
