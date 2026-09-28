@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.unifybrowse.todofy</id>
+  <launchable type="desktop-id">todofy.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://github.com/salarzeidanlou/todofy/blob/main/LICENSE</project_license>
+
+  <name>Todofy</name>
+  <summary>Plan your day with smart lists, reminders and focus timers</summary>
+
+  <developer id="com.unifybrowse">
+    <name>unifybrowse</name>
+  </developer>
+
+  <description>
+    <p>
+      Todofy is a local-first to-do app. Everything lives in a database on your own
+      machine and stays usable offline; signing in to sync an account across devices
+      is optional.
+    </p>
+    <p>Todofy offers:</p>
+    <ul>
+      <li>Smart lists for Today, Upcoming and anything overdue, alongside your own projects and labels</li>
+      <li>Natural-language quick add, so "pay rent every 1st at 9am" becomes a dated, recurring task</li>
+      <li>A global capture window on a keyboard shortcut, from wherever you are</li>
+      <li>Recurring tasks, subtask checklists, a Kanban board and a month calendar</li>
+      <li>Pomodoro and per-task stopwatch timers that keep counting across restarts</li>
+      <li>Desktop reminders, a daily journal, and optional on-device voice input</li>
+    </ul>
+  </description>
+
+  <categories>
+    <category>Office</category>
+    <category>ProjectManagement</category>
+  </categories>
+
+  <keywords>
+    <keyword>todo</keyword>
+    <keyword>task</keyword>
+    <keyword>reminder</keyword>
+    <keyword>checklist</keyword>
+    <keyword>kanban</keyword>
+    <keyword>pomodoro</keyword>
+  </keywords>
+
+  <url type="homepage">https://unifybrowse.com/products/todofy</url>
+  <url type="bugtracker">https://github.com/salarzeidanlou/todofy/issues</url>
+  <url type="vcs-browser">https://github.com/salarzeidanlou/todofy</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Today, with due dates, priorities and labels</caption>
+      <image>https://raw.githubusercontent.com/salarzeidanlou/todofy/main/docs/today.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A Kanban board for a project</caption>
+      <image>https://raw.githubusercontent.com/salarzeidanlou/todofy/main/docs/board.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The month calendar</caption>
+      <image>https://raw.githubusercontent.com/salarzeidanlou/todofy/main/docs/calendar.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A focus timer running against a task</caption>
+      <image>https://raw.githubusercontent.com/salarzeidanlou/todofy/main/docs/focus.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Quick capture from anywhere</caption>
+      <image>https://raw.githubusercontent.com/salarzeidanlou/todofy/main/docs/quickadd.png</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>todofy</binary>
+  </provides>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="1.13.0" date="2026-09-20">
+      <description>
+        <p>Optional on-device voice input for tasks and journal entries, managed from Settings.</p>
+      </description>
+    </release>
+  </releases>
+</component>
