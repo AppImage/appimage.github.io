@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>com.codedead.opal</id>
+    <metadata_license>FSFAP</metadata_license>
+    <project_license>GPL-3.0-only</project_license>
+    <name>Opal</name>
+    <summary>Play relaxing music in the background</summary>
+
+    <description>
+        <p>
+            Opal is a free and open-source JavaFX application that can play relaxing music in the background.
+        </p>
+        <p>
+            Select the sounds (20+ relaxing tracks are available) that you want to hear, turn them on and listen to and
+            enjoy the music for as long as you want, without interruption.
+        </p>
+    </description>
+
+    <launchable type="desktop-id">Opal.desktop</launchable>
+
+    <screenshots>
+        <screenshot type="default">
+            <caption>The main window</caption>
+            <image>https://codedead.com/Software/Opal/opal.png</image>
+        </screenshot>
+    </screenshots>
+
+    <url type="homepage">https://codedead.com/software/opal</url>
+</component>
