@@ -172,21 +172,33 @@ done
 # Cheap: read the added lines straight out of the "files" diff instead of an
 # extra request per file.
 
+# Our own PRs (label auto-discovered, about two thirds of the open ones) are
+# covered by step 3 without a request each; the others' files are read 8 at
+# a time (there are around a thousand).
+open_pr_repos() { # open_pr_repos NUMBER
+  api GET "repos/$REPO/pulls/$1/files?per_page=30" 2>/dev/null | jq -r '
+    .[] | select(.status == "added") | select(.filename | startswith("data/")) | .patch // empty' \
+  | grep -m 1 '^+' | grep -v '^+++' | sed 's/^+//' | while read -r LINE ; do
+    parse_owner_repo "$(tr -d '\r' <<<"$LINE")"
+  done
+}
+export -f api open_pr_repos parse_owner_repo lower
+export REPO GH_TOKEN
+export API_TOKEN="${API_TOKEN:-}" DISCOVER_API_STUB="${DISCOVER_API_STUB:-}"
 PR_PAGE=1
 while : ; do
-  PRS=$(api GET "repos/$REPO/pulls?state=open&per_page=100&page=$PR_PAGE" | jq -r '.[].number' 2>/dev/null)
-  [ -n "$PRS" ] || break
-  while read -r N ; do
-    [[ "$N" =~ ^[0-9]+$ ]] || continue
-    api GET "repos/$REPO/pulls/$N/files?per_page=30" 2>/dev/null | jq -r '
-      .[] | select(.status == "added") | select(.filename | startswith("data/")) | .patch // empty' \
-    | grep -m 1 '^+' | grep -v '^+++' | sed 's/^+//' | while read -r LINE ; do
-      OR=$(parse_owner_repo "$(tr -d '\r' <<<"$LINE")") && echo "$OR"
-    done
-  done <<<"$PRS" >> "$WORKDIR/openpr.txt"
-  [ "$(wc -l < <(echo "$PRS"))" -lt 100 ] && break
+  PAGE_JSON=$(api GET "repos/$REPO/pulls?state=open&per_page=100&page=$PR_PAGE")
+  N_THIS_PAGE=$(jq 'if type == "array" then length else 0 end' <<<"$PAGE_JSON" 2>/dev/null || echo 0)
+  [ "${N_THIS_PAGE:-0}" -gt 0 ] || break
+  jq -r --arg l "$LABEL" '.[] | select([.labels[]?.name] | index($l) | not) | .number' <<<"$PAGE_JSON" 2>/dev/null \
+    | grep -xE '[0-9]+' >> "$WORKDIR/openpr-numbers.txt"
+  [ "$N_THIS_PAGE" -lt 100 ] && break
   PR_PAGE=$((PR_PAGE + 1))
 done
+if [ -s "$WORKDIR/openpr-numbers.txt" ] ; then
+  xargs -P 8 -I {} bash -c 'open_pr_repos "$1"' _ {} < "$WORKDIR/openpr-numbers.txt" > "$WORKDIR/openpr.txt"
+fi
+echo "$(grep -c . "$WORKDIR/openpr-numbers.txt" 2>/dev/null || echo 0) open pull requests not labeled $LABEL read" >&2
 [ -f "$WORKDIR/openpr.txt" ] && while read -r OR ; do [ -n "$OR" ] && SKIP_OPENPR["$OR"]=1 ; done < "$WORKDIR/openpr.txt"
 
 # --- 3. Repositories proposed before (label auto-discovered, any state) --
