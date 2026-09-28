@@ -14,7 +14,10 @@
 # Rules:
 # 1. The newest release that is neither a draft nor a pre-release and has an
 #    AppImage; if there is none, the newest pre-release with an AppImage
-#    (projects that only publish continuous builds).
+#    (projects that only publish continuous builds). But a newer pre-release
+#    with an AppImage wins over a release that is more than 180 days older
+#    than it (projects whose current versions are all pre-releases, e.g.
+#    v0.2.1 from last year and v0.5.0-rc1 from this summer, #4548).
 # 2. Its assets whose name ends in .AppImage (not .zsync, .sha256, ...).
 # 3. Without other architectures (aarch64, arm64, armhf, armv7, i386, i686, ...).
 # 4. If several remain: those that name x86_64 (or amd64, x64, x86-64, 64bit).
@@ -28,17 +31,31 @@
 JSON="$1"
 NAME="$2"
 
-# Releases with at least one AppImage, as "prerelease<TAB>index"
-RELEASE=$(jq -r '[to_entries[] | select(.value.draft | not)
-  | select([.value.assets[]?.name | test("\\.appimage$"; "i")] | any)
-  | {i: .key, pre: .value.prerelease}]
-  | ((map(select(.pre | not)) | first) // first) // empty | .i' "$JSON" 2>/dev/null)
+# Releases with at least one AppImage (newest first): the newest release,
+# or the newest pre-release if there is no release or if it is more than
+# 180 days newer than the newest release. Prints "index<TAB>why".
+PICK=$(jq -r '
+  def secs: (.published_at // .created_at // "") | .[0:19]
+    | if test("^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9:]{8}$") then (. + "Z" | fromdateiso8601) else null end;
+  [to_entries[] | select(.value.draft | not)
+    | select([.value.assets[]?.name | test("\\.appimage$"; "i")] | any)
+    | {i: .key, pre: (.value.prerelease == true), t: (.value | secs)}] as $r
+  | ($r | map(select(.pre | not)) | first) as $rel
+  | ($r | first) as $new
+  | if $new == null then empty
+    elif $rel == null then "\($new.i)\tnone"
+    elif $new.pre and $new.t != null and $rel.t != null and ($new.t - $rel.t) > 180 * 86400 then "\($new.i)\tstale\t\($rel.i)"
+    else "\($rel.i)\trelease" end' "$JSON" 2>/dev/null)
+RELEASE=$(cut -f 1 <<<"$PICK")
 if [ -z "$RELEASE" ] ; then
   echo "ERROR: No AppImage found in the GitHub releases of this repository"
   exit 1
 fi
 TAG=$(jq -r ".[$RELEASE].tag_name" "$JSON")
-[ "$(jq -r ".[$RELEASE].prerelease" "$JSON")" == true ] && echo "NOTE: Using pre-release $TAG, as no release has an AppImage"
+case "$(cut -f 2 <<<"$PICK")" in
+  none) echo "NOTE: Using pre-release $TAG, as no release has an AppImage" ;;
+  stale) echo "NOTE: Using pre-release $TAG, as the newest release with an AppImage, $(jq -r ".[$(cut -f 3 <<<"$PICK")].tag_name" "$JSON"), is more than 180 days older" ;;
+esac
 
 # name<TAB>url<TAB>upload time of its AppImages
 jq -r ".[$RELEASE].assets[] | select(.name | test(\"\\\\.appimage$\"; \"i\")) | \"\\(.name)\\t\\(.browser_download_url)\\t\\(.updated_at)\"" "$JSON" > "$JSON.candidates"
