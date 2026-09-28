@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.todobench.TodoBench</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>TodoBench</name>
+  <summary>Native Markdown workspace task manager</summary>
+  <description>
+    <p>
+      TodoBench is a native desktop task manager whose workspace is an ordinary
+      directory of Markdown files, attachments, and readable settings. Workspaces
+      can be exported and imported as standard 7-Zip archives.
+    </p>
+  </description>
+  <launchable type="desktop-id">com.todobench.TodoBench.desktop</launchable>
+  <developer_name>TodoBench contributors</developer_name>
+  <url type="homepage">https://alex9001.github.io/TodoBench/</url>
+  <releases>
+    <release version="0.1.4" date="2026-09-28"/>
+  </releases>
+  <provides>
+    <binary>TodoBench</binary>
+  </provides>
+  <categories>
+    <category>Office</category>
+    <category>ProjectManagement</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+</component>
