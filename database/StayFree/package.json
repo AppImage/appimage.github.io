@@ -1,0 +1,33 @@
+{
+  "name": "stayfree-desktop",
+  "shortName": "StayFree",
+  "productName": "StayFree",
+  "version": "3.7.0",
+  "description": "Analytics to help you understand and control your pc usage, leading to less distractions and enhanced productivity",
+  "type": "module",
+  "main": "./out/index.js",
+  "author": "Sensor Tower",
+  "homepage": "https://stayfreeapps.com",
+  "dependencies": {
+    "@bugsnag/electron": "^8.9.0",
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@mapbox/node-pre-gyp": "^1.0.11",
+    "@paymoapp/active-window": "2.1.4",
+    "better-sqlite3": "^12.9.0",
+    "builder-util-runtime": "^9.7.0",
+    "chartjs-plugin-datalabels": "^2.2.0",
+    "electron-updater": "^6.8.3",
+    "electron-window-state": "^5.0.3",
+    "file-icon": "^6.0.0",
+    "get-windows": "^9.3.0",
+    "jsonfile": "^6.2.1",
+    "knex": "^3.3.0",
+    "koffi": "^3.3.0",
+    "lru-cache": "^11.5.2",
+    "node-cron": "^4.6.0",
+    "semver": "^7.7.4",
+    "winston": "^3.19.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
+}
