@@ -1,4 +1,4 @@
-#cursor=2014-03 query=0
+#cursor=2014-02 query=1
 arkaikus/unofficial-comfyui-launcher	2026-09-27	stars
 bluscream/steam-cli	2026-09-27	stars
 jadrt22/soberix	2026-09-27	stars
@@ -8515,3 +8515,6 @@ blakebitcoin/blakebitcoin	2026-09-28	added
 flakrat/dotfiles	2026-09-28	stars
 mccright/references	2026-09-28	no-appimage
 scorninpc/php-gtk3	2026-09-28	added
+crnlabs/dlb	2026-09-28	stars
+onemoregres/screentranslator	2026-09-28	old
+kzahel/web-server-chrome	2026-09-28	added
