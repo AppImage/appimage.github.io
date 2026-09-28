@@ -130,7 +130,7 @@ jobs:
             done
             URL=$(GH_TOKEN="$PAT" gh api -X POST "repos/$REPO/pulls" -f base=master -f head="$BRANCH" \
                     -f title="Re-test $(echo "$NAMES" | sed 's/ /, /g')" \
-                    -f body="Re-test of \`data/$(echo "$NAMES" | sed 's/ /\`, \`data\//g')\`, requested with \`/retest\` by @$COMMENTER in #$PR, which is merged already. Only the trailing newline changes; the test reads just the first line." \
+                    -f body="Re-test of \`data/$(echo "$NAMES" | sed 's/ /\`, \`data\//g')\`, requested with \`/retest\` by @$COMMENTER in #$PR, which is merged already." \
                     --jq .html_url)
             reply "This pull request is merged, so its entries are tested again in a new pull request: $URL"
             react rocket
