@@ -31,8 +31,9 @@ desktop:
     Terminal: false
     Categories: Office
     StartupWMClass: TodoBench
-    X-AppImage-Version: 0.1.4
+    X-AppImage-Version: 0.1.5
   AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|Alex9001|TodoBench|latest|TodoBench-*-x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)
@@ -72,6 +73,8 @@ appdata:
     binaries:
     - TodoBench
   Releases:
+  - version: 0.1.5
+    unix-timestamp: 1790553600
   - version: 0.1.4
     unix-timestamp: 1790553600
   ContentRating:
