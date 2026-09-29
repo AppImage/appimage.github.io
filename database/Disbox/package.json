@@ -1,0 +1,29 @@
+{
+  "name": "disbox-linux",
+  "version": "4.9.2",
+  "description": "Disbox by naufal-backup - Discord Cloud Storage - High Performance with Multi-Account & App Lock",
+  "author": {
+    "name": "naufal-backup",
+    "email": "alamsyahnaufal453@gmail.com"
+  },
+  "main": "electron/main.js",
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/syne": "^5.2.7",
+    "@tanstack/react-query": "^5.96.1",
+    "archiver": "^7.0.1",
+    "axios": "^1.6.7",
+    "better-sqlite3": "^11.10.0",
+    "chokidar": "^3.6.0",
+    "framer-motion": "^11.0.8",
+    "lucide-react": "^0.344.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-hot-toast": "^2.4.1",
+    "react-inner-image-zoom": "^4.0.1",
+    "react-router-dom": "^6.22.2",
+    "react-syntax-highlighter": "^16.1.1"
+  }
+}
