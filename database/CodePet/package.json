@@ -1,0 +1,28 @@
+{
+  "name": "code-pet",
+  "version": "1.0.3",
+  "private": false,
+  "description": "Multi-provider desktop companion for Codex, Antigravity, Claude, and Grok.",
+  "desktopName": "CodePet.desktop",
+  "main": "src/main.js",
+  "license": "MIT",
+  "bin": {
+    "code-pet": "bin/code-pet.js"
+  },
+  "files": [
+    "src/**/*.js",
+    "src/**/*.html",
+    "src/**/*.css",
+    "src/**/*.json",
+    "src/**/*.png",
+    "src/**/*.webp",
+    "src/docker/grok/Dockerfile",
+    "src/docker/grok/codepet-grok-*",
+    "bin/code-pet.js",
+    "build/icon.ico",
+    "build/icon.png"
+  ],
+  "optionalDependencies": {
+    "electron": "^41.10.4"
+  }
+}
