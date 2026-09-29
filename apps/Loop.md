@@ -1,0 +1,115 @@
+---
+layout: app
+
+permalink: /Loop/
+description: Loop is a minimal desktop GUI for code agents. Bundles an embedded server and local SQLite database so everything runs on your machine.
+license: MIT
+
+icons:
+  - Loop/icons/128x128/loop.png
+
+screenshots:
+  - Loop/screenshot.png
+
+authors:
+  - name: abddost
+    url: https://github.com/abddost
+
+links:
+  - type: GitHub
+    url: abddost/loop
+  - type: Download
+    url: https://github.com/abddost/loop/releases
+
+desktop:
+  Desktop Entry:
+    Name: Loop
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: loop
+    StartupWMClass: Loop
+    X-AppImage-Version: 0.1.20
+    GenericName: AI Coding Assistant
+    Categories: Development
+    Keywords: ai
+    Comment: Loop is a minimal desktop GUI for code agents. Bundles an embedded server
+      and local SQLite database so everything runs on your machine.
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.38
+    X-AppImage-Payload-License: MIT
+
+electron:
+  type: module
+  license: MIT
+  main: dist-electron/main.cjs
+  dependencies:
+    "@ai-sdk/anthropic": "^3.0.58"
+    "@ai-sdk/cohere": "^3.0.25"
+    "@ai-sdk/deepinfra": "^2.0.39"
+    "@ai-sdk/deepseek": "^2.0.24"
+    "@ai-sdk/google": "^3.0.43"
+    "@ai-sdk/groq": "^3.0.29"
+    "@ai-sdk/mistral": "^3.0.24"
+    "@ai-sdk/openai": "^3.0.41"
+    "@ai-sdk/openai-compatible": "^2.0.35"
+    "@ai-sdk/perplexity": "^3.0.23"
+    "@ai-sdk/togetherai": "^2.0.39"
+    "@ai-sdk/xai": "^3.0.67"
+    "@anthropic-ai/claude-agent-sdk": "^0.2.109"
+    "@codemirror/commands": "^6.10.3"
+    "@codemirror/language": "^6.12.3"
+    "@codemirror/search": "^6.7.0"
+    "@codemirror/state": "^6.6.0"
+    "@codemirror/view": "^6.42.1"
+    "@heroui/react": "^3.0.0-beta.8"
+    "@heroui/styles": "^3.0.0-beta.8"
+    "@modelcontextprotocol/sdk": "^1.27.1"
+    "@openai/apps-sdk-ui": "^0.2.1"
+    "@opencode-ai/sdk": "^1.14.39"
+    "@openrouter/ai-sdk-provider": "^2.3.0"
+    "@parcel/watcher": "^2.5.6"
+    "@streamdown/math": "^1.0.2"
+    "@streamdown/mermaid": "^1.0.2"
+    "@tanstack/react-router": "^1.114.0"
+    "@tanstack/react-virtual": "^3.13.0"
+    "@xterm/addon-fit": "^0.11.0"
+    "@xterm/addon-web-links": "^0.12.0"
+    "@xterm/xterm": "^6.0.0"
+    "@zip.js/zip.js": "^2.8.26"
+    ai: "^6.0.116"
+    bun-pty: "^0.4.8"
+    clsx: "^2.1.0"
+    codemirror: "^6.0.2"
+    diff: "^8.0.3"
+    dompurify: "^3.3.3"
+    drizzle-orm: "^0.39.0"
+    electron-updater: "^6.8.3"
+    hono: "^4.7.0"
+    immer: "^10.1.0"
+    mitt: "^3.0.1"
+    monaco-editor: "^0.55.1"
+    nanoid: "^5.1.0"
+    react: "^19.1.0"
+    react-dom: "^19.1.0"
+    shiki: "^4.0.2"
+    streamdown: "^2.5.0"
+    tailwind-merge: "^3.0.0"
+    turndown: "^7.2.2"
+    ulid: "^2.3.0"
+    vscode-material-icons: "^0.1.1"
+    zod: "^3.24.0"
+    zustand: "^5.0.0"
+  trustedDependencies:
+  - "@parcel/watcher"
+  - sqlite3
+---
