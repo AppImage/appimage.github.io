@@ -1,0 +1,8 @@
+{
+  "name": "claude-journal-tray",
+  "version": "1.3.1",
+  "description": "System tray for Claude Journal",
+  "author": "xunjian_yin",
+  "repository": "github:Arvid-pku/claude-journal",
+  "main": "tray.js"
+}
