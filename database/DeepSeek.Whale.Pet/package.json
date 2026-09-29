@@ -1,0 +1,20 @@
+{
+  "name": "deepseek-whale-pet",
+  "productName": "DeepSeek Whale Pet",
+  "version": "1.5.5",
+  "description": "桌面小鲸鱼桌宠：DeepSeek 余额监控、今日已用双模式记账、峰谷定价、自定义泡泡（点击序列/模块化排版）、预警与余额减少表情、自定义音效与任务结束音、随机台词、隐藏菜单按钮（Linux / Windows / macOS 独立运行）",
+  "main": "main.js",
+  "author": {
+    "name": "momo-OwO-qwq",
+    "email": "momo_OwO@hotmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/momo-OwO-qwq/DeepSeek-Whale-Pet.git"
+  },
+  "homepage": "https://github.com/momo-OwO-qwq/DeepSeek-Whale-Pet",
+  "license": "MIT",
+  "allowScripts": {
+    "electron@34.5.8": true
+  }
+}
