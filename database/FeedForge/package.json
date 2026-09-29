@@ -1,0 +1,15 @@
+{
+  "name": "feedforge",
+  "version": "2.0.4",
+  "private": true,
+  "description": "Desktop toolkit for FeedPak files for the FeedBack game.",
+  "author": "FeedForge Contributors",
+  "license": "MIT",
+  "main": "electron/main.cjs",
+  "desktopName": "FeedForge.desktop",
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
