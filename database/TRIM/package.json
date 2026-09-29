@@ -1,0 +1,19 @@
+{
+  "name": "trim",
+  "version": "1.7.0",
+  "description": "A Spotlight-like launcher for Windows, macOS, and Linux",
+  "main": "src/main/main.js",
+  "author": "6A31",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/6A31/TRIM.git"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/genai": "^1.48.0",
+    "electron-updater": "^6.8.3",
+    "nerdamer": "^1.1.13",
+    "plotly.js-dist-min": "^3.5.0"
+  }
+}
