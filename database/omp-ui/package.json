@@ -1,0 +1,21 @@
+{
+  "name": "@omp-ui/desktop",
+  "desktopName": "ai.lankford.omp-ui",
+  "version": "0.17.1",
+  "private": true,
+  "description": "Desktop GUI for the omp coding agent",
+  "author": "Austin Lankford <austin@austinlankford.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/LankfordAI/omp-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LankfordAI/omp-ui.git"
+  },
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@omp-ui/core": "*",
+    "@omp-ui/server": "*",
+    "electron-updater": "^6.8.9",
+    "node-pty": "^1.1.0"
+  }
+}
