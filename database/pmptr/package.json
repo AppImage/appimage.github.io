@@ -1,0 +1,37 @@
+{
+  "name": "pmptr",
+  "version": "0.2.0",
+  "description": "A minimal virtual teleprompter that lives as a transparent, always-on-top, click-through overlay.",
+  "main": "src/main/main.js",
+  "bin": {
+    "pmptr": "bin/pmptr.js"
+  },
+  "files": [
+    "bin/**/*",
+    "src/**/*",
+    "assets/**/*"
+  ],
+  "author": {
+    "name": "Jatin Malik",
+    "email": "jatinkrmalik@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jatinkrmalik/pmptr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jatinkrmalik/pmptr/issues"
+  },
+  "homepage": "https://github.com/jatinkrmalik/pmptr",
+  "peerDependencies": {
+    "electron": "^31.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "license": "MIT"
+}
