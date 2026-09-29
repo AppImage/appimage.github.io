@@ -1,6 +1,6 @@
 ### 🌏 An invitation / 邀请
 
-你好！非常感谢你把这个应用提交到 [AppImage 应用目录](https://appimage.github.io)。👋
+你好！非常感谢你制作了这个 AppImage！👋
 
 我们注意到这个应用的界面或说明文档主要是中文的。AppImage 目录面向全球用户，默认以英文显示界面的应用可以被收录，并有机会触达世界各地更多的用户。
 
@@ -10,7 +10,7 @@
 
 ---
 
-Hi there, and thank you for submitting this application to the [AppImage catalog](https://appimage.github.io)! 👋
+Hi there, and thank you for making this AppImage! 👋
 
 We noticed that this application's interface or documentation appears to be predominantly in Chinese. The catalog serves a worldwide audience, and applications that show an **English interface by default** can be included and reach many more users internationally.
 
