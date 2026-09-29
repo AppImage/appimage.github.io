@@ -1,0 +1,21 @@
+{
+  "name": "corv-gcs",
+  "version": "1.7.1",
+  "description": "CORV SYSTEMS Ground Control Station",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xarin94/Corv-GCS.git"
+  },
+  "author": "CORV SYSTEMS <info@corvsystems.com>",
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Xarin94/Corv-GCS/issues"
+  },
+  "homepage": "https://github.com/Xarin94/Corv-GCS#readme",
+  "dependencies": {
+    "node-mavlink": "^2.3.0",
+    "serialport": "^13.0.0"
+  }
+}
