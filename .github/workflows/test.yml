@@ -176,6 +176,10 @@ jobs:
           [ -e .nothing-tested ] && exit 0 # No artifact, no comment
           mkdir -p pr-result
           echo "${{ github.event.pull_request.number }}" > pr-result/pr-number
+          # If the screenshot's text is predominantly Chinese (check-screenshot.sh
+          # OCRs it), record it so publish-pr-screenshot.yml can invite the author
+          # to offer an English default instead of posting the usual report.
+          grep -q 'not in English but in Chinese script' log.txt && echo chinese > pr-result/language.txt || true
           if [ "${{ steps.main.outcome }}" = success ] ; then
             find database -type f -path '*/screenshot.png' -newer .test-start -print | while IFS= read -r screenshot ; do
               appname=$(basename "$(dirname "$screenshot")" | tr -cd 'A-Za-z0-9._-')

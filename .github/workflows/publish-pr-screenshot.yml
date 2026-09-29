@@ -60,8 +60,35 @@ jobs:
           fi
           echo "number=$PR" >> "$GITHUB_OUTPUT"
 
-      - name: Upload images
+      - name: Detect a predominantly Chinese application
+        id: lang
         if: steps.pr.outputs.number != ''
+        env:
+          PR: ${{ steps.pr.outputs.number }}
+        run: |
+          # If the screenshot or the upstream README is predominantly Chinese, we
+          # invite the author to offer an English default instead of posting the
+          # usual test report (see the "Comment on PR" step).
+          CHINESE=false
+          # Screenshot: the worker OCRs it (code/check-screenshot.sh) and records
+          # "chinese" when it is predominantly Chinese. The artifact is untrusted,
+          # so accept only that exact token.
+          if [ -f out/language.txt ] && [ "$(tr -cd 'a-z' < out/language.txt)" = chinese ] ; then
+            CHINESE=true
+          fi
+          # README: read from the PR's data/ files at the tested commit via the
+          # API (trusted, like the @mention logic below), not from the artifact.
+          if [ "$CHINESE" != true ] ; then
+            for FILE in $(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' | head -n 5) ; do
+              URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$HEAD_SHA" 2>/dev/null | head -n 1)
+              if [ "$(bash code/readme-language.sh "$URL")" = chinese ] ; then CHINESE=true ; break ; fi
+            done
+          fi
+          echo "chinese=$CHINESE" >> "$GITHUB_OUTPUT"
+          echo "Predominantly Chinese: $CHINESE"
+
+      - name: Upload images
+        if: steps.pr.outputs.number != '' && steps.lang.outputs.chinese != 'true'
         env:
           PR: ${{ steps.pr.outputs.number }}
           REPO_ID: ${{ github.event.repository.id }}
@@ -169,8 +196,40 @@ jobs:
         if: steps.pr.outputs.number != ''
         env:
           PR: ${{ steps.pr.outputs.number }}
+          CHINESE: ${{ steps.lang.outputs.chinese }}
         run: |
           MARKER='<!-- appimagehub-test-result -->'
+
+          # Predominantly Chinese application: instead of the usual test report,
+          # post a friendly bilingual invitation to offer an English default, so
+          # the app can be included and reach users internationally. @mention the
+          # GitHub account the AppImage comes from (unless a bot) so they see it.
+          if [ "$CHINESE" = true ] ; then
+            OWNERS=$(gh api --paginate "repos/$REPO/pulls/$PR/files" \
+                       --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' \
+                     | head -n 5 | while read -r FILE ; do
+                         URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$HEAD_SHA" 2>/dev/null | head -n 1)
+                         bash code/upstream-owner.sh "$URL"
+                       done | sort -fu)
+            EARLIER=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
+                        --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .body" || true)
+            MENTIONS=""
+            for OWNER in $OWNERS ; do
+              case "$(echo "$OWNER" | tr 'A-Z' 'a-z')" in *-bot|*\[bot\]) continue ;; esac
+              grep -qiE "@${OWNER}([^A-Za-z0-9-]|$)" <<<"$EARLIER" && continue
+              MENTIONS="$MENTIONS @$OWNER"
+            done
+            {
+              echo "$MARKER"
+              [ -n "$MENTIONS" ] && { echo "${MENTIONS# }" ; echo ; }
+              cat code/chinese-invite.md
+              echo
+              echo "Commit ${HEAD_SHA::8}. [Full log](${RUN_URL})"
+            } > comment.md
+            cat comment.md
+            gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md >/dev/null
+            exit 0
+          fi
           {
             echo "$MARKER"
             if [ "$CONCLUSION" = success ] ; then
@@ -289,9 +348,11 @@ jobs:
         if: steps.pr.outputs.number != '' && vars.AUTO_MERGE != 'false'
         env:
           PR: ${{ steps.pr.outputs.number }}
+          CHINESE: ${{ steps.lang.outputs.chinese }}
         run: |
           skip() { echo "Not auto-merging: $1" ; exit 0 ; }
           [ "$CONCLUSION" = success ] || skip "the test did not pass"
+          [ "$CHINESE" != true ] || skip "predominantly Chinese; invited the author to add an English default"
           gh api "repos/$REPO/pulls/$PR" > pr.json
           [ "$(jq -r .state pr.json)" = open ] || skip "not open"
           [ "$(jq -r .draft pr.json)" = false ] || skip "draft"
