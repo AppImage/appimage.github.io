@@ -1,0 +1,23 @@
+{
+  "name": "flux-hub",
+  "version": "1.0.2",
+  "description": "FLUX — Fetch, Load, Use & eXtract. Open-source media manager built on Electron, yt-dlp and ffmpeg.",
+  "main": "main.js",
+  "license": "GPL-3.0-or-later",
+  "author": {
+    "name": "Enrico Tommasini",
+    "email": "flux.hub.app@gmail.com"
+  },
+  "dependencies": {
+    "fabric": "^7.4.0",
+    "music-metadata": "^10.9.1",
+    "node-id3": "^0.2.9",
+    "node-shazam": "^1.2.7",
+    "pdfjs-dist": "^5.7.284",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.34.5"
+  },
+  "optionalDependencies": {
+    "electron-updater": "^6.1.7"
+  }
+}
