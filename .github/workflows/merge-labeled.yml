@@ -1,0 +1,124 @@
+# Merges every open pull request whose labels are EXACTLY "screenshot-ok" and
+# nothing else, or EXACTLY "auto-discovered" + "screenshot-ok" and nothing else.
+# ("auto-discovered" is the label auto-discovery adds; it is what is meant by
+# "auto-detected".) Any other label - error-*, manual-check-needed, do-not-merge,
+# not-upstream, opt-out, ... - excludes a pull request.
+#
+# Started by hand. It keeps going until nothing eligible is left or it has merged
+# "max" pull requests (default 50), waiting for GitHub to compute each pull
+# request's mergeability before deciding. A pull request that is not mergeable
+# (a conflict, or blocked by branch protection) is skipped. Merges use the
+# squash method; because a merge with GITHUB_TOKEN starts no push workflow, the
+# Test workflow is dispatched afterwards for each merge commit so database/ is
+# written (as the auto-merge in publish-pr-screenshot.yml does).
+#
+# Set dry_run to true to only list what would be merged.
+
+name: Merge labeled PRs
+
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: Maximum number of pull requests to merge
+        type: number
+        default: 50
+      dry_run:
+        description: Only list what would be merged; merge nothing
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: merge-labeled
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      MAX: ${{ inputs.max }}
+      DRY_RUN: ${{ inputs.dry_run }}
+    steps:
+      - name: Merge eligible pull requests
+        run: |
+          set -uo pipefail
+          MAX=$(printf '%s' "${MAX:-50}" | tr -cd '0-9') ; MAX=${MAX:-50}
+          [ "$MAX" -gt 0 ] 2>/dev/null || MAX=50
+          echo "Up to $MAX pull request(s); dry_run=$DRY_RUN"
+
+          # Open PRs whose label set is a non-empty subset of
+          # {screenshot-ok, auto-discovered} that contains screenshot-ok.
+          eligible() {
+            gh pr list -R "$REPO" --state open --label screenshot-ok --limit 200 \
+              --json number,labels \
+              --jq '.[] | ([.labels[].name] | sort) as $l
+                    | select(($l | index("screenshot-ok"))
+                             and (($l - ["screenshot-ok","auto-discovered"]) | length == 0))
+                    | .number' 2>/dev/null || true
+          }
+
+          # Try to merge one PR after waiting for its mergeability. 0 = merged.
+          merge_pr() {
+            local pr="$1" data mergeable state sha out
+            for _ in 1 2 3 4 5 6 7 8 ; do
+              data=$(gh api "repos/$REPO/pulls/$pr" 2>/dev/null) || return 1
+              [ "$(jq -r .state <<<"$data")" = open ] || { echo "skip #$pr: not open"; return 1; }
+              mergeable=$(jq -r '.mergeable' <<<"$data")
+              state=$(jq -r '.mergeable_state // ""' <<<"$data")
+              [ "$mergeable" = null ] || break   # null = GitHub is still computing it
+              sleep 5
+            done
+            sha=$(jq -r .head.sha <<<"$data")
+            if [ "$mergeable" != true ] ; then
+              echo "skip #$pr: not mergeable (mergeable=$mergeable, state=$state)"
+              return 1
+            fi
+            if [ "$DRY_RUN" = "true" ] ; then
+              echo "would merge #$pr (state=$state)"
+              return 0
+            fi
+            out=$(gh api -X PUT "repos/$REPO/pulls/$pr/merge" -f sha="$sha" -f merge_method=squash --jq .sha 2>&1) \
+              || { echo "skip #$pr: merge refused: $(printf '%s' "$out" | tr '\n' ' ' | cut -c1-160)"; return 1; }
+            echo "merged #$pr as ${out:0:8}"
+            # A merge with GITHUB_TOKEN starts no push run: dispatch Test so database/ is written
+            gh workflow run test.yml -R "$REPO" --ref master -f commit="$out" >/dev/null 2>&1 || true
+            return 0
+          }
+
+          DONE=0
+          while [ "$DONE" -lt "$MAX" ] ; do
+            mapfile -t PRS < <(eligible)
+            if [ "${#PRS[@]}" -eq 0 ] ; then
+              echo "No more eligible pull requests."
+              break
+            fi
+            echo "Eligible this pass: ${PRS[*]}"
+            PROGRESS=0
+            for pr in "${PRS[@]}" ; do
+              [ "$DONE" -lt "$MAX" ] || break
+              if merge_pr "$pr" ; then
+                DONE=$((DONE + 1))
+                PROGRESS=$((PROGRESS + 1))
+                [ "$DRY_RUN" = "true" ] || sleep 3   # let master settle before re-evaluating the rest
+              fi
+            done
+            # dry run lists each PR once; and stop if a whole pass made no progress
+            if [ "$DRY_RUN" = "true" ] || [ "$PROGRESS" -eq 0 ] ; then
+              [ "$PROGRESS" -eq 0 ] && [ "$DRY_RUN" != "true" ] && echo "No further progress; the remaining pull requests are not mergeable."
+              break
+            fi
+          done
+
+          if [ "$DRY_RUN" = "true" ] ; then
+            echo "Dry run: listed $DONE pull request(s); nothing was merged."
+          else
+            echo "Merged $DONE pull request(s)."
+          fi
