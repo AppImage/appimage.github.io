@@ -43,6 +43,11 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
 
+      # jekyll-build-pages only builds (into ./_site); the artifact that
+      # deploy-pages publishes has to be uploaded separately.
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
