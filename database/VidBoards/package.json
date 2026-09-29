@@ -1,0 +1,16 @@
+{
+  "name": "vidboards",
+  "version": "1.4.0",
+  "description": "Free video and image reference board",
+  "main": "src/main.js",
+  "author": {
+    "name": "Kuzma Bogdanov",
+    "email": "kuzmabogdanov@gmail.com"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "electron-log": "^5.4.4",
+    "electron-updater": "^6.8.9"
+  }
+}
