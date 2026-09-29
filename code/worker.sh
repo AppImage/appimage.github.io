@@ -377,6 +377,14 @@ sudo sysctl vm.mmap_min_addr=0
 
 export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
 export QT_DEBUG_PLUGINS=1 # https://github.com/AppImage/appimage.github.io/pull/1809#issuecomment-548399825
+# WebKitGTK-based apps (Tauri, wxWebView, GNOME web wrappers, ...) render a
+# blank white window when their GPU-accelerated compositing fails, which it
+# does under Xvfb's software rendering (no GPU) - the same failure users hit on
+# NVIDIA and in VMs. Force the software path so the web view actually paints
+# and the screenshot is real. See tauri-apps/tauri#11988 (EGL_BAD_PARAMETER),
+# #9304 (AcceleratedSurfaceDMABuf framebuffer), #5143 (blank until redraw).
+export WEBKIT_DISABLE_DMABUF_RENDERER=1 # WebKitGTK 2.40+ (the DMABUF/EGL renderer)
+export WEBKIT_DISABLE_COMPOSITING_MODE=1 # older WebKitGTK (accelerated compositing)
 sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/appimage.github.io/pull/1564#issuecomment-491591127 https://github.com/electron/electron/issues/17972
 
 # reset does not work here
