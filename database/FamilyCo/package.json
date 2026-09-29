@@ -1,0 +1,19 @@
+{
+  "name": "@familyco/electron",
+  "version": "1.1.1",
+  "description": "FamilyCo Electron",
+  "homepage": "https://github.com/familyco/familyco",
+  "type": "module",
+  "main": "electron/main.js",
+  "types": "dist/index.d.ts",
+  "author": {
+    "name": "FamilyCo",
+    "email": "thien.kt@omaicode.com"
+  },
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@10.33.0",
+  "dependencies": {
+    "@familyco/server": "workspace:*",
+    "electron-updater": "^6.6.2"
+  }
+}

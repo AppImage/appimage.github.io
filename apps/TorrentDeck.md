@@ -3,6 +3,7 @@ layout: app
 
 permalink: /TorrentDeck/
 description: A modern cross-platform remote dashboard for Transmission and Deluge BitTorrent daemons
+license: GPL-2.0
 
 icons:
   - TorrentDeck/icons/1024x1024/torrentdeck.png
@@ -11,29 +12,30 @@ screenshots:
   - TorrentDeck/screenshot.png
 
 authors:
-  - name: pramod-bls
-    url: https://github.com/pramod-bls
+  - name: pramodbutte
+    url: https://github.com/pramodbutte
 
 links:
   - type: GitHub
-    url: pramod-bls/torrentdeck
+    url: pramodbutte/torrentdeck
   - type: Download
-    url: https://github.com/pramod-bls/torrentdeck/releases
+    url: https://github.com/pramodbutte/torrentdeck/releases
 
 desktop:
   Desktop Entry:
     Name: TorrentDeck
-    Exec: AppRun --no-sandbox %U
+    Exec: AppRun %U
     Terminal: false
     Type: Application
     Icon: torrentdeck
     StartupWMClass: TorrentDeck
-    X-AppImage-Version: 0.1.8
+    X-AppImage-Version: 0.1.9
     MimeType: application/x-bittorrent
     Comment: A modern cross-platform remote dashboard for Transmission and Deluge BitTorrent
       daemons
     Categories: Network
   AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|pramodbutte|torrentdeck|latest|TorrentDeck-*.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)
@@ -41,9 +43,10 @@ desktop:
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
     X-AppImage-Libc: host
-    X-AppImage-Runtime: dynamic
+    X-AppImage-Runtime: static
     X-AppImage-Self-Contained: false
     X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: GPL-2.0
 
 electron:
   type: module
@@ -54,10 +57,10 @@ electron:
     name: Pramod Butte
     email: pramod.butte@gmail.com
   license: GPL-2.0-or-later
-  homepage: https://github.com/pramod-bls/torrentdeck
+  homepage: https://github.com/pramodbutte/torrentdeck
   repository:
     type: git
-    url: https://github.com/pramod-bls/torrentdeck.git
+    url: https://github.com/pramodbutte/torrentdeck.git
   dependencies:
     "@electron-toolkit/utils": "^4.0.0"
     "@radix-ui/react-checkbox": "^1.3.6"

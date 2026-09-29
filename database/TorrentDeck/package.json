@@ -1,7 +1,7 @@
 {
   "name": "torrentdeck",
   "productName": "TorrentDeck",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "type": "module",
   "description": "A modern cross-platform remote dashboard for Transmission and Deluge BitTorrent daemons",
   "main": "./out/main/index.js",
@@ -10,10 +10,10 @@
     "email": "pramod.butte@gmail.com"
   },
   "license": "GPL-2.0-or-later",
-  "homepage": "https://github.com/pramod-bls/torrentdeck",
+  "homepage": "https://github.com/pramodbutte/torrentdeck",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pramod-bls/torrentdeck.git"
+    "url": "https://github.com/pramodbutte/torrentdeck.git"
   },
   "dependencies": {
     "@electron-toolkit/utils": "^4.0.0",

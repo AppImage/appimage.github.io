@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.sjvrensburg.RailReader2</id>
+
+  <name>RailReader2</name>
+  <summary>AI-guided rail reading PDF viewer for comfortable high-magnification reading</summary>
+
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+
+  <developer id="io.github.sjvrensburg">
+    <name>Probity Data Analytics</name>
+  </developer>
+
+  <launchable type="desktop-id">io.github.sjvrensburg.RailReader2.desktop</launchable>
+
+  <description>
+    <p>
+      RailReader2 is a desktop PDF viewer with AI-guided "rail reading" mode for
+      high-magnification viewing. It uses an ONNX layout-detection model to
+      identify text blocks, then locks the viewport to one block at a time so the
+      reader can comfortably read at very high zoom levels without losing context.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>AI-detected layout for rail-style line-by-line reading at high magnification</li>
+      <li>Annotations: highlight, freehand, rectangle, text notes</li>
+      <li>Named bookmarks, outline navigation, full-text search</li>
+      <li>Markdown export via VLM transcription of figures, tables, equations</li>
+      <li>Colour effects (high contrast, amber, invert) for vision comfort</li>
+    </ul>
+  </description>
+
+  <url type="homepage">https://github.com/sjvrensburg/railreader2</url>
+  <url type="bugtracker">https://github.com/sjvrensburg/railreader2/issues</url>
+  <url type="vcs-browser">https://github.com/sjvrensburg/railreader2</url>
+
+  <categories>
+    <category>Office</category>
+    <category>Viewer</category>
+  </categories>
+
+  <provides>
+    <binary>RailReader2</binary>
+  </provides>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="3.67.0.0" date="2026-09-29"/>
+    <release version="3.66.1.0" date="2026-09-29"/>
+    <release version="3.66.0.0" date="2026-09-28"/>
+    <release version="3.62.1.0" date="2026-09-07"/>
+    <release version="3.62.0.0" date="2026-09-07"/>
+    <release version="3.61.0.0" date="2026-08-28"/>
+    <release version="3.60.0.0" date="2026-08-18"/>
+    <release version="3.59.1.0" date="2026-08-12"/>
+    <release version="3.59.0.0" date="2026-08-12"/>
+    <release version="3.58.1.0" date="2026-08-12"/>
+    <release version="3.58.0.0" date="2026-08-11"/>
+    <release version="3.57.2.0" date="2026-08-08"/>
+    <release version="3.57.1.0" date="2026-08-07"/>
+    <release version="3.57.0.0" date="2026-07-26"/>
+    <release version="3.56.0.0" date="2026-07-26"/>
+    <release version="3.55.3.0" date="2026-07-15"/>
+    <release version="3.55.2.0" date="2026-07-13"/>
+    <release version="3.55.1.0" date="2026-07-12"/>
+    <release version="3.13.2.0" date="2026-05-26"/>
+  </releases>
+</component>

@@ -52,6 +52,13 @@ if [ -z "$DESKTOP" ] ; then
   case "$NAME" in
     *[[:space:]]*) problem "must not contain blanks; use _ instead" ;;
   esac
+  # Characters that break the generated page's web address
+  # (https://appimage.github.io/<name>/): a colon in particular makes Jekyll
+  # read the name as a URL scheme, and the whole site build fails with
+  # "Invalid scheme format" (as data/Open_Battery_Information: did).
+  case "$NAME" in
+    *[:?#%]*) problem "must not contain ':', '?', '#' or '%'; these break the page's web address (https://appimage.github.io/<name>/) and can fail the whole site build. Use _ or omit them" ;;
+  esac
   if echo "$NAME" | grep -qiE '\.appimage$|(^|[-_.])(x86[-_]64|amd64|aarch64|arm64|armhf|i[36]86)([-_.]|$)' ; then
     problem "looks like the name of an AppImage file; use the name of the application instead (e.g. 'App', not 'App-1.0-x86_64.AppImage')"
   fi

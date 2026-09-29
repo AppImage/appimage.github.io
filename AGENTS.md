@@ -109,8 +109,12 @@ GitHub Pages (Jekyll) from this repository.
    to a different owner, it posts a comment marked
    `<!-- appimagehub-origin-check -->` and sets the yellow
    `manual-check-needed` label (possible takeover of an entry); both are
-   withdrawn when a later push undoes the change. This does not depend on the
-   PR's own test run, which a PR could alter.
+   withdrawn when a later push undoes the change. Exception: if both are GitHub
+   repositories and GitHub itself redirects the old repository to the new one
+   (a rename or transfer, so the same project), `check-origin.sh` exits 2 and
+   the workflow posts a neutral informational note instead — no warning, no
+   `manual-check-needed` label. This does not depend on the PR's own test run,
+   which a PR could alter.
 
 4. `.github/workflows/ping-authors.yml` (monthly `schedule`, a real run, and
    `workflow_dispatch` with `dry_run` (default true), `max_issues`
@@ -207,6 +211,25 @@ GitHub Pages (Jekyll) from this repository.
    it. `publish-pr-screenshot.yml`'s auto-merge skips pull requests whose
    branch starts with `discover/` or that are labeled `auto-discovered`: a
    maintainer always reviews these.
+
+   `.github/workflows/discover-apphub.yml` (`workflow_dispatch` only; inputs
+   `count` (default 1) and `dry_run`) does the same for **AppImageHub** (the
+   openDesktop/Pling store) with `code/discover-apphub.sh`. AppImageHub's own
+   API host is deprecated, but the shared OCS v1 API still serves it anonymously
+   at `https://api.opendesktop.org/ocs/v1/`; the app categories are the ones
+   whose `xdg_type` is `bin`. An entry's `downloadlink` is a tokenized, expiring
+   Pling URL and its `homepage` points back to the openDesktop page — neither is
+   stable — but for "link" entries the Pling URL simply redirects to the real
+   upstream (e.g. digiKam → `https://download.kde.org/stable/digikam/`). So the
+   script resolves each entry's download to its final URL and proposes it only
+   when that is stable and resolvable by the existing helpers: a
+   GitHub/GitLab/Codeberg repository (`fetch-releases.sh` + `find-appimage.sh`),
+   a download directory ending in `/` (`fetch-listing.sh`), or a versionless
+   "latest" `.AppImage` link; Pling-hosted files, versioned files and non-listing
+   HTML are skipped. Apps already in `data/`, added by an open PR, or named by an
+   `auto-discovered`/`opt-out` PR (any state) are skipped by name. Same
+   `auto-discovered` label and `DISCOVER_TOKEN`/`SCREENSHOT_UPLOAD_TOKEN`/`GITHUB_TOKEN`
+   handling as `discover-apps.yml`; a maintainer reviews the PRs.
 
 7. `.github/workflows/auto-retest.yml` (`issue_comment` only) re-tests a
    failed pull request without anyone typing `/retest`: on a comment (not

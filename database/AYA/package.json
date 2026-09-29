@@ -1,0 +1,10 @@
+{
+  "name": "aya",
+  "productName": "AYA",
+  "appId": "io.liriliri.aya",
+  "version": "1.14.2",
+  "description": "Android adb desktop app",
+  "main": "main/index.js",
+  "author": "surunzi",
+  "license": "AGPL-3.0"
+}

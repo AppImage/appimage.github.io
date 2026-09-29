@@ -1,0 +1,18 @@
+{
+  "name": "ccdeck-desktop",
+  "private": true,
+  "version": "3.32.1",
+  "description": "ccdeck as a desktop app: the deck, a window, a tray icon and native notifications.",
+  "desktopName": "ccdeck-desktop",
+  "license": "AGPL-3.0-only",
+  "homepage": "https://ccdeck.dev",
+  "author": {
+    "name": "ccdeck",
+    "url": "https://ccdeck.dev"
+  },
+  "type": "module",
+  "main": "main.mjs",
+  "dependencies": {
+    "electron-updater": "6.8.9"
+  }
+}
