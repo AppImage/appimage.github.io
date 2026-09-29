@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>ch.lkmc.Lucerne</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Lucerne</name>
+  <summary>Letters with free image placement and live text flow</summary>
+  <description>
+    <p>
+      Lucerne is a small, pleasant, ClarisWorks-style word editor for writing
+      letters. Its defining feature is genuine free placement of images: drop
+      a picture anywhere on the page and the text flows around it, live,
+      staying correct through every subsequent edit.
+    </p>
+    <p>
+      Documents are saved as .luce — a plain ZIP package containing readable
+      JSON, your images, and a Markdown backup trail, so your letters stay
+      recoverable with any archive tool. Files are fully compatible with
+      Lucerne for Mac.
+    </p>
+  </description>
+  <launchable type="desktop-id">ch.lkmc.Lucerne.desktop</launchable>
+  <provides>
+    <mediatype>application/x-lucerne</mediatype>
+  </provides>
+  <url type="homepage">https://github.com/L-K-M/Lucerne</url>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.6.0" date="2026-08-23"/>
+  </releases>
+  <categories>
+    <category>Office</category>
+    <category>WordProcessor</category>
+  </categories>
+</component>
