@@ -1,0 +1,15 @@
+{
+  "name": "simtradedesk",
+  "version": "0.7.11",
+  "description": "SimTradeDesk Desktop App",
+  "homepage": "https://github.com/kay-ou/SimTradeDesk",
+  "author": {
+    "name": "kay-ou",
+    "email": "kayou@duck.com"
+  },
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "node-pty": "^1.1.0"
+  },
+  "productName": "SimTradeDesk"
+}
