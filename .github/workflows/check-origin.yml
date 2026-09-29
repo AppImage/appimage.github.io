@@ -53,18 +53,26 @@ jobs:
                   | [.filename, (.previous_filename // .filename)] | @tsv' > files.tsv
           : > changes.md
           : > urls.txt
+          : > moved.md
           while IFS=$'\t' read -r FILE PREVIOUS ; do
             OLD=$(first_line "$PREVIOUS" "$BASE_SHA")
             NEW=$(first_line "$FILE" "$HEAD_SHA")
             [ -n "$OLD" ] && [ -n "$NEW" ] || continue
-            if ! RESULT=$(bash code/check-origin.sh "$OLD" "$NEW") ; then
-              # File names and origins contain only safe characters
-              SAFE_FILE=$(echo "$FILE" | tr -cd 'A-Za-z0-9._/+-')
-              echo "- \`$SAFE_FILE\`: \`${RESULT% *}\` → \`${RESULT#* }\`" >> changes.md
+            # 0 = same owner; 1 = different owner; 2 = different but GitHub
+            # redirects the old repo to the new one (a rename/transfer)
+            RESULT=$(bash code/check-origin.sh "$OLD" "$NEW") ; RC=$?
+            [ "$RC" -eq 0 ] && continue
+            # File names and origins contain only safe characters
+            SAFE_FILE=$(echo "$FILE" | tr -cd 'A-Za-z0-9._/+-')
+            LINE="- \`$SAFE_FILE\`: \`${RESULT% *}\` → \`${RESULT#* }\`"
+            if [ "$RC" -eq 2 ] ; then
+              echo "$LINE" >> moved.md
+            else
+              echo "$LINE" >> changes.md
               printf '%s\nold: %s\nnew: %s\n' "$SAFE_FILE" "$OLD" "$NEW" >> urls.txt
             fi
           done < files.tsv
-          cat changes.md
+          cat changes.md moved.md
 
           ID=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
                  --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .id" \
@@ -89,6 +97,12 @@ jobs:
               echo
               echo "- **Contributor:** please explain in this PR why the location changed, ideally with a link where the project announces the new location."
               echo "- **Maintainers:** please check that the new location belongs to the same project before merging."
+              if [ -s moved.md ] ; then
+                echo
+                echo "For reference, these other changes are confirmed GitHub redirects (the old repository was renamed or transferred to the new one — the same project):"
+                echo
+                cat moved.md
+              fi
               echo
               echo "Commit ${HEAD_SHA::8}."
             } > comment.md
@@ -103,6 +117,32 @@ jobs:
                   -f description="A maintainer needs to check this PR, see its comments" > /dev/null
               fi
               gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=$LABEL" > /dev/null
+            fi
+          elif [ -s moved.md ] ; then
+            # Different GitHub owner, but GitHub redirects the old repository to
+            # the new one: a rename or transfer, the same project. Just inform;
+            # this is not a takeover, so no warning and no manual-check label.
+            {
+              echo "$MARKER"
+              echo "### :information_source: Download location moved (same project)"
+              echo
+              echo "This PR points the entry to a different GitHub location, and GitHub itself redirects the old repository to the new one, so it is the same project (a rename or transfer), not a takeover:"
+              echo
+              cat moved.md
+              echo
+              echo "No action needed; noting it for the record."
+              echo
+              echo "Commit ${HEAD_SHA::8}."
+            } > comment.md
+            if [ -n "$ID" ] ; then
+              gh api -X PATCH "repos/$REPO/issues/comments/$ID" -F body=@comment.md > /dev/null
+            else
+              gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md > /dev/null
+            fi
+            # A confirmed move is not a manual check: drop the label if an
+            # earlier commit had added it.
+            if [ -n "$HAS_LABEL" ] ; then
+              gh api -X DELETE "repos/$REPO/issues/$PR/labels/$LABEL" > /dev/null
             fi
           else
             # No (more) change of owner: withdraw an earlier warning
