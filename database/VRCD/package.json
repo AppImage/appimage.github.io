@@ -1,0 +1,27 @@
+{
+  "name": "vr-cyberdeck",
+  "version": "1.8.3",
+  "description": "An Electron application with React and TypeScript",
+  "main": "./out/main/index.js",
+  "author": "example.com",
+  "homepage": "https://electron-vite.org",
+  "dependencies": {
+    "@devicefarmer/adbkit": "^3.3.8",
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/utils": "^4.0.0",
+    "axios": "^1.9.0",
+    "compare-versions": "^6.1.1",
+    "electron-log": "^5.4.1",
+    "execa": "^9.6.0",
+    "ini": "^5.0.0",
+    "marked": "^18.0.2",
+    "node-7z": "^3.0.0",
+    "pingman": "^2.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
+  }
+}

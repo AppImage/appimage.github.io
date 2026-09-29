@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata, shipped in the AppImage and .deb at /usr/share/metainfo/ (see tauri.conf.json,
+     bundle.linux.appimage.files / deb.files). Software catalogs such as AppImageHub read it.
+     Add a <release> line for each new version. Validate: appstreamcli validate linux/com.arynwood.mcp.metainfo.xml -->
+<component type="desktop-application">
+  <id>com.arynwood.mcp</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://github.com/Arynwood-Technology/ArynwoodMCP/blob/main/LICENSE</project_license>
+  <name>Arynwood MCP</name>
+  <summary>Local-first AI workspace for the Linux desktop</summary>
+  <description>
+    <p>
+      Arynwood MCP is a desktop workspace for running AI on your own Linux machine. It brings together
+      multi-persona chat with local Ollama models, knowledge search and memory over your own documents,
+      a design canvas with optional image generation, and Model Context Protocol (MCP) tool integrations,
+      including editing a running Kdenlive timeline through Cutroom's MCP server.
+    </p>
+    <p>
+      This is an alpha for Linux x86_64. Ollama and the optional services (Qdrant for knowledge search,
+      an image generation server) are installed separately. Chat works without a GPU.
+    </p>
+  </description>
+  <launchable type="desktop-id">arynwood-mcp.desktop</launchable>
+  <developer id="com.arynwood">
+    <name>Arynwood Technology</name>
+  </developer>
+  <url type="homepage">https://arynwood.com/mcp/</url>
+  <url type="bugtracker">https://github.com/Arynwood-Technology/ArynwoodMCP/issues</url>
+  <url type="vcs-browser">https://github.com/Arynwood-Technology/ArynwoodMCP</url>
+  <url type="help">https://arynwood.com/local-ai-linux.html</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Chat with a local model, with persona tabs above the conversation</caption>
+      <image>https://arynwood.com/assets/img/arynwood-mcp-screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <keywords>
+    <keyword>AI</keyword>
+    <keyword>LLM</keyword>
+    <keyword>Ollama</keyword>
+    <keyword>MCP</keyword>
+    <keyword>local</keyword>
+  </keywords>
+  <releases>
+    <release version="0.4.4" date="2026-09-26"/>
+    <release version="0.4.3" date="2026-09-21"/>
+  </releases>
+</component>

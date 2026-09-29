@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.bluearchive_cafe.cafe_launcher</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Cafe Launcher</name>
+  <developer id="io.github.bluearchive_cafe">
+    <name>BlueArchive Cafe contributors</name>
+  </developer>
+  <summary>Launcher for Blue Archive</summary>
+  <description>
+    <p>
+      Cafe Launcher downloads, verifies, repairs, and launches the Japanese
+      edition of Blue Archive, including Linux runtime selection through Wine
+      or Proton.
+    </p>
+  </description>
+  <launchable type="desktop-id">cafe-launcher.desktop</launchable>
+  <url type="homepage">https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia</url>
+  <provides>
+    <binary>cafe-launcher</binary>
+  </provides>
+  <content_rating type="oars-1.1" />
+</component>

@@ -1,0 +1,37 @@
+{
+  "name": "gitty-desktop",
+  "version": "0.2.1",
+  "description": "A four-pane git history browser",
+  "main": "./out/main/index.js",
+  "desktopName": "gitty.desktop",
+  "bin": {
+    "gitty": "./cli.js"
+  },
+  "files": [
+    "out",
+    "build",
+    "cli.js",
+    "ref/gitty-0.1.6.png"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "baojie",
+  "license": "MIT",
+  "dependencies": {
+    "@electron/rebuild": "^4.2.0",
+    "@node-rs/jieba": "^2.0.2",
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/addon-web-links": "^0.12.0",
+    "@xterm/xterm": "^6.0.0",
+    "highlight.js": "^11.11.1",
+    "markdown-it": "^15.0.0",
+    "node-pty": "^1.1.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-resizable-panels": "^4.12.2"
+  },
+  "optionalDependencies": {
+    "electron": "^43.3.0"
+  }
+}

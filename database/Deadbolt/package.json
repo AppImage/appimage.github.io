@@ -1,0 +1,16 @@
+{
+  "name": "deadbolt",
+  "version": "2.1.1",
+  "description": "Dead-simple file encryption for any OS.",
+  "license": "MIT",
+  "author": {
+    "name": "Aaron Lichtman",
+    "email": "aaronlichtman@gmail.com",
+    "url": "https://github.com/alichtman"
+  },
+  "homepage": "https://github.com/alichtman/deadbolt",
+  "main": "./dist/main/main.js",
+  "dependencies": {
+    "@node-rs/argon2": "^2.0.2"
+  }
+}

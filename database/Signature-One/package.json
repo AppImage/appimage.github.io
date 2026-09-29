@@ -1,0 +1,13 @@
+{
+  "name": "signature-one",
+  "version": "1.0.0",
+  "description": "Signature application",
+  "license": "FMC",
+  "author": {
+    "name": "Andika Chamberlin",
+    "email": "htmlandika@gmail.com",
+    "url": "https://andikachamberlin.com"
+  },
+  "main": "./dist/main/main.js",
+  "dependencies": {}
+}

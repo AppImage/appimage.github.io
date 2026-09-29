@@ -1,0 +1,124 @@
+# Marks as read ("closes") the notification threads of the account whose token
+# is used, when the account that opened the issue or pull request AND every
+# account that posted a comment on it are all in an allow-list (by default
+# probonopd and github-actions). Reviews and review comments are not considered.
+#
+# Threads that are not about an issue or pull request are marked read too (they
+# have no opener or comments to check). Only an issue or pull request whose
+# opener or a commenter is someone else - or whose participants cannot be read -
+# is left untouched. Runs only when started by hand, and changes nothing unless
+# "dry_run" is set to false (it lists what it would do first).
+#
+# Needs a classic personal access token with the "notifications" scope (add
+# "repo" as well to read participants in private repositories) in the
+# NOTIFICATIONS_TOKEN secret: the automatic GITHUB_TOKEN cannot read or change a
+# user's notifications.
+
+name: Clean up notifications
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Only list what would be marked as read; change nothing
+        type: boolean
+        default: true
+      allowed:
+        description: Comma-separated logins that may be the sole participants
+        default: probonopd,github-actions
+
+permissions: {}
+
+concurrency:
+  group: cleanup-notifications
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.NOTIFICATIONS_TOKEN }}
+      DRY_RUN: ${{ inputs.dry_run }}
+      ALLOWED: ${{ inputs.allowed }}
+    steps:
+      - name: Mark matching notifications as read
+        run: |
+          set -u
+          if [ -z "${GH_TOKEN:-}" ] ; then
+            echo "::error::Set the NOTIFICATIONS_TOKEN secret to a classic personal access token with the 'notifications' scope."
+            exit 1
+          fi
+
+          # Compare logins case-insensitively and treat "github-actions" and
+          # "github-actions[bot]" as the same account.
+          norm() { tr 'A-Z' 'a-z' | sed 's/\[bot\]$//' ; }
+          ALLOW=$(echo "$ALLOWED" | tr ',' '\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//' | norm | grep . | sort -u)
+          echo "Allowed sole participants:"
+          echo "$ALLOW" | sed 's/^/  /'
+          echo ""
+
+          # The opener of an issue or pull request and the authors of its
+          # comments (reviews and review comments are deliberately not counted).
+          # $1 is the API URL of the issue or pull request (.subject.url).
+          participants() {
+            local u="$1" issue
+            issue=$(echo "$u" | sed 's#/pulls/#/issues/#')  # PR conversation comments are issue comments
+            gh api "$u" --jq '.user.login // empty' 2>/dev/null          # the opener
+            gh api --paginate "$issue/comments" --jq '.[].user.login' 2>/dev/null  # comment authors
+          }
+
+          # Unread notifications of the token's account, across all repositories
+          gh api --paginate "/notifications?all=false&per_page=100" \
+            --jq '.[] | [.id, .subject.type, (.subject.url // ""), .repository.full_name, .subject.title] | @tsv' \
+            > threads.tsv || true
+          if [ ! -s threads.tsv ] ; then
+            echo "No unread notifications."
+            exit 0
+          fi
+
+          CHECKED=0 ; MATCHED=0 ; KEPT=0
+          close() {  # close THREAD_ID LABEL
+            MATCHED=$((MATCHED + 1))
+            if [ "$DRY_RUN" = "false" ] ; then
+              if gh api --silent -X PATCH "/notifications/threads/$1" 2>/dev/null ; then
+                echo "closed $2"
+              else
+                echo "::warning::Could not mark thread $1 as read ($2)"
+              fi
+            else
+              echo "would close $2"
+            fi
+          }
+          while IFS=$'\t' read -r ID TYPE URL REPO TITLE ; do
+            CHECKED=$((CHECKED + 1))
+            # Threads that are not an issue or pull request have no opener or
+            # comments to check; close them too, rather than keeping them just
+            # for being a different subject type.
+            case "$TYPE" in
+              Issue|PullRequest) ;;
+              *) close "$ID" "[$TYPE] $REPO: $TITLE" ; continue ;;
+            esac
+            # An issue or pull request whose participants cannot be read is kept,
+            # so it is never closed without confirming who took part.
+            if [ -z "$URL" ] ; then
+              echo "keep  $REPO: $TITLE (no subject URL)" ; KEPT=$((KEPT + 1)) ; continue
+            fi
+            PARTS=$(participants "$URL" | norm | grep . | sort -u)
+            if [ -z "$PARTS" ] ; then
+              echo "keep  $REPO: $TITLE (could not read participants)" ; KEPT=$((KEPT + 1)) ; continue
+            fi
+            OTHERS=$(comm -23 <(echo "$PARTS") <(echo "$ALLOW"))
+            if [ -n "$OTHERS" ] ; then
+              echo "keep  $REPO: $TITLE (others: $(echo "$OTHERS" | paste -sd, -))"
+              KEPT=$((KEPT + 1))
+              continue
+            fi
+            close "$ID" "$REPO: $TITLE (participants: $(echo "$PARTS" | paste -sd, -))"
+          done < threads.tsv
+
+          echo ""
+          echo "Checked $CHECKED notification(s): matched $MATCHED, kept $KEPT."
+          if [ "$DRY_RUN" != "false" ] ; then
+            echo "Dry run: nothing was changed. Re-run with dry_run = false to mark the matching ones as read."
+          fi

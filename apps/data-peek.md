@@ -1,0 +1,116 @@
+---
+layout: app
+
+permalink: /data-peek/
+description: A minimal, fast database client
+
+icons:
+  - data-peek/icons/1024x1024/data-peek.png
+
+screenshots:
+  - data-peek/screenshot.png
+
+authors:
+  - name: Rohithgilla12
+    url: https://github.com/Rohithgilla12
+
+links:
+  - type: GitHub
+    url: Rohithgilla12/data-peek
+  - type: Download
+    url: https://github.com/Rohithgilla12/data-peek/releases
+
+desktop:
+  Desktop Entry:
+    Name: Data Peek
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: data-peek
+    StartupWMClass: Data Peek
+    X-AppImage-Version: 0.29.0
+    Comment: A minimal, fast database client
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+
+electron:
+  main: "./out/main/index.js"
+  author: Rohith Gilla
+  homepage: https://github.com/Rohithgilla12/data-peek
+  dependencies:
+    "@ai-sdk/anthropic": "^2.0.85"
+    "@ai-sdk/google": "^2.0.78"
+    "@ai-sdk/groq": "^2.0.43"
+    "@ai-sdk/openai": "^2.0.110"
+    "@dnd-kit/core": "^6.3.1"
+    "@dnd-kit/sortable": "^10.0.0"
+    "@dnd-kit/utilities": "^3.2.2"
+    "@electron-toolkit/preload": "^3.0.2"
+    "@electron-toolkit/utils": "^4.0.0"
+    "@faker-js/faker": "^9.9.0"
+    "@fontsource-variable/geist": "^5.2.9"
+    "@fontsource-variable/geist-mono": "^5.2.8"
+    "@modelcontextprotocol/sdk": "^1.29.0"
+    "@monaco-editor/react": "^4.7.0"
+    "@radix-ui/react-alert-dialog": "^1.1.18"
+    "@radix-ui/react-checkbox": "^1.3.6"
+    "@radix-ui/react-collapsible": "^1.1.15"
+    "@radix-ui/react-context-menu": "^2.3.2"
+    "@radix-ui/react-dialog": "^1.1.18"
+    "@radix-ui/react-dropdown-menu": "^2.1.19"
+    "@radix-ui/react-label": "^2.1.11"
+    "@radix-ui/react-popover": "^1.1.18"
+    "@radix-ui/react-scroll-area": "^1.2.13"
+    "@radix-ui/react-select": "^2.3.2"
+    "@radix-ui/react-separator": "^1.1.11"
+    "@radix-ui/react-slot": "^1.3.0"
+    "@radix-ui/react-switch": "^1.3.2"
+    "@radix-ui/react-tooltip": "^1.2.11"
+    "@radix-ui/react-visually-hidden": "^1.2.7"
+    "@tanstack/react-hotkeys": "^0.9.1"
+    "@tanstack/react-router": "^1.170.17"
+    "@tanstack/react-table": "^8.21.3"
+    "@tanstack/react-virtual": "^3.14.5"
+    "@types/ssh2": "^1.15.5"
+    "@xyflow/react": "^12.11.2"
+    ai: "^5.0.210"
+    better-sqlite3: "^12.11.1"
+    class-variance-authority: "^0.7.1"
+    clsx: "^2.1.1"
+    cmdk: "^1.1.1"
+    cron-parser: "^5.6.1"
+    dotenv: "^17.4.2"
+    electron-log: "^5.4.4"
+    electron-store: "^11.0.2"
+    electron-updater: "^6.8.9"
+    html-to-image: "^1.11.13"
+    lucide-react: "^0.555.0"
+    monaco-editor: "^0.55.1"
+    mssql: "^11.0.1"
+    mysql2: "^3.22.5"
+    nanoid: "^5.1.16"
+    node-cron: "^3.0.3"
+    papaparse: "^5.5.4"
+    pg: "^8.22.0"
+    react-grid-layout: "^2.2.3"
+    react-markdown: "^10.1.0"
+    recharts: "^3.9.2"
+    remark-gfm: "^4.0.1"
+    sql-formatter: "^15.8.2"
+    ssh2: "^1.17.0"
+    tailwind-merge: "^3.6.0"
+    tw-animate-css: "^1.4.0"
+    uuid: "^11.1.1"
+    zod: "^3.25.76"
+    zustand: "^5.0.14"
+---

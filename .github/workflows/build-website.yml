@@ -1,0 +1,60 @@
+# Builds and deploys the website (GitHub Pages, Jekyll) ONLY when started by
+# hand. While apps are mass-merged, master receives many pushes (each merge, and
+# the database/ and apps/ commits the Test workflow makes); rebuilding the site
+# on every one of them is wasteful. With this workflow the site is rebuilt only
+# when a maintainer runs it from the Actions tab.
+#
+# IMPORTANT: for this to take effect, the repository's Pages source must be set
+# to "GitHub Actions" (Settings -> Pages -> Build and deployment -> Source).
+# As long as it is left at "Deploy from a branch", GitHub keeps rebuilding the
+# site automatically on every push to master, which is exactly what this avoids.
+# Once the source is "GitHub Actions", nothing rebuilds the site except this
+# manual run.
+
+name: Build website
+
+on:
+  workflow_dispatch:
+
+# Read the repository, and write to Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; do not cancel a running deploy
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      # Builds the Jekyll site with the github-pages gem (same as the legacy
+      # branch build) and uploads it as the Pages artifact.
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+
+      # jekyll-build-pages only builds (into ./_site); the artifact that
+      # deploy-pages publishes has to be uploaded separately.
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

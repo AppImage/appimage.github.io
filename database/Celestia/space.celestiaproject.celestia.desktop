@@ -1,0 +1,22 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Exec=celestia %f
+Icon=celestia
+X-GNOME-DocPath=
+Terminal=false
+Name=Celestia (GTK)
+GenericName=Space Simulator (AppImage-1.6.4+git)
+Comment=Explore the Universe in this detailed space simulation
+Categories=Astronomy;Education;Science;GTK;
+MimeType=application/x-celestia-script;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://download.opensuse.org/repositories/home:/munix9:/celestia:/1.6/AppImage/celestia-latest-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Sun Sep 13 07:42:27 2026 UTC                using RSA key BDF3F6ACD4D81407 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.30

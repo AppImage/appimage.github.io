@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- POM2 application icon. Deliberately generic (green apple + "][" for
+     "Apple ]["), avoiding the trademarked six-colour Apple logo.
+
+     THIS FILE IS THE ONLY SOURCE. The macOS .icns, the Windows .ico and the
+     hicolor PNGs are all rasterised from it by tools/gen_icons.sh — run that
+     after any edit here, or the four committed binaries drift apart.
+
+     Everything is a <path>/<rect>/<ellipse>: no <text>, deliberately. The
+     previous revision drew the brackets with font-family="monospace", and
+     every renderer picked a different face — the committed .icns and macOS
+     QuickLook disagreed about the same file. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="badge" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#243761"/>
+      <stop offset="1" stop-color="#0a111f"/>
+    </linearGradient>
+    <linearGradient id="apple" x1="0.15" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#93e468"/>
+      <stop offset="0.55" stop-color="#57bf4f"/>
+      <stop offset="1" stop-color="#2c8a41"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#3f9f47"/>
+      <stop offset="1" stop-color="#79d06a"/>
+    </linearGradient>
+    <radialGradient id="spec" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.30"/>
+      <stop offset="0.6" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded-square badge -->
+  <rect x="8" y="8" width="240" height="240" rx="54" fill="url(#badge)"/>
+  <!-- Hairline top rim: light from above, not a glass band -->
+  <rect x="8" y="8" width="240" height="240" rx="54" fill="url(#rim)"/>
+
+  <!-- Stem. Drawn before the body so the body covers where it enters. -->
+  <path d="M 124 108 C 119 96 118 84 123 72 L 134 75
+           C 129 86 129 97 133 107 Z" fill="#6b4a2b"/>
+
+  <!-- Leaf -->
+  <path d="M 136 90 C 149 68 175 62 194 66 C 192 88 175 103 151 101
+           C 145 100 140 96 136 90 Z" fill="url(#leaf)"/>
+  <path d="M 144 93 C 157 86 172 78 187 70" fill="none"
+        stroke="#2f7d3a" stroke-opacity="0.40" stroke-width="3"
+        stroke-linecap="round"/>
+
+  <!-- Apple body: two shoulders, a dip for the stem, a shallow base notch. -->
+  <path fill="url(#apple)" d="
+    M 128 110
+    C 146 90 181 86 197 110
+    C 214 134 208 178 188 202
+    C 173 219 153 226 138 218
+    C 131 213 124 213 117 218
+    C 102 226 82 219 67 202
+    C 47 178 41 134 58 110
+    C 74 86 110 90 128 110 Z"/>
+
+  <!-- Soft specular, upper left. Wide and faint: a hard blob reads as a
+       bubble stuck on the fruit rather than as light. -->
+  <ellipse cx="90" cy="140" rx="42" ry="30" fill="url(#spec)"
+           transform="rotate(-30 90 140)"/>
+
+  <!-- "][" mark, evoking Apple ]['s bracket logo. Spines face each other,
+       arms flare outward. Bar thickness 14/256 is the measured compromise:
+       11 breaks into dashes at 32 px, 17 reads as one block at 512. At 16
+       physical pixels nothing survives, so gen_icons.sh drops this group
+       entirely for that one slot and lets the apple carry the icon. -->
+  <g fill="#f4f8ff">
+    <path d="M 86 124 H 120 V 198 H 86 V 184 H 106 V 138 H 86 Z"/>
+    <path d="M 170 124 H 136 V 198 H 170 V 184 H 150 V 138 H 170 Z"/>
+  </g>
+</svg>

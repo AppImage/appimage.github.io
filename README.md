@@ -27,7 +27,7 @@ and send a Pull Request.
 
 **The file should contain one line with a link to the GitHub, Codeberg or GitLab repository that hosts AppImages on its Releases page.**
 
-**Alternatively, a link to the AppImage. Nothing else.**
+**Alternatively, a link to the download directory where new versions appear, e.g. `https://download.kde.org/stable/digikam/` or an openSUSE Build Service `.../AppImage/` directory (the test picks the AppImage of the newest version from its listing), or a link to the AppImage. Nothing else.**
 
 **The pull request must add (or change) exactly this one file in `data/` and nothing else; one application per pull request.** Otherwise the test fails.
 
@@ -50,7 +50,7 @@ Standard nomenclature:
 * Respect uppercase. If the app is called "App", do NOT use "app"
 * Example: `App-1.1-x86_64.AppImage` in a repo called "App"
 
-Then send a Pull Request to this repository. GitHub Actions will instantly perform an automated review of the AppImage and post the result as a comment in your pull request: a screenshot of your application if it succeeds, or the error (with hints on how to fix it) if it fails. Please check that the screenshot shows the main window of your application.
+Then send a Pull Request to this repository. GitHub Actions will instantly perform an automated review of the AppImage and post the result as a comment in your pull request: a screenshot of your application if it succeeds, or the error (with hints on how to fix it) if it fails. Please check that the screenshot shows the main window of your application. To test your pull request again (e.g., after publishing a new release), comment `/retest` on it. If the test failed, it also runs again automatically when you comment that the problem is fixed (e.g., "Fixed in 1.2.3, please test again").
 
 Then the autodetection works.
 
@@ -68,7 +68,7 @@ As a format, AppImage is designed in a way that does not impose restrictions on 
 * Must have a desktop file that passes `desktop-file-validate`
 * Must run without active Internet connection (and at least show some information)
 * Should have an [AppStream metainfo file](https://people.freedesktop.org/~hughsient/appdata/) in `usr/share/metainfo`. If it does, must pass `appstreamcli` validation
-* Must show its main window within 30 seconds, without network access. The test fails if the window is empty (e.g., only a menu bar on a blank background) or shows an error message
+* Must show its main window within 30 seconds, without network access. The test fails if the window is empty (e.g., only a menu bar on a blank background) or shows an error message. System tray applications that show only an icon in the tray are recognized and tested with a system tray: clicking the icon should open the application's window (or else its menu)
 * Should show a useful screen rather than some crude dialog box since the main window will be used for the main screenshots. Note that you can provide your own screenshots by using an [AppStream metainfo file](https://people.freedesktop.org/~hughsient/appdata/)
 * Should be available under a constant URL that does not contain the version number. Alternatively, should be available on GitHub Releases or the openSUSE Build Service (you are free to suggest additional serices like these)
 * Must display something sensible when there is no network connection (offline/air-gapped use). Electron apps, for example, can use something like

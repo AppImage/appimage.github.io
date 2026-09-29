@@ -11,7 +11,9 @@ set -o pipefail
 cleanup() {
   RC=$?
   { set +e +v +x ; } 2>/dev/null
-  if [ $RC -ne 0 ] && [ -n "$APID" ] && [ -n "$INPUTBASENAME" ] ; then
+  # A tray retry that still fails leaves only the tiny tray window on a black
+  # background, so its screen is not worth posting (only the error text is).
+  if [ $RC -ne 0 ] && [ -n "$APID" ] && [ -n "$INPUTBASENAME" ] && [ x"$TRAY_ATTEMPTED" != xtrue ] ; then
     mkdir -p failure-screens
     timeout 15 import -window root "failure-screens/${INPUTBASENAME}.png" 2>/dev/null
     # An empty screen (the application crashed before drawing) tells nothing
@@ -37,6 +39,11 @@ URL=$(cat $1 | head -n 1)
 echo $URL
 
 GHURL="" # Workaround for: "GHURL: unbound variable"
+
+# Set once we run the AppImage a second time with a system tray (stalonetray).
+# If it still fails after that, the screen only shows the tiny tray window on a
+# black background, so the cleanup trap must not capture it as a failure screen.
+TRAY_ATTEMPTED=false
 
 INPUTBASENAME=$(basename $1)
 
@@ -90,6 +97,32 @@ if [[ "$URL" == https://github.com/*/* || "$URL" == https://codeberg.org/*/* || 
   echo "URL from $FORGE_NAME API: $URL"
   LICENSE=$(bash "$(dirname "$0")/fetch-releases.sh" --license "$FORGE" "$GHUSER" "$GHREPO") || true
   rm -f "$API_JSON"
+fi
+
+# If the URL is a directory (ends with /) on another server, e.g.
+# https://download.kde.org/stable/digikam/, look for the AppImage of the newest
+# version in its listing (code/fetch-listing.sh) and pick it with the same
+# rules as for releases. If the listing has none (or it is a download link
+# that happens to end with /), the URL is downloaded as it is.
+if [ -z "$FORGE" ] && [[ "$URL" == http*://*/ ]] && [[ "$URL" != *github.com/* ]] ; then
+  LISTING_JSON=$(mktemp)
+  if LISTING_INFO=$(bash "$(dirname "$0")/fetch-listing.sh" "$URL" "$LISTING_JSON") ; then
+    echo "Directory listing detected: $LISTING_INFO"
+    FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$LISTING_JSON" "$INPUTBASENAME") || true
+    echo "$FOUND" | grep -v '^URL ' || true
+    LISTED_URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
+    if [ -z "$LISTED_URL" ] ; then
+      echo "Unable to decide which AppImage in the directory listing to test. Please link to the AppImage directly"
+      exit 1
+    fi
+    URL="$LISTED_URL"
+    echo "URL from directory listing: $URL"
+  elif [ $? -eq 3 ] ; then
+    echo "$LISTING_INFO"
+    echo "Unable to find an AppImage in the directory listing $URL or in its newest version directories"
+    exit 1
+  fi
+  rm -f "$LISTING_JSON"
 fi
 
 # If $URL begins with https://api.github.com, then treat it specially
@@ -344,6 +377,14 @@ sudo sysctl vm.mmap_min_addr=0
 
 export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
 export QT_DEBUG_PLUGINS=1 # https://github.com/AppImage/appimage.github.io/pull/1809#issuecomment-548399825
+# WebKitGTK-based apps (Tauri, wxWebView, GNOME web wrappers, ...) render a
+# blank white window when their GPU-accelerated compositing fails, which it
+# does under Xvfb's software rendering (no GPU) - the same failure users hit on
+# NVIDIA and in VMs. Force the software path so the web view actually paints
+# and the screenshot is real. See tauri-apps/tauri#11988 (EGL_BAD_PARAMETER),
+# #9304 (AcceleratedSurfaceDMABuf framebuffer), #5143 (blank until redraw).
+export WEBKIT_DISABLE_DMABUF_RENDERER=1 # WebKitGTK 2.40+ (the DMABUF/EGL renderer)
+export WEBKIT_DISABLE_COMPOSITING_MODE=1 # older WebKitGTK (accelerated compositing)
 sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/appimage.github.io/pull/1564#issuecomment-491591127 https://github.com/electron/electron/issues/17972
 
 # reset does not work here
@@ -364,8 +405,59 @@ for WAIT in $(seq 1 20) ; do
 done
 [ "$WAIT" -gt 1 ] && sleep 2 # A window just appeared; let it finish drawing
 
+NO_WINDOW=""
 if ! kill -0 $APID 2>/dev/null ; then
-  echo "ERROR: The application exited within $((10 + WAIT)) seconds instead of showing a window"
+  NO_WINDOW="ERROR: The application exited within $((10 + WAIT)) seconds instead of showing a window"
+elif ! grep -qE '0x.*": \(' <<< "$(timeout 5 xwininfo -tree -root 2>/dev/null || true)" ; then
+  NO_WINDOW="ERROR: Could not find a single window on screen :-("
+fi
+
+# System tray applications (#4441) show only an icon in the system tray, and
+# some exit when there is none; Xvfb has no tray. So only if the application
+# showed no window and its files mention a tray API (code/tray-hint.sh), run
+# it again with a tray (stalonetray). It counts as a tray application only if
+# its icon then appears in the tray.
+TRAY=false
+if [ -n "$NO_WINDOW" ] && [ x"$TERMINAL" == xfalse ] ; then
+  TRAY_HINT=$(bash "$(dirname "$0")/tray-hint.sh" "$APPDIR" || true)
+  if [ -n "$TRAY_HINT" ] ; then
+    echo "The application showed no window, but may be a system tray application ($TRAY_HINT); running it again with a system tray"
+    TRAY_ATTEMPTED=true
+    kill $APID 2>/dev/null && sleep 2 || true
+    kill -9 $APID 2>/dev/null || true
+    stalonetray --geometry 1x1+0+0 --icon-size 48 -bg white --window-type dock --decorations none --skip-taskbar > stalonetray.log 2>&1 &
+    TRAYWIN=""
+    for _ in 1 2 3 4 5 6 7 8 9 10 ; do
+      sleep 1
+      TRAYWIN=$(timeout 5 xdotool search --classname stalonetray 2>/dev/null | head -n 1 || true)
+      [ -n "$TRAYWIN" ] && break
+    done
+    if [ -n "$TRAYWIN" ] ; then
+      firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
+      APID=$!
+      # Docked icons are windows inside the tray's window (it always has a 1x1 one)
+      TRAYICON=""
+      for WAIT in $(seq 1 30) ; do
+        sleep 1
+        kill -0 $APID 2>/dev/null || break
+        TRAYICON=$(timeout 5 xwininfo -tree -id "$TRAYWIN" 2>/dev/null | grep -E '^ +0x' | grep -v ' 1x1+' | tail -n 1 | awk '{ print $1 }' || true)
+        [ -n "$TRAYICON" ] && break
+      done
+      if [ -n "$TRAYICON" ] && kill -0 $APID 2>/dev/null ; then
+        sleep 2 # Let it draw its icon
+        echo "Tray application: its icon appeared in the system tray"
+        TRAY=true
+        NO_WINDOW=""
+      else
+        echo "No icon appeared in the system tray either"
+      fi
+    else
+      echo "Could not start the system tray"
+    fi
+  fi
+fi
+if [ -n "$NO_WINDOW" ] ; then
+  echo "$NO_WINDOW"
   exit 1
 fi
 
@@ -422,11 +514,37 @@ mkdir -p database/$INPUTBASENAME/
 
 # The active window; if it cannot be read itself (e.g. OpenGL/SDL games, #75),
 # its area of the screen, else the whole screen
-bash "$(dirname "$0")/take-screenshot.sh" database/$INPUTBASENAME/screenshot.png || true
+if [ "$TRAY" == true ] ; then
+  # Click the icon: most tray applications then open their window; if none
+  # became active, right-click it for its menu and take the part of the
+  # screen that shows anything (the tray, and the menu if one opened)
+  read -r X Y W H < <(timeout 5 xwininfo -id "$TRAYICON" | awk '/Absolute upper-left X/ { x = $NF } /Absolute upper-left Y/ { y = $NF }
+    /Width/ { w = $NF } /Height/ { h = $NF } END { print x, y, w, h }' || true)
+  timeout 5 xdotool mousemove $((X + W / 2)) $((Y + H / 2)) click 1 || true
+  sleep 3
+  if timeout 5 xdotool getactivewindow > /dev/null 2>&1 ; then
+    echo "Clicking the tray icon opened a window"
+    bash "$(dirname "$0")/take-screenshot.sh" database/$INPUTBASENAME/screenshot.png || true
+  else
+    timeout 5 xdotool click 3 || true
+    sleep 2
+    timeout 30 import -window root database/$INPUTBASENAME/screenshot.png || true
+    convert database/$INPUTBASENAME/screenshot.png -trim +repage database/$INPUTBASENAME/screenshot.png || true
+    # Only the icon: make it visible
+    if [ "$(identify -format '%w' database/$INPUTBASENAME/screenshot.png 2>/dev/null || echo 0)" -lt 100 ] ; then
+      convert database/$INPUTBASENAME/screenshot.png -filter point -resize 400% database/$INPUTBASENAME/screenshot.png || true
+    fi
+    echo "Screenshot taken (system tray)"
+  fi
+  echo "WARNING: The screenshot shows a system tray application (its tray icon, or what clicking it opened); please check it"
+else
+  bash "$(dirname "$0")/take-screenshot.sh" database/$INPUTBASENAME/screenshot.png || true
+fi
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 APID=""
 killall icewm
+killall stalonetray 2>/dev/null || true
 
 # Check if the screenshot is unusable and error out if it is
 if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png" ] ; then
@@ -438,7 +556,7 @@ if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png
 fi
 
 # Fail on an empty window or an error message on screen
-if ! bash "$(dirname "$0")/check-screenshot.sh" database/$INPUTBASENAME/screenshot.png $([ x"$TERMINAL" == xtrue ] && echo terminal) ; then
+if ! bash "$(dirname "$0")/check-screenshot.sh" database/$INPUTBASENAME/screenshot.png $([ x"$TERMINAL" == xtrue ] && echo terminal) $([ "$TRAY" == true ] && echo tray) ; then
   mkdir -p failure-screens
   cp database/$INPUTBASENAME/screenshot.png "failure-screens/${INPUTBASENAME}.png"
   exit 1
@@ -616,12 +734,19 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "  - $INPUTBASENAME/icons/$ICONSIZE/$ICONBASENAME" >> apps/$INPUTBASENAME.md
   fi
   # Screenshot
-  if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    SCREENSHOT=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/screenshots/screenshot[1]/image" -v . || true)
-    if [ x"$SCREENSHOT" != x"" ] ; then
-      echo "screenshots:" >> apps/$INPUTBASENAME.md
-      echo "- $SCREENSHOT" >> apps/$INPUTBASENAME.md
-    fi
+  # The AppStream screenshot (the default one, else the first; from a
+  # .metainfo.xml or an .appdata.xml file) if there is one, else ours
+  SCREENSHOT=""
+  METAINFO=$(ls database/$INPUTBASENAME/*.metainfo.xml database/$INPUTBASENAME/*.appdata.xml 2>/dev/null | head -n 1 || true)
+  if [ -n "$METAINFO" ] ; then
+    SCREENSHOT=$(xmlstarlet sel -t -v "/component/screenshots/screenshot[@type='default'][1]/image[1]" "$METAINFO" 2>/dev/null | head -n 1 || true)
+    [ -n "$SCREENSHOT" ] || SCREENSHOT=$(xmlstarlet sel -t -v "/component/screenshots/screenshot[1]/image[1]" "$METAINFO" 2>/dev/null | head -n 1 || true)
+    # Only a web address can be shown on the site
+    [[ "$SCREENSHOT" =~ ^https?://[^[:space:]]+$ ]] || SCREENSHOT=""
+  fi
+  if [ -n "$SCREENSHOT" ] ; then
+    echo "screenshots:" >> apps/$INPUTBASENAME.md
+    echo "- $SCREENSHOT" >> apps/$INPUTBASENAME.md
   elif [ -f database/$INPUTBASENAME/screenshot.png ] ; then
     echo "" >> apps/$INPUTBASENAME.md
     echo "screenshots:" >> apps/$INPUTBASENAME.md
@@ -687,6 +812,17 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   if [  x"$OBS_LINK" != x"" ] ; then
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
+  fi
+  # Anything else: the page and feed.json link to where the AppImage is
+  # downloaded from, if that link stays valid for new versions (a download
+  # directory such as https://download.kde.org/stable/krita/, or a "latest"
+  # link), i.e. its path contains no version number (4.3.0, 16.12, v2, /12/)
+  DATA_URL=$(head -n 1 "data/$INPUTBASENAME" | tr -d '\r' | sed -E 's/[[:space:]].*//')
+  DATA_PATH=$(echo "$DATA_URL" | cut -d / -f 4- | cut -d '?' -f 1)
+  if [ x"$GH_USER" == x"" ] && [ x"$OBS_LINK" == x"" ] && [[ "$DATA_URL" =~ ^https?://[^[:space:]\"]+$ ]] \
+    && ! echo "/$DATA_PATH" | grep -qiE '[0-9]+\.[0-9]+|(^|[^a-z0-9])v[0-9]+([^a-z0-9]|$)|/[0-9]+(/|$)' ; then
+    echo "  - type: Download" >> apps/$INPUTBASENAME.md
+    echo "    url: $DATA_URL" >> apps/$INPUTBASENAME.md
   fi
   # Does the repo offer AppImages in it's download section?
   # BB_LINK=$(grep "^https://bitbucket.org/$BB_USER/$BB_REPO/downloads/.*AppImage$" data/$INPUTBASENAME) 

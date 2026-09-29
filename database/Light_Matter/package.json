@@ -1,0 +1,16 @@
+{
+  "name": "@light-matter/source",
+  "author": "hexmode.org",
+  "version": "0.2.0",
+  "description": "A simple image viewer with HDR photo support for Windows",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "exiftool-vendored": "35.21.0",
+    "nanoid": "5.1.11",
+    "tslib": "2.8.1",
+    "wasm-vips": "0.0.18",
+    "yargs": "18.0.0"
+  },
+  "overrides": {}
+}

@@ -1,0 +1,20 @@
+{
+  "name": "vibeshot",
+  "version": "0.1.0",
+  "description": "A fast screenshot shelf for coding-agent workflows.",
+  "main": "src/main.js",
+  "desktopName": "vibeshot.desktop",
+  "author": "Alan Luckey-Faraday",
+  "homepage": "https://github.com/luckeyfaraday/vibe-shot#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luckeyfaraday/vibe-shot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luckeyfaraday/vibe-shot/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

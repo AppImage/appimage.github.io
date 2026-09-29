@@ -1,0 +1,134 @@
+---
+layout: app
+
+permalink: /Kanban/
+description: A local-first, filesystem-backed Kanban board application
+
+icons:
+  - Kanban/icons/128x128/kanban-pro.png
+
+screenshots:
+  - Kanban/screenshot.png
+
+authors:
+  - name: donkruger
+    url: https://github.com/donkruger
+
+links:
+  - type: GitHub
+    url: donkruger/Kanban
+  - type: Download
+    url: https://github.com/donkruger/Kanban/releases
+
+desktop:
+  Desktop Entry:
+    Name: Kanban Pro
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: kanban-pro
+    StartupWMClass: Kanban Pro
+    X-AppImage-Version: 1.1.57
+    MimeType: x-scheme-handler/kanbanpro
+    Comment: A local-first, filesystem-backed Kanban board application
+    Categories: ProjectManagement
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+
+electron:
+  main: dist/electron/electron/main.js
+  bin:
+    kp: dist/kp/kp
+  prettier:
+    printWidth: 100
+    singleQuote: true
+    overrides:
+    - files: "*.html"
+      options:
+        parser: angular
+  private: true
+  packageManager: npm@11.5.1
+  engines:
+    node: ">=22"
+  dependencies:
+    "@angular/cdk": "^21.1.3"
+    "@angular/common": "^21.1.0"
+    "@angular/compiler": "^21.1.0"
+    "@angular/core": "^21.1.0"
+    "@angular/forms": "^21.1.0"
+    "@angular/platform-browser": "^21.1.0"
+    "@angular/router": "^21.1.0"
+    "@floating-ui/dom": "^1.7.6"
+    "@ngx-translate/core": "^17.0.0"
+    "@ngx-translate/http-loader": "^17.0.0"
+    "@phosphor-icons/core": "^2.1.1"
+    "@swimlane/ngx-graph": "^12.0.0-alpha.2"
+    "@tiptap/core": "^3.19.0"
+    "@tiptap/extension-bubble-menu": "^3.23.4"
+    "@tiptap/extension-code-block-lowlight": "^3.19.0"
+    "@tiptap/extension-color": "^3.19.0"
+    "@tiptap/extension-floating-menu": "^3.23.4"
+    "@tiptap/extension-highlight": "^3.19.0"
+    "@tiptap/extension-image": "^3.19.0"
+    "@tiptap/extension-link": "^3.19.0"
+    "@tiptap/extension-placeholder": "^3.19.0"
+    "@tiptap/extension-table": "^3.19.0"
+    "@tiptap/extension-table-cell": "^3.19.0"
+    "@tiptap/extension-table-header": "^3.19.0"
+    "@tiptap/extension-table-row": "^3.19.0"
+    "@tiptap/extension-task-item": "^3.19.0"
+    "@tiptap/extension-task-list": "^3.19.0"
+    "@tiptap/extension-text-style": "^3.19.0"
+    "@tiptap/pm": "^3.19.0"
+    "@tiptap/starter-kit": "^3.19.0"
+    "@xterm/addon-fit": "^0.11.0"
+    "@xterm/addon-image": "^0.9.0"
+    "@xterm/addon-search": "^0.16.0"
+    "@xterm/addon-serialize": "^0.14.0"
+    "@xterm/addon-unicode11": "^0.9.0"
+    "@xterm/addon-web-links": "^0.12.0"
+    "@xterm/addon-webgl": "^0.19.0"
+    "@xterm/xterm": "^6.0.0"
+    cac: "^7.0.0"
+    canvas-confetti: "^1.9.4"
+    chokidar: "^5.0.0"
+    clipboard: "^2.0.11"
+    d3-force: "^3.0.0"
+    d3-quadtree: "^3.0.1"
+    electron-log: "^5.4.3"
+    electron-updater: "^6.8.3"
+    electron-window-state: "^5.0.3"
+    emojilib: "^4.0.2"
+    flexsearch: "^0.8.212"
+    fractional-indexing: "^3.2.0"
+    gray-matter: "^4.0.3"
+    gsap: "^3.15.0"
+    html2canvas: "^1.4.1"
+    js-yaml: "^4.1.1"
+    jszip: "^3.10.1"
+    lowlight: "^3.3.0"
+    lucide-angular: "^0.563.0"
+    marked: "^17.0.1"
+    mermaid: "^11.12.0"
+    ngx-markdown: "^21.1.0"
+    ngx-tiptap: "^14.0.1"
+    node-pty: "^1.1.0"
+    prismjs: "^1.30.0"
+    proper-lockfile: "^4.1.2"
+    rxjs: "~7.8.0"
+    tiptap-markdown: "^0.9.0"
+    tslib: "^2.3.0"
+    unicode-emoji-json: "^0.8.0"
+  optionalDependencies:
+    node-mac-request-review: "^1.0.10"
+    spotlight-addon: file:native/spotlight-addon
+---

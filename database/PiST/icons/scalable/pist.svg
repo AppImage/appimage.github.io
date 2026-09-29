@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- PiST: the Atari ST's keyboard "function key" row motif over a monitor frame -->
+  <rect x="2" y="4" width="60" height="40" rx="3" fill="#2b2b30"/>
+  <rect x="6" y="8" width="52" height="32" rx="2" fill="#101014"/>
+  <!-- the ST's GEM desktop green -->
+  <rect x="9" y="11" width="46" height="26" fill="#0a5a18"/>
+  <rect x="9" y="11" width="46" height="5" fill="#1a8a30"/>
+  <text x="32" y="29" font-family="monospace" font-size="11" font-weight="bold"
+        fill="#e8e8ee" text-anchor="middle">PiST</text>
+  <rect x="20" y="46" width="24" height="4" rx="1" fill="#2b2b30"/>
+  <rect x="12" y="52" width="40" height="9" rx="2" fill="#3a3a42"/>
+  <g fill="#6d6d78">
+    <rect x="16" y="55" width="4" height="3"/><rect x="22" y="55" width="4" height="3"/>
+    <rect x="28" y="55" width="4" height="3"/><rect x="34" y="55" width="4" height="3"/>
+    <rect x="40" y="55" width="4" height="3"/><rect x="46" y="55" width="4" height="3"/>
+  </g>
+</svg>

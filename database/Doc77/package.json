@@ -1,0 +1,19 @@
+{
+  "name": "@doc77/electron",
+  "version": "1.1.10",
+  "description": "Doc77 Desktop — Electron desktop app for local document preview",
+  "author": "xyy277 <907507646@qq.com>",
+  "license": "MIT",
+  "repository": "https://github.com/xyy277/doc77",
+  "main": "dist/main.js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "@doc77/core": "workspace:^",
+    "@doc77/gallery": "workspace:^",
+    "@doc77/sync": "workspace:^",
+    "electron-updater": "^6.8.0"
+  }
+}

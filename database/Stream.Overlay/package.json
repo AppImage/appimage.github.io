@@ -1,0 +1,19 @@
+{
+  "name": "stream-overlay",
+  "version": "6.1.0",
+  "description": "Show borderless, transparent, click-through browser windows for streaming.",
+  "icon": "assets/logo.png",
+  "main": "build/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hperrin/stream-overlay.git"
+  },
+  "author": "Hunter Perrin <hperrin@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/hperrin/stream-overlay/issues"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "commander": "^14.0.0"
+  }
+}

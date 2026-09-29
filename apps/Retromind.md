@@ -7,6 +7,8 @@ license: GPL-3.0-only
 
 icons:
   - Retromind/icons/scalable/retromind.svg
+screenshots:
+- https://raw.githubusercontent.com/Dark574/Retromind/main/docs/images/retromind-bigmode-prism.jpg
 
 authors:
   - name: Dark574
@@ -26,9 +28,9 @@ desktop:
     Icon: retromind
     Categories: Utility
     Terminal: false
-    X-AppImage-Version: 0.1.9-alpha
+    X-AppImage-Version: 0.2.0-alpha
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|Dark574|Retromind|latest-all|Retromind-*-linux-x86_64.AppImage.zsync
+    X-AppImage-UpdateInformation: gh-releases-zsync|Dark574|Retromind|latest-all|Retromind-*-x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)
@@ -61,6 +63,16 @@ appdata:
   Provides:
     binaries:
     - Retromind
+  Screenshots:
+  - default: true
+    caption:
+      C: Retromind BigMode with the Prism theme
+    thumbnails: []
+    source-image:
+      url: https://raw.githubusercontent.com/Dark574/Retromind/main/docs/images/retromind-bigmode-prism.jpg
+      width: 1920
+      height: 1200
+      lang: C
   ContentRating:
     oars-1.1: {}
 ---

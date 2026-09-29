@@ -1,0 +1,13 @@
+{
+  "name": "coresound-desktop",
+  "version": "0.1.5",
+  "description": "Desktop Bluetooth audio controller",
+  "main": "src/main.js",
+  "author": "CriticalRange",
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "dbus-next": "^0.10.2",
+    "electron-updater": "^6.8.3",
+    "lucide": "^1.16.0"
+  }
+}

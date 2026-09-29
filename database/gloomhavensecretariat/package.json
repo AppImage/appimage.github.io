@@ -1,0 +1,76 @@
+{
+  "name": "gloomhavensecretariat",
+  "version": "0.171.2",
+  "license": "AGPL3",
+  "description": "Gloomhaven Secretariat is a Gloomhaven/Frosthaven Companion app.",
+  "homepage": "https://gloomhaven-secretariat.de",
+  "author": {
+    "name": "Lurkars",
+    "email": "contact@gloomhaven-secretariat.de",
+    "url": "https://www.champonthis.de"
+  },
+  "repository": "github:Lurkars/gloomhavensecretariat",
+  "bugs": "https://github.com/Lurkars/gloomhavensecretariat/issues",
+  "funding": {
+    "type": "ko-fi",
+    "url": "https://ko-fi.com/lurkars"
+  },
+  "main": "main.js",
+  "engines": {
+    "node": ">=24"
+  },
+  "nodemonConfig": {
+    "execMap": {
+      "js": "node ./scripts/build-data.js"
+    },
+    "watch": [
+      "data/"
+    ],
+    "ext": "json",
+    "runOnChangeOnly": true
+  },
+  "private": true,
+  "overrides": {
+    "@babel/core": "8.0.1",
+    "esbuild": "0.28.1",
+    "xcode": {
+      "uuid": "14.0.1"
+    }
+  },
+  "dependencies": {
+    "@angular/cdk": "~22.2.0",
+    "@angular/common": "~22.2.0",
+    "@angular/compiler": "~22.2.0",
+    "@angular/core": "~22.2.0",
+    "@angular/forms": "~22.2.0",
+    "@angular/platform-browser": "~22.2.0",
+    "@angular/router": "~22.2.0",
+    "@angular/service-worker": "~22.2.0",
+    "@capacitor/app": "^8.1.1",
+    "@capacitor/core": "^8.5.2",
+    "autocompleter": "^10.0.0",
+    "electron-updater": "^6.8.10",
+    "leaflet": "^1.9.4",
+    "mermaid": "^11.17.2",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.8.1",
+    "uuid": "^14.0.2"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,html}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src/**/*.scss": [
+      "prettier --write"
+    ]
+  },
+  "allowScripts": {
+    "electron-winstaller@5.4.0": true,
+    "esbuild@0.28.1": true,
+    "msgpackr-extract@3.0.4": true,
+    "sharp@0.32.6": true,
+    "@parcel/watcher@2.6.0": true,
+    "lmdb@3.5.6": true
+  }
+}

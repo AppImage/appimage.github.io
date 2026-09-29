@@ -1,0 +1,14 @@
+{
+  "name": "copilot-api-desktop",
+  "version": "2.6.18",
+  "description": "Copilot API Desktop App",
+  "author": "jeffreycao",
+  "desktopName": "copilot-api.desktop",
+  "main": "out/main/index.js",
+  "trustedDependencies": [
+    "electron"
+  ],
+  "dependencies": {
+    "electron-updater": "^6.3.4"
+  }
+}

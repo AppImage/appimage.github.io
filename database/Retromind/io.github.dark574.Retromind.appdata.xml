@@ -14,6 +14,12 @@
   </description>
   <launchable type="desktop-id">io.github.dark574.Retromind.desktop</launchable>
   <url type="homepage">https://dark574.github.io/Retromind/</url>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source" width="1920" height="1200">https://raw.githubusercontent.com/Dark574/Retromind/main/docs/images/retromind-bigmode-prism.jpg</image>
+      <caption>Retromind BigMode with the Prism theme</caption>
+    </screenshot>
+  </screenshots>
   <provides>
     <binary>Retromind</binary>
   </provides>

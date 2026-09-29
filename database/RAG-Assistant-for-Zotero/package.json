@@ -1,0 +1,21 @@
+{
+  "name": "zotero-rag-assistant",
+  "productName": "ZoteroRAG",
+  "version": "0.3.2",
+  "description": "AI-powered research assistant for your Zotero library",
+  "main": "dist/electron/main.js",
+  "author": {
+    "name": "Alexander Hepburn",
+    "email": "aahepburn@proton.me"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aahepburn/zotero-rag-assistant.git"
+  },
+  "homepage": "https://github.com/aahepburn/zotero-rag-assistant",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "electron-updater": "^6.1.0"
+  }
+}

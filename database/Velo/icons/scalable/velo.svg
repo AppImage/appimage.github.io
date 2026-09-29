@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b2e33"/>
+      <stop offset="1" stop-color="#17181b"/>
+    </linearGradient>
+    <linearGradient id="v" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6db3ff"/>
+      <stop offset="1" stop-color="#3a7bd5"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="48" fill="url(#bg)"/>
+  <!-- timeline tracks -->
+  <rect x="40" y="170" width="80" height="22" rx="5" fill="#3f6e9e"/>
+  <rect x="128" y="170" width="88" height="22" rx="5" fill="#3e8e5c"/>
+  <rect x="40" y="200" width="132" height="16" rx="4" fill="#9e6ec4" opacity="0.85"/>
+  <!-- V monogram / playhead wedge -->
+  <path d="M 64 44 L 104 44 L 128 118 L 152 44 L 192 44 L 146 152 L 110 152 Z"
+        fill="url(#v)"/>
+  <!-- playhead line -->
+  <rect x="124" y="160" width="6" height="62" rx="3" fill="#57a0ff"/>
+</svg>

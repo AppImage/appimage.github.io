@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.ankigammon.AnkiGammon</id>
+  <name>AnkiGammon</name>
+  <summary>Turn backgammon analysis into Anki flashcards</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer_name>AnkiGammon Contributors</developer_name>
+  <description>
+    <p>
+      AnkiGammon turns the positions you got wrong into Anki flashcards, so you
+      review them with spaced repetition until the right play sticks.
+    </p>
+    <p>
+      Import matches or positions analysed by eXtreme Gammon, GNU Backgammon or
+      OpenGammon, or have GNU Backgammon analyse your own matches. Each card shows
+      the board and asks for the best move or cube action; the back shows the
+      analysis, with optional score matrices and interactive moves.
+    </p>
+    <ul>
+      <li>Reads XG, GnuBG and OpenGammon files, and XGID, GNUID and OGID positions</li>
+      <li>Filters by error size and by player</li>
+      <li>Sends cards straight to Anki through AnkiConnect, or saves an .apkg deck</li>
+      <li>Sends positions to the AnkiGammon trainer in the browser</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">com.ankigammon.AnkiGammon.desktop</launchable>
+  <icon type="stock">ankigammon</icon>
+  <categories>
+    <category>Education</category>
+  </categories>
+  <keywords>
+    <keyword>backgammon</keyword>
+    <keyword>anki</keyword>
+    <keyword>flashcards</keyword>
+    <keyword>spaced repetition</keyword>
+  </keywords>
+  <url type="homepage">https://ankigammon.com</url>
+  <url type="bugtracker">https://github.com/Deinonychus999/AnkiGammon/issues</url>
+  <url type="donation">https://ko-fi.com/X8X31NIT0H</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Positions imported from a match, ready to export</caption>
+      <image>https://raw.githubusercontent.com/Deinonychus999/AnkiGammon/main/packaging/linux/screenshots/main-window.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The back of a card: the analysis, animated moves and your note</caption>
+      <image>https://raw.githubusercontent.com/Deinonychus999/AnkiGammon/main/packaging/linux/screenshots/anki-back.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Settings for export, the analysis engine, the board and study</caption>
+      <image>https://raw.githubusercontent.com/Deinonychus999/AnkiGammon/main/packaging/linux/screenshots/settings.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.17.1" date="2026-09-28"/>
+    <release version="1.17.0" date="2026-09-28"/>
+    <release version="1.16.0" date="2026-09-27"/>
+    <release version="1.15.0" date="2026-09-26"/>
+  </releases>
+</component>

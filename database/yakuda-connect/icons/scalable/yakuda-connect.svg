@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b4252"/>
+      <stop offset="0.55" stop-color="#2e3440"/>
+      <stop offset="1" stop-color="#232831"/>
+    </linearGradient>
+    <linearGradient id="visor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#81a1c1"/>
+      <stop offset="0.5" stop-color="#5e81ac"/>
+      <stop offset="1" stop-color="#4c6a94"/>
+    </linearGradient>
+    <linearGradient id="lensGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a8d8e8"/>
+      <stop offset="1" stop-color="#88c0d0"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="0.3" cy="0.2" r="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <!-- Hintergrund: abgerundetes Quadrat -->
+  <rect x="8" y="8" width="240" height="240" rx="56" fill="url(#bg)"/>
+  <rect x="8" y="8" width="240" height="240" rx="56" fill="url(#shine)"/>
+  <rect x="8" y="8" width="240" height="240" rx="56" fill="none"
+        stroke="#4c566a" stroke-width="2" opacity="0.6"/>
+
+  <!-- Funkwellen (Streaming) über dem Headset -->
+  <g stroke="#88c0d0" fill="none" stroke-linecap="round">
+    <path d="M 100 74 A 40 40 0 0 1 156 74" stroke-width="9" opacity="0.95"/>
+    <path d="M 82 56 A 66 66 0 0 1 174 56" stroke-width="9" opacity="0.55"/>
+  </g>
+  <circle cx="128" cy="88" r="7.5" fill="#88c0d0"/>
+
+  <!-- Headset-Körper -->
+  <g>
+    <!-- Glow hinter dem Visor -->
+    <rect x="46" y="112" width="164" height="84" rx="34" fill="#5e81ac"
+          opacity="0.5" filter="url(#soft)"/>
+    <!-- Kopfband -->
+    <path d="M 52 142 C 30 142 30 170 52 170" stroke="#434c5e" stroke-width="14"
+          fill="none" stroke-linecap="round"/>
+    <path d="M 204 142 C 226 142 226 170 204 170" stroke="#434c5e" stroke-width="14"
+          fill="none" stroke-linecap="round"/>
+    <!-- Visor -->
+    <path d="M 78 112
+             H 178
+             Q 210 112 210 146
+             V 158
+             Q 210 192 178 192
+             H 158
+             Q 146 192 140 181
+             L 136 174
+             Q 128 162 120 174
+             L 116 181
+             Q 110 192 98 192
+             H 78
+             Q 46 192 46 158
+             V 146
+             Q 46 112 78 112 Z"
+          fill="url(#visor)"/>
+    <!-- Glanzkante oben -->
+    <path d="M 78 118 H 178 Q 202 118 204 140 L 52 140 Q 54 118 78 118 Z"
+          fill="#ffffff" opacity="0.12"/>
+    <!-- Linsen -->
+    <circle cx="92" cy="152" r="17" fill="#2e3440"/>
+    <circle cx="164" cy="152" r="17" fill="#2e3440"/>
+    <circle cx="92" cy="152" r="11" fill="url(#lensGlow)"/>
+    <circle cx="164" cy="152" r="11" fill="url(#lensGlow)"/>
+    <circle cx="88" cy="148" r="3.5" fill="#ffffff" opacity="0.85"/>
+    <circle cx="160" cy="148" r="3.5" fill="#ffffff" opacity="0.85"/>
+  </g>
+
+  <!-- kleine Verbindungs-LED unten -->
+  <circle cx="128" cy="214" r="6" fill="#a3be8c"/>
+  <circle cx="128" cy="214" r="10" fill="#a3be8c" opacity="0.25"/>
+</svg>

@@ -1,0 +1,20 @@
+{
+  "name": "mixi",
+  "version": "0.5.18",
+  "author": "Fabrizio Salmi <fabrizio.salmi@gmail.com>",
+  "description": "Deterministic Audio Workstation",
+  "homepage": "https://github.com/fabriziosalmi/mixi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabriziosalmi/mixi.git"
+  },
+  "private": true,
+  "type": "module",
+  "main": "electron/dist/main.cjs",
+  "dependencies": {
+    "music-metadata": "^11.12.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zustand": "^5.0.5"
+  }
+}

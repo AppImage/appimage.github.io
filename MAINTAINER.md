@@ -57,12 +57,53 @@ and approve pull requests". The dry run shows the PR it would open.
 `code/ping-authors.sh --dry-run` runs the whole thing locally (needs
 `GH_TOKEN`).
 
+## Re-testing a pull request
+
+Comment `/retest` on the pull request (maintainers, the pull request's
+author, and the GitHub account the AppImage comes from can; on
+auto-discovered pull requests, that is the application's author).
+`.github/workflows/retest.yml` reacts with 👀, closes and reopens
+the pull request with `SCREENSHOT_UPLOAD_TOKEN`, so that the Test workflow runs
+again with the current workflow files from `master`, and reacts with 🚀.
+Without that secret it re-runs the last Test run instead, which uses the
+workflow files of that run. On a merged pull request, `/retest` opens a new
+pull request instead that changes only the trailing newline of its files in
+`data/`, so the entries are tested again. For all open pull requests at once,
+see `code/retest-prs.sh`.
+
+### Automatic re-tests
+
+`.github/workflows/auto-retest.yml` re-tests a failed pull request on its
+own, the same way (close and reopen with `SCREENSHOT_UPLOAD_TOKEN`), when a
+maintainer, the pull request's author, or the GitHub account the AppImage
+comes from comments that it is fixed or asks for a re-test ("v1.2 is out", "fixed in
+1.2", "could you re-run the test?"); it reacts with 🚀. The phrases are in
+`code/retest-comment.sh`.
+
+It never re-tests a pull request whose Test run started less than 15 minutes
+ago. To switch it off, disable the workflow in the Actions tab.
+`code/retest-pr.sh NUMBER` re-tests one pull request from a shell (with the
+token in `PAT`).
+
+## Explaining AppStream metadata
+
+Comment `/appstream` on an issue or pull request to post instructions for
+shipping an AppStream metainfo file (description, links, and screenshots of
+the author's choice, which the catalog shows instead of the automated one).
+The text is `code/appstream-help.md`; edit it there.
+
 ## Running "Discover apps" manually
 
 `.github/workflows/discover-apps.yml` searches GitHub for repositories that
 publish AppImages on their releases but are not in the catalog yet, and opens
 a pull request per qualifying repository (labeled `auto-discovered`) for a
 maintainer to review; it never merges these itself.
+
+A repository proposed once is never proposed again, whether its pull request
+was merged or closed. To make sure an app is never proposed again, not even
+from another repository (a fork, a copy, a move), add the black `opt-out`
+label to its pull request (any pull request that adds its file in `data/`,
+open or closed), e.g. when its authors asked not to be listed.
 
 To run it: Actions tab → "Discover apps" → *Run workflow*. `count` caps how
 many pull requests that run opens (default 1, no upper limit); the run goes on until
@@ -113,6 +154,10 @@ workflow silently falls back to `SCREENSHOT_UPLOAD_TOKEN` or `GITHUB_TOKEN`
 (the job log's first line says which token was used, never its value).
 
 ## Removing an application
+
+On a pull request (e.g. an auto-discovered one), comment `/remove`: the pull
+request is closed and labeled `opt-out`, so the app is never proposed again,
+and its entry is removed if it is in the catalog already.
 
 Comment `/remove` on its "Where did the AppImage of NAME go?" issue (only
 owners, members and collaborators can), or run *Actions → Remove entry* with

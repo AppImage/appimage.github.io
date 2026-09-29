@@ -1,0 +1,13 @@
+{
+  "name": "open-battery-information-desktop",
+  "productName": "Open Battery Information",
+  "version": "1.0.7",
+  "description": "Desktop build of the Open Battery Information OBI-1 tool — native serial battery diagnosis for Windows, macOS and Linux.",
+  "main": "main.js",
+  "license": "GPL-3.0",
+  "author": "Open Battery Information",
+  "homepage": "https://openbatteryinformation.github.io/",
+  "dependencies": {
+    "serialport": "^12.0.0"
+  }
+}

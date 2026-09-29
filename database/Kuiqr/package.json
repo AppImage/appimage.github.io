@@ -1,0 +1,10 @@
+{
+  "name": "kuiqr",
+  "version": "2.4.1",
+  "description": "Scan QR codes anywhere on your screen with a global keyboard shortcut. Works on Windows, macOS, and Linux.",
+  "main": "main.js",
+  "author": "LarryXu",
+  "homepage": "https://github.com/LarryXu2014/Kuiqr",
+  "license": "GPL-3.0",
+  "buildVersion": "2.4.2.5.3"
+}
