@@ -1,0 +1,8 @@
+{
+  "name": "desktop",
+  "private": true,
+  "version": "1.0.11",
+  "description": "Busca Vagas — app desktop (Electron)",
+  "main": "main.mjs",
+  "type": "module"
+}
