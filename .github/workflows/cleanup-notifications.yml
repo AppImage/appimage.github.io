@@ -1,11 +1,12 @@
 # Marks as read ("closes") the notification threads of the account whose token
-# is used, when the only participants of a thread are accounts in an allow-list
-# (by default probonopd and github-actions). "Participants" are the author of
-# the issue or pull request and everyone who commented or reviewed on it.
+# is used, when the account that opened the issue or pull request AND every
+# account that posted a comment on it are all in an allow-list (by default
+# probonopd and github-actions). Reviews and review comments are not considered.
 #
-# Threads that are not about an issue or pull request, or that involve anyone
-# else, are left untouched. Runs only when started by hand, and changes nothing
-# unless "dry_run" is set to false (it lists what it would do first).
+# Threads that are not about an issue or pull request, or where the opener or any
+# commenter is someone else, are left untouched. Runs only when started by hand,
+# and changes nothing unless "dry_run" is set to false (it lists what it would
+# do first).
 #
 # Needs a classic personal access token with the "notifications" scope (add
 # "repo" as well to read participants in private repositories) in the
@@ -56,21 +57,14 @@ jobs:
           echo "$ALLOW" | sed 's/^/  /'
           echo ""
 
-          # The logins of everyone who took part in an issue or pull request:
-          # its author, and the authors of its comments (and, for a pull
-          # request, its review comments and reviews). $1 is the API URL of the
-          # issue or pull request (notification .subject.url).
+          # The opener of an issue or pull request and the authors of its
+          # comments (reviews and review comments are deliberately not counted).
+          # $1 is the API URL of the issue or pull request (.subject.url).
           participants() {
             local u="$1" issue
             issue=$(echo "$u" | sed 's#/pulls/#/issues/#')  # PR conversation comments are issue comments
-            gh api "$u" --jq '.user.login // empty' 2>/dev/null
-            gh api --paginate "$issue/comments" --jq '.[].user.login' 2>/dev/null
-            case "$u" in
-              */pulls/*)
-                gh api --paginate "$u/comments" --jq '.[].user.login' 2>/dev/null  # inline review comments
-                gh api --paginate "$u/reviews" --jq '.[].user.login // empty' 2>/dev/null
-                ;;
-            esac
+            gh api "$u" --jq '.user.login // empty' 2>/dev/null          # the opener
+            gh api --paginate "$issue/comments" --jq '.[].user.login' 2>/dev/null  # comment authors
           }
 
           # Unread notifications of the token's account, across all repositories
