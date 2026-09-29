@@ -1,0 +1,92 @@
+---
+layout: app
+
+permalink: /Magnolia/
+description: Open-source qualitative data analysis software
+license: EUPL-1.2
+
+icons:
+  - Magnolia/icons/1024x1024/magnolia.png
+
+screenshots:
+  - Magnolia/screenshot.png
+
+authors:
+  - name: caledavis
+    url: https://github.com/caledavis
+
+links:
+  - type: GitHub
+    url: caledavis/Magnolia
+  - type: Download
+    url: https://github.com/caledavis/Magnolia/releases
+
+desktop:
+  Desktop Entry:
+    Name: Magnolia
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: magnolia
+    StartupWMClass: Magnolia
+    X-AppImage-Version: 1.8.1
+    Comment: Open-source qualitative data analysis software
+    Categories: Education
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: EUPL-1.2
+
+electron:
+  author:
+    name: Cale Davis
+    email: cale@caledavis.eu
+  license: EUPL-1.2
+  homepage: https://github.com/caledavis/Magnolia
+  repository:
+    type: git
+    url: https://github.com/caledavis/Magnolia.git
+  bugs:
+    url: https://github.com/caledavis/Magnolia/issues
+  main: "./out/main/index.js"
+  dependencies:
+    "@electron-toolkit/utils": "^4.0.0"
+    "@iarna/rtf-to-html": "^1.1.0"
+    "@tiptap/extension-color": "^3.22.2"
+    "@tiptap/extension-placeholder": "^3.22.1"
+    "@tiptap/extension-text-align": "^3.22.2"
+    "@tiptap/extension-text-style": "^3.22.2"
+    "@tiptap/extension-underline": "^3.22.2"
+    "@tiptap/pm": "^3.22.1"
+    "@tiptap/react": "^3.22.1"
+    "@tiptap/starter-kit": "^3.22.1"
+    "@types/diff": "^7.0.2"
+    diff: "^9.0.0"
+    electron-updater: "^6.8.3"
+    fast-xml-parser: "^4.5.3"
+    heic-decode: "^2.1.0"
+    jszip: "^3.10.1"
+    lucide-react: "^1.20.0"
+    mammoth: "^1.12.0"
+    marked: "^17.0.5"
+    music-metadata: "^11.12.3"
+    pdfjs-dist: "^4.10.38"
+    pngjs: "^7.0.0"
+    react: "^18.3.1"
+    react-dom: "^18.3.1"
+    react-resizable-panels: "^2.1.7"
+    rtf-parser: "^1.3.3"
+    tiptap-markdown: "^0.9.0"
+    utif: "^3.1.0"
+    uuid: "^9.0.1"
+    xlsx: "^0.18.5"
+    zustand: "^4.5.5"
+---
