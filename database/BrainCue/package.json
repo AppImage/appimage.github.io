@@ -1,0 +1,31 @@
+{
+  "name": "braincue",
+  "version": "2.2.0",
+  "description": "BrainCue — a local-first desktop AI companion for live conversations (Electron + React + OpenAI). It listens with consent, remembers your calls, and answers into a capture-invisible overlay. BYO OpenAI key.",
+  "author": "tpikachu",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tpikachu/BrainCue.git"
+  },
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.124.0",
+    "better-sqlite3": "^12.4.1",
+    "drizzle-orm": "^0.38.4",
+    "electron-updater": "^6.8.9",
+    "koffi": "^3.1.1",
+    "mammoth": "^1.9.0",
+    "openai": "^4.77.0",
+    "pdf-parse": "^1.1.1",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0",
+    "sherpa-onnx-node": "^1.13.7",
+    "ws": "^8.18.0",
+    "zod": "^3.24.1"
+  }
+}
