@@ -29,10 +29,11 @@ desktop:
     Type: Application
     Icon: ultima-vless-client
     StartupWMClass: UltimaVLESS
-    X-AppImage-Version: 7.15.1
+    X-AppImage-Version: 7.16.0
     Comment: Open-source desktop VLESS/Xray VPN client for Windows, macOS, and Linux
     Categories: Network
   AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|sliva-name|ultimaVLESS|latest|UltimaVLESS-*.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)
