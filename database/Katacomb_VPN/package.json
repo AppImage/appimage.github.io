@@ -1,0 +1,22 @@
+{
+  "name": "katacomb-vpn",
+  "version": "1.10.0",
+  "description": "Katacomb VPN Desktop Client",
+  "author": "Katacomb <noreply@katacomb.vpn>",
+  "homepage": "https://katacomb.vpn",
+  "license": "GPL-3.0-or-later",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@cosmjs/proto-signing": "^0.38.1",
+    "@cosmjs/stargate": "^0.38.1",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@sentinel-official/sentinel-js-sdk": "^2.0.4",
+    "@tanstack/react-virtual": "^3.13.0",
+    "bip39": "^3.1.0",
+    "d3-geo": "^3.1.1",
+    "flag-icons": "^7.3.2",
+    "long": "^5.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
