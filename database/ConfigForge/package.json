@@ -1,0 +1,26 @@
+{
+  "name": "@configforge/desktop",
+  "version": "0.3.103",
+  "private": true,
+  "description": "ConfigForge — OSConfig Baseline Editing tool",
+  "main": "./dist/electron/main.js",
+  "homepage": "https://github.com/Azure/ConfigForge",
+  "author": {
+    "name": "ConfigForge contributors",
+    "email": "noreply@github.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@fluentui/react-components": "^9.73.8",
+    "@fluentui/react-icons": "^2.0.325",
+    "@monaco-editor/react": "^4.7.0",
+    "electron-log": "^5.4.3",
+    "electron-updater": "6.8.9",
+    "i18next": "^25.0.0",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "js-yaml": "^4.3.1",
+    "monaco-editor": "^0.55.1",
+    "pdfkit": "^0.18.0",
+    "react-i18next": "^15.0.0"
+  }
+}
