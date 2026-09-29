@@ -11,7 +11,9 @@ set -o pipefail
 cleanup() {
   RC=$?
   { set +e +v +x ; } 2>/dev/null
-  if [ $RC -ne 0 ] && [ -n "$APID" ] && [ -n "$INPUTBASENAME" ] ; then
+  # A tray retry that still fails leaves only the tiny tray window on a black
+  # background, so its screen is not worth posting (only the error text is).
+  if [ $RC -ne 0 ] && [ -n "$APID" ] && [ -n "$INPUTBASENAME" ] && [ x"$TRAY_ATTEMPTED" != xtrue ] ; then
     mkdir -p failure-screens
     timeout 15 import -window root "failure-screens/${INPUTBASENAME}.png" 2>/dev/null
     # An empty screen (the application crashed before drawing) tells nothing
@@ -37,6 +39,11 @@ URL=$(cat $1 | head -n 1)
 echo $URL
 
 GHURL="" # Workaround for: "GHURL: unbound variable"
+
+# Set once we run the AppImage a second time with a system tray (stalonetray).
+# If it still fails after that, the screen only shows the tiny tray window on a
+# black background, so the cleanup trap must not capture it as a failure screen.
+TRAY_ATTEMPTED=false
 
 INPUTBASENAME=$(basename $1)
 
@@ -407,6 +414,7 @@ if [ -n "$NO_WINDOW" ] && [ x"$TERMINAL" == xfalse ] ; then
   TRAY_HINT=$(bash "$(dirname "$0")/tray-hint.sh" "$APPDIR" || true)
   if [ -n "$TRAY_HINT" ] ; then
     echo "The application showed no window, but may be a system tray application ($TRAY_HINT); running it again with a system tray"
+    TRAY_ATTEMPTED=true
     kill $APID 2>/dev/null && sleep 2 || true
     kill -9 $APID 2>/dev/null || true
     stalonetray --geometry 1x1+0+0 --icon-size 48 -bg white --window-type dock --decorations none --skip-taskbar > stalonetray.log 2>&1 &
