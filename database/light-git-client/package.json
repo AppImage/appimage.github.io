@@ -1,0 +1,23 @@
+{
+  "name": "light-git-client",
+  "version": "0.15.0",
+  "description": "A light git client",
+  "author": {
+    "name": "Blake Stacks",
+    "email": "blake@blakestacks.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Blakenator/light-git-client.git"
+  },
+  "main": "packages/backend/dist/main.js",
+  "private": true,
+  "packageManager": "pnpm@10.29.2",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "electron",
+      "electron-winstaller"
+    ]
+  }
+}
