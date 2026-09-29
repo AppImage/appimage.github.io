@@ -1,0 +1,23 @@
+{
+  "name": "guitarlab",
+  "version": "0.4.0",
+  "description": "GuitarLab — estudo de guitarra: setlist, tablatura, stems, cifras e timbres",
+  "main": "./out/main/index.js",
+  "author": "Paulo Brandao",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulobrandaodev/GuitarLab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paulobrandaodev/GuitarLab/issues"
+  },
+  "homepage": "https://github.com/paulobrandaodev/GuitarLab#readme",
+  "type": "module",
+  "dependencies": {
+    "@coderline/alphatab": "^1.8.4",
+    "better-sqlite3": "^13.0.3",
+    "drizzle-orm": "^0.45.2",
+    "electron-updater": "^6.8.9"
+  }
+}
