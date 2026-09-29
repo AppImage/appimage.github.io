@@ -1,0 +1,25 @@
+{
+  "name": "marea",
+  "version": "0.2.1",
+  "desktopName": "marea.desktop",
+  "description": "Marea — cliente Git de escritorio con grafo de commits interactivo. Navega tu historial.",
+  "author": "Pleamar Labs",
+  "license": "MIT",
+  "homepage": "https://github.com/AngelMendoz/marea",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngelMendoz/marea.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AngelMendoz/marea/issues"
+  },
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "lucide-react": "^0.460.0",
+    "node-pty": "^1.1.0",
+    "simple-git": "^3.27.0",
+    "zustand": "^5.0.1"
+  }
+}
