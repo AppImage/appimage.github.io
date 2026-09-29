@@ -1,0 +1,37 @@
+{
+  "name": "writeflow",
+  "version": "0.5.7",
+  "description": "WriteFlow - A Typora-style WYSIWYG Markdown Editor",
+  "main": "./out/main/index.js",
+  "author": "Jaqen",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaqen6688/WriteFlow"
+  },
+  "bugs": {
+    "url": "https://github.com/jaqen6688/WriteFlow/issues"
+  },
+  "homepage": "https://github.com/jaqen6688/WriteFlow",
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/utils": "^3.0.0",
+    "highlight.js": "^11.11.1",
+    "katex": "^0.16.45",
+    "markdown-it": "^14.1.0",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-task-lists": "^2.1.1",
+    "prosemirror-commands": "^1.6.0",
+    "prosemirror-history": "^1.4.1",
+    "prosemirror-inputrules": "^1.4.0",
+    "prosemirror-keymap": "^1.2.2",
+    "prosemirror-markdown": "^1.13.1",
+    "prosemirror-model": "^1.23.0",
+    "prosemirror-schema-list": "^1.5.0",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-transform": "^1.10.2",
+    "prosemirror-view": "^1.36.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
