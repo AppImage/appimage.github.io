@@ -1,0 +1,32 @@
+{
+  "name": "anchor-code",
+  "version": "0.1.41",
+  "description": "A human-in-the-loop reader for agent coding. Agent it. Review it. Feed it back.",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "@fontsource/eb-garamond": "^5.3.0",
+    "@monaco-editor/react": "^4.7.0",
+    "@vscode/codicons": "^0.0.45",
+    "@vscode/ripgrep": "^1.18.0",
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "electron-updater": "^6.8.9",
+    "mermaid": "^11.16.0",
+    "monaco-editor": "^0.55.1",
+    "node-pty": "^1.1.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "react-resizable-panels": "^2.1.9",
+    "remark-gfm": "^4.0.1",
+    "ssh2": "^1.17.0",
+    "ws": "^8.21.1",
+    "yaml": "^2.9.0",
+    "zod": "^4.4.3",
+    "zustand": "^5.0.6"
+  }
+}
