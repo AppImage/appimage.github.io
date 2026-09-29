@@ -1,0 +1,25 @@
+{
+  "name": "multi-git",
+  "version": "5.2.1",
+  "description": "A local-first Git desktop client for Windows, macOS and Linux, with multiple repositories, accounts, and SSH identities",
+  "homepage": "https://github.com/AnthonyKopri/multi-git",
+  "desktopName": "multi-git.desktop",
+  "main": "out/node/main/main.js",
+  "bin": {
+    "multi-git": "scripts/multi-git.cjs"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.0.0",
+    "express": "^5.2.1",
+    "ink": "^7.1.1",
+    "react": "^19.3.0",
+    "tar": "^7.5.22",
+    "yauzl": "^3.4.0",
+    "zod": "^4.6.5"
+  }
+}
