@@ -5,7 +5,10 @@
 # on a forge, or another domain.
 #
 # Usage: check-origin.sh OLD_URL NEW_URL
-#   Prints the origins and exits 1 if they differ, 0 if they are the same.
+#   Prints the origins and exits 0 if they are the same, 1 if they differ,
+#   or 2 if they differ but both are on GitHub and GitHub itself redirects the
+#   old repository to the new one (a rename or transfer: the same project, not
+#   a takeover). Uses the GitHub API (GH_TOKEN if set, else unauthenticated).
 #        check-origin.sh --origin URL
 #   Prints the origin of URL, e.g. "github.com/owner", "gitlab.com/owner",
 #   "sourceforge.net/projects/name" or "example.com".
@@ -58,6 +61,43 @@ origin() {
   esac | tr -cd 'a-z0-9._:/~-'
 }
 
+# Lowercased "owner/repo" of a GitHub repository URL, or nothing.
+gh_repo() {
+  local URL HOST PATHPART OWNER REPO
+  URL=$(echo "$1" | tr -d '\r"'"'"'<>' | sed -E 's/^[[:space:]]+//; s/[[:space:]].*//; s/[?#].*//')
+  HOST=$(echo "$URL" | sed -E 's|^[a-zA-Z]+://||; s|/.*||; s|.*@||; s|:[0-9]*$||' | tr 'A-Z' 'a-z')
+  HOST=${HOST#www.}
+  PATHPART=$(echo "$URL" | sed -E 's|^[a-zA-Z]+://[^/]*||')
+  case "$HOST" in
+    github.com|raw.githubusercontent.com)
+      OWNER=$(echo "$PATHPART" | cut -d / -f 2) ; REPO=$(echo "$PATHPART" | cut -d / -f 3) ;;
+    api.github.com)
+      [ "$(echo "$PATHPART" | cut -d / -f 2)" == repos ] || return 1
+      OWNER=$(echo "$PATHPART" | cut -d / -f 3) ; REPO=$(echo "$PATHPART" | cut -d / -f 4) ;;
+    *) return 1 ;;
+  esac
+  REPO=${REPO%.git}
+  [ -n "$OWNER" ] && [ -n "$REPO" ] || return 1
+  echo "$OWNER/$REPO" | tr 'A-Z' 'a-z' | tr -cd 'a-z0-9._/-'
+}
+
+# Whether GitHub redirects the OLD repository to the NEW one, i.e. the old
+# repository was renamed or transferred to the new one (so it is the same
+# project). Asks the API what the old repository resolves to now.
+github_moved() {
+  local OLD NEW RESOLVED AUTH=()
+  OLD=$(gh_repo "$1") || return 1
+  NEW=$(gh_repo "$2") || return 1
+  [ -n "$OLD" ] && [ -n "$NEW" ] && [ "$OLD" != "$NEW" ] || return 1
+  [ -n "${GH_TOKEN:-}" ] && AUTH=(-H "Authorization: Bearer $GH_TOKEN")
+  RESOLVED=$(curl -sSL --max-time 20 "${AUTH[@]}" \
+      -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" \
+      "https://api.github.com/repos/$OLD" 2>/dev/null \
+    | grep -o '"full_name"[[:space:]]*:[[:space:]]*"[^"]*"' | head -n 1 \
+    | sed -E 's/.*:[[:space:]]*"([^"]*)"$/\1/' | tr 'A-Z' 'a-z')
+  [ -n "$RESOLVED" ] && [ "$RESOLVED" == "$NEW" ]
+}
+
 if [ "$1" == "--origin" ] ; then
   origin "$2"
   echo
@@ -67,4 +107,8 @@ fi
 OLD=$(origin "$1")
 NEW=$(origin "$2")
 echo "$OLD $NEW"
-[ "$OLD" == "$NEW" ]
+[ "$OLD" == "$NEW" ] && exit 0
+# Different owner, but GitHub redirects the old repository to the new one:
+# a rename or transfer, the same project (informational, not a takeover warning)
+github_moved "$1" "$2" && exit 2
+exit 1

@@ -109,8 +109,12 @@ GitHub Pages (Jekyll) from this repository.
    to a different owner, it posts a comment marked
    `<!-- appimagehub-origin-check -->` and sets the yellow
    `manual-check-needed` label (possible takeover of an entry); both are
-   withdrawn when a later push undoes the change. This does not depend on the
-   PR's own test run, which a PR could alter.
+   withdrawn when a later push undoes the change. Exception: if both are GitHub
+   repositories and GitHub itself redirects the old repository to the new one
+   (a rename or transfer, so the same project), `check-origin.sh` exits 2 and
+   the workflow posts a neutral informational note instead — no warning, no
+   `manual-check-needed` label. This does not depend on the PR's own test run,
+   which a PR could alter.
 
 4. `.github/workflows/ping-authors.yml` (monthly `schedule`, a real run, and
    `workflow_dispatch` with `dry_run` (default true), `max_issues`
