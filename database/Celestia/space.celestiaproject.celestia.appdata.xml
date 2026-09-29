@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>space.celestiaproject.celestia</id>
+
+  <name>Celestia</name>
+  <summary>Explore the universe</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+
+  <description>
+    <p>
+      Celestia provides photo-realistic, real-time, three-dimensional viewing of
+      the Solar System, the Galaxy and the Universe.
+    </p>
+    <p>
+      It is an easy to use, freely-distributed, multi-platform, open source,
+      software package which has become a valuable tool for astronomy education.
+      Used in homes, schools, museums and planetariums around the world, it also
+      is used as a visualization tool by space mission designers.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">space.celestiaproject.celestia.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://celestiaproject.space/images/gallery/earth.jpg</image>
+    </screenshot>
+    <screenshot>
+      <image>https://celestiaproject.space/images/gallery/europa.jpg</image>
+    </screenshot>
+    <screenshot>
+      <image>https://celestiaproject.space/images/gallery/proxima.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://celestiaproject.space/</url>
+  <url type="bugtracker">https://github.com/CelestiaProject/Celestia/issues</url>
+</component>
