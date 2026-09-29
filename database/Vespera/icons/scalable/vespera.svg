@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="bg" cx="0.32" cy="0.26" r="0.95">
+      <stop offset="0" stop-color="#12213f"/>
+      <stop offset="0.55" stop-color="#0a1026"/>
+      <stop offset="1" stop-color="#060a18"/>
+    </radialGradient>
+    <radialGradient id="planet" cx="0.36" cy="0.34" r="0.8">
+      <stop offset="0" stop-color="#8fe6ff"/>
+      <stop offset="0.5" stop-color="#4f8fd6"/>
+      <stop offset="1" stop-color="#1a2a54"/>
+    </radialGradient>
+    <linearGradient id="star" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eaf9ff"/>
+      <stop offset="1" stop-color="#6fe9ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="240" height="240" rx="52" fill="url(#bg)"/>
+  <rect x="8.5" y="8.5" width="239" height="239" rx="51.5" fill="none" stroke="#6fe9ff" stroke-opacity="0.16"/>
+
+  <!-- stars -->
+  <g fill="#eaf2ff">
+    <circle cx="64" cy="70" r="1.7" opacity="0.8"/>
+    <circle cx="196" cy="96" r="1.4" opacity="0.6"/>
+    <circle cx="88" cy="176" r="1.6" opacity="0.7"/>
+    <circle cx="168" cy="188" r="1.3" opacity="0.55"/>
+    <circle cx="120" cy="60" r="1.2" opacity="0.5"/>
+  </g>
+
+  <!-- ringed planet -->
+  <g transform="translate(186 74)">
+    <ellipse cx="0" cy="0" rx="46" ry="15" fill="none" stroke="#a78bfa" stroke-opacity="0.55" stroke-width="5" transform="rotate(-24)"/>
+    <circle cx="0" cy="0" r="26" fill="url(#planet)"/>
+  </g>
+
+  <!-- evening star -->
+  <g transform="translate(112 140)">
+    <path d="M0 -54 C 7 -16, 16 -7, 54 0 C 16 7, 7 16, 0 54 C -7 16, -16 7, -54 0 C -16 -7, -7 -16, 0 -54 Z"
+          fill="url(#star)"/>
+    <circle cx="0" cy="0" r="7" fill="#ffffff"/>
+  </g>
+</svg>
