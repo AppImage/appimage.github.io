@@ -1,0 +1,13 @@
+{
+  "name": "arcdlp",
+  "version": "1.4.3",
+  "description": "Video downloader powered by yt-dlp",
+  "main": "src/main/main.js",
+  "author": "Archis",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "electron-store": "^6.0.1",
+    "ffmpeg-static": "^5.2.0"
+  }
+}
