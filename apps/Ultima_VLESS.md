@@ -3,9 +3,10 @@ layout: app
 
 permalink: /Ultima_VLESS/
 description: Open-source desktop VLESS/Xray VPN client for Windows, macOS, and Linux
+license: MIT
 
 icons:
-  - Ultima_VLESS/icons/128x128/ultima-vless-client.png
+  - Ultima_VLESS/icons/256x256/ultima-vless-client.png
 
 screenshots:
   - Ultima_VLESS/screenshot.png
@@ -28,9 +29,9 @@ desktop:
     Type: Application
     Icon: ultima-vless-client
     StartupWMClass: UltimaVLESS
-    X-AppImage-Version: 7.14.1
+    X-AppImage-Version: 7.15.1
     Comment: Open-source desktop VLESS/Xray VPN client for Windows, macOS, and Linux
-    Categories: Utility
+    Categories: Network
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
@@ -42,6 +43,7 @@ desktop:
     X-AppImage-Runtime: dynamic
     X-AppImage-Self-Contained: false
     X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: MIT
 
 electron:
   homepage: https://github.com/sliva-name/ultimaVLESS

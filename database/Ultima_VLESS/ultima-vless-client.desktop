@@ -5,9 +5,9 @@ Terminal=false
 Type=Application
 Icon=ultima-vless-client
 StartupWMClass=UltimaVLESS
-X-AppImage-Version=7.14.1
+X-AppImage-Version=7.15.1
 Comment=Open-source desktop VLESS/Xray VPN client for Windows, macOS, and Linux
-Categories=Utility;
+Categories=Network;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
@@ -19,3 +19,4 @@ X-AppImage-Libc=host
 X-AppImage-Runtime=dynamic
 X-AppImage-Self-Contained=false
 X-AppImage-Glibc-Required=GLIBC_2.25
+X-AppImage-Payload-License=MIT
