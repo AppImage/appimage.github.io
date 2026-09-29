@@ -1,0 +1,17 @@
+{
+  "name": "desktop-pet",
+  "version": "0.1.0",
+  "description": "A cross-platform anime desktop pet with character packs, chat, TTS, and multilingual UI.",
+  "author": "Desktop Pet Contributors",
+  "license": "MIT",
+  "homepage": "https://github.com/TonyNa-code/desktop-pet#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TonyNa-code/desktop-pet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TonyNa-code/desktop-pet/issues"
+  },
+  "main": "src/main.js",
+  "private": false
+}

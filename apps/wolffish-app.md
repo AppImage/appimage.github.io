@@ -1,0 +1,104 @@
+---
+layout: app
+
+permalink: /wolffish-app/
+description: Wolffish is a personal AI agent that runs on your machine with full system access. It thinks, acts, and learns — entirely local.
+license: MIT
+
+icons:
+  - wolffish-app/icons/128x128/wolffish-app.png
+
+screenshots:
+  - wolffish-app/screenshot.png
+
+authors:
+  - name: thewolffish
+    url: https://github.com/thewolffish
+
+links:
+  - type: GitHub
+    url: thewolffish/wolffish-app
+  - type: Download
+    url: https://github.com/thewolffish/wolffish-app/releases
+
+desktop:
+  Desktop Entry:
+    Name: Wolffish
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: wolffish-app
+    StartupWMClass: Wolffish
+    X-AppImage-Version: 1.0.317
+    Comment: Wolffish is a personal AI agent that runs on your machine with full system
+      access. It thinks, acts, and learns — entirely local.
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: MIT
+
+electron:
+  description: Wolffish is a personal AI agent that runs on your machine with full system
+    access. It thinks, acts, and learns — entirely local.
+  main: "./out/main/index.js"
+  author: Younes Alturkey <younes@wolffi.sh>
+  homepage: https://wolffi.sh
+  engines:
+    node: ">=24"
+  dependencies:
+    "@codemirror/commands": "^6.10.3"
+    "@codemirror/lang-json": "^6.0.2"
+    "@codemirror/lang-markdown": "^6.5.0"
+    "@codemirror/language": "^6.12.3"
+    "@codemirror/lint": "^6.9.5"
+    "@codemirror/state": "^6.6.0"
+    "@codemirror/view": "^6.41.1"
+    "@electron-toolkit/preload": "^3.0.2"
+    "@electron-toolkit/utils": "^4.0.0"
+    "@modelcontextprotocol/sdk": "^1.29.0"
+    "@noble/ciphers": "^2.2.0"
+    "@noble/curves": "^2.2.0"
+    "@noble/hashes": "^2.2.0"
+    "@tailwindcss/vite": "^4.2.4"
+    "@whiskeysockets/baileys": "^7.0.0-rc.9"
+    better-sqlite3: "^12.9.0"
+    compromise: "^14.15.0"
+    electron-updater: "^6.8.3"
+    grammy: "^1.42.0"
+    highlight.js: "^11.11.1"
+    hugeicons-react: "^0.4.0"
+    i18next: "^26.0.7"
+    i18next-browser-languagedetector: "^8.2.1"
+    js-yaml: "^4.1.1"
+    jszip: "^3.10.1"
+    mammoth: "^1.12.0"
+    mitt: "^3.0.1"
+    node-cron: "^4.2.1"
+    pdf-parse: "^2.4.5"
+    pino: "^10.3.1"
+    qrcode: "^1.5.4"
+    qrcode-terminal: "^0.12.0"
+    react-i18next: "^17.0.4"
+    react-icons: "^5.6.0"
+    react-markdown: "^10.1.0"
+    rehype-highlight: "^7.0.2"
+    rehype-raw: "^7.0.0"
+    rehype-sanitize: "^6.0.0"
+    remark-gfm: "^4.0.1"
+    semver: "^7.8.0"
+    sharp: "^0.34.5"
+    tailwindcss: "^4.2.4"
+    ws: "^8.21.0"
+    xlsx: "^0.18.5"
+  overrides:
+    phantomjs-prebuilt: npm:empty-npm-package@1.0.0
+---
