@@ -2,14 +2,12 @@
 layout: app
 
 permalink: /ABCarus/
-description: ABC notation editor and toolkit
 license: MIT
 
 icons:
   - ABCarus/icons/512x512/abcarus.png
-
 screenshots:
-  - ABCarus/screenshot.png
+- https://raw.githubusercontent.com/topchyan/abcarus/master/assets/screenshots/appstream-main.png
 
 authors:
   - name: topchyan
@@ -41,23 +39,4 @@ desktop:
     X-AppImage-Runtime: static
     X-AppImage-Self-Contained: false
     X-AppImage-Glibc-Required: GLIBC_2.27
-
-appdata:
-  Type: desktop-application
-  ID: com.abcarus.ABCarus
-  Name:
-    C: ABCarus
-  Summary:
-    C: ABC notation editor and toolkit
-  Description:
-    C: >-
-      <p>ABCarus is a small Electron app for editing, converting, and auditioning ABC notation.</p>
-  
-      <p>Import and export flows support common MusicXML workflows with bundled tools for portability.</p>
-  ProjectLicense: MIT
-  Launchable:
-    desktop-id:
-    - com.abcarus.ABCarus.desktop
-  ContentRating:
-    oars-1.1: {}
 ---
