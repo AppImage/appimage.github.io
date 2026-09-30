@@ -1,12 +1,14 @@
 [Desktop Entry]
-Type=Application
 Name=Sprocket
-X-AppImage-Version=0.1.102-alpha
-Comment=Sprocket 0.1.102-alpha
-Icon=Sprocket
-Exec=Sprocket
-StartupWMClass=Sprocket
-Categories=AudioVideo;AudioVideoEditing;Video;
+Exec=AppRun --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=sprocket-desktop
+StartupWMClass=com.spikonado.sprocket
+X-AppImage-Version=0.3.9
+Comment=Sprocket desktop application
+Categories=Development;
+
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
 # (e.g., with appimagetool -u) so that users can easily update the AppImage
@@ -14,7 +16,6 @@ X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runne
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
 X-AppImage-Libc=host
-X-AppImage-Runtime=static
+X-AppImage-Runtime=dynamic
 X-AppImage-Self-Contained=false
-X-AppImage-Glibc-Required=GLIBC_2.34
-X-AppImage-Payload-License=MIT
+X-AppImage-Glibc-Required=GLIBC_2.39
