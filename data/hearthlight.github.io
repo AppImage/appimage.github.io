@@ -1,1 +1,1 @@
-https://github.com/Hearthlight/hearthlight.github.io
+https://github.com/Hearthlight/Hearthlight
