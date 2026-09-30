@@ -1,13 +1,15 @@
 [Desktop Entry]
-Name=Pixel Pomodoro
-Exec=AppRun --no-sandbox %U
-Terminal=false
 Type=Application
-Icon=pixel-pomodoro
-StartupWMClass=Pixel Pomodoro
-X-AppImage-Version=0.1.0
-Comment=A pixel-art pomodoro desktop app
+Version=1.1
+Name=Pomodoro
+GenericName=Focus Timer
+Comment=A focus timer with session statistics and a lo-fi stream
+Exec=pomodoro
+Icon=pomodoro
+Terminal=false
 Categories=Utility;
+Keywords=pomodoro;timer;focus;productivity;
+StartupNotify=true
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
@@ -16,6 +18,6 @@ X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runne
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
 X-AppImage-Libc=host
-X-AppImage-Runtime=dynamic
+X-AppImage-Runtime=static
 X-AppImage-Self-Contained=false
-X-AppImage-Glibc-Required=GLIBC_2.25
+X-AppImage-Glibc-Required=GLIBC_2.34
