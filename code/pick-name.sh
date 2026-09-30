@@ -10,6 +10,8 @@
 #   photo-app  photo-app-1.2.AppImage  "Photo App is a ..." -> Photo_App
 #   OpenSubtitles-Uploader-PRO  OpenSubtitles.Uploader.PRO_1.8.24_amd64.AppImage
 #     README "# OpenSubtitles Uploader PRO"  -> OpenSubtitles_Uploader_PRO
+#   hearthlight.github.io  Hearthlight-1.1.0-x86_64.AppImage  -> Hearthlight
+#     (a GitHub Pages repo: the proper "Hearthlight" beats "hearthlight.github.io")
 # The README's headline is how the authors write the name, so it wins over
 # the other spellings. A dot between words ("Uploader.PRO", from an AppImage
 # name) becomes _; dots of names like draw.io or snake.js stay.
@@ -22,9 +24,12 @@ README="$4"
 
 key() { tr 'A-Z' 'a-z' <<<"$1" | tr -cd 'a-z0-9' ; }
 
-# The app's letters and digits, from the repository name without a trailing
-# -appimage/-linux (e.g. photoapp-appimage)
-BASE=$(sed -E 's/[-_.]?(appimage|linux)$//I' <<<"$REPO_NAME")
+# The app's letters and digits, from the repository name without a Pages-site
+# suffix (foo.github.io is the GitHub Pages repo of the app "foo", not
+# "foo.github.io") and without a trailing -appimage/-linux (e.g. photoapp-appimage).
+# Dropping the suffix lets a proper spelling (e.g. the AppImage's "Hearthlight")
+# match and win over the all-lowercase, dotted repository name.
+BASE=$(sed -E 's/\.(github\.io|gitlab\.io|codeberg\.page)$//I; s/[-_.]?(appimage|linux)$//I' <<<"$REPO_NAME")
 [ -n "$BASE" ] || BASE="$REPO_NAME"
 KEY=$(key "$BASE")
 [ -n "$KEY" ] || exit 0
