@@ -484,6 +484,34 @@ fi
 icewm > /dev/null 2>&1 &
 sleep 2
 
+# Move the largest application window to the top-left and shrink it if it is
+# larger than the small virtual display (test.yml runs Xvfb at 800x600), so the
+# screenshot shows the whole window instead of a clipped corner (#8041). Nothing
+# else makes an oversized window fit: the window manager lets it overflow and the
+# off-screen part is lost. Best effort - a window with a fixed minimum size may
+# refuse to shrink; it is at least moved fully on-screen.
+fit_main_window() {
+  local SW SH LINE WID WW WH NW NH
+  read -r SW SH < <(timeout 5 xdotool getdisplaygeometry 2>/dev/null)
+  [[ "$SW" =~ ^[0-9]+$ && "$SH" =~ ^[0-9]+$ ]] || return 0
+  # The largest managed window (as take-screenshot.sh picks the app window)
+  LINE=$(timeout 20 xwininfo -tree -root 2>/dev/null | grep '": ("' \
+    | sed -nE 's/^[[:space:]]*(0x[0-9a-f]+) .* ([0-9]+)x([0-9]+)[-+][-0-9]+[-+][-0-9]+ +[-+][0-9]+[-+][0-9]+$/\1 \2 \3/p' \
+    | awk '{ print $2 * $3, $0 }' | sort -rn | head -n 1 | cut -d ' ' -f 2-)
+  read -r WID WW WH <<<"$LINE"
+  [[ -n "$WID" && "$WW" =~ ^[0-9]+$ && "$WH" =~ ^[0-9]+$ ]] || return 0
+  timeout 5 xdotool windowmove "$WID" 0 0 2>/dev/null || true
+  NW=$WW ; NH=$WH
+  # Leave room for the window manager's border and title bar
+  [ "$WW" -gt $((SW - 4)) ] && NW=$((SW - 4))
+  [ "$WH" -gt $((SH - 30)) ] && NH=$((SH - 30))
+  if [ "$NW" != "$WW" ] || [ "$NH" != "$WH" ] ; then
+    echo "Window $WID (${WW}x${WH}) is larger than the ${SW}x${SH} screen; resizing it to ${NW}x${NH} so the whole window is captured"
+    timeout 5 xdotool windowsize "$WID" "$NW" "$NH" 2>/dev/null || true
+    sleep 1
+  fi
+}
+
 # We could simulate X11 keyboard/mouse input with xdotool here if needed;
 # of course this should not be hardcoded here (this is just an example)
 if [ x"$INPUTBASENAME" == xVLC ] ; then
@@ -538,6 +566,7 @@ if [ "$TRAY" == true ] ; then
   fi
   echo "WARNING: The screenshot shows a system tray application (its tray icon, or what clicking it opened); please check it"
 else
+  fit_main_window
   bash "$(dirname "$0")/take-screenshot.sh" database/$INPUTBASENAME/screenshot.png || true
 fi
 
