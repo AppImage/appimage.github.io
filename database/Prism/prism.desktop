@@ -1,15 +1,13 @@
 [Desktop Entry]
-Type=Application
 Name=Prism
-GenericName=Live Media Control
-Comment=Live media trigger and overlay tool for events and performances
-Exec=Prism
-Icon=org.cutwire.Prism
+Exec=AppRun --no-sandbox %U
 Terminal=false
-Categories=AudioVideo;Video;
-Keywords=vj;video;live;overlay;media;streaming;
+Type=Application
+Icon=prism
 StartupWMClass=Prism
-X-AppImage-Version=0.1.2
+X-AppImage-Version=2.1.0
+Comment=Every model. One interface. — A cross-platform AI desktop chat client for any provider.
+Categories=Utility;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
@@ -18,7 +16,7 @@ X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runne
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
 X-AppImage-Libc=host
-X-AppImage-Runtime=static
+X-AppImage-Runtime=dynamic
 X-AppImage-Self-Contained=false
 X-AppImage-Glibc-Required=GLIBC_2.34
-X-AppImage-Payload-License=GPL-3.0
+X-AppImage-Payload-License=MIT
