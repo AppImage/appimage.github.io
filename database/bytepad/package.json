@@ -1,0 +1,37 @@
+{
+  "name": "bytepad",
+  "private": true,
+  "version": "0.25.0",
+  "description": "A modern productivity app for notes, tasks, habits, and journaling",
+  "author": {
+    "name": "Sami Tugal",
+    "email": "tugalsami@gmail.com"
+  },
+  "type": "module",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@emailjs/browser": "^4.4.1",
+    "@langchain/anthropic": "^1.5.2",
+    "@langchain/core": "^1.2.4",
+    "@langchain/openai": "^1.2.1",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "file-saver": "^2.0.5",
+    "firebase": "^12.7.0",
+    "helmet": "^8.1.0",
+    "jszip": "^3.10.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^16.1.0",
+    "ws": "^8.21.1",
+    "zod": "^4.3.5",
+    "zustand": "^5.0.0"
+  }
+}
