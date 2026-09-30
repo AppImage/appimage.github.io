@@ -1,0 +1,89 @@
+# Rebuilds apps/<Name>.md pages whose YAML front matter is invalid, so Jekyll
+# renders them again instead of skipping them (the app 404s otherwise). This
+# recovers the ~250 pages that older worker.sh runs wrote with unquoted values
+# (issue #9519); code/write-app-page.sh, now shared with worker.sh, writes valid
+# front matter. It rebuilds each page from the committed database/<Name>/ and
+# data/<Name>, so no AppImage is downloaded and the content is unchanged.
+#
+# Run it by hand from the Actions tab. It lists what it would change first;
+# set "dry_run" to false to commit the rebuilt pages to master.
+
+name: Regenerate pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      apps:
+        description: 'Entries to rebuild, separated by blanks (default: every apps/*.md with invalid YAML)'
+        required: false
+      dry_run:
+        description: 'Only rebuild and report; commit nothing'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regenerate-pages
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Configure APT Packages
+        uses: awalsh128/cache-apt-pkgs-action@v1.4.3
+        with:
+          packages: sudo wget jq xmlstarlet libfuse2
+          version: 1.0
+      - name: Install dependencies
+        run: |
+          sudo gem install dupervisor -v 1.0.5 # provides dv, to convert desktop files to yaml
+      - name: Validate the app names given
+        env:
+          APPS: ${{ inputs.apps }}
+        run: |
+          set -u
+          for NAME in $APPS ; do
+            [[ "$NAME" =~ ^[A-Za-z0-9._+-]+$ ]] || { echo "Not an entry name: $NAME" ; exit 1 ; }
+          done
+      - name: Rebuild pages
+        env:
+          APPS: ${{ inputs.apps }}
+        run: |
+          set -u
+          # shellcheck disable=SC2086 # word splitting on APPS is intended
+          bash code/regenerate-pages.sh $APPS 2>&1 | tee regenerate.log
+          # Do not commit anything the rebuild may have left in database/
+          git checkout -- database 2>/dev/null || true
+          git clean -fdq -- database 2>/dev/null || true
+      - name: Show and commit changes
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          set -u
+          if git diff --quiet -- apps ; then
+            echo "No page changed."
+            exit 0
+          fi
+          echo "Pages that changed:"
+          git diff --name-only -- apps | sed 's/^/  /'
+          if [ "$DRY_RUN" = "false" ] ; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -- apps
+            git commit -m "Regenerate apps/*.md with valid YAML front matter (#9519) [ci skip]"
+            for i in 1 2 3 4 ; do
+              git push origin HEAD:master && break
+              echo "push failed; retrying in $((2 ** i))s" ; sleep $((2 ** i))
+              git pull --rebase origin master || true
+            done
+          else
+            echo ""
+            echo "Dry run: nothing was committed. Re-run with dry_run = false to commit these pages to master."
+          fi
