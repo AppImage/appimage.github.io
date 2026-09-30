@@ -399,8 +399,8 @@ APID=$!
 sleep 10
 for WAIT in $(seq 1 20) ; do
   kill -0 $APID 2>/dev/null || break
-  WINDOWS=$(timeout 5 xwininfo -tree -root 2>/dev/null || true)
-  grep -qE '0x.*": \(' <<< "$WINDOWS" && break # Not in a pipe: pipefail
+  # GTK tray icons and WebKit create unmapped helper windows; those are not content.
+  timeout 5 xdotool search --onlyvisible --name '.' >/dev/null 2>&1 && break
   sleep 1
 done
 [ "$WAIT" -gt 1 ] && sleep 2 # A window just appeared; let it finish drawing
@@ -408,7 +408,7 @@ done
 NO_WINDOW=""
 if ! kill -0 $APID 2>/dev/null ; then
   NO_WINDOW="ERROR: The application exited within $((10 + WAIT)) seconds instead of showing a window"
-elif ! grep -qE '0x.*": \(' <<< "$(timeout 5 xwininfo -tree -root 2>/dev/null || true)" ; then
+elif ! timeout 5 xdotool search --onlyvisible --name '.' >/dev/null 2>&1 ; then
   NO_WINDOW="ERROR: Could not find a single window on screen :-("
 fi
 
