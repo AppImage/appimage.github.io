@@ -29,7 +29,7 @@ desktop:
     Type: Application
     Icon: katacomb-vpn
     StartupWMClass: Katacomb VPN
-    X-AppImage-Version: 1.10.0
+    X-AppImage-Version: 1.11.0
     Comment: Katacomb VPN Desktop Client
     Categories: Network
   AppImageHub:

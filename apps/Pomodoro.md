@@ -2,35 +2,37 @@
 layout: app
 
 permalink: /Pomodoro/
-description: A pixel-art pomodoro desktop app
+description: A focus timer with session statistics and a lo-fi stream
 
 icons:
-  - Pomodoro/icons/512x512/pixel-pomodoro.png
+  - Pomodoro/icons/256x256/pomodoro.png
 
 screenshots:
   - Pomodoro/screenshot.png
 
 authors:
-  - name: cupidbity
-    url: https://github.com/cupidbity
+  - name: elhiba
+    url: https://github.com/elhiba
 
 links:
   - type: GitHub
-    url: cupidbity/pomodoro
+    url: elhiba/pomodoro
   - type: Download
-    url: https://github.com/cupidbity/pomodoro/releases
+    url: https://github.com/elhiba/pomodoro/releases
 
 desktop:
   Desktop Entry:
-    Name: Pixel Pomodoro
-    Exec: AppRun --no-sandbox %U
-    Terminal: false
     Type: Application
-    Icon: pixel-pomodoro
-    StartupWMClass: Pixel Pomodoro
-    X-AppImage-Version: 0.1.0
-    Comment: A pixel-art pomodoro desktop app
+    Version: 1.1
+    Name: Pomodoro
+    GenericName: Focus Timer
+    Comment: A focus timer with session statistics and a lo-fi stream
+    Exec: pomodoro
+    Icon: pomodoro
+    Terminal: false
     Categories: Utility
+    Keywords: pomodoro
+    StartupNotify: true
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
@@ -39,14 +41,7 @@ desktop:
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
     X-AppImage-Libc: host
-    X-AppImage-Runtime: dynamic
+    X-AppImage-Runtime: static
     X-AppImage-Self-Contained: false
-    X-AppImage-Glibc-Required: GLIBC_2.25
-
-electron:
-  main: "./out/main/index.js"
-  author: codedbycupidity
-  dependencies:
-    "@electron-toolkit/preload": "^3.0.2"
-    "@electron-toolkit/utils": "^4.0.0"
+    X-AppImage-Glibc-Required: GLIBC_2.34
 ---

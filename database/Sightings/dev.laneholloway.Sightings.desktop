@@ -8,7 +8,7 @@ Icon=dev.laneholloway.Sightings
 Terminal=false
 Categories=Electronics;Science;Utility;
 Keywords=DCA75;transistor;diode;curve tracer;semiconductor;
-X-AppImage-Version=0.3.6
+X-AppImage-Version=0.3.7
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|drlholloway|sightings|latest|Sightings-*x86_64.AppImage.zsync

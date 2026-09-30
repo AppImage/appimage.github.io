@@ -1,0 +1,30 @@
+{
+  "name": "freedom-loader",
+  "desktopName": "com.masteracnolo.freedomloader",
+  "productName": "Freedom Loader",
+  "version": "1.6.3",
+  "author": "MasterAcnolo <MasterAcnolo@users.noreply.github.com>",
+  "description": "Free and open-source GUI for yt-dlp — download video and audio from hundreds of platforms",
+  "homepage": "https://masteracnolo.github.io/Freedom-Loader-Site/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MasterAcnolo/Freedom-Loader.git"
+  },
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/MasterAcnolo/Freedom-Loader/issues"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "debug": "^4.4.1",
+    "discord-rpc": "^4.0.1",
+    "electron-updater": "^6.6.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "jszip": "^3.10.1",
+    "webidl-conversions": "^8.0.0",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
+}

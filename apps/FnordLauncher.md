@@ -1,0 +1,51 @@
+---
+layout: app
+
+permalink: /FnordLauncher/
+description: Discover, manage, and play Minecraft instances
+license: GPL-3.0
+
+icons:
+  - FnordLauncher/icons/scalable/xyz.fnordmc.FnordLauncher.svg
+
+screenshots:
+  - FnordLauncher/screenshot.png
+
+authors:
+  - name: FnordMC
+    url: https://github.com/FnordMC
+
+links:
+  - type: GitHub
+    url: FnordMC/FnordLauncher
+  - type: Download
+    url: https://github.com/FnordMC/FnordLauncher/releases
+
+desktop:
+  Desktop Entry:
+    Version: 1.0
+    Name: Fnord Launcher
+    Comment: Discover, manage, and play Minecraft instances
+    Type: Application
+    Terminal: false
+    Exec: fnordlauncher %U
+    StartupNotify: true
+    Icon: xyz.fnordmc.FnordLauncher
+    Categories: Game
+    Keywords: game
+    StartupWMClass: FnordLauncher
+    MimeType: application/zip
+    X-AppImage-Version: 11.0.3
+  AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|FnordMC|FnordLauncher|latest|FnordLauncher-Linux-x86_64.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created Signature made Thu Sep  3 11:25:35 2026 UTC                using EDDSA
+      key 3B857A3AE609A328536E97F0900B235587F81E6F Can''t check signature: No public
+      key'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: bundled
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: true
+    X-AppImage-Payload-License: GPL-3.0
+---
