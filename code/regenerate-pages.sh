@@ -61,7 +61,9 @@ for NAME in "${NAMES[@]}" ; do
     SKIPPED+=("$NAME")
     continue
   fi
-  if ! write_app_page "$NAME" >/dev/null ; then
+  # Redirect stdin: some helpers (e.g. xmlstarlet with no matching file) would
+  # otherwise read from stdin and could block during a long batch run.
+  if ! write_app_page "$NAME" >/dev/null </dev/null ; then
     echo "FAIL $NAME (write-app-page.sh errored)"
     STILL+=("$NAME")
     continue
