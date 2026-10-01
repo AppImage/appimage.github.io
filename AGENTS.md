@@ -274,6 +274,16 @@ GitHub Pages (Jekyll) from this repository.
      (`code/optout-comment.sh`: "please remove my app", "opt out"; questions,
      conditions and "close this PR" do not count). It never merges, closes or
      removes anything: a maintainer confirms with `/remove`.
+   - `.github/workflows/not-upstream-explained.yml`: on a PR labeled `not-upstream`
+     (a README saying "unofficial", "not affiliated", ... or a fork), when the
+     GitHub account of the repository in the PR's single `data/` file (not a fork,
+     on GitHub) explains in a comment, in at least 15 words, that the application
+     is its own upstream project (`code/upstream-claim.sh`; any sign of
+     repackaging means no), the `not-upstream` label is removed and
+     `manual-check-needed` is added, with one comment: a maintainer still decides.
+     Of 549 PRs with the label (534 open), most are misdetections or own projects,
+     and maintainers have never ruled on the label itself: all 13 labeled PRs
+     merged were merged by hand after the tests passed.
    - `code/diagnose.sh` has hints for `AppRun.wrapped: Permission denied`
      (Tauri/linuxdeploy mode 0770) and for a `.DirIcon` that cannot be read
      (absolute symlink).
