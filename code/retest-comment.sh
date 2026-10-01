@@ -19,7 +19,7 @@ POSITIVE="$POSITIVE|(^|[^a-z])is (now )?out([^a-z]|$)|new (release|version|build
 POSITIVE="$POSITIVE|(^|[^a-z])re-?(try|trigger)([^a-z]|$)"
 POSITIVE="$POSITIVE|fixed in|should now (run|work|pass)|now (runs|works|passes|builds)|(^|[^a-z])re-?built([^a-z]|$)"
 NEGATIVE="(^|[^a-z'])(will|won't|shall|gonna|i'll|we'll|i'm going to|we're going to|going to)([^a-z]|$)|(^|[^a-z])(when|once|as soon as) .*(ready|done|out|released|published|fixed|available)"
-NEGATIVE="$NEGATIVE|next (release|version|build)|upcoming|(^|[^a-z])yet([^a-z]|$)|not (been )?(out|released|published|fixed)|isn't out|(^|[^a-z])soon([^a-z]|$)"
+NEGATIVE="$NEGATIVE|(^|[^a-z])next([^a-z]|$)|upcoming|(^|[^a-z])(is|are) (planned|scheduled|coming)|(^|[^a-z])yet([^a-z]|$)|not (been )?(out|released|published|fixed)|isn't out|(^|[^a-z])soon([^a-z]|$)"
 # Questions about how to re-test are not requests (code/retest-question.sh
 # answers them)
 NEGATIVE="$NEGATIVE|(^|[^a-z])how (do|can|could|should|would|to)([^a-z]|$)|know how|(^|[^a-z])ways? to"
