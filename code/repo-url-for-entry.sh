@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# For an entry in data/ that points to the AppImage of one particular release
+# (https://github.com/OWNER/REPO/releases/download/v1.3.2/App-1.3.2.AppImage),
+# print the URL of the repository, if the repository's releases have an AppImage
+# that code/find-appimage.sh picks unambiguously: pointing to the repository
+# makes every test pick the newest release instead of testing the old one again.
+# Prints nothing (and exits 0) otherwise: no such direct link, a "latest" link,
+# another host, no AppImage found, or an error.
+#
+# Usage: code/repo-url-for-entry.sh URL NAME
+#          URL:  the first line of the entry's file
+#          NAME: the name of the entry (the file in data/)
+#        code/repo-url-for-entry.sh --repo-of URL
+#          Only derive the repository URL from the link, without asking the
+#          forge (used to check that a changed first line is exactly that).
+#
+# Supports GitHub, Codeberg and GitLab, like code/fetch-releases.sh; uses
+# GH_TOKEN (if set) for api.github.com only.
+
+set -u
+
+repo_of() {
+  local URL
+  URL=$(echo "$1" | tr -d '\r' | sed -E 's/^[[:space:]]+//; s/[[:space:]].*//')
+  if [[ "$URL" =~ ^https://github\.com/([^/]+)/([^/]+)/releases/download/ ]] ; then
+    echo "https://github.com/${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+  elif [[ "$URL" =~ ^https://codeberg\.org/([^/]+)/([^/]+)/releases/download/ ]] ; then
+    echo "https://codeberg.org/${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+  elif [[ "$URL" =~ ^https://gitlab\.com/([^/]+)/([^/]+)/-/releases/ ]] ; then
+    echo "https://gitlab.com/${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+  fi
+}
+
+if [ "${1:-}" == "--repo-of" ] ; then
+  repo_of "${2:-}"
+  exit 0
+fi
+
+REPO_URL=$(repo_of "${1:-}")
+NAME="${2:-}"
+[ -n "$REPO_URL" ] && [ -n "$NAME" ] || exit 0
+
+API_JSON=$(mktemp)
+trap 'rm -f "$API_JSON"' EXIT
+if timeout 120 bash "$(dirname "$0")/fetch-releases.sh" "$REPO_URL" "$API_JSON" >/dev/null 2>&1 \
+  && bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$NAME" | grep -q '^URL ' ; then
+  echo "$REPO_URL"
+fi
+exit 0

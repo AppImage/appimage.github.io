@@ -99,7 +99,8 @@ GitHub Pages (Jekyll) from this repository.
    `database/` as a push would. Re-test PRs (branch `retest/*` in this
    repository, opened by `/retest` on a merged PR) are merged whenever their
    test passes, even with warnings, as long as they only modify existing files
-   in `data/` and keep each file's first line. Switch off: repository variable
+   in `data/` and keep each file's first line (or only change it from a link to one
+   particular release to its repository, see `/retest` below). Switch off: repository variable
    `AUTO_MERGE=false`.
 
 3. `.github/workflows/check-origin.yml` (`pull_request_target`, from `master`)
@@ -341,8 +342,10 @@ GitHub Pages (Jekyll) from this repository.
   workflows), or without that secret re-runs its last Test run (old workflow
   files); it reacts 👀, then 🚀 once the test is started. On a merged PR it
   opens a new PR (branch `retest/<PR>-<time>`, with the personal token) that
-  only toggles the trailing newline of the merged PR's files in `data/`, so
-  that Test runs for those entries again (and, if green, auto-merge takes
+  only toggles the trailing newline of the merged PR's files in `data/` (an entry
+  that links to one particular release, `.../releases/download/v1.3.2/...`, is
+  changed to its repository URL instead, `code/repo-url-for-entry.sh`, so that
+  the newest release is tested), so that Test runs for those entries again (and, if green, auto-merge takes
   it, which refreshes `database/`); one open re-test PR per merged PR.
   Failed PRs are also re-tested when their author says it is fixed (item 7
   above), and `code/retest-pr.sh [-n] NUMBER` re-tests one PR by hand (needs

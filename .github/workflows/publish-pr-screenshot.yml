@@ -376,7 +376,13 @@ jobs:
             [ -s files.tsv ] || skip "re-test PR without changes"
             while IFS=$'\t' read -r FILE STATUS ; do
               [[ "$FILE" == data/* ]] && [ "$STATUS" = modified ] || skip "re-test PR changes $FILE ($STATUS), not only existing files in data/"
-              [ "$(first_line "$FILE" "$(jq -r .base.sha pr.json)")" = "$(first_line "$FILE" "$HEAD_SHA")" ] || skip "re-test PR changes the download location in $FILE"
+              # The first line may change in one way: from a link to one particular
+              # release to its repository (code/repo-url-for-entry.sh, same owner
+              # and repository), which the test of this PR has just passed with
+              OLD=$(first_line "$FILE" "$(jq -r .base.sha pr.json)")
+              NEW=$(first_line "$FILE" "$HEAD_SHA")
+              [ "$OLD" = "$NEW" ] || [ "$(bash code/repo-url-for-entry.sh --repo-of "$OLD")" = "$NEW" ] \
+                || skip "re-test PR changes the download location in $FILE"
             done < files.tsv
             MERGED=$(gh api -X PUT "repos/$REPO/pulls/$PR/merge" -f sha="$HEAD_SHA" -f merge_method=squash --jq .sha) \
               || skip "GitHub refused the merge"
