@@ -1,17 +1,15 @@
 # Marks as read ("closes") the notification threads of the account whose token
-# is used, when the account that opened the issue or pull request AND every
-# account that posted a comment on it are all in an allow-list (by default
-# probonopd and github-actions). Reviews and review comments are not considered.
-#
-# A merged pull request is marked read too when an allowed account (github-actions
-# or probonopd by default) merged it and merging was the last action: nobody
-# commented on it after the merge, whoever took part before.
+# is used, when the last post on the issue or pull request is by an account in an
+# allow-list (by default probonopd and github-actions): its latest comment, or the
+# merge of a pull request when that came after the last comment, or the opener's
+# own post when there are no comments. Whoever took part before does not matter:
+# the ball is not in our court. Reviews and review comments are not considered.
 #
 # Threads that are not about an issue or pull request are marked read too (they
-# have no opener or comments to check). Only an issue or pull request whose
-# opener or a commenter is someone else - or whose participants cannot be read -
-# is left untouched. Runs only when started by hand, and changes nothing unless
-# "dry_run" is set to false (it lists what it would do first).
+# have no posts to check). An issue or pull request whose last post is by someone
+# else - or cannot be read - is left untouched. Runs only when started by hand,
+# and changes nothing unless "dry_run" is set to false (it lists what it would do
+# first).
 #
 # Needs a classic personal access token with the "notifications" scope (add
 # "repo" as well to read participants in private repositories) in the
@@ -58,18 +56,33 @@ jobs:
           # "github-actions[bot]" as the same account.
           norm() { tr 'A-Z' 'a-z' | sed 's/\[bot\]$//' ; }
           ALLOW=$(echo "$ALLOWED" | tr ',' '\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//' | norm | grep . | sort -u)
-          echo "Allowed sole participants:"
+          echo "Allowed last posters:"
           echo "$ALLOW" | sed 's/^/  /'
           echo ""
 
-          # The opener of an issue or pull request and the authors of its
-          # comments (reviews and review comments are deliberately not counted).
+          # Who made the last post on an issue or pull request: the author of its
+          # latest comment, or of the merge if that came later, or the opener when
+          # there are no comments (reviews and review comments are deliberately
+          # not counted). Sets LAST_BY (empty if it cannot be read).
           # $1 is the API URL of the issue or pull request (.subject.url).
-          participants() {
-            local u="$1" issue
+          last_poster() {
+            local u="$1" issue c at
             issue=$(echo "$u" | sed 's#/pulls/#/issues/#')  # PR conversation comments are issue comments
-            gh api "$u" --jq '.user.login // empty' 2>/dev/null          # the opener
-            gh api --paginate "$issue/comments" --jq '.[].user.login' 2>/dev/null  # comment authors
+            LAST_BY=""
+            c=$(gh api --paginate "$issue/comments" --jq '.[] | [.created_at, .user.login] | @tsv' 2>/dev/null | sort | tail -n 1)
+            if [ -n "$c" ] ; then
+              at=${c%%$'\t'*} ; LAST_BY=${c#*$'\t'}
+            else
+              at=""
+              LAST_BY=$(gh api "$u" --jq '.user.login // empty' 2>/dev/null || true)  # the opener
+            fi
+            # A merge after the last comment is the last post
+            if [[ "$u" == */pulls/* ]] ; then
+              read -r M_AT M_BY < <(gh api "$u" --jq '[.merged_at // "", .merged_by.login // ""] | @tsv' 2>/dev/null || true)
+              if [ -n "${M_AT:-}" ] && [ -n "${M_BY:-}" ] && [[ ! "$at" > "$M_AT" ]] ; then
+                LAST_BY="$M_BY"
+              fi
+            fi
           }
 
           # Unread notifications of the token's account, across all repositories
@@ -96,41 +109,27 @@ jobs:
           }
           while IFS=$'\t' read -r ID TYPE URL REPO TITLE ; do
             CHECKED=$((CHECKED + 1))
-            # Threads that are not an issue or pull request have no opener or
-            # comments to check; close them too, rather than keeping them just
-            # for being a different subject type.
+            # Threads that are not an issue or pull request have no posts to
+            # check; close them too, rather than keeping them just for being a
+            # different subject type.
             case "$TYPE" in
               Issue|PullRequest) ;;
               *) close "$ID" "[$TYPE] $REPO: $TITLE" ; continue ;;
             esac
-            # An issue or pull request whose participants cannot be read is kept,
-            # so it is never closed without confirming who took part.
+            # Without a subject URL, or when the last post cannot be read, keep it
             if [ -z "$URL" ] ; then
               echo "keep  $REPO: $TITLE (no subject URL)" ; KEPT=$((KEPT + 1)) ; continue
             fi
-            # A pull request merged by an allowed account, with no comment after
-            # the merge: merging was the last action
-            if [ "$TYPE" = PullRequest ] ; then
-              read -r MERGED_AT MERGED_BY < <(gh api "$URL" --jq '[.merged_at // "", .merged_by.login // ""] | @tsv' 2>/dev/null || true)
-              if [ -n "${MERGED_AT:-}" ] && [ -n "${MERGED_BY:-}" ] && echo "$ALLOW" | grep -qx "$(echo "$MERGED_BY" | norm)" ; then
-                LAST_COMMENT=$(gh api --paginate "$(echo "$URL" | sed 's#/pulls/#/issues/#')/comments" --jq '.[].created_at' 2>/dev/null | sort | tail -n 1)
-                if [ -z "$LAST_COMMENT" ] || [[ ! "$LAST_COMMENT" > "$MERGED_AT" ]] ; then
-                  close "$ID" "$REPO: $TITLE (merged by $MERGED_BY, nothing after)"
-                  continue
-                fi
-              fi
+            last_poster "$URL"
+            if [ -z "$LAST_BY" ] ; then
+              echo "keep  $REPO: $TITLE (could not read the last post)" ; KEPT=$((KEPT + 1)) ; continue
             fi
-            PARTS=$(participants "$URL" | norm | grep . | sort -u)
-            if [ -z "$PARTS" ] ; then
-              echo "keep  $REPO: $TITLE (could not read participants)" ; KEPT=$((KEPT + 1)) ; continue
-            fi
-            OTHERS=$(comm -23 <(echo "$PARTS") <(echo "$ALLOW"))
-            if [ -n "$OTHERS" ] ; then
-              echo "keep  $REPO: $TITLE (others: $(echo "$OTHERS" | paste -sd, -))"
+            if echo "$ALLOW" | grep -qx "$(echo "$LAST_BY" | norm)" ; then
+              close "$ID" "$REPO: $TITLE (last post by $LAST_BY)"
+            else
+              echo "keep  $REPO: $TITLE (last post by $LAST_BY)"
               KEPT=$((KEPT + 1))
-              continue
             fi
-            close "$ID" "$REPO: $TITLE (participants: $(echo "$PARTS" | paste -sd, -))"
           done < threads.tsv
 
           echo ""
