@@ -34,7 +34,11 @@ GitHub Pages (Jekyll) from this repository.
      linux/, bin/, appimage/ and the like, and writes the AppImages found in
      the same shape with the listing's dates; then `code/find-appimage.sh`
      picks the AppImage by rules (among them: the newest toolkit build, e.g.
-     Qt6 over Qt5) and fails rather than guesses when several fit; a URL
+     Qt6 over Qt5; and the channel the entry's name ends in, e.g. `Firefox_ESR`,
+     `Firefox_Beta`, `Firefox_Nightly` get the release or AppImage of that
+     channel, plain `Firefox` that of none, so that the entries of a repository
+     with a release per channel, such as srevinsaju/Firefox-Appimage, do not
+     collide) and fails rather than guesses when several fit; a URL
      ending with `/` that is no listing is downloaded as it is),
      checks its type, mounts it with a separate runtime (never executes the
      AppImage's own runtime), runs `appdir-lint.sh`, finds the icon;
