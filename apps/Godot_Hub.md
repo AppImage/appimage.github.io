@@ -33,7 +33,7 @@ desktop:
     Categories: Development
     StartupWMClass: GodotHub
     StartupNotify: true
-    X-AppImage-Version: 1.3.1
+    X-AppImage-Version: 1.3.2
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|ismailivanov|godot-hub|latest|GodotHub-x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
@@ -113,7 +113,7 @@ appdata:
       url: https://raw.githubusercontent.com/ismailivanov/godot-hub/main/.github/assets/screenshot3.png
       lang: C
   Releases:
-  - version: 1.3.1
+  - version: 1.3.2
     unix-timestamp: 1790812800
   ContentRating:
     oars-1.1: {}
