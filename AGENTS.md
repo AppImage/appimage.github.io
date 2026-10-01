@@ -247,6 +247,20 @@ GitHub Pages (Jekyll) from this repository.
    branch starts with `discover/` or that are labeled `auto-discovered`: a
    maintainer always reviews these.
 
+   `.github/workflows/discover-pkgforge.yml` (`workflow_dispatch` only; inputs
+   `limit` (maximum number of apps to add, default 1) and `dry_run`) does the
+   same for the AppImages that https://github.com/pkgforge-dev builds, with
+   `code/discover-pkgforge.sh`: it reads the organization's repositories (most
+   recently pushed first), skips archived ones, forks and those whose name does
+   not end in `-AppImage` (its own tools such as sharun), and apps already in
+   `data/` (by URL or by name), added by an open PR or named by an
+   `auto-discovered`/`opt-out` PR (any state); the rest is checked like in
+   `discover-apps.yml` (`find-appimage.sh`: exactly one x86_64 AppImage, in a
+   release less than 2 years old; `pick-name.sh`; `check-name.sh`). pkgforge-dev
+   builds other projects' applications, so every PR gets `auto-discovered`,
+   `not-upstream` and `repackaged`: a maintainer decides. It keeps no state
+   (repositories without a usable AppImage are checked again on the next run).
+
    `.github/workflows/discover-apphub.yml` (`workflow_dispatch` only; inputs
    `count` (default 1) and `dry_run`) does the same for **AppImageHub** (the
    openDesktop/Pling store) with `code/discover-apphub.sh`. AppImageHub's own
