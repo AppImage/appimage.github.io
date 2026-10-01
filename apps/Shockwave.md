@@ -1,0 +1,99 @@
+---
+layout: app
+
+permalink: /Shockwave/
+description: Shockwave — markdown workspace editor
+license: MIT
+
+icons:
+  - Shockwave/icons/512x512/shockwave.png
+
+screenshots:
+  - Shockwave/screenshot.png
+
+authors:
+  - name: stephengpope
+    url: https://github.com/stephengpope
+
+links:
+  - type: GitHub
+    url: stephengpope/shockwave
+  - type: Download
+    url: https://github.com/stephengpope/shockwave/releases
+
+desktop:
+  Desktop Entry:
+    Name: Shockwave
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: shockwave
+    StartupWMClass: Shockwave
+    X-AppImage-Version: 1.0.88
+    Comment: Shockwave — markdown workspace editor
+    Categories: Office
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.38
+    X-AppImage-Payload-License: MIT
+
+electron:
+  type: module
+  main: "./out/main/index.js"
+  author: Stephen G. Pope
+  license: MIT
+  dependencies:
+    "@codemirror/autocomplete": "^6.20.2"
+    "@codemirror/commands": "^6.10.3"
+    "@codemirror/lang-markdown": "^6.5.0"
+    "@codemirror/language": "^6.12.3"
+    "@codemirror/language-data": "^6.5.2"
+    "@codemirror/state": "^6.6.0"
+    "@codemirror/theme-one-dark": "^6.1.3"
+    "@codemirror/view": "^6.43.0"
+    "@dnd-kit/core": "^6.3.1"
+    "@dnd-kit/sortable": "^10.0.0"
+    "@earendil-works/pi-ai": 0.80.5
+    "@earendil-works/pi-coding-agent": 0.80.5
+    "@excalidraw/excalidraw": "^0.18.1"
+    "@parcel/watcher": "^2.5.6"
+    arctic: "^3.7.0"
+    assemblyai: "^4.36.4"
+    class-variance-authority: "^0.7.1"
+    clsx: "^2.1.1"
+    cmdk: "^1.1.1"
+    codemirror: "^6.0.2"
+    croner: "^10.0.0"
+    cronstrue: "^3.24.0"
+    date-fns: "^4.4.0"
+    dayjs: "^1.11.20"
+    diff: "^9.0.0"
+    electron-log: "^5.4.4"
+    electron-updater: "^6.8.9"
+    force-graph: "^1.51.4"
+    fuzzysort: "^3.1.0"
+    lucide-react: "^1.24.0"
+    radix-ui: "^1.6.2"
+    react: "^19.2.6"
+    react-arborist: "^3.7.0"
+    react-day-picker: "^10.0.1"
+    react-dnd: "^14.0.3"
+    react-dnd-html5-backend: "^14.0.3"
+    react-dom: "^19.2.6"
+    react-markdown: "^10.1.0"
+    remark-gfm: "^4.0.1"
+    sonner: "^2.0.7"
+    tailwind-merge: "^3.6.0"
+  overrides:
+    "@radix-ui/react-dismissable-layer": 1.1.15
+    "@radix-ui/react-focus-guards": 1.1.4
+    "@radix-ui/react-focus-scope": 1.1.12
+---

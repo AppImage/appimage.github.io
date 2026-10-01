@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /Sightings/
-description: DCA75 Workbench: identify, curve-trace and catalogue semiconductors
+description: Identify, curve-trace and catalog semiconductors with the DCA75
 license: LicenseRef-PolyForm-Shield-1.0.0
 
 icons:
@@ -32,7 +32,7 @@ desktop:
     Terminal: false
     Categories: Electronics
     Keywords: DCA75
-    X-AppImage-Version: 0.3.6
+    X-AppImage-Version: 0.3.7
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|drlholloway|sightings|latest|Sightings-*x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
@@ -52,7 +52,7 @@ appdata:
   Name:
     C: Sightings
   Summary:
-    C: 'DCA75 Workbench: identify, curve-trace and catalogue semiconductors'
+    C: Identify, curve-trace and catalog semiconductors with the DCA75
   Description:
     C: >-
       <p>Companion app for the Peak Atlas DCA75 (DCA Pro) semiconductor analyzer. Connects over USB, runs identify tests and
@@ -75,6 +75,8 @@ appdata:
     desktop-id:
     - dev.laneholloway.Sightings.desktop
   Releases:
+  - version: 0.3.7
+    unix-timestamp: 1790726400
   - version: 0.3.6
     unix-timestamp: 1790553600
   - version: 0.3.5
