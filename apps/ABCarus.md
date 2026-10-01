@@ -2,7 +2,8 @@
 layout: app
 
 permalink: /ABCarus/
-license: MIT
+description: "Edit, render, and play ABC notation"
+license: "MIT"
 
 icons:
   - ABCarus/icons/512x512/abcarus.png
@@ -10,8 +11,8 @@ screenshots:
 - https://raw.githubusercontent.com/topchyan/abcarus/master/assets/screenshots/appstream-main.png
 
 authors:
-  - name: topchyan
-    url: https://github.com/topchyan
+  - name: "topchyan"
+    url: "https://github.com/topchyan"
 
 links:
   - type: GitHub
@@ -23,6 +24,7 @@ desktop:
   Desktop Entry:
     Type: Application
     Name: ABCarus
+    Comment: Edit, render, and play ABC notation
     Exec: abcarus
     Icon: abcarus
     Categories: AudioVideo
