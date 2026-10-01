@@ -56,7 +56,7 @@ Then send a Pull Request to this repository. GitHub Actions will instantly perfo
 
 * **Comments that run something:** `/retest` tests again; `/appstream` explains how to show your own screenshot (via the AppStream metainfo file). A comment that says a fix or a new release is out ("fixed in 1.2.3", "new release", "updated") re-tests a failed pull request automatically; "will be fixed in the next release" does not.
 * **Labels:** `error-*` names why the test failed (the comment has the hint); `screenshot-ok` means it passed and the screenshot looked fine; `manual-check-needed` means a maintainer must look (e.g. the download location moved to another owner).
-* **Merging:** pull requests of returning contributors that pass with `screenshot-ok` are merged automatically; all others are reviewed by a maintainer.
+* **Merging:** pull requests will take some time to be reviewed by a maintainer.
 * **Changed your mind?** Comment "please remove my app" (or "opt out") on the pull request: it gets the `opt-out` label and a maintainer closes it. The application is not proposed again.
 
 ### Checklist for submitting your own AppImage
