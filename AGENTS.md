@@ -115,6 +115,11 @@ GitHub Pages (Jekyll) from this repository.
    the workflow posts a neutral informational note instead — no warning, no
    `manual-check-needed` label. This does not depend on the PR's own test run,
    which a PR could alter.
+   The same workflow also sets `manual-check-needed` (with its own comment,
+   `<!-- appimagehub-name-check -->`) on a PR that adds or renames to a file in
+   `data/` whose name has more than two hyphens (often a version or file name
+   instead of the application's name); withdrawn when a later push fixes it, and
+   the label stays while either check flags the PR.
 
 4. `.github/workflows/ping-authors.yml` (monthly `schedule`, a real run, and
    `workflow_dispatch` with `dry_run` (default true), `max_issues`
