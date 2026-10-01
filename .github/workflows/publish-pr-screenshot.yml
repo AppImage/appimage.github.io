@@ -423,9 +423,15 @@ jobs:
           case "$STATUS" in
             added) ;;
             modified)
+              # An existing entry may keep its first line, or have a long-form
+              # link to a repository shortened to the short form of the SAME
+              # repository; any other change (even within the same owner: it may
+              # be a different project that happens to share the file name, #8569)
+              # is for a maintainer
               OLD=$(first_line "$FILE" "$(jq -r .base.sha pr.json)")
               NEW=$(first_line "$FILE" "$HEAD_SHA")
-              bash code/check-origin.sh "$OLD" "$NEW" || skip "the download location changes owner"
+              [ "$OLD" = "$NEW" ] || bash code/repo-url-for-entry.sh --shortens "$OLD" "$NEW" \
+                || skip "the download location of the existing entry changes; a maintainer checks that"
               ;;
             *) skip "$STATUS file" ;;
           esac

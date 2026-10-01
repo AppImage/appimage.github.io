@@ -65,7 +65,9 @@ jobs:
             [ -n "$OLD" ] && [ -n "$NEW" ] || continue
             # 0 = same owner; 1 = different owner; 2 = different but GitHub
             # redirects the old repo to the new one (a rename/transfer)
-            RESULT=$(bash code/check-origin.sh "$OLD" "$NEW") ; RC=$?
+            # (not "RESULT=$(...) ; RC=$?": under bash -e a non-zero exit of the
+            # script ends this one before RC is read, so nothing was reported)
+            RC=0 ; RESULT=$(bash code/check-origin.sh "$OLD" "$NEW") || RC=$?
             [ "$RC" -eq 0 ] && continue
             # File names and origins contain only safe characters
             SAFE_FILE=$(echo "$FILE" | tr -cd 'A-Za-z0-9._/+-')
