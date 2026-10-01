@@ -19,6 +19,7 @@
 set -u
 
 URL="${1:-}"
+URL="${URL%%#*}" # without a "#Channel" (see find-appimage.sh)
 [ -n "$URL" ] || exit 0
 
 fetch() { curl -sfL --max-time 30 "$@" 2>/dev/null ; }
