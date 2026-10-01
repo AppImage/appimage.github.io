@@ -2,18 +2,17 @@
 layout: app
 
 permalink: /Open-SSTV/
-description: Open-source SSTV transceiver for amateur radio
-license: GPL-3.0
+description: "Open-source SSTV transceiver for amateur radio"
+license: "GPL-3.0-or-later"
 
 icons:
-  - Open-SSTV/icons/775x779/open-sstv.png
-
+  - Open-SSTV/icons/512x512/io.github.bucknova.OpenSSTV.png
 screenshots:
-  - Open-SSTV/screenshot.png
+- https://raw.githubusercontent.com/bucknova/Open-SSTV/main/docs/screenshots/main-window.png
 
 authors:
-  - name: bucknova
-    url: https://github.com/bucknova
+  - name: "bucknova"
+    url: "https://github.com/bucknova"
 
 links:
   - type: GitHub
@@ -23,13 +22,18 @@ links:
 
 desktop:
   Desktop Entry:
-    Name: Open-SSTV
-    Exec: open-sstv
-    Icon: open-sstv
     Type: Application
-    Categories: HamRadio
+    Name: Open-SSTV
+    GenericName: SSTV Transceiver
     Comment: Open-source SSTV transceiver for amateur radio
+    Exec: open-sstv
+    Icon: io.github.bucknova.OpenSSTV
+    Terminal: false
+    Categories: HamRadio
+    Keywords: SSTV
+    StartupWMClass: Open-SSTV
   AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|bucknova|Open-SSTV|latest|Open-SSTV-x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)
