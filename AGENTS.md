@@ -232,7 +232,7 @@ GitHub Pages (Jekyll) from this repository.
    "repackaged" or the like with the word AppImage or AppImages within three
    words of it, in the same sentence (`code/not-upstream-phrase.sh`; "not
    affiliated with <the maker of the hardware>" alone is no reason), the PR also gets the `not-upstream` label and a
-   note naming the phrase and where it was found (and the `repackaged` label if the
+   note naming the phrase and where it was found (the `repackaged` label instead, if the
    phrase is "unofficial", "repackaged", "third party" or "community build": built
    by someone else from the application, as pkgforge-dev's and ivan-hc's AppImages
    are); every repository checked is recorded

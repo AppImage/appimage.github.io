@@ -39,7 +39,7 @@
 # or a repository with the same name linked from its description, homepage
 # or README, or found by name with more stars), that one, the application's
 # own, is proposed instead (unless it is known already); a fork whose source
-# publishes no AppImage gets the not-upstream label (and repackaged, if the
+# publishes no AppImage gets the not-upstream label (repackaged instead, if the
 # phrase says so: unofficial, repackaged, third party, community build). Every repository checked
 # is recorded in the state file with an outcome (added, no-appimage,
 # ambiguous, name, old, copy; stars for fewer than 5 stars).
@@ -674,10 +674,12 @@ while read -r FULLNAME ; do
   QUOTE=$(sed 's/^/> /' <<<"$SDESC")
 
   NOTE=""
+  NU_LABEL=not-upstream
+  [ -n "$REPACKAGED" ] && NU_LABEL=repackaged
   if [ -n "$NOT_UPSTREAM" ] ; then
     NOTE="
 
-**Possibly not from the application's authors:** $NOT_UPSTREAM (label \`not-upstream\`). Please check whether the catalog should list this AppImage, or rather one from the application's own project."
+**Possibly not from the application's authors:** $NOT_UPSTREAM (label \`$NU_LABEL\`). Please check whether the catalog should list this AppImage, or rather one from the application's own project."
   fi
   if [ -n "$SUSPICIOUS_STARS" ] ; then
     NOTE="$NOTE
@@ -749,7 +751,8 @@ discover-apps.yml. Needs a maintainer's review."
   PR_NUMBER=$(jq -r '.number // empty' <<<"$PR_RESP")
   if [ -n "$PR_NUMBER" ] ; then
     LABELS=("$LABEL")
-    if [ -n "$NOT_UPSTREAM" ] ; then
+    # repackaged already says it: no not-upstream label besides it
+    if [ -n "$NOT_UPSTREAM" ] && [ -z "$REPACKAGED" ] ; then
       LABELS+=(not-upstream)
       API_TOKEN="$PR_TOKEN" api GET "repos/$REPO/labels/not-upstream" >/dev/null 2>&1 || \
         API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/labels" -d "$(jq -n '{name:"not-upstream", color:"d93f0b", description:"The AppImage may not come from the application'"'"'s own authors (unofficial, repackaged, ...)"}')" >/dev/null
