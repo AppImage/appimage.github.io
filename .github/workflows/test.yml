@@ -198,7 +198,7 @@ jobs:
           # Also on success, e.g., a helper failing because of a too new glibc
           bash code/diagnose.sh log.txt > pr-result/hints.md
           # Remarks about the name of the file in data/ and of the AppImage
-          grep -hE "^(ERROR|WARNING): (File name|AppImage name) '" log.txt | sort -u > pr-result/names.txt || true
+          grep -hE "^(ERROR|WARNING): ((File name|AppImage name) '|The names of the .* differ: )" log.txt | sort -u > pr-result/names.txt || true
           # Whether the AppImage needs a compatible C library on the host
           grep -h '^X-AppImage-\(Libc\|Runtime\|Self-Contained\|Glibc-Required\)=' log.txt | sort -u > pr-result/libc.txt || true
           ls -la pr-result/

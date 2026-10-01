@@ -46,6 +46,10 @@ GitHub Pages (Jekyll) from this repository.
    - `code/check-name.sh`: rules for the name of the file in `data/` (errors
      only for files a PR adds, `STRICT=true`; warnings otherwise), and
      remarks about the AppImage's file name;
+   - `code/check-names-agree.sh`: a warning when the name of the repository, the
+     AppImage's name and the README's headline (`code/fetch-readme.sh`) disagree
+     within a tolerance (equal, one contains the other, or >= 80 % similar, ignoring
+     case and punctuation); shown under "Names" and "Warnings" in the test result;
    - runs the application in firejail **without network**, waits 30 s, takes a
      screenshot of the active window;
    - system tray applications: only if the application showed no window (or

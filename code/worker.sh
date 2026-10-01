@@ -159,6 +159,8 @@ fi
 # if we find an implementation that supports https
 echo "URL: $URL"
 bash "$(dirname "$0")/check-name.sh" --appimage "$(basename "${URL%%\?*}")"
+# Remark if the names of the repository, the AppImage and the README disagree
+bash "$(dirname "$0")/check-names-agree.sh" "$1" "$(basename "${URL%%\?*}")" || true
 
 FILENAME=BeingTested.AppImage
 rm -f "$FILENAME" # Left over from the previous file when a run tests several; must not be tested again
