@@ -86,6 +86,10 @@ HINTS=(
   "-"
   "Please check the remarks about the names below."
 
+  "^WARNING: The names of the .* differ: "
+  "-"
+  "The repository, the AppImage and the README (whichever exist) call the application by different names (see the remarks below). Please check that they all belong to the same application, and that the name of the file in data/ is the right one."
+
   "^FATAL: AppRun is missing"
   "error-not-an-appimage"
   "The downloaded file is not a valid AppImage."
