@@ -1,0 +1,9 @@
+{
+  "name": "OpenLive3D",
+  "version": "v1.3.2",
+  "description": "The Official Electron App for OpenLive3D",
+  "main": "main.js",
+  "repository": "https://github.com/OpenLive3D/OpenLive3D.github.io.git",
+  "author": "Wei-1",
+  "license": "Apache-2.0"
+}

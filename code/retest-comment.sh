@@ -15,7 +15,7 @@
 # comment here and we can test again".
 
 POSITIVE="re-?test|test (it |this |that )?again|re-?run|run (the |this )?(test|tests|check|it) again|(try|check) (it |this )?again"
-POSITIVE="$POSITIVE|(^|[^a-z])is (now )?out([^a-z]|$)|new (release|version|build)|(^|[^a-z])(re)?released([^a-z]|$)|(^|[^a-z])published([^a-z]|$)"
+POSITIVE="$POSITIVE|(^|[^a-z])is (now )?out([^a-z]|$)|new (release|version|build)|(^|[^a-z])(re)?released([^a-z]|$)|(^|[^a-z])published([^a-z]|$)|(^|[^a-z])(re)?updated([^a-z]|$)|latest release"
 POSITIVE="$POSITIVE|fixed in|should now (run|work|pass)|now (runs|works|passes|builds)|(^|[^a-z])re-?built([^a-z]|$)"
 NEGATIVE="(^|[^a-z'])(will|won't|shall|gonna|i'll|we'll|i'm going to|we're going to|going to)([^a-z]|$)|(^|[^a-z])(when|once|as soon as) .*(ready|done|out|released|published|fixed|available)"
 NEGATIVE="$NEGATIVE|next (release|version|build)|upcoming|(^|[^a-z])yet([^a-z]|$)|not (been )?(out|released|published|fixed)|isn't out|(^|[^a-z])soon([^a-z]|$)"
