@@ -7,6 +7,10 @@
 # github-actions posted, the thread is closed. Reviews and review comments are not
 # considered.
 #
+# A thread whose very last post is the bot's "Test failure" comment is marked read
+# as well, whoever wrote before it: the failure report answers the last push, and
+# the author is notified of the test result by the comment itself.
+#
 # Threads that are not about an issue or pull request are marked read too (they
 # have no posts to check). An issue or pull request whose last poster is someone
 # else - or cannot be read - is left untouched. Runs only when started by hand,
@@ -66,20 +70,24 @@ jobs:
           # github-actions: the opener, the authors of its comments and the one
           # who merged it (reviews and review comments are deliberately not
           # counted). Sets LAST_BY ("-" when only github-actions posted, empty if
-          # nothing can be read). $1 is the API URL of the issue or pull request
-          # (.subject.url).
+          # nothing can be read), and LAST_IS_FAILURE=true when the very last post
+          # of all is the bot's "Test failure" comment (.github/workflows/publish-pr-screenshot.yml).
+          # $1 is the API URL of the issue or pull request (.subject.url).
           last_poster() {
             local u="$1" issue posts
             issue=$(echo "$u" | sed 's#/pulls/#/issues/#')  # PR conversation comments are issue comments
-            LAST_BY=""
+            LAST_BY="" ; LAST_IS_FAILURE=false
+            # Rows: time, login, and whether it is the bot's "Test failure" comment
             posts=$({
-              gh api "$u" --jq '[.created_at, .user.login] | @tsv' 2>/dev/null                  # the opener
-              gh api --paginate "$issue/comments" --jq '.[] | [.created_at, .user.login] | @tsv' 2>/dev/null
+              gh api "$u" --jq '[.created_at, .user.login, "false"] | @tsv' 2>/dev/null          # the opener
+              gh api --paginate "$issue/comments" --jq '.[] | [.created_at, .user.login,
+                ((.user.login | startswith("github-actions")) and (.body | startswith("<!-- appimagehub-test-result -->")) and (.body | contains("### :x: Test failure")) | tostring)] | @tsv' 2>/dev/null
               if [[ "$u" == */pulls/* ]] ; then                                                # the merge
-                gh api "$u" --jq 'select(.merged_at != null) | [.merged_at, .merged_by.login] | @tsv' 2>/dev/null
+                gh api "$u" --jq 'select(.merged_at != null) | [.merged_at, .merged_by.login, "false"] | @tsv' 2>/dev/null
               fi
             } | grep . | sort)
             [ -n "$posts" ] || return 0
+            [ "$(echo "$posts" | tail -n 1 | cut -f 3)" = true ] && LAST_IS_FAILURE=true
             LAST_BY=$(echo "$posts" | cut -f 2 | norm | grep -vx github-actions | tail -n 1)
             [ -n "$LAST_BY" ] || LAST_BY="-"
           }
@@ -123,7 +131,9 @@ jobs:
             if [ -z "$LAST_BY" ] ; then
               echo "keep  $REPO: $TITLE (could not read the last post)" ; KEPT=$((KEPT + 1)) ; continue
             fi
-            if [ "$LAST_BY" = "-" ] ; then
+            if [ "$LAST_IS_FAILURE" = true ] ; then
+              close "$ID" "$REPO: $TITLE (the last post is the test failure)"
+            elif [ "$LAST_BY" = "-" ] ; then
               close "$ID" "$REPO: $TITLE (only github-actions posted)"
             elif echo "$ALLOW" | grep -qx "$(echo "$LAST_BY" | norm)" ; then
               close "$ID" "$REPO: $TITLE (last post by $LAST_BY)"
