@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- packaging/appimage/build.sh fills in the release version and date. -->
+<component type="desktop-application">
+  <id>io.github.ismailivanov.GodotHub</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Godot Hub</name>
+  <summary>Manage Godot editors and projects</summary>
+  <developer id="io.github.ismailivanov">
+    <name>ismailivanov</name>
+  </developer>
+
+  <description>
+    <p>
+      Godot Hub keeps your Godot Engine editors and projects together in one place. Install
+      several editor versions side by side, open every project with the editor it needs, and
+      follow Godot news without jumping between folders and browser tabs.
+    </p>
+    <ul>
+      <li>Install official releases, pre-releases and archived versions from the Installs page</li>
+      <li>Pick the Standard or .NET build of an editor in a short install wizard</li>
+      <li>Choose export templates while installing an editor, and add or remove them later</li>
+      <li>Import, create, clone, search and launch all your projects from one library</li>
+      <li>Keep each project connected to the Godot version it needs</li>
+      <li>Browse the Asset Library and read the official Godot news</li>
+      <li>Runs natively on x86_64 and ARM64, and updates itself from new releases</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.github.ismailivanov.GodotHub.desktop</launchable>
+  <provides>
+    <binary>GodotHub</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/ismailivanov/godot-hub</url>
+  <url type="bugtracker">https://github.com/ismailivanov/godot-hub/issues</url>
+  <url type="vcs-browser">https://github.com/ismailivanov/godot-hub</url>
+  <url type="donation">https://buymeacoffee.com/carbon06</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/ismailivanov/godot-hub/main/.github/assets/screenshot1.png</image>
+      <caption>Project library with each project's Godot editor and tags</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/ismailivanov/godot-hub/main/.github/assets/screenshot2.png</image>
+      <caption>Installed Godot editors on the Installs page</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/ismailivanov/godot-hub/main/.github/assets/screenshot4.png</image>
+      <caption>Official Godot releases in the Install Editor window</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/ismailivanov/godot-hub/main/.github/assets/screenshot5.png</image>
+      <caption>Choosing export templates while installing an editor</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/ismailivanov/godot-hub/main/.github/assets/screenshot3.png</image>
+      <caption>Official Godot news</caption>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.3.1" date="2026-10-01">
+      <url type="details">https://github.com/ismailivanov/godot-hub/releases/tag/v1.3.1</url>
+    </release>
+  </releases>
+</component>
