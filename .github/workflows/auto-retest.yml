@@ -9,7 +9,8 @@
 # It closes and reopens the PR with code/retest-pr.sh, using
 # SCREENSHOT_UPLOAD_TOKEN (a reopen with GITHUB_TOKEN starts no workflows),
 # and skips PRs whose Test run for the current commit started in the last
-# 15 minutes. "/retest" (retest.yml) remains for explicit requests.
+# 15 minutes. "/retest" (retest.yml) remains for explicit requests. A comment
+# asking how to test again (code/retest-question.sh) is answered once per PR.
 #
 # Nothing from the PR is checked out or run here: this runs from master and
 # reads the PR's files as text via the API. The comment is untrusted text: it
@@ -38,7 +39,7 @@ jobs:
     permissions:
       actions: read # find the latest Test run
       contents: read # read the PR's data/ file via the API
-      issues: write # react to the comment
+      issues: write # react to the comment, answer a "how do I re-test?" question
       pull-requests: write # reopen with GITHUB_TOKEN should the PAT fail
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -60,6 +61,20 @@ jobs:
         run: |
           if ! PHRASE=$(printf '%s\n' "$BODY" | bash code/retest-comment.sh) ; then
             echo "The comment does not ask for a re-test."
+            # A question about HOW to test again gets the answer, once per PR
+            # (to anyone: the answer changes nothing, it only names the command)
+            if printf '%s\n' "$BODY" | bash code/retest-question.sh ; then
+              MARKER='<!-- appimagehub-retest-howto -->'
+              if gh api --paginate "repos/$REPO/issues/$PR/comments" --jq '.[].body' | grep -qF "$MARKER" ; then
+                echo "Answered already."
+              else
+                {
+                  echo "$MARKER"
+                  echo 'To test this pull request again, comment `/retest` on it. It is also tested again automatically when you comment that a fix or a new release is out (e.g. "v1.2 is out, fixed in v1.2"). The author of the pull request, the GitHub account the AppImage comes from and maintainers can do either.'
+                } > howto.md
+                gh pr comment "$PR" -R "$REPO" --body-file howto.md
+              fi
+            fi
             exit 0
           fi
           echo "The comment says: \"$PHRASE\""
