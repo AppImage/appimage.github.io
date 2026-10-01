@@ -5,11 +5,9 @@ Terminal=false
 Type=Application
 Icon=loop
 StartupWMClass=Loop
-X-AppImage-Version=0.1.20
-GenericName=AI Coding Assistant
+X-AppImage-Version=2026.10.3
+Comment=Loop Terminal — Desktop client for Loop agents
 Categories=Development;
-Keywords=ai;coding;assistant;codex;claude;cursor;
-Comment=Loop is a minimal desktop GUI for code agents. Bundles an embedded server and local SQLite database so everything runs on your machine.
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
@@ -20,5 +18,5 @@ X-AppImage-Architecture=x86_64
 X-AppImage-Libc=host
 X-AppImage-Runtime=dynamic
 X-AppImage-Self-Contained=false
-X-AppImage-Glibc-Required=GLIBC_2.38
-X-AppImage-Payload-License=MIT
+X-AppImage-Glibc-Required=GLIBC_2.25
+X-AppImage-Payload-License=Apache-2.0

@@ -2,8 +2,8 @@
 layout: app
 
 permalink: /Loop/
-description: Loop is a minimal desktop GUI for code agents. Bundles an embedded server and local SQLite database so everything runs on your machine.
-license: MIT
+description: "Loop Terminal — Desktop client for Loop agents"
+license: "Apache-2.0"
 
 icons:
   - Loop/icons/128x128/loop.png
@@ -12,14 +12,14 @@ screenshots:
   - Loop/screenshot.png
 
 authors:
-  - name: abddost
-    url: https://github.com/abddost
+  - name: "radutopala"
+    url: "https://github.com/radutopala"
 
 links:
   - type: GitHub
-    url: abddost/loop
+    url: radutopala/loop
   - type: Download
-    url: https://github.com/abddost/loop/releases
+    url: https://github.com/radutopala/loop/releases
 
 desktop:
   Desktop Entry:
@@ -29,12 +29,9 @@ desktop:
     Type: Application
     Icon: loop
     StartupWMClass: Loop
-    X-AppImage-Version: 0.1.20
-    GenericName: AI Coding Assistant
+    X-AppImage-Version: 2026.10.3
+    Comment: Loop Terminal — Desktop client for Loop agents
     Categories: Development
-    Keywords: ai
-    Comment: Loop is a minimal desktop GUI for code agents. Bundles an embedded server
-      and local SQLite database so everything runs on your machine.
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
@@ -45,71 +42,8 @@ desktop:
     X-AppImage-Libc: host
     X-AppImage-Runtime: dynamic
     X-AppImage-Self-Contained: false
-    X-AppImage-Glibc-Required: GLIBC_2.38
-    X-AppImage-Payload-License: MIT
+    X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: Apache-2.0
 
-electron:
-  type: module
-  license: MIT
-  main: dist-electron/main.cjs
-  dependencies:
-    "@ai-sdk/anthropic": "^3.0.58"
-    "@ai-sdk/cohere": "^3.0.25"
-    "@ai-sdk/deepinfra": "^2.0.39"
-    "@ai-sdk/deepseek": "^2.0.24"
-    "@ai-sdk/google": "^3.0.43"
-    "@ai-sdk/groq": "^3.0.29"
-    "@ai-sdk/mistral": "^3.0.24"
-    "@ai-sdk/openai": "^3.0.41"
-    "@ai-sdk/openai-compatible": "^2.0.35"
-    "@ai-sdk/perplexity": "^3.0.23"
-    "@ai-sdk/togetherai": "^2.0.39"
-    "@ai-sdk/xai": "^3.0.67"
-    "@anthropic-ai/claude-agent-sdk": "^0.2.109"
-    "@codemirror/commands": "^6.10.3"
-    "@codemirror/language": "^6.12.3"
-    "@codemirror/search": "^6.7.0"
-    "@codemirror/state": "^6.6.0"
-    "@codemirror/view": "^6.42.1"
-    "@heroui/react": "^3.0.0-beta.8"
-    "@heroui/styles": "^3.0.0-beta.8"
-    "@modelcontextprotocol/sdk": "^1.27.1"
-    "@openai/apps-sdk-ui": "^0.2.1"
-    "@opencode-ai/sdk": "^1.14.39"
-    "@openrouter/ai-sdk-provider": "^2.3.0"
-    "@parcel/watcher": "^2.5.6"
-    "@streamdown/math": "^1.0.2"
-    "@streamdown/mermaid": "^1.0.2"
-    "@tanstack/react-router": "^1.114.0"
-    "@tanstack/react-virtual": "^3.13.0"
-    "@xterm/addon-fit": "^0.11.0"
-    "@xterm/addon-web-links": "^0.12.0"
-    "@xterm/xterm": "^6.0.0"
-    "@zip.js/zip.js": "^2.8.26"
-    ai: "^6.0.116"
-    bun-pty: "^0.4.8"
-    clsx: "^2.1.0"
-    codemirror: "^6.0.2"
-    diff: "^8.0.3"
-    dompurify: "^3.3.3"
-    drizzle-orm: "^0.39.0"
-    electron-updater: "^6.8.3"
-    hono: "^4.7.0"
-    immer: "^10.1.0"
-    mitt: "^3.0.1"
-    monaco-editor: "^0.55.1"
-    nanoid: "^5.1.0"
-    react: "^19.1.0"
-    react-dom: "^19.1.0"
-    shiki: "^4.0.2"
-    streamdown: "^2.5.0"
-    tailwind-merge: "^3.0.0"
-    turndown: "^7.2.2"
-    ulid: "^2.3.0"
-    vscode-material-icons: "^0.1.1"
-    zod: "^3.24.0"
-    zustand: "^5.0.0"
-  trustedDependencies:
-  - "@parcel/watcher"
-  - sqlite3
+electron: {"name":"loop","version":"2026.10.3","description":"Loop Terminal — Desktop client for Loop agents","homepage":"https://github.com/radutopala/loop","author":{"name":"Radu Topala","email":"radu.topala@trisoft.ro"},"private":true,"main":"dist-electron/main.js","type":"module","dependencies":{"@codemirror/commands":"^6.10.3","@codemirror/lang-css":"^6.3.1","@codemirror/lang-go":"^6.0.1","@codemirror/lang-html":"^6.4.11","@codemirror/lang-javascript":"^6.2.5","@codemirror/lang-json":"^6.0.2","@codemirror/lang-markdown":"^6.5.0","@codemirror/lang-python":"^6.2.1","@codemirror/lang-yaml":"^6.1.3","@codemirror/language":"^6.12.3","@codemirror/search":"^6.7.0","@codemirror/state":"^6.6.0","@codemirror/view":"^6.43.1","@fontsource/jetbrains-mono":"^5.2.8","@visx/group":"4.0.1-alpha.0","@visx/hierarchy":"4.0.1-alpha.0","@xterm/addon-fit":"^0.11.0","@xterm/addon-web-links":"^0.12.0","@xterm/xterm":"^5.5.0","dayjs":"^1.11.21","dompurify":"^3.4.16","electron-updater":"^6.8.9","katex":"^0.16.47","marked":"^17.0.6","mermaid":"^11.15.0","pdfjs-dist":"^6.3.289","react":"^19.2.7","react-dom":"^19.2.7"},"optionalDependencies":{"@rollup/rollup-linux-arm64-gnu":"^4.61.1","@rollup/rollup-linux-x64-gnu":"^4.61.1"},"allowScripts":{"esbuild@0.25.12":true,"electron-winstaller@5.4.0":true}}
 ---
