@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <id>dev.laneholloway.Sightings</id>
   <name>Sightings</name>
-  <summary>DCA75 Workbench: identify, curve-trace and catalogue semiconductors</summary>
+  <summary>Identify, curve-trace and catalog semiconductors with the DCA75</summary>
   <developer_name>Cryptid Effects</developer_name>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-PolyForm-Shield-1.0.0</project_license>
@@ -18,6 +18,7 @@
   <url type="donation">https://buymeacoffee.com/drlholloway</url>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="0.3.7" date="2026-09-30" />
     <release version="0.3.6" date="2026-09-28" />
     <release version="0.3.5" date="2026-09-27" />
     <release version="0.3.4" date="2026-09-12" />

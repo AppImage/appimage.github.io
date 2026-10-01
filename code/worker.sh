@@ -399,8 +399,8 @@ APID=$!
 sleep 10
 for WAIT in $(seq 1 20) ; do
   kill -0 $APID 2>/dev/null || break
-  WINDOWS=$(timeout 5 xwininfo -tree -root 2>/dev/null || true)
-  grep -qE '0x.*": \(' <<< "$WINDOWS" && break # Not in a pipe: pipefail
+  # GTK tray icons and WebKit create unmapped helper windows; those are not content.
+  timeout 5 xdotool search --onlyvisible --name '.' >/dev/null 2>&1 && break
   sleep 1
 done
 [ "$WAIT" -gt 1 ] && sleep 2 # A window just appeared; let it finish drawing
@@ -408,7 +408,7 @@ done
 NO_WINDOW=""
 if ! kill -0 $APID 2>/dev/null ; then
   NO_WINDOW="ERROR: The application exited within $((10 + WAIT)) seconds instead of showing a window"
-elif ! grep -qE '0x.*": \(' <<< "$(timeout 5 xwininfo -tree -root 2>/dev/null || true)" ; then
+elif ! timeout 5 xdotool search --onlyvisible --name '.' >/dev/null 2>&1 ; then
   NO_WINDOW="ERROR: Could not find a single window on screen :-("
 fi
 
@@ -725,16 +725,20 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   echo "layout: app" >> apps/$INPUTBASENAME.md
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
+  # Emit a value as a one-line YAML scalar (a JSON string is valid YAML), so a
+  # ": ", a "#", a leading special character or a newline in a description,
+  # license or author name cannot break the front matter (issue #9519).
+  yscalar() { printf '%s' "$1" | tr '\r\n\t' '   ' | jq -Rs '.' ; }
   # Description
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- ) || true
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     ./appstreamcli-x86_64.AppImage convert database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
     SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .) || true
     if [ x"$SUMMARY" != x"" ] ; then
-      echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
+      echo "description: $(yscalar "$SUMMARY")" >> apps/$INPUTBASENAME.md
     fi
   elif [  x"$DESKTOP_COMMENT" != x"" ] ; then
-    echo "description: $DESKTOP_COMMENT" >> apps/$INPUTBASENAME.md
+    echo "description: $(yscalar "$DESKTOP_COMMENT")" >> apps/$INPUTBASENAME.md
   fi
   # License
   AS_LICENSE=""
@@ -749,9 +753,9 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     | cut -d '=' -f 2
   ) || true
   if [ x"$AS_LICENSE" != x"" ] ; then
-    echo "license: $AS_LICENSE" >> apps/$INPUTBASENAME.md
+    echo "license: $(yscalar "$AS_LICENSE")" >> apps/$INPUTBASENAME.md
   elif [ x"$DT_LICENSE" != x"" ] ; then
-    echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
+    echo "license: $(yscalar "$DT_LICENSE")" >> apps/$INPUTBASENAME.md
   else
     echo "No license found!"
   fi
@@ -819,11 +823,11 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     gitlab.com) LINK_TYPE="GitLab" ;;
   esac
   if [  x"$GH_USER" != x"" ] ; then
-    echo "  - name: $GH_USER" >> apps/$INPUTBASENAME.md
-    echo "    url: https://$GH_HOST/$GH_USER" >> apps/$INPUTBASENAME.md
+    echo "  - name: $(yscalar "$GH_USER")" >> apps/$INPUTBASENAME.md
+    echo "    url: $(yscalar "https://$GH_HOST/$GH_USER")" >> apps/$INPUTBASENAME.md
   elif [  x"$OBS_USER" != x"" ] ; then
-    echo "  - name: $OBS_USER" >> apps/$INPUTBASENAME.md
-    echo "    url: https://build.opensuse.org/user/show/$OBS_USER" >> apps/$INPUTBASENAME.md
+    echo "  - name: $(yscalar "$OBS_USER")" >> apps/$INPUTBASENAME.md
+    echo "    url: $(yscalar "https://build.opensuse.org/user/show/$OBS_USER")" >> apps/$INPUTBASENAME.md
   # elif [  x"$BB_USER" != x"" ] ; then
     # echo "  - name: $BB_USER" >> apps/$INPUTBASENAME.md
     # echo "    url: https://bitbucket.org/$BB_USER" >> apps/$INPUTBASENAME.md
@@ -875,13 +879,16 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     cat database/$INPUTBASENAME/appdata.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
     rm database/$INPUTBASENAME/appdata.yaml
   fi
-  # Add content of Electron package.json file
+  # Add content of Electron package.json file, as one compact JSON value (valid
+  # YAML): splicing the pretty-printed YAML in with a fixed "tail -n" cut into
+  # the first value and produced invalid front matter (issue #9519). If it is
+  # not valid JSON, skip it rather than break the page.
   if [ -e database/$INPUTBASENAME/package.json ] ; then
-    sudo dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml # Do we need sudo to prevent '`load': cannot load such file'?
-    echo "" >> apps/$INPUTBASENAME.md
-    echo "electron:" >> apps/$INPUTBASENAME.md
-    cat database/$INPUTBASENAME/package.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
-    rm database/$INPUTBASENAME/package.yaml
+    ELECTRON_JSON=$(jq -c . database/$INPUTBASENAME/package.json 2>/dev/null) || ELECTRON_JSON=""
+    if [ -n "$ELECTRON_JSON" ] ; then
+      echo "" >> apps/$INPUTBASENAME.md
+      echo "electron: $ELECTRON_JSON" >> apps/$INPUTBASENAME.md
+    fi
   fi
   echo "---" >> apps/$INPUTBASENAME.md
   ls -lh apps/$INPUTBASENAME.md || exit 1
