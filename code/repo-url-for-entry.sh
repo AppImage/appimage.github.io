@@ -14,6 +14,13 @@
 #        code/repo-url-for-entry.sh --repo-of URL
 #          Only derive the repository URL from the link, without asking the
 #          forge (used to check that a changed first line is exactly that).
+#        code/repo-url-for-entry.sh --shortens OLD NEW
+#          Exit 0 if NEW is just the short form (https://github.com/OWNER/REPO,
+#          also Codeberg and GitLab) of the long-form link OLD into the SAME
+#          repository (.../releases, .../releases/download/..., .../tree/main,
+#          https://api.github.com/repos/OWNER/REPO/...), else exit 1. Used so that
+#          the automatic merges accept this one change of an existing entry's
+#          first line, and none else.
 #
 # Supports GitHub, Codeberg and GitLab, like code/fetch-releases.sh; uses
 # GH_TOKEN (if set) for api.github.com only.
@@ -31,6 +38,27 @@ repo_of() {
     echo "https://gitlab.com/${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
   fi
 }
+
+# https://HOST/OWNER/REPO/<anything> (or api.github.com/repos/OWNER/REPO/...) -> the
+# short form of the repository
+short_of() {
+  local URL
+  URL=$(echo "$1" | tr -d '\r' | sed -E 's/^[[:space:]]+//; s/[[:space:]].*//')
+  if [[ "$URL" =~ ^https://(github\.com|codeberg\.org|gitlab\.com)/([^/?#]+)/([^/?#]+)/[^[:space:]]+ ]] ; then
+    echo "https://${BASH_REMATCH[1]}/${BASH_REMATCH[2]}/${BASH_REMATCH[3]%.git}"
+  elif [[ "$URL" =~ ^https://api\.github\.com/repos/([^/?#]+)/([^/?#]+)(/|$) ]] ; then
+    echo "https://github.com/${BASH_REMATCH[1]}/${BASH_REMATCH[2]%.git}"
+  fi
+}
+
+if [ "${1:-}" == "--shortens" ] ; then
+  OLD=$(echo "${2:-}" | tr -d '\r' | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
+  NEW=$(echo "${3:-}" | tr -d '\r' | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
+  SHORT=$(short_of "$OLD")
+  [ -n "$SHORT" ] || exit 1
+  [ "$(echo "${NEW%/}" | tr 'A-Z' 'a-z')" == "$(echo "$SHORT" | tr 'A-Z' 'a-z')" ]
+  exit $?
+fi
 
 if [ "${1:-}" == "--repo-of" ] ; then
   repo_of "${2:-}"

@@ -101,8 +101,13 @@ GitHub Pages (Jekyll) from this repository.
    Finally it **auto-merges** (squash) a PR from a returning contributor
    (`author_association` CONTRIBUTOR or above) that changes exactly one file in
    `data/`, passed with `screenshot-ok`, has no `manual-check-needed` or
-   `do-not-merge` label, and does not move the download location to another
-   owner (checked itself via the API, not via the artifact). A merge with the
+   `do-not-merge` label, and does not change the first line of an existing file
+   in `data/` (checked itself via the API, not via the artifact), except to shorten a
+   long-form link to the short form of the SAME repository
+   (`code/repo-url-for-entry.sh --shortens`: `https://github.com/o/r/releases` or
+   `.../releases/download/...` to `https://github.com/o/r`); even a change within
+   the same owner may be a different project that shares the file name (#8569).
+   `merge-labeled.yml` applies the same rule. A merge with the
    workflow's token does not trigger push workflows, so it starts `test.yml`
    by `workflow_dispatch` with the merge commit (input `commit`), which writes
    `database/` as a push would. Re-test PRs (branch `retest/*` in this
@@ -125,6 +130,9 @@ GitHub Pages (Jekyll) from this repository.
    the workflow posts a neutral informational note instead — no warning, no
    `manual-check-needed` label. This does not depend on the PR's own test run,
    which a PR could alter.
+   (`check-origin.sh` exits 1 or 2 for a changed owner; the step must read that
+   with `RC=0 ; RESULT=$(...) || RC=$?`, as `RESULT=$(...) ; RC=$?` ends the step
+   under `bash -e` before anything is reported.)
    The same workflow also sets `manual-check-needed` (with its own comment,
    `<!-- appimagehub-name-check -->`) on a PR that adds or renames to a file in
    `data/` whose name has more than two hyphens (often a version or file name
