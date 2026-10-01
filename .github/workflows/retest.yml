@@ -50,11 +50,15 @@ jobs:
       ASSOCIATION: ${{ github.event.comment.author_association }}
       PR_AUTHOR: ${{ github.event.issue.user.login }}
     steps:
-      # master, never the PR: only for code/upstream-owner.sh
+      # master, never the PR: only for the scripts named below
       - uses: actions/checkout@v4
         with:
           ref: master
-          sparse-checkout: code/upstream-owner.sh
+          sparse-checkout: |
+            code/upstream-owner.sh
+            code/repo-url-for-entry.sh
+            code/fetch-releases.sh
+            code/find-appimage.sh
           sparse-checkout-cone-mode: false
 
       - name: Retest
@@ -126,11 +130,22 @@ jobs:
             BRANCH="retest/$PR-$(date -u +%Y%m%d%H%M%S)"
             BASE=$(gh api "repos/$REPO/git/ref/heads/master" --jq .object.sha)
             GH_TOKEN="$PAT" gh api -X POST "repos/$REPO/git/refs" -f ref="refs/heads/$BRANCH" -f sha="$BASE" >/dev/null
+            CHANGES=""
             for N in $NAMES ; do
               gh api "repos/$REPO/contents/data/$N?ref=master" > file.json
               jq -r .content file.json | base64 -d > file.txt
-              # Toggle the trailing newline
-              if [ "$(tail -c 1 file.txt | od -An -tx1 | tr -d ' ')" = 0a ] ; then
+              # An entry that points to the AppImage of one particular release
+              # would test that old release again whatever is published since:
+              # point it to the repository instead (if its releases have an
+              # AppImage), so that this and every later test takes the newest.
+              # Otherwise only toggle the trailing newline.
+              FIRST=$(head -n 1 file.txt | tr -d '\r')
+              NEWURL=$(bash code/repo-url-for-entry.sh "$FIRST" "$N" || true)
+              if [ -n "$NEWURL" ] ; then
+                { echo "$NEWURL" ; tail -n +2 file.txt ; } > file.new
+                mv file.new file.txt
+                CHANGES="$CHANGES"$'\n\n'"- \`data/$N\` pointed to one particular release (\`$FIRST\`); it now points to the repository (\`$NEWURL\`), so that the newest release is tested."
+              elif [ "$(tail -c 1 file.txt | od -An -tx1 | tr -d ' ')" = 0a ] ; then
                 truncate -s -1 file.txt
               else
                 printf '\n' >> file.txt
@@ -141,7 +156,7 @@ jobs:
             done
             URL=$(GH_TOKEN="$PAT" gh api -X POST "repos/$REPO/pulls" -f base=master -f head="$BRANCH" \
                     -f title="Re-test $(echo "$NAMES" | sed 's/ /, /g')" \
-                    -f body="Re-test of \`data/$(echo "$NAMES" | sed 's/ /\`, \`data\//g')\`, requested with \`/retest\` by @$COMMENTER in #$PR, which is merged already." \
+                    -f body="Re-test of \`data/$(echo "$NAMES" | sed 's/ /\`, \`data\//g')\`, requested with \`/retest\` by @$COMMENTER in #$PR, which is merged already.$CHANGES" \
                     --jq .html_url)
             reply "This pull request is merged, so its entries are tested again in a new pull request: $URL. Please follow the test there (comment \`/retest\` there to test again); this conversation is locked now."
             lock_old
