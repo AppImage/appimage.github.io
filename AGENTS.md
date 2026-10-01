@@ -247,6 +247,22 @@ GitHub Pages (Jekyll) from this repository.
    and reacts 🚀. Nothing from the PR is checked out or run; it reads the
    PR's files as text via the API.
 
+8. Answers to comments, without a maintainer:
+   - `auto-retest.yml` also answers a question about how to test again
+     (`code/retest-question.sh`, e.g. "how do I ask it to retry?") once per PR
+     with "comment `/retest`" (marker `<!-- appimagehub-retest-howto -->`).
+   - `.github/workflows/reopened-notice.yml` (`pull_request_target`) tells a
+     non-maintainer author who closes and reopens their own PR the same, once.
+   - `.github/workflows/opt-out-request.yml` labels a PR `opt-out` and answers
+     once when its author, or the GitHub account the AppImage comes from,
+     says the application should not be in the catalog
+     (`code/optout-comment.sh`: "please remove my app", "opt out"; questions,
+     conditions and "close this PR" do not count). It never merges, closes or
+     removes anything: a maintainer confirms with `/remove`.
+   - `code/diagnose.sh` has hints for `AppRun.wrapped: Permission denied`
+     (Tauri/linuxdeploy mode 0770) and for a `.DirIcon` that cannot be read
+     (absolute symlink).
+
 ## Rules that are easy to get wrong
 
 - **`pull_request_target` workflows must never check out or run code from
