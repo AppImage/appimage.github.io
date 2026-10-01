@@ -2,12 +2,13 @@
 layout: app
 
 permalink: /Swamp_Swap/
+description: "Secure file transfer"
+license: "GPL-3.0-or-later"
 
 icons:
-  - Swamp_Swap/icons/256x256/SwampSwap.png
-
+  - Swamp_Swap/icons/256x256/io.github.Ferase.SwampSwap.png
 screenshots:
-  - Swamp_Swap/screenshot.png
+- https://raw.githubusercontent.com/Ferase/SwampSwap/refs/heads/master/images/SwampSwap_Window_Screenshot_01.png
 
 authors:
   - name: "Ferase"
@@ -22,10 +23,13 @@ links:
 desktop:
   Desktop Entry:
     Name: SwampSwap
+    Comment: Secure file transfer
     Exec: SwampSwap
-    Icon: SwampSwap
+    Icon: io.github.Ferase.SwampSwap
     Type: Application
     Categories: Network
+    Keywords: croc
+    StartupWMClass: SwampSwap
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|Ferase|SwampSwap|latest|SwampSwap_x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
