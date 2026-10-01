@@ -1,0 +1,27 @@
+{
+  "name": "meshFlask",
+  "version": "0.2.1",
+  "description": "Adobe Bridge-style browser and organizer for 3D model files",
+  "main": "out/main/index.js",
+  "author": "meshFlask",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@mantine/core": "^7.13.0",
+    "@mantine/hooks": "^7.13.0",
+    "@mantine/notifications": "^7.13.0",
+    "@tabler/icons-react": "^3.19.0",
+    "@tanstack/react-virtual": "^3.10.8",
+    "@types/archiver": "^7.0.0",
+    "archiver": "^7.0.1",
+    "better-sqlite3": "^11.3.0",
+    "chokidar": "^3.6.0",
+    "electron-log": "^5.4.4",
+    "fflate": "^0.8.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-resizable-panels": "^2.1.7",
+    "three": "^0.184.0",
+    "uuid": "^10.0.0"
+  }
+}

@@ -22,7 +22,7 @@ on:
       dry_run:
         description: Only list what would be marked as read; change nothing
         type: boolean
-        default: true
+        default: false
       allowed:
         description: Comma-separated logins that may be the sole participants
         default: probonopd,github-actions

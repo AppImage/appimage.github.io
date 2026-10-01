@@ -1,0 +1,24 @@
+{
+  "name": "openmap-studio",
+  "version": "0.2.0",
+  "description": "An electron app for MapLibre GL JS",
+  "homepage": "https://github.com/opengeos/openmap-studio#readme",
+  "bugs": {
+    "url": "https://github.com/opengeos/openmap-studio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opengeos/openmap-studio.git"
+  },
+  "license": "MIT",
+  "author": "Qiusheng Wu <giswqs@gmail.com>",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "@duckdb/duckdb-wasm": "^1.33.1-dev18.0",
+    "maplibre-gl": "^5.16.0",
+    "maplibre-gl-components": "^0.13.0",
+    "maplibre-gl-layer-control": "^0.11.0",
+    "shpjs": "^6.2.0"
+  }
+}

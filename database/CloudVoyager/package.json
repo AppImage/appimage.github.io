@@ -1,0 +1,11 @@
+{
+  "name": "cloudvoyager-desktop",
+  "productName": "CloudVoyager Desktop",
+  "version": "1.3.0",
+  "type": "commonjs",
+  "description": "Desktop UI for CloudVoyager — migrate SonarQube to SonarCloud",
+  "main": "src/main/main.js",
+  "dependencies": {
+    "electron-store": "^8.2.0"
+  }
+}

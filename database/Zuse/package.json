@@ -1,0 +1,31 @@
+{
+  "name": "desktop",
+  "type": "module",
+  "productName": "Zuse (Beta)",
+  "version": "0.22.1",
+  "description": "Zuse (Beta) desktop app",
+  "license": "AGPL-3.0-only",
+  "private": true,
+  "author": {
+    "name": "Swaraj Bachu",
+    "email": "swarajkumar4444@gmail.com"
+  },
+  "homepage": "https://github.com/swarajbachu/zuse",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swarajbachu/zuse.git"
+  },
+  "main": "dist-electron/main.cjs",
+  "dependencies": {
+    "@cursor/sdk": "1.0.23",
+    "electron-updater": "^6.3.9",
+    "keytar": "^7.9.0",
+    "node-pty": "^1.1.0",
+    "selfsigned": "^5.5.0",
+    "tree-sitter": "^0.21.1",
+    "tree-sitter-javascript": "^0.23.1",
+    "tree-sitter-json": "^0.24.8",
+    "tree-sitter-typescript": "^0.23.2",
+    "yaml": "2.9.0"
+  }
+}

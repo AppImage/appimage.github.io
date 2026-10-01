@@ -1,0 +1,25 @@
+{
+  "name": "mcpx-desktop",
+  "version": "0.1.105",
+  "private": true,
+  "packageManager": "bun@1.4.0",
+  "description": "mcpx desktop app",
+  "homepage": "https://github.com/kwonye/mcpx",
+  "author": "kwonye",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@iarna/toml": "2.2.5",
+    "@sentry/electron": "^7.16.0",
+    "electron-updater": "^6.6.2",
+    "posthog-node": "^5.49.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^4.4.3"
+  },
+  "trustedDependencies": [
+    "electron",
+    "electron-builder",
+    "app-builder-bin",
+    "dmg-license"
+  ]
+}

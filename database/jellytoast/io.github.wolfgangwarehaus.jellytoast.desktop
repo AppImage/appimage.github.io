@@ -1,0 +1,27 @@
+[Desktop Entry]
+Type=Application
+Name=jellytoast
+GenericName=Jellyfin / Subsonic Music Player
+Comment=Audio-first native music client for Jellyfin and Subsonic
+Exec=jellytoast
+Icon=io.github.wolfgangwarehaus.jellytoast
+Terminal=false
+Categories=AudioVideo;Audio;Player;
+Keywords=jellyfin;subsonic;navidrome;music;media;player;chromecast;airplay;
+StartupNotify=true
+StartupWMClass=jellytoast
+# No MimeType / %U: jellytoast is a streaming client and has no local-file
+# or URL-open handler (no QFileOpenEvent filter, no argv parsing — the
+# single-instance relay only sends "raise"). Advertising audio/* handling
+# made double-clicking a file launch the app and silently ignore the file.
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|wolfgangwarehaus|jellytoast|latest|jellytoast-*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=GPL-2.0
