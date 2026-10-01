@@ -2,17 +2,17 @@
 layout: app
 
 permalink: /PKHeX-Avalonia/
-description: Edit Pokémon save files on Linux, Windows and macOS
-license: GPL-3.0-only
+description: "Edit Pokémon save files on Linux, Windows and macOS"
+license: "GPL-3.0-only"
 
 icons:
   - PKHeX-Avalonia/icons/64x64/io.pkhex.avalonia.png
 screenshots:
-- https://raw.githubusercontent.com/realgarit/PKHeX-Avalonia/0ba6e659f578ac6e5948a0d14798f9daadce4705/docs/screenshots/pokemon-editor-dark.png
+- https://raw.githubusercontent.com/realgarit/PKHeX-Avalonia/eb70790550b16820389fab2986a7ecc6d74d214e/docs/screenshots/pokemon-editor-dark.png
 
 authors:
-  - name: realgarit
-    url: https://github.com/realgarit
+  - name: "realgarit"
+    url: "https://github.com/realgarit"
 
 links:
   - type: GitHub
@@ -71,7 +71,7 @@ appdata:
       C: 'Pokémon editor with a legal Pokémon Legends: Z-A save in the dark theme'
     thumbnails: []
     source-image:
-      url: https://raw.githubusercontent.com/realgarit/PKHeX-Avalonia/0ba6e659f578ac6e5948a0d14798f9daadce4705/docs/screenshots/pokemon-editor-dark.png
+      url: https://raw.githubusercontent.com/realgarit/PKHeX-Avalonia/eb70790550b16820389fab2986a7ecc6d74d214e/docs/screenshots/pokemon-editor-dark.png
       width: 900
       height: 600
       lang: C
@@ -79,13 +79,13 @@ appdata:
       C: Pokémon editor with the same save in the light theme
     thumbnails: []
     source-image:
-      url: https://raw.githubusercontent.com/realgarit/PKHeX-Avalonia/0ba6e659f578ac6e5948a0d14798f9daadce4705/docs/screenshots/pokemon-editor-light.png
+      url: https://raw.githubusercontent.com/realgarit/PKHeX-Avalonia/eb70790550b16820389fab2986a7ecc6d74d214e/docs/screenshots/pokemon-editor-light.png
       width: 900
       height: 600
       lang: C
   Releases:
-  - version: 1.58.1
-    unix-timestamp: 1790726400
+  - version: 1.73.0
+    unix-timestamp: 1790812800
   ContentRating:
     oars-1.1: {}
 ---
