@@ -33,6 +33,8 @@ and send a Pull Request.
 
 Ideally, the file in `data/` contains a link to https://github.com/User/App/ (or the equivalent Codeberg or GitLab project page; not to a specific AppImage!). The test then picks the AppImage from the newest release (or, if no release has an AppImage, the newest pre-release): among its files ending in `.AppImage`, the one for x86_64 (other architectures such as aarch64 or i686 are left out), not a debug or nightly build, and, if the release contains AppImages of several applications, the one named like the file in `data/`. If it is still not clear which AppImage to test (e.g. `App-qt5-x86_64.AppImage` and `App-qt6-x86_64.AppImage`), the test fails; then put the link to the AppImage itself into the file in `data/`.
 
+If the repository has a release for each channel of the application (such as `esr`, `beta` and `nightly`), say which one this entry is by adding it to the link with a `#`, e.g. `https://github.com/User/App#nightly`; without it, the other channels are left out.
+
 If a PR changes the file in `data/` to a download location of a different owner (another GitHub user or organization, or another website), it gets the `manual-check-needed` label and a comment: please explain in the PR why the location changed, ideally with a link where the project announces it.
 
 Name of the file in `data/` (checked by the test; new files that break these rules fail with the `error-filename` label):

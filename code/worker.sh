@@ -37,6 +37,14 @@ dpkg -s libfuse2 >/dev/null 2>&1 || sudo apt-get -y install libfuse2 # Normally 
 
 URL=$(cat $1 | head -n 1)
 echo $URL
+# "#Channel" at the end of the URL (https://github.com/o/r#Nightly): which channel of a
+# repository that has a release per channel to test (code/find-appimage.sh), independent
+# of the name of the file; not part of the URL itself
+CHANNEL=""
+if [[ "$URL" == *"#"* ]] ; then
+  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._-')
+  URL="${URL%%#*}"
+fi
 
 GHURL="" # Workaround for: "GHURL: unbound variable"
 
@@ -82,7 +90,7 @@ if [[ "$URL" == https://github.com/*/* || "$URL" == https://codeberg.org/*/* || 
     gitlab) FORGE_NAME="GitLab" ;;
     *) FORGE_NAME="$FORGE" ;;
   esac
-  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME") || true
+  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME" "$CHANNEL") || true
   echo "$FOUND" | grep -v '^URL ' || true
   URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
   if [ x"" == x"$URL" ] ; then
@@ -108,7 +116,7 @@ if [ -z "$FORGE" ] && [[ "$URL" == http*://*/ ]] && [[ "$URL" != *github.com/* ]
   LISTING_JSON=$(mktemp)
   if LISTING_INFO=$(bash "$(dirname "$0")/fetch-listing.sh" "$URL" "$LISTING_JSON") ; then
     echo "Directory listing detected: $LISTING_INFO"
-    FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$LISTING_JSON" "$INPUTBASENAME") || true
+    FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$LISTING_JSON" "$INPUTBASENAME" "$CHANNEL") || true
     echo "$FOUND" | grep -v '^URL ' || true
     LISTED_URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
     if [ -z "$LISTED_URL" ] ; then
@@ -136,7 +144,7 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] ; then
     echo "Unable to get the releases of the GitHub repository $GHURL. Does the repository exist, and is it public?"
     exit 1
   fi
-  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME") || true
+  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME" "$CHANNEL") || true
   echo "$FOUND" | grep -v '^URL ' || true
   URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
   if [ x"" == x"$URL" ] ; then
@@ -794,16 +802,16 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # winning one, kept as "GH_*" for compatibility with the rest of the script
   GH_HOST=""
   GH_USER=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
-  GH_REPO=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+  GH_REPO=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 5 | cut -d '#' -f 1) || true
   [ x"$GH_USER" != x"" ] && GH_HOST="github.com"
   if [  x"$GH_USER" == x"" ] ; then
     GH_USER=$(grep "^https://codeberg.org/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
-    GH_REPO=$(grep "^https://codeberg.org/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+    GH_REPO=$(grep "^https://codeberg.org/" data/$INPUTBASENAME | cut -d '/' -f 5 | cut -d '#' -f 1) || true
     [ x"$GH_USER" != x"" ] && GH_HOST="codeberg.org"
   fi
   if [  x"$GH_USER" == x"" ] ; then
     GH_USER=$(grep "^https://gitlab.com/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
-    GH_REPO=$(grep "^https://gitlab.com/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+    GH_REPO=$(grep "^https://gitlab.com/" data/$INPUTBASENAME | cut -d '/' -f 5 | cut -d '#' -f 1) || true
     [ x"$GH_USER" != x"" ] && GH_HOST="gitlab.com"
   fi
   OBS_USER=$(
@@ -852,7 +860,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # downloaded from, if that link stays valid for new versions (a download
   # directory such as https://download.kde.org/stable/krita/, or a "latest"
   # link), i.e. its path contains no version number (4.3.0, 16.12, v2, /12/)
-  DATA_URL=$(head -n 1 "data/$INPUTBASENAME" | tr -d '\r' | sed -E 's/[[:space:]].*//')
+  DATA_URL=$(head -n 1 "data/$INPUTBASENAME" | tr -d '\r' | sed -E 's/[[:space:]].*//; s/#.*//') # without a "#Channel"
   DATA_PATH=$(echo "$DATA_URL" | cut -d / -f 4- | cut -d '?' -f 1)
   if [ x"$GH_USER" == x"" ] && [ x"$OBS_LINK" == x"" ] && [[ "$DATA_URL" =~ ^https?://[^[:space:]\"]+$ ]] \
     && ! echo "/$DATA_PATH" | grep -qiE '[0-9]+\.[0-9]+|(^|[^a-z0-9])v[0-9]+([^a-z0-9]|$)|/[0-9]+(/|$)' ; then

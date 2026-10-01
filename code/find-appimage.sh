@@ -2,14 +2,26 @@
 
 # Find the AppImage to test in the releases of a GitHub repository.
 #
-# Usage: find-appimage.sh releases.json [NAME]
+# Usage: find-appimage.sh releases.json [NAME [CHANNEL]]
 #   releases.json: the output of the GitHub API for
 #   repos/OWNER/REPO/releases (newest first)
 #   NAME: the name of the entry (the file in data/)
+#   CHANNEL: the channel the entry asks for, from the "#Channel" at the end of
+#     the URL in its data/ file (https://github.com/o/r#Nightly), if any
 #
 # Prints "URL <download URL>" and exits 0 when exactly one AppImage fits,
 # or "ERROR: ..." (and the candidates) and exits 1 when there is none or
 # more than one that cannot be told apart. "NOTE: ..." lines explain choices.
+#
+# Channels: some repositories publish several channels of one application as
+# releases of their own (Firefox-Appimage: releases "stable", "beta", "esr",
+# "nightly"). An entry asks for one with "#Channel" at the end of the URL in its
+# data/ file, independent of its name (https://github.com/o/r#ESR): then only the
+# releases (or, within a release, the AppImages) whose tag or file name has that
+# word are considered, and it is an error if there are none. An entry without a
+# channel does not get the releases or AppImages of the other well-known channels
+# (esr, nightly, beta, devedition, ...), if there are others. So that the entries
+# of such a repository each get their own AppImage and none of them collide.
 #
 # Rules:
 # 1. The newest release that is neither a draft nor a pre-release and has an
@@ -35,15 +47,28 @@
 JSON="$1"
 NAME="$2"
 
+# The channel the entry asks for (the "#Channel" of its URL), letters, digits and . _ -
+CHANNELS='esr|nightly|beta|devedition|developer[-_ ]?edition|aurora|canary'
+CHANNEL=$(echo "${3:-}" | tr -cd 'A-Za-z0-9._-')
+CH_RE=""
+if [ -n "$CHANNEL" ] ; then
+  CH_RE="(^|[^a-z0-9])($(echo "$CHANNEL" | sed 's/[.]/\\./g'))([^a-z0-9]|\$)"
+fi
+ALL_RE="(^|[^a-z0-9])($CHANNELS)([^a-z0-9]|\$)"
+
 # Releases with at least one AppImage (newest first): the newest release,
 # or the newest pre-release if there is no release or if it is more than
 # 180 days newer than the newest release. Prints "index<TAB>why".
-PICK=$(jq -r '
+PICK=$(jq -r --arg ch "$CH_RE" --arg all "$ALL_RE" '
+  def mentions($re): ((.tag_name // "") | test($re; "i")) or ([.assets[]?.name] | map(test($re; "i")) | any);
   def secs: (.published_at // .created_at // "") | .[0:19]
     | if test("^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9:]{8}$") then (. + "Z" | fromdateiso8601) else null end;
   [to_entries[] | select(.value.draft | not)
     | select([.value.assets[]?.name | test("\\.appimage$"; "i")] | any)
-    | {i: .key, pre: (.value.prerelease == true), t: (.value | secs)}] as $r
+    | {i: .key, pre: (.value.prerelease == true), t: (.value | secs),
+       m: ($ch != "" and (.value | mentions($ch))), c: (.value | mentions($all))}] as $r0
+  | (if $ch != "" then ($r0 | map(select(.m))) else ($r0 | map(select(.c | not))) end) as $r1
+  | (if $ch != "" or ($r1 | length) > 0 then $r1 else $r0 end) as $r
   | ($r | map(select(.pre | not)) | first) as $rel
   | ($r | first) as $new
   | if $new == null then empty
@@ -52,7 +77,11 @@ PICK=$(jq -r '
     else "\($rel.i)\trelease" end' "$JSON" 2>/dev/null)
 RELEASE=$(cut -f 1 <<<"$PICK")
 if [ -z "$RELEASE" ] ; then
-  echo "ERROR: No AppImage found in the GitHub releases of this repository"
+  if [ -n "$CHANNEL" ] ; then
+    echo "ERROR: No AppImage found in the GitHub releases of this repository for the channel \"$CHANNEL\" (the #$CHANNEL at the end of the URL): no release or AppImage has it in its tag or file name"
+  else
+    echo "ERROR: No AppImage found in the GitHub releases of this repository"
+  fi
   exit 1
 fi
 TAG=$(jq -r ".[$RELEASE].tag_name" "$JSON")
@@ -81,7 +110,12 @@ if [ "$(wc -l < "$JSON.candidates")" -gt 1 ] ; then
   narrow "Preferring the AppImage that names x86_64" '(^|[^a-z0-9])(x86[-_]64|amd64|x64|linux64|64-?bit)([^a-z0-9]|$)'
 fi
 if [ "$(wc -l < "$JSON.candidates")" -gt 1 ] ; then
-  narrow "Leaving out debug, test and nightly builds" '(^|[^a-z0-9])(debug|dbg|test|nightly|symbols)([^a-z0-9]|$)' v
+  if [ -n "$CHANNEL" ] ; then
+    narrow "Preferring the AppImage of the channel named in the entry, $CHANNEL" "$CH_RE"
+    narrow "Leaving out debug and test builds" '(^|[^a-z0-9])(debug|dbg|test|symbols)([^a-z0-9]|$)' v
+  else
+    narrow "Leaving out debug, test, nightly and other channels' builds" '(^|[^a-z0-9])(debug|dbg|test|nightly|symbols|esr|beta|devedition|developer[-_ ]?edition|aurora|canary)([^a-z0-9]|$)' v
+  fi
 fi
 # A "latest" AppImage next to versioned or timestamped ones (openSUSE Build
 # Service publishes NAME-latest-x86_64.AppImage beside dated builds): prefer

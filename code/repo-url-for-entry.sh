@@ -11,6 +11,10 @@
 # Usage: code/repo-url-for-entry.sh URL NAME
 #          URL:  the first line of the entry's file
 #          NAME: the name of the entry (the file in data/)
+#   If the link is to the release of a channel (a tag without digits: esr, nightly,
+#   main-nightly), and the repository's newest release of the entry would be
+#   another one, the result is REPOSITORY_URL#TAG (e.g. https://github.com/o/r#esr),
+#   so that the entry keeps its channel (see find-appimage.sh).
 #        code/repo-url-for-entry.sh --repo-of URL
 #          Only derive the repository URL from the link, without asking the
 #          forge (used to check that a changed first line is exactly that).
@@ -20,7 +24,9 @@
 #          repository (.../releases, .../releases/download/..., .../tree/main,
 #          https://api.github.com/repos/OWNER/REPO/...), else exit 1. Used so that
 #          the automatic merges accept this one change of an existing entry's
-#          first line, and none else.
+#          first line, and none else. NEW may also end in "#TAG" if OLD is a
+#          link to the release TAG (https://github.com/o/r/releases/download/esr/...
+#          to https://github.com/o/r#esr).
 #
 # Supports GitHub, Codeberg and GitLab, like code/fetch-releases.sh; uses
 # GH_TOKEN (if set) for api.github.com only.
@@ -51,12 +57,30 @@ short_of() {
   fi
 }
 
+# The tag of the release a link to a release asset is in (.../releases/download/TAG/...,
+# .../releases/tag/TAG, .../-/releases/TAG/...)
+tag_of() {
+  local URL
+  URL=$(echo "$1" | tr -d '\r' | sed -E 's/^[[:space:]]+//; s/[[:space:]].*//')
+  if [[ "$URL" =~ /releases/(download|tag)/([^/?#]+) ]] ; then
+    echo "${BASH_REMATCH[2]}"
+  elif [[ "$URL" =~ /-/releases/([^/?#]+) ]] ; then
+    echo "${BASH_REMATCH[1]}"
+  fi
+}
+
 if [ "${1:-}" == "--shortens" ] ; then
   OLD=$(echo "${2:-}" | tr -d '\r' | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
   NEW=$(echo "${3:-}" | tr -d '\r' | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
   SHORT=$(short_of "$OLD")
   [ -n "$SHORT" ] || exit 1
-  [ "$(echo "${NEW%/}" | tr 'A-Z' 'a-z')" == "$(echo "$SHORT" | tr 'A-Z' 'a-z')" ]
+  NEW_BASE=${NEW%%#*}
+  if [[ "$NEW" == *"#"* ]] ; then
+    # "#TAG": only if OLD is a link to the release TAG
+    TAG=$(tag_of "$OLD")
+    [ -n "$TAG" ] && [ "$(echo "${NEW#*#}" | tr 'A-Z' 'a-z')" == "$(echo "$TAG" | tr 'A-Z' 'a-z')" ] || exit 1
+  fi
+  [ "$(echo "${NEW_BASE%/}" | tr 'A-Z' 'a-z')" == "$(echo "$SHORT" | tr 'A-Z' 'a-z')" ]
   exit $?
 fi
 
@@ -71,8 +95,18 @@ NAME="${2:-}"
 
 API_JSON=$(mktemp)
 trap 'rm -f "$API_JSON"' EXIT
-if timeout 120 bash "$(dirname "$0")/fetch-releases.sh" "$REPO_URL" "$API_JSON" >/dev/null 2>&1 \
-  && bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$NAME" | grep -q '^URL ' ; then
-  echo "$REPO_URL"
+timeout 120 bash "$(dirname "$0")/fetch-releases.sh" "$REPO_URL" "$API_JSON" >/dev/null 2>&1 || exit 0
+FIND="$(dirname "$0")/find-appimage.sh"
+PLAIN=$(bash "$FIND" "$API_JSON" "$NAME" | sed -n 's/^URL //p')
+# A link to the release of a channel (a tag without digits: esr, nightly, ...): keep the
+# channel if the repository's newest release would be another one
+TAG=$(tag_of "${1:-}")
+if [ -n "$TAG" ] && ! [[ "$TAG" =~ [0-9] ]] ; then
+  CHAN=$(bash "$FIND" "$API_JSON" "$NAME" "$TAG" | sed -n 's/^URL //p')
+  if [ -n "$CHAN" ] && [ "$CHAN" != "$PLAIN" ] ; then
+    echo "$REPO_URL#$TAG"
+    exit 0
+  fi
 fi
+[ -n "$PLAIN" ] && echo "$REPO_URL"
 exit 0
