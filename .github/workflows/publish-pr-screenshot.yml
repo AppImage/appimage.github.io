@@ -88,7 +88,7 @@ jobs:
           echo "Predominantly Chinese: $CHINESE"
 
       - name: Upload images
-        if: steps.pr.outputs.number != '' && steps.lang.outputs.chinese != 'true'
+        if: steps.pr.outputs.number != ''
         env:
           PR: ${{ steps.pr.outputs.number }}
           REPO_ID: ${{ github.event.repository.id }}
@@ -143,6 +143,7 @@ jobs:
         if: steps.pr.outputs.number != ''
         env:
           PR: ${{ steps.pr.outputs.number }}
+          CHINESE: ${{ steps.lang.outputs.chinese }}
         run: |
           # error-* labels name the known causes of a failed test, screenshot-ok
           # marks a good screenshot; replace the previous ones. Untrusted artifact: only accept labels listed by
@@ -152,7 +153,7 @@ jobs:
             NEW=$(grep -xF -f <(bash code/diagnose.sh --list-labels) out/labels.txt | sort -u || true)
           fi
           # screenshot-ok: the test passed, took a screenshot and found nothing wrong with it
-          if [ "$CONCLUSION" = success ] && [ -e out/screenshot-ok ] && [ -s images.txt ] ; then
+          if [ "$CONCLUSION" = success ] && [ "$CHINESE" != true ] && [ -e out/screenshot-ok ] && [ -s images.txt ] ; then
             NEW=$(printf '%s\nscreenshot-ok\n' "$NEW" | grep . | sort -u)
           fi
           OLD=$(gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name | select(startswith("error-") or . == "screenshot-ok")' | sort -u)
@@ -224,6 +225,13 @@ jobs:
               [ -n "$MENTIONS" ] && { echo "${MENTIONS# }" ; echo ; }
               cat code/chinese-invite.md
               echo
+              # The screenshot, so the author sees what we saw
+              while read -r base url ; do
+                echo "**${base}**"
+                echo
+                echo "![${base}](${url})"
+                echo
+              done < images.txt
               echo "Commit ${HEAD_SHA::8}. [Full log](${RUN_URL})"
             } > comment.md
             cat comment.md
