@@ -484,32 +484,54 @@ fi
 icewm > /dev/null 2>&1 &
 sleep 2
 
-# Move the largest application window to the top-left and shrink it if it is
-# larger than the small virtual display (test.yml runs Xvfb at 800x600), so the
-# screenshot shows the whole window instead of a clipped corner (#8041). Nothing
-# else makes an oversized window fit: the window manager lets it overflow and the
-# off-screen part is lost. Best effort - a window with a fixed minimum size may
-# refuse to shrink; it is at least moved fully on-screen.
+# Move the application window (the active one, which take-screenshot.sh captures;
+# else the largest managed window) to the top-left and shrink it if it is larger
+# than the small virtual display (test.yml runs Xvfb at 800x600), so the
+# screenshot shows the whole window instead of a clipped corner (#8041, #7609).
+# Nothing else makes an oversized window fit: the off-screen part is lost. Always
+# logs what it found, so a window that did not fit can be diagnosed. A window
+# with a minimum size may refuse to shrink: then it warns (see diagnose.sh).
 fit_main_window() {
-  local SW SH LINE WID WW WH NW NH
+  local SW SH WID GEOM WW WH NW NH TRY
   read -r SW SH < <(timeout 5 xdotool getdisplaygeometry 2>/dev/null)
-  [[ "$SW" =~ ^[0-9]+$ && "$SH" =~ ^[0-9]+$ ]] || return 0
-  # The largest managed window (as take-screenshot.sh picks the app window)
-  LINE=$(timeout 20 xwininfo -tree -root 2>/dev/null | grep '": ("' \
-    | sed -nE 's/^[[:space:]]*(0x[0-9a-f]+) .* ([0-9]+)x([0-9]+)[-+][-0-9]+[-+][-0-9]+ +[-+][0-9]+[-+][0-9]+$/\1 \2 \3/p' \
-    | awk '{ print $2 * $3, $0 }' | sort -rn | head -n 1 | cut -d ' ' -f 2-)
-  read -r WID WW WH <<<"$LINE"
-  [[ -n "$WID" && "$WW" =~ ^[0-9]+$ && "$WH" =~ ^[0-9]+$ ]] || return 0
-  timeout 5 xdotool windowmove "$WID" 0 0 2>/dev/null || true
-  NW=$WW ; NH=$WH
-  # Leave room for the window manager's border and title bar
-  [ "$WW" -gt $((SW - 4)) ] && NW=$((SW - 4))
-  [ "$WH" -gt $((SH - 30)) ] && NH=$((SH - 30))
-  if [ "$NW" != "$WW" ] || [ "$NH" != "$WH" ] ; then
-    echo "Window $WID (${WW}x${WH}) is larger than the ${SW}x${SH} screen; resizing it to ${NW}x${NH} so the whole window is captured"
-    timeout 5 xdotool windowsize "$WID" "$NW" "$NH" 2>/dev/null || true
-    sleep 1
+  if ! [[ "$SW" =~ ^[0-9]+$ && "$SH" =~ ^[0-9]+$ ]] ; then
+    echo "fit_main_window: could not read the screen size"
+    return 0
   fi
+  WID=$(timeout 5 xdotool getactivewindow 2>/dev/null || true)
+  if [ -z "$WID" ] ; then
+    # The largest managed window, e.g.: 0x200006 "Game": ("game" "Game")  800x600+0+0  +0+0
+    WID=$(timeout 20 xwininfo -tree -root 2>/dev/null | grep '": ("' \
+      | sed -nE 's/^[[:space:]]*(0x[0-9a-f]+) .* ([0-9]+)x([0-9]+)[-+]+[0-9]+[-+]+[0-9]+ .*$/\2 \3 \1/p' \
+      | awk '{ print $1 * $2, $3 }' | sort -rn | head -n 1 | cut -d ' ' -f 2)
+  fi
+  if [ -z "$WID" ] ; then
+    echo "fit_main_window: no application window found"
+    return 0
+  fi
+  timeout 5 xdotool windowmove "$WID" 0 0 2>/dev/null || true
+  for TRY in 1 2 3 ; do
+    GEOM=$(timeout 5 xdotool getwindowgeometry --shell "$WID" 2>/dev/null || true)
+    WW=$(sed -n 's/^WIDTH=//p' <<<"$GEOM") ; WH=$(sed -n 's/^HEIGHT=//p' <<<"$GEOM")
+    if ! [[ "$WW" =~ ^[0-9]+$ && "$WH" =~ ^[0-9]+$ ]] ; then
+      echo "fit_main_window: could not read the size of window $WID"
+      return 0
+    fi
+    echo "Window $WID is ${WW}x${WH}, the screen ${SW}x${SH}"
+    NW=$WW ; NH=$WH
+    # Leave room for the window manager's border and title bar
+    [ "$WW" -gt $((SW - 4)) ] && NW=$((SW - 4))
+    [ "$WH" -gt $((SH - 30)) ] && NH=$((SH - 30))
+    if [ "$NW" == "$WW" ] && [ "$NH" == "$WH" ] ; then
+      return 0
+    fi
+    echo "Resizing window $WID to ${NW}x${NH} so the whole window is captured"
+    timeout 5 xdotool windowsize "$WID" "$NW" "$NH" 2>/dev/null || true
+    timeout 5 xdotool windowmove "$WID" 0 0 2>/dev/null || true
+    sleep 1 # an application may resize itself again
+  done
+  echo "WARNING: The window is larger than the ${SW}x${SH} test screen and could not be made smaller (${WW}x${WH}); the screenshot shows only part of it"
+  return 0
 }
 
 # We could simulate X11 keyboard/mouse input with xdotool here if needed;
