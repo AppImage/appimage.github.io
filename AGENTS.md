@@ -232,7 +232,10 @@ GitHub Pages (Jekyll) from this repository.
    "repackaged" or the like with the word AppImage or AppImages within three
    words of it, in the same sentence (`code/not-upstream-phrase.sh`; "not
    affiliated with <the maker of the hardware>" alone is no reason), the PR also gets the `not-upstream` label and a
-   note naming the phrase and where it was found; every repository checked is recorded
+   note naming the phrase and where it was found (and the `repackaged` label if the
+   phrase is "unofficial", "repackaged", "third party" or "community build": built
+   by someone else from the application, as pkgforge-dev's and ivan-hc's AppImages
+   are); every repository checked is recorded
    in the state file with its outcome, so it is not checked again for 90
    days. The state file (`discover-state.tsv`, with the cursor on its first
    line) lives on its own orphan branch, `discover-state`, never on `master`.
