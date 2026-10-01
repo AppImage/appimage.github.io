@@ -1,0 +1,16 @@
+{
+  "name": "we-bluetooth-le-terminal",
+  "version": "2.2.0",
+  "description": "Bluetooth LE Terminal app that connects to Bluetooth LE wireless modules from Würth Elektronik eiSos GmbH",
+  "author": {
+    "name": "Würth Elektronik eiSos GmbH",
+    "email": "wireless-sales@we-online.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WurthElektronik/WE-Bluetooth-LE-Terminal"
+  },
+  "main": "build/index.js",
+  "license": "MIT",
+  "type": "commonjs"
+}

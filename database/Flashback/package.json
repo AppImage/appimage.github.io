@@ -1,0 +1,37 @@
+{
+  "name": "Flashback",
+  "private": true,
+  "version": "0.5.2",
+  "type": "module",
+  "main": "src/electron/main.js",
+  "description": "The memorization workspace",
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WeirdCatAFK/Flashback.git"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@mozilla/readability": "^0.6.0",
+    "adm-zip": "^0.5.16",
+    "better-sqlite3": "^12.8.0",
+    "chardet": "^2.1.1",
+    "electron-log": "^5.4.4",
+    "electron-updater": "^6.8.9",
+    "express": "^5.1.0",
+    "iconv-lite": "^0.7.0",
+    "isomorphic-git": "^1.37.5",
+    "jsdom": "^29.1.1",
+    "knex": "^3.1.0",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "pdfjs-dist": "^6.2.108",
+    "sanitize-html": "^2.17.5",
+    "zod": "^4.4.3"
+  },
+  "author": "Daniel Pineda Torres",
+  "bugs": {
+    "url": "https://github.com/WeirdCatAFK/Flashback/issues"
+  },
+  "homepage": "https://github.com/WeirdCatAFK/Flashback#readme"
+}

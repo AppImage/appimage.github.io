@@ -1,0 +1,133 @@
+---
+layout: app
+
+permalink: /Konjugate/
+description: Graph-native engineering simulation
+license: MPL-2.0
+
+icons:
+  - Konjugate/icons/512x512/com.konjugate.Konjugate.png
+screenshots:
+- https://raw.githubusercontent.com/zenineasa/Konjugate/v0.7.3/assets/ForReadme/konjugateAppScreenshot.png
+
+authors:
+  - name: zenineasa
+    url: https://github.com/zenineasa
+
+links:
+  - type: GitHub
+    url: zenineasa/Konjugate
+  - type: Download
+    url: https://github.com/zenineasa/Konjugate/releases
+
+desktop:
+  Desktop Entry:
+    Name: Konjugate
+    Comment: Graph-native engineering simulation
+    Exec: Konjugate %f
+    Icon: com.konjugate.Konjugate
+    Type: Application
+    Categories: Science
+    Terminal: false
+    MimeType: application/x-konjugate
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.38
+    X-AppImage-Payload-License: MPL-2.0
+
+electron:
+  description: A graph-native simulation engine for composable engineering simulations
+    and digital twins.
+  type: module
+  main: src/main.mjs
+  license: MPL-2.0
+  copyright: Copyright © 2026 Zenin Easa Panthakkalakath
+  author:
+    name: Zenin Easa Panthakkalakath
+    url: https://github.com/zenineasa
+  repository:
+    type: git
+    url: git+https://github.com/zenineasa/Konjugate.git
+  bugs:
+    url: https://github.com/zenineasa/Konjugate/issues
+  homepage: https://github.com/zenineasa/Konjugate#readme
+  keywords:
+  - digital-twin
+  - engineering
+  - graph
+  - multiphysics
+  - simulation
+  scripts:
+    setup: node scripts/setupDevelopment.mjs
+    setup:web: node scripts/setupWebBuild.mjs
+    build:web: node scripts/buildWebEngine.mjs
+    build:web:threads: node scripts/buildWebEngine.mjs threads
+    build:webShell: node scripts/buildWebShell.mjs
+    build:webShell:threads: node scripts/buildWebShell.mjs threads
+    serve:webShell: node scripts/serveWebShell.mjs
+    serve:webShell:threads: node scripts/serveWebShell.mjs threads
+    test: node --test
+    test:interaction: npm run build:engine && node scripts/runInteractionTests.mjs
+    test:interaction:web: npm run build:web:threads && npm run build:webShell:threads
+      && node scripts/runWebInteractionTests.mjs
+    generate:example-thumbnails: npm run build:engine && node scripts/generateExampleThumbnails.mjs
+    generate:welcome-assets: node scripts/generateWelcomeAssets.mjs
+    test:all: npm test && npm run test:interaction
+    build:engine: node scripts/buildEngine.mjs
+    build:engine:no-metis: node scripts/buildEngine.mjs --no-metis
+    build:engine:sanitize: node scripts/buildEngine.mjs --sanitize
+    test:engine: node scripts/testEngine.mjs
+    test:engine:sanitize: node scripts/testEngineSanitized.mjs
+    lint:engine: node scripts/lintEngine.mjs
+    test:package: make verifyPackage
+    flatpak:generate-sources: node scripts/generateFlatpakNodeSources.mjs
+    homebrew:generate-cask: node scripts/generateHomebrewCask.mjs
+    test:codeExportFidelity: npm run build:engine && node tests/engine/codeExportFidelity.mjs
+    test:fmiExportFidelity: npm run build:engine && node tests/engine/fmiExportFidelity.mjs
+    test:fmiRoundTrip: npm run build:engine && node tests/engine/fmiRoundTrip.mjs
+    test:fmiImportFidelity: npm run build:engine && node tests/engine/fmiImportFidelity.mjs
+    test:fmi3ImportFidelity: npm run build:engine && node tests/engine/fmi3ImportFidelity.mjs
+    benchmark:engine: npm run build:engine && node tests/engine/executionBenchmark.mjs
+    benchmark:providers: npm run build:engine && node tests/engine/providerExecutionBenchmark.mjs
+    benchmark:protocol: node scripts/benchmarkProtocolEncoding.mjs
+    package:examples: node scripts/packageExamples.mjs
+    test:node-provider: node scripts/checkNodeProviderExample.mjs
+    start: npm run build:engine && electron .
+    dev: npm start
+    build: make build
+    icons: make icons
+    package: make packageApp
+    distribute: make distributable
+    clean: make clean
+  devDependencies:
+    "@electron/packager": "^20.0.4"
+    electron: "^43.2.0"
+    playwright: "^1.63.0"
+    protobufjs-cli: "^2.7.0"
+  engines:
+    node: ">=24.19.0"
+  dependencies:
+    "@codemirror/lang-cpp": "^6.0.3"
+    "@codemirror/lang-python": "^6.2.1"
+    "@codemirror/lint": "^6.9.7"
+    "@cortex-js/compute-engine": "^0.99.0"
+    "@wasmer/sdk": "^0.13.0"
+    codemirror: "^6.0.2"
+    fast-xml-parser: "^4.5.7"
+    fflate: 0.8.3
+    mathlive: "^0.110.0"
+    occt-import-js: "^0.0.23"
+    plotly.js-dist-min: "^3.7.0"
+    protobufjs: "^8.8.0"
+    pyodide: "^314.0.7"
+    scrypt-js: "^3.0.1"
+    three: "^0.185.1"
+---

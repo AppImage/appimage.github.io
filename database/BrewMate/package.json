@@ -1,0 +1,22 @@
+{
+  "name": "brewmate",
+  "version": "1.0.41",
+  "description": "BrewMate - A modern Homebrew package manager GUI for macOS and Linux",
+  "author": {
+    "name": "Roman Kurnovskii",
+    "email": "romankurnovskii@gmail.com"
+  },
+  "main": "dist/index.js",
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "i18next": "^26.4.2",
+    "node-pty": "^1.1.0"
+  },
+  "overrides": {
+    "node-abi": "^4.35.0"
+  }
+}

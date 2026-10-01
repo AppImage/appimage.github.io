@@ -4,10 +4,12 @@
 # window (e.g., only a menu bar on white, typical for Electron applications
 # that failed to render) or an error message.
 #
-# Usage: check-screenshot.sh screenshot.png [terminal]
+# Usage: check-screenshot.sh screenshot.png [terminal|tray]
 # Prints ERROR: and WARNING: lines; exits 1 if there is an ERROR.
 # With "terminal" (the application was run with --help in xterm), only
 # warnings are given: help texts often contain words like "fatal".
+# With "tray" (a system tray application: the screenshot shows its icon in a
+# system tray, or what clicking it opened), the empty-window check is skipped.
 #
 # The thresholds were chosen by running this over the ~1500 screenshots in
 # database/: it fails ~50 of them, nearly all of which are blank or stuck
@@ -34,7 +36,7 @@ WORDS=$(echo "$TEXT" | tr 'A-Z' 'a-z' | tr -cs 'a-z' '\n' | awk 'length($0) >= 3
 echo "Screenshot: ${SHARE}% one color, ${WORDS} words of text"
 
 RESULT=0
-if [ "$TERMINAL" != terminal ] ; then
+if [ "$TERMINAL" != terminal ] && [ "$TERMINAL" != tray ] ; then
   if { [ "$SHARE" -ge 99 ] && [ "$WORDS" -lt 5 ] ; } || { [ "$SHARE" -ge 95 ] && [ "$WORDS" -lt 3 ] ; } ; then
     echo "ERROR: The window appears to be empty (${SHARE}% one color, almost no text)"
     RESULT=1

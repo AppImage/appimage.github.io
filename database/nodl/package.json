@@ -1,0 +1,29 @@
+{
+  "name": "@nodl/desktop",
+  "version": "2.3.1",
+  "description": "A fast, lightweight desktop scratchpad for writing and running JavaScript/TypeScript code with instant inline output",
+  "main": "./out/main/index.js",
+  "author": {
+    "name": "Hung Doan",
+    "email": "hungdoansy@gmail.com",
+    "url": "https://github.com/hungdoansy"
+  },
+  "homepage": "https://github.com/hungdoansy/nodl",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@babel/parser": "^7.29.2",
+    "@babel/traverse": "^7.29.0",
+    "@monaco-editor/react": "^4.7.0",
+    "electron-store": "^11.0.2",
+    "esbuild": "^0.28.0",
+    "lucide-react": "^1.7.0",
+    "magic-string": "^0.30.21",
+    "monaco-vim": "^0.4.4",
+    "nanoid": "^5.1.7",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-resizable-panels": "^4.9.0",
+    "zustand": "^5.0.12"
+  }
+}

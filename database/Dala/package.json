@@ -1,0 +1,13 @@
+{
+  "name": "dala-desktop",
+  "productName": "Dala",
+  "private": true,
+  "version": "0.1.22",
+  "description": "Desktop client for dala servers",
+  "author": "MJ",
+  "repository": "https://github.com/mjason/dala",
+  "main": "main.js",
+  "dependencies": {
+    "electron-updater": "^6.6.4"
+  }
+}

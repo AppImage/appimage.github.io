@@ -1,0 +1,42 @@
+{
+  "name": "blinkdisk",
+  "description": "Modern backups for absolutely everyone.",
+  "repository": "https://github.com/blinkdisk/blinkdisk",
+  "author": {
+    "email": "support@blinkdisk.com",
+    "name": "BlinkDisk"
+  },
+  "version": "1.9.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "main": "./build/index.js",
+  "dependencies": {
+    "@better-auth/electron": "catalog:",
+    "@blinkdisk/api": "workspace:*",
+    "@blinkdisk/constants": "workspace:*",
+    "@blinkdisk/db": "workspace:*",
+    "@blinkdisk/schemas": "workspace:*",
+    "@blinkdisk/signaldb-electron": "catalog:",
+    "@blinkdisk/utils": "workspace:*",
+    "@esbuild-plugins/tsconfig-paths": "catalog:",
+    "@sentry/electron": "catalog:",
+    "@signaldb/core": "catalog:",
+    "@signaldb/fs": "catalog:",
+    "@signaldb/sync": "catalog:",
+    "@trpc/client": "catalog:",
+    "auto-launch": "catalog:",
+    "better-auth": "catalog:",
+    "electron-log": "catalog:",
+    "electron-store": "catalog:",
+    "electron-updater": "6.8.9",
+    "get-folder-size": "catalog:",
+    "p-limit": "catalog:",
+    "set-cookie-parser": "catalog:",
+    "tough-cookie": "catalog:",
+    "zod": "catalog:"
+  },
+  "homepage": "https://blinkdisk.com"
+}

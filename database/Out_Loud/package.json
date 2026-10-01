@@ -1,0 +1,43 @@
+{
+  "name": "out-loud",
+  "version": "2.1.2",
+  "description": "Free for non-commercial use, source-available, 100% offline AI text-to-speech desktop app powered by Kokoro-82M.",
+  "author": {
+    "name": "Julia Kafarska",
+    "email": "labs@light-cloud.com",
+    "url": "https://out-loud.io"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/light-cloud-com/out-loud#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/light-cloud-com/out-loud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/light-cloud-com/out-loud/issues"
+  },
+  "private": true,
+  "type": "module",
+  "main": "electron/main.js",
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10"
+  },
+  "dependencies": {
+    "espeak-ng": "1.0.2",
+    "ffmpeg-static": "^5.3.0",
+    "fluent-ffmpeg": "2.1.3",
+    "onnxruntime-node": "1.23.2",
+    "wavefile": "11.0.0",
+    "word-extractor": "^1.0.4"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml,css,html}": [
+      "prettier --write"
+    ]
+  }
+}

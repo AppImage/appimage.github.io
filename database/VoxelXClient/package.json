@@ -1,0 +1,28 @@
+{
+  "name": "voxelxlauncher",
+  "private": true,
+  "version": "1.5.14",
+  "description": "Martian Launcher - Minecraft Launcher by FoxStudios",
+  "author": {
+    "name": "FoxStudio",
+    "email": "contact@foxstudio.dev"
+  },
+  "type": "module",
+  "main": "electron/main.cjs",
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@phosphor-icons/react": "^2.1.10",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "@tailwindcss/vite": "^4.3.0",
+    "@zag-js/qr-code": "1.40.0",
+    "adm-zip": "^0.5.17",
+    "discord-rpc": "^4.0.1",
+    "pidusage": "^4.0.1",
+    "qrcode": "1.5.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "tailwindcss": "^4.3.0",
+    "three": "^0.184.0"
+  }
+}

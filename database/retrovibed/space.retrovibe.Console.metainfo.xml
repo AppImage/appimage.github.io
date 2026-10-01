@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 Retrovibed -->
+<component type="desktop-application">
+  <id>space.retrovibe.Console</id>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>Retrovibe Console</name>
+  <summary>A versatile application for data archival and media playback</summary>
+
+  <description>
+    <p>
+      Retrovibed is a cooperative media platform for archiving and playing back
+      your media collection. Ditch the algorithms, own your archive, and support
+      creators directly.
+    </p>
+    <ul>
+      <li>4K video and lossless audio playback powered by ffmpeg</li>
+      <li>Built-in torrent client for peer-to-peer media distribution</li>
+      <li>Cloud archive with end-to-end encryption and zero-knowledge storage</li>
+      <li>Privacy-first: built-in SOCKS5 proxy support</li>
+      <li>Community-powered: artists receive the majority of subscription revenue</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">space.retrovibe.Console.desktop</launchable>
+
+  <developer id="space.retrovibe">
+    <name>Retrovibed</name>
+  </developer>
+
+  <url type="homepage">https://retrovibe.space</url>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="2026.9.29" date="2026-09-29" />
+  </releases>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/retrovibed/retrovibed/main/.dist/screenshots/flatpak/library.png</image>
+      <caption>retrovibe media library</caption>
+    </screenshot>
+  </screenshots>
+</component>

@@ -1,0 +1,162 @@
+# Re-tests a pull request when a maintainer, the PR's author or the GitHub
+# account the AppImage comes from comments "/retest" on it, e.g. after a new
+# upstream release or a fix to the test.
+#
+# Like code/retest-prs.sh it closes and reopens the PR, so that the Test
+# workflow runs again with the current workflow files from master (re-running
+# an old run would reuse the old ones). That needs SCREENSHOT_UPLOAD_TOKEN (a
+# personal token): a reopen done with GITHUB_TOKEN starts no workflows. Without
+# it, the last Test run of the PR's head is re-run instead.
+#
+# On a merged PR it opens a new PR instead, which changes only the trailing
+# newline of the merged PR's files in data/ (only their first line is read),
+# so that Test runs for those entries again.
+#
+# Nothing from the PR is checked out or run here; only the API is used.
+name: Retest
+
+on:
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: retest-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  retest:
+    if: >-
+      github.repository == 'AppImage/appimage.github.io' &&
+      github.event.issue.pull_request &&
+      startsWith(github.event.comment.body, '/retest') &&
+      github.event.comment.user.type != 'Bot'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read # read data/ files via the API (writes use the personal token)
+      issues: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PAT: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.issue.number }}
+      COMMENT_ID: ${{ github.event.comment.id }}
+      COMMENTER: ${{ github.event.comment.user.login }}
+      ASSOCIATION: ${{ github.event.comment.author_association }}
+      PR_AUTHOR: ${{ github.event.issue.user.login }}
+    steps:
+      # master, never the PR: only for code/upstream-owner.sh
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          sparse-checkout: code/upstream-owner.sh
+          sparse-checkout-cone-mode: false
+
+      - name: Retest
+        run: |
+          react() { gh api -X POST "repos/$REPO/issues/comments/$COMMENT_ID/reactions" -f content="$1" >/dev/null || true ; }
+          reply() { gh pr comment "$PR" -R "$REPO" --body "$1" ; }
+          lc() { tr 'A-Z' 'a-z' <<<"$1" ; }
+          # Who may: maintainers, the PR's author, and the GitHub account the
+          # AppImage comes from (auto-discovered PRs are opened by a
+          # maintainer, so there the upstream author is not the PR's author).
+          # The URL is read from the PR's data/ files via the API.
+          ALLOWED=false
+          case "$ASSOCIATION" in OWNER|MEMBER|COLLABORATOR) ALLOWED=true ;; esac
+          [ "$(lc "$COMMENTER")" = "$(lc "$PR_AUTHOR")" ] && ALLOWED=true
+          if [ "$ALLOWED" != true ] ; then
+            SHA=$(gh api "repos/$REPO/pulls/$PR" --jq .head.sha)
+            for FILE in $(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' | head -n 5) ; do
+              URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$SHA" 2>/dev/null | head -n 1)
+              OWNER=$(bash code/upstream-owner.sh "$URL")
+              [ -n "$OWNER" ] && [ "$(lc "$OWNER")" = "$(lc "$COMMENTER")" ] && ALLOWED=true
+            done
+          fi
+          if [ "$ALLOWED" != true ] ; then
+            react confused
+            reply "\`/retest\` can be used by the author of this pull request, by the GitHub account the AppImage comes from, and by maintainers."
+            exit 0
+          fi
+          react eyes
+          STATE=$(gh api "repos/$REPO/pulls/$PR" --jq .state)
+          MERGED=$(gh api "repos/$REPO/pulls/$PR" --jq .merged)
+          if [ "$STATE" != open ] && [ "$MERGED" != true ] ; then
+            reply "This pull request is closed; reopen it (or open a new one) to test it again."
+            exit 0
+          fi
+          if [ "$MERGED" = true ] ; then
+            # A merged PR cannot be tested again itself: open a new PR that
+            # touches its entries in data/ (only the trailing newline changes;
+            # only the first line is read), so that Test runs for them. With
+            # the personal token, so that its Test workflow actually starts.
+            if [ -z "$PAT" ] ; then
+              reply "Could not re-test: this pull request is merged, and opening a new one to test it needs the \`SCREENSHOT_UPLOAD_TOKEN\` secret. A maintainer can re-test the entry from the Actions tab instead."
+              exit 1
+            fi
+            NAMES=""
+            for FILE in $(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' | head -n 5) ; do
+              N=${FILE#data/}
+              [[ "$N" =~ ^[A-Za-z0-9_+-][A-Za-z0-9._+-]*$ ]] || continue
+              gh api "repos/$REPO/contents/data/$N?ref=master" --jq .sha >/dev/null 2>&1 && NAMES="$NAMES $N"
+            done
+            NAMES=${NAMES# }
+            if [ -z "$NAMES" ] ; then
+              reply "Could not re-test: the entries of this pull request are no longer in \`data/\` on master."
+              exit 0
+            fi
+            # One open re-test PR per merged PR is enough
+            EXISTING=$(gh api "repos/$REPO/pulls?state=open&per_page=100" --jq ".[] | select(.head.ref | startswith(\"retest/$PR-\")) | .html_url" | head -n 1)
+            if [ -n "$EXISTING" ] ; then
+              reply "A re-test of this pull request's entries is open already: $EXISTING"
+              react rocket
+              exit 0
+            fi
+            BRANCH="retest/$PR-$(date -u +%Y%m%d%H%M%S)"
+            BASE=$(gh api "repos/$REPO/git/ref/heads/master" --jq .object.sha)
+            GH_TOKEN="$PAT" gh api -X POST "repos/$REPO/git/refs" -f ref="refs/heads/$BRANCH" -f sha="$BASE" >/dev/null
+            for N in $NAMES ; do
+              gh api "repos/$REPO/contents/data/$N?ref=master" > file.json
+              jq -r .content file.json | base64 -d > file.txt
+              # Toggle the trailing newline
+              if [ "$(tail -c 1 file.txt | od -An -tx1 | tr -d ' ')" = 0a ] ; then
+                truncate -s -1 file.txt
+              else
+                printf '\n' >> file.txt
+              fi
+              GH_TOKEN="$PAT" gh api -X PUT "repos/$REPO/contents/data/$N" -f branch="$BRANCH" \
+                -f message="Re-test $N (requested in #$PR)" -f content="$(base64 -w 0 file.txt)" \
+                -f sha="$(jq -r .sha file.json)" >/dev/null
+            done
+            URL=$(GH_TOKEN="$PAT" gh api -X POST "repos/$REPO/pulls" -f base=master -f head="$BRANCH" \
+                    -f title="Re-test $(echo "$NAMES" | sed 's/ /, /g')" \
+                    -f body="Re-test of \`data/$(echo "$NAMES" | sed 's/ /\`, \`data\//g')\`, requested with \`/retest\` by @$COMMENTER in #$PR, which is merged already." \
+                    --jq .html_url)
+            reply "This pull request is merged, so its entries are tested again in a new pull request: $URL"
+            react rocket
+            exit 0
+          fi
+          if [ -n "$PAT" ] ; then
+            # Close and reopen: a new Test run with the current workflow files
+            S=$(GH_TOKEN="$PAT" gh api -X PATCH "repos/$REPO/pulls/$PR" -f state=closed --jq .state || true)
+            sleep 3
+            S=$(GH_TOKEN="$PAT" gh api -X PATCH "repos/$REPO/pulls/$PR" -f state=open --jq .state || true)
+            if [ "$S" == open ] ; then
+              echo "Closed and reopened #$PR"
+              react rocket
+              exit 0
+            fi
+            # Never leave the PR closed
+            gh api -X PATCH "repos/$REPO/pulls/$PR" -f state=open >/dev/null || true
+            echo "Could not close and reopen #$PR with SCREENSHOT_UPLOAD_TOKEN; re-running the last test instead"
+          fi
+          # Fallback: re-run the last Test run of the PR's head (old workflow files)
+          SHA=$(gh api "repos/$REPO/pulls/$PR" --jq .head.sha)
+          RUN=$(gh api "repos/$REPO/actions/workflows/test.yml/runs?head_sha=$SHA&event=pull_request&per_page=1" --jq '.workflow_runs[0].id // empty')
+          if [ -z "$RUN" ] ; then
+            reply "Could not re-test: there is no test run for the latest commit of this pull request (the test only runs for pull requests that change files in \`data/\`). Pushing a new commit, or closing and reopening the pull request, starts one."
+            exit 1
+          fi
+          gh api -X POST "repos/$REPO/actions/runs/$RUN/rerun" >/dev/null
+          echo "Re-running run $RUN of #$PR"
+          react rocket

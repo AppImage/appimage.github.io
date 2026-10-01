@@ -19,9 +19,13 @@
 # blanks, and a few legitimately contain "AppImage" (AppImageUpdate) or
 # numbers (Play_2048), so those only warn.
 
+# "Linux" other than in "Anylinux", the name of the project that builds
+# some AppImages (https://github.com/pkgforge-dev/Anylinux-AppImages)
+has_linux() { echo "$1" | sed -E 's/anylinux//Ig' | grep -qi linux ; }
+
 if [ "$1" == "--appimage" ] ; then
   # All AppImages are for Linux, so "Linux" in the name tells nothing
-  if echo "$2" | grep -qi linux ; then
+  if has_linux "$2" ; then
     echo "WARNING: AppImage name '$2': should not contain 'Linux', since all AppImages are for Linux (e.g. 'App-1.0-x86_64.AppImage', not 'App-1.0-linux-x86_64.AppImage')"
   fi
   exit 0
@@ -48,6 +52,13 @@ if [ -z "$DESKTOP" ] ; then
   case "$NAME" in
     *[[:space:]]*) problem "must not contain blanks; use _ instead" ;;
   esac
+  # Characters that break the generated page's web address
+  # (https://appimage.github.io/<name>/): a colon in particular makes Jekyll
+  # read the name as a URL scheme, and the whole site build fails with
+  # "Invalid scheme format" (as data/Open_Battery_Information: did).
+  case "$NAME" in
+    *[:?#%]*) problem "must not contain ':', '?', '#' or '%'; these break the page's web address (https://appimage.github.io/<name>/) and can fail the whole site build. Use _ or omit them" ;;
+  esac
   if echo "$NAME" | grep -qiE '\.appimage$|(^|[-_.])(x86[-_]64|amd64|aarch64|arm64|armhf|i[36]86)([-_.]|$)' ; then
     problem "looks like the name of an AppImage file; use the name of the application instead (e.g. 'App', not 'App-1.0-x86_64.AppImage')"
   fi
@@ -65,6 +76,11 @@ if [ -z "$DESKTOP" ] ; then
   # (architectures such as x86_64 are reported above, not as a version number)
   if echo "$NAME" | sed -E 's/(x86[-_]64|amd64|aarch64|arm64|i[36]86)//Ig' | grep -qE '[0-9]+\.[0-9]+|[-_ ][vV]?[0-9]+([.][0-9]+)*$' ; then
     remark "seems to contain a version number; the name should not change with new versions (if the number is part of the application's name, this is fine)"
+  fi
+  # Dots between words ("Photo.App", usually from an AppImage's file name)
+  # rather than in names like draw.io or snake.js
+  if echo "$NAME" | grep -qE '[A-Za-z0-9]\.[A-Z]' ; then
+    remark "contains a dot between words; use _ between words instead (e.g. '$(echo "$NAME" | sed -E 's/\.([A-Z])/_\1/g')'), unless the dot is part of the application's name"
   fi
   if echo "$NAME" | grep -q '[^A-Za-z0-9._[:space:]-]' ; then
     remark "contains characters other than letters, digits, '.', '_' and '-'; please check that they are part of the application's name"

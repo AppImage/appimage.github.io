@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.diekaiju.subwaysurfers</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Subway Surfers</name>
+  <summary>Subway Surfers with native keyboard controls and PC quality-of-life fixes</summary>
+  <description>
+    <p>
+      Subway Surfers PC Native Controls Patcher injects native keyboard inputs (WASD and Arrow keys), restores missions, ensures null-safe daily words, and packages the game for seamless playback on modern desktop systems.
+    </p>
+    <p>
+      Features include:
+    </p>
+    <ul>
+      <li>Native keyboard controls for jumping, rolling, and lane-switching.</li>
+      <li>Spacebar activation for hoverboards.</li>
+      <li>Crash guards for missions, UI mission helpers, and daily words.</li>
+      <li>Character and stat unlock compatibility.</li>
+      <li>Bundled portable WoW64 Wine environment for plug-and-play Linux execution.</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">subwaysurfers.desktop</launchable>
+  <url type="homepage">https://github.com/diekaiju/Subway-Surfers</url>
+  <url type="bugtracker">https://github.com/diekaiju/Subway-Surfers/issues</url>
+  <provides>
+    <binary>AppRun</binary>
+  </provides>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Subway Surfers PC Gameplay with Native Keyboard Controls</caption>
+      <image>https://raw.githubusercontent.com/diekaiju/Subway-Surfers/main/screenshots/img%20(1).png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Subway Surfers In-game Action</caption>
+      <image>https://raw.githubusercontent.com/diekaiju/Subway-Surfers/main/screenshots/img%20(2).png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Subway Surfers Character and Menu View</caption>
+      <image>https://raw.githubusercontent.com/diekaiju/Subway-Surfers/main/screenshots/img%20(3).png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Game</category>
+    <category>ArcadeGame</category>
+  </categories>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="1.0" date="2026-09-29">
+      <description>
+        <p>Initial AppImage release with portable WoW64 Wine runtime, native keyboard controls, and crash safety patches.</p>
+      </description>
+    </release>
+  </releases>
+</component>

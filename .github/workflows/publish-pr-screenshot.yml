@@ -60,8 +60,35 @@ jobs:
           fi
           echo "number=$PR" >> "$GITHUB_OUTPUT"
 
-      - name: Upload images
+      - name: Detect a predominantly Chinese application
+        id: lang
         if: steps.pr.outputs.number != ''
+        env:
+          PR: ${{ steps.pr.outputs.number }}
+        run: |
+          # If the screenshot or the upstream README is predominantly Chinese, we
+          # invite the author to offer an English default instead of posting the
+          # usual test report (see the "Comment on PR" step).
+          CHINESE=false
+          # Screenshot: the worker OCRs it (code/check-screenshot.sh) and records
+          # "chinese" when it is predominantly Chinese. The artifact is untrusted,
+          # so accept only that exact token.
+          if [ -f out/language.txt ] && [ "$(tr -cd 'a-z' < out/language.txt)" = chinese ] ; then
+            CHINESE=true
+          fi
+          # README: read from the PR's data/ files at the tested commit via the
+          # API (trusted, like the @mention logic below), not from the artifact.
+          if [ "$CHINESE" != true ] ; then
+            for FILE in $(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' | head -n 5) ; do
+              URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$HEAD_SHA" 2>/dev/null | head -n 1)
+              if [ "$(bash code/readme-language.sh "$URL")" = chinese ] ; then CHINESE=true ; break ; fi
+            done
+          fi
+          echo "chinese=$CHINESE" >> "$GITHUB_OUTPUT"
+          echo "Predominantly Chinese: $CHINESE"
+
+      - name: Upload images
+        if: steps.pr.outputs.number != '' && steps.lang.outputs.chinese != 'true'
         env:
           PR: ${{ steps.pr.outputs.number }}
           REPO_ID: ${{ github.event.repository.id }}
@@ -169,8 +196,40 @@ jobs:
         if: steps.pr.outputs.number != ''
         env:
           PR: ${{ steps.pr.outputs.number }}
+          CHINESE: ${{ steps.lang.outputs.chinese }}
         run: |
           MARKER='<!-- appimagehub-test-result -->'
+
+          # Predominantly Chinese application: instead of the usual test report,
+          # post a friendly bilingual invitation to offer an English default, so
+          # the app can be included and reach users internationally. @mention the
+          # GitHub account the AppImage comes from (unless a bot) so they see it.
+          if [ "$CHINESE" = true ] ; then
+            OWNERS=$(gh api --paginate "repos/$REPO/pulls/$PR/files" \
+                       --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' \
+                     | head -n 5 | while read -r FILE ; do
+                         URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$HEAD_SHA" 2>/dev/null | head -n 1)
+                         bash code/upstream-owner.sh "$URL"
+                       done | sort -fu)
+            EARLIER=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
+                        --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .body" || true)
+            MENTIONS=""
+            for OWNER in $OWNERS ; do
+              case "$(echo "$OWNER" | tr 'A-Z' 'a-z')" in *-bot|*\[bot\]) continue ;; esac
+              grep -qiE "@${OWNER}([^A-Za-z0-9-]|$)" <<<"$EARLIER" && continue
+              MENTIONS="$MENTIONS @$OWNER"
+            done
+            {
+              echo "$MARKER"
+              [ -n "$MENTIONS" ] && { echo "${MENTIONS# }" ; echo ; }
+              cat code/chinese-invite.md
+              echo
+              echo "Commit ${HEAD_SHA::8}. [Full log](${RUN_URL})"
+            } > comment.md
+            cat comment.md
+            gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md >/dev/null
+            exit 0
+          fi
           {
             echo "$MARKER"
             if [ "$CONCLUSION" = success ] ; then
@@ -240,6 +299,10 @@ jobs:
               echo '````'
               echo
             fi
+            if [ "$CONCLUSION" != success ] ; then
+              echo "**What next:** once the AppImage is fixed (e.g. in a new release), comment \`/retest\` here to test it again. If it should not be in the catalog after all, close this pull request; an app that is already in the catalog can be removed by a maintainer with \`/remove\`."
+              echo
+            fi
             echo "Commit ${HEAD_SHA::8}. [Full log](${RUN_URL})"
           } > comment.md
 
@@ -254,11 +317,15 @@ jobs:
                          URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$HEAD_SHA" 2>/dev/null | head -n 1)
                          bash code/upstream-owner.sh "$URL"
                        done | sort -fu)
+            EARLIER=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
+                        --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .body" || true)
             MENTIONS=""
             for OWNER in $OWNERS ; do
               LOWER=$(echo "$OWNER" | tr 'A-Z' 'a-z')
               [ "$LOWER" = "$AUTHOR" ] && continue
               case "$LOWER" in *-bot|*\[bot\]) continue ;; esac
+              # Every run posts a new comment: mention each account only once
+              grep -qiE "@${OWNER}([^A-Za-z0-9-]|$)" <<<"$EARLIER" && continue # OWNER: login characters only
               MENTIONS="$MENTIONS @$OWNER"
             done
             if [ -n "$MENTIONS" ] ; then
@@ -269,15 +336,9 @@ jobs:
           fi
           cat comment.md
 
-          # Update our previous comment instead of adding a new one each push
-          ID=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
-                 --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .id" \
-               | tail -n 1)
-          if [ -n "$ID" ] ; then
-            gh api -X PATCH "repos/$REPO/issues/comments/$ID" -F body=@comment.md >/dev/null
-          else
-            gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md >/dev/null
-          fi
+          # A new comment for every test run, so that earlier results stay
+          # readable in the conversation
+          gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md >/dev/null
 
       # Merge PRs that need no maintainer: a returning contributor, one file in
       # data/, test passed with a good screenshot, same owner of the download
@@ -287,14 +348,34 @@ jobs:
         if: steps.pr.outputs.number != '' && vars.AUTO_MERGE != 'false'
         env:
           PR: ${{ steps.pr.outputs.number }}
+          CHINESE: ${{ steps.lang.outputs.chinese }}
         run: |
           skip() { echo "Not auto-merging: $1" ; exit 0 ; }
           [ "$CONCLUSION" = success ] || skip "the test did not pass"
+          [ "$CHINESE" != true ] || skip "predominantly Chinese; invited the author to add an English default"
           gh api "repos/$REPO/pulls/$PR" > pr.json
           [ "$(jq -r .state pr.json)" = open ] || skip "not open"
           [ "$(jq -r .draft pr.json)" = false ] || skip "draft"
           [ "$(jq -r .head.sha pr.json)" = "$HEAD_SHA" ] || skip "newer commits than the tested one"
           case "$(jq -r .head.ref pr.json)" in discover/*) skip "discovered automatically; a maintainer reviews it" ;; esac
+          first_line() { gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$1?ref=$2" | head -n 1 | tr -d '\r' ; }
+          # Re-test PRs (retest.yml opens them for /retest on a merged PR):
+          # the entries are listed already, so a passed test is enough, even
+          # with warnings; but only if they change nothing but existing files
+          # in data/ and keep each file's first line (the download location)
+          if [[ "$(jq -r .head.ref pr.json)" == retest/* ]] && [ "$(jq -r .head.repo.full_name pr.json)" = "$REPO" ] ; then
+            gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | [.filename, .status] | @tsv' > files.tsv
+            [ -s files.tsv ] || skip "re-test PR without changes"
+            while IFS=$'\t' read -r FILE STATUS ; do
+              [[ "$FILE" == data/* ]] && [ "$STATUS" = modified ] || skip "re-test PR changes $FILE ($STATUS), not only existing files in data/"
+              [ "$(first_line "$FILE" "$(jq -r .base.sha pr.json)")" = "$(first_line "$FILE" "$HEAD_SHA")" ] || skip "re-test PR changes the download location in $FILE"
+            done < files.tsv
+            MERGED=$(gh api -X PUT "repos/$REPO/pulls/$PR/merge" -f sha="$HEAD_SHA" -f merge_method=squash --jq .sha) \
+              || skip "GitHub refused the merge"
+            echo "Merged re-test PR #$PR as $MERGED"
+            gh workflow run test.yml -R "$REPO" --ref master -f commit="$MERGED"
+            exit 0
+          fi
           gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name' | grep -qx auto-discovered && skip "discovered automatically; a maintainer reviews it"
           case "$(jq -r .author_association pr.json)" in
             CONTRIBUTOR|COLLABORATOR|MEMBER|OWNER) ;;
@@ -310,7 +391,6 @@ jobs:
           case "$STATUS" in
             added) ;;
             modified)
-              first_line() { gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$1?ref=$2" | head -n 1 | tr -d '\r' ; }
               OLD=$(first_line "$FILE" "$(jq -r .base.sha pr.json)")
               NEW=$(first_line "$FILE" "$HEAD_SHA")
               bash code/check-origin.sh "$OLD" "$NEW" || skip "the download location changes owner"

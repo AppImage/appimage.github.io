@@ -1,6 +1,6 @@
 {
   "name": "local-operator-ui",
-  "version": "0.31.5",
+  "version": "0.31.13",
   "productName": "Local Operator",
   "description": "User interface for AI agent assistants that run Python code safely on your device through an intuitive chat interface. Supports local and cloud LLM models with built-in security features.",
   "main": "./out/main/index.js",

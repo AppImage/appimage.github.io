@@ -102,6 +102,10 @@ HINTS=(
   "-"
   "The window is mostly empty; please check that the screenshot shows the application's main window."
 
+  "^WARNING: The screenshot shows a system tray application"
+  "-"
+  "The application showed no window but an icon in the system tray, so it was tested as a system tray application: the screenshot shows what clicking its icon opened (its window, or its menu with the icon). Please check that it shows the application working."
+
   "^WARNING: The screenshot may show an error message"
   "-"
   "The screenshot may show an error message; please check it."

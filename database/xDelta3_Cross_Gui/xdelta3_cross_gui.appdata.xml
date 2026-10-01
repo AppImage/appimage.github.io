@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>xdelta3_cross_gui</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>Apache-2.0</project_license>
+	<name>xDelta3 Cross Gui</name>
+	<summary>A cross-platform GUI for xDelta3, available for Windows, Linux, and Mac </summary>
+	<description>
+		<p>A cross-platform GUI for creating xDelta3 patches, inspired by Moodkiller/xdelta3-gui-2.0, now available for Windows, Linux, and MacOS. Output patches can also be applied on all three major platforms without requiring the GUI.</p>
+	</description>
+	<launchable type="desktop-id">xdelta3_cross_gui.desktop</launchable>
+	<url type="homepage">https://github.com/dan0v/xdelta3-cross-gui</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/dan0v/xdelta3-cross-gui/master/Extra%20Resources/Progress-demo.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>xdelta3_cross_gui.desktop</id>
+	</provides>
+</component>

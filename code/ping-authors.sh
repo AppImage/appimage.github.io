@@ -117,7 +117,7 @@ UNKNOWN_N=$(grep -cP '\tunknown:' /tmp/ping-authors-results.tsv || true)
 {
   echo "## Ping authors: entry check"
   echo
-  echo "Checked $COUNT entries: $OK_N ok, $FIX_N fixable (AppImage found in the repository), $DEAD_N dead, $UNKNOWN_N unknown (not pinged)."
+  echo "Checked $COUNT entries: $OK_N ok, $FIX_N fixable (AppImage found in the repository or download directory), $DEAD_N dead, $UNKNOWN_N unknown (not pinged)."
   [ -z "$STOPPED" ] || { echo ; echo "$STOPPED" ; }
   echo
   if [ "$DEAD_N" -gt 0 ] ; then
@@ -151,7 +151,7 @@ done | head -n "$MAX_FIXES" > /tmp/ping-authors-fixed.tsv
 if [ -s /tmp/ping-authors-fixed.tsv ] ; then
   FIXED_N=$(wc -l < /tmp/ping-authors-fixed.tsv)
   {
-    echo "The AppImages these entries link to are gone, but the releases of their GitHub repositories have one (found by \`code/find-appimage.sh\`), so the entries can point to the repository and follow new releases:"
+    echo "The AppImages these entries link to are gone, but the releases of their repositories, or the download directory above them (\`code/fetch-listing.sh\`), have one (found by \`code/find-appimage.sh\`), so the entries can point there and follow new versions:"
     echo
     echo "| Entry | Was | Now |"
     echo "| --- | --- | --- |"
@@ -181,12 +181,13 @@ if [ -s /tmp/ping-authors-fixed.tsv ] ; then
     git config user.name "GitHub Actions"
     git config user.email "actions@users.noreply.github.com"
     git add data/
-    git commit -q -m "Point $FIXED_N entries to their GitHub repository
+    git commit -q -m "Point $FIXED_N entries to where new versions appear
 
-The AppImages they linked to are gone, but the repositories' releases have
-one (found by code/find-appimage.sh); by ping-authors.yml."
+The AppImages they linked to are gone, but their repositories' releases, or
+the download directory above them, have one (found by
+code/find-appimage.sh); by ping-authors.yml."
     git push -q origin "$BRANCH"
-    PR_URL=$(api POST "repos/$REPO/pulls" -d "$(jq -n --arg h "$BRANCH" --arg t "Point $FIXED_N entries to their GitHub repository" --rawfile b /tmp/ping-authors-pr.md \
+    PR_URL=$(api POST "repos/$REPO/pulls" -d "$(jq -n --arg h "$BRANCH" --arg t "Point $FIXED_N entries to where new versions appear" --rawfile b /tmp/ping-authors-pr.md \
       '{title:$t, head:$h, base:"master", body:$b}')" | jq -r '.html_url // .message')
     echo "Pull request: $PR_URL" | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
     git checkout -q -

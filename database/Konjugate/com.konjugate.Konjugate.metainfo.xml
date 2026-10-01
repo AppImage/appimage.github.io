@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright © 2026 Zenin Easa Panthakkalakath -->
+<component type="desktop-application">
+  <id>com.konjugate.Konjugate</id>
+  <name>Konjugate</name>
+  <summary>Graph-native simulation engine for engineering and digital twins</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MPL-2.0</project_license>
+  <developer id="com.konjugate">
+    <name>Zenin Easa Panthakkalakath</name>
+  </developer>
+  <url type="homepage">https://github.com/zenineasa/Konjugate</url>
+  <url type="bugtracker">https://github.com/zenineasa/Konjugate/issues</url>
+  <launchable type="desktop-id">com.konjugate.Konjugate.desktop</launchable>
+
+  <description>
+    <p>
+      Konjugate is an open-source graph-native simulation engine for building composable
+      engineering simulations and digital twins.
+    </p>
+    <p>
+      Rather than requiring users to manually assemble large system-level formulations, Konjugate
+      represents systems as graphs of interconnected components. Components define their states
+      and properties, while relationships define the equations governing how quantities are
+      transported and transformed between them.
+    </p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Konjugate's graph-based model editor</caption>
+      <image>https://raw.githubusercontent.com/zenineasa/Konjugate/v0.7.3/assets/ForReadme/konjugateAppScreenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Science</category>
+    <category>Engineering</category>
+  </categories>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="0.7.3" date="2026-08-28" />
+  </releases>
+</component>

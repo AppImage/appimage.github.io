@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.pkhex.avalonia</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>PKHeX-Avalonia</name>
+  <summary>Edit Pokémon save files on Linux, Windows and macOS</summary>
+  <description>
+    <p>PKHeX-Avalonia is a cross-platform Pokémon save file editor built with Avalonia and the upstream PKHeX core.</p>
+    <p>Inspect and edit Pokémon, manage boxes and party slots, check legality, and use game-specific trainer, inventory and save editors. Back up your original save before editing.</p>
+  </description>
+  <launchable type="desktop-id">io.pkhex.avalonia.desktop</launchable>
+  <developer id="ch.realgar">
+    <name>realgarit</name>
+  </developer>
+  <url type="homepage">https://github.com/realgarit/PKHeX-Avalonia</url>
+  <url type="bugtracker">https://github.com/realgarit/PKHeX-Avalonia/issues</url>
+  <url type="vcs-browser">https://github.com/realgarit/PKHeX-Avalonia</url>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Pokémon editor with a legal Pokémon Legends: Z-A save in the dark theme</caption>
+      <image type="source" width="900" height="600">https://raw.githubusercontent.com/realgarit/PKHeX-Avalonia/0ba6e659f578ac6e5948a0d14798f9daadce4705/docs/screenshots/pokemon-editor-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Pokémon editor with the same save in the light theme</caption>
+      <image type="source" width="900" height="600">https://raw.githubusercontent.com/realgarit/PKHeX-Avalonia/0ba6e659f578ac6e5948a0d14798f9daadce4705/docs/screenshots/pokemon-editor-light.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.58.1" date="2026-09-30" />
+  </releases>
+  <content_rating type="oars-1.1" />
+</component>

@@ -1,0 +1,28 @@
+{
+  "name": "containerlab-desktop",
+  "version": "0.2.2",
+  "private": true,
+  "description": "Manage and inspect containerlab topologies from a desktop application.",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "srl-labs",
+    "email": "containerlab@containerlab.dev",
+    "url": "https://containerlab.dev/"
+  },
+  "homepage": "https://containerlab.dev/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srl-labs/containerlab-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/srl-labs/containerlab-app/issues"
+  },
+  "type": "module",
+  "main": "dist/main.cjs",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "@srl-labs/containerlab-app-server": "0.2.2"
+  }
+}
