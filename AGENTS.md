@@ -257,8 +257,8 @@ GitHub Pages (Jekyll) from this repository.
    `auto-discovered`/`opt-out` PR (any state); the rest is checked like in
    `discover-apps.yml` (`find-appimage.sh`: exactly one x86_64 AppImage, in a
    release less than 2 years old; `pick-name.sh`; `check-name.sh`). pkgforge-dev
-   builds other projects' applications, so every PR gets `auto-discovered`,
-   `not-upstream` and `repackaged`: a maintainer decides. It keeps no state
+   builds other projects' applications, so every PR gets `auto-discovered`
+   and `repackaged` (not `not-upstream`: `repackaged` already says it): a maintainer decides. It keeps no state
    (repositories without a usable AppImage are checked again on the next run).
 
    `.github/workflows/discover-apphub.yml` (`workflow_dispatch` only; inputs

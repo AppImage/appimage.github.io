@@ -22,7 +22,8 @@
 # (STRICT=true); the name is picked by pick-name.sh.
 #
 # pkgforge-dev builds other projects' applications, so every proposal gets the
-# labels auto-discovered, not-upstream and repackaged, and says so: a
+# labels auto-discovered and repackaged (which already says it is not
+# upstream, so no not-upstream label), and says so: a
 # maintainer decides whether the catalog should list it, or rather the
 # application's own AppImage (if there is one).
 #
@@ -234,7 +235,7 @@ $QUOTE
 - AppImage asset: \`$(sanitize "$ASSET_NAME")\`
 - License: ${LICENSE:-unknown}
 
-**Not from the application's authors:** $ORG builds AppImages of other projects' applications (labels \`not-upstream\` and \`repackaged\`). Please check whether the catalog should list this AppImage, or rather one from the application's own project, if there is one.
+**Not from the application's authors:** $ORG builds AppImages of other projects' applications (label \`repackaged\`). Please check whether the catalog should list this AppImage, or rather one from the application's own project, if there is one.
 
 Found by \`.github/workflows/discover-pkgforge.yml\`, which looks for the
 AppImages of $ORG that are not in the catalog yet. This entry was not tested
@@ -268,7 +269,6 @@ Needs a maintainer's review."
     || git push -q origin "$BRANCH"
 
   ensure_label "$LABEL" c5def5 "Proposed automatically; needs a maintainer review"
-  ensure_label not-upstream d93f0b "The AppImage may not come from the application's own authors (unofficial, repackaged, ...)"
   ensure_label repackaged d4c5f9 "Built by a third party from someone else's application (an unofficial AppImage, repackaged)"
   PR_RESP=$(API_TOKEN="$PR_TOKEN" gh_api POST "repos/$REPO/pulls" \
     -d "$(jq -n --arg t "Add $NAME" --arg h "$BRANCH" --arg b "$BODY" '{title:$t, head:$h, base:"master", body:$b}')")
@@ -276,7 +276,7 @@ Needs a maintainer's review."
   PR_NUMBER=$(jq -r '.number // empty' <<<"$PR_RESP")
   if [ -n "$PR_NUMBER" ] ; then
     API_TOKEN="$PR_TOKEN" gh_api POST "repos/$REPO/issues/$PR_NUMBER/labels" \
-      -d "$(jq -n --arg l "$LABEL" '{labels:[$l, "not-upstream", "repackaged"]}')" >/dev/null
+      -d "$(jq -n --arg l "$LABEL" '{labels:[$l, "repackaged"]}')" >/dev/null
     echo "    Opened $PR_URL for $NAME"
     OPENED=$((OPENED + 1))
     KNOWN[$NAME_KEY]=1
