@@ -288,6 +288,24 @@ jobs:
                 echo
               fi
             fi
+            if [ -s out/notes.txt ] ; then
+              # Untrusted: a line counts only if it is exactly a note that
+              # code/check-name.sh (from master) writes for that file name
+              NOTES=""
+              while IFS= read -r LINE ; do
+                N=$(sed -nE "s/^NOTE: File name '([A-Za-z0-9._+-]{1,100})': .*/\1/p" <<<"$LINE")
+                [ -n "$N" ] || continue
+                for KIND in lowercase terminal ; do
+                  TEXT=$(bash code/check-name.sh --note-text "$KIND" "$N")
+                  [ "$LINE" = "NOTE: $TEXT" ] && NOTES="$NOTES- $TEXT"$'\n'
+                done
+              done < <(head -n 5 out/notes.txt)
+              if [ -n "$NOTES" ] ; then
+                echo "**Notes:**"
+                echo
+                printf '%s\n' "$NOTES"
+              fi
+            fi
             if [ -s out/hints.md ] ; then
               # Hints are fixed strings from code/diagnose.sh, but the artifact
               # is untrusted, so only accept lines we know

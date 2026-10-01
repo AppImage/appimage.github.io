@@ -46,6 +46,11 @@ GitHub Pages (Jekyll) from this repository.
    - `code/check-name.sh`: rules for the name of the file in `data/` (errors
      only for files a PR adds, `STRICT=true`; warnings otherwise), and
      remarks about the AppImage's file name;
+     it also prints a `NOTE:` (shown under "Notes" in the test result, not a
+     warning) for an all-lowercase name without `Terminal=true` in the desktop file,
+     or a name with capitals with `Terminal=true`: all-lowercase names are typically
+     command line tools; the publish workflow only shows a note that
+     `check-name.sh --note-text` generates exactly;
    - `code/check-names-agree.sh`: a warning when the name of the repository, the
      AppImage's name and the README's headline (`code/fetch-readme.sh`) disagree
      within a tolerance (equal, one contains the other, or >= 80 % similar, ignoring
