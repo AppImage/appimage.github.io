@@ -1,0 +1,68 @@
+---
+layout: app
+
+permalink: /i3X_Explorer/
+description: Cross-platform desktop application for exploring and interacting with I3X (Industrial Information Interface eXchange) API servers. Browse namespaces, object types, and instances. Monitor real-time values via subscriptions.
+license: MIT
+
+icons:
+  - i3X_Explorer/icons/128x128/i3x-explorer.png
+
+screenshots:
+  - i3X_Explorer/screenshot.png
+
+authors:
+  - name: ace-technologies-inc
+    url: https://github.com/ace-technologies-inc
+
+links:
+  - type: GitHub
+    url: ace-technologies-inc/i3X-Explorer
+  - type: Download
+    url: https://github.com/ace-technologies-inc/i3X-Explorer/releases
+
+desktop:
+  Desktop Entry:
+    Name: i3X Explorer
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: i3x-explorer
+    StartupWMClass: i3X Explorer
+    X-AppImage-Version: 1.0.0
+    Comment: Cross-platform desktop application for exploring and interacting with I3X
+      (Industrial Information Interface eXchange) API servers. Browse namespaces, object
+      types, and instances. Monitor real-time values via subscriptions.
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: MIT
+
+electron:
+  main: dist-electron/main.js
+  type: module
+  engines:
+    node: ">=18.0.0"
+  author:
+    name: ACE Technologies
+    email: info@acetechnologies.net
+  license: MIT
+  homepage: https://github.com/cesmii/I3X-Explorer
+  repository:
+    type: git
+    url: https://github.com/cesmii/I3X-Explorer.git
+  dependencies:
+    clsx: "^2.1.0"
+    react: "^18.2.0"
+    react-dom: "^18.2.0"
+    zustand: "^4.4.7"
+---

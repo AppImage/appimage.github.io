@@ -1,0 +1,12 @@
+{
+  "name": "hearthlight",
+  "productName": "Hearthlight",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Hearthlight — a cozy pixel-art adventure, with Party Mode for phones on your Wi-Fi",
+  "type": "module",
+  "main": "main.mjs",
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

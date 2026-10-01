@@ -1,0 +1,18 @@
+{
+  "name": "xppm-neo-seoul",
+  "version": "1.6.4",
+  "description": "xPPM neo-Seoul: Information Delivery Manual authoring tool based on the eXtended Process to Product Modeling method. Cross-platform IDM authoring tool for AEC industry - ISO 29481-1 & ISO 29481-3 compliant",
+  "main": "electron/main.js",
+  "author": "Building Informatics Group (BIG), Yonsei University",
+  "license": "GPL-3.0-or-later",
+  "homepage": "http://big.yonsei.ac.kr",
+  "dependencies": {
+    "bpmn-js": "^18.10.1",
+    "jszip": "^3.10.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "saxon-js": "^2.7.0",
+    "uuid": "^11.0.0",
+    "xslt3": "^2.7.0"
+  }
+}

@@ -1,11 +1,11 @@
 [Desktop Entry]
 Name=Katacomb VPN
-Exec=AppRun --no-sandbox %U
+Exec=AppRun %U
 Terminal=false
 Type=Application
 Icon=katacomb-vpn
 StartupWMClass=Katacomb VPN
-X-AppImage-Version=1.10.0
+X-AppImage-Version=1.11.1
 Comment=Katacomb VPN Desktop Client
 Categories=Network;
 
@@ -16,7 +16,7 @@ X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runne
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
 X-AppImage-Libc=host
-X-AppImage-Runtime=dynamic
+X-AppImage-Runtime=static
 X-AppImage-Self-Contained=false
 X-AppImage-Glibc-Required=GLIBC_2.34
 X-AppImage-Payload-License=GPL-3.0
