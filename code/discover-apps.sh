@@ -627,9 +627,9 @@ while read -r FULLNAME ; do
   ASSET_NAME=$(basename "$ASSET_URL")
 
   # Not from the application's own authors? ("unofficial", "not affiliated",
-  # "repackaged", ...) in the repository or AppImage name, the description
-  # or the README (first 50 KB): then label the PR not-upstream
-  UPSTREAM_PATTERN='(^|[^a-z])(unofficial|not (an )?official|non-?official|not affiliated|unaffiliated|not endorsed|community[- ](maintained|built|build|package|packaged)|third[- ]party (build|package|appimage)|repackag(ed|e|ing))([^a-z]|$)'
+  # "repackaged", ... with the word AppImage within three words of it, see
+  # code/not-upstream-phrase.sh) in the repository or AppImage name, the
+  # description or the README (first 50 KB): then label the PR not-upstream
   NOT_UPSTREAM=""
   # A fork whose own source publishes no AppImage is not the application's
   if [ "$(jq -r '.fork // false' <<<"$META")" == true ] ; then
@@ -637,7 +637,7 @@ while read -r FULLNAME ; do
   fi
   for SRC in "repository name:$RNAME" "AppImage name:$ASSET_URL" "description:$DESC" "README:$README" ; do
     [ -n "$NOT_UPSTREAM" ] && break
-    PHRASE=$(grep -oiE -m 1 "$UPSTREAM_PATTERN" <<<"${SRC#*:}" | head -n 1 | sed -E 's/^[^a-zA-Z]+//; s/[^a-zA-Z]+$//' | tr -cd 'A-Za-z -')
+    PHRASE=$(bash "$SCRIPT_DIR/not-upstream-phrase.sh" <<<"${SRC#*:}" | head -n 1 | tr -cd 'A-Za-z -' || true)
     if [ -n "$PHRASE" ] ; then
       NOT_UPSTREAM="the ${SRC%%:*} says \"$PHRASE\""
       echo "    not upstream? $NOT_UPSTREAM"

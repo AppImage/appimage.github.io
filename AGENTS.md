@@ -229,7 +229,9 @@ GitHub Pages (Jekyll) from this repository.
    App is …" gives `Photo_App`); an app already in `data/` in any spelling is
    skipped. If the repository or AppImage name, the description or the README
    (first 50 KB) says "unofficial", "not official", "not affiliated",
-   "repackaged" or the like, the PR also gets the `not-upstream` label and a
+   "repackaged" or the like with the word AppImage or AppImages within three
+   words of it, in the same sentence (`code/not-upstream-phrase.sh`; "not
+   affiliated with <the maker of the hardware>" alone is no reason), the PR also gets the `not-upstream` label and a
    note naming the phrase and where it was found; every repository checked is recorded
    in the state file with its outcome, so it is not checked again for 90
    days. The state file (`discover-state.tsv`, with the cursor on its first
