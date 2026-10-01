@@ -278,7 +278,7 @@ jobs:
             fi
             if [ -s out/names.txt ] ; then
               # Untrusted: only lines of the form the test writes, in a code block
-              NAMES=$(grep -E "^(ERROR|WARNING): (File name|AppImage name) '" out/names.txt | head -n 10 | cut -c1-300 | sed 's/````*/```/g' || true)
+              NAMES=$(grep -E "^(ERROR|WARNING): ((File name|AppImage name) '|The names of the .* differ: )" out/names.txt | head -n 10 | cut -c1-300 | sed 's/````*/```/g' || true)
               if [ -n "$NAMES" ] ; then
                 echo "**Names:**"
                 echo
@@ -286,6 +286,24 @@ jobs:
                 echo "$NAMES"
                 echo '````'
                 echo
+              fi
+            fi
+            if [ -s out/notes.txt ] ; then
+              # Untrusted: a line counts only if it is exactly a note that
+              # code/check-name.sh (from master) writes for that file name
+              NOTES=""
+              while IFS= read -r LINE ; do
+                N=$(sed -nE "s/^NOTE: File name '([A-Za-z0-9._+-]{1,100})': .*/\1/p" <<<"$LINE")
+                [ -n "$N" ] || continue
+                for KIND in lowercase terminal ; do
+                  TEXT=$(bash code/check-name.sh --note-text "$KIND" "$N")
+                  [ "$LINE" = "NOTE: $TEXT" ] && NOTES="$NOTES- $TEXT"$'\n'
+                done
+              done < <(head -n 5 out/notes.txt)
+              if [ -n "$NOTES" ] ; then
+                echo "**Notes:**"
+                echo
+                printf '%s\n' "$NOTES"
               fi
             fi
             if [ -s out/hints.md ] ; then

@@ -10,7 +10,11 @@
 #
 # On a merged PR it opens a new PR instead, which changes only the trailing
 # newline of the merged PR's files in data/ (only their first line is read),
-# so that Test runs for those entries again.
+# so that Test runs for those entries again. The merged PR then points to the
+# new one and is locked, so that further comments go to the new PR; and while a
+# re-test of the same merged PR is open, or was started in the last 30 minutes, no
+# further PR is opened (re-test PRs merge within minutes, so asking again would
+# only repeat the same test).
 #
 # Nothing from the PR is checked out or run here; only the API is used.
 name: Retest
@@ -62,6 +66,9 @@ jobs:
           react() { gh api -X POST "repos/$REPO/issues/comments/$COMMENT_ID/reactions" -f content="$1" >/dev/null || true ; }
           reply() { gh pr comment "$PR" -R "$REPO" --body "$1" ; }
           lc() { tr 'A-Z' 'a-z' <<<"$1" ; }
+          # A merged pull request is finished: lock it, so that further comments
+          # (e.g. repeated /retest) go to the re-test pull request it points to
+          lock_old() { gh api -X PUT "repos/$REPO/issues/$PR/lock" -f lock_reason=resolved >/dev/null 2>&1 || true ; }
           # Who may: maintainers, the PR's author, and the GitHub account the
           # AppImage comes from (auto-discovered PRs are opened by a
           # maintainer, so there the upstream author is not the PR's author).
@@ -109,10 +116,14 @@ jobs:
               reply "Could not re-test: the entries of this pull request are no longer in \`data/\` on master."
               exit 0
             fi
-            # One open re-test PR per merged PR is enough
-            EXISTING=$(gh api "repos/$REPO/pulls?state=open&per_page=100" --jq ".[] | select(.head.ref | startswith(\"retest/$PR-\")) | .html_url" | head -n 1)
+            # One re-test PR per merged PR at a time: while one is open, or was
+            # started in the last 30 minutes (they merge within minutes, and a
+            # new one would test the same thing), point to it instead
+            EXISTING=$(gh api "repos/$REPO/pulls?state=all&per_page=100" \
+              --jq ".[] | select(.head.ref | startswith(\"retest/$PR-\")) | select(.state == \"open\" or ((.created_at | fromdateiso8601) > (now - 1800))) | .html_url" | head -n 1)
             if [ -n "$EXISTING" ] ; then
-              reply "A re-test of this pull request's entries is open already: $EXISTING"
+              reply "A re-test of this pull request's entries was started already: $EXISTING. Please follow it there; asking again right away would only repeat the same test."
+              lock_old
               react rocket
               exit 0
             fi
@@ -147,7 +158,8 @@ jobs:
                     -f title="Re-test $(echo "$NAMES" | sed 's/ /, /g')" \
                     -f body="Re-test of \`data/$(echo "$NAMES" | sed 's/ /\`, \`data\//g')\`, requested with \`/retest\` by @$COMMENTER in #$PR, which is merged already.$CHANGES" \
                     --jq .html_url)
-            reply "This pull request is merged, so its entries are tested again in a new pull request: $URL"
+            reply "This pull request is merged, so its entries are tested again in a new pull request: $URL. Please follow the test there (comment \`/retest\` there to test again); this conversation is locked now."
+            lock_old
             react rocket
             exit 0
           fi

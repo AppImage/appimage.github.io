@@ -46,6 +46,15 @@ GitHub Pages (Jekyll) from this repository.
    - `code/check-name.sh`: rules for the name of the file in `data/` (errors
      only for files a PR adds, `STRICT=true`; warnings otherwise), and
      remarks about the AppImage's file name;
+     it also prints a `NOTE:` (shown under "Notes" in the test result, not a
+     warning) for an all-lowercase name without `Terminal=true` in the desktop file,
+     or a name with capitals with `Terminal=true`: all-lowercase names are typically
+     command line tools; the publish workflow only shows a note that
+     `check-name.sh --note-text` generates exactly;
+   - `code/check-names-agree.sh`: a warning when the name of the repository, the
+     AppImage's name and the README's headline (`code/fetch-readme.sh`) disagree
+     within a tolerance (equal, one contains the other, or >= 80 % similar, ignoring
+     case and punctuation); shown under "Names" and "Warnings" in the test result;
    - runs the application in firejail **without network**, waits 30 s, takes a
      screenshot of the active window;
    - system tray applications: only if the application showed no window (or
@@ -116,6 +125,11 @@ GitHub Pages (Jekyll) from this repository.
    the workflow posts a neutral informational note instead — no warning, no
    `manual-check-needed` label. This does not depend on the PR's own test run,
    which a PR could alter.
+   The same workflow also sets `manual-check-needed` (with its own comment,
+   `<!-- appimagehub-name-check -->`) on a PR that adds or renames to a file in
+   `data/` whose name has more than two hyphens (often a version or file name
+   instead of the application's name); withdrawn when a later push fixes it, and
+   the label stays while either check flags the PR.
 
 4. `.github/workflows/ping-authors.yml` (monthly `schedule`, a real run, and
    `workflow_dispatch` with `dry_run` (default true), `max_issues`
