@@ -418,8 +418,8 @@ GitHub Pages (Jekyll) from this repository.
   release becomes the repository URL, else the trailing newline is toggled), with
   `SCREENSHOT_UPLOAD_TOKEN` so that Test starts. A passing one is auto-merged like
   any re-test PR, which refreshes `database/`; a failing one stays open with the
-  test result (and the upstream account is mentioned). Entries that an open PR
-  changes, or that this script re-tested in the last 60 days (any state), and
+  test result (and the upstream account is mentioned). Entries named in the title of an
+  open PR (not their files: thousands of open PRs, 1000 API requests an hour), or that this script re-tested in the last 60 days (any state), and
   entries without a file in `data/`, are skipped.
 - `/appstream` (maintainers, or the author of the issue or PR):
   `.github/workflows/appstream-help.yml` posts `code/appstream-help.md` from

@@ -16,8 +16,10 @@
 #
 # The oldest entries come first. One pull request per entry, because the Test
 # workflow stops at the first failing entry of a pull request. Skipped: entries
-# without a file in data/; entries an open pull request changes in data/ or
-# database/ (it will test them); entries re-tested by a pull request of this
+# without a file in data/; entries whose name is in the title of an open
+# pull request (its changes would collide; the title is read instead of the files
+# of each open pull request: there are thousands, and the token may make only
+# 1000 requests an hour); entries re-tested by a pull request of this
 # script in the last 60 days (any state), so that a failed test does not
 # open a new pull request on every run.
 #
@@ -67,16 +69,30 @@ git log --format='@%ct' --name-only -- database \
 echo "$(wc -l < "$WORKDIR/ages.tsv") entries in database/" >&2
 
 # --- names to leave alone ---------------------------------------------------
+# Few API calls on purpose: the repository has thousands of open pull requests,
+# and the workflow's token may make 1000 requests an hour.
 : > "$WORKDIR/skip.txt"
-# Re-tested by this script lately (any state)
-gh api --paginate "repos/$REPO/pulls?state=all&per_page=100" \
-  --jq ".[] | select(.head.ref | startswith(\"retest/stale-\")) | select((.created_at | fromdateiso8601) > (now - 60 * 86400)) | .head.ref" 2>/dev/null \
-  | sed -E 's|^retest/stale-||; s|-[0-9]{14}$||' >> "$WORKDIR/skip.txt"
-# Changed by an open pull request
-for NUM in $(gh api --paginate "repos/$REPO/pulls?state=open&per_page=100" --jq '.[].number' 2>/dev/null) ; do
-  gh api --paginate "repos/$REPO/pulls/$NUM/files?per_page=100" --jq '.[].filename' 2>/dev/null \
-    | sed -nE 's|^data/([^/]+)$|\1|p; s|^database/([^/]+)/.*|\1|p' >> "$WORKDIR/skip.txt"
+# Re-tested by this script lately (any state): newest pull requests first, until
+# they are older than 60 days
+for PAGE in 1 2 3 4 5 6 7 8 9 10 ; do
+  gh api "repos/$REPO/pulls?state=all&sort=created&direction=desc&per_page=100&page=$PAGE" > "$WORKDIR/prs.json" 2>/dev/null || break
+  [ "$(jq 'length' "$WORKDIR/prs.json" 2>/dev/null || echo 0)" -gt 0 ] || break
+  jq -r '.[] | select(.head.ref | startswith("retest/stale-")) | .head.ref' "$WORKDIR/prs.json" \
+    | sed -E 's|^retest/stale-||; s|-[0-9]{14}$||' >> "$WORKDIR/skip.txt"
+  jq -e '[.[] | select((.created_at | fromdateiso8601) < (now - 60 * 86400))] | length > 0' "$WORKDIR/prs.json" >/dev/null && break
 done
+# Named in the title of an open pull request ("Add NAME", "Update NAME"; its
+# changes would collide with the re-test): compared by letters and digits
+: > "$WORKDIR/open-titles.txt"
+PAGE=1
+while [ "$PAGE" -le 100 ] ; do
+  gh api "repos/$REPO/pulls?state=open&per_page=100&page=$PAGE" --jq '.[].title' 2>/dev/null > "$WORKDIR/titles.txt" || break
+  [ -s "$WORKDIR/titles.txt" ] || break
+  cat "$WORKDIR/titles.txt" >> "$WORKDIR/open-titles.txt"
+  PAGE=$((PAGE + 1))
+done
+tr 'A-Z' 'a-z' < "$WORKDIR/open-titles.txt" | tr -cd 'a-z0-9\n' > "$WORKDIR/open-titles.key"
+echo "$(wc -l < "$WORKDIR/open-titles.key") open pull requests read" >&2
 sort -u "$WORKDIR/skip.txt" -o "$WORKDIR/skip.txt"
 
 OPENED=0 ; STALE=0 ; N_NODATA=0 ; N_SKIP=0
@@ -89,6 +105,8 @@ while IFS=$'\t' read -r T N ; do
   [ -f "data/$N" ] || { N_NODATA=$((N_NODATA + 1)) ; continue ; }
   STALE=$((STALE + 1))
   if grep -qxF -- "$N" "$WORKDIR/skip.txt" ; then N_SKIP=$((N_SKIP + 1)) ; continue ; fi
+  KEY=$(tr 'A-Z' 'a-z' <<<"$N" | tr -cd 'a-z0-9')
+  if [ -n "$KEY" ] && grep -qF -- "$KEY" "$WORKDIR/open-titles.key" ; then N_SKIP=$((N_SKIP + 1)) ; continue ; fi
   DAY=$(date -u -d "@$T" +%Y-%m-%d)
   if [ "$DRY_RUN" = true ] ; then
     echo "Would re-test $N (database/$N from $DAY)"
@@ -137,7 +155,7 @@ done < "$WORKDIR/ages.tsv"
 {
   echo "## Re-test stale entries"
   echo
-  echo "Entries whose database/ is older than $DAYS days: $STALE (oldest first), $N_SKIP of them left alone (an open pull request, or re-tested in the last 60 days); $N_NODATA without a file in data/."
+  echo "Entries whose database/ is older than $DAYS days: $STALE (oldest first), $N_SKIP of them left alone (an open pull request's title, or re-tested in the last 60 days); $N_NODATA without a file in data/."
   if [ "$DRY_RUN" = true ] ; then echo "Pull requests that would be opened: $OPENED (limit $LIMIT)" ; else echo "Pull requests opened: $OPENED (limit $LIMIT)" ; fi
   [ "$DRY_RUN" = true ] && echo && echo "(dry run: nothing was pushed)"
 } | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
