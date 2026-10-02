@@ -39,7 +39,8 @@
 # or a repository with the same name linked from its description, homepage
 # or README, or found by name with more stars), that one, the application's
 # own, is proposed instead (unless it is known already); a fork whose source
-# publishes no AppImage gets the not-upstream label. Every repository checked
+# publishes no AppImage gets the not-upstream label (repackaged instead, if the
+# phrase says so: unofficial, repackaged, third party, community build). Every repository checked
 # is recorded in the state file with an outcome (added, no-appimage,
 # ambiguous, name, old, copy; stars for fewer than 5 stars).
 #
@@ -627,20 +628,24 @@ while read -r FULLNAME ; do
   ASSET_NAME=$(basename "$ASSET_URL")
 
   # Not from the application's own authors? ("unofficial", "not affiliated",
-  # "repackaged", ...) in the repository or AppImage name, the description
-  # or the README (first 50 KB): then label the PR not-upstream
-  UPSTREAM_PATTERN='(^|[^a-z])(unofficial|not (an )?official|non-?official|not affiliated|unaffiliated|not endorsed|community[- ](maintained|built|build|package|packaged)|third[- ]party (build|package|appimage)|repackag(ed|e|ing))([^a-z]|$)'
+  # "repackaged", ... with the word AppImage within three words of it, see
+  # code/not-upstream-phrase.sh) in the repository or AppImage name, the
+  # description or the README (first 50 KB): then label the PR not-upstream
   NOT_UPSTREAM=""
   # A fork whose own source publishes no AppImage is not the application's
   if [ "$(jq -r '.fork // false' <<<"$META")" == true ] ; then
     NOT_UPSTREAM="it is a fork of $(sanitize "$(jq -r '.source.full_name // .parent.full_name // "another repository"' <<<"$META")" | tr -cd 'A-Za-z0-9._/ -'), which publishes no AppImage"
   fi
+  # "Unofficial AppImage of X", "repackaged", "third party AppImage", "community
+  # build": built by someone else from the application: also label it repackaged
+  REPACKAGED=""
   for SRC in "repository name:$RNAME" "AppImage name:$ASSET_URL" "description:$DESC" "README:$README" ; do
     [ -n "$NOT_UPSTREAM" ] && break
-    PHRASE=$(grep -oiE -m 1 "$UPSTREAM_PATTERN" <<<"${SRC#*:}" | head -n 1 | sed -E 's/^[^a-zA-Z]+//; s/[^a-zA-Z]+$//' | tr -cd 'A-Za-z -')
+    PHRASE=$(bash "$SCRIPT_DIR/not-upstream-phrase.sh" <<<"${SRC#*:}" | head -n 1 | tr -cd 'A-Za-z -' || true)
     if [ -n "$PHRASE" ] ; then
       NOT_UPSTREAM="the ${SRC%%:*} says \"$PHRASE\""
       echo "    not upstream? $NOT_UPSTREAM"
+      grep -qiE 'unofficial|non-?official|repackag|third party|community' <<<"$PHRASE" && REPACKAGED=1
       break
     fi
   done
@@ -669,10 +674,12 @@ while read -r FULLNAME ; do
   QUOTE=$(sed 's/^/> /' <<<"$SDESC")
 
   NOTE=""
+  NU_LABEL=not-upstream
+  [ -n "$REPACKAGED" ] && NU_LABEL=repackaged
   if [ -n "$NOT_UPSTREAM" ] ; then
     NOTE="
 
-**Possibly not from the application's authors:** $NOT_UPSTREAM (label \`not-upstream\`). Please check whether the catalog should list this AppImage, or rather one from the application's own project."
+**Possibly not from the application's authors:** $NOT_UPSTREAM (label \`$NU_LABEL\`). Please check whether the catalog should list this AppImage, or rather one from the application's own project."
   fi
   if [ -n "$SUSPICIOUS_STARS" ] ; then
     NOTE="$NOTE
@@ -744,10 +751,16 @@ discover-apps.yml. Needs a maintainer's review."
   PR_NUMBER=$(jq -r '.number // empty' <<<"$PR_RESP")
   if [ -n "$PR_NUMBER" ] ; then
     LABELS=("$LABEL")
-    if [ -n "$NOT_UPSTREAM" ] ; then
+    # repackaged already says it: no not-upstream label besides it
+    if [ -n "$NOT_UPSTREAM" ] && [ -z "$REPACKAGED" ] ; then
       LABELS+=(not-upstream)
       API_TOKEN="$PR_TOKEN" api GET "repos/$REPO/labels/not-upstream" >/dev/null 2>&1 || \
         API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/labels" -d "$(jq -n '{name:"not-upstream", color:"d93f0b", description:"The AppImage may not come from the application'"'"'s own authors (unofficial, repackaged, ...)"}')" >/dev/null
+    fi
+    if [ -n "$REPACKAGED" ] ; then
+      LABELS+=(repackaged)
+      API_TOKEN="$PR_TOKEN" api GET "repos/$REPO/labels/repackaged" >/dev/null 2>&1 || \
+        API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/labels" -d "$(jq -n '{name:"repackaged", color:"d4c5f9", description:"Built by a third party from someone else'"'"'s application (an unofficial AppImage, repackaged)"}')" >/dev/null
     fi
     if [ -n "$SUSPICIOUS_STARS" ] ; then
       LABELS+=(manual-check-needed)

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata, shipped in the Linux AppImage at
+  usr/share/metainfo/.  Software centres read it, and the AppImage catalog
+  (appimage.github.io) uses it for its listing: the summary becomes the
+  description, and the default screenshot below becomes the page's
+  screenshot, replacing the one the catalog's bot takes itself.  The
+  screenshot must be an http(s) URL; the catalog ignores anything else.
+-->
+<component type="desktop-application">
+  <id>io.github.bucknova.OpenSSTV</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Open-SSTV</name>
+  <summary>Send and receive slow-scan television images over amateur radio</summary>
+  <developer id="io.github.bucknova">
+    <name>W0AEZ</name>
+  </developer>
+
+  <description>
+    <p>
+      Open-SSTV transmits and decodes slow-scan television (SSTV), the
+      picture mode amateur radio operators use to exchange images on HF and
+      VHF.  It runs on Linux, macOS and Windows, and it can key your radio
+      over CAT or Hamlib's rigctld.
+    </p>
+    <ul>
+      <li>22 modes, including Robot 36, Martin, Scottie, PD, Wraase and Pasokon</li>
+      <li>Live decoding with a waterfall, plus decoding of recorded WAV files</li>
+      <li>Transmit templates with callsign, report and QSO overlays</li>
+      <li>A built-in logbook with ADIF import and export</li>
+      <li>An image gallery of everything sent and received</li>
+      <li>Remote operation from a phone or tablet browser</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.github.bucknova.OpenSSTV.desktop</launchable>
+  <provides>
+    <binary>open-sstv</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/bucknova/Open-SSTV</url>
+  <url type="bugtracker">https://github.com/bucknova/Open-SSTV/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main window: transmit panel, templates and receive panel</caption>
+      <image>https://raw.githubusercontent.com/bucknova/Open-SSTV/main/docs/screenshots/main-window.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>HamRadio</category>
+    <category>Network</category>
+  </categories>
+  <keywords>
+    <keyword>SSTV</keyword>
+    <keyword>slow-scan television</keyword>
+    <keyword>ham radio</keyword>
+    <keyword>amateur radio</keyword>
+  </keywords>
+
+  <content_rating type="oars-1.1"/>
+</component>

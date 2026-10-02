@@ -13,7 +13,7 @@ MimeType=text/plain;text/csv;text/tab-separated-values;
 Keywords=diff;merge;compare;winmerge;
 Keywords[pt_BR]=diff;merge;comparar;mesclar;winmerge;
 StartupWMClass=libremerge
-X-AppImage-Version=0.9.6
+X-AppImage-Version=0.9.7
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.tombueng.leolink</id>
+
+  <name>leolink</name>
+  <summary>Watch and record Reolink cameras</summary>
+  <summary xml:lang="ar">شاهد كاميرات Reolink وسجّل منها</summary>
+  <summary xml:lang="de">Reolink-Kameras ansehen und aufzeichnen</summary>
+  <summary xml:lang="es">Ver y grabar cámaras Reolink</summary>
+  <summary xml:lang="fr">Regarder et enregistrer des caméras Reolink</summary>
+  <summary xml:lang="hi">Reolink कैमरे देखें और रिकॉर्ड करें</summary>
+  <summary xml:lang="it">Guarda e registra telecamere Reolink</summary>
+  <summary xml:lang="ja">Reolink カメラを見て録画する</summary>
+  <summary xml:lang="pt_BR">Assista e grave câmeras Reolink</summary>
+  <summary xml:lang="ru">Просмотр и запись камер Reolink</summary>
+  <summary xml:lang="tr">Reolink kameralarını izleyin ve kaydedin</summary>
+  <summary xml:lang="zh_CN">查看并录制 Reolink 摄像机</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <developer id="io.github.tombueng">
+    <name>leolink contributors</name>
+  </developer>
+
+  <description>
+    <p>
+      leolink shows the live picture from Reolink IP cameras on Linux. It speaks
+      the camera's own protocols directly — the HTTP API, RTSP and ONVIF on the
+      local network, and Reolink's P2P service for cameras that are somewhere
+      else. On the local network nothing is sent to any third party.
+    </p>
+    <p xml:lang="ar">
+      يعرض leolink الصورة الحية من كاميرات Reolink على لينكس. وهو يتحدث بروتوكولات
+      الكاميرا نفسها مباشرة — واجهة HTTP وRTSP وONVIF داخل الشبكة المحلية، وخدمة P2P
+      من Reolink للكاميرات البعيدة. وداخل الشبكة المحلية لا يُرسل شيء إلى أي طرف ثالث.
+    </p>
+    <p xml:lang="de">
+      leolink zeigt das Livebild von Reolink-IP-Kameras unter Linux. Es spricht
+      direkt die Protokolle der Kamera — die HTTP-API, RTSP und ONVIF im lokalen
+      Netz, und Reolinks P2P-Dienst für Kameras, die woanders stehen. Im lokalen
+      Netz geht nichts an Dritte.
+    </p>
+    <p xml:lang="es">
+      leolink muestra la imagen en directo de las cámaras IP de Reolink en Linux.
+      Habla directamente los protocolos de la cámara — la interfaz HTTP, RTSP y
+      ONVIF en la red local, y el servicio P2P de Reolink para las cámaras que
+      están en otro sitio. En la red local no se envía nada a terceros.
+    </p>
+    <p xml:lang="fr">
+      leolink affiche l'image en direct des caméras IP Reolink sous Linux. Il parle
+      directement les protocoles de la caméra — l'interface HTTP, RTSP et ONVIF sur
+      le réseau local, et le service P2P de Reolink pour les caméras situées
+      ailleurs. Sur le réseau local, rien n'est envoyé à un tiers.
+    </p>
+    <p xml:lang="hi">
+      leolink लिनक्स पर Reolink आईपी कैमरों का सीधा चित्र दिखाता है। यह कैमरे के अपने
+      प्रोटोकॉल सीधे बोलता है — स्थानीय नेटवर्क पर HTTP इंटरफ़ेस, RTSP और ONVIF, और कहीं
+      दूर लगे कैमरों के लिए Reolink की P2P सेवा। स्थानीय नेटवर्क पर कुछ भी किसी तीसरे पक्ष
+      को नहीं भेजा जाता।
+    </p>
+    <p xml:lang="it">
+      leolink mostra l'immagine dal vivo delle telecamere IP Reolink su Linux. Parla
+      direttamente i protocolli della telecamera — l'interfaccia HTTP, RTSP e ONVIF
+      sulla rete locale, e il servizio P2P di Reolink per le telecamere che stanno
+      altrove. Sulla rete locale non viene inviato nulla a terzi.
+    </p>
+    <p xml:lang="ja">
+      leolink は Linux 上で Reolink の IP カメラのライブ映像を表示します。カメラ自身の
+      プロトコルを直接話します — ローカルネットワークでは HTTP API・RTSP・ONVIF、離れた
+      場所にあるカメラには Reolink の P2P サービス。ローカルネットワーク上では第三者に
+      何も送信しません。
+    </p>
+    <p xml:lang="pt_BR">
+      O leolink mostra a imagem ao vivo das câmeras IP Reolink no Linux. Ele fala
+      diretamente os protocolos da própria câmera — a interface HTTP, RTSP e ONVIF
+      na rede local, e o serviço P2P da Reolink para câmeras que estão em outro
+      lugar. Na rede local nada é enviado a terceiros.
+    </p>
+    <p xml:lang="ru">
+      leolink показывает живую картинку с IP-камер Reolink под Linux. Он напрямую
+      говорит на собственных протоколах камеры — HTTP-интерфейс, RTSP и ONVIF в
+      локальной сети, а также служба P2P от Reolink для камер, которые находятся
+      где-то ещё. В локальной сети ничего не уходит третьим лицам.
+    </p>
+    <p xml:lang="tr">
+      leolink, Reolink IP kameralarının canlı görüntüsünü Linux üzerinde gösterir.
+      Kameranın kendi protokollerini doğrudan konuşur — yerel ağda HTTP arayüzü,
+      RTSP ve ONVIF; başka bir yerdeki kameralar için de Reolink'in P2P hizmeti.
+      Yerel ağda hiçbir şey üçüncü taraflara gönderilmez.
+    </p>
+    <p xml:lang="zh_CN">
+      leolink 在 Linux 上显示 Reolink 网络摄像机的实时画面。它直接讲摄像机自己的协议 —
+      局域网内的 HTTP 接口、RTSP 和 ONVIF，以及用于异地摄像机的 Reolink P2P 服务。
+      在局域网内，不会向任何第三方发送任何内容。
+    </p>
+    <p>Features:</p>
+    <p xml:lang="ar">المزايا:</p>
+    <p xml:lang="de">Funktionen:</p>
+    <p xml:lang="es">Características:</p>
+    <p xml:lang="fr">Fonctionnalités :</p>
+    <p xml:lang="hi">विशेषताएँ:</p>
+    <p xml:lang="it">Funzioni:</p>
+    <p xml:lang="ja">主な機能:</p>
+    <p xml:lang="pt_BR">Recursos:</p>
+    <p xml:lang="ru">Возможности:</p>
+    <p xml:lang="tr">Özellikler:</p>
+    <p xml:lang="zh_CN">功能：</p>
+    <ul>
+      <li>Several cameras at once in a grid you arrange yourself, where a camera
+          may cover more than one cell</li>
+      <li xml:lang="ar">عدة كاميرات في آن واحد ضمن شبكة ترتّبها بنفسك، وفيها قد تشغل
+          الكاميرا الواحدة أكثر من خلية</li>
+      <li xml:lang="de">Mehrere Kameras gleichzeitig in einem selbst angeordneten
+          Gitter, in dem eine Kamera auch mehrere Felder belegen darf</li>
+      <li xml:lang="es">Varias cámaras a la vez en una cuadrícula que usted mismo
+          organiza, donde una cámara puede ocupar más de una celda</li>
+      <li xml:lang="fr">Plusieurs caméras à la fois dans une grille que vous
+          organisez vous-même, où une caméra peut couvrir plusieurs cases</li>
+      <li xml:lang="hi">एक साथ कई कैमरे, आपकी अपनी सजाई हुई जाली में, जहाँ एक कैमरा एक
+          से अधिक खाने घेर सकता है</li>
+      <li xml:lang="it">Più telecamere insieme in una griglia che disponi tu, dove
+          una telecamera può occupare più di una cella</li>
+      <li xml:lang="ja">自分で並べたグリッドに複数のカメラを同時表示。1 台で複数のマスを
+          占めることもできます</li>
+      <li xml:lang="pt_BR">Várias câmeras ao mesmo tempo numa grade que você mesmo
+          arruma, na qual uma câmera pode ocupar mais de uma célula</li>
+      <li xml:lang="ru">Несколько камер сразу в сетке, которую вы расставляете сами,
+          причём одна камера может занимать несколько ячеек</li>
+      <li xml:lang="tr">Kendi düzenlediğiniz bir ızgarada aynı anda birden çok
+          kamera; bir kamera birden fazla hücre kaplayabilir</li>
+      <li xml:lang="zh_CN">在自行排布的网格中同时显示多台摄像机，一台还可占据多个格子</li>
+      <li>Per-camera volume and mute, so one noisy room does not drown the rest</li>
+      <li xml:lang="ar">مستوى صوت وكتم لكل كاميرا، حتى لا تطغى غرفة صاخبة على الباقي</li>
+      <li xml:lang="de">Lautstärke und Stummschaltung je Kamera, damit ein lauter
+          Raum nicht alles übertönt</li>
+      <li xml:lang="es">Volumen y silencio por cámara, para que una habitación
+          ruidosa no ahogue a las demás</li>
+      <li xml:lang="fr">Volume et sourdine par caméra, pour qu'une pièce bruyante ne
+          couvre pas les autres</li>
+      <li xml:lang="hi">हर कैमरे के लिए अलग ध्वनि-मात्रा और मौन, ताकि एक शोरगुल वाला कमरा
+          बाकी सब पर हावी न हो</li>
+      <li xml:lang="it">Volume e silenziamento per singola telecamera, così una
+          stanza rumorosa non copre le altre</li>
+      <li xml:lang="ja">カメラごとの音量と消音。うるさい部屋がほかを飲み込みません</li>
+      <li xml:lang="pt_BR">Volume e silêncio por câmera, para que um cômodo barulhento
+          não abafe os demais</li>
+      <li xml:lang="ru">Громкость и отключение звука для каждой камеры, чтобы одна
+          шумная комната не заглушала остальные</li>
+      <li xml:lang="tr">Kamera başına ses düzeyi ve sessize alma; gürültülü bir oda
+          diğerlerini bastırmasın</li>
+      <li xml:lang="zh_CN">每台摄像机独立音量与静音，一间吵闹的屋子不会盖过其余</li>
+      <li>Motion alerts pushed by the camera over ONVIF instead of constant polling</li>
+      <li xml:lang="ar">تنبيهات الحركة تدفعها الكاميرا عبر ONVIF بدل الاستعلام المتواصل</li>
+      <li xml:lang="de">Bewegungsmeldungen, die die Kamera per ONVIF schickt, statt
+          ständigem Nachfragen</li>
+      <li xml:lang="es">Avisos de movimiento que la cámara envía por ONVIF, en vez de
+          preguntar sin parar</li>
+      <li xml:lang="fr">Alertes de mouvement poussées par la caméra via ONVIF, sans
+          interrogation permanente</li>
+      <li xml:lang="hi">लगातार पूछताछ के बजाय, ONVIF से कैमरे द्वारा भेजी गई गति-सूचनाएँ</li>
+      <li xml:lang="it">Avvisi di movimento inviati dalla telecamera via ONVIF invece
+          di continue interrogazioni</li>
+      <li xml:lang="ja">絶えず問い合わせるのではなく、ONVIF でカメラから届く動体通知</li>
+      <li xml:lang="pt_BR">Alertas de movimento enviados pela câmera via ONVIF, em vez
+          de consultas constantes</li>
+      <li xml:lang="ru">Уведомления о движении, которые камера присылает по ONVIF,
+          вместо постоянных опросов</li>
+      <li xml:lang="tr">Sürekli yoklama yerine, kameranın ONVIF ile ilettiği hareket
+          uyarıları</li>
+      <li xml:lang="zh_CN">由摄像机通过 ONVIF 推送的移动提醒，而非不停轮询</li>
+      <li>Records on motion to your own disk, which works even when the camera
+          has no SD card fitted</li>
+      <li xml:lang="ar">يسجّل عند الحركة على قرصك أنت، وهو ما يعمل حتى لو لم تكن في
+          الكاميرا بطاقة SD</li>
+      <li xml:lang="de">Aufnahme bei Bewegung auf die eigene Festplatte — auch dann,
+          wenn in der Kamera keine SD-Karte steckt</li>
+      <li xml:lang="es">Graba con el movimiento en su propio disco, lo que funciona
+          incluso sin tarjeta SD en la cámara</li>
+      <li xml:lang="fr">Enregistre au mouvement sur votre propre disque, ce qui marche
+          même sans carte SD dans la caméra</li>
+      <li xml:lang="hi">गति पर आपकी अपनी डिस्क पर रिकॉर्डिंग, जो कैमरे में SD कार्ड न होने
+          पर भी चलती है</li>
+      <li xml:lang="it">Registra sul tuo disco quando c'è movimento, e funziona anche
+          se la telecamera non ha una scheda SD</li>
+      <li xml:lang="ja">動きがあれば自分のディスクに録画。カメラに SD カードが無くても
+          使えます</li>
+      <li xml:lang="pt_BR">Grava no seu próprio disco quando há movimento, o que
+          funciona mesmo sem cartão SD na câmera</li>
+      <li xml:lang="ru">Запись по движению на собственный диск — работает даже тогда,
+          когда в камере нет карты SD</li>
+      <li xml:lang="tr">Hareket olduğunda kendi diskinize kayıt; kamerada SD kart
+          olmasa da çalışır</li>
+      <li xml:lang="zh_CN">有移动时录到自己的硬盘，即便摄像机没装存储卡也能用</li>
+      <li>Runs a command of your choice when a camera sees something</li>
+      <li xml:lang="ar">ينفّذ أمراً من اختيارك عندما ترى الكاميرا شيئاً</li>
+      <li xml:lang="de">Führt einen selbst gewählten Befehl aus, wenn eine Kamera
+          etwas sieht</li>
+      <li xml:lang="es">Ejecuta un comando de su elección cuando una cámara ve algo</li>
+      <li xml:lang="fr">Exécute une commande de votre choix quand une caméra voit
+          quelque chose</li>
+      <li xml:lang="hi">जब कोई कैमरा कुछ देखे, तब आपकी चुनी हुई कमांड चलाता है</li>
+      <li xml:lang="it">Esegue un comando a tua scelta quando una telecamera vede
+          qualcosa</li>
+      <li xml:lang="ja">カメラが何かを捉えたら、好きなコマンドを実行します</li>
+      <li xml:lang="pt_BR">Executa um comando à sua escolha quando uma câmera vê algo</li>
+      <li xml:lang="ru">Запускает выбранную вами команду, когда камера что-то видит</li>
+      <li xml:lang="tr">Bir kamera bir şey gördüğünde seçtiğiniz komutu çalıştırır</li>
+      <li xml:lang="zh_CN">摄像机看到动静时，运行您指定的命令</li>
+      <li>Event log with the captured stills and recordings, filterable per camera</li>
+      <li xml:lang="ar">سجل أحداث يضم الصور والتسجيلات الملتقطة، مع ترشيح لكل كاميرا</li>
+      <li xml:lang="de">Ereignisprotokoll mit den aufgenommenen Standbildern und
+          Aufzeichnungen, je Kamera filterbar</li>
+      <li xml:lang="es">Registro de eventos con las instantáneas y grabaciones
+          capturadas, filtrable por cámara</li>
+      <li xml:lang="fr">Journal des événements avec les captures et les
+          enregistrements, filtrable par caméra</li>
+      <li xml:lang="hi">पकड़े गए चित्रों और रिकॉर्डिंग के साथ घटना लॉग, हर कैमरे के अनुसार
+          छाँटा जा सकने वाला</li>
+      <li xml:lang="it">Registro eventi con le istantanee e le registrazioni
+          catturate, filtrabile per telecamera</li>
+      <li xml:lang="ja">撮れた静止画と録画を伴うイベントログ。カメラごとに絞り込めます</li>
+      <li xml:lang="pt_BR">Registro de eventos com os instantâneos e as gravações
+          capturados, filtrável por câmera</li>
+      <li xml:lang="ru">Журнал событий со снятыми кадрами и записями, с фильтром по
+          камерам</li>
+      <li xml:lang="tr">Yakalanan görüntü ve kayıtlarla birlikte olay günlüğü; kamera
+          bazında süzülebilir</li>
+      <li xml:lang="zh_CN">带抓拍图像与录像的事件日志，可按摄像机筛选</li>
+      <li>Finds cameras on the network by ONVIF discovery</li>
+      <li xml:lang="ar">يعثر على الكاميرات في الشبكة عبر اكتشاف ONVIF</li>
+      <li xml:lang="de">Findet Kameras im Netz per ONVIF-Suche</li>
+      <li xml:lang="es">Encuentra cámaras en la red mediante el descubrimiento ONVIF</li>
+      <li xml:lang="fr">Trouve les caméras sur le réseau par découverte ONVIF</li>
+      <li xml:lang="hi">ONVIF खोज के ज़रिए नेटवर्क पर कैमरे ढूँढ़ता है</li>
+      <li xml:lang="it">Trova le telecamere in rete tramite scoperta ONVIF</li>
+      <li xml:lang="ja">ONVIF ディスカバリーでネットワーク上のカメラを見つけます</li>
+      <li xml:lang="pt_BR">Encontra câmeras na rede por descoberta ONVIF</li>
+      <li xml:lang="ru">Находит камеры в сети через обнаружение ONVIF</li>
+      <li xml:lang="tr">ONVIF keşfiyle ağdaki kameraları bulur</li>
+      <li xml:lang="zh_CN">通过 ONVIF 发现在网络中找到摄像机</li>
+      <li>Hardware-accelerated decoding through libmpv</li>
+      <li xml:lang="ar">فك ترميز مسرَّع بالعتاد عبر libmpv</li>
+      <li xml:lang="de">Hardwarebeschleunigte Dekodierung über libmpv</li>
+      <li xml:lang="es">Decodificación acelerada por hardware mediante libmpv</li>
+      <li xml:lang="fr">Décodage accéléré par le matériel via libmpv</li>
+      <li xml:lang="hi">libmpv के ज़रिए हार्डवेयर-त्वरित डिकोडिंग</li>
+      <li xml:lang="it">Decodifica accelerata in hardware tramite libmpv</li>
+      <li xml:lang="ja">libmpv によるハードウェアアクセラレーションつきデコード</li>
+      <li xml:lang="pt_BR">Decodificação acelerada por hardware através do libmpv</li>
+      <li xml:lang="ru">Аппаратно ускоренное декодирование через libmpv</li>
+      <li xml:lang="tr">libmpv üzerinden donanım hızlandırmalı kod çözme</li>
+      <li xml:lang="zh_CN">通过 libmpv 进行硬件加速解码</li>
+      <li>Choice of RTSP or the lower-latency HTTP-FLV transport</li>
+      <li xml:lang="ar">اختيار بين RTSP ونقل HTTP-FLV الأقل كموناً</li>
+      <li xml:lang="de">Wahl zwischen RTSP und dem latenzärmeren HTTP-FLV</li>
+      <li xml:lang="es">Elección entre RTSP y el transporte HTTP-FLV, de menor latencia</li>
+      <li xml:lang="fr">Choix entre RTSP et le transport HTTP-FLV, à plus faible
+          latence</li>
+      <li xml:lang="hi">RTSP या कम विलंब वाले HTTP-FLV परिवहन में से चुनाव</li>
+      <li xml:lang="it">Scelta fra RTSP e il trasporto HTTP-FLV, a latenza più bassa</li>
+      <li xml:lang="ja">RTSP と、より低遅延な HTTP-FLV 伝送のどちらかを選べます</li>
+      <li xml:lang="pt_BR">Escolha entre RTSP e o transporte HTTP-FLV, de menor latência</li>
+      <li xml:lang="ru">Выбор между RTSP и транспортом HTTP-FLV с меньшей задержкой</li>
+      <li xml:lang="tr">RTSP ile daha düşük gecikmeli HTTP-FLV taşıması arasında seçim</li>
+      <li xml:lang="zh_CN">可选 RTSP，或延迟更低的 HTTP-FLV 传输</li>
+      <li>Passwords can be kept outside the config file by way of a helper command</li>
+      <li xml:lang="ar">يمكن إبقاء كلمات المرور خارج ملف الإعدادات عن طريق أمر مساعد</li>
+      <li xml:lang="de">Passwörter lassen sich über einen Hilfsbefehl außerhalb der
+          Konfigurationsdatei halten</li>
+      <li xml:lang="es">Las contraseñas pueden quedar fuera del archivo de
+          configuración mediante un comando auxiliar</li>
+      <li xml:lang="fr">Les mots de passe peuvent rester hors du fichier de
+          configuration grâce à une commande auxiliaire</li>
+      <li xml:lang="hi">एक सहायक कमांड के ज़रिए पासवर्ड सेटिंग फ़ाइल से बाहर रखे जा सकते हैं</li>
+      <li xml:lang="it">Le password possono restare fuori dal file di configurazione
+          tramite un comando di appoggio</li>
+      <li xml:lang="ja">補助コマンドを使えば、パスワードを設定ファイルの外に置けます</li>
+      <li xml:lang="pt_BR">As senhas podem ficar fora do arquivo de configuração por
+          meio de um comando auxiliar</li>
+      <li xml:lang="ru">Пароли можно держать вне файла настроек с помощью
+          вспомогательной команды</li>
+      <li xml:lang="tr">Parolalar, bir yardımcı komut aracılığıyla yapılandırma
+          dosyasının dışında tutulabilir</li>
+      <li xml:lang="zh_CN">借助一条辅助命令，密码可以放在配置文件之外</li>
+      <li>Twelve languages: Arabic, Chinese, English, French, German, Hindi,
+          Italian, Japanese, Portuguese, Russian, Spanish and Turkish</li>
+      <li xml:lang="ar">اثنتا عشرة لغة: الإنجليزية والألمانية والإسبانية والفرنسية
+          والإيطالية والبرتغالية والتركية والروسية والعربية والهندية والصينية
+          واليابانية</li>
+      <li xml:lang="de">Zwölf Sprachen: Arabisch, Chinesisch, Deutsch, Englisch,
+          Französisch, Hindi, Italienisch, Japanisch, Portugiesisch, Russisch,
+          Spanisch und Türkisch</li>
+      <li xml:lang="es">Doce idiomas: alemán, árabe, chino, español, francés, hindi,
+          inglés, italiano, japonés, portugués, ruso y turco</li>
+      <li xml:lang="fr">Douze langues : allemand, anglais, arabe, chinois, espagnol,
+          français, hindi, italien, japonais, portugais, russe et turc</li>
+      <li xml:lang="hi">बारह भाषाएँ: अंग्रेज़ी, अरबी, इतालवी, चीनी, जर्मन, जापानी, तुर्की,
+          पुर्तगाली, फ़्रेंच, रूसी, स्पेनिश और हिन्दी</li>
+      <li xml:lang="it">Dodici lingue: arabo, cinese, francese, giapponese, hindi,
+          inglese, italiano, portoghese, russo, spagnolo, tedesco e turco</li>
+      <li xml:lang="ja">12 言語: 英語・ドイツ語・スペイン語・フランス語・イタリア語・
+          ポルトガル語・トルコ語・ロシア語・アラビア語・ヒンディー語・中国語・日本語</li>
+      <li xml:lang="pt_BR">Doze idiomas: alemão, árabe, chinês, espanhol, francês,
+          hindi, inglês, italiano, japonês, português, russo e turco</li>
+      <li xml:lang="ru">Двенадцать языков: английский, немецкий, испанский,
+          французский, итальянский, португальский, турецкий, русский, арабский,
+          хинди, китайский и японский</li>
+      <li xml:lang="tr">On iki dil: Almanca, Arapça, Çince, Fransızca, Hintçe,
+          İngilizce, İspanyolca, İtalyanca, Japonca, Portekizce, Rusça ve Türkçe</li>
+      <li xml:lang="zh_CN">十二种语言：英语、德语、西班牙语、法语、意大利语、葡萄牙语、
+          土耳其语、俄语、阿拉伯语、印地语、中文和日语</li>
+    </ul>
+    <p>
+      Tested against an RLC-410W. Other Reolink models speak the same protocols
+      and the application asks each camera at start-up what it can do, so
+      unsupported features are simply hidden.
+    </p>
+    <p xml:lang="ar">
+      اختُبر على طراز RLC-410W. وطرازات Reolink الأخرى تتحدث البروتوكولات نفسها،
+      والتطبيق يسأل كل كاميرا عند الإقلاع عما تستطيعه، فتُخفى ببساطة المزايا غير
+      المدعومة.
+    </p>
+    <p xml:lang="de">
+      Getestet mit einer RLC-410W. Andere Reolink-Modelle sprechen dieselben
+      Protokolle, und das Programm fragt jede Kamera beim Start, was sie kann —
+      nicht unterstützte Funktionen werden einfach ausgeblendet.
+    </p>
+    <p xml:lang="es">
+      Probado con una RLC-410W. Otros modelos de Reolink hablan los mismos
+      protocolos, y la aplicación pregunta a cada cámara al arrancar qué sabe
+      hacer, de modo que las funciones no admitidas simplemente se ocultan.
+    </p>
+    <p xml:lang="fr">
+      Testé avec une RLC-410W. Les autres modèles Reolink parlent les mêmes
+      protocoles, et l'application demande à chaque caméra au démarrage ce
+      qu'elle sait faire : les fonctions non prises en charge sont simplement
+      masquées.
+    </p>
+    <p xml:lang="hi">
+      RLC-410W पर परखा गया। Reolink के दूसरे मॉडल भी वही प्रोटोकॉल बोलते हैं, और
+      अनुप्रयोग शुरू होते समय हर कैमरे से पूछ लेता है कि वह क्या कर सकता है, इसलिए
+      असमर्थित सुविधाएँ बस छिपा दी जाती हैं।
+    </p>
+    <p xml:lang="it">
+      Provato con una RLC-410W. Gli altri modelli Reolink parlano gli stessi
+      protocolli e all'avvio l'applicazione chiede a ogni telecamera che cosa sa
+      fare, così le funzioni non supportate vengono semplicemente nascoste.
+    </p>
+    <p xml:lang="ja">
+      RLC-410W で検証しました。ほかの Reolink 機種も同じプロトコルを話し、起動時に
+      各カメラへ何ができるかを尋ねるので、対応していない機能は単に隠されます。
+    </p>
+    <p xml:lang="pt_BR">
+      Testado com uma RLC-410W. Outros modelos da Reolink falam os mesmos
+      protocolos e o aplicativo pergunta a cada câmera, ao iniciar, o que ela sabe
+      fazer, de modo que os recursos não suportados são simplesmente ocultados.
+    </p>
+    <p xml:lang="ru">
+      Проверено на RLC-410W. Другие модели Reolink говорят на тех же протоколах, а
+      программа при запуске спрашивает каждую камеру, что она умеет, — поэтому
+      неподдерживаемые функции просто скрываются.
+    </p>
+    <p xml:lang="tr">
+      RLC-410W ile denendi. Diğer Reolink modelleri de aynı protokolleri konuşur ve
+      uygulama açılışta her kameraya neler yapabildiğini sorar; desteklenmeyen
+      özellikler böylece gizlenir.
+    </p>
+    <p xml:lang="zh_CN">
+      在 RLC-410W 上验证过。其他 Reolink 型号讲同样的协议，程序会在启动时逐一询问
+      摄像机能做什么，因此不受支持的功能只会被隐藏起来。
+    </p>
+    <p>
+      leolink is an independent project and is not affiliated with, endorsed by
+      or supported by Reolink.
+    </p>
+    <p xml:lang="ar">
+      ‏leolink مشروع مستقل، لا صلة له بشركة Reolink ولا يحظى بموافقتها أو دعمها.
+    </p>
+    <p xml:lang="de">
+      leolink ist ein unabhängiges Projekt und weder mit Reolink verbunden noch
+      von Reolink unterstützt oder befürwortet.
+    </p>
+    <p xml:lang="es">
+      leolink es un proyecto independiente y no está vinculado a Reolink ni
+      cuenta con su respaldo o su apoyo.
+    </p>
+    <p xml:lang="fr">
+      leolink est un projet indépendant, sans lien avec Reolink, ni approuvé ni
+      soutenu par elle.
+    </p>
+    <p xml:lang="hi">
+      leolink एक स्वतंत्र परियोजना है; न इसका Reolink से कोई संबंध है, न उसका समर्थन
+      या सहायता प्राप्त है।
+    </p>
+    <p xml:lang="it">
+      leolink è un progetto indipendente, non collegato a Reolink né approvato o
+      sostenuto da essa.
+    </p>
+    <p xml:lang="ja">
+      leolink は独立したプロジェクトであり、Reolink との関係も、同社による承認や
+      支援もありません。
+    </p>
+    <p xml:lang="pt_BR">
+      O leolink é um projeto independente, sem vínculo com a Reolink e sem apoio
+      ou endosso dela.
+    </p>
+    <p xml:lang="ru">
+      leolink — независимый проект, не связанный с Reolink и не поддерживаемый и
+      не одобряемый ею.
+    </p>
+    <p xml:lang="tr">
+      leolink bağımsız bir projedir; Reolink ile bağlantılı değildir, onun onayını
+      ya da desteğini almamıştır.
+    </p>
+    <p xml:lang="zh_CN">
+      leolink 是一个独立项目，与 Reolink 无关，未获其背书，也未受其支持。
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.tombueng.leolink.desktop</launchable>
+
+  <url type="homepage">https://tombueng.github.io/leolink/</url>
+  <url type="bugtracker">https://github.com/tombueng/leolink/issues</url>
+  <url type="help">https://tombueng.github.io/leolink/</url>
+  <url type="vcs-browser">https://github.com/tombueng/leolink</url>
+
+  <!-- Screenshots of the application actually running. The tiles play freely
+       licensed CC0 photographs through the custom-URL transport rather than a
+       real camera feed; see docs/screenshots/CREDITS.md. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Four cameras at once, in a grid you arrange yourself</caption>
+      <caption xml:lang="ar">أربع كاميرات في آن واحد، ضمن شبكة ترتّبها بنفسك</caption>
+      <caption xml:lang="de">Vier Kameras gleichzeitig, in einem selbst angeordneten Gitter</caption>
+      <caption xml:lang="es">Cuatro cámaras a la vez, en una cuadrícula que usted organiza</caption>
+      <caption xml:lang="fr">Quatre caméras à la fois, dans une grille que vous organisez</caption>
+      <caption xml:lang="hi">एक साथ चार कैमरे, आपकी अपनी सजाई हुई जाली में</caption>
+      <caption xml:lang="it">Quattro telecamere insieme, in una griglia che disponi tu</caption>
+      <caption xml:lang="ja">自分で並べたグリッドに 4 台のカメラを同時表示</caption>
+      <caption xml:lang="pt_BR">Quatro câmeras ao mesmo tempo, numa grade que você mesmo arruma</caption>
+      <caption xml:lang="ru">Четыре камеры сразу, в сетке, которую вы расставляете сами</caption>
+      <caption xml:lang="tr">Kendi düzenlediğiniz bir ızgarada aynı anda dört kamera</caption>
+      <caption xml:lang="zh_CN">在自行排布的网格中同时显示四台摄像机</caption>
+      <image>https://raw.githubusercontent.com/tombueng/leolink/main/docs/screenshots/01-grid.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Motion, recording and what happens when a camera sees something</caption>
+      <caption xml:lang="ar">الحركة والتسجيل وما يحدث حين ترى الكاميرا شيئاً</caption>
+      <caption xml:lang="de">Bewegung, Aufnahme und was geschieht, wenn eine Kamera etwas sieht</caption>
+      <caption xml:lang="es">Movimiento, grabación y qué ocurre cuando una cámara ve algo</caption>
+      <caption xml:lang="fr">Mouvement, enregistrement et ce qui se passe quand une caméra voit quelque chose</caption>
+      <caption xml:lang="hi">गति, रिकॉर्डिंग और जब कोई कैमरा कुछ देखे तब क्या हो</caption>
+      <caption xml:lang="it">Movimento, registrazione e che cosa succede quando una telecamera vede qualcosa</caption>
+      <caption xml:lang="ja">動体、録画、そしてカメラが何かを捉えたときの動作</caption>
+      <caption xml:lang="pt_BR">Movimento, gravação e o que acontece quando uma câmera vê algo</caption>
+      <caption xml:lang="ru">Движение, запись и что происходит, когда камера что-то видит</caption>
+      <caption xml:lang="tr">Hareket, kayıt ve bir kamera bir şey gördüğünde ne olacağı</caption>
+      <caption xml:lang="zh_CN">移动、录制，以及摄像机看到动静时会发生什么</caption>
+      <image>https://raw.githubusercontent.com/tombueng/leolink/main/docs/screenshots/settings-03-events.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Changing the camera's own encoder settings</caption>
+      <caption xml:lang="ar">تغيير إعدادات المرمِّز في الكاميرا نفسها</caption>
+      <caption xml:lang="de">Die Encoder-Einstellungen der Kamera selbst ändern</caption>
+      <caption xml:lang="es">Cambiar los ajustes del codificador de la propia cámara</caption>
+      <caption xml:lang="fr">Modifier les réglages du codeur de la caméra elle-même</caption>
+      <caption xml:lang="hi">कैमरे के अपने एन्कोडर की सेटिंग बदलना</caption>
+      <caption xml:lang="it">Cambiare le impostazioni del codificatore della telecamera</caption>
+      <caption xml:lang="ja">カメラ自身のエンコーダー設定を変更する</caption>
+      <caption xml:lang="pt_BR">Alterar as configurações do codificador da própria câmera</caption>
+      <caption xml:lang="ru">Изменение настроек кодировщика самой камеры</caption>
+      <caption xml:lang="tr">Kameranın kendi kodlayıcı ayarlarını değiştirme</caption>
+      <caption xml:lang="zh_CN">修改摄像机自身的编码器设置</caption>
+      <image>https://raw.githubusercontent.com/tombueng/leolink/main/docs/screenshots/camera-01-video.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Where the camera looks, when it reports, and how readily it triggers</caption>
+      <caption xml:lang="ar">أين تنظر الكاميرا، ومتى تبلّغ، وما مدى سهولة تنبّهها</caption>
+      <caption xml:lang="de">Wohin die Kamera schaut, wann sie meldet und wie leicht sie anspricht</caption>
+      <caption xml:lang="es">Dónde mira la cámara, cuándo avisa y con qué facilidad se dispara</caption>
+      <caption xml:lang="fr">Où la caméra regarde, quand elle signale, et avec quelle facilité elle se déclenche</caption>
+      <caption xml:lang="hi">कैमरा कहाँ देखता है, कब सूचना देता है, और कितनी आसानी से चलता है</caption>
+      <caption xml:lang="it">Dove guarda la telecamera, quando segnala e con quanta facilità scatta</caption>
+      <caption xml:lang="ja">カメラがどこを見て、いつ知らせ、どれくらい起きやすいか</caption>
+      <caption xml:lang="pt_BR">Para onde a câmera olha, quando ela avisa e com que facilidade dispara</caption>
+      <caption xml:lang="ru">Куда камера смотрит, когда сообщает и насколько легко срабатывает</caption>
+      <caption xml:lang="tr">Kameranın nereye baktığı, ne zaman bildirdiği ve ne kolaylıkla tetiklendiği</caption>
+      <caption xml:lang="zh_CN">摄像机看向哪里、何时上报，以及多容易被触发</caption>
+      <image>https://raw.githubusercontent.com/tombueng/leolink/main/docs/screenshots/camera-04-detection.png</image>
+    </screenshot>
+  </screenshots>
+
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Video</category>
+    <category>Network</category>
+  </categories>
+
+  <keywords>
+    <keyword>camera</keyword>
+    <keyword>surveillance</keyword>
+    <keyword>CCTV</keyword>
+    <keyword>Reolink</keyword>
+    <keyword>RTSP</keyword>
+    <keyword>ONVIF</keyword>
+    <keyword xml:lang="ar">كاميرا</keyword>
+    <keyword xml:lang="ar">مراقبة</keyword>
+    <keyword xml:lang="de">Kamera</keyword>
+    <keyword xml:lang="de">Überwachung</keyword>
+    <keyword xml:lang="es">cámara</keyword>
+    <keyword xml:lang="es">vigilancia</keyword>
+    <keyword xml:lang="fr">caméra</keyword>
+    <keyword xml:lang="fr">surveillance</keyword>
+    <keyword xml:lang="hi">कैमरा</keyword>
+    <keyword xml:lang="hi">निगरानी</keyword>
+    <keyword xml:lang="it">telecamera</keyword>
+    <keyword xml:lang="it">videosorveglianza</keyword>
+    <keyword xml:lang="ja">カメラ</keyword>
+    <keyword xml:lang="ja">監視</keyword>
+    <keyword xml:lang="pt_BR">câmera</keyword>
+    <keyword xml:lang="pt_BR">vigilância</keyword>
+    <keyword xml:lang="ru">камера</keyword>
+    <keyword xml:lang="ru">видеонаблюдение</keyword>
+    <keyword xml:lang="tr">kamera</keyword>
+    <keyword xml:lang="tr">gözetim</keyword>
+    <keyword xml:lang="zh_CN">摄像机</keyword>
+    <keyword xml:lang="zh_CN">监控</keyword>
+  </keywords>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <recommends>
+    <display_length compare="ge">768</display_length>
+  </recommends>
+
+  <!-- No user-generated content, no ads, no in-app purchases. -->
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.2.4" date="2026-10-01">
+      <description>
+        <p>The AppImage can update itself through AppImageUpdate or an AppImage manager, downloading only what changed, and carries its description and screenshots where software centres look for them.</p>
+        <p xml:lang="ar">يمكن لـ AppImage أن يحدّث نفسه عبر AppImageUpdate أو مدير AppImage، فيُنزّل ما تغيّر فقط، ويحمل وصفه ولقطات شاشته حيث تبحث عنها مراكز البرمجيات.</p>
+        <p xml:lang="de">Das AppImage kann sich über AppImageUpdate oder eine AppImage-Verwaltung selbst aktualisieren und lädt dabei nur, was sich geändert hat; Beschreibung und Bildschirmfotos liegen dort, wo Softwarezentren sie suchen.</p>
+        <p xml:lang="es">El AppImage puede actualizarse a sí mismo con AppImageUpdate o un gestor de AppImage, descargando solo lo que ha cambiado, y lleva su descripción y capturas donde los centros de software las buscan.</p>
+        <p xml:lang="fr">L'AppImage peut se mettre à jour via AppImageUpdate ou un gestionnaire d'AppImage, en ne téléchargeant que ce qui a changé, et porte sa description et ses captures d'écran là où les logithèques les cherchent.</p>
+        <p xml:lang="hi">AppImage अब AppImageUpdate या किसी AppImage प्रबंधक से खुद को अपडेट कर सकता है और केवल बदला हुआ हिस्सा डाउनलोड करता है; इसका विवरण और स्क्रीनशॉट वहीं रहते हैं जहाँ सॉफ़्टवेयर केंद्र उन्हें खोजते हैं।</p>
+        <p xml:lang="it">L'AppImage può aggiornarsi da sé tramite AppImageUpdate o un gestore di AppImage, scaricando solo ciò che è cambiato, e porta la descrizione e le schermate dove i centri software le cercano.</p>
+        <p xml:lang="ja">AppImage は AppImageUpdate や AppImage マネージャーで変更部分だけをダウンロードして自身を更新できるようになり、説明とスクリーンショットもソフトウェアセンターが探す場所に収められています。</p>
+        <p xml:lang="pt_BR">O AppImage pode se atualizar pelo AppImageUpdate ou por um gerenciador de AppImage, baixando só o que mudou, e traz sua descrição e capturas de tela onde as centrais de software as procuram.</p>
+        <p xml:lang="ru">AppImage теперь может обновляться через AppImageUpdate или менеджер AppImage, скачивая только изменившееся, а его описание и снимки экрана лежат там, где их ищут центры приложений.</p>
+        <p xml:lang="tr">AppImage artık AppImageUpdate ya da bir AppImage yöneticisiyle yalnızca değişen kısmı indirerek kendini güncelleyebiliyor; açıklaması ve ekran görüntüleri de yazılım merkezlerinin aradığı yerde.</p>
+        <p xml:lang="zh_CN">AppImage 现在可以通过 AppImageUpdate 或 AppImage 管理器自我更新，只下载有变化的部分，并把说明和截图放在软件中心查找的位置。</p>
+      </description>
+    </release>
+    <release version="0.2.3" date="2026-10-01">
+      <description>
+        <p>The AppImage now brings everything it needs, its C library included, so it runs on older and unusual distributions too, and decodes video on the graphics card where the previous one could not.</p>
+        <p xml:lang="ar">يحمل AppImage الآن كل ما يحتاجه، بما في ذلك مكتبة C، فيعمل على التوزيعات الأقدم وغير المألوفة أيضًا، ويفك ترميز الفيديو على بطاقة الرسوميات حيث لم يكن السابق يستطيع ذلك.</p>
+        <p xml:lang="de">Das AppImage bringt jetzt alles mit, was es braucht, die C-Bibliothek eingeschlossen. Es läuft damit auch auf älteren und ungewöhnlichen Distributionen und dekodiert Video auf der Grafikkarte, wo das vorige es nicht konnte.</p>
+        <p xml:lang="es">El AppImage trae ahora todo lo que necesita, incluida su biblioteca de C, así que funciona también en distribuciones antiguas o poco comunes, y decodifica el vídeo en la tarjeta gráfica donde el anterior no podía.</p>
+        <p xml:lang="fr">L'AppImage apporte désormais tout ce dont elle a besoin, sa bibliothèque C comprise : elle fonctionne aussi sur des distributions anciennes ou inhabituelles, et décode la vidéo sur la carte graphique là où la précédente n'y parvenait pas.</p>
+        <p xml:lang="hi">AppImage अब अपनी ज़रूरत की हर चीज़ साथ लाता है, अपनी C लाइब्रेरी समेत, इसलिए यह पुराने और असामान्य वितरणों पर भी चलता है, और वहाँ ग्राफ़िक्स कार्ड पर वीडियो डिकोड करता है जहाँ पिछला नहीं कर पाता था।</p>
+        <p xml:lang="it">L'AppImage porta ora con sé tutto ciò che le serve, libreria C compresa, quindi funziona anche su distribuzioni vecchie o insolite, e decodifica il video sulla scheda grafica dove la precedente non ci riusciva.</p>
+        <p xml:lang="ja">AppImage が C ライブラリを含め必要なものをすべて同梱するようになり、古いディストリビューションや一般的でないディストリビューションでも動作します。以前の AppImage ではできなかった環境でも、グラフィックカードで動画をデコードします。</p>
+        <p xml:lang="pt_BR">O AppImage agora traz tudo de que precisa, inclusive sua biblioteca C, então funciona também em distribuições antigas ou incomuns, e decodifica o vídeo na placa de vídeo onde o anterior não conseguia.</p>
+        <p xml:lang="ru">AppImage теперь содержит всё необходимое, включая библиотеку C, поэтому работает и на старых или необычных дистрибутивах, а видео декодирует на видеокарте там, где прежний этого не умел.</p>
+        <p xml:lang="tr">AppImage artık C kütüphanesi de dahil ihtiyaç duyduğu her şeyi yanında getiriyor; böylece eski ve alışılmadık dağıtımlarda da çalışıyor ve öncekinin yapamadığı yerlerde videoyu ekran kartında çözüyor.</p>
+        <p xml:lang="zh_CN">AppImage 现在自带所需的一切，包括 C 库，因此在较旧或不常见的发行版上也能运行，并且能在以前的版本无法做到的环境中用显卡解码视频。</p>
+      </description>
+    </release>
+    <release version="0.2.2" date="2026-09-30">
+      <description>
+        <p>The AppImage starts on systems without PipeWire or JACK installed, instead of not starting at all.</p>
+        <p xml:lang="ar">يعمل AppImage الآن على الأنظمة التي لا تثبّت PipeWire أو JACK، بدل ألا يعمل إطلاقًا.</p>
+        <p xml:lang="de">Das AppImage startet jetzt auch auf Systemen ohne PipeWire oder JACK, statt gar nicht zu starten.</p>
+        <p xml:lang="es">El AppImage arranca en sistemas sin PipeWire o JACK instalados, en lugar de no arrancar en absoluto.</p>
+        <p xml:lang="fr">L'AppImage démarre sur les systèmes où PipeWire ou JACK ne sont pas installés, au lieu de ne pas démarrer du tout.</p>
+        <p xml:lang="hi">AppImage अब उन सिस्टम पर भी चलता है जिन पर PipeWire या JACK इंस्टॉल नहीं है, पहले की तरह बिल्कुल न चलने के बजाय।</p>
+        <p xml:lang="it">L'AppImage si avvia sui sistemi senza PipeWire o JACK installati, invece di non avviarsi affatto.</p>
+        <p xml:lang="ja">PipeWire や JACK が入っていないシステムでも、AppImage が起動しないということがなくなりました。</p>
+        <p xml:lang="pt_BR">O AppImage inicia em sistemas sem PipeWire ou JACK instalados, em vez de simplesmente não iniciar.</p>
+        <p xml:lang="ru">AppImage теперь запускается в системах без PipeWire или JACK, а не отказывается запускаться вовсе.</p>
+        <p xml:lang="tr">AppImage artık PipeWire ya da JACK kurulu olmayan sistemlerde hiç açılmamak yerine açılıyor.</p>
+        <p xml:lang="zh_CN">在未安装 PipeWire 或 JACK 的系统上，AppImage 现在可以正常启动，而不再完全无法运行。</p>
+      </description>
+    </release>
+    <release version="0.2.1" date="2026-09-30">
+      <description>
+        <p>A repair release: the packages now hold what 0.2.0 promised, and live view stops giving up pictures in bursts.</p>
+        <p xml:lang="ar">إصدار إصلاح: الحزم تحوي الآن ما وعد به 0.2.0، والعرض المباشر لم يعد يُسقط الصور على دفعات.</p>
+        <p xml:lang="de">Eine Reparaturausgabe: Die Pakete enthalten jetzt, was 0.2.0 versprochen hat, und die Live-Ansicht verwirft keine Bilder mehr in Schüben.</p>
+        <p xml:lang="es">Una versión de reparación: los paquetes contienen ahora lo que 0.2.0 prometía, y la vista en directo deja de descartar imágenes a ráfagas.</p>
+        <p xml:lang="fr">Une version de réparation : les paquets contiennent désormais ce que 0.2.0 promettait, et la vue en direct cesse d'abandonner des images par salves.</p>
+        <p xml:lang="hi">एक सुधार संस्करण: पैकेजों में अब वह सब है जिसका 0.2.0 ने वादा किया था, और लाइव दृश्य अब झटकों में तस्वीरें नहीं छोड़ता।</p>
+        <p xml:lang="it">Una versione di riparazione: i pacchetti ora contengono ciò che la 0.2.0 prometteva, e la visione dal vivo smette di scartare immagini a raffiche.</p>
+        <p xml:lang="ja">修正リリースです。パッケージに 0.2.0 で約束した内容がようやく揃い、ライブ表示で画像がまとめて抜け落ちることもなくなりました。</p>
+        <p xml:lang="pt_BR">Uma versão de correção: os pacotes agora contêm o que a 0.2.0 prometia, e a visualização ao vivo deixa de descartar imagens em rajadas.</p>
+        <p xml:lang="ru">Исправительный выпуск: пакеты теперь содержат то, что обещал 0.2.0, а живой просмотр больше не теряет кадры пачками.</p>
+        <p xml:lang="tr">Bir onarım sürümü: paketler artık 0.2.0'ın vaat ettiklerini içeriyor ve canlı görüntü kareleri toplu hâlde atmayı bırakıyor.</p>
+        <p xml:lang="zh_CN">一个修复版本：软件包现在真正包含了 0.2.0 所承诺的内容，实时画面也不再成批丢帧。</p>
+        <ul>
+          <li>The deb, rpm and AppImage keep passwords in the system keyring, as 0.2.0 said they would</li>
+          <li xml:lang="ar">حزم deb وrpm وAppImage تحفظ كلمات السر في حلقة مفاتيح النظام، كما قال 0.2.0</li>
+          <li xml:lang="de">Das deb-, rpm- und AppImage-Paket legen Passwörter im Schlüsselbund des Systems ab, wie es 0.2.0 angekündigt hatte</li>
+          <li xml:lang="es">Los paquetes deb, rpm y AppImage guardan las contraseñas en el llavero del sistema, como anunciaba 0.2.0</li>
+          <li xml:lang="fr">Les paquets deb, rpm et AppImage gardent les mots de passe dans le trousseau du système, comme l'annonçait 0.2.0</li>
+          <li xml:lang="hi">deb, rpm और AppImage पासवर्ड सिस्टम कीरिंग में रखते हैं, जैसा 0.2.0 ने कहा था</li>
+          <li xml:lang="it">I pacchetti deb, rpm e AppImage tengono le password nel portachiavi di sistema, come annunciava la 0.2.0</li>
+          <li xml:lang="ja">deb・rpm・AppImage でも、0.2.0 の告知どおりパスワードをシステムのキーリングに保存できます</li>
+          <li xml:lang="pt_BR">Os pacotes deb, rpm e AppImage guardam as senhas no chaveiro do sistema, como a 0.2.0 anunciava</li>
+          <li xml:lang="ru">Пакеты deb, rpm и AppImage хранят пароли в хранилище ключей системы, как и было обещано в 0.2.0</li>
+          <li xml:lang="tr">deb, rpm ve AppImage paketleri, 0.2.0'da söylendiği gibi parolaları sistem anahtarlığında tutar</li>
+          <li xml:lang="zh_CN">deb、rpm 和 AppImage 软件包按 0.2.0 所说，将密码保存在系统密钥环中</li>
+          <li>The deb installs on Ubuntu 25.10 and 26.04</li>
+          <li xml:lang="ar">حزمة deb تُثبَّت على Ubuntu 25.10 و26.04</li>
+          <li xml:lang="de">Das deb-Paket lässt sich unter Ubuntu 25.10 und 26.04 installieren</li>
+          <li xml:lang="es">El paquete deb se instala en Ubuntu 25.10 y 26.04</li>
+          <li xml:lang="fr">Le paquet deb s'installe sur Ubuntu 25.10 et 26.04</li>
+          <li xml:lang="hi">deb पैकेज Ubuntu 25.10 और 26.04 पर इंस्टॉल होता है</li>
+          <li xml:lang="it">Il pacchetto deb si installa su Ubuntu 25.10 e 26.04</li>
+          <li xml:lang="ja">deb パッケージが Ubuntu 25.10 と 26.04 にインストールできます</li>
+          <li xml:lang="pt_BR">O pacote deb instala no Ubuntu 25.10 e 26.04</li>
+          <li xml:lang="ru">Пакет deb устанавливается в Ubuntu 25.10 и 26.04</li>
+          <li xml:lang="tr">deb paketi Ubuntu 25.10 ve 26.04 üzerine kurulur</li>
+          <li xml:lang="zh_CN">deb 软件包可在 Ubuntu 25.10 和 26.04 上安装</li>
+          <li>A camera that falls behind catches up instead of dropping pictures in recurring bursts</li>
+          <li xml:lang="ar">الكاميرا التي تتأخر تلحق بالركب بدل إسقاط الصور في دفعات متكررة</li>
+          <li xml:lang="de">Eine Kamera, die in Rückstand gerät, holt auf, statt immer wieder Bilder in Schüben zu verwerfen</li>
+          <li xml:lang="es">Una cámara que se retrasa se pone al día en lugar de descartar imágenes a ráfagas una y otra vez</li>
+          <li xml:lang="fr">Une caméra qui prend du retard le rattrape au lieu d'abandonner des images par salves répétées</li>
+          <li xml:lang="hi">पीछे छूटा कैमरा बार-बार झटकों में तस्वीरें छोड़ने के बजाय बराबरी पर आ जाता है</li>
+          <li xml:lang="it">Una telecamera rimasta indietro recupera, invece di scartare immagini a raffiche ricorrenti</li>
+          <li xml:lang="ja">遅れたカメラは、画像を繰り返しまとめて捨てるのではなく、きちんと追いつきます</li>
+          <li xml:lang="pt_BR">Uma câmera que fica para trás se recupera, em vez de descartar imagens em rajadas recorrentes</li>
+          <li xml:lang="ru">Отставшая камера догоняет, а не теряет кадры повторяющимися пачками</li>
+          <li xml:lang="tr">Geride kalan bir kamera, kareleri tekrar tekrar toplu hâlde atmak yerine arayı kapatır</li>
+          <li xml:lang="zh_CN">落后的摄像机会追上进度，而不是反复成批丢帧</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-09-14">
+      <description>
+        <p>A larger release: cameras behind a recorder, a full-screen mode, somewhere better than the configuration file to keep a password, and recording that can include the seconds before the trigger.</p>
+        <p xml:lang="ar">إصدار أكبر: الكاميرات خلف مسجل، ووضع ملء الشاشة، ومكان أفضل من ملف الإعدادات لحفظ كلمة السر، وتسجيل يمكنه أن يضم الثواني السابقة للحدث.</p>
+        <p xml:lang="de">Eine größere Ausgabe: Kameras hinter einem Rekorder, ein Vollbildmodus, ein besserer Ort als die Einstellungsdatei für ein Passwort, und Aufnahmen, die die Sekunden vor dem Auslöser enthalten können.</p>
+        <p xml:lang="es">Una versión mayor: cámaras detrás de un grabador, un modo de pantalla completa, un lugar mejor que el archivo de configuración para guardar una contraseña, y grabaciones que pueden incluir los segundos anteriores al disparo.</p>
+        <p xml:lang="fr">Une version plus large : des caméras derrière un enregistreur, un mode plein écran, un meilleur endroit que le fichier de configuration pour un mot de passe, et un enregistrement qui peut contenir les secondes précédant le déclenchement.</p>
+        <p xml:lang="hi">एक बड़ा संस्करण: रिकॉर्डर के पीछे लगे कैमरे, पूर्ण-स्क्रीन मोड, पासवर्ड रखने के लिए सेटिंग फ़ाइल से बेहतर जगह, और ऐसी रिकॉर्डिंग जो ट्रिगर से पहले के सेकंड भी समेट सके।</p>
+        <p xml:lang="it">Una versione più ampia: telecamere dietro a un registratore, una modalità a schermo intero, un posto migliore del file di configurazione per una password, e registrazioni che possono contenere i secondi precedenti all'evento.</p>
+        <p xml:lang="ja">大きめのリリースです。レコーダーの先にあるカメラ、全画面表示、設定ファイルより安全なパスワードの置き場所、そして記録のきっかけより前の数秒を含められる録画。</p>
+        <p xml:lang="pt_BR">Uma versão maior: câmeras atrás de um gravador, um modo de tela cheia, um lugar melhor que o arquivo de configuração para guardar uma senha, e gravações que podem incluir os segundos anteriores ao disparo.</p>
+        <p xml:lang="ru">Более крупный выпуск: камеры за регистратором, полноэкранный режим, место для пароля получше файла настроек и запись, способная включить секунды до срабатывания.</p>
+        <p xml:lang="tr">Daha büyük bir sürüm: bir kaydedicinin ardındaki kameralar, tam ekran kipi, parola için yapılandırma dosyasından daha iyi bir yer ve tetiklenmeden önceki saniyeleri de içerebilen kayıt.</p>
+        <p xml:lang="zh_CN">一个较大的版本：录像机后面的摄像机、全屏模式、比配置文件更妥当的密码存放处，以及可以包含触发之前几秒的录制。</p>
+        <ul>
+          <li>Cameras behind an NVR, offered by name and added together</li>
+          <li xml:lang="ar">الكاميرات خلف مسجل شبكي، تُعرض بأسمائها وتُضاف دفعة واحدة</li>
+          <li xml:lang="de">Kameras hinter einem NVR, mit Namen angeboten und gemeinsam hinzugefügt</li>
+          <li xml:lang="es">Cámaras detrás de un NVR, ofrecidas por su nombre y añadidas juntas</li>
+          <li xml:lang="fr">Caméras derrière un NVR, proposées par leur nom et ajoutées ensemble</li>
+          <li xml:lang="hi">NVR के पीछे लगे कैमरे, नाम के साथ सामने आते हैं और एक साथ जुड़ते हैं</li>
+          <li xml:lang="it">Telecamere dietro a un NVR, proposte per nome e aggiunte insieme</li>
+          <li xml:lang="ja">NVR の先にあるカメラを名前つきで提示し、まとめて追加</li>
+          <li xml:lang="pt_BR">Câmeras atrás de um NVR, oferecidas pelo nome e adicionadas juntas</li>
+          <li xml:lang="ru">Камеры за регистратором — предлагаются по именам и добавляются разом</li>
+          <li xml:lang="tr">Bir NVR'ın ardındaki kameralar, adlarıyla sunulup birlikte eklenir</li>
+          <li xml:lang="zh_CN">录像机后面的摄像机，按名称列出并一次性添加</li>
+          <li>Full screen for the grid or one camera, with the controls withdrawing when the pointer stops</li>
+          <li xml:lang="ar">ملء الشاشة للشبكة أو لكاميرا واحدة، مع انسحاب عناصر التحكم عند سكون المؤشر</li>
+          <li xml:lang="de">Vollbild für das Gitter oder eine Kamera; die Bedienelemente ziehen sich zurück, sobald der Zeiger ruht</li>
+          <li xml:lang="es">Pantalla completa para la cuadrícula o una sola cámara, con los controles retirándose cuando el puntero se detiene</li>
+          <li xml:lang="fr">Plein écran pour la grille ou une seule caméra, les commandes s'effaçant quand le pointeur s'arrête</li>
+          <li xml:lang="hi">जाली या किसी एक कैमरे के लिए पूर्ण स्क्रीन; पॉइंटर रुकते ही नियंत्रण हट जाते हैं</li>
+          <li xml:lang="it">Schermo intero per la griglia o per una sola telecamera, con i comandi che si ritirano quando il puntatore si ferma</li>
+          <li xml:lang="ja">グリッドでも 1 台でも全画面に。ポインタが止まると操作部は引っ込みます</li>
+          <li xml:lang="pt_BR">Tela cheia para a grade ou para uma câmera, com os controles se recolhendo quando o ponteiro para</li>
+          <li xml:lang="ru">Полный экран для сетки или одной камеры; органы управления убираются, когда указатель замирает</li>
+          <li xml:lang="tr">Izgara ya da tek kamera için tam ekran; işaretçi durunca denetimler çekilir</li>
+          <li xml:lang="zh_CN">整幅画面或单台摄像机全屏，指针停下后控件自动隐去</li>
+          <li>A password can live in the system keyring, or come from a command, instead of the configuration file</li>
+          <li xml:lang="ar">يمكن أن تُحفظ كلمة السر في حلقة مفاتيح النظام أو تأتي من أمر، بدل ملف الإعدادات</li>
+          <li xml:lang="de">Ein Passwort kann im Schlüsselbund des Systems liegen oder aus einem Befehl kommen statt aus der Einstellungsdatei</li>
+          <li xml:lang="es">La contraseña puede guardarse en el llavero del sistema o venir de un comando, en vez del archivo de configuración</li>
+          <li xml:lang="fr">Un mot de passe peut résider dans le trousseau du système ou provenir d'une commande, plutôt que du fichier de configuration</li>
+          <li xml:lang="hi">पासवर्ड सेटिंग फ़ाइल के बजाय सिस्टम कीरिंग में रह सकता है या किसी कमांड से आ सकता है</li>
+          <li xml:lang="it">La password può stare nel portachiavi di sistema o arrivare da un comando, invece che dal file di configurazione</li>
+          <li xml:lang="ja">パスワードは設定ファイルではなく、システムのキーリングやコマンドの出力から取れます</li>
+          <li xml:lang="pt_BR">A senha pode ficar no chaveiro do sistema, ou vir de um comando, em vez do arquivo de configuração</li>
+          <li xml:lang="ru">Пароль может храниться в хранилище ключей системы или приходить из команды, а не из файла настроек</li>
+          <li xml:lang="tr">Parola, yapılandırma dosyası yerine sistem anahtarlığında durabilir ya da bir komuttan gelebilir</li>
+          <li xml:lang="zh_CN">密码可存放在系统密钥环，或由命令提供，而不必写在配置文件里</li>
+          <li>Recording that keeps the seconds before the trigger, and recording round the clock into a rolling archive</li>
+          <li xml:lang="ar">تسجيل يحتفظ بالثواني السابقة للحدث، وتسجيل على مدار الساعة في أرشيف متجدد</li>
+          <li xml:lang="de">Aufnahmen, die die Sekunden vor dem Auslöser enthalten, und Aufnahme rund um die Uhr in ein rollendes Archiv</li>
+          <li xml:lang="es">Grabación que conserva los segundos anteriores al disparo, y grabación continua en un archivo rotatorio</li>
+          <li xml:lang="fr">Un enregistrement qui garde les secondes précédant le déclenchement, et un enregistrement continu dans une archive glissante</li>
+          <li xml:lang="hi">ऐसी रिकॉर्डिंग जो ट्रिगर से पहले के सेकंड रखती है, और चौबीसों घंटे चलने वाला घूमता संग्रह</li>
+          <li xml:lang="it">Registrazione che conserva i secondi prima dell'evento e registrazione continua in un archivio a scorrimento</li>
+          <li xml:lang="ja">きっかけより前の数秒を残す録画と、巻き取り式の保存領域への 24 時間録画</li>
+          <li xml:lang="pt_BR">Gravação que guarda os segundos anteriores ao disparo, e gravação ininterrupta em um arquivo rotativo</li>
+          <li xml:lang="ru">Запись, сохраняющая секунды до срабатывания, и круглосуточная запись в скользящий архив</li>
+          <li xml:lang="tr">Tetiklenmeden önceki saniyeleri saklayan kayıt ve dönen bir arşive kesintisiz kayıt</li>
+          <li xml:lang="zh_CN">保留触发之前几秒的录制，以及写入滚动归档的全天候录制</li>
+          <li>Baichuan video is read correctly on firmware whose frames are not laid out like an RLC-410W's, where every picture was arriving damaged</li>
+          <li xml:lang="ar">تُقرأ فيديوهات Baichuan قراءة صحيحة على البرمجيات التي تختلف بنية إطاراتها عن RLC-410W، حيث كانت كل صورة تصل تالفة</li>
+          <li xml:lang="de">Baichuan-Video wird auch auf Firmware richtig gelesen, deren Bilder anders aufgebaut sind als bei einer RLC-410W — dort kam bisher jedes Bild beschädigt an</li>
+          <li xml:lang="es">El vídeo Baichuan se lee correctamente en firmware cuyos fotogramas no están dispuestos como los de una RLC-410W, donde cada imagen llegaba dañada</li>
+          <li xml:lang="fr">La vidéo Baichuan est lue correctement sur les firmwares dont les trames ne sont pas disposées comme celles d'une RLC-410W, où chaque image arrivait abîmée</li>
+          <li xml:lang="hi">जिन फ़र्मवेयर में फ़्रेम की बनावट RLC-410W जैसी नहीं है, वहाँ भी Baichuan वीडियो सही पढ़ा जाता है — पहले हर तस्वीर खराब पहुँचती थी</li>
+          <li xml:lang="it">Il video Baichuan viene letto correttamente anche sui firmware in cui i fotogrammi non sono disposti come su una RLC-410W, dove ogni immagine arrivava danneggiata</li>
+          <li xml:lang="ja">フレームの並びが RLC-410W と異なるファームウェアでも Baichuan の映像を正しく読み取ります。これまではすべての画が壊れて届いていました</li>
+          <li xml:lang="pt_BR">O vídeo Baichuan é lido corretamente em firmwares cujos quadros não seguem o layout de uma RLC-410W, onde cada imagem chegava danificada</li>
+          <li xml:lang="ru">Видео Baichuan читается правильно и на прошивках, где кадры устроены не так, как у RLC-410W: раньше каждая картинка приходила повреждённой</li>
+          <li xml:lang="tr">Kareleri bir RLC-410W'ninki gibi dizilmemiş ürün yazılımlarında da Baichuan videosu doğru okunur; daha önce her görüntü bozuk geliyordu</li>
+          <li xml:lang="zh_CN">在帧结构与 RLC-410W 不同的固件上也能正确读取 Baichuan 视频——此前每一幅画面都是损坏的</li>
+          <li>The player is handed the camera's own timestamps, so the picture can no longer fall further and further behind</li>
+          <li xml:lang="ar">يُسلَّم المشغّل أختام الوقت من الكاميرا نفسها، فلم تعد الصورة تتأخر أكثر فأكثر</li>
+          <li xml:lang="de">Der Player bekommt die Zeitstempel der Kamera selbst, sodass das Bild nicht mehr immer weiter zurückfällt</li>
+          <li xml:lang="es">Al reproductor se le entregan las marcas de tiempo de la propia cámara, así que la imagen ya no se retrasa cada vez más</li>
+          <li xml:lang="fr">Le lecteur reçoit les horodatages de la caméra elle-même : l'image ne prend plus un retard qui ne cesse de croître</li>
+          <li xml:lang="hi">प्लेयर को कैमरे की अपनी समय-मुहरें मिलती हैं, इसलिए तस्वीर अब लगातार पीछे नहीं छूटती</li>
+          <li xml:lang="it">Al lettore vengono passati i tempi della telecamera stessa, così l'immagine non resta sempre più indietro</li>
+          <li xml:lang="ja">カメラ自身のタイムスタンプを再生側に渡すため、映像がどんどん遅れていくことはなくなりました</li>
+          <li xml:lang="pt_BR">O reprodutor recebe as marcas de tempo da própria câmera, de modo que a imagem não fica cada vez mais atrasada</li>
+          <li xml:lang="ru">Проигрыватель получает метки времени самой камеры, поэтому картинка больше не отстаёт всё сильнее</li>
+          <li xml:lang="tr">Oynatıcıya kameranın kendi zaman damgaları verilir; görüntü artık giderek geride kalmaz</li>
+          <li xml:lang="zh_CN">把摄像机自己的时间戳交给播放器，画面不会再越拖越迟</li>
+          <li>Twelve languages</li>
+          <li xml:lang="ar">اثنتا عشرة لغة</li>
+          <li xml:lang="de">Zwölf Sprachen</li>
+          <li xml:lang="es">Doce idiomas</li>
+          <li xml:lang="fr">Douze langues</li>
+          <li xml:lang="hi">बारह भाषाएँ</li>
+          <li xml:lang="it">Dodici lingue</li>
+          <li xml:lang="ja">12 の言語</li>
+          <li xml:lang="pt_BR">Doze idiomas</li>
+          <li xml:lang="ru">Двенадцать языков</li>
+          <li xml:lang="tr">On iki dil</li>
+          <li xml:lang="zh_CN">十二种语言</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.1" date="2026-07-28">
+      <description>
+        <p>
+          Fixes a crash when the program was closed: the log could be written
+          to while it was being taken apart. Reliable inside a Flatpak,
+          intermittent elsewhere.
+        </p>
+        <p xml:lang="ar">
+          يصلح انهياراً عند إغلاق البرنامج: إذ كان من الممكن الكتابة في السجل
+          أثناء تفكيكه. وكان الانهيار مؤكداً داخل Flatpak ومتقطعاً في غيره.
+        </p>
+        <p xml:lang="de">
+          Behebt einen Absturz beim Beenden: Ins Protokoll konnte geschrieben
+          werden, während es gerade abgebaut wurde. Im Flatpak zuverlässig,
+          sonst sporadisch.
+        </p>
+        <p xml:lang="es">
+          Corrige un fallo al cerrar el programa: podía escribirse en el registro
+          mientras se estaba desmontando. Seguro dentro de un Flatpak,
+          intermitente en otros casos.
+        </p>
+        <p xml:lang="fr">
+          Corrige un plantage à la fermeture : le journal pouvait être écrit
+          pendant qu'il était démonté. Systématique dans un Flatpak,
+          intermittent ailleurs.
+        </p>
+        <p xml:lang="hi">
+          प्रोग्राम बंद करते समय होने वाला एक क्रैश ठीक करता है: लॉग को उसी समय लिखा जा
+          सकता था जब उसे समेटा जा रहा हो। Flatpak के भीतर हर बार, अन्यत्र कभी-कभी।
+        </p>
+        <p xml:lang="it">
+          Corregge un crash alla chiusura: si poteva scrivere nel registro mentre
+          veniva smontato. Sistematico dentro un Flatpak, saltuario altrove.
+        </p>
+        <p xml:lang="ja">
+          終了時のクラッシュを修正しました。ログが解体されている最中に書き込まれる
+          ことがありました。Flatpak では毎回、それ以外では時折発生していました。
+        </p>
+        <p xml:lang="pt_BR">
+          Corrige uma falha ao fechar o programa: o registro podia ser escrito
+          enquanto estava sendo desmontado. Certo dentro de um Flatpak,
+          intermitente fora dele.
+        </p>
+        <p xml:lang="ru">
+          Исправляет аварийное завершение при закрытии программы: в журнал можно
+          было писать, пока он разбирался. Внутри Flatpak воспроизводилось
+          постоянно, в других случаях — время от времени.
+        </p>
+        <p xml:lang="tr">
+          Program kapatılırken oluşan bir çökmeyi giderir: günlük, tam
+          dağıtılırken yazılabiliyordu. Flatpak içinde her seferinde, başka
+          yerlerde ara sıra.
+        </p>
+        <p xml:lang="zh_CN">
+          修复了关闭程序时的崩溃：日志在被拆解的同时仍可能被写入。在 Flatpak 中必现，
+          在其他环境下偶发。
+        </p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-07-26">
+      <description>
+        <p>First release.</p>
+        <p xml:lang="ar">أول إصدار.</p>
+        <p xml:lang="de">Erste Veröffentlichung.</p>
+        <p xml:lang="es">Primera versión.</p>
+        <p xml:lang="fr">Première version.</p>
+        <p xml:lang="hi">पहला संस्करण।</p>
+        <p xml:lang="it">Prima versione.</p>
+        <p xml:lang="ja">最初のリリース。</p>
+        <p xml:lang="pt_BR">Primeira versão.</p>
+        <p xml:lang="ru">Первый выпуск.</p>
+        <p xml:lang="tr">İlk sürüm.</p>
+        <p xml:lang="zh_CN">首个版本。</p>
+        <ul>
+          <li>Multi-camera grid with per-camera volume</li>
+          <li xml:lang="ar">شبكة متعددة الكاميرات مع مستوى صوت لكل كاميرا</li>
+          <li xml:lang="de">Gitter mit mehreren Kameras und Lautstärke je Kamera</li>
+          <li xml:lang="es">Cuadrícula de varias cámaras con volumen por cámara</li>
+          <li xml:lang="fr">Grille multi-caméras avec volume par caméra</li>
+          <li xml:lang="hi">कई कैमरों की जाली, हर कैमरे के लिए अलग ध्वनि-मात्रा</li>
+          <li xml:lang="it">Griglia con più telecamere e volume per singola telecamera</li>
+          <li xml:lang="ja">カメラごとの音量つきマルチカメラグリッド</li>
+          <li xml:lang="pt_BR">Grade com várias câmeras e volume por câmera</li>
+          <li xml:lang="ru">Сетка из нескольких камер с громкостью для каждой</li>
+          <li xml:lang="tr">Kamera başına ses düzeyiyle çok kameralı ızgara</li>
+          <li xml:lang="zh_CN">多摄像机网格，每台独立音量</li>
+          <li>ONVIF motion alerts</li>
+          <li xml:lang="ar">تنبيهات حركة عبر ONVIF</li>
+          <li xml:lang="de">Bewegungsmeldungen über ONVIF</li>
+          <li xml:lang="es">Avisos de movimiento por ONVIF</li>
+          <li xml:lang="fr">Alertes de mouvement ONVIF</li>
+          <li xml:lang="hi">ONVIF गति-सूचनाएँ</li>
+          <li xml:lang="it">Avvisi di movimento ONVIF</li>
+          <li xml:lang="ja">ONVIF による動体通知</li>
+          <li xml:lang="pt_BR">Alertas de movimento por ONVIF</li>
+          <li xml:lang="ru">Уведомления о движении по ONVIF</li>
+          <li xml:lang="tr">ONVIF hareket uyarıları</li>
+          <li xml:lang="zh_CN">ONVIF 移动提醒</li>
+          <li>Snapshots and full-screen view</li>
+          <li xml:lang="ar">لقطات وعرض بملء الشاشة</li>
+          <li xml:lang="de">Standbilder und Vollbildansicht</li>
+          <li xml:lang="es">Instantáneas y vista a pantalla completa</li>
+          <li xml:lang="fr">Captures et affichage en plein écran</li>
+          <li xml:lang="hi">स्नैपशॉट और पूर्ण-स्क्रीन दृश्य</li>
+          <li xml:lang="it">Istantanee e vista a schermo intero</li>
+          <li xml:lang="ja">静止画と全画面表示</li>
+          <li xml:lang="pt_BR">Instantâneos e visualização em tela cheia</li>
+          <li xml:lang="ru">Снимки и полноэкранный просмотр</li>
+          <li xml:lang="tr">Anlık görüntüler ve tam ekran görünümü</li>
+          <li xml:lang="zh_CN">抓拍与全屏查看</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

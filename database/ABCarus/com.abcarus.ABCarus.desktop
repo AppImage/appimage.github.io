@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=ABCarus
+Comment=Edit, render, and play ABC notation
 Exec=abcarus
 Icon=abcarus
 Categories=AudioVideo;Audio;Music;

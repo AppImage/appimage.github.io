@@ -88,7 +88,7 @@ jobs:
           echo "Predominantly Chinese: $CHINESE"
 
       - name: Upload images
-        if: steps.pr.outputs.number != '' && steps.lang.outputs.chinese != 'true'
+        if: steps.pr.outputs.number != ''
         env:
           PR: ${{ steps.pr.outputs.number }}
           REPO_ID: ${{ github.event.repository.id }}
@@ -143,6 +143,7 @@ jobs:
         if: steps.pr.outputs.number != ''
         env:
           PR: ${{ steps.pr.outputs.number }}
+          CHINESE: ${{ steps.lang.outputs.chinese }}
         run: |
           # error-* labels name the known causes of a failed test, screenshot-ok
           # marks a good screenshot; replace the previous ones. Untrusted artifact: only accept labels listed by
@@ -152,7 +153,7 @@ jobs:
             NEW=$(grep -xF -f <(bash code/diagnose.sh --list-labels) out/labels.txt | sort -u || true)
           fi
           # screenshot-ok: the test passed, took a screenshot and found nothing wrong with it
-          if [ "$CONCLUSION" = success ] && [ -e out/screenshot-ok ] && [ -s images.txt ] ; then
+          if [ "$CONCLUSION" = success ] && [ "$CHINESE" != true ] && [ -e out/screenshot-ok ] && [ -s images.txt ] ; then
             NEW=$(printf '%s\nscreenshot-ok\n' "$NEW" | grep . | sort -u)
           fi
           OLD=$(gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name | select(startswith("error-") or . == "screenshot-ok")' | sort -u)
@@ -224,6 +225,13 @@ jobs:
               [ -n "$MENTIONS" ] && { echo "${MENTIONS# }" ; echo ; }
               cat code/chinese-invite.md
               echo
+              # The screenshot, so the author sees what we saw
+              while read -r base url ; do
+                echo "**${base}**"
+                echo
+                echo "![${base}](${url})"
+                echo
+              done < images.txt
               echo "Commit ${HEAD_SHA::8}. [Full log](${RUN_URL})"
             } > comment.md
             cat comment.md
@@ -270,7 +278,7 @@ jobs:
             fi
             if [ -s out/names.txt ] ; then
               # Untrusted: only lines of the form the test writes, in a code block
-              NAMES=$(grep -E "^(ERROR|WARNING): (File name|AppImage name) '" out/names.txt | head -n 10 | cut -c1-300 | sed 's/````*/```/g' || true)
+              NAMES=$(grep -E "^(ERROR|WARNING): ((File name|AppImage name) '|The names of the .* differ: )" out/names.txt | head -n 10 | cut -c1-300 | sed 's/````*/```/g' || true)
               if [ -n "$NAMES" ] ; then
                 echo "**Names:**"
                 echo
@@ -278,6 +286,24 @@ jobs:
                 echo "$NAMES"
                 echo '````'
                 echo
+              fi
+            fi
+            if [ -s out/notes.txt ] ; then
+              # Untrusted: a line counts only if it is exactly a note that
+              # code/check-name.sh (from master) writes for that file name
+              NOTES=""
+              while IFS= read -r LINE ; do
+                N=$(sed -nE "s/^NOTE: File name '([A-Za-z0-9._+-]{1,100})': .*/\1/p" <<<"$LINE")
+                [ -n "$N" ] || continue
+                for KIND in lowercase terminal ; do
+                  TEXT=$(bash code/check-name.sh --note-text "$KIND" "$N")
+                  [ "$LINE" = "NOTE: $TEXT" ] && NOTES="$NOTES- $TEXT"$'\n'
+                done
+              done < <(head -n 5 out/notes.txt)
+              if [ -n "$NOTES" ] ; then
+                echo "**Notes:**"
+                echo
+                printf '%s\n' "$NOTES"
               fi
             fi
             if [ -s out/hints.md ] ; then
@@ -368,7 +394,13 @@ jobs:
             [ -s files.tsv ] || skip "re-test PR without changes"
             while IFS=$'\t' read -r FILE STATUS ; do
               [[ "$FILE" == data/* ]] && [ "$STATUS" = modified ] || skip "re-test PR changes $FILE ($STATUS), not only existing files in data/"
-              [ "$(first_line "$FILE" "$(jq -r .base.sha pr.json)")" = "$(first_line "$FILE" "$HEAD_SHA")" ] || skip "re-test PR changes the download location in $FILE"
+              # The first line may change in one way: from a link to one particular
+              # release to its repository (code/repo-url-for-entry.sh, same owner
+              # and repository), which the test of this PR has just passed with
+              OLD=$(first_line "$FILE" "$(jq -r .base.sha pr.json)")
+              NEW=$(first_line "$FILE" "$HEAD_SHA")
+              [ "$OLD" = "$NEW" ] || bash code/repo-url-for-entry.sh --shortens "$OLD" "$NEW" \
+                || skip "re-test PR changes the download location in $FILE"
             done < files.tsv
             MERGED=$(gh api -X PUT "repos/$REPO/pulls/$PR/merge" -f sha="$HEAD_SHA" -f merge_method=squash --jq .sha) \
               || skip "GitHub refused the merge"
@@ -391,9 +423,15 @@ jobs:
           case "$STATUS" in
             added) ;;
             modified)
+              # An existing entry may keep its first line, or have a long-form
+              # link to a repository shortened to the short form of the SAME
+              # repository; any other change (even within the same owner: it may
+              # be a different project that happens to share the file name, #8569)
+              # is for a maintainer
               OLD=$(first_line "$FILE" "$(jq -r .base.sha pr.json)")
               NEW=$(first_line "$FILE" "$HEAD_SHA")
-              bash code/check-origin.sh "$OLD" "$NEW" || skip "the download location changes owner"
+              [ "$OLD" = "$NEW" ] || bash code/repo-url-for-entry.sh --shortens "$OLD" "$NEW" \
+                || skip "the download location of the existing entry changes; a maintainer checks that"
               ;;
             *) skip "$STATUS file" ;;
           esac
