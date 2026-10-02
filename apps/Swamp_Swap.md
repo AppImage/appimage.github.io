@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /Swamp_Swap/
-description: "Secure file transfer"
+description: "A GUI wrapper for the croc CLI file transfer program"
 license: "GPL-3.0-or-later"
 
 icons:
@@ -22,8 +22,8 @@ links:
 
 desktop:
   Desktop Entry:
-    Name: SwampSwap
-    Comment: Secure file transfer
+    Name: Swamp Swap
+    Comment: A GUI wrapper for the croc CLI file transfer program
     Exec: SwampSwap
     Icon: io.github.Ferase.SwampSwap
     Type: Application

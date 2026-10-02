@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=SwampSwap
-Comment=Secure file transfer
+Name=Swamp Swap
+Comment=A GUI wrapper for the croc CLI file transfer program
 Exec=SwampSwap
 Icon=io.github.Ferase.SwampSwap
 Type=Application
