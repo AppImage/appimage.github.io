@@ -1,0 +1,60 @@
+# Re-tests the entries whose stored result in database/ is old (by default more
+# than a year): for each, code/retest-stale.sh opens a pull request that touches
+# its file in data/, like /retest does for a merged pull request. If the test
+# passes it is merged automatically (publish-pr-screenshot.yml merges retest/*
+# pull requests that only touch existing files in data/), which refreshes
+# database/ and apps/; if it fails, the pull request stays open with the test
+# result, which also tells the GitHub account the AppImage comes from.
+# The oldest entries come first. Manual only (workflow_dispatch).
+
+name: Re-test stale entries
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Maximum number of entries (pull requests) to re-test in this run, oldest first'
+        type: number
+        default: 10
+      days:
+        description: 'An entry is stale when nothing in its database/ directory changed for this many days'
+        type: number
+        default: 365
+      dry_run:
+        description: 'Dry run (only list the entries that would be re-tested; nothing is pushed)'
+        type: boolean
+        default: true
+
+jobs:
+  retest-stale:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    # One run at a time, so that two runs cannot open pull requests for the same entry.
+    concurrency:
+      group: retest-stale
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # A pull request opened with GITHUB_TOKEN starts no Test run, so the
+      # branch is pushed and the pull request opened with this personal token
+      PAT: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the age of an entry is the date of its last commit in database/
+
+      - name: Open the re-test pull requests
+        env:
+          LIMIT: ${{ github.event.inputs.limit || '10' }}
+          DAYS: ${{ github.event.inputs.days || '365' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          ARGS=(--limit "$LIMIT" --days "$DAYS")
+          [ "$DRY_RUN" != "false" ] && ARGS+=(--dry-run)
+          bash code/retest-stale.sh "${ARGS[@]}"
