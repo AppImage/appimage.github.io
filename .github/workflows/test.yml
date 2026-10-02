@@ -71,8 +71,8 @@ jobs:
         # This action handles caching APT packages, and leaves the option for package configuration scripts to be run if needed,
         # saving a boat-load of time, if needed bump the action version.
         with:
-          packages: sudo imagemagick libasound2-dev pulseaudio pulseaudio-utils libasound2-plugins alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xsel xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim tesseract-ocr-ara tesseract-ocr-rus tesseract-ocr-ell libfuse2 stalonetray
-          version: 1.6
+          packages: sudo imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xsel xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim tesseract-ocr-ara tesseract-ocr-rus tesseract-ocr-ell libfuse2 stalonetray
+          version: 1.5
           # Bump me ^ if you have added any new packages
       - name: Cache test dependencies
         uses: actions/cache@v4
@@ -110,7 +110,6 @@ jobs:
           TaskBarShowCPUStatus = 0
           TaskBarShowWindowListMenu = 0
           EOF
-          bash code/prep-dummy-audio.sh # an audio output (PulseAudio null sink), as a runner has no sound card
           Xvfb :99 -screen 0 800x600x24 >/dev/null 2>&1 & # Need to set bit depth, otherwise get some black screenshots
           # Files in data/ added or changed by this PR (or by this push)
           if [ "$IS_PULLREQUEST" = true ] ; then
@@ -166,7 +165,6 @@ jobs:
             fi
           done
           killall Xvfb
-          pulseaudio --kill 2>/dev/null || true
           if [ -n "${FAILED:-}" ] ; then
             echo "Failed:$FAILED"
             exit 1
