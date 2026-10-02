@@ -1,0 +1,13 @@
+{
+  "name": "mynetwork",
+  "version": "1.1.0",
+  "description": "myNetwork — cross-platform LAN & port scanner with a beautiful GUI",
+  "main": "src/main.js",
+  "author": "ancaferro <ancaferro@users.noreply.github.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ancaferro/myNetwork",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ancaferro/myNetwork.git"
+  }
+}

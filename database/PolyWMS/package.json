@@ -1,0 +1,9 @@
+{
+  "name": "poly",
+  "private": true,
+  "version": "1.1.0",
+  "description": "A modern, offline-first Warehouse Management System",
+  "author": "Nam Nguyễn <namnts01718@gmail.com>",
+  "type": "module",
+  "main": "electron/main.cjs"
+}

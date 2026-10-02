@@ -1,0 +1,30 @@
+{
+  "name": "rokdock",
+  "version": "1.7.2",
+  "description": "Cross-platform desktop app for Roku development: device discovery, terminal sessions, remote control, sideloading, screenshot capture, automation scripting, and a built-in AI assistant with Gemini, Claude, Codex, and Copilot",
+  "main": "./out/main/main.js",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@codemirror/commands": "6.10.4",
+    "@codemirror/lang-json": "6.0.2",
+    "@codemirror/language": "6.12.4",
+    "@codemirror/lint": "6.9.7",
+    "@codemirror/search": "6.7.1",
+    "@codemirror/state": "6.7.1",
+    "@codemirror/view": "6.43.7",
+    "@fortawesome/fontawesome-svg-core": "7.3.0",
+    "@fortawesome/free-solid-svg-icons": "7.3.0",
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "electron-store": "11.0.2",
+    "electron-updater": "6.8.9",
+    "fast-xml-parser": "5.10.1",
+    "image-q": "4.0.0",
+    "js-yaml": "5.2.2",
+    "mdast-util-from-markdown": "2.0.3",
+    "mdast-util-to-hast": "13.2.1",
+    "pngjs": "7.0.0",
+    "rehype-raw": "7.0.0",
+    "zod": "4.4.3"
+  }
+}

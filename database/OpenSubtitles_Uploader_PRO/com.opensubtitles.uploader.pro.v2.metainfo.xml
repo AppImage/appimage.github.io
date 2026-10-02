@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata for the AppImage build.
+
+  The <id> matches the `identifier` in src-tauri/tauri.conf.json, and the file
+  name must match the <id>. `bundle.linux.appimage.files` in tauri.conf.json
+  copies this to usr/share/metainfo/ inside the AppDir.
+
+  The screenshot is a web address, not a file in the AppImage; it is served from
+  this repository. Keep screenshots/main-window.png in place - removing or
+  renaming it breaks the catalog page at https://appimage.github.io.
+
+  Bump <releases> on every release; `npm run update-version` does not touch this
+  file.
+
+  Validate with "appstreamcli validate" (add the no-net flag to skip URL checks).
+-->
+<component type="desktop-application">
+  <id>com.opensubtitles.uploader.pro.v2</id>
+  <name>OpenSubtitles Uploader PRO</name>
+  <summary>Upload subtitles to OpenSubtitles.org with automatic metadata matching</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <developer id="org.opensubtitles">
+    <name>OpenSubtitles</name>
+  </developer>
+
+  <description>
+    <p>
+      OpenSubtitles Uploader PRO is a desktop tool for contributing subtitles to
+      OpenSubtitles.org. Drop in a file or a whole movie folder and it pairs each
+      subtitle with its video, identifies the release, and fills in the metadata
+      the upload needs.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Drag and drop single files or entire folders, scanned recursively</li>
+      <li>Automatic pairing of video files with their matching subtitles</li>
+      <li>Movie and episode identification through file hashing and name parsing</li>
+      <li>Subtitle language detection, with hearing-impaired and format detection</li>
+      <li>Reads subtitles out of .zip, .rar, .7z and .tar archives</li>
+      <li>Handles srt, sub, ssa, ass, vtt, smi and other common subtitle formats</li>
+      <li>Batch upload with per-file metadata review before anything is sent</li>
+    </ul>
+    <p>
+      Uploading requires a free OpenSubtitles.org account. The application is
+      also available for Windows and macOS.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">OpenSubtitles Uploader PRO.desktop</launchable>
+
+  <categories>
+    <category>Utility</category>
+    <category>AudioVideo</category>
+  </categories>
+
+  <keywords>
+    <keyword>subtitles</keyword>
+    <keyword>subtitle</keyword>
+    <keyword>opensubtitles</keyword>
+    <keyword>upload</keyword>
+    <keyword>srt</keyword>
+    <keyword>movies</keyword>
+  </keywords>
+
+  <url type="homepage">https://github.com/opensubtitles/OpenSubtitles-Uploader-PRO</url>
+  <url type="bugtracker">https://github.com/opensubtitles/OpenSubtitles-Uploader-PRO/issues</url>
+  <url type="help">https://github.com/opensubtitles/OpenSubtitles-Uploader-PRO#readme</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main window, ready to accept files or folders</caption>
+      <image type="source" width="1456" height="831">https://raw.githubusercontent.com/opensubtitles/OpenSubtitles-Uploader-PRO/main/screenshots/main-window.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.8.26" date="2026-09-28">
+      <description>
+        <p>
+          Fixes the Linux AppImage failing to start for any user other than the
+          one that built it, and stops the API error banner from covering the
+          application header.
+        </p>
+      </description>
+    </release>
+  </releases>
+</component>

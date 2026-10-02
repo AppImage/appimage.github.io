@@ -1,0 +1,14 @@
+{
+  "name": "rigmatch-ai",
+  "private": true,
+  "version": "0.9.1",
+  "packageManager": "npm@10.9.3",
+  "description": "Find the best AI model your computer can run, 100% locally",
+  "author": "Dave Euson <daveeuson@gmail.com>",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "systeminformation": "^5.31.7"
+  }
+}

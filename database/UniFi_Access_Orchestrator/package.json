@@ -1,0 +1,29 @@
+{
+  "name": "unifi-access-orchestrator",
+  "version": "11.2.5",
+  "description": "Multi-door unlock automation for UniFi Access with built-in admin dashboard.",
+  "main": "electron/main.js",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "author": {
+    "name": "AJBCloud",
+    "url": "https://github.com/ajbcloud"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajbcloud/UniFi-Access-Orchestrator.git"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "express": "^4.18.2",
+    "winston": "^3.11.0",
+    "winston-daily-rotate-file": "^4.7.1",
+    "ws": "^8.16.0"
+  },
+  "optionalDependencies": {
+    "zwave-js": "15.25.3",
+    "nodemailer": "^6.9.16"
+  }
+}

@@ -11,7 +11,9 @@ set -o pipefail
 cleanup() {
   RC=$?
   { set +e +v +x ; } 2>/dev/null
-  if [ $RC -ne 0 ] && [ -n "$APID" ] && [ -n "$INPUTBASENAME" ] ; then
+  # A tray retry that still fails leaves only the tiny tray window on a black
+  # background, so its screen is not worth posting (only the error text is).
+  if [ $RC -ne 0 ] && [ -n "$APID" ] && [ -n "$INPUTBASENAME" ] && [ x"$TRAY_ATTEMPTED" != xtrue ] ; then
     mkdir -p failure-screens
     timeout 15 import -window root "failure-screens/${INPUTBASENAME}.png" 2>/dev/null
     # An empty screen (the application crashed before drawing) tells nothing
@@ -35,8 +37,21 @@ dpkg -s libfuse2 >/dev/null 2>&1 || sudo apt-get -y install libfuse2 # Normally 
 
 URL=$(cat $1 | head -n 1)
 echo $URL
+# "#Channel" at the end of the URL (https://github.com/o/r#Nightly): which channel of a
+# repository that has a release per channel to test (code/find-appimage.sh), independent
+# of the name of the file; not part of the URL itself
+CHANNEL=""
+if [[ "$URL" == *"#"* ]] ; then
+  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._-')
+  URL="${URL%%#*}"
+fi
 
 GHURL="" # Workaround for: "GHURL: unbound variable"
+
+# Set once we run the AppImage a second time with a system tray (stalonetray).
+# If it still fails after that, the screen only shows the tiny tray window on a
+# black background, so the cleanup trap must not capture it as a failure screen.
+TRAY_ATTEMPTED=false
 
 INPUTBASENAME=$(basename $1)
 
@@ -49,33 +64,94 @@ fi
 # The name of the file in data/ (STRICT=true for new files in a PR)
 bash "$(dirname "$0")/check-name.sh" "$INPUTBASENAME" "$(dirname "$1")" || exit 1
 
-# If the URL begins with https://github.com, then treat it specially
+# If the URL is the front page of a repository on a supported forge (GitHub,
+# Codeberg, GitLab), resolve it to the AppImage in its releases.
 # https://github.com/egoist/devdocs-desktop/
-if [ x"${URL:0:18}" == x"https://github.com" ] && [[ "${URL}" != *"download"* ]] ; then # do not redirect direct links
-  echo "GitHub URL detected"
-  GHUSER=$(echo "$URL" | cut -d '/' -f 4)
-  GHREPO=$(echo "$URL" | cut -d '/' -f 5)
-  GHURL="https://api.github.com/repos/$GHUSER/$GHREPO/releases" # Not "/latest" due to https://github.com/AppImage/AppImageHub/issues/12
-  echo "URL from GitHub: $URL"
-fi
-
-# If $URL begins with https://api.github.com, then treat it specially
-# This allows us to have generic URLs rather than URLs to specific releases
-if [ x"${URL:0:22}" == x"https://api.github.com" ] || [ x"${GHURL:0:22}" == x"https://api.github.com" ] ; then
-  if [ x"${URL:0:22}" == x"https://api.github.com" ] ; then
-    GHURL="$URL"
-  fi
-  echo "GitHub API URL detected"
+# https://codeberg.org/OWNER/REPO
+# https://gitlab.com/OWNER/REPO
+FORGE=""
+if [[ "$URL" == https://github.com/*/* || "$URL" == https://codeberg.org/*/* || "$URL" == https://gitlab.com/*/* ]] && [[ "${URL}" != *"download"* ]] ; then # do not redirect direct links
+  echo "Repository URL detected"
   API_JSON=$(mktemp)
-  wget -O "$API_JSON" --header "Accept: application/vnd.github+json" --header "Authorization: Bearer $GH_TOKEN" --header "X-GitHub-Api-Version: 2022-11-28" "$GHURL"
-  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME") || true
+  set +e
+  FORGE_INFO=$(bash "$(dirname "$0")/fetch-releases.sh" "$URL" "$API_JSON")
+  FETCH_RC=$?
+  set -e
+  if [ $FETCH_RC -ne 0 ] ; then
+    echo "Unable to get the releases of the repository $URL. Does the repository exist, and is it public?"
+    exit 1
+  fi
+  FORGE=$(echo "$FORGE_INFO" | cut -d ' ' -f 1)
+  GHUSER=$(echo "$FORGE_INFO" | cut -d ' ' -f 2)
+  GHREPO=$(echo "$FORGE_INFO" | cut -d ' ' -f 3)
+  case "$FORGE" in
+    github) FORGE_NAME="GitHub" ;;
+    codeberg) FORGE_NAME="Codeberg" ;;
+    gitlab) FORGE_NAME="GitLab" ;;
+    *) FORGE_NAME="$FORGE" ;;
+  esac
+  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME" "$CHANNEL") || true
   echo "$FOUND" | grep -v '^URL ' || true
   URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
   if [ x"" == x"$URL" ] ; then
     if echo "$FOUND" | grep -q 'several AppImages' ; then
-      echo "Unable to decide which AppImage of the GitHub release to test. Please link to the AppImage directly"
+      echo "Unable to decide which AppImage of the release to test. Please link to the AppImage directly"
     else
-      echo "Unable to get download URL for the AppImage. Is it really there on GitHub Releases?"
+      echo "Unable to get download URL for the AppImage. Is it really there on the repository's Releases?"
+    fi
+    exit 1
+  fi
+  # AGENTS.md and diagnose.sh rely on "URL from GitHub API:" verbatim for GitHub
+  echo "URL from $FORGE_NAME API: $URL"
+  LICENSE=$(bash "$(dirname "$0")/fetch-releases.sh" --license "$FORGE" "$GHUSER" "$GHREPO") || true
+  rm -f "$API_JSON"
+fi
+
+# If the URL is a directory (ends with /) on another server, e.g.
+# https://download.kde.org/stable/digikam/, look for the AppImage of the newest
+# version in its listing (code/fetch-listing.sh) and pick it with the same
+# rules as for releases. If the listing has none (or it is a download link
+# that happens to end with /), the URL is downloaded as it is.
+if [ -z "$FORGE" ] && [[ "$URL" == http*://*/ ]] && [[ "$URL" != *github.com/* ]] ; then
+  LISTING_JSON=$(mktemp)
+  if LISTING_INFO=$(bash "$(dirname "$0")/fetch-listing.sh" "$URL" "$LISTING_JSON") ; then
+    echo "Directory listing detected: $LISTING_INFO"
+    FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$LISTING_JSON" "$INPUTBASENAME" "$CHANNEL") || true
+    echo "$FOUND" | grep -v '^URL ' || true
+    LISTED_URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
+    if [ -z "$LISTED_URL" ] ; then
+      echo "Unable to decide which AppImage in the directory listing to test. Please link to the AppImage directly"
+      exit 1
+    fi
+    URL="$LISTED_URL"
+    echo "URL from directory listing: $URL"
+  elif [ $? -eq 3 ] ; then
+    echo "$LISTING_INFO"
+    echo "Unable to find an AppImage in the directory listing $URL or in its newest version directories"
+    exit 1
+  fi
+  rm -f "$LISTING_JSON"
+fi
+
+# If $URL begins with https://api.github.com, then treat it specially
+# This allows us to have generic URLs rather than URLs to specific releases
+if [ x"${URL:0:22}" == x"https://api.github.com" ] ; then
+  GHURL="$URL"
+  echo "GitHub API URL detected"
+  FORGE=github
+  API_JSON=$(mktemp)
+  if ! wget -q -O "$API_JSON" --header "Accept: application/vnd.github+json" --header "Authorization: Bearer $GH_TOKEN" --header "X-GitHub-Api-Version: 2022-11-28" "$GHURL" ; then
+    echo "Unable to get the releases of the GitHub repository $GHURL. Does the repository exist, and is it public?"
+    exit 1
+  fi
+  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME" "$CHANNEL") || true
+  echo "$FOUND" | grep -v '^URL ' || true
+  URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
+  if [ x"" == x"$URL" ] ; then
+    if echo "$FOUND" | grep -q 'several AppImages' ; then
+      echo "Unable to decide which AppImage of the release to test. Please link to the AppImage directly"
+    else
+      echo "Unable to get download URL for the AppImage. Is it really there on the repository's Releases?"
     fi
     exit 1
   fi
@@ -91,6 +167,8 @@ fi
 # if we find an implementation that supports https
 echo "URL: $URL"
 bash "$(dirname "$0")/check-name.sh" --appimage "$(basename "${URL%%\?*}")"
+# Remark if the names of the repository, the AppImage and the README disagree
+bash "$(dirname "$0")/check-names-agree.sh" "$1" "$(basename "${URL%%\?*}")" || true
 
 FILENAME=BeingTested.AppImage
 rm -f "$FILENAME" # Left over from the previous file when a run tests several; must not be tested again
@@ -102,24 +180,26 @@ fi
 TYPE=""
 ARCHITECTURE=$(file "$FILENAME" | cut -d "," -f 2 | xargs | sed -e 's|-|_|g' )
 echo $ARCHITECTURE # TODO: Normalize
-MAGIC=$(dd if="$FILENAME" bs=1 skip=7 count=4 2>/dev/null)
-if [ -z "$MAGIC" ] ; then
+# Compare bytes as hex: a shell variable cannot hold NUL bytes
+hexbytes() { od -An -tx1 -j "$2" -N "$3" "$1" 2>/dev/null | tr -d ' \n' ; } # hexbytes FILE OFFSET COUNT
+MAGIC=$(hexbytes "$FILENAME" 8 3) # "AI" and the AppImage type, https://github.com/AppImage/AppImageSpec/blob/master/draft.md
+if [ x"$MAGIC" == x000000 ] || [ -z "$MAGIC" ] ; then
   echo "Magic number not detected. Dear upstream, please consider to add one to the AppImage as per"
   echo "https://github.com/AppImage/AppImageSpec/blob/master/draft.md"
-  ELFMAGIC=$(dd if="$FILENAME" bs=1 skip=0 count=4  2>/dev/null)
-  if [ x"$ELFMAGIC" == x$(echo -ne "\x7f\x45\x4c\x46") ] ; then
+  ELFMAGIC=$(hexbytes "$FILENAME" 0 4)
+  if [ x"$ELFMAGIC" == x7f454c46 ] ; then
     echo "ELF file detected"
-    ISOMAGIC=$(dd if="$FILENAME" bs=1 skip=32769 count=5 2>/dev/null)
-    if [ x"$ISOMAGIC" == x$(echo -ne "CD001") ] ; then
+    ISOMAGIC=$(hexbytes "$FILENAME" 32769 5)
+    if [ x"$ISOMAGIC" == x4344303031 ] ; then # "CD001"
       echo "ISO9660 file detected"
       echo "Hence assuming AppImage type 1"
       TYPE=1
     fi
   fi
-elif [ x"$MAGIC" == x$(echo -ne "\x41\x49\x02") ] ; then
+elif [ x"$MAGIC" == x414902 ] ; then # "AI", 2
   echo "AppImage type 2 detected"
   TYPE=2
-elif [ x"$MAGIC" == x$(echo -ne "\x41\x49\x01") ] ; then
+elif [ x"$MAGIC" == x414901 ] ; then # "AI", 1
   echo "AppImage type 1 detected"
   TYPE=1
 else
@@ -175,7 +255,7 @@ if [ x"$TYPE" == x1 ] ; then
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
-  UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null) || echo "Could not get update information from the AppImage"
+  UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null | tr -d '\000') || echo "Could not get update information from the AppImage"
   # later # sudo umount -l /mnt
 fi
 
@@ -307,6 +387,14 @@ sudo sysctl vm.mmap_min_addr=0
 
 export QTWEBENGINE_DISABLE_SANDBOX=1 # https://github.com/netblue30/firejail/issues/2669
 export QT_DEBUG_PLUGINS=1 # https://github.com/AppImage/appimage.github.io/pull/1809#issuecomment-548399825
+# WebKitGTK-based apps (Tauri, wxWebView, GNOME web wrappers, ...) render a
+# blank white window when their GPU-accelerated compositing fails, which it
+# does under Xvfb's software rendering (no GPU) - the same failure users hit on
+# NVIDIA and in VMs. Force the software path so the web view actually paints
+# and the screenshot is real. See tauri-apps/tauri#11988 (EGL_BAD_PARAMETER),
+# #9304 (AcceleratedSurfaceDMABuf framebuffer), #5143 (blank until redraw).
+export WEBKIT_DISABLE_DMABUF_RENDERER=1 # WebKitGTK 2.40+ (the DMABUF/EGL renderer)
+export WEBKIT_DISABLE_COMPOSITING_MODE=1 # older WebKitGTK (accelerated compositing)
 sudo sysctl kernel.unprivileged_userns_clone=1 # https://github.com/AppImage/appimage.github.io/pull/1564#issuecomment-491591127 https://github.com/electron/electron/issues/17972
 
 # reset does not work here
@@ -321,14 +409,65 @@ APID=$!
 sleep 10
 for WAIT in $(seq 1 20) ; do
   kill -0 $APID 2>/dev/null || break
-  WINDOWS=$(timeout 5 xwininfo -tree -root 2>/dev/null || true)
-  grep -qE '0x.*": \(' <<< "$WINDOWS" && break # Not in a pipe: pipefail
+  # GTK tray icons and WebKit create unmapped helper windows; those are not content.
+  timeout 5 xdotool search --onlyvisible --name '.' >/dev/null 2>&1 && break
   sleep 1
 done
 [ "$WAIT" -gt 1 ] && sleep 2 # A window just appeared; let it finish drawing
 
+NO_WINDOW=""
 if ! kill -0 $APID 2>/dev/null ; then
-  echo "ERROR: The application exited within $((10 + WAIT)) seconds instead of showing a window"
+  NO_WINDOW="ERROR: The application exited within $((10 + WAIT)) seconds instead of showing a window"
+elif ! timeout 5 xdotool search --onlyvisible --name '.' >/dev/null 2>&1 ; then
+  NO_WINDOW="ERROR: Could not find a single window on screen :-("
+fi
+
+# System tray applications (#4441) show only an icon in the system tray, and
+# some exit when there is none; Xvfb has no tray. So only if the application
+# showed no window and its files mention a tray API (code/tray-hint.sh), run
+# it again with a tray (stalonetray). It counts as a tray application only if
+# its icon then appears in the tray.
+TRAY=false
+if [ -n "$NO_WINDOW" ] && [ x"$TERMINAL" == xfalse ] ; then
+  TRAY_HINT=$(bash "$(dirname "$0")/tray-hint.sh" "$APPDIR" || true)
+  if [ -n "$TRAY_HINT" ] ; then
+    echo "The application showed no window, but may be a system tray application ($TRAY_HINT); running it again with a system tray"
+    TRAY_ATTEMPTED=true
+    kill $APID 2>/dev/null && sleep 2 || true
+    kill -9 $APID 2>/dev/null || true
+    stalonetray --geometry 1x1+0+0 --icon-size 48 -bg white --window-type dock --decorations none --skip-taskbar > stalonetray.log 2>&1 &
+    TRAYWIN=""
+    for _ in 1 2 3 4 5 6 7 8 9 10 ; do
+      sleep 1
+      TRAYWIN=$(timeout 5 xdotool search --classname stalonetray 2>/dev/null | head -n 1 || true)
+      [ -n "$TRAYWIN" ] && break
+    done
+    if [ -n "$TRAYWIN" ] ; then
+      firejail --quiet --noprofile --net=none --appimage ./"$FILENAME" &
+      APID=$!
+      # Docked icons are windows inside the tray's window (it always has a 1x1 one)
+      TRAYICON=""
+      for WAIT in $(seq 1 30) ; do
+        sleep 1
+        kill -0 $APID 2>/dev/null || break
+        TRAYICON=$(timeout 5 xwininfo -tree -id "$TRAYWIN" 2>/dev/null | grep -E '^ +0x' | grep -v ' 1x1+' | tail -n 1 | awk '{ print $1 }' || true)
+        [ -n "$TRAYICON" ] && break
+      done
+      if [ -n "$TRAYICON" ] && kill -0 $APID 2>/dev/null ; then
+        sleep 2 # Let it draw its icon
+        echo "Tray application: its icon appeared in the system tray"
+        TRAY=true
+        NO_WINDOW=""
+      else
+        echo "No icon appeared in the system tray either"
+      fi
+    else
+      echo "Could not start the system tray"
+    fi
+  fi
+fi
+if [ -n "$NO_WINDOW" ] ; then
+  echo "$NO_WINDOW"
   exit 1
 fi
 
@@ -354,6 +493,34 @@ fi
 # Getting the active window seems to require a window manager
 icewm > /dev/null 2>&1 &
 sleep 2
+
+# Move the largest application window to the top-left and shrink it if it is
+# larger than the small virtual display (test.yml runs Xvfb at 800x600), so the
+# screenshot shows the whole window instead of a clipped corner (#8041). Nothing
+# else makes an oversized window fit: the window manager lets it overflow and the
+# off-screen part is lost. Best effort - a window with a fixed minimum size may
+# refuse to shrink; it is at least moved fully on-screen.
+fit_main_window() {
+  local SW SH LINE WID WW WH NW NH
+  read -r SW SH < <(timeout 5 xdotool getdisplaygeometry 2>/dev/null)
+  [[ "$SW" =~ ^[0-9]+$ && "$SH" =~ ^[0-9]+$ ]] || return 0
+  # The largest managed window (as take-screenshot.sh picks the app window)
+  LINE=$(timeout 20 xwininfo -tree -root 2>/dev/null | grep '": ("' \
+    | sed -nE 's/^[[:space:]]*(0x[0-9a-f]+) .* ([0-9]+)x([0-9]+)[-+][-0-9]+[-+][-0-9]+ +[-+][0-9]+[-+][0-9]+$/\1 \2 \3/p' \
+    | awk '{ print $2 * $3, $0 }' | sort -rn | head -n 1 | cut -d ' ' -f 2-)
+  read -r WID WW WH <<<"$LINE"
+  [[ -n "$WID" && "$WW" =~ ^[0-9]+$ && "$WH" =~ ^[0-9]+$ ]] || return 0
+  timeout 5 xdotool windowmove "$WID" 0 0 2>/dev/null || true
+  NW=$WW ; NH=$WH
+  # Leave room for the window manager's border and title bar
+  [ "$WW" -gt $((SW - 4)) ] && NW=$((SW - 4))
+  [ "$WH" -gt $((SH - 30)) ] && NH=$((SH - 30))
+  if [ "$NW" != "$WW" ] || [ "$NH" != "$WH" ] ; then
+    echo "Window $WID (${WW}x${WH}) is larger than the ${SW}x${SH} screen; resizing it to ${NW}x${NH} so the whole window is captured"
+    timeout 5 xdotool windowsize "$WID" "$NW" "$NH" 2>/dev/null || true
+    sleep 1
+  fi
+}
 
 # We could simulate X11 keyboard/mouse input with xdotool here if needed;
 # of course this should not be hardcoded here (this is just an example)
@@ -383,11 +550,40 @@ mkdir -p database/$INPUTBASENAME/
 # Taking screenshot like this fails, https://github.com/AppImage/appimage.github.io/issues/2494
 # convert x:$(xwininfo -tree -root | grep 0x | grep '": ("' | sed -e 's/^[[:space:]]*//' | head -n 1 | cut -d " " -f 1) database/$INPUTBASENAME/screenshot.png && echo "Snap!"
 
-timeout 30 import -window "$(timeout 10 xdotool getactivewindow)" database/$INPUTBASENAME/screenshot.png  && echo "Screenshot taken"
+# The active window; if it cannot be read itself (e.g. OpenGL/SDL games, #75),
+# its area of the screen, else the whole screen
+if [ "$TRAY" == true ] ; then
+  # Click the icon: most tray applications then open their window; if none
+  # became active, right-click it for its menu and take the part of the
+  # screen that shows anything (the tray, and the menu if one opened)
+  read -r X Y W H < <(timeout 5 xwininfo -id "$TRAYICON" | awk '/Absolute upper-left X/ { x = $NF } /Absolute upper-left Y/ { y = $NF }
+    /Width/ { w = $NF } /Height/ { h = $NF } END { print x, y, w, h }' || true)
+  timeout 5 xdotool mousemove $((X + W / 2)) $((Y + H / 2)) click 1 || true
+  sleep 3
+  if timeout 5 xdotool getactivewindow > /dev/null 2>&1 ; then
+    echo "Clicking the tray icon opened a window"
+    bash "$(dirname "$0")/take-screenshot.sh" database/$INPUTBASENAME/screenshot.png || true
+  else
+    timeout 5 xdotool click 3 || true
+    sleep 2
+    timeout 30 import -window root database/$INPUTBASENAME/screenshot.png || true
+    convert database/$INPUTBASENAME/screenshot.png -trim +repage database/$INPUTBASENAME/screenshot.png || true
+    # Only the icon: make it visible
+    if [ "$(identify -format '%w' database/$INPUTBASENAME/screenshot.png 2>/dev/null || echo 0)" -lt 100 ] ; then
+      convert database/$INPUTBASENAME/screenshot.png -filter point -resize 400% database/$INPUTBASENAME/screenshot.png || true
+    fi
+    echo "Screenshot taken (system tray)"
+  fi
+  echo "WARNING: The screenshot shows a system tray application (its tray icon, or what clicking it opened); please check it"
+else
+  fit_main_window
+  bash "$(dirname "$0")/take-screenshot.sh" database/$INPUTBASENAME/screenshot.png || true
+fi
 
 kill $APID && printf "\n\n\n* * * SUCCESS :-) * * *\n\n\n" || exit 1
 APID=""
 killall icewm
+killall stalonetray 2>/dev/null || true
 
 # Check if the screenshot is unusable and error out if it is
 if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png" ] ; then
@@ -399,7 +595,7 @@ if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png
 fi
 
 # Fail on an empty window or an error message on screen
-if ! bash "$(dirname "$0")/check-screenshot.sh" database/$INPUTBASENAME/screenshot.png $([ x"$TERMINAL" == xtrue ] && echo terminal) ; then
+if ! bash "$(dirname "$0")/check-screenshot.sh" database/$INPUTBASENAME/screenshot.png $([ x"$TERMINAL" == xtrue ] && echo terminal) $([ "$TRAY" == true ] && echo tray) ; then
   mkdir -p failure-screens
   cp database/$INPUTBASENAME/screenshot.png "failure-screens/${INPUTBASENAME}.png"
   exit 1
@@ -417,6 +613,16 @@ cp "$APPDIR"/*.desktop database/$INPUTBASENAME/
 DATAFILE=$(readlink -f database/$INPUTBASENAME/*.desktop | head -n 1)
 sudo chown $USER "$DATAFILE" # https://github.com/AppImage/AppImageHub/issues/19
 chmod 644 "$DATAFILE" # https://github.com/AppImage/AppImageHub/issues/19
+
+# Update information lets users update with AppImageUpdate; the section is often padded with blanks or NULs
+UPDATE_INFORMATION=$(echo "${UPDATE_INFORMATION:-}" | tr -d '\000' | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
+[ x"$UPDATE_INFORMATION" == xfalse ] && UPDATE_INFORMATION=""
+case "$UPDATE_INFORMATION" in
+  "") echo "WARNING: The AppImage contains no update information" ;;
+  bintray-zsync\|*) echo "WARNING: The update information of the AppImage points to Bintray, which has shut down: $UPDATE_INFORMATION" ;;
+  gh-releases-zsync\|*|zsync\|*|pling-v1-zsync\|*|gh-releases-direct\|*) ;;
+  *) echo "WARNING: The update information of the AppImage has an unknown format: $UPDATE_INFORMATION" ;;
+esac
 
 echo "" >> "$DATAFILE"
 echo "[AppImageHub]" >> "$DATAFILE"
@@ -529,16 +735,20 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   echo "layout: app" >> apps/$INPUTBASENAME.md
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
+  # Emit a value as a one-line YAML scalar (a JSON string is valid YAML), so a
+  # ": ", a "#", a leading special character or a newline in a description,
+  # license or author name cannot break the front matter (issue #9519).
+  yscalar() { printf '%s' "$1" | tr '\r\n\t' '   ' | jq -Rs '.' ; }
   # Description
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- ) || true
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     ./appstreamcli-x86_64.AppImage convert database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
     SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .) || true
     if [ x"$SUMMARY" != x"" ] ; then
-      echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
+      echo "description: $(yscalar "$SUMMARY")" >> apps/$INPUTBASENAME.md
     fi
   elif [  x"$DESKTOP_COMMENT" != x"" ] ; then
-    echo "description: $DESKTOP_COMMENT" >> apps/$INPUTBASENAME.md
+    echo "description: $(yscalar "$DESKTOP_COMMENT")" >> apps/$INPUTBASENAME.md
   fi
   # License
   AS_LICENSE=""
@@ -553,9 +763,9 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     | cut -d '=' -f 2
   ) || true
   if [ x"$AS_LICENSE" != x"" ] ; then
-    echo "license: $AS_LICENSE" >> apps/$INPUTBASENAME.md
+    echo "license: $(yscalar "$AS_LICENSE")" >> apps/$INPUTBASENAME.md
   elif [ x"$DT_LICENSE" != x"" ] ; then
-    echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
+    echo "license: $(yscalar "$DT_LICENSE")" >> apps/$INPUTBASENAME.md
   else
     echo "No license found!"
   fi
@@ -567,12 +777,19 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     echo "  - $INPUTBASENAME/icons/$ICONSIZE/$ICONBASENAME" >> apps/$INPUTBASENAME.md
   fi
   # Screenshot
-  if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
-    SCREENSHOT=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/screenshots/screenshot[1]/image" -v . || true)
-    if [ x"$SCREENSHOT" != x"" ] ; then
-      echo "screenshots:" >> apps/$INPUTBASENAME.md
-      echo "- $SCREENSHOT" >> apps/$INPUTBASENAME.md
-    fi
+  # The AppStream screenshot (the default one, else the first; from a
+  # .metainfo.xml or an .appdata.xml file) if there is one, else ours
+  SCREENSHOT=""
+  METAINFO=$(ls database/$INPUTBASENAME/*.metainfo.xml database/$INPUTBASENAME/*.appdata.xml 2>/dev/null | head -n 1 || true)
+  if [ -n "$METAINFO" ] ; then
+    SCREENSHOT=$(xmlstarlet sel -t -v "/component/screenshots/screenshot[@type='default'][1]/image[1]" "$METAINFO" 2>/dev/null | head -n 1 || true)
+    [ -n "$SCREENSHOT" ] || SCREENSHOT=$(xmlstarlet sel -t -v "/component/screenshots/screenshot[1]/image[1]" "$METAINFO" 2>/dev/null | head -n 1 || true)
+    # Only a web address can be shown on the site
+    [[ "$SCREENSHOT" =~ ^https?://[^[:space:]]+$ ]] || SCREENSHOT=""
+  fi
+  if [ -n "$SCREENSHOT" ] ; then
+    echo "screenshots:" >> apps/$INPUTBASENAME.md
+    echo "- $SCREENSHOT" >> apps/$INPUTBASENAME.md
   elif [ -f database/$INPUTBASENAME/screenshot.png ] ; then
     echo "" >> apps/$INPUTBASENAME.md
     echo "screenshots:" >> apps/$INPUTBASENAME.md
@@ -581,8 +798,22 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # Authors
   echo "" >> apps/$INPUTBASENAME.md
   echo "authors:" >> apps/$INPUTBASENAME.md
+  # Repository (GitHub, Codeberg or GitLab); GH_HOST/GH_USER/GH_REPO name the
+  # winning one, kept as "GH_*" for compatibility with the rest of the script
+  GH_HOST=""
   GH_USER=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
-  GH_REPO=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+  GH_REPO=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 5 | cut -d '#' -f 1) || true
+  [ x"$GH_USER" != x"" ] && GH_HOST="github.com"
+  if [  x"$GH_USER" == x"" ] ; then
+    GH_USER=$(grep "^https://codeberg.org/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
+    GH_REPO=$(grep "^https://codeberg.org/" data/$INPUTBASENAME | cut -d '/' -f 5 | cut -d '#' -f 1) || true
+    [ x"$GH_USER" != x"" ] && GH_HOST="codeberg.org"
+  fi
+  if [  x"$GH_USER" == x"" ] ; then
+    GH_USER=$(grep "^https://gitlab.com/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
+    GH_REPO=$(grep "^https://gitlab.com/" data/$INPUTBASENAME | cut -d '/' -f 5 | cut -d '#' -f 1) || true
+    [ x"$GH_USER" != x"" ] && GH_HOST="gitlab.com"
+  fi
   OBS_USER=$(
     grep -h "^http.*://download.opensuse.org/repositories/home:/" "data/$INPUTBASENAME" 2>/dev/null \
     | cut -d "/" -f 6 \
@@ -593,13 +824,20 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   if [  x"$GH_USER" == x"" ] ; then
     GH_USER=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 5 ) || true
     GH_REPO=$(grep "^https://api.github.com.*" data/$INPUTBASENAME | cut -d '/' -f 6 ) || true
+    [ x"$GH_USER" != x"" ] && GH_HOST="github.com"
   fi
+  LINK_TYPE=""
+  case "$GH_HOST" in
+    github.com) LINK_TYPE="GitHub" ;;
+    codeberg.org) LINK_TYPE="Codeberg" ;;
+    gitlab.com) LINK_TYPE="GitLab" ;;
+  esac
   if [  x"$GH_USER" != x"" ] ; then
-    echo "  - name: $GH_USER" >> apps/$INPUTBASENAME.md
-    echo "    url: https://github.com/$GH_USER" >> apps/$INPUTBASENAME.md
+    echo "  - name: $(yscalar "$GH_USER")" >> apps/$INPUTBASENAME.md
+    echo "    url: $(yscalar "https://$GH_HOST/$GH_USER")" >> apps/$INPUTBASENAME.md
   elif [  x"$OBS_USER" != x"" ] ; then
-    echo "  - name: $OBS_USER" >> apps/$INPUTBASENAME.md
-    echo "    url: https://build.opensuse.org/user/show/$OBS_USER" >> apps/$INPUTBASENAME.md
+    echo "  - name: $(yscalar "$OBS_USER")" >> apps/$INPUTBASENAME.md
+    echo "    url: $(yscalar "https://build.opensuse.org/user/show/$OBS_USER")" >> apps/$INPUTBASENAME.md
   # elif [  x"$BB_USER" != x"" ] ; then
     # echo "  - name: $BB_USER" >> apps/$INPUTBASENAME.md
     # echo "    url: https://bitbucket.org/$BB_USER" >> apps/$INPUTBASENAME.md
@@ -608,15 +846,26 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   echo "" >> apps/$INPUTBASENAME.md
   echo "links:" >> apps/$INPUTBASENAME.md
   if [  x"$GH_USER" != x"" ] ; then
-    echo "  - type: GitHub" >> apps/$INPUTBASENAME.md
+    echo "  - type: $LINK_TYPE" >> apps/$INPUTBASENAME.md
     echo "    url: $GH_USER/$GH_REPO" >> apps/$INPUTBASENAME.md
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
-    echo "    url: https://github.com/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
+    echo "    url: https://$GH_HOST/$GH_USER/$GH_REPO/releases" >> apps/$INPUTBASENAME.md
   fi
   OBS_LINK=$(grep "^http.*://download.opensuse.org.*latest.*AppImage$" data/$INPUTBASENAME | sed -e 's|http://d|https://d|g') || true
   if [  x"$OBS_LINK" != x"" ] ; then
     echo "  - type: Download" >> apps/$INPUTBASENAME.md
     echo "    url: $OBS_LINK.mirrorlist" >> apps/$INPUTBASENAME.md
+  fi
+  # Anything else: the page and feed.json link to where the AppImage is
+  # downloaded from, if that link stays valid for new versions (a download
+  # directory such as https://download.kde.org/stable/krita/, or a "latest"
+  # link), i.e. its path contains no version number (4.3.0, 16.12, v2, /12/)
+  DATA_URL=$(head -n 1 "data/$INPUTBASENAME" | tr -d '\r' | sed -E 's/[[:space:]].*//; s/#.*//') # without a "#Channel"
+  DATA_PATH=$(echo "$DATA_URL" | cut -d / -f 4- | cut -d '?' -f 1)
+  if [ x"$GH_USER" == x"" ] && [ x"$OBS_LINK" == x"" ] && [[ "$DATA_URL" =~ ^https?://[^[:space:]\"]+$ ]] \
+    && ! echo "/$DATA_PATH" | grep -qiE '[0-9]+\.[0-9]+|(^|[^a-z0-9])v[0-9]+([^a-z0-9]|$)|/[0-9]+(/|$)' ; then
+    echo "  - type: Download" >> apps/$INPUTBASENAME.md
+    echo "    url: $DATA_URL" >> apps/$INPUTBASENAME.md
   fi
   # Does the repo offer AppImages in it's download section?
   # BB_LINK=$(grep "^https://bitbucket.org/$BB_USER/$BB_REPO/downloads/.*AppImage$" data/$INPUTBASENAME) 
@@ -640,13 +889,16 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     cat database/$INPUTBASENAME/appdata.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
     rm database/$INPUTBASENAME/appdata.yaml
   fi
-  # Add content of Electron package.json file
+  # Add content of Electron package.json file, as one compact JSON value (valid
+  # YAML): splicing the pretty-printed YAML in with a fixed "tail -n" cut into
+  # the first value and produced invalid front matter (issue #9519). If it is
+  # not valid JSON, skip it rather than break the page.
   if [ -e database/$INPUTBASENAME/package.json ] ; then
-    sudo dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml # Do we need sudo to prevent '`load': cannot load such file'?
-    echo "" >> apps/$INPUTBASENAME.md
-    echo "electron:" >> apps/$INPUTBASENAME.md
-    cat database/$INPUTBASENAME/package.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
-    rm database/$INPUTBASENAME/package.yaml
+    ELECTRON_JSON=$(jq -c . database/$INPUTBASENAME/package.json 2>/dev/null) || ELECTRON_JSON=""
+    if [ -n "$ELECTRON_JSON" ] ; then
+      echo "" >> apps/$INPUTBASENAME.md
+      echo "electron: $ELECTRON_JSON" >> apps/$INPUTBASENAME.md
+    fi
   fi
   echo "---" >> apps/$INPUTBASENAME.md
   ls -lh apps/$INPUTBASENAME.md || exit 1
@@ -674,6 +926,13 @@ if [ "$IS_PULLREQUEST" = true ]; then
   exit 0
 fi
 
+# Only the upstream repository commits the result; in a fork, the commit would
+# end up in pull requests made from the fork's branch (#3948)
+if [ x"$GITHUB_REPOSITORY" != x"AppImage/appimage.github.io" ] ; then
+  echo "Not committing the result: this is $GITHUB_REPOSITORY, not AppImage/appimage.github.io"
+  exit 0
+fi
+
 # If this is not a PR, then git add the "database file" and git commit with "[ci skip]" and git push
 # https://gist.github.com/willprice/e07efd73fb7f13f917ea
 
@@ -681,13 +940,16 @@ git pull # To prevent from: error: failed to push some refs to 'https://[secure]
 git config --global user.email "actions@users.noreply.github.com"
 git config --global user.name "GitHub Actions"
 set -x
-( cd database/ ; git diff ; git add . ; git rm *.yaml || true ) # Recursively add everything in this directory
-( cd apps/ ; git diff ; git add . || true ) # Recursively add everything in this directory
+# Only this entry: when a run tests several files, one that failed may have left a partial entry behind
+git add -A "database/$INPUTBASENAME" "apps/$INPUTBASENAME.md" || true
+git rm --cached -q "database/$INPUTBASENAME/*.yaml" 2>/dev/null || true
 git commit -F- <<EOF || true # Always succeeed (even if there was nothing to add)
 Add automatically parsed data ($GITHUB_JOB)
 [ci skip]
 EOF
 set +x
+# The remote exists already from the previous file when a run tests several (set -e would end the script here)
+git remote remove deploy > /dev/null 2>&1 || true
 git remote add deploy https://${GH_TOKEN}@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
 # wrong logic? # if [ x"$TRAVIS_PULL_REQUEST" == x"false" ] ; then
     set -x

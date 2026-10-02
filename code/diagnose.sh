@@ -30,6 +30,14 @@ HINTS=(
   "error-not-executable"
   "A file inside the AppImage is not executable. Please check the file permissions before packaging the AppImage."
 
+  "AppRun\\.wrapped: Permission denied"
+  "-"
+  "AppRun.wrapped (or the launcher it starts) could not be executed. This typically happens with Tauri and linuxdeploy builds when a cached launcher was packaged with mode 0770 and is owned by root, so that it is not executable for the test user. Please make the AppDir readable and executable for everyone before packaging, e.g. \`chmod -R a+rX AppDir\` (and \`chmod a+x\` on AppRun and AppRun.wrapped) before running appimagetool."
+
+  "error while loading shared libraries"
+  "error-missing-library"
+  "The application needs a library that is neither in the AppImage nor on the test system (\"error while loading shared libraries\", the first error below names it). Please bundle this library, and what it depends on, in the AppImage: an AppImage cannot rely on libraries that are not installed on every target system."
+
   "^ERROR: The application exited within [0-9]+ seconds"
   "error-app-exits"
   "The application quit or crashed right after starting. The error below usually shows why."
@@ -44,15 +52,19 @@ HINTS=(
 
   "^No http link detected"
   "error-data-file"
-  "The first line of the file in data/ must be the download URL (or GitHub repository URL) of the AppImage."
+  "The first line of the file in data/ must be the download URL (or GitHub, Codeberg or GitLab repository URL) of the AppImage."
+
+  "^Unable to get the releases of the (GitHub )?repository"
+  "error-download"
+  "The repository in the file in data/ was not found (it may have been renamed, deleted or made private). Please put the current repository URL (or the download URL of the AppImage) into the file in data/."
 
   "^Unable to get download URL for the AppImage"
   "error-no-appimage-in-release"
-  "No AppImage was found in the GitHub releases of this project. The file name of the AppImage must contain \"AppImage\"."
+  "No AppImage was found in the releases of this project. The file name of the AppImage must contain \"AppImage\"."
 
-  "^Unable to decide which AppImage of the GitHub release to test"
+  "^Unable to decide which AppImage of the( GitHub)? release to test"
   "error-no-appimage-in-release"
-  "The latest GitHub release has several AppImages for x86_64, and it is not clear which one to test (they are listed in the log). Put the direct download URL of the AppImage into the file in data/ instead of the repository URL, or publish only one x86_64 AppImage per release."
+  "The latest release has several AppImages for x86_64, and it is not clear which one to test (they are listed in the log). Put the direct download URL of the AppImage into the file in data/ instead of the repository URL, or publish only one x86_64 AppImage per release."
 
   "ERROR (40[0-9]|50[0-9]):"
   "error-download"
@@ -74,6 +86,10 @@ HINTS=(
   "-"
   "Please check the remarks about the names below."
 
+  "^WARNING: The names of the .* differ: "
+  "-"
+  "The repository, the AppImage and the README (whichever exist) call the application by different names (see the remarks below). Please check that they all belong to the same application, and that the name of the file in data/ is the right one."
+
   "^FATAL: AppRun is missing"
   "error-not-an-appimage"
   "The downloaded file is not a valid AppImage."
@@ -94,12 +110,24 @@ HINTS=(
   "-"
   "The window is mostly empty; please check that the screenshot shows the application's main window."
 
+  "^WARNING: The screenshot shows a system tray application"
+  "-"
+  "The application showed no window but an icon in the system tray, so it was tested as a system tray application: the screenshot shows what clicking its icon opened (its window, or its menu with the icon). Please check that it shows the application working."
+
   "^WARNING: The screenshot may show an error message"
   "-"
   "The screenshot may show an error message; please check it."
 
-  "^WARNING: The screenshot shows text mostly not in English"
+  "^WARNING: The AppImage contains no update information"
   "-"
+  "The AppImage contains no update information, so users cannot update it with AppImageUpdate or similar tools. Please consider embedding it when building the AppImage (e.g., appimagetool -u) and publishing the .zsync file next to the AppImage; see https://docs.appimage.org/packaging-guide/optional/updates.html"
+
+  "^WARNING: The update information of the AppImage (points to Bintray|has an unknown format)"
+  "-"
+  "The update information embedded in the AppImage does not work (see the log), so users cannot update it with AppImageUpdate. Please fix it when building the AppImage; see https://docs.appimage.org/packaging-guide/optional/updates.html"
+
+  "^(ERROR|WARNING): The screenshot shows text mostly not in English"
+  "error-not-english"
   "The text on the screenshot is mostly not in English. AppImageHub is in English: please make the application start in English when the system language is English or not set (the test runs it with the C locale), e.g. by falling back to English instead of to another language."
 
   "^FATAL: .* (is missing|not found|missing in)"
@@ -109,6 +137,10 @@ HINTS=(
   "^Could not find icon file"
   "error-no-icon"
   "No icon was found. The AppImage needs an icon matching the Icon= entry of its desktop file."
+
+  "^Could not determine the size of the icon"
+  "error-no-icon"
+  "The icon could not be read. If it is the .DirIcon of the AppImage: it must be a PNG (or SVG) file, or a symlink with a relative target that stays inside the AppImage; a symlink with an absolute target (e.g. into /home/runner/..., as some Tauri builds write it) does not work on other systems; please replace .DirIcon with a copy of the icon."
 )
 
 if [ "$1" == "--list" ] ; then
@@ -144,8 +176,13 @@ GENERIC="error while loading shared libraries|Segmentation fault|Traceback \\(mo
 if [ "$1" == "--excerpt" ] ; then
   LOG="$2"
   [ -f "$LOG" ] || exit 0
+  # A missing library is almost always the real cause, wherever it appears;
+  # otherwise the first line matching an error (not a warning or a remark:
+  # hints without a label)
+  PRIORITY="error while loading shared libraries"
   PATTERN="$GENERIC"
   for ((i = 0; i < ${#HINTS[@]}; i += 3)) ; do
+    [ "${HINTS[$((i + 1))]}" == "-" ] && continue
     PATTERN="$PATTERN|${HINTS[$i]}"
   done
   # Drop the source lines that "set -v" echoes, the commands that "set -x"
@@ -154,7 +191,8 @@ if [ "$1" == "--excerpt" ] ; then
   CLEAN=$(mktemp)
   grep -vxF -f <(grep -v '^[[:space:]]*$' "$(dirname "$0")/worker.sh") "$LOG" \
     | grep -vE '^\++ |^cleanup$' | cat -s > "$CLEAN"
-  FIRST=$(grep -nE -m 1 -- "$PATTERN" "$CLEAN" | cut -d : -f 1)
+  FIRST=$(grep -nE -m 1 -- "$PRIORITY" "$CLEAN" | cut -d : -f 1)
+  [ -n "$FIRST" ] || FIRST=$(grep -nE -m 1 -- "$PATTERN" "$CLEAN" | cut -d : -f 1)
   if [ -n "$FIRST" ] ; then
     sed -n "${FIRST},$((FIRST + 15))p" "$CLEAN"
   else

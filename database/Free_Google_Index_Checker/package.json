@@ -1,0 +1,26 @@
+{
+  "name": "indexcheck",
+  "version": "0.1.1",
+  "description": "Open source desktop Google index checker by IndexBolt",
+  "main": "dist-electron/main/index.js",
+  "author": {
+    "name": "IndexBolt",
+    "email": "support@indexbolt.com"
+  },
+  "homepage": "https://indexbolt.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/indexbolt/indexbolt.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "electron-store": "^10.1.0",
+    "fast-xml-parser": "^5.3.0",
+    "lucide-react": "^0.577.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "^3.3.1"
+  }
+}

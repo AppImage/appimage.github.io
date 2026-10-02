@@ -46,7 +46,7 @@ desktop:
     X-AppImage-Libc: host
     X-AppImage-Runtime: dynamic
     X-AppImage-Self-Contained: false
-    X-AppImage-Glibc-Required: GLIBC_2.30
+    X-AppImage-Glibc-Required: GLIBC_2.27
 
 appdata:
   Type: desktop-application
@@ -67,7 +67,7 @@ appdata:
   - Graphics
   Url:
     homepage: https://gaphor.org
-    help: https://gaphor.readthedocs.io
+    help: https://docs.gaphor.org
   Launchable:
     desktop-id:
     - org.gaphor.Gaphor.desktop
@@ -80,6 +80,42 @@ appdata:
       url: https://gaphor.org/images/screenshot.png
       lang: C
   Releases:
+  - version: 2.18.0
+    unix-timestamp: 1680825600
+  - version: 2.17.0
+    unix-timestamp: 1677283200
+  - version: 2.16.0
+    unix-timestamp: 1675468800
+  - version: 2.15.0
+    unix-timestamp: 1673136000
+  - version: 2.14.2
+    unix-timestamp: 1672185600
+  - version: 2.14.1
+    unix-timestamp: 1672185600
+  - version: 2.14.0
+    unix-timestamp: 1671840000
+  - version: 2.13.0
+    unix-timestamp: 1669507200
+  - version: 2.12.1
+    unix-timestamp: 1665100800
+  - version: 2.12.0
+    unix-timestamp: 1664064000
+  - version: 2.11.0
+    unix-timestamp: 1657324800
+  - version: 2.10.0
+    unix-timestamp: 1653177600
+  - version: 2.9.2
+    unix-timestamp: 1647561600
+  - version: 2.9.1
+    unix-timestamp: 1647475200
+  - version: 2.9.0
+    unix-timestamp: 1647475200
+  - version: 2.8.2
+    unix-timestamp: 1643500800
+  - version: 2.8.1
+    unix-timestamp: 1642464000
+  - version: 2.8.0
+    unix-timestamp: 1642204800
   - version: 2.7.1
     unix-timestamp: 1638316800
   - version: 2.7.0

@@ -1,0 +1,13 @@
+{
+  "name": "parson-music-desktop",
+  "version": "1.0.0",
+  "private": true,
+  "license": "GPL-3.0-only",
+  "description": "Parson desktop client for Linux, macOS, and Windows",
+  "homepage": "https://github.com/ParsonLabs/Parson",
+  "author": {
+    "name": "ParsonLabs"
+  },
+  "desktopName": "com.parsonlabs.parson.desktop",
+  "main": "electron/main.cjs"
+}

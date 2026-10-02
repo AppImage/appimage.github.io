@@ -23,4 +23,4 @@ X-AppImage-Architecture=x86_64
 X-AppImage-Libc=host
 X-AppImage-Runtime=dynamic
 X-AppImage-Self-Contained=false
-X-AppImage-Glibc-Required=GLIBC_2.30
+X-AppImage-Glibc-Required=GLIBC_2.27

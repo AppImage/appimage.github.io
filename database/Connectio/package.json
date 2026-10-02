@@ -1,0 +1,16 @@
+{
+  "name": "connectio",
+  "version": "1.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Pulkit Banta",
+    "email": "pulkitbanta@gmail.com"
+  },
+  "description": "A local proxy manager — connect and route between local servers with optional Cloudflare tunnel exposure",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "express": "^5.2.1",
+    "http-proxy-middleware": "^4.0.0",
+    "lucide": "^1.16.0"
+  }
+}

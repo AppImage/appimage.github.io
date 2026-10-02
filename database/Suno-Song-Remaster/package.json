@@ -1,0 +1,9 @@
+{
+  "name": "ai-music-remastering",
+  "version": "2.2.0",
+  "description": "AI-powered audio mastering app for music production",
+  "main": "electron/main.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}

@@ -1,0 +1,17 @@
+{
+  "name": "phoenix-code-electron-shell",
+  "identifier": "io.phcode.dev",
+  "stage": "dev",
+  "trustedElectronDomains": [
+    "phtauri://localhost/",
+    "https://phcode.dev/"
+  ],
+  "version": "5.2.5",
+  "productName": "Phoenix Code Experimental Build",
+  "desktopName": "phoenix-code",
+  "description": "Phoenix Code Experimental Build",
+  "main": "main.js",
+  "dependencies": {
+    "keytar": "^7.9.0"
+  }
+}

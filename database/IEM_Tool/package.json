@@ -1,0 +1,12 @@
+{
+  "name": "iem-tool",
+  "version": "2.0.0",
+  "description": "🎧 IEM Tool - Parametric EQ & Frequency Response Analyzer",
+  "main": "main.js",
+  "author": "🍄 MyLittlePrimordia",
+  "license": "MIT",
+  "desktopName": "iem-tool",
+  "allowScripts": {
+    "electron@43.4.0": true
+  }
+}

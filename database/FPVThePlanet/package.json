@@ -1,0 +1,31 @@
+{
+  "name": "fpvtp-sim",
+  "productName": "FPVTP",
+  "version": "1.2.0",
+  "private": true,
+  "description": "FPVThePlanet! — FPV drone flight over real cities, in the browser",
+  "author": "lionrayonnant",
+  "license": "AGPL-3.0-only",
+  "homepage": "https://github.com/lionrayonnant/FPVThePlanet",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lionrayonnant/FPVThePlanet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lionrayonnant/FPVThePlanet/issues"
+  },
+  "main": "electron/main.js",
+  "type": "module",
+  "dependencies": {
+    "@dimforge/rapier3d-compat": "^0.14.0",
+    "@geoman-io/leaflet-geoman-free": "^2.20.0",
+    "electron-updater": "^6.8.9",
+    "leaflet": "^1.9.4",
+    "sharp": "^0.35.0",
+    "three": "^0.170.0"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true,
+    "sharp@0.33.5": true
+  }
+}
