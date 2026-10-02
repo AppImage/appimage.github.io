@@ -408,6 +408,19 @@ GitHub Pages (Jekyll) from this repository.
   Failed PRs are also re-tested when their author says it is fixed (item 7
   above), and `code/retest-pr.sh [-n] NUMBER` re-tests one PR by hand (needs
   `PAT`). The comment patterns: `echo "v1.2 is out" | code/retest-comment.sh`.
+- `.github/workflows/retest-stale.yml` (`workflow_dispatch` only; inputs `limit`
+  (default 10), `days` (default 365) and `dry_run` (default true)) re-tests the
+  entries whose `database/NAME` was last changed more than `days` days ago
+  (`code/retest-stale.sh`: from the git history, oldest first, about 1200 of
+  them in October 2026): one `retest/stale-NAME-<time>` pull request per entry
+  (the Test workflow stops at the first failing entry of a PR), changing
+  `data/NAME` the way `/retest` does on a merged PR (a link to one particular
+  release becomes the repository URL, else the trailing newline is toggled), with
+  `SCREENSHOT_UPLOAD_TOKEN` so that Test starts. A passing one is auto-merged like
+  any re-test PR, which refreshes `database/`; a failing one stays open with the
+  test result (and the upstream account is mentioned). Entries that an open PR
+  changes, or that this script re-tested in the last 60 days (any state), and
+  entries without a file in `data/`, are skipped.
 - `/appstream` (maintainers, or the author of the issue or PR):
   `.github/workflows/appstream-help.yml` posts `code/appstream-help.md` from
   `master`, how to ship an AppStream metainfo file with screenshots. The
