@@ -17,10 +17,11 @@
 # releases of their own (Firefox-Appimage: releases "stable", "beta", "esr",
 # "nightly"). An entry asks for one with "#Channel" at the end of the URL in its
 # data/ file, independent of its name (https://github.com/o/r#ESR): then only the
-# releases (or, within a release, the AppImages) whose tag or file name has that
+# releases (or, within a release, the AppImages) whose tag or AppImage file name has that
 # word are considered, and it is an error if there are none. An entry without a
 # channel does not get the releases or AppImages of the other well-known channels
-# (esr, nightly, beta, devedition, ...), if there are others. So that the entries
+# (esr, nightly, beta, devedition, ...), if there are others. Other files of a
+# release (a latest-beta.json update feed) say nothing about its channel. So that the entries
 # of such a repository each get their own AppImage and none of them collide.
 #
 # Rules:
@@ -60,7 +61,7 @@ ALL_RE="(^|[^a-z0-9])($CHANNELS)([^a-z0-9]|\$)"
 # or the newest pre-release if there is no release or if it is more than
 # 180 days newer than the newest release. Prints "index<TAB>why".
 PICK=$(jq -r --arg ch "$CH_RE" --arg all "$ALL_RE" '
-  def mentions($re): ((.tag_name // "") | test($re; "i")) or ([.assets[]?.name] | map(test($re; "i")) | any);
+  def mentions($re): ((.tag_name // "") | test($re; "i")) or ([.assets[]?.name | select(test("\\.appimage$"; "i"))] | map(test($re; "i")) | any);
   def secs: (.published_at // .created_at // "") | .[0:19]
     | if test("^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9:]{8}$") then (. + "Z" | fromdateiso8601) else null end;
   [to_entries[] | select(.value.draft | not)
@@ -85,6 +86,11 @@ if [ -z "$RELEASE" ] ; then
   exit 1
 fi
 TAG=$(jq -r ".[$RELEASE].tag_name" "$JSON")
+# Which releases were looked at, for the log: the newest ones, as the API listed
+# them, with what decides (draft, pre-release, AppImages) and the chosen one marked
+echo "Releases in the order of the API (* = the one chosen):"
+jq -r --argjson pick "$RELEASE" '
+  to_entries[:8][] | "  \(if .key == $pick then "*" else " " end) \(.value.tag_name // "?")  \(if .value.draft then "draft" elif .value.prerelease then "pre-release" else "release" end)  \((.value.published_at // .value.created_at // "no date") | .[0:10])  \([.value.assets[]?.name | select(test("\\.appimage$"; "i"))] | length) AppImage(s)"' "$JSON" 2>/dev/null
 case "$(cut -f 2 <<<"$PICK")" in
   none) echo "NOTE: Using pre-release $TAG, as no release has an AppImage" ;;
   stale) echo "NOTE: Using pre-release $TAG, as the newest release with an AppImage, $(jq -r ".[$(cut -f 3 <<<"$PICK")].tag_name" "$JSON"), is more than 180 days older" ;;
