@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.t00m.MiAZ</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>MiAZ</name>
+  <name xml:lang="es-ES">MiAZ</name>
+  <summary>Personal Document Organizer</summary>
+  <summary xml:lang="es-ES">Organizador Personal de Documentos</summary>
+  <description>
+    <p>Keeping family records, school files, invoices, and administrative paperwork organised is a constant challenge, especially when documents come in from many different countries and institutions.</p>
+    <p xml:lang="es-ES">Mantener registros familiares, archivos escolares, facturas y documentación administrativa organizados es un desafío constante, especialmente cuando los documentos provienen de muchos países e instituciones diferentes.</p>
+    <p>MiAZ solves this with a simple, consistent file-naming convention of seven fields: date, country, group, sender, purpose, concept, and recipient. Scan a letter, download an email attachment, drop it into your MiAZ repository, and the app guides you through naming it correctly.</p>
+    <p xml:lang="es-ES">MiAZ resuelve esto con una convención de nombres de archivos simple y consistente de siete campos: fecha, país, grupo, remitente, propósito, concepto y destinatario. Escanea una carta, descarga un archivo adjunto de correo electrónico, suéltalo en tu repositorio MiAZ y la aplicación te guía para nombrarlo correctamente.</p>
+    <p>Key features:</p>
+    <p xml:lang="es-ES">Características principales:</p>
+    <ul>
+      <li>Multiple independent document repositories</li>
+      <li xml:lang="es-ES">Múltiples repositorios de documentos independientes</li>
+      <li>No database. The directory is the database</li>
+      <li xml:lang="es-ES">Sin base de datos. El directorio es la base de datos</li>
+      <li>Fast workspace that handles thousands of documents</li>
+      <li xml:lang="es-ES">Área de trabajo rápida que gestiona miles de documentos</li>
+      <li>Powerful sidebar with filters for every field</li>
+      <li xml:lang="es-ES">Barra lateral potente con filtros para cada campo</li>
+      <li>Single and mass renaming of documents</li>
+      <li xml:lang="es-ES">Renombrado masivo de documento(s)</li>
+      <li>Project management: group related documents into named projects</li>
+      <li xml:lang="es-ES">Gestión de proyectos: agrupar documentos relacionados en proyectos denominados</li>
+      <li>Plugin system for extending functionality</li>
+      <li xml:lang="es-ES">Sistema de plugins para extender la funcionalidad</li>
+    </ul>
+  </description>
+  <categories>
+    <category>Office</category>
+    <category>Database</category>
+  </categories>
+  <developer id="io.github.t00m">
+    <name>Tomás Vírseda</name>
+  </developer>
+  <url type="homepage">https://github.com/t00m/MiAZ</url>
+  <url type="bugtracker">https://github.com/t00m/MiAZ/issues</url>
+  <url type="vcs-browser">https://github.com/t00m/MiAZ</url>
+  <update_contact>tomasvirseda_AT_gmail.com</update_contact>
+  <content_rating type="oars-1.1"/>
+  <launchable type="desktop-id">io.github.t00m.MiAZ.desktop</launchable>
+  <translation type="gettext">miaz</translation>
+  <requires>
+    <internet>offline-only</internet>
+  </requires>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </recommends>
+  <branding>
+    <color type="primary" scheme_preference="light">#a9a9da</color>
+    <color type="primary" scheme_preference="dark">#45457c</color>
+  </branding>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source" width="1330" height="850">https://raw.githubusercontent.com/t00m/MiAZ/main/data/docs/screenshots/MiAZ-Workspace-filters.png</image>
+      <caption>Main workspace with document list and filters</caption>
+      <caption xml:lang="es-ES">Área de trabajo principal con la lista de documentos y los filtros</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1074" height="778">https://raw.githubusercontent.com/t00m/MiAZ/main/data/docs/screenshots/MiAZ-repository-settings.png</image>
+      <caption>Repository settings</caption>
+      <caption xml:lang="es-ES">Ajustes del repositorio</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1074" height="778">https://raw.githubusercontent.com/t00m/MiAZ/main/data/docs/screenshots/MiAZ-repository-plugins.png</image>
+      <caption>Manage repository plugins</caption>
+      <caption xml:lang="es-ES">Gestionar plugins para este repositorio</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="464" height="341">https://raw.githubusercontent.com/t00m/MiAZ/main/data/docs/screenshots/MiAZ-Workspace-menu.png</image>
+      <caption>Document actions menu</caption>
+      <caption xml:lang="es-ES">Menú de acciones para documentos</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="375" height="528">https://raw.githubusercontent.com/t00m/MiAZ/main/data/docs/screenshots/MiAZ-About.png</image>
+      <caption>About MiAZ</caption>
+      <caption xml:lang="es-ES">Acerca de MiAZ</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.4.0" date="2026-09-30" urgency="medium">
+      <description>
+        <p>An AppImage that runs anywhere, background work you can watch instead of guess at, a keyboard shortcut for every action, and a faster start.</p>
+        <ul>
+          <li>The AppImage carries its own Python, GTK, libadwaita, libpeas and WebKit, so it runs on distributions that ship none of them. It also knows how to update itself</li>
+          <li>Background work has a place in the header bar: what is running, how far it has got, and what failed. A job that failed used to disappear without saying anything</li>
+          <li>A large import says which document it is on and how many are left, and its bar no longer reaches the end with work still to do</li>
+          <li>Long imports and ZIP exports no longer make the desktop offer to close the window</li>
+          <li>Two imports can no longer copy into the same repository at the same time</li>
+          <li>Every core action has a keyboard shortcut, and the ones that used to take a combination the desktop or a text entry already owns have been moved. The shortcuts window is built from the same table the keys come from, so the two cannot drift apart</li>
+          <li>A repository can be marked as remote, per machine, so MiAZ stops treating a mounted drive as if it were a local folder</li>
+          <li>MiAZ starts faster: it no longer does a quarter of its startup work for a window nobody opened, nor the rest of it twice</li>
+          <li>The document list scrolls better: a preview already rendered is not decoded again, and a document's date is not read out of the file every time something asks for it</li>
+          <li>A maximized window comes back maximized, instead of as the size of the screen</li>
+          <li>Stepping back over a configuration change keeps the redo</li>
+          <li>A crash while MiAZ is starting now shows the crash dialog, instead of crashing the crash handler</li>
+          <li>A row no longer keeps the style of an inactive document after that document has scrolled past</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.1" date="2026-09-14" urgency="medium">
+      <description>
+        <p>Disabling a plugin now really disables it, the right-click menu is no longer cut off behind a scrollbar, and MiAZ starts even when libpeas and pygobject are out of step.</p>
+        <ul>
+          <li>Switching a plugin off takes its keyboard shortcuts with it. Ctrl+P went on running MiAZProjectMgt's assign action after the plugin was disabled, against a service that was already gone</li>
+          <li>The plugin info button works again. It showed nothing at all for seventeen of the twenty bundled plugins</li>
+          <li>A plugin installed from a ZIP file can be enabled straight away instead of after a restart, the file is checked before anything is unpacked, and a plugin that cannot be enabled says why</li>
+          <li>Submenus in the right-click menu open at their own size, instead of being squeezed into the height of the menu they came from</li>
+          <li>The "document scanned and imported" toast no longer repeats forever, and neither do the three OCR ones</li>
+          <li>The workspace shows the Copy column only when a document on screen really does have a twin</li>
+          <li>Notes sit under Documents, then Annotation, beside the OCR action that saves what it extracts as a note</li>
+          <li>MiAZ starts even when libpeas and python3-gobject are built against different versions, and says which two to update</li>
+          <li>Installing no longer fails because of a stale icon cache</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.0" date="2026-09-12" urgency="medium">
+      <description>
+        <p>A command line that does what the window does, four new ways to read the same documents, notes and a repository doctor built in, and undo for the whole repository.</p>
+        <ul>
+          <li>miaz is a real command line: add, delete, rename, search, read notes and run OCR, on a machine with no desktop toolkit installed; a plugin can add commands of its own</li>
+          <li>Four new ways to look at the same documents: a Grid of pages, a Timeline, Conversations between the two parties of a document, and the Filenames as they are on disk</li>
+          <li>The first page of the selected document, in the workspace and in the rename dialog, so a filename that says nothing can be settled without opening the file</li>
+          <li>Notes are part of MiAZ rather than a plugin. They moved into the repository's own .conf/notes folder, and a repository written by an older MiAZ moves them itself when it opens</li>
+          <li>MiAZDoctor checks a repository in one pass: names that break the convention, values nobody uses, documents with the same content, files that went missing. It can run when the repository opens, and every finding puts the documents it names on screen</li>
+          <li>MiAZContacts reads the senders and recipients as contacts, each with an address, a phone number and an IBAN. The contact manager imports and exports them as vCard files, so they can leave as easily as they arrived</li>
+          <li>MiAZHistory: undo and redo for the whole repository, with a history of what changed</li>
+          <li>MiAZRelated: the documents around the one you are reading</li>
+          <li>Documents can be dragged out of MiAZ into another application</li>
+          <li>The window fits a phone</li>
+          <li>Repository Settings is three tabs instead of six, and a plugin is configured in it rather than in a dialog of its own</li>
+          <li>What acts on the documents is on a toolbar above them, along with the views, Review and a menu to choose the columns</li>
+          <li>An empty repository can be filled again: the empty page has its own Add button, with an entry per enabled import plugin</li>
+          <li>miaz search --from and --to work at last, and a repository written by a newer MiAZ is refused instead of opened</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-08-31" urgency="medium">
+      <description>
+        <p>Runs on Debian 13, marks duplicate documents in review mode, gathers every field suggestion under one menu, and speaks complete Spanish again.</p>
+        <ul>
+          <li>The keyboard shortcuts window no longer needs libadwaita 1.8, so MiAZ runs on Debian 13; the startup check now compares toolkit versions correctly against the real floors, GTK 4.10 and libadwaita 1.7</li>
+          <li>Review mode marks a document whose content matches another one; the column sorts copies next to each other and the tooltip names the twin and says whether it is filed already</li>
+          <li>One Suggest menu in the rename dialog covers everything that proposes filename values, in sections that say what is read locally and what is sent to an AI</li>
+          <li>The rename dialog says what it is doing while it reads a document, and its pages are a menu instead of a row of tabs that widened with every plugin</li>
+          <li>The date in the rename dialog is checked when you leave the field or press Rename, not on every keystroke, and a half-typed date is no longer completed into a date nobody chose</li>
+          <li>Adding documents from a directory and copying document names are core features now, not plugins, and an import of more than twenty files runs in the background</li>
+          <li>Backup and restore run behind a progress dialog that reports each file, instead of freezing the window</li>
+          <li>The setup assistant asks about countries and nothing else; groups, purposes, senders and recipients start with every shipped value enabled</li>
+          <li>A name containing an ampersand no longer blanks list columns and dialog messages</li>
+          <li>The plugin menus are flatter and the plugin catalogue uses six one-word categories</li>
+          <li>The deb and the rpm declare ocrmypdf and the Python venv tooling, so OCR and the external libraries work on a clean install</li>
+          <li>Running miaz with no display says so and points at the command line, and a crash leaves a Python traceback in the log instead of a core dump</li>
+          <li>Spanish is complete again, all 1011 strings; the never-translated German and French catalogues are gone</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.60" date="2026-08-19" urgency="medium">
+      <description>
+        <p>A command line that works without a display, repository switching without a restart, and dates read from the document instead of guessed.</p>
+        <ul>
+          <li>New command line: miaz search finds documents in any repository and miaz repos lists them, so searching works over SSH and in scripts</li>
+          <li>Switch repository without restarting the application, and choose separately whether it becomes the default</li>
+          <li>The filing date is read from the document itself: PDF creation date, XMP, image EXIF and Office metadata, with no extra libraries needed</li>
+          <li>A date that cannot be read is filed as 99991231 and sorts to the end, instead of being silently filed under today</li>
+          <li>Ambiguous dates such as 03/04/2024 are refused rather than guessed, and document metadata is trusted over digits in a filename</li>
+          <li>The rename dialog has a button to read the date again on demand</li>
+          <li>Plugins unload completely and start clean, which fixes a crash on right click after disabling a plugin</li>
+          <li>The projects file can no longer be emptied when the app and the workspace disagree about which repository is open</li>
+          <li>Faster, quieter startup: the plugin directories are scanned once instead of twice, and the browser page no longer reloads once per plugin</li>
+          <li>First automated interface test suite, plus a manual checklist used as the release gate</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.50" date="2026-08-12" urgency="medium">
+      <description>
+        <p>Groundwork release: the workspace filter, the document index and the configuration each became a thing of their own, and both packages are now verified before release.</p>
+        <ul>
+          <li>The document parse moved into a new index, so it exists once instead of twice and can be tested without a display</li>
+          <li>The workspace filter became a value that can be saved, restored and compared, which is what saved searches will need</li>
+          <li>Each repository owns its configuration, so switching no longer reads settings left behind by the previous one</li>
+          <li>Background work runs through one helper that reports its failures, instead of eight hand-rolled threads that swallowed them</li>
+          <li>A failed background operation no longer freezes the workspace for the rest of the session</li>
+          <li>Plugins can contribute sidebar and header bar widgets through helpers that clean up after themselves on unload</li>
+          <li>The rename dialog refuses to apply a name that is not valid, and gained a Manage projects button</li>
+          <li>The .deb and the .rpm are built from one export of one commit and checked against distribution policy before release</li>
+          <li>Fixed the "Since last year" date filter, which covered the wrong period</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.40" date="2026-08-05" urgency="medium">
+      <description>
+        <p>Secrets in the system keyring, a localized interface, a faster workspace, and a rename dialog plugins can extend.</p>
+        <ul>
+          <li>AI provider API keys are stored in the system keyring instead of plain text</li>
+          <li>Country, Group and Purpose labels are shown in your language; French and German catalogues added</li>
+          <li>Plugins can add tabs to the rename dialog: set a project or a periodicity while renaming</li>
+          <li>Rename dialog is keyboard-friendly: typeable date, Ctrl+Enter to apply, Esc to cancel, invalid names refused</li>
+          <li>Faster workspace on large repositories: single file changes update one row, and scans no longer touch the disk per row</li>
+          <li>New MiAZInsights plugin page: all-years overview, period selector, activity heatmap, rank movers and a world map</li>
+          <li>One AI plugin: MiAZAIChat merged into MiAZAIAssistant, so providers are configured once</li>
+          <li>Adding documents is always available: it moved from an optional plugin into the app</li>
+          <li>Optional third-party libraries install into a private virtualenv, never into the system Python</li>
+          <li>Failed plugins are reported in the app instead of only the log, and every plugin now has an icon</li>
+          <li>Config files are written atomically, so a crash cannot leave a half-written repository</li>
+          <li>Fixed date filters that hid documents at month boundaries and past midnight</li>
+          <li>Flatpak packaging is deprecated: a sandboxed build cannot reach host tools such as ocrmypdf and scanimage</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.30" date="2026-07-08" urgency="medium">
+      <description>
+        <p>See CHANGELOG.md for details.</p>
+      </description>
+    </release>
+    <release version="0.1.29" date="2026-07-06" urgency="medium">
+      <description>
+        <p>See CHANGELOG.md for details.</p>
+      </description>
+    </release>
+    <release version="0.1.28" date="2026-06-27" urgency="medium">
+      <description>
+        <p>AI chat, mass rename as a core feature, a per-repository change journal, and several new plugins.</p>
+        <ul>
+          <li>New plugin MiAZAIChat: chat about a document via Claude, OpenAI, Gemini, or Ollama</li>
+          <li>Mass rename is now a core feature with a guided Concept transform dialog</li>
+          <li>Per-repository change journal records every add, rename, and delete with import provenance</li>
+          <li>New plugins: MiAZNewspaper, MiAZYearReport, MiAZOCR, MiAZFullscreen, MiAZColumnVisibility</li>
+          <li>MiAZNotes renders the note body as Markdown in view mode</li>
+          <li>Embedded localhost web server with a built-in Browser page</li>
+          <li>Global crash handling with a log file and an error dialog</li>
+          <li>Rename: filenames forced to uppercase, and Suggest metadata from documents sharing the concept</li>
+          <li>Sidebar filters: case-insensitive substring search with sorted entries</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.26" date="2026-05-16" urgency="medium">
+      <description>
+        <p>AI-assisted renaming, document notes, column visibility, and rename dialog improvements.</p>
+        <ul>
+          <li>New plugin MiAZAIAssistant: propose all seven filename fields via Claude, OpenAI, Gemini, or Ollama</li>
+          <li>New plugin MiAZNotes: attach Markdown notes to any document with faceted filtering and backup/restore</li>
+          <li>New plugin MiAZColumnVisibility: toggle workspace column visibility</li>
+          <li>Rename dialog: inline Add buttons on restricted-vocabulary rows</li>
+          <li>Rename dialog: Concept autocomplete via difflib-backed popover</li>
+          <li>Workspace: Adw.InlineViewSwitcher for workspace view switching</li>
+          <li>Backend: filename_guess_date() probes PDF metadata, EXIF, and file mtime</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.25" date="2026-05-05" urgency="medium">
+      <description>
+        <p>Sidebar redesign, unified plugin system, performance improvements and startup fixes.</p>
+        <ul>
+          <li>Sidebar rebuilt with Adw.Sidebar (icon-only filter rows and resizable pane)</li>
+          <li>Plugin system unified: no more system/user distinction</li>
+          <li>Plugin sidebar filters now show the plugin icon</li>
+          <li>Review button turns red when pending documents exist</li>
+          <li>Eliminated spurious workspace updates on startup</li>
+          <li>Dropdowns now show "Any country", "Any group", etc.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.8" date="2025-07-21" urgency="low"/>
+    <release version="0.1.7" date="2025-03-22" urgency="low"/>
+    <release version="0.0.48" date="2024-07-12" urgency="low"/>
+  </releases>
+</component>

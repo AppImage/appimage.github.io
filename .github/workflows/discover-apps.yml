@@ -26,7 +26,7 @@ jobs:
   discover-apps:
     if: github.repository == 'AppImage/appimage.github.io'
     runs-on: ubuntu-latest
-    timeout-minutes: 360 # runs until the requested number is found; the script stops after 5.5 h to save its state
+    timeout-minutes: 480 # runs until the requested number is found; the script stops after 7.5 h to save its state
     # One run at a time, so that two runs cannot propose the same repository
     # or race on the state file.
     concurrency:
@@ -44,6 +44,8 @@ jobs:
       SCREENSHOT_UPLOAD_TOKEN: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_REPOSITORY: ${{ github.repository }}
+      # Stop the search in time to save state, staying under timeout-minutes (7.5 h)
+      DISCOVER_MAX_SECONDS: 27000
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

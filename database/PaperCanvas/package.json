@@ -1,0 +1,9 @@
+{
+  "name": "paper-canvas",
+  "version": "0.2.8",
+  "main": "electron/main.mjs",
+  "description": "PaperCanvas desktop",
+  "author": "PaperCanvas",
+  "license": "MIT",
+  "desktopName": "paper-canvas.desktop"
+}

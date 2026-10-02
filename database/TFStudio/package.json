@@ -1,0 +1,21 @@
+{
+  "name": "tfstudio",
+  "version": "1.8.2",
+  "description": "TFStudio - Optical Thin Film Coating Design",
+  "main": "src/main.js",
+  "desktopName": "tfstudio.desktop",
+  "author": {
+    "name": "Andrey Achapovsky",
+    "url": "https://orcid.org/0009-0005-1497-6279"
+  },
+  "license": "MIT",
+  "homepage": "https://tfstudio.xyz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aai2k/TFStudio.git"
+  },
+  "dependencies": {
+    "js-yaml": "^4.3.2",
+    "tmmcore": "^0.4.2"
+  }
+}

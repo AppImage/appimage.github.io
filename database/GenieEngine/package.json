@@ -1,0 +1,16 @@
+{
+  "name": "genieengine",
+  "productName": "GenieEngine",
+  "version": "0.1.2",
+  "description": "AI-powered game engine — build games by chatting with an AI, powered by Godot under the hood.",
+  "main": "out/main/index.js",
+  "author": "Jared Zhao",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "dompurify": "^3.4.11",
+    "dugite": "^3.0.0",
+    "itchio-downloader": "^1.2.0",
+    "koffi": "^3.1.2",
+    "marked": "^18.0.5"
+  }
+}

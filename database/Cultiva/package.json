@@ -1,0 +1,18 @@
+{
+  "name": "cultiva",
+  "version": "2.3.4",
+  "description": "Grow your habits. Grow yourself.",
+  "homepage": "https://github.com/krwg/cultiva",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "author": {
+    "name": "krwg",
+    "email": "shevotsukov@icloud.com"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "discord-rpc": "^4.0.1",
+    "electron-updater": "^6.8.3",
+    "extract-zip": "^2.0.1"
+  }
+}

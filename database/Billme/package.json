@@ -1,0 +1,43 @@
+{
+  "name": "billme",
+  "private": true,
+  "version": "0.4.0",
+  "description": "Billme desktop invoicing application",
+  "license": "FSL-1.1-ALv2",
+  "homepage": "https://billme.app",
+  "author": {
+    "name": "Billme Team",
+    "email": "opensource@billme.app"
+  },
+  "type": "module",
+  "packageManager": "pnpm@10.0.0",
+  "main": "dist/main/index.js",
+  "dependencies": {
+    "@billme/desktop-contracts": "workspace:*",
+    "@billme/desktop-core": "workspace:*",
+    "@billme/desktop-data": "workspace:*",
+    "@billme/desktop-designer": "workspace:*",
+    "@billme/desktop-hooks": "workspace:*",
+    "@billme/desktop-renderer": "workspace:*",
+    "@billme/desktop-services": "workspace:*",
+    "@billme/desktop-state": "workspace:*",
+    "@billme/desktop-ui": "workspace:*",
+    "@billme/desktop-utils": "workspace:*",
+    "@billme/server-core": "workspace:*",
+    "@billme/ui": "workspace:*",
+    "@tanstack/react-query": "^5.90.19",
+    "@tanstack/react-router": "^1.153.1",
+    "better-sqlite3": "^12.4.1",
+    "electron-updater": "^6.8.3",
+    "iconv-lite": "^0.6.3",
+    "keytar": "^7.9.0",
+    "lucide-react": "^0.562.0",
+    "nodemailer": "^6.9.15",
+    "papaparse": "^5.5.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "uuid": "^13.0.0",
+    "zod": "^3.25.76",
+    "zustand": "^5.0.10"
+  }
+}

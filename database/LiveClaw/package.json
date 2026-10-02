@@ -1,0 +1,23 @@
+{
+  "name": "liveclaw",
+  "productName": "LiveClaw",
+  "version": "1.4.1",
+  "description": "An Electron desktop AI companion — a Live2D character you chat with.",
+  "main": "./out/main/index.js",
+  "author": "zeikar",
+  "homepage": "https://github.com/zeikar/liveclaw",
+  "dependencies": {
+    "@charivo/core": "^0.15.0",
+    "@charivo/llm": "^0.6.0",
+    "@charivo/render": "^0.6.0",
+    "@charivo/render-live2d": "^0.3.0",
+    "@charivo/server": "^0.4.0",
+    "@charivo/stt": "^0.6.0",
+    "@charivo/tts": "^0.5.0",
+    "@electron-toolkit/utils": "^4.0.0",
+    "dotenv": "^17.3.1",
+    "json5": "^2.2.3",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  }
+}

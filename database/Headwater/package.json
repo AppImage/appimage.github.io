@@ -1,0 +1,24 @@
+{
+  "name": "headwater-desktop",
+  "productName": "Headwater",
+  "desktopName": "social.pleroma.Headwater.desktop",
+  "version": "0.0.1-nightly.11",
+  "description": "Single-user social networking over encrypted email",
+  "license": "Unlicense",
+  "author": "Headwater contributors",
+  "private": true,
+  "type": "module",
+  "main": "dist/main.js",
+  "packageManager": "pnpm@11.5.2",
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": "11.5.2"
+  },
+  "dependencies": {
+    "@deltachat/jsonrpc-client": "2.53.0",
+    "@deltachat/stdio-rpc-server": "2.53.0",
+    "@hono/node-server": "2.0.8",
+    "hono": "4.12.27",
+    "ws": "8.21.0"
+  }
+}

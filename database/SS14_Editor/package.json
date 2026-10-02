@@ -1,0 +1,10 @@
+{
+  "name": "ss14-editor",
+  "version": "1.1.18",
+  "description": "SS14 Editor – desktop wrapper",
+  "author": "TheShuEd",
+  "main": "main.js",
+  "dependencies": {
+    "electron-updater": "^6.3.0"
+  }
+}

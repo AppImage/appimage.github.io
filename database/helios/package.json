@@ -1,0 +1,20 @@
+{
+  "name": "helios-desktop",
+  "//version": "A placeholder. Every packaged build overrides it with the number the release resolved (`--config.extraMetadata.version`), and an unpackaged one does not check for updates. Nothing reads this.",
+  "version": "3.21.0",
+  "private": true,
+  "description": "Helios desktop client — session sidebar and live terminal tabs",
+  "homepage": "https://github.com/kamrul1157024/helios",
+  "author": {
+    "name": "Md Kamrul Hassan",
+    "email": "kamrul1157024@gmail.com"
+  },
+  "main": "dist/main/main.js",
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "allowScripts": {
+    "esbuild@0.24.2": true,
+    "electron@33.4.11": true
+  }
+}

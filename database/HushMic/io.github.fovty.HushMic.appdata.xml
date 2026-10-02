@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.fovty.HushMic</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT OR Apache-2.0</project_license>
+
+  <name>HushMic</name>
+  <summary>Real-time mic noise suppression</summary>
+
+  <developer id="io.github.fovty">
+    <name>Fovty</name>
+  </developer>
+
+  <description>
+    <p>
+      HushMic runs DPDFNet deep-learning noise suppression on your microphone
+      and exposes the cleaned audio as a virtual PipeWire microphone, so any
+      call or recording app can simply select it. Keyboard clatter, fans and
+      street noise are removed while your voice stays natural.
+    </p>
+    <p>
+      Processing is local and CPU-only: audio never leaves the machine and no
+      network connection is ever made. A tray menu switches models, picks the
+      microphone and sets the suppression strength, and the built-in A/B test
+      window shows your raw and cleaned signal side by side so you can hear
+      and see the difference before a call.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">hushmic.desktop</launchable>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#9be5ea</color>
+    <color type="primary" scheme_preference="dark">#0d3c44</color>
+  </branding>
+
+  <content_rating type="oars-1.1" />
+
+  <url type="homepage">https://github.com/Fovty/HushMic</url>
+  <url type="bugtracker">https://github.com/Fovty/HushMic/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <!-- keep pinned to the release tag, not a branch -->
+      <image>https://raw.githubusercontent.com/Fovty/HushMic/v0.3.0/docs/img/hushmic-ab-window.png</image>
+      <caption>Live A/B mic test: raw input next to the cleaned output other apps receive</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.10.1" date="2026-09-29">
+      <description>
+        <p>
+          Starting HushMic from the app menu now always opens the mic test
+          window, also without a tray. If noise suppression is off or
+          PipeWire can't be reached, the window says so, and a button turns
+          suppression on.
+        </p>
+      </description>
+    </release>
+    <release version="0.10.0" date="2026-09-26">
+      <description>
+        <p>
+          On CPUs with AVX2 both models now run on the DPDFNet authors'
+          native INT8 engine, using about half the CPU with unchanged
+          quality. Model and strength now always follow the microphone in
+          use.
+        </p>
+      </description>
+    </release>
+    <release version="0.9.1" date="2026-09-22">
+      <description>
+        <p>
+          On KDE Plasma before 6.4, System Settings no longer opens on
+          every start once keyboard shortcuts are set up, and the keys keep
+          working after a restart. Holding the push-to-mute key no longer
+          leaves the microphone muted after you let go.
+        </p>
+      </description>
+    </release>
+    <release version="0.9.0" date="2026-09-20">
+      <description>
+        <p>
+          On KDE and GNOME the tray icon is now a monochrome icon in your
+          panel's own color, like the icons next to it, and it follows a
+          switch between light and dark on its own. The new tray_icon setting
+          brings the colored icons back if you prefer them.
+        </p>
+      </description>
+    </release>
+    <release version="0.8.1" date="2026-09-15">
+      <description>
+        <p>
+          When the CPU is too busy for the quality model, HushMic now
+          switches to the light model on its own and back once there is room
+          again, so your voice keeps going during screen sharing and other
+          heavy load. If even the light model cannot keep up, the microphone
+          stays on without noise suppression instead of going silent.
+        </p>
+      </description>
+    </release>
+    <release version="0.8.0" date="2026-09-13">
+      <description>
+        <p>
+          HushMic can now run without a tray icon and be configured from the
+          terminal: hushmic --headless, hushmic config, and a systemd user
+          unit. Noise suppression runs on its own thread, so short audio
+          cycles no longer cause dropouts; processing latency is 80 ms.
+        </p>
+      </description>
+    </release>
+    <release version="0.7.1" date="2026-09-11">
+      <description>
+        <p>
+          Adds a Catalan translation of the interface. No other changes.
+        </p>
+      </description>
+    </release>
+    <release version="0.7.0" date="2026-08-24">
+      <description>
+        <p>
+          The interface now speaks your language: German, Spanish, Ukrainian
+          and Estonian ship in this release, with more translations underway.
+          Also fixes choppy audio during voice calls on systems where call
+          apps request very short audio cycles.
+        </p>
+      </description>
+    </release>
+    <release version="0.6.0" date="2026-07-28">
+      <description>
+        <p>
+          The noise suppression engine is now available as a standalone Rust
+          library (hushmic-denoiser), so other applications can embed the
+          same denoiser. The HushMic app itself behaves exactly as before.
+        </p>
+      </description>
+    </release>
+    <release version="0.5.1" date="2026-07-26">
+      <description>
+        <p>
+          HushMic now notices when another audio tool (such as EasyEffects)
+          re-routes its microphone input and repairs the connection on its
+          own — or tells you exactly which setting is fighting it. The
+          diagnostics report shows what actually feeds the chain, and the
+          mic-test window opens with a calm connecting state instead of a
+          brief error while everything starts up.
+        </p>
+      </description>
+    </release>
+    <release version="0.5.0" date="2026-07-24">
+      <description>
+        <p>
+          Mute and bypass without disconnecting: the new Mode menu switches
+          instantly between noise suppression, raw voice, and a hard mute.
+          Control everything from scripts (hushmic status | mode | toggle)
+          or bind global keyboard shortcuts — including push-to-talk and
+          push-to-mute — through your desktop's own shortcut dialog. HushMic
+          also reports its true 60 ms processing latency to PipeWire so
+          recording apps can compensate automatically.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.0" date="2026-07-19">
+      <description>
+        <p>
+          HushMic now recovers on its own when your microphone disconnects:
+          it falls back to the system default and switches back when the mic
+          returns, without touching your saved choice. Each microphone
+          remembers its own model and suppression strength, and a new
+          diagnostics report (hushmic --doctor, or Copy diagnostics in the
+          About window) makes bug reports one paste.
+        </p>
+      </description>
+    </release>
+    <release version="0.3.0" date="2026-07-17">
+      <description>
+        <p>
+          First Flatpak release. Launching HushMic from the application menu
+          now opens the live A/B window, and launching it again brings the
+          window back; autostart stays silent in the tray.
+        </p>
+      </description>
+    </release>
+    <release version="0.2.1" date="2026-07-14">
+      <description>
+        <p>
+          "Test my mic" and microphone selection now work across every
+          PipeWire version, and two new install channels (AUR binary
+          package, Fedora COPR) shipped alongside.
+        </p>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-07-09">
+      <description>
+        <p>
+          Live A/B mic-test window, desktop notifications for failures and
+          recoveries, and Arch (AUR) plus NixOS packaging.
+        </p>
+      </description>
+    </release>
+  </releases>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+  </categories>
+
+  <keywords>
+    <keyword>noise</keyword>
+    <keyword>suppression</keyword>
+    <keyword>microphone</keyword>
+    <keyword>pipewire</keyword>
+    <keyword>virtual microphone</keyword>
+  </keywords>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+</component>

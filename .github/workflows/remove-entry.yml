@@ -6,6 +6,9 @@
 # - a push to master deletes or renames a file in data/: its database/ and
 #   apps/ entries are removed too (deleting only data/NAME left the page)
 # - by hand: Actions tab -> "Remove entry" -> names separated by blanks
+# - a maintainer comments "/remove" on a pull request (job remove-pr): the PR
+#   is closed and labeled opt-out (never proposed again by discover-apps.sh),
+#   and the entries it adds or changes are removed if they are in the catalog
 name: Remove entry
 
 on:
@@ -99,3 +102,64 @@ jobs:
               --comment "Removed \`data/$NAMES\` and its page from the catalog ($(git rev-parse --short HEAD)). Thank you!"
           fi
           exit $RC
+
+  remove-pr:
+    if: >-
+      github.repository == 'AppImage/appimage.github.io' &&
+      github.event_name == 'issue_comment' &&
+      github.event.issue.pull_request &&
+      startsWith(github.event.comment.body, '/remove') &&
+      contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.issue.number }}
+      COMMENT_ID: ${{ github.event.comment.id }}
+      COMMENTER: ${{ github.event.comment.user.login }}
+    steps:
+      # master, never the PR: its files are only read as names via the API
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Remove
+        run: |
+          gh api -X POST "repos/$REPO/issues/comments/$COMMENT_ID/reactions" -f content=eyes >/dev/null || true
+          # The entries this PR adds or changes (plain names only)
+          NAMES=$(gh api --paginate "repos/$REPO/pulls/$PR/files" \
+                    --jq '.[] | select(.filename | startswith("data/")) | .filename' \
+                  | sed -n 's|^data/\([A-Za-z0-9_+-][A-Za-z0-9._+-]*\)$|\1|p' | sort -u)
+          # Only those that are in the catalog are removed from it
+          IN_CATALOG=()
+          for N in $NAMES ; do
+            if [ -e "data/$N" ] || [ -e "database/$N" ] || [ -e "apps/$N.md" ] ; then IN_CATALOG+=("$N") ; fi
+          done
+          MSG=""
+          if [ ${#IN_CATALOG[@]} -gt 0 ] ; then
+            bash code/remove-entry.sh "${IN_CATALOG[@]}"
+            git config user.name "GitHub Actions"
+            git config user.email "actions@users.noreply.github.com"
+            git commit -q -m "Remove ${IN_CATALOG[*]} from the catalog" -m "Requested with /remove in #$PR by @$COMMENTER"
+            PUSHED=false
+            for TRY in 1 2 3 4 5 ; do
+              git push -q origin HEAD:master && { PUSHED=true ; break ; }
+              sleep $((TRY * 5))
+              git pull -q --rebase origin master
+            done
+            $PUSHED || { echo "Could not push the removal" ; exit 1 ; }
+            MSG="Removed \`${IN_CATALOG[*]}\` and its page from the catalog ($(git rev-parse --short HEAD)). "
+          fi
+          # Never proposed again by discover-apps.sh
+          gh api -X POST "repos/$REPO/issues/$PR/labels" -f "labels[]=opt-out" >/dev/null || true
+          MSG="${MSG}Labeled \`opt-out\`: auto-discovery will not propose this app again."
+          if [ "$(gh api "repos/$REPO/pulls/$PR" --jq .state)" = open ] ; then
+            gh pr close "$PR" -R "$REPO" --comment "$MSG"
+          else
+            gh pr comment "$PR" -R "$REPO" --body "$MSG"
+          fi
+          gh api -X POST "repos/$REPO/issues/comments/$COMMENT_ID/reactions" -f content=rocket >/dev/null || true

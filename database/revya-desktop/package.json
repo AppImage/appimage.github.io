@@ -1,0 +1,8 @@
+{
+  "name": "revya",
+  "version": "1.5.0",
+  "description": "Transforma celulares Samsung em dispositivos de mídia para TV via ADB",
+  "main": "src/main/main.js",
+  "author": "Natalier Júnior",
+  "license": "MIT"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "astra",
+  "version": "0.1.1",
+  "description": "Audiophile music player with advanced visualization",
+  "main": "./out/main/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Boof2015/astra"
+  },
+  "author": {
+    "name": "Astra",
+    "email": "astra@users.noreply.github.com"
+  },
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "music-metadata": "^11.10.6",
+    "node-addon-api": "^8.5.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "sql.js": "^1.13.0",
+    "zustand": "^5.0.10"
+  }
+}

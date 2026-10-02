@@ -176,6 +176,10 @@ jobs:
           [ -e .nothing-tested ] && exit 0 # No artifact, no comment
           mkdir -p pr-result
           echo "${{ github.event.pull_request.number }}" > pr-result/pr-number
+          # If the screenshot's text is predominantly Chinese (check-screenshot.sh
+          # OCRs it), record it so publish-pr-screenshot.yml can invite the author
+          # to offer an English default instead of posting the usual report.
+          grep -q 'not in English but in Chinese script' log.txt && echo chinese > pr-result/language.txt || true
           if [ "${{ steps.main.outcome }}" = success ] ; then
             find database -type f -path '*/screenshot.png' -newer .test-start -print | while IFS= read -r screenshot ; do
               appname=$(basename "$(dirname "$screenshot")" | tr -cd 'A-Za-z0-9._-')
@@ -194,7 +198,9 @@ jobs:
           # Also on success, e.g., a helper failing because of a too new glibc
           bash code/diagnose.sh log.txt > pr-result/hints.md
           # Remarks about the name of the file in data/ and of the AppImage
-          grep -hE "^(ERROR|WARNING): (File name|AppImage name) '" log.txt | sort -u > pr-result/names.txt || true
+          grep -hE "^(ERROR|WARNING): ((File name|AppImage name) '|The names of the .* differ: )" log.txt | sort -u > pr-result/names.txt || true
+          # Notes about the name of the file in data/ (not warnings)
+          grep -h "^NOTE: File name '" log.txt | sort -u > pr-result/notes.txt || true
           # Whether the AppImage needs a compatible C library on the host
           grep -h '^X-AppImage-\(Libc\|Runtime\|Self-Contained\|Glibc-Required\)=' log.txt | sort -u > pr-result/libc.txt || true
           ls -la pr-result/
