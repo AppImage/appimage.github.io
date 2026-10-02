@@ -85,6 +85,11 @@ if [ -z "$RELEASE" ] ; then
   exit 1
 fi
 TAG=$(jq -r ".[$RELEASE].tag_name" "$JSON")
+# Which releases were looked at, for the log: the newest ones, as the API listed
+# them, with what decides (draft, pre-release, AppImages) and the chosen one marked
+echo "Releases in the order of the API (* = the one chosen):"
+jq -r --argjson pick "$RELEASE" '
+  to_entries[:8][] | "  \(if .key == $pick then "*" else " " end) \(.value.tag_name // "?")  \(if .value.draft then "draft" elif .value.prerelease then "pre-release" else "release" end)  \((.value.published_at // .value.created_at // "no date") | .[0:10])  \([.value.assets[]?.name | select(test("\\.appimage$"; "i"))] | length) AppImage(s)"' "$JSON" 2>/dev/null
 case "$(cut -f 2 <<<"$PICK")" in
   none) echo "NOTE: Using pre-release $TAG, as no release has an AppImage" ;;
   stale) echo "NOTE: Using pre-release $TAG, as the newest release with an AppImage, $(jq -r ".[$(cut -f 3 <<<"$PICK")].tag_name" "$JSON"), is more than 180 days older" ;;
