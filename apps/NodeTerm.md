@@ -1,0 +1,165 @@
+---
+layout: app
+
+permalink: /NodeTerm/
+description: Aplicación de escritorio multiplataforma con Electron y PrimeReact
+
+icons:
+  - NodeTerm/icons/512x512/nodeterm.png
+
+screenshots:
+  - NodeTerm/screenshot.png
+
+authors:
+  - name: kalidus
+    url: https://github.com/kalidus
+
+links:
+  - type: GitHub
+    url: kalidus/NodeTerm
+  - type: Download
+    url: https://github.com/kalidus/NodeTerm/releases
+
+desktop:
+  Desktop Entry:
+    Name: NodeTerm
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: nodeterm
+    StartupWMClass: nodeterm
+    X-AppImage-Version: 1.7.6
+    Comment: Aplicación de escritorio multiplataforma con Electron y PrimeReact
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+
+electron:
+    name: kalidus
+    email: kalidus@users.noreply.github.com
+  main: main.js
+  desktopName: nodeterm.desktop
+  engines:
+    node: ">=24 <25"
+  license: ISC
+  description: Aplicación de escritorio multiplataforma con Electron y PrimeReact
+  dependencies:
+    "@devolutions/iron-remote-desktop": "^0.11.0"
+    "@devolutions/iron-remote-desktop-rdp": "^0.7.0"
+    "@fortawesome/fontawesome-svg-core": "^7.2.0"
+    "@fortawesome/free-solid-svg-icons": "^7.2.0"
+    "@fortawesome/react-fontawesome": "^3.2.0"
+    "@mozilla/readability": "^0.6.0"
+    "@novnc/novnc": "^1.7.0"
+    "@primno/dpapi": "^2.0.1"
+    "@tiptap/core": "^3.31.3"
+    "@tiptap/extension-code-block-lowlight": "^3.31.3"
+    "@tiptap/extension-color": "^3.31.3"
+    "@tiptap/extension-highlight": "^3.31.3"
+    "@tiptap/extension-image": "^3.31.3"
+    "@tiptap/extension-link": "^3.31.3"
+    "@tiptap/extension-placeholder": "^3.31.3"
+    "@tiptap/extension-table": "^3.31.3"
+    "@tiptap/extension-table-cell": "^3.31.3"
+    "@tiptap/extension-table-header": "^3.31.3"
+    "@tiptap/extension-table-row": "^3.31.3"
+    "@tiptap/extension-task-item": "^3.31.3"
+    "@tiptap/extension-task-list": "^3.31.3"
+    "@tiptap/extension-text-align": "^3.31.3"
+    "@tiptap/extension-text-style": "^3.31.3"
+    "@tiptap/extension-underline": "^3.31.3"
+    "@tiptap/pm": "^3.31.3"
+    "@tiptap/react": "^3.31.3"
+    "@tiptap/starter-kit": "^3.31.3"
+    "@types/react-resizable": "^3.0.8"
+    "@xterm/addon-canvas": "^0.7.0"
+    "@xterm/addon-clipboard": "^0.2.0"
+    "@xterm/addon-fit": "^0.11.0"
+    "@xterm/addon-image": "^0.9.0"
+    "@xterm/addon-unicode11": "^0.9.0"
+    "@xterm/addon-web-links": "^0.12.0"
+    "@xterm/addon-webgl": "^0.19.0"
+    "@xterm/xterm": "^6.0.0"
+    assert: "^2.1.0"
+    basic-ftp: "^5.0.5"
+    better-sqlite3: "^12.10.0"
+    cvss: "^1.0.5"
+    cvss4: "^1.0.7"
+    dommatrix: "^0.1.1"
+    dompurify: "^3.4.15"
+    electron-log: "^5.4.3"
+    electron-updater: "^6.8.3"
+    guacamole-common-js: "^1.5.0"
+    guacamole-lite: "^1.0.2"
+    highlight.js: "^11.11.1"
+    https-browserify: "^1.0.0"
+    jsdom: "^28.1.0"
+    kdbxweb: "^2.1.1"
+    lowlight: "^3.3.0"
+    marked: "^17.0.6"
+    mime-types: "^3.0.2"
+    node-forge: "^1.3.1"
+    node-pty: "^1.1.0-beta34"
+    node-ssh: "^13.2.1"
+    pako: "^2.1.0"
+    primeflex: "^3.3.1"
+    primeicons: "^6.0.1"
+    primereact: "^10.9.7"
+    react: "^19.2.4"
+    react-dnd: "^16.0.1"
+    react-dnd-html5-backend: "^16.0.1"
+    react-dom: "^19.2.4"
+    react-icons: "^5.6.0"
+    react-resizable: "^3.0.5"
+    react-rnd: "^10.5.2"
+    react-split: "^2.0.14"
+    ssh2-promise: "^1.0.3"
+    ssh2-sftp-client: "^12.0.1"
+    stream-http: "^3.2.0"
+    systeminformation: "^5.33.10"
+    tar: "^7.5.22"
+    turndown: "^7.2.4"
+    unzipper: "^0.12.3"
+    ws: "^8.18.0"
+  optionalDependencies:
+    dmg-license: "^1.0.11"
+  overrides:
+    ssh2: 1.17.0
+    tar: "^7.5.22"
+    elliptic: 6.6.1
+    "@electron/asar": "^4.0.1"
+    glob: "^13.0.5"
+    rimraf: "^6.1.3"
+    "@xmldom/xmldom": "^0.8.15"
+    boolean: "^3.2.0"
+    lodash.isequal: "^4.5.0"
+    shell-quote: "^1.8.5"
+    builder-util-runtime: "^9.7.0"
+    fflate: "^0.8.2"
+    fast-uri: "^3.1.7"
+    form-data: "^4.0.6"
+    postcss: "^8.5.28"
+    nanoid: "^3.3.19"
+    qs: "^6.16.0"
+    tmp: "^0.2.7"
+    joi: "^18.2.9"
+    js-yaml: "^4.3.2"
+    axios: "^1.20.0"
+    postcss-selector-parser: "^7.1.6"
+    browserslist: "^4.28.9"
+    "@tiptap/core": "^3.31.3"
+    "@tiptap/pm": "^3.31.3"
+    jsdom:
+      undici: "^7.29.1"
+    node-gyp:
+      undici: "^6.28.1"
+---

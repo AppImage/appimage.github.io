@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>eu.opencloud.desktop.opencloud</id>
+  
+  <name>OpenCloud Desktop</name>
+  <summary>Desktop client for OpenCloud file synchronization</summary>
+  
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+
+  <developer id="eu.opencloud">
+    <name>OpenCloud GmbH</name>
+  </developer>
+  <project_group>Heinlein Group</project_group>
+
+  <description>
+    <p>
+      The OpenCloud Desktop Client synchronizes files between your computer and OpenCloud. It provides offline access, automatic synchronization, and a consistent way to work with files locally.
+    </p>
+  </description>
+
+  <icon type="remote">https://raw.githubusercontent.com/opencloud-eu/desktop/bb4ac2e5495cbcf8f6455f91d9de8448962e4334/src/resources/theme/universal/opencloud-icon.svg</icon>
+  <branding>
+    <color type="primary" scheme_preference="light">#E2BAFF</color>
+    <color type="primary" scheme_preference="dark">#20434F</color>
+  </branding>
+
+  <content_rating type="oars-1.1" />
+
+  <url type="bugtracker">https://github.com/opencloud-eu/desktop/issues</url>
+  <url type="homepage">https://opencloud.eu</url>
+  <url type="faq">https://docs.opencloud.eu/docs/user/desktop-client/common-functionality/multiple-accounts</url>
+  <url type="translate">https://explore.transifex.com/opencloud-eu/opencloud-eu</url>
+  <url type="contribute">https://github.com/opencloud-eu/opencloud/blob/main/CONTRIBUTING.md</url>
+  <url type="vcs-browser">https://github.com/opencloud-eu/desktop</url>
+  
+  <launchable type="desktop-id">opencloud.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main screen of the application</caption>
+      <image>https://docs.opencloud.eu/assets/images/settings-overview-561af2cba465818c58a388c454830451.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Login screen on first startup</caption>
+      <image>https://docs.opencloud.eu/assets/images/set-up-enter-url-57bd85c39ceb0145112bf9d34d72d508.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="3.0.3" date="2025-12-08">
+      <url type="details">https://github.com/opencloud-eu/desktop/releases/tag/v3.0.3</url>
+    </release>
+  </releases>
+</component>

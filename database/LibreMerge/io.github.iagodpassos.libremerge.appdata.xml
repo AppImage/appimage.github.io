@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: CC0-1.0 -->
+<!-- AppStream metadata: software centers (GNOME Software, KDE Discover)
+     and AppImageHub read the description and screenshots from here. The
+     file is named after the component ID, which appstreamcli validate-tree
+     requires; the .appdata.xml suffix (not .metainfo.xml) is the one
+     AppImageHub reads the description and screenshots from. Add a
+     <release> on every version bump. -->
+<component type="desktop-application">
+  <id>io.github.iagodpassos.libremerge</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>LibreMerge</name>
+  <summary>Compare and merge files and folders</summary>
+  <summary xml:lang="pt-BR">Compare e mescle arquivos e pastas</summary>
+
+  <description>
+    <p>
+      LibreMerge brings the comparison engine of WinMerge to Linux and macOS,
+      with a native Qt interface. If you know WinMerge, you already know
+      LibreMerge: the layout, the colors and the workflow are intentionally
+      the same.
+    </p>
+    <ul>
+      <li>Side-by-side file comparison and merging, 2-way and 3-way, with word-level highlights, free editing and undo</li>
+      <li>Folder comparison, 2-way and 3-way, with WinMerge's compare methods, file filters, View filters, copy and delete</li>
+      <li>Archive comparison: zip, 7z and tar archives open as folders</li>
+      <li>CSV and TSV tables compared cell by cell, and images compared pixel by pixel</li>
+      <li>Syntax highlighting for 47 languages, light and dark themes</li>
+      <li>Works as git's merge and diff tool</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">libremerge.desktop</launchable>
+
+  <url type="homepage">https://github.com/iagodpassos/libremerge</url>
+  <url type="bugtracker">https://github.com/iagodpassos/libremerge/issues</url>
+  <url type="donation">https://buymeacoffee.com/iagodpassos</url>
+
+  <developer id="io.github.iagodpassos">
+    <name>Iago Passos</name>
+  </developer>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>File comparison</caption>
+      <image>https://raw.githubusercontent.com/iagodpassos/libremerge/main/docs/screenshots/file-compare-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Folder comparison</caption>
+      <image>https://raw.githubusercontent.com/iagodpassos/libremerge/main/docs/screenshots/folder-compare-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Image comparison</caption>
+      <image>https://raw.githubusercontent.com/iagodpassos/libremerge/main/docs/screenshots/image-compare.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Dark theme</caption>
+      <image>https://raw.githubusercontent.com/iagodpassos/libremerge/main/docs/screenshots/file-compare-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Following the dark style of GNOME</caption>
+      <image>https://raw.githubusercontent.com/iagodpassos/libremerge/main/docs/screenshots/linux-debian.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.9.7" date="2026-10-01">
+      <url type="details">https://github.com/iagodpassos/libremerge/releases/tag/v0.9.7</url>
+    </release>
+    <release version="0.9.6" date="2026-09-27">
+      <url type="details">https://github.com/iagodpassos/libremerge/releases/tag/v0.9.6</url>
+    </release>
+    <release version="0.9.5" date="2026-09-26">
+      <url type="details">https://github.com/iagodpassos/libremerge/releases/tag/v0.9.5</url>
+    </release>
+    <release version="0.9.4" date="2026-09-08">
+      <url type="details">https://github.com/iagodpassos/libremerge/releases/tag/v0.9.4</url>
+    </release>
+    <release version="0.9.3" date="2026-09-06">
+      <url type="details">https://github.com/iagodpassos/libremerge/releases/tag/v0.9.3</url>
+    </release>
+    <release version="0.9.2" date="2026-09-03">
+      <url type="details">https://github.com/iagodpassos/libremerge/releases/tag/v0.9.2</url>
+    </release>
+  </releases>
+</component>

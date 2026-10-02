@@ -1,0 +1,71 @@
+---
+layout: app
+
+permalink: /scadnano/
+description: [scadnano](https://scadnano.org)\r (“scriptable-cadnano”, [source code repository here](https://github.com/UC-Davis-molecular-computing/scadnano))\r is a program for designing synthetic DNA structures such as DNA origami.\r The scadnano project is developed and maintained by the UC Davis Molecular Computing group.\r Note that [cadnano](https://cadnano.org) is a separate project, developed and maintained by\r the [Douglas lab](https://bionano.ucsf.edu/) at UCSF.
+license: MIT
+
+icons:
+  - scadnano/icons/256x256/scadnano.png
+
+screenshots:
+  - scadnano/screenshot.png
+
+authors:
+  - name: UC-Davis-molecular-computing
+    url: https://github.com/UC-Davis-molecular-computing
+
+links:
+  - type: GitHub
+    url: UC-Davis-molecular-computing/scadnano
+  - type: Download
+    url: https://github.com/UC-Davis-molecular-computing/scadnano/releases
+
+desktop:
+  Desktop Entry:
+    Name: scadnano
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: scadnano
+    StartupWMClass: scadnano
+    X-AppImage-Version: 0.1.0
+    Comment: "[scadnano](https://scadnano.org)\r (“scriptable-cadnano”, [source code
+      repository here](https://github.com/UC-Davis-molecular-computing/scadnano))\r
+      is a program for designing synthetic DNA structures such as DNA origami.\r The
+      scadnano project is developed and maintained by the UC Davis Molecular Computing
+      group.\r Note that [cadnano](https://cadnano.org) is a separate project, developed
+      and maintained by\r the [Douglas lab](https://bionano.ucsf.edu/) at UCSF."
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: MIT
+
+electron:
+    code repository here](https://github.com/UC-Davis-molecular-computing/scadnano))\r
+    is a program for designing synthetic DNA structures such as DNA origami.\r The scadnano
+    project is developed and maintained by the UC Davis Molecular Computing group.\r
+    Note that [cadnano](https://cadnano.org) is a separate project, developed and maintained
+    by\r the [Douglas lab](https://bionano.ucsf.edu/) at UCSF."
+  main: main.js
+  repository:
+    type: git
+    url: git+https://github.com/UC-Davis-molecular-computing/scadnano.git
+  author: David Doty <doty@ucdavis.edu> (https://scadnano.org)
+  license: MIT
+  type: commonjs
+  bugs:
+    url: https://github.com/UC-Davis-molecular-computing/scadnano/issues
+  homepage: https://github.com/UC-Davis-molecular-computing/scadnano#readme
+  dependencies:
+    electron-squirrel-startup: "^1.0.1"
+---

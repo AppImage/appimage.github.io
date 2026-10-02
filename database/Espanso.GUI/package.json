@@ -1,0 +1,14 @@
+{
+  "name": "espanso-gui",
+  "version": "1.2.0",
+  "description": "Open source GUI for espanso text expander",
+  "main": "electron/main.js",
+  "author": "espanso-gui",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.7.0"
+  }
+}

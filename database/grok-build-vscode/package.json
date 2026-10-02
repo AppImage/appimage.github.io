@@ -1,0 +1,556 @@
+{
+  "name": "grok-build-desktop",
+  "displayName": "GUI for Grok Build & Muse Code",
+  "description": "Grok Build Desktop (Community)",
+  "version": "4.14.1",
+  "publisher": "PawelHuryn",
+  "author": {
+    "name": "Paweł Huryn",
+    "url": "https://www.productcompass.pm"
+  },
+  "license": "FSL-1.1-MIT",
+  "homepage": "https://github.com/phuryn/grok-build-vscode",
+  "bugs": {
+    "url": "https://github.com/phuryn/grok-build-vscode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phuryn/grok-build-vscode"
+  },
+  "engines": {
+    "vscode": "^1.106.0"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "icon": "resources/grok-icon.png",
+  "main": "out/desktop/main.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "secondarySidebar": [
+        {
+          "id": "grokSidebar",
+          "title": "Grok",
+          "icon": "resources/grok-icon.svg"
+        }
+      ],
+      "activitybar": [
+        {
+          "id": "grokPrimary",
+          "title": "Grok",
+          "icon": "resources/grok-icon.svg"
+        },
+        {
+          "id": "grokProjects",
+          "title": "Grok",
+          "icon": "resources/grok-icon.svg"
+        }
+      ],
+      "panel": [
+        {
+          "id": "grokPanel",
+          "title": "Grok",
+          "icon": "resources/grok-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "grokSidebar": [
+        {
+          "type": "webview",
+          "id": "grok.chat",
+          "name": "Grok"
+        }
+      ],
+      "grokProjects": [
+        {
+          "type": "webview",
+          "id": "grok.projects",
+          "name": "Projects"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "grok.continueOnPhone",
+        "title": "Grok: Continue on Phone"
+      },
+      {
+        "command": "grok.open",
+        "title": "Grok: Open"
+      },
+      {
+        "command": "grok.moveView",
+        "title": "Grok: Move Chat View"
+      },
+      {
+        "command": "grok.newSession",
+        "title": "Grok: New Session"
+      },
+      {
+        "command": "grok.newWorktreeSession",
+        "title": "Grok: New Worktree Session"
+      },
+      {
+        "command": "grok.applyWorktree",
+        "title": "Grok: Apply Worktree"
+      },
+      {
+        "command": "grok.removeWorktree",
+        "title": "Grok: Remove Worktree"
+      },
+      {
+        "command": "grok.rewind",
+        "title": "Grok: Rewind Conversation"
+      },
+      {
+        "command": "grok.compact",
+        "title": "Grok: Compact Conversation"
+      },
+      {
+        "command": "grok.pickModel",
+        "title": "Grok: Pick Model"
+      },
+      {
+        "command": "grok.toggleMode",
+        "title": "Grok: Toggle Plan / Agent Mode"
+      },
+      {
+        "command": "grok.sendSelection",
+        "title": "Add Selection to Grok"
+      },
+      {
+        "command": "grok.sendFile",
+        "title": "Add to Grok chat"
+      },
+      {
+        "command": "grok.insertAtMention",
+        "title": "Grok: Insert @-Mention"
+      },
+      {
+        "command": "grok.showLogs",
+        "title": "Grok: Show Logs"
+      },
+      {
+        "command": "grok.settings",
+        "title": "Grok: Settings",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "grok.expandAllToolDetails",
+        "title": "Grok: Expand All Tool Details (This Session)"
+      },
+      {
+        "command": "grok.collapseAllToolDetails",
+        "title": "Grok: Collapse All Tool Details (This Session)"
+      },
+      {
+        "command": "grok.findInSession",
+        "title": "Grok: Find in Conversation"
+      },
+      {
+        "command": "grok.logout",
+        "title": "Grok: Log Out"
+      },
+      {
+        "command": "grok.linkRemote",
+        "title": "AFK Pilot: Link this device"
+      },
+      {
+        "command": "grok.unlinkRemote",
+        "title": "AFK Pilot: Unlink this device"
+      },
+      {
+        "command": "grok._debugDummyPlan",
+        "title": "Grok: Debug — Show dummy plan card (for testing Approve/Reject/Cancel)"
+      },
+      {
+        "command": "grok.composerForward",
+        "title": "Grok: Composer — Move Forward"
+      },
+      {
+        "command": "grok.composerPreviousLine",
+        "title": "Grok: Composer — Move to Previous Line"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "grok.open",
+        "key": "ctrl+;",
+        "mac": "cmd+;"
+      },
+      {
+        "command": "grok.insertAtMention",
+        "key": "alt+g",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "grok.composerForward",
+        "key": "ctrl+f",
+        "when": "isMac && grok.composerFocus"
+      },
+      {
+        "command": "grok.composerPreviousLine",
+        "key": "ctrl+p",
+        "when": "isMac && grok.composerFocus"
+      },
+      {
+        "command": "grok.findInSession",
+        "key": "ctrl+f",
+        "mac": "cmd+f",
+        "when": "focusedView == grok.chat"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "grok.settings",
+          "when": "view == grok.chat",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "grok._debugDummyPlan",
+          "when": "false"
+        },
+        {
+          "command": "grok.composerForward",
+          "when": "false"
+        },
+        {
+          "command": "grok.composerPreviousLine",
+          "when": "false"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "grok.sendSelection",
+          "when": "editorHasSelection",
+          "group": "grok@1"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "grok.sendFile",
+          "when": "resourceScheme == file",
+          "group": "grok@1"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "grok.sendFile",
+          "when": "resourceScheme == file",
+          "group": "grok@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Grok",
+      "properties": {
+        "grok.cliPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the grok binary. Empty = auto-discover (~/.grok/bin/grok, then PATH)."
+        },
+        "grok.codexCliPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the OpenAI Codex binary. Empty = auto-discover on PATH, then in the newest OpenAI ChatGPT bundle installed by VS Code, Cursor, or remote VS Code."
+        },
+        "grok.museCliPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the installed Muse Code CLI on macOS or Linux. Leave empty to discover muse on PATH."
+        },
+        "grok.museShellSandbox": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use Muse Code's shell sandbox for new conversations in Prompt unmatched. On request always uses it; Allow all disables it. On request is unavailable in a running process without the sandbox."
+        },
+        "grok.museSandboxNetwork": {
+          "type": "string",
+          "enum": [
+            "proxy-only",
+            "restricted",
+            "enabled"
+          ],
+          "default": "proxy-only",
+          "description": "Muse Code sandbox network access for new conversations in Prompt unmatched or On request."
+        },
+        "grok.museTrustWorkspaces": {
+          "type": "boolean",
+          "default": false,
+          "description": "Trust workspaces for new Muse Code conversations in Prompt unmatched or On request. Allow all always trusts the workspace. A trusted workspace also runs the repository's hooks."
+        },
+        "grok.claudeCliPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the Anthropic Claude Code CLI (`claude`). Empty = auto-discover on PATH, then well-known user-bin locations. Authentication stays in Anthropic's own CLI."
+        },
+        "grok.defaultModel": {
+          "type": "string",
+          "default": "",
+          "description": "Model ID to use on new sessions. Empty = CLI default. If a non-empty value isn't available for the session's agent, it's replaced with the model the CLI falls back to (no prompt)."
+        },
+        "grok.defaultMode": {
+          "type": "string",
+          "enum": [
+            "",
+            "agent",
+            "yolo"
+          ],
+          "enumDescriptions": [
+            "Agent mode (CLI default)",
+            "Agent mode",
+            "Auto accept — auto-approve every permission request"
+          ],
+          "default": "",
+          "description": "Mode for new sessions. Updated automatically to remember your last switch between Agent and Auto accept (Plan is never remembered). Empty = Agent."
+        },
+        "grok.includeActiveFileByDefault": {
+          "type": "boolean",
+          "default": true,
+          "description": "Auto-add the active editor file as a context chip."
+        },
+        "grok.mentionIndexLimit": {
+          "type": "number",
+          "default": 5000,
+          "minimum": 100,
+          "markdownDescription": "Max workspace files indexed for composer **@** file autocomplete. Default 5000 keeps a cold index build bounded; raise it (no upper limit) if files are missing from the `@` list in large repos. Applies on the next `@` after the setting changes. Very large values cost more time on the first rebuild."
+        },
+        "grok.acp.promptIdleTimeoutMs": {
+          "type": "number",
+          "default": 1800000,
+          "minimum": 0,
+          "markdownDescription": "How long a live `session/prompt` may stay silent before the extension reports **ACP request timed out**. Any `session/update` or in-turn server request (permission, terminal, …) resets this idle clock. Default 1800000 (30 minutes). `0` disables the idle cap. Applies to newly started sessions (#117)."
+        },
+        "grok.acp.promptAbsoluteTimeoutMs": {
+          "type": "number",
+          "default": 86400000,
+          "minimum": 0,
+          "markdownDescription": "Hard wall-clock cap for one `session/prompt`, even while the turn is still streaming. Default 86400000 (24 hours). `0` disables the absolute cap. Applies to newly started sessions (#117)."
+        },
+        "grok.acp.requestTimeoutMs": {
+          "type": "number",
+          "default": 120000,
+          "minimum": 1000,
+          "markdownDescription": "Timeout for ACP methods other than `session/prompt` (`initialize`, `session/new`, `session/set_model`, …). Default 120000 (2 minutes). Applies to newly started sessions."
+        },
+        "grok.defaultEffort": {
+          "type": "string",
+          "enum": [
+            "",
+            "none",
+            "minimal",
+            "low",
+            "medium",
+            "high",
+            "xhigh"
+          ],
+          "enumDescriptions": [
+            "CLI default (no flag passed to grok agent stdio)",
+            "None — no extra reasoning",
+            "Minimal — least reasoning",
+            "Low — fast, lightweight reasoning",
+            "Medium — balanced",
+            "High — deeper reasoning",
+            "Extra high — deepest reasoning, slowest"
+          ],
+          "default": "",
+          "description": "Reasoning effort passed as --reasoning-effort to grok agent stdio. Values match the grok CLI's accepted set (none, minimal, low, medium, high, xhigh). Applies live on recent CLIs (grok 0.2.101+); older CLIs, and resetting to the model default, restart the session."
+        },
+        "grok.useCtrlEnterToSend": {
+          "type": "boolean",
+          "default": false,
+          "description": "Use Ctrl/Cmd+Enter to send (Enter inserts newline)."
+        },
+        "grok.terminalShell": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "cmd"
+          ],
+          "enumDescriptions": [
+            "PowerShell on Windows (pwsh, then Windows PowerShell 5.1); the shell $SHELL names on macOS and Linux — matches the standalone Grok CLI",
+            "Force cmd.exe on Windows, /bin/sh on macOS and Linux"
+          ],
+          "default": "auto",
+          "markdownDescription": "Which shell runs the agent's commands. `auto` (default) matches the standalone Grok CLI: PowerShell on Windows — `pwsh.exe` if installed, else Windows PowerShell 5.1 (#46) — and the shell `$SHELL` names on macOS and Linux (typically `/bin/zsh`) instead of `/bin/sh`, which on macOS is bash 3.2 and cannot run a modern sdkman init (#140). The agent's command is also unwrapped from the `bash -lc` envelope Grok sends, and run as an explicit argument, so your shell cannot hand it straight back to bash. A `$SHELL` that isn't POSIX-compatible (fish, nushell) falls back to `/bin/sh`, because the agent writes POSIX commands. `cmd` forces `cmd.exe` on Windows and `/bin/sh` on macOS/Linux, if matching your shell causes trouble — a profile that prints on startup, or is slow to load. On Windows, changing this switches the shell straight away but the agent is told which dialect to write when a conversation starts, so **start a new conversation** for the change to apply to both halves. **Tip: install PowerShell 7 (`pwsh`)** — the 5.1 fallback rejects `&&` chains and reports every failing command's exit code as 1."
+        },
+        "grok.showThinking": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Show Grok's reasoning (thinking) traces in chat. Off by default — a lightweight \"Thinking…\" indicator stands in while Grok reasons. Also toggleable live from the gear menu → **Config & debug → Show thinking traces** (applies to already-loaded sessions too)."
+        },
+        "grok.expandCommandOutputs": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Expand tool details by default — each shell command's IN/OUT block (full command text + captured output) and each edit's inline diff (useful for auditing Auto-accept sessions). With this setting on, groups containing command or edit details (such as \"Ran N commands\" or \"Edited N files\") open too; read/explore-only groups stay collapsed, and a lone command outside a group opens its details. Off: click a row or group header (›) to expand it — edit rows always show a `+N −M` change count, even when their diff is closed. Also toggleable live from the gear menu → **Config & debug → Expand tool details**."
+        },
+        "grok.expandDiffCard": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Open each turn's Changed-files card by default instead of showing only its header. Independent of Expand tool details. On a phone or browser this is a per-device preference."
+        },
+        "grok.steerByDefault": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Send straight into the running turn instead of queueing it. Off (default): a message you send while the agent is working waits, and is sent as one prompt when the turn ends — you can still steer it on demand with the **Steer** button on the pending message. On: sending while it works **skips the queue** and injects the message into the turn immediately, so the agent changes course mid-answer. Steering never cancels the turn and never discards in-flight tool work — it is not a Stop. It carries your text and the files you attached to that message, but not the ambient editor selection. **Grok** and **OpenAI Codex** take a mid-turn correction; **Claude Code** does not, and there a message always falls back to the queue. Images are the one thing that can still be refused: an older Grok Build CLI ignores them, so a message carrying pictures is queued whole rather than arriving without them. Also toggleable live from the gear menu → **Config & debug → Steer by default**."
+        },
+        "grok.pinLiveWorkflows": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Show live workflows above the message box. Turn off to show each workflow where it started. On a phone or browser this is a per-device preference and this setting does not apply."
+        },
+        "grok.promptNav": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Show a **Previous prompt** button above the message box: it jumps back to the prompt before the one you are reading and highlights it, so you can find what you asked without scrolling. On a phone or browser this is a per-device preference and this setting does not apply."
+        },
+        "grok.soundNotifications": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Play a short sound when Grok finishes a turn or hits an error — a rising chime on completion, a lower tone on error. Off by default. Plays **only when the Grok panel isn't focused** (you've switched to the editor or another window), so it notifies you when you've stepped away without beeping while you watch. Also toggleable live from the gear menu → **Config & debug → Sound notifications**."
+        },
+        "grok.processingSound": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Play a quiet repeating sound while Grok is still working. The first cue waits seven seconds, then repeats every eight seconds until the turn ends. Off by default and separate from the completion/error sound. Also toggleable live from the gear menu → **Config & debug → Still-processing sound**."
+        },
+        "grok.readRepliesAloud": {
+          "type": "boolean",
+          "default": false,
+          "description": "Read completed Grok replies aloud in the VS Code chat. Code blocks are skipped."
+        },
+        "grok.summarizeRepliesAloud": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Read simplified summaries of spoken Grok replies. Each reply costs an extra xAI call and adds network delay; the full reply is used if summarization fails. Uses the same credential resolution as Voice input. AFK Pilot keeps its own per-device browser preference."
+        },
+        "grok.remote.keepAwake": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Keep this machine awake while it's linked to an **AFK Pilot** account, so a remote turn isn't cut off by idle sleep. Only active once you've signed in (gear → AFK Pilot → *Sign in*); unlinking releases the lock immediately. The display is still free to sleep — only system/idle sleep is blocked. Uses `caffeinate` on macOS, `SetThreadExecutionState` on Windows and `systemd-inhibit` on Linux. **A closed laptop lid still sleeps** on every platform — that's an OS-level decision no application can override."
+        },
+        "grok.thumbsFeedback": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Show thumbs on a finished Grok turn so you can send a rating to SpaceXAI. **Off by default.** On, thumbs appear only when this Grok session actually supports feedback — never on Codex or Claude. Ratings are not stored. Toggle live from Settings → General → **Thumbs feedback to SpaceXAI**."
+        },
+        "grok.telemetry.enabled": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Send anonymous, privacy-first usage telemetry. A single `session_start` event per session carries an anonymous install id (a random GUID, no account/identity) plus a low-cardinality settings snapshot (including mode/model/effort, host kind, UI preferences, whether voice input is available, and which providers are connected; full list in [docs/privacy.md](https://github.com/PawelHuryn/grok-vscode/blob/main/docs/privacy.md)) — **never** any message content, code, file paths, or free-text settings. Also requires VS Code's global `telemetry.telemetryLevel` to be enabled and this to be the official build; turning either setting off stops all sending."
+        },
+        "grok.chatFontScale": {
+          "type": "number",
+          "default": 100,
+          "minimum": 60,
+          "maximum": 300,
+          "markdownDescription": "Zoom for the Grok chat panel only, as a percent (100 = default). Scales the whole chat UI — text, icons, spacing — without affecting the rest of VS Code (unlike `Ctrl/Cmd+Shift+=`). Applies live, no reload needed. Supports User (global) and Workspace (local) scope."
+        },
+        "grok.voiceApiKey": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Optional xAI override key for speech-to-text. Empty uses `GROK_VOICE_API_KEY`, `XAI_API_KEY`, or the cached `grok login` token. For OpenAI dictation use `grok.voiceOpenAiApiKey` or `OPENAI_API_KEY`. See [voice setup](https://github.com/PawelHuryn/grok-vscode/blob/main/docs/voice-setup.md)."
+        },
+        "grok.ffmpegPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the ffmpeg binary used to record the microphone for voice control. Empty = use 'ffmpeg' from PATH. Install ffmpeg from https://ffmpeg.org if voice control reports it as missing."
+        },
+        "grok.voiceInputDevice": {
+          "type": "string",
+          "default": "",
+          "description": "Microphone device for voice control. Empty = system default (on Windows, the first DirectShow audio device is auto-detected). Set this to a specific device name (Windows/dshow) or index (macOS/avfoundation) to override."
+        },
+        "grok.voiceSendPhrase": {
+          "type": "string",
+          "default": "grok send",
+          "description": "Spoken phrase that auto-submits the message when it ends a voice transcription (e.g. say \"…fix the bug, grok send\"). The phrase is stripped before sending. Leave empty to disable hands-free sending."
+        },
+        "grok.voiceKeyterms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Words or phrases to help streaming voice recognition spell code and project vocabulary correctly (for example, \"Get-ChildItem\", \"useEffect\", or an internal package name). Put the most important terms first. xAI accepts at most 100 terms of 50 characters each; the send phrase and \"Grok\" are kept first, then user terms fill the remaining slots. Supports User and Workspace scope."
+        },
+        "grok.voiceLanguage": {
+          "type": "string",
+          "default": "",
+          "description": "Optional recognition language code (for example en, pl, fr). OpenAI uses it as a language hint; xAI also enables written formatting of numbers, currencies and units. Empty uses the backend default. Supports User and Workspace scope."
+        },
+        "grok.voiceStreaming": {
+          "type": "boolean",
+          "default": true,
+          "description": "Stream transcription as you speak, with hands-free send on finalized text. Disable for local one-shot batch transcription after Stop. Browser dictation always streams. API costs depend on the backend and model."
+        },
+        "grok.voiceBackend": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "xai",
+            "openai"
+          ],
+          "default": "auto",
+          "description": "Speech-to-text backend. Auto prefers OpenAI for Codex and xAI for Grok or Claude, using the other when only its credential is available. An explicit choice requires its credential. Applies to the next recording."
+        },
+        "grok.voiceOpenAiApiKey": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "OpenAI API-platform key for dictation. Empty uses `OPENAI_API_KEY` from the workspace `.env` or host environment. Codex / ChatGPT sign-in does not include transcription API access. API usage is billed separately."
+        },
+        "grok.voiceOpenAiModel": {
+          "type": "string",
+          "enum": [
+            "gpt-live-transcribe",
+            "gpt-4o-transcribe",
+            "gpt-4o-mini-transcribe",
+            "whisper-1"
+          ],
+          "default": "gpt-live-transcribe",
+          "description": "OpenAI Realtime transcription model. Dictionary terms become model-specific vocabulary hints. The explicit batch mode uses gpt-4o-transcribe."
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@agentclientprotocol/claude-agent-acp": "0.76.0",
+    "@agentclientprotocol/codex-acp": "1.11.0",
+    "@agentclientprotocol/sdk": "1.4.0",
+    "@muse-code/sdk": "1.3.0",
+    "electron-updater": "^6.6.4",
+    "jpeg-js": "^0.4.4",
+    "qrcode-generator": "2.0.4",
+    "ws": "^8.21.0"
+  },
+  "overrides": {
+    "app-builder-lib": {
+      "builder-util-runtime": "9.7.0"
+    },
+    "builder-util": {
+      "builder-util-runtime": "9.7.0"
+    },
+    "dmg-builder": {
+      "builder-util-runtime": "9.7.0"
+    },
+    "electron-builder": {
+      "builder-util-runtime": "9.7.0"
+    },
+    "electron-publish": {
+      "builder-util-runtime": "9.7.0"
+    },
+    "electron-updater": {
+      "builder-util-runtime": "9.7.0"
+    }
+  },
+  "grokCloudBuild": true,
+  "grokExtensionName": "grok-vscode-phuryn"
+}

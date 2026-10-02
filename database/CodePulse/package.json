@@ -1,0 +1,12 @@
+{
+  "name": "@codepulse/desktop",
+  "version": "1.4.10",
+  "private": true,
+  "description": "CodePulse Desktop Electron app",
+  "main": "./out/main/index.js",
+  "author": "CodePulse",
+  "dependencies": {
+    "better-sqlite3": "^12.11.1",
+    "serialport": "^13.0.0"
+  }
+}

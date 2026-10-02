@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop">
+    <id>io.github.kotatogram</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0</project_license>
+    <name>Kotatogram Desktop</name>
+    <summary>Kotatogram Desktop messenger</summary>
+    <description>
+        <p>Kotatogram Desktop is unofficial messaging based on Telegram Desktop.</p>
+        <p>Telegram is a popular messaging protocol with encryption and security as its key focus.</p>
+    </description>
+    <categories>
+        <category>Network</category>
+        <category>InstantMessaging</category>
+    </categories>
+    <update_contact></update_contact>
+    <developer_name>RadRussianRus</developer_name>
+    <url type="homepage">https://kotatogram.github.io/</url>
+    <url type="bugtracker">https://github.com/kotatogram/kotatogram-desktop/issues</url>
+    <url type="help">https://github.com/kotatogram/kotatogram-desktop/issues</url>
+    <screenshots>
+      <screenshot type="default">
+        <image>https://raw.githubusercontent.com/kotatogram/kotatogram-desktop/dev/docs/assets/ktg_preview.png</image>
+      </screenshot>
+    </screenshots>
+    <keywords>
+        <keyword>tg</keyword>
+        <keyword>telegram</keyword>
+        <keyword>kotatogram</keyword>
+        <keyword>tdesktop</keyword>
+        <keyword>messaging</keyword>
+        <keyword>messenger</keyword>
+        <keyword>chat</keyword>
+        <keyword>sms</keyword>
+        <keyword>im</keyword>
+    </keywords>
+    <releases>
+        <release version="1.2.2" date="2020-04-02">
+            <description>
+                <p>TDesktop sources were updated to 2.0.1.</p>
+                <p>Also in this update:</p>
+                <ul>
+                    <li>Option to hide All chats folder.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="1.2.1" date="2020-03-31">
+            <description>
+                <p>TDesktop sources were updated to 2.0.</p>
+                <p>Also in this update:</p>
+                <ul>
+                    <li>Option to set default folder. Also added context menu to All chats filter.</li>
+                    <li>Option to show only unmuted chats in folder counter.</li>
+                    <li>Option to hide Edit button in folder sidebar.</li>
+                    <li>Compact folder sidebar option.</li>
+                    <li>Restored unreleased notification toggle as option.</li>
+                    <li>tg://settings/kotato link to open Kotatogram Settings. Also added three-dots menu there.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="1.2" date="2020-03-19">
+            <description>
+                <p>TDesktop sources were updated to 1.9.21.</p>
+                <p>Also in this update:</p>
+                <ul>
+                    <li>New logo and option to choose alternative icons.</li>
+                    <li>Support for taskbar flashing alert.</li>
+                    <li>Bot privacy status in members list.</li>
+                    <li>Custom tray and taskbar icon.</li>
+                    <li>Show working dir in tray icon tooltip.</li>
+                    <li>Option to change rounding of profile pictures.</li>
+                    <li>Option to always show profile picture in top bar.</li>
+                    <li>Ban members option in Recent Actions.</li>
+                    <li>Control notification sound from tray menu.</li>
+                    <li>Option to change recent stickers show limit (up to 200 or disable at all).</li>
+                    <li>Show video playback controls for GIFs.</li>
+                    <li>Allow up to 64px as minimal sticker size.</li>
+                    <li>Optional confirmation before calling.</li>
+                    <li>"Disable Up to edit" now in options menu.</li>
+                    <li>Option to use original font height.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="1.1.9" date="2020-03-15">
+            <description>
+                <p>TDesktop sources were updated to 1.9.20 beta.</p>
+                <p>Also in this update:</p>
+                <ul>
+                    <li>Support for taskbar flashing alert.</li>
+                    <li>Bot privacy status in members list.</li>
+                    <li>Custom tray and taskbar icon.</li>
+                    <li>Show working dir in tray icon tooltip.</li>
+                    <li>Option to change rounding of profile pictures.</li>
+                    <li>Option to always show profile picture in top bar.</li>
+                    <li>Ban members option in Recent Actions.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="1.1.8" date="2020-02-26">
+            <description>
+                <p>TDesktop sources were updated to 1.9.19 beta.</p>
+                <p>Also in this update:</p>
+                <ul>
+                    <li>Control notification sound from tray menu.</li>
+                    <li>Option to change recent stickers show limit (up to 200 or disable at all).</li>
+                    <li>Show video playback controls for GIFs.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="1.1.7" date="2020-02-08">
+            <description>
+                <p>TDesktop sources were updated to 1.9.10 beta.</p>
+                <p>Also in this update:</p>
+                <ul>
+                    <li>Allow up to 64px as minimal sticker size.</li>
+                    <li>Optional confirmation before calling.</li>
+                    <li>"Disable Up to edit" now in options menu.</li>
+                    <li>Option to use original font height.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="1.1.6" date="2020-01-31">
+            <description>
+                <p>TDesktop sources were updated to 1.9.9.</p>
+                <p>Also in this update:</p>
+                <ul>
+                    <li>Custom instant replaces in JSON settings.</li>
+                    <li>Ability to use system font (user-contributed).</li>
+                </ul>
+            </description>
+        </release>
+    </releases>
+    <content_rating type="oars-1.1">
+        <content_attribute id="violence-cartoon">none</content_attribute>
+        <content_attribute id="violence-fantasy">none</content_attribute>
+        <content_attribute id="violence-realistic">none</content_attribute>
+        <content_attribute id="violence-bloodshed">none</content_attribute>
+        <content_attribute id="violence-sexual">none</content_attribute>
+        <content_attribute id="violence-desecration">none</content_attribute>
+        <content_attribute id="violence-slavery">none</content_attribute>
+        <content_attribute id="violence-worship">none</content_attribute>
+        <content_attribute id="drugs-alcohol">none</content_attribute>
+        <content_attribute id="drugs-narcotics">none</content_attribute>
+        <content_attribute id="drugs-tobacco">none</content_attribute>
+        <content_attribute id="sex-nudity">none</content_attribute>
+        <content_attribute id="sex-themes">none</content_attribute>
+        <content_attribute id="sex-homosexuality">none</content_attribute>
+        <content_attribute id="sex-prostitution">none</content_attribute>
+        <content_attribute id="sex-adultery">none</content_attribute>
+        <content_attribute id="sex-appearance">none</content_attribute>
+        <content_attribute id="language-profanity">none</content_attribute>
+        <content_attribute id="language-humor">none</content_attribute>
+        <content_attribute id="language-discrimination">none</content_attribute>
+        <content_attribute id="social-chat">intense</content_attribute>
+        <content_attribute id="social-info">none</content_attribute>
+        <content_attribute id="social-audio">intense</content_attribute>
+        <content_attribute id="social-location">none</content_attribute>
+        <content_attribute id="social-contacts">intense</content_attribute>
+        <content_attribute id="money-purchasing">none</content_attribute>
+        <content_attribute id="money-gambling">none</content_attribute>
+    </content_rating>
+    <launchable type="desktop-id">kotatogramdesktop.desktop</launchable>
+    <provides>
+        <binary>kotatogram-desktop</binary>
+    </provides>
+</component>

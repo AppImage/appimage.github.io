@@ -4,10 +4,12 @@
 # window (e.g., only a menu bar on white, typical for Electron applications
 # that failed to render) or an error message.
 #
-# Usage: check-screenshot.sh screenshot.png [terminal]
+# Usage: check-screenshot.sh screenshot.png [terminal|tray]
 # Prints ERROR: and WARNING: lines; exits 1 if there is an ERROR.
 # With "terminal" (the application was run with --help in xterm), only
 # warnings are given: help texts often contain words like "fatal".
+# With "tray" (a system tray application: the screenshot shows its icon in a
+# system tray, or what clicking it opened), the empty-window check is skipped.
 #
 # The thresholds were chosen by running this over the ~1500 screenshots in
 # database/: it fails ~50 of them, nearly all of which are blank or stuck
@@ -34,7 +36,7 @@ WORDS=$(echo "$TEXT" | tr 'A-Z' 'a-z' | tr -cs 'a-z' '\n' | awk 'length($0) >= 3
 echo "Screenshot: ${SHARE}% one color, ${WORDS} words of text"
 
 RESULT=0
-if [ "$TERMINAL" != terminal ] ; then
+if [ "$TERMINAL" != terminal ] && [ "$TERMINAL" != tray ] ; then
   if { [ "$SHARE" -ge 99 ] && [ "$WORDS" -lt 5 ] ; } || { [ "$SHARE" -ge 95 ] && [ "$WORDS" -lt 3 ] ; } ; then
     echo "ERROR: The window appears to be empty (${SHARE}% one color, almost no text)"
     RESULT=1
@@ -52,6 +54,34 @@ if [ -n "$MATCH" ] && [ "$TERMINAL" != terminal ] ; then
 else
   [ -n "$MATCH" ] || MATCH=$(echo "$TEXT" | grep -oiE ".{0,40}(${SOFT}).{0,60}" | head -n 1)
   [ -z "$MATCH" ] || echo "WARNING: The screenshot may show an error message: ${MATCH}"
+fi
+
+# Script of the text: AppImageHub is in English, so an application must
+# start in English (the test runs with the C locale). OCR with models for
+# Latin, Chinese, Arabic, Cyrillic and Greek (Japanese and Korean models
+# made up characters from icons and textures), counting only letters of words
+# recognized with a confidence of at least 80 (below, icons and grids turn
+# into random characters). Chinese characters count three times, as one
+# stands for about a word. On the ~1600 screenshots in database/, this flags
+# 16, all of them indeed Chinese, Arabic, Russian or Greek.
+LANGS=$(tesseract --list-langs 2>/dev/null)
+if echo "$LANGS" | grep -qx chi_sim && echo "$LANGS" | grep -qx ara && echo "$LANGS" | grep -qx rus && echo "$LANGS" | grep -qx ell ; then
+  read -r LATIN HAN ARABIC CYRILLIC < <(convert "$SCREENSHOT" -resize 200% -colorspace Gray png:- \
+    | OMP_THREAD_LIMIT=1 timeout 120 tesseract stdin stdout -l eng+chi_sim+ara+rus+ell --psm 11 tsv 2>/dev/null \
+    | awk -F '\t' 'NR > 1 && $11 + 0 >= 80 && $12 != "" { print $12 }' \
+    | perl -CSD -ne '$l += () = /\p{Latin}/g; $h += () = /[\p{Han}\p{Hiragana}\p{Katakana}\p{Hangul}]/g;
+        $a += () = /\p{Arabic}/g; $c += () = /[\p{Cyrillic}\p{Greek}]/g;
+        END { printf "%d %d %d %d\n", $l, $h, $a, $c }')
+  echo "Screenshot: letters by script: ${LATIN:-0} Latin, ${HAN:-0} Chinese/Japanese/Korean, ${ARABIC:-0} Arabic, ${CYRILLIC:-0} Cyrillic/Greek"
+  if [ $((HAN + ARABIC + CYRILLIC)) -ge 10 ] && [ $((3 * HAN + ARABIC + CYRILLIC)) -gt "${LATIN:-0}" ] ; then
+    SCRIPT=$( { echo "$((3 * HAN)) Chinese" ; echo "$ARABIC Arabic" ; echo "$CYRILLIC Cyrillic or Greek" ; } | sort -rn | head -n 1 | cut -d " " -f 2-)
+    if [ "$TERMINAL" != terminal ] ; then
+      echo "ERROR: The screenshot shows text mostly not in English but in $SCRIPT script"
+      RESULT=1
+    else
+      echo "WARNING: The screenshot shows text mostly not in English but in $SCRIPT script"
+    fi
+  fi
 fi
 
 exit $RESULT

@@ -1,0 +1,23 @@
+{
+  "name": "eca-desktop",
+  "productName": "ECA",
+  "version": "0.10.3",
+  "description": "ECA Desktop - AI Code Assistant",
+  "author": "Editor Code Assistant",
+  "license": "Apache-2.0",
+  "main": "dist/main.js",
+  "private": true,
+  "dependencies": {
+    "electron-updater": "^6.3.9",
+    "extract-zip": "^2.0.1",
+    "follow-redirects": "^1.15.9",
+    "jsonc-parser": "^3.3.1",
+    "vscode-jsonrpc": "^8.2.1"
+  },
+  "overrides": {
+    "axios": "^1.15.2",
+    "@xmldom/xmldom": "^0.8.13",
+    "ip-address": "^10.1.1",
+    "yauzl": "^3.4.0"
+  }
+}

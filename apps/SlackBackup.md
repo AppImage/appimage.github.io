@@ -3,6 +3,7 @@ layout: app
 
 permalink: /SlackBackup/
 description: An application to archive Slack messages and perform some simple account maintenance
+license: GPL-3.0
 
 icons:
   - SlackBackup/icons/128x128/slack-backup.png
@@ -33,11 +34,16 @@ desktop:
     X-AppImage-BuildId: 401fd380-9e50-11a8-1bcf-ab8777cf1139
     Categories: Development
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.15
+    X-AppImage-Payload-License: GPL-3.0
 
 electron:
   description: An application to archive Slack messages and perform some simple account

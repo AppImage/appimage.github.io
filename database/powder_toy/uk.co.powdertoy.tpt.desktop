@@ -1,0 +1,27 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Powder Toy
+Comment=Physics sandbox game
+Exec=powder
+Icon=uk.co.powdertoy.tpt
+Terminal=false
+Categories=Game;Simulation;
+StartupWMClass=powder
+X-AppImage-Version=96.2
+
+[X-App Permissions]
+Level=3
+Devices=dri;
+Sockets=x11;network;
+
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|mgord9518|Powder_Toy.AppImage|continuous|Powder_Toy-*x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.27

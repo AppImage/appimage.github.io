@@ -3,6 +3,7 @@ layout: app
 
 permalink: /ImExample/
 description: ImExample is a simple Dear ImGui application example
+license: MIT
 
 icons:
   - ImExample/icons/scalable/ImExample.svg
@@ -29,7 +30,7 @@ desktop:
     Type: Application
     Categories: Utility
     X-AppImage-Name: ImExample
-    X-AppImage-Version: 0.3.0
+    X-AppImage-Version: 2.0.0
     X-AppImage-Arch: amd64
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|Patitotective|ImTemplate|latest|ImExample-*-amd64.AppImage.zsync
@@ -39,4 +40,9 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: MIT
 ---

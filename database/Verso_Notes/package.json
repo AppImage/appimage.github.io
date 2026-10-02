@@ -1,0 +1,23 @@
+{
+  "name": "verso",
+  "version": "0.2.13",
+  "//desktopName": "Pairs with linux.syncDesktopName in electron-builder.yml — without it Linux desktops can't associate running windows with the .desktop entry (wrong taskbar icon / no grouping).",
+  "desktopName": "verso.desktop",
+  "description": "A local-first note app: a mesh of Obsidian and Logseq, built on Markdown.",
+  "main": "./out/main/index.js",
+  "author": "Ed Nico <ed.nico222@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ed-nico/verso_notes.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "dictionary-en": "^4.0.0",
+    "nspell": "^2.1.5"
+  }
+}

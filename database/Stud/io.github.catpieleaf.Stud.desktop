@@ -1,0 +1,44 @@
+[Desktop Entry]
+Type=Application
+Name=Stud
+Comment=Unofficial Roblox launcher for Linux
+# Exec is filled in at configure time: the plain command for an
+# installed package, an absolute path for a build tree.
+Exec=stud %u
+Icon=io.github.catpieleaf.Stud
+Terminal=false
+# Without this the launcher mints no activation token, and a Stud that is
+# already running cannot be brought forward when a game link is clicked:
+# Wayland lets no application raise itself, so the ONLY thing that can do
+# it is a token from the process the user acted in. The portal passes that
+# token to the handler it spawns in XDG_ACTIVATION_TOKEN, but only when
+# the entry asks for startup notification. Live-caught: the link arrived
+# and the game joined, with the window still behind the browser.
+StartupNotify=true
+Categories=Game;
+NoDisplay=false
+MimeType=x-scheme-handler/roblox-player;x-scheme-handler/roblox;
+# Both of Stud's windows report the application id as their Wayland
+# app_id: the Qt UI through QGuiApplication::setDesktopFileName(), and the
+# game window through xdg_toplevel_set_app_id(). Without a StartupWMClass
+# that matches, the compositor cannot tie either window back to this entry,
+# which is why the taskbar showed no icon even once the icon was installed.
+StartupWMClass=io.github.catpieleaf.Stud
+Actions=Settings;
+X-AppImage-Version=1.1.10
+
+[Desktop Action Settings]
+Name=Settings
+Exec=stud --settings
+Icon=io.github.catpieleaf.Stud
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=bundled
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=true
+X-AppImage-Payload-License=AGPL-3.0

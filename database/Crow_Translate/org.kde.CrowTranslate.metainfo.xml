@@ -1,0 +1,2275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>org.kde.CrowTranslate</id>
+  <replaces>
+    <id>io.crow_translate.CrowTranslate</id>
+  </replaces>
+  <provides>
+    <id>io.crow_translate.CrowTranslate.desktop</id>
+  </provides>
+  <name>Crow Translate</name>
+  <name xml:lang="ar">غراب</name>
+  <name xml:lang="az">Crow Translate</name>
+  <name xml:lang="be">Crow Translate</name>
+  <name xml:lang="ca">Crow Translate</name>
+  <name xml:lang="ca-valencia">Crow Translate</name>
+  <name xml:lang="cs">Crow Translate</name>
+  <name xml:lang="en-GB">Crow Translate</name>
+  <name xml:lang="eo">Crow Translate</name>
+  <name xml:lang="es">Crow Translate</name>
+  <name xml:lang="eu">Crow Translate</name>
+  <name xml:lang="fi">Crow Translate</name>
+  <name xml:lang="fr">Crow Translate</name>
+  <name xml:lang="gl">Crow Translate</name>
+  <name xml:lang="he">Crow Translate</name>
+  <name xml:lang="ia">Crow Translate (Crow Traduce)</name>
+  <name xml:lang="it">Crow Translate</name>
+  <name xml:lang="ka">მთარგმნელი Crow</name>
+  <name xml:lang="ko">Crow Translate</name>
+  <name xml:lang="lt">Crow Translate</name>
+  <name xml:lang="lv">Crow Translate</name>
+  <name xml:lang="nl">Crow Translate</name>
+  <name xml:lang="pl">Tłumacz Crow</name>
+  <name xml:lang="pt-BR">Crow Translate</name>
+  <name xml:lang="sk">Preložiť</name>
+  <name xml:lang="sl">Crow Translate</name>
+  <name xml:lang="sv">Crow översättning</name>
+  <name xml:lang="tr">Crow Çeviri</name>
+  <name xml:lang="uk">Crow Translate</name>
+  <name xml:lang="zh-TW">Crow Translate</name>
+  <developer id="org.KDE">
+    <name translate="no">KDE</name>
+  </developer>
+  <summary>Application that allows you to translate and speak text using Mozhi</summary>
+  <summary xml:lang="ar">تطبيق يسمح بترجمة النصوص والتحدث بها باستخدام Mozhi</summary>
+  <summary xml:lang="az">Mozhi istifadə edərək mətnin tərcümə edilməsi və səsləndiriılməsi üçün tətbiq</summary>
+  <summary xml:lang="be">Праграма, якая можа перакладаць і вымаўляць тэкст з дапамогай Mozhi</summary>
+  <summary xml:lang="ca">Una aplicació que us permet traduir i pronunciar text utilitzant Mozhi</summary>
+  <summary xml:lang="ca-valencia">Una aplicació que us permet traduir i llegir text utilitzant Mozhi</summary>
+  <summary xml:lang="cs">Aplikace, která umožňuje překládat a číst text pomocí Mozhi</summary>
+  <summary xml:lang="en-GB">Application that allows you to translate and speak text using Mozhi</summary>
+  <summary xml:lang="eo">Apliko kiu permesas vin traduki kaj paroligi tekston uzante Mozhi</summary>
+  <summary xml:lang="es">Aplicación que le permite traducir y leer textos usando Mozhi</summary>
+  <summary xml:lang="eu">Mozhi erabiliz testua itzultzeko eta hitz egiteko aukera ematen duen aplikazioa</summary>
+  <summary xml:lang="fi">Sovellus, joka Mozhilla kääntää ja puhuu tekstiä</summary>
+  <summary xml:lang="fr">Une application vous permettant la traduction et l'énonce de texte en utilisant Mozhi.</summary>
+  <summary xml:lang="gl">Unha aplicación que lle permite traducir e pronunciar texto usando Mozhi</summary>
+  <summary xml:lang="he">יישום שמאפשר לך לתרגם ולהקריא טקסט בעזרת Mozhi</summary>
+  <summary xml:lang="it">Applicazione che consente di tradurre e pronunciare testi utilizzando Mozhi</summary>
+  <summary xml:lang="ka">აპლიკაცია, რომელიც საშუალებას გაძლევთ, თარგმნოთ და წარმოთქვათ ტექსტი Mozhi-ის საშუალებით</summary>
+  <summary xml:lang="ko">Mozhi를 사용하여 텍스트를 번역하고 말하는 앱</summary>
+  <summary xml:lang="lt">Programa, kuri jums leidžia versti ir sakyti tekstą naudojant Mozhi</summary>
+  <summary xml:lang="lv">Programma teksta tulkošanai un izrunāšanai, izmantojot „Mozhi“</summary>
+  <summary xml:lang="nl">Toepassing die het vertalen en uitspreken van tekst biedt met gebruik van Mozhi.</summary>
+  <summary xml:lang="pl">Aplikacja, która nie tylko tłumaczy ale i wypowiada na głos zaznaczony tekst przy użyciu Mozhi</summary>
+  <summary xml:lang="pt-BR">Aplicativo que permite traduzir e falar textos usando o Mozhi</summary>
+  <summary xml:lang="sk">Aplikácia, ktorá umožňuje prekladať a čítať text pomocou Mozhi</summary>
+  <summary xml:lang="sl">Prevajalnik, ki vam omogoča prevajanje in izgovorjavo besedila z uporabo Mozhi</summary>
+  <summary xml:lang="sv">Program som gör det möjligt att översätta och läsa upp text med Mozhi</summary>
+  <summary xml:lang="tr">Mozhi’yi kullanarak metin çevirmenize ve seslendirmenize olanak tanıyan bir uygulama</summary>
+  <summary xml:lang="uk">Програма, яка надає вам змогу перекладати і озвучувати тексти за допомогою Mozhi</summary>
+  <summary xml:lang="zh-TW">讓您利用 Mozhi 翻譯與朗讀文字的應用程式</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <description>
+    <p>Application written in C++ / Qt that allows you to translate and speak text using Mozhi.</p>
+    <p xml:lang="ar">تطبيق يسمح بترجمة النصوص والتحدث بها باستخدام Mozhi مكتوب بلغة سي++ ومكتبة كيو تي..</p>
+    <p xml:lang="az">C++ / Qt ilə yazılmış və Mozhi istifadə edərək mətni tərcümə etməyə və səsləndirməyə imkan verən tətbiq.</p>
+    <p xml:lang="be">Праграма, напісаная з дапамогай C++ і Qt, якая можа перакладаць і вымаўляць тэкст з дапамогай Mozhi.</p>
+    <p xml:lang="ca">Una aplicació escrita en C++/Qt que us permet traduir i pronunciar text utilitzant Mozhi.</p>
+    <p xml:lang="ca-valencia">Una aplicació escrita en C++/Qt que us permet traduir i llegir text utilitzant Mozhi.</p>
+    <p xml:lang="cs">Aplikace napsaná v jazyce C++ / Qt, která umožňuje překládat a číst text pomocí Mozhi.</p>
+    <p xml:lang="en-GB">Application written in C++ / Qt that allows you to translate and speak text using Mozhi.</p>
+    <p xml:lang="eo">Apliko skribita en C++ / Qt, kiu ebligas al vi traduki kaj paroligi tekston per Mozhi.</p>
+    <p xml:lang="es">Aplicación escrita en C++/Qt que le permite traducir y leer texto usando Mozhi.</p>
+    <p xml:lang="eu">Mozhi erabiliz testua itzultzeko eta hitz egiteko aukera ematen dizun, C++ /Qt-rekin idatzitako aplikazioa.</p>
+    <p xml:lang="fi">C++:lla/Qt:lla kirjoitettu sovellus, joka Mozhilla kääntää ja puhuu tekstiä</p>
+    <p xml:lang="fr">Application écrite en C++ / Qt permettant la traduction et l'énoncé de texte en utilisant Mozhi.</p>
+    <p xml:lang="gl">Unha aplicación escrita con C++ e Qt que lle permite traducir e pronunciar texto usando Mozhi.</p>
+    <p xml:lang="he">יישום שנכתב ב־C++‎ /‏ Qt ומאפשר לך לתרגם ולהקריא טקסט בעזרת Mozhi.</p>
+    <p xml:lang="it">Applicazione scritta in C++ / Qt che consente di tradurre e pronunciare testi utilizzando Mozhi.</p>
+    <p xml:lang="ka">აპლიკაცია, რომელიც დაწერილია C++/Qt-ით, რომელიც საშუალებას გაძლევთ, თარგმნოთ და წარმოთქვათ ტექსტი Mozhi-ის საშუალებით.</p>
+    <p xml:lang="ko">C++/Qt로 개발된 앱이며 Mozhi를 사용하여 텍스트를 번역하고 읽어 줄 수 있습니다.</p>
+    <p xml:lang="lt">C++ / Qt programavimo kalba sukurta programa, leidžianti jums versti ir sakyti tekstą naudojant Mozhi.</p>
+    <p xml:lang="lv">Programma ir izstrādāta C++ / Qt un palīdz tulkot un izrunāt tekstu, izmantojot „Mozhi“.</p>
+    <p xml:lang="nl">Toepassing geschreven in C++ / Qt die het vertalen en uitspreken van tekst biedt met gebruik van Mozhi.</p>
+    <p xml:lang="pl">Aplikacja, napisana w C++ / Qt, która nie tylko tłumaczy ale i wypowiada na głos zaznaczony tekst przy użyciu Mozhi.</p>
+    <p xml:lang="pt-BR">Aplicativo escrito em C++ / Qt que permite traduzir e falar texto usando o Mozhi.</p>
+    <p xml:lang="sk">Aplikácia napísaná v C++ / Qt, ktorá umožňuje prekladať a čítať text pomocou Mozhi.</p>
+    <p xml:lang="sl">Aplikacija napisana v C++ / Qt, ki vam omogoča prevajanje in izgovorjavo besedila z uporabo Mozhi.</p>
+    <p xml:lang="sv">Program skrivet i C++ och Qt som gör det möjligt att översätta och läsa upp text med Mozhi.</p>
+    <p xml:lang="tr">C++/Qt ile yazılmış, Mozhi kullanarak metinleri çevirmenize ve seslendirmenize olanak tanıyan bir uygulama.</p>
+    <p xml:lang="uk">Програма для перекладу, яку написано на C++ / Qt і яка надає вам змогу перекладати і озвучувати тексти за допомогою Mozhi.</p>
+    <p xml:lang="zh-TW">讓您利用 Mozhi 翻譯與朗讀文字的 C++/Qt 應用程式。</p>
+    <p>Features:</p>
+    <p xml:lang="ar">الميزات:</p>
+    <p xml:lang="az">Özəllikləri:</p>
+    <p xml:lang="be">Магчымасці:</p>
+    <p xml:lang="ca">Característiques:</p>
+    <p xml:lang="ca-valencia">Característiques:</p>
+    <p xml:lang="cs">Vlastnosti:</p>
+    <p xml:lang="en-GB">Features:</p>
+    <p xml:lang="eo">Trajtoj:</p>
+    <p xml:lang="es">Funciones:</p>
+    <p xml:lang="eu">Ezaugarriak:</p>
+    <p xml:lang="fi">Ominaisuuksia:</p>
+    <p xml:lang="fr">Fonctionnalités :</p>
+    <p xml:lang="gl">Funcionalidades:</p>
+    <p xml:lang="he">יכולות:</p>
+    <p xml:lang="ia">Characteristicas:</p>
+    <p xml:lang="it">Funzionalità:</p>
+    <p xml:lang="ka">თვისებები:</p>
+    <p xml:lang="ko">기능:</p>
+    <p xml:lang="lt">Ypatybės:</p>
+    <p xml:lang="lv">Iespējas:</p>
+    <p xml:lang="nl">Mogelijkheden:</p>
+    <p xml:lang="pl">Możliwości:</p>
+    <p xml:lang="pt-BR">Funcionalidades:</p>
+    <p xml:lang="sk">Funkcie:</p>
+    <p xml:lang="sl">Zmožnosti:</p>
+    <p xml:lang="sv">Funktioner:</p>
+    <p xml:lang="ta">அம்சங்கள்:</p>
+    <p xml:lang="tr">Özellikler:</p>
+    <p xml:lang="ug">ئىقتىدار:</p>
+    <p xml:lang="uk">Можливості:</p>
+    <p xml:lang="zh-TW">功能：</p>
+    <ul>
+      <li>Multiple translation engines provided by Mozhi (some instances can disable specific engines)*</li>
+      <li xml:lang="ar">محركات الترجمة المتعددة التي توفرها Mozhi (يمكن في بعض الحالات تعطيل محركات معينة)*</li>
+      <li xml:lang="az">Mozhi tərəfindən bir çox tərcümə mühərrikləri təqdim olunur (bəzi nümunələr xüsusi mühərrikləri söndürə bilər)*</li>
+      <li xml:lang="be">Некалькі рухавікоў перакладу, якія падаюцца Mozhi (некаторыя асобнікі могуць адключыць канкрэтныя рухавікі)*</li>
+      <li xml:lang="ca">Diversos motors de traducció subministrats per Mozhi (algunes instàncies poden desactivar motors específics)*</li>
+      <li xml:lang="ca-valencia">Diversos motors de traducció subministrats per Mozhi (algunes instàncies poden desactivar motors específics)*</li>
+      <li xml:lang="cs">Několik překladových modulů poskytovaných společností Mozhi (v některých případech lze konkrétní moduly deaktivovat)*</li>
+      <li xml:lang="en-GB">Multiple translation engines provided by Mozhi (some instances can disable specific engines)*</li>
+      <li xml:lang="eo">Multoblaj tradukmotoroj provizitaj de Mozhi (kelkaj okazoj povas malŝalti specifajn motorojn)*</li>
+      <li xml:lang="es">Múltiples motores de traducción proporcionados por Mozhi (algunas instancias pueden desactivar determinados motores)*</li>
+      <li xml:lang="eu">Mozhi-k hornitutako hainbat itzulpen-motor (instantzia batzuek motor zehatz batzuk ezgaitu ditzakete)*</li>
+      <li xml:lang="fi">Mozhin tarjoamat monet käännösmoottorit (mutta ilmentymät voivat poistaa joitakin käytöstä)*</li>
+      <li xml:lang="fr">Plusieurs moteurs de traduction fournis par Mozhi (Certaines instances peuvent désactiver des moteurs spécifiques)*</li>
+      <li xml:lang="gl">Varios motores de tradución fornecidos por Mozhi (algunhas instancias poden desactivar motores concretos)*.</li>
+      <li xml:lang="he">מגוון מנועי תרגום מסופקים על ידי Mozhi (חלק מהמופעים יכולים להשבית מנועים מסוימים)*</li>
+      <li xml:lang="it">Molteplici motori di traduzione forniti da Mozhi (alcune istanze possono disabilitare motori specifici)*</li>
+      <li xml:lang="ka">Mozhi-ის მიერ მოწოდებული თარგმანის ძრავები (ზოგიერთს შეუძლია ზოგიერთი სპეციფიკური ძრავების გათიშვა)*</li>
+      <li xml:lang="ko">Mozhi를 사용한 다중 번역 엔진(일부 인스턴스에서는 자체적으로 엔진을 비활성화할 수 있음)*</li>
+      <li xml:lang="lt">Keletas Mozhi teikiamų vertimo modulių (kai kurie egzemplioriai gali išjungti tam tikrus modulius)*</li>
+      <li xml:lang="lv">Vairākas tulkošanas sistēmas, ko nodrošina „Mozhi“ (dažas instances var izslēgt noteiktas sistēmas)*</li>
+      <li xml:lang="nl">Meerdere vertaal-engines geleverd door Mozhi (sommige exemplaren kunnen specifieke engines uitschakelen)*</li>
+      <li xml:lang="pl">Wiele silników tłumaczeń dostarczonych przez Mozhi (niektóre wersje mogą wyłączyć niektóre silniki)*</li>
+      <li xml:lang="pt-BR">Vários mecanismos de tradução fornecidos pelo Mozhi (algumas instâncias podem desabilitar mecanismos específicos)*</li>
+      <li xml:lang="sk">Viaceré prekladové mechanizmy poskytované Mozhi (niektoré inštancie môžu zakázať špecifické mechanizmy)*</li>
+      <li xml:lang="sl">Mozhi ponuja več prevajalskih mehanizmov (nekateri pojavki lahko onemogočijo določene motorje)*</li>
+      <li xml:lang="sv">Flera översättningsgränssnitt tillhandahållna av Mozhi (vissa instanser kan inaktivera specifika gränssnitt)*</li>
+      <li xml:lang="tr">Mozhi tarafından sağlanan birden çok çeviri işletkesi (bazı örnekler belirli işletkeleri devre dışı bırakabilir)*</li>
+      <li xml:lang="uk">Декілька рушіїв перекладу, доступ до яких надає Mozhi (у деяких екземплярах певні рушії може бути вимкнено)*</li>
+      <li xml:lang="zh-TW">Mozhi 提供的多種翻譯引擎（有些實體支援停用指定引擎）*</li>
+      <li>Translate and speak text from screen or selection</li>
+      <li xml:lang="ar">ترجمة النص ونطقه من الشاشة أو التحديد</li>
+      <li xml:lang="az">Ekrandan və ya seçilmiş sahədən mətnin tərcüməsi və səsləndirilməsi</li>
+      <li xml:lang="be">Пераклад і вымаўленне абранага тэксту або тэксту з экрана</li>
+      <li xml:lang="ca">Tradueix i pronuncia text des de la pantalla o una selecció</li>
+      <li xml:lang="ca-valencia">Traduïx i llig text des de la pantalla o una selecció</li>
+      <li xml:lang="cs">Přeložit a přečíst text z obrazovky nebo z vybraného úseku</li>
+      <li xml:lang="en-GB">Translate and speak text from screen or selection</li>
+      <li xml:lang="eo">Traduku kaj paroligu tekston el ekrano aŭ elekto</li>
+      <li xml:lang="es">Traducir y leer texto de la pantalla o seleccionado</li>
+      <li xml:lang="eu">Pantailako edo hautapeneko testua itzuli eta ahoskatu</li>
+      <li xml:lang="fi">Käännä ja puhu tekstiä näytöltä tai valinnasta</li>
+      <li xml:lang="fr">Traduire et énoncer du texte à partir de l'écran ou de la sélection</li>
+      <li xml:lang="gl">Traducir e pronunciar texto da pantalla ou da selección.</li>
+      <li xml:lang="he">תרגום והקראת טקסט מהמסך או מבחירה</li>
+      <li xml:lang="it">Traduci e pronuncia il testo dallo schermo o dalla selezione</li>
+      <li xml:lang="ka">თარგმნეთ და წარმოთქვით ტექსტი ეკრანიდან ან მონიშნულიდან</li>
+      <li xml:lang="ko">화면이나 선택 영역의 텍스트 번역</li>
+      <li xml:lang="lt">Versti ir sakyti pažymėtą ar ekrane esantį tekstą</li>
+      <li xml:lang="lv">Teksta tulkošana un izrunāšana no ekrāna vai atlases</li>
+      <li xml:lang="nl">Tekst vertalen en uitspreken vanaf het scherm of selectie</li>
+      <li xml:lang="pl">Przetłumacz i wypowiedz na głos tekst z ekranu lub zaznaczenia</li>
+      <li xml:lang="pt-BR">Traduzir e falar texto da tela ou seleção</li>
+      <li xml:lang="sk">Preložiť a prečítať text z obrazovky alebo výberu</li>
+      <li xml:lang="sl">Prevede in izgovarja besedilo z zaslona ali izbire</li>
+      <li xml:lang="sv">Översätt och läs upp text från skärmen eller en markering</li>
+      <li xml:lang="tr">Ekrandan veya bir seçimden olan metni çevir ve konuş</li>
+      <li xml:lang="uk">Переклад і озвучення тексту з екрана або позначеного фрагмента</li>
+      <li xml:lang="zh-TW">翻譯/朗讀螢幕上或目前選取的文字</li>
+      <li>Highly customizable shortcuts</li>
+      <li xml:lang="ar">اختصارات قابلة للتخصيص بشكل كبير</li>
+      <li xml:lang="az">Yüksək şəkildə ayarlanabilən qısayolllar</li>
+      <li xml:lang="be">Наладжвальныя спалучэнні клавіш</li>
+      <li xml:lang="ca">Dreceres molt personalitzables</li>
+      <li xml:lang="ca-valencia">Dreceres molt personalitzables</li>
+      <li xml:lang="cs">Vysoce přizpůsobitelné zkratky</li>
+      <li xml:lang="en-GB">Highly customisable shortcuts</li>
+      <li xml:lang="eo">Tre agordeblaj ŝparvojoj</li>
+      <li xml:lang="es">Atajos de teclado altamente personalizables</li>
+      <li xml:lang="eu">Neurrira asko egokitu daitezkeen lasterbideak</li>
+      <li xml:lang="fi">Laajalti mukautettavat pikanäppäimet</li>
+      <li xml:lang="fr">Raccourcis largement personnalisables</li>
+      <li xml:lang="gl">Atallos moi personalizábeis.</li>
+      <li xml:lang="he">מקשי קיצור שאפשר להגדיר בגמישות רבה</li>
+      <li xml:lang="it">Scorciatoie altamente personalizzabili</li>
+      <li xml:lang="ka">მორგებადი მალსახმობები</li>
+      <li xml:lang="ko">사용자 정의 가능한 단축키</li>
+      <li xml:lang="lt">Tinkinami spartieji klavišai</li>
+      <li xml:lang="lv">Pielāgojamas saīsnes</li>
+      <li xml:lang="nl">Zeer goed aanpasbare sneltoetsen</li>
+      <li xml:lang="pl">Wysoce dostosowywalne skróty</li>
+      <li xml:lang="pt-BR">Atalhos altamente personalizáveis</li>
+      <li xml:lang="sk">Vysoko prispôsobiteľné klávesové skratky</li>
+      <li xml:lang="sl">Zelo prilagodljive bližnjice</li>
+      <li xml:lang="sv">Mycket anpassningsbara genvägar</li>
+      <li xml:lang="tr">Yüksek derecede özelleştirilebilir kısayollar</li>
+      <li xml:lang="uk">Надзвичайна гнучкість у налаштовування скорочень</li>
+      <li xml:lang="zh-TW">可自訂快捷鍵</li>
+      <li>Command-line interface with rich options</li>
+      <li xml:lang="ar">واجهة سطر الأوامر مع خيارات غنية</li>
+      <li xml:lang="az">Zəngin seçimləri ilə əmr sətri interfeysi</li>
+      <li xml:lang="be">Інтэрфейс каманднага радка з вялікай колькасцю параметраў</li>
+      <li xml:lang="ca">Interfície de la línia d'ordres amb moltes opcions</li>
+      <li xml:lang="ca-valencia">Interfície de la línia d'ordres amb moltes opcions</li>
+      <li xml:lang="cs">Rozhraní příkazového řádku s bohatými možnostmi</li>
+      <li xml:lang="en-GB">Command-line interface with rich options</li>
+      <li xml:lang="eo">Komandlinia interfaco kun riĉaj opcioj</li>
+      <li xml:lang="es">Interfaz de la línea de órdenes con abundantes opciones</li>
+      <li xml:lang="eu">Aukera aberatsak dituen komando-lerro interfazea</li>
+      <li xml:lang="fi">Monipuolinen komentorivikäyttöliittymä</li>
+      <li xml:lang="fr">Interface en ligne de commandes avec des options avancées</li>
+      <li xml:lang="gl">Interface de liña de ordes con moitas opcións.</li>
+      <li xml:lang="he">ממשק שורת פקודות עם אפשרויות עשירות</li>
+      <li xml:lang="it">Interfaccia a riga di comando con opzioni avanzate</li>
+      <li xml:lang="ka">ბრძანების სტრიქონის ინტერფეისი ბევრი პარამეტრით</li>
+      <li xml:lang="ko">다양한 옵션을 제공하는 명령행 인터페이스</li>
+      <li xml:lang="lt">Komandų eilutės sąsaja su daugybe parinkčių</li>
+      <li xml:lang="lv">Komandrindas saskarne ar daudzām iespējām</li>
+      <li xml:lang="nl">Commandoregel-interface met rijke opties</li>
+      <li xml:lang="pl">Obsługa z wiersza poleceń, dająca wiele możliwości</li>
+      <li xml:lang="pt-BR">Interface de linha de comando com opções ricas</li>
+      <li xml:lang="sk">Rozhranie príkazového riadku s bohatými možnosťami</li>
+      <li xml:lang="sl">Vmesnik ukazne vrstice z bogatimi možnostmi</li>
+      <li xml:lang="sv">Kommandoradsgränssnitt med mångfaldiga väljare</li>
+      <li xml:lang="tr">Zengin seçenekler içeren komut satırı arayüzü</li>
+      <li xml:lang="uk">Інтерфейс командного рядка із безліччю параметрів</li>
+      <li xml:lang="zh-TW">選項豐富的命令列介面</li>
+      <li>D-Bus API</li>
+      <li xml:lang="ar">واجهة برمجة تطبيقات D-Bus</li>
+      <li xml:lang="az">D-Bus API</li>
+      <li xml:lang="be">D-Bus API</li>
+      <li xml:lang="ca">API del D-Bus</li>
+      <li xml:lang="ca-valencia">API de D-Bus</li>
+      <li xml:lang="cs">D-Bus API</li>
+      <li xml:lang="en-GB">D-Bus API</li>
+      <li xml:lang="eo">D-Bus API</li>
+      <li xml:lang="es">API de D-Bus</li>
+      <li xml:lang="eu">D-Bus API</li>
+      <li xml:lang="fi">D-Bus-API</li>
+      <li xml:lang="fr">API « D-Bus »</li>
+      <li xml:lang="gl">API de D-Bus.</li>
+      <li xml:lang="he">API מול D-Bus</li>
+      <li xml:lang="ia">D-Bus API</li>
+      <li xml:lang="it">D-Bus API</li>
+      <li xml:lang="ka">D-Bus API</li>
+      <li xml:lang="ko">D-Bus API</li>
+      <li xml:lang="lt">D-Bus API</li>
+      <li xml:lang="lv">„D-Bus“ API</li>
+      <li xml:lang="nl">D-Bus API</li>
+      <li xml:lang="pl">D-Bus API</li>
+      <li xml:lang="pt-BR">API D-Bus</li>
+      <li xml:lang="sk">D-Bus API</li>
+      <li xml:lang="sl">D-Bus API</li>
+      <li xml:lang="sv">D-Bus programmeringsgränssnitt</li>
+      <li xml:lang="tr">D-Bus API’si</li>
+      <li xml:lang="uk">Програмний інтерфейс D-Bus</li>
+      <li xml:lang="zh-TW">D-Bus API</li>
+      <li>Available for Linux and Windows</li>
+      <li xml:lang="ar">متوفر لنظامي التشغيل لينكس وويندوز</li>
+      <li xml:lang="az">Linux və Windows ƏS-ləri üçün mövcuddur</li>
+      <li xml:lang="be">Даступна для Linux і Windows</li>
+      <li xml:lang="ca">Disponible per al Linux i Windows</li>
+      <li xml:lang="ca-valencia">Disponible per a Linux i Windows</li>
+      <li xml:lang="cs">K dispozici pro Linux a Windows</li>
+      <li xml:lang="en-GB">Available for Linux and Windows</li>
+      <li xml:lang="eo">Havebla por Linukso kaj Vindozo</li>
+      <li xml:lang="es">Disponible para Linux y Windows</li>
+      <li xml:lang="eu">Linux-erako eta Windows-erako erabilgarri</li>
+      <li xml:lang="fi">Saatavilla Linuxiin ja Windowsiin</li>
+      <li xml:lang="fr">Disponible pour Linux et Windows</li>
+      <li xml:lang="gl">Dispoñíbel para Linux e Windows.</li>
+      <li xml:lang="he">זמין ללינוקס ול־Windows</li>
+      <li xml:lang="it">Disponibile per Linux e Windows</li>
+      <li xml:lang="ka">ხელმისაწვდომია Linux-ზე და Windows-ზე</li>
+      <li xml:lang="ko">리눅스, Windows에서 사용 가능</li>
+      <li xml:lang="lt">Prieinama „Linux“ ir „Windows“ platformose</li>
+      <li xml:lang="lv">Pieejams „Linux“ un „Windows“ operētājsistēmām</li>
+      <li xml:lang="nl">Beschikbaar voor Linux en Windows</li>
+      <li xml:lang="pl">Dostępne na Linuksa i Windowsa</li>
+      <li xml:lang="pt-BR">Disponível para Linux e Windows</li>
+      <li xml:lang="sk">Dostupné pre Linux a Windows</li>
+      <li xml:lang="sl">Na voljo za Linux in Windows</li>
+      <li xml:lang="sv">Tillgänglig för Linux och Windows</li>
+      <li xml:lang="tr">Linux ve Windows üzerinde kullanılabilir</li>
+      <li xml:lang="uk">Доступність на Linux і Windows</li>
+      <li xml:lang="zh-TW">支援 Linux 與 Windows</li>
+    </ul>
+    <p>*While Mozhi acts as a proxy to protect your privacy, the third-party services it uses may store and analyze the text you send.</p>
+    <p xml:lang="ar">*بينما تعمل Mozhi كوكيل لحماية خصوصيتك، فإن خدمات الطرف الثالث التي تستخدمها قد تخزن وتحلل النص الذي ترسله.</p>
+    <p xml:lang="az">*Mozhi təhlükəsizliyinizi qorumaq üçün üçüncü tərəf serverlərindən istifadə edərək proksi rolunda çıxış etdikdə göndərdiyiniz mətni saxlaya və analiz edə bilər.</p>
+    <p xml:lang="be">*Хоць Mozhi дзейнічае як проксі для абароны вашай прыватнасці, староннія службы, якія ён выкарыстоўвае, могуць захоўваць і аналізаваць тэкст, які вы адпраўляеце.</p>
+    <p xml:lang="ca">*Si bé Mozhi actua com a servidor intermediari per a protegir la vostra privadesa, els serveis de tercers que utilitza poden emmagatzemar i analitzar el text que envieu.</p>
+    <p xml:lang="ca-valencia">*Si bé Mozhi actua com a servidor intermediari per a protegir la vostra privadesa, els serveis de tercers que utilitza poden emmagatzemar i analitzar el text que envieu.</p>
+    <p xml:lang="cs">*Ačkoli Mozhi funguje jako proxy server za účelem ochrany vašeho soukromí, služby třetích stran, které využívá, mohou ukládat a analyzovat text, který odešlete.</p>
+    <p xml:lang="en-GB">*While Mozhi acts as a proxy to protect your privacy, the third-party services it uses may store and analyse the text you send.</p>
+    <p xml:lang="eo">*Dum Mozhi funkcias kiel prokurilo por protekti vian privatecon, la triaj servoj kiujn ĝi uzas povas konservi kaj analizi la tekston, kiun vi sendas.</p>
+    <p xml:lang="es">*Aunque Mozhi actúa como un proxy para proteger su privacidad, los servicios de terceras partes que usa pueden almacenar y analizar el texto que se envía.</p>
+    <p xml:lang="eu">*Mozhi zure pribatutasuna babesteko ordezkari gisa lan egiten duen bitartean, erabiltzen dituen hirugarrenen zerbitzuek bidaltzen duzun testua gorde eta analizatu dezakete.</p>
+    <p xml:lang="fi">*Vaikka Mozhi välityspalveluna suojaa tietosi, sen käyttämät kolmannen osapuolen palvelut voivat tallettaa ja tutkia lähettämääsi tekstiä.</p>
+    <p xml:lang="fr">*Bien que Mozhi agisse en tant que serveur mandataire pour protéger votre vie privée, les services tiers qu'il utilise peuvent enregistrer et analyser le texte que vous transmettez.</p>
+    <p xml:lang="gl">*Aínda que Mozhi actúa como mandatario para protexer a súa privacidade, os servizos de terceiras partes que usa poden almacenar e analizar o texto que envía.</p>
+    <p xml:lang="he">*על אף ש־Mozhi מכהן כמתווך כדי להגן על הפרטיות שלך, שירותי צד־שלישי שבהם הוא משתמש מאחסנים ומנתחים את הטקסט ששלחת.</p>
+    <p xml:lang="it">*Sebbene Mozhi agisca come proxy per proteggere la tua riservatezza, i servizi di terze parti che utilizza potrebbero memorizzare e analizzare il testo che invii.</p>
+    <p xml:lang="ka">*იმ დროს, როცა Mozhi იქცევა, როგორც პროქსი, რომ დაიცვას თქვენი კონფიდენციალობა, მესამე პირების სერვისებმა, რომლებსაც ის იყენებს, შეიძლება, დაიმახსოვროს და გააანალიზოს ტექსტი, რომელსაც აგზავნით.</p>
+    <p xml:lang="ko">*Mozhi는 개인 정보를 보호하는 프록시로 작동하지만, 여기에서 사용하는 제3자 서비스에서 전송한 텍스트를 저장하고 분석할 수도 있습니다.</p>
+    <p xml:lang="lt">*Nors Mozhi veikia kaip įgaliotinis, skirtas apsaugoti jūsų privatumą, Mozhi naudojamos trečiųjų šalių paslaugos gali saugoti ir analizuoti jūsų siunčiamą tekstą.</p>
+    <p xml:lang="lv">*Lai gan „Mozhi“ darbojas kā starpnieks, lai aizsargātu lietotāja privātumu, trešās puses pakalpojumu sniedzēji, kurus tas izmanto, var glabāt un analizēt nosūtīto tekstu.</p>
+    <p xml:lang="nl">*Terwijl Mozhi acteert als een proxy om uw privacy te beschermen, kunnen de services van de derde partij die het gebruikt de tekst die verzendt opslaan en analyseren.</p>
+    <p xml:lang="pl">*Podczas gdy Mozhi pełni rolę pośrednika, aby chronić twoją prywatność, to usługi stron trzecich, których używa przechowują i przetwarzają tekst, który im wysyła.</p>
+    <p xml:lang="pt-BR">*Embora o Mozhi atue como um proxy para proteger sua privacidade, os serviços de terceiros que ele usa podem armazenar e analisar o texto que você envia.</p>
+    <p xml:lang="sk">*Aj keď Mozhi funguje ako proxy na ochranu vášho súkromia, služby tretích strán, ktoré používa, môžu ukladať a analyzovať odoslaný text.</p>
+    <p xml:lang="sl">*Medtem ko Mozhi deluje kot posrednik za zaščito vaše zasebnosti, lahko storitve tretjih oseb, ki jih uporablja, shranijo in analizirajo besedilo, ki ga pošiljate.</p>
+    <p xml:lang="sv">*Även om Mozhi fungerar som en proxy för att skydda din integritet, kan de tredjepartstjänster som den använder lagra och analysera texten du skickar.</p>
+    <p xml:lang="tr">* Mozhi, gizliliğinizi korumak adına bir vekil olarak davranırken, kullandığı üçüncü parti hizmetlerin bazıları gönderdiğiniz metinleri depolayabilir ve çözümleyebilir.</p>
+    <p xml:lang="uk">*Хоча Mozhi працює як проміжна ланка і захищає ваші конфіденційні дані, використані нею сторонні служби можуть зберігати і аналізувати надісланий вами текст.</p>
+    <p xml:lang="zh-TW">*雖然 Mozhi 作為代理可以保護您的隱私，它所使用的第三方服務會能夠選擇儲存並分析您所傳送的文字。</p>
+  </description>
+  <url type="homepage">https://apps.kde.org/crowtranslate</url>
+  <url type="bugtracker">https://bugs.kde.org</url>
+  <url type="translate">https://l10n.kde.org</url>
+  <launchable type="desktop-id">org.kde.CrowTranslate.desktop</launchable>
+  <translation type="qt">Crow Translate/Crow Translate/translations/crow-translate</translation>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://invent.kde.org/websites/product-screenshots/-/raw/master/crow-translate/main.png</image>
+      <caption>Main window</caption>
+      <caption xml:lang="ar">النافذة الرئيسة</caption>
+      <caption xml:lang="az">Əsas pəncərə</caption>
+      <caption xml:lang="be">Галоўнае акно</caption>
+      <caption xml:lang="ca">Finestra principal</caption>
+      <caption xml:lang="ca-valencia">Finestra principal</caption>
+      <caption xml:lang="cs">Hlavní okno</caption>
+      <caption xml:lang="en-GB">Main window</caption>
+      <caption xml:lang="eo">Ĉefa fenestro</caption>
+      <caption xml:lang="es">Ventana principal</caption>
+      <caption xml:lang="eu">Leiho nagusia</caption>
+      <caption xml:lang="fi">Pääikkuna</caption>
+      <caption xml:lang="fr">Fenêtre principale</caption>
+      <caption xml:lang="gl">Xanela principal.</caption>
+      <caption xml:lang="he">חלון ראשי</caption>
+      <caption xml:lang="ia">Fenestra principal</caption>
+      <caption xml:lang="it">Finestra principale</caption>
+      <caption xml:lang="ka">მთავარი ფანჯარა</caption>
+      <caption xml:lang="ko">주 창</caption>
+      <caption xml:lang="lt">Pagrindinis langas</caption>
+      <caption xml:lang="lv">Galvenais logs</caption>
+      <caption xml:lang="nl">Hoofdvenster</caption>
+      <caption xml:lang="pl">Główne okno</caption>
+      <caption xml:lang="pt-BR">Janela principal</caption>
+      <caption xml:lang="sk">Hlavné okno</caption>
+      <caption xml:lang="sl">Glavno okno</caption>
+      <caption xml:lang="sv">Huvudfönster</caption>
+      <caption xml:lang="ta">பிரதான சாளரம்</caption>
+      <caption xml:lang="tr">Ana pencere</caption>
+      <caption xml:lang="ug">باش كۆزنەك</caption>
+      <caption xml:lang="uk">Головне вікно</caption>
+      <caption xml:lang="zh-TW">主視窗</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://invent.kde.org/websites/product-screenshots/-/raw/master/crow-translate/settings.png</image>
+      <caption>Settings</caption>
+      <caption xml:lang="ar">الإعدادات</caption>
+      <caption xml:lang="az">Ayarlar</caption>
+      <caption xml:lang="be">Налады</caption>
+      <caption xml:lang="ca">Configuració</caption>
+      <caption xml:lang="ca-valencia">Configuració</caption>
+      <caption xml:lang="cs">Nastavení</caption>
+      <caption xml:lang="en-GB">Settings</caption>
+      <caption xml:lang="eo">Agordoj</caption>
+      <caption xml:lang="es">Preferencias</caption>
+      <caption xml:lang="eu">Ezarpenak</caption>
+      <caption xml:lang="fi">Asetukset</caption>
+      <caption xml:lang="fr">Configuration</caption>
+      <caption xml:lang="gl">Configuración.</caption>
+      <caption xml:lang="he">הגדרות</caption>
+      <caption xml:lang="ia">Preferentias</caption>
+      <caption xml:lang="it">Impostazioni</caption>
+      <caption xml:lang="ka">მორგება</caption>
+      <caption xml:lang="ko">설정</caption>
+      <caption xml:lang="lt">Nuostatos</caption>
+      <caption xml:lang="lv">Iestatījumi</caption>
+      <caption xml:lang="nl">Instellingen</caption>
+      <caption xml:lang="pl">Ustawienia</caption>
+      <caption xml:lang="pt-BR">Configurações</caption>
+      <caption xml:lang="sk">Nastavenia</caption>
+      <caption xml:lang="sl">Nastavitve</caption>
+      <caption xml:lang="sv">Inställningar</caption>
+      <caption xml:lang="ta">அமைப்புகள்</caption>
+      <caption xml:lang="tr">Ayarlar</caption>
+      <caption xml:lang="ug">تەڭشەك</caption>
+      <caption xml:lang="uk">Параметри</caption>
+      <caption xml:lang="zh-TW">設定</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://invent.kde.org/websites/product-screenshots/-/raw/master/crow-translate/main-mobile.png</image>
+      <caption>Main window on Plasma Mobile</caption>
+      <caption xml:lang="ar">النافذة الرئيسة على بلازما الجوال</caption>
+      <caption xml:lang="az">Plasma Mobile-də əsas pəncərə</caption>
+      <caption xml:lang="be">Галоўнае акно ў Plasma Mobile</caption>
+      <caption xml:lang="ca">Finestra principal al Plasma Mobile</caption>
+      <caption xml:lang="ca-valencia">Finestra principal en Plasma Mobile</caption>
+      <caption xml:lang="cs">Hlavní okno v Plasma Mobile</caption>
+      <caption xml:lang="en-GB">Main window on Plasma Mobile</caption>
+      <caption xml:lang="eo">Ĉefa fenestro sur Plasma Mobile</caption>
+      <caption xml:lang="es">Ventana principal en Plasma Mobile</caption>
+      <caption xml:lang="eu">Plasma Mobilen leiho nagusia</caption>
+      <caption xml:lang="fi">Pääikkuna Plasma Mobilessa</caption>
+      <caption xml:lang="fr">Fenêtre principale sous Plasma Mobile</caption>
+      <caption xml:lang="gl">Xanela principal en Plasma Mobile.</caption>
+      <caption xml:lang="he">חלון ראשי בפלזמה לניידים</caption>
+      <caption xml:lang="it">Finestra principale su Plasma Mobile</caption>
+      <caption xml:lang="ka">მთავარი ფანჯარა Plasma Mobile-ზე</caption>
+      <caption xml:lang="ko">Plasma Mobile에서의 주 창</caption>
+      <caption xml:lang="lt">Pagrindinis langas Plasma mobiliojoje sąsajoje</caption>
+      <caption xml:lang="lv">Galvenais logs „Plasma Mobile“ operētājsistēmā</caption>
+      <caption xml:lang="nl">Hoofdvenster op Plasma Mobile</caption>
+      <caption xml:lang="pl">Główne okno na Przenośnej Plazmie</caption>
+      <caption xml:lang="pt-BR">Janela principal no Plasma Mobile</caption>
+      <caption xml:lang="sk">Hlavné okno na Plasma Mobile</caption>
+      <caption xml:lang="sl">Glavno okno na Plasma Mobile</caption>
+      <caption xml:lang="sv">Huvudfönster på Plasma mobil</caption>
+      <caption xml:lang="tr">Plasma Cep üzerinde ana pencere</caption>
+      <caption xml:lang="uk">Головне вікно на мобільній Плазмі</caption>
+      <caption xml:lang="zh-TW">Plasma 行動上的主視窗</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://invent.kde.org/websites/product-screenshots/-/raw/master/crow-translate/main-mobile-portrait.png</image>
+      <caption>Portrait main window on Plasma Mobile</caption>
+      <caption xml:lang="ar">النافذة الرئيسة العمودية على بلازما الجوال</caption>
+      <caption xml:lang="az">Plasma Mobile-də əsas portret pəncərə</caption>
+      <caption xml:lang="be">Галоўнае акно ў кніжнай арыентацыі на Plasma Mobile</caption>
+      <caption xml:lang="ca">Finestra principal vertical al Plasma Mobile</caption>
+      <caption xml:lang="ca-valencia">Finestra principal vertical en Plasma Mobile</caption>
+      <caption xml:lang="cs">Hlavní okno na výšku v Plasma Mobile</caption>
+      <caption xml:lang="en-GB">Portrait main window on Plasma Mobile</caption>
+      <caption xml:lang="eo">Portreta ĉefa fenestro sur Plasma Mobile</caption>
+      <caption xml:lang="es">Ventana principal en modo retrato en Plasma Mobile</caption>
+      <caption xml:lang="eu">Leiho nagusia erretratuan Plasma Mobilen</caption>
+      <caption xml:lang="fi">Pystysuuntainen pääikkuna Plasma Mobilessa</caption>
+      <caption xml:lang="fr">Fenêtre principale en mode Portrait sous Plasma Mobile</caption>
+      <caption xml:lang="gl">Xanela principal en modo vertical en Plasma Mobile.</caption>
+      <caption xml:lang="he">חלון ראשי במצב אנכי בפלזמה לניידים</caption>
+      <caption xml:lang="it">Finestra principale verticale su Plasma Mobile</caption>
+      <caption xml:lang="ka">პორტრეტული მთავარი ფანჯარა Plasma Mobile-ზე</caption>
+      <caption xml:lang="ko">Plasma Mobile에서의 가로 주 창</caption>
+      <caption xml:lang="lt">Stačias pagrindinis langas Plasma mobiliojoje sąsajoje</caption>
+      <caption xml:lang="lv">Galvenais logs „Plasma Mobile“ portreta režīmā</caption>
+      <caption xml:lang="nl">Hoofdvenster in modus portret op Plasma Mobile</caption>
+      <caption xml:lang="pl">Okno główne w pionie na Przenośnej Plazmie</caption>
+      <caption xml:lang="pt-BR">Janela principal no modo retrato no Plasma Mobile</caption>
+      <caption xml:lang="sk">Hlavné okno na výšku na Plasma Mobile</caption>
+      <caption xml:lang="sl">Pokončno glavno okno na Plasma Mobile</caption>
+      <caption xml:lang="sv">Huvudfönster i stående läge på Plasma mobil</caption>
+      <caption xml:lang="tr">Plasma Cep üzerinde dikey ana pencere</caption>
+      <caption xml:lang="uk">Книжковий режим головного вікна на мобільній Плазмі</caption>
+      <caption xml:lang="zh-TW">Plasma 行動上的垂直主視窗</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://invent.kde.org/websites/product-screenshots/-/raw/master/crow-translate/settings-mobile.png</image>
+      <caption>Settings on Plasma Mobile</caption>
+      <caption xml:lang="ar">الإعدادات على بلازما الجوال</caption>
+      <caption xml:lang="az">Plasma Mobile-dəki ayarlar</caption>
+      <caption xml:lang="be">Налады Plasma Mobile</caption>
+      <caption xml:lang="ca">Configuració al Plasma Mobile</caption>
+      <caption xml:lang="ca-valencia">Configuració en Plasma Mobile</caption>
+      <caption xml:lang="cs">Nastavení v Plasma Mobile</caption>
+      <caption xml:lang="en-GB">Settings on Plasma Mobile</caption>
+      <caption xml:lang="eo">Agordoj sur Plasma Mobile</caption>
+      <caption xml:lang="es">Preferencias en Plasma Mobile</caption>
+      <caption xml:lang="eu">Ezarpenak Plasma Mobilen</caption>
+      <caption xml:lang="fi">Asetukset Plasma Mobilessa</caption>
+      <caption xml:lang="fr">Configuration sous Plasma Mobile</caption>
+      <caption xml:lang="gl">Configuración en Plasma Mobile.</caption>
+      <caption xml:lang="he">הגדרות פלזמה לניידים</caption>
+      <caption xml:lang="it">Impostazioni su Plasma Mobile</caption>
+      <caption xml:lang="ka">მორგება Plasma Mobile-ზე</caption>
+      <caption xml:lang="ko">Plasma Mobile에서의 설정</caption>
+      <caption xml:lang="lt">Nuostatos Plasma mobiliojoje sąsajoje</caption>
+      <caption xml:lang="lv">„Plasma Mobile“ iestatījumi</caption>
+      <caption xml:lang="nl">Instellingen op Plasma Mobile</caption>
+      <caption xml:lang="pl">Ustawienia na Przenośnej Plazmie</caption>
+      <caption xml:lang="pt-BR">Configurações no Plasma Mobile</caption>
+      <caption xml:lang="sk">Nastavenia na Plasma Mobile</caption>
+      <caption xml:lang="sl">Nastavitve na Plasma Mobile</caption>
+      <caption xml:lang="sv">Inställningar på Plasma mobil</caption>
+      <caption xml:lang="tr">Plasma Cep üzerinde ayarlar</caption>
+      <caption xml:lang="uk">Параметри на мобільній Плазмі</caption>
+      <caption xml:lang="zh-TW">Plasma 行動上的設定</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="4.1.0" date="2026-08-18">
+      <description>
+        <p>Changelog:</p>
+        <ul>
+          <li>Translate through any OpenAI-compatible endpoint with the new LocalAI backend.</li>
+          <li>Recognize text in images with a vision model, as an alternative OCR engine to Tesseract.</li>
+          <li>Open, drop or paste an image to recognize text from it.</li>
+          <li>Show what is currently running, and what failed, in a status strip.</li>
+          <li>Use an API key with LibreTranslate, either through Mozhi or directly.</li>
+          <li>Report a bug from the tray menu.</li>
+          <li>Fix the capture area on Windows with multiple monitors at different scaling.</li>
+          <li>Fix the missing application icon on Windows and macOS.</li>
+          <li>Fix starting up again after an unclean shutdown.</li>
+          <li>Fix the translate selection shortcut on Wayland.</li>
+          <li>Name icon-only buttons for screen readers, and make error messages translatable.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.0.2" date="2025-09-07">
+      <description>
+        <p>Changelog:</p>
+        <ul>
+          <li>Work around broken text-to-speech on Windows with Qt 6.9.x by building the Windows binaries against Qt 6.8.3.</li>
+        </ul>
+      </description>
+      <artifacts>
+        <artifact type="binary" platform="x86_64-linux-gnu">
+          <location>https://download.kde.org/stable/crow-translate/4.0.2/crow-translate-master-598-linux-gcc-x86_64.AppImage</location>
+        </artifact>
+        <artifact type="binary" platform="x86_64-windows-msvc">
+          <location>https://download.kde.org/stable/crow-translate/4.0.2/crow-translate-4.0.0-hotfix2-c9dfc26-master-windows-cl-msvc2022-x86_64.exe</location>
+        </artifact>
+        <artifact type="binary" platform="x86_64-windows-msvc">
+          <location>https://download.kde.org/stable/crow-translate/4.0.2/crow-translate-4.0.0-hotfix2-c9dfc26-master-windows-cl-msvc2022-x86_64.7z</location>
+        </artifact>
+        <artifact type="source">
+          <location>https://download.kde.org/stable/crow-translate/4.0.2/crow-translate-4.0.2.tar.gz</location>
+        </artifact>
+      </artifacts>
+    </release>
+    <release version="4.0.1" date="2025-09-06">
+      <description>
+        <p>Changelog:</p>
+        <ul>
+          <li>Fix Windows packaging: some libraries were installed next to the libraries instead of next to the program.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.0.0" date="2025-09-05">
+      <description>
+        <p>Changelog:</p>
+        <ul>
+          <li>Port to Qt 6.</li>
+          <li>Rework translation and text-to-speech into interchangeable providers.</li>
+          <li>Speak text with the system voice through Qt TextToSpeech.</li>
+          <li>Speak text offline with Piper neural text-to-speech.</li>
+          <li>Support custom languages beyond the standard locales.</li>
+          <li>Invert images before recognition to read light text on a dark background.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.1.0" date="2024-10-24">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Automate fastest Mozhi instance selection.</li>
+          <li xml:lang="ar">أتمتة اختيار أسرع نسخة من Mozhi.</li>
+          <li xml:lang="be">Аўтаматызацыя выбару найхутчэйшага асобніка Mozhi.</li>
+          <li xml:lang="ca">Automatitza la selecció més ràpida d'instàncies de Mozhi.</li>
+          <li xml:lang="ca-valencia">Automatitza la selecció més ràpida d'instàncies de Mozhi.</li>
+          <li xml:lang="cs">Automatizace výběru nejrychlejší instance Mozhi.</li>
+          <li xml:lang="es">Se ha automatizado la selección de la instancia de Mozhi más rápida.</li>
+          <li xml:lang="fi">Automatisoi nopeimman Mozhi-ilmentymän valinta.</li>
+          <li xml:lang="fr">Automatisation de la sélection la plus rapide de l'instance de Mozhi.</li>
+          <li xml:lang="he">ביצוע אוטומציה לבחירת מופע ה־Mozhi המהיר ביותר.</li>
+          <li xml:lang="it">Automatizza la selezione più rapida delle istanze Mozhi.</li>
+          <li xml:lang="ka">უსწრაფესი Mozhi-ის გაშვებული ასლის ავტომატური არჩევა.</li>
+          <li xml:lang="nl">Automatiseer de snelste selectie van een Mozhi-exemplaar.</li>
+          <li xml:lang="pt-BR">Automatização da seleção da instância Mozhi mais rápida.</li>
+          <li xml:lang="sk">Automatizovať výber najrýchlejšej inštancie Mozhi.</li>
+          <li xml:lang="sl">Avtomatizira najhitrejšo izbiro pojavka Mozhi.</li>
+          <li xml:lang="sv">Automatisera snabbaste Mozhi-instansval.</li>
+          <li xml:lang="tr">Automate fastest Mozhi instance selection.</li>
+          <li xml:lang="uk">Автоматичний вибір найшвидшого екземпляра Mozhi.</li>
+          <li>Automatically assign the fastest instance on the first startup instead of selecting it randomly.</li>
+          <li xml:lang="ar">تعيين أسرع نسخة آليًا عند بدء التشغيل الأول بدلًا من اختيارها عشوائيًا.</li>
+          <li xml:lang="be">Аўтаматычна прызначаць найхутчэйшы асобнік пры першым запуску замест выпадковага выбару.</li>
+          <li xml:lang="ca">Assigna automàticament la instància més ràpida a la primera engegada en lloc de seleccionar-la aleatòriament.</li>
+          <li xml:lang="ca-valencia">Assigna automàticament la instància més ràpida a la primera iniciada en lloc de seleccionar-la aleatòriament.</li>
+          <li xml:lang="cs">Při prvním spuštění se automaticky přiřadí nejrychlejší instance namísto jejího náhodného výběru.</li>
+          <li xml:lang="es">Asignar automáticamente la instancia más rápida durante el primer inicio en lugar de seleccionar una de forma aleatoria.</li>
+          <li xml:lang="fi">Osoittaa ensikäynnistyksellä automaattisesti nopeimman ilmentymän sen sijaan, että se valittaisiin satunnaisesti.</li>
+          <li xml:lang="fr">Attribuer automatiquement l'instance la plus rapide lors du premier démarrage au lieu de la sélectionner au hasard.</li>
+          <li xml:lang="he">להקצות את העותק המהיר ביותר אוטומטית עם העלייה הראשונה במקום לבחור אותו אקראית.</li>
+          <li xml:lang="it">Assegna automaticamente l'istanza più veloce al primo avvio anziché selezionarla casualmente.</li>
+          <li xml:lang="ka">უსწრაფესი გაშვებული ასლის ავტომატური მინიჭება პირველი გაშვებისას მისი შემთხვევით არჩევის მაგიერ.</li>
+          <li xml:lang="nl">Wijs bij de eerste opstart automatisch het snelste exemplaar toe in plaats van deze willekeurig te selecteren.</li>
+          <li xml:lang="pt-BR">Atribuir automaticamente a instância mais rápida na primeira inicialização, em vez de selecioná-la aleatoriamente.</li>
+          <li xml:lang="sk">Automaticky priradiť najrýchlejšiu inštanciu pri prvom spustení namiesto náhodného výberu.</li>
+          <li xml:lang="sl">Samodejno dodeli najhitrejši pojavek ob prvem zagonu, namesto da ga izbere naključno.</li>
+          <li xml:lang="sv">Tilldela automatisk den snabbaste instansen vid första start istället för att välja den slumpmässigt.</li>
+          <li xml:lang="tr">Automatically assign the fastest instance on the first startup instead of selecting it randomly.</li>
+          <li xml:lang="uk">Автоматично призначати найшвидший екземпляр під час першого запуску, замість випадкового вибору.</li>
+          <li>CLI: By default, use the instance from settings.</li>
+          <li xml:lang="ar">واجهة سطر الأوامر: استخدام النسخة من الإعدادات مبدئيًا.</li>
+          <li xml:lang="be">CLI: прадвызначана выкарыстоўваць асобнік з налад.</li>
+          <li xml:lang="ca">CLI: de manera predeterminada, utilitza la instància de la configuració.</li>
+          <li xml:lang="ca-valencia">CLI: de manera predeterminada, utilitza la instància de la configuració.</li>
+          <li xml:lang="cs">CLI: Ve výchozím nastavení se použije instance z nastavení.</li>
+          <li xml:lang="es">CLI: De forma predeterminada, usar la instancia de la configuración.</li>
+          <li xml:lang="fi">Komentorivi: oletusarvoisesti käytetään ilmentymää asetuksista.</li>
+          <li xml:lang="fr">CLI : par défaut, utiliser l'instance de la configuration.</li>
+          <li xml:lang="he">שורת פקודות: כברירת מחדל, להשתמש במופע מההגדרות.</li>
+          <li xml:lang="it">CLI: per impostazione predefinita, utilizza l'istanza dalle impostazioni.</li>
+          <li xml:lang="ka">CLI: ნაგულისხმევად გამოყენებული იქნება გაშვებული ასლი არამეტრებიდან.</li>
+          <li xml:lang="nl">CLI: standaard wordt het exemplaar uit de instellingen gebruikt.</li>
+          <li xml:lang="pt-BR">CLI: Por padrão, utiliza a instância definida nas configurações.</li>
+          <li xml:lang="sk">CLI: Predvolene použiť inštanciu z nastavení.</li>
+          <li xml:lang="sl">CLI: Privzeto uporabi pojavek iz nastavitev.</li>
+          <li xml:lang="sv">Kommandorad: Använd normal instansen från inställningarna.</li>
+          <li xml:lang="tr">CLI: By default, use the instance from settings.</li>
+          <li xml:lang="uk">CLI: реалізовано типове використання екземпляра з параметрів.</li>
+          <li>CLI: Verify language codes.</li>
+          <li xml:lang="ar">واجهة سطر الأوامر: التحقق من رموز اللغات.</li>
+          <li xml:lang="be">CLI: правяраць коды моў.</li>
+          <li xml:lang="ca">CLI: verifica els codis d'idioma.</li>
+          <li xml:lang="ca-valencia">CLI: verifica els codis d'idioma.</li>
+          <li xml:lang="cs">CLI: Ověření kódu jazyků.</li>
+          <li xml:lang="es">CLI: Verificar los códigos de idiomas.</li>
+          <li xml:lang="fi">Komentorivi: tarkistetaan kielikoodit.</li>
+          <li xml:lang="fr">CLI : vérification des codes de langue.</li>
+          <li xml:lang="he">שורת פקודות: אימות קודים של שפות.</li>
+          <li xml:lang="it">CLI: verifica i codici delle lingue.</li>
+          <li xml:lang="ka">CLI: ენის კოდების შემოწმება.</li>
+          <li xml:lang="nl">CLI: Controleer taalcodes.</li>
+          <li xml:lang="pt-BR">CLI: Verificar códigos de idioma.</li>
+          <li xml:lang="sk">CLI: Overiť kódy jazykov.</li>
+          <li xml:lang="sl">CLI: Preveri jezikovne kode.</li>
+          <li xml:lang="sv">Kommandorad: Verifiera språkkoder.</li>
+          <li xml:lang="tr">CLI: Verify language codes.</li>
+          <li xml:lang="uk">CLI: реалізовано перевірку кодів мов.</li>
+          <li>CLI: Do not print empty translations on error.</li>
+          <li xml:lang="ar">واجهة سطر الأوامر: عدم طباعة ترجمات فارغة عند حدوث خطأ.</li>
+          <li xml:lang="be">CLI: не выводзіць пустыя пераклады пры памылцы.</li>
+          <li xml:lang="ca">CLI: no imprimeix traduccions buides en cas d'error.</li>
+          <li xml:lang="ca-valencia">CLI: no imprimix traduccions buides en cas d'error.</li>
+          <li xml:lang="cs">CLI: V případě chyby se nevypisují prázdné překlady.</li>
+          <li xml:lang="es">CLI: No mostrar traducciones vacías cuando se produce un error.</li>
+          <li xml:lang="fi">Komentorivi: virhetilanteessa ei tulosteta tyhjiä käännöksiä.</li>
+          <li xml:lang="fr">CLI : ne pas afficher les traductions vides en cas d'erreur.</li>
+          <li xml:lang="he">שורת פקודות: לא להציג תרגומים ריקים כשמתרחשת שגיאה.</li>
+          <li xml:lang="it">CLI: non stampa traduzioni vuote in caso di errore.</li>
+          <li xml:lang="ka">CLI: შეცდომისას ცარიელი თარგმანები გამოტანილი არ იქნება.</li>
+          <li xml:lang="nl">CLI: geen lege vertalingen afdrukken bij een foutmelding.</li>
+          <li xml:lang="pt-BR">CLI: Não imprimir traduções vazias em caso de erro.</li>
+          <li xml:lang="sk">CLI: Nevypisovať prázdne preklady pri chybe.</li>
+          <li xml:lang="sl">CLI: V primeru napake ne izpisuje praznih prevodov.</li>
+          <li xml:lang="sv">Kommandorad: Skriv inte ut tomma översättningar vid fel.</li>
+          <li xml:lang="tr">CLI: Do not print empty translations on error.</li>
+          <li xml:lang="uk">CLI: усунено виведення порожніх перекладів при помилці.</li>
+          <li>CLI: The --help command returns exit code 1.</li>
+          <li xml:lang="ar">واجهة سطر الأوامر: يرجع الأمر help-- رمز الخروج 1.</li>
+          <li xml:lang="be">CLI: каманда --help вяртае код выхаду 1.</li>
+          <li xml:lang="ca">CLI: l'ordre --help retorna el codi de sortida 1.</li>
+          <li xml:lang="ca-valencia">CLI: l'ordre --help retorna el codi d'eixida 1.</li>
+          <li xml:lang="cs">CLI: Příkaz --help vrátí výstupní kód 1.</li>
+          <li xml:lang="es">CLI: La orden --help devuelve el código de salida 1.</li>
+          <li xml:lang="fi">Komentorivi: --help-komento palauttaa virhekoodin 1.</li>
+          <li xml:lang="fr">CLI : la commande « --help » retourne le code de sortie 1.</li>
+          <li xml:lang="he">שורת פקודות: פקודת ‎--help מחזירה קוד יציאה 1.</li>
+          <li xml:lang="it">CLI: il comando --help restituisce il codice di uscita 1.</li>
+          <li xml:lang="ka">CLI: ბრძანება --help აბრუნებს შეცდომის კოდს 1.</li>
+          <li xml:lang="nl">CLI: de opdracht --help retourneert afsluitcode 1.</li>
+          <li xml:lang="pt-BR">CLI: O comando --help retorna o código de saída 1.</li>
+          <li xml:lang="sk">CLI: Príkaz --help vracia ukončovací kód 1.</li>
+          <li xml:lang="sl">CLI: Ukaz --help vrne izhodno kodo 1.</li>
+          <li xml:lang="sv">Kommandorad: Kommandot --help returnerar avslutningskoden 1.</li>
+          <li xml:lang="tr">CLI: The --help command returns exit code 1.</li>
+          <li xml:lang="uk">CLI: команда --help повертає код виходу 1.</li>
+          <li>Fix language codes for Persian and Chinese Simplified.</li>
+          <li xml:lang="ar">إصلاح رموز اللغات للفارسية والصينية المبسطة.</li>
+          <li xml:lang="be">Выпраўленне кодаў моў для персідскай і спрошчанай кітайскай.</li>
+          <li xml:lang="ca">Corregeix els codis d'idioma del persa i el xinès simplificat.</li>
+          <li xml:lang="ca-valencia">Corregix els codis d'idioma del persa i el xinés simplificat.</li>
+          <li xml:lang="cs">Opraveny jazykové kódy pro perštinu a zjednodušenou čínštinu.</li>
+          <li xml:lang="es">Se han corregido los códigos de idioma para el persa y el chino simplificado.</li>
+          <li xml:lang="fi">Korjattu persian ja yksinkertaistetun kiinan kielikoodit.</li>
+          <li xml:lang="fr">Corriger les codes de langue pour le Persan et le Chinois simplifié.</li>
+          <li xml:lang="he">הקודים של השפות פרסית וסינית מפושטת תוקנו.</li>
+          <li xml:lang="it">Corregge i codici di lingua per persiano e cinese semplificato.</li>
+          <li xml:lang="ka">გასწორდა ენის კოდები სპარსულისთვის და გამარტივებული ჩინურისთვის.</li>
+          <li xml:lang="nl">Corrigeer de taalcodes voor Perzisch en Vereenvoudigd Chinees.</li>
+          <li xml:lang="pt-BR">Corrigidos os códigos de idioma para persa e chinês simplificado.</li>
+          <li xml:lang="sk">Oprava kódov jazykov pre perzštinu a zjednodušenú čínštinu.</li>
+          <li xml:lang="sl">Popravi jezikovne kode za perzijščino in poenostavljeno kitajščino.</li>
+          <li xml:lang="sv">Rätta språkkoder för persiska och förenklad kinesiska.</li>
+          <li xml:lang="tr">Fix language codes for Persian and Chinese Simplified.</li>
+          <li xml:lang="uk">Виправлено коди мови для перської та спрощеної китайської.</li>
+          <li>Fix loading of Qt translations.</li>
+          <li xml:lang="ar">إصلاح تحميل ترجمات كيو تي.</li>
+          <li xml:lang="be">Выпраўленне загрузкі перакладаў Qt.</li>
+          <li xml:lang="ca">Corregeix la càrrega de les traduccions de les Qt.</li>
+          <li xml:lang="ca-valencia">Corregix la càrrega de les traduccions de les Qt.</li>
+          <li xml:lang="cs">Opraveno načítání překladů Qt.</li>
+          <li xml:lang="es">Se ha corregido la carga de traducciones de Qt.</li>
+          <li xml:lang="fi">Korjattu Qt-käännösten lataaminen.</li>
+          <li xml:lang="fr">Correction du chargement des traductions sous Qt.</li>
+          <li xml:lang="he">תוקנה טעינת תרגומי Qt.</li>
+          <li xml:lang="it">Corregge il caricamento delle traduzioni Qt.</li>
+          <li xml:lang="ka">გასწორდა Qt-ის თარგმანების ჩატვირთვა.</li>
+          <li xml:lang="nl">Het laden van Qt-vertalingen corrigeren.</li>
+          <li xml:lang="pt-BR">Corrigido o carregamento de traduções do Qt.</li>
+          <li xml:lang="sk">Oprava načítania prekladov Qt.</li>
+          <li xml:lang="sl">Popravljeno nalaganje prevodov Qt.</li>
+          <li xml:lang="sv">Rätta inläsning av Qt-översättningar</li>
+          <li xml:lang="tr">Fix loading of Qt translations.</li>
+          <li xml:lang="uk">Виправлено завантаження перекладів Qt.</li>
+        </ul>
+      </description>
+      <artifacts>
+        <artifact type="binary" platform="x86_64-linux-gnu">
+          <location>https://download.kde.org/stable/crow-translate/3.1.0/crow-translate-release_3.1-433-linux-gcc-x86_64.AppImage</location>
+        </artifact>
+        <artifact type="binary" platform="x86_64-windows-msvc">
+          <location>https://download.kde.org/stable/crow-translate/3.1.0/crow-translate-release_3.1-433-windows-cl-msvc2019-x86_64.exe</location>
+        </artifact>
+        <artifact type="binary" platform="x86_64-windows-msvc">
+          <location>https://download.kde.org/stable/crow-translate/3.1.0/crow-translate-release_3.1-433-windows-cl-msvc2019-x86_64.7z</location>
+        </artifact>
+        <artifact type="source">
+          <location>https://download.kde.org/stable/crow-translate/3.1.0/crow-translate-v3.1.0.tar.gz</location>
+        </artifact>
+      </artifacts>
+    </release>
+    <release version="3.0.0" date="2024-09-04">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Migrate from direct API calls to Mozhi. If you experience slow translation speeds, try selecting a closer instance in the settings.</li>
+          <li xml:lang="ar">الانتقال من استدعاءات واجهة برمجة التطبيقات المباشرة إلى Mozhi. إذا واجهت بطئًا في سرعة الترجمة، جرب اختيار نسخة أقرب في الإعدادات.</li>
+          <li xml:lang="be">Перайдзіце з непасрэдных выклікаў API на Mozhi. Калі хуткасць перакладу нізкая, паспрабуйце абраць больш блізкі асобнік у наладах.</li>
+          <li xml:lang="ca">Migra de les crides directes de l'API a Mozhi. Si experimenteu velocitats de traducció lentes, proveu de seleccionar una instància més propera a la configuració.</li>
+          <li xml:lang="ca-valencia">Migra de les crides directes de l'API a Mozhi. Si experimenteu velocitats de traducció lentes, proveu de seleccionar una instància més propera a la configuració.</li>
+          <li xml:lang="cs">Přechod z přímých volání API na Mozhi. Pokud zaznamenáte pomalou rychlost překladu, zkuste v nastavení vybrat instanci, která je blíže.</li>
+          <li xml:lang="es">Se ha migrado de las llamadas directas de la API a Mozhi. Si experimenta velocidades de traducción lentas, intente seleccionar una instancia más cercana en la configuración.</li>
+          <li xml:lang="fi">Siirrytty suorista API-kutsuista Mozhiin. Jos käännösnopeus on hidas, kokeile valita asetuksista lähempi ilmentymä.</li>
+          <li xml:lang="fr">Migrer vers des appels API directs à Mozhi. Si vous constatez des lenteurs dans la traduction, veuillez essayer de sélectionner une instance plus proche dans la configuration.</li>
+          <li xml:lang="he">בוצעה הסבה מקריאות API ישירות ל־Mozhi. אם נתקלת בתהליך תרגום איטי, כדאי לבחור עותק קרוב יותר בהגדרות.</li>
+          <li xml:lang="it">Esegue la migrazione dalle chiamate API dirette a Mozhi. Se riscontri una velocità di traduzione lenta, prova a selezionare un'istanza più vicina nelle impostazioni.</li>
+          <li xml:lang="ka">პირდაპირი API-ის გამოძახებების მიგრაცია Mozhi-ზე. თუ თარგმანის სიჩქარე დაბალი გექნებათ, სცადეთ, პარამეტრებში უფრო ახლო გაშვებული ასლი აირჩიოთ.</li>
+          <li xml:lang="nl">Migreer van directe API-aanroepen naar Mozhi. Als de vertaalsnelheid traag is, probeer dan een exemplaar dichter bij huis te selecteren in de instellingen.</li>
+          <li xml:lang="pt-BR">Migração de chamadas diretas à API para o Mozhi. Se você notar lentidão na tradução, tente selecionar uma instância mais próxima nas configurações.</li>
+          <li xml:lang="sk">Migrácia z priamych volaní API na Mozhi. Ak pociťujete pomalé rýchlosti prekladu, skúste v nastaveniach vybrať bližšiu inštanciu.</li>
+          <li xml:lang="sl">Preseli se z neposrednih klicev API-ja na Mozhi. Če imate počasne hitrosti prevajanja, poskusite v nastavitvah izbrati bližji pojavek.</li>
+          <li xml:lang="sv">Konvertera från direkta programmeringsgränssnittsanrop till Mozhi. Om långsamma översättningshastigheter upplevs, försök välja en närmare instans i inställningarna.</li>
+          <li xml:lang="tr">Migrate from direct API calls to Mozhi. If you experience slow translation speeds, try selecting a closer instance in the settings.</li>
+          <li xml:lang="uk">Перехід з прямих викликів програмного інтерфейсу на Mozhi. Якщо ви спостерігаєте низьку швидкість перекладу, спробуйте вибрати ближчий екземпляр у налаштуваннях.</li>
+          <li>Change short option for --speak-translation to -r.</li>
+          <li xml:lang="ar">تغيير الخيار القصير لـ speak-translation-- إلى r-.</li>
+          <li xml:lang="be">Змена кароткага параметра для --speak-translation на -r.</li>
+          <li xml:lang="ca">Canvia l'opció curta de --speak-translation a -r.</li>
+          <li xml:lang="ca-valencia">Canvia l'opció curta de --speak-translation a -r.</li>
+          <li xml:lang="cs">Změna zkrácené volby pro --speak-translation na -r.</li>
+          <li xml:lang="es">Se ha cambiado la forma corta de --speak-translation a -r.</li>
+          <li xml:lang="fi">Muutettu --speak-translation-valitsimen lyhyeksi muodoksi -r.</li>
+          <li xml:lang="fr">Modifier l'option courte de « --speak-translation » vers « -r ».</li>
+          <li xml:lang="he">שינוי האפשרות המקוצרת של ‎--speak-translation ל־‎-r.</li>
+          <li xml:lang="it">Modifica l'opzione breve per --speak-translation in -r.</li>
+          <li xml:lang="ka">შეიცვალა --speak-translation პარამეტრის მოკლე ვერსია პარამეტრით -r.</li>
+          <li xml:lang="nl">Wijzig de korte optie voor --speak-translation naar -r.</li>
+          <li xml:lang="pt-BR">Alteração da opção abreviada para --speak-translation para -r.</li>
+          <li xml:lang="sk">Zmena krátkej možnosti pre --speak-translation na -r.</li>
+          <li xml:lang="sl">Spremeni kratko možnost za --speak-translation v -r.</li>
+          <li xml:lang="sv">Ändra kort alternativ för --speak-translation till -r.</li>
+          <li xml:lang="tr">Change short option for --speak-translation to -r.</li>
+          <li xml:lang="uk">Змінено скорочений варіант параметра --speak-translation на -r.</li>
+          <li>Change short option for --speak-source to -o.</li>
+          <li xml:lang="ar">تغيير الخيار القصير لـ speak-source-- إلى o-.</li>
+          <li xml:lang="be">Змена кароткага параметра для --speak-source на -o.</li>
+          <li xml:lang="ca">Canvia l'opció curta de --speak-source a -o.</li>
+          <li xml:lang="ca-valencia">Canvia l'opció curta de --speak-source a -o.</li>
+          <li xml:lang="cs">Změna zkrácené volby pro --speak-source na -o.</li>
+          <li xml:lang="es">Se ha cambiado la forma corta de --speak-source a -o.</li>
+          <li xml:lang="fi">Muutettu --speak-source-valitsimen lyhyeksi muodoksi -o.</li>
+          <li xml:lang="fr">Changer l'option courte de « --speak-source » vers « -o ».</li>
+          <li xml:lang="he">שינוי האפשרות המקוצרת של ‎--speak-source ל־‎-o.</li>
+          <li xml:lang="it">Modificare l'opzione breve per --speak-source in -o.</li>
+          <li xml:lang="ka">შეიცვალა --speak-source პარამეტრის მოკლე ვერსია პარამეტრით -o.</li>
+          <li xml:lang="nl">Wijzig de korte optie voor --speak-source naar -o.</li>
+          <li xml:lang="pt-BR">Alteração da opção abreviada para --speak-source para -o.</li>
+          <li xml:lang="sk">Zmena krátkej možnosti pre --speak-source na -o.</li>
+          <li xml:lang="sl">Spremeni kratko možnost za --speak-source v -o.</li>
+          <li xml:lang="sv">Ändra kort alternativ för --speak-source till -o.</li>
+          <li xml:lang="tr">Change short option for --speak-source to -o.</li>
+          <li xml:lang="uk">Змінено скорочений варіант параметра --speak-source на -o.</li>
+          <li>Remove flags from languages.</li>
+          <li xml:lang="ar">إزالة الأعلام من اللغات.</li>
+          <li xml:lang="be">Выдаленне сцягоў з моў.</li>
+          <li xml:lang="ca">Elimina les banderes dels idiomes.</li>
+          <li xml:lang="ca-valencia">Elimina les banderes dels idiomes.</li>
+          <li xml:lang="cs">Odstraněny vlajky jazyků.</li>
+          <li xml:lang="es">Se han eliminado las banderas de los idiomas.</li>
+          <li xml:lang="fi">Poistettu kielten liput.</li>
+          <li xml:lang="fr">Supprimer les étiquettes des langues.</li>
+          <li xml:lang="he">הסרת דגלונים משפות.</li>
+          <li xml:lang="it">Rimuovere le bandiere dalle lingue.</li>
+          <li xml:lang="ka">ენებს ალმები მოსცილდა.</li>
+          <li xml:lang="nl">Verwijder vlaggen uit talen.</li>
+          <li xml:lang="pt-BR">Remoção das bandeiras dos idiomas.</li>
+          <li xml:lang="sk">Odstrániť vlajky z jazykov.</li>
+          <li xml:lang="sl">Odstrani zastavice iz jezikov.</li>
+          <li xml:lang="sv">Ta bort flaggor från språk.</li>
+          <li xml:lang="tr">Remove flags from languages.</li>
+          <li xml:lang="uk">Вилучено прапорці для пунктів мов.</li>
+          <li>Fix autotranslate checkbox overlap.</li>
+          <li xml:lang="ar">إصلاح تداخل مربع اختيار الترجمة الآلية.</li>
+          <li xml:lang="be">Выпраўленне перакрыцця адзнакі аўтаперакладу.</li>
+          <li xml:lang="ca">Corregeix la superposició de la casella de selecció de traducció automàtica.</li>
+          <li xml:lang="ca-valencia">Corregix la superposició de la casella de selecció de traducció automàtica.</li>
+          <li xml:lang="cs">Opraveno překrývání zaškrtávacího políčka automatického překladu.</li>
+          <li xml:lang="es">Se ha corregido la superposición de la casilla de traducción automática.</li>
+          <li xml:lang="fi">Korjattu automaattikäännösvalintaruudun lomittuminen.</li>
+          <li xml:lang="fr">Correction du chevauchement de la case à cocher de la traduction automatique.</li>
+          <li xml:lang="he">תוקנה חפיפת תיבת סימון בתרגום אוטומטי.</li>
+          <li xml:lang="it">Corregge la sovrapposizione della casella di controllo della traduzione automatica.</li>
+          <li xml:lang="ka">გასწორდა ავტოთარგმანის თოლიას გადაფარვა.</li>
+          <li xml:lang="nl">Corrigeer de overlapping van de keuzevakjes voor automatische vertaling.</li>
+          <li xml:lang="pt-BR">Correção da sobreposição das caixas de seleção de tradução automática.</li>
+          <li xml:lang="sk">Oprava prekrývania zaškrtávacieho políčka automatického prekladu.</li>
+          <li xml:lang="sl">Odpravi prekrivanje potrditvenih polj za samodejno prevajanje.</li>
+          <li xml:lang="sv">Rätta överlappning av automatisk översättning</li>
+          <li xml:lang="tr">Fix autotranslate checkbox overlap.</li>
+          <li xml:lang="uk">Виправлено перекриття пункту автоперекладу.</li>
+          <li>Change application ID to org.kde.CrowTranslate.</li>
+          <li xml:lang="ar">تغيير معرف التطبيق إلى org.kde.CrowTranslate.</li>
+          <li xml:lang="be">Змена ID праграмы на org.kde.CrowTranslate.</li>
+          <li xml:lang="ca">Canvia l'ID de l'aplicació a org.kde.CrowTranslate.</li>
+          <li xml:lang="ca-valencia">Canvia l'ID de l'aplicació a org.kde.CrowTranslate.</li>
+          <li xml:lang="cs">Změněno ID aplikace na org.kde.CrowTranslate.</li>
+          <li xml:lang="es">Se ha cambiado el ID de la aplicación a org.kde.CrowTranslate.</li>
+          <li xml:lang="fi">Muutettu sovellustunnisteeksi org.kde.CrowTranslate.</li>
+          <li xml:lang="fr">Modifier l'identifiant de l'application en « org.kde.CrowTranslate ».</li>
+          <li xml:lang="he">מזהה היישום התחלף ל־org.kde.CrowTranslate.</li>
+          <li xml:lang="it">Cambia l'ID dell'applicazione in org.kde.CrowTranslate.</li>
+          <li xml:lang="ka">აპლიკაციის ID შეიცვალა მნიშვნელობაზე org.kde.CrowTranslate.</li>
+          <li xml:lang="nl">Wijzig de toepassings-ID naar org.kde.CrowTranslate.</li>
+          <li xml:lang="pt-BR">Alteração do ID do aplicativo para org.kde.CrowTranslate.</li>
+          <li xml:lang="sk">Zmena ID aplikácie na org.kde.CrowTranslate.</li>
+          <li xml:lang="sl">Spremeni ID aplikacije v org.kde.CrowTranslate.</li>
+          <li xml:lang="sv">Ändra program-id till org.kde.CrowTranslate.</li>
+          <li xml:lang="tr">Change application ID to org.kde.CrowTranslate.</li>
+          <li xml:lang="uk">Змінено ідентифікатор програми на org.kde.CrowTranslate.</li>
+          <li>Disable "Start minimized" by default.</li>
+          <li xml:lang="ar">تعطيل "ابدأ مصغرًا" مبدئيًا.</li>
+          <li xml:lang="be">Адключэнне прадвызначанага значэння "Запускаць у згорнутым стане".</li>
+          <li xml:lang="ca">Desactiva «Inicia minimitzat» de manera predeterminada.</li>
+          <li xml:lang="ca-valencia">Desactiva «Inicia minimitzat» de manera predeterminada.</li>
+          <li xml:lang="cs">Ve výchozím nastavení je funkce "Spustit minimalizované" deaktivována.</li>
+          <li xml:lang="es">Se ha desactivado de forma predeterminada «Iniciar minimizado».</li>
+          <li xml:lang="fi">Poistettu oletusarvoisesti käytöstä ”Käynnistä pienennettynä”.</li>
+          <li xml:lang="fr">Désactiver « Démarrer en mode minimisé » par défaut.</li>
+          <li xml:lang="he">השבתת „הפעלה ממוזערת” כברירת מחדל.</li>
+          <li xml:lang="it">Disattiva «Avvia minimizzato» per impostazione predefinita.</li>
+          <li xml:lang="ka">"ჩაკეცილად გაშვების" ნაგულისხმევად გამორთვა.</li>
+          <li xml:lang="nl">Schakel "Starten in geminimaliseerde modus" standaard uit.</li>
+          <li xml:lang="pt-BR">Opção "Iniciar minimizado" desativada por padrão.</li>
+          <li xml:lang="sk">Predvolene zakázať "Spustiť minimalizovane".</li>
+          <li xml:lang="sl">Privzeto onemogoči možnost "Začni strnjeno".</li>
+          <li xml:lang="sv">Inaktivera normalt "Starta minimerad".</li>
+          <li xml:lang="tr">Disable "Start minimized" by default.</li>
+          <li xml:lang="uk">Типово вимкнено «Запускати мінімізованим».</li>
+          <li>Use icons that are compatible with Adwaita.</li>
+          <li xml:lang="ar">استخدام أيقونات متوافقة مع Adwaita.</li>
+          <li xml:lang="be">Выкарыстанне значкоў, сумяшчальных з Adwaita.</li>
+          <li xml:lang="ca">Utilitza icones que siguin compatibles amb Adwaita.</li>
+          <li xml:lang="ca-valencia">Utilitza icones que siguen compatibles amb Adwaita.</li>
+          <li xml:lang="cs">Použity ikony kompatibilní s Adwaita.</li>
+          <li xml:lang="es">Usar iconos compatibles con Adwaita.</li>
+          <li xml:lang="fi">Käytetään Adwaitan kanssa yhteensopivia kuvakkeita.</li>
+          <li xml:lang="fr">Utiliser des icônes compatibles avec Adwaita.</li>
+          <li xml:lang="he">להשתמש בסמלים תואמי Adwaita.</li>
+          <li xml:lang="it">Utilizza icone compatibili con Adwaita.</li>
+          <li xml:lang="ka">Adwaita-ისთან თავსებადი ხატულების გამოყენება.</li>
+          <li xml:lang="nl">Gebruik pictogrammen die compatibel zijn met Adwaita.</li>
+          <li xml:lang="pt-BR">Usar ícones compatíveis com o Adwaita.</li>
+          <li xml:lang="sk">Použiť ikony kompatibilné s Adwaita.</li>
+          <li xml:lang="sl">Uporabi ikone, ki so združljive z Adwaito.</li>
+          <li xml:lang="sv">Använd ikoner som är kompatibla med Adwaita.</li>
+          <li xml:lang="tr">Use icons that are compatible with Adwaita.</li>
+          <li xml:lang="uk">Реалізовано використання піктограм, які сумісні з Adwaita.</li>
+          <li>Use Breeze icons as fallback.</li>
+          <li xml:lang="ar">استخدام أيقونات Breeze كبديل احتياطي.</li>
+          <li xml:lang="be">Выкарыстанне значкоў Breeze як рэзервовых.</li>
+          <li xml:lang="ca">Utilitza les icones Brisa com a alternativa de reserva.</li>
+          <li xml:lang="ca-valencia">Utilitza les icones Brisa com a alternativa de reserva.</li>
+          <li xml:lang="cs">Jako náhradní řešení použity ikony Breeze.</li>
+          <li xml:lang="es">Usar iconos de Brisa como alternativa.</li>
+          <li xml:lang="fi">Käytetään varateemana Breeze-kuvakkeita.</li>
+          <li xml:lang="fr">Utiliser les icônes du thème Breeze comme solution de repli.</li>
+          <li xml:lang="he">להשתמש בסמלים של בריזה כנסיגה.</li>
+          <li xml:lang="it">Utilizza le icone Brezza come soluzione di riserva.</li>
+          <li xml:lang="ka">Breeze-ის ხატულების გამოყენება გადასართავად.</li>
+          <li xml:lang="nl">Breeze pictogrammen als terugval gebruiken.</li>
+          <li xml:lang="pt-BR">Usar os ícones do Breeze como alternativa.</li>
+          <li xml:lang="sk">Použiť ikony Breeze ako záložné.</li>
+          <li xml:lang="sl">Uporabi ikone Breeze kot rezervo.</li>
+          <li xml:lang="sv">Använd Breeze-ikoner som reserv.</li>
+          <li xml:lang="tr">Use Breeze icons as fallback.</li>
+          <li xml:lang="uk">Реалізовано використання резервних піктограм Breeze.</li>
+          <li>Remove updater functionality for Windows.</li>
+          <li xml:lang="ar">إزالة وظيفة المحدث لنظام ويندوز.</li>
+          <li xml:lang="be">Выдаленне функцыянальнасці абнаўлення для Windows.</li>
+          <li xml:lang="ca">Elimina la funcionalitat de l'actualitzador per al Windows.</li>
+          <li xml:lang="ca-valencia">Elimina la funcionalitat de l'actualitzador per a Windows.</li>
+          <li xml:lang="cs">Odstraněna funkce aktualizace pro Windows.</li>
+          <li xml:lang="es">Eliminar la funcionalidad de actualizador para Windows.</li>
+          <li xml:lang="fi">Poistettu Windowsista päivitystoiminnallisuus.</li>
+          <li xml:lang="fr">Supprimer la fonctionnalité de l'agent de mise à jour sous Windows.</li>
+          <li xml:lang="he">הוסרה יכולת המעדכן ב־Windows.</li>
+          <li xml:lang="it">Rimuove la funzionalità di aggiornamento per Windows.</li>
+          <li xml:lang="ka">განახლების პროგრამის წაშლა Windows-ისთვის.</li>
+          <li xml:lang="nl">Functionaliteit voor bijwerken voor Windows verwijderen.</li>
+          <li xml:lang="pt-BR">Remoção da funcionalidade de atualização para Windows.</li>
+          <li xml:lang="sk">Odstrániť funkčnosť aktualizátora pre Windows.</li>
+          <li xml:lang="sl">Odstrani zmožnost posodabljanja za Windows.</li>
+          <li xml:lang="sv">Ta bort uppdateringsfunktionalitet för Windows.</li>
+          <li xml:lang="tr">Remove updater functionality for Windows.</li>
+          <li xml:lang="uk">Вилучено можливості з оновлення для Windows.</li>
+        </ul>
+      </description>
+      <artifacts>
+        <artifact type="binary" platform="x86_64-linux-gnu">
+          <location>https://download.kde.org/stable/crow-translate/3.0.0/crow-translate-release_3.0-356-linux-gcc-x86_64.AppImage</location>
+        </artifact>
+        <artifact type="binary" platform="x86_64-windows-msvc">
+          <location>https://download.kde.org/stable/crow-translate/3.0.0/crow-translate-release_3.0-370-windows-cl-msvc2019-x86_64.exe</location>
+        </artifact>
+        <artifact type="binary" platform="x86_64-windows-msvc">
+          <location>https://download.kde.org/stable/crow-translate/3.0.0/crow-translate-release_3.0-370-windows-cl-msvc2019-x86_64.7z</location>
+        </artifact>
+        <artifact type="source">
+          <location>https://download.kde.org/stable/crow-translate/3.0.0/crow-translate-v3.0.0.tar.gz</location>
+        </artifact>
+      </artifacts>
+    </release>
+    <release version="2.11.1" date="2024-01-04">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Enable new LibreTranslate langs.</li>
+          <li xml:lang="ar">تفعيل لغات LibreTranslate الجديدة.</li>
+          <li xml:lang="be">Уключэнне новых моў LibreTranslate.</li>
+          <li xml:lang="ca">Activa els idiomes nous de LibreTranslate.</li>
+          <li xml:lang="ca-valencia">Activa els idiomes nous de LibreTranslate.</li>
+          <li xml:lang="cs">Povoleny nové jazyky v LibreTranslate.</li>
+          <li xml:lang="es">Activar los nuevos idiomas de LibreTranslate.</li>
+          <li xml:lang="fi">Otettu käyttöön uudet LibreTranslate-kielet.</li>
+          <li xml:lang="fr">Activer les nouvelles langues de LibreTranslate.</li>
+          <li xml:lang="he">הופעלו שפות חדשות ב־LibreTranslate.</li>
+          <li xml:lang="it">Abilita le nuove lingue di LibreTranslate.</li>
+          <li xml:lang="ka">ახალი LibreTranslate-ის ენების ჩართვა.</li>
+          <li xml:lang="nl">Nieuwe LibreTranslate-talen inschakelen.</li>
+          <li xml:lang="pt-BR">Ativação dos novos idiomas do LibreTranslate.</li>
+          <li xml:lang="sk">Povoliť nové jazyky LibreTranslate.</li>
+          <li xml:lang="sl">Omogoči nove jezike LibreTranslate.</li>
+          <li xml:lang="sv">Aktivera nya LibreTranslate språk.</li>
+          <li xml:lang="tr">Enable new LibreTranslate langs.</li>
+          <li xml:lang="uk">Увімкнено нові мови у LibreTranslate.</li>
+          <li>Require Qt5X11Extras on Linux.</li>
+          <li xml:lang="ar">تطلب حزمة Qt5X11Extras على لينكس.</li>
+          <li xml:lang="be">Патрабуецца Qt5X11Extras на Linux.</li>
+          <li xml:lang="ca">Requereix Qt5X11Extras al Linux.</li>
+          <li xml:lang="ca-valencia">Requerix Qt5X11Extras a Linux.</li>
+          <li xml:lang="cs">V systému Linux je vyžadován balíček Qt5X11Extras.</li>
+          <li xml:lang="es">Requerir Qt5X11Extras en Linux.</li>
+          <li xml:lang="fi">Vaaditaan Linuxissa Qt5X11Extras.</li>
+          <li xml:lang="fr">Nécessite la bibliothèque « Qt5X11Extras » sous Linux.</li>
+          <li xml:lang="he">דרישה ל־Qt5X11Extras בלינוקס.</li>
+          <li xml:lang="it">Richiede Qt5X11Extras su Linux.</li>
+          <li xml:lang="ka">Qt5X11Extras-ის მოთხოვნა Linux-ზე.</li>
+          <li xml:lang="nl">Vereis Qt5X11Extras op Linux.</li>
+          <li xml:lang="pt-BR">Requerer o pacote Qt5X11Extras no Linux.</li>
+          <li xml:lang="sk">Vyžadovať Qt5X11Extras na Linuxe.</li>
+          <li xml:lang="sl">Zahteva Qt5X11Extras na Linuxu.</li>
+          <li xml:lang="sv">Kräv Qt5X11Extras på Linux.</li>
+          <li xml:lang="tr">Require Qt5X11Extras on Linux.</li>
+          <li xml:lang="uk">Реалізовано вимогу щодо встановлення Qt5X11Extras у Linux.</li>
+          <li>Add and remove old, non-existed, broken Libre and Lingva instances.</li>
+          <li xml:lang="ar">إضافة وإزالة نسخ Libre و Lingva القديمة وغير الموجودة والمعطلة.</li>
+          <li xml:lang="be">Дадаванне і выдаленне старых, неіснуючых, пашкоджаных асобнікаў Libre і Lingva.</li>
+          <li xml:lang="ca">Afegeix i elimina instàncies antigues, no existents i trencades de Libre i Lingva.</li>
+          <li xml:lang="ca-valencia">Afig i elimina instàncies antigues, no existents i trencades de Libre i Lingva.</li>
+          <li xml:lang="cs">Přidány a odstraněny staré, neexistující a nefunkční instance Libre a Lingva.</li>
+          <li xml:lang="es">Añadir y eliminar las antiguas instancias que no existían ni funcionaban de Libre y Lingva.</li>
+          <li xml:lang="fi">Lisätty ja poistettu vanhoja, olemassa olemattomia, särkyneitä Libre- ja Lingva-ilmentymiä.</li>
+          <li xml:lang="fr">Ajouter et supprimer les instances de Libre et de Lingva, anciennes, supprimées ou endommagées.</li>
+          <li xml:lang="he">הוספה והסרה של עותקים ישנים, לא קיימים או פגומים של Libre ושל Lingva.</li>
+          <li xml:lang="it">Aggiunge e rimuove vecchie istanze di Libre e Lingva inesistenti o non funzionanti.</li>
+          <li xml:lang="ka">დაემატა და წაიშალა ძველი, არარსებული, გაფუჭებული Libre-ის და Lingva-ის გაშვებული ასლები.</li>
+          <li xml:lang="nl">Verwijder oude, niet-bestaande, gebroken Libre en Lingva exemplaren.</li>
+          <li xml:lang="pt-BR">Adicionar e remover instâncias antigas, inexistentes ou corrompidas do LibreOffice e do Lingva.</li>
+          <li xml:lang="sk">Pridať a odstrániť staré, neexistujúce, nefunkčné inštancie Libre a Lingva.</li>
+          <li xml:lang="sl">Doda in odstrani stare, neobstoječe, pokvarjene pojavke Libre in Lingva.</li>
+          <li xml:lang="sv">Lägg till och ta bort gamla, inte längre befintliga, felaktiga instanser av Libre och Lingva.</li>
+          <li xml:lang="tr">Add and remove old, non-existed, broken Libre and Lingva instances.</li>
+          <li xml:lang="uk">Додано нові і вилучено старі, непрацездатні екземпляри Libre і Lingva.</li>
+          <li>Improve accessibility for screen readers.</li>
+          <li xml:lang="ar">تحسين إمكانية الوصول لقارئات الشاشة.</li>
+          <li xml:lang="be">Паляпшэнне адмысловых магчымасцяў для праграм чытання з экрана.</li>
+          <li xml:lang="ca">Millora de l'accessibilitat dels lectors de pantalla.</li>
+          <li xml:lang="ca-valencia">Millora de l'accessibilitat dels lectors de pantalla.</li>
+          <li xml:lang="cs">Vylepšená přístupnost pro čtečky obrazovky.</li>
+          <li xml:lang="es">Se ha mejorado la accesibilidad de los lectores de pantalla.</li>
+          <li xml:lang="fi">Parannettu esteettömyyttä näyttölukijoille.</li>
+          <li xml:lang="fr">Améliorer l'accessibilité pour les lecteurs d'écran.</li>
+          <li xml:lang="he">שיפור נגישות לקוראי מסך</li>
+          <li xml:lang="it">Migliora l'accessibilità per i lettori di schermo.</li>
+          <li xml:lang="ka">გაუმჯობესდა წვდომადობა ეკრანის წამკითხველებისთვის.</li>
+          <li xml:lang="nl">Verbeter toegankelijkheid voor schermlezers.</li>
+          <li xml:lang="pt-BR">Melhoria na acessibilidade para leitores de tela.</li>
+          <li xml:lang="sk">Zlepšiť prístupnosť pre čítačky obrazovky.</li>
+          <li xml:lang="sl">Izboljša dostopnost za bralnike zaslona.</li>
+          <li xml:lang="sv">Förbättra tillgänglighet för skärmläsare.</li>
+          <li xml:lang="tr">Improve accessibility for screen readers.</li>
+          <li xml:lang="uk">Удосконалено доступність для засобів читання з екрана.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.11.0" date="2023-10-14">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Remove spaces in settings paths. Everywhere instead of "Crow Translate" now "crow-translate".</li>
+          <li xml:lang="ar">إزالة المسافات في مسارات الإعدادات. استبدال "Crow Translate" بـ "crow-translate" في كل مكان.</li>
+          <li xml:lang="be">Выдаленне прагалаў у шляхах налад. Усюды замест "Crow Translate" зараз "crow-translate".</li>
+          <li xml:lang="ca">Elimina els espais als camins de configuració. A tot arreu, en lloc de «Crow Translate» ara és «crow-translate».</li>
+          <li xml:lang="ca-valencia">Elimina els espais als camins de configuració. A tot arreu, en lloc de «Crow Translate» ara és «crow-translate».</li>
+          <li xml:lang="cs">Odstraněny mezery v cestách k nastavením. Všude, kde bylo "Crow Translate", je nyní "crow-translate".</li>
+          <li xml:lang="es">Eliminar los espacios en las rutas de los ajustes. En lugar de «Crow Translate» se usa «crow-translate» ahora.</li>
+          <li xml:lang="fi">Poistettu välilyönnit asetuspoluista. ”Crow Translaten” sijaan kaikkialla on nyt ”crow-translate”.</li>
+          <li xml:lang="fr">Supprimer les espaces dans les emplacements des paramètres. Maintenant, remplacer partout « Crow Translate » par « crow-translate ».</li>
+          <li xml:lang="he">הוסרו הרווחים בנתיבי ההגדרות. בכל מקום במקום „Crow Translate” מעכשיו זה „crow-translate”.</li>
+          <li xml:lang="it">Rimuovi gli spazi nei percorsi delle impostazioni. Invece di «Crow Translate» ora c'è «crow-translate».</li>
+          <li xml:lang="ka">წაიშალა ჰარეები პარამეტრების ბილიკში. ყველგან "Crow Translate"-ის მაგიერ ახლა არის "crow-translate".</li>
+          <li xml:lang="nl">Verwijder spaties in paden naar instellingen. Overal in plaats van "Crow Translate" nu "crow-translate".</li>
+          <li xml:lang="pt-BR">Remoção dos espaços nos caminhos das configurações. Em todos os lugares, em vez de "Crow Translate", agora é "crow-translate".</li>
+          <li xml:lang="sk">Odstrániť medzery v cestách nastavení. Všade namiesto "Crow Translate" je teraz "crow-translate".</li>
+          <li xml:lang="sl">Odstrani presledke v poteh nastavitev. Povsod namesto "Crow Translate" je zdaj "crow-translate".</li>
+          <li xml:lang="sv">Ta bort mellanslag i inställningssökvägar. Överallt istället för "Crow Translate" nu "crow-translate".</li>
+          <li xml:lang="tr">Remove spaces in settings paths. Everywhere instead of "Crow Translate" now "crow-translate".</li>
+          <li xml:lang="uk">Вилучено пробіли у шляхах у параметрах. Усюди, замість «Crow Translate» у новій версії маємо «crow-translate».</li>
+          <li>Use lingva.garudalinux.org by default for Lingva engine.</li>
+          <li xml:lang="ar">استخدام lingva.garudalinux.org مبدئيًا لمحرك Lingva.</li>
+          <li xml:lang="be">Прадвызначанае выкарыстанне lingva.garudalinux.org для рухавіка Lingva.</li>
+          <li xml:lang="ca">Usa lingva.garudalinux.org de manera predeterminada per al motor Lingva.</li>
+          <li xml:lang="ca-valencia">Utilitza lingva.garudalinux.org de manera predeterminada per al motor Lingva.</li>
+          <li xml:lang="cs">Jako výchozí zdroj pro modul Lingva je použit web lingva.garudalinux.org.</li>
+          <li xml:lang="es">Usar lingva.garudalinux.org de forma predeterminada para el motor Lingva.</li>
+          <li xml:lang="fi">Käytetään Lingva-moottorioletukseksi lingva.garudalinux.org.</li>
+          <li xml:lang="fr">Utiliser « lingva.garudalinux.org » par défaut pour le moteur de Lingva.</li>
+          <li xml:lang="he">להשתמש ב־lingva.garudalinux.org כברירת מחדל למנוע Lingva.</li>
+          <li xml:lang="it">Utilizza lingva.garudalinux.org per il motore Lingva in modo predefinito</li>
+          <li xml:lang="ka">lingva.garudalinux.org-ის ნაგულისხმევად გამოყენება ძრავისთვის Lingva.</li>
+          <li xml:lang="nl">Standaard lingva.garudalinux.org gebruiken voor Lingva-engine.</li>
+          <li xml:lang="pt-BR">Por padrão, usar lingva.garudalinux.org para o mecanismo Lingva.</li>
+          <li xml:lang="sk">Predvolene použiť lingva.garudalinux.org pre mechanizmus Lingva.</li>
+          <li xml:lang="sl">Privzeto uporabi lingva.garudalinux.org za Lingva mehanizem.</li>
+          <li xml:lang="sv">Använd normalt lingva.garudalinux.org för Lingva-gränssnittet.</li>
+          <li xml:lang="tr">Use lingva.garudalinux.org by default for Lingva engine.</li>
+          <li xml:lang="uk">Типово використано lingva.garudalinux.org для рушія Lingva.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.10.10" date="2023-08-02">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Fix selection translation on Windows.</li>
+          <li xml:lang="ar">إصلاح ترجمة التحديد على ويندوز.</li>
+          <li xml:lang="be">Выпраўленне перакладу абранага на Windows.</li>
+          <li xml:lang="ca">Corregeix la traducció de la selecció al Windows.</li>
+          <li xml:lang="ca-valencia">Corregix la traducció de la selecció a Windows.</li>
+          <li xml:lang="cs">Opraven překlad výběru ve Windows.</li>
+          <li xml:lang="es">Se ha corregido la traducción de la selección en Windows.</li>
+          <li xml:lang="fi">Korjattu valinnan kääntäminen Windowsissa.</li>
+          <li xml:lang="fr">Correction de la traduction de la sélection sous Windows.</li>
+          <li xml:lang="he">תוקן תרגום בחירה ב־Windows.</li>
+          <li xml:lang="it">Corregge la traduzione della selezione su Windows.</li>
+          <li xml:lang="ka">გასწორდა მონიშნულის თარგმნა Windows-ზე.</li>
+          <li xml:lang="nl">Selectie van vertaling op Windows corrigeren.</li>
+          <li xml:lang="pt-BR">Correção da tradução de seleção no Windows.</li>
+          <li xml:lang="sk">Oprava prekladu výberu na Windows.</li>
+          <li xml:lang="sl">Popravljen prevod izbire v sistemu Windows.</li>
+          <li xml:lang="sv">Rätta översättningsval på Windows.</li>
+          <li xml:lang="tr">Fix selection translation on Windows.</li>
+          <li xml:lang="uk">Виправлено вибір перекладів у Windows.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.10.9" date="2023-08-02">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Fix selection translation regression.</li>
+          <li xml:lang="ar">إصلاح تراجع في ترجمة التحديد.</li>
+          <li xml:lang="be">Выпраўленне рэгрэсіі перакладу абранага.</li>
+          <li xml:lang="ca">Corregeix una regressió de la traducció de la selecció.</li>
+          <li xml:lang="ca-valencia">Corregix una regressió de la traducció de la selecció.</li>
+          <li xml:lang="cs">Opravena regrese překladu výběru.</li>
+          <li xml:lang="es">Se ha corregido la regresión de la traducción de la selección.</li>
+          <li xml:lang="fi">Korjattu valinnan kääntämisen regressio.</li>
+          <li xml:lang="fr">Correction de la régression de la traduction sur la sélection.</li>
+          <li xml:lang="he">תוקנה תקלה חוזרת בתרגום בחירה.</li>
+          <li xml:lang="it">Corregge la regressione della traduzione della selezione.</li>
+          <li xml:lang="ka">გასწორდა მონიშნულის თარგმნის რეგრესია.</li>
+          <li xml:lang="nl">Regressie in selectie van vertaling corrigeren.</li>
+          <li xml:lang="pt-BR">Correção da regressão na tradução da seleção.</li>
+          <li xml:lang="sk">Oprava regresie prekladu výberu.</li>
+          <li xml:lang="sl">Popravi regresijo prevajanja izbire.</li>
+          <li xml:lang="sv">Rätta regression översättningsval.</li>
+          <li xml:lang="tr">Fix selection translation regression.</li>
+          <li xml:lang="uk">Виправлено регресію у виборі перекладу.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.10.8" date="2023-08-01">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Fix selection translation on Wayland.</li>
+          <li xml:lang="ar">إصلاح ترجمة التحديد على Wayland.</li>
+          <li xml:lang="be">Выпраўленне перакладу абранага на Wayland.</li>
+          <li xml:lang="ca">Corregeix la traducció de la selecció al Wayland.</li>
+          <li xml:lang="ca-valencia">Corregix la traducció de la selecció a Wayland.</li>
+          <li xml:lang="cs">Opraven překlad výběru ve Waylandu.</li>
+          <li xml:lang="es">Se ha corregido la traducción de la selección en Wayland.</li>
+          <li xml:lang="fi">Korjattu valinnan kääntäminen Waylandissä.</li>
+          <li xml:lang="fr">Correction de la traduction de la sélection sous Wayland.</li>
+          <li xml:lang="he">תוקן תרגום בחירה ב־Wayland.</li>
+          <li xml:lang="it">Corregge la traduzione della selezione su Wayland.</li>
+          <li xml:lang="ka">გასწორდა მონიშნულის თარგმნა Wayland-ზე.</li>
+          <li xml:lang="nl">Selectie van vertaling op Wayland corrigeren.</li>
+          <li xml:lang="pt-BR">Correção da tradução de seleção no Wayland.</li>
+          <li xml:lang="sk">Oprava prekladu výberu na Waylande.</li>
+          <li xml:lang="sl">Popravi prevod izbire na Waylandu.</li>
+          <li xml:lang="sv">Rätta översättningsval på Wayland.</li>
+          <li xml:lang="tr">Fix selection translation on Wayland.</li>
+          <li xml:lang="uk">Виправлено вибір перекладу у Wayland.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.10.7" date="2023-07-13">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Fix settings in portable mode.</li>
+          <li xml:lang="ar">إصلاح الإعدادات في الوضع المحمول.</li>
+          <li xml:lang="be">Выпраўленне налад у партатыўным рэжыме.</li>
+          <li xml:lang="ca">Corregeix la configuració en mode portable.</li>
+          <li xml:lang="ca-valencia">Corregix la configuració en mode portable.</li>
+          <li xml:lang="cs">Opraveno nastavení v přenosném režimu.</li>
+          <li xml:lang="es">Se han corregido los ajustes del modo portable.</li>
+          <li xml:lang="fi">Korjattu asetukset siirrettävässä tilassa.</li>
+          <li xml:lang="fr">Correction des paramètres en mode portable.</li>
+          <li xml:lang="he">תוקנו הגדרות במצב נייד.</li>
+          <li xml:lang="it">Corregge le impostazioni in modalità portatile.</li>
+          <li xml:lang="ka">გასწორდა პარამეტრები გადატანად რეჟიმში.</li>
+          <li xml:lang="nl">Instellingen in draagbare modus corrigeren.</li>
+          <li xml:lang="pt-BR">Correção das configurações no modo portátil.</li>
+          <li xml:lang="sk">Oprava nastavení v prenosnom režime.</li>
+          <li xml:lang="sl">Popravi nastavitve v prenosnem načinu.</li>
+          <li xml:lang="sv">Rätta inställningar i portabelt läge.</li>
+          <li xml:lang="tr">Fix settings in portable mode.</li>
+          <li xml:lang="uk">Виправлено параметри у портативному режимі.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.10.6" date="2023-06-29">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Fix screen capture DPI.</li>
+          <li xml:lang="ar">إصلاح نقاط لكل بوصة (DPI) عند التقاط الشاشة.</li>
+          <li xml:lang="be">Выпраўленне DPI захоплівання экрана.</li>
+          <li xml:lang="ca">Corregeix el PPP de captura de pantalla.</li>
+          <li xml:lang="ca-valencia">Corregix el PPP de captura de pantalla.</li>
+          <li xml:lang="cs">Opraveno DPI při snímání obrazovky.</li>
+          <li xml:lang="es">Se ha corregido la DPI de la captura de pantalla.</li>
+          <li xml:lang="fi">Korjattu ruutukaappauksen DPI.</li>
+          <li xml:lang="fr">Correction de la résolution « DPI » pour la capture d'écran.</li>
+          <li xml:lang="he">תוקנו הנקודות לאינטש של צילום המסך.</li>
+          <li xml:lang="it">Corregge i DPI di acquisizione dello schermo.</li>
+          <li xml:lang="ka">გასწორდა ეკრანის გადაღების DPI.</li>
+          <li xml:lang="nl">Schermafdruk maken op DPI corrigeren.</li>
+          <li xml:lang="pt-BR">Correção do DPI da captura de tela.</li>
+          <li xml:lang="sk">Oprava DPI zachytenia obrazovky.</li>
+          <li xml:lang="sl">Popravi DPI za zajem zaslona.</li>
+          <li xml:lang="sv">Rätta punkter/tum för skärmbildstagning.</li>
+          <li xml:lang="tr">Fix screen capture DPI.</li>
+          <li xml:lang="uk">Виправлено роздільність при захопленні зображення з екрана.</li>
+          <li>Do not apply smoothing to the magnifier's image.</li>
+          <li xml:lang="ar">عدم تطبيق التنعيم على صورة المكبر.</li>
+          <li xml:lang="be">Забарона згладжвання да павелічэння выяў.</li>
+          <li xml:lang="ca">No aplica suavitzat a la imatge de la lupa.</li>
+          <li xml:lang="ca-valencia">No aplica suavitzat a la imatge de la lupa.</li>
+          <li xml:lang="cs">Na obraz zvětšovacího skla se nepoužívá vyhlazování.</li>
+          <li xml:lang="es">No aplicar suavizado a la imagen de la lupa.</li>
+          <li xml:lang="fi">Ei käytetä pehmennystä suurennuslasin kuvaan.</li>
+          <li xml:lang="fr">Ne pas appliquer de lissage à l'image de la loupe.</li>
+          <li xml:lang="he">לא להחיל החלקה על תמונת זכוכית המגדלת.</li>
+          <li xml:lang="it">Non applicare lo smussamento all'immagine della lente di ingrandimento.</li>
+          <li xml:lang="ka">გამადიდებლის გამოსახულებაზე მოგლუვება არ მოხდება.</li>
+          <li xml:lang="nl">Geen gladmaken toepassen op het beeld van het vergrootglas.</li>
+          <li xml:lang="pt-BR">Não aplicar suavização à imagem da lupa.</li>
+          <li xml:lang="sk">Neaplikovať vyhladzovanie na obrázok lupy.</li>
+          <li xml:lang="sl">Ne uporablja glajenja na sliki povečevalnega stekla.</li>
+          <li xml:lang="sv">Tillämpa inte utjämning i förstoringsglasets bild.</li>
+          <li xml:lang="tr">Do not apply smoothing to the magnifier's image.</li>
+          <li xml:lang="uk">Усунено застосування згладжування збільшеного зображення.</li>
+          <li>Read settings from application directory when building in portable mode.</li>
+          <li xml:lang="ar">قراءة الإعدادات من دليل التطبيق عند البناء في الوضع المحمول.</li>
+          <li xml:lang="be">Чытанне налад з каталога праграмы пры збіранні ў партатыўным рэжыме.</li>
+          <li xml:lang="ca">Llegeix la configuració des del directori de l'aplicació quan es construeix en mode portable.</li>
+          <li xml:lang="ca-valencia">Llig la configuració des del directori de l'aplicació quan es construïx en mode portable.</li>
+          <li xml:lang="cs">Při kompilaci v přenosném režimu se načítá nastavení z adresáře aplikace.</li>
+          <li xml:lang="es">Leer las preferencias del directorio de la aplicación cuando se compila en el modo portable.</li>
+          <li xml:lang="fi">Luetaan asetukset sovelluskansiosta koostettaessa siirrettävään tilaan.</li>
+          <li xml:lang="fr">Lire la configuration depuis le dossier de l'application lors de la création en mode portable.</li>
+          <li xml:lang="he">קריאת ההגדרות מתיקיית היישום בעת בנייה במצב נייד.</li>
+          <li xml:lang="it">Legge le impostazioni dalla cartella dell'applicazione durante la compilazione in modalità portatile.</li>
+          <li xml:lang="ka">პარამეტრების წაკითხვა აპლიკაციის საქაღალდიდან გადატანადი რეჟიმისთვის აგებისას.</li>
+          <li xml:lang="nl">Bij het bouwen in draagbare modus worden de instellingen uit de toepassingsmap gelezen.</li>
+          <li xml:lang="pt-BR">Ao compilar em modo portátil, lê as configurações do diretório do aplicativo.</li>
+          <li xml:lang="sk">Čítať nastavenia z priečinka aplikácie pri zostavovaní v prenosnom režime.</li>
+          <li xml:lang="sl">Preberi nastavitve iz imenika aplikacije pri gradnji v prenosnem načinu.</li>
+          <li xml:lang="sv">Läs inställningar från programkatalogen vid bygge i portabelt läge.</li>
+          <li xml:lang="tr">Read settings from application directory when building in portable mode.</li>
+          <li xml:lang="uk">Реалізовано читання параметрів з каталогу програми при збиранні у портативному режимі.</li>
+          <li>Add missing Basque localization.</li>
+          <li xml:lang="ar">إضافة الترجمة الباسكية الناقصة.</li>
+          <li xml:lang="be">Дадаванне адсутнай баскскай лакалізацыі.</li>
+          <li xml:lang="ca">Afegeix la localització basca que manca.</li>
+          <li xml:lang="ca-valencia">Afig la ubicació basca que falta.</li>
+          <li xml:lang="cs">Doplněna chybějící baskická lokalizace.</li>
+          <li xml:lang="es">Se ha añadido la localización del euskera que faltaba.</li>
+          <li xml:lang="fi">Lisätty puuttuva baskin kotoistus.</li>
+          <li xml:lang="fr">Ajouter la localisation manquante en Basque.</li>
+          <li xml:lang="he">נוסף תרגום חסר לבסקית.</li>
+          <li xml:lang="it">Aggiunge la localizzazione basca mancante.</li>
+          <li xml:lang="ka">დაემატა ნაკლული ბასკური ლოკალიზაცია.</li>
+          <li xml:lang="nl">Ontbrekende lokalisatie van Baskisch toegevoegd.</li>
+          <li xml:lang="pt-BR">Adicionada a localização basca que faltava.</li>
+          <li xml:lang="sk">Pridať chýbajúcu baskickú lokalizáciu.</li>
+          <li xml:lang="sl">Dodajte manjkajočo baskovsko lokalizacijo.</li>
+          <li xml:lang="sv">Lägg till saknad landsanpassning för baskiska.</li>
+          <li xml:lang="tr">Add missing Basque localization.</li>
+          <li xml:lang="uk">Додано пропущено локалізацію баскською.</li>
+          <li>Use correct flags for Cantonese, Chinese (Traditional), and Uighur.</li>
+          <li xml:lang="ar">استخدام الأعلام الصحيحة للكانتونية والصينية (التقليدية) والأويغورية.</li>
+          <li xml:lang="be">Выкарыстанне правільных сцягоў для кантонскай, кітайскай (традыцыйнай) і уйгурскай.</li>
+          <li xml:lang="ca">Utilitza les banderes correctes per al cantonès, el xinès (tradicional) i l'uigur.</li>
+          <li xml:lang="ca-valencia">Utilitza les banderes correctes per al cantonés, el xinés (tradicional) i l'uigur.</li>
+          <li xml:lang="cs">Použity správné vlajky pro kantonštinu, čínštinu (tradiční) a ujgurštinu.</li>
+          <li xml:lang="es">Usar las banderas correctas para el cantonés, el chino (tradicional) y el uigur.</li>
+          <li xml:lang="fi">Käytetty oikeita lippuja kantonille, perinteiselle kiinalle ja uiguurille.</li>
+          <li xml:lang="fr">Utiliser les étiquettes correctes pour le Cantonais, le Chinois traditionnel et l'Ouïghour.</li>
+          <li xml:lang="he">נעשה שימוש בדגלונים הנכונים בקנטונית, סינית מסורתית ואויגורית.</li>
+          <li xml:lang="it">Utilizza le bandiere corrette per cantonese, cinese (tradizionale) e uiguro.</li>
+          <li xml:lang="ka">სწორი ალმების გამოყენება კანტონურისთვის, ტრადიციული ჩინურისთვის და უიღურულისთვის.</li>
+          <li xml:lang="nl">Juiste vlaggen voor Cantonees, Chinees (Traditioneel) en Uighur gebruiken.</li>
+          <li xml:lang="pt-BR">Uso das bandeiras corretas para cantonês, chinês (tradicional) e uigur.</li>
+          <li xml:lang="sk">Použiť správne vlajky pre kantónčinu, čínštinu (tradičnú) a ujgurčinu.</li>
+          <li xml:lang="sl">Uporabite pravilne zastave za kantonščino, kitajščino (tradicionalno) in ujgurščino.</li>
+          <li xml:lang="sv">Använd rätt flaggor för kantonesiska, traditionella kinesiska och uiguriska.</li>
+          <li xml:lang="tr">Use correct flags for Cantonese, Chinese (Traditional), and Uighur.</li>
+          <li xml:lang="uk">Використано належні прапорі для кантонської, китайської (традиційної) та уйгурської.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.10.5" date="2023-05-18">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Fix Yandex translation due to API changes.</li>
+          <li xml:lang="ar">إصلاح ترجمة ياندكس بسبب تغييرات في واجهة برمجة التطبيقات.</li>
+          <li xml:lang="be">Выпраўленне перакладу Yandex праз змены API.</li>
+          <li xml:lang="ca">Corregeix la traducció de Yandex a causa de canvis a l'API.</li>
+          <li xml:lang="ca-valencia">Corregix la traducció de Yandex a causa de canvis a l'API.</li>
+          <li xml:lang="cs">Opraven překlad z Yandexu v důsledku změn v API.</li>
+          <li xml:lang="es">Se ha corregido la traducción de Yandex debido a cambios en la API.</li>
+          <li xml:lang="fi">Korjattu Yandex-käännös API-muutosten takia.</li>
+          <li xml:lang="fr">Correction de la traduction avec Yandex en raison des modifications de l'API.</li>
+          <li xml:lang="he">תוקן תרגום Yandex עקב שינויי API.</li>
+          <li xml:lang="it">Corregge la traduzione di Yandex dovuta alle modifiche dell'API.</li>
+          <li xml:lang="ka">გასწორდა Yandex თარგმანი API-ის ცვლილებების გამო.</li>
+          <li xml:lang="nl">Yandex vertaling gerepareerd vanwege wijzigingen aan API.</li>
+          <li xml:lang="pt-BR">Corrigido o problema de tradução do Yandex devido a alterações na API.</li>
+          <li xml:lang="sk">Oprava prekladu Yandex kvôli zmenám API.</li>
+          <li xml:lang="sl">Popravi prevod Yandexa zaradi sprememb API-ja.</li>
+          <li xml:lang="sv">Rätta Yandex översättningar på grund av ändringar av programmeringsgränssnitt.</li>
+          <li xml:lang="tr">Fix Yandex translation due to API changes.</li>
+          <li xml:lang="uk">Виправлено переклад Yandex через зміни у програмному інтерфейсі.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.10.4" date="2023-04-16">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Added OCR actions to desktop file.</li>
+          <li xml:lang="ar">إضافة إجراءات التعرف الضوئي على الحروف (OCR) إلى ملف سطح المكتب.</li>
+          <li xml:lang="be">Дададзены дзеянні OCR у файл desktop.</li>
+          <li xml:lang="ca">S'han afegit accions OCR al fitxer d'escriptori.</li>
+          <li xml:lang="ca-valencia">S'han afegit accions OCR al fitxer d'escriptori.</li>
+          <li xml:lang="cs">Do desktop souboru byly přidány akce OCR.</li>
+          <li xml:lang="es">Se han añadido acciones OCR al archivo de escritorio.</li>
+          <li xml:lang="fi">Lisätty työpöytätiedostoon tekstintunnistustoiminnot.</li>
+          <li xml:lang="fr">Ajout des actions de reconnaissance optique de caractères au fichier de bureau.</li>
+          <li xml:lang="he">נוספו פעולות זיהוי תווים אופטי לקובץ שולחן עבודה.</li>
+          <li xml:lang="it">Aggiunte azioni OCR al file desktop.</li>
+          <li xml:lang="ka">დაემატა OCR-ის ქმედებები სამუშაო მაგიდის ფაილში.</li>
+          <li xml:lang="nl">OCR-acties aan desktopbestand toegevoegd.</li>
+          <li xml:lang="pt-BR">Adicionadas ações de OCR ao arquivo da área de trabalho.</li>
+          <li xml:lang="sk">Pridané akcie OCR do súboru pracovnej plochy.</li>
+          <li xml:lang="sl">Dodana dejanja OCR v datoteko na namizju.</li>
+          <li xml:lang="sv">Lägg till skärmvisningsåtgärder i skrivbordsfil.</li>
+          <li xml:lang="tr">Added OCR actions to desktop file.</li>
+          <li xml:lang="uk">У файл desktop додано дії з розпізнавання тексту.</li>
+          <li>Autoselect source text when showing main window.</li>
+          <li xml:lang="ar">اختيار نص المصدر آليًا عند إظهار النافذة الرئيسة.</li>
+          <li xml:lang="be">Аўтаматычны выбар зыходнага тэксту пры паказе галоўнага акна.</li>
+          <li xml:lang="ca">Selecciona automàticament el text d'origen en mostrar la finestra principal.</li>
+          <li xml:lang="ca-valencia">Tria automàticament el text d'origen en mostrar la finestra principal.</li>
+          <li xml:lang="cs">Při zobrazení hlavního okna se automaticky vybere zdrojový text.</li>
+          <li xml:lang="es">Seleccionar automáticamente el texto de origen al mostrar la ventana principal.</li>
+          <li xml:lang="fi">Valitaan lähdeteksti automaattisesti näytettäessä pääikkuna.</li>
+          <li xml:lang="fr">Sélectionner automatiquement le texte source lors de l'affichage de la fenêtre principale.</li>
+          <li xml:lang="he">בחירת טקסט המקור אוטומטית בעת הצגת החלון הראשי.</li>
+          <li xml:lang="it">Seleziona automaticamente il testo sorgente quando viene visualizzata la finestra principale.</li>
+          <li xml:lang="ka">წყარო ტექსტის ავტომონიშვნა მთავარი ფანჯრის ჩვენებისას.</li>
+          <li xml:lang="nl">Automatisch brontekst selecteren bij het weergeven van het hoofdvenster.</li>
+          <li xml:lang="pt-BR">Selecionar automaticamente o texto de origem ao exibir a janela principal.</li>
+          <li xml:lang="sk">Automaticky vybrať zdrojový text pri zobrazení hlavného okna.</li>
+          <li xml:lang="sl">Samodejna izbira izvornega besedila pri prikazu glavnega okna.</li>
+          <li xml:lang="sv">Välj automatiskt källtext när huvudfönstret visas.</li>
+          <li xml:lang="tr">Autoselect source text when showing main window.</li>
+          <li xml:lang="uk">Реалізовано автоматичне позначення початкового тексту при показі головного вікна.</li>
+          <li>Fixed an issue where the TTS engine would sometimes pronounce the space as "percent twenty".</li>
+          <li xml:lang="ar">إصلاح مشكلة كانت تجعل محرك نطق النصوص ينطق المسافة أحيانًا كـ "بالمئة عشرين".</li>
+          <li xml:lang="be">Выпраўлена праблема, калі рухавік TTS іншы раз вымаўляў прагал як "працэнт дваццаць".</li>
+          <li xml:lang="ca">Corregix un problema en el qual el motor TTS de vegades pronunciava l'espai com a «percent vint».</li>
+          <li xml:lang="ca-valencia">Corregix un problema en el qual el motor TTS de vegades pronunciava l'espai com a «percent vint».</li>
+          <li xml:lang="cs">Opravena chyba, kvůli které modul TTS někdy vyslovoval mezeru jako "dvacet procent".</li>
+          <li xml:lang="es">Se ha corregido un problema que hacía que el motor TTS pronunciara a veces el espacio como «veinte por ciento».</li>
+          <li xml:lang="fi">Korjattu ongelma, jossa puhesynteesimoottori joskus äänsi välilyönnin muodossa ”prosentti kaksikymmentä”.</li>
+          <li xml:lang="fr">Correction d'un problème où le moteur de synthèse vocale prononçait parfois l'espace comme « pourcent vingt ».</li>
+          <li xml:lang="he">תוקנה תקלה שבה מנוע ההקראה לפעמים מקריא רווח בתור „אחוז עשרים” (percent twenty).</li>
+          <li xml:lang="it">Corretto un problema per cui il motore TTS a volte pronunciava lo spazio come «percentuale venti».</li>
+          <li xml:lang="ka">გასწორდა პრობლემა, როცა TTS-ის ძრავა ჰარეს წარმოთქვამდა, როგორც "პროცენტი ოცი".</li>
+          <li xml:lang="nl">Er is een probleem opgelost waarbij de TTS-engine de spatie soms uitsprak als "percent twenty".</li>
+          <li xml:lang="pt-BR">Corrigido um problema em que o mecanismo de TTS às vezes pronunciava o espaço como "vinte por cento".</li>
+          <li xml:lang="sk">Opravený problém, keď mechanizmus TTS niekedy vyslovoval medzeru ako "percent twenty".</li>
+          <li xml:lang="sl">Odpravljena je bila težava, pri kateri je mehanizem za pretvorbo besedila v besedilo včasih izgovoril presledek kot »odstotek dvajset«.</li>
+          <li xml:lang="sv">Rättade ett problem där TTS-gränssnittet ibland uttalade mellanslaget som "procent tjugo".</li>
+          <li xml:lang="tr">Fixed an issue where the TTS engine would sometimes pronounce the space as "percent twenty".</li>
+          <li xml:lang="uk">Виправлено проблему, через яку механізм синтезу мовлення іноді вимовляв пробіл як «відсоток двадцять».</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.10.3" date="2023-01-25">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Add examples support for Lingva.</li>
+          <li xml:lang="ar">إضافة دعم الأمثلة لـ Lingva.</li>
+          <li xml:lang="be">Дададзена падтрымка прыкладаў для Lingva.</li>
+          <li xml:lang="ca">Afegeix exemples de suport del Lingva.</li>
+          <li xml:lang="ca-valencia">Afig exemples de suport del Lingva.</li>
+          <li xml:lang="cs">Přidána podpora příkladů pro Lingvu.</li>
+          <li xml:lang="es">Se han añadido ejemplos del uso de Lingva.</li>
+          <li xml:lang="fi">Lisätty esimerkkituki Lingvaan.</li>
+          <li xml:lang="fr">Ajouter la prise en charge des exemples pour Lingva.</li>
+          <li xml:lang="he">נוספה תמיכה בדוגמאות ל־Lingva.</li>
+          <li xml:lang="it">Aggiunge esempi di supporto per Lingva.</li>
+          <li xml:lang="ka">დაემატა მაგალითების მხარდაჭერა Lingva-ისთვის.</li>
+          <li xml:lang="nl">Voeg ondersteuning voor voorbeelden toe voor Lingva.</li>
+          <li xml:lang="pt-BR">Adicionado suporte a exemplos para Lingva.</li>
+          <li xml:lang="sk">Pridať podporu príkladov pre Lingva.</li>
+          <li xml:lang="sl">Doda podporo za primere za Lingvo.</li>
+          <li xml:lang="sv">Lägg till exempelstöd för Lingva.</li>
+          <li xml:lang="tr">Add examples support for Lingva.</li>
+          <li xml:lang="uk">Додано підтримку прикладів для Lingva.</li>
+          <li>Parse all examples for Google.</li>
+          <li xml:lang="ar">تحليل كافة الأمثلة لجوجل.</li>
+          <li xml:lang="be">Аналіз усіх прыкладаў для Google.</li>
+          <li xml:lang="ca">Analitza tots els exemples de Google.</li>
+          <li xml:lang="ca-valencia">Analitza tots els exemples de Google.</li>
+          <li xml:lang="cs">Analyzovány všechny příklady pro Google.</li>
+          <li xml:lang="es">Analizar todos los ejemplos para Google.</li>
+          <li xml:lang="fi">Jäsennetty kaikki esimerkit Googlelle.</li>
+          <li xml:lang="fr">Analyser tous les exemples pour Google.</li>
+          <li xml:lang="he">פיענוח כל הדוגמאות ל־Google.</li>
+          <li xml:lang="it">Analizza tutti gli esempi per Google.</li>
+          <li xml:lang="ka">ყველა მაგალითის დამუშავება Google-ისთვის.</li>
+          <li xml:lang="nl">Analyseer alle voorbeelden voor Google.</li>
+          <li xml:lang="pt-BR">Analisar todos os exemplos para o Google.</li>
+          <li xml:lang="sk">Analyzovať všetky príklady pre Google.</li>
+          <li xml:lang="sl">Razčleni vse primere za Google.</li>
+          <li xml:lang="sv">Tolka alla exempel för Google.</li>
+          <li xml:lang="tr">Parse all examples for Google.</li>
+          <li xml:lang="uk">Реалізовано обробку усіх прикладів для Google.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.10.2" date="2023-01-18">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Add transliterations and type of speeches for Lingva.</li>
+          <li xml:lang="ar">إضافة النقحرة وأنواع الكلام لـ Lingva.</li>
+          <li xml:lang="be">Дададзены транслітарацыі і тыпы маўлення для Lingva.</li>
+          <li xml:lang="ca">Afegeix transliteracions i tipus de veus per al Lingva.</li>
+          <li xml:lang="ca-valencia">Afig transliteracions i tipus de veus per al Lingva.</li>
+          <li xml:lang="cs">Do Lingvy byly přidány přesné přepisy a typy řečí.</li>
+          <li xml:lang="es">Se han añadido transliteraciones y tipos de voz para Lingva.</li>
+          <li xml:lang="fi">Lisätty litterointeja ja puhetyyppejä Lingvaan.</li>
+          <li xml:lang="fr">Ajouter des translittérations et un type de discours pour Lingva.</li>
+          <li xml:lang="he">נוספו תעתיקים וסוגי שיח ל־Ligva.</li>
+          <li xml:lang="it">Aggiungi traslitterazioni e tipi di discorsi per Lingva.</li>
+          <li xml:lang="ka">დაემატა ტრანსლიტერაციები და წარმოთქმის ტიპები Lingva-ისთვის.</li>
+          <li xml:lang="nl">Voeg transliteraties en spraaktypen toe voor Lingva.</li>
+          <li xml:lang="pt-BR">Adicionadas transliterações e tipos de discurso para Lingva.</li>
+          <li xml:lang="sk">Pridať transliterácie a druhy reči pre Lingva.</li>
+          <li xml:lang="sl">Dodajte transliteracije in vrste govorov za Lingvo.</li>
+          <li xml:lang="sv">Lägg till translitteration och typ av tal för Lingva.</li>
+          <li xml:lang="tr">Add transliterations and type of speeches for Lingva.</li>
+          <li xml:lang="uk">Додано транслітерації і тип мовлення для Lingva.</li>
+          <li>Fix Bing translation.</li>
+          <li xml:lang="ar">إصلاح ترجمة بينج.</li>
+          <li xml:lang="be">Выпраўлены перакладу Bing.</li>
+          <li xml:lang="ca">Corregeix la traducció del Bing.</li>
+          <li xml:lang="ca-valencia">Corregix la traducció del Bing.</li>
+          <li xml:lang="cs">Opraven překlad z Bingu.</li>
+          <li xml:lang="es">Se ha corregido la traducción de Bing.</li>
+          <li xml:lang="fi">Korjattu Bing-käännös.</li>
+          <li xml:lang="fr">Corriger la traduction de Bing.</li>
+          <li xml:lang="he">תרגום Bing תוקן.</li>
+          <li xml:lang="it">Corregge la traduzione di Bing.</li>
+          <li xml:lang="ka">გასწორდა Bng-ით თარგმანი.</li>
+          <li xml:lang="nl">Verbeter de Bing-vertaling.</li>
+          <li xml:lang="pt-BR">Corrigida tradução do Bing.</li>
+          <li xml:lang="sk">Oprava prekladu Bing.</li>
+          <li xml:lang="sl">Popravi prevajanje Binga.</li>
+          <li xml:lang="sv">Rätta Bing översättning.</li>
+          <li xml:lang="tr">Fix Bing translation.</li>
+          <li xml:lang="uk">Виправлено переклади Bing.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.10.1" date="2022-10-24">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Remove Network category from desktop file.</li>
+          <li xml:lang="ar">إزالة فئة الشبكة من ملف سطح المكتب.</li>
+          <li xml:lang="be">З файла desktop выдалена катэгорыя Network.</li>
+          <li xml:lang="ca">Elimina la categoria de xarxa del fitxer d'escriptori.</li>
+          <li xml:lang="ca-valencia">Elimina la categoria de xarxa del fitxer d'escriptori.</li>
+          <li xml:lang="cs">Z desktop souboru byla odstraněna kategorie Síť.</li>
+          <li xml:lang="es">Se ha eliminado la categoría «Network» del archivo de escritorio.</li>
+          <li xml:lang="fi">Poistettu työpöytätiedostosta Verkko-luokka.</li>
+          <li xml:lang="fr">Supprimer la catégorie « Réseau » du fichier de bureau.</li>
+          <li xml:lang="he">הוסרה קטגוריית Network (רשת) מקובץ שולחן העבודה (desktop).</li>
+          <li xml:lang="it">Rimuovi la categoria Rete dal file desktop.</li>
+          <li xml:lang="ka">წაიშალა ქსელის კატეგორია სამუშაო მაგიდის ფაილიდან.</li>
+          <li xml:lang="nl">Verwijder de categorie 'Netwerk' uit het bureaubladbestand.</li>
+          <li xml:lang="pt-BR">Remoção da categoria Rede dos arquivos da área de trabalho.</li>
+          <li xml:lang="sk">Odstrániť kategóriu Sieť zo súboru pracovnej plochy.</li>
+          <li xml:lang="sl">Odstrani kategorijo Omrežje iz datoteke namizja.</li>
+          <li xml:lang="sv">Ta bort nätverkskategorin från skrivbordsfilen.</li>
+          <li xml:lang="tr">Remove Network category from desktop file.</li>
+          <li xml:lang="uk">Вилучено категорію Network з файла desktop.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.10.0" date="2022-09-05">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Add an option to select regional voice for Google.</li>
+          <li xml:lang="ar">إضافة خيار لاختيار صوت إقليمي لجوجل.</li>
+          <li xml:lang="be">Дададзены параметр выбару рэгіянальнага голасу для Google.</li>
+          <li xml:lang="ca">Afegeix una opció per a seleccionar la veu regional de Google.</li>
+          <li xml:lang="ca-valencia">Afig una opció per a seleccionar la veu regional de Google.</li>
+          <li xml:lang="cs">Přidána možnost výběru regionálního hlasu pro Google.</li>
+          <li xml:lang="es">Se ha añadido una opción para seleccionar una voz regional para Google.</li>
+          <li xml:lang="fi">Lisätty valinta alueellisen äänen valitsemiseksi Googlelle.</li>
+          <li xml:lang="fr">Ajouter une option pour sélectionner la voix régionale pour Google.</li>
+          <li xml:lang="he">נוספה אפשרות לבחור קול תואם אזור ב־Google.</li>
+          <li xml:lang="it">Aggiunge un'opzione per selezionare la voce regionale per Google.</li>
+          <li xml:lang="ka">დაემატა არჩევანი, რომ აირჩიოთ რეგიონალური ხმა Google-ისთვის.</li>
+          <li xml:lang="nl">Voeg een optie toe om een ​​regionale spraakweergave voor Google te selecteren.</li>
+          <li xml:lang="pt-BR">Adicionada uma opção para selecionar a voz regional no Google.</li>
+          <li xml:lang="sk">Pridať možnosť výberu regionálneho hlasu pre Google.</li>
+          <li xml:lang="sl">Doda možnost izbire regionalnega glasu za Google.</li>
+          <li xml:lang="sv">Lägg till ett alternativ för att välja regional röst för Google.</li>
+          <li xml:lang="tr">Add an option to select regional voice for Google.</li>
+          <li xml:lang="uk">Додано пункт для вибору регіонального диктора у Google.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.9.12" date="2022-08-12">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Use the correct approach to remove invalid symbols from translations.</li>
+          <li xml:lang="ar">استخدام النهج الصحيح لإزالة الرموز غير الصالحة من الترجمات.</li>
+          <li xml:lang="be">Выкарыстаны правільны падыход да выдалення недапушчальных сімвалаў з перакладаў.</li>
+          <li xml:lang="ca">Utilitza l'aproximació correcta per a eliminar símbols no vàlids de les traduccions.</li>
+          <li xml:lang="ca-valencia">Utilitza l'aproximació correcta per a eliminar símbols no vàlids de les traduccions.</li>
+          <li xml:lang="cs">Použit správný postup k odstranění neplatných symbolů z překladů.</li>
+          <li xml:lang="es">Usar la aproximación correcta para eliminar símbolos no válidos de las traducciones.</li>
+          <li xml:lang="fi">Käytetään oikeaa tapaa poistaa virheelliset symbolit käännöksistä.</li>
+          <li xml:lang="fr">Utiliser la bonne méthode pour la suppression des symboles non valables des traductions.</li>
+          <li xml:lang="he">נעשה שימוש בגישה הנכונה להסרת סמלים שגויים מתרגומים.</li>
+          <li xml:lang="it">Utilizza l'approccio corretto per rimuovere i simboli non validi dalle traduzioni.</li>
+          <li xml:lang="ka">თარგმანიდან არასწორი სიმბოლოების წასაშლელად სწორი მიდგომის გამოყენება.</li>
+          <li xml:lang="nl">Gebruik de juiste methode om ongeldige symbolen uit vertalingen te verwijderen.</li>
+          <li xml:lang="pt-BR">Uso da abordagem correta para remover símbolos inválidos das traduções.</li>
+          <li xml:lang="sk">Použiť správny prístup na odstránenie neplatných symbolov z prekladov.</li>
+          <li xml:lang="sl">Uporabite pravilen pristop za odstranitev neveljavnih simbolov iz prevodov.</li>
+          <li xml:lang="sv">Använd rätt metod för att ta bort ogiltiga symboler från översättningar.</li>
+          <li xml:lang="tr">Use the correct approach to remove invalid symbols from translations.</li>
+          <li xml:lang="uk">Реалізовано використання правильного підходу для вилучення некоректних символів з перекладу</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.9.11" date="2022-08-11">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Fix regression in translation formatting.</li>
+          <li xml:lang="ar">إصلاح تراجع في تنسيق الترجمة.</li>
+          <li xml:lang="be">Выпраўлена рэгрэсія фарматавання перакладу.</li>
+          <li xml:lang="ca">Corregeix una regressió en el format de traducció.</li>
+          <li xml:lang="ca-valencia">Corregix una regressió en el format de traducció.</li>
+          <li xml:lang="cs">Opravena chyba ve formátování překladu.</li>
+          <li xml:lang="es">Se ha corregido una regresión en el formateo de la traducción.</li>
+          <li xml:lang="fi">Korjattu regressio käännösten muotoilussa.</li>
+          <li xml:lang="fr">Correction de la régression dans le formatage des traductions.</li>
+          <li xml:lang="he">תוקנה תקלה חוזרת בעיצוב תרגומים.</li>
+          <li xml:lang="it">Corregge la regressione nella formattazione della traduzione.</li>
+          <li xml:lang="ka">გასწორდა რეგრესია თარგმანის დაფორმატებში.</li>
+          <li xml:lang="nl">Een regressie in de vertaalopmaak is verholpen.</li>
+          <li xml:lang="pt-BR">Corrigido erro na formatação da tradução.</li>
+          <li xml:lang="sk">Oprava regresie vo formátovaní prekladu.</li>
+          <li xml:lang="sl">Popravi regresijo v oblikovanju prevodov.</li>
+          <li xml:lang="sv">Rätta regressioner i översättningsformatering.</li>
+          <li xml:lang="tr">Fix regression in translation formatting.</li>
+          <li xml:lang="uk">Виправлено регресію у форматуванні перекладу.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.9.10" date="2022-08-07">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Fix popup window not displaying text if text contains UTF-8 special characters.</li>
+          <li xml:lang="ar">إصلاح عدم عرض النافذة المنبثقة للنص إذا كان يحتوي على محارف UTF-8 خاصة.</li>
+          <li xml:lang="be">Выпраўлена выплыўное акно, якое не паказвала тэкст, калі тэкст утрымліваў спецыяльныя сімвалы UTF-8.</li>
+          <li xml:lang="ca">Corregeix la finestra emergent que no mostra text si el text conté caràcters UTF-8 especials.</li>
+          <li xml:lang="ca-valencia">Corregix la finestra emergent que no mostra text si el text conté caràcters UTF-8 especials.</li>
+          <li xml:lang="cs">Opravena chyba, kvůli které se ve vyskakovacím okně nezobrazoval text, pokud obsahoval speciální znaky UTF-8.</li>
+          <li xml:lang="es">Se ha corregido la ventana emergente que no mostraba texto cuando dicho texto contenía caracteres especiales UTF-8.</li>
+          <li xml:lang="fi">Korjattu ponnahdusikkuna, joka ei näyttänyt UTF-8-erikoismerkkejä sisältänyttä tekstiä.</li>
+          <li xml:lang="fr">Corriger la fenêtre contextuelle n’affichant pas le texte s'il contient des caractères spéciaux au format « UTF-8 ».</li>
+          <li xml:lang="he">תוקנה בעיה שחלונות צצים לא הציגו טקסט אם הטקסט הכיל תווים מיוחדים ב־UTF-8.</li>
+          <li xml:lang="it">Corregge la finestra a comparsa che non visualizza il testo se contiene caratteri speciali UTF-8.</li>
+          <li xml:lang="ka">გასწორდა შეცდომა, როცა მხტუნარა ფანჯარა ტექსტს არ აჩვენებდა, თუ ტექსტი შეიცავდა UTF-8-ის სპეციალურ სიმბოლოებს.</li>
+          <li xml:lang="nl">Los het probleem op dat het pop-upvenster geen tekst weergeeft als de tekst speciale UTF-8-tekens bevat.</li>
+          <li xml:lang="pt-BR">Corrigido problema em janela pop-up que não exibe texto se o texto contiver caracteres especiais UTF-8.</li>
+          <li xml:lang="sk">Oprava vyskakovacieho okna nezobrazujúceho text, ak text obsahuje špeciálne znaky UTF-8.</li>
+          <li xml:lang="sl">Odpravljena napaka, zaradi katere pojavno okno ne prikazuje besedila, če besedilo vsebuje posebne znake UTF-8.</li>
+          <li xml:lang="sv">Rätta att meddelandefönster inte visar text om texten innehåller UTF-8 specialtecken.</li>
+          <li xml:lang="tr">Fix popup window not displaying text if text contains UTF-8 special characters.</li>
+          <li xml:lang="uk">Виправлено показ тексту у контекстному вікні, якщо у тексті містяться спеціальні символи UTF-8.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.9.9" date="2022-08-06">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Add missing Basque and Finnish localizations.</li>
+          <li xml:lang="ar">إضافة الترجمات الباسكية والفنلندية الناقصة.</li>
+          <li xml:lang="be">Дададзены адсутныя баскская і фінская лакалізацыі.</li>
+          <li xml:lang="ca">Afegeix les localitzacions basques i fineses que falten.</li>
+          <li xml:lang="ca-valencia">Afig les ubicacions basques i fineses que falten.</li>
+          <li xml:lang="cs">Doplněny chybějící lokalizace do baskičtiny a finštiny.</li>
+          <li xml:lang="es">Se han añadido las localizaciones ausentes del euskera y del finés.</li>
+          <li xml:lang="fi">Lisätty puuttuvat baskin ja suomen kotoistukset.</li>
+          <li xml:lang="fr">Ajouter les localisations manquantes pour la Basque et le Finnois.</li>
+          <li xml:lang="he">נוספו התרגומים החסרים לבסקית ולפינית.</li>
+          <li xml:lang="it">Aggiunge le localizzazioni mancanti in basco e finlandese.</li>
+          <li xml:lang="ka">დაემატა ნაკლული ბასკური და ფინური ლოკალიზაციები.</li>
+          <li xml:lang="nl">Voeg de ontbrekende Baskische en Finse lokalisaties toe.</li>
+          <li xml:lang="pt-BR">Adicionadas as localizações basca e finlandesa que faltavam.</li>
+          <li xml:lang="sk">Pridať chýbajúce baskické a fínske lokalizácie.</li>
+          <li xml:lang="sl">Dodaj manjkajoče baskovske in finske lokalizacije.</li>
+          <li xml:lang="sv">Lägg till saknade landsanpassningar för baskiska och finska.</li>
+          <li xml:lang="tr">Add missing Basque and Finnish localizations.</li>
+          <li xml:lang="uk">Додано пропущені баскську та фінську локалізації.</li>
+          <li>Respect URL settings in CLI.</li>
+          <li xml:lang="ar">احترام إعدادات العناوين (URL) في واجهة سطر الأوامر.</li>
+          <li xml:lang="be">Пільнавацца налад URL у CLI.</li>
+          <li xml:lang="ca">Respecta la configuració d'URL al CLI.</li>
+          <li xml:lang="ca-valencia">Respecta la configuració d'URL cap a CLI.</li>
+          <li xml:lang="cs">Nastavení URL adresy v CLI se zohledňuje.</li>
+          <li xml:lang="es">Respetar los ajustes de URL en la línea de órdenes.</li>
+          <li xml:lang="fi">Kunnioitetaan komentorivillä verkko-osoiteasetuksia.</li>
+          <li xml:lang="fr">Respecter la configuration d'URL dans le CLI.</li>
+          <li xml:lang="he">לכבד הגדרות כתובות בשורת הפקודות.</li>
+          <li xml:lang="it">Rispetta le impostazioni URL nella CLI.</li>
+          <li xml:lang="ka">URL-ის პარამეტრების გათვალისწინება CLI-ში.</li>
+          <li xml:lang="nl">Respecteer de URL-instellingen in de CLI.</li>
+          <li xml:lang="pt-BR">Respeitar as configurações de URL na CLI.</li>
+          <li xml:lang="sk">Rešpektovať nastavenia URL v CLI.</li>
+          <li xml:lang="sl">Upošteva nastavitve URL-jev v CLI.</li>
+          <li xml:lang="sv">Respektera webbadressinställningar i kommandoradsgränssnittet.</li>
+          <li xml:lang="tr">Respect URL settings in CLI.</li>
+          <li xml:lang="uk">Реалізовано врахування параметрів адреси у командному інтерфейсі.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.9.8" date="2022-05-16">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Bundle application icons only for Windows.</li>
+          <li xml:lang="ar">حزم أيقونات التطبيق لويندوز فقط.</li>
+          <li xml:lang="be">Набор значкоў праграмы толькі для Windows.</li>
+          <li xml:lang="ca">Empaqueta les icones d'aplicació només per al Windows.</li>
+          <li xml:lang="ca-valencia">Empaqueta les icones d'aplicació només per a Windows.</li>
+          <li xml:lang="cs">Ikony aplikací v balíčku jsou určeny pouze pro Windows.</li>
+          <li xml:lang="es">Empaquetar los iconos de la aplicación solo en Windows.</li>
+          <li xml:lang="fi">Pakataan sovelluskuvakkeet mukaan vain Windowsissa.</li>
+          <li xml:lang="fr">Regrouper les icônes d'application uniquement sous Windows.</li>
+          <li xml:lang="he">איגוד סמלי היישום רק ל־Windows.</li>
+          <li xml:lang="it">Include solo le icone delle applicazioni per Windows.</li>
+          <li xml:lang="ka">აპლიკაციის ხატულების გაყოლება, მხოლოდ, Windows-ზე.</li>
+          <li xml:lang="nl">Bundel alleen toepassingspictogrammen voor Windows.</li>
+          <li xml:lang="pt-BR">Agrupar ícones de aplicativos somente para Windows.</li>
+          <li xml:lang="sk">Zväzkovať ikony aplikácie iba pre Windows.</li>
+          <li xml:lang="sl">Združi ikone aplikacij samo za Windows.</li>
+          <li xml:lang="sv">Skicka bara med programikoner för Windows.</li>
+          <li xml:lang="tr">Bundle application icons only for Windows.</li>
+          <li xml:lang="uk">Реалізовано додавання піктограм програми до пакета лише у Windows.</li>
+          <li>Make XDG dialogs modal on Wayland.</li>
+          <li xml:lang="ar">جعل حوارات XDG مشروطة على Wayland.</li>
+          <li xml:lang="be">Зрабіць дыялогі XDG мадальнымі на Wayland.</li>
+          <li xml:lang="ca">Fa que els diàlegs XDG siguin modals al Wayland.</li>
+          <li xml:lang="ca-valencia">Fa que els diàlegs XDG siguen modals a Wayland.</li>
+          <li xml:lang="cs">Dialogová okna XDG nastaveno jako modální na Waylandu.</li>
+          <li xml:lang="es">Hacer que los diálogos XDG sean modales en Wayland.</li>
+          <li xml:lang="fi">Tehty XDG-kyselyikkunoista Waylandissä modaalisia.</li>
+          <li xml:lang="fr">Rendre modal les dialogues « XDG » sous Wayland.</li>
+          <li xml:lang="he">להפוך את חלוניות ה־XDG לנדיפות ב־Wayland.</li>
+          <li xml:lang="it">Rendere modali le finestre XDG su Wayland.</li>
+          <li xml:lang="ka">XDG დიალოგები გადაკეთდა მოდალებად Wayland-ზე.</li>
+          <li xml:lang="nl">Maak XDG-dialoogvensters modaal op Wayland.</li>
+          <li xml:lang="pt-BR">Tornar os diálogos XDG modais no Wayland.</li>
+          <li xml:lang="sk">Nastaviť dialógy XDG ako modálne na Waylande.</li>
+          <li xml:lang="sl">Naj bodo pogovorna okna XDG modalna na Waylandu.</li>
+          <li xml:lang="sv">Gör XDG dialogrutor modala på Wayland.</li>
+          <li xml:lang="tr">Make XDG dialogs modal on Wayland.</li>
+          <li xml:lang="uk">Вікна XDG у Wayland зроблено модальними.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.9.7" date="2022-05-14">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Autostart support via xdg-desktop-portal.</li>
+          <li xml:lang="ar">دعم التشغيل الآلي عبر xdg-desktop-portal.</li>
+          <li xml:lang="be">Падтрымка аўтазапуску праз xdg-desktop-portal.</li>
+          <li xml:lang="ca">Implementació d'inici automàtic via xdg-desktop-portal.</li>
+          <li xml:lang="ca-valencia">Implementació d'inici automàtic via xdg-desktop-portal.</li>
+          <li xml:lang="cs">Podpora automatického spouštění prostřednictvím xdg-desktop-portal.</li>
+          <li xml:lang="es">Compatibilidad con inicio automático mediante xdg-desktop-portal.</li>
+          <li xml:lang="fi">Automaattikäynnistystuki xdg-desktop-portalilla.</li>
+          <li xml:lang="fr">Prise en charge du démarrage automatique grâce au logiciel « xdg-desktop-portal ».</li>
+          <li xml:lang="he">תמיכה בהפעלה אוטומטית דרך xdg-desktop-portal.</li>
+          <li xml:lang="it">Supporto per l'avvio automatico tramite xdg-desktop-portal.</li>
+          <li xml:lang="ka">ავტოგაშვების მხარდაჭერა xdg-desktop-portal-ით.</li>
+          <li xml:lang="nl">Ondersteuning voor automatisch opstarten via xdg-desktop-portal.</li>
+          <li xml:lang="pt-BR">Suporte para inicialização automática via xdg-desktop-portal.</li>
+          <li xml:lang="sk">Podpora automatického spustenia cez xdg-desktop-portal.</li>
+          <li xml:lang="sl">Podpora za samodejni zagon prek xdg-desktop-portala.</li>
+          <li xml:lang="sv">Stöd för automatisk start via xdg-desktop-portal.</li>
+          <li xml:lang="tr">Autostart support via xdg-desktop-portal.</li>
+          <li xml:lang="uk">Реалізовано підтримку автозапуску за допомогою xdg-desktop-portal.</li>
+          <li>Close settings window after all settings applied.</li>
+          <li xml:lang="ar">إغلاق نافذة الإعدادات بعد تطبيق كافة الإعدادات.</li>
+          <li xml:lang="be">Закрываць акно налад пасля ўжывання ўсіх налад.</li>
+          <li xml:lang="ca">Tanca la finestra de configuració després d'aplicar tots els paràmetres.</li>
+          <li xml:lang="ca-valencia">Tanca la finestra de configuració després d'aplicar tots els paràmetres.</li>
+          <li xml:lang="cs">Po uložení všech nastavení se okno nastavení zavře.</li>
+          <li xml:lang="es">Cerrar la ventana de configuración tras aplicar todos los ajustes.</li>
+          <li xml:lang="fi">Suljetaan asetusikkuna, kun kaikki asetukset on otettu käyttöön.</li>
+          <li xml:lang="fr">Fermer la fenêtre de configuration après l'application de la configuration.</li>
+          <li xml:lang="he">לסגור את חלון ההגדרות לאחר שכל ההגדרות חלו.</li>
+          <li xml:lang="it">Chiude la finestra delle impostazioni dopo aver applicato tutte le impostazioni.</li>
+          <li xml:lang="ka">მორგების ფანჯრის დახურვა ყველა პარამეტრის გადატარების შემდეგ.</li>
+          <li xml:lang="nl">Sluit het instellingenvenster nadat alle instellingen zijn toegepast.</li>
+          <li xml:lang="pt-BR">Fechar a janela de configurações após aplicar todas as configurações.</li>
+          <li xml:lang="sk">Zavrieť okno nastavení po aplikovaní všetkých nastavení.</li>
+          <li xml:lang="sl">Zapre okno z nastavitvami po uporabi vseh nastavitev.</li>
+          <li xml:lang="sv">Stäng inställningsfönster efter alla inställningar har verkställts.</li>
+          <li xml:lang="tr">Close settings window after all settings applied.</li>
+          <li xml:lang="uk">Реалізовано закриття вікна параметрів після того, як усі значення застосовано.</li>
+          <li>Retrieve parent window ID for XDG desktop portal dialogs.</li>
+          <li xml:lang="ar">جلب معرف النافذة الأب لحوارات xdg-desktop-portal.</li>
+          <li xml:lang="be">Атрыманне ID бацькоўскага акна для дыялогаў XDG desktop portal.</li>
+          <li xml:lang="ca">Recupera l'ID de la finestra pare per als diàlegs del portal XDG d'escriptori.</li>
+          <li xml:lang="ca-valencia">Recupera l'ID de la finestra pare per als diàlegs del portal XDG d'escriptori.</li>
+          <li xml:lang="cs">Načtení ID nadřazeného okna pro dialogová okna portálu XDG Desktop.</li>
+          <li xml:lang="es">Obtener el ID de la ventana superior para los diálogos del portal de escritorio de XDG.</li>
+          <li xml:lang="fi">Noudetaan XDG-työpöytäportaali-ikkunoille emoikkunan tunniste.</li>
+          <li xml:lang="fr">Récupérer l'identifiant de la fenêtre parente pour les boîtes de dialogue du portail « XDG » de bureau .</li>
+          <li xml:lang="he">מזהה חלון ההורה מתקבל עבור חלוניות שער שולחן העבודה XDG.</li>
+          <li xml:lang="it">Recupera l'ID della finestra padre per le finestre del portale desktop XDG.</li>
+          <li xml:lang="ka">მშობელი ფანჯრის ID-ის მიღება XDG-ის სამუშაო მაგიდის პორტალის დიალოგებისთვის.</li>
+          <li xml:lang="nl">Haal de ID van het bovenliggende venster op voor XDG-desktopportaldialoogvensters.</li>
+          <li xml:lang="pt-BR">Recuperar o ID da janela principal para diálogos do portal de desktop XDG.</li>
+          <li xml:lang="sk">Získať ID rodičovského okna pre dialógy portálu XDG pracovnej plochy.</li>
+          <li xml:lang="sl">Pridobi ID nadrejenega okna za pogovorna okna namiznega portala XDG.</li>
+          <li xml:lang="sv">Hämta överliggande fönsteridentifikation för dialogrutor i XDG-skrivbordsportal.</li>
+          <li xml:lang="tr">Retrieve parent window ID for XDG desktop portal dialogs.</li>
+          <li xml:lang="uk">Реалізовано отримання ідентифікатора батьківського вікна для вікон порталу стільниці XDG.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.9.6" date="2022-05-12">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Fix icons fallback on GNOME.</li>
+          <li xml:lang="ar">إصلاح البديل الاحتياطي للأيقونات على جينوم.</li>
+          <li xml:lang="be">Выпраўленне рэзервовых значкоў у GNOME.</li>
+          <li xml:lang="ca">Corregeix l'alternativa de reserva de les icones al GNOME.</li>
+          <li xml:lang="ca-valencia">Corregix l'alternativa de reserva de les icones a GNOME.</li>
+          <li xml:lang="cs">Opraveno náhradní zobrazení ikon v prostředí GNOME.</li>
+          <li xml:lang="es">Se han corregido los iconos alternativos en GNOME.</li>
+          <li xml:lang="fi">Korjattu GNOMEn kuvakevarateema.</li>
+          <li xml:lang="fr">Correction de la solution de repli pour les icônes sous GNOME.</li>
+          <li xml:lang="he">תוקנה נסיגת הסמלים ב־GNOME.</li>
+          <li xml:lang="it">Corregge il ripiego delle icone su GNOME.</li>
+          <li xml:lang="ka">გასწორდა ხატულების გადართვა GNOME-ზე.</li>
+          <li xml:lang="nl">Los het probleem op met het terugvallen op pictogrammen in GNOME.</li>
+          <li xml:lang="pt-BR">Corrigidos os ícones de fallback no GNOME.</li>
+          <li xml:lang="sk">Oprava záložných ikon na GNOME.</li>
+          <li xml:lang="sl">Popravljena nadomestna uporaba ikon v okolju GNOME.</li>
+          <li xml:lang="sv">Rätta reservikoner på GNOME</li>
+          <li xml:lang="tr">Fix icons fallback on GNOME.</li>
+          <li xml:lang="uk">Виправлено використання резервних піктограм у GNOME.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.9.5" date="2022-05-11">
+      <description>
+        <p>Changelog:</p>
+        <p xml:lang="ar">سجل التغييرات:</p>
+        <p xml:lang="be">Журнал змен:</p>
+        <p xml:lang="ca">Registre de canvis:</p>
+        <p xml:lang="ca-valencia">Registre de canvis:</p>
+        <p xml:lang="cs">Seznam změn:</p>
+        <p xml:lang="es">Registro de cambios:</p>
+        <p xml:lang="fi">Muutosloki:</p>
+        <p xml:lang="fr">Journal des modifications :</p>
+        <p xml:lang="he">יומן שינויים:</p>
+        <p xml:lang="it">Elenco delle modifiche:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Log van wijzigingen:</p>
+        <p xml:lang="pt-BR">Registro de alterações:</p>
+        <p xml:lang="sk">Zoznam zmien:</p>
+        <p xml:lang="sl">Dnevnik sprememb:</p>
+        <p xml:lang="sv">Ändringshistorik:</p>
+        <p xml:lang="ta">மாற்றங்கள்:</p>
+        <p xml:lang="tr">Değişiklik günlüğü:</p>
+        <p xml:lang="ug">ئۆزگىرىش خاتىرىسى:</p>
+        <p xml:lang="uk">Журнал змін:</p>
+        <ul>
+          <li>Remove "The application is already running" dialog.</li>
+          <li xml:lang="ar">إزالة حوار "التطبيق قيد التشغيل بالفعل".</li>
+          <li xml:lang="be">Выдаліць дыялог "Праграма ўжо запушчана".</li>
+          <li xml:lang="ca">Elimina el diàleg «L'aplicació ja s'està executant».</li>
+          <li xml:lang="ca-valencia">Elimina el diàleg «L'aplicació ja s'està executant».</li>
+          <li xml:lang="cs">Odstraněno dialogové okno "Aplikace již běží".</li>
+          <li xml:lang="es">Se ha eliminado el diálogo «La aplicación ya está en ejecución».</li>
+          <li xml:lang="fi">Korjattu ”Sovellus on jo käynnissä” -kyselyikkuna.</li>
+          <li xml:lang="fr">Supprimer la boîte de dialogue « L'application est déjà en cours d'exécution ».</li>
+          <li xml:lang="he">הוסרה החלונית „היישום כבר פעיל”.</li>
+          <li xml:lang="it">Rimuove la finestra «L'applicazione è già in esecuzione».</li>
+          <li xml:lang="ka">მოცილებულია დიალოგი "აპლიკაცია უკვე გაშვებულია".</li>
+          <li xml:lang="nl">Verwijder het dialoogvenster "De toepassing is al actief".</li>
+          <li xml:lang="pt-BR">Remoção da caixa de diálogo "O aplicativo já está em execução".</li>
+          <li xml:lang="sk">Odstrániť dialóg "Aplikácia je už spustená".</li>
+          <li xml:lang="sl">Odstrani pogovorno okno "Aplikacija se že izvaja".</li>
+          <li xml:lang="sv">Ta bort dialogrutan "Programmet kör redan".</li>
+          <li xml:lang="tr">Remove "The application is already running" dialog.</li>
+          <li xml:lang="uk">Вилучено вікно «Програму вже запущено».</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.9.4" date="2022-05-11"/>
+  </releases>
+</component>

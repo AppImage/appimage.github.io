@@ -1,0 +1,24 @@
+{
+  "name": "pillsnative",
+  "productName": "Pills Native",
+  "version": "3.4.0",
+  "main": "main.js",
+  "author": "Goblin_Thug",
+  "license": "ISC",
+  "description": "Это приложение Electron для забывчивых ребят!",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GoblinThug/pillsnative.git"
+  },
+  "dependencies": {
+    "@pillsnative/alarm-overlay": "file:plugins/alarm-overlay",
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-updater": "^6.8.9",
+    "node-schedule": "^2.1.1"
+  },
+  "allowScripts": {
+    "electron@34.1.1": true,
+    "electron-winstaller@5.4.0": true,
+    "@parcel/watcher@2.5.1": true
+  }
+}

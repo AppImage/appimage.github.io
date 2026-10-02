@@ -10,6 +10,16 @@ on:
   pull_request:
     paths:
       - 'data/**'
+  # Merges by a workflow (auto-merge in publish-pr-screenshot.yml) do not
+  # trigger push runs, so it starts this with the merge commit
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: 'Commit on master whose changed files in data/ to test'
+        required: false
+      files:
+        description: 'Or: names of entries in data/ to re-test, separated by blanks (e.g. to regenerate database/)'
+        required: false
 
 # A new push to a PR makes the previous test run obsolete
 concurrency:
@@ -24,6 +34,11 @@ env:
 
 jobs:
   test:
+    # Pushes (and manual runs) write database/ and commit it: only here. In a
+    # fork, a push to its master would commit "Add automatically parsed data"
+    # to the fork, and a PR from that branch would carry the commit (#3948).
+    # PRs are tested wherever they are opened.
+    if: github.event_name == 'pull_request' || github.repository == 'AppImage/appimage.github.io'
     runs-on: ubuntu-22.04
     timeout-minutes: 20
     permissions:
@@ -56,8 +71,8 @@ jobs:
         # This action handles caching APT packages, and leaves the option for package configuration scripts to be run if needed,
         # saving a boat-load of time, if needed bump the action version.
         with:
-          packages: sudo imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xsel xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl tesseract-ocr tesseract-ocr-eng libfuse2
-          version: 1.2
+          packages: sudo imagemagick libasound2-dev pulseaudio-utils alsa-utils alsa-oss libjack0 desktop-file-utils xmlstarlet xsel xterm xvfb icewm x11-utils x11-apps netpbm xdotool libgl1-mesa-dri libgl1-mesa-dev mesa-utils libosmesa6 libsdl1.2-dev libsdl2-2.0-0 fonts-wqy-microhei libfile-mimeinfo-perl tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim tesseract-ocr-ara tesseract-ocr-rus tesseract-ocr-ell libfuse2 stalonetray
+          version: 1.5
           # Bump me ^ if you have added any new packages
       - name: Cache test dependencies
         uses: actions/cache@v4
@@ -79,6 +94,9 @@ jobs:
           # npm install -g @alexlafroscia/yaml-merge # to merge yaml files
       - name: Main test
         id: main
+        env:
+          DISPATCH_COMMIT: ${{ inputs.commit }}
+          DISPATCH_FILES: ${{ inputs.files }}
         run: |
           touch .test-start # Screenshots newer than this are from this run
           mkdir $HOME/.icewm/
@@ -96,6 +114,15 @@ jobs:
           # Files in data/ added or changed by this PR (or by this push)
           if [ "$IS_PULLREQUEST" = true ] ; then
             FILES=$(git diff --name-only --diff-filter=AMR "origin/${{ github.base_ref }}...HEAD" -- data/)
+          elif [ -n "$DISPATCH_FILES" ] ; then
+            FILES=""
+            for NAME in $DISPATCH_FILES ; do
+              [[ "$NAME" =~ ^[A-Za-z0-9._+-]+$ ]] && [ -f "data/$NAME" ] || { echo "Not an entry in data/: $NAME" ; exit 1 ; }
+              FILES="$FILES data/$NAME"
+            done
+          elif [ -n "$DISPATCH_COMMIT" ] ; then
+            [[ "$DISPATCH_COMMIT" =~ ^[0-9a-f]{7,40}$ ]] || { echo "Not a commit: $DISPATCH_COMMIT" ; exit 1 ; }
+            FILES=$(git diff --name-only --diff-filter=AMR "$DISPATCH_COMMIT~1" "$DISPATCH_COMMIT" -- data/)
           elif [ -n "${{ github.event.before }}" ] && git cat-file -e "${{ github.event.before }}" 2>/dev/null ; then
             FILES=$(git diff --name-only --diff-filter=AMR "${{ github.event.before }}" HEAD -- data/)
           else
@@ -113,6 +140,12 @@ jobs:
             echo "$FILE"
             # The timeout keeps a hanging application from running into the job
             # timeout, which would cancel the job without a report on the PR
+            # Name rules are errors only for files a PR adds (existing entries may have older names)
+            STRICT=false
+            if [ "$IS_PULLREQUEST" = true ] && [ -n "$(git diff --name-only --diff-filter=A "origin/${{ github.base_ref }}...HEAD" -- "$FILE")" ] ; then
+              STRICT=true
+            fi
+            export STRICT
             timeout --kill-after=30 "$WORKER_TIMEOUT" bash -e code/worker.sh "$(readlink -f "$FILE")" 2>&1 | tee -a log.txt
             EXIT_CODE=${PIPESTATUS[0]} # bashism; get the return code of the leftmost element of the pipe
             if [ $EXIT_CODE -eq 124 ] || [ $EXIT_CODE -eq 137 ] ; then
@@ -120,10 +153,22 @@ jobs:
             fi
             if [ $EXIT_CODE -ne 0 ]; then
               echo "worker.sh exited with a non-zero code: $EXIT_CODE"
+              # Re-testing chosen entries: go on with the others
+              if [ -n "$DISPATCH_FILES" ] ; then
+                FAILED="${FAILED:-} $FILE"
+                # Drop what the failed file left in database/ and apps/, so that nothing commits it
+                git checkout -q -- database apps 2>/dev/null || true
+                git clean -fdq -- database apps
+                continue
+              fi
               exit $EXIT_CODE
             fi
           done
           killall Xvfb
+          if [ -n "${FAILED:-}" ] ; then
+            echo "Failed:$FAILED"
+            exit 1
+          fi
       - name: Collect result for the PR comment
         if: always() && github.event_name == 'pull_request'
         run: |
@@ -131,6 +176,10 @@ jobs:
           [ -e .nothing-tested ] && exit 0 # No artifact, no comment
           mkdir -p pr-result
           echo "${{ github.event.pull_request.number }}" > pr-result/pr-number
+          # If the screenshot's text is predominantly Chinese (check-screenshot.sh
+          # OCRs it), record it so publish-pr-screenshot.yml can invite the author
+          # to offer an English default instead of posting the usual report.
+          grep -q 'not in English but in Chinese script' log.txt && echo chinese > pr-result/language.txt || true
           if [ "${{ steps.main.outcome }}" = success ] ; then
             find database -type f -path '*/screenshot.png' -newer .test-start -print | while IFS= read -r screenshot ; do
               appname=$(basename "$(dirname "$screenshot")" | tr -cd 'A-Za-z0-9._-')
@@ -144,9 +193,14 @@ jobs:
             cp failure-screens/*.png pr-result/ 2>/dev/null || true
             bash code/diagnose.sh --excerpt log.txt > pr-result/error.txt
             bash code/diagnose.sh --labels log.txt > pr-result/labels.txt
+            [ -s pr-result/labels.txt ] || echo error-other > pr-result/labels.txt
           fi
           # Also on success, e.g., a helper failing because of a too new glibc
           bash code/diagnose.sh log.txt > pr-result/hints.md
+          # Remarks about the name of the file in data/ and of the AppImage
+          grep -hE "^(ERROR|WARNING): ((File name|AppImage name) '|The names of the .* differ: )" log.txt | sort -u > pr-result/names.txt || true
+          # Notes about the name of the file in data/ (not warnings)
+          grep -h "^NOTE: File name '" log.txt | sort -u > pr-result/notes.txt || true
           # Whether the AppImage needs a compatible C library on the host
           grep -h '^X-AppImage-\(Libc\|Runtime\|Self-Contained\|Glibc-Required\)=' log.txt | sort -u > pr-result/libc.txt || true
           ls -la pr-result/

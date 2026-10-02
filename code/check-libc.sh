@@ -20,8 +20,8 @@
 #   X-AppImage-Glibc-Required=GLIBC_2.xx
 #                             for "host": the newest glibc symbol version
 #                             that any ELF file (or the runtime) references;
-#                             an upper bound, since not every library in the
-#                             AppImage is necessarily loaded
+#                             every ELF file in the AppImage counts, even one
+#                             that is only loaded in rare cases
 #
 # A payload without any ELF files (e.g., only scripts) uses programs of the
 # host and hence counts as "host".
@@ -43,7 +43,7 @@ DYNAMIC=0
 PAYLOAD_VERSIONS=$(mktemp)
 RUNTIME_VERSIONS=$(mktemp)
 while IFS= read -r -d '' F ; do
-  [ "$(head -c 4 "$F" 2>/dev/null)" == $'\x7fELF' ] || continue
+  [ "$(od -An -tx1 -N4 "$F" 2>/dev/null)" == " 7f 45 4c 46" ] || continue # ELF magic
   ELFS=$((ELFS + 1))
   if is_dynamic "$F" ; then
     DYNAMIC=$((DYNAMIC + 1))

@@ -31,6 +31,7 @@ desktop:
     Type: Application
     Categories: Game
     Actions: Main
+    X-AppImage-Version: a7c5b10
   Desktop Action Main:
     Name: Main server
     Exec: eternallands main
@@ -41,17 +42,20 @@ desktop:
     Name: PK server
     Exec: eternallands pk
   AppImageHub:
-    X-AppImage-UpdateInformation: zsync|https://twinmoons.org.uk/appimage/EternalLands-latest-x86_64.AppImage.zsync
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: NOASSERTION
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.27
 
 appdata:
   Type: desktop-application
-  ID: eternallands.desktop
+  ID: com.eternal_lands.elc
   Name:
     C: Eternal Lands
   Summary:
@@ -70,19 +74,21 @@ appdata:
     C: Paul Broadhead
   ProjectLicense: QPL-1.0
   Categories:
-  - Games
-  - Role Playing
-  - MMORPG
-  - Adventure
-  - Fantasy
+  - Game
   Url:
     homepage: http://www.eternal-lands.com/
     bugtracker: https://github.com/raduprv/Eternal-Lands/issues
     help: http://www.eternal-lands.com/forum/index.php?/forum/103-help-and-information
+  Launchable:
+    desktop-id:
+    - com.eternal_lands.elc.desktop
   Screenshots:
   - default: true
     thumbnails: []
     source-image:
       url: http://www.eternal-lands.com/forum/uploads/1218074388/med_gallery_4_16_4336.jpg
       lang: C
+  Releases:
+  - version: 1.9.6.0
+    unix-timestamp: 1639612800
 ---

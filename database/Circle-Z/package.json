@@ -1,0 +1,13 @@
+{
+  "name": "circle-z",
+  "version": "1.14.0",
+  "description": "A chat client for online math courses",
+  "author": "Jim Fowler <fowler@rossprogram.org>",
+  "main": "background.js",
+  "dependencies": {
+    "@vue/cli": "^4.3.1",
+    "datauri": "^3.0.0",
+    "diff-match-patch": "^1.0.5",
+    "image-type": "^4.1.0"
+  }
+}

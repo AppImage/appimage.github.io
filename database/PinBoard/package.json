@@ -1,0 +1,17 @@
+{
+  "name": "pinboard",
+  "version": "1.2.0",
+  "description": "Pinterest Board Downloader, download images, GIFs and videos from any Pinterest board",
+  "main": "src/main/main.js",
+  "author": "PinBoard",
+  "license": "UNLICENSED",
+  "private": true,
+  "identity": "Developer ID Application: Archis Vaze (RY454BNMUZ)",
+  "dependencies": {
+    "axios": "^1.13.5",
+    "electron-store": "^6.0.1",
+    "ffmpeg-static": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "node-machine-id": "^1.1.12"
+  }
+}

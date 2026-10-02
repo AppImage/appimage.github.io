@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>in.org.dawn.wikilynx</id>
+  <metadata_license>MIT</metadata_license>
+  <launchable type="desktop-id">in.org.dawn.wikilynx.desktop</launchable>
+  <name>wikiLYNX</name>
+  <summary>A simple app to play wikipedia speedruns the right way</summary>
+  <description>
+    <p>
+            wikiLYNX is a free and open source app to play Wikipedia speed-runs. 
+            Navigate your way through articles and clear checkpoints to win the game!
+    </p>
+  </description>
+  <provides>
+    <binary>wikilynx</binary>
+ </provides>
+  <url type="homepage">https://projects.dawn.org.in/wikilynx</url>
+  <url type="faq">https://github.com/flamboyantpenguin/wikilynx/wiki/Game-%7C-FAQs</url>
+  <url type="help">https://github.com/flamboyantpenguin/wikilynx/wiki</url>
+  <url type="donation">https://buymeacoffee.com/flamboyantpenguin</url>
+  <url type="contact">https://flamboyantpenguin.in</url>
+  <url type="vcs-browser">https://github.com/flamboyantpenguin/wikilynx</url>
+  <url type="bugtracker">https://github.com/flamboyantpenguin/wikilynx/issues</url>
+  <releases>
+    <release version="1.5.6" date="2025-02-01T12:00:00.000+05:30"/>
+    <release version="1.5.5" date="2025-01-03T18:30:00.000+05:30"/>
+    <release version="1.5.0" date="2024-12-18T16:42:14.702+05:30"/>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://cdn.dawn.org.in/projects/wikilynx/screenshots/Banner_WelcomeDialog_Plasma.png</image>
+      <caption>Welcome Dialog opened in KDE Plasma Desktop</caption>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://cdn.dawn.org.in/projects/wikilynx/screenshots/Banner_GameWindow_Plasma.png</image>
+      <caption>A Game Session in progress</caption>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://cdn.dawn.org.in/projects/wikilynx/screenshots/LevelEditorDialog.png</image>
+      <caption>Level Editor Dialog</caption>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://cdn.dawn.org.in/projects/wikilynx/screenshots/Banner_The_wikiLYNX_Experience.png</image>
+      <caption>Welcome and About Dialog in KDE Plasma Desktop</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.0" />
+  <project_group>DAWN</project_group>
+  <project_license>MIT</project_license>
+  <developer id="dawn.org.in">
+    <name>DAWN Development Team</name>
+    <url>https://dawn.org.in</url>
+  </developer>
+</component>

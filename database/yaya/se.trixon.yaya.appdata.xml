@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>se.trixon.yaya</id>
+    <name>Yaya</name>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>Apache-2.0</project_license>
+    <content_rating type="oars-1.1" />
+    <developer id="se.trixon.patrik">
+        <name>Patrik Karlström</name>
+    </developer>
+    <summary>Yet Another Yahtzee-esque Application</summary>
+    <description>
+        <p>Enjoy a collection of classic family dice games with up to 8 players. If you know your way around games like Yahtzee, Yatzy, Yacht and Crag you will do fine.</p>
+        <p>Ready, Set, Roll!</p>
+    </description>
+    <launchable type="desktop-id">se.trixon.yaya.desktop</launchable>
+    <url type="homepage">https://trixon.se/</url>
+    <url type="bugtracker">https://github.com/trixon/yaya/issues</url>
+    <url type="donation">https://buymeacoffee.com/trixon</url>
+    <provides>
+        <id>se.trixon.yaya.desktop</id>
+    </provides>
+    <keywords>
+        <keyword translate="no">java</keyword>
+        <keyword translate="no">netbeans</keyword>
+    </keywords>
+
+    <branding>
+        <color type="primary" scheme_preference="light">#ff8248</color>
+        <color type="primary" scheme_preference="dark">#A0522D</color>
+    </branding>
+
+    <screenshots>
+        <screenshot type="default">
+            <image>https://trixon.se/files/screenshots/yaya_appstream01.png</image>
+            <caption>Scorecard with new game dialog</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://trixon.se/files/screenshots/yaya_appstream02.png</image>
+            <caption>Help window with rules</caption>
+        </screenshot>
+    </screenshots>
+</component>
