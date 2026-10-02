@@ -44,7 +44,10 @@ GitHub Pages (Jekyll) from this repository.
      collide) and fails rather than guesses when several fit; a URL
      ending with `/` that is no listing is downloaded as it is),
      checks its type, mounts it with a separate runtime (never executes the
-     AppImage's own runtime), runs `appdir-lint.sh`, finds the icon;
+     AppImage's own runtime), runs `appdir-lint.sh` (with a `desktop-file-validate`
+     that only warns about the `Version` key: it is the version of the Desktop Entry
+     specification, but many applications put their own there, `Version=1.5`;
+     `code/relaxed-desktop-file-validate.sh`), finds the icon;
    - `code/check-libc.sh`: does it need a compatible C library on the host?
      (`X-AppImage-Libc=none|bundled|host`, `X-AppImage-Runtime`,
      `X-AppImage-Self-Contained`, `X-AppImage-Glibc-Required=GLIBC_2.xx`, stored
