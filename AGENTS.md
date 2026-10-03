@@ -318,6 +318,15 @@ GitHub Pages (Jekyll) from this repository.
      Of 549 PRs with the label (534 open), most are misdetections or own projects,
      and maintainers have never ruled on the label itself: all 13 labeled PRs
      merged were merged by hand after the tests passed.
+   - `.github/workflows/notify-tauri-diricon.yml` (`workflow_dispatch` only; inputs
+     `limit` (default 100) and `dry_run` (default true), `code/notify-tauri-diricon.sh`):
+     Tauri before 2.11.4 built AppImages without `.DirIcon`
+     (https://github.com/tauri-apps/tauri/pull/15596). It posts one friendly message
+     (marker `<!-- appimagehub-tauri-diricon -->`: use Tauri 2.11.4 or later, build a
+     new release, comment `/retest`) on each open PR that has the `error-missing-file`
+     label, mentions "tauri" in its title, description or comments, and whose last
+     test result says `.DirIcon is missing` (the label alone also covers other missing
+     files). Run the dry run first.
    - `code/diagnose.sh` has hints for `AppRun.wrapped: Permission denied`
      (Tauri/linuxdeploy mode 0770) and for a `.DirIcon` that cannot be read
      (absolute symlink).
