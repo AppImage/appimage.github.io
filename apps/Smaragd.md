@@ -3,13 +3,12 @@ layout: app
 
 permalink: /Smaragd/
 description: "A native desktop authoring tool for writers"
-license: "GPL-3.0"
+license: "GPL-3.0-or-later"
 
 icons:
   - Smaragd/icons/512x512/smaragd.png
-
 screenshots:
-  - Smaragd/screenshot.png
+- https://ljantzen.github.io/smaragd/white-desktop.png
 
 authors:
   - name: "ljantzen"
@@ -31,7 +30,7 @@ desktop:
     Icon: smaragd
     Terminal: false
     Categories: Office
-    X-AppImage-Version: 1.5.0
+    X-AppImage-Version: 1.5.2
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
