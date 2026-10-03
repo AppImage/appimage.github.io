@@ -1,7 +1,7 @@
 {
   "name": "blanc",
   "productName": "Blanc",
-  "version": "1.23.0",
+  "version": "1.26.0",
   "description": "Minimal Electron browser shell: custom chrome UI + built-in ad/tracker blocking, no extension-store dependency.",
   "main": "src/main/main.js",
   "type": "commonjs",
