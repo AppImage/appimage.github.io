@@ -3,13 +3,12 @@ layout: app
 
 permalink: /sidplaywx/
 description: "A GUI player for Commodore 64 SID music files"
-license: "GPL-3.0"
+license: "GPL-3.0-or-later"
 
 icons:
   - sidplaywx/icons/256x256/sidplaywx_icon.png
-
 screenshots:
-  - sidplaywx/screenshot.png
+- https://raw.githubusercontent.com/bytespiller/sidplaywx/refs/heads/assets/screenshots/sidplaywx-debian-dark.png
 
 authors:
   - name: "bytespiller"
@@ -45,16 +44,46 @@ desktop:
     X-AppImage-Payload-License: GPL-3.0
 
 appdata:
-  Type: generic
-  ID: org.bytespiller.sidplaywx
+  Type: desktop-application
+  ID: io.github.bytespiller.sidplaywx
   Name:
     C: sidplaywx
   Summary:
     C: A GUI player for Commodore 64 SID music files
+  Description:
+    C: >-
+      <p>The sidplaywx is a GUI player for Commodore 64 SID chip tunes aiming to provide a feature-rich &amp; intuitive SID
+      tune playback experience on the PC.</p>
+  
+      <p>The current alpha version is fully usable, supporting QoL features like seeking, drag &amp; drop, unicode paths, DPI
+      awareness and much more.</p>
+  
+      <p>The sidplaywx uses libsidplayfp (with ReSIDfp) for ultimate quality in SID emulation, wxWidgets for native GUI on supported
+      platforms, and PortAudio for audio output.</p>
+  ProjectLicense: GPL-3.0-or-later
   Categories:
   - Audio
   - Player
   - GTK
   Url:
     homepage: https://github.com/bytespiller/sidplaywx
+  Launchable:
+    desktop-id:
+    - io.github.bytespiller.sidplaywx.desktop
+  Screenshots:
+  - default: true
+    caption:
+      C: The main window (dark theme on Debian)
+    thumbnails: []
+    source-image:
+      url: https://raw.githubusercontent.com/bytespiller/sidplaywx/refs/heads/assets/screenshots/sidplaywx-debian-dark.png
+      lang: C
+  - caption:
+      C: The main window (light theme on Debian)
+    thumbnails: []
+    source-image:
+      url: https://raw.githubusercontent.com/bytespiller/sidplaywx/refs/heads/assets/screenshots/sidplaywx-debian-light.png
+      lang: C
+  ContentRating:
+    oars-1.1: {}
 ---

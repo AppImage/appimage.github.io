@@ -7,7 +7,6 @@ Terminal=false
 Icon=sidplaywx_icon
 Type=Application
 Categories=AudioVideo;Audio;Player;GTK;
-
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
 # (e.g., with appimagetool -u) so that users can easily update the AppImage
