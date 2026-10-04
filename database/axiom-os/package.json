@@ -1,0 +1,22 @@
+{
+  "name": "axiom-os",
+  "version": "2.0.1",
+  "description": "AXIOM - Private Desktop Environment",
+  "author": {
+    "name": "AXIOM OS",
+    "email": "axiom@axiom.os"
+  },
+  "main": "electron/dist/main.js",
+  "dependencies": {
+    "adm-zip": "^0.5.17",
+    "archiver": "^7.0.1",
+    "better-sqlite3": "^12.9.0",
+    "bip39": "^3.1.0",
+    "framer-motion": "^12.38.0",
+    "nostr-tools": "^2.24.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "ws": "^8.21.1",
+    "zustand": "^5.0.12"
+  }
+}

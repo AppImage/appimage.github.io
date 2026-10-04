@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2025 hstr0100 -->
+<component type="desktop-application">
+    <id>net.brlns.gdownloader</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0</project_license>
+    <name>GDownloader</name>
+    <developer id="net.brlns.gdownloader">
+        <name>Gabriel D @hstr0100</name>
+    </developer>
+    <summary>Graphical interface for yt-dlp, gallery-dl, and spotDL</summary>
+    <summary xml:lang="pt-BR">Interface gráfica para yt-dlp, gallery-dl e spotDL</summary>
+    <description>
+        <p>GDownloader is a user-friendly graphical user interface (GUI) for yt-dlp, gallery-dl and spotDL written in Java.</p>
+        <p xml:lang="pt-BR">GDownloader é uma interface gráfica (GUI) amigável para yt-dlp, gallery-dl e spotDL escrito em Java.</p>
+        <p>Internet access is required to use this application.</p>
+        <p xml:lang="pt-BR">Acesso á internet é requerido para usar esse aplicativo.</p>
+    </description>
+    <content_rating type="oars-1.0" />
+    <launchable type="desktop-id">net.brlns.gdownloader.desktop</launchable>
+    <url type="homepage">https://github.com/hstr0100/GDownloader</url>
+    <url type="bugtracker">https://github.com/hstr0100/GDownloader/issues</url>
+    <url type="donation">https://github.com/sponsors/hstr0100</url>
+    <update_contact>brokenlensllc_AT_gmail.com</update_contact>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/hstr0100/GDownloader/refs/heads/main/screenshot1.png</image>
+            <caption>Desktop Interface</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/hstr0100/GDownloader/refs/heads/main/screenshot2.png</image>
+            <caption>Settings Panel</caption>
+        </screenshot>
+    </screenshots>
+    <releases>
+        <release version="1.7.11" date="2026-09-24" />
+    </releases>
+    <provides>
+        <id>net.brlns.gdownloader.desktop</id>
+    </provides>
+</component>

@@ -1,0 +1,20 @@
+{
+  "name": "scadnano",
+  "version": "0.1.0",
+  "description": "[scadnano](https://scadnano.org)\r (\"scriptable-cadnano\", [source code repository here](https://github.com/UC-Davis-molecular-computing/scadnano))\r is a program for designing synthetic DNA structures such as DNA origami.\r The scadnano project is developed and maintained by the UC Davis Molecular Computing group.\r Note that [cadnano](https://cadnano.org) is a separate project, developed and maintained by\r the [Douglas lab](https://bionano.ucsf.edu/) at UCSF.",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UC-Davis-molecular-computing/scadnano.git"
+  },
+  "author": "David Doty <doty@ucdavis.edu> (https://scadnano.org)",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/UC-Davis-molecular-computing/scadnano/issues"
+  },
+  "homepage": "https://github.com/UC-Davis-molecular-computing/scadnano#readme",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
+  }
+}

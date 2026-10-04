@@ -1,0 +1,33 @@
+{
+  "name": "myshows-scrobbler",
+  "version": "0.0.18",
+  "description": "Universal media scrobbler for MyShows (Plex, Emby, Jellyfin, Kodi)",
+  "homepage": "https://github.com/myshowsme/myshows-scrobbler#readme",
+  "bugs": {
+    "url": "https://github.com/myshowsme/myshows-scrobbler/issues"
+  },
+  "license": "MIT",
+  "author": "MyShows",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myshowsme/myshows-scrobbler.git"
+  },
+  "type": "module",
+  "main": "dist/electron/electron.mjs",
+  "dependencies": {
+    "@fastify/websocket": "11.3.0",
+    "@ffprobe-installer/ffprobe": "2.1.2",
+    "electron-updater": "6.8.9",
+    "fastify": "5.10.0",
+    "guessit-js": "4.0.0",
+    "koffi": "3.1.2"
+  },
+  "optionalDependencies": {
+    "@fastify/static": "10.1.2"
+  },
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=11.0.0"
+  },
+  "packageManager": "pnpm@11.16.0+sha512.b767e9a98fc87aec0f42daefcd0e84941c2cdb45d73c4e1e68860fb2bdfdbe032ab592105479e5e05c237f740c8a5ffdbbb52385797ddc2296745a1bbb883e8d"
+}

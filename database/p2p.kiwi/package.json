@@ -1,0 +1,28 @@
+{
+  "name": "p2p.kiwi",
+  "version": "3.6.1",
+  "description": "p2p.kiwi is a simple and easy-to-use screen sharing tool for Mac, Windows, and Linux.",
+  "homepage": "https://p2p.kiwi",
+  "license": "MIT",
+  "author": {
+    "name": "Marco Kellershoff",
+    "email": "marco@kellershoff.net"
+  },
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@electron-toolkit/preload": "3.0.2",
+    "@electron-toolkit/utils": "4.0.0",
+    "@hpke/core": "^1.9.0",
+    "@noble/curves": "^2.4.0",
+    "@noble/hashes": "^2.4.0",
+    "electron-settings": "4.0.4",
+    "electron-updater": "6.8.9",
+    "sdp-compact": "0.0.11",
+    "ts-mls": "^1.6.4",
+    "typesafe-i18n": "5.27.1"
+  },
+  "overrides": {
+    "vitest": "4.1.11"
+  },
+  "desktopName": "p2p.kiwi"
+}

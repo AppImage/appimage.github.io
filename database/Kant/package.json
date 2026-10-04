@@ -1,0 +1,18 @@
+{
+  "name": "kant-desktop",
+  "version": "0.4.3",
+  "description": "Kant — desktop app for Linux",
+  "license": "AGPL-3.0-only",
+  "author": {
+    "name": "Kant",
+    "email": "dev@kant.app"
+  },
+  "homepage": "https://kant.app",
+  "main": "dist-electron/main.js",
+  "private": true,
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "electron-updater": "6.8.3",
+    "zod": "4.4.3"
+  }
+}

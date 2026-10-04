@@ -1,0 +1,37 @@
+# Posts instructions for adding AppStream metadata (description, links,
+# screenshots of one's own choice) when a maintainer, or the author of the
+# issue or pull request, comments "/appstream". The text is code/appstream-help.md
+# from master. Nothing from a pull request is checked out or run.
+name: AppStream help
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  help:
+    if: >-
+      github.repository == 'AppImage/appimage.github.io' &&
+      startsWith(github.event.comment.body, '/appstream') && (
+        contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association) ||
+        github.event.comment.user.login == github.event.issue.user.login)
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      NUMBER: ${{ github.event.issue.number }}
+      COMMENT_ID: ${{ github.event.comment.id }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          sparse-checkout: code/appstream-help.md
+          sparse-checkout-cone-mode: false
+
+      - name: Post the instructions
+        run: |
+          gh api -X POST "repos/$REPO/issues/comments/$COMMENT_ID/reactions" -f content=eyes >/dev/null || true
+          gh api "repos/$REPO/issues/$NUMBER/comments" -F body=@code/appstream-help.md >/dev/null

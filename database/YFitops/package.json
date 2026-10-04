@@ -1,0 +1,14 @@
+{
+  "name": "Yfitops-windows_",
+  "version": "1.3.0",
+  "description": "YFitops Desktop",
+  "author": "Rexy_130",
+  "homepage": "https://yfitops.duckdns.org",
+  "main": "main.js",
+  "dependencies": {
+    "@xhayper/discord-rpc": "^1.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zustand": "^4.5.2"
+  }
+}

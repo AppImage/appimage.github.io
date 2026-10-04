@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.tobi.omatrack</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Omatrack</name>
+  <developer id="io.github.tobi">
+    <name>Tobi</name>
+  </developer>
+  <summary>Cross-format motorsport telemetry analysis</summary>
+  <description>
+    <p>Omatrack is a native telemetry workstation for drivers and engineers. It normalizes heterogeneous logger formats into one lap model for trace overlays, distance-aligned delta, corner analysis, and synchronized onboard video.</p>
+    <ul>
+      <li>Reads Pi/Cosworth PDS, MoTeC LD, Racelogic VBO, and AiM MP4 telemetry</li>
+      <li>Compares laps with or without usable GPS</li>
+      <li>Keeps source telemetry and video immutable</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github.tobi.omatrack.desktop</launchable>
+  <provides>
+    <binary>omatrack</binary>
+  </provides>
+  <url type="homepage">https://github.com/tobi/omatrack</url>
+  <url type="bugtracker">https://github.com/tobi/omatrack/issues</url>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.9.0" date="2026-09-28">
+      <description>
+        <p>Measured Track Atlas maps show current and reference GPS lines,
+        synchronized cursor markers, and automatic corner detail with
+        reliable sub-metre GPS. Cached maps remain available offline.</p>
+        <p>A compact library sidebar, docked video opening, continuous
+        playback, pit-stop filmstrip cells, and improved reference sync
+        make it easier to explore and compare recorded laps.</p>
+      </description>
+    </release>
+    <release version="1.8.6" date="2026-09-18">
+      <description>
+        <p>Custom trace layouts add exact heights, manual scrolling, shared
+        lanes, and independent styling. Corner editing stays responsive, and
+        closing corner analysis reliably restores the previous viewport.</p>
+      </description>
+    </release>
+    <release version="1.8.5" date="2026-09-08">
+      <description>
+        <p>Windows fullscreen video stays a composited window: no display
+        re-mode or refresh-rate switch, no black flicker, and dialogs can
+        appear above the video.</p>
+      </description>
+    </release>
+    <release version="1.8.4" date="2026-09-08">
+      <description>
+        <p>Gauge discovery is opt-in per video and builds confidence by vote:
+        boxes appear only after independent frames agree, larger gauges win
+        over the glyph boxes nested in them, and boxes never overlap.</p>
+      </description>
+    </release>
+    <release version="1.8.3" date="2026-09-07">
+      <description>
+        <p>Discover, confirm and extract gauges from video with the offline
+        model bundle: proven reader, tiny general detector and the larger AiM
+        detector, all verified and shipped without downloads.</p>
+      </description>
+    </release>
+    <release version="1.8.2" date="2026-09-06">
+      <description>
+        <p>Progressive image-derived telemetry for supported video overlays,
+        resumable telemetry caches, native time traces, optional Hugging Face
+        model download and updates, and fullscreen video opening. Native
+        telemetry remains authoritative and source footage stays local.</p>
+      </description>
+    </release>
+    <release version="1.2.0" date="2026-08-15">
+      <description>
+        <p>In-app updates from GitHub Releases for the Linux AppImage,
+        Windows Velopack installer, and macOS app. Later snoozes the
+        prompt for a week; the header icon stays. Windows installs
+        per-user and asks about file associations on first run.</p>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-08-14">
+      <description>
+        <p>Native .telemetry companions as the only analysis file, primary
+        video as the playback clock with reference catch-up on straights,
+        five fullscreen compose layouts, an iRacing-style live delta bar,
+        and Δt taken at the same 50 Hz lap-progress station as traces and
+        video. Sidebar rows group by day. Corner notes and hover chips use
+        that same station map.</p>
+      </description>
+    </release>
+    <release version="0.9.11" date="2026-08-12">
+      <description>
+        <p>S3 and Google Cloud Storage library sources, streamed onboard video
+        with offline pin and signed-URL recovery, portable recording sidecars
+        and create-only AiM companions, automatic USB discovery, representative
+        lap selection, and non-blocking library I/O.</p>
+      </description>
+    </release>
+    <release version="0.9.10" date="2026-08-10">
+      <description>
+        <p>Session-confidence trace bands, multi-lap brake-point consistency,
+        improved corner focus guides, stabilized dual-video synchronization,
+        click-only video seeking from traces, and a compact fixed-position
+        fullscreen telemetry HUD.</p>
+      </description>
+    </release>
+    <release version="0.9.6" date="2026-08-10">
+      <description>
+        <p>GPU scene-graph trace renderer, in-place corner analysis with a
+        pluggable check system, authenticated WebDAV telemetry sources, Windows
+        flat release zips, and unified telemetry/video file opening with
+        recent-file history.</p>
+      </description>
+    </release>
+    <release version="0.9.0" date="2026-08-09">
+      <description>
+        <p>Cached GPS/speed track-station alignment shared by traces, delta and
+        synchronized video; lazy cached library indexing; pinned upstream Rust
+        telemetry crates; fullscreen telemetry HUD and video/folder metadata
+        workflow; downloadable Linux, macOS and Windows builds.</p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-08-05">
+      <description><p>Initial public development release.</p></description>
+    </release>
+  </releases>
+</component>

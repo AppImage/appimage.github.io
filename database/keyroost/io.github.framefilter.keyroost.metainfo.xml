@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metainfo for the Flatpak/AppImage build.
+     Validate: appstreamcli validate io.github.framefilter.keyroost.metainfo.xml
+     App-id, icon (packaging/icons/), homepage, and license are set; only the
+     optional <screenshots> and the per-cut <release> remain (see notes below). -->
+<component type="desktop-application">
+  <id>io.github.framefilter.keyroost</id>
+
+  <name>keyroost</name>
+  <summary>Program Token2 Molto2 TOTP tokens and manage FIDO2/OATH/OpenPGP/PIV security keys</summary>
+
+  <!-- Dual-licensed project; this is the project (not the metadata) license. -->
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT OR Apache-2.0</project_license>
+
+  <description>
+    <p>
+      keyroost is an independent, dual-licensed (MIT/Apache-2.0) toolchain for
+      programming the Token2 Molto2 / Molto2v2 programmable TOTP hardware token,
+      and for managing common security keys over their standard applets.
+    </p>
+    <p>It speaks to devices over PC/SC (smart-card readers) and USB HID (FIDO), and supports:</p>
+    <ul>
+      <li>Token2 Molto2 / Molto2v2 TOTP slot programming</li>
+      <li>FIDO2 / CTAP credential management and PIN handling</li>
+      <li>OATH (TOTP/HOTP) on Yubico/Trussed-style applets</li>
+      <li>OpenPGP Card v3.4 management</li>
+      <li>PIV (NIST SP 800-73-4) management: keys, certificates, PIN/PUK/management-key</li>
+    </ul>
+    <p>
+      A command-line tool (keyroostctl) and a desktop GUI (keyroost) share the
+      same protocol layers. This package provides the GUI; the CLI is also included.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.framefilter.keyroost.desktop</launchable>
+
+  <categories>
+    <category>Utility</category>
+    <category>Security</category>
+  </categories>
+
+  <url type="homepage">https://framefilter.github.io/keyroost</url>
+  <url type="bugtracker">https://github.com/framefilter/keyroost/issues</url>
+  <url type="vcs-browser">https://github.com/framefilter/keyroost</url>
+
+  <developer id="io.github.framefilter">
+    <name>framefilter</name>
+  </developer>
+
+  <content_rating type="oars-1.1"/>
+
+  <!-- Optional: software centers show screenshots; appstreamcli only WARNS
+       without them. Host a PNG (e.g. under the Pages site) then uncomment and
+       point <image> at it. -->
+  <!--
+  <screenshots>
+    <screenshot type="default">
+      <image>https://framefilter.github.io/keyroost/screenshots/main.png</image>
+      <caption>The keyroost device view</caption>
+    </screenshot>
+  </screenshots>
+  -->
+
+  <!-- The <releases> body is GENERATED at bundle build time from CHANGELOG.md
+       by packaging/flatpak/gen-metainfo-releases.py — do not hand-edit and do
+       not commit entries here. Keeping the committed block empty is the point:
+       the hand-maintained copy of the changelog drifted three releases behind
+       and shipped stale AppStream versions (#80). -->
+  <releases>
+    <release version="0.11.0" date="2026-09-30"/>
+    <release version="0.10.0" date="2026-09-20"/>
+    <release version="0.9.0" date="2026-08-31"/>
+    <release version="0.8.0" date="2026-08-24"/>
+    <release version="0.7.8" date="2026-08-13"/>
+    <release version="0.7.7" date="2026-08-04"/>
+    <release version="0.7.6" date="2026-07-17"/>
+    <release version="0.7.5" date="2026-07-14"/>
+    <release version="0.7.4" date="2026-07-06"/>
+    <release version="0.7.3" date="2026-06-30"/>
+    <release version="0.7.2" date="2026-06-26"/>
+    <release version="0.7.1" date="2026-06-21"/>
+    <release version="0.7.0" date="2026-06-20"/>
+    <release version="0.6.0" date="2026-06-17"/>
+    <release version="0.5.1" date="2026-06-14"/>
+    <release version="0.5.0" date="2026-06-14"/>
+    <release version="0.4.0" date="2026-06-12"/>
+    <release version="0.3.0" date="2026-06-08"/>
+    <release version="0.2.0" date="2026-06-06"/>
+    <release version="0.1.0" date="2026-06-02"/>
+  </releases>
+</component>

@@ -1,0 +1,28 @@
+{
+  "name": "ada-app",
+  "productName": "Ada",
+  "version": "0.1.66",
+  "description": "Ada — agent-first desktop app",
+  "author": "Ada",
+  "main": "electron/main.js",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@fontsource/caveat": "5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/ibm-plex-sans": "^5.2.8",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/kalam": "5.3.0",
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^5.5.0",
+    "electron-updater": "^6.1.0",
+    "katex": "^0.18.7",
+    "kokoro-js": "1.2.1",
+    "monaco-editor": "^0.52.0"
+  }
+}

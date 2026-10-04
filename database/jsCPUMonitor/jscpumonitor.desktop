@@ -1,0 +1,31 @@
+[Desktop Entry]
+Type=Application
+Name=jsCPUMonitor
+GenericName=CPU Monitor
+Comment=Per-core CPU monitor for the Linux desktop
+Comment[de]=CPU-Anzeige je Kern für den Linux-Desktop
+Exec=jsCpuMonitor
+# Icon-NAME, kein Pfad. Die Datei debian/jscpumonitor.desktop trägt hier
+# "${SNAP}/meta/gui/icon.png" — das ist ausserhalb eines Snaps eine leere
+# Variable und damit gar kein Icon. Ein Icon-Name wird dagegen über den
+# hicolor-Theme-Pfad aufgelöst und funktioniert in jedem Paketformat.
+Icon=jscpumonitor
+Terminal=false
+Categories=System;Monitor;
+Keywords=cpu;monitor;performance;cores;frequency;temperature;
+Keywords[de]=CPU;Prozessor;Auslastung;Kerne;Takt;Temperatur;
+NoDisplay=false
+StartupNotify=false
+StartupWMClass=jsCpuMonitor
+X-AppImage-Version=1.15
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34

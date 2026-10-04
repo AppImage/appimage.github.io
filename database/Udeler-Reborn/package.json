@@ -1,0 +1,24 @@
+{
+  "name": "Udeler",
+  "version": "3.3.1",
+  "description": "A cross platform (Windows, Mac, Linux) desktop application for downloading Udemy Courses.",
+  "main": "./out/main/index.js",
+  "author": {
+    "name": "M3rcena",
+    "url": "https://github.com/M3rcena"
+  },
+  "homepage": "https://m3rcena.github.io/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/M3rcena/Udeler-Reborn.git"
+  },
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/utils": "^4.0.0",
+    "better-sqlite3": "^13.0.2",
+    "dompurify": "^3.4.14",
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.8.9",
+    "zod": "^4.4.3"
+  }
+}

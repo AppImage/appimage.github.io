@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 Josef Sejrek / Budbrain Software -->
+<component type="desktop-application">
+  <id>de.budbrain.jsLinuxCleanup</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsLinuxCleanup</name>
+  <summary>Free up disk space and see what is installed</summary>
+  <summary xml:lang="de">Speicherplatz freigeben und sehen, was installiert ist</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <description>
+    <p>
+      Shows what is quietly filling your disk, and what is installed on your
+      machine — including when you last used it.
+    </p>
+    <ul>
+      <li>Finds archived logs, downloaded installation files, crash reports, superseded app versions and caches</li>
+      <li>Rates every entry Safe, Caution or Careful, and says why</li>
+      <li>Lists system packages, Snaps and Flatpaks together, sortable by size, install date and last use</li>
+      <li>Shows what starts automatically when you log in</li>
+      <li>Shows scheduled jobs in plain language and helps you add one</li>
+      <li>Tells you which updates are waiting</li>
+      <li>Refuses anything that would break the system, and explains what would go</li>
+      <li>Deletes only what you ticked, after a confirmation that says it is final</li>
+      <li>44 languages, light and dark theme</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">jslinuxcleanup.desktop</launchable>
+
+  <categories>
+    <!-- System, nicht Development: die Kategorie kam beim Ableiten aus der
+         Schwester-App (jsDevCleaner, ein Entwicklerwerkzeug) mit. Sie steuert,
+         unter welcher Rubrik GNOME Software die App zeigt, und stand im
+         Widerspruch zu Categories=System;Filesystem; in der .desktop-Datei. -->
+    <category>System</category>
+    <category>Utility</category>
+  </categories>
+
+  <!-- Ohne <screenshots> nimmt AppImageHub selbst eines auf — in einem leeren
+       Testcontainer, wo diese App eine LEERE Liste zeigt. Die URLs zeigen auf
+       die Bilder der Website, die mit jedem Release mitgepflegt werden. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Cleanup: categories with size and safety rating</caption>
+      <caption xml:lang="de">Aufräumen: Kategorien mit Größe und Sicherheitsbewertung</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jslinuxcleanup_01-cleanup.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Packages: programs with size, install date and last use</caption>
+      <caption xml:lang="de">Pakete: Programme mit Größe, Installationsdatum und letzter Nutzung</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jslinuxcleanup_02-packages.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>What removed programs left behind</caption>
+      <caption xml:lang="de">Reste entfernter Programme</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jslinuxcleanup_03-leftovers.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Pending updates</caption>
+      <caption xml:lang="de">Offene Aktualisierungen</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jslinuxcleanup_05-updates.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <releases>
+    <release version="1.0.1" date="2026-08-15">
+      <description>
+        <p>Fixes throughout. Single entries inside a category can be picked
+        again, lists keep their position and open folders after a change, and
+        anything that takes a moment now shows a progress dialog instead of a
+        frozen window. Where administrator rights are needed, a lock says so and
+        one click restarts the app with them.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-08-02">
+      <description>
+        <p>First release. Frees up disk space, shows what is installed and when
+        you last used it, what starts automatically, what is scheduled and which
+        updates are waiting.</p>
+      </description>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,24 @@
+{
+  "name": "codex-context-switch",
+  "version": "2.0.1",
+  "description": "A small desktop control for the Codex context window.",
+  "type": "module",
+  "main": "src/main.js",
+  "desktopName": "com.codavidgarcia.codex-context-switch.desktop",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "author": {
+    "name": "David Garcia",
+    "email": "codavidgarcia@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codavidgarcia/codex-context-switch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codavidgarcia/codex-context-switch/issues"
+  },
+  "homepage": "https://github.com/codavidgarcia/codex-context-switch#readme"
+}

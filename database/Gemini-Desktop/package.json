@@ -1,0 +1,42 @@
+{
+  "name": "gemini-desktop",
+  "productName": "Gemini Desktop",
+  "description": "A desktop wrapper for Google Gemini with enhanced features",
+  "author": "Ben Wendell <github@benwendell.com>",
+  "private": true,
+  "version": "0.12.1",
+  "type": "module",
+  "main": "dist-electron/main/main.cjs",
+  "dependencies": {
+    "dbus-next": "^0.10.2",
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.8.9",
+    "framer-motion": "^12.37.0",
+    "marked": "^18.0.5",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "semver": "^7.8.3",
+    "turndown": "^7.2.2",
+    "turndown-plugin-gfm": "^1.0.2"
+  },
+  "optionalDependencies": {
+    "node-llama-cpp": "^3.18.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "src/**/*.{ts,tsx}": "eslint",
+    "tests/**/*.{ts,tsx}": "eslint",
+    "config/**/*.{ts,tsx}": "eslint",
+    "scripts/**/*.{ts,tsx}": "eslint"
+  },
+  "overrides": {
+    "serialize-javascript": "^7.0.3",
+    "tar": "^7.5.7",
+    "dbus-next": {
+      "xml2js": "^0.6.2",
+      "usocket": {
+        "node-gyp": "^12.2.0"
+      }
+    }
+  }
+}

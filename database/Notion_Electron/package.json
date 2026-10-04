@@ -1,0 +1,39 @@
+{
+  "name": "notion-electron",
+  "version": "2.4.1",
+  "main": "out/main/index.js",
+  "type": "module",
+  "desktopName": "notion-electron.desktop",
+  "author": "Artem Nechunaev <artem@nechunaev.com>",
+  "license": "MIT",
+  "description": "Unofficial Notion desktop client made with Electron for Linux",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anechunaev/notion-electron",
+    "owner": "anechunaev",
+    "name": "notion-electron",
+    "project": "notion-electron"
+  },
+  "publish": {
+    "provider": "github",
+    "releaseType": "release"
+  },
+  "dependencies": {
+    "@clebert/node-d-bus": "^1.0.0",
+    "@jimp/core": "^1.6.1",
+    "@jimp/js-png": "^1.6.1",
+    "@jimp/plugin-resize": "^1.6.1",
+    "d-bus-message-protocol": "^1.0.0",
+    "d-bus-type-system": "^1.0.0",
+    "decode-ico": "^0.4.1",
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.8.9",
+    "sharp": "^0.35.3",
+    "sortablejs": "^1.15.7"
+  },
+  "dbus": {
+    "name": "io.github.anechunaev.NotionElectron",
+    "path": "/io/github/anechunaev/NotionElectron",
+    "interface": "io.github.anechunaev.NotionElectron"
+  }
+}

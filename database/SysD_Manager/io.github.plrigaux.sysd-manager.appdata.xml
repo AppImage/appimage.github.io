@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://docs.flathub.org/docs/for-app-authors/metainfo-guidelines/ 
+ https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html
+ -->
+<component type="desktop-application">
+  <id>io.github.plrigaux.sysd-manager</id>
+  <metadata_license>CC0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name comments="metainfo name">SysD Manager</name>
+  <name comments="metainfo name" xml:lang="zh-Hans">SysD 管理器</name>
+  <name comments="metainfo name" xml:lang="uk">SysD Manager</name>
+  <name comments="metainfo name" xml:lang="ru">SysD Менеджер</name>
+  <name comments="metainfo name" xml:lang="pt-BR">Gerenciador SysD</name>
+  <name comments="metainfo name" xml:lang="pt">Gestor SysD</name>
+  <name comments="metainfo name" xml:lang="fr">SysD Manager</name>
+  <name comments="metainfo name" xml:lang="et">SysD haldur</name>
+  <name comments="metainfo name" xml:lang="es">Administrador de SysD</name>
+  <name comments="metainfo name" xml:lang="cs">SysD Manager</name>
+  <summary comments="metainfo summary">A user-friendly application to manage systemd's units</summary>
+  <summary comments="metainfo summary" xml:lang="zh-Hans">一个用于管理 systemd 单元，用户友好的应用程序</summary>
+  <summary comments="metainfo summary" xml:lang="ru">Удобное приложение для управления юнитами systemd</summary>
+  <summary comments="metainfo summary" xml:lang="pt-BR">Um aplicativo amigável para gerenciar unidades systemd</summary>
+  <summary comments="metainfo summary" xml:lang="pt">Uma aplicação amigável para gerir unidades systemd</summary>
+  <summary comments="metainfo summary" xml:lang="nb-NO">En brukervennlig applikasjon for å behandle systemds enheter</summary>
+  <summary comments="metainfo summary" xml:lang="fr">Une application conviviale pour gérer les unités de systemd</summary>
+  <summary comments="metainfo summary" xml:lang="et">Kasutajasõbralik rakendus systemd teenuseüksuste haldamiseks</summary>
+  <summary comments="metainfo summary" xml:lang="es">Una aplicación fácil de usar para administrar unidades systemd</summary>
+  <summary comments="metainfo summary" xml:lang="de">Eine bedienerfreundliche Anwendung um Systemd Units zu verwalten</summary>
+  <summary comments="metainfo summary" xml:lang="cs">Uživatelsky přívětivá aplikace pro správu systemd jednotek</summary>
+  <!--   <icon type="stock">io.github.plrigaux.sysd-manager</icon> -->
+  <description>
+    <p>
+      Manage your Services, Timers, Sockets and other units. You can enable, disable, stop and
+      start them. Also, you can view their config file and peak at their journal logs.
+    </p>
+    <p xml:lang="zh-Hans">管理您的服务、定时器、套接字和其他单元。您可以启用、禁用、停止和启动它们。此外，您还可以查看它们的配置文件并查看它们的日志。</p>
+    <p xml:lang="ru">Управляйте своими сервисами, таймерами, сокетами и другими юнитами. Вы можете включать, отключать, останавливать и запускать их. Также вы можете просматривать их конфигурационные файлы и смотреть журналы.</p>
+    <p xml:lang="pt-BR">Gerencie seus serviços, temporizadores, soquetes e outras unidades. Você pode habilitá-los, desabilitá-los, pará-los e iniciá-los. Além disso, você pode visualizar seus arquivos de configuração e conferir seus registros de diário.</p>
+    <p xml:lang="pt">Gira os seus serviços, temporizadores, soquetes e outras unidades. Pode habilitá-los, desabilitá-los, pará-los e iniciá-los. Além disso, pode visualizar os seus ficheiros de configuração e conferir os seus registos de diário.</p>
+    <p xml:lang="fr">Gérez vos services, temporisateurs, sockets et autres unités. Vous pouvez les activer, les désactiver, les arrêter et les démarrer. Vous pouvez également consulter leur fichier de configuration et leurs journaux.</p>
+    <p xml:lang="et">Halda oma arvuti teenuseid, taimereid, sokleid ja muid systemd üksusi. Sa võid neid sisse lülitada ja kasutusel eemaldada, peatada ja käivitada. Lisaks võid vaadata nende seadistusfaili ning kiigata süsteemipäeviku logidesse.</p>
+    <p xml:lang="es">Administra tus servicios, temporizadores, sockets y otras unidades. Puedes activarlos, desactivarlos, detenerlos e iniciarlos. También puedes ver su archivo de configuración y consultar sus registros.</p>
+    <p xml:lang="de">Verwalten Sie ihre Services, Timers, Sockets und andere Units. Sie können sie einschalten, ausschalten, stoppen und starten. Außerdem können Sie die jeweiligen Konfigurationsdateien und Journal Protokolle ansehen.</p>
+    <p xml:lang="cs">Spravujte služby, časovače, sokety a další jednotky. Je možné je povolovat, zakazovat, zastavovat a spouštět. Také je možné si zobrazovat jejich soubory s nastaveními a záznamy v žurnálu.</p>
+  </description>
+  <branding>
+    <color type="primary" scheme_preference="light">#a1ba87</color>
+    <color type="primary" scheme_preference="dark">#424d38</color>
+  </branding>
+  <categories>
+    <category translate="no">Utility</category>
+    <category translate="no">System</category>
+    <category translate="no">Settings</category>
+    <category translate="no">GTK</category>
+  </categories>
+  <keywords>
+    <keyword translate="no">rust</keyword>
+    <keyword translate="no">Systemd</keyword>
+  </keywords>
+  <requires>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </requires>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">
+        https://raw.githubusercontent.com/plrigaux/sysd-manager/main/screenshots/unit_info.png</image>
+      <caption>Unit Files</caption>
+      <caption xml:lang="zh-Hans">单元文件</caption>
+      <caption xml:lang="ru">Юнит-файлы</caption>
+      <caption xml:lang="pt-BR">Arquivos de unidade</caption>
+      <caption xml:lang="pt">Ficheiros de unidade</caption>
+      <caption xml:lang="nb-NO">enhetsfiler</caption>
+      <caption xml:lang="fr">Fichiers d'unité</caption>
+      <caption xml:lang="et">Üksusefailid</caption>
+      <caption xml:lang="es">Archivo de unidad</caption>
+      <caption xml:lang="cs">Soubory jednotek</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" environment="gnome:dark">
+        https://raw.githubusercontent.com/plrigaux/sysd-manager/main/screenshots/unit_info_dark.png</image>
+      <caption comments="metainfo screenshot caption">Unit Files</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="zh-Hans">单元文件</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="ru">Юнит-файлы</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt-BR">Arquivos de unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt">Ficheiros de unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="nb-NO">enhetsfiler</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="fr">Fichiers d'unité</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="et">Üksusefailid</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="es">Archivo de unidad</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="cs">Soubory jednotek</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" environment="gnome:dark">
+        https://raw.githubusercontent.com/plrigaux/sysd-manager/main/screenshots/dependencies.png</image>
+      <caption comments="metainfo screenshot caption">Unit Dependencies</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="zh-Hans">单元依赖</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="ru">Зависимости юнита</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt-BR">Dependências de Unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt">Dependências de Unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="nb-NO">enhetsavhengigheter</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="fr">Dépendances des unités</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="et">Üksuse sõltuvused</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="es">Dependencias de la unidad</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="cs">Závislosti jednotek</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" environment="gnome:dark">
+        https://raw.githubusercontent.com/plrigaux/sysd-manager/main/screenshots/dependencies_dark.png</image>
+      <caption comments="metainfo screenshot caption">Unit Dependencies</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="zh-Hans">单元依赖</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="ru">Зависимости юнита</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt-BR">Dependências de Unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt">Dependências de Unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="nb-NO">enhetsavhengigheter</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="fr">Dépendances des unités</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="et">Üksuse sõltuvused</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="es">Dependencias de la unidad</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="cs">Závislosti jednotek</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source">
+        https://raw.githubusercontent.com/plrigaux/sysd-manager/main/screenshots/unit_file.png</image>
+      <caption comments="metainfo screenshot caption">Unit File</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="zh-Hans">单元文件</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="ru">Юнит-Файл</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt-BR">Arquivo de unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt">Ficheiro de unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="nb-NO">enhetsfil</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="fr">Fichier de l'unité</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="et">Üksuse fail</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="es">Archivo de unidad</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="cs">Soubor jednotky</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" environment="gnome:dark">
+        https://raw.githubusercontent.com/plrigaux/sysd-manager/main/screenshots/unit_file_dark.png</image>
+      <caption comments="metainfo screenshot caption">Unit File</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="zh-Hans">单元文件</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="ru">Юнит-Файл</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt-BR">Arquivo de unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt">Ficheiro de unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="nb-NO">enhetsfil</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="fr">Fichier de l'unité</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="et">Üksuse fail</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="es">Archivo de unidad</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="cs">Soubor jednotky</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source">
+        https://raw.githubusercontent.com/plrigaux/sysd-manager/main/screenshots/journal.png</image>
+      <caption comments="metainfo screenshot caption">Unit Journal</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="zh-Hans">单元日志</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="ru">Журнал юнита</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt-BR">Diário da Unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt">Diário da Unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="nb-NO">enhetsjournal</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="fr">Journal</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="et">Üksuse päevik</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="es">Diario de la unidad</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="cs">Žurnál jednotky</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" environment="gnome:dark">
+        https://raw.githubusercontent.com/plrigaux/sysd-manager/main/screenshots/journal_dark.png</image>
+      <caption comments="metainfo screenshot caption">Unit Journal</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="zh-Hans">单元日志</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="ru">Журнал юнита</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt-BR">Diário da Unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="pt">Diário da Unidade</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="nb-NO">enhetsjournal</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="fr">Journal</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="et">Üksuse päevik</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="es">Diario de la unidad</caption>
+      <caption comments="metainfo screenshot caption" xml:lang="cs">Žurnál jednotky</caption>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/plrigaux/sysd-manager</url>
+  <url type="bugtracker">https://github.com/plrigaux/sysd-manager/issues</url>
+  <url type="contribute">https://github.com/plrigaux/sysd-manager/pulls</url>
+  <url type="donation">https://github.com/sponsors/plrigaux</url>
+  <url type="vcs-browser">https://github.com/plrigaux/sysd-manager</url>
+  <url type="translate">https://hosted.weblate.org/projects/sysd-manager/</url>
+  <!--
+Open Age Rating Service
+https://hughsie.github.io/oars/index.html
+-->
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="2.22.2" date="2026-09-14">
+      <description translate="no">
+        <p>Changed</p>
+        <ul>
+          <li>Brazilian translation</li>
+          <li>Chineese translation</li>
+          <li>Norwegian translation</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.22.1" date="2026-09-09">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Norwegian translation</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>French translation</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.22.0" date="2026-09-08">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Option to toggle display unit's active state between text or icon</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>[Issue 70]Change sort order of columns "Unit File State" and "Load State"</li>
+          <li>Set default bus selection to "System &amp; User session Bus"</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>Translation integration</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.21.0" date="2026-08-30">
+      <description translate="no">
+        <p>Changed</p>
+        <ul>
+          <li>Better Proxy error handling</li>
+          <li>Remove Proxy preference if you packaging doesn't have access to it</li>
+          <li>Improve boot list fetch by a factor 10</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>[Issue 78] Now display journal events when new events arrives and when originally there were no displayed events</li>
+          <li>Fixed some toast messages</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.20.11" date="2026-08-22">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Mention __p-bo__  in the acknowledgements</li>
+          <li>Translation link</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>[Issue 76] Use the checkbox's label for the Follow option and improve UX</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.20.9" date="2026-08-03">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Mention __p-bo__  in the acknowledgements</li>
+          <li>Translation link</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>CS translation</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.20.8" date="2026-08-01">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Unit Status context menu option wrap word</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>Journal's follow switch has been replaced by a checkbox. This fixes [Issue 48]</li>
+          <li>Unit Info tab changed to Status</li>
+          <li>Find in text improvement</li>
+          <li>CS translation</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>[Issue 71] Application Freeze</li>
+          <li>[Issue 69] Message toast color contrast for better visibility</li>
+          <li>[Issue 67] Journal's follow auto-scroll to new journal entries when Descending is enabled </li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.20.4" date="2026-06-17">
+      <description translate="no">
+        <p>Fixed</p>
+        <ul>
+          <li>PARTIAL FIX Follow does not auto-scroll to new journal entries when Descending is enabled [Issue 67]</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.20.3" date="2026-06-17">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Unit Creation Wizard: Add Standard Output and Error on Service</li>
+          <li>Unit Creation Wizard: Add CPUQuota and MemoryHigh on Service</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.20.2" date="2026-06-13">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Unit Creation Wizard time validators [Issue 44]</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.20.1" date="2026-06-11">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Unit Creation Wizard new options [Issue 44]</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.20.0" date="2026-06-06">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Wizard to create Timer and Service Units [Issue 44]</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.19.6" date="2026-05-20">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Column sizes are preserved between list refresh</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>[Issue 56] Remember the sorting column order</li>
+          <li>[Issue 65] Journal events was always displaying horizontal scrollbar</li>
+          <li>About dialog crash</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.19.4" date="2026-05-13">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>[Issue 62] Add word wrap option for the journal events</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>[Issue 58] Services in currated list - Fix include unit files</li>
+          <li>[Issue 64] Unit File color palette when switching Color Scheme Mode (Light and Dark)</li>
+          <li>[Issue 63] Unit Description and Unit Dependencies when switching Color Scheme Mode (Light and Dark)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.19.3" date="2026-05-12">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>[Issue 59] Keyboard shortcuts Ctrl+W and Esc to close sub-windows, and Ctrl+Q to quit
+            the application</li>
+          <li>[Issue 58] Add Services in currated list (Shift+Ctrl+S)</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>[Issue 49] Put focus on search entry when appearing</li>
+          <li>[Issue 61] Keep font choice when switching between light and dark mode</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.19.2" date="2026-04-24">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Esc key to clear Text Search and Unit Search Entries [Issue 46] and [Issue 49]</li>
+          <li>Unit browser add or remove units when loaded in systemd</li>
+          <li>Translation strings</li>
+          <li>Add Open Find in Text shortcut Shift+Ctrl+F</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>Hide Start, Stop and Restart buttons according to unit active state [Issue 50]</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>Fix Unit File List</li>
+          <li>UX Ellipsize File Link [Issue 51]</li>
+          <li>UX better separation between tab navigator and bellow context [Issue 47]</li>
+          <li>UX Text Search Entry get focus when Text Search Panel Open [Issue 46]</li>
+          <li>UX Make Space ratio between the unit browser and the content to persist in all time
+            [Issue 52] and [Issue 53]</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.18.0" date="2026-04-16">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>The reload unit button</li>
+          <li>New shortcuts in Shortcuts Dialog</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>Fixed the Start, Stop ... Unit sporadic first call lag</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.17.2" date="2026-04-11">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Favorites</li>
+          <li>Signal Watcher Window Bus Column</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>The Bus column title</li>
+          <li>(2.17.2) Start, Stop, Restart User Session Units delay</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.16.0" date="2026-04-02">
+      <description translate="no">
+        <p>Changed</p>
+        <ul>
+          <li>Unit browser right click select the unit</li>
+          <li>Start Unit, Stop Unit, Restart Unit now check the action result (signal)</li>
+          <li>Reload now check the action result (signal)</li>
+          <li>Proxy have a better Hart Beat handling</li>
+          <li>Reload Unit can now goes trough Proxy</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>Start Unit, Stop Unit, Restart Unit Modes are now taken care</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.15.0" date="2026-03-26">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Case insensitive search option</li>
+          <li>For Socket Unit, add the Activated and Connected (if relevant) in the Unit Info panel</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>Add a safe write location for unit files (/lib/systemd/system)</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>Duplicate line in Socket Unit browsing</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.14.6" date="2026-03-15">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Save the show line number context</li>
+          <li>Save find in text context</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>Translation</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.14.5" date="2026-03-13">
+      <description translate="no">
+        <p>Changed</p>
+        <ul>
+          <li>Security: limit the directories where a file can be created or modified</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>Deamon reload with Proxy</li>
+          <li>Create drop-in UX</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.14.4" date="2026-03-11">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Add a UX for overrestrictive filters</li>
+          <li>Add Journal no events info</li>
+          <li>Curated unit lists in unit browser popup menu</li>
+          <li>New Include Unit files option</li>
+          <li>Shortcut for proxy preferences</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>Move reload button to the right</li>
+          <li>Better polkit authentication message</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>Proxy now starts automatically when a privileged operation is triggered (Save,
+            Enable/Disable, Daemon Reload, etc.) [Issue 37]</li>
+          <li>Start proxy at Startup option not working [Issue 37]</li>
+          <li>Stop proxy at Close no longer prompts for password when proxy was never started [Issue
+            37]</li>
+          <li>Start option icon missing [Issue 41]</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.13.3" date="2026-02-22">
+      <description translate="no">
+        <p>Added</p>
+        <ul>
+          <li>Add curated lists switcher</li>
+          <li>Display list of Timers</li>
+          <li>Display list of Sockets</li>
+          <li>Display list of Unit Files</li>
+          <li>Display list of Unit Paths</li>
+          <li>Display list of Unit Automounts</li>
+          <li>Shortcuts on curated lists</li>
+          <li>Shortcut on save file</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>Better unit fetching algorithm</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>
+            Save unit files with privilege elevation on a Flatpack build
+          </li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <developer id="io.github.plrigaux">
+    <name translate="no">Pierre-Luc Rigaux</name>
+  </developer>
+  <launchable type="desktop-id">io.github.plrigaux.sysd-manager.desktop</launchable>
+</component>

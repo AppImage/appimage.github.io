@@ -1,0 +1,50 @@
+# Tauri before 2.11.4 built AppImages without a .DirIcon
+# (https://github.com/tauri-apps/tauri/pull/15596), which fails the test with
+# "FATAL: .DirIcon is missing". This posts a friendly message on the open pull
+# requests that have the error-missing-file label, mention Tauri, and whose last
+# test result says that .DirIcon is missing: update Tauri to 2.11.4 or later,
+# build a new release, comment /retest. Once per pull request (code/notify-tauri-diricon.sh).
+# Manual only (workflow_dispatch); a dry run lists the pull requests first.
+
+name: Notify Tauri .DirIcon
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Maximum number of pull requests to post the message on'
+        type: number
+        default: 100
+      dry_run:
+        description: 'Dry run (only list the pull requests that would get the message; nothing is posted)'
+        type: boolean
+        default: true
+
+jobs:
+  notify:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    concurrency:
+      group: notify-tauri-diricon
+      cancel-in-progress: false
+    permissions:
+      issues: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: code
+
+      - name: Post the message
+        env:
+          LIMIT: ${{ github.event.inputs.limit || '100' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          ARGS=(--limit "$LIMIT")
+          [ "$DRY_RUN" != "false" ] && ARGS+=(--dry-run)
+          bash code/notify-tauri-diricon.sh "${ARGS[@]}"

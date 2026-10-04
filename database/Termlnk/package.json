@@ -1,0 +1,17 @@
+{
+  "name": "@termlnk/termlnk-desktop",
+  "version": "0.4.1",
+  "main": "./dist/main/index.js",
+  "type": "module",
+  "description": "Termlnk Desktop App",
+  "author": "telan <telanflow@gmail.com>",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "dependencies": {
+    "trzsz": "1.1.6",
+    "ssh2": "1.17.0",
+    "node-pty": "1.1.0",
+    "better-sqlite3": "12.11.1",
+    "cpu-features": "0.0.10"
+  },
+  "optionalDependencies": {}
+}

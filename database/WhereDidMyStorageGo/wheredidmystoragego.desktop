@@ -1,0 +1,26 @@
+[Desktop Entry]
+Type=Application
+Name=Where Did My Storage Go?
+GenericName=Disk Usage Analyzer
+Comment=See where your disk space went — as a colourful treemap
+Comment[de]=Sehen, wo der Speicherplatz hin ist — als bunte Treemap
+Exec=WhereDidMyStorageGo %f
+Icon=wheredidmystoragego
+Terminal=false
+Categories=System;Filesystem;Utility;
+Keywords=disk;usage;space;storage;treemap;cleanup;analyzer;
+Keywords[de]=Speicher;Platz;Festplatte;Treemap;aufräumen;Analyse;
+# The app takes a folder as its argument, which is what makes it appear under
+# "Open with" for directories in the file manager.
+MimeType=inode/directory;
+NoDisplay=false
+StartupNotify=true
+StartupWMClass=WhereDidMyStorageGo
+X-AppImage-Version=1.0.7
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

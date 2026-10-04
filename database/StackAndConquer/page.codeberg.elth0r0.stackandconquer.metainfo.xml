@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2021 Thorsten Roth -->
+<component type="desktop-application">
+  <id>page.codeberg.elth0r0.stackandconquer</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>StackAndConquer</name>
+  <name xml:lang="de">StackAndConquer</name>
+  <summary>Challenging tower conquest board game</summary>
+  <summary xml:lang="de">Ein anspruchsvolles Tower Conquest Brettspiel</summary>
+
+  <description>
+    <p>StackAndConquer is a challenging tower conquest board game inspired by Mixtour. Objective is to build a stack of stones with at least five stones and a stone with the players color on top.</p>
+    <p xml:lang="de">StackAndConquer ist ein anspruchsvolles Tower Conquest Brettspiel, das von Mixtour inspiriert ist. Ziel ist es einen Turm mit mindestens 5 Steinen zu bauen, mit einem eigenen Stein an oberster Stelle.</p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://codeberg.org/ElTh0r0/stackandconquer/raw/branch/main/data/screenshot.png</image>
+      <caption>StackAndConquer</caption>
+    </screenshot>
+  </screenshots>
+
+  <launchable type="desktop-id">page.codeberg.elth0r0.stackandconquer.desktop</launchable>
+
+  <url type="homepage">https://codeberg.org/ElTh0r0/stackandconquer</url>
+  <url type="bugtracker">https://codeberg.org/ElTh0r0/stackandconquer/issues</url>
+  <url type="translate">https://translate.codeberg.org/engage/stackandconquer/</url>
+
+  <developer id="page.codeberg.elth0r0">
+    <name>Thorsten Roth</name>
+  </developer>
+  <update_contact>elthoro@gmx.de</update_contact>
+
+  <provides>
+    <binary>stackandconquer</binary>
+  </provides>
+
+  <content_rating type="oars-1.0" />
+
+  <languages>
+    <lang percentage="100">de</lang>
+    <lang percentage="100">en</lang>
+    <lang percentage="77">it</lang>
+    <lang percentage="30">ja_JP</lang>
+    <lang percentage="100">nl</lang>
+    <lang percentage="30">pl</lang>
+    <lang percentage="100">ru</lang>
+  </languages>
+  
+  <releases>
+    <release version="0.12.0" date="2026-09-02">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Bundle light and dark icons</li>
+          <li>Fix language selection</li>
+          <li>Drop support for Qt 5</li>
+          <li>Move project to Codeberg</li>
+          <li>CI fixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.11.1" date="2025-06-07">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Add Russian translation - thanks to aaly11</li>
+          <li>CI fixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.11.0" date="2024-11-10">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Extend CPU interface</li>
+          <li>Add Minimax and MonteCarlo CPU - thanks to maksverver</li>
+          <li>Drop support for ReactOS (>= Qt 5.12 required now)</li>
+          <li>Update Dutch translation - thanks to maksverver</li>
+          <li>Integrate into Transifex for translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.10.1" date="2024-05-20">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Add support for dark scheme on Windows with Qt 6.5</li>
+          <li>Add Japanese and Polish rules</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.10.0" date="2022-05-01">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Add board settings dialog</li>
+          <li>Updated Italian translation - thanks to davi92!</li>
+          <li>Add txt to json board file converter</li>
+          <li>Fix for loading user CPU scripts</li>
+          <li>ESLint, Prettier JS code</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.0" date="2021-06-27">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Improve CPU opponent</li>
+          <li>Dynamic scale change</li>
+          <li>Icon for dark background</li>
+          <li>Theoretic support for more than 2 players</li>
+          <li>Theoretic support for none rectangular boards</li>
+          <li>Check for legal moves</li>
+          <li>Implement direction change</li>
+          <li>Save game fixes</li>
+          <li>Configurable stone color</li>
+          <li>Rewrite of board handling</li>
+          <li>Update Dutch translation - thanks to Elbert</li>
+          <li>Packaging changes</li>
+          <li>Support for Qt 6</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.8.2" date="2020-03-27">
+      <description>
+        <p>Added Italian translation - thanks to davi92!</p>
+      </description>
+    </release>
+    <release version="0.8.1" date="2018-03-11">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Added Dutch translation - thanks to Vistaus!</li>
+          <li>Improved CPU opponent</li>
+          <li>Added AppImage</li>
+          <li>Added macOS build (untested)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.8.0" date="2017-11-08">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Added rules</li>
+          <li>Load/save game</li>
+          <li>Fixed cmd argument handling</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.7.0" date="2017-09-19">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Improved CPU</li>
+          <li>Added Appyeyor build file</li>
+          <li>Bug fixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.6.0" date="2017-04-17">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Added JS engine for CPU scripts and removed plugin interface</li>
+          <li>Minor GUI changes and graphic fixes</li>
+          <li>Added fall-back menu icons</li>
+          <li>Change GUI language without restarting the game</li>
+          <li>Moved project from Launchpad to GitHub</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.5.0" date="2016-11-13">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Added CPU plugin interface</li>
+          <li>Highlight moves</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.4.0" date="2016-05-29">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Check for possible moves</li>
+          <li>Check if previous move is reverted</li>
+          <li>Pretty debug output</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.0" date="2016-04-16">
+      <description>
+        <p>Main changes:</p>
+        <ul>
+          <li>Settings dialog</li>
+          <li>Added German translation</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.0" date="2016-04-08">
+      <description>
+        <p>Improved graphics.</p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2016-04-07">
+      <description>
+        <p>Initial commit. Main game logic implemented.</p>
+      </description>
+    </release>
+  </releases>
+</component>

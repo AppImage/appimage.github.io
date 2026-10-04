@@ -1,0 +1,22 @@
+{
+  "name": "dungeontable",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "main.js",
+  "author": "Soubi <soubi@dungeontable.com>",
+  "description": "A simple, intuitive Virtual Table Top for local tabletop RPG sessions.",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "dependencies": {
+    "@turf/turf": "^7.2.0",
+    "electron-log": "^5.4.3",
+    "file-saver": "^2.0.5",
+    "get-port": "^7.1.0",
+    "jszip": "^3.10.1",
+    "lodash.debounce": "^4.0.8",
+    "path-browserify": "^1.0.1",
+    "vue": "^3.5.22"
+  }
+}

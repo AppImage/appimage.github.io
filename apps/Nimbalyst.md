@@ -1,0 +1,142 @@
+---
+layout: app
+
+permalink: /Nimbalyst/
+description: Electron app for Nimbalyst
+license: MIT
+
+icons:
+  - Nimbalyst/icons/128x128/nimbalyst.png
+
+screenshots:
+  - Nimbalyst/screenshot.png
+
+authors:
+  - name: nimbalyst
+    url: https://github.com/nimbalyst
+
+links:
+  - type: GitHub
+    url: nimbalyst/nimbalyst
+  - type: Download
+    url: https://github.com/nimbalyst/nimbalyst/releases
+
+desktop:
+  Desktop Entry:
+    Name: Nimbalyst
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: nimbalyst
+    StartupWMClass: nimbalyst
+    X-AppImage-Version: 0.36.5
+    Comment: Electron app for Nimbalyst
+    MimeType: text/markdown
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.38
+    X-AppImage-Payload-License: MIT
+
+electron:
+  license: MIT
+  author: Nimbalyst Team
+  description: Electron app for Nimbalyst
+  homepage: https://nimbalyst.com
+  desktopName: nimbalyst.desktop
+  main: out/main/index.js
+  bin:
+    nimbalyst: "./bin/nimbalyst"
+  dependencies:
+    "@anthropic-ai/claude-agent-sdk": 0.3.280
+    "@anthropic-ai/sdk": "^0.115.0"
+    "@electric-sql/pglite": 0.3.14
+    "@electron-toolkit/utils": "^4.0.0"
+    "@excalidraw/excalidraw": 0.18.1
+    "@floating-ui/react": "^0.27.19"
+    "@modelcontextprotocol/sdk": "^1.29.0"
+    "@monaco-editor/react": "^4.7.0"
+    "@nimbalyst/collab-adapters": "*"
+    "@nimbalyst/collab-protocol": "*"
+    "@nimbalyst/tracker-schema": 0.1.0
+    "@nimbalyst/tracker-engine": 0.1.0
+    "@nimbalyst/excalidraw-extension": "*"
+    "@nimbalyst/extension-calc-sheets": "*"
+    "@nimbalyst/extension-csv-spreadsheet": "*"
+    "@nimbalyst/extension-datamodellm": "*"
+    "@nimbalyst/mockuplm": "*"
+    "@nimbalyst/runtime": "*"
+    "@openai/codex-sdk": "^0.156.1"
+    "@revolist/react-datagrid": 4.21.4
+    "@revolist/revogrid": 4.21.4
+    "@types/glob": "^8.1.0"
+    "@types/js-yaml": "^4.0.9"
+    "@types/marked": "^5.0.2"
+    "@types/node-fetch": "^2.6.13"
+    "@types/uuid": "^10.0.0"
+    "@types/ws": "^8.18.1"
+    "@vscode/ripgrep": "^1.17.1"
+    abort-controller: "^3.0.0"
+    adm-zip: "^0.6.0"
+    agentkeepalive: "^4.6.0"
+    better-sqlite3: 13.0.1
+    chardet: "^2.1.1"
+    chokidar: "^4.0.3"
+    diff: "^5.2.0"
+    electron-log: "^5.4.3"
+    electron-store: "^8.2.0"
+    electron-updater: "^6.6.2"
+    express-rate-limit: "^7.5.1"
+    form-data-encoder: "^4.1.0"
+    formdata-node: "^6.0.3"
+    ghostty-web: "^0.4.0"
+    gifwrap: "^0.10.1"
+    glob: "^11.0.3"
+    heic-decode: "^2.1.0"
+    highlight.js: 11.11.1
+    html2canvas: "^1.4.1"
+    ignore: "^7.0.5"
+    jimp: "^1.6.0"
+    jotai: "^2.16.1"
+    jotai-family: "^1.1.0"
+    js-yaml: "^4.1.0"
+    json-schema-to-ts: "^3.1.1"
+    marked: "^16.4.0"
+    mcp-remote: "^0.1.38"
+    mermaid: "^11.12.0"
+    minimatch: "^10.2.5"
+    monaco-editor: "^0.55.1"
+    mp4-muxer: "^5.2.2"
+    node-fetch: "^3.3.2"
+    node-pty: "^1.1.0"
+    openai: "^6.9.1"
+    pathe: "^2.0.3"
+    pdfjs-dist: "^4.10.38"
+    pkce-challenge: "^5.0.0"
+    posthog-js: 1.380.0
+    posthog-node: "^5.10.0"
+    qrcode: "^1.5.4"
+    react: "^19.2.7"
+    react-diff-view: "^3.3.3"
+    react-dom: "^19.2.7"
+    react-is: "^19.2.4"
+    react-virtuoso: "^4.18.11"
+    recharts: "^3.5.0"
+    refractor: "^3.6.0"
+    simple-git: "^3.36.0"
+    ulid: "^3.0.1"
+    uuid: "^11.1.1"
+    virtua: "^0.48.2"
+    web-streams-polyfill: "^4.2.0"
+    ws: "^8.19.0"
+    zod: "^4.0.0"
+    zustand: "^5.0.9"
+---

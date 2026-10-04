@@ -1,0 +1,17 @@
+{
+  "name": "echolect",
+  "version": "0.1.0",
+  "description": "A real-time meeting copilot — live transcription, speaker naming, and on-demand AI assistance.",
+  "license": "GPL-3.0-or-later",
+  "author": "ah2k (https://ah2k.dev)",
+  "homepage": "https://ah2k.dev",
+  "repository": "https://github.com/ah2k-dev/echolect",
+  "private": true,
+  "main": "dist/main/main/index.js",
+  "type": "module",
+  "dependencies": {
+    "@types/ws": "^8.18.1",
+    "better-sqlite3": "^11.0.0",
+    "ws": "^8.20.1"
+  }
+}

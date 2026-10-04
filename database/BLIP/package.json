@@ -1,0 +1,30 @@
+{
+  "name": "blip",
+  "version": "2.0.3",
+  "description": "P2P LAN messenger — text, voice, and video. No cloud, no servers, no accounts.",
+  "author": {
+    "name": "krwg",
+    "email": "blipteam@icloud.com"
+  },
+  "homepage": "https://krwg.github.io/blip/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krwg/blip.git"
+  },
+  "main": "main/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dompurify": "^3.4.12",
+    "electron-updater": "^6.8.3",
+    "jspdf": "^2.5.2",
+    "marked": "^18.0.7",
+    "multicast-dns": "^7.2.5"
+  },
+  "CompanyName": "krwg",
+  "FileDescription": "BLIP — P2P LAN Messenger",
+  "ProductName": "BLIP",
+  "LegalCopyright": "Copyright © 2026 krwg"
+}

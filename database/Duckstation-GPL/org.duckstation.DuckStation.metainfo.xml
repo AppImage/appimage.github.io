@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>org.duckstation.DuckStation</id>
+  <launchable type="desktop-id">org.duckstation.DuckStation.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>DuckStation</name>
+  <developer_name>Stenzek</developer_name>
+  <summary>PlayStation Emulator</summary>
+  <description>
+    <p>DuckStation is an simulator/emulator of the Sony PlayStation(TM) console, focusing on playability, speed, and long-term maintainability. The goal is to be as accurate as possible while maintaining performance suitable for low-end devices.</p>
+    <p>"Hack" options are discouraged, the default configuration should support all playable games with only some of the enhancements having compatibility issues.</p>
+    <p>"PlayStation" and "PSX" are registered trademarks of Sony Interactive Entertainment Europe Limited. This project is not affiliated in any way with Sony Interactive Entertainment.</p>
+  </description>
+  <content_rating type="oars-1.1"/>
+  <update_contact>stenzek_AT_gmail.com</update_contact>
+  <url type="homepage">https://www.duckstation.org/</url>
+  <url type="help">https://github.com/stenzek/duckstation</url>
+  <url type="vcs-browser">https://github.com/stenzek/duckstation</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/stenzek/duckstation/md-images/main-qt.png</image>
+      <caption>Desktop Interface</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/stenzek/duckstation/md-images/bigduck.png</image>
+      <caption>Big Picture Mode Interface</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.1-7371-gb2577ef8b" date="2024-08-19" />
+  </releases>
+  <custom>
+    <value key="flathub::manifest">https://raw.githubusercontent.com/stenzek/duckstation/b2577ef8bdaae99840874b6dae8146f0316357b4/scripts/flatpak/org.duckstation.DuckStation.yaml</value>
+  </custom>
+</component>

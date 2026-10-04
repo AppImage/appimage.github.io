@@ -1,9 +1,10 @@
 {
   "name": "tutanota-desktop",
   "main": "./desktop/DesktopMain.js",
-  "version": "3.106.5",
+  "version": "360.260922.0",
   "author": "Tutao GmbH",
-  "description": "The desktop client for Tutanota, the secure e-mail service.",
+  "description": "The desktop client for Tuta, the secure e-mail, calendar and drive service.",
+  "type": "module",
   "tutao-config": {
     "pubKeys": [
       "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhFrLW999Y/ODqGfGKSzh\n7SFm6UgIj5scpb1r+KmEgVr/3zmd973+u2z5gG/wtayUbdVUGlzTgxqTE76BGTBR\nszq932uTsPfjRbtbyjIOzfzPvkyAB1Ew91gQk5ubrO1VCbXAZyuFi7RxDibuklLO\nlzHyjKyEIVTTdOqOTE+mg/vr41MxDW0X4nZw5MT1mIV/aYGeOSdtNdFsL69aR+d7\nKufD43J60FUS9G0tf4KmyQInmGqC8MSXCO0SMwwEJZDxDzkBsSensKfS0HzIjCXS\nor/Ahu6RwhEhjm7MyXbhiDyis+kGHSfatsO5KWWuZ4xgCEUO0L6vMQwr5M/qYOj1\n7QIDAQAB\n-----END PUBLIC KEY-----",
@@ -11,15 +12,14 @@
       null
     ],
     "pollingInterval": 10800000,
-    "webAssetsPath": ".",
     "iconName": "logo-solo-red.png",
     "fileManagerTimeout": 30000,
-    "checkUpdateSignature": true,
+    "checkUpdateSignature": false,
     "appUserModelId": "de.tutao.tutanota",
     "initialSseConnectTimeoutInSeconds": 60,
     "maxSseConnectTimeoutInSeconds": 2400,
     "configMigrationFunction": "migrateClient",
-    "updateUrl": "https://mail.tutanota.com/desktop",
+    "updateUrl": "https://app.tuta.com/desktop",
     "defaultDesktopConfig": {
       "heartbeatTimeoutInSeconds": 30,
       "defaultDownloadPath": null,
@@ -27,7 +27,5 @@
       "runAsTrayApp": true
     }
   },
-  "dependencies": {
-    "electron-updater": "5.3.0"
-  }
+  "dependencies": {}
 }

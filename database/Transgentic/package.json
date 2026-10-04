@@ -1,0 +1,54 @@
+{
+  "name": "transgentic",
+  "private": true,
+  "files": [
+    "dist/",
+    "dist-electron/",
+    "bin/",
+    "extensions/transgentic-sync/",
+    "LICENSE",
+    "README.md"
+  ],
+  "version": "2.1.3",
+  "description": "Tactile Electron MCP bridge and orchestration engine for web AI sessions",
+  "desktopName": "transgentic.desktop",
+  "main": "dist-electron/main/index.js",
+  "bin": {
+    "transgentic-cli": "./bin/transgentic-cli.js"
+  },
+  "type": "module",
+  "author": {
+    "name": "Exit",
+    "email": "exit.technology@outlook.com"
+  },
+  "homepage": "https://github.com/entertheexit/transgentic#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/entertheexit/transgentic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/entertheexit/transgentic/issues"
+  },
+  "funding": [
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/patiparnne"
+    },
+    {
+      "type": "buy-me-a-coffee",
+      "url": "https://buymeacoffee.com/patiparnne"
+    }
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "clsx": "^2.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "framer-motion": "^12.4.7",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.1"
+  }
+}

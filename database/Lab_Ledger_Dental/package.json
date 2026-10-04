@@ -1,0 +1,13 @@
+{
+  "name": "lab-ledger-dental",
+  "productName": "Lab Ledger Dental",
+  "version": "1.5.2",
+  "description": "Desktop app for a dental lab: works, patients, shipping, material costs from real pack prices, running costs, taxes and the profit that is actually left. All data stays local.",
+  "author": "Vladyslav Pereverzyev",
+  "license": "BUSL-1.1",
+  "private": true,
+  "main": "electron/main.js",
+  "dependencies": {
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "soundvisualizer",
+  "version": "3.1.4",
+  "description": "CAYADEV — çoklu ekran, OBS yayın çıkışı ve Studio shader editörü olan ses görselleştirici (Windows + macOS)",
+  "main": "src/main/main.js",
+  "author": {
+    "name": "CAYADEV",
+    "email": "contact@cayadev.com",
+    "url": "https://cayadev.com"
+  },
+  "homepage": "https://cayadev.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CaYatur/SoundVisualizer.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@napolab/texture-bridge": "^0.15.0",
+    "audify": "^1.10.1",
+    "ffmpeg-static": "^5.3.0"
+  }
+}
