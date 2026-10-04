@@ -201,6 +201,9 @@ jobs:
           grep -hE "^(ERROR|WARNING): ((File name|AppImage name) '|The names of the .* differ: )" log.txt | sort -u > pr-result/names.txt || true
           # Notes about the name of the file in data/ (not warnings)
           grep -h "^NOTE: File name '" log.txt | sort -u > pr-result/notes.txt || true
+          # Which file was tested (where it was downloaded from), and the notes about
+          # a pre-release having been chosen, so that the comment can say it
+          { grep -h '^URL: ' log.txt | head -n 5 ; grep -h '^NOTE: Using pre-release ' log.txt | sort -u | head -n 5 ; } > pr-result/tested.txt || true
           # Whether the AppImage needs a compatible C library on the host
           grep -h '^X-AppImage-\(Libc\|Runtime\|Self-Contained\|Glibc-Required\)=' log.txt | sort -u > pr-result/libc.txt || true
           ls -la pr-result/

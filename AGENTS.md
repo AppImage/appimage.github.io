@@ -105,6 +105,10 @@ GitHub Pages (Jekyll) from this repository.
    read via the API at the tested commit, not from the artifact), unless it
    is the PR's author or a bot, or was mentioned in an earlier test result
    comment already; other hosts have no GitHub account to mention.
+   The comment says which file was tested (**Tested:** the file name, linked, and the
+   release it comes from, with a remark if the release is marked as a pre-release or its
+   tag looks like one: alpha, beta, rc; from the `URL:` line of the log, which the test
+   result artifact carries as `tested.txt`; only URLs of a strict form are accepted).
    Finally it **auto-merges** (squash) a PR from a returning contributor
    (`author_association` CONTRIBUTOR or above) that changes exactly one file in
    `data/`, passed with `screenshot-ok`, has no `manual-check-needed` or
