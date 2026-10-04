@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.kim.miniserve-gui</id>
+  <name>miniserve-gui</name>
+  <summary>A lightweight cross-platform file sharing GUI for miniserve</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>miniserve-gui is a lightweight cross-platform desktop GUI client for miniserve, providing easy file sharing via web interface and QR code.</p>
+  </description>
+  <launchable type="desktop-id">miniserve-gui.desktop</launchable>
+  <url type="homepage">https://github.com/ISuuuu/miniserve-gui</url>
+  <url type="bugtracker">https://github.com/ISuuuu/miniserve-gui/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>miniserve-gui main window</caption>
+      <image>https://raw.githubusercontent.com/ISuuuu/miniserve-gui/main/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.8.3" date="2026-10-04"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

@@ -7,9 +7,8 @@ license: "MIT"
 
 icons:
   - miniserve_gui/icons/128x128/miniserve-gui.png
-
 screenshots:
-  - miniserve_gui/screenshot.png
+- https://raw.githubusercontent.com/ISuuuu/miniserve-gui/main/screenshot.png
 
 authors:
   - name: "ISuuuu"
