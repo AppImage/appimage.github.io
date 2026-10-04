@@ -1,11 +1,11 @@
 [Desktop Entry]
 Name=TFStudio
-Exec=AppRun --no-sandbox %U
+Exec=AppRun %U
 Terminal=false
 Type=Application
 Icon=tfstudio
 StartupWMClass=tfstudio
-X-AppImage-Version=1.8.2
+X-AppImage-Version=1.8.3
 Comment=TFStudio - Optical Thin Film Coating Design
 MimeType=application/x-tfstudio-design;
 Categories=Science;
@@ -17,7 +17,7 @@ X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runne
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
 X-AppImage-Libc=host
-X-AppImage-Runtime=dynamic
+X-AppImage-Runtime=static
 X-AppImage-Self-Contained=false
 X-AppImage-Glibc-Required=GLIBC_2.25
 X-AppImage-Payload-License=MIT
