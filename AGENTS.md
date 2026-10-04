@@ -105,6 +105,10 @@ GitHub Pages (Jekyll) from this repository.
    read via the API at the tested commit, not from the artifact), unless it
    is the PR's author or a bot, or was mentioned in an earlier test result
    comment already; other hosts have no GitHub account to mention.
+   The comment says which file was tested (**Tested:** the file name, linked, and the
+   release it comes from, with a remark if the release is marked as a pre-release or its
+   tag looks like one: alpha, beta, rc; from the `URL:` line of the log, which the test
+   result artifact carries as `tested.txt`; only URLs of a strict form are accepted).
    Finally it **auto-merges** (squash) a PR from a returning contributor
    (`author_association` CONTRIBUTOR or above) that changes exactly one file in
    `data/`, passed with `screenshot-ok`, has no `manual-check-needed` or
@@ -318,6 +322,15 @@ GitHub Pages (Jekyll) from this repository.
      Of 549 PRs with the label (534 open), most are misdetections or own projects,
      and maintainers have never ruled on the label itself: all 13 labeled PRs
      merged were merged by hand after the tests passed.
+   - `.github/workflows/notify-tauri-diricon.yml` (`workflow_dispatch` only; inputs
+     `limit` (default 100) and `dry_run` (default true), `code/notify-tauri-diricon.sh`):
+     Tauri before 2.11.4 built AppImages without `.DirIcon`
+     (https://github.com/tauri-apps/tauri/pull/15596). It posts one friendly message
+     (marker `<!-- appimagehub-tauri-diricon -->`: use Tauri 2.11.4 or later, build a
+     new release, comment `/retest`) on each open PR that has the `error-missing-file`
+     label, mentions "tauri" in its title, description or comments, and whose last
+     test result says `.DirIcon is missing` (the label alone also covers other missing
+     files). Run the dry run first.
    - `code/diagnose.sh` has hints for `AppRun.wrapped: Permission denied`
      (Tauri/linuxdeploy mode 0770) and for a `.DirIcon` that cannot be read
      (absolute symlink).
@@ -408,6 +421,19 @@ GitHub Pages (Jekyll) from this repository.
   Failed PRs are also re-tested when their author says it is fixed (item 7
   above), and `code/retest-pr.sh [-n] NUMBER` re-tests one PR by hand (needs
   `PAT`). The comment patterns: `echo "v1.2 is out" | code/retest-comment.sh`.
+- `.github/workflows/retest-stale.yml` (`workflow_dispatch` only; inputs `limit`
+  (default 10), `days` (default 365) and `dry_run` (default true)) re-tests the
+  entries whose `database/NAME` was last changed more than `days` days ago
+  (`code/retest-stale.sh`: from the git history, oldest first, about 1200 of
+  them in October 2026): one `retest/stale-NAME-<time>` pull request per entry
+  (the Test workflow stops at the first failing entry of a PR), changing
+  `data/NAME` the way `/retest` does on a merged PR (a link to one particular
+  release becomes the repository URL, else the trailing newline is toggled), with
+  `SCREENSHOT_UPLOAD_TOKEN` so that Test starts. A passing one is auto-merged like
+  any re-test PR, which refreshes `database/`; a failing one stays open with the
+  test result (and the upstream account is mentioned). Entries named in the title of an
+  open PR (not their files: thousands of open PRs, 1000 API requests an hour), or that this script re-tested in the last 60 days (any state), and
+  entries without a file in `data/`, are skipped.
 - `/appstream` (maintainers, or the author of the issue or PR):
   `.github/workflows/appstream-help.yml` posts `code/appstream-help.md` from
   `master`, how to ship an AppStream metainfo file with screenshots. The

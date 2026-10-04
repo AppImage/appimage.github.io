@@ -254,6 +254,33 @@ jobs:
               echo "![${base}](${url})"
               echo
             done < images.txt
+            if [ -s out/tested.txt ] ; then
+              # Which file was tested. Untrusted: only URLs and notes of the expected form
+              TESTED=""
+              while IFS= read -r LINE ; do
+                URL=${LINE#URL: }
+                [ "$URL" != "$LINE" ] || continue
+                [[ "$URL" =~ ^https://[A-Za-z0-9.-]+/[A-Za-z0-9._~%+@:=,/-]{1,300}$ ]] || continue
+                FILE=${URL##*/}
+                [[ "$FILE" =~ ^[A-Za-z0-9._+~%@=,-]{1,150}$ ]] || continue
+                WHAT="[\`$FILE\`]($URL)"
+                if [[ "$URL" =~ /releases/download/([A-Za-z0-9._+~%@=,-]{1,100})/[^/]+$ ]] ; then
+                  TAG=${BASH_REMATCH[1]}
+                  WHAT="$WHAT from release \`$TAG\`"
+                  if grep -qE "^NOTE: Using pre-release $TAG, as " out/tested.txt ; then
+                    WHAT="$WHAT (marked as a pre-release)"
+                  elif [[ "$TAG" =~ (alpha|beta|preview|nightly|dev|[0-9.-](a|b|rc)[0-9]*$) ]] ; then
+                    WHAT="$WHAT (the name looks like a pre-release)"
+                  fi
+                fi
+                TESTED="$TESTED- $WHAT"$'\n'
+              done < <(head -n 5 out/tested.txt)
+              if [ -n "$TESTED" ] ; then
+                echo "**Tested:**"
+                echo
+                printf '%s\n' "$TESTED"
+              fi
+            fi
             if [ -s out/libc.txt ] ; then
               # Untrusted: only take values of the expected form
               val() { grep -xE "X-AppImage-$1=($2)" out/libc.txt | head -n 1 | cut -d = -f 2 || true ; }

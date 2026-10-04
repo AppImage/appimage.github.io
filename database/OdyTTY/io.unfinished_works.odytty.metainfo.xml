@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.unfinished_works.odytty</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>OdyTTY</name>
+  <summary>GPU-rendered terminal emulator with an Odyssey visual identity</summary>
+  <developer id="io.unfinished_works">
+    <name>Unfinished Works</name>
+  </developer>
+  <launchable type="desktop-id">io.unfinished_works.odytty.desktop</launchable>
+  <provides>
+    <binary>odytty</binary>
+  </provides>
+  <categories>
+    <category>System</category>
+    <category>TerminalEmulator</category>
+  </categories>
+  <keywords>
+    <keyword>terminal</keyword>
+    <keyword>tty</keyword>
+    <keyword>pty</keyword>
+    <keyword>shell</keyword>
+  </keywords>
+  <description>
+    <p>
+      OdyTTY is a from-scratch Rust terminal emulator for Linux. It owns the
+      terminal byte path from PTY allocation through escape parsing, terminal
+      state, render geometry, and GPU presentation.
+    </p>
+    <p>
+      The project explores a distinctive Odyssey visual identity while keeping
+      terminal correctness, readable text, predictable input, local privacy, and
+      performance as hard requirements.
+    </p>
+  </description>
+  <url type="homepage">https://odytty.unfinished-works.com</url>
+  <url type="bugtracker">https://github.com/ghreprimand/odytty/issues</url>
+  <content_rating type="oars-1.1"/>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/ghreprimand/odytty/master/assets/demo.png</image>
+      <caption>OdyTTY running a shell with the Odyssey visual identity</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.16.1" date="2026-10-03">
+      <description>
+        <p>The only change is AppImage update information and the companion zsync asset for AppImage update tools such as AppImageUpdate. Every other package is rebuilt at version 0.16.1 with no behavior change from version 0.16.0.</p>
+      </description>
+    </release>
+    <release version="0.16.0" date="2026-10-02">
+      <description>
+        <p>This release adds pane and window workflows: read-only panes, guarded broadcast input, macOS secure keyboard input, moving tabs and panes between windows, stacked and floating layouts, scrollback export, an East Asian Ambiguous width preference, and Windows fixes for first-command placement after a wrapped PowerShell prompt and Ctrl+Shift+N input.</p>
+      </description>
+    </release>
+    <release version="0.15.8" date="2026-10-02">
+      <description>
+        <p>On macOS, an untouched window's idle CPU returns to about zero. A per-tick clone of the event-loop proxy re-woke the macOS run loop, and had done so since v0.15.0. The tick path no longer clones that proxy. On Linux and Windows the clones were cheap and showed no spin; the per-tick clone is removed there too, with no idle-CPU claim.</p>
+      </description>
+    </release>
+    <release version="0.15.7" date="2026-09-27">
+      <description>
+        <p>This release prevents Wayland windows from stopping updating after they return from a hidden workspace. Under the Fifo present mode, NVIDIA's proprietary driver was observed to ask the compositor to hold a window's updates far in the future; OdyTTY now presents with Mailbox on Wayland when the surface offers it. Windows, macOS, and X11 keep Fifo. The change was checked on device with NVIDIA's proprietary driver only.</p>
+        <p>Merging the primary window into another window, or pulling it into another window, now hands workspace autosave to the surviving window, so later layout changes are saved again.</p>
+      </description>
+    </release>
+    <release version="0.15.6" date="2026-09-24">
+      <description>
+        <p>This release fixes a v0.15.5 regression in which a cursor jump of more than six cells, such as Home or End on a long command line, paused partway through its glide before snapping to its destination. The large-jump cursor follower now requests its own animation frames in windows without splits.</p>
+        <p>Right-click menus taller than the window now keep their own scroll position: the overflow arrows scroll one row when clicked, the mouse wheel and trackpad scroll the menu by whole rows with the highlight staying on the row under the pointer, and hovering or moving the highlight with the arrow keys inside the visible rows does not move the list.</p>
+      </description>
+    </release>
+    <release version="0.15.5" date="2026-09-24">
+      <description>
+        <p>This release moves normal-text font metadata, metrics, and outlines to the maintained Fontations skrifa library behind an OdyTTY-owned font handle, keeping the existing glyph rasterizer, and draws client-side Wayland title-bar text through the system FreeType and Fontconfig libraries. The unmaintained ttf-parser crate no longer appears in the dependency graph. Sampled glyph output and controlled screenshots are unchanged.</p>
+        <p>Two Wayland reliability fixes are included: a focused window whose compositor stops returning frame callbacks now recovers with bounded direct repaints and a named watchdog record, and timed animations no longer keep a focused idle window busy-waking the event loop.</p>
+      </description>
+    </release>
+    <release version="0.15.0" date="2026-09-13">
+      <description>
+        <p>This release adds a dedicated quick terminal summoned by a global shortcut, with platform-specific registration, hidden-session retention, single-instance summons, and actionable notices for denied or conflicting shortcuts. An opt-in, owner-scoped local automation endpoint and a small control CLI list and focus windows, workspaces, tabs, and panes, open profiles, create tabs, splits, and workspaces, and rename, without sending terminal input or reading terminal content, and without any network listener.</p>
+        <p>External file drop inserts dropped paths through the confirm-first, shell-quoted paste-safety policy without appending Enter, including a companion native-Wayland listener that requests copy only and performs no file operation; Windows refuses file drop with an explicit notice. Keyboard-first window merging moves tabs, panes, PTYs, and attach handles between same-process windows through the command palette and Session Navigator, closing the source only after a successful transfer. The Electric Blue preset is added alongside the existing themes. Existing terminal input and remote-upload security boundaries are unchanged.</p>
+      </description>
+    </release>
+    <release version="0.14.0" date="2026-09-07">
+      <description>
+        <p>This release adds named launch profiles with a versioned no-secret on-disk schema, deterministic precedence, atomic storage with malformed-file recovery, and a Profile Manager whose editor exposes the complete schema. Plain New Tab and New Workspace stay one-click on the effective default profile, while an adjacent chooser and the context menus open a lazy searchable profile picker; profile discovery, remote checks, and validation never delay the first local terminal.</p>
+        <p>External palette following adds an optional opt-in mode that applies a complete local palette file through the existing theme seam with fail-closed parsing and last-known-good retention. A unified Session Navigator searches workspaces, tabs, panes, and detachable sessions with a redacted opt-in preview. This release also closes an external security review with per-finding evidence and hardens the shipped configuration and spawn boundaries. Rendering, terminal storage, GPU allocation, and presentation timing are unchanged, so the v0.12.0 performance evidence carries forward.</p>
+      </description>
+    </release>
+    <release version="0.13.0" date="2026-08-31">
+      <description>
+        <p>This release adds one cross-platform policy for risky non-bracketed paste, with a bounded escaped preview and explicit paste, one-line, or cancel choices, while preserving ordinary single-line and child-enabled bracketed paste.</p>
+        <p>Verified OSC 133 command ranges now support select, copy, scoped search, failed-command navigation, and bounded plain-text export. Bounded OSC notification and progress handling adds pane-owned completion, activity, silence, bell, process-finish, and command-failure monitors without changing terminal-grid semantics, exposing terminal-authored text in trusted chrome, or delaying the first local terminal.</p>
+      </description>
+    </release>
+    <release version="0.12.2" date="2026-08-30">
+      <description>
+        <p>This compatibility patch adds the ECMA-48 cursor-next-line and cursor-preceding-line controls used by pacman's parallel-download display, preserving the existing movement bounds and pending-wrap behavior on Linux, macOS, and Windows.</p>
+      </description>
+    </release>
+    <release version="0.12.1" date="2026-08-29">
+      <description>
+        <p>This security patch isolates reused SSH connections with OpenSSH's effective connection hash, including remote host, port, and user, so profiles for distinct endpoints cannot alias the same ControlMaster socket. Interactive sessions, remote image uploads, and uploaded-image cleanup all share the corrected path template.</p>
+        <p>The AUR release job now receives only its dedicated publishing key instead of inheriting every release secret. Rendering and memory paths are unchanged, so the v0.12.0 benchmark evidence is carried forward without a new benchmark campaign.</p>
+      </description>
+    </release>
+    <release version="0.12.0" date="2026-08-28">
+      <description>
+        <p>This release reduces OdyTTY-controlled memory with surface-sized background textures, releasable post-process targets, denser scrollback storage, and shared runtime fallback faces. It also adds bounded Kitty zlib payloads and image-number animation addressing, advertises Sixel through DA1, and reconstructs selected faces from over-limit font collections instead of retaining the collection.</p>
+        <p>Memory attribution and a pre-release regression guard make the reductions repeatable, the supported shaping boundary is documented with measured evidence, and release artifacts gain GitHub OIDC provenance alongside Minisign. The benchmark protocol adds separately classified software-endpoint workloads without presenting them as optical latency measurements.</p>
+      </description>
+    </release>
+    <release version="0.10.0" date="2026-08-09">
+      <description>
+        <p>This release is primarily an architecture, reliability, and security convergence release. Its bounded presentation additions show live terminal dimensions during resize, the effective font size during Ctrl+wheel zoom, and unseen tab and workspace activity. Every handwritten Rust source file that is compiled into the shipping binary is now under 2,000 physical lines, with the oversized settings, terminal screen, grid, text, atlas, snapshot, shell-integration, and native interface modules split along ownership boundaries; a repository-wide guard enforces that limit in blocking CI.</p>
+        <p>Reads of externally influenced files are bounded before allocation and refuse a target that is not a regular file: session metadata, font files, connection-host records, and the shell-integration wrapper comparison share one audited policy, session metadata refuses a redirected final component, the graphics file transport rejects a Windows reparse point, and clipboard images are bounded before encoding rather than after it. Parser, terminal state, Kitty graphics, and Sixel decoding gained retained fuzz targets with a scheduled bounded smoke run, alongside mutation-testing, coverage, and dynamic-analysis evidence.</p>
+      </description>
+    </release>
+    <release version="0.9.8" date="2026-07-28">
+      <description>
+        <p>Linux windows can now select a launch-scoped Wayland application ID and X11 WM_CLASS through the compatible --app-id and --class aliases while retaining the packaged OdyTTY identity by default. Short-lived local commands can remain visible with --hold, which reports their exit status and dismisses on the next keypress without changing later sessions or remote reconnect behavior. The desktop entry now advertises all five xdg-terminal-exec argument keys.</p>
+      </description>
+    </release>
+    <release version="0.9.7" date="2026-07-27">
+      <description>
+        <p>Windows no longer disappear after a machine sits idle and its display blanks. Recreating a rendering surface now retires the previous one before configuring its replacement, so a second presentation chain is never requested for the same window — on Wayland that request raised a fatal protocol error that closed every window of the process at once. Frames are also presented in step with the compositor's draw loop, so a window whose display has gone to sleep stops being driven through the render path instead of accumulating skipped frames until it escalated to a surface recreate. The freeze watchdog now distinguishes a stalled render path from a display that is simply not asking for frames, and no longer reports a stall for a sleeping or hidden window.</p>
+      </description>
+    </release>
+    <release version="0.9.6" date="2026-07-22">
+      <description>
+        <p>Multi-pane windows no longer abort when panes render different numbers of color glyphs such as emoji. Each pane now builds and clips its color-glyph vertices in a reusable scratch buffer before appending them to the shared frame buffer, preserving glyphs from earlier panes. Windowless regression coverage exercises the same accumulation path used by multi-pane rendering.</p>
+      </description>
+    </release>
+    <release version="0.9.5" date="2026-07-22">
+      <description>
+        <p>Renaming a workspace whose tab holds more than one pane no longer freezes the window: the rename prompt now renders above split panes instead of capturing input behind an invisible modal, so renaming works for active and inactive multi-pane workspaces and cancel or confirm restores normal input. Source and package builds also report a real commit in the About panel, resolving it from a validated build override, a live Git commit, or a commit substituted into the released source archive, so official binaries and the AUR and Homebrew source builds no longer show an unknown commit.</p>
+      </description>
+    </release>
+    <release version="0.9.4" date="2026-07-21">
+      <description>
+        <p>Prompt keyboard enhancement now works on macOS' legacy Bash 3.2: older Bash removes Kitty keyboard disambiguation once before the first command through a prompt-guarded boundary, while Bash 4.4 and newer keep their existing prompt path, and command-status reporting is unaffected. Tag-triggered releases also fail closed unless the exact tagged commit already has a completed, successful continuous-integration run, so a missing, queued, in-progress, cancelled, failed, or wrong-commit result blocks publication and every downstream package channel.</p>
+      </description>
+    </release>
+    <release version="0.9.3" date="2026-07-21">
+      <description>
+        <p>Linux keyboard routing normalizes compositor-dependent editing keys before dispatch, so Ctrl+Backspace word-deletes at the default Bash prompt on KDE/Wayland while ordinary editing keys and Fish keep their behavior. Command-status gutters now appear across desktop launch shapes and every single, split, and nested pane layout, and the Unix launcher resolves the login shell through passwd/NSS when a graphical session omits SHELL. Window overlays stay opaque and themed after a split, selection strength defaults to full opacity with an opt-in boost above it, and configured window padding applies at every divider-facing pane edge while narrowed or heavily padded panes keep valid dimensions and clip cleanly. On KDE/Wayland, completed resizes and divider drags settle every pane to the configured padding.</p>
+      </description>
+    </release>
+    <release version="0.9.2" date="2026-07-20">
+      <description>
+        <p>Windows console applications can now request complete ConPTY Win32 key records, preserving input such as Ctrl+Backspace and Shift+Enter. Prompt key enhancement is enabled by default for word-wise editing in integrated Bash and Zsh, with existing bindings taking priority. The retro preset no longer forces curvature; the separate curvature setting remains flat by default.</p>
+      </description>
+    </release>
+    <release version="0.9.1" date="2026-07-20">
+      <description>
+        <p>The workspace rail gains an always-available auto-hide control. New transparency legibility controls strengthen colored cell backgrounds and optionally brighten text, while DEC Special Graphics, atomic bracketed paste, shell working-directory encoding, clipboard consent, and atomic configuration writes improve compatibility and safety.</p>
+      </description>
+    </release>
+    <release version="0.9.0" date="2026-07-16">
+      <description>
+        <p>Visual-polish release. The cursor comes alive: it glides smoothly between cells with a short fading trail, eases across its blink, and carries one soft shape-aware glow matched to the Block, Bar, or Underline shape. The glow strength is now adjustable on its own scale, independent of the scene bloom. Large jumps leave a brief elastic streak that settles into the destination, blinking yields to active typing and parks visibly when idle, and an unfocused window shows a hollow Block outline. A reduced-motion master switch makes every one of these effects static or instant for accessibility. Programming ligatures are enabled by default for the bundled font, so sequences render as their designed glyphs while copy, selection, and cursor positions stay per-character. Text with combining accents now renders and copies correctly, and the legacy double-underline attribute is honored. The workspace rail and tab bar were refined into one continuous, aligned surface. This release also hardens local behavior: terminal-directed file, temporary-file, and shared-memory graphics transports are off by default, clipboard writes require an active focused session, and private state and log files are owner-only on Unix. Windows and macOS ship from the same verified build matrix.</p>
+      </description>
+    </release>
+    <release version="0.8.9" date="2026-07-15">
+      <description>
+        <p>Reliability release. When a system exposes both software and hardware graphics adapters, OdyTTY now prefers the accelerated adapter instead of settling on a software one, so machines with accelerated OpenGL alongside a software Vulkan driver render on the GPU. Context menus now show the arrow cursor the moment they open, rather than keeping the text cursor until the pointer moves. Windows and macOS ship from the same verified build matrix.</p>
+      </description>
+    </release>
+    <release version="0.8.8" date="2026-07-14">
+      <description>
+        <p>Reliability release. OdyTTY now renders on accelerated OpenGL when no Vulkan adapter is available, so systems with a working GL stack but no Vulkan (a common virtual-machine configuration) start and run on the GPU instead of failing or falling back to slow software rendering. Software rasterization remains a last resort. Standard graphics environment overrides are now honored. Windows and macOS ship from the same verified build matrix.</p>
+      </description>
+    </release>
+    <release version="0.8.7" date="2026-07-13">
+      <description>
+        <p>Packaging release. Linux gains three prebuilt install paths alongside the portable AppImage: a standalone binary tarball, a native Debian package, and a best-effort RPM, all x86_64. A hosted one-line installer detects the system package manager and installs the matching artifact from the latest release, verifying its checksum against the published SHA256SUMS first. macOS and Windows keep their existing Homebrew and Scoop channels with no change.</p>
+      </description>
+    </release>
+    <release version="0.8.6" date="2026-07-13">
+      <description>
+        <p>Reliability patch. Attaching a detached session now reconciles its terminal to the current window as soon as it is attached, so the grid and the right-click menu render at full opacity and respond to input without a manual resize. Previously an attached session stayed sized to its originating host until the next window resize; with window transparency enabled that mismatch left the context menu washed out and unresponsive. Windows and macOS ship from the same verified build matrix.</p>
+      </description>
+    </release>
+    <release version="0.8.5" date="2026-07-13">
+      <description>
+        <p>Reliability and interaction release. Three audit passes hardened the parser, GPU surface handling, session host, and settings model: OSC 8 hyperlink interning gains a bounded, least-recently-used table; scrollback eviction is constant-time; combining marks beyond the cell store spill into a bounded side table; GPU surface loss recovers automatically; and search, emoji, and OSC dispatch drop their per-frame allocations. A stall where the first keypress after a long idle took several seconds to present is fixed by accelerating swapchain recovery on window focus and restore. The workspace rail behaves correctly when set to auto-hide: clicking a workspace switches it while panes are split, the floating rail can be width-dragged and holds open under its resize cursor, and the top tab bar keeps the arrow cursor. Settings are reorganized into a Layout section with separate Rail side and Rail visibility controls, tab-bar height is editable by stepper, typing, or dragging, and saving a rail setting no longer reverts to a shadowed value. Chrome labels no longer clip their descenders on the default one-row bar. Earlier feel fixes remove a right-click freeze, make split-pane tab drag-reorder and inline images work, open Ctrl+clicked paths and links even inside mouse-tracking programs, and restore scrollback in inline TUIs. Windows and macOS ship from the same verified build matrix.</p>
+      </description>
+    </release>
+    <release version="0.8.2" date="2026-07-08">
+      <description>
+        <p>Packaging and workspace-ergonomics release. macOS gains a first-class install path: CI builds an ad-hoc-signed OdyTTY.app bundle and a Homebrew tap ships it as a cask, with a source-build formula fallback for Intel hosts. The animated scroll glide and its pixel-precise lane now follow each pane individually inside splits, where scrolling previously fell back to a plain notch jump. Workspaces can be reordered from the rail's right-click menu, and a new setting controls what typing exit does when it would close a whole workspace: close just that workspace as before, or quit OdyTTY so a restored layout reopens the same set. New tabs and windows inherit the active pane's working directory, a Duplicate Tab action rides that inheritance, and the built-in theme library grows to 112 palettes. The settings panel reaches every shipped knob, the new-slot controls read more clearly with a mis-click guard, the window-opacity floor lowers to 20 percent, and GPU adapter startup diagnostics route through the rotated log. Windows: the PowerShell click-to-place caret lands exactly at the click, and the exit-behavior setting flows through the same ConPTY path.</p>
+      </description>
+    </release>
+    <release version="0.8.1" date="2026-07-07">
+      <description>
+        <p>Point release focused on scroll feel and a copy fix. Scrollback scrolling gains an optional animated glide, on by default: the viewport jumps to its target row instantly while a separate visual position eases toward it each frame, moving only in the scroll direction so it can never overshoot or bounce. High-resolution and touchpad devices drive a separate continuous pixel-precise lane that tracks pointer travel directly. The mouse-wheel scroll amount is now six rows per notch by default and remains configurable; it governs both local scrollback and alternate-scroll pagers such as less, man, and git log so the two advance in step, while full mouse-tracking programs such as vim, tmux, and htop still own the wheel themselves. The composited tab bar and vertical workspace rail are pinned against the sub-row scroll motion, so only terminal content glides and the chrome no longer drifts with it. Copying a mouse selection that extends beyond the visible screen now captures the full selected range across scrollback, for both normal and rectangular block selection.</p>
+      </description>
+    </release>
+    <release version="0.8.0" date="2026-07-07">
+      <description>
+        <p>Feature release. Tabs now live inside named workspaces, each with its own tab strip and a vertical rail that appears once a second workspace exists; workspaces can be created, renamed, closed, cycled by keyboard, and bound to a remote host. Opt-in layout persistence (off by default) reopens the previous window shape — workspaces, tabs, and pane splits at their working directories — when launched with no arguments; snapshots record structure only, never terminal output, scrollback, environment, or the commands that were running, so a restored pane is always a fresh shell. Named layouts capture the whole session and can be saved, reopened with a replace-or-add prompt, and on Unix reattach still-alive SSH sessions. Seamless remote terminals carry the shell integration onto a remote over an inline bash bootstrap with nothing persisted remotely, reuse SSH connections across tabs via ControlMaster, hold dropped connections open with a reconnect prompt, optionally persist sessions with tmux, and paste images through to the remote host. A rebuilt connection manager adds an Add/Edit form with a Test Connection probe and a per-host identity file, right-click host actions, and ad-hoc connection to an unsaved host. Right-click menus are composed per surface. The settings panel is compacted to one line per row with a focused-row help footer and split name/value click zones. Window transparency (off by default) makes the background translucent while text, cursor, selection, and overlays stay opaque. The tab chrome is reworked into a flat, glow-accented treatment with a top bar or a drag-resizable, auto-hiding vertical rail. Shutdown and rapid-close paths are bounded so a wedged remote can no longer stall exit. Windows: transparency composites through DWM; SSH connection reuse is a Unix-client feature and restored remote panes open fresh.</p>
+      </description>
+    </release>
+    <release version="0.7.5" date="2026-07-02">
+      <description>
+        <p>Hardening and correctness release: a full audit of the terminal core, session host, graphics protocols, and native shell lands as thirty-plus individually tested fixes. Highlights: memory-safety ceilings on scrollback, image transfers, and the glyph atlas; Kitty graphics chunked transmissions and quiet modes; sixel and placement clipping fixes; VT conformance (IND/NEL, DECSTBM clamping, OSC color formats and palette queries); overlay and IME keystrokes no longer leak into the shell; prompt-aware select+Delete rebuilt on an explicit input-region model with per-shell certainty tiers; click-to-place cursor now on by default with multi-row wrapped-line support; crash/freeze hardening with a panic hook, watchdog, and default rotated logging. Windows: process trees are cleaned up via Job Objects, a ConPTY resize/close race is fixed, logs move to LOCALAPPDATA, missing symbol glyphs render via a Segoe UI Symbol fallback, and a "New Window" action and Keyboard Shortcuts menu item round out the UI.</p>
+      </description>
+    </release>
+    <release version="0.7.1" date="2026-07-01">
+      <description>
+        <p>Bugfix release. Fixes an idle-window render freeze: a long-lived, non-interacted OdyTTY window could stop repainting entirely — stale pixels, input with no echo, and no repaint even when dragged to another monitor — after a transient GPU/compositor surface hiccup. The skipped-frame recovery gave up permanently once its fast-retry budget was spent, so under an event-wait loop a window with no incoming events never repainted again. The fix adds a slow keep-alive retry so an idle window self-heals within about a second of the surface recovering, without busy-spinning.</p>
+      </description>
+    </release>
+    <release version="0.7.0" date="2026-07-01">
+      <description>
+        <p>Cursor, selection, and multi-pane hardening release, and the first with a Windows install channel (Scoop). Fixes resize cursor drift on pulled scrollback, minimize/restore black-screen and 1x1 reflow, prompt-aware select+Delete surviving a side-by-side split, clickable paths for filenames containing spaces, multi-pane wheel scrolling the pane under the cursor and hover resolving to the correct pane, drag-selection after a split, and a divider-drag pseudoconsole resize flood. Adds PowerShell shell integration (OSC 133 marks) and OSC 7 working-directory reporting on Windows. Interactive Windows behaviour is validated on-device; Linux, macOS, and Windows are all blocking CI legs.</p>
+      </description>
+    </release>
+    <release version="0.6.2" date="2026-06-28">
+      <description>
+        <p>First experimental Windows build: OdyTTY compiles and runs on Windows through a ConPTY pseudoconsole backend, shipping as an unsigned portable x86_64 zip alongside the existing source, AppImage, and AUR artifacts. Local tabs, splits, rendering, themes, effects, inline graphics, and persistent configuration under %APPDATA% work; detachable/resumable session hosting stays Unix-only for this release.</p>
+      </description>
+    </release>
+    <release version="0.6.1" date="2026-06-28">
+      <description>
+        <p>Fixes settings-description drift so each setting's help text matches its actual behaviour, and restores the GUI "reset to default background" action.</p>
+      </description>
+    </release>
+    <release version="0.6.0" date="2026-06-27">
+      <description>
+        <p>Ships a bundled default background and OdysseyOS identity defaults, so a fresh install opens with the intended Odyssey visual identity out of the box.</p>
+      </description>
+    </release>
+    <release version="0.5.4" date="2026-06-27">
+      <description>
+        <p>Adds an in-app About section to the settings overlay: a read-only view (the last row of the settings list) showing version, build provenance (git commit, build date, target, Rust version), and live GPU/renderer diagnostics (adapter, backend, driver), plus clickable project links and a one-click "Copy diagnostics" for bug reports. The diagnostics block deliberately omits filesystem paths so it can be shared without leaking a username.</p>
+      </description>
+    </release>
+    <release version="0.5.3" date="2026-06-26">
+      <description>
+        <p>Adds two opt-in ergonomic features and keyboard parity for prompt editing: a smart Ctrl+C mode (copy-or-interrupt) that copies a local selection when one exists and otherwise sends the interrupt, clickable bare URLs (Ctrl+click to open printed http/https links, on by default), and Delete/Backspace removing a selected editable prompt input via the same shell-integration-gated path as the right-click Delete. Ships a best-effort x86_64 AppImage and an AUR package alongside the source release.</p>
+      </description>
+    </release>
+    <release version="0.5.2" date="2026-06-26">
+      <description>
+        <p>One-fix patch release: the native window now announces its application id (io.unfinished_works.odytty) on Linux, so Wayland compositors and X11 bars resolve the OdyTTY taskbar/dock icon instead of a generic placeholder. The desktop file gains a matching StartupWMClass so spawned windows group under their launcher entry.</p>
+      </description>
+    </release>
+    <release version="0.5.1" date="2026-06-26">
+      <description>
+        <p>Visual-polish release: Nerd Font / symbol icon glyphs are now scaled aspect-preserving and centered in their cell so icon columns (e.g. a fastfetch panel) render even and uncropped, while body text stays byte-identical. OdyTTY also self-identifies to terminal-aware tooling by exporting TERM_PROGRAM=odytty and TERM_PROGRAM_VERSION.</p>
+      </description>
+    </release>
+    <release version="0.5.0" date="2026-06-26">
+      <description>
+        <p>Bug-fix and UX release validated hands-on on both Linux and macOS: click-to-open now works on a real desktop (Ctrl+click on Linux, Cmd+click on macOS), closing the v0.4.0 cross-platform regressions, and extends the interactive-paths workflow layer.</p>
+      </description>
+    </release>
+    <release version="0.4.0" date="2026-06-24">
+      <description>
+        <p>Brings multi-tab and split-pane multiplexing (each pane keeps its own scrollback, selection, viewport, and search), detached resumable sessions with reattach driven by a local-only, per-user Unix socket, and an in-window Manage Sessions overlay (default Ctrl+Shift+A) for attach, rename, kill, and Detach and switch. Adds an SSH connection manager, a Ctrl+Shift+P command palette, and a scrubbable session-replay overlay. Introduces interactive paths (default off): with the gate enabled, OdyTTY detects filesystem paths in its output and Ctrl+click opens them — files via xdg-open, path:line:col via an editor matrix, directories via the file manager — plus Open, Open With…, Copy Path, Copy File, and Reveal in File Manager context items. Resolved image paths open in an in-app lightbox viewer (Esc or click-outside to dismiss). The in-panel keybinding editor now covers every bindable action.</p>
+      </description>
+    </release>
+    <release version="0.3.1" date="2026-06-24">
+      <description>
+        <p>Makes four overlays discoverable by giving each a default Ctrl+Shift chord and a menu entry: Ctrl+Shift+P opens the command palette, Ctrl+Shift+S the connection manager, Ctrl+Shift+R the session-replay overlay, and Ctrl+Shift+B the theme builder. All four use Ctrl+Shift+&lt;letter&gt; chords that a TUI cannot receive, so no PTY input path is perturbed, and every chord remains rebindable. Prompt navigation stays on the Ctrl+Shift+Up / Ctrl+Shift+Down arrow chords.</p>
+      </description>
+    </release>
+    <release version="0.3.0" date="2026-06-23">
+      <description>
+        <p>Lands native splits and panes on a per-tab binary layout tree (single-pane tabs stay byte-identical), reachable via tmux-style prefix bindings and direct Ctrl+Shift+E / Ctrl+Shift+O chords with drag-resizable dividers and directional focus moves. Adds resumable, persistent sessions: a detached session-host process owns the PTYs and terminal models so a window can close and reattach with full scrollback over a per-user, local-only Unix socket, with CLI verbs odytty new, list, and attach. Also introduces an SSH connection manager and a command palette.</p>
+      </description>
+    </release>
+    <release version="0.2.1" date="2026-06-21">
+      <description>
+        <p>Fixes insert/replace mode (IRM, ANSI mode 4): printing in insert mode now shifts existing cells to the right instead of overwriting them, so editors that rely on incremental line redraw — notably Apple's pico/nano on macOS — no longer corrupt the current line. Also bounds scrollback memory by default (a runaway program can no longer grow history until the system runs out of memory) and makes the test suite deterministic. No change to terminal behavior beyond the IRM fix.</p>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-06-20">
+      <description>
+        <p>Adds a mouse-cursor shape (an I-beam over the text grid, a hand over hyperlinks, an arrow over chrome), fixes a stuck-underline bug from a misparsed private-mode escape sequence, and improves macOS symbol-glyph and color coverage. OdyTTY now ships as source only on both Linux and macOS: the prebuilt macOS disk image is retired in favor of a build-from-source flow, and both platforms are exercised in continuous integration.</p>
+      </description>
+    </release>
+    <release version="0.1.9" date="2026-06-19">
+      <description>
+        <p>Fixes scrollback not filling when a program leaves a full-screen scroll region set (so the mouse wheel and Shift+PageUp could not scroll back), adds alternate scroll mode so the wheel scrolls full-screen TUIs like pagers, discovers Apple Color Emoji on macOS, persists first-run onboarding dismissal, and builds from source on older stable Rust toolchains.</p>
+      </description>
+    </release>
+    <release version="0.1.8" date="2026-06-19">
+      <description>
+        <p>Adds an experimental universal macOS build and a tag-triggered release pipeline that publishes the Linux source archive and the macOS disk image together. No functional change for Linux.</p>
+      </description>
+    </release>
+    <release version="0.1.7" date="2026-06-19">
+      <description>
+        <p>Adds bell handling (visual flash or window urgency, configurable) and IME composition input so CJK input methods and compose-key accents work.</p>
+      </description>
+    </release>
+    <release version="0.1.6" date="2026-06-19">
+      <description>
+        <p>Makes the bundled Nerd Font glyph pack render across both v2 and v3 codepoint eras via an ordered symbol fallback chain, and groups the font picker into bundled and system fonts.</p>
+      </description>
+    </release>
+    <release version="0.1.5" date="2026-06-18">
+      <description>
+        <p>Adds geometric Unicode Braille pattern rendering so btop and other Braille-graph terminal output does not fall back to missing-glyph boxes.</p>
+      </description>
+    </release>
+    <release version="0.1.4" date="2026-06-18">
+      <description>
+        <p>Fixes uneven background-image opacity in the padding and non-grid edge regions when translucent cell backgrounds are enabled.</p>
+      </description>
+    </release>
+    <release version="0.1.3" date="2026-06-18">
+      <description>
+        <p>Adds `odytty -e command args...`, `--working-directory`, and `--title` launch support for terminal-exec integrations and command launchers.</p>
+      </description>
+    </release>
+    <release version="0.1.2" date="2026-06-18">
+      <description>
+        <p>Fixes a native-session shutdown crash that could panic after the final shell exited while the event loop was still processing teardown.</p>
+      </description>
+    </release>
+    <release version="0.1.1" date="2026-06-18">
+      <description>
+        <p>Refreshes the public README install guide so the release archive matches the documented user-local install flow.</p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-06-18">
+      <description>
+        <p>Initial Linux pre-release target with source packaging, desktop launcher metadata, and hicolor icon assets.</p>
+      </description>
+    </release>
+  </releases>
+</component>

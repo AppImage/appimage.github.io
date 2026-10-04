@@ -1,0 +1,23 @@
+[Desktop Entry]
+Type=Application
+Name=HashVerifier
+Comment=Checksum generation and verification tool
+Exec=hashverifier
+Icon=hashverifier
+Categories=Utility;
+Terminal=false
+MimeType=inode/directory;application/x-sfv;application/x-md4;application/x-md5;application/x-sha1;application/x-sha256;application/x-sha384;application/x-sha512;application/x-sha3-256;application/x-sha3-384;application/x-sha3-512;application/x-blake3;application/x-xxh3;application/x-xxh128;
+Keywords=checksum;hash;verify;sfv;md5;sha;
+X-AppImage-Version=2026.9.26
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.30
+X-AppImage-Payload-License=MIT

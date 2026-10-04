@@ -1,11 +1,11 @@
 [Desktop Entry]
 Name=Blanc
-Exec=AppRun --no-sandbox %U
+Exec=AppRun %U
 Terminal=false
 Type=Application
 Icon=blanc
 StartupWMClass=Blanc
-X-AppImage-Version=1.23.0
+X-AppImage-Version=1.26.0
 Comment=Minimal Electron browser shell: custom chrome UI + built-in ad/tracker blocking, no extension-store dependency.
 MimeType=x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/blanc-import;
 Categories=Network;WebBrowser;
@@ -17,7 +17,7 @@ X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runne
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
 X-AppImage-Libc=host
-X-AppImage-Runtime=dynamic
+X-AppImage-Runtime=static
 X-AppImage-Self-Contained=false
 X-AppImage-Glibc-Required=GLIBC_2.25
 X-AppImage-Payload-License=MIT

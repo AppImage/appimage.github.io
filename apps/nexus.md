@@ -2,8 +2,8 @@
 layout: app
 
 permalink: /nexus/
-description: Cross-platform BBS client
-license: MIT
+description: "Cross-platform BBS client"
+license: "MIT"
 
 icons:
   - nexus/icons/scalable/nexus.svg
@@ -12,8 +12,8 @@ screenshots:
   - nexus/screenshot.png
 
 authors:
-  - name: zquestz
-    url: https://github.com/zquestz
+  - name: "zquestz"
+    url: "https://github.com/zquestz"
 
 links:
   - type: GitHub
@@ -33,6 +33,7 @@ desktop:
     Type: Application
     MimeType: x-scheme-handler/nexus
   AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|zquestz|nexus|latest-all|nexus-client-*-x64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)

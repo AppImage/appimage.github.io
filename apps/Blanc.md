@@ -2,8 +2,8 @@
 layout: app
 
 permalink: /Blanc/
-description: Minimal Electron browser shell: custom chrome UI + built-in ad/tracker blocking, no extension-store dependency.
-license: MIT
+description: "Minimal Electron browser shell: custom chrome UI + built-in ad/tracker blocking, no extension-store dependency."
+license: "MIT"
 
 icons:
   - Blanc/icons/1024x1024/blanc.png
@@ -12,8 +12,8 @@ screenshots:
   - Blanc/screenshot.png
 
 authors:
-  - name: bnfy
-    url: https://github.com/bnfy
+  - name: "bnfy"
+    url: "https://github.com/bnfy"
 
 links:
   - type: GitHub
@@ -24,12 +24,12 @@ links:
 desktop:
   Desktop Entry:
     Name: Blanc
-    Exec: AppRun --no-sandbox %U
+    Exec: AppRun %U
     Terminal: false
     Type: Application
     Icon: blanc
     StartupWMClass: Blanc
-    X-AppImage-Version: 1.23.0
+    X-AppImage-Version: 1.26.0
     Comment: 'Minimal Electron browser shell: custom chrome UI + built-in ad/tracker
       blocking, no extension-store dependency.'
     MimeType: x-scheme-handler/http
@@ -42,21 +42,10 @@ desktop:
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
     X-AppImage-Libc: host
-    X-AppImage-Runtime: dynamic
+    X-AppImage-Runtime: static
     X-AppImage-Self-Contained: false
     X-AppImage-Glibc-Required: GLIBC_2.25
     X-AppImage-Payload-License: MIT
 
-electron:
-  description: 'Minimal Electron browser shell: custom chrome UI + built-in ad/tracker
-    blocking, no extension-store dependency.'
-  main: src/main/main.js
-  type: commonjs
-  author: ''
-  license: MIT
-  private: true
-  dependencies:
-    "@1password/sdk": 0.5.0
-    "@ghostery/adblocker-electron": "^2.18.2"
-    electron-updater: "^6.8.9"
+electron: {"name":"blanc","productName":"Blanc","version":"1.26.0","description":"Minimal Electron browser shell: custom chrome UI + built-in ad/tracker blocking, no extension-store dependency.","main":"src/main/main.js","type":"commonjs","author":"","license":"MIT","private":true,"dependencies":{"@1password/sdk":"0.5.0","@ghostery/adblocker-electron":"^2.18.2","electron-updater":"^6.8.9"}}
 ---

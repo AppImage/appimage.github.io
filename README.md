@@ -4,7 +4,7 @@
 
 ## This is...
 
-* __A crowd-sourced directory of available, reviewed AppImages__ with data that 3rd party app stores and software centers can use. Given a URL to an AppImage, it inspects the AppImage and puts it into a community-maintained catalog. The idea is that all the metadata travels inside the AppImage, so besides adding a URL to this repository no additional information is asked, since it comes with the AppImage itself.
+* __A crowd-sourced directory of available, tested AppImages__ with data that 3rd party app stores and software centers can use. Given a URL to an AppImage, it inspects the AppImage and puts it into a community-maintained catalog. The idea is that all the metadata travels inside the AppImage, so besides adding a URL to this repository no additional information is asked, since it comes with the AppImage itself.
 
 ## This is NOT...
 

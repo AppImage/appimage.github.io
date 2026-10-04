@@ -1,0 +1,32 @@
+{
+  "name": "claude-code-studio",
+  "version": "7.18.3",
+  "description": "Full-featured web workspace for Claude Code — chat, Kanban, multi-agent, MCP, skills, projects",
+  "bin": {
+    "claude-code-studio": "./bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lexus2016/claude-code-studio.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "electron-updater": "^6.8.9",
+    "express": "^4.21.0",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "multer": "^2.2.0",
+    "ssh2": "^1.17.0",
+    "ws": "^8.18.0"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^11.0.0"
+  },
+  "main": "electron/main.js",
+  "author": "Lexus2016 <Lexus2016@users.noreply.github.com>"
+}
