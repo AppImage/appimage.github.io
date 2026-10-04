@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Pybient
-Comment=Pybient - Python Entwicklungsumgebung
+Comment=The intuitive Python code editor
 Exec=com.pybient.Pybient
 Icon=com.pybient.Pybient
 Categories=Development;IDE;

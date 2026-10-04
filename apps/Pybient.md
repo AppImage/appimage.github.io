@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /Pybient/
-description: "Pybient - Python Entwicklungsumgebung"
+description: "The intuitive Python code editor"
 license: "LicenseRef-proprietary"
 
 icons:
@@ -11,16 +11,20 @@ screenshots:
 - https://www.pybient.com/n1.png
 
 authors:
+  - name: "Pybient"
+    url: "https://github.com/Pybient"
 
 links:
+  - type: GitHub
+    url: Pybient/Pybient
   - type: Download
-    url: https://www.pybient.com/index.php?pybient_download=pybient-latest-linux
+    url: https://github.com/Pybient/Pybient/releases
 
 desktop:
   Desktop Entry:
     Type: Application
     Name: Pybient
-    Comment: Pybient - Python Entwicklungsumgebung
+    Comment: The intuitive Python code editor
     Exec: com.pybient.Pybient
     Icon: com.pybient.Pybient
     Categories: Development

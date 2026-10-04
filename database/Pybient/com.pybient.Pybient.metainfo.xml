@@ -2,15 +2,15 @@
 <component type="desktop-application">
   <id>com.pybient.Pybient</id>
   <name>Pybient</name>
-  <summary>Pybient - Python Entwicklungsumgebung</summary>
+  <summary>The intuitive Python code editor</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
-  <description><p>Pybient - Python Entwicklungsumgebung</p></description>
+  <description><p>The intuitive Python code editor</p></description>
   <launchable type="desktop-id">com.pybient.Pybient.desktop</launchable>
   <url type="homepage">https://www.pybient.com</url>
   <provides><id>com.pybient.Pybient.desktop</id></provides>
   <releases>
-    <release version="7.45.50" date="2026-10-02"/>
+    <release version="7.45.50" date="2026-10-03"/>
   </releases>
   <screenshots>
     <screenshot type="default"><image>https://www.pybient.com/n1.png</image></screenshot>
