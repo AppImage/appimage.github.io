@@ -1,0 +1,38 @@
+{
+  "name": "bahnsparer",
+  "version": "1.25.1",
+  "private": true,
+  "desktopName": "de.bahnsparer.app.desktop",
+  "description": "Backend-free rail fare comparison, alerts and journey companion",
+  "homepage": "https://bahnsparer.de",
+  "author": {
+    "name": "Max Ritter",
+    "email": "mail@maxritter.net"
+  },
+  "type": "module",
+  "imports": {
+    "#bahnsparer-i18n/*": "./src/i18n-jsx-runtime/*.ts"
+  },
+  "main": "desktop-dist/main.cjs",
+  "dependencies": {
+    "@capacitor-community/in-app-review": "^8.0.0",
+    "@capacitor/android": "^8.5.1",
+    "@capacitor/app": "^8.1.1",
+    "@capacitor/app-launcher": "^8.0.1",
+    "@capacitor/background-runner": "3.0.0",
+    "@capacitor/browser": "^8.0.4",
+    "@capacitor/core": "^8.5.1",
+    "@capacitor/ios": "^8.5.1",
+    "@capacitor/local-notifications": "^8.3.1",
+    "@capacitor/preferences": "^8.0.1",
+    "@capacitor/share": "^8.0.1",
+    "@capgo/capacitor-inappbrowser": "8.16.5",
+    "electron-updater": "^6.8.9",
+    "maplibre-gl": "6.11.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "overrides": {
+    "js-yaml": "^4.3.2"
+  }
+}

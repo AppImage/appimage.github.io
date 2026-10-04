@@ -27,6 +27,12 @@ set -u
 
 FILE="$1"
 URL=$(head -n 1 "$FILE" | tr -d '\r')
+# "#Channel" at the end of the URL (https://github.com/o/r#Nightly): see find-appimage.sh
+CHANNEL=""
+if [[ "$URL" == *"#"* ]] ; then
+  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._-')
+  URL="${URL%%#*}"
+fi
 
 if [ x"${URL:0:4}" != xhttp ] ; then
   echo "unknown: first line of $FILE is not a URL"
@@ -50,7 +56,7 @@ if [[ "$URL" == https://github.com/*/* || "$URL" == https://codeberg.org/*/* || 
   # FETCH_RC here means a fetch error, not "not a repository URL" (exit 2)
   if [ $FETCH_RC -eq 0 ] ; then
     NAME=$(basename "$FILE")
-    FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$NAME") || true
+    FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$NAME" "$CHANNEL") || true
     if echo "$FOUND" | grep -q '^URL '; then
       echo ok
     elif echo "$FOUND" | grep -q 'No AppImage found'; then
@@ -126,20 +132,12 @@ case "$HTTP_CODE" in
   404|410)
     # A release asset that is gone: maybe the repository has a newer release
     # with the AppImage; then the entry can point to the repository instead
-    REPO_URL=""
-    if [[ "$URL" =~ ^https://github\.com/([^/]+)/([^/]+)/releases/download/ ]] ; then
-      REPO_URL="https://github.com/${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
-    elif [[ "$URL" =~ ^https://codeberg\.org/([^/]+)/([^/]+)/releases/download/ ]] ; then
-      REPO_URL="https://codeberg.org/${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
-    elif [[ "$URL" =~ ^https://gitlab\.com/([^/]+)/([^/]+)/-/releases/ ]] ; then
-      REPO_URL="https://gitlab.com/${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
-    fi
+    # (with "#channel" if the link was to the release of a channel, e.g. esr)
+    REPO_URL=$(bash "$(dirname "$0")/repo-url-for-entry.sh" --repo-of "$URL")
     if [ -n "$REPO_URL" ] ; then
-      API_JSON=$(mktemp)
-      trap 'rm -f "$API_JSON"' EXIT
-      if bash "$(dirname "$0")/fetch-releases.sh" "$REPO_URL" "$API_JSON" >/dev/null 2>&1 \
-        && bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$(basename "$FILE")" | grep -q '^URL ' ; then
-        echo "fixable: $REPO_URL"
+      FIX=$(bash "$(dirname "$0")/repo-url-for-entry.sh" "$URL" "$(basename "$FILE")")
+      if [ -n "$FIX" ] ; then
+        echo "fixable: $FIX"
         exit 0
       fi
     fi

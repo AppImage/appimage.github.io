@@ -37,6 +37,14 @@ dpkg -s libfuse2 >/dev/null 2>&1 || sudo apt-get -y install libfuse2 # Normally 
 
 URL=$(cat $1 | head -n 1)
 echo $URL
+# "#Channel" at the end of the URL (https://github.com/o/r#Nightly): which channel of a
+# repository that has a release per channel to test (code/find-appimage.sh), independent
+# of the name of the file; not part of the URL itself
+CHANNEL=""
+if [[ "$URL" == *"#"* ]] ; then
+  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._-')
+  URL="${URL%%#*}"
+fi
 
 GHURL="" # Workaround for: "GHURL: unbound variable"
 
@@ -82,7 +90,7 @@ if [[ "$URL" == https://github.com/*/* || "$URL" == https://codeberg.org/*/* || 
     gitlab) FORGE_NAME="GitLab" ;;
     *) FORGE_NAME="$FORGE" ;;
   esac
-  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME") || true
+  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME" "$CHANNEL") || true
   echo "$FOUND" | grep -v '^URL ' || true
   URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
   if [ x"" == x"$URL" ] ; then
@@ -108,7 +116,7 @@ if [ -z "$FORGE" ] && [[ "$URL" == http*://*/ ]] && [[ "$URL" != *github.com/* ]
   LISTING_JSON=$(mktemp)
   if LISTING_INFO=$(bash "$(dirname "$0")/fetch-listing.sh" "$URL" "$LISTING_JSON") ; then
     echo "Directory listing detected: $LISTING_INFO"
-    FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$LISTING_JSON" "$INPUTBASENAME") || true
+    FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$LISTING_JSON" "$INPUTBASENAME" "$CHANNEL") || true
     echo "$FOUND" | grep -v '^URL ' || true
     LISTED_URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
     if [ -z "$LISTED_URL" ] ; then
@@ -136,7 +144,7 @@ if [ x"${URL:0:22}" == x"https://api.github.com" ] ; then
     echo "Unable to get the releases of the GitHub repository $GHURL. Does the repository exist, and is it public?"
     exit 1
   fi
-  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME") || true
+  FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$INPUTBASENAME" "$CHANNEL") || true
   echo "$FOUND" | grep -v '^URL ' || true
   URL=$(echo "$FOUND" | grep '^URL ' | cut -d ' ' -f 2-) || true
   if [ x"" == x"$URL" ] ; then
@@ -159,6 +167,8 @@ fi
 # if we find an implementation that supports https
 echo "URL: $URL"
 bash "$(dirname "$0")/check-name.sh" --appimage "$(basename "${URL%%\?*}")"
+# Remark if the names of the repository, the AppImage and the README disagree
+bash "$(dirname "$0")/check-names-agree.sh" "$1" "$(basename "${URL%%\?*}")" || true
 
 FILENAME=BeingTested.AppImage
 rm -f "$FILENAME" # Left over from the previous file when a run tests several; must not be tested again
@@ -399,8 +409,8 @@ APID=$!
 sleep 10
 for WAIT in $(seq 1 20) ; do
   kill -0 $APID 2>/dev/null || break
-  WINDOWS=$(timeout 5 xwininfo -tree -root 2>/dev/null || true)
-  grep -qE '0x.*": \(' <<< "$WINDOWS" && break # Not in a pipe: pipefail
+  # GTK tray icons and WebKit create unmapped helper windows; those are not content.
+  timeout 5 xdotool search --onlyvisible --name '.' >/dev/null 2>&1 && break
   sleep 1
 done
 [ "$WAIT" -gt 1 ] && sleep 2 # A window just appeared; let it finish drawing
@@ -408,7 +418,7 @@ done
 NO_WINDOW=""
 if ! kill -0 $APID 2>/dev/null ; then
   NO_WINDOW="ERROR: The application exited within $((10 + WAIT)) seconds instead of showing a window"
-elif ! grep -qE '0x.*": \(' <<< "$(timeout 5 xwininfo -tree -root 2>/dev/null || true)" ; then
+elif ! timeout 5 xdotool search --onlyvisible --name '.' >/dev/null 2>&1 ; then
   NO_WINDOW="ERROR: Could not find a single window on screen :-("
 fi
 
@@ -484,6 +494,34 @@ fi
 icewm > /dev/null 2>&1 &
 sleep 2
 
+# Move the largest application window to the top-left and shrink it if it is
+# larger than the small virtual display (test.yml runs Xvfb at 800x600), so the
+# screenshot shows the whole window instead of a clipped corner (#8041). Nothing
+# else makes an oversized window fit: the window manager lets it overflow and the
+# off-screen part is lost. Best effort - a window with a fixed minimum size may
+# refuse to shrink; it is at least moved fully on-screen.
+fit_main_window() {
+  local SW SH LINE WID WW WH NW NH
+  read -r SW SH < <(timeout 5 xdotool getdisplaygeometry 2>/dev/null)
+  [[ "$SW" =~ ^[0-9]+$ && "$SH" =~ ^[0-9]+$ ]] || return 0
+  # The largest managed window (as take-screenshot.sh picks the app window)
+  LINE=$(timeout 20 xwininfo -tree -root 2>/dev/null | grep '": ("' \
+    | sed -nE 's/^[[:space:]]*(0x[0-9a-f]+) .* ([0-9]+)x([0-9]+)[-+][-0-9]+[-+][-0-9]+ +[-+][0-9]+[-+][0-9]+$/\1 \2 \3/p' \
+    | awk '{ print $2 * $3, $0 }' | sort -rn | head -n 1 | cut -d ' ' -f 2-)
+  read -r WID WW WH <<<"$LINE"
+  [[ -n "$WID" && "$WW" =~ ^[0-9]+$ && "$WH" =~ ^[0-9]+$ ]] || return 0
+  timeout 5 xdotool windowmove "$WID" 0 0 2>/dev/null || true
+  NW=$WW ; NH=$WH
+  # Leave room for the window manager's border and title bar
+  [ "$WW" -gt $((SW - 4)) ] && NW=$((SW - 4))
+  [ "$WH" -gt $((SH - 30)) ] && NH=$((SH - 30))
+  if [ "$NW" != "$WW" ] || [ "$NH" != "$WH" ] ; then
+    echo "Window $WID (${WW}x${WH}) is larger than the ${SW}x${SH} screen; resizing it to ${NW}x${NH} so the whole window is captured"
+    timeout 5 xdotool windowsize "$WID" "$NW" "$NH" 2>/dev/null || true
+    sleep 1
+  fi
+}
+
 # We could simulate X11 keyboard/mouse input with xdotool here if needed;
 # of course this should not be hardcoded here (this is just an example)
 if [ x"$INPUTBASENAME" == xVLC ] ; then
@@ -538,6 +576,7 @@ if [ "$TRAY" == true ] ; then
   fi
   echo "WARNING: The screenshot shows a system tray application (its tray icon, or what clicking it opened); please check it"
 else
+  fit_main_window
   bash "$(dirname "$0")/take-screenshot.sh" database/$INPUTBASENAME/screenshot.png || true
 fi
 
@@ -696,16 +735,20 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   echo "layout: app" >> apps/$INPUTBASENAME.md
   echo "" >> apps/$INPUTBASENAME.md
   echo "permalink: /$INPUTBASENAME/" >> apps/$INPUTBASENAME.md
+  # Emit a value as a one-line YAML scalar (a JSON string is valid YAML), so a
+  # ": ", a "#", a leading special character or a newline in a description,
+  # license or author name cannot break the front matter (issue #9519).
+  yscalar() { printf '%s' "$1" | tr '\r\n\t' '   ' | jq -Rs '.' ; }
   # Description
   DESKTOP_COMMENT=$(grep "^Comment=.*" database/$INPUTBASENAME/*.desktop | cut -d '=' -f 2- ) || true
   if [ -f database/$INPUTBASENAME/*appdata.xml ] ; then
     ./appstreamcli-x86_64.AppImage convert database/$INPUTBASENAME/*appdata.xml database/$INPUTBASENAME/appdata.yaml
     SUMMARY=$(cat database/$INPUTBASENAME/*appdata.xml | xmlstarlet sel -t -m "/component/summary[1]" -v .) || true
     if [ x"$SUMMARY" != x"" ] ; then
-      echo "description: $SUMMARY" >> apps/$INPUTBASENAME.md
+      echo "description: $(yscalar "$SUMMARY")" >> apps/$INPUTBASENAME.md
     fi
   elif [  x"$DESKTOP_COMMENT" != x"" ] ; then
-    echo "description: $DESKTOP_COMMENT" >> apps/$INPUTBASENAME.md
+    echo "description: $(yscalar "$DESKTOP_COMMENT")" >> apps/$INPUTBASENAME.md
   fi
   # License
   AS_LICENSE=""
@@ -720,9 +763,9 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     | cut -d '=' -f 2
   ) || true
   if [ x"$AS_LICENSE" != x"" ] ; then
-    echo "license: $AS_LICENSE" >> apps/$INPUTBASENAME.md
+    echo "license: $(yscalar "$AS_LICENSE")" >> apps/$INPUTBASENAME.md
   elif [ x"$DT_LICENSE" != x"" ] ; then
-    echo "license: $DT_LICENSE" >> apps/$INPUTBASENAME.md
+    echo "license: $(yscalar "$DT_LICENSE")" >> apps/$INPUTBASENAME.md
   else
     echo "No license found!"
   fi
@@ -759,16 +802,16 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # winning one, kept as "GH_*" for compatibility with the rest of the script
   GH_HOST=""
   GH_USER=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
-  GH_REPO=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+  GH_REPO=$(grep "^https://github.com/" data/$INPUTBASENAME | cut -d '/' -f 5 | cut -d '#' -f 1) || true
   [ x"$GH_USER" != x"" ] && GH_HOST="github.com"
   if [  x"$GH_USER" == x"" ] ; then
     GH_USER=$(grep "^https://codeberg.org/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
-    GH_REPO=$(grep "^https://codeberg.org/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+    GH_REPO=$(grep "^https://codeberg.org/" data/$INPUTBASENAME | cut -d '/' -f 5 | cut -d '#' -f 1) || true
     [ x"$GH_USER" != x"" ] && GH_HOST="codeberg.org"
   fi
   if [  x"$GH_USER" == x"" ] ; then
     GH_USER=$(grep "^https://gitlab.com/" data/$INPUTBASENAME | cut -d '/' -f 4) || true
-    GH_REPO=$(grep "^https://gitlab.com/" data/$INPUTBASENAME | cut -d '/' -f 5) || true
+    GH_REPO=$(grep "^https://gitlab.com/" data/$INPUTBASENAME | cut -d '/' -f 5 | cut -d '#' -f 1) || true
     [ x"$GH_USER" != x"" ] && GH_HOST="gitlab.com"
   fi
   OBS_USER=$(
@@ -790,11 +833,11 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     gitlab.com) LINK_TYPE="GitLab" ;;
   esac
   if [  x"$GH_USER" != x"" ] ; then
-    echo "  - name: $GH_USER" >> apps/$INPUTBASENAME.md
-    echo "    url: https://$GH_HOST/$GH_USER" >> apps/$INPUTBASENAME.md
+    echo "  - name: $(yscalar "$GH_USER")" >> apps/$INPUTBASENAME.md
+    echo "    url: $(yscalar "https://$GH_HOST/$GH_USER")" >> apps/$INPUTBASENAME.md
   elif [  x"$OBS_USER" != x"" ] ; then
-    echo "  - name: $OBS_USER" >> apps/$INPUTBASENAME.md
-    echo "    url: https://build.opensuse.org/user/show/$OBS_USER" >> apps/$INPUTBASENAME.md
+    echo "  - name: $(yscalar "$OBS_USER")" >> apps/$INPUTBASENAME.md
+    echo "    url: $(yscalar "https://build.opensuse.org/user/show/$OBS_USER")" >> apps/$INPUTBASENAME.md
   # elif [  x"$BB_USER" != x"" ] ; then
     # echo "  - name: $BB_USER" >> apps/$INPUTBASENAME.md
     # echo "    url: https://bitbucket.org/$BB_USER" >> apps/$INPUTBASENAME.md
@@ -817,7 +860,7 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
   # downloaded from, if that link stays valid for new versions (a download
   # directory such as https://download.kde.org/stable/krita/, or a "latest"
   # link), i.e. its path contains no version number (4.3.0, 16.12, v2, /12/)
-  DATA_URL=$(head -n 1 "data/$INPUTBASENAME" | tr -d '\r' | sed -E 's/[[:space:]].*//')
+  DATA_URL=$(head -n 1 "data/$INPUTBASENAME" | tr -d '\r' | sed -E 's/[[:space:]].*//; s/#.*//') # without a "#Channel"
   DATA_PATH=$(echo "$DATA_URL" | cut -d / -f 4- | cut -d '?' -f 1)
   if [ x"$GH_USER" == x"" ] && [ x"$OBS_LINK" == x"" ] && [[ "$DATA_URL" =~ ^https?://[^[:space:]\"]+$ ]] \
     && ! echo "/$DATA_PATH" | grep -qiE '[0-9]+\.[0-9]+|(^|[^a-z0-9])v[0-9]+([^a-z0-9]|$)|/[0-9]+(/|$)' ; then
@@ -846,13 +889,16 @@ sudo chmod a+x appstreamcli-x86_64.AppImage
     cat database/$INPUTBASENAME/appdata.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
     rm database/$INPUTBASENAME/appdata.yaml
   fi
-  # Add content of Electron package.json file
+  # Add content of Electron package.json file, as one compact JSON value (valid
+  # YAML): splicing the pretty-printed YAML in with a fixed "tail -n" cut into
+  # the first value and produced invalid front matter (issue #9519). If it is
+  # not valid JSON, skip it rather than break the page.
   if [ -e database/$INPUTBASENAME/package.json ] ; then
-    sudo dv database/$INPUTBASENAME/package.json --yaml -o database/$INPUTBASENAME/package.yaml # Do we need sudo to prevent '`load': cannot load such file'?
-    echo "" >> apps/$INPUTBASENAME.md
-    echo "electron:" >> apps/$INPUTBASENAME.md
-    cat database/$INPUTBASENAME/package.yaml | sed  's/^/  /' | tail -n +5 >> apps/$INPUTBASENAME.md # tail -n +5 = skip first 4 lines ("---")
-    rm database/$INPUTBASENAME/package.yaml
+    ELECTRON_JSON=$(jq -c . database/$INPUTBASENAME/package.json 2>/dev/null) || ELECTRON_JSON=""
+    if [ -n "$ELECTRON_JSON" ] ; then
+      echo "" >> apps/$INPUTBASENAME.md
+      echo "electron: $ELECTRON_JSON" >> apps/$INPUTBASENAME.md
+    fi
   fi
   echo "---" >> apps/$INPUTBASENAME.md
   ls -lh apps/$INPUTBASENAME.md || exit 1

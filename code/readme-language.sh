@@ -19,6 +19,7 @@
 set -u
 
 URL="${1:-}"
+URL="${URL%%#*}" # without a "#Channel" (see find-appimage.sh)
 [ -n "$URL" ] || exit 0
 
 fetch() { curl -sfL --max-time 30 "$@" 2>/dev/null ; }
@@ -57,6 +58,38 @@ readme() {
       ;;
   esac
 }
+
+# Print the names of the files in the repository's root directory, or nothing.
+root_files() {
+  local slug owner repo enc branch
+  case "$URL" in
+    https://github.com/*)
+      slug=${URL#https://github.com/} ; slug=${slug%.git} ; slug=${slug%/}
+      owner=$(cut -d / -f 1 <<<"$slug") ; repo=$(cut -d / -f 2 <<<"$slug")
+      [ -n "$owner" ] && [ -n "$repo" ] || return 0
+      fetch ${GH_TOKEN:+-H "Authorization: Bearer $GH_TOKEN"} \
+        "https://api.github.com/repos/$owner/$repo/contents/" | jq -r '.[]?.name' 2>/dev/null
+      ;;
+    https://codeberg.org/*)
+      slug=${URL#https://codeberg.org/} ; slug=${slug%.git} ; slug=${slug%/}
+      owner=$(cut -d / -f 1 <<<"$slug") ; repo=$(cut -d / -f 2 <<<"$slug")
+      [ -n "$owner" ] && [ -n "$repo" ] || return 0
+      fetch "https://codeberg.org/api/v1/repos/$owner/$repo/contents" | jq -r '.[]?.name' 2>/dev/null
+      ;;
+    https://gitlab.com/*)
+      slug=${URL#https://gitlab.com/} ; slug=${slug%.git} ; slug=${slug%/}
+      enc=$(jq -rn --arg s "$slug" '$s|@uri' 2>/dev/null)
+      [ -n "$enc" ] || return 0
+      fetch "https://gitlab.com/api/v4/projects/$enc/repository/tree?per_page=100" | jq -r '.[]?.name' 2>/dev/null
+      ;;
+  esac
+}
+
+# An English README next to the main one: README.en.md, README_EN.md,
+# readme-en.md, README.en-US.md, README.english.md, ...
+if root_files | grep -qiE '^readme[._-]?(en|eng|english)([._-][a-z0-9_-]*)*$' ; then
+  exit 0
+fi
 
 TEXT=$(readme | head -c 200000)
 [ -n "$TEXT" ] || exit 0

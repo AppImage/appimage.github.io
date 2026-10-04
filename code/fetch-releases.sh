@@ -49,7 +49,7 @@ if [ "${1:-}" == "--license" ] ; then
   exit 0
 fi
 
-URL="$1"
+URL="${1%%#*}" # without a "#Channel" (see find-appimage.sh)
 OUT_JSON="$2"
 
 FORGE=""

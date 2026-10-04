@@ -1,0 +1,15 @@
+{
+  "name": "observerlauncher",
+  "version": "3.2.0",
+  "description": "A beginner-friendly and advanced-capable desktop launcher for hosting local Minecraft servers on Windows and Linux.",
+  "license": "Apache-2.0",
+  "author": "ObserverLauncher contributors",
+  "main": "src/main.js",
+  "bin": {
+    "observer": "src/cli.js"
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.9",
+    "prismarine-nbt": "^2.8.0"
+  }
+}

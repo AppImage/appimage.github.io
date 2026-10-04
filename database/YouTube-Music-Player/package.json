@@ -1,0 +1,23 @@
+{
+  "name": "youtube-music-player",
+  "version": "2.0.2",
+  "description": "YouTube Music Player",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nubsuki/YouTube-Music-Player"
+  },
+  "author": {
+    "name": "nubsuki",
+    "email": "nubsuki@proton.me"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@ghostery/adblocker-electron": "^2.18.2",
+    "@gorhill/ubo-core": "^0.1.30",
+    "@xhayper/discord-rpc": "^1.5.1",
+    "dotenv": "^16.4.5",
+    "electron-updater": "^6.8.9",
+    "node-fetch": "^3.3.2"
+  }
+}

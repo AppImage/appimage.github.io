@@ -1,0 +1,15 @@
+{
+  "name": "sip-mud-client",
+  "version": "3.3.4",
+  "description": "Sip -a MUD Client!",
+  "main": "main.js",
+  "author": {
+    "name": "Bo Zimmerman",
+    "email": "bo@zimmers.net"
+  },
+  "homepage": "http://www.coffeemud.org/",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "@electron/remote": "^2.1.2"
+  }
+}

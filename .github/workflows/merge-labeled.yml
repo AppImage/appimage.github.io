@@ -12,6 +12,10 @@
 # Test workflow is dispatched afterwards for each merge commit so database/ is
 # written (as the auto-merge in publish-pr-screenshot.yml does).
 #
+# A pull request that changes the first line of an existing file in data/ is left
+# to a maintainer, unless it only shortens a long-form repository link to the
+# short form of the same repository (code/repo-url-for-entry.sh --shortens).
+#
 # Set dry_run to true to only list what would be merged.
 
 name: Merge labeled PRs
@@ -48,6 +52,11 @@ jobs:
       MAX: ${{ inputs.max }}
       DRY_RUN: ${{ inputs.dry_run }}
     steps:
+      # master, not a PR: for code/repo-url-for-entry.sh
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: code
       - name: Merge eligible pull requests
         run: |
           set -uo pipefail
@@ -78,6 +87,24 @@ jobs:
               sleep 5
             done
             sha=$(jq -r .head.sha <<<"$data")
+            # Existing entries in data/ must keep their first line (or have a
+            # long-form repository link shortened to the SAME repository)
+            local file status old new
+            while IFS=$'\t' read -r file status ; do
+              [[ "$file" == data/* ]] || continue
+              case "$status" in
+                added) ;;
+                modified)
+                  old=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$file?ref=$(jq -r .base.sha <<<"$data")" 2>/dev/null | head -n 1 | tr -d '\r')
+                  new=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$file?ref=$sha" 2>/dev/null | head -n 1 | tr -d '\r')
+                  if [ "$old" != "$new" ] && ! bash code/repo-url-for-entry.sh --shortens "$old" "$new" ; then
+                    echo "skip #$pr: the download location of the existing $file changes; a maintainer checks that"
+                    return 1
+                  fi
+                  ;;
+                *) echo "skip #$pr: $file is $status; a maintainer checks that" ; return 1 ;;
+              esac
+            done < <(gh api --paginate "repos/$REPO/pulls/$pr/files" --jq '.[] | [.filename, .status] | @tsv' 2>/dev/null)
             if [ "$mergeable" != true ] ; then
               echo "skip #$pr: not mergeable (mergeable=$mergeable, state=$state)"
               return 1
