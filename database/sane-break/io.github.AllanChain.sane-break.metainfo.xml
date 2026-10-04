@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright [2025] [Allan Chain] -->
+<component type="desktop-application">
+  <id>io.github.AllanChain.sane-break</id>
+
+  <name>Sane Break</name>
+  <summary>Break reminder, no mindless skips</summary>
+
+  <metadata_license>CC-BY-SA-4.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <developer id="io.github.allanchain">
+    <name>Allan Chain</name>
+  </developer>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+  <branding>
+    <color type="primary" scheme_preference="light">#bbf7d0</color>
+    <color type="primary" scheme_preference="dark">#14532d</color>
+  </branding>
+  <content_rating type="oars-1.1" />
+  <url type="bugtracker">https://github.com/AllanChain/sane-break/issues</url>
+  <url type="homepage">https://github.com/AllanChain/sane-break/</url>
+
+
+  <description>
+    <p>
+      NOTE: Sane Break works best with X11 and KDE Wayland. It works on GNOME but less optimal. It also works on other Wayland compositors with wlr layer shell and idle notify protocols support. The Flatpak version does not support locking screen or pausing breaks when specific programs are running.
+    </p>
+    <p>
+      Sane Break is a cross-platform break reminder designed to help you take meaningful breaks without disrupting your workflow. It allows you to take ownership of when to stop and break, and aims to strike a balance between respecting your workflow and ensuring you take the breaks you need. Specifically, Sane Break uses a two-phase system:
+    </p>
+    <ul>
+      <li>Phase 1: A small, unobtrusive reminder that encourages you to find a good stopping point.</li>
+      <li>Phase 2: The reminder grows to full screen during the actual break.</li>
+    </ul>
+    <p>
+      Transition to phase 2 happens when you stop working on your computer, or when you ignore the reminder and keep working for too long.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.AllanChain.sane-break.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The configuration UI</caption>
+      <image>https://github.com/user-attachments/assets/cdcfbcab-80e3-48f9-874b-715b947cc1e4</image>
+    </screenshot>
+    <screenshot>
+      <caption>The full screen window during phase 2</caption>
+      <image>https://github.com/user-attachments/assets/59164505-3446-4ef7-b0e0-5ffe0a607c44</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+  <release version="0.9.5" date="2026-01-03">
+    <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.9.5</url>
+    <description>
+      <p>Bug fixes</p>
+      <ul>
+        <li>fix preference window theme</li>
+        <li>try wait for tray before starting</li>
+      </ul>
+      <p>Changes</p>
+      <ul>
+        <li>flash tray icon 10 seconds before breaks</li>
+      </ul>
+      <p>Misc</p>
+      <ul>
+        <li>adopt Qt 6.10</li>
+        <li>translation update and add German translations</li>
+      </ul>
+    </description>
+  </release>
+  <release version="0.9.4" date="2025-10-08">
+    <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.9.4</url>
+    <description>
+      <p>Bug fixes</p>
+      <ul>
+        <li>Fix clock update after break ends</li>
+        <li>Update preference button color after theme change</li>
+      </ul>
+    </description>
+  </release>
+  <release version="0.9.3" date="2025-09-13">
+    <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.9.3</url>
+    <description>
+      <p>Bug fixes</p>
+      <ul>
+        <li>Improve sleep handling and avoid exiting pauses</li>
+        <li>Fix false positive postpone confirm after pause</li>
+        <li>Fix incorrect initial time on break window when user is idle</li>
+        <li>Fix exit force break button remains after clicking</li>
+        <li>Show buttons when previewing break windows</li>
+        <li>Fix save button not shown in general tab</li>
+        <li>Hide buttons on BreakPhasePost since can't click</li>
+        <li>Fix `qt_add_plugin` for x11 with old Qt versions</li>
+        <li>Fix preference window icon</li>
+        <li>Do not make window transparent for inputs on X11</li>
+        <li>Smaller clock size with countdown and remove seconds</li>
+      </ul>
+    </description>
+  </release>
+  <release version="0.9.2" date="2025-08-14">
+    <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.9.2</url>
+    <description>
+      <p>Bug fixes</p>
+      <ul>
+        <li>Prevent any new instance to start to avoid confusion</li>
+      </ul>
+    </description>
+  </release>
+  <release version="0.9.1" date="2025-08-12">
+    <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.9.1</url>
+    <description>
+      <p>Bug fixes</p>
+      <ul>
+        <li>Fix show components for small break windows</li>
+        <li>Fix pause reason not cleared on sleep end</li>
+        <li>Fix auto close window for small and big breaks</li>
+        <li>Fix break window auto close after closing preference window</li>
+      </ul>
+    </description>
+  </release>
+  <release version="0.9.0" date="2025-08-05">
+    <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.9.0</url>
+    <description>
+      <p>Breaking changes</p>
+      <ul>
+        <li>Use bpm as unit for flash speed</li>
+        <li>Only show custom messages in full-screen</li>
+      </ul>
+      <p>Feature</p>
+      <ul>
+        <li>Enable immersive break experience</li>
+        <li>Avoid starting more than one instance of the app</li>
+        <li>Preview button for break window interface setting</li>
+        <li>Button to revert preferences to default values</li>
+      </ul>
+      <p>Changes</p>
+      <ul>
+        <li>Organize preference tabs and add “Interface” tab</li>
+        <li>Separate Wayland and X11 deps with plugins</li>
+        <li>Adopt state machine pattern for app logic</li>
+      </ul>
+      <p>Bug fixes</p>
+      <ul>
+        <li>Remove unused macOS permission hint</li>
+      </ul>
+    </description>
+  </release>
+  <release version="0.8.4" date="2025-07-20">
+    <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.8.4</url>
+    <description>
+      <p>Features</p>
+        <ul>
+          <li>Limited number of exits of force-breaks (default 2)</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Avoid resetting time to next break when postponing</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.8.3" date="2025-06-02">
+      <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.8.3</url>
+      <description>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Unified icon button appearance in break window on all platforms</li>
+          <li>Fix values of spin box and slider out of sync</li>
+          <li>Create autostart dir on Linux if not already exists</li>
+          <li>Disable lock screen on Flatpak as it's not supported</li>
+          <li>When there is break right after the pause, Sane Break now takes the duration of the next break into consideration to decide whether to regard the user has taken a break</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.8.2" date="2025-05-06">
+      <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.8.2</url>
+      <description>
+        <p>Features</p>
+        <ul>
+          <li>Confirm postpone if long time no break</li>
+          <li>Add lock screen and exit force break buttons</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Fix auto screen lock even if not idle after break</li>
+          <li>Move notices to a separate window for better performance</li>
+          <li>Improve preference UI in different languages</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.8.1" date="2025-04-15">
+      <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.8.1</url>
+      <description>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Fix seconds paused is not correctly reset</li>
+          <li>Fix default message prompt not translated</li>
+        </ul>
+        <p>Minor changes</p>
+        <ul>
+          <li>Update builds to Qt 6.9</li>
+          <li>Add traditional Chinese and Spanish translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.8.0" date="2025-04-11">
+      <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.8.0</url>
+      <description>
+        <p>Features</p>
+        <ul>
+          <li>Introduced custom color themes for break windows</li>
+          <li>Added customizable break messages</li>
+          <li>Added option to take a small break instead of a big break</li>
+          <li>Optional tips to exit the application during forced breaks</li>
+        </ul>
+        <p>Bug Fixes</p>
+        <ul>
+          <li>Resolved Wayland protocol errors on Qt 6.9 platforms</li>
+          <li>Enhanced minimum value settings for sliders and spin boxes</li>
+          <li>Fixed menu background color inconsistencies in configuration</li>
+          <li>Fixed unexpected autostart requests</li>
+          <li>Fixed lock screen logic during breaks</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.7.1" date="2025-04-02">
+      <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.7.1</url>
+      <description>
+        <p>Bug fixes</p>
+        <ul>
+          <li>sound config mismatch</li>
+          <li>set minimum for schedule in preference UI</li>
+        </ul>
+        <p>Minor changes</p>
+        <ul>
+          <li>clarify transparency only affects countdown</li>
+          <li>add ticks to flash speed config</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.7.0" date="2025-03-30">
+      <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.7.0</url>
+      <description>
+        <p>Features</p>
+        <ul>
+          <li>allow setting app auto start from settings</li>
+          <li>configurable postpone minutes</li>
+          <li>configurable flash speed and text transparency</li>
+          <li>improved rework preference UI, adding spin boxes and scrolls</li>
+          <li>add French and Dutch translations</li>
+          <li>quit is now in a separate menu entry</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>make progress bar animation smooth</li>
+        </ul>
+        <p>Minor changes</p>
+        <ul>
+          <li>in menu, show time before big break instead of numbers</li>
+          <li>also show tray menu on left click on Windows</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.6.2" date="2025-03-01">
+      <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.6.2</url>
+      <description>
+        <p>Bug fixes</p>
+        <ul>
+          <li>translations can not be configured</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.6.1" date="2025-02-27">
+      <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.6.1</url>
+      <description>
+        <p>Features</p>
+        <ul>
+          <li>add zh translations</li>
+          <li>crowdsourced translations via Weblate</li>
+          <li>use v2 idle-notify protocol when possible (#27)</li>
+          <li>display config file location</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>use minute for bigBreakFor slider</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.6.0" date="2025-01-26">
+      <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.6.0</url>
+      <description>
+        <p>Features</p>
+        <ul>
+          <li>Sane Break will work on systems without trays</li>
+          <li>partial support for GNOME</li>
+          <li>a welcome window to guide new users and show Linux compatibility warnings</li>
+          <li>the flashing window is now transparent to mouse, making it less annoying</li>
+          <li>use minute and second style count down</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>fix settings UI about "big break after"</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.5.3" date="2025-01-12">
+      <url type="details">https://github.com/AllanChain/sane-break/releases/tag/v0.5.3</url>
+      <description>
+        <p>Features</p>
+        <ul>
+          <li>Automatically lock screen after a specific time</li>
+          <li>Quickly start next break after middle click (Linux) or double click (Windows)</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Fix UI display with notch on macOS</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

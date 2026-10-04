@@ -1,0 +1,36 @@
+{
+  "name": "glass-music",
+  "version": "3.0.0",
+  "description": "A futuristic, liquid-glass aesthetic music player for Linux",
+  "main": "main.js",
+  "homepage": "https://github.com/glass-music/app",
+  "author": {
+    "name": "Glass Music",
+    "email": "info@glassmusic.app"
+  },
+  "dependencies": {
+    "@distube/ytdl-core": "^4.16.12",
+    "@google/genai": "^1.43.0",
+    "axios": "^1.18.1",
+    "ffmpeg-static": "^5.3.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "framer-motion": "^12.38.0",
+    "jsdom": "^29.1.1",
+    "jsmediatags": "^3.9.5",
+    "lamejs": "^1.2.1",
+    "lucide-react": "^0.460.0",
+    "metaflac-js": "^1.0.5",
+    "motion": "^12.38.0",
+    "music-metadata": "^11.15.0",
+    "node-id3": "^0.2.6",
+    "play-dl": "^1.9.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-virtualized-auto-sizer": "^2.0.3",
+    "react-virtuoso": "^4.18.3",
+    "react-window": "^2.2.7",
+    "soundcloud-downloader": "^1.0.0",
+    "youtube-dl-exec": "^3.1.9",
+    "yt-search": "^2.13.1"
+  }
+}

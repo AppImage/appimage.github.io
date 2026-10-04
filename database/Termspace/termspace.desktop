@@ -1,0 +1,22 @@
+[Desktop Entry]
+Name=Termspace
+Exec=AppRun --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=termspace
+StartupWMClass=termspace
+X-AppImage-Version=1.6.0
+Comment=A terminal emulator that lays panes out on a horizontal canvas wider than the viewport. Panes past the window edge are not lost — they stay where you put them, and the arrow keys slide the viewport over to them.\n
+Categories=System;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34
+X-AppImage-Payload-License=MIT

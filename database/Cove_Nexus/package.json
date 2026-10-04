@@ -1,0 +1,21 @@
+{
+  "name": "cove-nexus",
+  "version": "2.5.1",
+  "description": "The Cove Nexus — install, launch, and update every Cove tool from a single window.",
+  "main": "main.js",
+  "author": {
+    "name": "Sin",
+    "email": "79215527+Sin213@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/Sin213/cove-nexus",
+  "dependencies": {
+    "electron-updater": "^6.3.9"
+  },
+  "overrides": {
+    "js-yaml": "^4.3.0"
+  },
+  "allowScripts": {
+    "electron@43.1.1": true
+  }
+}

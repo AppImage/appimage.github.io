@@ -1,0 +1,32 @@
+{
+  "name": "todometer",
+  "description": "A simple task app with a progress bar",
+  "version": "3.0.3",
+  "main": "dist/main/index.cjs",
+  "type": "module",
+  "author": {
+    "name": "Cassidy Williams",
+    "email": "hi@cassidoo.co",
+    "url": "https://cassidoo.co"
+  },
+  "homepage": ".",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cassidoo/todometer"
+  },
+  "dependencies": {
+    "@dnd-kit/abstract": "^0.4.0",
+    "@dnd-kit/dom": "^0.4.0",
+    "@dnd-kit/helpers": "^0.4.0",
+    "@dnd-kit/react": "^0.4.0",
+    "@radix-ui/react-accordion": "^1.2.11",
+    "better-sqlite3": "^13.0.3",
+    "date-fns": "^4.1.0",
+    "electron-is-dev": "^3.0.1",
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.8.9",
+    "prop-types": "^15.8.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}

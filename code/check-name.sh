@@ -7,6 +7,10 @@
 #   Without DESKTOPFILE, only the rules that need no AppImage are checked
 #   (run before downloading); with it, also the comparison with the
 #   application's name (run after mounting the AppImage).
+#        check-name.sh --note-text lowercase|terminal NAME
+#   Prints the text of a note about the name (see below), so that the workflow
+#   that publishes the test result can check a line it reads from the (untrusted)
+#   artifact against it.
 #        check-name.sh --appimage FILENAME
 #   Checks the file name of the downloaded AppImage (warnings only, since
 #   changing it means renaming the release files).
@@ -14,14 +18,34 @@
 #   everything is only a warning (existing entries may have older names).
 #
 # Prints "ERROR: File name ..." / "WARNING: File name ..." lines; exits 1 if
-# there is an error. The rules follow the ~1700 existing names: most equal the
+# there is an error. With the desktop file it may also print one "NOTE: File
+# name ..." line (shown under "Notes" in the test result; not a warning): an
+# all-lowercase name without Terminal=true in the desktop file, or a name with
+# capitals with Terminal=true, as all-lowercase names are typically command line
+# tools. The rules follow the ~1700 existing names: most equal the
 # application's name (ignoring case and punctuation), use _ instead of
 # blanks, and a few legitimately contain "AppImage" (AppImageUpdate) or
 # numbers (Play_2048), so those only warn.
 
+# "Linux" other than in "Anylinux", the name of the project that builds
+# some AppImages (https://github.com/pkgforge-dev/Anylinux-AppImages)
+has_linux() { echo "$1" | sed -E 's/anylinux//Ig' | grep -qi linux ; }
+
+note_text() { # note_text lowercase|terminal NAME
+  case "$1" in
+    lowercase) echo "File name '$2': all-lowercase names are typically used for command line tools, but the desktop file does not set Terminal=true. If this is a graphical application, please name the file after the application as it is spelled, with capitals where it has them (e.g. 'Krita'); if it is a command line tool, set Terminal=true in its desktop file." ;;
+    terminal) echo "File name '$2': the desktop file sets Terminal=true, which is typical for command line tools, and those are usually named all lowercase, like their command; this name has capitals. If this is a command line tool, please check the name." ;;
+  esac
+}
+
+if [ "$1" == "--note-text" ] ; then
+  note_text "$2" "$3"
+  exit 0
+fi
+
 if [ "$1" == "--appimage" ] ; then
   # All AppImages are for Linux, so "Linux" in the name tells nothing
-  if echo "$2" | grep -qi linux ; then
+  if has_linux "$2" ; then
     echo "WARNING: AppImage name '$2': should not contain 'Linux', since all AppImages are for Linux (e.g. 'App-1.0-x86_64.AppImage', not 'App-1.0-linux-x86_64.AppImage')"
   fi
   exit 0
@@ -48,6 +72,13 @@ if [ -z "$DESKTOP" ] ; then
   case "$NAME" in
     *[[:space:]]*) problem "must not contain blanks; use _ instead" ;;
   esac
+  # Characters that break the generated page's web address
+  # (https://appimage.github.io/<name>/): a colon in particular makes Jekyll
+  # read the name as a URL scheme, and the whole site build fails with
+  # "Invalid scheme format" (as data/Open_Battery_Information: did).
+  case "$NAME" in
+    *[:?#%]*) problem "must not contain ':', '?', '#' or '%'; these break the page's web address (https://appimage.github.io/<name>/) and can fail the whole site build. Use _ or omit them" ;;
+  esac
   if echo "$NAME" | grep -qiE '\.appimage$|(^|[-_.])(x86[-_]64|amd64|aarch64|arm64|armhf|i[36]86)([-_.]|$)' ; then
     problem "looks like the name of an AppImage file; use the name of the application instead (e.g. 'App', not 'App-1.0-x86_64.AppImage')"
   fi
@@ -66,6 +97,11 @@ if [ -z "$DESKTOP" ] ; then
   if echo "$NAME" | sed -E 's/(x86[-_]64|amd64|aarch64|arm64|i[36]86)//Ig' | grep -qE '[0-9]+\.[0-9]+|[-_ ][vV]?[0-9]+([.][0-9]+)*$' ; then
     remark "seems to contain a version number; the name should not change with new versions (if the number is part of the application's name, this is fine)"
   fi
+  # Dots between words ("Photo.App", usually from an AppImage's file name)
+  # rather than in names like draw.io or snake.js
+  if echo "$NAME" | grep -qE '[A-Za-z0-9]\.[A-Z]' ; then
+    remark "contains a dot between words; use _ between words instead (e.g. '$(echo "$NAME" | sed -E 's/\.([A-Z])/_\1/g')'), unless the dot is part of the application's name"
+  fi
   if echo "$NAME" | grep -q '[^A-Za-z0-9._[:space:]-]' ; then
     remark "contains characters other than letters, digits, '.', '_' and '-'; please check that they are part of the application's name"
   fi
@@ -80,6 +116,15 @@ else
       remark "contains 'Linux', which the application's name ('$APPNAME') does too; fine if that is really the application's name"
     else
       problem "must not contain 'Linux' (all AppImages are for Linux) unless it is part of the application's name ('$APPNAME')"
+    fi
+  fi
+  # All-lowercase names are typically command line tools (Terminal=true)
+  TERMINAL=$(grep -m 1 -i '^Terminal=' "$DESKTOP" 2>/dev/null | cut -d = -f 2- | tr -d '\r[:space:]' | tr 'A-Z' 'a-z')
+  if echo "$NAME" | grep -q '[A-Za-z]' ; then
+    if ! echo "$NAME" | grep -q '[A-Z]' && [ "$TERMINAL" != true ] ; then
+      echo "NOTE: $(note_text lowercase "$NAME")"
+    elif echo "$NAME" | grep -q '[A-Z]' && [ "$TERMINAL" == true ] ; then
+      echo "NOTE: $(note_text terminal "$NAME")"
     fi
   fi
   A=$(normalize "$NAME")

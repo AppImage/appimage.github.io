@@ -1,0 +1,17 @@
+{
+  "name": "grimp",
+  "version": "1.4.0",
+  "private": true,
+  "description": "GRIMP (Generally Reliable Interactive Mapping Program): a map editor for Space Station 14.",
+  "author": "rebaserHEAD",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/react-fontawesome": "^3.2.0",
+    "js-yaml": "^4.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

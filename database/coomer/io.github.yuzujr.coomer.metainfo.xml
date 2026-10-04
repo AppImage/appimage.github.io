@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.yuzujr.coomer</id>
+  <name>coomer</name>
+  <summary>Zoom and inspect your screen on Linux</summary>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="io.github.yuzujr">
+    <name>yuzujr</name>
+  </developer>
+  <launchable type="desktop-id">coomer.desktop</launchable>
+  <description>
+    <p>
+      coomer is a lightweight screen magnifier for Linux with X11, wlroots,
+      and portal capture backends.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/yuzujr/coomer</url>
+  <content_rating type="oars-1.1"/>
+</component>

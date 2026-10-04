@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>space.retrovibe.Console</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0</project_license>
+  <name>Retrovibe</name>
+  <summary>Personal media library and player</summary>
+  <description>
+    <p>Retrovibe is a personal media library with p2p content sharing and </p>
+  </description>
+  <launchable type="desktop-id">space.retrovibe.Console.desktop</launchable>
+  <url type="homepage">https://retrovibe.space</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/retrovibed/retrovibed/main/.dist/screenshots/flatpak/library.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <id>space.retrovibe.Console.desktop</id>
+  </provides>
+</component>

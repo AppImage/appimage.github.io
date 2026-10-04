@@ -1,0 +1,92 @@
+---
+layout: app
+
+permalink: /AI_Art_Engine/
+description: AIArtEngine — professional AI creation tool for short drama, ads, and film
+
+icons:
+  - AI_Art_Engine/icons/1024x1024/aiartengine.png
+
+screenshots:
+  - AI_Art_Engine/screenshot.png
+
+authors:
+  - name: Justin-sky
+    url: https://github.com/Justin-sky
+
+links:
+  - type: GitHub
+    url: Justin-sky/ai-art-engine
+  - type: Download
+    url: https://github.com/Justin-sky/ai-art-engine/releases
+
+desktop:
+  Desktop Entry:
+    Name: AIArtEngine
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: aiartengine
+    StartupWMClass: AIArtEngine
+    X-AppImage-Version: 6.7.0
+    Comment: AIArtEngine — professional AI creation tool for short drama, ads, and film
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.28
+
+electron:
+    film
+  main: "./out/main/index.js"
+  author: AIArtEngine
+  license: GPL-3.0-only
+  homepage: https://github.com/Justin-sky/ai-art-engine#readme
+  repository:
+    type: git
+    url: git+https://github.com/Justin-sky/ai-art-engine.git
+  bugs:
+    url: https://github.com/Justin-sky/ai-art-engine/issues
+  dependencies:
+    "@cordisjs/core": "^3.18.1"
+    "@deepseek-ai/dsh": 0.1.5-rc.2
+    "@electron-toolkit/preload": "^3.0.2"
+    "@electron-toolkit/utils": "^4.0.0"
+    "@volcengine/tos-sdk": "^2.9.1"
+    ag-psd: "^31.0.2"
+    ali-oss: "^6.23.0"
+    axios: "^1.10.0"
+    chokidar: "^5.0.0"
+    cos-nodejs-sdk-v5: "^3.0.0"
+    dockview-vue: "^7.0.4"
+    electron-store: "^8.2.0"
+    electron-updater: "^6.8.9"
+    fabric: "^7.4.0"
+    gpt-tokenizer: "^3.4.0"
+    jpeg-js: "^0.4.4"
+    jszip: "^3.10.1"
+    marked: "^18.0.12"
+    onnxruntime-node: "^1.29.0"
+    pinia: "^3.0.3"
+    pngjs: "^7.0.0"
+    three: "^0.185.1"
+    vue: "^3.5.17"
+    vue-i18n: "^11.4.6"
+    vue-router: "^4.5.1"
+  allowScripts:
+    "@deepseek-ai/dsh-subprocess-local@0.1.5-rc.2": true
+    "@google/genai@1.52.0": true
+    electron@35.2.1: true
+    esbuild@0.25.12: true
+    koffi@3.1.6: true
+    node-pty@1.2.0-beta.15: true
+    protobufjs@7.6.6: true
+    tos-crc64-js@0.0.1: true
+---

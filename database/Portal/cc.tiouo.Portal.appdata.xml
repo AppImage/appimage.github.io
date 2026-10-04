@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <metadata_license>GPL-3</metadata_license>
+
+    <!-- Note the use of macros to automate most (but not all) content below -->
+    <id>cc.tiouo.Portal</id>
+    <name>Portal</name>
+    <summary>Portal</summary>
+    <developer_name>github.com/tiouoo/Portal</developer_name>
+    <url type="homepage">https://portal.tiouo.cc/</url>
+    <project_license>GPL-3.0-or-later</project_license>
+    <content_rating type="oars-1.1"/>
+
+    <launchable type="desktop-id">cc.tiouo.Portal.desktop</launchable>
+
+    <description>
+        <!-- See AppDescription in configuration -->
+        <p>Portal</p>
+        <!--
+        <p>This is a longer application description in the default (English) language
+        which may span several short paragraphs. You may either specify it yourself
+        directly here, or have it populated automatically using the macro above.</p>
+        <p>IMPORTANT. If you wish to provide your own (default) description here, delete the
+        macro directly above. In either case, you may wish to provide other language
+        descriptions here also.</p>
+        -->
+    </description>
+
+    <!-- Freedesktop Categories -->
+    <categories>
+        <category>Utility</category>
+    </categories>
+
+    <!-- Uncomment to provide keywords
+    <keywords>
+        <keyword translate="no">IDE</keyword>
+        <keyword>development</keyword>
+        <keyword>programming</keyword>
+        <keyword xml:lang="de">entwicklung</keyword>
+        <keyword xml:lang="de">programmierung</keyword>
+    </keywords>
+    -->
+
+    <!-- Uncomment to provide screenshots
+    <screenshots>
+        <screenshot type="default">
+            <image>https://i.postimg.cc/0jc8xxxC/Hello-Computer.png</image>
+        </screenshot>
+    </screenshots>
+    -->
+
+    <releases>
+        <!-- See AppChangeFile in configuration -->
+        <release version="1.0.6" date="2026-08-30"/>
+        <!-- Or, uncomment below and delete macro directly above to specify changes yourself
+        <release version="1.0.0" date="2023-05-04">
+            <description>
+                <ul>
+                    <li>Added feature 1</li>
+                    <li>Added feature 2</li>
+                </ul>
+            </description>
+        </release>
+        -->
+    </releases>
+
+</component>

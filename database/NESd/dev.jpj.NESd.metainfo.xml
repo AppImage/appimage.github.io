@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>dev.jpj.NESd</id>
+
+    <name>NESd</name>
+    <summary>NES emulator</summary>
+
+    <developer_name>John Paul Jonte</developer_name>
+    <url type="homepage">https://github.com/jpjonte/NESd</url>
+    <update_contact>nesd_AT_jpj.dev</update_contact>
+
+    <metadata_license>MIT</metadata_license>
+    <project_license>MIT</project_license>
+
+    <supports>
+        <control>pointing</control>
+        <control>keyboard</control>
+        <control>touch</control>
+        <control>gamepad</control>
+    </supports>
+
+    <description>
+        <p>
+            A NES Emulator written in Dart and Flutter. Supports macOS, Windows, Android and Linux (tested on Steam Deck).
+        </p>
+        <p>
+            Features
+        </p>
+        <p>
+            <ul>
+                <li>Runs on macOS, Linux, Windows, and Android</li>
+                <li>Cycle accurate CPU emulation</li>
+                <li>PPU and APU emulation</li>
+                <li>Support for NTSC and PAL games</li>
+                <li>SRAM saves</li>
+                <li>Save states</li>
+                <li>Customizable controls with multiple bindings per action</li>
+                <li>Gamepad support</li>
+                <li>Load ROMs from file or ZIP archive</li>
+                <li>Customizable touch screen controls</li>
+                <li>Debug overlay</li>
+                <li>Debugging tools
+                    <ul>
+                        <li>Debugger</li>
+                        <li>Execution Log</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+        <p>
+            Supported mappers
+        </p>
+        <p>
+            <ul>
+                <li>NROM (0)</li>
+                <li>MMC1 (1)</li>
+                <li>UNROM (2)</li>
+                <li>CNROM (3)</li>
+                <li>MMC3 (4)</li>
+                <li>MMC5 (5)</li>
+                <li>AxROM (7)</li>
+                <li>MMC2 (9)</li>
+                <li>GxROM (66)</li>
+                <li>BR909x (71)</li>
+                <li>Namco108 (206)</li>
+            </ul>
+        </p>
+    </description>
+
+    <launchable type="desktop-id">dev.jpj.NESd.desktop</launchable>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://github.com/jpjonte/NESd/raw/main/docs/list.png</image>
+        </screenshot>
+    </screenshots>
+
+    <content_rating type="oars-1.1"/>
+
+    <releases>
+        <release version="0.21.2" date="2026-09-29" />
+        <release version="0.21.1" date="2026-09-28" />
+        <release version="0.21.0" date="2026-09-26" />
+        <release version="0.20.0" date="2026-09-16" />
+        <release version="0.19.0" date="2026-09-06" />
+        <release version="0.18.0" date="2026-08-30" />
+        <release version="0.17.0" date="2026-08-23" />
+        <release version="0.16.0" date="2026-08-07" />
+        <release version="0.15.1" date="2026-07-31" />
+        <release version="0.15.0" date="2026-07-23" />
+        <release version="0.14.0" date="2026-03-16" />
+        <release version="0.13.0" date="2025-09-16" />
+        <release version="0.12.1" date="2025-05-03" />
+        <release version="0.12.0" date="2025-04-30" />
+        <release version="0.11.0" date="2025-04-06" />
+        <release version="0.10.0" date="2025-03-27" />
+        <release version="0.9.0" date="2025-03-17" />
+    </releases>
+</component>

@@ -4,7 +4,7 @@
 
 ## This is...
 
-* __A crowd-sourced directory of available, reviewed AppImages__ with data that 3rd party app stores and software centers can use. Given a URL to an AppImage, it inspects the AppImage and puts it into a community-maintained catalog. The idea is that all the metadata travels inside the AppImage, so besides adding a URL to this repository no additional information is asked, since it comes with the AppImage itself.
+* __A crowd-sourced directory of available, tested AppImages__ with data that 3rd party app stores and software centers can use. Given a URL to an AppImage, it inspects the AppImage and puts it into a community-maintained catalog. The idea is that all the metadata travels inside the AppImage, so besides adding a URL to this repository no additional information is asked, since it comes with the AppImage itself.
 
 ## This is NOT...
 
@@ -27,11 +27,13 @@ and send a Pull Request.
 
 **The file should contain one line with a link to the GitHub, Codeberg or GitLab repository that hosts AppImages on its Releases page.**
 
-**Alternatively, a link to the AppImage. Nothing else.**
+**Alternatively, a link to the download directory where new versions appear, e.g. `https://download.kde.org/stable/digikam/` or an openSUSE Build Service `.../AppImage/` directory (the test picks the AppImage of the newest version from its listing), or a link to the AppImage. Nothing else.**
 
 **The pull request must add (or change) exactly this one file in `data/` and nothing else; one application per pull request.** Otherwise the test fails.
 
 Ideally, the file in `data/` contains a link to https://github.com/User/App/ (or the equivalent Codeberg or GitLab project page; not to a specific AppImage!). The test then picks the AppImage from the newest release (or, if no release has an AppImage, the newest pre-release): among its files ending in `.AppImage`, the one for x86_64 (other architectures such as aarch64 or i686 are left out), not a debug or nightly build, and, if the release contains AppImages of several applications, the one named like the file in `data/`. If it is still not clear which AppImage to test (e.g. `App-qt5-x86_64.AppImage` and `App-qt6-x86_64.AppImage`), the test fails; then put the link to the AppImage itself into the file in `data/`.
+
+If the repository has a release for each channel of the application (such as `esr`, `beta` and `nightly`), say which one this entry is by adding it to the link with a `#`, e.g. `https://github.com/User/App#nightly`; without it, the other channels are left out.
 
 If a PR changes the file in `data/` to a download location of a different owner (another GitHub user or organization, or another website), it gets the `manual-check-needed` label and a comment: please explain in the PR why the location changed, ideally with a link where the project announces it.
 
@@ -50,9 +52,14 @@ Standard nomenclature:
 * Respect uppercase. If the app is called "App", do NOT use "app"
 * Example: `App-1.1-x86_64.AppImage` in a repo called "App"
 
-Then send a Pull Request to this repository. GitHub Actions will instantly perform an automated review of the AppImage and post the result as a comment in your pull request: a screenshot of your application if it succeeds, or the error (with hints on how to fix it) if it fails. Please check that the screenshot shows the main window of your application.
+Then send a Pull Request to this repository. GitHub Actions will instantly perform an automated review of the AppImage and post the result as a comment in your pull request: a screenshot of your application if it succeeds, or the error (with hints on how to fix it) if it fails. Please check that the screenshot shows the main window of your application. To test your pull request again (e.g., after publishing a new release), comment `/retest` on it. If the test failed, it also runs again automatically when you comment that the problem is fixed (e.g., "Fixed in 1.2.3, please test again").
 
-Then the autodetection works.
+### After you submit
+
+* **Comments that run something:** `/retest` tests again; `/appstream` explains how to show your own screenshot (via the AppStream metainfo file). A comment that says a fix or a new release is out ("fixed in 1.2.3", "new release", "updated") re-tests a failed pull request automatically; "will be fixed in the next release" does not.
+* **Labels:** `error-*` names why the test failed (the comment has the hint); `screenshot-ok` means it passed and the screenshot looked fine; `manual-check-needed` means a maintainer must look (e.g. the download location moved to another owner).
+* **Merging:** pull requests will take some time to be reviewed by a maintainer.
+* **Changed your mind?** Comment "please remove my app" (or "opt out") on the pull request: it gets the `opt-out` label and a maintainer closes it. The application is not proposed again.
 
 ### Checklist for submitting your own AppImage
 
@@ -63,10 +70,11 @@ As a format, AppImage is designed in a way that does not impose restrictions on 
 * Must run on the [oldest still-supported Ubuntu LTS release](https://www.ubuntu.com/info/release-end-of-life) without the installation of additional packages. Targeting the oldest still-supported LTS is to ensure that the AppImage will run not only on the very latest, but also on older target systems, such as enterprise distributions (not limited to Ubuntu)
 * Should ideally be self-contained, i.e., not need a compatible C library (glibc) on the system, either because it contains no dynamically linked code or because it ships its own C library including the loader (`ld-linux-*.so.*`), and use the statically linked [AppImage runtime](https://github.com/AppImage/type2-runtime). The test detects this and the directory shows it on the page of the application
 * Must execute in our GitHub Actions based testing environment
-* Must work with X11 (we don't have tests for Wayland as it is [broken, fragmented, and unsupportable])(https://gist.github.com/probonopd/9feb7c20257af5dd915e3a9f2d1f2277)
+* Must work with X11 (we don't have tests for Wayland as it is [broken, fragmented, and unsupportable](https://gist.github.com/probonopd/9feb7c20257af5dd915e3a9f2d1f2277))
 * Must pass [appdir-lint.sh](https://github.com/AppImage/AppImages/blob/master/appdir-lint.sh)
 * Must have a desktop file that passes `desktop-file-validate`
 * Must run without active Internet connection (and at least show some information)
+* Must show an English interface by default, e.g. by following the system language and falling back to English (the test runs with the C locale). A README in another language is fine if the repository also has an English one such as `README.en.md`
 * Should have an [AppStream metainfo file](https://people.freedesktop.org/~hughsient/appdata/) in `usr/share/metainfo`. If it does, must pass `appstreamcli` validation
 * Must show its main window within 30 seconds, without network access. The test fails if the window is empty (e.g., only a menu bar on a blank background) or shows an error message. System tray applications that show only an icon in the tray are recognized and tested with a system tray: clicking the icon should open the application's window (or else its menu)
 * Should show a useful screen rather than some crude dialog box since the main window will be used for the main screenshots. Note that you can provide your own screenshots by using an [AppStream metainfo file](https://people.freedesktop.org/~hughsient/appdata/)

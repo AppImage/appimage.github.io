@@ -1,0 +1,25 @@
+{
+  "name": "voyage-ai-playground",
+  "version": "1.33.4",
+  "description": "Vai Playground — Desktop app for exploring embeddings, reranking, and vector search",
+  "main": "main.js",
+  "author": "Michael Lynn",
+  "license": "MIT",
+  "dependencies": {
+    "@vaicli/vai-workflow-asymmetric-search": "^1.0.0",
+    "@vaicli/vai-workflow-batch-quality-gate": "^1.0.0",
+    "@vaicli/vai-workflow-code-migration-helper": "^1.0.0",
+    "@vaicli/vai-workflow-code-search": "^1.0.2",
+    "@vaicli/vai-workflow-contract-clause-finder": "^1.0.0",
+    "@vaicli/vai-workflow-doc-freshness": "^1.0.0",
+    "@vaicli/vai-workflow-embedding-drift-detector": "^1.0.0",
+    "@vaicli/vai-workflow-financial-risk-scanner": "^1.0.0",
+    "@vaicli/vai-workflow-incremental-sync": "^1.0.0",
+    "@vaicli/vai-workflow-knowledge-base-bootstrap": "^1.0.0",
+    "@vaicli/vai-workflow-meeting-action-items": "^1.0.0",
+    "@vaicli/vai-workflow-model-shootout": "^1.0.0",
+    "@vaicli/vai-workflow-multilingual-search": "^1.0.0",
+    "electron-updater": "^6.7.3",
+    "picocolors": "^1.0.0"
+  }
+}

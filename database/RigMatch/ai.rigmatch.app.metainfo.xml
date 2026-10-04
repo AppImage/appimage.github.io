@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata for Linux software centers and the AppImage catalog. It is
+  where they read RigMatch's description and screenshots; without it the catalog
+  screenshots whatever the app shows first on a blank test machine. Shipped into
+  the AppImage at usr/share/metainfo by linux.extraFiles in package.json.
+  Validate with: appstreamcli validate build/linux/ai.rigmatch.app.metainfo.xml
+-->
+<component type="desktop-application">
+  <id>ai.rigmatch.app</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>RigMatch</name>
+  <summary>Find the best local AI model your computer can run</summary>
+  <developer id="io.github.daveeuson">
+    <name>Dave Euson</name>
+  </developer>
+  <description>
+    <p>
+      RigMatch finds the AI models that run well on your own computer, then has them
+      compete so you can pick a winner. It reads your graphics card and memory, suggests
+      models that fit, and asks every contestant the same questions on your hardware:
+      answer quality, speed and fit are measured here, not quoted from somewhere else.
+    </p>
+    <p>
+      Everything stays on your computer. Models run through Ollama; RigMatch needs no
+      account and sends none of your prompts anywhere.
+    </p>
+    <ul>
+      <li>Simple Mode walks you through checking your PC, picking models, and a head-to-head show that crowns your Top Match</li>
+      <li>Advanced Mode shows every model that fits your graphics card, with custom tests, scorecards and diagnostics</li>
+      <li>Image, video and audio models can be tested too, on your own ComfyUI</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">rigmatch-ai.desktop</launchable>
+  <url type="homepage">https://github.com/DaveEuson/RigMatch</url>
+  <url type="bugtracker">https://github.com/DaveEuson/RigMatch/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Advanced Mode: every model that fits your graphics card, with the scores it earned on your PC</caption>
+      <image>https://raw.githubusercontent.com/DaveEuson/RigMatch/main/docs/images/advanced-models.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Speed Dating: every contestant answers the same questions on your hardware</caption>
+      <image>https://raw.githubusercontent.com/DaveEuson/RigMatch/main/docs/images/04-compare.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Your Top Match, and how the whole lineup finished</caption>
+      <image>https://raw.githubusercontent.com/DaveEuson/RigMatch/main/docs/images/05-winner.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Development</category>
+    <category>Utility</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+</component>

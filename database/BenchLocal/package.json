@@ -1,0 +1,19 @@
+{
+  "name": "benchlocal-app",
+  "productName": "BenchLocal",
+  "private": true,
+  "version": "0.4.0",
+  "description": "BenchLocal desktop app for running and managing LLM Bench Packs.",
+  "author": "stevibe",
+  "type": "module",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "chart.js": "^4.5.1",
+    "electron-updater": "^6.6.2",
+    "lucide-react": "^1.7.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "undici": "^6.25.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "puffin",
+  "version": "4.2.0",
+  "description": "A GUI for Claude Code to help you 'clode' new projects",
+  "main": "src/main/main.js",
+  "author": "jdubray",
+  "license": "MIT",
+  "dependencies": {
+    "@cognitive-fab/sam-fsm": "1.0.0",
+    "@cognitive-fab/sam-pattern": "^1.6.1",
+    "@excalidraw/excalidraw": "^0.17.0",
+    "@puffin/hdsl-types": "file:shared/hdsl-types",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "better-sqlite3": "^11.6.0",
+    "marked": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "uuid": "^10.0.0"
+  }
+}

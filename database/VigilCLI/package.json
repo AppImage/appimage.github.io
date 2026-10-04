@@ -1,0 +1,13 @@
+{
+  "name": "vigil-cli",
+  "version": "0.5.18",
+  "description": "Desktop session monitor for AI CLI tools (Claude Code, Codex, Cursor, etc.)",
+  "main": "src/main-entry.js",
+  "author": "somethingforheheda",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "type": "commonjs",
+  "dependencies": {
+    "electron-updater": "^6.8.3",
+    "koffi": "^2.15.2"
+  }
+}

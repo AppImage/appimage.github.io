@@ -30,6 +30,10 @@ HINTS=(
   "error-not-executable"
   "A file inside the AppImage is not executable. Please check the file permissions before packaging the AppImage."
 
+  "AppRun\\.wrapped: Permission denied"
+  "-"
+  "AppRun.wrapped (or the launcher it starts) could not be executed. This typically happens with Tauri and linuxdeploy builds when a cached launcher was packaged with mode 0770 and is owned by root, so that it is not executable for the test user. Please make the AppDir readable and executable for everyone before packaging, e.g. \`chmod -R a+rX AppDir\` (and \`chmod a+x\` on AppRun and AppRun.wrapped) before running appimagetool."
+
   "error while loading shared libraries"
   "error-missing-library"
   "The application needs a library that is neither in the AppImage nor on the test system (\"error while loading shared libraries\", the first error below names it). Please bundle this library, and what it depends on, in the AppImage: an AppImage cannot rely on libraries that are not installed on every target system."
@@ -82,6 +86,10 @@ HINTS=(
   "-"
   "Please check the remarks about the names below."
 
+  "^WARNING: The names of the .* differ: "
+  "-"
+  "The repository, the AppImage and the README (whichever exist) call the application by different names (see the remarks below). Please check that they all belong to the same application, and that the name of the file in data/ is the right one."
+
   "^FATAL: AppRun is missing"
   "error-not-an-appimage"
   "The downloaded file is not a valid AppImage."
@@ -129,6 +137,10 @@ HINTS=(
   "^Could not find icon file"
   "error-no-icon"
   "No icon was found. The AppImage needs an icon matching the Icon= entry of its desktop file."
+
+  "^Could not determine the size of the icon"
+  "error-no-icon"
+  "The icon could not be read. If it is the .DirIcon of the AppImage: it must be a PNG (or SVG) file, or a symlink with a relative target that stays inside the AppImage; a symlink with an absolute target (e.g. into /home/runner/..., as some Tauri builds write it) does not work on other systems; please replace .DirIcon with a copy of the icon."
 )
 
 if [ "$1" == "--list" ] ; then
