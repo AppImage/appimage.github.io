@@ -22,6 +22,11 @@ layout: null
     {% for post in apps %}
         {
         "name": {% if post.title %}{{ post.title | jsonify }}{% else %}{{ post.name | remove: ".md" | jsonify  }}{% endif %},
+    {% if post.appdata.Summary.C %}
+        "summary": {{ post.appdata.Summary.C | jsonify }},
+    {% elsif post.desktop["Desktop Entry"].Comment %}
+        "summary": {{ post.desktop["Desktop Entry"].Comment | jsonify }},
+    {% endif %}
     {% if post.appdata.Description.C %}
         "description": {{ post.appdata.Description.C | jsonify }},
     {% elsif post.desktop["Desktop Entry"].Comment %}
