@@ -1,0 +1,15 @@
+{
+  "name": "geekdown",
+  "version": "0.0.7",
+  "description": "Offline Markdown Editor",
+  "main": "main.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@milkdown/core": "^7.0.0",
+    "@milkdown/plugin-history": "^7.0.0",
+    "@milkdown/preset-commonmark": "^7.0.0",
+    "@milkdown/theme-nord": "^7.8.0",
+    "electron-bundler": "^0.0.0-alpha.0.0"
+  }
+}

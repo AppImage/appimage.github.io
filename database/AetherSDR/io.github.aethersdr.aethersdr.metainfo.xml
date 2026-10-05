@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.aethersdr.aethersdr</id>
+
+  <name>AetherSDR</name>
+  <summary>Linux-native client for FlexRadio Systems transceivers</summary>
+
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <description>
+    <p>
+      AetherSDR brings FlexRadio operation to Linux without Wine or virtual machines. Built from the ground up with Qt6 and C++20, it speaks the SmartSDR protocol natively and aims to replicate the full SmartSDR experience.
+    </p>
+    <p>
+      Highlights:
+    </p>
+    <ul>
+      <li>Native SmartSDR protocol — speaks v1.4.0.0 directly without Wine or virtual machines</li>
+      <li>GPU-accelerated spectrum and waterfall with multi-panadapter support and native VITA-49 streams</li>
+      <li>Aetherial Audio Channel Strip — unified RX/TX DSP suite with six noise-reduction engines</li>
+      <li>Multi-client (Multi-Flex) operation alongside SmartSDR and Maestro, plus SmartLink remote and TCI v2.0 server</li>
+      <li>AetherModem packet radio, CW operator suite, FreeDV RADE, and per-slice WFM demodulator for satellite data</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">AetherSDR.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/aethersdr/AetherSDR/v26.6.3/docs/assets/screenshot-current.png</image>
+      <caption>AetherSDR main window showing panadapter and waterfall</caption>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/aethersdr/AetherSDR</url>
+  <url type="bugtracker">https://github.com/aethersdr/AetherSDR/issues</url>
+  <url type="help">https://github.com/aethersdr/AetherSDR/blob/main/SUPPORT.md</url>
+  <url type="vcs-browser">https://github.com/aethersdr/AetherSDR</url>
+  <url type="contribute">https://github.com/aethersdr/AetherSDR#contributing</url>
+
+  <developer id="io.github.aethersdr">
+    <name>AetherSDR</name>
+  </developer>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+
+  <releases>
+    <release version="26.9.5" date="2026-09-27"/>
+    <release version="26.9.4" date="2026-09-20"/>
+    <release version="26.9.3" date="2026-09-13"/>
+    <release version="26.9.2" date="2026-09-06"/>
+    <release version="26.9.1" date="2026-08-29"/>
+    <release version="26.8.4" date="2026-08-22"/>
+    <release version="26.8.3" date="2026-08-16"/>
+    <release version="26.8.2" date="2026-08-09"/>
+    <release version="26.8.1" date="2026-08-02"/>
+    <release version="26.7.4.1" date="2026-07-27"/>
+    <release version="26.7.4" date="2026-07-26"/>
+    <release version="26.7.3" date="2026-07-19"/>
+    <release version="26.7.2" date="2026-07-12"/>
+    <release version="26.7.1" date="2026-07-02"/>
+    <release version="26.6.5" date="2026-06-28"/>
+    <release version="26.6.4" date="2026-06-23"/>
+    <release version="26.6.3" date="2026-06-14"/>
+    <release version="26.6.2" date="2026-06-07"/>
+    <release version="26.6.1.1" date="2026-06-01"/>
+    <release version="26.6.1" date="2026-06-01"/>
+    <release version="26.5.3" date="2026-05-24"/>
+  </releases>
+</component>

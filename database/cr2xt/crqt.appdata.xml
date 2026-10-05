@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>crqt.desktop</id>
+  <name>crqt-ng</name>
+  <project_license>GPL-2.0-or-later</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <summary>Cross platform open source e-book reader</summary>
+  <content_rating type="oars-1.1" />
+  <developer_name>Aleksey Chernov et al.</developer_name>
+  <description>
+    <p>
+      crqt-ng is fast and small cross-platform XML/CSS based eBook reader. Written using the Qt framework.
+    </p>
+    <p>
+      Supported formats: fb2, fb3 (incomplete), epub (non-DRM), doc, docx, odt, rtf, pdb, mobi (non-DRM), txt, html, Markdown, chm, tcr.
+    </p>
+    <p>Main functions:</p>
+    <ul>
+      <li>Ability to display 2 pages at the same time</li>
+      <li>Displaying and Navigating Book Contents</li>
+      <li>Text search</li>
+      <li>Word hyphenation using hyphenation dictionaries</li>
+      <li>Most complete support for FB2 - styles, tables, footnotes at the bottom of the page</li>
+      <li>Extensive font rendering capabilities: use of ligatures, kerning, hinting option selection, floating punctuation, simultaneous use of several fonts, including fallback fonts</li>
+      <li>Detection of the main font incompatible with the language of the book</li>
+      <li>Reading books directly from a ZIP archive</li>
+      <li>TXT auto reformat, automatic encoding recognition</li>
+      <li>Flexible styling with CSS files</li>
+      <li>Background pictures, textures, or solid background</li>
+      <li>HiDPI support</li>
+      <li>Multi-tabbed interface</li>
+    </ul>
+  </description>
+  <url type="homepage">https://gitlab.com/coolreader-ng/crqt-ng</url>
+  <url type="bugtracker">https://gitlab.com/coolreader-ng/crqt-ng/-/issues</url>
+  <url type="vcs-browser">https://gitlab.com/coolreader-ng/crqt-ng</url>
+  <launchable type="desktop-id">crqt.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://gitlab.com/coolreader-ng/crqt-ng/-/wikis/uploads/1aab10e451b10d8f8c60f813b0c3be21/1101-mainwnd-kde.png</image>
+      <caption>Main window</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/coolreader-ng/crqt-ng/-/wikis/uploads/415b658889458feb2f5e80abff855555/1102-mainwnd-kde__tabs_.png</image>
+      <caption>Main window with tabs</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.0.15" date="2024-10-23"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.15</url></release>
+    <release version="1.0.14" date="2024-05-09"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.14</url></release>
+    <release version="1.0.13" date="2024-02-14"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.13</url></release>
+    <release version="1.0.12" date="2023-10-29"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.12</url></release>
+    <release version="1.0.11" date="2023-04-06"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.11</url></release>
+    <release version="1.0.10" date="2023-03-18"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.10</url></release>
+    <release version="1.0.9" date="2023-02-11"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.9</url></release>
+    <release version="1.0.8" date="2023-02-06"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.8</url></release>
+    <release version="1.0.7" date="2023-02-06"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.7</url></release>
+    <release version="1.0.6" date="2023-02-06"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.6</url></release>
+    <release version="1.0.5.1" date="2023-01-24"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/tags/1.0.5.1</url></release>
+    <release version="1.0.5" date="2023-01-22"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.5</url></release>
+    <release version="1.0.4" date="2022-12-31"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.4</url></release>
+    <release version="1.0.3" date="2022-12-25"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.3</url></release>
+    <release version="1.0.2" date="2022-12-22"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.2</url></release>
+    <release version="1.0.1" date="2022-12-18"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.1</url></release>
+    <release version="1.0.0" date="2022-02-10"><url>https://gitlab.com/coolreader-ng/crqt-ng/-/releases/1.0.0</url></release>
+  </releases>
+</component>

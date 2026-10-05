@@ -1,0 +1,50 @@
+---
+layout: app
+
+permalink: /Nodus/
+description: "Local-first desktop app that turns a Zotero library into a navigable graph of ideas and authors."
+license: "AGPL-3.0"
+
+icons:
+  - Nodus/icons/128x128/nodus.png
+
+screenshots:
+  - Nodus/screenshot.png
+
+authors:
+  - name: "Drakonis96"
+    url: "https://github.com/Drakonis96"
+
+links:
+  - type: GitHub
+    url: Drakonis96/nodus
+  - type: Download
+    url: https://github.com/Drakonis96/nodus/releases
+
+desktop:
+  Desktop Entry:
+    Name: Nodus
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: nodus
+    StartupWMClass: Nodus
+    X-AppImage-Version: 5.7.3
+    Comment: Local-first desktop app that turns a Zotero library into a navigable graph
+      of ideas and authors.
+    Categories: Office
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.38
+    X-AppImage-Payload-License: AGPL-3.0
+
+electron: {"name":"nodus","version":"5.7.3","description":"Local-first desktop app that turns a Zotero library into a navigable graph of ideas and authors.","author":{"name":"Jorge Pérez Burgueño","url":"https://orcid.org/0000-0002-1150-1930"},"license":"AGPL-3.0-only","homepage":"https://nodusresearch.com/","repository":{"type":"git","url":"https://github.com/Drakonis96/nodus.git"},"releaseMetadata":{"dateReleased":"2026-09-30","conceptDoi":"10.5281/zenodo.21515531","versionDoi":null},"private":true,"main":"dist-electron/main.js","type":"module","dependencies":{"@anthropic-ai/sdk":"^0.32.1","@citation-js/plugin-csl":"^0.8.2","@diffusionstudio/piper-wasm":"1.0.0","@diffusionstudio/vits-web":"^1.0.3","@github/copilot-sdk":"1.0.7","@google/genai":"^2.11.0","@huggingface/transformers":"^3.8.1","@milkdown/core":"^7.21.3","@milkdown/crepe":"^7.21.3","@milkdown/plugin-history":"^7.21.3","@milkdown/plugin-listener":"^7.21.3","@milkdown/plugin-slash":"^7.21.3","@milkdown/plugin-tooltip":"^7.21.3","@milkdown/plugin-upload":"^7.21.3","@milkdown/preset-commonmark":"^7.21.3","@milkdown/preset-gfm":"^7.21.3","@milkdown/prose":"^7.21.3","@milkdown/react":"^7.21.3","@milkdown/utils":"^7.21.3","@modelcontextprotocol/sdk":"^1.29.0","@mozilla/readability":"^0.6.0","@napi-rs/canvas":"^0.1.65","@openai/codex":"0.144.6","@pdf-lib/fontkit":"^1.1.1","adm-zip":"^0.6.0","archiver":"^5.3.2","better-sqlite3":"^12.11.1","citeproc":"^2.4.63","d3-geo":"^3.1.1","diff":"^9.0.0","docx":"^9.7.1","electron-updater":"^6.8.9","framer-motion":"^11.11.17","graphology":"^0.26.0","graphology-layout-forceatlas2":"^0.10.1","heic-decode":"^2.1.0","jsonrepair":"^3.14.0","katex":"^0.17.0","kokoro-js":"^1.2.1","leaflet":"^1.9.4","linkedom":"^0.18.13","mammoth":"^1.8.0","mkcert":"^3.2.0","openai":"^4.73.0","pdf-lib":"^1.17.1","pdfjs-dist":"^4.8.69","qrcode":"^1.5.4","react":"^18.3.1","react-dom":"^18.3.1","react-markdown":"^10.1.0","rehype-katex":"^7.0.1","remark-gfm":"^4.0.1","remark-math":"^6.0.0","sigma":"^3.0.3","subset-font":"^2.7.0","tesseract.js":"^5.1.1","three":"^0.186.0","topojson-client":"^3.1.0","topojson-server":"^3.0.1","topojson-simplify":"^3.0.3","turndown":"^7.2.4","uuid":"^11.0.3","word-extractor":"^1.0.4","ws":"^8.21.0","xlsx":"https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz","yjs":"^13.6.27","zod":"^3.25.76"},"overrides":{"sharp":"0.35.4"}}
+---

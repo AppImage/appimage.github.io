@@ -1,0 +1,60 @@
+{
+  "name": "@quanta-intellect/vessel-browser",
+  "mcpName": "io.github.unmodeled-tyler/vessel-browser",
+  "version": "0.1.200",
+  "description": "AI-native web browser runtime for autonomous agents with human supervision",
+  "main": "./out/main/index.js",
+  "bin": {
+    "vessel-browser": "bin/vessel-browser.js"
+  },
+  "files": [
+    "out/**/*",
+    "bin/**/*",
+    "resources/vessel-icon.png",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": "Quanta Intellect <hello@quantaintellect.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unmodeled-tyler/vessel-browser.git"
+  },
+  "engines": {
+    "node": ">=22.23.2",
+    "npm": ">=11.0.0"
+  },
+  "packageManager": "npm@11.19.1",
+  "peerDependencies": {
+    "electron": ">=30.0.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.110.0",
+    "@modelcontextprotocol/client": "^2.0.0",
+    "@modelcontextprotocol/node": "^2.0.0",
+    "@modelcontextprotocol/server": "^2.0.0",
+    "@mozilla/readability": "^0.6.0",
+    "dompurify": "^3.4.15",
+    "linkedom": "^0.18.13",
+    "openai": "^6.49.0",
+    "zod": "^4.6.5"
+  },
+  "allowScripts": {
+    "electron-winstaller@5.4.0": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.1": true
+  },
+  "overrides": {
+    "vite": {
+      "esbuild": "0.28.1"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --config eslint.config.mjs --fix",
+    "*.{ts,tsx,mjs,json}": "prettier --write"
+  }
+}

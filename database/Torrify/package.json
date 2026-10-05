@@ -1,0 +1,24 @@
+{
+  "name": "torrify",
+  "version": "0.9.3",
+  "description": "Torrify - AI-assisted CAD IDE for OpenSCAD and build123d",
+  "main": "dist-electron/main.cjs",
+  "type": "module",
+  "author": "Torrify <hello@torrify.org>",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "email": "hello@torrify.org",
+    "url": "https://github.com/caseyhartnett/torrify/issues"
+  },
+  "overrides": {
+    "esbuild": ">=0.25.0"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@monaco-editor/react": "^4.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.182.0",
+    "zod": "^4.3.6"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "@dsh-studio/desktop",
+  "productName": "DSH Studio",
+  "version": "0.1.4",
+  "description": "DSH Studio: a local Desktop and Web workbench over DeepSeek Harness",
+  "author": "dsh-external",
+  "desktopName": "dsh-studio.desktop",
+  "private": true,
+  "packageManager": "pnpm@11.20.0",
+  "type": "module",
+  "main": "dist/main.js",
+  "bin": {
+    "dsh-studio": "bin/dsh-studio"
+  },
+  "exports": {
+    ".": {
+      "default": "./dist/plugin.js"
+    },
+    "./client": "./dist/client.js",
+    "./cordis.patch.yml": "./dist/cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/plugin.js",
+    "dist/client.js",
+    "dist/client.js.map",
+    "dist/cordis.patch.yml",
+    "dist/dsh-studio.js",
+    "bin/dsh-studio",
+    "bin/dsh-studio.cmd"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./dist/cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@dsh-studio/workbench",
+        "@dsh-studio/panel-controls",
+        "@dsh-studio/pinned-summary",
+        "@dsh-studio/sidebar",
+        "@dsh-studio/sidebar-desktop",
+        "@dsh-studio/plugin-marketplace"
+      ],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dshStudio": {
+    "clientDependencies": [
+      "@upsetjs/venn.js",
+      "clsx",
+      "papaparse",
+      "pathe",
+      "semver"
+    ]
+  }
+}

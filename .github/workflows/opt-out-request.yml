@@ -1,0 +1,90 @@
+# When the author of a pull request, or the GitHub account the AppImage comes
+# from, says in a comment that the application should not be in the catalog
+# ("please remove my app", "I want to opt out"; code/optout-comment.sh), this
+# labels the pull request opt-out and answers once. The label keeps it from
+# being merged automatically and from being proposed again by auto-discovery.
+#
+# It never merges, closes or removes anything: a maintainer confirms by
+# commenting /remove (remove-entry.yml), which closes the pull request and
+# removes the entries it adds or changes. Not started for comments by
+# maintainers (who use /remove directly) or bots.
+#
+# Nothing from the PR is checked out or run here: this runs from master and
+# reads the PR via the API. The comment is untrusted text: it is passed via the
+# environment and only matched against fixed patterns.
+name: Opt-out request
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  opt-out:
+    if: >-
+      github.repository == 'AppImage/appimage.github.io' &&
+      github.event.issue.pull_request &&
+      github.event.issue.state == 'open' &&
+      !startsWith(github.event.comment.body, '/') &&
+      github.event.comment.user.type != 'Bot' &&
+      !endsWith(github.event.comment.user.login, '[bot]') &&
+      !contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: opt-out-request-${{ github.event.issue.number }}
+      cancel-in-progress: false
+    permissions:
+      contents: read # read the PR's data/ file via the API
+      issues: write # label and comment
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.issue.number }}
+      COMMENT_ID: ${{ github.event.comment.id }}
+      COMMENTER: ${{ github.event.comment.user.login }}
+      PR_AUTHOR: ${{ github.event.issue.user.login }}
+      BODY: ${{ github.event.comment.body }}
+    steps:
+      # master, not the PR
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: code
+
+      - name: Label the pull request opt-out
+        run: |
+          lower() { echo "$1" | tr '[:upper:]' '[:lower:]' ; }
+          PHRASE=$(printf '%s\n' "$BODY" | bash code/optout-comment.sh) || { echo "The comment is no opt-out request." ; exit 0 ; }
+          echo "The comment says: \"$PHRASE\""
+          # Only the PR's author, or the account the AppImage comes from
+          # (from the first line of the PR's data/ files at its head commit)
+          ALLOWED=false
+          [ "$(lower "$COMMENTER")" = "$(lower "$PR_AUTHOR")" ] && ALLOWED=true
+          if [ "$ALLOWED" != true ] ; then
+            SHA=$(gh api "repos/$REPO/pulls/$PR" --jq .head.sha)
+            for FILE in $(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' | head -n 5) ; do
+              URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$SHA" 2>/dev/null | head -n 1 || true)
+              OWNER=$(bash code/upstream-owner.sh "$URL")
+              [ -n "$OWNER" ] && [ "$(lower "$OWNER")" = "$(lower "$COMMENTER")" ] && ALLOWED=true
+            done
+          fi
+          if [ "$ALLOWED" != true ] ; then
+            echo "$COMMENTER is neither the author of the pull request nor the account the AppImage comes from."
+            exit 0
+          fi
+          if gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name' | grep -qx opt-out ; then
+            echo "Labeled already."
+            exit 0
+          fi
+          gh api "repos/$REPO/labels/opt-out" >/dev/null 2>&1 || \
+            gh api "repos/$REPO/labels" -f name=opt-out -f color=000000 \
+              -f description="The author does not want the application in the catalog" >/dev/null
+          gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=opt-out" >/dev/null
+          gh api -X POST "repos/$REPO/issues/comments/$COMMENT_ID/reactions" -f content=eyes >/dev/null || true
+          {
+            echo "Thank you for letting us know, @$COMMENTER. This pull request is labeled \`opt-out\`, so it will not be merged and the application will not be proposed again. A maintainer will close it and remove the entry if there is one."
+            echo
+            echo "If you did not mean to opt out, just say so in a comment."
+          } > reply.md
+          gh pr comment "$PR" -R "$REPO" --body-file reply.md

@@ -1,0 +1,26 @@
+{
+  "name": "jsonforge",
+  "version": "0.2.1",
+  "description": "Visual JSON UI editor for Minecraft: Bedrock Edition.",
+  "author": {
+    "name": "JsonForge Developer Team",
+    "email": "jsonforge@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "main": "dist-electron/main.js",
+  "type": "module",
+  "dependencies": {
+    "@monaco-editor/react": "^4.6.0",
+    "discord-rpc": "^4.0.1",
+    "electron-updater": "^6.8.9",
+    "immer": "^11.1.8",
+    "jszip": "^3.10.1",
+    "lucide-react": "^1.17.0",
+    "monaco-editor": "^0.55.1",
+    "nanoid": "^5.0.7",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-mosaic-component": "^7.0.0",
+    "zustand": "^5.0.14"
+  }
+}

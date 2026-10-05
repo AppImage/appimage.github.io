@@ -1,0 +1,17 @@
+{
+  "name": "deezer-discord-rpc",
+  "version": "1.4.0",
+  "description": "A Discord RPC for Deezer",
+  "desktopName": "deezer-discord-rpc.desktop",
+  "main": "./build/src/index.js",
+  "dependencies": {
+    "@xhayper/discord-rpc": "^1.5.1",
+    "chalk": "6.0.1"
+  },
+  "repository": "https://github.com/CuteTenshii/deezer-discord-rpc.git",
+  "author": {
+    "name": "Tenshii",
+    "email": "tenshii@miwa.lol"
+  },
+  "license": "MIT"
+}

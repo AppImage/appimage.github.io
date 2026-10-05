@@ -1,0 +1,24 @@
+{
+  "name": "happy-desktop-electron",
+  "version": "0.0.88",
+  "private": true,
+  "description": "Happy Place macOS desktop app",
+  "author": "Slopus",
+  "files": [
+    "dist",
+    "assets/app-icon/generated/app-icon.png"
+  ],
+  "type": "module",
+  "main": "dist/main.js",
+  "exports": {
+    "./renderer": "./sources/renderer/renderer.tsx",
+    "./vite": "./vite.config.ts"
+  },
+  "dependencies": {
+    "@slopus/happy-agent-client": "0.0.67",
+    "electron-updater": "^6.8.9",
+    "ws": "^8.21.1",
+    "yjs": "^13.6.31"
+  },
+  "packageManager": "pnpm@10.28.1"
+}

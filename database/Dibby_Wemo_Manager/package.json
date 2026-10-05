@@ -1,0 +1,22 @@
+{
+  "name": "dibby-wemo-manager",
+  "productName": "Dibby Wemo Manager",
+  "version": "2.0.7",
+  "private": true,
+  "description": "Belkin Wemo device manager – local control, no cloud required",
+  "author": "SRS IT",
+  "homepage": "https://github.com/K0rb3nD4ll4S/dibby-wemo-manager",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "adm-zip": "^0.5.14",
+    "axios": "^1.7.0",
+    "sql.js": "^1.12.0",
+    "qrcode": "^1.5.4",
+    "ws": "^8.18.0",
+    "xml2js": "^0.6.2",
+    "xmlbuilder2": "^4.0.3"
+  },
+  "optionalDependencies": {
+    "node-windows": "^1.0.0-beta.8"
+  }
+}
