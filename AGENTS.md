@@ -150,6 +150,15 @@ GitHub Pages (Jekyll) from this repository.
    instead of the application's name); withdrawn when a later push fixes it, and
    the label stays while either check flags the PR.
 
+   `.github/workflows/one-file-per-pr.yml` (`pull_request_target`, `opened` and
+   `reopened`) closes a pull request from a fork whose author is not a maintainer
+   (OWNER, MEMBER, COLLABORATOR; not a bot) as soon as it is opened when it does not
+   change exactly one file in `data/` and nothing else (the rule of the README,
+   which the test also checks; #3977 added a file in the root), with a comment that
+   lists the changed files and says what to do (marker
+   `<!-- appimagehub-one-file -->`). A maintainer who reopens it on purpose is
+   respected. Only the list of changed files is read, via the API.
+
 4. `.github/workflows/ping-authors.yml` (monthly `schedule`, a real run, and
    `workflow_dispatch` with `dry_run` (default true), `max_issues`
    (default 5) and `full_scan`) runs `code/check-entry.sh` over the files in
