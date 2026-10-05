@@ -1,6 +1,6 @@
 {
   "name": "clarity",
-  "version": "1.18.0",
+  "version": "1.22.0",
   "description": "Clarity, unified suite (Manager + Installer + Couch in one AppImage)",
   "main": "main.js",
   "desktopName": "clarity.desktop",
