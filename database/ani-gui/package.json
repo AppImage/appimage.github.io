@@ -1,0 +1,12 @@
+{
+  "name": "ani-gui",
+  "version": "0.15.1",
+  "description": "Browse and watch anime",
+  "homepage": "https://github.com/pucci/ani-gui",
+  "author": {
+    "name": "ani-gui contributors",
+    "email": "dev@thirdmovement.net"
+  },
+  "private": true,
+  "main": "main.js"
+}
