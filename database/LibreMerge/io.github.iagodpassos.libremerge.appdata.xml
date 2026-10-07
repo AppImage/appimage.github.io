@@ -13,6 +13,9 @@
 
   <name>LibreMerge</name>
   <summary>Compare and merge files and folders</summary>
+  <summary xml:lang="ca">Compareu i combineu fitxers i carpetes</summary>
+  <summary xml:lang="de">Dateien und Ordner vergleichen und zusammenführen</summary>
+  <summary xml:lang="es">Compare y combine archivos y carpetas</summary>
   <summary xml:lang="pt-BR">Compare e mescle arquivos e pastas</summary>
 
   <description>
@@ -68,6 +71,9 @@
   <content_rating type="oars-1.1"/>
 
   <releases>
+    <release version="0.9.8" date="2026-10-07">
+      <url type="details">https://github.com/iagodpassos/libremerge/releases/tag/v0.9.8</url>
+    </release>
     <release version="0.9.7" date="2026-10-01">
       <url type="details">https://github.com/iagodpassos/libremerge/releases/tag/v0.9.7</url>
     </release>

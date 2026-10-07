@@ -25,8 +25,14 @@ desktop:
     Type: Application
     Name: LibreMerge
     GenericName: Diff and Merge Tool
+    GenericName[ca]: Eina de comparació i combinació
+    GenericName[de]: Werkzeug zum Vergleichen und Zusammenführen
+    GenericName[es]: Herramienta de comparación y combinación
     GenericName[pt_BR]: Ferramenta de Comparação e Mesclagem
     Comment: Compare and merge files and folders
+    Comment[ca]: Compareu i combineu fitxers i carpetes
+    Comment[de]: Dateien und Ordner vergleichen und zusammenführen
+    Comment[es]: Compare y combine archivos y carpetas
     Comment[pt_BR]: Compare e mescle arquivos e pastas
     Exec: libremerge %F
     Icon: libremerge
@@ -34,9 +40,12 @@ desktop:
     Categories: Development
     MimeType: text/plain
     Keywords: diff
+    Keywords[ca]: diff
+    Keywords[de]: diff
+    Keywords[es]: diff
     Keywords[pt_BR]: diff
     StartupWMClass: libremerge
-    X-AppImage-Version: 0.9.7
+    X-AppImage-Version: 0.9.8
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
@@ -58,6 +67,9 @@ appdata:
   Summary:
     C: Compare and merge files and folders
     pt-BR: Compare e mescle arquivos e pastas
+    ca: Compareu i combineu fitxers i carpetes
+    es: Compare y combine archivos y carpetas
+    de: Dateien und Ordner vergleichen und zusammenführen
   Description:
     C: >-
       <p>LibreMerge brings the comparison engine of WinMerge to Linux and macOS,
@@ -113,6 +125,8 @@ appdata:
       url: https://raw.githubusercontent.com/iagodpassos/libremerge/main/docs/screenshots/linux-debian.png
       lang: C
   Releases:
+  - version: 0.9.8
+    unix-timestamp: 1791331200
   - version: 0.9.7
     unix-timestamp: 1790812800
   - version: 0.9.6

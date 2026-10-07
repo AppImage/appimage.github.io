@@ -2,8 +2,14 @@
 Type=Application
 Name=LibreMerge
 GenericName=Diff and Merge Tool
+GenericName[ca]=Eina de comparació i combinació
+GenericName[de]=Werkzeug zum Vergleichen und Zusammenführen
+GenericName[es]=Herramienta de comparación y combinación
 GenericName[pt_BR]=Ferramenta de Comparação e Mesclagem
 Comment=Compare and merge files and folders
+Comment[ca]=Compareu i combineu fitxers i carpetes
+Comment[de]=Dateien und Ordner vergleichen und zusammenführen
+Comment[es]=Compare y combine archivos y carpetas
 Comment[pt_BR]=Compare e mescle arquivos e pastas
 Exec=libremerge %F
 Icon=libremerge
@@ -11,9 +17,12 @@ Terminal=false
 Categories=Development;TextTools;
 MimeType=text/plain;text/csv;text/tab-separated-values;
 Keywords=diff;merge;compare;winmerge;
+Keywords[ca]=diff;merge;comparar;combinar;winmerge;
+Keywords[de]=diff;merge;vergleichen;zusammenführen;winmerge;
+Keywords[es]=diff;merge;comparar;combinar;winmerge;
 Keywords[pt_BR]=diff;merge;comparar;mesclar;winmerge;
 StartupWMClass=libremerge
-X-AppImage-Version=0.9.7
+X-AppImage-Version=0.9.8
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
