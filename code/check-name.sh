@@ -25,7 +25,8 @@
 # tools. The rules follow the ~1700 existing names: most equal the
 # application's name (ignoring case and punctuation), use _ instead of
 # blanks, and a few legitimately contain "AppImage" (AppImageUpdate) or
-# numbers (Play_2048), so those only warn.
+# numbers (Play_2048), so those only warn. The word "App" (Foo-App) is never part
+# of a name; it is an error for new files, and a warning for the 32 old ones.
 
 # "Linux" other than in "Anylinux", the name of the project that builds
 # some AppImages (https://github.com/pkgforge-dev/Anylinux-AppImages)
@@ -84,6 +85,12 @@ if [ -z "$DESKTOP" ] ; then
   fi
   if echo "$NAME" | grep -qiE '\.(md|txt|ya?ml|json|desktop|sh|url)$' ; then
     problem "must not have a file extension; the file is named after the application only"
+  fi
+  # "App" as a word ("Foo-App", "foo_app", "App_Outlet"): every entry is an
+  # application, so it tells nothing; not "Apple", "WhatsApp", "Application"
+  if echo "$NAME" | grep -qiE '(^|[-_. ])apps?($|[-_. ])' ; then
+    WITHOUT=$(echo "$NAME" | sed -E 's/(^|[-_. ])[Aa][Pp][Pp][Ss]?($|[-_. ])/\1\2/g; s/(^|[-_. ])[Aa][Pp][Pp][Ss]?($|[-_. ])/\1\2/g; s/[-_. ]+$//; s/^[-_. ]+//; s/([-_. ])[-_. ]+/\1/g')
+    problem "must not contain the word 'App' (all entries are applications): name the file after the application without it${WITHOUT:+ (e.g. '$WITHOUT')}"
   fi
   LOWER=$(echo "$NAME" | tr 'A-Z' 'a-z')
   for OTHER in "$DATADIR"/* ; do
