@@ -20,6 +20,9 @@ ASSET="$2"
 DESC="$3"
 README="$4"
 
+PICKED_FILE=$(mktemp)
+trap 'rm -f "$PICKED_FILE"' EXIT
+
 key() { tr 'A-Z' 'a-z' <<<"$1" | tr -cd 'a-z0-9' ; }
 
 # The app's letters and digits, from the repository name without a trailing
@@ -75,4 +78,14 @@ HEADLINE=$(head -c 20000 <<<"$README" | tr -d '\r' | awk '
   [ "$UPPER" -gt 0 ] && [ "$LOWER" -eq 0 ] && { [ ${#KEY} -le 5 ] && RANK=2 || RANK=0 ; }
   printf '%s\t%s\t%s\t%s\n' "$RANK" "$UPPER" "$PRIO" "$SPELLING"
 done | sort -t $'\t' -k1,1nr -k2,2nr -k3,3nr | head -n 1 | cut -f 4 \
-  | sed -E 's/ /_/g; s/\.([A-Z])/_\1/g' | tr -cd 'A-Za-z0-9._+-'
+  | sed -E 's/ /_/g; s/\.([A-Z])/_\1/g' | tr -cd 'A-Za-z0-9._+-' > "$PICKED_FILE"
+PICKED=$(cat "$PICKED_FILE")
+# A hyphen where the README (or the description) writes blanks, "XI-on-Anything"
+# and "XI on Anything": use _ instead, as for the other blanks
+if [[ "$PICKED" == *[A-Za-z0-9]-[A-Za-z0-9]* ]] ; then
+  SPACED=${PICKED//-/ }
+  if tr -s '[:space:]' ' ' <<<"${README:0:50000} ${DESC:0:300}" | grep -qiF -- "$SPACED" ; then
+    PICKED=${PICKED//-/_}
+  fi
+fi
+printf '%s' "$PICKED"

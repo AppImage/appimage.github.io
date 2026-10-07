@@ -10,7 +10,9 @@
 #     GitHub, Codeberg and GitLab; other hosts have no repository name)
 #   APPIMAGE_FILE_NAME: e.g. LoFiLogic-Linux-1.6.6-x86_64.AppImage
 #
-# Prints at most one line:
+# Prints at most two lines, the first only if the file name has a hyphen where the
+# README has blanks (WARNING: File name 'X-Y': the README writes ... 'X Y'; use _ ...),
+# the other:
 #   WARNING: The names of the repository, the AppImage and the README differ: repository 'x', AppImage 'y', README 'z'
 # (only the names that exist are listed). Names agree when, ignoring case and
 # punctuation (and a trailing "appimage"/"linux"), they are equal, one contains
@@ -37,14 +39,26 @@ STEM=$(sed -E 's/\.appimage$//I; s/[-_. ]?(x86[-_]64|amd64|x64|linux(64)?)//Ig; 
 # The README's headline: the first "# Title" (or "Title" underlined with ===,
 # or <h1>), without links, images, HTML tags and emoji
 HEADLINE=""
+README_TEXT=""
 if [ -n "$REPO" ] ; then
-  HEADLINE=$(timeout 60 bash "$(dirname "$0")/fetch-readme.sh" "$URL" | head -c 20000 | tr -d '\r' | awk '
+  README_TEXT=$(timeout 60 bash "$(dirname "$0")/fetch-readme.sh" "$URL" | head -c 50000 | tr -d '\r')
+  HEADLINE=$(head -c 20000 <<<"$README_TEXT" | awk '
     /^[[:space:]]*#{1,2}[[:space:]]+[^[:space:]]/ { sub(/^[[:space:]]*#+[[:space:]]+/, ""); print; exit }
     /^[[:space:]]*=+[[:space:]]*$/ && prev ~ /[^[:space:]]/ { print prev; exit }
     match($0, /<h1[^>]*>[^<]*[^<[:space:]][^<]*<\/h1>/) { t = substr($0, RSTART, RLENGTH); gsub(/<[^>]*>/, "", t); print t; exit }
     { prev = $0 }' \
     | sed -E 's/!\[[^]]*\]\([^)]*\)//g; s/\[([^]]*)\]\([^)]*\)/\1/g; s/<[^>]*>//g; s/[*_`]+/ /g' \
     | LC_ALL=C tr -cd 'A-Za-z0-9+._ -' | head -c 200)
+fi
+
+# A hyphen in the file name where the README writes blanks ("XI-on-Anything",
+# README: "XI on Anything"): the name should use _ instead (XI_on_Anything)
+ENTRY=$(basename "$DATA_FILE")
+if [[ "$ENTRY" == *[A-Za-z0-9]-[A-Za-z0-9]* ]] && [ -n "$README_TEXT" ] ; then
+  SPACED=${ENTRY//-/ }
+  if tr -s '[:space:]' ' ' <<<"$README_TEXT" | grep -qiF -- "$SPACED" ; then
+    echo "WARNING: File name '$ENTRY': the README writes the name with blanks ('$SPACED'); use _ instead of - (e.g. '${ENTRY//-/_}'), as blanks in a name become _"
+  fi
 fi
 
 python3 - "$REPO" "$STEM" "$HEADLINE" <<'PY'

@@ -42,6 +42,7 @@ Name of the file in `data/` (checked by the test; new files that break these rul
 * No blanks; use `_` instead, e.g. `data/Linux_Device_Manager`
 * No version number, architecture or `.AppImage`, e.g. not `data/App-1.0-x86_64.AppImage`
 * No "AppImage" or "Linux" unless they are part of the application's name (all AppImages are for Linux)
+* Blanks in the application's name become `_`, also where the file name would otherwise have `-`: if the README writes "XI on Anything", the file is `data/XI_on_Anything`, not `data/XI-on-Anything` (the test warns about it)
 * No "App" as a word (all entries are applications), e.g. `data/AniWings`, not `data/AniWings-App` or `data/aniwings_app`; names such as `WhatsApp` or `Apple` are fine
 * No file extension such as `.md` or `.txt`
 * Not an existing name in different capitalization; to update an entry, change its existing file
