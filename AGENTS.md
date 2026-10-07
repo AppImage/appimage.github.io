@@ -58,6 +58,11 @@ GitHub Pages (Jekyll) from this repository.
      or a name with capitals with `Terminal=true`: all-lowercase names are typically
      command line tools; the publish workflow only shows a note that
      `check-name.sh --note-text` generates exactly;
+   - `code/check-name.sh` also rejects the word "App" in a name (`Foo-App`, `foo_app`,
+     `App_Outlet`: a token between `-`, `_`, `.` or blanks; not `WhatsApp`, `Apple`), an
+     error for files a PR adds and a warning for the 32 old ones, and `code/pick-name.sh`
+     (auto-discovery) leaves such a word out of the proposed name (`aniwings-app` gives
+     `AniWings`), so the discovery workflows do not propose names the test rejects;
    - `code/check-names-agree.sh`: a warning when the name of the repository, the
      AppImage's name and the README's headline (`code/fetch-readme.sh`) disagree
      within a tolerance (equal, one contains the other, or >= 80 % similar, ignoring

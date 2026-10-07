@@ -26,6 +26,10 @@ key() { tr 'A-Z' 'a-z' <<<"$1" | tr -cd 'a-z0-9' ; }
 # -appimage/-linux (e.g. photoapp-appimage)
 BASE=$(sed -E 's/[-_.]?(appimage|linux)$//I' <<<"$REPO_NAME")
 [ -n "$BASE" ] || BASE="$REPO_NAME"
+# ... and without the word "app" (aniwings-app, app-foo): it is no part of a name
+# (check-name.sh); not in "photoapp", "whatsapp", "apple"
+STRIPPED=$(sed -E 's/(^|[-_.])apps?($|[-_.])/\1\2/Ig; s/(^|[-_.])apps?($|[-_.])/\1\2/Ig; s/[-_.]+$//; s/^[-_.]+//' <<<"$BASE")
+[ -z "$STRIPPED" ] || BASE="$STRIPPED"
 KEY=$(key "$BASE")
 [ -n "$KEY" ] || exit 0
 
