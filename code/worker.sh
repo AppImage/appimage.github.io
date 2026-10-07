@@ -240,6 +240,7 @@ if [ x"$TYPE" == x2 ] ; then
   fi
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"
+  bash "$(dirname "$0")/check-permissions.sh" "$APPDIR" || true
   # later # kill $PID # fuse
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
   UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-updateinformation) || echo "Could not get update information from the AppImage"
@@ -254,6 +255,7 @@ if [ x"$TYPE" == x1 ] ; then
   APPDIR=/mnt
   echo $APPDIR
   bash appdir-lint.sh "$APPDIR"
+  bash "$(dirname "$0")/check-permissions.sh" "$APPDIR" || true
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
   UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null | tr -d '\000') || echo "Could not get update information from the AppImage"
   # later # sudo umount -l /mnt
