@@ -32,7 +32,11 @@ HINTS=(
 
   "AppRun\\.wrapped: Permission denied"
   "-"
-  "AppRun.wrapped (or the launcher it starts) could not be executed. This typically happens with Tauri and linuxdeploy builds when a cached launcher was packaged with mode 0770 and is owned by root, so that it is not executable for the test user. Please make the AppDir readable and executable for everyone before packaging, e.g. \`chmod -R a+rX AppDir\` (and \`chmod a+x\` on AppRun and AppRun.wrapped) before running appimagetool."
+  "AppRun.wrapped (or the launcher it starts) could not be executed by the test user. In Tauri builds this file is the AppRun that Tauri's bundler downloads and writes with mode 0770 (not executable for other users; linuxdeploy renames it to AppRun.wrapped). The AppImage runtime's own mount ignores that for the user who starts the AppImage, but a mount by root, as in the test's sandbox, applies it. Please make the AppDir readable and executable for everyone before packaging the AppImage, e.g. \`chmod -R a+rX AppDir\` (or \`chmod 755 AppRun.wrapped\`), then pack it with appimagetool; with Tauri, the cached copy of the AppRun in the Tauri cache directory can be given mode 755 before the build (the bundler only downloads it if it is missing)."
+
+  "^WARNING: [0-9]+ files? in the AppImage (is|are) not readable or executable by other users"
+  "-"
+  "Some files in the AppImage are not readable by other users, or not executable although the owner can execute them (e.g. mode 0770; the line above names examples). That works for the user who starts the AppImage, but not when the AppImage is mounted by another user, as root does in a sandbox or when extracting: the files cannot be used then (e.g. \"AppRun.wrapped: Permission denied\" in Tauri builds). Please make the files in the AppDir world readable and executable where they are executable at all, e.g. \`chmod -R a+rX AppDir\`, before packaging the AppImage."
 
   "error while loading shared libraries"
   "error-missing-library"

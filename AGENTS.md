@@ -348,8 +348,15 @@ GitHub Pages (Jekyll) from this repository.
      test result says `.DirIcon is missing` (the label alone also covers other missing
      files). Run the dry run first.
    - `code/diagnose.sh` has hints for `AppRun.wrapped: Permission denied`
-     (Tauri/linuxdeploy mode 0770) and for a `.DirIcon` that cannot be read
-     (absolute symlink).
+     (Tauri's bundler downloads its AppRun with mode 0770, in `write_and_make_executable`;
+     `fs::copy` keeps the mode and linuxdeploy renames the file to `AppRun.wrapped`; the
+     AppImage runtime's FUSE mount does not apply owner/group/other bits for the user who
+     mounts it, but a mount by root, as firejail's `--appimage`, does) and for a `.DirIcon`
+     that cannot be read (absolute symlink). `code/check-permissions.sh` (after
+     `appdir-lint.sh`) warns beforehand: `WARNING: N files in the AppImage are not readable
+     or executable by other users (e.g. AppRun.wrapped: mode 770)`; the hint for it says
+     to `chmod -R a+rX AppDir`. Updating Tauri does not fix it: its bundler still uses 0770
+     (October 2026; the fix in 2.11.4 is the missing `.DirIcon`).
 
 ## Rules that are easy to get wrong
 
