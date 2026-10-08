@@ -3,9 +3,9 @@ Type=Application
 Name=Retromind
 Exec=Retromind
 Icon=retromind
-Categories=Utility;
+Categories=Game;Utility;
 Terminal=false
-X-AppImage-Version=0.2.0-alpha
+X-AppImage-Version=0.2.1-alpha
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|Dark574|Retromind|latest-all|Retromind-*-x86_64.AppImage.zsync

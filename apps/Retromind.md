@@ -2,8 +2,8 @@
 layout: app
 
 permalink: /Retromind/
-description: Portable media manager for games, movies, books, and more
-license: GPL-3.0-only
+description: "Portable media manager for games, movies, books, and more"
+license: "GPL-3.0-only"
 
 icons:
   - Retromind/icons/scalable/retromind.svg
@@ -11,8 +11,8 @@ screenshots:
 - https://raw.githubusercontent.com/Dark574/Retromind/main/docs/images/retromind-bigmode-prism.jpg
 
 authors:
-  - name: Dark574
-    url: https://github.com/Dark574
+  - name: "Dark574"
+    url: "https://github.com/Dark574"
 
 links:
   - type: GitHub
@@ -26,9 +26,9 @@ desktop:
     Name: Retromind
     Exec: Retromind
     Icon: retromind
-    Categories: Utility
+    Categories: Game
     Terminal: false
-    X-AppImage-Version: 0.2.0-alpha
+    X-AppImage-Version: 0.2.1-alpha
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|Dark574|Retromind|latest-all|Retromind-*-x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
