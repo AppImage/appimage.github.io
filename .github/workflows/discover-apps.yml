@@ -6,7 +6,9 @@
 # code/discover-apps.sh keeps a state file (cursor + recently-checked
 # repositories) on the orphan "discover-state" branch, so repeated runs
 # rotate through GitHub's search results and history instead of proposing
-# or re-checking the same repositories. Manual only; see MAINTAINER.md.
+# or re-checking the same repositories. By default (recent mode) a run only looks
+# at what was pushed since the last run and at the last 3 months of new
+# repositories. Manual only; see MAINTAINER.md.
 
 name: Discover apps
 
@@ -17,6 +19,10 @@ on:
         description: 'Number of pull requests to open; the run searches until it has found that many (or searched every month since 2012, or 5.5 hours passed)'
         type: number
         default: 1
+      months:
+        description: 'Recent mode (default): search what was pushed since the last run and the repositories created in the last N months, then stop (minutes, not hours). 0: the full sweep over every month since 2012 (about 500 searches), which finds little new once it has been done'
+        type: number
+        default: 3
       dry_run:
         description: 'Dry run (only print what would be opened; nothing is pushed or changed)'
         type: boolean
@@ -55,8 +61,9 @@ jobs:
       - name: Discover and propose new entries
         env:
           COUNT: ${{ github.event.inputs.count || '1' }}
+          MONTHS: ${{ github.event.inputs.months || '3' }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
         run: |
-          ARGS=(--count "$COUNT")
+          ARGS=(--count "$COUNT" --months "$MONTHS")
           [ "$DRY_RUN" == "true" ] && ARGS+=(--dry-run)
           bash code/discover-apps.sh "${ARGS[@]}"
