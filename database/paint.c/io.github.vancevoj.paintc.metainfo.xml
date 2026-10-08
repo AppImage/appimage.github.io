@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata of paint.c (validated with appstreamcli validate). -->
+<component type="desktop-application">
+  <id>io.github.vancevoj.paintc</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>paint.c</name>
+  <summary>Edit images with layers and effects</summary>
+  <developer id="io.github.vancevoj">
+    <name>Vance Vojslavek</name>
+  </developer>
+  <description>
+    <p>
+      paint.c is a fast, native image and photo editor written in C. It follows
+      the workflow of a well known Windows image editor, so its tools, menus,
+      shortcuts and dialogs feel familiar from the first click, and it opens and
+      saves that editor's .pdn files with their layers intact.
+    </p>
+    <ul>
+      <li>Layers with opacity, 14 blend modes and visibility</li>
+      <li>Unlimited history with a clickable history panel</li>
+      <li>Selections, magic wand, brushes, clone stamp, recolor, gradients and fills</li>
+      <li>Shapes, lines and curves, and text that stay editable until finished</li>
+      <li>Adjustments and effects with live previews, including curves and levels</li>
+      <li>Opens and saves PDN, PNG, JPEG, JPEG XL, AVIF, WebP, TIFF, BMP, GIF, TGA, DDS and OpenRaster</li>
+      <li>Optional plugins for even more effects</li>
+      <li>Autosave with crash recovery</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github.vancevoj.paintc.desktop</launchable>
+  <url type="homepage">https://github.com/vancevoj/paint.c</url>
+  <url type="bugtracker">https://github.com/vancevoj/paint.c/issues</url>
+  <url type="vcs-browser">https://github.com/vancevoj/paint.c</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Layers, shapes, text and brushes</caption>
+      <image>https://raw.githubusercontent.com/vancevoj/paint.c/v0.1.2/packaging/screenshots/main.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Curves with a live preview in the dark theme</caption>
+      <image>https://raw.githubusercontent.com/vancevoj/paint.c/v0.1.2/packaging/screenshots/curves-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Effects with live previews</caption>
+      <image>https://raw.githubusercontent.com/vancevoj/paint.c/v0.1.2/packaging/screenshots/effects.png</image>
+    </screenshot>
+  </screenshots>
+  <branding>
+    <color type="primary" scheme_preference="light">#b9c6f2</color>
+    <color type="primary" scheme_preference="dark">#33407a</color>
+  </branding>
+  <provides>
+    <binary>paintc</binary>
+    <mediatype>image/x-paintnet</mediatype>
+    <mediatype>image/png</mediatype>
+    <mediatype>image/jpeg</mediatype>
+    <mediatype>image/bmp</mediatype>
+    <mediatype>image/gif</mediatype>
+    <mediatype>image/tiff</mediatype>
+    <mediatype>image/webp</mediatype>
+    <mediatype>image/avif</mediatype>
+    <mediatype>image/jxl</mediatype>
+    <mediatype>image/x-tga</mediatype>
+    <mediatype>image/x-dds</mediatype>
+    <mediatype>image/openraster</mediatype>
+  </provides>
+  <categories>
+    <category>Graphics</category>
+    <category>2DGraphics</category>
+    <category>RasterGraphics</category>
+  </categories>
+  <keywords>
+    <keyword>image</keyword>
+    <keyword>photo</keyword>
+    <keyword>paint</keyword>
+    <keyword>layers</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>tablet</control>
+  </supports>
+  <releases>
+    <release version="0.1.3" date="2026-10-06">
+      <description>
+        <p>Packaging fixes: the desktop entry passes older desktop file validators and the AppImage carries a PNG icon for thumbnails.</p>
+      </description>
+    </release>
+    <release version="0.1.2" date="2026-10-05">
+      <description>
+        <p>Flatpak support: the app id is now io.github.vancevoj.paintc, opening a file while paint.c runs in the Flatpak reaches the open window, and the Text tool lists the fonts installed on the system.</p>
+      </description>
+    </release>
+    <release version="0.1.1" date="2026-10-05">
+      <description>
+        <p>Fixes a canvas that kept part of a closed image after opening another, prefers native Wayland on compositors without wp_fifo_v1 (KWin before 6.4) with a Display server setting, and adds the plugin host features the optional plugins use.</p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-10-05">
+      <description>
+        <p>First preview release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

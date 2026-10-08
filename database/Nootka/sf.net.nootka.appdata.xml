@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018-2021 SeeLook CC-0 -->
+<component type="desktop-application">
+  <id>nootka.desktop</id>
+  <name>Nootka</name>
+  <developer_name>SeeLook</developer_name>
+  <metadata_license>CC0-1.0</metadata_license>
+  <summary>Application to learn classical score notation</summary>
+  <project_license>GPL-3.0+</project_license>
+
+  <description>
+    <p>
+      ​Application helps understand the basics of music notation reading and practicing playing musical scores.
+    </p>
+    <p>
+      ​Long story short: the user plays notes (melody) displayed by the app, which then in real time checks if the note was played correctly.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>interactive interface to discover the rules of musical notation</li>
+      <li>learning where to play single note and playing entire melodies</li>
+      <li>accurate method for detecting sung and played sounds and melodies</li>
+      <li>exercises with possibility to create own questions sets</li>
+      <li>importing melodies from musicXML file format - creating exercises based on them</li>
+      <li>support for different instruments (guitars, ukulele, piano, saxophones, bandoneon)</li>
+      <li>analyze of results - charts with exercise details</li>
+    </ul>
+  </description>
+
+  <categories>
+    <category>Education</category>
+    <category>Music</category>
+  </categories>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window - guitar</caption>
+      <image>https://nootka.sourceforge.io/wp-content/uploads/2021/05/Guitar.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>Main window, single note - bandoneon</caption>
+      <image>https://nootka.sourceforge.io/wp-content/uploads/2021/05/Bando.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>Playing bass guitar exercise</caption>
+      <image>https://nootka.sourceforge.io/wp-content/uploads/2021/05/Bass.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>Saxophone and random melody</caption>
+      <image>https://nootka.sourceforge.io/wp-content/uploads/2021/05/Sax.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://nootka.sourceforge.io</url>
+  <url type="bugtracker">https://sourceforge.net/p/nootka/bugs/</url>
+  <url type="donation">https://sourceforge.net/p/nootka/donate/</url>
+  <url type="translate">https://www.opencode.net/seelook/nootka/blob/master/lang/how-to-translate.md</url>
+
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+  <update_contact>seelook_AT_gmail.com</update_contact>
+
+  <releases>
+    <release date="2021-08-16" version="2.0.2"/>
+  </releases>
+
+</component>

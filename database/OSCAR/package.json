@@ -1,0 +1,27 @@
+{
+  "name": "oscar",
+  "productName": "OSCAR",
+  "version": "2.0.0",
+  "description": "OSCAR creates GUIs to control interactive installations sending OSC",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trafalmejo/OSCAR"
+  },
+  "author": "Daniel Castaño",
+  "license": "BSD-3-Clause",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "open": "^8.4.2",
+    "osc": "^2.4.5",
+    "socket.io": "^4.8.3"
+  },
+  "overrides": {
+    "ws": "^8.21.3"
+  }
+}

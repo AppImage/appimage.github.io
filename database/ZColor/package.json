@@ -1,0 +1,31 @@
+{
+  "name": "ZColor",
+  "version": "2.0.1",
+  "description": "Professional color toolkit for designers and developers – Chrome extension & cross‑platform desktop app with 2,200+ colors, 2,000+ gradients, SVG icon builder, and color picker",
+  "author": {
+    "name": "Abolfazl Cheloyi",
+    "email": "achdev@achdev.ir",
+    "url": "https://github.com/cheloei"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheloei/ZColor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cheloei/ZColor/issues"
+  },
+  "homepage": "https://github.com/cheloei/ZColor#readme",
+  "dependencies": {
+    "@aasaam/brand-icons": "^0.0.27",
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "@material-design-icons/svg": "^0.14.15",
+    "@phosphor-icons/core": "^2.1.1",
+    "bootstrap-icons": "^1.13.1",
+    "feather-icons": "^4.29.2",
+    "lucide-static": "^1.8.0",
+    "remixicon": "^4.9.1",
+    "unzipper": "^0.12.3"
+  },
+  "main": "dist-electron/main.js"
+}

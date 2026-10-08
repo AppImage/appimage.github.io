@@ -1,0 +1,47 @@
+{
+  "name": "goblintown",
+  "version": "0.7.0-beta.1",
+  "description": "Local-first AI chat and multi-agent orchestration for Goblintown.",
+  "license": "MIT",
+  "author": "0XBL33P",
+  "homepage": "https://github.com/0XBL33P/goblintown#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0XBL33P/goblintown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0XBL33P/goblintown/issues"
+  },
+  "type": "module",
+  "bin": {
+    "goblintown": "dist/cli.js"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/desktop.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "!dist/__tests__",
+    "site/assets",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "glob": "^11.0.0",
+    "matter-js": "^0.20.0",
+    "openai": "^4.80.0"
+  }
+}

@@ -34,14 +34,18 @@ desktop:
     Categories: Graphics
     MimeType: application/x-graphics.friction.Friction
     StartupWMClass: friction
-    X-AppImage-Version: 1.0.0-rc.1
+    X-AppImage-Version: 1.0.0-rc.3
   AppImageHub:
-    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
-      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
-      could not be verified. Please remember that the signature file (.sig or .asc)
-      should be the first file given on the command line.'
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: GPL-3.0
 
 appdata:
   Type: desktop-application
@@ -90,6 +94,16 @@ appdata:
       url: https://friction.graphics/assets/screenshots/100/friction-100b2-screenshot.png
       lang: C
   Releases:
+  - version: 1.0.0-rc.3
+    unix-timestamp: 1767139200
+    description:
+      C: >-
+        <p>Third release candidate for v1.0.0 is now available. Features gizmos, snapping and grid. And of course many fixes!</p>
+  - version: 1.0.0-rc.2
+    unix-timestamp: 1754438400
+    description:
+      C: >-
+        <p>Second release candidate for v1.0.0 is now available.</p>
   - version: 1.0.0-rc.1
     unix-timestamp: 1741564800
     description:

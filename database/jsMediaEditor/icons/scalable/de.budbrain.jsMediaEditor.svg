@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!--
+  Budbrain Media Editor — Logo.
+  Deterministisch per SVG (kein KI-Bild): volles Copyright, keine Artefakte.
+
+  Motiv: Filmklappe (links) und Bildrahmen (rechts); dazwischen eine GEÖFFNETE
+  Schere, deren gekreuzte Klingen durch beide hindurchschneiden. Im Hintergrund
+  schießen Blitze radial aus der Mitte. Text: "Budbrain's" / "Media Editor".
+
+  Safe-Zone: Motiv im zentralen ~72 % (Android-Adaptive-Icon zoomt auf 66 %).
+
+  SCHRIFT: nur freie Fonts als Fallback (DejaVu = Bitstream-Vera-Lizenz,
+  Liberation = SIL OFL). NIEMALS Verdana/Arial/Helvetica in die font-family —
+  das sind proprietäre Fonts (msttcorefonts), die auf manchen Build-Rechnern
+  installiert sind und dann in die Store-Grafiken gerastert würden.
+-->
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0.40" r="0.85">
+      <stop offset="0%" stop-color="#2C6392"/>
+      <stop offset="55%" stop-color="#1C2229"/>
+      <stop offset="100%" stop-color="#0B0E11"/>
+    </radialGradient>
+    <linearGradient id="rayGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFE9A8"/>
+      <stop offset="55%" stop-color="#E0B84C"/>
+      <stop offset="100%" stop-color="#C08A1E" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="45%" stop-color="#C9D3DB"/>
+      <stop offset="100%" stop-color="#7C8892"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5E9FD4"/>
+      <stop offset="100%" stop-color="#2C6392"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <!-- Weicher Schlagschatten unter dem Schriftzug (zusätzlich zur Extrusion). -->
+    <filter id="textShadow" x="-25%" y="-25%" width="150%" height="170%">
+      <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+    <!-- Glanzverlauf für die Deckfläche der Schrift. -->
+    <linearGradient id="textFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#E6EBEF"/>
+      <stop offset="100%" stop-color="#9FAAB4"/>
+    </linearGradient>
+    <linearGradient id="textFaceTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DDE5EB"/>
+      <stop offset="100%" stop-color="#8794A0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+
+  <!-- ============ Blitze: radial aus der Mitte, HINTER dem Motiv ============ -->
+  <g>
+    <polygon points="571,420 741,426 720,466 934,492 736,496 758,476 568,431" fill="url(#rayGrad)" opacity="0.55"/>
+    <polygon points="558,449 703,539 664,562 837,692 663,597 692,590 551,456" fill="url(#rayGrad)" opacity="0.30"/>
+    <polygon points="533,466 613,617 568,618 652,817 550,647 578,656 522,469" fill="url(#rayGrad)" opacity="0.55"/>
+    <polygon points="502,469 496,639 456,618 430,832 426,634 446,656 491,466" fill="url(#rayGrad)" opacity="0.30"/>
+    <polygon points="473,456 383,601 360,562 230,735 325,561 332,590 466,449" fill="url(#rayGrad)" opacity="0.55"/>
+    <polygon points="456,431 305,511 304,466 105,550 275,448 266,476 453,420" fill="url(#rayGrad)" opacity="0.30"/>
+    <polygon points="453,400 283,394 304,354 90,328 288,324 266,344 456,389" fill="url(#rayGrad)" opacity="0.55"/>
+    <polygon points="466,371 321,281 360,258 187,128 361,223 332,230 473,364" fill="url(#rayGrad)" opacity="0.30"/>
+    <polygon points="491,354 411,203 456,202 372,3 474,173 446,164 502,351" fill="url(#rayGrad)" opacity="0.55"/>
+    <polygon points="522,351 528,181 568,202 594,-12 598,186 578,164 533,354" fill="url(#rayGrad)" opacity="0.30"/>
+    <polygon points="551,364 641,219 664,258 794,85 699,259 692,230 558,371" fill="url(#rayGrad)" opacity="0.55"/>
+    <polygon points="568,389 719,309 720,354 919,270 749,372 758,344 571,400" fill="url(#rayGrad)" opacity="0.30"/>
+  </g>
+  <circle cx="512" cy="410" r="130" fill="#E0B84C" opacity="0.22" filter="url(#glow)"/>
+
+  <!-- ============ Filmklappe (links) ============ -->
+  <g transform="translate(230 288) rotate(-8)">
+    <rect x="0" y="60" width="248" height="184" rx="16" fill="#2F3944" stroke="#B6C2CC" stroke-width="6"/>
+    <rect x="0" y="0" width="248" height="62" rx="10" fill="#161C22" stroke="#B6C2CC" stroke-width="6"/>
+    <g fill="#EDF1F4">
+      <polygon points="14,4 54,4 30,58 -10,58"/>
+      <polygon points="86,4 126,4 102,58 62,58"/>
+      <polygon points="158,4 198,4 174,58 134,58"/>
+      <polygon points="230,4 260,4 246,58 206,58"/>
+    </g>
+    <rect x="34" y="112" width="180" height="10" rx="5" fill="#8E9AA5" opacity="0.7"/>
+    <rect x="34" y="152" width="138" height="10" rx="5" fill="#8E9AA5" opacity="0.5"/>
+  </g>
+
+  <!-- ============ Bildrahmen (rechts) ============ -->
+  <g transform="translate(540 294) rotate(7)">
+    <rect x="0" y="0" width="250" height="236" rx="18" fill="#232B33" stroke="url(#frame)" stroke-width="8"/>
+    <circle cx="68" cy="64" r="25" fill="#E0B84C"/>
+    <polygon points="22,194 98,108 148,168 188,126 230,194" fill="#5E9FD4"/>
+    <polygon points="118,194 174,130 230,194" fill="#B6C2CC" opacity="0.85"/>
+  </g>
+
+  <!-- ============ Schere: GEÖFFNET, gekreuzte Klingen ============
+       Drehpunkt in der Mitte; die Klingen laufen von dort nach oben-links und
+       oben-rechts auseinander (offenes V), die Griffe nach unten. So schneidet
+       sie sichtbar durch Klappe und Rahmen. -->
+  <g transform="translate(512 470)">
+    <!-- Klinge nach oben-links -->
+    <g transform="rotate(-19)">
+      <path d="M -13 -12 L 11 -18 L 3 -300 L -19 -284 Z" fill="url(#steel)" stroke="#4A545E" stroke-width="4" stroke-linejoin="round"/>
+    </g>
+    <!-- Klinge nach oben-rechts -->
+    <g transform="rotate(19)">
+      <path d="M 13 -12 L -11 -18 L -3 -300 L 19 -284 Z" fill="url(#steel)" stroke="#4A545E" stroke-width="4" stroke-linejoin="round"/>
+    </g>
+    <!-- Griffe -->
+    <g stroke="#C0483F" stroke-width="26" fill="none" stroke-linecap="round">
+      <path d="M -12 16 C -44 66, -74 92, -66 140" />
+      <path d="M 12 16 C 44 66, 74 92, 66 140" />
+    </g>
+    <ellipse cx="-72" cy="176" rx="40" ry="46" fill="none" stroke="#C0483F" stroke-width="26"/>
+    <ellipse cx="72" cy="176" rx="40" ry="46" fill="none" stroke="#C0483F" stroke-width="26"/>
+    <!-- Drehpunkt -->
+    <circle cx="0" cy="0" r="20" fill="#3A444F" stroke="#EDF1F4" stroke-width="7"/>
+    <circle cx="0" cy="0" r="5" fill="#EDF1F4"/>
+  </g>
+
+  <!-- ============ Schriftzug (3D: Extrusion + Schlagschatten) ============
+       Tiefe durch gestapelte, leicht versetzte Kopien hinter der Deckfläche —
+       ein reiner Blur-Schatten bliebe flach. Die Tiefe (9 Schichten × 1.05 px)
+       muss KLEINER sein als der Zeilenabstand, sonst wächst die Extrusion der
+       oberen Zeile in die untere hinein. -->
+  <g text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, sans-serif" filter="url(#textShadow)">
+    <g>
+    <text x="517.9" y="845.5" font-size="84" font-weight="700" fill="#161a1f" letter-spacing="2">Budbrain's</text>
+    <text x="517.2" y="844.4" font-size="84" font-weight="700" fill="#171b20" letter-spacing="2">Budbrain's</text>
+    <text x="516.5" y="843.4" font-size="84" font-weight="700" fill="#181c21" letter-spacing="2">Budbrain's</text>
+    <text x="515.9" y="842.3" font-size="84" font-weight="700" fill="#1a1e23" letter-spacing="2">Budbrain's</text>
+    <text x="515.2" y="841.2" font-size="84" font-weight="700" fill="#1b1f24" letter-spacing="2">Budbrain's</text>
+    <text x="514.6" y="840.2" font-size="84" font-weight="700" fill="#1c2025" letter-spacing="2">Budbrain's</text>
+    <text x="514.0" y="839.1" font-size="84" font-weight="700" fill="#1e2227" letter-spacing="2">Budbrain's</text>
+    <text x="513.3" y="838.1" font-size="84" font-weight="700" fill="#1f2328" letter-spacing="2">Budbrain's</text>
+    <text x="512.6" y="837.0" font-size="84" font-weight="700" fill="#202429" letter-spacing="2">Budbrain's</text>
+      <text x="512" y="836" font-size="84" font-weight="700" fill="url(#textFaceTop)"
+            stroke="#22415C" stroke-width="2" letter-spacing="2">Budbrain's</text>
+    </g>
+    <g>
+    <text x="517.9" y="961.5" font-size="96" font-weight="800" fill="#161a1f" letter-spacing="1">Media Editor</text>
+    <text x="517.2" y="960.4" font-size="96" font-weight="800" fill="#171b20" letter-spacing="1">Media Editor</text>
+    <text x="516.5" y="959.4" font-size="96" font-weight="800" fill="#181c21" letter-spacing="1">Media Editor</text>
+    <text x="515.9" y="958.3" font-size="96" font-weight="800" fill="#1a1e23" letter-spacing="1">Media Editor</text>
+    <text x="515.2" y="957.2" font-size="96" font-weight="800" fill="#1b1f24" letter-spacing="1">Media Editor</text>
+    <text x="514.6" y="956.2" font-size="96" font-weight="800" fill="#1c2025" letter-spacing="1">Media Editor</text>
+    <text x="514.0" y="955.1" font-size="96" font-weight="800" fill="#1e2227" letter-spacing="1">Media Editor</text>
+    <text x="513.3" y="954.1" font-size="96" font-weight="800" fill="#1f2328" letter-spacing="1">Media Editor</text>
+    <text x="512.6" y="953.0" font-size="96" font-weight="800" fill="#202429" letter-spacing="1">Media Editor</text>
+      <text x="512" y="952" font-size="96" font-weight="800" fill="url(#textFace)"
+            stroke="#22415C" stroke-width="2" letter-spacing="1">Media Editor</text>
+    </g>
+  </g>
+</svg>

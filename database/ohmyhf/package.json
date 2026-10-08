@@ -1,0 +1,16 @@
+{
+  "name": "oh-my-huggingface-desktop",
+  "version": "0.0.20",
+  "private": true,
+  "description": "Oh My HuggingFace — unofficial desktop client for the Hugging Face Hub",
+  "license": "Apache-2.0",
+  "author": "Oh My HuggingFace contributors",
+  "homepage": "https://github.com/fzlzjerry/ohmyhf",
+  "main": "./out/main/index.mjs",
+  "dependencies": {
+    "better-sqlite3": "^12.11.1",
+    "electron-updater": "^6.8.9",
+    "hyparquet": "^1.26.2",
+    "ignore": "^5.3.2"
+  }
+}

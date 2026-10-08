@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata, shipped inside the AppImage at usr/share/metainfo/.
+
+  It is what gives the AppImageHub catalog page a description, links and, above
+  all, screenshots of our choosing. Without it the catalog shows a screenshot its
+  own test takes by running the AppImage in a clean container, which catches the
+  first-run welcome dialog rather than the library.
+
+  The <id> matches build.appId in package.json and the file name, and
+  <launchable> names the .desktop file electron-builder generates from
+  linux.executableName. If either of those changes, this has to change with it.
+-->
+<component type="desktop-application">
+  <id>io.github.fromchaoscomesclarity.clarity</id>
+  <name>Clarity</name>
+  <summary>Your Linux game library in one place</summary>
+  <developer id="io.github.fromchaoscomesclarity">
+    <name>J.R.A.</name>
+  </developer>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <description>
+    <p>
+      Clarity keeps every game you own in one library: GOG, Epic, Steam, itch,
+      PICO-8, emulators, fan games, source ports and mods. One AppImage, no
+      cloud, no launcher farm, and nothing to install beyond the file itself.
+    </p>
+    <p>It has four faces, all in the same download:</p>
+    <ul>
+      <li>Manager, for a desk. Import, organise, scrape, install and launch.</li>
+      <li>Couch, fullscreen and gamepad first, for a TV across the room.</li>
+      <li>CRT, a plain menu for 480 lines over composite, driven with a D-pad.</li>
+      <li>Installer, which installs GOG and Epic games on its own, with no store client.</li>
+    </ul>
+    <p>
+      It also carries recipes: per-game fixes for titles that do not work on
+      Linux out of the box, applied when you press play, with nothing to
+      configure.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">clarity.desktop</launchable>
+
+  <url type="homepage">https://fromchaoscomesclarity.github.io/ClarityWebSite/</url>
+  <url type="bugtracker">https://github.com/FromChaosComesClarity/Clarity/issues</url>
+  <url type="help">https://fromchaoscomesclarity.github.io/ClarityWebSite/fixes.html</url>
+  <url type="donation">https://ko-fi.com/clarity</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The library in Gallery view</caption>
+      <image>https://fromchaoscomesclarity.github.io/ClarityWebSite/assets/gallery/008_library_all_games.webp</image>
+    </screenshot>
+    <screenshot>
+      <caption>A game page, with artwork, metadata and achievements</caption>
+      <image>https://fromchaoscomesclarity.github.io/ClarityWebSite/assets/gallery/009_gamepage_doom.webp</image>
+    </screenshot>
+    <screenshot>
+      <caption>Couch Mode, gamepad first, for a television</caption>
+      <image>https://fromchaoscomesclarity.github.io/ClarityWebSite/assets/gallery/049_couch_home_now_playing.webp</image>
+    </screenshot>
+    <screenshot>
+      <caption>The catalogue of source ports and mods</caption>
+      <image>https://fromchaoscomesclarity.github.io/ClarityWebSite/assets/gallery/039_source_ports_catalogue.webp</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Game</category>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>games</keyword>
+    <keyword>library</keyword>
+    <keyword>launcher</keyword>
+    <keyword>GOG</keyword>
+    <keyword>Epic</keyword>
+    <keyword>Steam</keyword>
+    <keyword>emulation</keyword>
+    <keyword>Proton</keyword>
+  </keywords>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.22.0" date="2026-10-05"/>
+  </releases>
+</component>

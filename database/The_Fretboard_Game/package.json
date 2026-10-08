@@ -1,0 +1,20 @@
+{
+  "name": "the-fretboard-game",
+  "version": "1.0.0",
+  "description": "A fretboard game desktop app",
+  "main": "electron/main.js",
+  "author": "LeonN <leo321war@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.16.0",
+    "pitchfinder": "^2.3.4",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tailwind-merge": "^3.6.0",
+    "zustand": "^5.0.13"
+  },
+  "packageManager": "pnpm@10.6.1+sha512.40ee09af407fa9fbb5fbfb8e1cb40fbb74c0af0c3e10e9224d7b53c7658528615b2c92450e74cfad91e3a2dcafe3ce4050d80bda71d757756d2ce2b66213e9a3"
+}

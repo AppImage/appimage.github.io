@@ -1,0 +1,29 @@
+[Desktop Entry]
+Type=Application
+Name=Budbrain Media Editor
+GenericName=Media Editor
+Comment=Cut video, resize and adjust images, export for every platform
+Comment[de]=Video schneiden, Bilder anpassen, für jede Plattform exportieren
+Exec=jsMediaEditor %f
+Icon=de.budbrain.jsMediaEditor
+Terminal=false
+# 🚫 NUR EINE Hauptkategorie. Mit AudioVideo UND Graphics erscheint die App in
+# manchen Menüs ZWEIMAL — und Josefs Arbeitsplatz soll je App genau einen
+# Eintrag haben.
+Categories=AudioVideo;Video;AudioVideoEditing;
+Keywords=video;cut;trim;image;resize;crop;rotate;editor;
+Keywords[de]=Video;Schneiden;Bild;Größe;Zuschneiden;Drehen;Editor;
+MimeType=video/mp4;video/quicktime;video/x-matroska;video/webm;video/x-msvideo;image/jpeg;image/png;image/webp;image/gif;image/bmp;image/tiff;
+StartupNotify=true
+StartupWMClass=Budbrain Media Editor
+X-AppImage-Version=1.0.0
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://www.budbrain.de/appimage/jsmediaeditor-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=2.34

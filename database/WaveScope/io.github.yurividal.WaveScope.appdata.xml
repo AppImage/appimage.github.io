@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata for WaveScope.  Shipped as
+     /usr/share/metainfo/io.github.yurividal.WaveScope.appdata.xml in the
+     .deb, .rpm and AppImage.  Add a <release> entry for every new version. -->
+<component type="desktop-application">
+  <id>io.github.yurividal.WaveScope</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>WaveScope</name>
+  <summary>Modern WiFi analyzer for Linux</summary>
+
+  <developer id="io.github.yurividal">
+    <name>WaveScope Contributors</name>
+  </developer>
+
+  <description>
+    <p>
+      WaveScope is a real-time WiFi analyzer for Linux desktops. It scans the
+      wireless networks around you through NetworkManager and iw and shows
+      signal strength, channel occupancy, security modes, WiFi generations
+      and manufacturer data.
+    </p>
+    <ul>
+      <li>Per-band channel graphs for 2.4 GHz, 5 GHz and 6 GHz, with DFS channel markers</li>
+      <li>Rolling signal history per access point</li>
+      <li>Detailed AP metadata: security and AKM, WiFi generation, channel width, channel utilization, connected clients, 802.11k/v/r roaming support</li>
+      <li>AP names and TX power read from Cisco, Aruba, Ubiquiti and Ruckus vendor IEs</li>
+      <li>AP group sidebar that groups the radios of one physical access point</li>
+      <li>Manufacturer lookup from the IEEE OUI database, WPS data and vendor IEs, with vendor icons</li>
+      <li>Monitor-mode and managed-mode packet capture to Wireshark-compatible pcap files</li>
+      <li>Dark, light and automatic themes</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">wavescope.desktop</launchable>
+
+  <url type="homepage">https://github.com/yurividal/WaveScope</url>
+  <url type="bugtracker">https://github.com/yurividal/WaveScope/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window with access point table and channel graphs</caption>
+      <image>https://raw.githubusercontent.com/yurividal/WaveScope/main/assets/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Network</category>
+    <category>Monitor</category>
+  </categories>
+
+  <keywords>
+    <keyword>wifi</keyword>
+    <keyword>wireless</keyword>
+    <keyword>analyzer</keyword>
+    <keyword>spectrum</keyword>
+  </keywords>
+
+  <provides>
+    <binary>wavescope</binary>
+  </provides>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="2.1.3" date="2026-10-01">
+      <description>
+        <p>The AppImage now bundles iw 6.17 and scans without any host tools; optional tools (NetworkManager, tcpdump, pkexec) and the first-run vendor-database offer are shown as in-window notices instead of dialogs.</p>
+      </description>
+      <url type="details">https://github.com/yurividal/WaveScope/releases/tag/v2.1.3</url>
+    </release>
+    <release version="2.1.2" date="2026-10-01">
+      <description>
+        <p>Verified against IEEE Std 802.11-2024: 6 GHz AP power type decoded per Table E-13, operating-class-aware Country element channel ranges, and the Mobility Domain ID shown in both octet and numeric form.</p>
+      </description>
+      <url type="details">https://github.com/yurividal/WaveScope/releases/tag/v2.1.2</url>
+    </release>
+    <release version="2.1.1" date="2026-10-01">
+      <description>
+        <p>Data-accuracy fixes from an 802.11 spec review: legacy rates, HT rates, country power limits, group management cipher, TPC sign, OWE transition labels, Suite-B naming, Reduced Neighbor Report flags, 80+80 MHz placement, 160 MHz rates and stricter 6 GHz / PMF checks; the Wireshark cross-check covers these fields now.</p>
+      </description>
+      <url type="details">https://github.com/yurividal/WaveScope/releases/tag/v2.1.1</url>
+    </release>
+    <release version="2.1.0" date="2026-10-01">
+      <description>
+        <p>Kernel scan cache via iw as the single data source (verified against Wireshark), an Issues tab with configuration checks, side-by-side Compare, BSSID labels, column profiles with pinned columns, a Find AP beeper, saved sessions and CSV export, and a Settings dialog.</p>
+      </description>
+      <url type="details">https://github.com/yurividal/WaveScope/releases/tag/v2.1.0</url>
+    </release>
+    <release version="2.0.3" date="2026-10-01">
+      <description>
+        <p>Fixes false BSS color collision warnings between SSIDs of the same radio.</p>
+      </description>
+      <url type="details">https://github.com/yurividal/WaveScope/releases/tag/v2.0.3</url>
+    </release>
+    <release version="2.0.2" date="2026-10-01">
+      <description>
+        <p>Fixes missing beacon data for BSSs heard only via beacons, keeps decoded data while NetworkManager still lists a BSS, and groups SSIDs of one radio reliably on 6 GHz.</p>
+      </description>
+      <url type="details">https://github.com/yurividal/WaveScope/releases/tag/v2.0.2</url>
+    </release>
+    <release version="2.0.1" date="2026-10-01">
+      <description>
+        <p>AppImage now starts on minimal systems: bundles the X11 (xcb) and xkbcommon libraries Qt needs.</p>
+      </description>
+      <url type="details">https://github.com/yurividal/WaveScope/releases/tag/v2.0.1</url>
+    </release>
+    <release version="2.0.0" date="2026-09-30">
+      <description>
+        <p>802.11 parsing correctness pass, hardened packet capture, Wi-Fi 6E/7 detail (320 MHz, puncturing, MLD, PSC, 6 GHz AP power type), RF analysis (channel congestion, BSS color collisions, roam candidates), per-radio SSID grouping in the channel graph, and saved settings.</p>
+      </description>
+      <url type="details">https://github.com/yurividal/WaveScope/releases/tag/v2.0.0</url>
+    </release>
+  </releases>
+</component>

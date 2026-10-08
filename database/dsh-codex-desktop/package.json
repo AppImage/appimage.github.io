@@ -1,0 +1,35 @@
+{
+  "name": "deepseek-harness-desktop",
+  "version": "1.0.79",
+  "description": "DeepSeek Harness 原生桌面启动器",
+  "author": "MichengAI",
+  "desktopName": "DSH Codex Desktop",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "packageManager": "pnpm@11.26.0",
+  "engines": {
+    "node": "24.21.0",
+    "pnpm": "11.26.0"
+  },
+  "config": {
+    "bundledNodeVersion": "v24.21.0",
+    "bundledNodeSha256": {
+      "win32-x64": "BA4E6D110E8C1592A1ECD390F6B05F3DA124B13871A5BE62B341A07A853C6C32",
+      "darwin-arm64": "E4B5A3AF0E05C75DE2EAE013904145F40FE7FC2A6E6F17510128BF45CCA4E79B",
+      "darwin-x64": "7ABCF39BD37AB251015337FF75304D7555F0D8E88C6E0FBF04BCE8CE34636F49",
+      "linux-arm64": "0F8949D1028F6D61506B2D5BC57E7E6FE893D7B1997509B7847294FC9C616584",
+      "linux-x64": "7FDE7B8AFA198DA66257F42EE2001D874C7355631E6D1579A5FB5EF1F246DF4C"
+    },
+    "bundledDshVersion": "0.2.0-rc.2"
+  },
+  "main": "dist/src/main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "yaml": "2.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MichengAI/dsh-codex-desktop.git"
+  }
+}

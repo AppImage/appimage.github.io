@@ -1,0 +1,137 @@
+---
+layout: app
+
+permalink: /pi-gui/
+description: A native desktop interface for pi coding agent sessions, workspaces, and tools.
+license: MIT
+
+icons:
+  - pi-gui/icons/512x512/pi-gui.png
+
+screenshots:
+  - pi-gui/screenshot.png
+
+authors:
+  - name: minghinmatthewlam
+    url: https://github.com/minghinmatthewlam
+
+links:
+  - type: GitHub
+    url: minghinmatthewlam/pi-gui
+  - type: Download
+    url: https://github.com/minghinmatthewlam/pi-gui/releases
+
+desktop:
+  Desktop Entry:
+    Name: pi-gui
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: pi-gui
+    StartupWMClass: pi-gui
+    X-AppImage-Version: 1.0.1
+    Comment: A native desktop interface for pi coding agent sessions, workspaces, and
+      tools.
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: MIT
+
+electron:
+  author: Matthew Lam
+  license: MIT
+  description: Codex-style desktop shell for pi
+  homepage: https://github.com/minghinmatthewlam/pi-gui
+  main: out/main/main.js
+  dependencies:
+    "@anthropic-ai/sdk": 0.124.0
+    "@aws-crypto/sha256-browser": 5.2.0
+    "@aws-crypto/sha256-js": 5.2.0
+    "@aws-sdk/client-bedrock-runtime": 3.1127.0
+    "@aws-sdk/core": "^3.974.11"
+    "@aws-sdk/credential-provider-node": "^3.972.42"
+    "@aws-sdk/eventstream-handler-node": "^3.972.16"
+    "@aws-sdk/middleware-eventstream": "^3.972.12"
+    "@aws-sdk/middleware-websocket": "^3.972.19"
+    "@aws-sdk/nested-clients": "^3.997.3"
+    "@aws-sdk/signature-v4-multi-region": "^3.996.38"
+    "@aws-sdk/token-providers": 3.1127.0
+    "@aws-sdk/types": "^3.973.8"
+    "@aws-sdk/xml-builder": "^3.972.33"
+    "@aws/lambda-invoke-store": "^0.2.2"
+    "@earendil-works/chord": "^0.87.1"
+    "@earendil-works/pi-coding-agent": "^0.87.1"
+    "@google/genai": 2.21.0
+    "@mistralai/mistralai": 2.2.6
+    "@opentelemetry/api": 1.9.0
+    "@pi-gui/catalogs": workspace:*
+    "@pi-gui/extension-ui": workspace:*
+    "@pi-gui/pi-sdk-driver": workspace:*
+    "@pi-gui/session-driver": workspace:*
+    "@silvia-odwyer/photon-node": 0.3.4
+    "@smithy/core": "^3.29.0"
+    "@smithy/credential-provider-imds": "^4.5.2"
+    "@smithy/fetch-http-handler": "^5.4.2"
+    "@smithy/is-array-buffer": "^2.2.0"
+    "@smithy/node-http-handler": "^4.7.2"
+    "@smithy/property-provider": "^4.2.14"
+    "@smithy/shared-ini-file-loader": "^4.4.9"
+    "@smithy/signature-v4": "^5.6.1"
+    "@smithy/types": "^4.14.1"
+    "@smithy/util-buffer-from": "^2.2.0"
+    "@smithy/util-utf8": "^2.3.0"
+    "@xterm/addon-clipboard": "^0.2.0"
+    "@xterm/addon-fit": "^0.11.0"
+    "@xterm/addon-web-links": "^0.12.0"
+    "@xterm/xterm": "^6.0.0"
+    ansi-regex: "^6.2.2"
+    balanced-match: "^4.0.2"
+    bowser: "^2.11.0"
+    brace-expansion: "^5.0.12"
+    chalk: "^6.0.0"
+    cross-spawn: 7.0.6
+    data-uri-to-buffer: "^4.0.1"
+    diff: 8.0.4
+    esbuild: 0.28.2
+    glob: "^13.0.1"
+    highlight.js: 10.7.3
+    hosted-git-info: "^9.0.2"
+    http-proxy-agent: 9.1.0
+    https-proxy-agent: 9.1.0
+    ignore: 7.0.5
+    jiti: 2.7.0
+    lru-cache: "^11.1.0"
+    mime-types: "^3.0.2"
+    minimatch: "^10.2.6"
+    node-pty: "^1.1.0"
+    openai: 6.40.0
+    parse5: "^5.1.1"
+    parse5-htmlparser2-tree-adapter: "^6.0.1"
+    partial-json: 0.1.7
+    path-key: "^3.1.0"
+    proper-lockfile: 4.1.2
+    proxy-agent: "^6.5.0"
+    react: "^19.1.0"
+    react-dom: "^19.1.0"
+    react-markdown: "^10.1.0"
+    remark-gfm: "^4.0.1"
+    retry: "^0.13.1"
+    semver: 7.8.5
+    shebang-command: "^2.0.0"
+    strip-ansi: "^7.2.0"
+    tslib: "^2.6.2"
+    typebox: 1.3.27
+    undici: 8.5.0
+    which: "^2.0.1"
+    yaml: 2.9.0
+    yargs: "^16.2.0"
+---

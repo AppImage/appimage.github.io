@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.ljantzen.Smaragd</id>
+  <name>Smaragd</name>
+  <summary>A native desktop authoring tool for writers</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="io.github.ljantzen">
+    <name>Leif Jantzen</name>
+  </developer>
+  <description>
+    <p>
+      Smaragd is a native desktop authoring tool for writers. A project is a
+      folder of Markdown files and subfolders, with dockable views, a binder
+      tree, bookmarks, an fzf-style quick-switcher, and export to PDF, EPUB,
+      and DOCX.
+    </p>
+  </description>
+  <!--
+    Unlike the Flathub build (packaging/flatpak/io.github.ljantzen.Smaragd.metainfo.xml),
+    the AppImage bundles packaging/smaragd.desktop verbatim rather than
+    renaming it to the reverse-DNS id, so the desktop-id here has to match
+    that filename.
+  -->
+  <launchable type="desktop-id">smaragd.desktop</launchable>
+  <url type="homepage">https://github.com/ljantzen/smaragd</url>
+  <url type="bugtracker">https://github.com/ljantzen/smaragd/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Binder, editor, corkboard, and dockable panels</caption>
+      <image>https://ljantzen.github.io/smaragd/white-desktop.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1" />
+</component>

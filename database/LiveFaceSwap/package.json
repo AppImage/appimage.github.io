@@ -1,0 +1,30 @@
+{
+  "name": "livefaceswap-desktop",
+  "version": "0.2.10",
+  "desktopMacBuildVersion": "227",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.15.1",
+  "pnpm": {
+    "overrides": {
+      "@volcengine/rtc": "4.68.5"
+    }
+  },
+  "main": "dist/electron/main/main.js",
+  "description": "LiveFaceSwap realtime AI desktop client for Linux.",
+  "dependencies": {
+    "@better-auth/electron": "1.6.26",
+    "@decartai/sdk": "^0.1.22",
+    "@xmaxai/sdk-global": "^1.1.10",
+    "better-auth": "1.6.26",
+    "conf": "15.0.2",
+    "electron-updater": "^6.8.9"
+  },
+  "author": {
+    "name": "LiveFaceSwap AI"
+  },
+  "homepage": "https://livefaceswap.ai",
+  "desktopBrand": "livefaceswap",
+  "desktopAppId": "ai.livefaceswap.desktop",
+  "desktopName": "livefaceswap-desktop"
+}

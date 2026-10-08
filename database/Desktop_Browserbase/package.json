@@ -1,0 +1,17 @@
+{
+  "name": "desktop-browserbase",
+  "version": "1.0.2",
+  "description": "A Chrome-like desktop browser powered by Browserbase remote browsers",
+  "main": "dist/main/index.js",
+  "author": "Browserbase",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/browserbase/desktop-browserbase"
+  },
+  "homepage": "https://browserbase.com",
+  "license": "MIT",
+  "dependencies": {
+    "yauzl": "^3.2.0",
+    "playwright-core": "^1.40.0"
+  }
+}

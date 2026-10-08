@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsDuoDom</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>jsDuoDom</name>
+  <summary>Slide stones together until the board is clear</summary>
+  <summary xml:lang="de">Steine zusammenschieben, bis das Brett leer ist</summary>
+
+  <description>
+    <p>
+      Drag a stone next to another one. Do the two touching sides show the same
+      number — or does one side match the other stone's total? Then both
+      dissolve. Clear the board and the level is yours.
+    </p>
+    <p xml:lang="de">
+      Einen Stein neben einen anderen ziehen. Zeigen die beiden Seiten, die
+      sich berühren, dieselbe Zahl — oder passt eine Seite zur Summe des
+      Nachbarn? Dann lösen sich beide auf. Wer das Brett leer räumt, hat das
+      Level.
+    </p>
+    <p>
+      Every level is generated fresh and checked for a solution before you see
+      it. The clock runs, the board grows, and from level three on a fuse
+      starts burning somewhere.
+    </p>
+    <p xml:lang="de">
+      Jedes Level entsteht neu und wird auf Lösbarkeit geprüft, bevor es
+      erscheint. Die Uhr läuft, das Brett wächst, und ab Level drei brennt
+      irgendwo eine Lunte.
+    </p>
+    <ul>
+      <li>Levels without end — every one generated and checked</li>
+      <li>Chain reactions: the sum of a dissolved pair takes the next stone</li>
+      <li>Dynamite, a joker, chained stones and a diamond</li>
+      <li>Undo, hint, water and extra time — paid for with points</li>
+      <li>Seventeen kinds of stone, a new one every ten levels</li>
+      <li>Available in 20 languages</li>
+    </ul>
+    <ul xml:lang="de">
+      <li>Level ohne Ende — jedes neu erzeugt und auf Lösbarkeit geprüft</li>
+      <li>Kettenreaktionen: die Summe eines Paares reißt den nächsten Stein mit</li>
+      <li>Dynamit, ein Joker, angekettete Steine und ein Diamant</li>
+      <li>Zurück, Tipp, Wasser und Extrazeit — bezahlt mit Punkten</li>
+      <li>Siebzehn Steinsorten, alle zehn Level eine neue</li>
+      <li>In 20 Sprachen</li>
+    </ul>
+  </description>
+
+  <!-- Ohne diesen Block macht der Katalog sein EIGENES Bildschirmfoto — in
+       einem leeren Testcontainer, und das ist das haesslichste Bild, das es
+       von dem Spiel gibt. Die Adressen zeigen auf die Dateien, die
+       generate-site.sh der Website mit hochlaedt; wer sie dort umbenennt,
+       macht die AppStream-Bilder kaputt. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main menu, with the stones drifting past</caption>
+      <caption xml:lang="de">Das Hauptmenü, mit den ziehenden Steinen</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsduodom_01-menu.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A level in play, with undo, hint, water and extra time</caption>
+      <caption xml:lang="de">Ein Level im Spiel, mit Zurück, Tipp, Wasser und Extrazeit</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsduodom_02-playing.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Trophies and the checkpoints you can start from</caption>
+      <caption xml:lang="de">Pokale und die Prüfpunkte, ab denen es losgehen kann</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsduodom_03-levels.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A level cleared, with points, moves and a new trophy</caption>
+      <caption xml:lang="de">Ein geräumtes Level, mit Punkten, Zügen und einem neuen Pokal</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsduodom_04-won.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The ten best runs</caption>
+      <caption xml:lang="de">Die zehn besten Läufe</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsduodom_05-records.png</image>
+    </screenshot>
+  </screenshots>
+
+  <launchable type="desktop-id">de.budbrain.jsDuoDom.desktop</launchable>
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <categories>
+    <category>Game</category>
+    <category>LogicGame</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <recommends>
+    <display_length compare="ge">640</display_length>
+  </recommends>
+
+  <releases>
+    <release version="1.0.1" date="2026-08-22">
+      <description>
+        <p>A quit button in the settings, the board now scrolls along while you
+           hold a stone, and the numbers on the stones sit properly inside their
+           shape again.</p>
+        <p xml:lang="de">Ein Beenden-Knopf in den Einstellungen, das Brett rollt
+           jetzt mit, während man einen Stein hält, und die Zahlen auf den
+           Steinen sitzen wieder sauber in ihrer Form.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-08-21">
+      <description>
+        <p>First release for Linux — the desktop port of the Android game.</p>
+        <p xml:lang="de">Erste Fassung für Linux — die Rechnerfassung des Android-Spiels.</p>
+      </description>
+    </release>
+  </releases>
+</component>

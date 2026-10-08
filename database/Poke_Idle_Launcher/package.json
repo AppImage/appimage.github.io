@@ -1,0 +1,8 @@
+{
+  "name": "poke-idle-launcher",
+  "version": "1.1.1",
+  "description": "Navegador leve (Electron) da comunidade Poke Idle World: acompanha até 4 contas, coleta 100% pela rede (WebSocket), preview PokeAPI, alertas de shiny/raridade/bolas/potions, dashboard, prints e overlay flutuante.",
+  "main": "main.js",
+  "author": "Poke Idle Launcher contributors",
+  "license": "MIT"
+}

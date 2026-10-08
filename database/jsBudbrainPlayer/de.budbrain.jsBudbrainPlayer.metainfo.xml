@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 Josef Sejrek / Budbrain Software -->
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainPlayer</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsBudbrainPlayer</name>
+  <summary>Plays recordings from a folder, at random or in order, at the times you choose</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <!-- Derselbe Text wie im Snap Store (snap/snapcraft.yaml, dist/snap.txt) —
+       dieser wiederum ist die englische Spalte des Microsoft-Store-Eintrags. -->
+  <description>
+    <p>
+      You point it at a folder, and it finds the recordings in there and plays
+      them — endlessly, without you having to keep a playlist. The folder may
+      sit on a network drive; when new recordings arrive, it picks them up by
+      itself.
+    </p>
+    <p>
+      You can set a time range: only between two times of day, only on certain
+      weekdays. If you want, the same range also decides which recordings
+      qualify at all — then it plays only what was recorded during the day, for
+      example.
+    </p>
+    <p>
+      If the recordings differ in loudness, it evens them out, and a meter shows
+      you how loud it really is while it plays.
+    </p>
+    <ul>
+      <li>Plays recordings from a folder, including a network drive</li>
+      <li>At random or in order</li>
+      <li>Endlessly or once through</li>
+      <li>Only between two times of day</li>
+      <li>Only on the weekdays you tick</li>
+      <li>Optionally only recordings from that same range</li>
+      <li>Reads the recording time from the file name</li>
+      <li>Evens out recordings of different loudness</li>
+      <li>Shows the output level for both channels</li>
+      <li>Starts when you log in and carries on by itself</li>
+      <li>Light and dark design</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">jsbudbrainplayer.desktop</launchable>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Player</category>
+  </categories>
+
+  <!-- Ohne <screenshots> nimmt AppImageHub selbst eines auf, in einem leeren
+       Testcontainer. Die URLs zeigen auf die Bilder der Website. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Plays recordings from a folder, including a network drive</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainplayer_01-main-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Light and dark design</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainplayer_02-main-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Settings</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainplayer_03-settings.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>What is inside and who is behind it</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainplayer_04-about.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <!-- Kein <url type="contact"> mit mailto: — AppStream verwirft die Datei
+       sonst komplett (web-url-expected). -->
+
+  <provides>
+    <binary>jsbudbrainplayer</binary>
+  </provides>
+
+  <releases>
+    <release version="1.0.0" date="2026-09-11">
+      <description>
+        <p>First Linux release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

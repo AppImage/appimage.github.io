@@ -1,0 +1,25 @@
+{
+  "name": "krypt-trader",
+  "productName": "Krypt Trader",
+  "version": "6.0.0",
+  "description": "A free, fully-featured Kalshi trading app. Whale tracker, momentum scanner, manual trading terminal and a configurable auto-trading engine in one polished desktop app. Part of the Krypt free tools suite.",
+  "main": "dist-electron/main.js",
+  "author": {
+    "name": "Krypt",
+    "email": "hi@krypt.cc",
+    "url": "https://krypt.cc"
+  },
+  "homepage": "https://krypt.cc/tools/trader",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scripflipped/krypt-trader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/scripflipped/krypt-trader/issues"
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "discord-rpc": "^4.0.1"
+  }
+}

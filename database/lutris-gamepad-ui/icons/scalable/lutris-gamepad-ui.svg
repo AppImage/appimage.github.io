@@ -1,0 +1,14 @@
+<svg width="256" height="256" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <rect width="24" height="24" rx="4" fill="#181818" />
+
+    <g id="d-pad" transform="translate(1, 4)">
+        <path d="M4 8H10" stroke="#e5e5e5" stroke-width="1.75" stroke-linecap="round" />
+        <path d="M7 5V11" stroke="#e5e5e5" stroke-width="1.75" stroke-linecap="round" />
+    </g>
+
+    <g id="play-button-focused" transform="translate(0, 0.5)">
+        <rect x="13.5" y="8.5" width="7" height="7" rx="1.5" stroke="#e50914" stroke-width="1.75"
+            fill="none" />
+        <path d="M16 11L19 12.5L16 14V11Z" fill="#e50914" />
+    </g>
+</svg>

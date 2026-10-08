@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <title>Dream-VoiceTraining</title>
+  <defs>
+    <linearGradient id="plate" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#4c566a"/>
+      <stop offset="0.55" stop-color="#3b4252"/>
+      <stop offset="1" stop-color="#2b303b"/>
+    </linearGradient>
+    <!-- Blau unten, Violett oben: die Bewegung, um die es geht -->
+    <linearGradient id="bars" gradientUnits="userSpaceOnUse"
+                    x1="26" y1="114" x2="103" y2="38">
+      <stop offset="0" stop-color="#81a1c1"/>
+      <stop offset="0.5" stop-color="#88c0d0"/>
+      <stop offset="1" stop-color="#b48ead"/>
+    </linearGradient>
+    <linearGradient id="curve" gradientUnits="userSpaceOnUse"
+                    x1="20" y1="98" x2="110" y2="30">
+      <stop offset="0" stop-color="#88c0d0"/>
+      <stop offset="1" stop-color="#d8a0c8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.26" r="0.5">
+      <stop offset="0" stop-color="#b48ead" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#b48ead" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="plateClip">
+      <rect x="6" y="6" width="116" height="116" rx="27"/>
+    </clipPath>
+  </defs>
+
+  <rect x="6" y="6" width="116" height="116" rx="27" fill="url(#plate)"/>
+  <g clip-path="url(#plateClip)">
+    <rect x="6" y="6" width="116" height="116" fill="url(#glow)"/>
+  </g>
+
+  <!-- Wellenform: wenige, kraeftige Balken, damit das Symbol auch bei
+       16 Pixel noch lesbar bleibt -->
+  <g stroke="url(#bars)" stroke-linecap="round" fill="none" stroke-width="9">
+    <line x1="27" y1="72" x2="27" y2="84"/>
+    <line x1="46" y1="58" x2="46" y2="98"/>
+    <line x1="65" y1="44" x2="65" y2="108"/>
+    <line x1="84" y1="36" x2="84" y2="114"/>
+    <line x1="103" y1="56" x2="103" y2="96"/>
+  </g>
+
+  <!-- Tonhoehenkurve: der Verlauf, den das Programm zeigt -->
+  <path d="M20 98 C 40 96, 52 80, 68 68 S 96 44, 110 30"
+        fill="none" stroke="#2b303b" stroke-width="14"
+        stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  <path d="M20 98 C 40 96, 52 80, 68 68 S 96 44, 110 30"
+        fill="none" stroke="url(#curve)" stroke-width="7"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="110" cy="30" r="9" fill="#2b303b"/>
+  <circle cx="110" cy="30" r="6" fill="#d8a0c8"/>
+</svg>

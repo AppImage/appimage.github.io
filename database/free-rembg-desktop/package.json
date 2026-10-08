@@ -1,0 +1,15 @@
+{
+  "name": "rembg-desktop",
+  "version": "1.2.0",
+  "description": "A Desktop Application for RemBG.com's API",
+  "main": "dist-electron/main.js",
+  "type": "module",
+  "author": "Arken AI LLC <support@rembg.com>",
+  "dependencies": {
+    "@remove-background-ai/rembg.js": "^1.3.1",
+    "keytar": "^7.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.34.3"
+  }
+}

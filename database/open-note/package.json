@@ -1,0 +1,12 @@
+{
+  "name": "open-note",
+  "productName": "Open Note",
+  "version": "0.1.0-alpha.7",
+  "description": "An endless canvas for notes, sketches, data and maths.",
+  "homepage": "https://github.com/AlessioPop/open-note",
+  "author": "Alessio Popovic <alessiopopovic@gmail.com>",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "private": true,
+  "main": "desktop/main.js",
+  "desktopName": "open-note.desktop"
+}

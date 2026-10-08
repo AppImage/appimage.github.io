@@ -1,97 +1,469 @@
+# Posts the result of the "Test" workflow (screenshot on success; screen
+# capture, error summary and hints on failure) as a comment on the PR.
+#
+# This runs via workflow_run because PRs come from forks, whose "Test" runs
+# only get a read-only token. Everything read from the artifact is untrusted:
+# the PR number is cross-checked against the triggering commit, and text is
+# only ever placed inside a code block.
+
 name: Publish PR Screenshot
 
 on:
   workflow_run:
-    workflows:
-      - ".github/workflows/test.yml"
+    workflows: [Test]  # Must be the workflow *name*, not its path
     types: [completed]
 
 jobs:
   publish:
     if: >
-      github.event.workflow_run.conclusion == 'success' &&
       github.event.workflow_run.event == 'pull_request' &&
       github.repository == 'AppImage/appimage.github.io'
     runs-on: ubuntu-latest
     permissions:
-      actions: read
+      actions: write # read the artifact; start the Test run after an auto-merge
       contents: write
       pull-requests: write
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      RUN_ID: ${{ github.event.workflow_run.id }}
+      RUN_URL: ${{ github.event.workflow_run.html_url }}
       HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+      CONCLUSION: ${{ github.event.workflow_run.conclusion }}
     steps:
+      # The default branch, not the PR: only its code/diagnose.sh is trusted
       - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Extract PR number from event
-        id: extract-pr
-        shell: bash
-        run: |
-          PR_NUMBER=$(jq -r '.workflow_run.pull_requests[0].number // empty' "$GITHUB_EVENT_PATH")
-          echo "PR_NUMBER=${PR_NUMBER}" >> $GITHUB_ENV
-          echo "PR_NUMBER=${PR_NUMBER}"
-          echo "pr_number=${PR_NUMBER}" >> $GITHUB_OUTPUT
-      - name: Download screenshot artifacts
-        uses: dawidd6/action-download-artifact@v2
+        uses: actions/checkout@v4
         with:
-          run_id: ${{ github.event.workflow_run.id }}
-          name: pr-screenshots
-          path: ./out
-          if_no_artifact_found: ignore
+          sparse-checkout: code
 
-      - name: Prepare files
-        id: prep
-        shell: bash
+      - name: Download test result
         run: |
-          set -e
-          mkdir -p upload
-          : > upload/list.txt
-          SHORT="${HEAD_SHA::8}"
-          COUNT=0
-          FALLBACK="run-${{ github.event.workflow_run.id }}"
-          for f in out/*.png; do
+          if ! gh run download "$RUN_ID" -R "$REPO" -n pr-result -D out ; then
+            echo "No pr-result artifact (the test did not get far enough); nothing to post."
+            exit 0
+          fi
+          ls -laR out
+
+      - name: Find the PR
+        id: pr
+        run: |
+          [ -f out/pr-number ] || exit 0
+          # workflow_run.pull_requests is always empty for PRs from forks, so
+          # the number comes from the artifact; verify it really is this commit
+          PR=$(tr -cd '0-9' < out/pr-number)
+          [ -n "$PR" ] || exit 0
+          PR_SHA=$(gh api "repos/$REPO/pulls/$PR" --jq .head.sha)
+          if [ "$PR_SHA" != "$HEAD_SHA" ] ; then
+            echo "PR #$PR head is $PR_SHA, not $HEAD_SHA (newer push?); not posting."
+            exit 0
+          fi
+          echo "number=$PR" >> "$GITHUB_OUTPUT"
+
+      - name: Detect a predominantly Chinese application
+        id: lang
+        if: steps.pr.outputs.number != ''
+        env:
+          PR: ${{ steps.pr.outputs.number }}
+        run: |
+          # If the screenshot or the upstream README is predominantly Chinese, we
+          # invite the author to offer an English default instead of posting the
+          # usual test report (see the "Comment on PR" step).
+          CHINESE=false
+          # Screenshot: the worker OCRs it (code/check-screenshot.sh) and records
+          # "chinese" when it is predominantly Chinese. The artifact is untrusted,
+          # so accept only that exact token.
+          if [ -f out/language.txt ] && [ "$(tr -cd 'a-z' < out/language.txt)" = chinese ] ; then
+            CHINESE=true
+          fi
+          # README: read from the PR's data/ files at the tested commit via the
+          # API (trusted, like the @mention logic below), not from the artifact.
+          if [ "$CHINESE" != true ] ; then
+            for FILE in $(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' | head -n 5) ; do
+              URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$HEAD_SHA" 2>/dev/null | head -n 1)
+              if [ "$(bash code/readme-language.sh "$URL")" = chinese ] ; then CHINESE=true ; break ; fi
+            done
+          fi
+          echo "chinese=$CHINESE" >> "$GITHUB_OUTPUT"
+          echo "Predominantly Chinese: $CHINESE"
+
+      - name: Upload images
+        if: steps.pr.outputs.number != ''
+        env:
+          PR: ${{ steps.pr.outputs.number }}
+          REPO_ID: ${{ github.event.repository.id }}
+          # Classic personal access token with only the public_repo scope, of
+          # an account with write access to this repository. Optional: without
+          # it (or when it expires) the ci-screenshots release is used instead.
+          UPLOAD_TOKEN: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
+        run: |
+          # Upload the way pasting an image into a comment does, so GitHub
+          # hosts it with the comment. This endpoint is undocumented and does
+          # not accept the workflow token (GITHUB_TOKEN).
+          upload_attachment() {
+            [ -n "$UPLOAD_TOKEN" ] || return 1
+            curl -sS -o response.json -w '%{http_code}' -X POST \
+              "https://uploads.github.com/user-attachments/assets?name=$(basename "$1")&content_type=image/png&repository_id=${REPO_ID}" \
+              -H "Authorization: Bearer $UPLOAD_TOKEN" -H "Accept: application/json" \
+              --data-binary "@$1" > status.txt || true
+            URL=$(grep -oE 'https://github\.com/user-attachments/assets/[A-Za-z0-9-]+' response.json | head -n 1)
+            if [ -z "$URL" ] ; then
+              echo "::warning::Attachment upload failed (HTTP $(cat status.txt)): $(head -c 300 response.json)" >&2
+              return 1
+            fi
+            echo "$URL"
+          }
+          upload_release_asset() {
+            gh release view ci-screenshots -R "$REPO" >/dev/null 2>&1 || \
+              gh release create ci-screenshots -R "$REPO" --prerelease \
+                -t "CI Screenshots" -n "Automated screenshots from PRs; used in PR comments" >&2
+            gh release upload ci-screenshots -R "$REPO" "$1" --clobber >&2
+            echo "https://github.com/$REPO/releases/download/ci-screenshots/$(basename "$1")"
+          }
+          [ -n "$UPLOAD_TOKEN" ] || echo "SCREENSHOT_UPLOAD_TOKEN is not set, using the ci-screenshots release"
+          : > images.txt
+          for f in out/*.png ; do
             [ -f "$f" ] || continue
-            base="$(basename "$f")"
-            appname="${base%.png}"  # Remove .png extension to get app name
-            # Produce deterministic upload name with app name
-            PN="${PR_NUMBER:-$FALLBACK}"
-            name="pr-${PN}-${SHORT}-${appname}.png"
-            cp "$f" "upload/${name}"
-            echo "${name}" >> upload/list.txt
-            COUNT=$((COUNT+1))
+            # Only allow safe names, and make sure it is really a PNG
+            base=$(basename "$f" .png | tr -cd 'A-Za-z0-9._-' | cut -c1-80)
+            [ "$(file -b --mime-type "$f")" = image/png ] || continue
+            name="pr-${PR}-${HEAD_SHA::8}-${base}.png"
+            cp "$f" "$name"
+            if url=$(upload_attachment "$name") ; then
+              echo "Uploaded $name as a GitHub attachment"
+            else
+              url=$(upload_release_asset "$name")
+              echo "Uploaded $name to the ci-screenshots release"
+            fi
+            echo "$base $url" >> images.txt
           done
-          echo "COUNT=${COUNT}" >> $GITHUB_ENV
-          echo "count=${COUNT}" >> $GITHUB_OUTPUT
+          cat images.txt
 
-      - name: Ensure release exists (published)
-        shell: bash
+      - name: Update labels
+        if: steps.pr.outputs.number != ''
+        env:
+          PR: ${{ steps.pr.outputs.number }}
+          CHINESE: ${{ steps.lang.outputs.chinese }}
         run: |
-          gh release view ci-screenshots >/dev/null 2>&1 || \
-          gh release create ci-screenshots -t "CI Screenshots" -n "Automated screenshots from PRs" --prerelease
-          gh release edit ci-screenshots --draft=false
+          # error-* labels name the known causes of a failed test, screenshot-ok
+          # marks a good screenshot; replace the previous ones. Untrusted artifact: only accept labels listed by
+          # code/diagnose.sh from master
+          NEW=""
+          if [ "$CONCLUSION" != success ] && [ -s out/labels.txt ] ; then
+            NEW=$(grep -xF -f <(bash code/diagnose.sh --list-labels) out/labels.txt | sort -u || true)
+          fi
+          # screenshot-ok: the test passed, took a screenshot and found nothing wrong with it
+          if [ "$CONCLUSION" = success ] && [ "$CHINESE" != true ] && [ -e out/screenshot-ok ] && [ -s images.txt ] ; then
+            NEW=$(printf '%s\nscreenshot-ok\n' "$NEW" | grep . | sort -u)
+          fi
+          OLD=$(gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name | select(startswith("error-") or . == "screenshot-ok")' | sort -u)
+          for L in $(comm -13 <(echo "$NEW") <(echo "$OLD")) ; do
+            echo "Removing $L"
+            gh api -X DELETE "repos/$REPO/issues/$PR/labels/$L" > /dev/null
+          done
+          for L in $(comm -23 <(echo "$NEW") <(echo "$OLD")) ; do
+            echo "Adding $L"
+            if ! gh api "repos/$REPO/labels/$L" > /dev/null 2>&1 ; then
+              if [ "$L" = screenshot-ok ] ; then
+                gh api "repos/$REPO/labels" -f name="$L" -f color=0e8a16 \
+                  -f description="Test passed; the screenshot was checked and looks fine" > /dev/null
+              else
+                gh api "repos/$REPO/labels" -f name="$L" -f color=b60205 \
+                  -f description="Test failed: see the test result comment" > /dev/null
+              fi
+            fi
+            gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=$L" > /dev/null
+          done
 
-      - name: Upload assets
-        if: ${{ steps.prep.outputs.count != '0' }}
-        shell: bash
+      - name: Prune old release screenshots
+        if: steps.pr.outputs.number != ''
+        env:
+          PR: ${{ steps.pr.outputs.number }}
         run: |
-          while IFS= read -r name; do
-            gh release upload ci-screenshots "upload/${name}" --clobber
-          done < upload/list.txt
+          # The comment on a PR is updated in place, so screenshots of its
+          # earlier commits are no longer shown; others expire after 30 days.
+          # (Releases hold at most 1000 files.)
+          gh release view ci-screenshots -R "$REPO" >/dev/null 2>&1 || exit 0
+          CUTOFF=$(date -u -d '30 days ago' +%Y-%m-%dT%H:%M:%SZ)
+          RELEASE_ID=$(gh api "repos/$REPO/releases/tags/ci-screenshots" --jq .id)
+          gh api --paginate "repos/$REPO/releases/$RELEASE_ID/assets" \
+            --jq ".[] | select(.created_at < \"$CUTOFF\" or ((.name | startswith(\"pr-$PR-\")) and (.name | startswith(\"pr-$PR-${HEAD_SHA::8}-\") | not))) | \"\(.id) \(.name)\"" \
+            | while read -r id name ; do
+                echo "Deleting $name"
+                gh api -X DELETE "repos/$REPO/releases/assets/$id"
+              done
 
-      - name: Comment on PR with images
-        if: ${{ steps.prep.outputs.count != '0' && steps.extract-pr.outputs.pr_number != '' }}
-        shell: bash
+      - name: Comment on PR
+        if: steps.pr.outputs.number != ''
+        env:
+          PR: ${{ steps.pr.outputs.number }}
+          CHINESE: ${{ steps.lang.outputs.chinese }}
         run: |
-          repo="${{ github.repository }}"
+          MARKER='<!-- appimagehub-test-result -->'
+
+          # Predominantly Chinese application: instead of the usual test report,
+          # post a friendly bilingual invitation to offer an English default, so
+          # the app can be included and reach users internationally. @mention the
+          # GitHub account the AppImage comes from (unless a bot) so they see it.
+          if [ "$CHINESE" = true ] ; then
+            OWNERS=$(gh api --paginate "repos/$REPO/pulls/$PR/files" \
+                       --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' \
+                     | head -n 5 | while read -r FILE ; do
+                         URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$HEAD_SHA" 2>/dev/null | head -n 1)
+                         bash code/upstream-owner.sh "$URL"
+                       done | sort -fu)
+            EARLIER=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
+                        --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .body" || true)
+            MENTIONS=""
+            for OWNER in $OWNERS ; do
+              case "$(echo "$OWNER" | tr 'A-Z' 'a-z')" in *-bot|*\[bot\]) continue ;; esac
+              grep -qiE "@${OWNER}([^A-Za-z0-9-]|$)" <<<"$EARLIER" && continue
+              MENTIONS="$MENTIONS @$OWNER"
+            done
+            {
+              echo "$MARKER"
+              [ -n "$MENTIONS" ] && { echo "${MENTIONS# }" ; echo ; }
+              cat code/chinese-invite.md
+              echo
+              # The screenshot, so the author sees what we saw
+              while read -r base url ; do
+                echo "**${base}**"
+                echo
+                echo "![${base}](${url})"
+                echo
+              done < images.txt
+              echo "Commit ${HEAD_SHA::8}. [Full log](${RUN_URL})"
+            } > comment.md
+            cat comment.md
+            gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md >/dev/null
+            exit 0
+          fi
           {
-            echo "Automated screenshot(s) for PR #${PR_NUMBER} (commit ${HEAD_SHA}):"
-            echo ""
-            while IFS= read -r name; do
-              url="https://github.com/${repo}/releases/download/ci-screenshots/${name}"
-              echo "![Screenshot](${url})"
-              echo ""
-            done < upload/list.txt
-          } > comment.txt
-          gh api "repos/${repo}/issues/${PR_NUMBER}/comments" -F body=@comment.txt
+            echo "$MARKER"
+            if [ "$CONCLUSION" = success ] ; then
+              echo "### :white_check_mark: Test passed"
+              echo
+              echo "Please check that the screenshot shows the application's main window."
+            else
+              echo "### :x: Test ${CONCLUSION}"
+            fi
+            echo
+            while read -r base url ; do
+              echo "**${base}**"
+              echo
+              echo "![${base}](${url})"
+              echo
+            done < images.txt
+            if [ -s out/tested.txt ] ; then
+              # Which file was tested. Untrusted: only URLs and notes of the expected form
+              TESTED=""
+              while IFS= read -r LINE ; do
+                URL=${LINE#URL: }
+                [ "$URL" != "$LINE" ] || continue
+                [[ "$URL" =~ ^https://[A-Za-z0-9.-]+/[A-Za-z0-9._~%+@:=,/-]{1,300}$ ]] || continue
+                FILE=${URL##*/}
+                [[ "$FILE" =~ ^[A-Za-z0-9._+~%@=,-]{1,150}$ ]] || continue
+                WHAT="[\`$FILE\`]($URL)"
+                if [[ "$URL" =~ /releases/download/([A-Za-z0-9._+~%@=,-]{1,100})/[^/]+$ ]] ; then
+                  TAG=${BASH_REMATCH[1]}
+                  WHAT="$WHAT from release \`$TAG\`"
+                  if grep -qE "^NOTE: Using pre-release $TAG, as " out/tested.txt ; then
+                    WHAT="$WHAT (marked as a pre-release)"
+                  elif [[ "$TAG" =~ (alpha|beta|preview|nightly|dev|[0-9.-](a|b|rc)[0-9]*$) ]] ; then
+                    WHAT="$WHAT (the name looks like a pre-release)"
+                  fi
+                fi
+                TESTED="$TESTED- $WHAT"$'\n'
+              done < <(head -n 5 out/tested.txt)
+              if [ -n "$TESTED" ] ; then
+                echo "**Tested:**"
+                echo
+                printf '%s\n' "$TESTED"
+              fi
+            fi
+            if [ -s out/libc.txt ] ; then
+              # Untrusted: only take values of the expected form
+              val() { grep -xE "X-AppImage-$1=($2)" out/libc.txt | head -n 1 | cut -d = -f 2 || true ; }
+              LIBC=$(val Libc 'none|bundled|host')
+              RUNTIME=$(val Runtime 'static|dynamic')
+              SELF=$(val Self-Contained 'true|false')
+              GLIBC=$(val Glibc-Required '(GLIBC_)?[0-9]{1,2}(\.[0-9]{1,3}){1,2}' | sed 's/^GLIBC_//')
+              if [ "$SELF" = true ] && [ -n "$LIBC" ] ; then
+                case "$LIBC" in
+                  none) echo "**Compatibility:** self-contained (contains no dynamically linked code)" ;;
+                  *) echo "**Compatibility:** self-contained (ships its own C library)" ;;
+                esac
+                echo
+              elif [ -n "$LIBC" ] ; then
+                REASONS=()
+                [ "$LIBC" = host ] && REASONS+=("uses the C library of the system")
+                [ "$RUNTIME" = dynamic ] && REASONS+=("uses an old AppImage runtime that needs the C library (and libfuse2) of the system")
+                [ -n "$GLIBC" ] && REASONS+=("references glibc $GLIBC")
+                echo "**Compatibility:** not self-contained: $(IFS=';' ; echo "${REASONS[*]}" | sed 's/;/; /g')"
+                echo
+              fi
+            fi
+            if [ -s out/names.txt ] ; then
+              # Untrusted: only lines of the form the test writes, in a code block
+              NAMES=$(grep -E "^(ERROR|WARNING): ((File name|AppImage name) '|The names of the .* differ: )" out/names.txt | head -n 10 | cut -c1-300 | sed 's/````*/```/g' || true)
+              if [ -n "$NAMES" ] ; then
+                echo "**Names:**"
+                echo
+                echo '````text'
+                echo "$NAMES"
+                echo '````'
+                echo
+              fi
+            fi
+            if [ -s out/notes.txt ] ; then
+              # Untrusted: a line counts only if it is exactly a note that
+              # code/check-name.sh (from master) writes for that file name
+              NOTES=""
+              while IFS= read -r LINE ; do
+                N=$(sed -nE "s/^NOTE: File name '([A-Za-z0-9._+-]{1,100})': .*/\1/p" <<<"$LINE")
+                [ -n "$N" ] || continue
+                for KIND in lowercase terminal ; do
+                  TEXT=$(bash code/check-name.sh --note-text "$KIND" "$N")
+                  [ "$LINE" = "NOTE: $TEXT" ] && NOTES="$NOTES- $TEXT"$'\n'
+                done
+              done < <(head -n 5 out/notes.txt)
+              if [ -n "$NOTES" ] ; then
+                echo "**Notes:**"
+                echo
+                printf '%s\n' "$NOTES"
+              fi
+            fi
+            if [ -s out/hints.md ] ; then
+              # Hints are fixed strings from code/diagnose.sh, but the artifact
+              # is untrusted, so only accept lines we know
+              HINTS=$(grep -xF -f <(bash code/diagnose.sh --list) out/hints.md || true)
+              if [ -n "$HINTS" ] ; then
+                [ "$CONCLUSION" = success ] && echo "**Warnings:**" && echo
+                echo "$HINTS" | sed 's/^/- /'
+                echo
+              fi
+            fi
+            if [ "$CONCLUSION" != success ] && [ -s out/error.txt ] ; then
+              echo "**First error in the log:**"
+              echo
+              echo '````text'
+              # Neutralize anything that could close the code block
+              head -n 25 out/error.txt | cut -c1-300 | sed 's/````*/```/g'
+              echo '````'
+              echo
+            fi
+            if [ "$CONCLUSION" != success ] ; then
+              echo "**What next:** once the AppImage is fixed (e.g. in a new release), comment \`/retest\` here to test it again. If it should not be in the catalog after all, close this pull request; an app that is already in the catalog can be removed by a maintainer with \`/remove\`."
+              echo
+            fi
+            echo "Commit ${HEAD_SHA::8}. [Full log](${RUN_URL})"
+          } > comment.md
 
+          # Errors or findings: @mention the GitHub account the AppImage comes
+          # from, unless that is who opened the PR (or a bot). The URL is read
+          # from the PR's data/ files at the tested commit, not from the artifact.
+          if [ "$CONCLUSION" != success ] || grep -qE '^\*\*(Warnings|Names):\*\*' comment.md ; then
+            AUTHOR=$(gh api "repos/$REPO/pulls/$PR" --jq '.user.login' | tr 'A-Z' 'a-z')
+            OWNERS=$(gh api --paginate "repos/$REPO/pulls/$PR/files" \
+                       --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' \
+                     | head -n 5 | while read -r FILE ; do
+                         URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$HEAD_SHA" 2>/dev/null | head -n 1)
+                         bash code/upstream-owner.sh "$URL"
+                       done | sort -fu)
+            EARLIER=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
+                        --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .body" || true)
+            MENTIONS=""
+            for OWNER in $OWNERS ; do
+              LOWER=$(echo "$OWNER" | tr 'A-Z' 'a-z')
+              [ "$LOWER" = "$AUTHOR" ] && continue
+              case "$LOWER" in *-bot|*\[bot\]) continue ;; esac
+              # Every run posts a new comment: mention each account only once
+              grep -qiE "@${OWNER}([^A-Za-z0-9-]|$)" <<<"$EARLIER" && continue # OWNER: login characters only
+              MENTIONS="$MENTIONS @$OWNER"
+            done
+            if [ -n "$MENTIONS" ] ; then
+              LINE="${MENTIONS# }: this pull request adds the AppImage from your GitHub repository to the [AppImage catalog](https://appimage.github.io); the test reports the following. Could you have a look?"
+              # After the heading (line 2 of the comment)
+              awk -v l="$LINE" 'NR == 3 { print ; print l ; print "" ; next } { print }' comment.md > comment.new && mv comment.new comment.md
+            fi
+          fi
+          cat comment.md
+
+          # A new comment for every test run, so that earlier results stay
+          # readable in the conversation
+          gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md >/dev/null
+
+      # Merge PRs that need no maintainer: a returning contributor, one file in
+      # data/, test passed with a good screenshot, same owner of the download
+      # location. Everything is checked via the API, not the (untrusted)
+      # artifact. Switch off with the repository variable AUTO_MERGE=false.
+      - name: Auto-merge
+        if: steps.pr.outputs.number != '' && vars.AUTO_MERGE != 'false'
+        env:
+          PR: ${{ steps.pr.outputs.number }}
+          CHINESE: ${{ steps.lang.outputs.chinese }}
+        run: |
+          skip() { echo "Not auto-merging: $1" ; exit 0 ; }
+          [ "$CONCLUSION" = success ] || skip "the test did not pass"
+          [ "$CHINESE" != true ] || skip "predominantly Chinese; invited the author to add an English default"
+          gh api "repos/$REPO/pulls/$PR" > pr.json
+          [ "$(jq -r .state pr.json)" = open ] || skip "not open"
+          [ "$(jq -r .draft pr.json)" = false ] || skip "draft"
+          [ "$(jq -r .head.sha pr.json)" = "$HEAD_SHA" ] || skip "newer commits than the tested one"
+          case "$(jq -r .head.ref pr.json)" in discover/*) skip "discovered automatically; a maintainer reviews it" ;; esac
+          first_line() { gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$1?ref=$2" | head -n 1 | tr -d '\r' ; }
+          # Re-test PRs (retest.yml opens them for /retest on a merged PR):
+          # the entries are listed already, so a passed test is enough, even
+          # with warnings; but only if they change nothing but existing files
+          # in data/ and keep each file's first line (the download location)
+          if [[ "$(jq -r .head.ref pr.json)" == retest/* ]] && [ "$(jq -r .head.repo.full_name pr.json)" = "$REPO" ] ; then
+            gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | [.filename, .status] | @tsv' > files.tsv
+            [ -s files.tsv ] || skip "re-test PR without changes"
+            while IFS=$'\t' read -r FILE STATUS ; do
+              [[ "$FILE" == data/* ]] && [ "$STATUS" = modified ] || skip "re-test PR changes $FILE ($STATUS), not only existing files in data/"
+              # The first line may change in one way: from a link to one particular
+              # release to its repository (code/repo-url-for-entry.sh, same owner
+              # and repository), which the test of this PR has just passed with
+              OLD=$(first_line "$FILE" "$(jq -r .base.sha pr.json)")
+              NEW=$(first_line "$FILE" "$HEAD_SHA")
+              [ "$OLD" = "$NEW" ] || bash code/repo-url-for-entry.sh --shortens "$OLD" "$NEW" \
+                || skip "re-test PR changes the download location in $FILE"
+            done < files.tsv
+            MERGED=$(gh api -X PUT "repos/$REPO/pulls/$PR/merge" -f sha="$HEAD_SHA" -f merge_method=squash --jq .sha) \
+              || skip "GitHub refused the merge"
+            echo "Merged re-test PR #$PR as $MERGED"
+            gh workflow run test.yml -R "$REPO" --ref master -f commit="$MERGED"
+            exit 0
+          fi
+          gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name' | grep -qx auto-discovered && skip "discovered automatically; a maintainer reviews it"
+          case "$(jq -r .author_association pr.json)" in
+            CONTRIBUTOR|COLLABORATOR|MEMBER|OWNER) ;;
+            *) skip "first contribution (author association $(jq -r .author_association pr.json)); a maintainer reviews it" ;;
+          esac
+          LABELS=$(gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name')
+          echo "$LABELS" | grep -qx screenshot-ok || skip "no screenshot-ok label"
+          ! echo "$LABELS" | grep -qxE 'manual-check-needed|do-not-merge' || skip "labeled for a manual check"
+          gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | [.filename, .status] | @tsv' > files.tsv
+          [ "$(wc -l < files.tsv)" -eq 1 ] || skip "changes more than one file"
+          IFS=$'\t' read -r FILE STATUS < files.tsv
+          [[ "$FILE" == data/* ]] || skip "does not change a file in data/"
+          case "$STATUS" in
+            added) ;;
+            modified)
+              # An existing entry may keep its first line, or have a long-form
+              # link to a repository shortened to the short form of the SAME
+              # repository; any other change (even within the same owner: it may
+              # be a different project that happens to share the file name, #8569)
+              # is for a maintainer
+              OLD=$(first_line "$FILE" "$(jq -r .base.sha pr.json)")
+              NEW=$(first_line "$FILE" "$HEAD_SHA")
+              [ "$OLD" = "$NEW" ] || bash code/repo-url-for-entry.sh --shortens "$OLD" "$NEW" \
+                || skip "the download location of the existing entry changes; a maintainer checks that"
+              ;;
+            *) skip "$STATUS file" ;;
+          esac
+          MERGED=$(gh api -X PUT "repos/$REPO/pulls/$PR/merge" -f sha="$HEAD_SHA" -f merge_method=squash --jq .sha) \
+            || skip "GitHub refused the merge"
+          echo "Merged PR #$PR as $MERGED"
+          # A merge with this workflow's token does not trigger the push run that writes database/
+          gh workflow run test.yml -R "$REPO" --ref master -f commit="$MERGED"

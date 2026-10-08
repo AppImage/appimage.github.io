@@ -1,0 +1,13 @@
+<component type="desktop-application">
+  <id>DotnetDeployer.Fleet.Desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>DotnetDeployer Fleet</name>
+  <summary>Coordinate DotnetDeployer builds and deployments across remote workers</summary>
+  <description>
+    <p>Coordinate DotnetDeployer builds and deployments across remote workers</p>
+  </description>
+  <launchable type="desktop-id">dotnetdeployer-fleet.desktop</launchable>
+  <provides>
+    <id>dotnetdeployer-fleet.desktop</id>
+  </provides>
+</component>

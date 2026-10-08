@@ -1,0 +1,49 @@
+---
+layout: app
+
+permalink: /jsonquery_gui/
+description: "Browse and query large JSON files with jq-compatible queries"
+license: "MIT"
+
+icons:
+  - jsonquery_gui/icons/128x128/jsonquery_gui.png
+
+screenshots:
+  - jsonquery_gui/screenshot.png
+
+authors:
+  - name: "nujufas"
+    url: "https://github.com/nujufas"
+
+links:
+  - type: GitHub
+    url: nujufas/jsonquery_gui
+  - type: Download
+    url: https://github.com/nujufas/jsonquery_gui/releases
+
+desktop:
+  Desktop Entry:
+    Type: Application
+    Name: jsonquery
+    GenericName: JSON Query Tool
+    Comment: Browse and query large JSON files with jq-compatible queries
+    Exec: jsonquery_gui
+    Icon: jsonquery_gui
+    Categories: Development
+    Terminal: false
+    StartupWMClass: jsonquery_gui
+    X-AppImage-Version: 0.4.2
+  AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|nujufas|jsonquery_gui|latest|jsonquery_gui-*-x86_64.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.18
+    X-AppImage-Payload-License: MIT
+---

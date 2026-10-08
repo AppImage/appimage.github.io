@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metainfo for Linux Device Manager.
+     Keep <id>, <launchable> and <icon type="stock"> in sync. -->
+<component type="desktop-application">
+  <id>io.github.getldm.linux-device-manager</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Linux Device Manager</name>
+  <summary>View and manage hardware devices</summary>
+  <developer>
+    <name>Linux Device Manager contributors</name>
+  </developer>
+  <description>
+    <p>
+      Linux Device Manager is a GTK4 application that enumerates devices
+      from sysfs/udev, displays them in a category tree with detail tabs
+      (general, advanced, driver, logs), and allows enabling/disabling
+      devices through a privileged helper governed by polkit.
+    </p>
+  </description>
+  <launchable type="desktop-id">linux-device-manager.desktop</launchable>
+  <icon type="stock">linux-device-manager</icon>
+  <categories>
+    <category>System</category>
+    <category>HardwareSettings</category>
+  </categories>
+  <url type="homepage">https://github.com/getldm/linux-device-manager</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/getldm/linux-device-manager/main/docs/wiki/images/screenshot.png</image>
+      <caption>Category tree with device detail tabs</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="sex-homosexuality">none</content_attribute>
+    <content_attribute id="sex-prostitution">none</content_attribute>
+    <content_attribute id="sex-adultery">none</content_attribute>
+    <content_attribute id="sex-appearance">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+  <releases>
+    <release version="0.2.6" date="2026-09-26"/>
+    <release version="0.2.5" date="2026-09-26"/>
+    <release version="0.2.4" date="2026-09-26"/>
+    <release version="0.2.3" date="2026-09-26"/>
+    <release version="0.2.2" date="2026-09-26"/>
+    <release version="0.2.1" date="2026-09-26"/>
+    <release version="0.2.0" date="2026-09-25"/>
+  </releases>
+  <provides>
+    <binary>linux-device-manager</binary>
+  </provides>
+</component>

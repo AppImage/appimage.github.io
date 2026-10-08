@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>net.sf.metronomek</id>
+
+  <name>Metronomek</name>
+  <summary>Trivial looking metronome with natural sounds and sophisticated possibilities</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer_name>SeeLook</developer_name>
+
+  <description>
+    <p>
+      Simple metronome with natural sounds.
+    </p>
+    <p>
+      In spite of childish look, Metronomek application sounds quite robust with natural, pure audio sound of one among many selectable beats and rings.
+      In Polish language it is a childish diminutive of a word 'metronome'.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>natural (real audio) beat sounds</li>
+      <li>selectable sounds of ticking and ringing (i.e.: mechanical metronome, clapping, snapping, etc.)</li>
+      <li>programmable changes of tempo (aka accelerando and rallentando)</li>
+      <li>visible counting</li>
+      <li>determining tempo BPM by tapping or clicking</li>
+      <li>cross-platform: Android, Linux, Mac, Windows</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">net.sf.metronomek.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>General view</caption>
+      <image>https://metronomek.sourceforge.io/images/main.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>In action</caption>
+      <image>https://a.fsdn.com/con/app/proj/metronomek/screenshots/MetronomeK-1.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Natural sounds to choose</caption>
+      <image>https://a.fsdn.com/con/app/proj/metronomek/screenshots/MetronomeK-2.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Programming tempo changes</caption>
+      <image>https://a.fsdn.com/con/app/proj/metronomek/screenshots/MetronomeK-3.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://metronomek.sourceforge.io</url>
+  <url type="bugtracker">https://github.com/SeeLook/metronomek/issues</url>
+  <url type="translate">https://www.opencode.net/seelook/metronomek/-/blob/master/CONTRIBUTING.md</url>
+
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+
+  <update_contact>seelook_AT_gmail.com</update_contact>
+
+  <releases>
+    <release date="2022-01-05" version="0.6.0"/>
+  </releases>
+
+</component>

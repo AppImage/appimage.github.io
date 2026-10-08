@@ -1,0 +1,12 @@
+{
+  "name": "soil",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "author": "Soil Contributors",
+  "license": "MIT",
+  "description": "Open-source desktop LaTeX editor and offline two-way synchronization client for Overleaf Premium projects.",
+  "dependencies": {
+    "chokidar": "^5.0.0",
+    "simple-git": "^3.32.3"
+  }
+}
