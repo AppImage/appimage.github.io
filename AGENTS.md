@@ -204,10 +204,20 @@ GitHub Pages (Jekyll) from this repository.
    `data/NAME` used to leave the page on the site.
 
 6. `.github/workflows/discover-apps.yml` (`workflow_dispatch` only; inputs
-   `count`, default 1, no upper limit, and `dry_run`) runs `code/discover-apps.sh` to
+   `count`, default 1, no upper limit, `months` (default 3) and `dry_run`) runs `code/discover-apps.sh` to
    find GitHub repositories that publish AppImages on their releases but are
    not in the catalog yet, and proposes each as a new entry in its own pull
-   request, labeled `auto-discovered`, for a maintainer to review. Candidates
+   request, labeled `auto-discovered`, for a maintainer to review. **Recent mode**
+   (`months` N > 0, the default 3): it searches the repositories of any age pushed to
+   since the last complete run (sorted by update; the state's first line has
+   `lastrun=DAY`), then those created in the last N months, and stops after
+   minutes; a repository checked before is checked again when it was pushed to
+   since, at least a week later. A full sweep over every month since 2012
+   (`months` 0, about 500 searches, two hours with the checks) found 135 new apps in
+   October 2026, of which 108 were created in 2026: it is only needed now and
+   then. The text below describes that sweep. A branch `discover/NAME` that exists
+   already (an earlier PR for the same name) skips the app (outcome `name`)
+   instead of failing the run; the state is saved every 10 PRs. Candidates
    come from the GitHub search API (most stars first), one month of
    repository creation dates at a time with both a `topic:appimage` and an
    `appimage in:name,description,readme` query, going back month after month

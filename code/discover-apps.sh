@@ -5,11 +5,19 @@
 # request. Used by .github/workflows/discover-apps.yml (workflow_dispatch
 # only); runnable by hand too (see MAINTAINER.md).
 #
-# Usage: discover-apps.sh [--dry-run] [--count N]
+# Usage: discover-apps.sh [--dry-run] [--count N] [--months N]
 #   --dry-run  Only print what would be opened; pushes nothing, opens no PR,
 #              and does not touch the discover-state branch at all.
 #   --count N  Open N pull requests in this run (default 1), searching until
 #              they are found (or every month was searched, or the time limit).
+#   --months N Recent mode (default 3, or $DISCOVER_MONTHS): search the repositories
+#              of any age that were pushed to since the last complete run (a new
+#              release of an old project), then those created in the last N months,
+#              and stop. In a full sweep, 108 of 135 new apps were created in the
+#              last 10 months, and 501 searches took an hour. 0: the full sweep
+#              over all months since 2012 (below), which is only needed now and then.
+#              A repository that was checked before is checked again when it was
+#              pushed to since, a week or more later.
 #
 # Candidates come from the GitHub search API (most stars first), one month
 # of repository creation dates at a time, both query shapes per month
@@ -69,14 +77,17 @@ set -u
 
 DRY_RUN=false
 COUNT=1
+MONTHS="${DISCOVER_MONTHS:-3}"
 while [ $# -gt 0 ] ; do
   case "$1" in
     --dry-run) DRY_RUN=true ; shift ;;
     --count) COUNT="$2" ; shift 2 ;;
-    *) echo "Usage: $0 [--dry-run] [--count N]" >&2 ; exit 2 ;;
+    --months) MONTHS="$2" ; shift 2 ;;
+    *) echo "Usage: $0 [--dry-run] [--count N] [--months N]" >&2 ; exit 2 ;;
   esac
 done
 case "$COUNT" in ''|*[!0-9]*) echo "Bad --count: $COUNT" >&2 ; exit 2 ;; esac
+case "$MONTHS" in ''|*[!0-9]*) echo "Bad --months: $MONTHS" >&2 ; exit 2 ;; esac
 # No upper limit: the run goes on until COUNT apps are found, every month since
 # 2012 was searched, or the time limit
 [ "$COUNT" -lt 1 ] && COUNT=1
@@ -286,7 +297,12 @@ fi
 CURSOR_LINE=$(head -n 1 "$STATE_FILE")
 tail -n +2 "$STATE_FILE" > "$WORKDIR/base-rows.tsv" 2>/dev/null || : > "$WORKDIR/base-rows.tsv"
 CURSOR_MONTH=$(sed -n 's/^#cursor=\([0-9-]*\) .*/\1/p' <<<"$CURSOR_LINE")
-QUERY_IDX=$(sed -n 's/.*query=\([0-9]*\)/\1/p' <<<"$CURSOR_LINE")
+QUERY_IDX=$(sed -n 's/.*query=\([0-9]*\).*/\1/p' <<<"$CURSOR_LINE")
+# The day of the last complete run of the recent mode (repositories pushed since then are searched)
+LASTRUN=$(sed -n 's/.*lastrun=\([0-9-]*\).*/\1/p' <<<"$CURSOR_LINE")
+[[ "$LASTRUN" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || LASTRUN=""
+LASTRUN_NEXT="$LASTRUN"
+SAVED_CURSOR_MONTH="$CURSOR_MONTH"
 [[ "$CURSOR_MONTH" =~ ^[0-9]{4}-[0-9]{2}$ ]] || CURSOR_MONTH=$(date -u +%Y-%m)
 [[ "$QUERY_IDX" =~ ^[0-9]+$ ]] || QUERY_IDX=0
 
@@ -298,12 +314,15 @@ tail -n +2 "$STATE_FILE" 2>/dev/null | while IFS=$'\t' read -r OR DATE OUTCOME ;
   [ -z "$OR" ] && continue
   [ "$OUTCOME" == added ] && continue # already handled via SKIP_KNOWN/data or the PR trail
   if [ "$OUTCOME" == stars ] ; then
-    [[ "$DATE" > "$CUTOFF_STARS" ]] && echo "$OR"
+    [[ "$DATE" > "$CUTOFF_STARS" ]] && printf '%s\t%s\n' "$OR" "$DATE"
   else
-    [[ "$DATE" > "$CUTOFF" ]] && echo "$OR"
+    [[ "$DATE" > "$CUTOFF" ]] && printf '%s\t%s\n' "$OR" "$DATE"
   fi
 done > "$WORKDIR/recent.txt"
-while read -r OR ; do [ -n "$OR" ] && SKIP_RECENT["$OR"]=1 ; done < "$WORKDIR/recent.txt"
+# The day it was checked (SKIP_RECENT_ON): a repository that was pushed to after
+# that, at least a week later, is checked again (it may publish an AppImage now)
+declare -A SKIP_RECENT_ON=()
+while IFS=$'\t' read -r OR DATE ; do [ -n "$OR" ] && { SKIP_RECENT["$OR"]=1 ; SKIP_RECENT_ON["$OR"]="$DATE" ; } ; done < "$WORKDIR/recent.txt"
 
 # --- 9. Persist the state file -------------------------------------------
 # Called after every opened PR, every 10 slices and at the end, so that a
@@ -313,9 +332,10 @@ STATE_SAVED=false
 save_state() {
   [ "$DRY_RUN" == true ] && return 0
   NEXT_MONTH="$CURSOR_MONTH"
+  [ "$MONTHS" -gt 0 ] && NEXT_MONTH="$SAVED_CURSOR_MONTH" # the recent mode does not move the cursor of the full sweep
   NEXT_QUERY="$QUERY_IDX"
   write_state() { # write_state FILE BASEROWS
-    { echo "#cursor=$NEXT_MONTH query=$NEXT_QUERY" ; cat "$2" "$WORKDIR/new-state-rows.tsv" | awk 'NF && !seen[$0]++' ; } > "$1.new"
+    { echo "#cursor=$NEXT_MONTH query=$NEXT_QUERY${LASTRUN_NEXT:+ lastrun=$LASTRUN_NEXT}" ; cat "$2" "$WORKDIR/new-state-rows.tsv" | awk 'NF && !seen[$0]++' ; } > "$1.new"
     mv "$1.new" "$1"
   }
   write_state "$STATE_FILE" "$WORKDIR/base-rows.tsv"
@@ -352,8 +372,8 @@ save_state() {
 
 PUSHED_SINCE=$(date -u -d '1 year ago' +%Y-%m-%d 2>/dev/null || date -u -v-1y +%Y-%m-%d)
 QUERY_TEMPLATES=(
-  "topic:appimage fork:false archived:false pushed:>=$PUSHED_SINCE"
-  "appimage in:name,description,readme fork:false archived:false pushed:>=$PUSHED_SINCE"
+  "topic:appimage fork:false archived:false pushed:>=@SINCE@"
+  "appimage in:name,description,readme fork:false archived:false pushed:>=@SINCE@"
 )
 # No fixed budget: go on until COUNT apps qualify, until every month back to
 # 2012 has been searched once (then there is nothing new to find), or until
@@ -365,7 +385,7 @@ WRAPPED=false
 STOP_REASON=""
 SLICES_SEARCHED=()
 CANDIDATES_FOUND=0
-N_KNOWN=0 N_OPENPR=0 N_LABELED=0 N_RECENT=0
+N_KNOWN=0 N_OPENPR=0 N_LABELED=0 N_RECENT=0 N_AGAIN=0
 FAILED=false
 : > "$WORKDIR/seen.txt"
 
@@ -451,32 +471,69 @@ find_original() { # find_original OWNER/REPO META README
 
 
 SLICES_SINCE_SAVE=0
+RECENT_STEP=0
+RECENT_DONE=false
+SORT=stars
+WEEK_AGO=$(date -u -d '7 days ago' +%Y-%m-%d 2>/dev/null || date -u -v-7d +%Y-%m-%d)
+declare -A PUSHED_OF=()
 while [ "$OPENED" -lt "$COUNT" ] ; do
 if [ "$(date +%s)" -ge "$DEADLINE" ] ; then STOP_REASON="time limit" ; break ; fi
-if [ "$WRAPPED" == true ] && [ "$CURSOR_MONTH" == "$START_MONTH" ] ; then STOP_REASON="searched every month since 2012" ; break ; fi
-LAST_DAY=$(date -u -d "$CURSOR_MONTH-01 +1 month -1 day" +%d 2>/dev/null || \
-           date -u -j -v+1m -v-1d -f %Y-%m-%d "$CURSOR_MONTH-01" +%d)
-SLICE="created:$CURSOR_MONTH-01..$CURSOR_MONTH-$LAST_DAY"
-SLICES_SEARCHED+=("$CURSOR_MONTH")
+SORT=stars
+SINCE="$PUSHED_SINCE"
+if [ "$MONTHS" -gt 0 ] ; then
+  # Recent mode: first the repositories of any age that were pushed to since the
+  # last complete run (a new release of an old project), then the repositories
+  # created in the last MONTHS months; the full sweep over all months since 2012
+  # (--months 0) finds hardly anything new once it has been done
+  if [ "$RECENT_STEP" -gt "$MONTHS" ] ; then
+    STOP_REASON="searched what was pushed since the last run and the last $MONTHS months"
+    RECENT_DONE=true
+    break
+  fi
+  if [ "$RECENT_STEP" -eq 0 ] ; then
+    SLICE=""
+    SORT=updated
+    if [ -n "$LASTRUN" ] ; then
+      SINCE=$(date -u -d "$LASTRUN -1 day" +%Y-%m-%d 2>/dev/null || date -u -j -v-1d -f %Y-%m-%d "$LASTRUN" +%Y-%m-%d)
+      [[ "$SINCE" < "$PUSHED_SINCE" ]] && SINCE="$PUSHED_SINCE"
+    fi
+    SLICE_NAME="pushed since $SINCE"
+  else
+    CURSOR_MONTH=$(date -u -d "$(date -u +%Y-%m-01) -$((RECENT_STEP - 1)) month" +%Y-%m 2>/dev/null || date -u -v-"$((RECENT_STEP - 1))"m +%Y-%m)
+    LAST_DAY=$(date -u -d "$CURSOR_MONTH-01 +1 month -1 day" +%d 2>/dev/null || \
+               date -u -j -v+1m -v-1d -f %Y-%m-%d "$CURSOR_MONTH-01" +%d)
+    SLICE="created:$CURSOR_MONTH-01..$CURSOR_MONTH-$LAST_DAY"
+    SLICE_NAME="created in $CURSOR_MONTH"
+  fi
+  RECENT_STEP=$((RECENT_STEP + 1))
+else
+  if [ "$WRAPPED" == true ] && [ "$CURSOR_MONTH" == "$START_MONTH" ] ; then STOP_REASON="searched every month since 2012" ; break ; fi
+  LAST_DAY=$(date -u -d "$CURSOR_MONTH-01 +1 month -1 day" +%d 2>/dev/null || \
+             date -u -j -v+1m -v-1d -f %Y-%m-%d "$CURSOR_MONTH-01" +%d)
+  SLICE="created:$CURSOR_MONTH-01..$CURSOR_MONTH-$LAST_DAY"
+  SLICE_NAME="created in $CURSOR_MONTH"
+fi
+SLICES_SEARCHED+=("$SLICE_NAME")
 : > "$WORKDIR/candidates.txt"
 for Q in 0 1 ; do
-  QUERY="${QUERY_TEMPLATES[$(( (QUERY_IDX + Q) % ${#QUERY_TEMPLATES[@]} ))]} $SLICE"
+  QUERY="${QUERY_TEMPLATES[$(( (QUERY_IDX + Q) % ${#QUERY_TEMPLATES[@]} ))]//@SINCE@/$SINCE} $SLICE"
   [ "$SEARCHES" -gt 0 ] && [ -z "${DISCOVER_API_STUB:-}" ] && sleep 3
   wait_for_rate search
   SEARCHES=$((SEARCHES + 1))
   # Up to 10 pages of 100 (the search API returns at most 1000 results)
-  echo "Searching repositories created in $CURSOR_MONTH: $QUERY"
+  echo "Searching repositories ($SLICE_NAME): $QUERY"
   for PAGE in 1 2 3 4 5 6 7 8 9 10 ; do
     if [ "$PAGE" -gt 1 ] ; then
       [ -z "${DISCOVER_API_STUB:-}" ] && sleep 3
       wait_for_rate search
       SEARCHES=$((SEARCHES + 1))
     fi
-    RESP=$(api GET "search/repositories?q=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$QUERY")&per_page=100&page=$PAGE&sort=stars&order=desc")
+    RESP=$(api GET "search/repositories?q=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$QUERY")&per_page=100&page=$PAGE&sort=$SORT&order=desc")
     ITEMS=$(jq -r '.items[]? | .full_name' <<<"$RESP" 2>/dev/null)
-    while IFS=$'\t' read -r FN ST ; do
+    while IFS=$'\t' read -r FN ST PD ; do
       [ -n "$FN" ] && STARS_OF["$(lower "$FN")"]=$ST
-    done < <(jq -r '.items[]? | "\(.full_name)\t\(.stargazers_count // 0)"' <<<"$RESP" 2>/dev/null)
+      [ -n "$FN" ] && PUSHED_OF["$(lower "$FN")"]="${PD%%T*}"
+    done < <(jq -r '.items[]? | "\(.full_name)\t\(.stargazers_count // 0)\t\(.pushed_at // "")"' <<<"$RESP" 2>/dev/null)
     N_ITEMS=$(grep -c . <<<"$ITEMS")
     [ "$PAGE" -eq 1 ] && echo "  $(jq -r '.total_count // 0' <<<"$RESP" 2>/dev/null) results$(jq -r 'if .message then " (" + .message + ")" else "" end' <<<"$RESP" 2>/dev/null)"
     [ -n "$ITEMS" ] && echo "$ITEMS" >> "$WORKDIR/candidates.txt"
@@ -496,7 +553,15 @@ while read -r FULLNAME ; do
   if [ -n "${SKIP_KNOWN[$OR]:-}" ] ; then N_KNOWN=$((N_KNOWN + 1)) ; continue ; fi
   if [ -n "${SKIP_OPENPR[$OR]:-}" ] ; then N_OPENPR=$((N_OPENPR + 1)) ; continue ; fi
   if [ -n "${SKIP_LABELED[$OR]:-}${SKIP_OPTOUT[$OR]:-}" ] ; then N_LABELED=$((N_LABELED + 1)) ; continue ; fi
-  if [ -n "${SKIP_RECENT[$OR]:-}" ] ; then N_RECENT=$((N_RECENT + 1)) ; continue ; fi
+  if [ -n "${SKIP_RECENT[$OR]:-}" ] ; then
+    # ... unless it was pushed to after it was checked (a week or more ago): it may publish an AppImage now
+    CHECKED_ON="${SKIP_RECENT_ON[$OR]:-}" ; PUSHED_ON="${PUSHED_OF[$OR]:-}"
+    if [ -n "$PUSHED_ON" ] && [[ "$PUSHED_ON" > "$CHECKED_ON" ]] && [[ "$CHECKED_ON" < "$WEEK_AGO" ]] ; then
+      N_AGAIN=$((N_AGAIN + 1))
+    else
+      N_RECENT=$((N_RECENT + 1)) ; continue
+    fi
+  fi
   if [[ "${STARS_OF[$OR]:-0}" =~ ^[0-9]+$ ]] && [ "${STARS_OF[$OR]:-0}" -lt "$MIN_STARS" ] ; then
     record "$OR" stars
     continue
@@ -724,6 +789,13 @@ EOF
   fi
 
   BRANCH="discover/$NAME"
+  # A branch of this name exists already (an earlier, closed pull request for an app of
+  # this name, e.g. another repository of it): pushing would be rejected
+  if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1 ; then
+    echo "    The branch $BRANCH exists already (an earlier pull request for this name); skipped"
+    record "$OR" name
+    continue
+  fi
   git fetch -q origin master
   # Never commit anywhere else: if the branch cannot be set up, skip this one
   if ! git checkout -q -B "$BRANCH" origin/master || [ "$(git branch --show-current)" != "$BRANCH" ] ; then
@@ -781,17 +853,23 @@ discover-apps.yml. Needs a maintainer's review."
   PR_URLS+=("$PR_URL")
   record "$OR" added
   OPENED=$((OPENED + 1))
-  save_state || true
+  # The state is saved every 10 pull requests (a push of its own branch each time
+  # takes seconds); "added" is not even read back: the pull request itself is the trail
+  [ $((OPENED % 10)) -eq 0 ] && { save_state || true ; }
 done < "$WORKDIR/remaining.txt"
 
 # Next slice: one month earlier (wrapping), and the other query first
-CURSOR_MONTH=$(prev_month "$CURSOR_MONTH")
-if [[ "$CURSOR_MONTH" < "2012-01" ]] ; then CURSOR_MONTH=$(date -u +%Y-%m) ; WRAPPED=true ; fi
+if [ "$MONTHS" -eq 0 ] ; then
+  CURSOR_MONTH=$(prev_month "$CURSOR_MONTH")
+  if [[ "$CURSOR_MONTH" < "2012-01" ]] ; then CURSOR_MONTH=$(date -u +%Y-%m) ; WRAPPED=true ; fi
+fi
 QUERY_IDX=$(( (QUERY_IDX + 1) % ${#QUERY_TEMPLATES[@]} ))
 SLICES_SINCE_SAVE=$((SLICES_SINCE_SAVE + 1))
 if [ "$SLICES_SINCE_SAVE" -ge 10 ] ; then save_state || true ; SLICES_SINCE_SAVE=0 ; fi
 done # slices
 
+# The recent mode searches what was pushed since this day next time (only after a complete run)
+[ "$RECENT_DONE" == true ] && LASTRUN_NEXT="$TODAY"
 save_state || true
 
 # --- 10. Summary -----------------------------------------------------------
@@ -799,11 +877,15 @@ save_state || true
 {
   echo "## Discover apps"
   echo
-  echo "Searched repositories created from ${SLICES_SEARCHED[0]:-?} back to ${SLICES_SEARCHED[-1]:-?} (${#SLICES_SEARCHED[@]} months, $SEARCHES searches); the next run starts at ${NEXT_MONTH:-$CURSOR_MONTH}"
+  if [ "$MONTHS" -gt 0 ] ; then
+    echo "Recent mode (--months $MONTHS): searched $(IFS=';' ; echo "${SLICES_SEARCHED[*]}" | sed 's/;/; /g') ($SEARCHES searches)$([ "$RECENT_DONE" == true ] && echo "; the next run searches what is pushed from $TODAY on")"
+  else
+    echo "Searched repositories created from ${SLICES_SEARCHED[0]:-?} back to ${SLICES_SEARCHED[-1]:-?} (${#SLICES_SEARCHED[@]} months, $SEARCHES searches); the next run starts at ${NEXT_MONTH:-$CURSOR_MONTH}"
+  fi
   echo
   echo "Candidates found: $CANDIDATES_FOUND"
   [ "$OPENED" -lt "$COUNT" ] && echo "Found $OPENED of the $COUNT requested; stopped: $STOP_REASON."
-  echo "Skipped: $N_KNOWN already in the catalog, $N_OPENPR in an open PR, $N_LABELED proposed before, $N_RECENT checked recently"
+  echo "Skipped: $N_KNOWN already in the catalog, $N_OPENPR in an open PR, $N_LABELED proposed before, $N_RECENT checked recently ($N_AGAIN checked again because they were pushed to since)"
   echo "Checked this run: $CHECKED"
   echo "Outcomes: added ${OUTCOME_COUNT[added]:-0}, no-appimage ${OUTCOME_COUNT[no-appimage]:-0}, ambiguous ${OUTCOME_COUNT[ambiguous]:-0}, name ${OUTCOME_COUNT[name]:-0}, old ${OUTCOME_COUNT[old]:-0}, fork or copy ${OUTCOME_COUNT[copy]:-0}, opted out ${OUTCOME_COUNT[opt-out]:-0}, too few stars ${OUTCOME_COUNT[stars]:-0} (reconsidered after 30 days)"
   echo "Pull requests opened: $OPENED"
