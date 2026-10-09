@@ -1,0 +1,44 @@
+{
+  "name": "rebase-git",
+  "version": "0.0.6",
+  "description": "A fast local Git client for the browser and desktop.",
+  "author": "Alexandru Ion <ionalexandru99@users.noreply.github.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionalexandru99/rebase-git.git"
+  },
+  "homepage": "https://github.com/ionalexandru99/rebase-git#readme",
+  "bugs": {
+    "url": "https://github.com/ionalexandru99/rebase-git/issues"
+  },
+  "type": "module",
+  "imports": {
+    "#contracts/*": "./src/contracts/*",
+    "#desktop/*": "./src/apps/desktop/*",
+    "#server/*": "./src/apps/server/*",
+    "#web/*": "./src/apps/web/*",
+    "#tests-support/*": "./tests/support/*",
+    "#tests-performance/*": "./tests/performance/*"
+  },
+  "bin": {
+    "rebase": "./dist/cli.js",
+    "rebase-git": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=22.18.0 <23.0.0 || >=24.0.0 <25.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@lydell/node-pty": "1.2.0-beta.15"
+  },
+  "main": "main.js"
+}
