@@ -3,13 +3,12 @@ layout: app
 
 permalink: /Kute/
 description: "Krunker client"
-license: "GPL-3.0"
+license: "GPL-3.0-only"
 
 icons:
   - Kute/icons/256x256/kute.png
-
 screenshots:
-  - Kute/screenshot.png
+- https://raw.githubusercontent.com/NullDev/Kute/master/resources/screenshots/settings.png
 
 authors:
   - name: "NullDev"
