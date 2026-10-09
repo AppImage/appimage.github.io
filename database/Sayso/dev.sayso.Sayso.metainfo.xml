@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>dev.sayso.Sayso</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>Sayso</name>
+  <summary>Local voice dictation into any app</summary>
+  <description>
+    <p>Press a key, speak, and Sayso writes the text into the app you use. Speech recognition runs on your computer. Nothing leaves it unless you choose a cloud model or an AI style with a cloud provider.</p>
+  </description>
+  <launchable type="desktop-id">dev.sayso.Sayso.desktop</launchable>
+  <url type="homepage">https://justsayso.app</url>
+  <url type="bugtracker">https://github.com/watzon/sayso/issues</url>
+  <developer id="dev.sayso">
+    <name>Watzon Ventures LLC</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+</component>
