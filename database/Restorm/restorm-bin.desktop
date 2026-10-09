@@ -1,0 +1,52 @@
+[Desktop Entry]
+Name=Restorm
+Exec=AppRun --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=restorm-bin
+StartupWMClass=restorm
+X-AppImage-Version=1.0.2
+GenericName=API Testing Environment
+Comment=Restorm is a local-first environment to test APIs end to end: it is both an API client and a server. Send and inspect requests, mock and simulate endpoints, and chain reproducible scenarios across REST, GraphQL, gRPC, WebSocket, Redis, AMQP, MQTT and more — everything kept on your own disk, Git-friendly for teams, with no forced cloud account.
+Categories=Development;
+Keywords=REST;API;HTTP;GraphQL;gRPC;WebSocket;
+MimeType=application/x-restorm;
+Actions=new;
+
+[Desktop Action new]
+Name=New
+Name[cs]=Nový
+Name[da]=Ny
+Name[de]=Neu
+Name[el]=Νέο
+Name[es]=Nuevo
+Name[fi]=Uusi
+Name[fr]=Nouveau
+Name[hr]=Novo
+Name[hu]=Új
+Name[id]=Baru
+Name[it]=Nuovo
+Name[ja]=新規作成
+Name[ko]=새로 만들기
+Name[nb]=Ny
+Name[nl]=Nieuw
+Name[pl]=Nowy
+Name[pt]=Novo
+Name[ro]=Nou
+Name[sq]=I ri
+Name[sr]=Novo
+Name[sv]=Ny
+Name[tr]=Yeni
+Name[uk]=Створити
+Name[vi]=Mới
+Name[zh_CN]=新建
+Name[zh_TW]=新增
+Icon=document-new
+Exec=/opt/Restorm/restorm-bin --new
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

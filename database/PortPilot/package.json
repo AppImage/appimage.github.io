@@ -1,0 +1,20 @@
+{
+  "name": "portpilot",
+  "version": "3.3.0",
+  "description": "Localhost port and app manager for developers",
+  "main": "src/main/main.js",
+  "author": {
+    "name": "Macdara",
+    "email": "macdara.work@gmail.com",
+    "url": "https://github.com/m4cd4r4"
+  },
+  "homepage": "https://github.com/m4cd4r4/PortPilot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m4cd4r4/PortPilot.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  }
+}

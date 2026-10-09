@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.switch_bros.EasySCSModManager</id>
+  <name>Easy SCSModManager</name>
+  <summary>Mod and profile manager for Euro Truck Simulator 2 and American Truck Simulator</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <developer id="io.github.switch_bros">
+    <name>SwitchBros</name>
+  </developer>
+
+  <description>
+    <p>
+      Easy SCSModManager is a Linux- and Windows-native tool for managing mods and
+      profiles for Euro Truck Simulator 2 and American Truck Simulator. It looks like
+      the in-game mod manager but adds the comfort features the game itself lacks.
+    </p>
+    <p>Browse and activate</p>
+    <ul>
+      <li>Grid of all installed mods with icons, full-text search and category filters</li>
+      <li>Drag &amp; drop mods between installed and active, with multi-select</li>
+      <li>Switch between ETS2 and ATS from a single window</li>
+    </ul>
+    <p>Load order</p>
+    <ul>
+      <li>Active list grouped by load-order section with clear headers</li>
+      <li>Marks mods that sit in the wrong group</li>
+      <li>Compatibility check against the detected game version (incompatible mods flagged)</li>
+      <li>Conflict hints when two active mods touch the same files</li>
+      <li>Export and import a map combo to share or reproduce a map setup</li>
+    </ul>
+    <p>Comfort</p>
+    <ul>
+      <li>Favourites with a favourites-only filter</li>
+      <li>Profile backup and restore</li>
+      <li>Fully bilingual interface (English and German)</li>
+    </ul>
+  </description>
+
+  <categories>
+    <category>Game</category>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>ets2</keyword>
+    <keyword>ats</keyword>
+    <keyword>euro truck simulator</keyword>
+    <keyword>american truck simulator</keyword>
+    <keyword>mods</keyword>
+    <keyword>mod manager</keyword>
+    <keyword>load order</keyword>
+    <keyword>profile</keyword>
+  </keywords>
+
+  <url type="homepage">https://github.com/Switch-Bros/easy-scsmodmanager</url>
+  <url type="bugtracker">https://github.com/Switch-Bros/easy-scsmodmanager/issues</url>
+
+  <launchable type="desktop-id">io.github.switch_bros.EasySCSModManager.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main window: mod grid on the left, the grouped active load order on the right</caption>
+      <image>https://raw.githubusercontent.com/Switch-Bros/easy-scsmodmanager/v1.1.1/easy_scsmodmanager/resources/screenshots/01_en_main_window.webp</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.1.1" date="2026-06-01">
+      <description>
+        <p>Initial release. Browse and activate mods for ETS2 and ATS, drag &amp; drop
+           load ordering with grouped sections, compatibility and conflict hints,
+           map combo export/import, favourites, profile backup/restore, and a full
+           English + German interface.</p>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1"/>
+</component>

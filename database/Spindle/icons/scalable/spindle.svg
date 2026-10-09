@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="52" fill="#1f6f8b"/>
+  <!-- open book -->
+  <path d="M48 80c28-14 56-14 80 0v112c-24-14-52-14-80 0V80z" fill="#fbfaf7"/>
+  <path d="M208 80c-28-14-56-14-80 0v112c24-14 52-14 80 0V80z" fill="#e9e2d4"/>
+  <line x1="128" y1="80" x2="128" y2="192" stroke="#1f6f8b" stroke-width="6"/>
+  <!-- spindle thread -->
+  <line x1="128" y1="40" x2="128" y2="216" stroke="#f4a259" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="128" cy="40" r="12" fill="#f4a259"/>
+  <circle cx="128" cy="216" r="12" fill="#f4a259"/>
+</svg>

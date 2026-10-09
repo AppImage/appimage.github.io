@@ -1,0 +1,24 @@
+[Desktop Entry]
+Name=Photon Studio
+Exec=AppRun %U
+Terminal=false
+Type=Application
+Icon=photon-studio
+StartupWMClass=photon-studio
+X-AppImage-Version=0.1.44
+PrefersNonDefaultGPU=true
+X-KDE-RunOnDiscreteGpu=true
+Comment=Photon Studio — an offline image editor with Photoshop-equivalent capabilities and native PSD support.
+MimeType=application/x-photon;application/pdf;image/svg+xml;image/vnd.adobe.photoshop;image/x-photoshop;image/psd;image/x-psb;image/png;image/jpeg;image/tiff;image/gif;image/bmp;image/x-bmp;image/webp;image/avif;image/heic;image/heif;image/jxl;image/x-dcraw;image/x-adobe-dng;image/x-canon-cr2;image/x-canon-cr3;image/x-canon-crw;image/x-epson-erf;image/x-fuji-raf;image/x-hasselblad-3fr;image/x-hasselblad-fff;image/x-kodak-dcr;image/x-kodak-kdc;image/x-leaf-mos;image/x-mamiya-mef;image/x-minolta-mdc;image/x-minolta-mrw;image/x-nikon-nef;image/x-nikon-nrw;image/x-olympus-orf;image/x-panasonic-rw;image/x-panasonic-rw2;image/x-pentax-pef;image/x-phaseone-iiq;image/x-samsung-srw;image/x-sigma-x3f;image/x-sony-arw;image/x-sony-sr2;image/x-sony-srf;
+Categories=Graphics;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.39

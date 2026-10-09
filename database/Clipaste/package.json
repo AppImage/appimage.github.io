@@ -1,0 +1,29 @@
+{
+  "name": "clipaste",
+  "productName": "Clipaste",
+  "version": "2.1.0",
+  "description": "A simple clipboard manager. It keeps your clipboard history and shows the app each item came from.",
+  "type": "module",
+  "main": "src/main/main.js",
+  "homepage": "https://ahmetkorkmaz3.github.io/clipaste/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmetkorkmaz3/clipaste.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmetkorkmaz3/clipaste/issues"
+  },
+  "author": "Ahmet Korkmaz <muratahmetkorkmaz@hotmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "lowdb": "^7.0.1",
+    "x11": "^4.3.0"
+  },
+  "allowScripts": {
+    "electron": true,
+    "electron-winstaller": false
+  }
+}

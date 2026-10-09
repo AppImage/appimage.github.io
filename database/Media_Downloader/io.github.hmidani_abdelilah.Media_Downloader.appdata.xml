@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.hmidani_abdelilah.Media_Downloader</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Media Downloader</name>
+  <summary>A powerful graphical media downloader using yt-dlp</summary>
+  <summary xml:lang="ar">تطبيق رسومي قوي لتحميل الفيديوهات والصوتيات باستخدام yt-dlp</summary>
+
+
+  <developer id="io.github.hmidani_abdelilah">
+    <name>Hmidani Abdelilah</name>
+  </developer>
+  <content_rating type="oars-1.1" />
+
+  <description>
+    <p>
+      Media Downloader is a cross-platform graphical application that allows you to easily download video and audio from YouTube, Facebook, Instagram, X.com, TikTok, and many other platforms. It features quality selection, speed acceleration with Aria2c, subtitle downloads, and video cutting/compression tools.
+    </p>
+    <p xml:lang="ar">
+      تطبيق Media Downloader هو برنامج رسومي يعمل على مختلف الأنظمة، يتيح لك تحميل الفيديوهات والصوت بسهولة من يوتيوب، فيسبوك، إنستغرام، تويتر، تيك توك والعديد من المنصات الأخرى. يتميز باختيار الجودة، تسريع التحميل عبر Aria2c، تحميل الترجمات، وأدوات لقص وضغط الفيديو.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">Media_Downloader.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main application interface</caption>
+      <caption>xml:lang="ar"الواجهة الرئيسية للتطبيق</caption>
+      <image type="source">https://raw.githubusercontent.com/hmidani-abdelilah/Media_Downloader/refs/heads/main/Screenshots/Screenshot%20From%202026-08-24%2013-22-57.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/hmidani-abdelilah/Media_Downloader</url>
+  <url type="bugtracker">https://github.com/hmidani-abdelilah/Media_Downloader/issues</url>
+
+  <provides>
+    <binary>Media_Downloader</binary>
+  </provides>
+
+  <releases>
+    <release version="3.0.0" date="2026-08-24" />
+  </releases>
+</component>

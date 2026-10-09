@@ -1,0 +1,69 @@
+# Finds GitHub repositories that publish AppImages on their releases but are
+# not in the catalog yet, and proposes each as a new entry in its own pull
+# request (label auto-discovered), for a maintainer to review. Never merges
+# on its own: publish-pr-screenshot.yml's auto-merge skips these PRs.
+#
+# code/discover-apps.sh keeps a state file (cursor + recently-checked
+# repositories) on the orphan "discover-state" branch, so repeated runs
+# rotate through GitHub's search results and history instead of proposing
+# or re-checking the same repositories. By default (recent mode) a run only looks
+# at what was pushed since the last run and at the last 3 months of new
+# repositories. Manual only; see MAINTAINER.md.
+
+name: Discover apps
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Number of pull requests to open; the run searches until it has found that many (or searched every month since 2012, or 5.5 hours passed)'
+        type: number
+        default: 1
+      months:
+        description: 'Recent mode (default): search what was pushed since the last run and the repositories created in the last N months, then stop (minutes, not hours). 0: the full sweep over every month since 2012 (about 500 searches), which finds little new once it has been done'
+        type: number
+        default: 3
+      dry_run:
+        description: 'Dry run (only print what would be opened; nothing is pushed or changed)'
+        type: boolean
+        default: false
+
+jobs:
+  discover-apps:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 480 # runs until the requested number is found; the script stops after 7.5 h to save its state
+    # One run at a time, so that two runs cannot propose the same repository
+    # or race on the state file.
+    concurrency:
+      group: discover-apps
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      # A personal token lets the opened PR's Test workflow actually start
+      # (a PR opened with this workflow's own token starts none): DISCOVER_TOKEN
+      # if set, else the SCREENSHOT_UPLOAD_TOKEN secret, else GITHUB_TOKEN (then
+      # the PR body says to close and reopen it). See MAINTAINER.md.
+      DISCOVER_TOKEN: ${{ secrets.DISCOVER_TOKEN }}
+      SCREENSHOT_UPLOAD_TOKEN: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+      # Stop the search in time to save state, staying under timeout-minutes (7.5 h)
+      DISCOVER_MAX_SECONDS: 27000
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Discover and propose new entries
+        env:
+          COUNT: ${{ github.event.inputs.count || '1' }}
+          MONTHS: ${{ github.event.inputs.months || '3' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          ARGS=(--count "$COUNT" --months "$MONTHS")
+          [ "$DRY_RUN" == "true" ] && ARGS+=(--dry-run)
+          bash code/discover-apps.sh "${ARGS[@]}"

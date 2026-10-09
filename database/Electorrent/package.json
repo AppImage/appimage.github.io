@@ -1,29 +1,36 @@
 {
   "name": "electorrent",
   "productName": "Electorrent",
-  "version": "2.1.10",
+  "version": "2.17.1",
   "description": "A thin client for your torrenting needs",
-  "main": "app.js",
+  "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tympanix/Electorrent.git"
+    "url": "git+https://github.com/tympanix/Electorrent.git"
   },
   "author": {
-    "name": "Tympanix",
+    "name": "tympanix",
     "email": "tympanix@gmail.com"
   },
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/Tympanix/Electorrent/issues"
+    "url": "https://github.com/tympanix/Electorrent/issues"
   },
-  "homepage": "https://github.com/Tympanix/Electorrent#readme",
+  "homepage": "https://github.com/tympanix/Electorrent#readme",
   "dependencies": {
-    "electron-is": "^2.4.0",
-    "electron-regedit": "^1.0.5",
+    "axios": "^0.24.0",
+    "electron-is": "^3.0.0",
+    "electron-regedit": "^2.0.0",
     "electron-squirrel-startup": "^1.0.0",
+    "form-data": "^4.0.5",
+    "geoip-country": "^5.0.202607180103",
+    "qs": "^6.10.1",
     "request": "^2.74.0",
-    "semver": "^5.3.0",
+    "semver": "^5.7.2",
     "winston": "^2.2.0",
     "yargs": "^4.8.1"
+  },
+  "overrides": {
+    "form-data": "$form-data"
   }
 }

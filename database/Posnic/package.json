@@ -1,0 +1,37 @@
+{
+  "name": "posnic",
+  "version": "1.8.0",
+  "description": "Free, offline-first point-of-sale software for retail and restaurants, with open source POS code and billing workflows. Posnic source is AGPL-3.0-only; packages contain separately licensed components.",
+  "main": "src/main.js",
+  "desktopName": "com.posnic.app.desktop",
+  "lint-staged": {
+    "*.{js,cjs,mjs,json,html,css,md,yml,yaml}": "prettier --write",
+    "api/{src,tests}/**/*.js": "node scripts/lint-staged-api.js"
+  },
+  "author": "Posnic Innovations Private Limited",
+  "license": "AGPL-3.0-only",
+  "dependencies": {
+    "@serialport/parser-readline": "^13.0.0",
+    "electron-log": "^5.4.4",
+    "electron-updater": "^6.8.9",
+    "mongodb": "7.6.0",
+    "pdf-to-printer": "^5.8.1",
+    "serialport": "^13.0.0",
+    "unzipper": "0.12.5"
+  },
+  "overrides": {
+    "sharp": "$sharp",
+    "js-yaml": "^4.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Posnic/POS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Posnic/POS/issues"
+  },
+  "homepage": "https://www.posnic.com/",
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsChess</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Budbrain's Chess</name>
+  <summary>A hundred chess levels against the AI, from beginner to club player</summary>
+  <summary xml:lang="de">Hundert Schach-Level gegen die KI, von Anfänger bis Vereinsspieler</summary>
+
+  <description>
+    <p>
+      A hundred chess levels, and the opponent gets stronger with every one of
+      them. Click a piece and every move it may make lights up; click a lit
+      square and the piece goes there.
+    </p>
+    <p xml:lang="de">
+      Hundert Schach-Level, und der Gegner wird mit jedem einzelnen stärker.
+      Wer eine Figur anklickt, sieht jeden Zug leuchten, den sie machen darf;
+      ein Klick auf ein leuchtendes Feld setzt sie dorthin.
+    </p>
+    <p>
+      It starts gently. On the first levels the opponent plays with a handicap
+      — without a queen, without knights, or with nothing but a king and pawns
+      — so a first game is winnable. From there the strength climbs level by
+      level, from around 150 ELO to 1900, and every stage of ten levels brings
+      a board of its own: pine, olive, walnut, marble, ink, emerald, plum,
+      graphite, glass and obsidian.
+    </p>
+    <p xml:lang="de">
+      Es fängt sanft an. In den ersten Leveln spielt der Gegner mit Handicap —
+      ohne Dame, ohne Springer oder nur mit König und Bauern —, damit die erste
+      Partie zu gewinnen ist. Von dort steigt die Stärke Level für Level, von
+      rund 150 ELO bis 1900, und jede Stufe aus zehn Leveln bringt ihr eigenes
+      Brett: Kiefer, Oliv, Walnuss, Marmor, Tinte, Smaragd, Pflaume, Graphit,
+      Glas und Obsidian.
+    </p>
+    <p>
+      There is help for every skill level. A hint button suggests a good move,
+      your own pieces blink red when they are under attack, and any move can be
+      taken back. Two dice decide who opens the game. Every game you win is
+      kept as a board you can look at again, with your time and your stars.
+    </p>
+    <p xml:lang="de">
+      Hilfe gibt es für jede Spielstärke. Ein Hinweisknopf schlägt einen guten
+      Zug vor, eigene Figuren blinken rot, sobald sie im Feuer stehen, und
+      jeder Zug lässt sich zurücknehmen. Zwei Würfel entscheiden, wer anfängt.
+      Jede gewonnene Partie bleibt als Brett erhalten, mit Zeit und Sternen.
+    </p>
+    <ul>
+      <li>A hundred levels in ten stages, each stage with its own board</li>
+      <li>The opponent plays with a handicap on the early levels</li>
+      <li>Every legal move of the piece you pick lights up</li>
+      <li>A hint when you are stuck, and your threatened pieces blink</li>
+      <li>Take back a move, turn the board, and it remembers where you stopped</li>
+      <li>Three stars per level — win in fewer moves to earn them</li>
+      <li>A gallery of every game you have won</li>
+      <li>Available in 22 languages</li>
+    </ul>
+    <ul xml:lang="de">
+      <li>Hundert Level in zehn Stufen, jede Stufe mit eigenem Brett</li>
+      <li>In den ersten Leveln spielt der Gegner mit Handicap</li>
+      <li>Jeder erlaubte Zug der gewählten Figur leuchtet auf</li>
+      <li>Ein Hinweis, wenn es klemmt, und bedrohte Figuren blinken</li>
+      <li>Zug zurücknehmen, Brett drehen, und der Stand bleibt erhalten</li>
+      <li>Drei Sterne je Level — mit weniger Zügen gewinnen</li>
+      <li>Eine Galerie jeder gewonnenen Partie</li>
+      <li>In 22 Sprachen</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">de.budbrain.jsChess.desktop</launchable>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <!-- ACHTUNG: <url type="contact"> nimmt KEIN mailto: — appstreamcli verwirft
+       dann die ganze Datei, und die App erscheint in keinem Software-Center.
+       Die Adresse steht deshalb auf der Website. -->
+  <url type="contact">https://www.budbrain.de/kontakt.html</url>
+
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+
+  <categories>
+    <category>Game</category>
+    <category>BoardGame</category>
+    <category>StrategyGame</category>
+  </categories>
+
+  <keywords>
+    <keyword>chess</keyword>
+    <keyword>board</keyword>
+    <keyword>strategy</keyword>
+    <keyword>levels</keyword>
+  </keywords>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <requires>
+    <display_length compare="ge">560</display_length>
+  </requires>
+
+  <content_rating type="oars-1.1"/>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://www.budbrain.de/budbrain-software/images/linux/chess_01-playing.png</image>
+      <caption>A game in progress, the legal moves of the chosen piece lit up</caption>
+      <caption xml:lang="de">Eine Partie im Spiel, die Züge der gewählten Figur leuchten</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/chess_02-menu.png</image>
+      <caption>The main menu</caption>
+      <caption xml:lang="de">Das Hauptmenü</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/chess_03-levels.png</image>
+      <caption>A hundred levels; every tile shows the board it starts from</caption>
+      <caption xml:lang="de">Hundert Level; jede Kachel zeigt ihre Startstellung</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/chess_04-dice.png</image>
+      <caption>Two dice decide who opens the game</caption>
+      <caption xml:lang="de">Zwei Würfel entscheiden, wer anfängt</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/chess_05-gallery.png</image>
+      <caption>The achievements: every game you have won</caption>
+      <caption xml:lang="de">Die Erfolge: jede gewonnene Partie</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.0.1" date="2026-09-04">
+      <description>
+        <p>The window now remembers its size and position reliably.</p>
+        <p xml:lang="de">Das Fenster merkt sich Größe und Lage jetzt zuverlässig.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-09-04">
+      <description>
+        <p>First release for the desktop.</p>
+        <p xml:lang="de">Erste Fassung für den Schreibtisch.</p>
+      </description>
+    </release>
+  </releases>
+</component>

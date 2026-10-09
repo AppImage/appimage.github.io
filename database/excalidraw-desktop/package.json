@@ -1,0 +1,9 @@
+{
+  "name": "excalidraw",
+  "productName": "Excalidraw",
+  "version": "1.0.9",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": "Excalidraw desktop application for Linux, Windows, and Mac."
+}

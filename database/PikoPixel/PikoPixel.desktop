@@ -1,0 +1,21 @@
+[Desktop Entry]
+Type=Application
+Categories=Graphics;2DGraphics;RasterGraphics;X-GNUstep;
+Name=PikoPixel
+StartupWMClass=PikoPixel
+Comment=Pixel-art image editor
+Icon=PikoPixel
+Exec=PikoPixel
+MimeType=image/piko;image/x-piko;image/gif;image/jpeg;image/png;image/x-png;image/tiff;image/bmp;
+Keywords=Graphics;Pixelart;Icon;Bitmap;Raster;Image;Png;Gif;Jpg;Tiff;Bmp;Art;Draw;Paint;Fill;Pencil;Trace;
+X-AppImage-Version=1.0_BETA10c
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=bundled
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=true

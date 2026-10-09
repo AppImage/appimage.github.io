@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.sadabx.tost</id>
+  <name>TOST</name>
+  <summary>Manage TOST Steam integrations on Linux</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <description><p>TOST provides guarded Steam discovery, SLSsteam management, imports, backups, and recovery.</p></description>
+  <launchable type="desktop-id">tost.desktop</launchable>
+  <url type="homepage">https://github.com/sadabx/TOST</url>
+</component>

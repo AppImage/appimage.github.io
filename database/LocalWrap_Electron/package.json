@@ -1,0 +1,19 @@
+{
+  "name": "localwrap",
+  "version": "3.3.0",
+  "description": "Desktop cockpit for localhost apps",
+  "main": "main.js",
+  "author": "Tom Ballard",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcballard/LocalWrap.git"
+  },
+  "homepage": "https://github.com/tcballard/LocalWrap#readme",
+  "bugs": {
+    "url": "https://github.com/tcballard/LocalWrap/issues"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

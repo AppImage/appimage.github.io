@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.n1m21n.Infinite</id>
+  <name>Infinite</name>
+  <summary>Real-time node-based creative coding</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Proprietary</project_license>
+  <description>
+    <p>Infinite is a real-time node-based creative coding application for
+    2D/3D visuals, audio synthesis and processing.</p>
+  </description>
+  <launchable type="desktop-id">infinite.desktop</launchable>
+  <releases>
+    <release version="0.4.5" date="2026-09-26"/>
+  </releases>
+</component>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.Astonischika</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Astonischika</name>
+  <summary>A pixel-art party RPG: three heroes, a branching map, the boss on top</summary>
+  <summary xml:lang="de">Ein Pixel-Rollenspiel: drei Helden, eine verzweigte Karte, oben der Boss</summary>
+
+  <description>
+    <p>Lead three heroes up a map full of monsters and treasure – with the boss waiting at the top.</p>
+    <p xml:lang="de">Führe drei Helden über eine Karte voller Monster und Schätze – ganz oben wartet der Boss.</p>
+    <p>Every run is a new path. Fight, rest at a campfire, open chests or visit a merchant – you choose the way. Fall in battle and your heroes still keep their levels and gear, so the next run starts stronger.</p>
+    <p xml:lang="de">Jeder Lauf ist ein neuer Weg. Kämpfen, am Lagerfeuer rasten, Truhen öffnen oder beim Händler einkaufen – du wählst die Route. Fallen deine Helden im Kampf, behalten sie trotzdem Stufe und Ausrüstung, und der nächste Lauf beginnt stärker.</p>
+    <p>Eight classes, over a thousand monsters and loot that is different every time keep each run fresh. Your progress is saved, and a run continues right where you left off.</p>
+    <p xml:lang="de">Acht Klassen, über tausend Monster und Beute, die jedes Mal anders ausfällt, machen jeden Lauf neu. Dein Fortschritt wird gespeichert, und ein Lauf geht genau dort weiter, wo du aufgehört hast.</p>
+    <ul>
+      <li>Pick three of eight heroes: warrior, mage, cleric, rogue, vampire, thief, druid and archer</li>
+      <li xml:lang="de">Drei von acht Helden wählen: Krieger, Magier, Kleriker, Schurke, Vampir, Dieb, Druide und Bogenschütze</li>
+      <li>Turn-based battles against over a thousand creatures</li>
+      <li xml:lang="de">Rundenkämpfe gegen über tausend Kreaturen</li>
+      <li>Collect weapons, armour, rings and complete item sets</li>
+      <li xml:lang="de">Waffen, Rüstungen und Ringe sammeln und Sets vervollständigen</li>
+      <li>Try your luck in mini games at the treasure chests</li>
+      <li xml:lang="de">Das Glück herausfordern mit Minispielen an den Schatztruhen</li>
+      <li>Shops, trainer, tavern and more in the city between runs</li>
+      <li xml:lang="de">Läden, Ausbilder, Taverne und mehr in der Stadt zwischen den Läufen</li>
+      <li>Heroes grow all the way to level 9999</li>
+      <li xml:lang="de">Helden steigen bis Stufe 9999 auf</li>
+      <li>Pixel art, music and sound</li>
+      <li xml:lang="de">Pixelkunst, Musik und Klang</li>
+    </ul>
+    <p>Available in 44 languages. Plays completely offline.</p>
+    <p xml:lang="de">In 44 Sprachen. Läuft komplett offline.</p>
+  </description>
+
+  <launchable type="desktop-id">de.budbrain.Astonischika.desktop</launchable>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <!-- ACHTUNG: <url type="contact"> nimmt KEIN mailto: — appstreamcli verwirft
+       dann die ganze Datei, und die App erscheint in keinem Software-Center.
+       Die Adresse steht deshalb auf der Website. -->
+  <url type="contact">https://www.budbrain.de/kontakt.html</url>
+
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+
+  <categories>
+    <category>Game</category>
+    <category>RolePlaying</category>
+  </categories>
+
+  <keywords>
+    <keyword>rpg</keyword>
+    <keyword>party</keyword>
+    <keyword>turn based</keyword>
+    <keyword>pixel</keyword>
+    <keyword>loot</keyword>
+  </keywords>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <requires>
+    <display_length compare="ge">560</display_length>
+  </requires>
+
+  <content_rating type="oars-1.1">
+    <!-- Rundenkampf gegen gezeichnete Pixelmonster, kein Blut, keine
+         Menschendarstellung im Kampf. „mild" ist die Stufe, die die
+         Telefonfassung im Play Store traegt. -->
+    <content_attribute id="violence-fantasy">mild</content_attribute>
+  </content_rating>
+
+  <screenshots>
+    <!-- 🚫 DIESE FUENF BILDER MUESSEN VOR DEM APPIMAGE-BAU HOCHGELADEN SEIN.
+         `appstream-util` laedt jede URL; liefert eine davon 404, bricht der
+         AppImage-Bau ab — und der Fehler zeigt auf das AppImage, waehrend die
+         Ursache auf der Website liegt. Erst die Bilder, dann die Pakete.
+         Es sind die Aufnahmen aus dist/store/screenshots/ (1920x1080, englisch);
+         website-software/generate-site.sh legt sie unter genau diesen Namen ab. -->
+    <screenshot type="default">
+      <image>https://www.budbrain.de/budbrain-software/images/linux/astonischika_01-menu.png</image>
+      <caption>The main menu</caption>
+      <caption xml:lang="de">Das Hauptmenü</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/astonischika_02-map.png</image>
+      <caption>The map - every run takes a different path</caption>
+      <caption xml:lang="de">Die Karte – jeder Lauf nimmt einen anderen Weg</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/astonischika_03-city.png</image>
+      <caption>The city between runs: shops, guild, barracks and more</caption>
+      <caption xml:lang="de">Die Stadt zwischen den Läufen: Läden, Gilde, Kaserne und mehr</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/astonischika_04-party.png</image>
+      <caption>Your heroes: levels, attributes and gear</caption>
+      <caption xml:lang="de">Deine Helden: Stufe, Attribute und Ausrüstung</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/astonischika_05-barracks.png</image>
+      <caption>The barracks: choose who goes on the next run</caption>
+      <caption xml:lang="de">Die Kaserne: wer beim nächsten Lauf dabei ist</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.0.0" date="2026-09-05">
+      <description>
+        <p>First release for the desktop.</p>
+        <p xml:lang="de">Erste Fassung für den Schreibtisch.</p>
+      </description>
+    </release>
+  </releases>
+</component>

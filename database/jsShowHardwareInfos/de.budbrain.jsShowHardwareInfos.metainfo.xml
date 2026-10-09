@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 Josef Sejrek / Budbrain Software
+
+     AppStream-Daten. Ohne sie erscheint die Anwendung in GNOME Software und
+     KDE Discover gar nicht — auch dann nicht, wenn das Paket sauber
+     installiert. Die Datei liegt bewusst unter packaging/ und wird von CMake
+     in JEDES Paket installiert, nicht nur ins Flatpak (im Schwesterprojekt
+     jsCPUMonitor lag sie unter flatpak/ und fehlte deshalb überall sonst).
+
+     <launchable> nennt den Kurznamen der .desktop-Datei, so wie CMake sie
+     installiert. Zeigt er ins Leere, bricht ein Flatpak-Build mit
+     "gui-app-without-icon" ab.
+
+     Der Text beschreibt, WAS die Anwendung kann — nicht, wie sie es macht.
+     Keine sysfs-Pfade, keine SMBIOS-Interna, keine Algorithmen.
+-->
+<component type="desktop-application">
+  <id>de.budbrain.jsShowHardwareInfos</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsShowHardwareInfos</name>
+  <summary>See every hardware detail your computer reports</summary>
+  <summary xml:lang="de">Jedes Hardware-Detail sehen, das der Rechner meldet</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <description>
+    <p>
+      Everything the computer knows about itself, in one window: processor,
+      memory, graphics, drives, network, sensors and the devices attached to
+      it. Pick a branch on the left, read the details on the right.
+    </p>
+    <p xml:lang="de">
+      Alles, was der Rechner über sich selbst weiß, in einem Fenster:
+      Prozessor, Arbeitsspeicher, Grafik, Datenträger, Netzwerk, Sensoren und
+      was angeschlossen ist. Links einen Zweig wählen, rechts die Einzelheiten
+      lesen.
+    </p>
+    <ul>
+      <li>A live bar on top: load per processor core, temperature and memory</li>
+      <li>Drives and USB devices drawn to scale instead of listed as numbers</li>
+      <li>Network throughput and sensor readings update while you watch them</li>
+      <li>A process list you can sort, search and act on</li>
+      <li>Saves the whole report as a text file — useful for a support request</li>
+      <li>Searches every value in the tree at once</li>
+      <li>44 languages, light and dark theme, all colours adjustable</li>
+    </ul>
+    <ul xml:lang="de">
+      <li>Eine Leiste oben zeigt laufend Auslastung je Kern, Temperatur und Speicher</li>
+      <li>Datenträger und USB-Geräte werden maßstäblich gezeichnet statt als Zahlen aufgezählt</li>
+      <li>Netzwerkdurchsatz und Sensorwerte laufen mit, während man hinsieht</li>
+      <li>Eine Prozessliste zum Sortieren, Suchen und Eingreifen</li>
+      <li>Speichert den ganzen Bericht als Textdatei — praktisch für eine Supportanfrage</li>
+      <li>Durchsucht alle Werte des Baums auf einmal</li>
+      <li>44 Sprachen, helles und dunkles Erscheinungsbild, alle Farben einstellbar</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">jsshowhardwareinfos.desktop</launchable>
+
+  <categories>
+    <category>System</category>
+    <category>Monitor</category>
+    <category>HardwareSettings</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <!-- Kein <url type="contact"> mit mailto:: AppStream verlangt dort eine
+       Web-Adresse und lehnt die Datei sonst KOMPLETT ab ("web-url-expected") —
+       und eine abgelehnte metainfo heißt: die App taucht in GNOME Software gar
+       nicht erst auf. Die Kontaktadresse steht im Über-Fenster. -->
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The hardware tree with the live bar on top</caption>
+      <caption xml:lang="de">Der Hardware-Baum mit der Live-Leiste darüber</caption>
+      <image>https://www.budbrain.de/jsshowhardwareinfos/screenshot-1.png</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>jsShowHardwareInfos</binary>
+  </provides>
+
+  <releases>
+    <release version="1.0" date="2026-08-01">
+      <description>
+        <p>First release.</p>
+        <p xml:lang="de">Erste Fassung.</p>
+      </description>
+    </release>
+  </releases>
+</component>

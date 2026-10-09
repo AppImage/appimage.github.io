@@ -1,0 +1,15 @@
+{
+  "name": "elysian-code",
+  "version": "1.0.3",
+  "description": "Elysian Code - A cross-platform desktop IDE",
+  "main": "src/main/main.js",
+  "author": {
+    "name": "ElysianNodes",
+    "email": "support@elysiannodes.uk"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@ryuziii/discord-rpc": "^1.0.1-rc.1",
+    "node-pty": "^1.1.0"
+  }
+}

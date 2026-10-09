@@ -1,0 +1,15 @@
+{
+  "name": "obscreen-player",
+  "version": "2026.7.1",
+  "author": {
+    "name": "Obscreen",
+    "email": "hello@obscreen.com"
+  },
+  "homepage": "https://obscreen.com",
+  "license": "https://docs.obscreen.com/legal/license",
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+    "electron-updater": "^6.8.3"
+  }
+}

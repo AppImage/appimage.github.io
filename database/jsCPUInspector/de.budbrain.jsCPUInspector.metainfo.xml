@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 Josef Sejrek / Budbrain Software
+
+     AppStream-Daten. Ohne sie erscheint die Anwendung in GNOME Software und
+     KDE Discover gar nicht — auch dann nicht, wenn das Paket sauber
+     installiert. Die Datei liegt bewusst unter packaging/ und wird von CMake
+     in JEDES Paket installiert, nicht nur ins Flatpak.
+
+     <launchable> nennt den Kurznamen der .desktop-Datei, so wie CMake sie
+     installiert. Zeigt er ins Leere, bricht ein Flatpak-Build mit
+     "gui-app-without-icon" ab.
+
+     Der Text beschreibt, WAS die Anwendung kann — nicht, wie sie es macht.
+     Keine sysfs-Pfade, keine CPUID-Blattnummern, keine DRM-Aufrufe.
+-->
+<component type="desktop-application">
+  <id>de.budbrain.jsCPUInspector</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsCPUInspector</name>
+  <summary>Every detail of your processor, mainboard and memory</summary>
+  <summary xml:lang="de">Alle Details zu Prozessor, Hauptplatine und Arbeitsspeicher</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <description>
+    <p>
+      Nine tabs, one window: what processor is in this computer, how it is laid
+      out, which graphics unit it has, what mainboard it sits on, what memory is
+      installed, which drives are built in, and what is attached over PCI, USB
+      and the network. Sockets, cores and threads, cache sizes, code name and
+      manufacturing process, BIOS and chipset, and every memory module with its
+      own speed and part number.
+    </p>
+    <p xml:lang="de">
+      Neun Registerkarten, ein Fenster: welcher Prozessor in diesem Rechner
+      steckt, wie er aufgebaut ist, welche Grafikeinheit er hat, auf welcher
+      Hauptplatine er sitzt, welcher Arbeitsspeicher eingebaut ist, welche
+      Datenträger darin stecken und was über PCI, USB und Netzwerk angeschlossen
+      ist. Sockel, Kerne und Threads, Cache-Größen, Codename und Fertigung, BIOS
+      und Chipsatz, und jedes Speichermodul mit eigenem Takt und eigener
+      Teilenummer.
+    </p>
+    <!-- Die Uebersetzungen stehen je EINTRAG, nicht als zweite komplette
+         Liste: appstreamcli 1.1 lehnt eine uebersetzte <ul>-Gruppe ab
+         ("description-enum-group-translated"), und eine abgelehnte metainfo
+         heisst, dass die Anwendung in GNOME Software gar nicht erscheint. -->
+    <ul>
+      <li>A grid of every core with its own clock speed and load, updating live</li>
+      <li xml:lang="de">Ein Raster aller Kerne mit eigenem Takt und eigener Auslastung, das mitläuft</li>
+      <li>Cache levels drawn to scale, with what shares them</li>
+      <li xml:lang="de">Die Cache-Stufen maßstäblich gezeichnet, samt dem, was sie sich teilt</li>
+      <li>Code name, microarchitecture and manufacturing process</li>
+      <li xml:lang="de">Codename, Mikroarchitektur und Fertigungsverfahren</li>
+      <li>The graphics unit in the processor with its compute units and clocks</li>
+      <li xml:lang="de">Die Grafikeinheit im Prozessor mit ihren Recheneinheiten und Takten</li>
+      <li>Every memory slot: size, type, speed, part number — and which ones are free</li>
+      <li xml:lang="de">Jeder Speichersteckplatz: Größe, Typ, Takt, Teilenummer — und welche frei sind</li>
+      <li>Drives, PCI devices, USB devices and network interfaces, each on its own tab</li>
+      <li xml:lang="de">Datenträger, PCI-Geräte, USB-Geräte und Netzwerkschnittstellen, jeweils auf einer eigenen Seite</li>
+      <li>Saves everything as a text file, useful for a support request</li>
+      <li xml:lang="de">Speichert alles als Textdatei, praktisch für eine Supportanfrage</li>
+      <li>44 languages, light and dark theme, all colours adjustable</li>
+      <li xml:lang="de">44 Sprachen, helles und dunkles Erscheinungsbild, alle Farben einstellbar</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">jscpuinspector.desktop</launchable>
+
+  <categories>
+    <category>System</category>
+    <category>Monitor</category>
+    <category>HardwareSettings</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <!-- Kein <url type="contact"> mit mailto:: AppStream verlangt dort eine
+       Web-Adresse und lehnt die Datei sonst KOMPLETT ab ("web-url-expected") —
+       und eine abgelehnte metainfo heisst: die App taucht in GNOME Software
+       gar nicht erst auf. Die Kontaktadresse steht im Ueber-Fenster. -->
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The processor tab with the core grid</caption>
+      <caption xml:lang="de">Die Prozessor-Ansicht mit dem Kernraster</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jscpuinspector_01-processor.png</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>jsCPUInspector</binary>
+  </provides>
+
+  <releases>
+    <release version="1.0" date="2026-08-16">
+      <description>
+        <p>First release.</p>
+        <p xml:lang="de">Erste Fassung.</p>
+      </description>
+    </release>
+  </releases>
+</component>

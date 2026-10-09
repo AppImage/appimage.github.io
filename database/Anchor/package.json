@@ -1,0 +1,21 @@
+{
+  "name": "anchor-wallet",
+  "productName": "Anchor Wallet",
+  "version": "1.4.0",
+  "description": "Anchor Wallet",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "Greymass",
+    "email": "hello@greymass.com",
+    "url": "https://github.com/greymass"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.14.8",
+    "@ledgerhq/hw-transport-node-hid": "6.33.5"
+  },
+  "resolutions": {
+    "node-hid": "3.3.0",
+    "usb": "2.9.0"
+  }
+}

@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Thunderbird/
 description: Send and receive mail with Thunderbird
+license: MIT
 
 icons:
   - Thunderbird/icons/128x128/thunderbird.png
@@ -193,10 +194,15 @@ desktop:
     Name[zh_TW]: 開啟通訊錄
     Exec: thunderbird -addressbook
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|srevinsaju|thunderbird-appimage|latest|Thunderbird*.AppImage.zsync
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-UpdateInformation: gh-releases-zsync|srevinsaju|thunderbird-appimage|stable|Thunderbird*.AppImage.zsync
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: MIT
 ---

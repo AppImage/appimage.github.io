@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108" role="img" aria-labelledby="tmplayer-logo-title">
+  <title id="tmplayer-logo-title">TMPlayer</title>
+  <!--
+    Same geometry as the Android adaptive icon: the tile is the full bleed backdrop and the mark
+    sits inside the circle the launcher masks to, so the site and the home screen show one shape.
+  -->
+  <rect x="0" y="0" width="108" height="108" rx="24" ry="24" fill="#1E1E28"/>
+  <path fill="#3A3A46" d="M36,33 H72 A5,5 0 0 1 77,38 V60 A5,5 0 0 1 72,65 H36 A5,5 0 0 1 31,60 V38 A5,5 0 0 1 36,33 Z"/>
+  <path fill="#0E0E12" d="M36,34.5 H72 A3.5,3.5 0 0 1 75.5,38 V60 A3.5,3.5 0 0 1 72,63.5 H36 A3.5,3.5 0 0 1 32.5,60 V38 A3.5,3.5 0 0 1 36,34.5 Z"/>
+  <path fill="#EDEDF2" d="M48,40.5 L65,49 L48,57.5 Z"/>
+  <path fill="#2AABEE" d="M36.5,70 H55.5 A2.5,2.5 0 0 1 55.5,75 H36.5 A2.5,2.5 0 0 1 36.5,70 Z"/>
+  <path fill="#3A3A46" d="M66.5,70 H71.5 A2.5,2.5 0 0 1 71.5,75 H66.5 A2.5,2.5 0 0 1 66.5,70 Z"/>
+  <circle cx="62" cy="72.5" r="5.5" fill="#EDEDF2"/>
+</svg>

@@ -1,0 +1,29 @@
+{
+  "name": "denokv-gui-client",
+  "description": "An open source GUI client to browse the data inside a Deno KV database and perform CRUD operations",
+  "version": "1.32.0",
+  "private": true,
+  "type": "module",
+  "homepage": "https://abdulrhmangoni.github.io/denokv-gui-client/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbdulrhmanGoni/denokv-gui-client"
+  },
+  "license": "MIT",
+  "author": {
+    "email": "abdulrhmangoni@gmail.com",
+    "name": "Abdulrhman Goni",
+    "url": "https://github.com/AbdulrhmanGoni"
+  },
+  "main": "packages/entry-point.mjs",
+  "engines": {
+    "node": ">=24.15.0",
+    "pnpm": ">=11.1.0"
+  },
+  "dependencies": {
+    "@app/dev": "workspace:*",
+    "@app/db-migration": "workspace:*",
+    "@app/main": "workspace:*",
+    "@app/preload": "workspace:*"
+  }
+}

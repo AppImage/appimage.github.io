@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Loginized/
 description: Loginized Gnome GDM Login Theme Manager
+license: GPL-3.0
 
 icons:
   - Loginized/icons/256x256/loginized.png
@@ -22,38 +23,37 @@ links:
 
 desktop:
   Desktop Entry:
-    Name: loginized
-    Comment: Loginized Gnome GDM Login Theme Manager
+    Name: Loginized
     Exec: AppRun
     Terminal: false
     Type: Application
     Icon: loginized
-    StartupWMClass: loginized
-    X-AppImage-Version: 1.0.0
+    StartupWMClass: Loginized
+    X-AppImage-Version: 1.4.0
+    Comment: Loginized Gnome GDM Login Theme Manager
     Categories: GTK
-    X-AppImage-BuildId: 1FIkxbTMUtZfTgxpgywEoD4TEu2
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: GPL-3.0
 
 electron:
-  version: 1.0.0
+  version: 1.4.0
   private: true
   license: GPL-3.0
   author:
     name: Juha Kukkonen
     email: juha7kukkonen@gmail.com
     url: https://github.com/juhaku/loginized
-  dependencies:
-    luxon: "^1.9.0"
-    vue: "^2.5.17"
-    vue-class-component: "^6.0.0"
-    vue-property-decorator: "^7.0.0"
-    vue-router: "^3.0.2"
-    vuex: "^3.0.1"
+  dependencies: {}
   postcss:
     plugins:
       autoprefixer: {}

@@ -1,0 +1,26 @@
+[Desktop Entry]
+Type=Application
+Name=Better IPTV
+Comment=Cross-platform IPTV player with MPV backend
+# Workaround for WebKitGTK 2.50+ EGL display bug on Wayland
+# See: https://github.com/tauri-apps/tauri/issues/11988
+# See: https://bugs.webkit.org/show_bug.cgi?id=280239
+Exec=env WEBKIT_DISABLE_DMABUF_RENDERER=1 better-ip-tv
+Icon=better-ip-tv
+Terminal=false
+Categories=
+# Matched against the Wayland app_id / X11 class, which Tauri sets from the
+# binary name: keep the exec variable here, the name variable does not match.
+StartupWMClass=better-ip-tv
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=GPL-2.0

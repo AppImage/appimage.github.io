@@ -1,0 +1,8 @@
+{
+  "name": "crossdeck",
+  "version": "0.3.4",
+  "description": "Dedicated X (Twitter) browser with vertical split tabs and multi-profile support",
+  "main": "dist/main.js",
+  "author": "",
+  "license": "MIT"
+}

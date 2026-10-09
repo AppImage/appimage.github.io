@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.noderelay.UplinkIRC</id>
+  <name>Uplink</name>
+  <summary>Fast, secure IRC client</summary>
+  <description>
+    <p>Uplink is a fast, secure IRC client with full IRCv3 support, built with Qt6.</p>
+  </description>
+  <url type="homepage">https://uplinkirc.chat</url>
+  <url type="bugtracker">https://github.com/noderelay/UplinkIRC/issues</url>
+  <launchable type="desktop-id">Uplink.desktop</launchable>
+  <categories>
+    <category>Network</category>
+    <category>IRCClient</category>
+  </categories>
+  <provides>
+    <binary>Uplink</binary>
+  </provides>
+  <releases>
+    <release version="0.25.54" date="2026-06-26"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

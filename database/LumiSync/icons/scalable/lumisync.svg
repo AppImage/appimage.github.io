@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14E8E8"/>
+      <stop offset="42%" stop-color="#2688FF"/>
+      <stop offset="72%" stop-color="#7D45F6"/>
+      <stop offset="100%" stop-color="#ED2ACD"/>
+    </linearGradient>
+
+    <radialGradient id="tile" cx="38%" cy="28%" r="90%">
+      <stop offset="0%" stop-color="#202632"/>
+      <stop offset="58%" stop-color="#141821"/>
+      <stop offset="100%" stop-color="#0C0F15"/>
+    </radialGradient>
+  </defs>
+  <rect x="32" y="32" width="960" height="960" rx="220" fill="url(#tile)"
+        stroke="#343B4A" stroke-width="4"/>
+  <path d="M 230 190 V 650 Q 230 805 385 805 H 650 Q 805 805 805 650 Q 805 545 700 545 H 600 Q 505 545 505 450 Q 505 355 600 355 H 710" fill="none" stroke="url(#brand)" stroke-width="118" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

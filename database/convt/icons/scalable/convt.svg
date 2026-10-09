@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- App icon for Linux and macOS (bundle.sh renders the .icns from this file). The tile sits
+       on Apple's 824/1024 icon grid and is flat because a subtle gradient bands at 8 bits;
+       the mark matches apps/web/src/components/logo.tsx. -->
+  <defs>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".04"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#46d08b"/>
+      <stop offset="1" stop-color="#1fa463"/>
+    </linearGradient>
+    <clipPath id="source"><rect x="2" y="2" width="19" height="19" rx="5"/></clipPath>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#000000" flood-opacity=".3"/>
+    </filter>
+  </defs>
+  <rect x="12.5" y="12.5" width="103" height="103" rx="23" fill="#131615" filter="url(#shadow)"/>
+  <rect x="13" y="13" width="102" height="102" rx="22.5" fill="none" stroke="url(#edge)"/>
+  <g transform="translate(26.3 26.3) scale(2.357)">
+    <rect x="2" y="2" width="19" height="19" rx="5" fill="#edefee"/>
+    <rect x="11" y="11" width="19" height="19" rx="5" fill="url(#green)"/>
+    <rect x="11" y="11" width="19" height="19" rx="5" fill="#a6f0c8" clip-path="url(#source)"/>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>io.github.wojciech_graj.doom_ascii</id>
+
+  <name>doom-ascii</name>
+  <summary> DOOM in the terminal</summary>
+
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+
+  <description>
+    <p>
+      Text-based DOOM in your terminal! A Source-port of doomgeneric. Does not have sound.
+
+      You will need a WAD file (game data). If you don't own the game, the shareware version is freely available.
+    </p>
+  </description>
+
+  <url type="homepage">https://github.com/wojciech-graj/doom-ascii</url>
+  <url type="contact">https://w-graj.net</url>
+
+  <developer id="net.w-graj">
+    <name>Wojciech Graj</name>
+  </developer>
+
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-fantasy">intense</content_attribute>
+    <content_attribute id="violence-bloodshed">moderate</content_attribute>
+  </content_rating>
+
+  <icon type="stock">io.github.wojciech_graj.doom_ascii</icon>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://w-graj.net/images/doom-ascii/logo.png</image>
+      <caption>The DOOM title screen</caption>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Game</category>
+    <category>Shooter</category>
+  </categories>
+
+  <provides>
+    <binary>doom-ascii</binary>
+  </provides>
+
+  <releases>
+    <release version="0.3.2" date="2026-09-11"/>
+  </releases>
+</component>

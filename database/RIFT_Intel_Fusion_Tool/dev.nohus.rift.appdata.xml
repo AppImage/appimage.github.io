@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>dev.nohus.rift</id>
+    <metadata_license>FSFAP</metadata_license>
+    <project_license>LicenseRef-proprietary=https://riftforeve.online/eula.txt</project_license>
+    <name>RIFT Intel Fusion Tool</name>
+    <summary>Intel tool for EVE Online</summary>
+    <icon type="stock">rift</icon>
+    <description>
+        <ul>
+            <li>Intel channels monitoring</li>
+            <li>Real-time intel feed</li>
+            <li>Powerful and flexible alerts</li>
+            <li>View intel on the map</li>
+            <li>Plan your route</li>
+            <li>Dive into system details</li>
+            <li>Manage your assets</li>
+            <li>Check your Planetary Industry</li>
+            <li>Works with all your alts</li>
+            <li>Easily configurable</li>
+            <li>And more...</li>
+        </ul>
+    </description>
+    <categories>
+        <category>Game</category>
+    </categories>
+    <keywords>
+        <keyword>intel</keyword>
+        <keyword>map</keyword>
+        <keyword>eve online</keyword>
+        <keyword>esi</keyword>
+    </keywords>
+    <url type="homepage">https://riftforeve.online</url>
+    <launchable type="desktop-id">dev.nohus.rift.desktop</launchable>
+    <provides>
+        <id>dev.nohus.rift.desktop</id>
+    </provides>
+    <developer id="dev.nohus">
+        <name>Nohus</name>
+    </developer>
+    <screenshots>
+        <screenshot type="default">
+            <caption>Intel Reports</caption>
+            <image>https://riftforeve.online/images/intel.png</image>
+        </screenshot>
+        <screenshot>
+            <caption>Intel Feed</caption>
+            <video codec="vp9">https://riftforeve.online/images/intel_feed.webm</video>
+        </screenshot>
+        <screenshot>
+            <caption>Alerts</caption>
+            <image>https://riftforeve.online/images/alerts.png</image>
+        </screenshot>
+        <screenshot>
+            <caption>Intel Map</caption>
+            <video codec="vp9">https://riftforeve.online/images/intel_map.webm</video>
+        </screenshot>
+        <screenshot>
+            <caption>Autopilot Route</caption>
+            <video codec="vp9">https://riftforeve.online/images/autopilot-route.webm</video>
+        </screenshot>
+        <screenshot>
+            <caption>Map Details</caption>
+            <video codec="vp9">https://riftforeve.online/images/map_data.webm</video>
+        </screenshot>
+        <screenshot>
+            <caption>Assets</caption>
+            <video codec="vp9">https://riftforeve.online/images/rift-assets.webm</video>
+        </screenshot>
+        <screenshot>
+            <caption>Planetary Industry</caption>
+            <video codec="vp9">https://riftforeve.online/images/pi.webm</video>
+        </screenshot>
+        <screenshot>
+            <caption>Characters</caption>
+            <image>https://riftforeve.online/images/characters.png</image>
+        </screenshot>
+    </screenshots>
+    <content_rating type="oars-1.0" />
+</component>

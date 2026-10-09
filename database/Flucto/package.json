@@ -1,0 +1,38 @@
+{
+  "name": "flucto",
+  "productName": "Flucto",
+  "version": "1.16.4",
+  "description": "Flucto - Creator-first media downloader for YouTube, Instagram, X, Reddit, and Bilibili.",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeclanJeon/flucto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DeclanJeon/flucto/issues"
+  },
+  "homepage": "https://flucto.ponslink.com",
+  "main": "./dist-electron/main/index.js",
+  "files": [
+    "dist-electron/",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "bin": {
+    "flucto": "./dist-electron/cli/index.js",
+    "fl": "./dist-electron/cli/index.js"
+  },
+  "author": "Flucto Team",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "dotenv": "^17.2.3",
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.8.3"
+  },
+  "overrides": {
+    "vite": "npm:rolldown-vite@7.2.5"
+  }
+}

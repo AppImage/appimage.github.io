@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.github.abakum.crocson</id>
+  <name>crocson</name>
+  <summary>Easily and securely send things from one computer to another</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>ISC</project_license>
+  <developer id="com.github.abakum">
+    <name>Konstantin Abakumov</name>
+  </developer>
+  <description>
+    <p>
+      crocson is a cross-platform GUI and CLI for croc, allowing secure file
+      transfer, WebDAV sharing, encrypted chat with video calls, and more on
+      Android, Windows, Linux, and macOS.
+    </p>
+    <p>File transfer from sender to receiver</p>
+    <ul>
+      <li>Via relay without port forwarding</li>
+      <li>Desktop: drag-and-drop, command line, stdin pipe</li>
+      <li>Android: "Share" and "Open with" from file managers</li>
+    </ul>
+    <p>WebDAV — two-way file transfer</p>
+    <ul>
+      <li>Built-in HTTP/HTTPS server</li>
+      <li>File browsing via browser, streaming audio/video</li>
+      <li>Tunneling through encrypted tunnel</li>
+    </ul>
+    <p>Chat</p>
+    <ul>
+      <li>Web chat with session history</li>
+      <li>Video calls, video messages, desktop screen sharing</li>
+      <li>Server-side recording of webcam/microphone/screenshots</li>
+    </ul>
+    <p>Security</p>
+    <ul>
+      <li>End-to-end encryption (PAKE), one-time passwords (TOTP)</li>
+      <li>QR code generation/scanning, Deep Links</li>
+    </ul>
+    <p>CLI mode: pipes, text sending, transfer resuming, quiet mode</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/abakum/crocson/master/metadata/en-US/images/phoneScreenshots/1.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://raw.githubusercontent.com/abakum/crocson/master/metadata/en-US/images/phoneScreenshots/2.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://raw.githubusercontent.com/abakum/crocson/master/metadata/en-US/images/phoneScreenshots/4.png</image>
+    </screenshot>
+  </screenshots>
+  <launchable type="desktop-id">com.github.abakum.crocson.desktop</launchable>
+  <url type="homepage">https://github.com/abakum/crocson</url>
+  <url type="bugtracker">https://github.com/abakum/crocson/issues</url>
+  <url type="help">https://github.com/abakum/crocson/blob/master/README.md</url>
+  <provides>
+    <binary>crocson</binary>
+  </provides>
+  <categories>
+    <category>Network</category>
+    <category>FileTransfer</category>
+  </categories>
+  <releases>
+    <release version="1.11.77" date="2026-07-23"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

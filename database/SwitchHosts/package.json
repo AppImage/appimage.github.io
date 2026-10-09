@@ -1,0 +1,18 @@
+{
+  "name": "switchhosts",
+  "version": "3.4.0",
+  "description": "Switch hosts quickly!",
+  "main": "main.js",
+  "author": "oldj",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "chrome-remote-interface": "^0.27.2",
+    "electron-window-state": "^5.0.3",
+    "express": "^4.17.1",
+    "js-beautify": "^1.10.1",
+    "md5-file": "^4.0.0",
+    "node-notifier": "^5.4.0",
+    "request": "^2.88.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "gazboard",
+  "productName": "GazBoard",
+  "version": "3.0.0",
+  "description": "A free-form digital whiteboard - offline replica of the classic Microsoft Whiteboard 21.x experience, with Word / PowerPoint / PDF import.",
+  "main": "main.js",
+  "author": {
+    "name": "theBoringCodes",
+    "email": "fahim9778@gmail.com"
+  },
+  "homepage": "https://github.com/fahim9778/GazBoard",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fahim9778/GazBoard"
+  },
+  "license": "MIT",
+  "desktopName": "gazboard.desktop"
+}

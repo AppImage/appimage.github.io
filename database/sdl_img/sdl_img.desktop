@@ -1,0 +1,36 @@
+[Desktop Entry]
+Name=sdl_img
+Comment=SDL2 and stb_image based image viewer with unique features
+TryExec=sdl_img
+Exec=sdl_img %U
+# TRANSLATORS: Do NOT translate or transliterate this text!
+# This is an icon file name
+# put in /usr/share/icons/hicolor/scalable/apps
+# Icon=sdl_img.svg
+# put in /usr/share/icons/hicolor/48x48/apps
+Icon=sdl_img
+# StartupNotify=true
+# Terminal=false
+Type=Application
+Categories=Graphics;2DGraphics;RasterGraphics;Viewer;
+MimeType=image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/x-bmp;image/x-png;image/x-portable-graymap;image/x-portable-pixmap;image/vnd.radiance;
+# Extra keywords that can be used to search for eog in GNOME Shell and Unity
+# TRANSLATORS: Search terms to find this application.
+#              Do NOT translate or localize the semicolons!
+#              The list MUST also end with a semicolon!
+Keywords=Picture;Slideshow;Graphics;
+X-AppImage-Version=0.101.0
+# X-Ubuntu-Gettext-Domain=sdl_img
+
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34
+X-AppImage-Payload-License=MIT

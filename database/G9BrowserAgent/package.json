@@ -1,0 +1,26 @@
+{
+  "name": "g9-desktop",
+  "productName": "G9BrowserAgent",
+  "desktopName": "g9browseragent.desktop",
+  "version": "3.4.0",
+  "description": "G9BrowserAgent desktop shell: tray, watch window, runs, approvals, engines, installer and updater. Never an engine.",
+  "private": true,
+  "type": "module",
+  "main": "main.mjs",
+  "author": {
+    "name": "Iman Kari",
+    "email": "iman.kari@live.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/ImanKari/G9BrowserAgent",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ImanKari/G9BrowserAgent.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "daggerfall-js-app",
+  "productName": "Daggerfall Online",
+  "private": true,
+  "version": "0.1.4615",
+  "description": "Daggerfall Online - the downloadable desktop shell. Loads the same dist/ the website deploys; adds ARENA2-from-disk and file-backed saves.",
+  "author": "Lattymoy",
+  "homepage": "https://daggerfalljs.dev/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lattymoy/daggerfall-js-source.git"
+  },
+  "main": "main.cjs",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}
