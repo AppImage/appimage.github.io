@@ -1,0 +1,23 @@
+{
+  "name": "keyboard-lock",
+  "productName": "Keyboard Lock",
+  "version": "1.0.1",
+  "description": "Lock your keyboard for a set time so you can wipe it clean. Dark, slim, cross-platform.",
+  "license": "MIT",
+  "author": {
+    "name": "sayedmahmod",
+    "email": "sayedmahmod@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/sayedmahmod/keyboard-lock",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sayedmahmod/keyboard-lock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sayedmahmod/keyboard-lock/issues"
+  },
+  "main": "out/main/index.js",
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}
