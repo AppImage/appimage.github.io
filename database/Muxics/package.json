@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "muxics",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "Rajofearth <rajofearth@proton.me>",
   "description": "A modern music player built with Electron",
   "packageManager": "pnpm@11.13.0",
