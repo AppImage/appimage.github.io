@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.aaronmurniadi.ofxrawhost</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>OFX Raw Host</name>
+  <summary>Still-image OpenFX plugin host</summary>
+  <description>
+    <p>
+      A minimal still-image OpenFX host. Open a RAW or PNG, JPEG, TIFF, or EXR
+      photo, run it through one or more OFX filter plugins, preview the result,
+      and export to PNG, JPEG, WebP, JPEG XL, or 16-bit TIFF.
+    </p>
+  </description>
+  <launchable type="desktop-id">ofxrawhost.desktop</launchable>
+  <url type="homepage">https://github.com/aaronmurniadi/ofxrawhost</url>
+  <provides>
+    <binary>OfxRawHost</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+</component>
