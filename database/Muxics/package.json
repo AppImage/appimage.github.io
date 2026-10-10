@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "name": "muxics",
+  "version": "1.0.6",
+  "author": "Rajofearth <rajofearth@proton.me>",
+  "description": "A modern music player built with Electron",
+  "packageManager": "pnpm@11.13.0",
+  "main": "dist-electron/main.cjs",
+  "dependencies": {
+    "@tanstack/react-virtual": "^3.14.9",
+    "colorthief": "^3.4.0",
+    "electron-updater": "^6.8.9",
+    "lucide-react": "latest",
+    "music-metadata": "^11.14.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "youtubei.js": "^17.2.0",
+    "zustand": "^5.0.14"
+  }
+}
