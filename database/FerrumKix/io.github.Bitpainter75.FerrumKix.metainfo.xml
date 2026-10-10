@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream-Metadaten fuer die Veroeffentlichung.
+  Die <releases> spiegeln CHANGELOG.md; neue Version dort zuerst eintragen.
+  TODO, sobald das GitHub-Repo oeffentlich ist:
+    - Mindestens 1 Screenshot mit oeffentlich erreichbarer URL ergaenzen.
+    - Mit `appstreamcli validate` gegenpruefen.
+-->
+<component type="desktop-application">
+  <id>io.github.Bitpainter75.FerrumKix</id>
+  <name>FerrumKix</name>
+  <summary>Desktop music player with album-grouped playlists and Audio CD support</summary>
+  <summary xml:lang="de">Musikspieler mit nach Alben geordneten Wiedergabelisten und Audio-CD-Unterstuetzung</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+
+  <developer id="io.github.bitpainter75">
+    <name>Bitpainter75</name>
+  </developer>
+
+  <description>
+    <p>
+      FerrumKix is a dark, tidy music player for the desktop. The cover art and details of the
+      current track sit on the left, the playlist grouped by album on the right, the transport
+      controls at the bottom.
+    </p>
+    <ul>
+      <li>Plays MP3, FLAC, OGG, Opus, M4A, AAC, WAV, WavPack, APE, WMA and more</li>
+      <li>Reads artist, album, year, duration, sample rate, bitrate and embedded cover art</li>
+      <li>Groups the playlist by folder, with collapsible album headers</li>
+      <li>Quick search across title, artist, album and file name</li>
+      <li>Drag and drop of files and whole folders</li>
+      <li>Shuffle, repeat and gapless playback</li>
+      <li>Integrated conversion to MP3, FLAC and Ogg Vorbis, including ordered album output</li>
+      <li>Automatically detects inserted Audio CDs on Linux and shows them as a separate playlist</li>
+      <li>Browses and plays albums from a configured Lyrion Media Server</li>
+      <li>Edits common MP3 album metadata and embedded cover art</li>
+      <li>MPRIS integration for media keys, desktop controls and notifications</li>
+      <li>Accent colour, font size and per-screen scaling on Linux</li>
+    </ul>
+    <p xml:lang="de">
+      FerrumKix ist ein dunkler, aufgeraeumter Musikspieler fuer den Schreibtisch: links das
+      Titelbild und die Angaben zum laufenden Stueck, rechts die Wiedergabeliste nach Alben
+      geordnet, unten der Transport.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.Bitpainter75.FerrumKix.desktop</launchable>
+
+  <url type="homepage">https://github.com/Bitpainter75/FerrumKix</url>
+  <url type="bugtracker">https://github.com/Bitpainter75/FerrumKix/issues</url>
+
+  <content_rating type="oars-1.1" />
+
+  <provides>
+    <binary>ferrumkix</binary>
+    <!-- Bis 0.9.5 hiess die Anwendung FerrumPlay. Beide Eintraege sorgen dafuer, dass
+         Software-Zentren die installierte App wiedererkennen statt sie als neue zu fuehren. -->
+    <id>io.github.Bitpainter75.FerrumPlay</id>
+  </provides>
+
+  <replaces>
+    <id>io.github.Bitpainter75.FerrumPlay</id>
+  </replaces>
+
+  <releases>
+    <release version="0.9.6" date="2026-09-20">
+      <description>
+        <ul>
+          <li>The application was renamed from FerrumPlay to FerrumKix; other products already carried the old name.</li>
+          <li>The application id, the binary, the D-Bus name and the AUR package moved with it, and the old id is declared as replaced.</li>
+          <li>Settings, playlist and the cover art cache are carried over on the first start.</li>
+          <li>New application icon.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.5" date="2026-09-20">
+      <description>
+        <ul>
+          <li>Converted files are named from a pattern of their own, set in the settings with the placeholders known from tagging.</li>
+          <li>The pattern holds for files, for a CD rip and for the tracks cut out of a CUE; the extension comes from the chosen format.</li>
+          <li>Zero padding of the track number is a switch of its own, and a missing number stays empty instead of becoming a zero.</li>
+          <li>The conversion queue reads like the playlist, with check boxes, group positions and file details.</li>
+          <li>The application scale moves in single percent, under the pointer and at the wheel.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.4" date="2026-09-20">
+      <description>
+        <ul>
+          <li>Three appearances to choose from in the settings: dark, gray dark and gray light.</li>
+          <li>The player follows the chosen appearance, from the footer deck to the veil over the playlist.</li>
+          <li>Drop-down lists, menus and list rows change along with it instead of keeping the previous colours.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.3" date="2026-09-20">
+      <description>
+        <ul>
+          <li>The MP3 tag editor proposes every empty field on its own: file name for the title, folder name for album and artist.</li>
+          <li>A missing track number follows the order of the file names; numbers already in the files stay untouched.</li>
+          <li>The genre box completes what is typed from the genre defaults in the settings.</li>
+          <li>After a while without input the view returns to the playing track and scrolls along with every following one.</li>
+          <li>Page up, page down, home and end scroll the playlist even when the focus sits elsewhere.</li>
+          <li>The filled accent buttons carry dark text again instead of white.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.2" date="2026-09-15">
+      <description>
+        <ul>
+          <li>Configure up to three Lyrion Media Servers with separate named tabs and sync targets.</li>
+          <li>Favorite filtering reports its track count and required sync space; album views show their duration and size.</li>
+          <li>Save, load and open M3U/M3U8 playlists, including from the command line.</li>
+          <li>Audio CD views show identified metadata and artwork immediately, and rip targets can use placeholder-based album subfolders.</li>
+          <li>Existing conversion targets require confirmation before they are overwritten.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.0" date="2026-09-14">
+      <description>
+        <ul>
+          <li>Untagged files get a proposal in the MP3 tag editor: numbering, titles from file names, album and artist from the folder.</li>
+          <li>A cover can be chosen through a file picker, and the drop zone shows what it accepts.</li>
+          <li>Padding track numbers with zeros now applies to the converter and to split CUE sheets as well.</li>
+          <li>Ripped MP3s get their tags and file names from the same writer as the tag editor.</li>
+          <li>A conversion or rip can be cancelled, and the window is covered while one runs.</li>
+          <li>Tracks can be unchecked in a Lyrion album and are then skipped when playing in FerrumKix.</li>
+          <li>The application scale takes effect without a restart, and the diagnostic log has a switch in the settings.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.8.0" date="2026-09-13">
+      <description>
+        <ul>
+          <li>FerrumKix can act as a remote control for any player registered with a Lyrion Media Server.</li>
+          <li>Audio CDs are identified at MusicBrainz, and the details and cover art go into the tags when ripping.</li>
+          <li>"Refresh library" now asks the Lyrion server to scan for new and changed music first.</li>
+          <li>Fixed the CD tray closing while a disc was being inserted, shuffle having no effect on a CD, and seeking within a CD track.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.7.0" date="2026-09-13">
+      <description>
+        <ul>
+          <li>Added sorting and a favorites filter to the Lyrion album overview.</li>
+          <li>Added the favorites sync into a folder of your choosing.</li>
+          <li>The favorites sync now reports its state and survives leaving the view.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.6.0" date="2026-09-13">
+      <description>
+        <ul>
+          <li>Added Lyrion Media Server album browsing and local HTTP-stream playback.</li>
+          <li>Added the integrated MP3 tag editor.</li>
+          <li>Improved Audio CD timing and playlist handling.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.4.1" date="2026-09-12">
+      <description>
+        <p>The converter now uses the full selected set of tracks from the playlist context menu.</p>
+      </description>
+    </release>
+    <release version="0.4.0" date="2026-09-12">
+      <description>
+        <ul>
+          <li>Added the integrated Audio Converter for MP3, FLAC and Ogg Vorbis.</li>
+          <li>Selections and source folders can be converted to ordered single files.</li>
+          <li>Added direct Audio-CD ripping through cdparanoia.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.0" date="2026-09-11">
+      <description>
+        <ul>
+          <li>Added drag-and-drop reordering and a context menu for tracks and albums in the playlist.</li>
+          <li>The playlist now visibly follows the shuffled playback order while shuffle is enabled.</li>
+          <li>The current track is scrolled into view when the player starts.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-09-11">
+      <description>
+        <ul>
+          <li>Added automatic Audio CD detection on Linux, with a separate temporary CD playlist.</li>
+          <li>Added MPRIS integration, ReplayGain, missing-track handling and single-instance opening.</li>
+          <li>Opening a track in an existing instance now scrolls the playlist to it.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-09-11">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>
