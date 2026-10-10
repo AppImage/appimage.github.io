@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.jackpison.RcloneExplorer</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Rclone Explorer</name>
+  <summary>rclone GUI: browse, transfer and sync files on all your cloud storage</summary>
+  <description>
+    <p>Rclone Explorer (formerly Rclone Browser) is a modern rclone GUI. Browse, upload, download and sync files on
+    Google Drive, OneDrive, Dropbox, pCloud, S3 and 70+ other services, with tabs,
+    icon and details views, pausable transfers and saved tasks.</p>
+  </description>
+  <launchable type="desktop-id">rclone-explorer.desktop</launchable>
+  <url type="homepage">https://jackpison.github.io/RcloneExplorer/</url>
+  <url type="bugtracker">https://github.com/Jackpison/RcloneExplorer/issues</url>
+  <developer id="io.github.jackpison"><name>Jackpison</name></developer>
+  <content_rating type="oars-1.1"/>
+</component>
