@@ -1,0 +1,11 @@
+{
+  "name": "markdown-cornell-notes-editor",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Electron desktop editor for markdown-cornell-notes. Run with `make app` from a project directory; see docs/editor-app.md.",
+  "main": "main.js",
+  "desktopName": "markdown-cornell-notes.desktop",
+  "author": "Todd C. Takala",
+  "homepage": "https://github.com/forloop11/markdown-cornell-notes",
+  "license": "MIT"
+}
