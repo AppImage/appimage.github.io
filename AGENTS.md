@@ -192,6 +192,15 @@ GitHub Pages (Jekyll) from this repository.
    once. It never removes an entry. One run at a time (`concurrency`). Run it by hand from the Actions tab (dry run
    first); see `MAINTAINER.md`.
 
+   `.github/workflows/remove-dead-entries.yml` (`workflow_dispatch` only; inputs
+   `limit` (default 10), `days` (default 90), `dry_run` (default true);
+   `code/remove-dead-entries.sh`) removes the entries whose `entry-unavailable`
+   issue is at least `days` old, has no comment by anyone but github-actions, and
+   whose entry `check-entry.sh` finds `dead` again right now (`unknown`, `fixable`
+   and `ok` keep it): `remove-entry.sh` in one commit on master, and each issue is
+   closed with a comment that a new PR brings the application back. Same
+   concurrency group as `remove-entry.yml`.
+
 5. `.github/workflows/remove-entry.yml` removes entries completely with
    `code/remove-entry.sh` (`data/NAME`, `database/NAME/`, `apps/NAME.md`): on
    a maintainer's `/remove` comment on a "Where did the AppImage of NAME go?"
@@ -447,8 +456,11 @@ GitHub Pages (Jekyll) from this repository.
   Failed PRs are also re-tested when their author says it is fixed (item 7
   above), and `code/retest-pr.sh [-n] NUMBER` re-tests one PR by hand (needs
   `PAT`). The comment patterns: `echo "v1.2 is out" | code/retest-comment.sh`.
-- `.github/workflows/retest-stale.yml` (`workflow_dispatch` only; inputs `limit`
-  (default 10), `days` (default 365) and `dry_run` (default true)) re-tests the
+- `.github/workflows/retest-stale.yml` (monthly `schedule`, a real run of 20 entries;
+  `workflow_dispatch` with inputs `limit` (default 20), `days` (default 365), `pinned`
+  and `dry_run` (default true); `--pinned` re-tests the entries pinned to one release
+  (`.../releases/download/...`, 235 in October 2026) instead, whatever their age, which
+  points them to the repository) re-tests the
   entries whose `database/NAME` was last changed more than `days` days ago
   (`code/retest-stale.sh`: from the git history, oldest first, about 1200 of
   them in October 2026): one `retest/stale-NAME-<time>` pull request per entry
