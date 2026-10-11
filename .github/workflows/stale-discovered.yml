@@ -1,0 +1,62 @@
+# Auto-discovered pull requests whose test failed long ago and that nobody looked
+# at, in three steps, one per pull request and run (code/stale-discovered.sh):
+# re-test (labeled retested-stale); if it still fails, ping the application's
+# author once (labeled pinged-author); if nobody answers in 60 days, close
+# (labeled auto-closed; discover-apps.yml proposes the repository again when it
+# publishes a new release). A pull request with a human comment is never
+# touched. Manual only, a dry run by default. Nothing from any pull request is run.
+
+name: Stale auto-discovered pull requests
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Maximum number of pull requests to re-test, ping or close in this run (oldest first)'
+        type: number
+        default: 20
+      days:
+        description: 'A test result older than this many days counts as stale (step 1, re-test)'
+        type: number
+        default: 90
+      close_days:
+        description: 'Close this many days after the ping went unanswered (step 3)'
+        type: number
+        default: 60
+      dry_run:
+        description: 'Dry run (only list what would be re-tested, pinged or closed)'
+        type: boolean
+        default: true
+
+jobs:
+  stale:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    concurrency:
+      group: stale-discovered
+      cancel-in-progress: false
+    permissions:
+      contents: read # the entry's link, to find the author to mention
+      issues: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PAT: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: code
+
+      - name: Re-test, ping, close
+        env:
+          LIMIT: ${{ github.event.inputs.limit || '20' }}
+          DAYS: ${{ github.event.inputs.days || '90' }}
+          CLOSE_DAYS: ${{ github.event.inputs.close_days || '60' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          ARGS=(--limit "$LIMIT" --days "$DAYS" --close-days "$CLOSE_DAYS")
+          [ "$DRY_RUN" != "false" ] && ARGS+=(--dry-run)
+          bash code/stale-discovered.sh "${ARGS[@]}"

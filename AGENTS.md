@@ -169,6 +169,24 @@ GitHub Pages (Jekyll) from this repository.
    `<!-- appimagehub-one-file -->`). A maintainer who reopens it on purpose is
    respected. Only the list of changed files is read, via the API.
 
+   `.github/workflows/stale-discovered.yml` (`workflow_dispatch` only; inputs
+   `limit` (default 20), `days` (default 90), `close_days` (default 60), `dry_run`
+   (default true); `code/stale-discovered.sh`) walks auto-discovered PRs whose test
+   failed and that no human commented on up a ladder, one step per PR and run:
+   (1) a last result older than `days` → re-test (`retest-pr.sh`, with
+   `SCREENSHOT_UPLOAD_TOKEN`), label `retested-stale`; (2) the re-test's result is
+   in and still failed → one comment that @mentions the GitHub account the AppImage
+   comes from (`upstream-owner.sh`; never a maintainer or bot), asks for `/retest`
+   when fixed and announces the closing, label `pinged-author` (marker
+   `<!-- appimagehub-stale-ping -->`); (3) `close_days` after the ping with no human
+   comment → closed with a comment, label `auto-closed` (the other two removed).
+   A PR that passes the re-test keeps `screenshot-ok` and waits for a maintainer.
+   `discover-apps.sh` treats an `auto-closed` PR like a repository checked without
+   success on its closing day (proposed again when pushed to later), not like one
+   rejected by a maintainer. API budget: the comments of a PR are only fetched
+   when it is on the ladder or had no activity (`updated_at`) for `days`; the run
+   stops with exit 4 when fewer than `RESERVE` (200) requests of the hour are left,
+   and prints how many it used (see "GitHub API budget" below).
    `.github/workflows/health-report.yml` (weekly, Monday, and `workflow_dispatch`;
    `code/health-report.sh`) writes one issue, updated in place (marker
    `<!-- appimagehub-health-report -->`, label `health-report`): what needs a
