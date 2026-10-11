@@ -205,7 +205,7 @@ GitHub Pages (Jekyll) from this repository.
    entries are found unless `full_scan`) to find
    entries whose AppImage is gone (repository not found, no AppImage in its
    releases or in a directory listing, or a direct download URL returning
-   404/410; timeouts and other errors are `unknown` and are never pinged),
+   404/410; timeouts and other errors are `unknown` and are never pinged, and so is a gone release asset whose repository still has AppImages that `find-appimage.sh` cannot pick for the entry, e.g. python2 and python3 from one release),
    writes a summary, and runs `code/ping-authors.sh`. A dead link to a
    release asset (GitHub, Codeberg or GitLab) whose repository still has an
    AppImage (`find-appimage.sh`), or to a file in a directory listing when a
