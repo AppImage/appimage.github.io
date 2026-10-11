@@ -44,7 +44,10 @@ GitHub Pages (Jekyll) from this repository.
      collide) and fails rather than guesses when several fit; a URL
      ending with `/` that is no listing is downloaded as it is),
      checks its type, mounts it with a separate runtime (never executes the
-     AppImage's own runtime), runs `appdir-lint.sh`, finds the icon;
+     AppImage's own runtime), runs `code/appdir-lint.sh` (vendored from
+     AppImage/AppImages with fixes: errors are reported instead of ending the
+     script under `set -e`, the excludelist check works with several matches; the
+     `excludelist` itself is still downloaded from there), finds the icon;
    - `code/check-libc.sh`: does it need a compatible C library on the host?
      (`X-AppImage-Libc=none|bundled|host`, `X-AppImage-Runtime`,
      `X-AppImage-Self-Contained`, `X-AppImage-Glibc-Required=GLIBC_2.xx`, stored
