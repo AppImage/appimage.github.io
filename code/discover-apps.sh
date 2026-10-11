@@ -224,13 +224,24 @@ while : ; do
   PAGE_JSON=$(api GET "repos/$REPO/issues?labels=$LABEL&state=all&per_page=100&page=$LABELED_PAGE")
   N_THIS_PAGE=$(jq 'if type == "array" then length else 0 end' <<<"$PAGE_JSON" 2>/dev/null || echo 0)
   [ "${N_THIS_PAGE:-0}" -gt 0 ] || break
-  jq -r '.[] | select(.pull_request) | .body // ""' <<<"$PAGE_JSON" 2>/dev/null \
+  # A pull request closed by close-stale-discovered.yml (label auto-closed) was
+  # not rejected by a maintainer: its repository counts as checked without
+  # success on the day it was closed (proposed again when it is pushed to later),
+  # not as proposed before
+  jq -r '.[] | select(.pull_request) | select([.labels[]?.name] | index("auto-closed") | not) | .body // ""' <<<"$PAGE_JSON" 2>/dev/null \
     | sed -n 's/^Repository: *\(https:\/\/github\.com\/[^ ]*\).*/\1/p' | tr -d '\r' \
     | while read -r LINE ; do parse_owner_repo "$LINE" ; done >> "$WORKDIR/labeled.txt"
+  jq -r '.[] | select(.pull_request) | select([.labels[]?.name] | index("auto-closed")) | [(.closed_at // .updated_at // "")[0:10], (.body // "")] | @tsv' <<<"$PAGE_JSON" 2>/dev/null \
+    | while IFS=$'\t' read -r DAY BODY ; do
+        OR=$(sed -n 's/^Repository: *\(https:\/\/github\.com\/[^ ]*\).*/\1/p' <<<"$BODY" | head -n 1 | tr -d '\r')
+        OR=$(parse_owner_repo "$OR") && printf '%s\t%s\n' "$OR" "$DAY"
+      done >> "$WORKDIR/autoclosed.tsv"
   [ "$N_THIS_PAGE" -lt 100 ] && break
   LABELED_PAGE=$((LABELED_PAGE + 1))
 done
 [ -f "$WORKDIR/labeled.txt" ] && while read -r OR ; do [ -n "$OR" ] && SKIP_LABELED["$OR"]=1 ; done < "$WORKDIR/labeled.txt"
+# (the auto-closed ones join the recently-checked below, with their closing day)
+[ -f "$WORKDIR/autoclosed.tsv" ] && echo "$(grep -c . "$WORKDIR/autoclosed.tsv") repositories were auto-closed before (proposed again when pushed to)" >&2
 echo "$(sort -u "$WORKDIR/labeled.txt" 2>/dev/null | grep -c .) repositories were proposed before (label $LABEL)" >&2
 
 # --- 3b. Apps a maintainer opted out (label opt-out on any PR) -------------
@@ -323,6 +334,15 @@ done > "$WORKDIR/recent.txt"
 # that, at least a week later, is checked again (it may publish an AppImage now)
 declare -A SKIP_RECENT_ON=()
 while IFS=$'\t' read -r OR DATE ; do [ -n "$OR" ] && { SKIP_RECENT["$OR"]=1 ; SKIP_RECENT_ON["$OR"]="$DATE" ; } ; done < "$WORKDIR/recent.txt"
+# Auto-closed pull requests: like checked without success on the closing day
+# (skipped for 90 days, unless the repository is pushed to in the meantime)
+if [ -f "$WORKDIR/autoclosed.tsv" ] ; then
+  while IFS=$'\t' read -r OR DATE ; do
+    [ -n "$OR" ] || continue
+    [ -n "${SKIP_KNOWN[$OR]:-}${SKIP_LABELED[$OR]:-}" ] && continue
+    if [[ "$DATE" > "$CUTOFF" ]] ; then SKIP_RECENT["$OR"]=1 ; SKIP_RECENT_ON["$OR"]="$DATE" ; fi
+  done < "$WORKDIR/autoclosed.tsv"
+fi
 
 # --- 9. Persist the state file -------------------------------------------
 # Called after every opened PR, every 10 slices and at the end, so that a
