@@ -1,0 +1,19 @@
+{
+  "name": "WeekToDo",
+  "version": "2.2.0",
+  "private": true,
+  "description": "Free and Open Source Minimalist Weekly Planner focused on privacy.",
+  "author": "Manuel Ernesto Garcia <contact@weektodo.me> (https://weektodo.me/)",
+  "homepage": "https://weektodo.me",
+  "main": "background.js",
+  "repository": "https://github.com/manuelernestog/weektodo",
+  "dependencies": {
+    "bootstrap-icons": "^1.10.5",
+    "cryptocurrency-icons": "^0.17.1",
+    "electron-config": "^2.0.0",
+    "lodash.uniqueid": "^4.0.1"
+  },
+  "resolutions": {
+    "vue-cli-plugin-electron-builder/electron-builder": "^23.0.3"
+  }
+}
