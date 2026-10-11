@@ -20,7 +20,7 @@
 HINTS=(
   "GLIBC_[0-9.]*' not found|GLIBCXX_[0-9.]*' not found|CXXABI_[0-9.]*' not found"
   "error-glibc-too-new"
-  "The AppImage was built on a system that is too new. Please build it on the oldest still-supported Ubuntu LTS release so that it runs on all supported systems."
+  "The AppImage needs a newer C library (glibc, or the C++ library libstdc++) than the test system has: the test runs on Ubuntu 22.04 (glibc 2.35, the oldest Ubuntu LTS still supported), and the error names the version that is missing (e.g. GLIBC_2.38). An AppImage is meant to run on any current Linux distribution, including older ones, and glibc can only be as old as the system the AppImage was built on: a program built on a system with glibc 2.38 links against symbols that older systems do not have. The fix is to build on the oldest still-supported Ubuntu LTS (e.g. ubuntu-22.04 in GitHub Actions, or a container of it), not on the newest system. If the program itself needs a newer compiler, build in a container of the old release with a newer toolchain (e.g. the toolchain PPAs), or statically link what needs it; bundling your own glibc inside the AppImage is not a solution. See https://docs.appimage.org/reference/best-practices.html#binaries-compiled-on-old-enough-base-system"
 
   "Running as root without --no-sandbox is not supported|SUID sandbox helper binary"
   "error-electron-sandbox"
