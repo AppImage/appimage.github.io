@@ -166,6 +166,17 @@ GitHub Pages (Jekyll) from this repository.
    `<!-- appimagehub-one-file -->`). A maintainer who reopens it on purpose is
    respected. Only the list of changed files is read, via the API.
 
+   `.github/workflows/close-stale-discovered.yml` (`workflow_dispatch` only; inputs
+   `limit` (default 20), `days` (default 90), `dry_run` (default true);
+   `code/close-stale-discovered.sh`) closes auto-discovered PRs whose test failed
+   more than `days` ago and that no human commented on, in two runs: the first
+   re-tests them (`retest-pr.sh`, with `SCREENSHOT_UPLOAD_TOKEN`) and labels them
+   `retest-before-closing`; the next closes those whose new result still failed
+   (comment, label `auto-closed`). A PR that passes the re-test keeps
+   `screenshot-ok` and waits for a maintainer. `discover-apps.sh` treats an
+   `auto-closed` PR like a repository checked without success on its closing day
+   (proposed again when pushed to later), not like one rejected by a maintainer.
+
 4. `.github/workflows/ping-authors.yml` (monthly `schedule`, a real run, and
    `workflow_dispatch` with `dry_run` (default true), `max_issues`
    (default 5) and `full_scan`) runs `code/check-entry.sh` over the files in

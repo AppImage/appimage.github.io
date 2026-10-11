@@ -1,0 +1,55 @@
+# Closes the auto-discovered pull requests whose test failed more than 90 days
+# ago and that nobody commented on, after one last re-test (two runs: the first
+# re-tests and labels retest-before-closing, the next closes those that still
+# fail, label auto-closed). discover-apps.yml proposes a closed repository again
+# when it publishes a new release. code/close-stale-discovered.sh; manual only,
+# a dry run by default. Nothing from any pull request is run.
+
+name: Close stale auto-discovered pull requests
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Maximum number of pull requests to re-test or close in this run (oldest first)'
+        type: number
+        default: 20
+      days:
+        description: 'A test result older than this many days counts as stale'
+        type: number
+        default: 90
+      dry_run:
+        description: 'Dry run (only list what would be re-tested or closed)'
+        type: boolean
+        default: true
+
+jobs:
+  close-stale:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    concurrency:
+      group: close-stale-discovered
+      cancel-in-progress: false
+    permissions:
+      issues: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PAT: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: code
+
+      - name: Re-test, then close what still fails
+        env:
+          LIMIT: ${{ github.event.inputs.limit || '20' }}
+          DAYS: ${{ github.event.inputs.days || '90' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          ARGS=(--limit "$LIMIT" --days "$DAYS")
+          [ "$DRY_RUN" != "false" ] && ARGS+=(--dry-run)
+          bash code/close-stale-discovered.sh "${ARGS[@]}"
