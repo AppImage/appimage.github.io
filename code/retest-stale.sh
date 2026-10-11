@@ -8,11 +8,15 @@
 # and for the GitHub account the AppImage comes from. Used by
 # .github/workflows/retest-stale.yml (workflow_dispatch only); runnable by hand.
 #
-# Usage: retest-stale.sh [--dry-run] [--limit N] [--days D]
+# Usage: retest-stale.sh [--dry-run] [--limit N] [--days D] [--pinned]
 #   --dry-run  Only print which entries would be re-tested.
 #   --limit N  Open at most N pull requests (default 10).
 #   --days D   An entry is stale when nothing in database/NAME was committed
 #              for D days (default 365).
+#   --pinned   Instead of the stale entries: the entries whose first line links
+#              to the AppImage of one particular release (.../releases/download/...),
+#              whatever their age; the re-test points them to the repository
+#              (code/repo-url-for-entry.sh), so that they follow new releases.
 #
 # The oldest entries come first. One pull request per entry, because the Test
 # workflow stops at the first failing entry of a pull request. Skipped: entries
@@ -38,9 +42,11 @@ REPO="${GITHUB_REPOSITORY:-AppImage/appimage.github.io}"
 DRY_RUN=false
 LIMIT=10
 DAYS=365
+PINNED=false
 while [ $# -gt 0 ] ; do
   case "$1" in
     --dry-run) DRY_RUN=true ;;
+    --pinned) PINNED=true ;;
     --limit) LIMIT="$2" ; shift ;;
     --limit=*) LIMIT="${1#*=}" ;;
     --days) DAYS="$2" ; shift ;;
@@ -67,6 +73,15 @@ git log --format='@%ct' --name-only -- database \
   | awk '/^@/ { t = substr($0, 2); next } NF { split($0, p, "/"); if (!(p[2] in seen)) { seen[p[2]] = 1; print t "\t" p[2] } }' \
   | sort -n > "$WORKDIR/ages.tsv"
 echo "$(wc -l < "$WORKDIR/ages.tsv") entries in database/" >&2
+if [ "$PINNED" = true ] ; then
+  # Only the entries pinned to one release, oldest result first (an entry without a
+  # result counts as oldest); all of them, whatever their age
+  grep -lE '^https?://[^[:space:]]*/releases/download/' data/* 2>/dev/null | sed 's|^data/||' | sort > "$WORKDIR/pinned.txt"
+  { awk -F'\t' 'NR == FNR { want[$0] = 1; next } ($2 in want) { print; delete want[$2] } END { for (n in want) print 0 "\t" n }' "$WORKDIR/pinned.txt" "$WORKDIR/ages.tsv" ; } | sort -n > "$WORKDIR/ages.pinned.tsv"
+  mv "$WORKDIR/ages.pinned.tsv" "$WORKDIR/ages.tsv"
+  CUTOFF=$(( $(date -u +%s) + 1 ))
+  echo "$(wc -l < "$WORKDIR/ages.tsv") of them pinned to one release" >&2
+fi
 
 # --- names to leave alone ---------------------------------------------------
 # Few API calls on purpose: the repository has thousands of open pull requests,
@@ -155,7 +170,8 @@ done < "$WORKDIR/ages.tsv"
 {
   echo "## Re-test stale entries"
   echo
-  echo "Entries whose database/ is older than $DAYS days: $STALE (oldest first), $N_SKIP of them left alone (an open pull request's title, or re-tested in the last 60 days); $N_NODATA without a file in data/."
+  if [ "$PINNED" = true ] ; then echo "Entries pinned to one release: $STALE (oldest result first), $N_SKIP of them left alone (an open pull request's title, or re-tested in the last 60 days)." ; else
+  echo "Entries whose database/ is older than $DAYS days: $STALE (oldest first), $N_SKIP of them left alone (an open pull request's title, or re-tested in the last 60 days); $N_NODATA without a file in data/." ; fi
   if [ "$DRY_RUN" = true ] ; then echo "Pull requests that would be opened: $OPENED (limit $LIMIT)" ; else echo "Pull requests opened: $OPENED (limit $LIMIT)" ; fi
   [ "$DRY_RUN" = true ] && echo && echo "(dry run: nothing was pushed)"
 } | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
