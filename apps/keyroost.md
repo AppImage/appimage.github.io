@@ -7,9 +7,8 @@ license: "MIT OR Apache-2.0"
 
 icons:
   - keyroost/icons/256x256/io.github.framefilter.keyroost.png
-
 screenshots:
-  - keyroost/screenshot.png
+- https://framefilter.github.io/keyroost/assets/screenshots/overview.png
 
 authors:
   - name: "framefilter"
@@ -35,13 +34,13 @@ desktop:
     Keywords: TOTP
     StartupNotify: true
     StartupWMClass: keyroost
-    X-AppImage-Version: 0.11.0
+    X-AppImage-Version: 0.13.0
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|framefilter|keyroost|latest|keyroost-*x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
-      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
-      could not be verified. Please remember that the signature file (.sig or .asc)
-      should be the first file given on the command line.'
+      created Signature made Sun Oct 11 00:51:06 2026 UTC                using EDDSA
+      key F9E04EED9DC5DC94AB2E61006C81DC353794478B Can''t check signature: No public
+      key'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
     X-AppImage-Libc: host
