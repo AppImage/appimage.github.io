@@ -169,6 +169,17 @@ GitHub Pages (Jekyll) from this repository.
    `<!-- appimagehub-one-file -->`). A maintainer who reopens it on purpose is
    respected. Only the list of changed files is read, via the API.
 
+   `.github/workflows/health-report.yml` (weekly, Monday, and `workflow_dispatch`;
+   `code/health-report.sh`) writes one issue, updated in place (marker
+   `<!-- appimagehub-health-report -->`, label `health-report`): what needs a
+   maintainer (auto-discovered PRs that passed, contributors' PRs that passed but
+   were not merged, `manual-check-needed`), what the bots handle (open PRs by
+   error label), the catalog (entries without `database/`, stale, pinned to a
+   release, `entry-unavailable` issues), and the automation (whether
+   `SCREENSHOT_UPLOAD_TOKEN` works and when it expires, last runs). It sets the
+   `needs-maintainer` label exactly on the PRs blocked on a maintainer (and removes
+   it elsewhere), so that they can be found among the thousands handled by bots.
+
 4. `.github/workflows/ping-authors.yml` (monthly `schedule`, a real run, and
    `workflow_dispatch` with `dry_run` (default true), `max_issues`
    (default 5) and `full_scan`) runs `code/check-entry.sh` over the files in
