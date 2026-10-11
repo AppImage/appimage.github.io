@@ -33,6 +33,12 @@
 # keeps screenshot-ok and waits for a maintainer (the health report lists it).
 #
 # Needs GH_TOKEN; PAT (SCREENSHOT_UPLOAD_TOKEN) for step 1; GITHUB_REPOSITORY.
+#
+# API budget: the list of open pull requests costs one request per 100; the
+# comments are fetched only for pull requests on the ladder or without any
+# activity in D days (updated_at from the list), one request each; every
+# action costs 2-5. The run stops (exit 4) when fewer than RESERVE (default
+# 200) requests of the hourly quota are left, and prints how many it used.
 
 set -uo pipefail
 
@@ -69,36 +75,60 @@ L_RETESTED=retested-stale
 L_PINGED=pinged-author
 L_CLOSED=auto-closed
 
-ensure_label() { gh api "repos/$REPO/labels/$1" >/dev/null 2>&1 || gh api -X POST "repos/$REPO/labels" -f name="$1" -f color="$2" -f description="$3" >/dev/null ; }
+# Every request goes through api(): it counts them and, every 50 requests,
+# stops the run when fewer than RESERVE requests of the hourly quota are left
+# (GITHUB_TOKEN has 1000 an hour per repository, a personal token 5000).
+RESERVE=${RESERVE:-200}
+N_REQUESTS=0
+api() {
+  N_REQUESTS=$((N_REQUESTS + 1))
+  if [ $((N_REQUESTS % 50)) -eq 0 ] ; then
+    LEFT=$(gh api rate_limit --jq .resources.core.remaining 2>/dev/null || echo 0)
+    if [ "${LEFT:-0}" -lt "$RESERVE" ] ; then
+      echo "Only $LEFT API requests left this hour (reserve $RESERVE); stopping after $N_REQUESTS requests" >&2
+      exit 4
+    fi
+  fi
+  api "$@"
+}
+ensure_label() { api "repos/$REPO/labels/$1" >/dev/null 2>&1 || api -X POST "repos/$REPO/labels" -f name="$1" -f color="$2" -f description="$3" >/dev/null ; }
 lower() { tr 'A-Z' 'a-z' <<<"$1" ; }
 
 # Open auto-discovered pull requests with an error label, oldest first
 : > "$WORKDIR/prs.jsonl"
 PAGE=1
 while [ "$PAGE" -le 100 ] ; do
-  gh api "repos/$REPO/pulls?state=open&per_page=100&page=$PAGE&sort=created&direction=asc" > "$WORKDIR/page.json" 2>/dev/null || break
+  api "repos/$REPO/pulls?state=open&per_page=100&page=$PAGE&sort=created&direction=asc" > "$WORKDIR/page.json" 2>/dev/null || break
   [ "$(jq 'length' "$WORKDIR/page.json" 2>/dev/null || echo 0)" -gt 0 ] || break
   jq -c '.[] | select([.labels[].name] | index("auto-discovered")) | select([.labels[].name | select(startswith("error-"))] | length > 0)
           | select([.labels[].name] | index("screenshot-ok") | not) | select([.labels[].name] | index("manual-check-needed") | not)
-          | {n:.number, sha:.head.sha, user:.user.login, labels:[.labels[].name]}' "$WORKDIR/page.json" >> "$WORKDIR/prs.jsonl"
+          | {n:.number, sha:.head.sha, user:.user.login, updated:.updated_at, labels:[.labels[].name]}' "$WORKDIR/page.json" >> "$WORKDIR/prs.jsonl"
   PAGE=$((PAGE + 1))
 done
 echo "$(wc -l < "$WORKDIR/prs.jsonl") open auto-discovered pull requests with a failed test" >&2
 
 N_RETESTED=0 ; N_PINGED=0 ; N_CLOSED=0 ; N_HUMAN=0 ; N_FRESH=0 ; N_WAIT=0
 label_time() { # label_time PR LABEL -> when it was last applied
-  gh api --paginate "repos/$REPO/issues/$1/events?per_page=100" --jq '.[] | select(.event == "labeled" and .label.name == "'"$2"'") | .created_at' 2>/dev/null | tail -n 1
+  api --paginate "repos/$REPO/issues/$1/events?per_page=100" --jq '.[] | select(.event == "labeled" and .label.name == "'"$2"'") | .created_at' 2>/dev/null | tail -n 1
 }
 while IFS= read -r ROW ; do
   [ $((N_RETESTED + N_PINGED + N_CLOSED)) -lt "$LIMIT" ] || break
   N=$(jq -r .n <<<"$ROW")
-  gh api --paginate "repos/$REPO/issues/$N/comments?per_page=100" --jq '.[] | [.user.login, .created_at, (.body | contains("'"$MARKER"'")), (.body | contains("'"$PING_MARKER"'"))] | @tsv' > "$WORKDIR/c.tsv" 2>/dev/null || continue
+  has_label() { jq -e --arg l "$1" '.labels | index($l)' <<<"$ROW" >/dev/null ; }
+  # Cheap first: a pull request not yet on the ladder whose last activity (a
+  # comment, a label, a push) is newer than D days cannot have a result older
+  # than that, so its comments are not fetched at all. Thousands of pull
+  # requests fail this test; the comments of the few hundred that pass it are
+  # one request each.
+  if ! has_label "$L_PINGED" && ! has_label "$L_RETESTED" && [[ "$(jq -r .updated <<<"$ROW")" > "$CUTOFF" ]] ; then
+    N_FRESH=$((N_FRESH + 1)) ; continue
+  fi
+  api --paginate "repos/$REPO/issues/$N/comments?per_page=100" --jq '.[] | [.user.login, .created_at, (.body | contains("'"$MARKER"'")), (.body | contains("'"$PING_MARKER"'"))] | @tsv' > "$WORKDIR/c.tsv" 2>/dev/null || continue
   if awk -F'\t' '$1 != "github-actions[bot]" { f = 1 } END { exit !f }' "$WORKDIR/c.tsv" ; then
     N_HUMAN=$((N_HUMAN + 1)) ; continue
   fi
   LAST_RESULT=$(awk -F'\t' '$3 == "true" { t = $2 } END { print t }' "$WORKDIR/c.tsv")
   PING_AT=$(awk -F'\t' '$4 == "true" { t = $2 } END { print t }' "$WORKDIR/c.tsv")
-  has_label() { jq -e --arg l "$1" '.labels | index($l)' <<<"$ROW" >/dev/null ; }
 
   if has_label "$L_PINGED" ; then
     # Step 3: close, once the ping is old enough and still unanswered
@@ -112,11 +142,11 @@ while IFS= read -r ROW ; do
         echo "<!-- appimagehub-auto-closed -->"
         echo "No answer in $CLOSE_DAYS days, so this automatically opened pull request is closed to keep the queue manageable. Nothing is lost: the application is proposed again automatically once its repository publishes a new release, and a pull request that adds \`data/<Name>\` is welcome at any time. Thank you!"
       } > "$WORKDIR/c.md"
-      gh api -X POST "repos/$REPO/issues/$N/comments" -F body=@"$WORKDIR/c.md" >/dev/null
-      gh api -X POST "repos/$REPO/issues/$N/labels" -f "labels[]=$L_CLOSED" >/dev/null
-      gh api -X DELETE "repos/$REPO/issues/$N/labels/$L_PINGED" >/dev/null 2>&1 || true
-      gh api -X DELETE "repos/$REPO/issues/$N/labels/$L_RETESTED" >/dev/null 2>&1 || true
-      gh api -X PATCH "repos/$REPO/pulls/$N" -f state=closed >/dev/null
+      api -X POST "repos/$REPO/issues/$N/comments" -F body=@"$WORKDIR/c.md" >/dev/null
+      api -X POST "repos/$REPO/issues/$N/labels" -f "labels[]=$L_CLOSED" >/dev/null
+      api -X DELETE "repos/$REPO/issues/$N/labels/$L_PINGED" >/dev/null 2>&1 || true
+      api -X DELETE "repos/$REPO/issues/$N/labels/$L_RETESTED" >/dev/null 2>&1 || true
+      api -X PATCH "repos/$REPO/pulls/$N" -f state=closed >/dev/null
       echo "#$N: closed"
     fi
     N_CLOSED=$((N_CLOSED + 1))
@@ -126,10 +156,10 @@ while IFS= read -r ROW ; do
     if [ -z "$LAST_RESULT" ] || [ -z "$LABELED_AT" ] || [[ "$LAST_RESULT" < "$LABELED_AT" ]] ; then N_WAIT=$((N_WAIT + 1)) ; continue ; fi
     # The GitHub account the AppImage comes from (never the bot, never a maintainer)
     SHA=$(jq -r .sha <<<"$ROW")
-    FILE=$(gh api --paginate "repos/$REPO/pulls/$N/files" --jq '.[] | select(.filename | startswith("data/")) | .filename' 2>/dev/null | head -n 1)
+    FILE=$(api --paginate "repos/$REPO/pulls/$N/files" --jq '.[] | select(.filename | startswith("data/")) | .filename' 2>/dev/null | head -n 1)
     OWNER=""
     if [ -n "$FILE" ] ; then
-      URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$SHA" 2>/dev/null | head -n 1 | tr -d '\r')
+      URL=$(api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$SHA" 2>/dev/null | head -n 1 | tr -d '\r')
       OWNER=$(bash "$SCRIPT_DIR/upstream-owner.sh" "$URL" 2>/dev/null | tr -cd 'A-Za-z0-9-')
     fi
     case "$(lower "$OWNER")" in ""|*"[bot]"|probonopd|github-actions) OWNER="" ;; esac
@@ -141,8 +171,8 @@ while IFS= read -r ROW ; do
         echo "$PING_MARKER"
         echo "${OWNER:+@$OWNER: }This pull request was opened automatically to add the application to the [AppImage catalog](https://appimage.github.io), and we would like to list it, but its AppImage does not pass the test (the result above says what fails and how to fix it; the test was just run again on the newest release). Could you have a look? Once a fixed release is out, comment \`/retest\` here and it is tested again. If we do not hear anything in $CLOSE_DAYS days, this pull request is closed to keep the queue manageable; the application is proposed again automatically when the repository publishes a new release. Thank you!"
       } > "$WORKDIR/c.md"
-      gh api -X POST "repos/$REPO/issues/$N/comments" -F body=@"$WORKDIR/c.md" >/dev/null
-      gh api -X POST "repos/$REPO/issues/$N/labels" -f "labels[]=$L_PINGED" >/dev/null
+      api -X POST "repos/$REPO/issues/$N/comments" -F body=@"$WORKDIR/c.md" >/dev/null
+      api -X POST "repos/$REPO/issues/$N/labels" -f "labels[]=$L_PINGED" >/dev/null
       echo "#$N: pinged ${OWNER:+@$OWNER}"
       sleep 3
     fi
@@ -156,7 +186,7 @@ while IFS= read -r ROW ; do
       [ -n "${PAT:-}" ] || { echo "PAT is needed to re-test; stopping" >&2 ; break ; }
       ensure_label "$L_RETESTED" fef2c0 "Auto-discovered, failed months ago, tested once more (stale-discovered.yml); the author is pinged if it still fails"
       if PAT="$PAT" REPO="$REPO" bash "$SCRIPT_DIR/retest-pr.sh" "$N" >/dev/null 2>&1 ; then
-        gh api -X POST "repos/$REPO/issues/$N/labels" -f "labels[]=$L_RETESTED" >/dev/null
+        api -X POST "repos/$REPO/issues/$N/labels" -f "labels[]=$L_RETESTED" >/dev/null
         echo "#$N: re-tested (closed and reopened), labeled $L_RETESTED"
       else
         echo "#$N: could not re-test; skipped" >&2 ; continue
@@ -172,7 +202,8 @@ done < "$WORKDIR/prs.jsonl"
   echo
   W=$([ "$DRY_RUN" = true ] && echo " (would)")
   echo "Re-tested$W: $N_RETESTED; pinged$W: $N_PINGED; closed$W: $N_CLOSED (limit $LIMIT; results older than $DAYS days; closed $CLOSE_DAYS days after an unanswered ping)."
-  echo "Left alone: $N_HUMAN with a comment by a human, $N_FRESH with a result newer than $DAYS days, $N_WAIT waiting (for a re-test result, or for the $CLOSE_DAYS days after the ping)."
+  echo "Left alone: $N_HUMAN with a comment by a human, $N_FRESH with a result (or other activity) newer than $DAYS days, $N_WAIT waiting (for a re-test result, or for the $CLOSE_DAYS days after the ping)."
+  echo "API requests: $N_REQUESTS."
   [ "$DRY_RUN" = true ] && echo && echo "(dry run: nothing was changed)"
 } | tee -a "${GITHUB_STEP_SUMMARY:-/dev/null}"
 exit 0

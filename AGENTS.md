@@ -180,7 +180,10 @@ GitHub Pages (Jekyll) from this repository.
    A PR that passes the re-test keeps `screenshot-ok` and waits for a maintainer.
    `discover-apps.sh` treats an `auto-closed` PR like a repository checked without
    success on its closing day (proposed again when pushed to later), not like one
-   rejected by a maintainer.
+   rejected by a maintainer. API budget: the comments of a PR are only fetched
+   when it is on the ladder or had no activity (`updated_at`) for `days`; the run
+   stops with exit 4 when fewer than `RESERVE` (200) requests of the hour are left,
+   and prints how many it used (see "GitHub API budget" below).
 
 4. `.github/workflows/ping-authors.yml` (monthly `schedule`, a real run, and
    `workflow_dispatch` with `dry_run` (default true), `max_issues`
