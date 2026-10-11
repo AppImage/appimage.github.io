@@ -208,10 +208,11 @@ else
   exit 1
 fi
 
-# Get lint (consider moving it to this repository at some point)
-if [ ! -f appdir-lint.sh ] ; then
-  wget -c -q https://raw.githubusercontent.com/AppImage/AppImages/master/appdir-lint.sh https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist
+# appdir-lint.sh is code/appdir-lint.sh (vendored); only the excludelist comes from AppImage/AppImages
+if [ ! -f excludelist ] ; then
+  wget -c -q https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist
 fi
+export EXCLUDELIST=$PWD/excludelist
 
 set -x
 
@@ -239,7 +240,7 @@ if [ x"$TYPE" == x2 ] ; then
     exit 1
   fi
   echo $APPDIR
-  bash appdir-lint.sh "$APPDIR"
+  bash "$(dirname "$0")/appdir-lint.sh" "$APPDIR"
   # later # kill $PID # fuse
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
   UPDATE_INFORMATION=$(TARGET_APPIMAGE="$FILENAME" ./runtime* --appimage-updateinformation) || echo "Could not get update information from the AppImage"
@@ -253,7 +254,7 @@ if [ x"$TYPE" == x1 ] ; then
   sudo mount "$FILENAME" -o ro,loop /mnt
   APPDIR=/mnt
   echo $APPDIR
-  bash appdir-lint.sh "$APPDIR"
+  bash "$(dirname "$0")/appdir-lint.sh" "$APPDIR"
   # https://github.com/AppImage/AppImageSpec/blob/master/draft.md#updateinformation
   UPDATE_INFORMATION=$(dd if="${FILENAME}" bs=1 skip=33651 count=512 2>/dev/null | tr -d '\000') || echo "Could not get update information from the AppImage"
   # later # sudo umount -l /mnt

@@ -14,7 +14,6 @@ get() { # get URL [FILENAME]
   [ -s "$NAME" ] || wget -q -O "$NAME" "$1"
 }
 
-get https://raw.githubusercontent.com/AppImage/AppImages/master/appdir-lint.sh
 get https://raw.githubusercontent.com/AppImage/AppImages/master/excludelist
 get https://github.com/AppImage/appimage.github.io/releases/download/deps/runtime-fuse2-x86_64
 get https://github.com/AppImage/appimage.github.io/releases/download/deps/alpine-firejail-git20230825.tar.gz
