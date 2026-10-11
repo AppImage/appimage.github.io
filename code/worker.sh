@@ -466,6 +466,32 @@ if [ -n "$NO_WINDOW" ] && [ x"$TERMINAL" == xfalse ] ; then
     fi
   fi
 fi
+# The test runs without network on purpose (firejail --net=none): an AppImage
+# must start without phoning home. Many applications exit, or show nothing,
+# without network (a login or update check first). When the application showed
+# no window, run it once more WITH network, only to tell the contributor whether
+# that is the cause (code/diagnose.sh: error-needs-network); the test fails
+# either way. The instance is left to the cleanup trap (it kills it after the
+# failure screen capture, which then shows the window that needs the network).
+if [ -n "$NO_WINDOW" ] && [ x"$TERMINAL" == xfalse ] ; then
+  kill $APID 2>/dev/null && sleep 2 || true
+  kill -9 $APID 2>/dev/null || true
+  echo "Running the application once more, with network access, to see whether that is what it needs"
+  firejail --quiet --noprofile --appimage ./"$FILENAME" > network-run.log 2>&1 &
+  APID=$!
+  sleep 10
+  for _ in $(seq 1 20) ; do
+    kill -0 $APID 2>/dev/null || break
+    timeout 5 xdotool search --onlyvisible --name '.' >/dev/null 2>&1 && break
+    sleep 1
+  done
+  if kill -0 $APID 2>/dev/null && timeout 5 xdotool search --onlyvisible --name '.' >/dev/null 2>&1 ; then
+    sleep 2
+    echo "NOTE: With network access the application shows a window: it needs the network to start"
+  else
+    echo "No window with network access either"
+  fi
+fi
 if [ -n "$NO_WINDOW" ] ; then
   echo "$NO_WINDOW"
   exit 1

@@ -82,6 +82,11 @@ GitHub Pages (Jekyll) from this repository.
      message found by OCR (tesseract), or text mostly in Chinese, Arabic,
      Cyrillic or Greek script (OCR with those models, confident words only;
      label `error-not-english`);
+   - when the application showed no window (and is no terminal application), runs
+     it once more **with** network, only for the diagnosis: a window then means
+     `NOTE: With network access the application shows a window`, label
+     `error-needs-network` with a hint (start offline, log in or check for updates
+     afterwards); the test fails either way, as it runs without network on purpose;
    - warns when the AppImage has no (or broken) update information;
    - writes `database/` and `apps/`. `links:` in `apps/<Name>.md` (shown on
      the page and in `feed.json`) gets the repository and its releases for

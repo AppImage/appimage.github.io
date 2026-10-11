@@ -42,6 +42,10 @@ HINTS=(
   "error-app-exits"
   "The application quit or crashed right after starting. The error below usually shows why."
 
+  "^NOTE: With network access the application shows a window"
+  "error-needs-network"
+  "The application shows its window only with network access: the test runs it without network on purpose, and it exited or showed nothing, but it did show a window when run once more with network. An AppImage must start without network (a user may be offline): please show the window first and do the login, update check or download afterwards, and handle a failed connection instead of exiting."
+
   "^ERROR: Could not find a single window on screen"
   "error-no-window"
   "The application did not open a window within 30 seconds. It must show its main window when started without arguments."
