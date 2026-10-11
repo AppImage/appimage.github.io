@@ -502,6 +502,49 @@ Write the answer:
   and mention further findings only as friendly suggestions.
 - Follow the attribution rules of the environment the agent runs in.
 
+## GitHub API budget
+
+GitHub allows 5000 REST requests an hour per user, and `GITHUB_TOKEN` in a
+workflow 1000 an hour per repository; every token and tool that acts as the
+same account (a personal token, `gh api`, an agent's own client) draws from
+one bucket, so one careless loop stops everything else for the rest of the
+hour. The repository has thousands of open pull requests: one request per
+pull request is already most of the budget. In October 2026 an agent spent
+the whole hour with an analysis that made four requests per pull request,
+eight in parallel, while a dry run of `stale-discovered.sh` walked the
+comments of 3400 pull requests at the same time.
+
+Rules for scripts and workflows:
+- Count the requests before writing the loop: `(items / 100)` pages for a
+  list, plus the per-item requests, plus the actions. Anything over a few
+  hundred per run needs a cheaper design. Prefer one list of all pull
+  requests (100 per page: 50 requests for 5000) and filter it locally by
+  its fields (`labels`, `updated_at`, `head.ref`, `title`) over anything
+  per pull request; fetch comments, files or events only for the handful of
+  candidates that survive (`stale-discovered.sh`, `retest-stale.sh`).
+- Send every request through one function (`api()` in
+  `stale-discovered.sh`), count them, check `rate_limit` every 50 requests
+  and stop when fewer than a reserve (200) are left, with a clear message
+  and exit code; print the count in the summary so that a regression shows.
+- Stop after `limit` actions, not after the whole list is read.
+- Never run two request-heavy jobs at once (`concurrency` in the workflow;
+  by hand, one at a time).
+- The search API has its own limit (30 requests a minute); wait it out
+  (`discover-apps.sh`), do not retry in a tight loop.
+
+Rules for an agent working on the repository by hand:
+- Use git where it gives the same answer for free: `git fetch origin
+  refs/pull/N/head` gets a pull request's files and content (one fetch
+  for hundreds of pull requests), `git ls-remote https://github.com/o/r`
+  tells whether a repository is gone, `raw.githubusercontent.com` serves
+  file contents.
+- Before a batch, read `rate_limit` (`gh api rate_limit --jq
+  .resources.core`), budget the batch and keep a reserve for the actions
+  that follow; save responses to disk so that a re-run does not fetch
+  them again; run at most 2-3 requests in parallel; and stop at the first
+  "API rate limit exceeded" instead of retrying (the reset time is in the
+  `X-RateLimit-Reset` header).
+
 ## Conventions
 
 - Keep the shell style of the surrounding code (plain bash, `[ x"$A" == x... ]`

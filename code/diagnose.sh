@@ -40,7 +40,7 @@ HINTS=(
 
   "^ERROR: The application exited within [0-9]+ seconds"
   "error-app-exits"
-  "The application quit or crashed right after starting. The error below usually shows why."
+  "The application quit or crashed right after starting; the error below usually shows why. Note that the test runs the application without network access, on purpose, and that this is a requirement for the catalog: an AppImage must start without network (users are offline too). If the application needs a server, a login or an update check to start, please make it show its window (or at least a message) first and connect afterwards, and handle a failed connection instead of exiting."
 
   "^ERROR: Could not find a single window on screen"
   "error-no-window"
