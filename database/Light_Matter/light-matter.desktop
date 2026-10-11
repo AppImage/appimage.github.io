@@ -5,8 +5,9 @@ Terminal=false
 Type=Application
 Icon=light-matter
 StartupWMClass=light-matter
-X-AppImage-Version=0.2.0
-Comment=A simple image viewer with HDR photo support for Windows
+X-AppImage-Version=0.2.2
+Comment=A simple image viewer with HDR photo support for Windows and Linux
+MimeType=image/jpeg;image/jpeg;image/jxl;image/png;image/gif;image/svg+xml;image/webp;image/avif;image/bmp;
 Categories=Graphics;
 
 [AppImageHub]

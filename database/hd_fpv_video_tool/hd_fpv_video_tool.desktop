@@ -1,16 +1,11 @@
 [Desktop Entry]
+Name=hd_fpv_video_tool
+Exec=hd_fpv_video_tool
+Icon=icon
 Type=Application
-Version=1.0
-Name=OpenRA - Example Mod
-GenericName=Real Time Strategy Game
-GenericName[de]=Echtzeit-Strategiespiel
-Icon=openra-example
-Exec=openra-example %U
-Terminal=false
-Categories=Game;StrategyGame;
-StartupWMClass=openra-example-20250330
-MimeType=x-scheme-handler/openra-example-20250330;
-PrefersNonDefaultGPU=true
+Terminal=true
+Categories=Utility;
+X-AppImage-Version=2.2.1
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
@@ -21,5 +16,5 @@ X-AppImage-Architecture=x86_64
 X-AppImage-Libc=host
 X-AppImage-Runtime=static
 X-AppImage-Self-Contained=false
-X-AppImage-Glibc-Required=GLIBC_2.27
-X-AppImage-Payload-License=GPL-3.0
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=GPL-2.0
