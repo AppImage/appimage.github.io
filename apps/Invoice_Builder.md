@@ -1,0 +1,120 @@
+---
+layout: app
+
+permalink: /Invoice_Builder/
+description: Invoice and quotation builder desktop app with PDF export, designed for small businesses and freelancers. Create, manage, and export invoices and quotes easily using a local database in an Electron-based app.
+license: MIT
+
+icons:
+  - Invoice_Builder/icons/128x128/invoice-builder.png
+
+screenshots:
+  - Invoice_Builder/screenshot.png
+
+authors:
+  - name: piratuks
+    url: https://github.com/piratuks
+
+links:
+  - type: GitHub
+    url: piratuks/invoice-builder
+  - type: Download
+    url: https://github.com/piratuks/invoice-builder/releases
+
+desktop:
+  Desktop Entry:
+    Name: Invoice Builder
+    Exec: AppRun %U
+    Terminal: false
+    Type: Application
+    Icon: invoice-builder
+    StartupWMClass: Invoice Builder
+    X-AppImage-Version: 3.0.3
+    Comment: Invoice and quotation builder desktop app with PDF export, designed for
+      small businesses and freelancers. Create, manage, and export invoices and quotes
+      easily using a local database in an Electron-based app.
+    Categories: Office
+  AppImageHub:
+    X-AppImage-UpdateInformation: zsync|https://github.com/piratuks/invoice-builder/releases/download/v3.0.3/Invoice-Builder-3.0.3.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.29
+    X-AppImage-Payload-License: MIT
+
+electron:
+  type: module
+  description: Invoice and quotation builder desktop app with PDF export, designed for
+    small businesses and freelancers. Create, manage, and export invoices and quotes
+    easily using a local database in an Electron-based app.
+  author: piratuks
+  bugs:
+    url: https://github.com/piratuks/invoice-builder/issues
+  repository:
+    type: git
+    url: git://github.com/piratuks/invoice-builder.git
+  license: MIT
+  electronmon:
+    patterns:
+    - "!data/**"
+    - "!**/*.db"
+    - "!**/*.db-journal"
+    - "!**/*.db-wal"
+    - "!**/*.db-shm"
+  dependencies:
+    "@dnd-kit/core": "^6.3.1"
+    "@dnd-kit/modifiers": "^9.0.0"
+    "@dnd-kit/sortable": "^10.0.0"
+    "@emotion/react": "^11.14.0"
+    "@emotion/styled": "^11.14.1"
+    "@monaco-editor/react": "^4.7.0"
+    "@mui/icons-material": "^9.4.0"
+    "@mui/material": "^9.4.0"
+    "@mui/x-date-pickers": "^9.7.0"
+    "@react-pdf/renderer": "^4.9.0"
+    "@reduxjs/toolkit": "^2.12.0"
+    cors: "^2.8.6"
+    date-fns: "^4.1.0"
+    dayjs: "^1.11.21"
+    dotenv: "^17.3.1"
+    electron-updater: "^6.8.3"
+    exceljs: "^4.4.0"
+    express: "^5.2.1"
+    express-rate-limit: "^8.7.0"
+    file-saver: "^2.0.5"
+    i18next: "^26.0.8"
+    i18next-browser-languagedetector: "^8.2.1"
+    mui-color-input: "^9.0.0"
+    multer: "^2.3.0"
+    pako: "^3.0.1"
+    pdf-lib: "^1.17.1"
+    pg: "^8.20.0"
+    react: "^19.2.6"
+    react-dom: "^19.3.0"
+    react-error-boundary: "^6.1.1"
+    react-i18next: "^17.0.15"
+    react-image-crop: "^11.1.2"
+    react-number-format: "^5.4.5"
+    react-redux: "^9.3.0"
+    react-router-dom: "^7.18.3"
+    react-signature-canvas: "^1.1.0-alpha.2"
+    recharts: "^3.8.0"
+    sqlite3: "^6.0.1"
+    tsx: "^4.23.13"
+    uuid: "^14.0.0"
+  msw:
+    workerDirectory: public
+  overrides:
+    tar: "^7.5.9"
+    minimatch: "^10.2.1"
+    dompurify: "^3.4.13"
+    exceljs:
+      uuid: "^11.1.1"
+  main: dist-be/backend/main/main.cjs
+---

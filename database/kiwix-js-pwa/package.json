@@ -1,0 +1,30 @@
+{
+  "name": "kiwix-js-electron",
+  "productName": "Kiwix JS Electron",
+  "version": "3.9.2-E",
+  "description": "Kiwix JS offline ZIM archive reader packaged for the Electron framework",
+  "main": "main.cjs",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "repository": "https://github.com/kiwix/kiwix-js-pwa",
+  "author": {
+    "name": "Kiwix",
+    "email": "kiwix@kiwix.org"
+  },
+  "maintainer": "Jaifroid",
+  "license": "CC0-1.0",
+  "overrides": {
+    "ip": "npm:neoip@2.1.0"
+  },
+  "dependencies": {
+    "@types/fs-extra": "^9.0.11",
+    "core-js": "3.30.2",
+    "electron-context-menu": "^3.1.1",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.8.9",
+    "express": "^5.2.1",
+    "webtorrent": "3.0.16"
+  }
+}

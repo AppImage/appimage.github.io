@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata for the Linux AppImage. linux_package.sh fills in
+  0.0.6 and 2026-09-30 and installs the result as
+  usr/share/metainfo/com.alev.control-center.appdata.xml: appimagetool and
+  AppImageHub's appdir-lint.sh only look for the `.appdata.xml` name, and the
+  id must match the desktop file's basename for `appstreamcli validate-tree`.
+  Screenshots are the content-hashed stills the landing page serves. Only URL
+  types AppStream 0.15 (Ubuntu 22.04's appstreamcli) knows: it fails
+  validation on newer ones such as vcs-browser.
+-->
+<component type="desktop-application">
+  <id>com.alev.control-center</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Control Center</name>
+  <summary>Dispatch and review coding agents on isolated worktrees</summary>
+  <developer id="com.alev">
+    <name>Samuel Alev</name>
+  </developer>
+  <description>
+    <p>
+      Control Center coordinates coding agents across workspaces and repositories.
+      Mention an agent in a space to dispatch a run against an isolated branch and
+      worktree, follow its conversation and run log, then review the pull request it
+      opens.
+    </p>
+    <p>Agents are one part of the deck. The same server keeps:</p>
+    <ul>
+      <li>An inbox of the pull requests waiting on you, with diffs, checks and review</li>
+      <li>Tickets, pipelines and plans</li>
+      <li>Meetings with on-device transcription and summaries</li>
+      <li>Messaging, calendar, a newsfeed and observability</li>
+    </ul>
+    <p>
+      Agents run on the built-in runtime with your own model-provider key, or through
+      the Claude Code CLI. The desktop app hosts its own server, and the web and phone
+      clients connect to it.
+    </p>
+  </description>
+  <launchable type="desktop-id">com.alev.control-center.desktop</launchable>
+  <url type="homepage">https://usectrl.dev/</url>
+  <url type="help">https://usectrl.dev/manual/</url>
+  <url type="bugtracker">https://github.com/SamuelAlev/control-center/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://files.usectrl.dev/media/inbox-review.f5e789b8.webp</image>
+      <caption>The inbox of pull requests waiting on your review</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://files.usectrl.dev/media/pr-diff.f63ce4fc.webp</image>
+      <caption>A pull request with its checks, reviewers and activity</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://files.usectrl.dev/media/meetings.2fde5b3d.webp</image>
+      <caption>A meeting transcript next to its notes</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://files.usectrl.dev/media/pipelines.132302c0.webp</image>
+      <caption>Pipeline runs and their results</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://files.usectrl.dev/media/agents-and-skills.2e4bc4f3.webp</image>
+      <caption>Configuring agents and their skills</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <releases>
+    <release version="0.0.6" date="2026-09-30"/>
+  </releases>
+</component>

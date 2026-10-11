@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Vidra
+GenericName=Advanced Video Download Manager
+Exec=LD_LIBRARY_PATH=usr/lib vidra %u
+Icon=vidra
+Type=Application
+StartupNotify=true
+Categories=Network;Utility;AudioVideo
+Keywords=Vidra;yt-dlp;Download;Video;Media;Manager;Flutter
+
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|chomusuke-mk|vidra|latest|vidra-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Sat Aug 15 08:15:25 2026 UTC                using RSA key 5D317A329AECB4D0FBDE1685470282696D71639C Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

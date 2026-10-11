@@ -1,0 +1,16 @@
+{
+  "name": "lm-clipper",
+  "version": "2.0.0-beta.9",
+  "description": "An application for creating melee clips",
+  "license": "GPL-3.0-only",
+  "author": {
+    "name": "Matt Denney",
+    "email": "matt.a.denney@gmail.com"
+  },
+  "main": "./dist/main/main.js",
+  "dependencies": {
+    "@napi-rs/canvas": "^1.0.0",
+    "better-sqlite3": "^12.6.2",
+    "electron-updater": "^6.7.3"
+  }
+}

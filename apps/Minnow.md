@@ -1,0 +1,154 @@
+---
+layout: app
+
+permalink: /Minnow/
+description: Minnow — a full agentic development workspace: editor, agents, git, issues, planning and local model hosting in one app.
+license: AGPL-3.0
+
+icons:
+  - Minnow/icons/1024x1024/minnow.png
+
+screenshots:
+  - Minnow/screenshot.png
+
+authors:
+  - name: HenriGrimm
+    url: https://github.com/HenriGrimm
+
+links:
+  - type: GitHub
+    url: HenriGrimm/Minnow
+  - type: Download
+    url: https://github.com/HenriGrimm/Minnow/releases
+
+desktop:
+  Desktop Entry:
+    Name: Minnow
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: minnow
+    StartupWMClass: Minnow
+    X-AppImage-Version: 0.1.6
+    Comment: 'Minnow — a full agentic development workspace: editor, agents, git, issues,
+      planning and local model hosting in one app.'
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.38
+    X-AppImage-Payload-License: AGPL-3.0
+
+electron:
+  description: 'A full agentic development workspace: editor, agents, git, issues, planning
+    and local model hosting in one open source app'
+  author: Henri Grimm <henri@grimmedia.org>
+  license: AGPL-3.0-or-later
+  repository:
+    type: git
+    url: git+https://github.com/henrigrimm/minnow.git
+  type: module
+  main: electron/dist/main.js
+  bin:
+    minnow: "./bin/minnow.mjs"
+  dependencies:
+    "@ai-sdk/anthropic": 4.0.21
+    "@codemirror/autocomplete": "^6.20.3"
+    "@codemirror/commands": "^6.10.4"
+    "@codemirror/lang-angular": "^0.1.4"
+    "@codemirror/lang-cpp": "^6.0.3"
+    "@codemirror/lang-css": "^6.3.1"
+    "@codemirror/lang-go": "^6.0.1"
+    "@codemirror/lang-html": "^6.4.11"
+    "@codemirror/lang-java": "^6.0.2"
+    "@codemirror/lang-javascript": "^6.2.5"
+    "@codemirror/lang-json": "^6.0.2"
+    "@codemirror/lang-less": "^6.0.2"
+    "@codemirror/lang-markdown": "^6.5.1"
+    "@codemirror/lang-php": "^6.0.2"
+    "@codemirror/lang-python": "^6.2.1"
+    "@codemirror/lang-rust": "^6.0.2"
+    "@codemirror/lang-sass": "^6.0.2"
+    "@codemirror/lang-sql": "^6.10.0"
+    "@codemirror/lang-vue": "^0.1.3"
+    "@codemirror/lang-wast": "^6.0.2"
+    "@codemirror/lang-xml": "^6.1.0"
+    "@codemirror/lang-yaml": "^6.1.3"
+    "@codemirror/language": "^6.12.4"
+    "@codemirror/language-data": "^6.5.2"
+    "@codemirror/legacy-modes": "^6.5.3"
+    "@codemirror/lint": "^6.9.7"
+    "@codemirror/search": "^6.7.1"
+    "@codemirror/state": "^6.7.1"
+    "@codemirror/view": "^6.43.6"
+    "@flaticon/flaticon-uicons": "^3.3.1"
+    "@lydell/node-pty": "^1.1.0"
+    "@modelcontextprotocol/sdk": "^1.29.0"
+    "@types/react": "^19.2.17"
+    "@types/react-dom": "^19.2.3"
+    "@vscode/ripgrep": "^1.18.0"
+    "@xenova/transformers": "^2.17.2"
+    "@xterm/addon-fit": "^0.11.0"
+    "@xterm/addon-web-links": "^0.12.0"
+    "@xterm/xterm": "^6.0.0"
+    ai: 7.0.37
+    bash-language-server: "^5.6.0"
+    better-sqlite3: "^13.0.1"
+    connect: "^3.7.0"
+    cron-parser: "^5.6.2"
+    d3-drag: "^3.0.0"
+    d3-force: "^3.0.0"
+    d3-selection: "^3.0.0"
+    d3-zoom: "^3.0.0"
+    diff: "^9.0.0"
+    dockerfile-language-server-nodejs: "^0.15.0"
+    dompurify: "^3.4.12"
+    electron-updater: "^6.8.9"
+    graphql-language-service-cli: "^3.5.0"
+    highlight.js: "^11.11.1"
+    isomorphic-dompurify: "^3.19.0"
+    marked: "^18.0.7"
+    material-icon-theme: "^5.37.0"
+    pyright: "^1.1.411"
+    qrcode: "^1.5.4"
+    react: "^19.2.8"
+    react-dom: "^19.2.8"
+    recharts: "^3.10.1"
+    sirv: "^3.0.2"
+    tsserver-fallback: npm:typescript@^5.8.3
+    typescript: "^7.0.2"
+    typescript-language-server: "^5.3.0"
+    vscode-jsonrpc: "^9.0.1"
+    vscode-langservers-extracted: "^4.10.0"
+    vscode-languageserver-types: "^3.18.0"
+    ws: "^8.21.1"
+    yaml-language-server: "^1.24.0"
+  overrides:
+    glob: "^13.0.6"
+    rimraf: "^6.0.1"
+    inflight: npm:@favware/skip-inflight@^1.0.2
+    "@hono/node-server": "^2.0.12"
+    brace-expansion: "^5.0.8"
+    minimatch: "^10.2.5"
+    protobufjs: "^7.6.3"
+    sharp: "^0.35.3"
+    html-to-text: "^10.0.1"
+    deepmerge-ts: "^8.0.1"
+  optionalDependencies:
+    "@emnapi/core": 1.11.3
+    "@emnapi/runtime": 1.11.3
+    "@pdf-lib/fontkit": "^1.1.1"
+    docx: "^9.7.1"
+    mammoth: "^1.12.0"
+    officeparser: "^6.0.7"
+    pdf-lib: "^1.17.1"
+    pdf-parse: "^2.4.5"
+    xlsx: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
+---

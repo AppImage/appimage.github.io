@@ -1,0 +1,220 @@
+# Flags PRs that change an entry in data/ to a download location of someone
+# else (another GitHub user or organization, another domain): this could be
+# an attempt to take over the entry. Adds the manual-check-needed label and a
+# comment for the maintainers.
+#
+# Also flags PRs that add (or rename to) a file in data/ whose name has more than
+# two hyphens ("My-App-Name-1.0-x86_64" and the like: often a version, an
+# architecture or a file name instead of the application's name) with the same
+# label and a comment of its own, marked <!-- appimagehub-name-check -->.
+#
+# pull_request_target runs this file and code/ from master, with write
+# permissions, also for PRs from forks. It must never check out or run
+# anything from the PR: the PR's files are only read as text via the API.
+name: Check origin
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'data/**'
+
+concurrency:
+  group: check-origin-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  check-origin:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.pull_request.number }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      LABEL: manual-check-needed
+    steps:
+      # The default branch, not the PR
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: code
+
+      - name: Compare the download locations
+        run: |
+          MARKER='<!-- appimagehub-origin-check -->'
+          first_line() { # first_line PATH REF: first line of a file, as text
+            gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$1?ref=$2" 2>/dev/null \
+              | head -n 1 | tr -d '\r' | cut -c1-300 || true
+          }
+          # Changed (not added) files in data/, with their previous name if renamed
+          gh api --paginate "repos/$REPO/pulls/$PR/files" \
+            --jq '.[] | select(.filename | startswith("data/")) | select(.status == "modified" or .status == "renamed")
+                  | [.filename, (.previous_filename // .filename)] | @tsv' > files.tsv
+          : > changes.md
+          : > urls.txt
+          : > moved.md
+          while IFS=$'\t' read -r FILE PREVIOUS ; do
+            OLD=$(first_line "$PREVIOUS" "$BASE_SHA")
+            NEW=$(first_line "$FILE" "$HEAD_SHA")
+            [ -n "$OLD" ] && [ -n "$NEW" ] || continue
+            # 0 = same owner; 1 = different owner; 2 = different but GitHub
+            # redirects the old repo to the new one (a rename/transfer)
+            # (not "RESULT=$(...) ; RC=$?": under bash -e a non-zero exit of the
+            # script ends this one before RC is read, so nothing was reported)
+            RC=0 ; RESULT=$(bash code/check-origin.sh "$OLD" "$NEW") || RC=$?
+            [ "$RC" -eq 0 ] && continue
+            # File names and origins contain only safe characters
+            SAFE_FILE=$(echo "$FILE" | tr -cd 'A-Za-z0-9._/+-')
+            LINE="- \`$SAFE_FILE\`: \`${RESULT% *}\` → \`${RESULT#* }\`"
+            if [ "$RC" -eq 2 ] ; then
+              echo "$LINE" >> moved.md
+            else
+              echo "$LINE" >> changes.md
+              printf '%s\nold: %s\nnew: %s\n' "$SAFE_FILE" "$OLD" "$NEW" >> urls.txt
+            fi
+          done < files.tsv
+          cat changes.md moved.md
+
+          # Files in data/ that this PR adds or renames to, with a name of more
+          # than two hyphens (existing entries keep the names they have)
+          gh api --paginate "repos/$REPO/pulls/$PR/files" \
+            --jq '.[] | select(.filename | startswith("data/")) | select(.status == "added" or .status == "renamed") | .filename' \
+            | while read -r FILE ; do
+                NAME=${FILE#data/}
+                [ "$(printf '%s' "$NAME" | tr -cd '-' | wc -c)" -gt 2 ] || continue
+                # File names are shown only with safe characters
+                echo "- \`$(echo "$NAME" | tr -cd 'A-Za-z0-9._+-' | cut -c1-100)\`"
+              done > hyphens.md
+          cat hyphens.md
+
+          ID=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
+                 --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .id" \
+               | tail -n 1)
+          HAS_LABEL=$(gh api "repos/$REPO/issues/$PR/labels" --jq ".[] | select(.name == \"$LABEL\") | .name")
+
+          if [ -s changes.md ] ; then
+            {
+              echo "$MARKER"
+              echo "### :warning: Manual check needed: the download location changes owner"
+              echo
+              echo "This PR changes where the AppImage is downloaded from, to a different owner or site:"
+              echo
+              cat changes.md
+              echo
+              echo '````text'
+              # Untrusted text: neutralize anything that could close the code block
+              sed 's/````*/```/g' urls.txt
+              echo '````'
+              echo
+              echo "This is often fine (e.g. the project moved to an organization or to its own website), but it could also be an attempt to take over the entry."
+              echo
+              echo "- **Contributor:** please explain in this PR why the location changed, ideally with a link where the project announces the new location."
+              echo "- **Maintainers:** please check that the new location belongs to the same project before merging."
+              if [ -s moved.md ] ; then
+                echo
+                echo "For reference, these other changes are confirmed GitHub redirects (the old repository was renamed or transferred to the new one — the same project):"
+                echo
+                cat moved.md
+              fi
+              echo
+              echo "Commit ${HEAD_SHA::8}."
+            } > comment.md
+            if [ -n "$ID" ] ; then
+              gh api -X PATCH "repos/$REPO/issues/comments/$ID" -F body=@comment.md > /dev/null
+            else
+              gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md > /dev/null
+            fi
+            if [ -z "$HAS_LABEL" ] ; then
+              if ! gh api "repos/$REPO/labels/$LABEL" > /dev/null 2>&1 ; then
+                gh api "repos/$REPO/labels" -f name="$LABEL" -f color=fbca04 \
+                  -f description="A maintainer needs to check this PR, see its comments" > /dev/null
+              fi
+              gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=$LABEL" > /dev/null
+            fi
+          elif [ -s moved.md ] ; then
+            # Different GitHub owner, but GitHub redirects the old repository to
+            # the new one: a rename or transfer, the same project. Just inform;
+            # this is not a takeover, so no warning and no manual-check label.
+            {
+              echo "$MARKER"
+              echo "### :information_source: Download location moved (same project)"
+              echo
+              echo "This PR points the entry to a different GitHub location, and GitHub itself redirects the old repository to the new one, so it is the same project (a rename or transfer), not a takeover:"
+              echo
+              cat moved.md
+              echo
+              echo "No action needed; noting it for the record."
+              echo
+              echo "Commit ${HEAD_SHA::8}."
+            } > comment.md
+            if [ -n "$ID" ] ; then
+              gh api -X PATCH "repos/$REPO/issues/comments/$ID" -F body=@comment.md > /dev/null
+            else
+              gh api "repos/$REPO/issues/$PR/comments" -F body=@comment.md > /dev/null
+            fi
+            # A confirmed move is not a manual check: drop the label if an
+            # earlier commit had added it.
+            if [ -n "$HAS_LABEL" ] && [ ! -s hyphens.md ] ; then
+              gh api -X DELETE "repos/$REPO/issues/$PR/labels/$LABEL" > /dev/null
+            fi
+          else
+            # No (more) change of owner: withdraw an earlier warning
+            if [ -n "$ID" ] ; then
+              printf '%s\n### Download location: no change of owner\n\nAn earlier commit of this PR changed the download location to a different owner; as of commit %s, it no longer does.\n' \
+                "$MARKER" "${HEAD_SHA::8}" > comment.md
+              gh api -X PATCH "repos/$REPO/issues/comments/$ID" -F body=@comment.md > /dev/null
+            fi
+            if [ -n "$HAS_LABEL" ] && [ -n "$ID" ] && [ ! -s hyphens.md ] ; then
+              gh api -X DELETE "repos/$REPO/issues/$PR/labels/$LABEL" > /dev/null
+            fi
+          fi
+
+          # More than two hyphens in the name of a file: its own comment, and the
+          # same label (kept while either check flags the PR)
+          NAME_MARKER='<!-- appimagehub-name-check -->'
+          NAME_ID=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
+                      --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$NAME_MARKER\")) | .id" \
+                    | tail -n 1)
+          has_label() { gh api "repos/$REPO/issues/$PR/labels" --jq ".[] | select(.name == \"$LABEL\") | .name" | grep -q . ; }
+          if [ -s hyphens.md ] ; then
+            {
+              echo "$NAME_MARKER"
+              echo "### :warning: Manual check needed: the name of the file has more than two hyphens"
+              echo
+              cat hyphens.md
+              echo
+              echo "The name of the file in \`data/\` should be the name of the application (see the README), without version, architecture or file extension; blanks become \`_\`. Many hyphens often mean that it is a file name such as \`App-1.0-x86_64\` instead."
+              echo
+              echo "- **Contributor:** please check the name, or say in this PR why it is right (some applications really have hyphens in their name)."
+              echo "- **Maintainers:** please check the name before merging."
+              echo
+              echo "Commit ${HEAD_SHA::8}."
+            } > name-comment.md
+            if [ -n "$NAME_ID" ] ; then
+              gh api -X PATCH "repos/$REPO/issues/comments/$NAME_ID" -F body=@name-comment.md > /dev/null
+            else
+              gh api "repos/$REPO/issues/$PR/comments" -F body=@name-comment.md > /dev/null
+            fi
+            if ! has_label ; then
+              if ! gh api "repos/$REPO/labels/$LABEL" > /dev/null 2>&1 ; then
+                gh api "repos/$REPO/labels" -f name="$LABEL" -f color=fbca04 \
+                  -f description="A maintainer needs to check this PR, see its comments" > /dev/null
+              fi
+              gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=$LABEL" > /dev/null
+            fi
+          elif [ -n "$NAME_ID" ] ; then
+            # No (more) such name: withdraw the earlier warning, and the label
+            # unless the origin check flags the PR
+            printf '%s\n### File name: no more than two hyphens\n\nAn earlier commit of this PR had a file in data/ with more than two hyphens in its name; as of commit %s, it no longer does.\n' \
+              "$NAME_MARKER" "${HEAD_SHA::8}" > name-comment.md
+            gh api -X PATCH "repos/$REPO/issues/comments/$NAME_ID" -F body=@name-comment.md > /dev/null
+            if [ ! -s changes.md ] && has_label ; then
+              gh api -X DELETE "repos/$REPO/issues/$PR/labels/$LABEL" > /dev/null
+            fi
+          fi

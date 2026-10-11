@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>openhv.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>OpenHV</name>
+  <developer id="net.openhv">
+    <name>OpenHV developers</name>
+  </developer>
+  <summary>Futuristic strategy game</summary>
+  <description>
+    <p>
+      OpenHV is an open source pixel art, science fiction strategy game using art and ideas from the golden era of RTS, but adding modern technology and usability to the mix. It comes with multiplayer (LAN and internet) support, competent skirmish AI as well as an integrated map editor. All the assets are licensed under Open Source compliant terms. It is easy to add custom content.
+    </p>
+  </description>
+  <launchable type="desktop-id">openhv.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://www.openhv.net/images/appstream/arctic-base.png</image>
+      <caption>fortified base</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.openhv.net/images/appstream/editor-mirror-tool.png</image>
+      <caption>in-game map editor</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.openhv.net/images/appstream/uneven-remuneration.png</image>
+      <caption>spectator mode</caption>
+    </screenshot>
+  </screenshots>
+  <branding>
+    <color type="primary" scheme_preference="light">#5a5a5a</color>
+    <color type="primary" scheme_preference="dark">#333333</color>
+  </branding>
+  <url type="homepage">https://www.openhv.net/</url>
+  <url type="bugtracker">https://github.com/OpenHV/OpenHV/issues</url>
+  <url type="help">https://github.com/OpenHV/OpenHV/wiki</url>
+  <url type="faq">https://github.com/OpenHV/OpenHV/wiki/FAQ</url>
+  <url type="contact">https://matrix.to/#/+openhv:matrix.org</url>
+  <url type="donation">https://opencollective.com/openhv</url>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-fantasy">moderate</content_attribute>
+    <content_attribute id="violence-bloodshed">moderate</content_attribute>
+    <content_attribute id="social-chat">intense</content_attribute>
+  </content_rating>
+  <releases>
+    <release version="20250725" date="2025-07-25">
+      <url>https://github.com/OpenHV/OpenHV/releases/tag/20250725</url>
+    </release>
+  </releases>
+</component>

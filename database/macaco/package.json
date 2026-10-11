@@ -1,0 +1,26 @@
+{
+  "name": "macaco",
+  "version": "1.0.6",
+  "description": "A Magic Card Collection Software",
+  "main": "src/main/main.js",
+  "author": "Eric Mauser",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.10.0",
+    "jszip": "^3.10.1",
+    "jimp": "^1.6.1"
+  },
+  "standard": {
+    "globals": [
+      "macaco",
+      "CustomEvent",
+      "customElements",
+      "HTMLElement",
+      "IntersectionObserver",
+      "CSSStyleSheet"
+    ]
+  }
+}

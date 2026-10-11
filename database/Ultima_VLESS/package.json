@@ -1,0 +1,38 @@
+{
+  "name": "ultima-vless-client",
+  "version": "7.16.0",
+  "description": "Open-source desktop VLESS/Xray VPN client for Windows, macOS, and Linux",
+  "homepage": "https://github.com/sliva-name/ultimaVLESS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sliva-name/ultimaVLESS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sliva-name/ultimaVLESS/issues"
+  },
+  "main": "dist-electron/main.js",
+  "author": "UltimaVPN",
+  "license": "MIT",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.14.4",
+    "@sentry/electron": "^7.18.0",
+    "clsx": "^2.1.1",
+    "country-flag-icons": "^1.6.20",
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.8.9",
+    "i18next": "^26.4.2",
+    "js-base64": "^3.9.3",
+    "lucide-react": "^1.45.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-i18next": "^17.0.13"
+  },
+  "overrides": {
+    "baseline-browser-mapping": "2.11.22",
+    "brace-expansion@1.1.15": "1.1.18",
+    "browserslist": "4.28.9",
+    "fast-uri": "3.1.7",
+    "protobufjs": "7.6.6",
+    "undici@7.27.2": "7.29.1"
+  }
+}

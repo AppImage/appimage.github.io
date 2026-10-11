@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Icon=ClownMapEd
+Exec=ClownMapEd
+Terminal=false
+Type=Application
+Categories=Graphics;2DGraphics;Viewer;Qt;
+Name=ClownMapEd
+GenericName=Mega Drive Sonic the Hedgehog Sprite Editor
+X-AppImage-Version=v1.2

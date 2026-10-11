@@ -1,0 +1,12 @@
+{
+  "name": "rongyou",
+  "version": "1.0.1",
+  "description": "Electron app for RongYou (融优学堂) course automation",
+  "main": "main.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "electron-store": "^8.2.0",
+    "tesseract.js": "^5.1.1"
+  }
+}

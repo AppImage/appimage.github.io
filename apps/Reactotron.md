@@ -2,10 +2,11 @@
 layout: app
 
 permalink: /Reactotron/
-description: Reactotron desktop mode engage!
+description: A desktop app for inspecting your React JS and React Native projects. macOS, Linux, and Windows
+license: MIT
 
 icons:
-  - Reactotron/icons/128x128/reactotron-app.png
+  - Reactotron/icons/512x512/reactotron-app.png
 
 screenshots:
   - Reactotron/screenshot.png
@@ -23,57 +24,76 @@ links:
 desktop:
   Desktop Entry:
     Name: Reactotron
-    Comment: Reactotron desktop mode engage!
-    Exec: AppRun
+    Exec: AppRun --no-sandbox %U
     Terminal: false
     Type: Application
     Icon: reactotron-app
     StartupWMClass: Reactotron
-    X-AppImage-Version: 2.4.4.154
+    X-AppImage-Version: 3.11.0.4140
+    Comment: A desktop app for inspecting your React JS and React Native projects. macOS,
+      Linux, and Windows
     Categories: Development
-    X-AppImage-BuildId: 1EACeio9wZbGosBTrKRct0IMOu8
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: MIT
 
 electron:
-  description: Reactotron desktop mode engage!
-  main: "./src/main.prod.js"
-  repository: https://github.com/infinitered/reactotron
+  description: A desktop app for inspecting your React JS and React Native projects.
+    macOS, Linux, and Windows
   author:
-    name: Steve Kellock
-    email: steve@kellock.ca
-    url: https://github.com/reactotron
+    name: Infinite Red
+    email: hello@infinite.red
+    url: https://github.com/infinitered/reactotron
   license: MIT
   bugs:
     url: https://github.com/infinitered/reactotron/issues
+  repository: https://github.com/infinitered/reactotron
   homepage: https://github.com/infinitered/reactotron#readme
+  electronWebpack:
+    whiteListedModules:
+    - reactotron-core-ui
+    - react-router-dom
+    - styled-components
+    renderer:
+      webpackConfig: webpack.config.js
+      webpackDllConfig: webpack.config.js
+    main:
+      webpackConfig: webpack.config.js
   dependencies:
-    color: "^2.0.0"
-    css-modules-require-hook: "^4.2.2"
-    date-fns: "^1.29.0"
-    electron-debug: "^1.4.0"
-    font-awesome: "^4.7.0"
-    mobx: "^4.2.1"
-    mobx-react: "^5.1.2"
-    postcss: "^6.0.13"
-    prop-types: "^15.6.1"
-    ramda: "^0.25.0"
-    ramdasauce: "^2.1.0"
-    react: "^16.3.2"
-    react-base16-styling: "^0.5.3"
-    react-dom: "^16.3.2"
-    react-hot-loader: "^4.3.12"
-    react-icons: "^2.2.7"
-    react-json-tree: "^0.11.0"
-    react-modal: "^3.4.4"
-    react-tap-event-plugin: "^3.0.2"
-    react-tooltip: "^3.5.1"
-    reactotron-core-server: "^2.1.4"
-    source-map-support: "^0.5.5"
-    stringify-object: "^3.2.2"
-    update-electron-app: "^1.3.0"
+    electron-log: "^5.0.0"
+    electron-store: "^8.1.0"
+    electron-updater: "^6.1.7"
+    electron-window-state: "^5.0.3"
+    immer: "^10.0.3"
+    lodash.debounce: "^4.0.8"
+    react: 18.2.0
+    react-dom: 18.2.0
+    react-hotkeys: "^2.0.0"
+    react-icons: "^4.11.0"
+    react-modal: 3.16.1
+    react-motion: 0.5.2
+    react-router-dom: "^6.18.0"
+    react-tooltip: 4.5.1
+    reactotron-core-contract: workspace:*
+    reactotron-core-server: workspace:*
+    reactotron-core-ui: workspace:*
+    reactotron-mcp: workspace:*
+    source-map-support: "^0.5.21"
+    styled-components: "^6.1.0"
+    v8-compile-cache: "^2.4.0"
+  jest:
+    preset: ts-jest
+    testEnvironment: jsdom
+    testMatch:
+    - "**/*.test.ts"
+    - "**/*.test.tsx"
+  main: main.js
 ---

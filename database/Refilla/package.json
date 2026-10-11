@@ -1,0 +1,16 @@
+{
+  "name": "refilla",
+  "version": "2.0.1",
+  "description": "AI Account Tracker — local desktop app for managing AI service quotas and conversation context",
+  "main": "dist-electron/main.js",
+  "author": "🔱 PEGASUS",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "electron-store": "^8.2.0",
+    "lucide-react": "^0.441.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "uuid": "^10.0.0"
+  }
+}

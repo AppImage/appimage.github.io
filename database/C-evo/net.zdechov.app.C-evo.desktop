@@ -1,0 +1,19 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=C-evo
+Comment=A turn-based empire building strategy game inspired by Civilization II game.
+Exec=c-evo
+Icon=c-evo
+Terminal=false
+Type=Application
+Categories=GNOME;Game;StrategyGame
+StartupNotify=true
+MimeType=application/cevo;application/cevomap
+Keywords=strategy;simulation;civilization;tiles;history;mankind;multiplayer;turn-based;game;empire
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

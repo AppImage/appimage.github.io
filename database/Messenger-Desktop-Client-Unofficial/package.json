@@ -1,0 +1,15 @@
+{
+  "name": "messenger-desktop-unofficial",
+  "version": "3.0.0",
+  "description": "Messenger Desktop (Unofficial) - Secure desktop client for Facebook Messenger with native OS integration",
+  "main": "dist/main/main.js",
+  "author": "WinTer1165",
+  "license": "MIT",
+  "dependencies": {
+    "electron-store": "^10.1.0",
+    "electron-updater": "^6.8.9"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

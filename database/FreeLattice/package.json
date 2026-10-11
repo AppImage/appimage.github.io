@@ -1,0 +1,14 @@
+{
+  "name": "freelattice",
+  "productName": "FreeLattice",
+  "version": "5.8.0",
+  "description": "Your AI. Your Data. Your Freedom.",
+  "author": "Kirk Miller <kirkpmiller@hotmail.com>",
+  "homepage": "https://freelattice.com",
+  "license": "MIT",
+  "main": "main.js",
+  "dependencies": {
+    "electron-store": "^8.1.0",
+    "webtorrent": "^2.5.1"
+  }
+}

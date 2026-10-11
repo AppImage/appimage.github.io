@@ -1,0 +1,96 @@
+---
+layout: app
+
+permalink: /MongoBench/
+description: A modern, dark-mode-first MongoDB GUI.
+license: MIT
+
+icons:
+  - MongoBench/icons/1024x1024/mongobench.png
+
+screenshots:
+  - MongoBench/screenshot.png
+
+authors:
+  - name: ByteExceptionM
+    url: https://github.com/ByteExceptionM
+
+links:
+  - type: GitHub
+    url: ByteExceptionM/MongoBench
+  - type: Download
+    url: https://github.com/ByteExceptionM/MongoBench/releases
+
+desktop:
+  Desktop Entry:
+    Name: MongoBench
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: mongobench
+    StartupWMClass: MongoBench
+    X-AppImage-Version: 1.5.0
+    Comment: A modern, dark-mode-first MongoDB GUI.
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: MIT
+
+electron:
+  description: A modern, dark-mode-first MongoDB GUI.
+  author: ByteExceptionM
+  license: MIT
+  repository:
+    type: git
+    url: https://github.com/ByteExceptionM/MongoBench.git
+  main: out/main/index.js
+  engines:
+    node: ">=20"
+  dependencies:
+    "@fontsource-variable/geist": "^5.2.8"
+    "@monaco-editor/react": "^4.7.0"
+    "@radix-ui/react-alert-dialog": "^1.1.15"
+    "@radix-ui/react-context-menu": "^2.2.16"
+    "@radix-ui/react-dialog": "^1.1.15"
+    "@radix-ui/react-label": "^2.1.8"
+    "@radix-ui/react-select": "^2.2.6"
+    "@radix-ui/react-slot": "^1.1.0"
+    "@radix-ui/react-switch": "^1.2.6"
+    "@radix-ui/react-tabs": "^1.1.13"
+    "@tanstack/react-query": "^5.59.0"
+    bson: "^7.2.0"
+    class-variance-authority: "^0.7.0"
+    clsx: "^2.1.1"
+    cmdk: "^1.1.1"
+    electron-log: "^5.2.0"
+    electron-updater: "^6.8.3"
+    lucide-react: "^0.451.0"
+    monaco-editor: "^0.55.1"
+    mongodb: "^7.2.0"
+    react: "^18.3.1"
+    react-dom: "^18.3.1"
+    socks: "^2.8.9"
+    sonner: "^2.0.7"
+    ssh2: "^1.17.0"
+    tailwind-merge: "^2.5.2"
+    uuid: "^14.0.0"
+    zod: "^4.4.3"
+    zustand: "^5.0.0"
+  overrides:
+    dompurify: "^3.4.13"
+  lint-staged:
+    "*.{ts,tsx}":
+    - eslint --fix
+    - prettier --write
+    "*.{css,html,json,md,cjs,js}":
+    - prettier --write
+---

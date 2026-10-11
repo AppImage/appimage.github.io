@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Omatrack</title>
+  <desc id="desc">Two telemetry traces crossing a timing cursor</desc>
+  <rect width="128" height="128" rx="26" fill="#16181d"/>
+  <rect x="8.5" y="8.5" width="111" height="111" rx="19" fill="none" stroke="#2a2f3a" stroke-width="3"/>
+  <path d="M18 84 C30 84 34 44 46 44 C58 44 58 92 70 92 C82 92 84 34 96 34 C104 34 108 52 110 60"
+        fill="none" stroke="#a7c080" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18 100 C34 100 38 70 52 70 C66 70 70 104 86 104 C98 104 104 92 110 84"
+        fill="none" stroke="#e67e80" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+  <line x1="64" y1="20" x2="64" y2="108" stroke="#e09d7f" stroke-width="3" stroke-dasharray="6 6"/>
+  <circle cx="64" cy="58" r="6" fill="#e09d7f"/>
+</svg>

@@ -1,0 +1,12 @@
+{
+  "name": "@veld/desktop",
+  "private": true,
+  "version": "16.80.1",
+  "description": "Veld Desktop — Electron shell around the veld management UI (/ide)",
+  "author": "Prosperity Solutions <veld@life.li>",
+  "homepage": "https://veld.oss.life.li",
+  "main": "src/main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

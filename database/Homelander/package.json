@@ -1,0 +1,18 @@
+{
+  "name": "homelander",
+  "version": "1.5.3",
+  "private": true,
+  "author": "Mykola Fedurko <kolausf@gmail.com>",
+  "description": "Desktop app that automates apartment applications on ImmobilienScout24 — polls listings and auto-fills contact forms via a bundled Chromium browser.",
+  "type": "module",
+  "main": "electron/main.js",
+  "dependencies": {
+    "@puppeteer/browsers": "^2.13.2",
+    "better-sqlite3": "^12.11.1",
+    "koffi": "^3.0.2",
+    "puppeteer": "^24.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.0"
+  }
+}

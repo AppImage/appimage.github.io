@@ -1,0 +1,58 @@
+{
+  "name": "ipfs-desktop",
+  "private": true,
+  "version": "0.50.1",
+  "productName": "IPFS Desktop",
+  "description": "IPFS Native Application",
+  "main": "src/index.js",
+  "pre-commit": [
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ipfs/ipfs-desktop"
+  },
+  "author": "Interplanetary Shipyard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ipfs/ipfs-desktop/issues/new/choose"
+  },
+  "homepage": "https://github.com/ipfs/ipfs-desktop",
+  "dependencies": {
+    "countly-sdk-nodejs": "^20.11.0",
+    "electron-serve": "^1.1.0",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.8.9",
+    "fix-path": "3.0.0",
+    "fs-extra": "^10.0.1",
+    "i18next": "^21.8.14",
+    "i18next-fs-backend": "1.1.4",
+    "i18next-icu": "^2.0.3",
+    "intl-messageformat": "^9.13.0",
+    "ipfs-http-client": "56.0.2",
+    "ipfs-utils": "^9.0.10",
+    "ipfsd-ctl": "10.0.6",
+    "it-last": "^1.0.6",
+    "kubo": "0.43.1",
+    "multiaddr": "10.0.1",
+    "multiaddr-to-uri": "8.0.0",
+    "portfinder": "^1.0.32",
+    "untildify": "^4.0.0",
+    "v8-compile-cache": "^2.4.0",
+    "winston": "^3.7.2"
+  },
+  "standard": {
+    "ignore": [
+      "**/*.ts"
+    ]
+  },
+  "ts-standard": {
+    "project": "tsconfig.json",
+    "files": [
+      "types/*.ts"
+    ],
+    "ignore": [
+      "**/*.js"
+    ]
+  }
+}

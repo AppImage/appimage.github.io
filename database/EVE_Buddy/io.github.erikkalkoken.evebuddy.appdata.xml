@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <component type="desktop-application">
+   <id>io.github.erikkalkoken.evebuddy</id>
+   <name>EVE Buddy</name>
+   <summary>A multi-platform companion app for Eve Online players</summary>
+   <metadata_license>MIT</metadata_license>
+   <project_license>MIT</project_license>
+   <description><p>EVE Buddy is a multi-platform companion app for Eve Online players available on Windows, macOS, Linux and Android. Please see website for details.</p></description>
+   <launchable type="desktop-id">io.github.erikkalkoken.evebuddy.desktop</launchable>
+   <url type="homepage">https://github.com/ErikKalkoken/evebuddy</url>
+   <content_rating type="oars-1.1"></content_rating>
+   <screenshots>
+     <screenshot type="default">
+       <image>https://cdn.imgpile.com/f/aD27GDt_xl.png</image>
+     </screenshot>
+   </screenshots>
+   <categories>
+     <category>Game</category>
+   </categories>
+   <keywords>
+     <keyword>Eve Online</keyword>
+     <keyword>characters</keyword>
+   </keywords>
+ </component>

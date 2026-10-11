@@ -1,0 +1,99 @@
+---
+layout: app
+
+permalink: /bodegaone-releases/
+description: Multi-Agent Orchestration Platform
+
+icons:
+  - bodegaone-releases/icons/512x512/bodega-one.png
+
+screenshots:
+  - bodegaone-releases/screenshot.png
+
+authors:
+  - name: BodegaoneAI
+    url: https://github.com/BodegaoneAI
+
+links:
+  - type: GitHub
+    url: BodegaoneAI/bodegaone-releases
+  - type: Download
+    url: https://github.com/BodegaoneAI/bodegaone-releases/releases
+
+desktop:
+  Desktop Entry:
+    Name: Bodega One
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: bodega-one
+    StartupWMClass: Bodega One
+    X-AppImage-Version: 1.0.0-beta.43
+    Comment: Multi-Agent Orchestration Platform
+    MimeType: x-scheme-handler/bodega
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+
+electron:
+  description: Multi-Agent Orchestration Platform
+  author:
+    name: Bodega One Team
+    email: dev@bodegaone.ai
+  homepage: https://bodegaone.ai
+  repository:
+    type: git
+    url: https://github.com/BodegaoneAI/bodegaone-releases.git
+  main: dist/main.js
+  license: MIT
+  type: commonjs
+  dependencies:
+    "@monaco-editor/react": "^4.7.0"
+    "@sentry/electron": "^7.10.0"
+    "@tailwindcss/typography": "^0.5.19"
+    "@types/dompurify": "^3.2.0"
+    "@xterm/addon-fit": "^0.11.0"
+    "@xterm/addon-search": "^0.16.0"
+    "@xterm/addon-unicode11": "^0.9.0"
+    "@xterm/addon-web-links": "^0.12.0"
+    "@xterm/addon-webgl": "^0.19.0"
+    "@xterm/xterm": "^6.0.0"
+    "@xyflow/react": "^12.11.0"
+    chokidar: "^5.0.0"
+    dockview: "^6.5.0"
+    dompurify: "^3.4.1"
+    electron-updater: "^6.3.0"
+    mermaid: "^11.13.0"
+    monaco-editor: "^0.55.1"
+    monaco-editor-webpack-plugin: "^7.1.1"
+    node-pty: "^1.1.0"
+    react: "^19.2.4"
+    react-arborist: "^3.4.3"
+    react-dom: "^19.2.4"
+    react-markdown: "^10.1.0"
+    react-resizable-panels: "^4.6.2"
+    react-syntax-highlighter: "^16.1.0"
+    rehype-katex: "^7.0.1"
+    remark-gfm: "^4.0.1"
+    remark-math: "^6.0.0"
+    tailwindcss: "^4.1.18"
+    tldts: "^7.4.10"
+    zustand: "^5.0.11"
+  overrides:
+    lodash: ">=4.17.21"
+    lodash-es: ">=4.17.21"
+    dompurify: "^3.4.1"
+    node-gyp: "^12.1.0"
+  optionalDependencies:
+    "@emnapi/core": 1.10.0
+    "@emnapi/runtime": 1.10.0
+---

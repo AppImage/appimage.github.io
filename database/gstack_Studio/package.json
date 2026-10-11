@@ -1,0 +1,22 @@
+{
+  "name": "gstack-studio",
+  "version": "0.15.0",
+  "description": "Visual desktop studio for gstack — discover, run, and monitor AI agents without touching the CLI",
+  "main": "out/main/index.js",
+  "homepage": "https://github.com/arunrajiah/gstack-studio",
+  "repository": "https://github.com/arunrajiah/gstack-studio",
+  "author": {
+    "name": "gstack Studio Contributors",
+    "email": "noreply@github.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@electron-toolkit/tsconfig": "^2.0.0",
+    "@electron-toolkit/utils": "^4.0.0",
+    "electron-updater": "^6.3.9",
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  }
+}

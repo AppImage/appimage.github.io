@@ -1,0 +1,24 @@
+{
+  "name": "leagent-desktop",
+  "version": "1.2.7",
+  "description": "LeAgent Desktop — local-first intelligent office automation",
+  "homepage": "https://github.com/vixues/LeAgent",
+  "author": "LeAgent Team",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "main": "dist/main.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "electron-log": "^5.4.4",
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.8.9"
+  },
+  "overrides": {
+    "@electron/asar": "^4.2.0",
+    "glob": "^13.0.0",
+    "rimraf": "^6.0.0"
+  }
+}

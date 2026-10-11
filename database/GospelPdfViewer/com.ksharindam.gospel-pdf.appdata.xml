@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2023 Arindam Chaudhuri <ksharindam@gmail.com> -->
+<component type="desktop-application">
+  <id>com.ksharindam.gospel-pdf</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Gospel Pdf Viewer</name>
+  <summary>A fast, simple Pdf Viewer</summary>
+
+  <description>
+    <p>
+      A fast pdf viewer based on Poppler or MuPdf.
+    </p>
+  </description>
+
+  <categories>
+    <category>Office</category>
+  </categories>
+
+  <launchable type="desktop-id">com.ksharindam.gospel-pdf.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+        <caption>Screenshot 1</caption>
+        <image>https://github.com/ksharindam/gospel-pdf-viewer/raw/main/data/screenshots/Screenshot1.jpg</image>
+      </screenshot>
+    <screenshot>
+        <caption>Screenshot 2</caption>
+        <image>https://github.com/ksharindam/gospel-pdf-viewer/raw/main/data/screenshots/Screenshot2.jpg</image>
+      </screenshot>
+    <screenshot>
+        <caption>Screenshot 3</caption>
+        <image>https://github.com/ksharindam/gospel-pdf-viewer/raw/main/data/screenshots/Screenshot3.jpg</image>
+      </screenshot>
+    </screenshots>
+
+  <url type="homepage">https://ksharindam.github.io/gospel-pdf-viewer/</url>
+
+</component>

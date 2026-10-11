@@ -1,0 +1,50 @@
+{
+  "name": "meshshift",
+  "version": "0.2.3",
+  "description": "Offline 3D asset conversion and optimization toolkit.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@10.30.1",
+  "main": "dist/desktop/main.cjs",
+  "types": "./dist/core/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "meshshift": "dist/cli/meshshift.mjs"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "docs"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "jszip": "^3.10.1",
+    "meshoptimizer": "^1.2.0",
+    "three": "^0.169.0",
+    "three-mesh-bvh": "^0.9.13",
+    "watlas": "^1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H445/MeshShift.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/H445/MeshShift/issues"
+  },
+  "homepage": "https://github.com/H445/MeshShift#readme",
+  "productName": "MeshShift"
+}

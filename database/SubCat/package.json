@@ -1,0 +1,33 @@
+{
+  "name": "subcat",
+  "version": "1.2.3",
+  "description": "Get notified when a GitHub Actions CI run finishes",
+  "author": "Samuel Fialho",
+  "main": "src/electron/main.js",
+  "dependencies": {
+    "better-sqlite3": "^12.8.0",
+    "electron-updater": "^6.8.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/tests/e2e/"
+    ],
+    "testEnvironmentOptions": {
+      "nodeOptions": "--no-warnings"
+    },
+    "collectCoverageFrom": [
+      "src/core/**/*.js",
+      "src/db/**/*.js",
+      "src/electron/ipc/**/*.js"
+    ],
+    "coverageReporters": [
+      "text",
+      "text-summary"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.abcarus.ABCarus</id>
+  <name>ABCarus</name>
+  <summary>Edit, render, and play ABC notation</summary>
+  <developer_name>ABCarus contributors</developer_name>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>ABCarus is a desktop editor and toolkit for ABC notation. It combines text editing with an engraved score view and playback, so notation can be written, checked, and rehearsed in one workspace.</p>
+    <p>It supports multi-tune ABC files, Library browsing, set lists, MusicXML import and export, printing, practice loops, and configurable microtonal notation and playback.</p>
+  </description>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Music</category>
+  </categories>
+  <keywords>
+    <keyword>ABC</keyword>
+    <keyword>notation</keyword>
+    <keyword>score</keyword>
+    <keyword>MusicXML</keyword>
+    <keyword>set list</keyword>
+    <keyword>microtonal</keyword>
+  </keywords>
+  <url type="homepage">https://github.com/topchyan/abcarus</url>
+  <url type="bugtracker">https://github.com/topchyan/abcarus/issues</url>
+  <launchable type="desktop-id">com.abcarus.ABCarus.desktop</launchable>
+  <provides>
+    <binary>abcarus</binary>
+    <mediatype>text/x-abc</mediatype>
+    <mediatype>application/x-abc</mediatype>
+  </provides>
+  <screenshots>
+    <screenshot type="default">
+      <caption>ABC editor, Library, playback controls, and engraved score</caption>
+      <image type="source">https://raw.githubusercontent.com/topchyan/abcarus/master/assets/screenshots/appstream-main.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+</component>

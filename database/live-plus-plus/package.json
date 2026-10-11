@@ -1,0 +1,33 @@
+{
+  "name": "live-plus-plus",
+  "version": "2.3.12",
+  "private": true,
+  "description": "live++",
+  "desktopName": "live++",
+  "author": "dipelta <zha_zha@outlook.com>",
+  "main": "dist-electron/main/index.js",
+  "dependencies": {
+    "@electron/remote": "^2.1.3",
+    "@mdi/font": "5.9.55",
+    "axios": "^1.20.0",
+    "flv.js": "^1.6.2",
+    "fs-extra": "^11.4.0",
+    "huya-danmu": "^2.0.3",
+    "lodash-id": "^0.14.0",
+    "lowdb": "^1.0.0",
+    "material-design-icons-iconfont": "^5.0.1",
+    "roboto-fontface": "*",
+    "uuid": "^9.0.1",
+    "videojs-flvjs-es6": "^1.0.1",
+    "vue-danmaku": "^2.0.5",
+    "vue-router": "^4.6.4",
+    "vuetify": "^3.13.3",
+    "webfontloader": "^1.0.0"
+  },
+  "debug": {
+    "env": {
+      "VITE_DEV_SERVER_URL": "http://127.0.0.1:3344/"
+    }
+  },
+  "license": "MIT"
+}

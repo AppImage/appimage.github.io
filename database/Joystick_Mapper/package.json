@@ -1,0 +1,18 @@
+{
+  "name": "joystick-mapper",
+  "productName": "Joystick Mapper",
+  "version": "0.4.10",
+  "private": true,
+  "description": "Map a flight stick to a virtual Xbox 360 controller.",
+  "author": "Halston",
+  "license": "GPL-3.0-only",
+  "repository": "github:Alphonsvds/joystick-mapper",
+  "type": "module",
+  "main": "src/main/main.js",
+  "desktopName": "joystick-mapper.desktop",
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "koffi": "^3.3.2",
+    "node-hid": "^3.4.0"
+  }
+}

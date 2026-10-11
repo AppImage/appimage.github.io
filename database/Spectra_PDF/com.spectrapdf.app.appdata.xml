@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.spectrapdf.app</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Spectra PDF</name>
+  <summary>Open-source PDF workbench</summary>
+  <description>
+    <p>
+      Spectra PDF views, edits, annotates, fills, signs, converts, compares
+      and redacts PDF documents, and runs text recognition (OCR) on scanned
+      pages. All processing runs on the computer. The application needs no
+      account and sends no telemetry.
+    </p>
+  </description>
+  <launchable type="desktop-id">spectrapdf.desktop</launchable>
+  <url type="homepage">https://github.com/jasonulbright/Spectra-PDF</url>
+  <url type="bugtracker">https://github.com/jasonulbright/Spectra-PDF/issues</url>
+  <developer_name>Jason Ulbright</developer_name>
+  <categories>
+    <category>Office</category>
+    <category>Viewer</category>
+  </categories>
+  <provides>
+    <binary>spectrapdf</binary>
+    <mediatype>application/pdf</mediatype>
+  </provides>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-info">none</content_attribute>
+  </content_rating>
+</component>

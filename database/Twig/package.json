@@ -1,0 +1,24 @@
+{
+  "name": "twig",
+  "version": "0.17.0",
+  "releaseDate": "2026-10-07",
+  "private": true,
+  "type": "module",
+  "description": "An independent desktop Git workspace with a visual commit graph",
+  "author": "Kiryl Tarasenka <tarasenka.kiryl@gmail.com>",
+  "homepage": "https://kitarasenka.github.io/twig/",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "nodexInstall": false,
+  "main": "main/index.js",
+  "engines": {
+    "node": ">=20.19.0 <21"
+  },
+  "dependencies": {
+    "@fontsource/fira-code": "^5.2.0",
+    "@fontsource/fira-sans": "^5.2.0",
+    "lucide-react": "^0.468.0",
+    "prismjs": "1.30.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>dev.malgel.Malgel</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0</project_license>
+  <name>Malgel</name>
+  <summary>Write and preview Markdown</summary>
+  <developer id="dev.malgel">
+    <name>Ross Cawston</name>
+  </developer>
+  <description>
+    <p>
+      Malgel is a fast, native Markdown editor and previewer. A
+      syntax-highlighted editor sits next to a live GitHub-flavored preview,
+      and the two panes scroll together.
+    </p>
+    <ul>
+      <li>Tables, task lists, fenced code with highlighting, front matter and images</li>
+      <li>GitHub alerts and LaTeX math, typeset offline</li>
+      <li>Formatting commands and a heading outline</li>
+      <li>Export as HTML, PDF and Word</li>
+      <li>Light and dark themes</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">dev.malgel.Malgel.desktop</launchable>
+  <provides>
+    <binary>malgel</binary>
+    <mediatype>text/markdown</mediatype>
+  </provides>
+  <url type="homepage">https://www.malgel.com</url>
+  <url type="vcs-browser">https://github.com/rcawston/Malgel</url>
+  <url type="bugtracker">https://github.com/rcawston/Malgel/issues</url>
+  <categories>
+    <category>Utility</category>
+    <category>TextEditor</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Editor and preview side by side</caption>
+      <image>https://raw.githubusercontent.com/rcawston/Malgel/main/docs/screenshot-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>GitHub alerts and math</caption>
+      <image>https://raw.githubusercontent.com/rcawston/Malgel/main/docs/screenshot-alerts-math.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.1.0" date="2026-09-30"/>
+  </releases>
+</component>

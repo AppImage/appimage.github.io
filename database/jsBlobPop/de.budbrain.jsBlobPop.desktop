@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Name=BlobPop
+GenericName=Bubble Shooter
+Comment=Aim, shoot, and pop the bubbles — a hundred levels and an endless arcade
+Comment[de]=Zielen, schießen, Bubbles ploppen lassen — hundert Level und ein endloses Arcade
+Exec=jsBlobPop
+Icon=jsBlobPop
+Terminal=false
+Categories=Game;ArcadeGame;
+Keywords=bubble;shooter;arcade;match;colors;
+Keywords[de]=Bubble;Blase;Schießen;Arcade;Farben;
+StartupNotify=true
+StartupWMClass=jsBlobPop
+X-AppImage-Version=1.0.0
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://www.budbrain.de/appimage/jsblobpop-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=2.34

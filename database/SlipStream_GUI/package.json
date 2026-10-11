@@ -1,0 +1,25 @@
+{
+  "name": "slipstream-gui",
+  "version": "1.4.4",
+  "description": "SlipStream GUI Client with HTTP Proxy",
+  "main": "main.js",
+  "author": {
+    "name": "SlipStream GUI Contributors",
+    "email": "noreply@github.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mirzaaghazadeh/SlipStreamGUI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mirzaaghazadeh/SlipStreamGUI/issues"
+  },
+  "homepage": "https://github.com/mirzaaghazadeh/SlipStreamGUI#readme",
+  "dependencies": {
+    "http-proxy": "1.18.1",
+    "ip": "^2.0.1",
+    "socks": "^2.7.1",
+    "socks-proxy-agent": "^8.0.2"
+  }
+}

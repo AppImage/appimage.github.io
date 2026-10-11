@@ -1,0 +1,17 @@
+{
+  "name": "kyaraben-ui",
+  "version": "0.1.7",
+  "private": true,
+  "repository": "github:fnune/kyaraben",
+  "main": "dist-electron/electron/main.js",
+  "dependencies": {
+    "@types/semver": "^7.7.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "semver": "^7.7.4"
+  },
+  "overrides": {
+    "minimatch": "^10.2.1",
+    "glob": "^13"
+  }
+}

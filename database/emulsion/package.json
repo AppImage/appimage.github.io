@@ -1,0 +1,23 @@
+{
+  "name": "emulsion",
+  "version": "0.11.01",
+  "summary": "Better gaming throught chemistry",
+  "description": "Display your games collection into responsive galleries, manage game metadata, cover art and emulator configuration. Launch your games in style.",
+  "homepage": "https://yphil.gitlab.io/emulsion",
+  "license": "GPLv3",
+  "author": {
+    "name": "yPhil",
+    "email": "yphil@gnu.org"
+  },
+  "type": "module",
+  "main": "main.js",
+  "dependencies": {
+    "axios": "^1.12.0",
+    "electron-updater": "^6.6.2",
+    "steamgriddb": "^2.2.1",
+    "tree-kill": "^1.2.2"
+  },
+  "optionalDependencies": {
+    "sdl2-gamecontroller": "^1.1.3"
+  }
+}

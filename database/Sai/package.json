@@ -1,0 +1,16 @@
+{
+  "name": "sai-desktop",
+  "version": "0.2.8",
+  "private": true,
+  "description": "Sai 桌面工作台",
+  "desktopName": "sai-desktop.desktop",
+  "license": "MIT",
+  "main": "electron/main.cjs",
+  "packageManager": "pnpm@12.6.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "ws": "8.21.0"
+  }
+}

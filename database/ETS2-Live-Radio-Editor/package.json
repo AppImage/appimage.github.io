@@ -1,0 +1,12 @@
+{
+  "name": "ets2-live-radio-editor",
+  "version": "0.4.0",
+  "description": "Desktop app to manage ETS2 and ATS live radios with local ffmpeg relays.",
+  "main": "electron/main.cjs",
+  "author": "Murilo Duran",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  }
+}

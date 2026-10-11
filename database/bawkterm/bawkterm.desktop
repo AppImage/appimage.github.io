@@ -1,0 +1,23 @@
+[Desktop Entry]
+Name=bawkterm
+Exec=AppRun --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=bawkterm
+StartupWMClass=bawkterm
+X-AppImage-Version=0.9.4
+Keywords=ssh;sftp;terminal;rdp;docker;
+Comment=SSH, SFTP, Docker and Remote Desktop client with an encrypted vault
+Categories=Network;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34
+X-AppImage-Payload-License=AGPL-3.0

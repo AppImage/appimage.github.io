@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html#spec-component-filespec -->
+<component type="desktop">
+  <id>org.kde.glaxnimate</id>
+  <replaces>
+    <id>org.mattbas.Glaxnimate</id>
+  </replaces>
+  <metadata_license>CC-BY-SA-4.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>Glaxnimate</name>
+  <name xml:lang="ar">غلاكسنيمَيْت</name>
+  <name xml:lang="ca">Glaxnimate</name>
+  <name xml:lang="ca-valencia">Glaxnimate</name>
+  <name xml:lang="cs">Glaxnimate</name>
+  <name xml:lang="en-GB">Glaxnimate</name>
+  <name xml:lang="eo">Glaxnimate</name>
+  <name xml:lang="es">Glaxnimate</name>
+  <name xml:lang="eu">Glaxnimate</name>
+  <name xml:lang="fi">Glaxnimate</name>
+  <name xml:lang="fr">Glaxnimate</name>
+  <name xml:lang="gl">Glaxnimate</name>
+  <name xml:lang="he">Glaxnimate</name>
+  <name xml:lang="it">Glaxnimate</name>
+  <name xml:lang="ka">Glaxnimate</name>
+  <name xml:lang="nl">Glaxnimate</name>
+  <name xml:lang="pl">Glaxnimate</name>
+  <name xml:lang="pt-BR">Glaxnimate</name>
+  <name xml:lang="ru">Glaxnimate</name>
+  <name xml:lang="sk">Glaxnimate</name>
+  <name xml:lang="sl">Glaxnimate</name>
+  <name xml:lang="sv">Glaxnimate</name>
+  <name xml:lang="tr">Glaxnimate</name>
+  <name xml:lang="uk">Glaxnimate</name>
+  <name xml:lang="zh-TW">Glaxnimate</name>
+  <summary>Vector Animation Editor</summary>
+  <summary xml:lang="ar">محرر رسوم متحركة متجهة</summary>
+  <summary xml:lang="ca">Editor d'animació vectorial</summary>
+  <summary xml:lang="ca-valencia">Editor d'animació vectorial</summary>
+  <summary xml:lang="en-GB">Vector Animation Editor</summary>
+  <summary xml:lang="eo">Verktor-Animacia Redaktilo</summary>
+  <summary xml:lang="es">Editor de animación vectorial</summary>
+  <summary xml:lang="eu">Bektore-animazio editorea</summary>
+  <summary xml:lang="fi">Vektorianimaatiomuokkain</summary>
+  <summary xml:lang="fr">Éditeur d'animations vectorielles</summary>
+  <summary xml:lang="gl">Editor de animacións vectoriais</summary>
+  <summary xml:lang="he">עורך הנפשה וקטורית</summary>
+  <summary xml:lang="it">Editor di animazioni vettoriali</summary>
+  <summary xml:lang="ka">ვექტორული ანიმაციების რედაქტორი</summary>
+  <summary xml:lang="nl">Bewerker voor vectoranimatie</summary>
+  <summary xml:lang="pl">Edytor do animacji wektorowych</summary>
+  <summary xml:lang="pt-BR">Editor de animação vetorial</summary>
+  <summary xml:lang="ru">Редактор векторной анимации</summary>
+  <summary xml:lang="sl">Urejevalnik vektorskih animacij</summary>
+  <summary xml:lang="sv">Vektoranimeringseditor</summary>
+  <summary xml:lang="tr">Vektör Canlandırma Düzenleyicisi</summary>
+  <summary xml:lang="uk">Редактор векторної анімації</summary>
+  <summary xml:lang="zh-TW">向量動畫編輯器</summary>
+  <description>
+    <p>Glaxnimate is an open-source vector animation and motion design desktop application.</p>
+    <p xml:lang="ar">غلاكسنيمَيْت هو تطبيق سطح مكتب مفتوح المصدر للرسوم المتحركة المتجهة وتصميم الحركة.</p>
+    <p xml:lang="ca">El Glaxnimate és una aplicació d'escriptori d'animació vectorial i disseny de moviment de codi font obert.</p>
+    <p xml:lang="ca-valencia">Glaxnimate és una aplicació d'escriptori d'animació vectorial i disseny de moviment de codi font obert.</p>
+    <p xml:lang="en-GB">Glaxnimate is an open-source vector animation and motion design desktop application.</p>
+    <p xml:lang="eo">Glaxnimate estas malfermfonta labortabla aplikaĵo por vektora animacio kaj movdezajno.</p>
+    <p xml:lang="es">Glaxnimate es una aplicación de escritorio de código abierto para animación vectorial y diseño de movimientos.</p>
+    <p xml:lang="eu">Glaximate mahaigainerako sorburu irekiko bekore-animazio eta higidura diseinu aplikazio bat da.</p>
+    <p xml:lang="fi">Glaxnimate on avoimen lähdekoodin työpöydän vektorianimaatio- ja liikesuunnittelusovellus.</p>
+    <p xml:lang="fr">Glaxnimate est une application de bureau « Open source » pour des animations vectorielles et du « motion design ».</p>
+    <p xml:lang="gl">Glaxnimate é unha aplicación libre de escritorio para animacións vectoriais e deseño de movementos.</p>
+    <p xml:lang="he">Glaxnimate הוא יישום הנפשה ועיצוב תנועה וקטורי לשולחן העבודה.</p>
+    <p xml:lang="it">Glaxnimate è un'applicazione desktop open source per l'animazione vettoriale e il motion design.</p>
+    <p xml:lang="ka">Ganximate ღია კოდის მქონე ვექტორული ანიმაციისა და მოძრავი დიზაინის აპლიკაციაა.</p>
+    <p xml:lang="nl">Glaxnimate is een open-source bureaubladtoepassing voor vectoranimatie en ontwerpen van beweging.</p>
+    <p xml:lang="pl">Glaxnimate jest programem o otwartym kodzie do animacji wektorowych i projektowania ruchu.</p>
+    <p xml:lang="pt-BR">O Glaxnimate é um aplicativo de desktop de código aberto para animação vetorial e design de movimento.</p>
+    <p xml:lang="ru">Glaxnimate — классическое приложение с открытым исходным кодом, предназначенное для работы с векторной анимацией и моушн-дизайном.</p>
+    <p xml:lang="sl">Glaxnimate je odprto-kodni namizni program za vektorsko animacijo in oblikovanje gibanja.</p>
+    <p xml:lang="sv">Glaxnimate är skrivbordsprogram för vektoranimering och rörelsekonstruktion med öppen källkod.</p>
+    <p xml:lang="tr">Glaxnimate bir açık kaynaklı vektör canlandırma ve hareket tasarımı uygulamasıdır.</p>
+    <p xml:lang="uk">Glaxnimate — програма з відкритим кодом для роботи з векторною анімацією та моушн-дизайном.</p>
+    <p xml:lang="zh-TW">Glaxnimate 是一個開源的向量動畫與動態設計應用程式。</p>
+    <p>Features:</p>
+    <p xml:lang="ar">الميزات:</p>
+    <p xml:lang="ca">Característiques:</p>
+    <p xml:lang="ca-valencia">Característiques:</p>
+    <p xml:lang="cs">Vlastnosti:</p>
+    <p xml:lang="en-GB">Features:</p>
+    <p xml:lang="eo">Trajtoj:</p>
+    <p xml:lang="es">Funciones:</p>
+    <p xml:lang="eu">Ezaugarriak:</p>
+    <p xml:lang="fi">Ominaisuuksia:</p>
+    <p xml:lang="fr">Fonctionnalités :</p>
+    <p xml:lang="gl">Funcionalidades:</p>
+    <p xml:lang="he">יכולות:</p>
+    <p xml:lang="it">Funzionalità:</p>
+    <p xml:lang="ka">თვისებები:</p>
+    <p xml:lang="nl">Mogelijkheden:</p>
+    <p xml:lang="pl">Możliwości:</p>
+    <p xml:lang="pt-BR">Funcionalidades:</p>
+    <p xml:lang="ru">Возможности:</p>
+    <p xml:lang="sk">Funkcie:</p>
+    <p xml:lang="sl">Funkcionalnosti:</p>
+    <p xml:lang="sv">Funktioner:</p>
+    <p xml:lang="tr">Özellikler:</p>
+    <p xml:lang="uk">Можливості:</p>
+    <p xml:lang="zh-TW">功能：</p>
+    <ul>
+      <li>Tweening</li>
+      <li xml:lang="ar">تحريك وسطي</li>
+      <li xml:lang="ca">Interpolació («tweening»)</li>
+      <li xml:lang="ca-valencia">Interpolació («tweening»)</li>
+      <li xml:lang="en-GB">Tweening</li>
+      <li xml:lang="eo">Tweening</li>
+      <li xml:lang="es">Interpolación de movimiento</li>
+      <li xml:lang="eu">Interpolazioa</li>
+      <li xml:lang="fr">Tweening</li>
+      <li xml:lang="gl">Interpolación de movemento.</li>
+      <li xml:lang="he">הנפשת ביניים</li>
+      <li xml:lang="it">Interpolazione</li>
+      <li xml:lang="ka">შუაში ჩასმა</li>
+      <li xml:lang="nl">Tweening</li>
+      <li xml:lang="pl">Klatki pośrednie</li>
+      <li xml:lang="pt-BR">Interpolação</li>
+      <li xml:lang="ru">Промежуточные кадры</li>
+      <li xml:lang="sl">Risanje vmesnih faz animacije</li>
+      <li xml:lang="sv">Interpolering</li>
+      <li xml:lang="tr">Ara Doldurma</li>
+      <li xml:lang="uk">Проміжні кадри</li>
+      <li xml:lang="zh-TW">補格</li>
+      <li>Precompositions</li>
+      <li xml:lang="ar">تركيبات مسبقة</li>
+      <li xml:lang="ca">Precomposicions</li>
+      <li xml:lang="ca-valencia">Precomposicions</li>
+      <li xml:lang="en-GB">Precompositions</li>
+      <li xml:lang="eo">Antaŭkunmetaĵoj</li>
+      <li xml:lang="es">Precomposiciones</li>
+      <li xml:lang="eu">Aurrekonposizioak</li>
+      <li xml:lang="fr">Précompositions</li>
+      <li xml:lang="gl">Composicións previas.</li>
+      <li xml:lang="he">טרום הרכבות</li>
+      <li xml:lang="it">Precomposizioni</li>
+      <li xml:lang="ka">პრეკომპოზიციები</li>
+      <li xml:lang="nl">Composities vooraf</li>
+      <li xml:lang="pl">Zestawy złożeń</li>
+      <li xml:lang="pt-BR">Pré-composições</li>
+      <li xml:lang="ru">Предкомпоновка</li>
+      <li xml:lang="sl">Vnaprejšnje sestave</li>
+      <li xml:lang="sv">Förkompositioner</li>
+      <li xml:lang="tr">Ön Kompozisyonlar</li>
+      <li xml:lang="uk">Попереднє компонування</li>
+      <li xml:lang="zh-TW">預合成</li>
+      <li>Time Stretching</li>
+      <li xml:lang="ar">تمديد الزمن</li>
+      <li xml:lang="ca">Estirament del temps</li>
+      <li xml:lang="ca-valencia">Estirament del temps</li>
+      <li xml:lang="en-GB">Time Stretching</li>
+      <li xml:lang="eo">Tempostreĉado</li>
+      <li xml:lang="es">Estiramiento del tiempo</li>
+      <li xml:lang="eu">Denbora luzatzea</li>
+      <li xml:lang="fi">Ajan venytys</li>
+      <li xml:lang="fr">Étirement temporel</li>
+      <li xml:lang="gl">Estiramento no tempo.</li>
+      <li xml:lang="he">מתיחת זמנים</li>
+      <li xml:lang="it">Dilatazione del tempo</li>
+      <li xml:lang="ka">დროის გაწელვა</li>
+      <li xml:lang="nl">Uitrekken van tijd</li>
+      <li xml:lang="pl">Rozciąganie czasu</li>
+      <li xml:lang="pt-BR">Ajuste de tempo</li>
+      <li xml:lang="ru">Растягивание времени</li>
+      <li xml:lang="sl">Razteg časa</li>
+      <li xml:lang="sv">Tidsutsträckning</li>
+      <li xml:lang="tr">Zaman Germe</li>
+      <li xml:lang="uk">Розтягування за часом</li>
+      <li xml:lang="zh-TW">時間拉伸</li>
+      <li>Motion Along Path</li>
+      <li xml:lang="ar">حركة على طول مسار</li>
+      <li xml:lang="ca">Moviment a través d'un camí</li>
+      <li xml:lang="ca-valencia">Moviment a través d'un camí</li>
+      <li xml:lang="en-GB">Motion Along Path</li>
+      <li xml:lang="eo">Moviĝo Laŭ Vojo</li>
+      <li xml:lang="es">Movimiento a lo largo de una trayectoria</li>
+      <li xml:lang="eu">Higidura bidean zehar</li>
+      <li xml:lang="fi">Liike polulla</li>
+      <li xml:lang="fr">Animation le long du tracé</li>
+      <li xml:lang="gl">Movemento por unha ruta.</li>
+      <li xml:lang="he">תנועה לאורך נתיב</li>
+      <li xml:lang="it">Movimento lungo un percorso</li>
+      <li xml:lang="ka">მოძრაობა ბილიკის გასწვრივ</li>
+      <li xml:lang="nl">Beweging langs pad</li>
+      <li xml:lang="pl">Ruch wzdłuż ścieżki</li>
+      <li xml:lang="pt-BR">Movimento ao longo do caminho</li>
+      <li xml:lang="ru">Движение по пути</li>
+      <li xml:lang="sl">Gibanje vzdolž poti</li>
+      <li xml:lang="sv">Rörelse längs kontur</li>
+      <li xml:lang="tr">Yol Üzerinde Hareket</li>
+      <li xml:lang="uk">Рух уздовж контуру</li>
+      <li xml:lang="zh-TW">在路徑上移動</li>
+      <li>Shape Modifiers</li>
+      <li xml:lang="ar">معدلات الأشكال</li>
+      <li xml:lang="ca">Modificadors de formes</li>
+      <li xml:lang="ca-valencia">Modificadors de formes</li>
+      <li xml:lang="en-GB">Shape Modifiers</li>
+      <li xml:lang="eo">Formmodifiloj</li>
+      <li xml:lang="es">Modificadores de forma</li>
+      <li xml:lang="eu">Forma aldatzaileak</li>
+      <li xml:lang="fr">Modificateurs de profils</li>
+      <li xml:lang="gl">Modificadores de formas.</li>
+      <li xml:lang="he">משני צורות</li>
+      <li xml:lang="it">Modificatori di forma</li>
+      <li xml:lang="ka">მოხაზულობის მოდიფიკატორები</li>
+      <li xml:lang="nl">Wijzigen van vorm</li>
+      <li xml:lang="pl">Zmiana kształtu</li>
+      <li xml:lang="pt-BR">Modificadores de forma</li>
+      <li xml:lang="ru">Модификаторы форм</li>
+      <li xml:lang="sl">Spremenilniki likov</li>
+      <li xml:lang="sv">Formmodifierare</li>
+      <li xml:lang="tr">Şekil Niteleyicileri</li>
+      <li xml:lang="uk">Модифікатори форм</li>
+      <li xml:lang="zh-TW">形狀修飾</li>
+      <li>Text Support</li>
+      <li xml:lang="ar">دعم النص</li>
+      <li xml:lang="ca">Admet text</li>
+      <li xml:lang="ca-valencia">Admet text</li>
+      <li xml:lang="en-GB">Text Support</li>
+      <li xml:lang="eo">Teksta Subteno</li>
+      <li xml:lang="es">Soporte de texto</li>
+      <li xml:lang="eu">Testuaren euskarria</li>
+      <li xml:lang="fi">Tekstituki</li>
+      <li xml:lang="fr">Prise en charge du texte</li>
+      <li xml:lang="gl">Permite texto.</li>
+      <li xml:lang="he">תמיכה בטקסט</li>
+      <li xml:lang="it">Supporto del testo</li>
+      <li xml:lang="ka">ტექსტის მხარდაჭერა</li>
+      <li xml:lang="nl">Ondersteuning van tekst</li>
+      <li xml:lang="pl">Obsługa tekstu</li>
+      <li xml:lang="pt-BR">Suporte de texto</li>
+      <li xml:lang="ru">Поддержка текста</li>
+      <li xml:lang="sl">Podpora za besedilo</li>
+      <li xml:lang="sv">Textstöd</li>
+      <li xml:lang="tr">Metin Desteği</li>
+      <li xml:lang="uk">Підтримка тексту</li>
+      <li xml:lang="zh-TW">文字支援</li>
+      <li>Animated Gradients</li>
+      <li xml:lang="ar">تدرجات متحركة</li>
+      <li xml:lang="ca">Degradats animats</li>
+      <li xml:lang="ca-valencia">Degradats animats</li>
+      <li xml:lang="en-GB">Animated Gradients</li>
+      <li xml:lang="eo">Viglaj Kolortransiroj</li>
+      <li xml:lang="es">Gradientes animados</li>
+      <li xml:lang="eu">Gradiente animatuak</li>
+      <li xml:lang="fi">Animoidut liukuvärit</li>
+      <li xml:lang="fr">Dégradés animés</li>
+      <li xml:lang="gl">Gradacións animadas.</li>
+      <li xml:lang="he">מדרגים מונפשים</li>
+      <li xml:lang="it">Sfumature animate</li>
+      <li xml:lang="ka">ანიმირებული გრადაციები</li>
+      <li xml:lang="nl">Geanimeerd kleurverloop</li>
+      <li xml:lang="pl">Animowane gradienty</li>
+      <li xml:lang="pt-BR">Gradientes animados</li>
+      <li xml:lang="ru">Анимированные градиенты</li>
+      <li xml:lang="sl">Animirani prelivi</li>
+      <li xml:lang="sv">Animerade gradienter</li>
+      <li xml:lang="tr">Hareketli Gradyanlar</li>
+      <li xml:lang="uk">Анімовані градієнти</li>
+      <li xml:lang="zh-TW">動態漸變</li>
+      <li>Raster to Vector</li>
+      <li xml:lang="ar">تحويل من نقطي إلى متجه</li>
+      <li xml:lang="ca">Rasterització a vector</li>
+      <li xml:lang="ca-valencia">Rasterització a vector</li>
+      <li xml:lang="en-GB">Raster to Vector</li>
+      <li xml:lang="eo">Rastrumo al Vektoro</li>
+      <li xml:lang="es">Mapa de bits a vector</li>
+      <li xml:lang="eu">Rasterretik bektorera</li>
+      <li xml:lang="fi">Rasterista vektoriksi</li>
+      <li xml:lang="fr">Raster vers Vectoriel</li>
+      <li xml:lang="gl">Conversión de mapa de bits a vector.</li>
+      <li xml:lang="he">מפת סיביות לווקטור</li>
+      <li xml:lang="it">Da raster a vettoriale</li>
+      <li xml:lang="ka">რასტრულიდან ვექტორულამდე</li>
+      <li xml:lang="nl">Raster naar vector</li>
+      <li xml:lang="pl">Raster na wektor</li>
+      <li xml:lang="pt-BR">Rasterizar para vetor</li>
+      <li xml:lang="ru">Преобразование из растрового в векторный формат</li>
+      <li xml:lang="sl">Pretvorbo rastrske grafike v vektorske poti</li>
+      <li xml:lang="sv">Rastrering till vektor</li>
+      <li xml:lang="tr">Rasterden Vektöre</li>
+      <li xml:lang="uk">Перетворення з растрового на векторний формат</li>
+      <li xml:lang="zh-TW">點陣轉向量</li>
+      <li>Scripting Support</li>
+      <li xml:lang="ar">دعم البرمجة النصية</li>
+      <li xml:lang="ca">Permet la creació de scripts</li>
+      <li xml:lang="ca-valencia">Permet la creació de scripts</li>
+      <li xml:lang="cs">Podpora pro skripty</li>
+      <li xml:lang="en-GB">Scripting Support</li>
+      <li xml:lang="eo">Skripta Subteno</li>
+      <li xml:lang="es">Soporte de secuencia de órdenes</li>
+      <li xml:lang="eu">Gidoietarako euskarria</li>
+      <li xml:lang="fi">Skriptaustuki</li>
+      <li xml:lang="fr">Prise en charge du langage de script</li>
+      <li xml:lang="gl">Permite guións.</li>
+      <li xml:lang="he">תמיכה בסקריפטים</li>
+      <li xml:lang="it">Supporto per script</li>
+      <li xml:lang="ka">სკრიპტების მხარდაჭერა</li>
+      <li xml:lang="nl">Scripting-ondersteuning</li>
+      <li xml:lang="pl">Obsługa skryptów</li>
+      <li xml:lang="pt-BR">Suporte para criação de scripts</li>
+      <li xml:lang="ru">Поддержка записи сценариев</li>
+      <li xml:lang="sk">Podpora skriptovania</li>
+      <li xml:lang="sl">Podpora za skriptanje</li>
+      <li xml:lang="sv">Skriptstöd</li>
+      <li xml:lang="tr">Betik Yazımı Desteği</li>
+      <li xml:lang="uk">Підтримка запису скриптів</li>
+      <li xml:lang="zh-TW">文稿支援</li>
+    </ul>
+    <p>Supported file formats:</p>
+    <p xml:lang="ar">صيغ الملفات المتاحة:</p>
+    <p xml:lang="ca">Formats de fitxer admesos:</p>
+    <p xml:lang="ca-valencia">Formats de fitxer admesos:</p>
+    <p xml:lang="cs">Podporované formáty souboru:</p>
+    <p xml:lang="en-GB">Supported file formats:</p>
+    <p xml:lang="eo">Subtenataj dosierformatoj:</p>
+    <p xml:lang="es">Formatos de archivo compatibles:</p>
+    <p xml:lang="eu">Onartutako fitxategi-formatuak:</p>
+    <p xml:lang="fi">Tuetut tiedostomuodot:</p>
+    <p xml:lang="fr">Formats de fichier pris en charge :</p>
+    <p xml:lang="gl">Formatos de ficheiro compatíbeis:</p>
+    <p xml:lang="he">סוגי הקבצים הנתמכים:</p>
+    <p xml:lang="it">Formati di file supportati:</p>
+    <p xml:lang="ka">მხარდაჭერილ ფაილის ფორმატები:</p>
+    <p xml:lang="nl">Ondersteunde bestandsformaten:</p>
+    <p xml:lang="pl">Obsługiwane rodzaje plików:</p>
+    <p xml:lang="pt-BR">Formatos de arquivo compatíveis:</p>
+    <p xml:lang="ru">Поддерживаемые форматы файлов:</p>
+    <p xml:lang="sl">Podprte vrste datotek:</p>
+    <p xml:lang="sv">Filformat som stöds:</p>
+    <p xml:lang="tr">Desteklenen dosya biçimleri:</p>
+    <p xml:lang="uk">Підтримувані формати файлів:</p>
+    <p xml:lang="zh-TW">支援的檔案格式：</p>
+    <ul>
+      <li>Lottie</li>
+      <li xml:lang="ar">لوتي</li>
+      <li xml:lang="ca">Lottie</li>
+      <li xml:lang="ca-valencia">Lottie</li>
+      <li xml:lang="cs">Lottie</li>
+      <li xml:lang="en-GB">Lottie</li>
+      <li xml:lang="eo">Lottie</li>
+      <li xml:lang="es">Lottie</li>
+      <li xml:lang="eu">Lottie</li>
+      <li xml:lang="fi">Lottie</li>
+      <li xml:lang="fr">Lottie</li>
+      <li xml:lang="gl">Lottie</li>
+      <li xml:lang="he">Lottie</li>
+      <li xml:lang="it">Lottie</li>
+      <li xml:lang="ka">Lottie</li>
+      <li xml:lang="nl">Lottie</li>
+      <li xml:lang="pl">Lottie</li>
+      <li xml:lang="pt-BR">Lottie</li>
+      <li xml:lang="ru">Lottie</li>
+      <li xml:lang="sk">Lottie</li>
+      <li xml:lang="sl">Lottie</li>
+      <li xml:lang="sv">Lottie</li>
+      <li xml:lang="tr">Lottie</li>
+      <li xml:lang="uk">Lottie</li>
+      <li xml:lang="zh-TW">Lottie</li>
+      <li>Animated SVG</li>
+      <li xml:lang="ar">SVG متحرك</li>
+      <li xml:lang="ca">SVG animat</li>
+      <li xml:lang="ca-valencia">SVG animat</li>
+      <li xml:lang="cs">Animovaný SVG</li>
+      <li xml:lang="en-GB">Animated SVG</li>
+      <li xml:lang="eo">Animaciita SVG</li>
+      <li xml:lang="es">SVG animado</li>
+      <li xml:lang="eu">SVG animatua</li>
+      <li xml:lang="fi">Animoitu SVG</li>
+      <li xml:lang="fr">SVG animé</li>
+      <li xml:lang="gl">SVG animado</li>
+      <li xml:lang="he">SVG מונפש</li>
+      <li xml:lang="it">SVG animata</li>
+      <li xml:lang="ka">ანიმირებული SVG</li>
+      <li xml:lang="nl">Geanimeerde SVG</li>
+      <li xml:lang="pl">Animowany SVG</li>
+      <li xml:lang="pt-BR">SVG animados</li>
+      <li xml:lang="ru">Анимированные SVG</li>
+      <li xml:lang="sl">Animirani SVG</li>
+      <li xml:lang="sv">Animerad SVG</li>
+      <li xml:lang="tr">Hareketli SVG</li>
+      <li xml:lang="uk">Анімовані SVG</li>
+      <li xml:lang="zh-TW">動態 SVG</li>
+      <li>Animated WebP</li>
+      <li xml:lang="ar">WebP متحرك</li>
+      <li xml:lang="ca">WebP animat</li>
+      <li xml:lang="ca-valencia">WebP animat</li>
+      <li xml:lang="cs">Animovaný WebP</li>
+      <li xml:lang="en-GB">Animated WebP</li>
+      <li xml:lang="eo">Animaciita WebP</li>
+      <li xml:lang="es">WebP animado</li>
+      <li xml:lang="eu">WebP animatua</li>
+      <li xml:lang="fi">Animoitu WebP</li>
+      <li xml:lang="fr">WebP animé</li>
+      <li xml:lang="gl">WebP animado</li>
+      <li xml:lang="he">WebP מונפש</li>
+      <li xml:lang="it">WebP animata</li>
+      <li xml:lang="ka">ანიმირებული WebP</li>
+      <li xml:lang="nl">Geanimeerde WebP</li>
+      <li xml:lang="pl">Animowane WebP</li>
+      <li xml:lang="pt-BR">WebP animados</li>
+      <li xml:lang="ru">Анимированные WebP</li>
+      <li xml:lang="sl">Animirani WebP</li>
+      <li xml:lang="sv">Animerad WebP</li>
+      <li xml:lang="tr">Hareketli WebP</li>
+      <li xml:lang="uk">Анімований WebP</li>
+      <li xml:lang="zh-TW">動態 WebP</li>
+      <li>Animated Vector Drawables</li>
+      <li xml:lang="ar">رسميات متجهة متحركة</li>
+      <li xml:lang="ca">Dibuixable vectorial animat</li>
+      <li xml:lang="ca-valencia">Dibuixable vectorial animat</li>
+      <li xml:lang="en-GB">Animated Vector Drawables</li>
+      <li xml:lang="eo">Animaciitaj Vektor-Desegneblaĵoj</li>
+      <li xml:lang="es">Vectores animados</li>
+      <li xml:lang="eu">Marrazgarri bektorial animatuak</li>
+      <li xml:lang="fr">Objets graphiques vectoriels animés</li>
+      <li xml:lang="gl">Debuxos vectoriais animados</li>
+      <li xml:lang="he">פריטי ציור וקטוריים מונפשים</li>
+      <li xml:lang="it">Disegni vettoriali animati</li>
+      <li xml:lang="ka">ანიმირებული ვექტორული ნახატები</li>
+      <li xml:lang="nl">Geanimeerde tekenbare vectoren</li>
+      <li xml:lang="pl">Animowane rzeczy wektorowe</li>
+      <li xml:lang="pt-BR">Desenhos animados vetoriais</li>
+      <li xml:lang="ru">Анимированные векторные области рисования</li>
+      <li xml:lang="sl">Animirane vektorske podobe</li>
+      <li xml:lang="sv">Animerade vektorteckningar</li>
+      <li xml:lang="tr">Hareketli Vektör Çizilebilirleri</li>
+      <li xml:lang="uk">Креслення векторної анімації</li>
+      <li xml:lang="zh-TW">動態向量可繪</li>
+      <li>RIVE</li>
+      <li xml:lang="ar">RIVE</li>
+      <li xml:lang="ca">RIVE</li>
+      <li xml:lang="ca-valencia">RIVE</li>
+      <li xml:lang="cs">RIVE</li>
+      <li xml:lang="en-GB">RIVE</li>
+      <li xml:lang="eo">RIVE</li>
+      <li xml:lang="es">RIVE</li>
+      <li xml:lang="eu">RIVE</li>
+      <li xml:lang="fi">RIVE</li>
+      <li xml:lang="fr">RIVE</li>
+      <li xml:lang="gl">RIVE</li>
+      <li xml:lang="he">RIVE</li>
+      <li xml:lang="it">RIVE</li>
+      <li xml:lang="ka">RIVE</li>
+      <li xml:lang="nl">RIVE</li>
+      <li xml:lang="pl">RIVE</li>
+      <li xml:lang="pt-BR">RIVE</li>
+      <li xml:lang="ru">RIVE</li>
+      <li xml:lang="sk">RIVE</li>
+      <li xml:lang="sl">RIVE</li>
+      <li xml:lang="sv">RIVE</li>
+      <li xml:lang="tr">RIVE</li>
+      <li xml:lang="uk">RIVE</li>
+      <li xml:lang="zh-TW">RIVE</li>
+      <li>Video Export</li>
+      <li xml:lang="ar">تصدير فيديو</li>
+      <li xml:lang="ca">Exportació a vídeo</li>
+      <li xml:lang="ca-valencia">Exporteu cap a vídeo</li>
+      <li xml:lang="en-GB">Video Export</li>
+      <li xml:lang="eo">Video-Eksporto</li>
+      <li xml:lang="es">Exportación a vídeo</li>
+      <li xml:lang="eu">Bideoa esportatzea</li>
+      <li xml:lang="fi">Videovienti</li>
+      <li xml:lang="fr">Exportation de vidéo</li>
+      <li xml:lang="gl">Exportación de vídeo.</li>
+      <li xml:lang="he">ייצוא וידאו</li>
+      <li xml:lang="it">Esportazione video</li>
+      <li xml:lang="ka">ვიდეოს გატანა</li>
+      <li xml:lang="nl">Video exporteren</li>
+      <li xml:lang="pl">Eksportowanie nagrania</li>
+      <li xml:lang="pt-BR">Exportação do vídeo</li>
+      <li xml:lang="ru">Экспорт видео</li>
+      <li xml:lang="sl">Izvoz videoposnetkov</li>
+      <li xml:lang="sv">Videoexport</li>
+      <li xml:lang="tr">Video Dışa Aktarım</li>
+      <li xml:lang="uk">Експорт відео</li>
+      <li xml:lang="zh-TW">影片匯出</li>
+      <li>Spritesheet Export</li>
+      <li xml:lang="ar">تصدير ورقة كائنات</li>
+      <li xml:lang="ca">Exportació a Spritesheet</li>
+      <li xml:lang="ca-valencia">Exporteu cap a Spritesheet</li>
+      <li xml:lang="en-GB">Spritesheet Export</li>
+      <li xml:lang="eo">Spritaĵfolio-Eksporto</li>
+      <li xml:lang="es">Exportación a Spritesheet</li>
+      <li xml:lang="eu">Iratxo-orria esportatzea</li>
+      <li xml:lang="fr">Exportation de Spritesheet</li>
+      <li xml:lang="gl">Exportación de folla de sprites.</li>
+      <li xml:lang="he">ייצוא גיליונות דמויות (Spritesheets)</li>
+      <li xml:lang="it">Esporta foglio di sprite</li>
+      <li xml:lang="ka">სპრაიტების ცხრილის გატანა</li>
+      <li xml:lang="nl">Exporteren van spritesheet</li>
+      <li xml:lang="pl">Eksportowanie arkuszy duszków</li>
+      <li xml:lang="pt-BR">Exportar sequencia de imagens</li>
+      <li xml:lang="ru">Экспорт таблицы спрайтов</li>
+      <li xml:lang="sl">Izvozi predlogo likov</li>
+      <li xml:lang="sv">Spritesheet-export</li>
+      <li xml:lang="tr">Grafik Sayfası Dışa Aktarım</li>
+      <li xml:lang="uk">Експорт таблиці спрайтів</li>
+      <li xml:lang="zh-TW">Spritesheet 匯出</li>
+    </ul>
+  </description>
+  <categories>
+    <category>Graphics</category>
+  </categories>
+  <url type="homepage">https://glaxnimate.org/</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=glaxnimate</url>
+  <url type="help">https://docs.glaxnimate.org/</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=glaxnimate&amp;source=appdata</url>
+  <!-- url type=contribute is not recognized but it should be valid o_O -->
+  <!--     <url type="contribute">https://glaxnimate.org/contributing/</url> -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Glaxnimate main window</caption>
+      <caption xml:lang="ar">النافذة الرئيسة لغلاكسنيمَيْت</caption>
+      <caption xml:lang="ca">Finestra principal del Glaxnimate</caption>
+      <caption xml:lang="ca-valencia">Finestra principal de Glaxnimate</caption>
+      <caption xml:lang="en-GB">Glaxnimate main window</caption>
+      <caption xml:lang="eo">Ĉeffenestro de Glaxnimate</caption>
+      <caption xml:lang="es">Ventana principal de Glaxnimate</caption>
+      <caption xml:lang="eu">Glaxnimate leiho nagusia</caption>
+      <caption xml:lang="fi">Glaxnimaten pääikkuna</caption>
+      <caption xml:lang="fr">Fenêtre principale de Glaxnimate</caption>
+      <caption xml:lang="gl">Xanela principal de Glaxnimate.</caption>
+      <caption xml:lang="he">החלון הראשי של Glaxnimate</caption>
+      <caption xml:lang="it">Finestra principale di Glaxnimate</caption>
+      <caption xml:lang="ka">Glaxnimate-ის მთავარი ფანჯარა</caption>
+      <caption xml:lang="nl">Hoofdvenster van Glaxnimate</caption>
+      <caption xml:lang="pl">Główne okno Glaxnimate</caption>
+      <caption xml:lang="pt-BR">Janela principal do Glaxnimate</caption>
+      <caption xml:lang="ru">Главное окно Glaxnimate</caption>
+      <caption xml:lang="sl">Glavno okno programa Glaxnimate</caption>
+      <caption xml:lang="sv">Glaxnimate huvudfönster</caption>
+      <caption xml:lang="tr">Glaxnimate ana penceresi</caption>
+      <caption xml:lang="uk">Головне вікно Glaxnimate</caption>
+      <caption xml:lang="zh-TW">Glaxnimate 主視窗</caption>
+      <image>https://cdn.kde.org/screenshots/glaxnimate/glaxnimate.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <id>org.mattbas.Glaxnimate.desktop</id>
+    <binary>glaxnimate</binary>
+    <mediatype>image/svg+xml</mediatype>
+    <mediatype>application/vnd.glaxnimate.rawr+json</mediatype>
+  </provides>
+  <launchable type="desktop-id">org.kde.glaxnimate.desktop</launchable>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.6.0" date="2026-03-01">
+      <url>https://glaxnimate.org/news/releases/0.6.0/</url>
+    </release>
+    <release version="0.5.4" date="2023-09-09">
+      <description>
+        <p>Highlight of this release are the ability to animate objects along a path and several new import/export options like export as an image sequence and support for Rive animations. Additionally the display on smaller screens has been improved and several bugs got fixed.</p>
+        <p xml:lang="ar">أبرز ما يميز هذا الإصدار هو القدرة على تحريك الكائنات على طول مسار معين والعديد من خيارات الاستيراد/التصدير الجديدة مثل التصدير كسلسلة صور ودعم الرسوم المتحركة Rive. بالإضافة إلى ذلك، تحسنت العرض على الشاشات الصغيرة وتم إصلاح العديد من الأخطاء.</p>
+        <p xml:lang="ca">El més destacat d'aquest llançament és la capacitat d'animar objectes al llarg d'un camí i diverses opcions noves d'importació/exportació com l'exportació com a seqüència d'imatges i la implementació d'animacions Rive. A més, s'ha millorat la visualització en pantalles més petites i s'han corregit diversos errors.</p>
+        <p xml:lang="ca-valencia">El més destacat d'este llançament és la capacitat d'animar objectes al llarg d'un camí i diverses opcions noves d'importació/exportació com l'exportació com a seqüència d'imatges i la implementació d'animacions Rive. A més, s'ha millorat la visualització en pantalles més xicotetes i s'han corregit diversos errors.</p>
+        <p xml:lang="es">Lo más destacado de esta versión es la posibilidad de animar objetos en una trayectoria, múltiples opciones de importar/exportar como una secuencia de imágenes y el soporte para animaciones Rive. Además se ha mejorado el aspecto en pantallas pequeñas y varios errores han sido arreglados.</p>
+        <p xml:lang="eu">Kaleratze honen berrikuntzen artean daude objektuak bide batean zehar animatzeko aukera, eta hainbat inportazio/esportazio aukera berri, hala nola irudi-segida gisa esportatzea eta Rive animazioen euskarria. Gainera, pantaila txikiagoetan bistaratzea hobetu da, eta hainbat akats konpondu dira.</p>
+        <p xml:lang="fr">Les points majeurs de cette version concernent la possibilité d'animer des objets le long d'un tracé et plusieurs nouvelles options d'importation / exportation, comme l'exportation comme séquence d'images et la prise en charge des animations « Rive ». De plus, l'affichage sur les écrans plus petits a été amélioré et plusieurs bogues ont été corrigés.</p>
+        <p xml:lang="he">גולת הכותרת של המהדורה הזאת הן היכולת להנפיש עצמים לאורך נתיב ומגוון אפשרויות ייבוא/ייצוא חדשות כגון ייצוא רצף תמונות ותמיכה בהנפשות Rive. בנוסף, התצוגה במסכים קטנים יותר השתפרה וכמה תקלות תוקנו.</p>
+        <p xml:lang="it">Le novità principali di questa versione sono la possibilità di animare oggetti lungo un percorso e diverse nuove opzioni di importazione/esportazione, come l'esportazione come sequenza di immagini e il supporto per le animazioni Rive. Inoltre, la visualizzazione su schermi più piccoli è stata migliorata e diversi bug sono stati risolti.</p>
+        <p xml:lang="nl">Hoogtepunten van deze uitgave zijn de mogelijkheid om objecten langs een pad te animeren en diverse nieuwe import-/exportopties, zoals exporteren als een reeks afbeeldingen en ondersteuning voor Rive-animaties. Daarnaast is de weergave op kleinere schermen verbeterd en zijn er diverse bugs verholpen.</p>
+        <p xml:lang="pt-BR">Os destaques desta versão são a capacidade de animar objetos ao longo de um caminho e várias novas opções de importação/exportação, como exportar como uma sequência de imagens e suporte para animações Rive. Além disso, a exibição em telas menores foi aprimorada e vários bugs foram corrigidos.</p>
+        <p xml:lang="ru">Основные нововведения этого выпуска: возможность анимировать объекты вдоль пути, несколько новых параметров импорта и экспорта, таких как экспорт в виде последовательности изображений и поддержка анимаций Rive. Также улучшено отображение на экранах меньшего размера и исправлено несколько ошибок.</p>
+        <p xml:lang="sl">Vrhunec te izdaje je možnost animiranja predmetov vzdolž poti in več novih možnosti uvoza/izvoza, kot sta izvoz kot zaporedje slik in podpora za animacije Rive. Poleg tega je bil izboljšan prikaz na manjših zaslonih in odpravljenih je bilo več napak.</p>
+        <p xml:lang="tr">Bu yayımın öne çıkan özellikleri arasında, nesneleri bir yol boyunca hareket ettirme yeteneği ve görüntü dizisi olarak dışa aktarma ve Rive canlandırmaları desteği gibi çeşitli yeni içe/dışa aktarma seçenekleri yer alıyor. Ayrıca, daha küçük ekranlardaki görüntü iyileştirildi ve çeşitli hatalar düzeltildi.</p>
+        <p xml:lang="uk">Родзинками цього випуску є можливість анімувати об'єкти вздовж контуру та кілька нових варіантів імпорту/експорту, таких як експорт у вигляді послідовності зображень та підтримка анімації Rive. Крім того, покращено показ на менших екранах та виправлено кілька помилок.</p>
+      </description>
+      <url>https://glaxnimate.org/news/releases/0.5.4/</url>
+    </release>
+    <release version="0.5.3" date="2023-03-08">
+      <url>https://glaxnimate.org/news/releases/0.5.3/</url>
+    </release>
+    <release version="0.5.2" date="2023-02-14">
+      <url>https://glaxnimate.org/news/releases/0.5.2/</url>
+    </release>
+  </releases>
+</component>

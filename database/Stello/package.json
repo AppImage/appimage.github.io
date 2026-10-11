@@ -1,0 +1,22 @@
+{
+  "name": "stello",
+  "version": "1.9.15",
+  "description": "A new way to send newsletters that are secure and interactive",
+  "homepage": "https://stello.news/",
+  "author": {
+    "name": "Gracious Tech",
+    "email": "support@gracious.tech"
+  },
+  "private": true,
+  "type": "module",
+  "main": "dist/main.js",
+  "dependencies": {
+    "@types/node": "^22.19.15",
+    "check-disk-space": "^3.4.0",
+    "electron-context-menu": "^4.1.1",
+    "electron-updater": "^6.8.3",
+    "nodemailer": "^8.0.2",
+    "rollbar": "^2.26.5",
+    "semver": "^7.7.4"
+  }
+}

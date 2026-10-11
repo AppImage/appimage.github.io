@@ -1,0 +1,14 @@
+{
+  "name": "light-phone-manager",
+  "productName": "Light Phone Manager",
+  "version": "1.2.0",
+  "description": "Manage sideloaded tools on your Light Phone 3 — track GitHub repos, install and update APKs, all with adb bundled in.",
+  "main": "src/main/main.js",
+  "author": "Light Phone Manager",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "app-info-parser": "^1.1.6"
+  }
+}

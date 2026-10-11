@@ -1,0 +1,13 @@
+{
+  "name": "agentglass-electron",
+  "private": true,
+  "version": "0.22.0",
+  "description": "Every AI coding agent on your machine, on one screen — live cost, tokens and tool calls across every provider, and a hold on anything dangerous until you say go.",
+  "author": "SirAllap",
+  "homepage": "https://github.com/SirAllap/agentglass",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SirAllap/agentglass.git"
+  },
+  "main": "main.js"
+}

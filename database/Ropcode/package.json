@@ -1,0 +1,13 @@
+{
+  "name": "ropcode",
+  "version": "0.2.4",
+  "private": true,
+  "license": "AGPL-3.0",
+  "description": "GUI app and Toolkit for Claude Code",
+  "main": "electron/dist/main.js",
+  "author": {
+    "name": "Ropcode",
+    "email": "support@ropcode.com"
+  },
+  "homepage": "https://ropcode.com"
+}

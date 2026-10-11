@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.github.yeicor.colmap_openmvs_app</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Photos to 3D Model Offline</name>
+  <summary>Photogrammetry app to create textured 3D models from photos offline</summary>
+  <developer id="com.github.yeicor">
+    <name>Yeicor</name>
+  </developer>
+  <description>
+    <p>
+      Photos to 3D Model Offline (colmap-openmvs-app) provides a local, offline photogrammetry pipeline using COLMAP and OpenMVS. It reconstructs dense 3D point clouds and textured meshes directly from sets of images, featuring an interactive 3D viewer and real-time pipeline monitoring.
+    </p>
+  </description>
+  <launchable type="desktop-id">com.github.yeicor.colmap_openmvs_app.desktop</launchable>
+  <url type="homepage">https://github.com/yeicor/colmap-openmvs-app</url>
+  <url type="bugtracker">https://github.com/yeicor/colmap-openmvs-app/issues</url>
+  <provides>
+    <binary>colmap-openmvs-app</binary>
+  </provides>
+  <categories>
+    <category>Graphics</category>
+    <category>Photography</category>
+    <category>3DGraphics</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Textured 3D mesh in viewer</caption>
+      <image>https://yeicor.github.io/colmap-openmvs-app/screenshots/light/viewer-textured-mesh.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Project images</caption>
+      <image>https://yeicor.github.io/colmap-openmvs-app/screenshots/light/project-demo-images.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Real-time logs</caption>
+      <image>https://yeicor.github.io/colmap-openmvs-app/screenshots/light/project-demo-logs.jpg</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.2.2" date="2026-10-06">
+      <description>
+        <p>Release 0.2.2: Self-contained AppImage with bundled WebKitGTK helper processes, AppStream metadata, and Linux compatibility improvements.</p>
+      </description>
+    </release>
+    <release version="0.2.1" date="2026-10-05"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

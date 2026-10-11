@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata: what GNOME Software, KDE Discover and Flathub show for the app. -->
+<component type="desktop-application">
+  <id>io.github.dracu_lah.TMPlayer</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>TMPlayer</name>
+  <summary>Watch the videos in your Telegram chats while they download</summary>
+  <summary xml:lang="ar">شاهد الفيديوهات في محادثاتك على Telegram أثناء تنزيلها</summary>
+  <summary xml:lang="bn">ডাউনলোড হওয়ার সঙ্গে সঙ্গে আপনার Telegram চ্যাটের ভিডিও দেখুন</summary>
+  <summary xml:lang="de">Sieh dir die Videos in deinen Telegram-Chats an, während sie heruntergeladen werden</summary>
+  <summary xml:lang="es">Mira los videos de tus chats de Telegram mientras se descargan</summary>
+  <summary xml:lang="fa">ویدیوهای گفتگوهای Telegram را همان‌طور که دانلود می‌شوند ببینید</summary>
+  <summary xml:lang="fr">Regardez les vidéos de vos discussions Telegram pendant leur téléchargement</summary>
+  <summary xml:lang="hi">अपनी Telegram चैट के वीडियो डाउनलोड होते-होते देखें</summary>
+  <summary xml:lang="id">Tonton video di chat Telegram-mu selagi diunduh</summary>
+  <summary xml:lang="it">Guarda i video delle tue chat Telegram mentre si scaricano</summary>
+  <summary xml:lang="ja">Telegramのチャットの動画を、ダウンロードしながら再生</summary>
+  <summary xml:lang="ko">Telegram 채팅의 영상을 다운로드하면서 바로 시청하세요</summary>
+  <summary xml:lang="ml">നിങ്ങളുടെ Telegram ചാറ്റുകളിലെ വീഡിയോകൾ ഡൗൺലോഡ് ആകുമ്പോൾ തന്നെ കാണുക</summary>
+  <summary xml:lang="pl">Oglądaj filmy z czatów Telegrama w trakcie ich pobierania</summary>
+  <summary xml:lang="pt_BR">Assista aos vídeos dos seus chats do Telegram enquanto eles baixam</summary>
+  <summary xml:lang="ru">Смотрите видео из чатов Telegram, пока они загружаются</summary>
+  <summary xml:lang="tr">Telegram sohbetlerindeki videoları indirilirken izle</summary>
+  <summary xml:lang="uk">Дивіться відео зі своїх чатів Telegram, поки вони завантажуються</summary>
+  <summary xml:lang="vi">Xem video trong các cuộc trò chuyện Telegram của bạn khi chúng đang tải</summary>
+  <summary xml:lang="zh_CN">边下载边观看你 Telegram 聊天中的视频</summary>
+  <summary xml:lang="zh_TW">邊下載邊觀看 Telegram 聊天中的影片</summary>
+  <developer id="io.github.dracu_lah">
+    <name>dracu-lah</name>
+  </developer>
+  <description>
+    <p>
+      TMPlayer plays the videos in your own Telegram chats and channels. It starts within seconds
+      while the file is still downloading, and seeking re-aims the download instead of waiting
+      for it.
+    </p>
+    <ul>
+      <li>Sign in with a QR code or your phone number</li>
+      <li>Browse the videos in every chat as a poster grid, with what you were watching first</li>
+      <li>Resume where you stopped, and go on to the next episode</li>
+      <li>Embedded subtitles and audio tracks, drawn by libmpv</li>
+      <li>Full keyboard and mouse control, media keys and MPRIS</li>
+    </ul>
+    <p>
+      TMPlayer is an unofficial client. It is not made by or affiliated with Telegram.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.dracu_lah.TMPlayer.desktop</launchable>
+  <url type="homepage">https://tmplayer.org</url>
+  <url type="bugtracker">https://github.com/dracu-lah/TMPlayer/issues</url>
+  <url type="vcs-browser">https://github.com/dracu-lah/TMPlayer</url>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Video</category>
+    <category>Player</category>
+  </categories>
+  <keywords>
+    <keyword>Telegram</keyword>
+    <keyword>Video</keyword>
+    <keyword>Stream</keyword>
+  </keywords>
+  <provides>
+    <binary>tmplayer</binary>
+  </provides>
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-info">mild</content_attribute>
+  </content_rating>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/dracu-lah/TMPlayer/main/docs/screenshots/tv-chats.webp</image>
+      <caption>Browse Telegram chats as a poster grid</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/dracu-lah/TMPlayer/main/docs/screenshots/devices.webp</image>
+      <caption>Watch video seamlessly across devices</caption>
+    </screenshot>
+  </screenshots>
+  <!-- package.sh fills in the version being built and its date. -->
+  <releases>
+    <release version="1.24.0" date="2026-10-07">
+      <url type="details">https://github.com/dracu-lah/TMPlayer/releases</url>
+    </release>
+  </releases>
+</component>

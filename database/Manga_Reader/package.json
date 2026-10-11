@@ -1,0 +1,13 @@
+{
+  "name": "manga-library",
+  "version": "3.0.0",
+  "description": "A cross-platform desktop app to organize and read your local manga collection.",
+  "main": "./out/main/index.js",
+  "author": "Izumi <izumicancode@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "electron-store": "^8.2.0",
+    "node-unrar-js": "^2.0.2"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "rowbinary-explorer",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Interactive hex viewer for ClickHouse RowBinary and Native wire formats",
+  "author": "alex-clickhouse <alex.soffronow@clickhouse.com>",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-resizable-panels": "^2.1.7",
+    "react-window": "^1.8.10",
+    "zustand": "^5.0.3"
+  }
+}

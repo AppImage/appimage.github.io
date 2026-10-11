@@ -1,0 +1,13 @@
+{
+  "name": "metafold",
+  "version": "0.0.72",
+  "description": "MetaFold - Laboratory data management platform for automated folder structures, experiment metadata, and seamless integration with electronical lab notebooks like elabFTW and also OMERO. Built for life sciences research workflows.",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThZobel/MetaFold.git"
+  },
+  "author": "Dr. Thomas Zobel",
+  "license": "MIT",
+  "dependencies": {}
+}

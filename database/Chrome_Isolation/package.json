@@ -1,0 +1,9 @@
+{
+  "name": "chrome-isolation",
+  "version": "1.1.0",
+  "description": "Isolated Docker-backed Chrome profiles for GNOME Linux",
+  "main": "electron/main.js",
+  "author": "MuhammadUsamaMX",
+  "license": "MIT",
+  "dependencies": {}
+}

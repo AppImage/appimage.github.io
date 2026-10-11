@@ -1,0 +1,77 @@
+---
+layout: app
+
+permalink: /Materialious/
+description: Modern material design for YouTube and Invidious.
+license: AGPL-3.0
+
+icons:
+  - Materialious/icons/512x512/materialious.png
+
+screenshots:
+  - Materialious/screenshot.png
+
+authors:
+  - name: Materialious
+    url: https://github.com/Materialious
+
+links:
+  - type: GitHub
+    url: Materialious/Materialious
+  - type: Download
+    url: https://github.com/Materialious/Materialious/releases
+
+desktop:
+  Desktop Entry:
+    Name: Materialious
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: materialious
+    StartupWMClass: us.materialio.Materialious
+    X-AppImage-Version: 1.18.7
+    Comment: Modern material design for YouTube and Invidious.
+    Categories: GNOME
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: AGPL-3.0
+
+electron:
+  desktopName: us.materialio.Materialious
+  author:
+    name: Ward Pearce
+    email: wardpearce@pm.me
+  repository:
+    type: git
+    url: https://github.com/Materialious/Materialious
+  license: MIT
+  main: build/src/index.js
+  dependencies:
+    "@capacitor-community/electron": "^5.0.0"
+    "@materialious/shared": file:../shared
+    "@types/jsdom": "^28.0.3"
+    bgutils-js: "^4.0.3"
+    chokidar: "~5.0.0"
+    electron-is-dev: "~3.0.1"
+    electron-serve: "~3.0.0"
+    electron-unhandled: "^4.0.1"
+    electron-updater: "^6.8.9"
+    electron-window-state: "^5.0.3"
+    ffmpeg-static: "^5.3.0"
+    fluent-ffmpeg: "^2.1.3"
+    googlevideo: "^4.1.1"
+    jsdom: "^30.0.1"
+    jsonfile: "^6.2.1"
+    youtubei.js: "^18.0.0"
+  overrides:
+    tar: 7.5.22
+---

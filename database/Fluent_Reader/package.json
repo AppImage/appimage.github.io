@@ -1,0 +1,12 @@
+{
+  "name": "fluent-reader",
+  "version": "1.2.2",
+  "description": "Modern desktop RSS reader",
+  "main": "./dist/electron.js",
+  "author": "Haoyuan Liu",
+  "license": "BSD-3-Clause",
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": "github:yang991178/fluent-reader"
+}

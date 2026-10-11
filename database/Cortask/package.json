@@ -1,0 +1,20 @@
+{
+  "name": "@cortask/desktop",
+  "version": "0.2.39",
+  "private": true,
+  "description": "Cortask desktop application",
+  "homepage": "https://github.com/cortask/cortask",
+  "author": {
+    "name": "Sebastian Kraus",
+    "email": "info@cortask.com"
+  },
+  "main": "dist/main.js",
+  "dependencies": {
+    "@cortask/channels": "workspace:*",
+    "@cortask/core": "workspace:*",
+    "@cortask/gateway": "workspace:*",
+    "agent-browser": "^0.21.2",
+    "better-sqlite3": "^11.7.0",
+    "electron-updater": "^6.3.0"
+  }
+}

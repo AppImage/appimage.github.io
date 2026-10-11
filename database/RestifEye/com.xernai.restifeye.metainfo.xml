@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.xernai.restifeye</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-PolyForm-Shield-1.0.0</project_license>
+  <name>RestifEye</name>
+  <summary>Break reminders that respect your flow</summary>
+  <developer_name>Xernai</developer_name>
+  <description>
+    <p>
+      RestifEye reminds you to rest your eyes and move your body at healthy
+      intervals — without being annoying and without breaking on Wayland.
+      It defers breaks while you are in a call, credits breaks you take on
+      your own, always warns before taking the screen, and shows a simple
+      illustrated exercise with every break.
+    </p>
+    <p>
+      Includes automatic screen-time tracking with weekly, monthly, and
+      yearly analytics plus practical advice — all computed locally.
+      No accounts, no telemetry.
+    </p>
+  </description>
+  <launchable type="desktop-id">com.xernai.restifeye.desktop</launchable>
+  <url type="homepage">https://github.com/Xern-AI/restifeye</url>
+  <url type="bugtracker">https://github.com/Xern-AI/restifeye/issues</url>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.1.0" date="2026-07-13"/>
+  </releases>
+</component>

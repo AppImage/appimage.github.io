@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
     <id>xonsh</id>
-    <metadata_license>MIT</metadata_license>
-    <project_license>Python-2.0</project_license>
+    <metadata_license>BSD</metadata_license>
+    <project_license>BSD</project_license>
     <name>Xonsh</name>
-    <summary>Xonsh on Python 3.8.5</summary>
+    <summary>Xonsh shell on Python 3.14.7</summary>
     <description>
-        <p>  Python 3.8.5 + Xonsh bundled in an AppImage.
+        <p>Xonsh shell, bundled with Python 3.14.7. Xonsh (sounds like "consh") is a modern,
+           full-featured and cross-platform Python-based shell. The language is a superset of Python 3 with
+           seamless integration of shell functionality and commands. Xonsh is meant for the daily use of experts
+           and novices.
         </p>
     </description>
     <launchable type="desktop-id">xonsh.desktop</launchable>
     <url type="homepage">http://xon.sh</url>
     <provides>
-        <binary>python3.8</binary>
+        <binary>python3.14</binary>
     </provides>
 </component>

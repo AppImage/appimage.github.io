@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>net.cyberbrand.whodis</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Whodis</name>
+  <summary>Investigate domain identity, infrastructure, services, and technology</summary>
+  <description>
+    <p>
+      Whodis is a full, evidence-backed domain investigation suite. It starts
+      with the appropriate RDAP, WHOIS, or RWhois authority, then connects that
+      identity to DNS inventory, bounded service diagnostics, infrastructure
+      attribution, technology profiling, research pivots, change tracking, and
+      a score-free homepage audit.
+    </p>
+    <p>
+      The native desktop application provides registration, DNS query,
+      resolver comparison, delegation, web, TLS, mail, stack, homepage
+      observations, related-domain, findings, batch, and raw-source views
+      without requiring the command-line application.
+    </p>
+  </description>
+  <launchable type="desktop-id">net.cyberbrand.whodis.desktop</launchable>
+  <developer_name>Aleksandr Oreshkin</developer_name>
+  <url type="homepage">https://github.com/Alex9001/whodis</url>
+  <url type="bugtracker">https://github.com/Alex9001/whodis/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Alex9001/whodis/main/docs/whodis-gui-registration.png</image>
+      <caption>Registration overview</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Alex9001/whodis/main/docs/whodis-gui-dns.png</image>
+      <caption>Public DNS inventory</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="2.5.4" date="2026-10-02"/>
+  </releases>
+  <provides>
+    <binary>whodis-gui</binary>
+  </provides>
+  <categories>
+    <category>Network</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+</component>

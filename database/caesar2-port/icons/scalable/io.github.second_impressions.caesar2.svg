@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Roman helmet in profile</title>
+  <ellipse cx="32" cy="59" rx="22" ry="3" fill="#2e201b" opacity=".4"/>
+  <path d="M6.9 19.5A29 29 0 0 1 57.1 19.5L48.5 24.5A19 19 0 0 0 15.5 24.5Z" fill="#b23833" stroke="#3b211d" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M32 14V6M22 16.7 18 9.8M42 16.7l4-6.9" fill="none" stroke="#7c221f" stroke-width="1.5"/>
+  <path d="M14 34a18 18 0 0 1 36 0v3H14Z" fill="#d9a441" stroke="#3b2a20" stroke-width="3"/>
+  <path d="M42 25q7 2 9 7" fill="none" stroke="#f0cd72" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M14 35 5 43l5 6 9-9Z" fill="#c08a3e" stroke="#3b2a20" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M27 37h17l3 6-5 13h-9l-6-9Z" fill="#c08a3e" stroke="#3b2a20" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M33 42q4 3 3 8" fill="none" stroke="#7a4a26" stroke-width="2" stroke-linecap="round"/>
+</svg>

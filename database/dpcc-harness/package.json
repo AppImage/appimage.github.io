@@ -1,0 +1,65 @@
+{
+  "name": "pcc-agent",
+  "version": "3.0.2",
+  "productName": "PccAgent",
+  "description": "Desktop client for Pi and custom ACP coding agents",
+  "author": {
+    "name": "DUNHKpcc",
+    "email": "sjh2329952249@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/DUNHKpcc/dpcc-harness",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DUNHKpcc/dpcc-harness.git"
+  },
+  "main": "electron/dist/main.js",
+  "packageManager": "pnpm@10.26.0",
+  "dependencies": {
+    "@agentclientprotocol/sdk": "^0.15.0",
+    "@earendil-works/pi-coding-agent": "0.84.1",
+    "@file-viewer/ppt": "0.3.3",
+    "@file-viewer/preset-lite": "3.0.2",
+    "@file-viewer/preset-office": "3.0.2",
+    "@file-viewer/react": "3.0.2",
+    "@fontsource-variable/noto-serif-sc": "^5.2.10",
+    "@fontsource-variable/source-serif-4": "^5.2.9",
+    "@fontsource/instrument-serif": "^5.2.8",
+    "@huggingface/transformers": "^3.8.1",
+    "@lobehub/icons-static-svg": "1.94.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@monaco-editor/react": "^4.7.0",
+    "@tanstack/react-virtual": "^3.13.22",
+    "dompurify": "^3.3.3",
+    "electron-context-menu": "^4.1.1",
+    "electron-updater": "^6.8.3",
+    "i18next": "^26.3.1",
+    "konva": "^10.2.0",
+    "mermaid": "^11.13.0",
+    "motion": "^12.34.3",
+    "node-html-parser": "^9.0.1",
+    "node-pty": "^1.1.0",
+    "pi-acp": "0.0.33",
+    "pi-mcp-adapter": "2.31.0",
+    "qrcode": "^1.5.4",
+    "react-i18next": "^17.0.8",
+    "react-konva": "^19.2.3",
+    "refractor": "^5.0.0",
+    "sonner": "^2.0.7",
+    "zod": "^4.4.3",
+    "zustand": "^5.0.12"
+  },
+  "pnpm": {
+    "overrides": {
+      "@earendil-works/pi-agent-core": "0.84.1",
+      "@earendil-works/pi-ai": "0.84.1",
+      "@earendil-works/pi-client": "0.84.1",
+      "@earendil-works/pi-protocol": "0.84.1",
+      "@earendil-works/pi-telemetry": "0.84.1",
+      "@earendil-works/pi-tui": "0.84.1"
+    },
+    "patchedDependencies": {
+      "pi-acp@0.0.33": "patches/pi-acp@0.0.33.patch"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+[Desktop Entry]
+Type=Application
+Name=Easy SCSModManager
+Comment=Mod and profile manager for Euro Truck Simulator 2 and American Truck Simulator
+Comment[de]=Mod- und Profil-Manager für Euro Truck Simulator 2 und American Truck Simulator
+Exec=easy-scsmodmanager
+Icon=io.github.switch_bros.EasySCSModManager
+Terminal=false
+Categories=Game;Utility;
+Keywords=ets2;ats;euro truck;american truck;mods;mod manager;load order;scs;
+StartupNotify=true
+StartupWMClass=io.github.switch_bros.EasySCSModManager
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=GPL-3.0

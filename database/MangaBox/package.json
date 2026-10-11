@@ -1,0 +1,14 @@
+{
+  "name": "mangabox",
+  "version": "0.4.7",
+  "author": "zpaolo11x paolo.zago@gmail.com",
+  "description": "Desktop client for Komga server",
+  "main": "package-main.js",
+  "dependencies": {
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/ios": "^7.0.0",
+    "keytar": "^7.9.0",
+    "node-stream-zip": "^1.15.0"
+  }
+}

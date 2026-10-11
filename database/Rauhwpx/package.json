@@ -1,0 +1,18 @@
+{
+  "name": "rauhwpx",
+  "productName": "Rauhwpx",
+  "version": "2.0.8",
+  "description": "HWP/HWPX editor with a local AI agent sidebar.",
+  "author": "Hataewook",
+  "license": "MIT",
+  "homepage": "https://github.com/heemangstudio/Rauhwpx",
+  "desktopName": "rauhwpx.desktop",
+  "private": true,
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "main": "desktop/main.mjs",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

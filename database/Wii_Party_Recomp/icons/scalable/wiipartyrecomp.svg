@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs>
+<linearGradient id="tile" x1="0" y1="32" x2="0" y2="992" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff6fb4"/><stop offset="1" stop-color="#d4146f"/></linearGradient>
+<radialGradient id="glow" cx="512" cy="430" r="520" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+<linearGradient id="face" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e9e6f0"/></linearGradient>
+<linearGradient id="rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+<radialGradient id="pip" cx="0.4" cy="0.35" r="0.75"><stop offset="0" stop-color="#3a3a52"/><stop offset="1" stop-color="#15151f"/></radialGradient>
+<linearGradient id="shine" x1="0" y1="32" x2="0" y2="400" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.02"/></linearGradient>
+<clipPath id="clip"><rect x="32" y="32" width="960" height="960" rx="220"/></clipPath>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="26"/></filter>
+<filter id="inset" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<g clip-path="url(#clip)">
+<rect width="1024" height="1024" fill="url(#tile)"/>
+<rect width="1024" height="1024" fill="url(#glow)"/>
+<ellipse cx="512" cy="-60" rx="720" ry="460" fill="url(#shine)"/>
+</g>
+<rect x="33" y="33" width="958" height="958" rx="219" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+<g transform="translate(512 512) rotate(14) scale(1.08)">
+<rect x="-270" y="-230" width="540" height="540" rx="130" fill="#6a0035" fill-opacity="0.35" filter="url(#shadow)"/>
+<rect x="-270" y="-270" width="540" height="540" rx="130" fill="url(#face)"/>
+<rect x="-262" y="-262" width="524" height="524" rx="122" fill="none" stroke="url(#rim)" stroke-width="10"/>
+<rect x="-270" y="-270" width="540" height="540" rx="130" fill="none" stroke="#c9c3d6" stroke-opacity="0.55" stroke-width="3"/>
+<g>
+<circle cx="-140" cy="-137" r="66" fill="#000000" fill-opacity="0.18" filter="url(#inset)"/>
+<circle cx="0" cy="3" r="66" fill="#000000" fill-opacity="0.18" filter="url(#inset)"/>
+<circle cx="140" cy="143" r="66" fill="#000000" fill-opacity="0.18" filter="url(#inset)"/>
+<circle cx="-140" cy="-140" r="64" fill="url(#pip)"/>
+<circle cx="0" cy="0" r="64" fill="url(#pip)"/>
+<circle cx="140" cy="140" r="64" fill="url(#pip)"/>
+</g>
+</g>
+</svg>

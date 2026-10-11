@@ -1,0 +1,12 @@
+{
+  "name": "codex-mobile-bridge-desktop",
+  "version": "1.4.0",
+  "description": "Codex App 手机网关桌面启动器",
+  "author": "try2love",
+  "license": "MIT",
+  "private": true,
+  "main": "desktop/main.cjs",
+  "dependencies": {
+    "qrcode": "1.5.4"
+  }
+}

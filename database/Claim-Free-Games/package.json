@@ -1,0 +1,19 @@
+{
+  "name": "claim-free-games",
+  "version": "2.1.0",
+  "description": "Automatically claim Epic Games Store giveaways with an API-first strategy and browser fallback.",
+  "author": {
+    "name": "Ashish Ajin",
+    "email": "68105674+KingHacker9000@users.noreply.github.com"
+  },
+  "desktopName": "claim-free-games",
+  "private": true,
+  "type": "module",
+  "main": "dist/desktop/main.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "patchright": "1.62.1"
+  }
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: CC0-1.0 -->
+<component type="desktop-application">
+  <id>io.github.keithxc.tio_gui</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>tio-gui</name>
+  <summary>Connect to serial devices and inspect their output</summary>
+  <developer id="io.github.keithxc">
+    <name>tio-gui contributors</name>
+  </developer>
+  <description>
+    <p>
+      tio-gui is a serial workspace for embedded development. On Linux, it
+      manages tio sessions in an embedded terminal, with device discovery,
+      connection profiles, automatic reconnection and session logging.
+    </p>
+    <p>
+      Open several devices in separate tabs, send text or binary commands,
+      record and replay data, and inspect captured output with filters and
+      plots. Serial access requires permission to open the selected device.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.keithxc.tio_gui.desktop</launchable>
+  <url type="homepage">https://github.com/keithxc/tio-gui</url>
+  <url type="bugtracker">https://github.com/keithxc/tio-gui/issues</url>
+  <url type="vcs-browser">https://github.com/keithxc/tio-gui</url>
+  <url type="help">https://github.com/keithxc/tio-gui/blob/main/README.md</url>
+  <provides>
+    <binary>tio-gui</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.4.3" date="2026-10-09">
+      <url>https://github.com/keithxc/tio-gui/releases/tag/v0.4.3</url>
+      <description>
+        <p>Fixes session restoration and settings persistence, improves portable
+        macOS character conversion, and adds self-contained Linux packages.</p>
+      </description>
+    </release>
+    <release version="0.4.1" date="2026-09-14">
+      <url>https://github.com/keithxc/tio-gui/releases/tag/v0.4.1</url>
+      <description>
+        <p>Improves macOS system appearance handling and package version checks.</p>
+      </description>
+    </release>
+  </releases>
+</component>

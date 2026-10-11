@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.composa.Composa</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Composa</name>
+  <summary>Layer-based image editor for compositing and retouching</summary>
+
+  <description>
+    <p>
+      Composa is a layer-based image editor for compositing and retouching, with Photoshop-style
+      tools and shortcuts. It is a from-scratch implementation of Compositor, Robbie Tilton's
+      open-source macOS app.
+    </p>
+    <p>Among what it offers:</p>
+    <ul>
+      <li>Layers with masks, clipping, blend modes, groups and layer effects</li>
+      <li>Selections: marquee, lasso, magic wand, object and subject selection, feathering</li>
+      <li>Brush, eraser, clone, heal, dodge, burn and sharpen, with pen pressure</li>
+      <li>Adjustments: levels, curves, hue and saturation, exposure, colour balance and more</li>
+      <li>Text layers, transforms, rulers, guides, grid and snapping</li>
+      <li>Opens Photoshop files and camera RAW; exports PNG, JPEG and WebP</li>
+      <li>Autosave with crash recovery</li>
+    </ul>
+  </description>
+
+  <developer id="io.github.dvdstelt">
+    <name>Dennis van der Stelt</name>
+  </developer>
+
+  <launchable type="desktop-id">composa.desktop</launchable>
+  <url type="homepage">https://github.com/dvdstelt/Composa</url>
+  <url type="bugtracker">https://github.com/dvdstelt/Composa/issues</url>
+
+  <provides>
+    <binary>composa</binary>
+  </provides>
+
+  <categories>
+    <category>Graphics</category>
+    <category>2DGraphics</category>
+    <category>RasterGraphics</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+
+  <!--
+    Newest first. GNOME Software and KDE Discover show this as the version history. A new entry is
+    added along with the CHANGELOG.md section when a release is cut; see RELEASING.md.
+  -->
+  <releases>
+    <release version="1.2.0" date="2026-09-27">
+      <description>
+        <p>An AI agent can drive the editor through a Model Context Protocol server, a Painterly filter turns a photo into a painting that is still that photo, letters of a text layer can have their own colors, saving writes in the background, sliders show their colors and can be reset, and Motion Blur's angle has a full-circle dial.</p>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-09-25">
+      <description>
+        <p>Photoshop Large Document files, editable Photoshop text, SVG import, a memory budget for the whole document, sliders you drag, scrub or type into, a dial for shadow angles, and a color picker laid out as Photoshop's.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-09-23">
+      <description>
+        <p>The first stable release, and the first for Windows: an installer and a portable zip for x64 and arm64, with ImageMagick included so HEIC, AVIF, TIFF and camera RAW open without anything else installed.</p>
+      </description>
+    </release>
+    <release version="0.3.0" date="2026-09-23">
+      <description>
+        <p>The Camera Raw Filter, finishing filters, blur and noise adjustment layers, the Inner Glow effect, layer copy and paste, Image Trim, and a notice when a newer version is available.</p>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-09-23">
+      <description>
+        <p>The first release with downloadable packages for Linux.</p>
+      </description>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,14 @@
+{
+  "name": "local-notebooklm-app",
+  "version": "2.0.7",
+  "description": "Beautiful desktop app for Local-NotebookLM PDF to Audio generation",
+  "author": "Gökdeniz Gülmez <goekdenizguelmez.ml@gmail.com>",
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.294.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.1.0"
+  }
+}

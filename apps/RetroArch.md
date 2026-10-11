@@ -6,9 +6,10 @@ description: Frontend for emulators, game engines and media players
 license: GPL-3.0
 
 icons:
-  - RetroArch/icons/scalable/retroarch.svg
+  - RetroArch/icons/scalable/com.libretro.RetroArch.svg
+
 screenshots:
-- https://www.retroarch.com/images/xmb-tabs.png
+  - RetroArch/screenshot.png
 
 authors:
   - name: hizzlekizzle
@@ -30,13 +31,13 @@ desktop:
     Comment[ru]: Графический интерфейс для эмуляторов, игровых движков и медиаплееров
     Comment[fr]: Interface graphique pour émulateurs, moteurs de jeu et lecteurs multimédia
     Comment[de]: Front-End für Emulatoren, Spiel-Engines und Mediaplayer
-    Icon: retroarch
+    Icon: com.libretro.RetroArch
     Exec: retroarch
     Terminal: false
     StartupNotify: false
+    StartupWMClass: retroarch
     Keywords: multi
     Categories: Game
-    X-AppImage-Version: 5ca666acee
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
@@ -44,64 +45,9 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-
-appdata:
-  Type: desktop-application
-  ID: com.libretro.RetroArch
-  Name:
-    C: RetroArch
-  Summary:
-    C: Frontend for emulators, game engines and media players
-  Description:
-    C: >-
-      <p>RetroArch is an open source and cross platform frontend/framework for emulators, game engines, video games, media players
-      and other applications.</p>
-  
-      <p>While it can do many things besides this, it is most widely known for enabling you to run classic games on a wide range
-      of computers and consoles through a slick graphical interface. Settings are also unified so configuration is done once
-      and for all.</p>
-  
-      <p>In addition to this, you will soon be able to run original game discs (CDs) from RetroArch. We take videogame preservation
-      seriously and want to ensure you can run your originally bought content on modern day PCs.</p>
-  
-      <p>RetroArch has advanced features like shaders, netplay, rewinding, next-frame response times, runahead, and more!</p>
-  DeveloperName:
-    C: Libretro
-  ProjectGroup: Libretro
-  ProjectLicense: GPL-3.0
-  Url:
-    homepage: https://www.retroarch.com/
-    bugtracker: https://github.com/libretro/RetroArch/issues
-    donation: https://www.retroarch.com/index.php?page=donate
-  Launchable:
-    desktop-id:
-    - retroarch.desktop
-  Screenshots:
-  - default: true
-    thumbnails: []
-    source-image:
-      url: https://www.retroarch.com/images/xmb-tabs.png
-      lang: C
-  - default: true
-    thumbnails: []
-    source-image:
-      url: https://www.retroarch.com/images/xmb-updater.png
-      lang: C
-  - default: true
-    thumbnails: []
-    source-image:
-      url: https://www.retroarch.com/images/xmb-osk.png
-      lang: C
-  - default: true
-    thumbnails: []
-    source-image:
-      url: https://www.retroarch.com/images/xmb-playlists.png
-      lang: C
-  - default: true
-    thumbnails: []
-    source-image:
-      url: https://www.retroarch.com/images/xmb-metadata.png
-      lang: C
-  Releases:
-  - version: 1.9.0
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.30
+    X-AppImage-Payload-License: MIT
 ---

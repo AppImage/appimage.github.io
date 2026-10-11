@@ -1,0 +1,28 @@
+{
+  "name": "eaon-desktop",
+  "version": "2026.6.2",
+  "description": "The Eaon desktop app — a bring-your-own-key AI chat client",
+  "main": "./out/main/index.js",
+  "desktopName": "eaon.desktop",
+  "bin": {
+    "eaon": "bin/eaon.mjs"
+  },
+  "author": "Eaon",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eaonlabs/eaon-desktop.git"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.120.0",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "baileys": "7.0.0-rc14",
+    "betterwright": "2.8.8",
+    "electron-updater": "^6.3.9",
+    "node-pty": "^1.1.0",
+    "postal-mime": "^4.0.2",
+    "qrcode": "^1.5.4",
+    "ws": "^8.21.3"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "@xtralab/desktop",
+  "productName": "xtralab",
+  "version": "0.15.3",
+  "description": "Electron desktop shell for xtralab.",
+  "private": true,
+  "license": "BSD-3-Clause",
+  "main": "dist/main.js",
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:python": "uv build --wheel --out-dir python/wheels .. && uv build --wheel --out-dir python/wheels .",
+    "build:lock": "uv export --frozen --no-dev --no-emit-project --no-emit-package xtralab --format requirements.txt --output-file python/wheels/requirements.txt",
+    "build:wheelhouse": "node scripts/build-wheelhouse.mjs",
+    "build:runtime": "node scripts/build-runtime.mjs",
+    "build:all": "pnpm build && pnpm build:lock && pnpm build:wheelhouse && pnpm build:python && pnpm build:runtime",
+    "dev": "pnpm build:all && electron .",
+    "start": "pnpm build:all && electron-forge start",
+    "package": "pnpm build:all && electron-forge package",
+    "make": "pnpm build:all && electron-forge make",
+    "publish": "pnpm build:all && electron-forge publish",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.forge.json"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.11.0",
+    "@electron-forge/maker-dmg": "^7.11.0",
+    "@electron-forge/maker-zip": "^7.11.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.11.0",
+    "@electron-forge/plugin-fuses": "^7.11.0",
+    "@electron-forge/shared-types": "^7.11.0",
+    "@electron/fuses": "^1.8.0",
+    "@electron/notarize": "^2.5.0",
+    "@reforged/maker-appimage": "^5.1.0",
+    "@types/node": "25.6.0",
+    "electron": "42.0.0",
+    "typescript": "5.9.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "tar": "^7.5.14",
+      "@tootallnate/once": "^3.0.1"
+    },
+    "onlyBuiltDependencies": [
+      "fs-xattr",
+      "macos-alias"
+    ]
+  }
+}

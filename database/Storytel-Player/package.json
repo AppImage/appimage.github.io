@@ -1,0 +1,19 @@
+{
+  "name": "storytel-player",
+  "version": "1.4.1",
+  "email": "andrea@debbaweb.it",
+  "description": "Storytel Unofficial Player - Storytel audiobook player for desktop",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/debba/storytel-player.git"
+  },
+  "main": "dist/electron/main.js",
+  "homepage": "./",
+  "author": "debba <andrea@debbaweb.it>",
+  "license": "MIT",
+  "dependencies": {
+    "dot-object": "^2.1.5",
+    "electron-store": "^10.1.0",
+    "electron-updater": "^6.7.3"
+  }
+}

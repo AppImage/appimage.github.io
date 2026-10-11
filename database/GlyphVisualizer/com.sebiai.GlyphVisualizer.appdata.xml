@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with https://www.freedesktop.org/software/appstream/metainfocreator -->
+<!-- Content rating created with https://hughsie.github.io/oars/generate.html -->
+<component type="desktop-application">
+  <id>com.sebiai.GlyphVisualizer</id>
+  
+  <name>GlyphVisualizer</name>
+  <summary>Visualizes &apos;Glyph Composer&apos; compositions on desktop</summary>
+  <content_rating type="oars-1.1" />
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+  
+  <description>
+    <p>
+      A Glyph composition player written with the Qt6 framework in C++ that plays Glyph compositions from Nothing Phones.
+    </p>
+    <p>
+      This is a tool that is meant to be used in combination with Glyph Tools (https%3A%2F%2Fgithub.com%2FSebiAi%2Fcustom-nothing-glyph-tools). When you create a custom ringtone or notification tone with these scripts, you want to test them as often as possible. You can use this tool to visualize your composition and rapidly iterate on it - no file transfer to your phone is needed.
+    </p>
+    <p>
+      And apart from that, you can use it if you want to view the composition without having access to a Nothing Phone.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">com.sebiai.GlyphVisualizer.desktop</launchable>
+</component>

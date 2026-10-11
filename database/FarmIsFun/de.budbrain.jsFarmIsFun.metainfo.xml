@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsFarmIsFun</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>FarmIsFun</name>
+  <summary>Build a farm from an empty patch of land</summary>
+  <summary xml:lang="de">Aus einem Stück Land eine Farm aufbauen</summary>
+
+  <description>
+    <p>
+      You start with ten coins, six seeds and no tools at all. The first tree
+      comes down with your bare hands — and out of that wood comes the axe for
+      the next one. Turn the soil, sow what you have, and by the evening
+      something is growing where nothing was.
+    </p>
+    <p xml:lang="de">
+      Am Anfang stehen zehn Münzen, sechs Samenkörner und kein einziges
+      Werkzeug. Den ersten Baum fällst du mit bloßen Händen — und aus dem Holz
+      wird die Axt für den nächsten. Umgraben, säen, was da ist, und am Abend
+      wächst dort etwas, wo vorher nichts war.
+    </p>
+    <p>
+      From there it grows in every direction. Chickens, cows, pigs, sheep,
+      horses and bees each want their own place. The mine goes down through
+      copper and silver to gold. There are fish in the lake, deer in the
+      forest, and wolves after dark.
+    </p>
+    <p xml:lang="de">
+      Von da an wächst es in jede Richtung. Hühner, Kühe, Schweine, Schafe,
+      Pferde und Bienen wollen jeweils ihren eigenen Platz. Die Mine führt
+      über Kupfer und Silber bis zum Gold. Im See stehen Fische, im Wald
+      Rehe, und nach Einbruch der Dunkelheit kommen die Wölfe.
+    </p>
+    <p>
+      In town there are traders, a cook, an armourer and a jeweller, a job
+      board that always has work, and a small arcade for when the day is done.
+    </p>
+    <p xml:lang="de">
+      In der Stadt gibt es Händler, einen Koch, einen Waffenschmied und einen
+      Juwelier, ein Schwarzes Brett mit immer neuen Aufträgen und eine kleine
+      Spielhalle für den Feierabend.
+    </p>
+    <ul>
+      <li>Over 300 things to find, grow, cook, forge and wear</li>
+      <li>231 recipes, from a plank to a gold ring</li>
+      <li>Six kinds of animal, each with its own building</li>
+      <li>Seventeen skills that grow with what you do</li>
+      <li>Four seasons, weather, day and night</li>
+      <li>Four little games in the arcade</li>
+      <li>Several save slots, and it saves by itself</li>
+      <li>Available in 22 languages</li>
+    </ul>
+    <ul xml:lang="de">
+      <li>Über 300 Dinge zum Finden, Anbauen, Kochen, Schmieden und Tragen</li>
+      <li>231 Baupläne, vom Brett bis zum Goldring</li>
+      <li>Sechs Tierarten, jede mit ihrem eigenen Gebäude</li>
+      <li>Siebzehn Fertigkeiten, die mit dem wachsen, was man tut</li>
+      <li>Vier Jahreszeiten, Wetter, Tag und Nacht</li>
+      <li>Vier kleine Spiele in der Spielhalle</li>
+      <li>Mehrere Spielstandplätze, und es speichert von selbst</li>
+      <li>In 22 Sprachen</li>
+    </ul>
+  </description>
+
+  <!-- Ohne diesen Block macht der Katalog sein EIGENES Bildschirmfoto — in
+       einem leeren Testcontainer, und das ist das haesslichste Bild, das es
+       von dem Spiel gibt. Die Adressen zeigen auf die Dateien, die
+       generate-site.sh der Website mit hochlaedt; wer sie dort umbenennt,
+       macht die AppStream-Bilder kaputt. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>The title screen</caption>
+      <caption xml:lang="de">Das Titelbild</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/farmisfun_01-title.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A farm that has grown, with workbenches, barns and a well</caption>
+      <caption xml:lang="de">Eine gewachsene Farm, mit Werkbänken, Ställen und Brunnen</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/farmisfun_02-farm.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A fight after dark</caption>
+      <caption xml:lang="de">Ein Kampf nach Einbruch der Dunkelheit</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/farmisfun_03-combat.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The same farm in autumn</caption>
+      <caption xml:lang="de">Dieselbe Farm im Herbst</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/farmisfun_04-autumn.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The town on the lake, with the shops and the arcade</caption>
+      <caption xml:lang="de">Die Stadt am See, mit den Läden und der Spielhalle</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/farmisfun_05-town.png</image>
+    </screenshot>
+  </screenshots>
+
+  <launchable type="desktop-id">de.budbrain.jsFarmIsFun.desktop</launchable>
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+
+  <!-- KEIN mailto: — `<url type="contact">` verwirft damit die ganze
+       metainfo, und die App erscheint in keinem Software-Center. -->
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <categories>
+    <category>Game</category>
+    <category>Simulation</category>
+  </categories>
+
+  <content_rating type="oars-1.1">
+    <!-- Es wird gekaempft: Woelfe, Baeren, Skelette. Comichaft, ohne Blut.
+         Und in der Spielhalle wird mit Spielmuenzen gewettet — kein echtes
+         Geld, aber die Frage danach ist gestellt und wird beantwortet. -->
+    <content_attribute id="violence-cartoon">mild</content_attribute>
+    <content_attribute id="money-gambling">mild</content_attribute>
+  </content_rating>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>gamepad</control>
+  </supports>
+
+  <recommends>
+    <display_length compare="ge">1000</display_length>
+  </recommends>
+
+  <releases>
+    <release version="1.0.3" date="2026-08-29">
+      <description>
+        <p>Wild chickens can be caught again, build recipes name the building instead of its material, and the day change reports what the animals produced overnight.</p>
+        <p xml:lang="de">Wildhühner lassen sich wieder einfangen, Baupläne nennen das Gebäude statt seines Baustoffs, und der Tageswechsel meldet, was die Tiere über Nacht gegeben haben.</p>
+      </description>
+    </release>
+    <release version="1.0.2" date="2026-08-25">
+      <description>
+        <p>Buildings are drawn in full again, workshops carry their name, and lists scroll with the mouse wheel.</p>
+        <p xml:lang="de">Gebäude werden wieder vollständig gezeichnet, Werkstätten tragen ihren Namen, und Listen lassen sich mit dem Mausrad rollen.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-08-23">
+      <description>
+        <p>First release for Linux — the desktop port of the Android game.</p>
+        <p xml:lang="de">Erste Fassung für Linux — die Rechnerfassung des Android-Spiels.</p>
+      </description>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.nova.browser</id>
+  <name>Nova Browser</name>
+  <summary>Open-source sovereign desktop browser with local AI and privacy controls</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>Nova Browser is an open-source sovereign desktop browser built with React and Electron. It features on-device AI integration via the Model Context Protocol (MCP), zero-telemetry offline Whisper voice transcription, client-side end-to-end encrypted sync, and native adblocking.</p>
+  </description>
+  <launchable type="desktop-id">nova-browser.desktop</launchable>
+  <url type="homepage">https://github.com/unitybtw/nova-browser</url>
+  <url type="bugtracker">https://github.com/unitybtw/nova-browser/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Nova Browser main interface</caption>
+      <image>https://raw.githubusercontent.com/unitybtw/nova-browser/main/website/public/images/newtab.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>AI Assistant and split view</caption>
+      <image>https://raw.githubusercontent.com/unitybtw/nova-browser/main/website/public/images/assistant.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.5.2" date="2026-10-10"/>
+  </releases>
+</component>

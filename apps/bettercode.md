@@ -1,0 +1,96 @@
+---
+layout: app
+
+permalink: /bettercode/
+description: BetterC0de is an AI-powered IDE with a Node.js backend and provider-agnostic chat.
+license: MIT
+
+icons:
+  - bettercode/icons/512x512/betterc0de.png
+
+screenshots:
+  - bettercode/screenshot.png
+
+authors:
+  - name: kerim0x1
+    url: https://github.com/kerim0x1
+
+links:
+  - type: GitHub
+    url: kerim0x1/bettercode
+  - type: Download
+    url: https://github.com/kerim0x1/bettercode/releases
+
+desktop:
+  Desktop Entry:
+    Name: BetterC0de
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: betterc0de
+    StartupWMClass: BetterC0de
+    X-AppImage-Version: 0.1.0-beta.4
+    Comment: BetterC0de is an AI-powered IDE with a Node.js backend and provider-agnostic
+      chat.
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: MIT
+
+electron:
+  type: module
+  main: apps/shell/main.cjs
+  workspaces:
+  - apps/*
+  - packages/*
+  dependencies:
+    "@anthropic-ai/claude-agent-sdk": "^0.2.123"
+    "@anthropic-ai/sdk": "^0.105.0"
+    "@hono/node-server": "^1.14.0"
+    "@modelcontextprotocol/sdk": "~1.29.0"
+    "@types/dompurify": "^3.0.5"
+    better-sqlite3: "^12.9.0"
+    dompurify: "^3.3.3"
+    electron-updater: "^6.8.3"
+    fast-glob: "^3.3.3"
+    hono: "^4.10.7"
+    ignore: "^7.0.5"
+    node-pty: "^1.1.0"
+    openai: "^6.34.0"
+    pino: "^9.5.0"
+    tar: "^7.5.13"
+    ws: "^8.18.0"
+    zod: "^4.0.0"
+  overrides:
+    react-native-svg: 15.15.4
+    metro: 0.84.5
+    metro-config: 0.84.5
+    metro-transform-worker: 0.84.5
+    react-native-reanimated: 4.3.1
+    react-native-worklets: 0.8.3
+    react-native-gesture-handler: "~2.31.1"
+    test-renderer: "~1.2.0"
+  description: A desktop AI coding environment for agents, files, terminals, and live
+    previews.
+  homepage: https://betterc0de.com
+  repository:
+    type: git
+    url: https://github.com/kerim0x1/bettercode.git
+  bugs:
+    url: https://github.com/kerim0x1/bettercode/issues
+  author: BetterC0de contributors
+  engines:
+    node: "^22.15.0 || ^24.0.0"
+    npm: ">=10"
+  license: MIT
+  betterc0deCodeSigned: true
+---

@@ -1,0 +1,15 @@
+{
+  "name": "tikkocampus",
+  "version": "2.1.7",
+  "description": "Premium Electron interface for Tikkocampus",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilyasstrougouty/Tikkocampus.git"
+  },
+  "author": "Tikkocampus Team",
+  "license": "ISC",
+  "dependencies": {
+    "electron-updater": "^6.8.3"
+  }
+}

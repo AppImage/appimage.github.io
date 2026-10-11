@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 Utopian Academy -->
+<component type="desktop-application">
+  <id>io.github.utopian_academy.Deckboy</id>
+
+  <name>Deckboy</name>
+  <summary>Cue-based media playback and show control for live video</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <developer id="io.github.utopian_academy">
+    <name>Utopian Academy</name>
+  </developer>
+
+  <description>
+    <p>
+      Deckboy is a native application for video engineers, AV technicians and live
+      operators who need a reliable way to organise media, trigger cues, loop content
+      and send video to production displays. When the lights go down, playback has to
+      be right, and that is the job the interface is built around.
+    </p>
+    <p>
+      Media is arranged as a playlist of cues with fades, loops and hold-last-frame
+      behaviour, sent to dedicated fullscreen outputs. Each output has its own area of
+      interest, edge feathering and warp or keystone correction, so several projectors
+      can be driven from one machine.
+    </p>
+    <p>
+      The same machine usually solves the other problems on the day as well. It speaks
+      NDI, SRT, RTMP, SMPTE ST 2110, Blackmagic SDI, LTC timecode, OSC, Art-Net and
+      NMOS, and several outputs can run at once, so an NDI source can reach SDI and a
+      stream at the same time.
+    </p>
+    <p>Also included:</p>
+    <ul>
+      <li>Convert media that will not play, without leaving the application</li>
+      <li>Inspect any file for codec, raster, frame rate, channels and duration</li>
+      <li>Generate test patterns and a test card to prove a signal chain end to end</li>
+      <li>Capture a camera, a window or a screen and treat it as a cue</li>
+      <li>Normalise loudness to EBU R128 when a clip arrives mastered too quietly</li>
+      <li>Import PDF, PowerPoint and Keynote decks as one cue per slide, with
+          presenter and prompter views available as output types</li>
+      <li>Drive playback from a Stream Deck, Bitfocus Companion, OSC, MIDI or timecode</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.github.utopian_academy.Deckboy.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://utopian-academy.github.io/Deckboy/images/hero.png</image>
+      <caption>The control window, with the cue playlist, programme monitor and cue inspector</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://utopian-academy.github.io/Deckboy/images/presenter.png</image>
+      <caption>Presenter view, showing the live slide, the previous and next slides, and the speaker notes</caption>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://utopian-academy.github.io/Deckboy/</url>
+  <url type="bugtracker">https://github.com/Utopian-Academy/Deckboy/issues</url>
+  <url type="vcs-browser">https://github.com/Utopian-Academy/Deckboy</url>
+  <url type="help">https://github.com/Utopian-Academy/Deckboy/blob/main/MANUAL.md</url>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Video</category>
+    <category>Player</category>
+  </categories>
+
+  <keywords>
+    <keyword>playback</keyword>
+    <keyword>playout</keyword>
+    <keyword>cue</keyword>
+    <keyword>NDI</keyword>
+    <keyword>SRT</keyword>
+    <keyword>show control</keyword>
+    <keyword>live events</keyword>
+    <keyword>broadcast</keyword>
+  </keywords>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <recommends>
+    <display_length compare="ge">1280</display_length>
+  </recommends>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.99.357" date="2026-09-13"/>
+  </releases>
+</component>

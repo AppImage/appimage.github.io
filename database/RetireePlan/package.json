@@ -1,0 +1,18 @@
+{
+  "name": "@retiree-plan/desktop",
+  "version": "0.0.47",
+  "description": "Retiree Plan – Desktop Application",
+  "author": {
+    "name": "Retiree Plan",
+    "email": "maintainer@retireeplan.app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/fox-den/retireeplan.git"
+  },
+  "main": "dist/main.js",
+  "private": true,
+  "dependencies": {
+    "electron-updater": "^6.3.0"
+  }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.dockport.Silo</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Silo</name>
+  <summary>Rsync GUI desktop-application</summary>
+  <description>
+    <p>Silo is an rsync GUI application. It lets you define a body of data — a "silo" — by selecting &amp; excluding folders from source, then mirror that silo to a destination with rsync. </p>
+    <p>The interface also shows you an analytical breakdown of your populated silo. Beyond just backing up, you'll have a clear, comprehensive overview of everything inside your siloed data.</p>
+    <p>The UI interface carries a theme inspired by the TV show Silo.</p>
+  </description>
+  <launchable type="desktop-id">silo.desktop</launchable>
+  <url type="homepage">https://github.com/DOCKPORT/Silo</url>
+  <url type="bugtracker">https://github.com/DOCKPORT/Silo/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/DOCKPORT/Silo/main/logo/Screenshot_2026-08-26_04-33-19.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.0.0" date="2026-08-28"/>
+  </releases>
+  <categories>
+    <category>Utility</category>
+  </categories>
+</component>

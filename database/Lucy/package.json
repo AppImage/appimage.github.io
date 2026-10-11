@@ -1,0 +1,36 @@
+{
+  "name": "lucy-ai",
+  "version": "0.1.9",
+  "private": true,
+  "main": "electron/main.js",
+  "bin": {
+    "lucy": "./cli/bin.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.104.1",
+    "@google/generative-ai": "^0.24.1",
+    "@lobehub/icons": "^5.10.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@supabase/ssr": "^0.12.0",
+    "@supabase/supabase-js": "^2.108.1",
+    "@xyflow/react": "^12.11.0",
+    "cron-parser": "^4.9.0",
+    "grammy": "^1.44.0",
+    "lucide-react": "^1.17.0",
+    "next": "16.2.9",
+    "nodemailer": "^9.0.1",
+    "openai": "^6.42.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.0",
+    "remark-gfm": "^4.0.0",
+    "simple-icons": "^16.24.0",
+    "zod": "^3.25.76",
+    "zustand": "^5.0.2"
+  },
+  "overrides": {
+    "js-yaml": "^4.2.0",
+    "postcss": "$postcss"
+  }
+}

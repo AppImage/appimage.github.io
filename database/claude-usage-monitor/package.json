@@ -1,0 +1,40 @@
+{
+  "name": "clauddy",
+  "desktopName": "clauddy.desktop",
+  "version": "1.28.1",
+  "description": "A cute desktop pet that tracks your Claude Code usage",
+  "main": "main.js",
+  "bin": {
+    "clauddy": "bin/clauddy.js"
+  },
+  "files": [
+    "bin",
+    "main.js",
+    "preload.js",
+    "usage.js",
+    "auth.js",
+    "accounts.js",
+    "codex.js",
+    "cursor.js",
+    "reminders.js",
+    "config.json",
+    "renderer"
+  ],
+  "author": "Renato",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatoaug/claude-usage-monitor.git"
+  },
+  "homepage": "https://github.com/renatoaug/claude-usage-monitor#readme",
+  "bugs": {
+    "url": "https://github.com/renatoaug/claude-usage-monitor/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "bun@1.3.14",
+  "engines": {
+    "node": ">=24"
+  }
+}

@@ -1,0 +1,36 @@
+[Desktop Entry]
+# Handlebars template for the .deb/.rpm/.AppImage desktop entry
+# (bundle.linux.{deb,rpm}.desktopTemplate). Available variables:
+# `categories`, `comment`, `exec`, `icon`, `mime_type`, `name`.
+#
+# Two lines differ from Tauri's built-in template, and both are required for
+# "Open With → OMP Desktop" on a folder:
+#
+#   * `MimeType=inode/directory` — what makes file managers list the app for
+#     a directory. `bundle.fileAssociations` cannot express it: `ext` is
+#     required there and a folder has no extension. The `` half
+#     is Tauri's own list (file associations + deep-link schemes) and must
+#     stay, or those would register everywhere except Linux.
+#   * `%F` on Exec — the built-in template has a bare `Exec=omp-desktop`, so the
+#     selected folder would never reach the process. It arrives as argv; see
+#     src-tauri/src/external_open.rs.
+Categories=
+Exec=omp-desktop %F
+StartupWMClass=omp-desktop
+Icon=omp-desktop
+Name=OMP Desktop
+Terminal=false
+Type=Application
+MimeType=inode/directory;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=MIT

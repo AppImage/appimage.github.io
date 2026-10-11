@@ -1,0 +1,25 @@
+{
+  "name": "diskhound",
+  "private": true,
+  "type": "module",
+  "version": "0.6.4",
+  "description": "Fast disk space analyzer — find and clean up large files",
+  "author": "DiskHound",
+  "homepage": "https://github.com/tzarebczan/diskhound",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tzarebczan/diskhound.git"
+  },
+  "main": "dist-electron/main.cjs",
+  "packageManager": "bun@1.3.11",
+  "dependencies": {
+    "@shutterstock/p-map-iterable": "^1.1.2",
+    "blake2": "^5.0.1",
+    "electron-updater": "^6.6.2",
+    "preact": "^10.26.9"
+  },
+  "trustedDependencies": [
+    "blake2",
+    "electron"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "codex-profile-pro",
+  "version": "1.0.8",
+  "description": "CodexProfilePro is a cross-platform desktop dashboard for Codex usage, token heatmaps, API cost estimates, and hourly tray refresh.",
+  "author": {
+    "name": "Leon",
+    "email": "Leonxlnx@users.noreply.github.com"
+  },
+  "main": "CodexProfilePro/electron/main.cjs",
+  "private": true
+}

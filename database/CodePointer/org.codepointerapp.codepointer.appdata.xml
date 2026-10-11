@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.codepointerapp.codepointer</id>
+
+  <name>codepointer</name>
+  <summary>IDE for Rust, Go, C++ and more</summary>
+
+  <description>
+    <p>
+    codepointer is an IDE for Rust, Go, C++ Python and more. Its focus is local development,
+    not web development.
+    </p>
+  </description>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <developer_name>CodePointer Developers</developer_name>
+  <developer id="org.codepointerapp">
+    <name>CodePointer Developers</name>
+  </developer>
+
+  <url type="homepage">https://github.com/codepointerapp/codepointer/issues/</url>
+  <url type="bugtracker">https://github.com/codepointerapp/codepointer/issues/</url>
+
+  <categories>
+    <category>Development</category>
+    <category>Utility</category>
+    <category>TextEditor</category>
+  </categories>
+
+  <provides>
+    <binary>codepointer</binary>
+  </provides>
+
+  <launchable type="desktop-id">
+    org.codepointerapp.codepointer.desktop
+  </launchable>
+
+  <content_rating type="oars-1.1"/>
+</component>

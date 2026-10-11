@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Ecency/
 description: Ecency desktop application reimagined for Windows, Mac, Linux users, start earning cryptocurrency!
+license: MIT
 
 icons:
   - Ecency/icons/128x128/ecency-surfer.png
@@ -28,7 +29,7 @@ desktop:
     Type: Application
     Icon: ecency-surfer
     StartupWMClass: Ecency
-    X-AppImage-Version: 3.0.18
+    X-AppImage-Version: 3.0.35
     Comment: Ecency desktop application reimagined for Windows, Mac, Linux users, start
       earning cryptocurrency!
     MimeType: x-scheme-handler/hive
@@ -40,11 +41,16 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: MIT
 
 electron:
     start earning cryptocurrency!
   homepage: https://ecency.com
-  version: 3.0.18
+  version: 3.0.35
   main: "./main.prod.js"
   author: Ecency <hello@ecency.com>
   dependencies: {}

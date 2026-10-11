@@ -1,0 +1,25 @@
+{
+  "name": "@ompchamber/electron",
+  "version": "2.0.4",
+  "private": true,
+  "description": "Electron desktop runtime for OMPChamber",
+  "author": "OMPChamber",
+  "type": "module",
+  "main": "./dist-bundle/main.mjs",
+  "dependencies": {
+    "@ompchamber/web": "workspace:*",
+    "electron-context-menu": "^4.1.2",
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.8.3"
+  },
+  "trustedDependencies": [
+    "electron"
+  ],
+  "desktopPrerequisites": [
+    "Electron runtime dependencies installed via bun install",
+    "Bun available to run the bundled OMP CLI",
+    "macOS: Xcode + build tools for notarized packaging",
+    "Windows: NSIS installed for installer creation",
+    "Linux: native x64 or arm64 host (no cross-arch packaging); FUSE/libfuse2 to run AppImages, or APPIMAGE_EXTRACT_AND_RUN=1"
+  ]
+}

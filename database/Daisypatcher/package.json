@@ -1,0 +1,33 @@
+{
+  "name": "daisypatcher",
+  "version": "0.5.6",
+  "description": "Visual node-based patcher for the Electro-Smith Daisy Seed and ESP32-S3/C3 — hear the patch in-app, compile it to firmware, flash the board.",
+  "author": {
+    "name": "willbearfruits",
+    "email": "willbear_fruits@proton.me"
+  },
+  "homepage": "https://willbearfruits.github.io/daisypatcher/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/willbearfruits/daisypatcher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/willbearfruits/daisypatcher/issues"
+  },
+  "license": "AGPL-3.0-or-later",
+  "private": true,
+  "type": "module",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "electron-updater": "^6.8.3",
+    "nanoid": "^5.1.9",
+    "rete": "^2.0.6",
+    "rete-area-plugin": "^2.1.5",
+    "rete-connection-plugin": "^2.0.5",
+    "rete-react-plugin": "^2.1.0",
+    "rete-render-utils": "^2.0.3",
+    "serialport": "^12.0.0",
+    "styled-components": "^6.4.0",
+    "zustand": "^5.0.12"
+  }
+}

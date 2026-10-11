@@ -1,0 +1,12 @@
+{
+  "name": "latent-library",
+  "version": "1.2.2",
+  "description": "Latent Library Desktop",
+  "main": "main.js",
+  "author": "Alexander Nilsson",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erroralex/Latent-Library.git"
+  }
+}

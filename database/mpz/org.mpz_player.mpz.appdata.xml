@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.mpz_player.mpz</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>mpz Music Player</name>
+  <summary>Music player for large local collections</summary>
+  <summary xml:lang="ru">Музыкальный проигрыватель для больших локальных коллекций</summary>
+  <summary xml:lang="ja">大規模なローカルコレクション向けの音楽プレーヤー</summary>
+  <summary xml:lang="sr">Музички плејер за велике локалне колекције</summary>
+
+  <launchable type="desktop-id">org.mpz_player.mpz.desktop</launchable>
+
+  <description>
+    <p>
+      A folder player for big local music collections. Instead of indexing
+      every file into a library, mpz treats your files and folders as the
+      library and provides a convenient way to build playlists directly from
+      folders.
+    </p>
+    <p>
+      The main feature is the three-column UI: a directory tree, the list of
+      playlists, and the tracks of the current playlist — similar to
+      Foobar2000's Album List. Choose library folders, middle-click a folder,
+      and a playlist is created from it.
+    </p>
+    <p>
+      Also supported: gapless playback, a 10-band and parametric equalizer with
+      AutoEq presets, internet radio, CUE sheets, a tag editor, cover art and
+      lyrics, MPRIS media control, and an experimental MPD client mode.
+    </p>
+  </description>
+
+  <developer id="org.mpz_player">
+    <name>Oleg Antonyan</name>
+  </developer>
+
+  <url type="homepage">https://mpz-player.org/</url>
+  <url type="bugtracker">https://github.com/olegantonyan/mpz/issues</url>
+  <url type="vcs-browser">https://github.com/olegantonyan/mpz</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://mpz-player.org/images/breeze-dark.png</image>
+      <caption>Three-column library, playlists and tracks (dark theme)</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://mpz-player.org/images/breeze-light.png</image>
+      <caption>Three-column library, playlists and tracks (light theme)</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://mpz-player.org/images/eq.png</image>
+      <caption>Parametric equalizer with AutoEq presets</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://mpz-player.org/images/radio.png</image>
+      <caption>Built-in internet radio library</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://mpz-player.org/images/playback-log.png</image>
+      <caption>Playback log</caption>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="2.1.2" date="2026-08-01">
+      <description>
+        <p>See the changelog for details.</p>
+      </description>
+    </release>
+  </releases>
+</component>

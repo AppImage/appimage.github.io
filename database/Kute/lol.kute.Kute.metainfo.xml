@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>lol.kute.Kute</id>
+  <name>Kute</name>
+  <summary>High-performance Krunker client</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <developer id="lol.kute">
+    <name>NullDev</name>
+  </developer>
+  <description>
+    <p>Kute is a Krunker.io client running on its own patched Chromium (CEF). It brings uncapped FPS with an exact frame limiter, native raw mouse input and the aim freeze fix of uncapped clients.</p>
+    <p>It also comes with a resource swapper, userscripts, a HUD editor, a matchmaker, an account manager and Auto-Detect Best Settings, which benchmarks your PC and keeps only what measurably runs better.</p>
+  </description>
+  <launchable type="desktop-id">lol.kute.Kute.desktop</launchable>
+  <url type="homepage">https://kute.lol</url>
+  <url type="bugtracker">https://github.com/NullDev/Kute/issues</url>
+  <url type="vcs-browser">https://github.com/NullDev/Kute</url>
+  <categories>
+    <category>Game</category>
+  </categories>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">intense</content_attribute>
+    <content_attribute id="social-chat">intense</content_attribute>
+  </content_rating>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Client settings inside Krunker</caption>
+      <image>https://raw.githubusercontent.com/NullDev/Kute/master/resources/screenshots/settings.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>HUD editor</caption>
+      <image>https://raw.githubusercontent.com/NullDev/Kute/master/resources/screenshots/hud-editor.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Resource swapper and userscripts</caption>
+      <image>https://raw.githubusercontent.com/NullDev/Kute/master/resources/screenshots/swapper.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.1.0" date="2026-10-09"/>
+  </releases>
+</component>

@@ -1,0 +1,62 @@
+# README: "The pull request must add (or change) exactly this one file in data/
+# and nothing else; one application per pull request." The Test workflow fails
+# a pull request from a fork that does not, but the author then waits for a
+# maintainer to look at it (e.g. #3977 added a file in the root of the
+# repository). This closes such a pull request when it is opened, with a
+# comment that says what to do. Not for maintainers, bots, or branches in this
+# repository (those may change the test together with a file in data/).
+#
+# pull_request_target, from master: nothing from the pull request is checked
+# out or run, only its list of changed files is read via the API.
+name: One file per pull request
+
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+jobs:
+  one-file:
+    if: >-
+      github.repository == 'AppImage/appimage.github.io' &&
+      github.event.pull_request.head.repo.full_name != github.repository &&
+      github.event.pull_request.user.type != 'Bot' &&
+      !contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.pull_request.author_association)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.pull_request.number }}
+      SENDER: ${{ github.event.sender.login }}
+      ACTION: ${{ github.event.action }}
+    steps:
+      - name: Close it if it does not change exactly one file in data/
+        run: |
+          # A maintainer who reopens it on purpose decides
+          if [ "$ACTION" = reopened ] ; then
+            PERMISSION=$(gh api "repos/$REPO/collaborators/$SENDER/permission" --jq .permission 2>/dev/null || true)
+            case "$PERMISSION" in admin|maintain|write) echo "Reopened by a maintainer ($SENDER)." ; exit 0 ;; esac
+          fi
+          gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[].filename' > changed.txt
+          if [ "$(grep -c . changed.txt)" -eq 1 ] && grep -qxE 'data/[^/]+' changed.txt ; then
+            echo "Changes exactly one file in data/."
+            exit 0
+          fi
+          MARKER='<!-- appimagehub-one-file -->'
+          {
+            echo "$MARKER"
+            echo "Thank you for your contribution! As described in the [README](https://github.com/$REPO#readme), a pull request must add (or change) **exactly one file in \`data/\` and nothing else; one application per pull request**. This one changes:"
+            echo
+            echo '````text'
+            head -n 10 changed.txt | cut -c1-200 | sed 's/````*/```/g'
+            [ "$(grep -c . changed.txt)" -le 10 ] || echo "..."
+            echo '````'
+            echo
+            echo "So that we do not have to leave it waiting, it is closed. Please open a new pull request that only adds the one file \`data/NameOfTheApplication\`, whose first line is the link to the repository that hosts the AppImages on its Releases page (or to a download directory); see the README for the details. Thank you!"
+          } > comment.md
+          gh pr comment "$PR" -R "$REPO" --body-file comment.md
+          gh api -X PATCH "repos/$REPO/pulls/$PR" -f state=closed >/dev/null
+          echo "Closed #$PR"

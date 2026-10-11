@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Budbrain's Mahjong — app icon.
+     A jade lacquer plaque with the gold double frame and 回 corner brackets of
+     the game, carrying one ivory tile with the red-dragon mark 中. The mark is
+     drawn as PATHS, not as text: an icon rendered on a build host without a CJK
+     font would otherwise come out with an empty box in the middle.
+     Everything here is our own geometry — no third-party tile artwork. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="felt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a6347"/>
+      <stop offset="0.55" stop-color="#0e3a2b"/>
+      <stop offset="1" stop-color="#072017"/>
+    </linearGradient>
+    <radialGradient id="sheen" cx="0.5" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#2c8a63" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#2c8a63" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ivory" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset="1" stop-color="#f0e6cf"/>
+    </linearGradient>
+  </defs>
+
+  <!-- plaque -->
+  <rect x="0" y="0" width="512" height="512" rx="96" fill="url(#felt)"/>
+  <rect x="0" y="0" width="512" height="512" rx="96" fill="url(#sheen)"/>
+  <rect x="26" y="26" width="460" height="460" rx="76" fill="none" stroke="#e8b84b"
+        stroke-opacity="0.55" stroke-width="8"/>
+  <rect x="44" y="44" width="424" height="424" rx="62" fill="none" stroke="#e8b84b"
+        stroke-opacity="0.3" stroke-width="4"/>
+  <!-- 回 corner brackets -->
+  <g fill="none" stroke="#e8b84b" stroke-opacity="0.8" stroke-width="9" stroke-linecap="square">
+    <path d="M64 118 L64 64 L118 64"/>
+    <path d="M448 118 L448 64 L394 64"/>
+    <path d="M64 394 L64 448 L118 448"/>
+    <path d="M448 394 L448 448 L394 448"/>
+  </g>
+
+  <!-- the tile: body with its bottom/right bevel, then the face -->
+  <g transform="translate(256 262)">
+    <rect x="-118" y="-158" width="236" height="316" rx="38" fill="#b6a578"/>
+    <rect x="-118" y="-158" width="236" height="316" rx="38" fill="none" stroke="#9c8b66"
+          stroke-width="4"/>
+    <rect x="-118" y="-158" width="208" height="288" rx="38" fill="url(#ivory)"/>
+    <rect x="-108" y="-148" width="188" height="268" rx="30" fill="none" stroke="#78623a"
+          stroke-opacity="0.35" stroke-width="3"/>
+
+    <!-- 中 — box plus the vertical stroke through it -->
+    <g transform="translate(-14 -14)" fill="#b91c1c">
+      <path d="M-56 -62 h112 v124 h-112 z M-34 -40 v80 h68 v-80 z" fill-rule="evenodd"/>
+      <rect x="-11" y="-104" width="22" height="208" rx="4"/>
+    </g>
+  </g>
+</svg>

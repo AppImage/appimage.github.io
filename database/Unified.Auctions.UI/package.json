@@ -1,0 +1,14 @@
+{
+  "name": "unified-auctions",
+  "version": "1.25.0",
+  "description": "MakerDAO Unified Auctions Electron App",
+  "main": "main.js",
+  "repository": {
+    "url": "https://github.com/sidestream-tech/unified-auctions-ui"
+  },
+  "author": "SIDESTREAM GmbH",
+  "dependencies": {
+    "electron-updater": "^5.3.0",
+    "semver": "^7.3.8"
+  }
+}

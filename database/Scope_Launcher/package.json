@@ -1,0 +1,21 @@
+{
+  "name": "scope-launcher",
+  "version": "2.0.8",
+  "private": true,
+  "description": "A modern desktop launcher for Minecraft instances and modpacks.",
+  "author": "Scope Launcher contributors",
+  "license": "MIT",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "dependencies": {
+    "archiver": "8.0.0",
+    "framer-motion": "^13.4.0",
+    "lucide-react": "^1.47.0",
+    "node-stream-zip": "^1.16.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "skinview3d": "^3.4.2",
+    "tar-stream": "^3.2.1",
+    "three": "^0.186.0"
+  }
+}

@@ -1,0 +1,50 @@
+---
+layout: app
+
+permalink: /Sei/
+description: "Sei is an AI gaming companion that joins your Minecraft LAN world and plays alongside you."
+license: "AGPL-3.0"
+
+icons:
+  - Sei/icons/1024x1024/sei.png
+
+screenshots:
+  - Sei/screenshot.png
+
+authors:
+  - name: "sei-studio"
+    url: "https://github.com/sei-studio"
+
+links:
+  - type: GitHub
+    url: sei-studio/sei
+  - type: Download
+    url: https://github.com/sei-studio/sei/releases
+
+desktop:
+  Desktop Entry:
+    Name: Sei
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: sei
+    StartupWMClass: Sei
+    X-AppImage-Version: 0.6.6
+    Comment: Sei is an AI gaming companion that joins your Minecraft LAN world and plays
+      alongside you.
+    Categories: Game
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.38
+    X-AppImage-Payload-License: AGPL-3.0
+
+electron: {"name":"sei","version":"0.6.6","type":"module","main":"dist/main/index.js","workspaces":["packs/*"],"dependencies":{"@anthropic-ai/sdk":"^0.91.1","@huggingface/transformers":"^3.8.1","@supabase/supabase-js":"^2.106.0","cce-1":"file:./vendor/cce-1","chess.js":"^1.4.0","electron-updater":"^6.8.3","img2skin":"file:./vendor/skin-gen","jszip":"^3.10.1","pixi-live2d-display-lipsyncpatch":"^0.5.0-ls-8","pixi.js":"^7.4.3","posthog-node":"^4.18.0","react":"19.2.6","react-dom":"19.2.6","semver":"^7.8.0","sherpa-onnx-node":"^1.13.5","signalsmith-stretch":"^1.3.2","skinview3d":"3.4.2","soulcaster":"file:./vendor/soulcaster","three":"^0.185.1","yauzl":"^3.3.0","zod":"^3.22.4","zod-to-json-schema":"^3.25.2","zustand":"5.0.13"},"overrides":{"node-canvas-webgl":{"canvas":"^3.2.0","gl":"file:./vendor/gl-8.1.6-cxx20.tgz"}}}
+---

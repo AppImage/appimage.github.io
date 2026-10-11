@@ -1,0 +1,16 @@
+{
+  "name": "ascii-smash",
+  "productName": "Ascii Smash",
+  "version": "1.2.0",
+  "description": "Convert images and video to ASCII, build patterns, and run still effects",
+  "author": "sachsen",
+  "desktopName": "ascii-smash.desktop",
+  "main": "electron/main.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "allowScripts": {
+    "electron": true,
+    "electron@37.10.3": true
+  }
+}

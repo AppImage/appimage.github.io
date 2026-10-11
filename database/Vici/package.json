@@ -1,0 +1,14 @@
+{
+  "name": "vici-desktop",
+  "productName": "Vici",
+  "version": "2026.1001.1",
+  "private": true,
+  "description": "Vici — музыкальный плеер для Navidrome",
+  "author": "Aut0iq",
+  "homepage": "https://github.com/Aut0iq/Vici",
+  "desktopName": "vici.desktop",
+  "main": "main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

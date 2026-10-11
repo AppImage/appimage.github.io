@@ -1,11 +1,11 @@
 {
   "name": "cityhub",
-  "version": "1.0.10",
+  "version": "1.0.39",
   "license": "MIT",
   "author": {
     "name": "City Chain Foundation",
-    "email": "citychainmail@gmail.com",
-    "url": "https://citychain.foundation"
+    "email": "post@city-chain.org",
+    "url": "https://www.city-chain.org"
   },
   "description": "City Hub is your hub into everything on City Chain and the Smart City Platform.",
   "repository": {
@@ -19,8 +19,10 @@
   "main": "main.js",
   "private": true,
   "dependencies": {
-    "electron-context-menu": "^0.10.0",
-    "electron-log": "^2.2.16",
-    "electron-updater": "^3.0.3"
+    "conventional-changelog-cli": "2.0.31",
+    "electron-context-menu": "0.16.0",
+    "electron-log": "4.0.6",
+    "electron-updater": "^4.3.5",
+    "tslib": "1.10.0"
   }
 }

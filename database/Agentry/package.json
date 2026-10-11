@@ -1,0 +1,18 @@
+{
+  "name": "agentry",
+  "version": "0.23.1",
+  "private": true,
+  "description": "Electron desktop shell for Agentry",
+  "homepage": "https://github.com/yeyo11/agentry",
+  "license": "MIT",
+  "author": {
+    "name": "Jose Antonio Garrido",
+    "email": "yeyochico@gmail.com"
+  },
+  "type": "module",
+  "main": "dist/main.cjs",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  },
+  "desktopName": "agentry.desktop"
+}

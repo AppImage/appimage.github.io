@@ -1,0 +1,11 @@
+{
+  "name": "invisic-client",
+  "version": "1.3.3",
+  "description": "Invisic — enhanced desktop client for Kloak",
+  "main": "src/main/index.js",
+  "homepage": "https://kloak.app",
+  "author": "Aster",
+  "dependencies": {
+    "adm-zip": "^0.5.16"
+  }
+}

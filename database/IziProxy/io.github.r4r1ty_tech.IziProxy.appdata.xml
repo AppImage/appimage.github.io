@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.r4r1ty_tech.IziProxy</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>IziProxy</name>
+  <summary>Deploy Xray (VLESS + REALITY) on your own server in a few clicks</summary>
+  <description>
+    <p>
+      IziProxy connects to a VPS over SSH, installs Xray with VLESS + REALITY
+      and gives you ready-to-use connection links and QR codes.
+    </p>
+    <p>
+      It also shows the Xray service status and traffic statistics, validates
+      the server configuration and helps replace a blocked SNI domain.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.r4r1ty_tech.IziProxy.desktop</launchable>
+  <url type="homepage">https://github.com/r4r1ty-tech/iziproxy</url>
+  <url type="bugtracker">https://github.com/r4r1ty-tech/iziproxy/issues</url>
+  <developer id="io.github.r4r1ty_tech">
+    <name>r4r1ty-tech</name>
+  </developer>
+  <categories>
+    <category>Network</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.0.3" date="2026-09-29"/>
+  </releases>
+</component>

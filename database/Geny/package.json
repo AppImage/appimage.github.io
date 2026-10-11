@@ -1,0 +1,25 @@
+{
+  "name": "geny-connector",
+  "version": "0.31.0",
+  "description": "Geny desktop connector — the always-on-top avatar, plus the controls for work running on the server: which model accounts it can reach, which one each agent uses, and the exact record of what each agent did.",
+  "type": "module",
+  "author": {
+    "name": "Geny",
+    "email": "noreply@hrletsgo.me"
+  },
+  "homepage": "https://github.com/CocoRoF/Geny",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CocoRoF/Geny.git"
+  },
+  "license": "Apache-2.0",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.13.0",
+    "@nut-tree-fork/nut-js": "^4.2.0",
+    "chokidar": "^5.0.0",
+    "electron-updater": "^6.3.9",
+    "picomatch": "^4.0.5",
+    "ws": "^8.18.0"
+  }
+}

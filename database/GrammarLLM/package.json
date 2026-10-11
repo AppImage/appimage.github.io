@@ -1,0 +1,21 @@
+{
+  "name": "grammarllm-electron",
+  "productName": "GrammarLLM",
+  "private": true,
+  "version": "1.4.0",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "diff": "^9.0.0",
+    "jspdf": "^4.2.1",
+    "node-llama-cpp": "^3.19.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "zod": "^4.4.3"
+  },
+  "allowScripts": {
+    "electron-winstaller@5.4.0": true,
+    "node-llama-cpp@3.19.1": true,
+    "core-js": false
+  }
+}

@@ -1,0 +1,78 @@
+---
+layout: app
+
+permalink: /CleanCode/
+description: A local-first executable development workspace for humans and coding agents.
+license: MIT
+
+icons:
+  - CleanCode/icons/1024x1024/cleancode.png
+
+screenshots:
+  - CleanCode/screenshot.png
+
+authors:
+  - name: chen-985211
+    url: https://github.com/chen-985211
+
+links:
+  - type: GitHub
+    url: chen-985211/cleancode
+  - type: Download
+    url: https://github.com/chen-985211/cleancode/releases
+
+desktop:
+  Desktop Entry:
+    Name: CleanCode
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: cleancode
+    StartupWMClass: CleanCode
+    X-AppImage-Version: 0.1.19
+    Comment: A local-first executable development workspace for humans and coding agents.
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: MIT
+
+electron:
+  private: true
+  author: chen-985211
+  homepage: https://github.com/chen-985211/cleancode
+  repository:
+    type: git
+    url: https://github.com/chen-985211/cleancode.git
+  license: MIT
+  description: A local-first executable development workspace for humans and coding
+    agents.
+  type: module
+  main: out/main/main.js
+  packageManager: pnpm@10.33.0
+  dependencies:
+    "@phosphor-icons/react": 2.1.10
+    "@radix-ui/react-tooltip": 1.2.12
+    "@xterm/addon-fit": 0.11.0
+    "@xterm/addon-search": 0.16.0
+    "@xterm/addon-serialize": 0.14.0
+    "@xterm/addon-unicode11": 0.9.0
+    "@xterm/addon-web-links": 0.12.0
+    "@xterm/addon-webgl": 0.19.0
+    "@xterm/headless": 6.0.0
+    "@xterm/xterm": 6.0.0
+    "@xyflow/react": 12.11.1
+    node-pty: 1.1.0
+    react: 19.2.7
+    react-dom: 19.2.7
+    react-markdown: 10.1.0
+    remark-gfm: 4.0.1
+---

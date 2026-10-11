@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Name=jsBudbrainPlayer
+GenericName=Recording Player
+Comment=Plays recordings from a folder, at random or in order, at the times you choose
+Comment[de]=Spielt Aufnahmen aus einem Ordner — zufällig oder der Reihe nach, zu den Zeiten, die Sie wählen
+Exec=jsBudbrainPlayer
+Icon=jsbudbrainplayer
+Terminal=false
+Categories=AudioVideo;Audio;Player;
+Keywords=music;player;recordings;mp3;shuffle;folder;
+Keywords[de]=Musik;Wiedergabe;Aufnahmen;mp3;Zufall;Ordner;
+StartupNotify=true
+StartupWMClass=jsBudbrainPlayer
+X-AppImage-Version=1.0.0
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://www.budbrain.de/appimage/jsbudbrainplayer-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=2.34

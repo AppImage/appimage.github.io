@@ -1,0 +1,33 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Magnolie Organizer
+GenericName=Personal Organizer
+GenericName[de]=Persönlicher Organizer
+Comment=Calendar, address book, tasks and notes styled like a paper organizer
+Comment[de]=Kalender, Adressbuch, Aufgaben und Notizen im Stil eines Papier-Organizers
+Exec=magnolie-organizer
+Icon=magnolie-organizer
+Terminal=false
+Categories=Office;Calendar;ContactManagement;
+Keywords=Organizer;Calendar;Appointments;Contacts;Tasks;Notes;PIM;
+Keywords[de]=Organizer;Kalender;Termine;Adressen;Aufgaben;Notizen;PIM;Filofax;
+StartupWMClass=magnolie-organizer
+StartupNotify=true
+Actions=StartDebug;
+
+[Desktop Action StartDebug]
+Name=Start Magnolie Organizer in Debug Mode
+Name[de]=Magnolie Organizer im Debugmodus starten
+Exec=magnolie-organizer --debug
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35

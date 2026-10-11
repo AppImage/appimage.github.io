@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <content_rating type="oars-1.0" />
+  <id>com.mitchellh.ghostty</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Ghostty</name>
+  <icon type="remote">https://raw.githubusercontent.com/ghostty-org/ghostty/refs/heads/main/images/icons/icon_256.png</icon>
+  <summary>Fast, native, feature-rich terminal emulator pushing modern features</summary>
+  <description>
+    <p>
+      Ghostty is a terminal emulator that differentiates itself by being fast,
+      feature-rich, and native. While there are many excellent terminal
+      emulators available, they all force you to choose between speed,
+      features, or native UIs.  Ghostty provides all three.
+    </p>
+
+    <p>
+      In all categories, I am not trying to claim that Ghostty is the best
+      (i.e. the fastest, most feature-rich, or most native). But Ghostty is
+      competitive in all three categories and Ghostty doesn't make you choose
+      between them.
+    </p>
+
+    <p>
+      Ghostty also intends to push the boundaries of what is possible with a
+      terminal emulator by exposing modern, opt-in features that enable CLI
+      tool developers to build more feature rich, interactive applications.
+    </p>
+
+    <p>
+      While aiming for this ambitious goal, our first step is to make Ghostty
+      one of the best fully standards compliant terminal emulator, remaining
+      compatible with all existing shells and software while supporting all of
+      the latest terminal innovations in the ecosystem. You can use Ghostty as
+      a drop-in replacement for your existing terminal emulator.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">com.mitchellh.ghostty.desktop</launchable>
+
+  <url type="homepage">https://ghostty.org/</url>
+  <url type="help">https://ghostty.org/docs/about</url>
+  <url type="bugtracker">https://github.com/ghostty-org/ghostty/issues</url>
+
+<!-- tbd
+  <screenshots>
+    <screenshot type="default">
+      <caption>Use background image attachments</caption>
+      <image>https://ghostty.org/tbd-screenshot.png</image>
+    </screenshot>
+  </screenshots>
+-->
+
+  <developer id="com.mitchellh">
+    <name>Mitchell Hashimoto</name>
+  </developer>
+
+  <releases>
+    <release version="v1.0.1+1" date="2025-01-09">
+      <description>
+        <p>
+          Initial AppImage build.
+        </p>
+      </description>
+    </release>
+  </releases>
+</component>

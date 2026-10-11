@@ -1,0 +1,10 @@
+{
+  "name": "sticky-notes-canvas",
+  "version": "2.2.1",
+  "description": "Spatial sticky notes canvas",
+  "main": "main.js",
+  "private": true,
+  "homepage": "https://local.sticky-notes",
+  "author": "faridjaff <faridjaff@users.noreply.github.com>",
+  "license": "MIT"
+}

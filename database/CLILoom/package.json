@@ -1,0 +1,35 @@
+{
+  "name": "cliloom",
+  "productName": "CLILoom",
+  "version": "0.2.0",
+  "private": true,
+  "description": "CLILoom desktop app for universal AI development workflows.",
+  "author": {
+    "name": "CLILoom Team",
+    "email": "laurentwu@users.noreply.github.com"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/laurentwu/CLILoom",
+  "desktopName": "io.github.laurentwu.cliloom.desktop",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laurentwu/CLILoom.git"
+  },
+  "main": "dist/main/main/main.js",
+  "engines": {
+    "node": ">=24.15.0 <25"
+  },
+  "overrides": {
+    "@mdxeditor/editor": {
+      "js-yaml": "4.3.1"
+    }
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "cron-parser": "^5.10.1",
+    "electron-updater": "^6.8.9",
+    "font-list": "^2.1.0",
+    "i18next": "^26.3.6",
+    "node-pty": "^1.1.0"
+  }
+}

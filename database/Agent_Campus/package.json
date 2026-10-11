@@ -1,0 +1,24 @@
+{
+  "name": "pixel-agents-desktop",
+  "version": "0.2.0",
+  "description": "Pixel Agents — standalone desktop app for visualizing AI coding agents",
+  "main": "dist-electron/electron/main.js",
+  "private": true,
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.274",
+    "node-pty": "^1.1.0",
+    "pngjs": "^7.0.0",
+    "zod": "^4.0.0"
+  },
+  "overrides": {
+    "node-abi": "^4.33.0",
+    "node-gyp": "^12.4.0"
+  },
+  "lint-staged": {
+    "src/**/*.ts": "eslint --fix",
+    "electron/**/*.ts": "eslint --fix",
+    "webview-ui/src/**/*.{ts,tsx}": "eslint --fix",
+    "*.{ts,tsx,js,mjs,css,json,md}": "prettier --write",
+    "webview-ui/**/*.{ts,tsx,js,css,json}": "prettier --write"
+  }
+}

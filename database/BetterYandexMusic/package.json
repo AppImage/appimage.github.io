@@ -1,0 +1,13 @@
+{
+  "name": "better-yandex-music-installer",
+  "version": "1.3.1",
+  "description": "Installer and patcher for BetterYandexMusic sync",
+  "main": "main.js",
+  "author": "IvanForze <ivanforze@users.noreply.github.com>",
+  "homepage": "https://github.com/IvanForze/BetterYandexMusic",
+  "license": "ISC",
+  "dependencies": {
+    "@electron/asar": "^3.2.14",
+    "@electron/fuses": "^1.8.0"
+  }
+}

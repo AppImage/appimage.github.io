@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.univers4craft.PaintSoftware</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>paint.software</name>
+  <summary>Open-source Paint.NET clone for Linux</summary>
+  <summary xml:lang="fr">Clone open-source de Paint.NET pour Linux</summary>
+
+  <description>
+    <p>
+      paint.software is a free and open-source raster image editor that
+      reproduces the look and feel of Paint.NET on Linux. It is a familiar,
+      lightweight editor with layers, blend modes, selections, effects and
+      adjustments — all native, with no .NET runtime required.
+    </p>
+    <p xml:lang="fr">
+      paint.software est un éditeur d'images matricielles libre et open source
+      qui reproduit l'apparence et le fonctionnement de Paint.NET sous Linux.
+      Un éditeur léger et familier avec calques, modes de fusion, sélections,
+      effets et ajustements — le tout natif, sans runtime .NET.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Layers with opacity, blend modes and smart merge</li>
+      <li>Native .psw format, plus PNG/JPEG/BMP/GIF/TIFF/WebP</li>
+      <li>Selections, effects, adjustments and a plugin system</li>
+      <li>Light and dark themes; English and French</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">paint.software.desktop</launchable>
+
+  <categories>
+    <category>Graphics</category>
+    <category>2DGraphics</category>
+    <category>RasterGraphics</category>
+  </categories>
+
+  <keywords>
+    <keyword>paint</keyword>
+    <keyword>image</keyword>
+    <keyword>editor</keyword>
+    <keyword>photo</keyword>
+    <keyword>paint.net</keyword>
+  </keywords>
+
+  <url type="homepage">https://github.com/Univers4craft/paint.software</url>
+  <url type="bugtracker">https://github.com/Univers4craft/paint.software/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>paint.software running on Linux</caption>
+      <image>https://raw.githubusercontent.com/Univers4craft/paint.software/main/docs/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <developer id="io.github.univers4craft">
+    <name>Univers4craft</name>
+  </developer>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="1.1" date="2026-07-18">
+      <description>
+        <p>Continuous build from the main branch.</p>
+      </description>
+    </release>
+  </releases>
+</component>

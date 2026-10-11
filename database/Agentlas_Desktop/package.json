@@ -1,0 +1,32 @@
+{
+  "name": "agentlas-desktop",
+  "version": "0.4.0",
+  "description": "Agentlas Desktop — local Apps OS for AI-native tools and agent teams. BYOC: 사용자 Claude/ChatGPT/Gemini 구독 그대로.",
+  "private": true,
+  "license": "Apache-2.0",
+  "main": "dist/electron/main.js",
+  "author": {
+    "name": "Agentlas",
+    "email": "appbridge@appbridge.co.kr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agentlas-ai/agentlas-desktop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agentlas-ai/agentlas-desktop/issues"
+  },
+  "homepage": "https://agentlas.cloud/desktop",
+  "dependencies": {
+    "@google/genai": "^2.8.0",
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "better-sqlite3": "^11.3.0",
+    "cross-spawn": "^7.0.6",
+    "electron-updater": "^6.3.9",
+    "keytar": "^7.9.0",
+    "zod": "^3.23.8"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

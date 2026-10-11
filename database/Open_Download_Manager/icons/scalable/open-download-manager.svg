@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <title>Open Download Manager</title>
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f0f0ed"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ed4c40"/>
+      <stop offset="0.2" stop-color="#db3025"/>
+      <stop offset="1" stop-color="#b51f17"/>
+    </linearGradient>
+  </defs>
+  <!-- A fixed light surface keeps the original dark mark readable on any theme. -->
+  <rect x="4" y="5" width="120" height="119" rx="23" fill="#adb4b4"/>
+  <rect x="4.5" y="4.5" width="119" height="118" rx="22.5" fill="url(#tile)" stroke="#c9cece"/>
+  <!-- Letter outlines keep the logo independent of installed fonts. -->
+  <g fill="#333e3e" fill-rule="evenodd">
+    <path d="M31 25c-7 0-11 4.5-11 11.5S24 48 31 48s11-4.5 11-11.5S38 25 31 25zm0 6c3 0 4.5 2 4.5 5.5S34 42 31 42s-4.5-2-4.5-5.5S28 31 31 31z"/>
+    <path d="M47 17v30h10c10 0 16-5.5 16-15S67 17 57 17H47zm8 7h2c5.5 0 8 2.5 8 8s-2.5 8-8 8h-2V24z"/>
+    <path d="M77 17h9l8 16 8-16h9v30h-8V30l-7 14h-4l-7-14v17h-8V17z"/>
+  </g>
+  <path d="M52 73h24v13h15c1.5 0 2 1 1 2l-26 25c-1.2 1.2-2.8 1.2-4 0L36 88c-1-1-.5-2 1-2h15V73z" fill="#333e3e"/>
+  <rect x="34" y="55" width="60" height="23" rx="11.5" fill="#931c17"/>
+  <rect x="34" y="53" width="60" height="23" rx="11.5" fill="url(#bar)"/>
+  <path d="M45.5 54h37a10.5 10.5 0 0 1 8 3.5" fill="none" stroke="#f36a5e" stroke-linecap="round"/>
+</svg>

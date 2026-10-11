@@ -1,0 +1,19 @@
+{
+  "name": "spotify-overlay",
+  "version": "3.6.1",
+  "description": "Cadence — a floating Spotify lyrics overlay: synced lyrics, 3D holographic frames, album theming, listen along with friends",
+  "author": "Samahith Thellakal",
+  "license": "MIT",
+  "homepage": "https://github.com/MowkE/cadence",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MowkE/cadence.git"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1",
+    "electron-updater": "^6.8.9",
+    "koffi": "3.3.1"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "ontime-electron",
+  "version": "4.14.0",
+  "author": "Carlos Valente",
+  "description": "Time keeping for live events",
+  "repository": "https://github.com/cpvalente/ontime",
+  "license": "AGPL-3.0-only",
+  "main": "src/main.js"
+}

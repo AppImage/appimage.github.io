@@ -1,0 +1,20 @@
+{
+  "name": "rommix",
+  "version": "0.19.0",
+  "description": "Big Picture style front end for your own RomM server on Linux: browse your library, download a game, play it, and your saves go back to RomM",
+  "license": "MIT",
+  "author": "Benjamin Leclerc",
+  "main": "./out/main/index.js",
+  "engines": {
+    "node": ">=24"
+  },
+  "desktopName": "be.bl_it.RomMix.desktop",
+  "dependencies": {
+    "lucide-react": "^1.45.0",
+    "qrcode-generator": "^2.0.4",
+    "yauzl": "^3.4.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

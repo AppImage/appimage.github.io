@@ -1,0 +1,15 @@
+{
+  "name": "stemkit",
+  "productName": "StemKit",
+  "description": "Local YouTube stem splitter and player",
+  "main": "./out/main/index.js",
+  "author": "daniel",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  },
+  "version": "0.1.23"
+}

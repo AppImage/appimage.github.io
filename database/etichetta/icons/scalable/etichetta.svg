@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 72 72"
+   version="1.1"
+   id="svg12"
+   width="72"
+   height="72"
+   inkscape:version="1.2.2 (1:1.2.2+202212051552+b0a8486541)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="3.3956835"
+     inkscape:cx="14.282839"
+     inkscape:cy="34.75"
+     inkscape:window-width="1920"
+     inkscape:window-height="1131"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <title
+     id="title2">资源 168</title>
+  <g
+     id="g251"
+     transform="translate(-0.035,1.26)">
+    <path
+       d="m 12.08,40.65 c -0.17,0 -0.28,-0.06 -0.39,-0.06 -7,5.54 -9.79,10 -9.84,13.7 L 2,55.52 c 0.67,4 4.64,6.88 9.73,9 5.25,2.24 14.59,3.63 22.53,4.47 V 41.49 C 26.78,41.43 16.83,41.32 12.08,40.65 Z"
+       fill="#be202e"
+       id="path4" />
+    <path
+       d="m 11.69,40.59 0.05,-0.06 A 2.19,2.19 0 0 1 12.13,40.26 185,185 0 0 1 34.22,25.44 V 2 L 32.37,0 a 30.45,30.45 0 0 1 -4.08,4.92 c -5.31,5.14 -11,8.78 -15.71,12 C 5.7,21.58 0.45,25.38 0,31.48 l 0.22,2.62 1.63,20.13 c 0,-3.63 2.79,-8.16 9.84,-13.64 z"
+       fill="#f69320"
+       id="path6" />
+    <path
+       d="m 60.05,28.85 c 0.16,0 0.28,0.06 0.39,0.06 7,-5.54 9.84,-10 9.84,-13.7 L 70.17,14 C 69.5,10 65.53,7.12 60.49,5 55.24,2.74 45.9,1.34 38,0.5 V 28 c 7.34,0 17.29,0.12 22.05,0.85 z"
+       fill="#00a69c"
+       id="path8" />
+    <path
+       d="m 60.44,28.91 -0.06,0.05 a 2.19,2.19 0 0 1 -0.39,0.28 185.85,185.85 0 0 1 -22.08,14.82 v 23.42 l 1.79,2 a 30,30 0 0 1 4.08,-4.92 c 5.31,-5.15 10.9,-8.78 15.71,-12 C 66.36,47.91 71.62,44.11 72.07,38 L 71.84,35.37 70.22,15.26 c 0.06,3.64 -2.74,8.11 -9.78,13.65 z"
+       fill="#a4cd39"
+       id="path10" />
+  </g>
+  <metadata
+     id="metadata141">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>资源 168</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

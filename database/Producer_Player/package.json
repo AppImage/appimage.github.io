@@ -1,0 +1,21 @@
+{
+  "name": "producer-player",
+  "version": "3.339.0",
+  "private": true,
+  "description": "Producer Player desktop app for producers managing album tracks, exports, and ordering.",
+  "author": "EthanSK",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "homepage": "https://ethansk.github.io/producer-player/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EthanSK/producer-player.git"
+  },
+  "main": "apps/electron/dist/main.cjs",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "@webtoon/psd": "^0.4.0"
+  }
+}

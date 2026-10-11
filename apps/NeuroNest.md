@@ -1,0 +1,96 @@
+---
+layout: app
+
+permalink: /NeuroNest/
+description: NeuroNest - The AI Coding SuperAgent
+
+icons:
+  - NeuroNest/icons/1024x1024/neuronest.png
+
+screenshots:
+  - NeuroNest/screenshot.png
+
+authors:
+  - name: NETGVai
+    url: https://github.com/NETGVai
+
+links:
+  - type: GitHub
+    url: NETGVai/NeuroNest
+  - type: Download
+    url: https://github.com/NETGVai/NeuroNest/releases
+
+desktop:
+  Desktop Entry:
+    Name: NeuroNest
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: neuronest
+    StartupWMClass: NeuroNest
+    X-AppImage-Version: 0.2.917
+    StartupNotify: true
+    Categories: Development
+    Comment: NeuroNest - The AI Coding SuperAgent
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.38
+
+electron:
+  author: NeuroNest <admin@neuronest.cc>
+  license: BUSL-1.1
+  private: true
+  main: dist/main/electron-app.js
+  workspaces:
+  - packages/*
+  dependencies:
+    "@blackwell-systems/gcf": 2.1.2
+    "@peculiar/x509": 2.0.0
+    "@popperjs/core": 2.11.8
+    "@sentry/electron": 7.0.0
+    "@simplewebauthn/server": 13.3.0
+    "@slack/bolt": 4.6.0
+    "@types/ws": 8.18.1
+    archiver: 7.0.1
+    better-sqlite3: 13.0.2
+    chokidar: 5.0.0
+    discord.js: 14.26.1
+    electron-updater: 6.8.3
+    fast-glob: 3.3.2
+    grammy: 1.42.0
+    headroom-ai: 0.22.4
+    highlight.js: 11.11.1
+    lucide-static: 1.14.0
+    markdown-it: 14.1.1
+    modern-monaco: 0.4.2
+    monaco-editor: 0.55.1
+    node-addon-api: 8.7.0
+    nodemailer: 9.0.0
+    onnxruntime-node: 1.26.0
+    openai: 6.33.0
+    qrcode: 1.5.4
+    reflect-metadata: 0.2.2
+    tar: 7.5.13
+    tippy.js: 6.3.7
+    tm-grammars: 1.31.15
+    tm-themes: 1.12.2
+    twemoji-parser: 14.0.0
+    uuidv7: 1.2.1
+    web-tree-sitter: 0.24.7
+    ws: 8.20.0
+    zod: 4.3.6
+  engines:
+    node: ">=22.12.0"
+  overrides:
+    esbuild: 0.28.1
+    "@electron/rebuild":
+      "@electron/node-gyp": npm:node-gyp@^11.2.0
+---

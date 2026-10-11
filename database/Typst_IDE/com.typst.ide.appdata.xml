@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.typst.ide</id>
+
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+
+  <name>Typst IDE</name>
+  <summary>A modern, local-first Typst editor</summary>
+
+  <description>
+    <p>
+      Typst IDE is a local editor for Typst, rebuilt with Tauri and Rust.
+      Documents stay on your own machine: no account, no cloud, no browser.
+    </p>
+    <p>Features include:</p>
+    <ul>
+      <li>Live preview rendered by the same compiler as Typst.app</li>
+      <li>Click in the preview to jump to the matching source position</li>
+      <li>Preview automatically follows the editor cursor</li>
+      <li>Project file manager with drag &amp; drop, imports and images</li>
+      <li>Markers (TODO, FIXME, …) highlighted in the editor, with a marker book</li>
+      <li>Global and per-project notes, templates, history</li>
+      <li>PDF export, bibliography helpers, configuration import/export</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">com.typst.ide.desktop</launchable>
+
+  <url type="homepage">https://github.com/gnoooo/typst-ide</url>
+  <url type="bugtracker">https://github.com/gnoooo/typst-ide/issues</url>
+
+  <categories>
+    <category>Development</category>
+    <category>TextEditor</category>
+  </categories>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Editing a Typst document with the live preview</caption>
+      <image type="source">https://raw.githubusercontent.com/gnoooo/typst-ide/main/images/preview.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <!-- Version and date are substituted by scripts/fix-appimage.sh at build time -->
+  <releases>
+    <release version="1.6.13" date="2026-10-01"/>
+  </releases>
+</component>

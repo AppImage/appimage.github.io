@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Cryptomator
+Comment=Cloud Storage Encryption Utility
+Exec=cryptomator %F
+Icon=org.cryptomator.Cryptomator
+Terminal=false
+Type=Application
+Categories=Utility;Security;FileTools;
+StartupNotify=true
+StartupWMClass=org.cryptomator.launcher.Cryptomator$MainApp
+MimeType=application/vnd.cryptomator.encrypted;application/vnd.cryptomator.vault;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|cryptomator|cryptomator|latest|cryptomator-*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Wed Feb  5 15:45:03 2025 UTC                using RSA key 58117AFA1F85B3EEC154677D615D449FE6E6A235 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

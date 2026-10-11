@@ -1,0 +1,31 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Nexira
+GenericName=Game Launcher
+Comment=Launch and manage SmartyCraft game servers
+Icon=nexira
+Exec=env BAMF_DESKTOP_FILE_HINT=%k nexira %U
+Terminal=false
+StartupNotify=true
+StartupWMClass=Nexira
+Categories=Game;
+MimeType=x-scheme-handler/nexira;
+Keywords=launcher;game;hivens;smartycraft;minecraft;
+Actions=recovery;
+
+[Desktop Action recovery]
+Name=Start in recovery mode
+Exec=env BAMF_DESKTOP_FILE_HINT=%k nexira --recovery
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.9
+X-AppImage-Payload-License=GPL-3.0

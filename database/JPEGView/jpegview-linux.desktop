@@ -1,0 +1,21 @@
+[Desktop Entry]
+Type=Application
+Name=JPEGView Linux
+Comment=Fast, minimal image viewer
+Exec=jpegview-linux %F
+Icon=jpegview-linux
+Terminal=false
+Categories=Graphics;Viewer;
+MimeType=image/jpeg;image/png;image/gif;image/apng;image/bmp;image/x-tga;image/vnd.adobe.photoshop;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-portable-arbitrarymap;image/qoi;image/webp;image/tiff;image/heic;image/heif;image/avif;image/jxl;image/jxr;
+X-AppImage-Version=1.4.2
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35

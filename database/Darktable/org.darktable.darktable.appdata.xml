@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>org.darktable.darktable</id>
+  <name>darktable</name>
+  <launchable type="desktop-id">org.darktable.darktable.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <summary>Organize and develop images from digital cameras</summary>
+  <summary xml:lang="cs">Uspořádejte a vytvářejte snímky z digitálních fotoaparátů</summary>
+  <summary xml:lang="de">Organisiere und entwickle Bilder von Digitalkameras</summary>
+  <summary xml:lang="en@truecase">Organize and develop images from digital cameras</summary>
+  <summary xml:lang="es">Organice y revele fotografías de cámaras digitales</summary>
+  <summary xml:lang="fi">Hallinnoi ja kehitä digitaalikameroilla otettuja valokuvia</summary>
+  <summary xml:lang="fr">Organiser et développer les images d’un boîtier numérique</summary>
+  <summary xml:lang="hu">Digitális fényképező képeinek rendezése, kidolgozása</summary>
+  <summary xml:lang="ja">デジタルカメラで撮影した画像を整理し現像します</summary>
+  <summary xml:lang="ko_KR">디지털 카메라에서 이미지를 정리하고 현상하세요</summary>
+  <summary xml:lang="lo">ຈັດລະບຽບ ແລະ ປັບແຕ່ງຮູບພາບຈາກກ້ອງດິຈິຕອນ</summary>
+  <summary xml:lang="nb">Organiser og fremkall bilder fra digitale kamera</summary>
+  <summary xml:lang="nl">Organiseer en ontwikkel afbeeldingen van digitale camera's</summary>
+  <summary xml:lang="pl">Organizuj i obrabiaj zdjęcia z aparatów cyfrowych</summary>
+  <summary xml:lang="pt_BR">Organize e trate imagens de câmeras digitais</summary>
+  <summary xml:lang="ru">Организация и обработка цифровых фотографий</summary>
+  <summary xml:lang="sl">Organizira in razvija slike digitalnih kamer</summary>
+  <summary xml:lang="sq">Organizoni dhe zhvilloni imazhet e kamerave digjitale</summary>
+  <summary xml:lang="sv">Organisera och utveckla bilder från digitalkameror</summary>
+  <summary xml:lang="uk">Організація і обробка цифрових фотографій</summary>
+  <summary xml:lang="zh_CN">组织并冲印来自数码相机的图片</summary>
+  <summary xml:lang="zh_TW">整理和顯影來自數位相機的影像</summary>
+  <translation type="gettext">darktable</translation>
+  <description>
+    <p>darktable manages your camera raw files and images in a database, lets you view them through lighttable mode and develop/enhance them in darkroom mode.</p>
+    <p xml:lang="cs">darktable spravuje vaše RAW soubory a obrázky v databázi, umožňuje vám je prohlížet v režimu katalogu a vyvíjet/vylepšovat je v režimu editoru.</p>
+    <p xml:lang="de">darktable verwaltet die RAW-Dateien und Bilder der Kamera in einer Datenbank, zeigt sie im Leuchttisch-Modus an und ermöglicht die Entwicklung/Bearbeitung im Dunkelkammer-Modus.</p>
+    <p xml:lang="en@truecase">Darktable manages your camera raw files and images in a database, lets you view them through Lighttable mode and develop/enhance them in Darkroom mode.</p>
+    <p xml:lang="es">darktable posee herramientas para revelar imágenes en bruto y mejorarlas a través del cuarto oscuro. Además, gestiona los negativos digitales y otro tipo de imágenes mediante una base de datos los cuales pueden visualizarse en la mesa de luz.</p>
+    <p xml:lang="fi">Darktable hallitsee digitaalisia negatiivejasi tietokannan avulla, esittää ne sinulle valopöydällä ja mahdollistaa kuvien muokkauksen/parantamisen pimiötilassa.</p>
+    <p xml:lang="fr">Darktable gère vos fichiers RAW et vos images dans une base de données, vous permet de les voir depuis la table lumineuse et de les développer / améliorer dans la chambre noire.</p>
+    <p xml:lang="hu">A darktable adatbázist épít a camera raw fájlokból és képekből, és lehetővé teszi a nézegetésüket átvilágító asztal módban, valamint javításukat és kidolgozásukat sötétkamra módban.</p>
+    <p xml:lang="ja">darktableはデータベースであなたのカメラのrawファイルと画像を管理し、ライトテーブルモードでそれらを閲覧することが出来ます。またダークルームモードでそれらを現像し、より良い画像にすることが出来ます</p>
+    <p xml:lang="ko_KR">darktable은 카메라 RAW 파일과 이미지를 데이터베이스로 관리하며, lighttable모드에서 이미지를 보고 darkroom 모드에서 현상 및 보정할 수 있습니다.</p>
+    <p xml:lang="lo">darktable ຈັດການໄຟລ໌ດິບ ແລະ ຮູບພາບໃນຖານຂໍ້ມູນ, ຊ່ວຍໃຫ້ທ່ານເບິ່ງຮູບຜ່ານໂໝດຫ້ອງແສງ (lighttable) ແລະ ປັບແຕ່ງຮູບໃນໂໝດຫ້ອງມືດ (darkroom).</p>
+    <p xml:lang="nb">darktable håndterer dine digitale raw-filer og bilder i en database og lar deg se dem på et lysbord. Det lar deg også fremkalle og forbedre dem i et mørkerom.</p>
+    <p xml:lang="nl">darktable bewaart uw digitale negatieven in een database, je kunt ze bekijken in de bibliotheek-modus en bewerken in de ontwikkelen modus.</p>
+    <p xml:lang="pl">darktable zarządza twoimi plikami raw i obrazami w bazie danych i pozwala ci je przeglądać na podświetlanym stole. Pozwala także wywoływać i obrabiać je w trybie ciemni.</p>
+    <p xml:lang="pt_BR">o darktable gerencia seus negativos digitais em um bando de dados e permite que você os visualize a partir da mesa de luz e os revele e trate na sala escura.</p>
+    <p xml:lang="ru">darktable управляет цифровыми фотографиями в формате RAW, позволяя просматривать их, каталогизировать и редактировать.</p>
+    <p xml:lang="sl">darktable upravlja z vašimi surovimi slikami v podatkovni bazi, vam jih kaže v načinu osvetljene podlage in omogoča njihovo razvijanje in izboljševanje v načinu temnice.</p>
+    <p xml:lang="sq">darktable administron databazën e imazheve bruto, i organizon për t'u parë në fototekë dhe për t'i zhvilluar/përmirësuar ato në dhomën e errët.</p>
+    <p xml:lang="sv">darktable hanterar din kameras rawfiler och bilder i en databas, låter dig titta på dem i ljusbordsläge och framkalla/förbättra dem i mörkrumsläge.</p>
+    <p xml:lang="uk">Darktable керує вашими raw файлами та зображеннями в базі даних, дає змогу переглядати їх у режимі Світлого стола й обробляти/покращувати їх у режимі Темної кімнати.</p>
+    <p xml:lang="zh_CN">使用 darktable 管理您的 RAW 文件与照片，在光台中浏览照片，在暗室中处理图像。</p>
+    <p xml:lang="zh_TW">darktable 使用資料庫管理你的圖檔。在「燈箱 LightTable」模式裡瀏覽照片，在「暗房 Darkroom」模式下編輯調整。</p>
+    <p>Other modes besides lighttable and darkroom are a map for geotagging, tethering, print and a slideshow.</p>
+    <p xml:lang="cs">Další režimy kromě katalogu a editoru jsou mapa pro geotagging, tethering, tisk a slideshow.</p>
+    <p xml:lang="de">Weitere Modi neben Leuchttisch und Dunkelkammer sind eine Karte für Geotagging, Tethering, Druck und eine Diashow.</p>
+    <p xml:lang="en@truecase">Other modes besides Lighttable and Darkroom are a Map for geotagging, Tethering, Print and a Slideshow.</p>
+    <p xml:lang="es">Además de las vistas de mesa de luz y del cuarto oscuro están los modos captura, diapositivas, imprimir, y mapa para geolocalización.</p>
+    <p xml:lang="fi">Valopöydän ja pimiön lisäksi ohjelmassa on karttatila paikkatietojen lisäämiseksi, liitetyn kuvauksen tila, tulostustila ja kuvien esitys kuvasarjana.</p>
+    <p xml:lang="fr">À part la table lumineuse et la chambre noire, les autres modes sont la carte pour la géolocalisation, la capture, l’impression et le diaporama.</p>
+    <p xml:lang="hu">Az átvilágító és sötétkamra módokon túl térképes geokódolást, tetheringet, nyomtatást és diavetítést tesz lehetővé.</p>
+    <p xml:lang="ja">ライトテーブルとダークルーム以外には、ジオタグを利用するためのマップモード、テザリングモード、印刷モード、そしてスライドショーモードがあります</p>
+    <p xml:lang="ko_KR">lighttable과 darkroom 외에도 지도(지오태깅), 테더링, 인쇄, 슬라이드쇼 모드를 지원합니다.</p>
+    <p xml:lang="lo">ໂໝດອື່ນໆນອກຈາກຫ້ອງແສງ ແລະ ຫ້ອງມືດ ຄື ແຜນທີ່ສຳລັບລະບຸພິກັດ, ການເຊື່ອມຕໍ່ກ້ອງ, ການພິມ ແລະ ການສະແດງພາບສະໄລ້.</p>
+    <p xml:lang="nb">Andre verktøy i tillegg til lysbord og mørkerom er kart for geomerking, direktefotografering via fjernstyring, utskrift og lysbilde-show.</p>
+    <p xml:lang="nl">Overige onderdelen naast de bibliotheek en ontwikkelen zijn een kaart (voor geotaggen), tethering, afdrukken en presentatie.</p>
+    <p xml:lang="pl">Inne tryby poza stołem podświetlanym i ciemnią to mapa do geotaggingu, tethering, wydruk i pokaz slajdów.</p>
+    <p xml:lang="pt_BR">Outros modos além da mesa de luz e sala escura são um mapa para geoetiquetamento, aceso remoto, impressão e slideshow.</p>
+    <p xml:lang="ru">Помимо этого darktable поддерживает геотеггинг, режим дистанционной съёмки, печать и слайдшоу.</p>
+    <p xml:lang="sl">Ostali načini uporabe programa razen osvetljene podlage in temnice so še dodajanje geografskih oznak, odd. upravljanje, tisk slik in časovno prikazovanje slik.</p>
+    <p xml:lang="sq">Ka edhe kënde të tjera veç fototekës dhe dhomës së errët, si për etiketimin gjeografik, telefotografimin, printimin dhe diafilmin.</p>
+    <p xml:lang="sv">Förutom ljusbordet och mörkrummet finner man också en kartvy för geotaggade bilder, kamerastyrning, utskrift och ett bildspel.</p>
+    <p xml:lang="uk">Інші режими, крім світлого стола та темної кімнати, - це мапа для геотегування, керування камерою, друк та слайд-шоу.</p>
+    <p xml:lang="zh_CN">除了光台和暗房模式，您可以使用地图为照片添加地理位置标签、使用有线模式连接相机、打印照片及放映幻灯片。</p>
+    <p xml:lang="zh_TW">除了「燈箱 LightTable」和「暗房 Darkroom」這兩個主要模式之外，還有地圖、連機拍攝、列印（不適用於 windows）和影像輪播等功能。</p>
+    <p>darktable supports most modern cameras' raw formats, and does all of its processing at very high precision.</p>
+    <p xml:lang="cs">darktable podporuje RAW formáty většiny moderních fotoaparátů a veškeré zpracování provádí s velmi vysokou přesností.</p>
+    <p xml:lang="de">darktable unterstützt das RAW-Format der meisten modernen Kameras und führt seine Berechnungen mit sehr hoher Präzision durch.</p>
+    <p xml:lang="en@truecase">Darktable supports most modern cameras' raw formats, and does all of its processing at very high precision.</p>
+    <p xml:lang="es">darktable tiene soporte para la mayoría de los formatos en bruto (RAW) de las cámaras modernas. Además, ofrece una gran precisión en el proceso de revelado.</p>
+    <p xml:lang="fi">Darktable tukee lähes kaikkia nykyaikaisia kameroiden raakakuvamuotoja ja käsittelee niitä erittäin tarkasti.</p>
+    <p xml:lang="fr">Darktable couvre la plupart des formats RAW récents et fait tous ses calculs avec une très haute précision.</p>
+    <p xml:lang="hu">A darktable támogatja a legtöbb modern fényképező raw formátumát, a feldolgozásukat pedig nagy pontossággal végzi.</p>
+    <p xml:lang="ja">darktableは近年作られたほとんど全てのカメラのRAWフォーマットをサポートしており、全ての処理を非常に高い精度で行います</p>
+    <p xml:lang="ko_KR">darktable은 대부분의 최신 카메라 RAW 포맷을 지원하며, 모든 처리를 매우 높은 정밀도로 수행합니다.</p>
+    <p xml:lang="lo">darktable ຮອງຮັບໄຟລ໌ດິບຂອງກ້ອງສະໄໝໃໝ່ເກືອບທຸກລຸ້ນ ແລະ ປະມວນຜົນດ້ວຍຄວາມລະອຽດສູງຫຼາຍ.</p>
+    <p xml:lang="nb">darktable støtter de fleste moderne kameraers RAW-formater, og foretar all sin prosessering med svært høy presisjon.</p>
+    <p xml:lang="nl">darktable ondersteunt de meeste gangbare raw-formaten en verwerkt ze met een zeer hoge precisie.</p>
+    <p xml:lang="pl">darktable obsługuje większość formatów raw współczesnych aparatów i wykonuje obróbkę z bardzo wysoką precyzją.</p>
+    <p xml:lang="pt_BR">o darktable suporta o formato raw da maioria das câmeras modernas, e faz todo o processamento com muito alta precisão.</p>
+    <p xml:lang="ru">darktable поддерживает большой спектр современных камер и выполняет обработку снимков с очень высокой точностью.</p>
+    <p xml:lang="sl">darktable podpira večino surovih formatov sodobnih kamer in nudi obdelavo z visoko natančnostjo.</p>
+    <p xml:lang="sq">darktable hap shumicën e formateve bruto të kamerave moderne dhe punon me precizion shumë të lartë.</p>
+    <p xml:lang="sv">darktable stöder de flesta moderna kamerornas råformat, och gör alla bearbetningar med mycket hög noggrannhet.</p>
+    <p xml:lang="uk">Darktable підтримує необроблені (raw) формати більшості сучасних камер і виконує всю обробку з дуже високою точністю.</p>
+    <p xml:lang="zh_CN">darktable 支持绝大多数现代相机的 RAW 文件格式，并以极高精确度处理图像。</p>
+    <p xml:lang="zh_TW">darktable 支援大多數現代相機的 RAW 格式，並以 32 bit float 精度執行內部運算。</p>
+  </description>
+  <screenshots>
+    <screenshot width="1920" height="1080">
+      <image>https://www.darktable.org/images/darktable-appdata-lighttable.jpg</image>
+      <caption>Virtual light table, showing a collection</caption>
+      <caption xml:lang="cs">Virtuální katalog zobrazující kolekci</caption>
+      <caption xml:lang="de">Der Leuchttisch zeigt eine Sammlung an</caption>
+      <caption xml:lang="en@truecase">Virtual light table, showing a collection</caption>
+      <caption xml:lang="es">Mesa de Luz virtual mostrando una colección</caption>
+      <caption xml:lang="fi">Virtuaalinen valopöytä, näyttää kuvakokoelman.</caption>
+      <caption xml:lang="fr">Table lumineuse, avec une collection affichée</caption>
+      <caption xml:lang="hu">Virtuális átvilágító, egy gyűjtemény megjelenítése</caption>
+      <caption xml:lang="ja">コレクションを表示するバーチャルライトテーブル</caption>
+      <caption xml:lang="ko_KR">가상 light table, 컬렉션 표시</caption>
+      <caption xml:lang="lo">ຫ້ອງແສງສະເໝືອນຈິງ, ສະແດງຊຸດຮູບພາບ</caption>
+      <caption xml:lang="nb">Virtuelt lysbord, viser en samling</caption>
+      <caption xml:lang="nl">Virtuele lichtbak, toont een collectie</caption>
+      <caption xml:lang="pl">Wirtualny stół podświetlany wyświetlający kolekcję</caption>
+      <caption xml:lang="pt_BR">Mesa de Luz, mostrando uma coleção</caption>
+      <caption xml:lang="ru">Виртуальный световой стол и коллекция снимков</caption>
+      <caption xml:lang="sl">Virtualna svetlobna podlaga prikazuje zbirko</caption>
+      <caption xml:lang="sq">Fototeka virtuale, duke shfaqur një koleksion</caption>
+      <caption xml:lang="sv">Virtuellt ljusbord, en bildsamling visas</caption>
+      <caption xml:lang="uk">Віртуальний світлий стіл, показ колекції</caption>
+      <caption xml:lang="zh_CN">虚拟光台，用于展示照片集</caption>
+      <caption xml:lang="zh_TW">虛擬燈箱，顯示相冊</caption>
+    </screenshot>
+    <screenshot width="1920" type="default" height="1080">
+      <image>https://www.darktable.org/images/darktable-appdata-darkroom1.jpg</image>
+      <caption>Virtual dark room with an opened image</caption>
+      <caption xml:lang="cs">Virtuální editor s otevřeným obrázkem</caption>
+      <caption xml:lang="de">Die Dunkelkammer mit einem geöffneten Bild</caption>
+      <caption xml:lang="en@truecase">Virtual dark room with an opened image</caption>
+      <caption xml:lang="es">Cuarto Oscuro virtual con una imagen abierta</caption>
+      <caption xml:lang="fi">Virtuaalinen pimiö näyttää avatun valokuvan.</caption>
+      <caption xml:lang="fr">Chambre noire avec une image ouverte</caption>
+      <caption xml:lang="hu">Virtuális sötétkamra egy megnyitott képpel</caption>
+      <caption xml:lang="ja">画像を開いて表示するバーチャルダークルーム</caption>
+      <caption xml:lang="ko_KR">가상 암실에서 이미지 열기</caption>
+      <caption xml:lang="lo">ຫ້ອງມືດສະເໝືອນຈິງພ້ອມຮູບທີ່ເປີດຢູ່</caption>
+      <caption xml:lang="nb">Virtuelt mørkerom med et åpnet bilde</caption>
+      <caption xml:lang="nl">Virtuele DoKa met een geopende afbeelding</caption>
+      <caption xml:lang="pl">Wirtualna ciemnia z otwartym obrazem</caption>
+      <caption xml:lang="pt_BR">Sala Escura com uma imagem aberta</caption>
+      <caption xml:lang="ru">Фоторедактор с открытым снимком</caption>
+      <caption xml:lang="sl">Virtualna temnica z odprto sliko</caption>
+      <caption xml:lang="sq">Dhoma e errët virtuale me një imazh të hapur</caption>
+      <caption xml:lang="sv">Virtuellt mörkerrum med en bild öppnad</caption>
+      <caption xml:lang="uk">Віртуальна темна кімната з відкритим зображенням</caption>
+      <caption xml:lang="zh_CN">虚拟暗房，打开单张图像</caption>
+      <caption xml:lang="zh_TW">虛擬暗房，含一開啟影像</caption>
+    </screenshot>
+    <screenshot width="1920" height="1080">
+      <image>https://www.darktable.org/images/darktable-appdata-darkroom2.jpg</image>
+      <caption>Virtual dark room, sharpening an image</caption>
+      <caption xml:lang="cs">Virtuální editor, zaostření obrázku</caption>
+      <caption xml:lang="de">Schärfen eines Bildes in der Dunkelkammer</caption>
+      <caption xml:lang="en@truecase">Virtual dark room, sharpening an image</caption>
+      <caption xml:lang="es">Cuarto Oscuro virtual enfocando una imagen</caption>
+      <caption xml:lang="fi">Virtuaalinen pimiö, valokuvan terävöitykseen.</caption>
+      <caption xml:lang="fr">Chambre noire, augmenter la netteté d’une image</caption>
+      <caption xml:lang="hu">Virtuális sötétkamra, egy kép élesítése</caption>
+      <caption xml:lang="ja">画像をシャープにするバーチャルダークルーム</caption>
+      <caption xml:lang="ko_KR">가상 암실, 이미지 샤프닝</caption>
+      <caption xml:lang="lo">ຫ້ອງມືດສະເໝືອນຈິງ, ກຳລັງເພີ່ມຄວາມຄົມຊັດໃຫ້ຮູບ</caption>
+      <caption xml:lang="nb">Virtuelt mørkerom, økt skarphet i et bilde</caption>
+      <caption xml:lang="nl">Virtuele DoKa, die een afbeelding scherper maakt</caption>
+      <caption xml:lang="pl">Wirtualna ciemnia, wyostrzanie obrazu</caption>
+      <caption xml:lang="pt_BR">Sala Escura, melhorando a nitidez de uma imagem</caption>
+      <caption xml:lang="ru">Фоторедактор, повышение резкости снимка</caption>
+      <caption xml:lang="sl">Virtualna temnica ostri sliko</caption>
+      <caption xml:lang="sq">Dhoma e errët virtuale, duke qartësuar një imazh</caption>
+      <caption xml:lang="sv">Virtuellt mörkerrum, skärpa läggs på en bild</caption>
+      <caption xml:lang="uk">Віртуальна темна кімната, збільшення різкості зображення</caption>
+      <caption xml:lang="zh_CN">虚拟暗房，对图像进行锐化</caption>
+      <caption xml:lang="zh_TW">虛擬暗房，銳化影像</caption>
+    </screenshot>
+    <screenshot width="1920" height="1080">
+      <image>https://www.darktable.org/images/darktable-appdata-map.jpg</image>
+      <caption>Show images on a map</caption>
+      <caption xml:lang="cs">Zobrazit obrázky na mapě</caption>
+      <caption xml:lang="de">Zeige Bilder auf der Karte an</caption>
+      <caption xml:lang="en@truecase">Show images on a map</caption>
+      <caption xml:lang="es">Modo Mapa con algunas imágenes</caption>
+      <caption xml:lang="fi">Näytä valokuvat kartalla.</caption>
+      <caption xml:lang="fr">Montre des images sur la carte</caption>
+      <caption xml:lang="hu">Képek megjelenítése a térképen</caption>
+      <caption xml:lang="ja">地図上に画像を表示</caption>
+      <caption xml:lang="ko_KR">지도에 이미지 표시</caption>
+      <caption xml:lang="lo">ສະແດງຮູບພາບໃນແຜນທີ່</caption>
+      <caption xml:lang="nb">Vis bilder på et kart</caption>
+      <caption xml:lang="nl">Toon afbeeldingen op een kaart</caption>
+      <caption xml:lang="pl">Pokaż obrazy na mapie</caption>
+      <caption xml:lang="pt_BR">Mostrar imagens em um mapa</caption>
+      <caption xml:lang="ru">Показ снимков на карте</caption>
+      <caption xml:lang="sl">Prikaži slike na karti</caption>
+      <caption xml:lang="sq">Tregoni imazhet në hartë</caption>
+      <caption xml:lang="sv">Visa bilder på karta</caption>
+      <caption xml:lang="uk">Показ зображень на мапі</caption>
+      <caption xml:lang="zh_CN">在地图上显示图像</caption>
+      <caption xml:lang="zh_TW">在地圖中顯示影像</caption>
+    </screenshot>
+    <screenshot width="1920" height="1080">
+      <image>https://www.darktable.org/images/darktable-appdata-print.jpg</image>
+      <caption>Print your images</caption>
+      <caption xml:lang="cs">Tisk vašich obrázků</caption>
+      <caption xml:lang="de">Drucke deine Bilder</caption>
+      <caption xml:lang="en@truecase">Print your images</caption>
+      <caption xml:lang="es">Imprimir las imágenes</caption>
+      <caption xml:lang="fi">Tulosta valokuvasi.</caption>
+      <caption xml:lang="fr">Imprimer les images</caption>
+      <caption xml:lang="hu">Képek nyomtatása</caption>
+      <caption xml:lang="ja">画像を印刷</caption>
+      <caption xml:lang="ko_KR">이미지 인쇄</caption>
+      <caption xml:lang="lo">ພິມຮູບພາບຂອງທ່ານ</caption>
+      <caption xml:lang="nb">Skriv ut bilder</caption>
+      <caption xml:lang="nl">Print je afbeeldingen</caption>
+      <caption xml:lang="pl">Drukuj swoje obrazy</caption>
+      <caption xml:lang="pt_BR">Imprimir suas imagens</caption>
+      <caption xml:lang="ru">Печать снимков</caption>
+      <caption xml:lang="sl">Natisni svoje slike</caption>
+      <caption xml:lang="sq">Printoni imazhet</caption>
+      <caption xml:lang="sv">Skriv ut dina bilder</caption>
+      <caption xml:lang="uk">Друк зображень</caption>
+      <caption xml:lang="zh_CN">打印图像</caption>
+      <caption xml:lang="zh_TW">列印影像</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="5.6.1" date="2026-08-27"/>
+    <release version="5.6.0" date="2026-06-21"/>
+    <release version="5.4.1" date="2026-02-05"/>
+    <release version="5.4.0" date="2025-12-21"/>
+    <release version="5.2.1" date="2025-08-06"/>
+    <release version="5.2.0" date="2025-06-21"/>
+    <release version="5.0.1" date="2025-02-12"/>
+    <release version="5.0.0" date="2024-12-21"/>
+    <release version="4.8.1" date="2024-07-24"/>
+    <release version="4.8.0" date="2024-06-21"/>
+    <release version="4.6.1" date="2024-02-17"/>
+    <release version="4.6.0" date="2023-12-21"/>
+    <release version="4.4.2" date="2023-07-22"/>
+    <release version="4.4.1" date="2023-07-01"/>
+    <release version="4.4.0" date="2023-06-21"/>
+    <release version="4.2.1" date="2023-02-15"/>
+    <release version="4.2.0" date="2022-12-21"/>
+    <release version="4.0.1" date="2022-09-17"/>
+    <release version="4.0.0" date="2022-07-02"/>
+    <release version="3.8.1" date="2022-02-11"/>
+    <release version="3.8.0" date="2021-12-24"/>
+    <release version="3.6.1" date="2021-09-15"/>
+    <release version="3.6.0" date="2021-07-03"/>
+    <release version="3.4.1" date="2021-02-06"/>
+    <release version="3.4.0" date="2020-12-24"/>
+    <release version="3.2.1" date="2020-08-10"/>
+    <release version="3.0.2" date="2020-04-18"/>
+    <release version="3.0.1" date="2020-03-09"/>
+    <release version="3.0.0" date="2019-12-24"/>
+    <release version="2.6.3" date="2019-10-20"/>
+    <release version="2.6.2" date="2019-03-21"/>
+    <release version="2.6.1" date="2019-03-07"/>
+    <release version="2.6.0" date="2018-12-24"/>
+  </releases>
+  <developer id="org.darktable">
+    <name>darktable developers</name>
+  </developer>
+  <url type="homepage">https://www.darktable.org/</url>
+  <url type="bugtracker">https://github.com/darktable-org/darktable/issues</url>
+  <url type="help">https://www.darktable.org/resources/</url>
+  <update_contact>darktable-dev@lists.darktable.org</update_contact>
+</component>

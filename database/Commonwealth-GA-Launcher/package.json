@@ -1,0 +1,20 @@
+{
+  "name": "commonwealth-ga-launcher",
+  "productName": "Commonwealth GA Launcher",
+  "desktopName": "commonwealth-ga-launcher",
+  "version": "0.1.30",
+  "description": "Cross-platform launcher for the Commonwealth Global Agenda private server.",
+  "author": "Commonwealth GA",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "electron-updater": "6.8.5"
+  },
+  "launcherReleaseRepository": "Zotikus1001/commonwealth-ga-launcher",
+  "defaultServerHost": "216.201.76.180",
+  "fallbackServerHost": "commonwealth.ydns.eu"
+}

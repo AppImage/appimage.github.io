@@ -1,0 +1,30 @@
+{
+  "name": "vigil",
+  "private": true,
+  "version": "1.7.0",
+  "description": "A password manager with modern UI, security checks, and more.",
+  "author": "Ryan",
+  "dependencies": {
+    "@node-rs/argon2": "^2.0.2",
+    "@types/zxcvbn": "^4.4.5",
+    "electron-log": "^5.4.4",
+    "jsqr": "^1.4.0",
+    "kdbxweb": "^2.1.1",
+    "keytar": "^7.9.0",
+    "node-hid": "^3.4.0",
+    "passport-desktop": "^0.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tldts": "^7.4.11",
+    "tweetnacl": "^1.0.3",
+    "zxcvbn": "^4.4.2"
+  },
+  "overrides": {
+    "kdbxweb": {
+      "@xmldom/xmldom": "^0.8.15",
+      "fflate": "^0.7.5"
+    },
+    "tar-fs": "^2.1.5"
+  },
+  "main": "dist-electron/main.js"
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>io.github.maxybom.materialize</id>
+    <launchable type="desktop-id">materialize.desktop</launchable>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0-only</project_license>
+    <name>Materialize</name>
+    <developer_name>Maxybom</developer_name>
+    <summary>Generate PBR materials from a single image</summary>
+    <description>
+        <p>Materialize is a tool for creating standard PBR materials for use in games from images. You can create an entire material from a single diffuse/albedo image or import the textures you have and generate the missing maps.</p>
+        <p>This is a Unity 6 port of the original Bounding Box Software project, featuring native Linux compatibility. Unlike previous iterations, this version retains full FreeImage support with specific fixes to handle .tif/.tiff metadata, preventing Segmentation Faults during heavy processing.</p>
+    </description>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/Maxybom/Materialize-Unity6-Win-Linux/main/screenshot.png</image>
+        </screenshot>
+    </screenshots>
+    <url type="homepage">https://github.com/Maxybom/Materialize-Unity6-Win-Linux</url>
+    <content_rating type="oars-1.1" />
+</component>

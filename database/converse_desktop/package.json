@@ -1,0 +1,16 @@
+{
+  "name": "@converse/desktop",
+  "productName": "Converse Desktop",
+  "desktopName": "org.conversejs.ConverseDesktop",
+  "version": "14.0.0",
+  "description": "Desktop Jabber/XMPP client based on Converse and Electron",
+  "main": "main.js",
+  "author": "The Converse Desktop Developers",
+  "repository": "https://github.com/conversejs/converse-desktop",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "converse.js": "^14.0.0",
+    "electron-settings": "^4.0.4",
+    "electron-context-menu": "^4.1.1"
+  }
+}

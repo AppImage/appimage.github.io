@@ -1,0 +1,26 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Converseen
+GenericName=Converseen
+GenericName[en_GB]=Converseen
+GenericName[fr]=Converseen
+GenericName[it]=Converseen
+GenericName[ru]=Converseen
+GenericName[ro]=Converseen
+Comment=Batch image converter
+Comment[fr]=Convertisseur d'images par lots
+Comment[it]=Convertitore batch di immagini
+Comment[ru]=Пакетное преобразование изображений
+Comment[ro]=Batch converter pentru imagini
+Exec=converseen
+Icon=converseen
+Terminal=false
+Categories=Qt;KDE;Graphics;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Tue Aug 23 17:22:27 2022 UTC                using RSA key 226AFBECCF43F9C4E8550B3CE917C445FDB638FF Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

@@ -8,7 +8,7 @@ license: LGPL-3.0
 icons:
   - Bench_CLI/icons/256x256/bench.png
 screenshots:
-- https://raw.githubusercontent.com/Lateralus138/UniShellect/master/media/demo.png
+- https://raw.githubusercontent.com/Lateralus138/bench-cli/master/media/help.png
 
 authors:
   - name: Lateralus138
@@ -29,11 +29,16 @@ desktop:
     Type: Application
     Categories: Utility
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.27
+    X-AppImage-Payload-License: GPL-3.0
 
 appdata:
   Type: console-application
@@ -47,7 +52,7 @@ appdata:
       <p>Cross-platform command line tool to benchmark commands in command lines written in `Fortran`. Very precise and fast.</p>
   ProjectLicense: LGPL-3.0
   Url:
-    homepage: https://github.com/Lateralus138/benchmark-commandline-fortran
+    homepage: https://github.com/Lateralus138/bench-cli
   Launchable:
     desktop-id:
     - bench.desktop
@@ -58,6 +63,6 @@ appdata:
   - default: true
     thumbnails: []
     source-image:
-      url: https://raw.githubusercontent.com/Lateralus138/UniShellect/master/media/demo.png
+      url: https://raw.githubusercontent.com/Lateralus138/bench-cli/master/media/help.png
       lang: C
 ---

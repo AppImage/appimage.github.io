@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>ai.wisprflow.WisprFlow</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Wispr Flow</name>
+  <summary>Voice dictation that types into your focused app</summary>
+  <description>
+    <p>
+      Unofficial Linux build of the Wispr Flow voice-dictation app, with a
+      clean-room Rust helper providing text injection, active-app detection,
+      and selection capture across KDE/GNOME/wlroots/X11.
+    </p>
+  </description>
+  <launchable type="desktop-id">ai.wisprflow.WisprFlow.desktop</launchable>
+  <url type="homepage">https://wisprflow.ai</url>
+  <provides>
+    <binary>AppRun</binary>
+  </provides>
+  <categories>
+    <category>Utility</category>
+    <category>AudioVideo</category>
+  </categories>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="1.6.957-1.0.4" date="2026-09-25">
+      <description><p>Version 1.6.957-1.0.4.</p></description>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.Ferase.SwampSwap</id>
+  <name>Swamp Swap</name>
+  <summary>A user interface for the file transfer program croc</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <description>
+    <p>Swamp Swap is a user interface wrapped around a command line file transfer utility called croc. croc provides simple and private file transfers between two users, and Swamp Swap provides a fun, handy user interface to operate it from. croc was created by Zack Schollz.</p>
+  </description>
+  <launchable type="desktop-id">SwampSwap.desktop</launchable>
+  <url type="homepage">https://github.com/Ferase/SwampSwap</url>
+  <url type="bugtracker">https://github.com/Ferase/SwampSwap/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The send tab of the main window using the default "Swamp" theme</caption>
+      <image>https://raw.githubusercontent.com/Ferase/SwampSwap/refs/heads/master/images/SwampSwap_Window_Screenshot_01.png</image>
+    </screenshot>
+    <screenshot type="extra">
+      <caption>The receive tab of the main window using the "Steam 1.0" theme</caption>
+      <image>https://raw.githubusercontent.com/Ferase/SwampSwap/refs/heads/master/images/SwampSwap_Window_Screenshot_02.png</image>
+    </screenshot>
+    <screenshot type="extra">
+      <caption>The settings tab of the main window using the "Deep Dark" theme</caption>
+      <image>https://raw.githubusercontent.com/Ferase/SwampSwap/refs/heads/master/images/SwampSwap_Window_Screenshot_03.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.5.4" date="2026-10-01"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

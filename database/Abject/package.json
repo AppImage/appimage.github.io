@@ -1,0 +1,35 @@
+{
+  "name": "abjects",
+  "version": "0.11.0",
+  "description": "LLM-Mediated Object System",
+  "author": {
+    "name": "mempko",
+    "email": "max@mempko.com"
+  },
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "@lydell/node-pty": "1.2.0-beta.15",
+    "@xterm/headless": "^6.0.0",
+    "acorn": "^8.17.0",
+    "ajv": "^8.20.0",
+    "fflate": "^0.8.2",
+    "jpeg-js": "^0.4.4",
+    "jsqr": "^1.4.0",
+    "linkedom": "^0.18.0",
+    "minisearch": "^7.2.0",
+    "node-datachannel": "^0.32.1",
+    "playwright": "^1.40.0",
+    "qrcode": "^1.5.4",
+    "uuid": "^9.0.0",
+    "ws": "^8.18.0",
+    "yaml": "^2.8.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "node-datachannel",
+      "electron",
+      "esbuild"
+    ]
+  }
+}

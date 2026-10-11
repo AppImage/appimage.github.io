@@ -1,0 +1,15 @@
+{
+  "name": "notebooklm-for-windows",
+  "version": "3.0.0",
+  "description": "Native cross-platform desktop wrapper for Google NotebookLM",
+  "main": "src/main.js",
+  "author": {
+    "name": "Gyanesh Samanta",
+    "email": "mail.gyaneshsamanta@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "auto-launch": "^5.0.6",
+    "electron-updater": "^6.3.9"
+  }
+}

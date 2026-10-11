@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="16"
+   height="16"
+   id="svg2310"
+   sodipodi:version="0.32"
+   inkscape:version="0.45+devel"
+   sodipodi:docname="application-fontmatrix-vectors.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/home/vlada/fontmatrix.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   version="1.0">
+  <defs
+     id="defs2312" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="16"
+     inkscape:cx="7.3902443"
+     inkscape:cy="9.2360663"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     gridtolerance="10"
+     inkscape:object-paths="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     objecttolerance="5"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="969"
+     inkscape:window-height="870"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     width="16px">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2907" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2315">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>FontMatrix application icon</dc:title>
+        <dc:date>13.11.2007.</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Vladimir Savic</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title>Pierre Marchand</dc:title>
+          </cc:Agent>
+        </dc:contributor>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:prohibits
+           rdf:resource="http://creativecommons.org/ns#CommercialUse" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <path
+       transform="matrix(0,0.3548388,-0.3548386,0,63.354825,-50.451627)"
+       style="fill:#bf0000;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
+       d="M 142.18182,133.45454 L 187.27273,133.45454 L 187.27273,178.54545 L 142.18182,178.54545 L 142.18182,133.45454 z"
+       id="path2937" />
+    <path
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bauhaus Std"
+       d="M 0,1.5885741 L 0,15.621877 L 7.7875919,18.769533 L 7.7875919,40.803129 L 19.46898,47.098443 L 19.46898,22.312505 C 25.883731,25.165812 27.256572,26.671339 27.256572,33.865629 L 27.256572,40.803129 L 38.937959,47.098438 L 38.9375,36.71875 C 38.937501,31.302292 40.566832,17.851506 27.256572,12.8125 L 0,1.5885741 z"
+       id="path2941"
+       transform="matrix(0.2439985,-2.5640681e-2,0,0.2382725,0,0.9027364)" />
+    <path
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#ffd9b0;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bauhaus Std"
+       d="M 56.469699,146.30985 C 47.138458,146.30985 40.610524,146.29257 35.696924,153.5518 L 32.192538,158.65961 C 35.529496,156.22406 39.921667,156.11666 43.566249,155.96579 C 45.229777,154.04025 46.085212,153.70267 52.716698,153.5518 L 63.444157,153.5518 L 69.279634,146.30985 C 66.477571,146.31676 59.271689,146.3013 56.469699,146.30985 z"
+       id="path2943"
+       transform="matrix(0,0.30006,-0.4142527,4.3288612e-2,75.241241,-12.465348)" />
+  </g>
+</svg>

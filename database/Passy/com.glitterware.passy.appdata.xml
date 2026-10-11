@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>com.glitterware.passy</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0</project_license>
+	<name>Passy</name>
+	<developer id="com.glitterware">
+	  <name>GlitterWare</name>
+	</developer>
+	<developer_name>GlitterWare</developer_name>
+	<summary>Offline password manager with cross-platform synchronization</summary>
+	<description>
+		<p>Store passwords, payment cards notes, ID cards and identities offline and safe, synchronized between all of your devices.</p>
+		<p>Features:</p>
+		<ul><li>Security - All your information is encrypted in AES and stored offline on your devices, providing highest-tier security.</li><li>Synchronization - Share data between separate devices within seconds.</li><li>2FA codes - Keep your 2FA codes safe and sound in offline storage.</li><li>Entry sharing – Send entries to your friends and family.</li><li>Biometrics - Quickly unlock the app using your fingerprint.</li><li>Multipurpose - Store passwords, payment cards, notes, id cards and identities, all in one place.</li><li>Autofill - Quickly fill fields in apps and websites without having to open the app.</li><li>Browser extension - Use autofill and add new entries on the fly right from your browser. (See https://github.com/GlitterWare/Passy-Browser-Extension)</li><li>Passy Cloud - Support this free project and get secure, automatic online synchronization in return. (disabled by default - base app and manual QR-powered sync remain free forever)</li></ul>
+		<p>Official website: https://glitterware.github.io/Passy</p>
+	</description>
+	<launchable type="desktop-id">com.glitterware.passy.desktop</launchable>
+	<url type="homepage">https://glitterware.github.io/Passy</url>
+	<screenshots>
+		<screenshot type="default">
+			<caption>Passy login screen.</caption>
+			<image type="source" width="1920" height="1080">https://github.com/GlitterWare/Passy/raw/273e012d77e0667486388d94c9f5d129a2911350/screenshots/1920x1080/1.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Passy main screen.</caption>
+			<image type="source" width="1920" height="1080">https://github.com/GlitterWare/Passy/raw/273e012d77e0667486388d94c9f5d129a2911350/screenshots/1920x1080/2.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Host connection QR code.</caption>
+			<image type="source" width="1920" height="1080">https://github.com/GlitterWare/Passy/raw/273e012d77e0667486388d94c9f5d129a2911350/screenshots/1920x1080/3.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Add password screen.</caption>
+			<image type="source" width="1920" height="1080">https://github.com/GlitterWare/Passy/raw/273e012d77e0667486388d94c9f5d129a2911350/screenshots/1920x1080/4.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Password generator.</caption>
+			<image type="source" width="1920" height="1080">https://github.com/GlitterWare/Passy/raw/273e012d77e0667486388d94c9f5d129a2911350/screenshots/1920x1080/5.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Custom field screen.</caption>
+			<image type="source" width="1920" height="1080">https://github.com/GlitterWare/Passy/raw/273e012d77e0667486388d94c9f5d129a2911350/screenshots/1920x1080/6.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Date selection.</caption>
+			<image type="source" width="1920" height="1080">https://github.com/GlitterWare/Passy/raw/273e012d77e0667486388d94c9f5d129a2911350/screenshots/1920x1080/7.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Password entry screen.</caption>
+			<image type="source" width="1920" height="1080">https://github.com/GlitterWare/Passy/raw/273e012d77e0667486388d94c9f5d129a2911350/screenshots/1920x1080/8.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>Password view dialog.</caption>
+			<image type="source" width="1920" height="1080">https://github.com/GlitterWare/Passy/raw/273e012d77e0667486388d94c9f5d129a2911350/screenshots/1920x1080/9.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>com.glitterware.passy.desktop</id>
+	</provides>
+	<content_rating type="oars-1.0" />
+	<releases>
+		<release version="v1.10.2" date="2026-06-26">
+		</release>
+	</releases>
+</component>

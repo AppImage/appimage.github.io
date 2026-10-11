@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.mall0r.Twinverse</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>Twinverse</name>
+  <summary>Play any game in splitscreen</summary>
+  <developer id="io.github.mall0r">
+    <name>Mallor (mall0r)</name>
+  </developer>
+
+  <description>
+    <p>
+      Twinverse is a tool that allows you to create and manage multiple instances
+      of `gamescope` and `steam` simultaneously. This enables multiple players to enjoy
+      their game library on a single computer, either in splitscreen mode or each with
+      their own display, along with dedicated audio output and input devices.
+    </p>
+    <p>Key Features:</p>
+    <ul>
+      <li>Simple Multi-Instance Management: Run multiple Steam Client simultaneously, allowing you and your friends to enjoy your game libraries separately</li>
+      <li>Per-Instance Hardware Assignment: Assign specific mice, keyboards, and controllers to each game instance</li>
+      <li>Dedicated Audio Channels: Route audio from each game instance to a separate audio output device</li>
+      <li>Separate Home Directory: Customize settings and files for each instance individually</li>
+      <li>Shared Game Library: Share the Steam game directory among multiple instances</li>
+      <li>Use Any Proton: Use any version of Proton to run your games.</li>
+      <li>Play Whatever You Want: Instances are not limited to playing the same game; each instance can play whichever game it wants</li>
+      <li>Flexible Screen Modes: Choose between splitscreen (up to 4 instances per monitor) or fullscreen (1 instance per monitor)</li>
+    </ul>
+    <p>How it Works:</p>
+    <p>Twinverse uses Bubblewrap (bwrap), a low-level Linux sandboxing tool, to isolate each Steam Client instance.
+       This ensures that the instances do not interfere with each other or with the user's main system.
+       Furthermore, the Gamescope command line is dynamically generated based on the user's settings,
+       involving the bwrap command which, in turn, launches Steam.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.mall0r.Twinverse.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/mall0r/Twinverse/v1.0.0/share/screenshots/twinverse-ui.png</image>
+      <caption>Main application window</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/mall0r/Twinverse/v1.0.0/share/screenshots/multiscope_ui_config.png</image>
+      <caption>Main application window showing player configuration</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/mall0r/Twinverse/v1.0.0/share/screenshots/horizontal-steam.png</image>
+      <caption>Horizontal split-screen</caption>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/mall0r/Twinverse</url>
+  <url type="vcs-browser">https://github.com/mall0r/Twinverse</url>
+  <url type="donation">https://ko-fi.com/mallor</url>
+  <url type="bugtracker">https://github.com/mall0r/Twinverse/issues/new</url>
+  <url type="help">https://github.com/mall0r/Twinverse/blob/main/docs/GUIDE.md</url>
+
+  <provides>
+    <binary>twinverse</binary>
+  </provides>
+
+  <releases>
+    <release version="1.1.2" date="2026-10-01" type="stable">
+      <description>
+        <p>Fix controller navigation of the Steam side menus while a game runs in splitscreen instances.</p>
+        <p>Turn off Steam Input in each instance on its first launch.</p>
+        <p>Build the AppImage against glibc 2.35 in a container and verify in CI that it opens a window before release.</p>
+      </description>
+    </release>
+    <release version="1.1.1" date="2026-10-01" type="stable">
+      <description>
+        <p>Fix Steam performance-menu control of MangoApp and prevent duplicated overlay elements.</p>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-09-30" type="stable">
+      <description>
+        <p>Add per-player terminals, synchronize game manifests, and fix controller navigation during Steam UI startup.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-01-10" type="stable">
+      <description>
+        <p>Initial public release stable.</p>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-info">intense</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+    <content_attribute id="money-purchasing">intense</content_attribute>
+  </content_rating>
+
+  <categories>
+    <category>Game</category>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>twinverse</keyword>
+    <keyword>gamescope</keyword>
+    <keyword>gaming</keyword>
+    <keyword>display</keyword>
+    <keyword>steam</keyword>
+    <keyword>multiplayer</keyword>
+    <keyword>splitscreen</keyword>
+    <keyword>multi-monitor</keyword>
+    <keyword>coop</keyword>
+    <keyword>games</keyword>
+    <keyword>steamos</keyword>
+    <keyword>multi-instance</keyword>
+    <keyword>local-multiplayer</keyword>
+  </keywords>
+
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>gamepad</control>
+    <display_length compare="ge">1024</display_length>
+  </supports>
+
+  <recommends>
+    <memory>8192</memory>
+  </recommends>
+
+  <custom>
+    <value key="x-app-type">desktop</value>
+    <value key="x-supported-platforms">linux</value>
+  </custom>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#99c1f1</color>
+    <color type="primary" scheme_preference="dark">#1c4376</color>
+  </branding>
+</component>

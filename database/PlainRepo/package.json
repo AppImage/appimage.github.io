@@ -1,0 +1,13 @@
+{
+  "name": "plainrepo",
+  "version": "1.0.2",
+  "description": "Plain text view of your repository",
+  "license": "MIT",
+  "author": {
+    "name": "PlainRepo Maintainers",
+    "email": "rick.kohjiaxuan@gmail.com",
+    "url": "https://plainrepo.com"
+  },
+  "main": "./dist/main/main.js",
+  "dependencies": {}
+}

@@ -1,0 +1,17 @@
+{
+  "name": "yawf",
+  "productName": "YAWF",
+  "version": "3.0.1",
+  "description": "Yet Another WhatsApp Fork - unofficial WhatsApp desktop client (Electron edition)",
+  "main": "src/main.js",
+  "homepage": "https://github.com/Wahid7852/YAWF",
+  "author": {
+    "name": "Wahid7852",
+    "email": "wahidzk0091@gmail.com"
+  },
+  "license": "GPL-3.0",
+  "private": true,
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "qbz-downloader",
+  "version": "5.6.2",
+  "description": "Desktop-first Qobuz downloader EXE with Hi-Res audio, metadata automation, and lyrics support",
+  "main": "electron/main.cjs",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "author": "ifauzeee",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifauzeee/QBZ-Downloader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ifauzeee/QBZ-Downloader/issues"
+  },
+  "homepage": "https://github.com/ifauzeee/QBZ-Downloader#readme",
+  "overrides": {
+    "brace-expansion": "5.0.9"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "axios": "^1.20.0",
+    "better-sqlite3": "^13.0.3",
+    "chalk": "^6.0.0",
+    "cheerio": "^1.2.0",
+    "chokidar": "^5.0.0",
+    "csv-parse": "^7.0.2",
+    "electron-updater": "^6.8.9",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "ffmpeg-static": "^5.3.0",
+    "lru-cache": "^11.5.2",
+    "music-metadata": "^11.15.0",
+    "node-id3": "^0.2.9",
+    "p-limit": "^7.3.2",
+    "socket.io": "^4.8.3",
+    "zod": "^4.6.5"
+  }
+}

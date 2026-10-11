@@ -1,0 +1,23 @@
+{
+  "name": "nudelta",
+  "author": "Mohamed Gaber <me@donn.website>",
+  "version": "0.10.0",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/donn/nudelta#readme",
+  "description": "An open-source alternative to the NuPhy Console",
+  "dependencies": {
+    "@fontsource/nunito": "^4.5.11",
+    "fs-extra": "^10.1.0",
+    "yaml": "^2.1.3"
+  },
+  "type": "module",
+  "main": "index.cjs",
+  "cmake-js": {
+    "runtime": "electron",
+    "runtimeVersion": "35.0.3"
+  },
+  "prettier": {
+    "tabWidth": 4,
+    "quoteProps": "consistent"
+  }
+}

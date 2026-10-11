@@ -1,0 +1,44 @@
+{
+  "name": "dj_manager",
+  "version": "1.0.65",
+  "description": "DJ-focused music library manager",
+  "main": "src/main.js",
+  "desktopName": "dj_manager.desktop",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Radexito/djman.git"
+  },
+  "author": {
+    "name": "Radexito",
+    "email": "ceo@rwtechworks.pl"
+  },
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Radexito/djman/issues"
+  },
+  "homepage": "https://github.com/Radexito/djman#readme",
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "renderer/src/**/*.{js,jsx}": [
+      "prettier --write"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --write"
+    ],
+    "**/*.css": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "better-sqlite3": "^13.0.2",
+    "react-virtualized": "^9.22.6",
+    "react-window": "^2.3.0"
+  }
+}

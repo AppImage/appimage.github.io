@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.kyonru.spritesheethelper</id>
+  <name>Sprite Sheet Helper</name>
+  <summary>Create game-ready sprite sheets from animated 3D models</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>Sprite Sheet Helper turns animated GLB, GLTF, FBX, and OBJ models into sprite sheets, GIFs, normal maps, and engine-ready export packages.</p>
+    <p>Frame animations with reusable camera workflows, refine materials and effects, capture or edit poses, and export deterministic atlases for popular game engines.</p>
+  </description>
+  <launchable type="desktop-id">spritesheet-helper.desktop</launchable>
+  <url type="homepage">https://github.com/Kyonru/sprite-sheet-helper</url>
+  <url type="bugtracker">https://github.com/Kyonru/sprite-sheet-helper/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The Sprite Sheet Helper editor and export workbench</caption>
+      <image>https://raw.githubusercontent.com/Kyonru/sprite-sheet-helper/main/screenshots/main.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.8.3" date="2026-09-28"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

@@ -2,12 +2,12 @@
 layout: app
 
 permalink: /Glaxnimate/
+license: GPL-3.0+
 
 icons:
-  - Glaxnimate/icons/scalable/glaxnimate.svg
-
+  - Glaxnimate/icons/scalable/org.kde.glaxnimate.svg
 screenshots:
-  - Glaxnimate/screenshot.png
+- https://cdn.kde.org/screenshots/glaxnimate/glaxnimate.png
 
 authors:
 
@@ -17,16 +17,44 @@ desktop:
   Desktop Entry:
     Categories: Graphics
     Type: Application
-    Icon: glaxnimate
+    Icon: org.kde.glaxnimate
     Name: glaxnimate
+    Name[ar]: glaxnimate
+    Name[ca]: glaxnimate
+    Name[ca@valencia]: glaxnimate
+    Name[cs]: glaxnimate
+    Name[en_GB]: glaxnimate
+    Name[eo]: glaxnimate
+    Name[es]: glaxnimate
+    Name[eu]: glaxnimate
+    Name[fi]: glaxnimate
+    Name[fr]: glaxnimate
+    Name[gl]: glaxnimate
+    Name[he]: glaxnimate
+    Name[it]: glaxnimate
+    Name[ka]: glaxnimate
+    Name[nl]: glaxnimate
+    Name[pl]: glaxnimate
+    Name[pt_BR]: glaxnimate
+    Name[ru]: glaxnimate
+    Name[sk]: glaxnimate
+    Name[sl]: glaxnimate
+    Name[sv]: glaxnimate
+    Name[tr]: glaxnimate
+    Name[uk]: glaxnimate
+    Name[zh_CN]: glaxnimate
+    Name[zh_TW]: glaxnimate
     Exec: glaxnimate
-    X-AppImage-Version: dev
+    X-AppImage-Version: 0.6.0
   AppImageHub:
-    X-AppImage-UpdateInformation: zsync|https://gitlab.com/mattbas/glaxnimate/-/jobs/artifacts/pre-release/raw/glaxnimate-x86_64.AppImage.zsync?job=linux:appimage
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.28
 ---

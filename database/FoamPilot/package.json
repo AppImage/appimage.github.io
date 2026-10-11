@@ -1,0 +1,25 @@
+{
+  "name": "foampilot",
+  "version": "0.0.7",
+  "description": "Aerodynamics made simple — guided OpenFOAM simulations",
+  "type": "module",
+  "main": "electron-dist/main.js",
+  "author": "OlaafRossi",
+  "license": "MIT",
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "electron-updater": "^6.3.9",
+    "lucide-react": "^1.7.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^7.13.2",
+    "recharts": "^3.8.1",
+    "tailwindcss": "^4.2.2",
+    "three": "^0.183.2"
+  }
+}

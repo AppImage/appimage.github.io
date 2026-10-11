@@ -1,0 +1,27 @@
+{
+  "name": "BulkReviewer",
+  "version": "0.3.1",
+  "author": "Tessa Walsh <tessa@bitarchivist.net>",
+  "description": "Identify, review, and remove private information",
+  "license": "GPL-3.0-only",
+  "main": "./dist/electron/main.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/vue-fontawesome": "^0.1.8",
+    "axios": "^0.21.1",
+    "buefy": "^0.7.3",
+    "builder": "^4.0.0",
+    "fast-csv": "^4.3.6",
+    "fix-path": "^2.1.0",
+    "processor": "^0.1.9",
+    "vue": "^2.5.16",
+    "vue-electron": "^1.0.6",
+    "vue-router": "^3.0.1",
+    "vue-select": "^2.6.3",
+    "vuex": "^3.0.1",
+    "vuex-electron": "^1.0.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "music-library-frontend",
+  "version": "0.1.7",
+  "description": "Self-hosted music library web and desktop client",
+  "author": {
+    "name": "esson",
+    "email": "55195336+githubesson@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/githubesson/lumen",
+  "desktopName": "Lumen",
+  "private": true,
+  "type": "module",
+  "main": "electron/build/main.js",
+  "dependencies": {
+    "@music-library/core": "file:../core",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "discord-rpc": "^4.0.1",
+    "electron-updater": "^6.8.9",
+    "hls.js": "^1.6.16",
+    "lucide-react": "^1.47.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.4"
+  },
+  "overrides": {
+    "discord-rpc": {
+      "ws": "^7.5.11"
+    }
+  }
+}

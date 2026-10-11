@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata, read by Linux software centres and the AppImage
+     catalog. Installed as usr/share/metainfo/com.reach.desktop.metainfo.xml
+     by the AppImage, .deb and .rpm bundles (tauri.conf.json). -->
+<component type="desktop-application">
+  <id>com.reach.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Reach</name>
+  <summary>SSH client and remote server manager</summary>
+  <developer id="com.github.alexandrosnt">
+    <name>Alexander Nt.</name>
+  </developer>
+  <description>
+    <p>
+      Reach is a modern SSH client and remote server management tool, free and open source.
+    </p>
+    <ul>
+      <li>Tabbed SSH terminals, jump hosts and port forwarding</li>
+      <li>SFTP file browser and system monitoring</li>
+      <li>Remote desktop over RDP and VNC</li>
+      <li>An encrypted vault for sessions and keys, synced between your devices if you choose</li>
+      <li>Ansible and OpenTofu automation, databases and a serial console</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">Reach.desktop</launchable>
+  <url type="homepage">https://reachssh.com</url>
+  <url type="bugtracker">https://github.com/alexandrosnt/Reach/issues</url>
+  <url type="vcs-browser">https://github.com/alexandrosnt/Reach</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Terminals, sessions and the server monitor</caption>
+      <image>https://raw.githubusercontent.com/alexandrosnt/Reach/main/assets/preview.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Network</category>
+    <category>System</category>
+  </categories>
+  <content_rating type="oars-1.1" />
+  <!-- The newest first. A test (metainfo_lists_this_version in lib.rs)
+       fails if the version in Cargo.toml is missing here. -->
+  <releases>
+    <release version="0.7.3" date="2026-10-02">
+      <url type="details">https://github.com/alexandrosnt/Reach/releases/tag/v0.7.3</url>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,21 @@
+{
+  "name": "@onekeyhq/desktop",
+  "main": "dist/app.js",
+  "version": "4.24.0",
+  "description": "Multi-chain support for BTC/ETH/BNB/NEAR/Polygon/Solana/Avalanche/Fantom and others",
+  "private": true,
+  "author": "OneKey <hi@onekey.so>",
+  "dependencies": {
+    "@onekeyhq/components": "*",
+    "@onekeyhq/kit": "*",
+    "adm-zip": "^0.5.10",
+    "electron-config": "^2.0.0",
+    "electron-context-menu": "^3.5.0",
+    "electron-is-dev": "^2.0.0",
+    "electron-log": "^4.4.8",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^5.2.1",
+    "expo": "49.0.6",
+    "node-fetch": "^2.6.7"
+  }
+}

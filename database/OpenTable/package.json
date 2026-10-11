@@ -1,0 +1,39 @@
+{
+  "name": "opentable",
+  "productName": "OpenTable",
+  "version": "1.1.2",
+  "description": "A clean, fast SQL editor for PostgreSQL, MySQL and SQLite.",
+  "main": "./out/main/index.js",
+  "author": {
+    "name": "Mohammed K",
+    "email": "alrasamking123@gmail.com"
+  },
+  "private": true,
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.20.3",
+    "@codemirror/commands": "^6.11.0",
+    "@codemirror/lang-sql": "^6.10.0",
+    "@codemirror/language": "^6.12.4",
+    "@codemirror/state": "^6.7.1",
+    "@codemirror/view": "^6.43.9",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@lezer/highlight": "^1.2.3",
+    "codemirror": "^6.0.2",
+    "electron-updater": "^6.8.9",
+    "mysql2": "^3.24.2",
+    "pg": "^8.23.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "ssh2": "^1.17.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohammedkmo/OpenTable.git"
+  },
+  "homepage": "https://github.com/mohammedkmo/OpenTable",
+  "bugs": {
+    "url": "https://github.com/mohammedkmo/OpenTable/issues"
+  },
+  "license": "MIT"
+}

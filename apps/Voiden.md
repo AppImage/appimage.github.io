@@ -1,0 +1,145 @@
+---
+layout: app
+
+permalink: /Voiden/
+description: Build, Test, Document & Collaborate. Streamline your API development process with Voiden
+license: Apache-2.0
+
+icons:
+  - Voiden/icons/128x128/Voiden.png
+
+screenshots:
+  - Voiden/screenshot.png
+
+authors:
+  - name: VoidenHQ
+    url: https://github.com/VoidenHQ
+
+links:
+  - type: GitHub
+    url: VoidenHQ/voiden
+  - type: Download
+    url: https://github.com/VoidenHQ/voiden/releases
+
+desktop:
+  Desktop Entry:
+    Name: Voiden
+    Exec: Voiden --no-sandbox --disable-setuid-sandbox %u
+    Terminal: false
+    Type: Application
+    Icon: Voiden
+    StartupWMClass: Voiden
+    X-AppImage-Version: 2.3.0
+    Comment: Build, Test, Document & Collaborate. Streamline your API development process
+      with Voiden
+    Categories: Utility
+    MimeType: x-scheme-handler/voiden
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: Apache-2.0
+
+electron:
+  private: true
+  author:
+    name: Voiden
+    email: info@voiden.md
+  license: Apache-2.0
+  description: Build, Test, Document & Collaborate. Streamline your API development
+    process with Voiden
+  main: ".vite/build/main.js"
+  scripts:
+    start: electron-forge start
+    package: electron-forge package
+    build:nix: npx esbuild build-assets.ts --bundle --platform=node --format=cjs --outfile=build-assets.js
+      --packages=external && node build-assets.js
+    make: NODE_OPTIONS='--max-old-space-size=4096' electron-forge make
+    publish: electron-forge publish
+    version:bump:beta-patch: node version-bump.js beta patch
+    version:bump:beta-prerelease: node version-bump.js beta prerelease
+    version:bump:stable-patch: node version-bump.js stable patch
+    version:bump:stable-minor: node version-bump.js stable minor
+    version:bump:stable-major: node version-bump.js stable major
+    publish:apt:beta: node publish-apt.js beta
+    publish:apt:stable: node publish-apt.js stable
+    publish:apt: node publish-apt.js
+    publish:snap:beta: node publish-snap.js beta
+    publish:snap:stable: node publish-snap.js stable
+    publish:snap: node publish-snap.js
+  installConfig:
+    hoistingLimits: workspaces
+  devDependencies:
+    "@electron-forge/cli": 7.4.0
+    "@electron-forge/maker-deb": 7.4.0
+    "@electron-forge/maker-dmg": 7.4.0
+    "@electron-forge/maker-rpm": 7.4.0
+    "@electron-forge/maker-zip": 7.4.0
+    "@electron-forge/plugin-auto-unpack-natives": 7.4.0
+    "@electron-forge/plugin-fuses": 7.4.0
+    "@electron-forge/plugin-vite": 7.4.0
+    "@electron-forge/publisher-s3": 7.4.0
+    "@electron/fuses": "^1.8.0"
+    "@felixrieseberg/electron-forge-maker-nsis": "^7.2.0"
+    "@pengx17/electron-forge-maker-appimage": "^1.2.1"
+    "@types/adm-zip": "^0"
+    "@types/js-yaml": "^4"
+    "@types/mime-types": "^2"
+    "@types/selfsigned": "^2.1.0"
+    "@voiden/executors": "*"
+    "@voiden/runner": workspace:*
+    aws-sdk: 2.1692.0
+    commander: "^12.0.0"
+    dotenv: "^16.4.5"
+    electron: 39.8.8
+    electron-updater: "^6.3.9"
+    electron-updater-yaml: "^1.0.0"
+    semver: "^7.6.0"
+    ts-node: "^10.0.0"
+    typescript: "~4.5.4"
+    undici: "^7.28.0"
+    vite: "^6.4.3"
+  keywords: []
+  dependencies:
+    "@grpc/grpc-js": "^1.14.4"
+    adm-zip: "^0.6.0"
+    fast-glob: "^3.3.3"
+    graphql: "^16.12.0"
+    graphql-ws: "^6.0.6"
+    js-yaml: "^4.1.0"
+    mime-types: "^2.1.35"
+    node-pty: 1.0.0
+    remove-markdown: "^0.6.2"
+    selfsigned: "^5.5.0"
+    simple-git: "^3.36.0"
+    sudo-prompt: "^9.2.1"
+  build:
+    appId: md.voiden.app
+    productName: voiden
+    executableName: Voiden
+    win:
+      target:
+      - nsis
+      icon: src/images/icon.ico
+      artifactName: Voiden Setup ${version}.${ext}
+    nsis:
+      oneClick: true
+      perMachine: true
+      shortcutName: Voiden
+      uninstallDisplayName: Voiden
+      installerIcon: src/images/icon.ico
+      uninstallerIcon: src/images/icon.ico
+      installerHeaderIcon: src/images/icon.ico
+      createDesktopShortcut: always
+      createStartMenuShortcut: true
+    linux:
+      icon: src/images/icon.png
+      category: Development
+---

@@ -1,0 +1,138 @@
+---
+layout: app
+
+permalink: /Hive/
+description: Native macOS app for managing git worktrees and AI-powered coding sessions
+license: MIT
+
+icons:
+  - Hive/icons/512x512/hive.png
+
+screenshots:
+  - Hive/screenshot.png
+
+authors:
+  - name: morapelker
+    url: https://github.com/morapelker
+
+links:
+  - type: GitHub
+    url: morapelker/hive
+  - type: Download
+    url: https://github.com/morapelker/hive/releases
+
+desktop:
+  Desktop Entry:
+    Name: Hive
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: hive
+    StartupWMClass: Hive
+    X-AppImage-Version: 1.2.49
+    Comment: Native macOS app for managing git worktrees and AI-powered coding sessions
+    MimeType: x-scheme-handler/hive
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: MIT
+
+electron:
+  main: "./out/main/index.js"
+  author: morapelker <morapelker@users.noreply.github.com>
+  license: MIT
+  packageManager: pnpm@10.24.0
+  homepage: https://github.com/morapelker/hive#readme
+  repository:
+    type: git
+    url: git+https://github.com/morapelker/hive.git
+  bugs:
+    url: https://github.com/morapelker/hive/issues
+  pnpm:
+    onlyBuiltDependencies:
+    - better-sqlite3
+    - electron
+    - esbuild
+    - msw
+    - node-pty
+  dependencies:
+    "@anthropic-ai/claude-agent-sdk": "^0.3.197"
+    "@anthropic-ai/sdk": "^0.123.0"
+    "@codemirror/autocomplete": "^6.20.2"
+    "@codemirror/commands": "^6.10.3"
+    "@codemirror/lang-cpp": "^6.0.3"
+    "@codemirror/lang-css": "^6.3.1"
+    "@codemirror/lang-html": "^6.4.11"
+    "@codemirror/lang-java": "^6.0.2"
+    "@codemirror/lang-javascript": "^6.2.5"
+    "@codemirror/lang-json": "^6.0.2"
+    "@codemirror/lang-markdown": "^6.5.0"
+    "@codemirror/lang-python": "^6.2.1"
+    "@codemirror/lang-rust": "^6.0.2"
+    "@codemirror/lang-sql": "^6.10.0"
+    "@codemirror/lang-xml": "^6.1.0"
+    "@codemirror/lang-yaml": "^6.1.3"
+    "@codemirror/language": "^6.12.2"
+    "@codemirror/legacy-modes": "^6.5.2"
+    "@codemirror/lint": "^6.9.6"
+    "@codemirror/search": "^6.6.0"
+    "@codemirror/state": "^6.6.0"
+    "@codemirror/theme-one-dark": "^6.1.3"
+    "@codemirror/view": "^6.40.0"
+    "@electron-toolkit/utils": "^4.0.0"
+    "@lottiefiles/dotlottie-web": "^0.71.0"
+    "@monaco-editor/react": "^4.7.0"
+    "@opencode-ai/sdk": "^1.1.51"
+    "@radix-ui/react-context-menu": "^2.2.16"
+    "@radix-ui/react-dialog": "^1.1.15"
+    "@radix-ui/react-dropdown-menu": "^2.1.16"
+    "@radix-ui/react-slot": "^1.1.1"
+    "@radix-ui/react-tabs": "^1.1.13"
+    "@tanstack/react-virtual": "^3.13.18"
+    "@xterm/addon-fit": "^0.11.0"
+    "@xterm/addon-search": "^0.16.0"
+    "@xterm/addon-web-links": "^0.12.0"
+    "@xterm/addon-webgl": "^0.19.0"
+    "@xterm/xterm": "^6.0.0"
+    ansi-to-react: "^6.2.6"
+    better-sqlite3: "^12.8.0"
+    chokidar: "^3.6.0"
+    cmdk: 0.2.1
+    codemirror: "^6.0.2"
+    diff2html: "^3.4.56"
+    discord.js: "^14.26.4"
+    effect: "^3.18.0"
+    electron-updater: "^6.8.3"
+    graphql-request: "^7.4.0"
+    highlight.js: "^11.11.1"
+    lucide-react: "^0.468.0"
+    monaco-editor: "^0.55.1"
+    motion: "^12.38.0"
+    node-addon-api: "^8.6.0"
+    node-pty: "^1.1.0"
+    posthog-node: "^5.26.0"
+    qrcode-terminal: "^0.12.0"
+    radix-ui: "^1.4.3"
+    react: "^19.0.0"
+    react-dom: "^19.0.0"
+    react-markdown: "^10.1.0"
+    react-syntax-highlighter: "^16.1.0"
+    remark-gfm: "^4.0.1"
+    sherpa-onnx-node: 1.13.7
+    simple-git: "^3.30.0"
+    sonner: "^1.7.1"
+    ulidx: "^2.4.1"
+    ws: "^8.21.0"
+    yaml: "^2.8.2"
+    zod: "^4.0.0"
+    zustand: "^5.0.2"
+---

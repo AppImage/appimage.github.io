@@ -1,0 +1,123 @@
+---
+layout: app
+
+permalink: /mtgatool-desktop/
+license: GPL-3.0
+
+icons:
+  - mtgatool-desktop/icons/512x512/mtgatool-desktop.png
+
+screenshots:
+  - mtgatool-desktop/screenshot.png
+
+authors:
+  - name: mtgatool
+    url: https://github.com/mtgatool
+
+links:
+  - type: GitHub
+    url: mtgatool/mtgatool-desktop
+  - type: Download
+    url: https://github.com/mtgatool/mtgatool-desktop/releases
+
+desktop:
+  Desktop Entry:
+    Name: mtgatool-desktop
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: mtgatool-desktop
+    StartupWMClass: mtgatool-desktop
+    X-AppImage-Version: 7.2.4
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: GPL-3.0
+
+electron:
+  main: build/electron.js
+  homepage: "./"
+  dependencies:
+    "@electron/remote": "^2.1.0"
+    "@reduxjs/toolkit": "^1.5.0"
+    "@sqlite.org/sqlite-wasm": "^3.53.0-build1"
+    "@supabase/supabase-js": 2.39.8
+    "@testing-library/jest-dom": "^5.11.4"
+    "@testing-library/react": "^11.1.0"
+    "@testing-library/user-event": "^12.1.10"
+    "@welldone-software/why-did-you-render": "^6.2.1"
+    automerge: "^1.0.1-preview.5"
+    axios: "^0.21.1"
+    bytebuffer: "^5.0.1"
+    date-fns: "^2.19.0"
+    electron-devtools-installer: "^3.2.0"
+    electron-log: "^5.0.0"
+    electron-updater: "^6.1.4"
+    extract-zip: "^2.0.1"
+    follow-redirects: "^1.14.3"
+    google-protobuf: "^3.15.6"
+    history: "^4.10.1"
+    html-to-image: "^1.11.13"
+    lodash: "^4.17.21"
+    match-sorter: "^6.3.0"
+    mathjs: "^9.3.0"
+    mtga-reader: "^0.1.13"
+    mtgatool-shared: "^2.2.0"
+    nan: "^2.20.0"
+    proto2typescript: "^2.2.0"
+    protobufjs: "~5.0.3"
+    qrcode: "^1.5.4"
+    queue: "^6.0.2"
+    random-words: "^1.1.2"
+    react: "^17.0.2"
+    react-autosuggest: "^10.1.0"
+    react-color: "^2.19.3"
+    react-day-picker: "^7.4.10"
+    react-dom: "^17.0.2"
+    react-minimal-pie-chart: "^8.4.1"
+    react-redux: "^7.2.2"
+    react-router-dom: "^5.2.0"
+    react-scripts: 4.0.3
+    react-spring: "^8.0.27"
+    react-table: "^7.7.0"
+    redux: "^4.0.5"
+    shortid: "^2.2.16"
+    tar-fs: "^2.1.1"
+    typescript: "^4.1.2"
+    web-vitals: "^1.0.1"
+    zlib: "^1.0.5"
+  browserslist:
+    production:
+    - ">0.2%"
+    - not dead
+    - not op_mini all
+    development:
+    - last 1 chrome version
+    - last 1 firefox version
+    - last 1 safari version
+  config:
+    commitizen:
+      path: "./node_modules/cz-conventional-changelog"
+  husky:
+    hooks:
+      pre-commit: lint-staged
+  lint-staged:
+    "*.{js,jsx,ts,tsx}":
+    - eslint --fix
+  repository:
+    type: git
+    url: https://github.com/mtgatool/mtgatool-desktop.git
+  optionalDependencies:
+    dmg-license: "^1.0.11"
+  resolutions:
+    nan: 2.18.0
+---

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Arka Plan (Koyu Linux Terminal/Arayüz Hissi) -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    
+    <!-- Açılış/Power Butonu Rengi (Canlı Camgöbeği/Mavi) -->
+    <linearGradient id="power" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+
+    <!-- Analiz/Sistem Ritmi Rengi (Uyarıcı Turuncu/Sarı) -->
+    <linearGradient id="pulse" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#FBBF24" />
+    </linearGradient>
+  </defs>
+  
+  <!-- İkon Zemin (Yuvarlatılmış Kare) -->
+  <rect width="512" height="512" rx="120" fill="url(#bg)" />
+  
+  <!-- 1. Kısım: Açılışı (Boot) Temsil Eden 'Power' Butonu -->
+  <!-- Üstteki Dikey Çizgi -->
+  <path d="M 256 96 L 256 224" stroke="url(#power)" stroke-width="44" stroke-linecap="round" />
+  
+  <!-- Power Butonunun Yarım Çemberi -->
+  <path d="M 164 156 A 144 144 0 1 0 348 156" fill="none" stroke="url(#power)" stroke-width="44" stroke-linecap="round" />
+  
+  <!-- 2. Kısım: Analizi (Analyzer) Temsil Eden Sistem Ritmi / EKG -->
+  <path d="M 160 288 L 208 288 L 232 232 L 272 352 L 304 264 L 328 288 L 352 288" fill="none" stroke="url(#pulse)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Analiz çizgisinin sonundaki aktif nokta -->
+  <circle cx="352" cy="288" r="10" fill="#FBBF24" />
+</svg>

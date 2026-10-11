@@ -1,0 +1,51 @@
+---
+layout: app
+
+permalink: /Meguri/
+description: "Meguri is a local video and image browser with thumbnails, search, and playback"
+license: "MIT"
+
+icons:
+  - Meguri/icons/512x512/meguri.png
+
+screenshots:
+  - Meguri/screenshot.png
+
+authors:
+  - name: "zabuton-app"
+    url: "https://github.com/zabuton-app"
+
+links:
+  - type: GitHub
+    url: zabuton-app/meguri
+  - type: Download
+    url: https://github.com/zabuton-app/meguri/releases
+
+desktop:
+  Desktop Entry:
+    Name: Meguri
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: meguri
+    StartupWMClass: Meguri
+    X-AppImage-Version: 0.8.0
+    Comment: Meguri is a local video and image browser with thumbnails, search, and
+      playback
+    MimeType: x-scheme-handler/meguri
+    Categories: AudioVideo
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: MIT
+
+electron: {"name":"meguri","private":true,"version":"0.8.0","description":"Meguri is a local video and image browser with thumbnails, search, and playback","license":"MIT","author":{"name":"amgsk","email":"y.amgsk@gmail.com"},"homepage":"https://github.com/zabuton-app/meguri#readme","repository":{"type":"git","url":"git+https://github.com/zabuton-app/meguri.git"},"bugs":{"url":"https://github.com/zabuton-app/meguri/issues"},"main":"out/main/main.js","engines":{"node":">=22.22"},"overrides":{"@emoji-mart/react":{"react":"$react"}},"dependencies":{"@dnd-kit/core":"^6.3.1","@dnd-kit/modifiers":"^9.0.0","@dnd-kit/sortable":"^10.0.0","@dnd-kit/utilities":"^3.2.2","@emoji-mart/data":"^1.2.1","@emoji-mart/react":"^1.1.1","@radix-ui/react-context-menu":"^2.3.1","@radix-ui/react-dialog":"^1.1.17","@radix-ui/react-dropdown-menu":"^2.1.4","@radix-ui/react-popover":"^1.1.23","@radix-ui/react-scroll-area":"^1.2.11","@radix-ui/react-select":"^2.3.0","@radix-ui/react-slot":"^1.1.1","@radix-ui/react-switch":"^1.3.1","@tanstack/react-query":"^5.62.0","@tanstack/react-virtual":"^3.14.2","better-sqlite3":"^12.11.1","class-variance-authority":"^0.7.1","clsx":"^2.1.1","cmdk":"^1.1.1","electron-log":"^5.4.4","embla-carousel-react":"^8.6.0","emoji-mart":"^5.6.0","ffmpeg-static":"^5.2.0","ffprobe-static":"^3.1.0","lucide-react":"^0.469.0","react":"^19.2.8","react-dom":"^19.2.8","react-router":"^8.3.0","sonner":"^2.0.7","tailwind-merge":"^2.6.0","tinykeys":"^3.1.0","zod":"^4.4.3"},"allowScripts":{"better-sqlite3@12.11.1":true,"electron-winstaller@5.4.0":true,"esbuild@0.25.12":true,"ffmpeg-static@5.3.0":true,"electron@42.11.0":true,"ffprobe-static@3.1.0":true}}
+---

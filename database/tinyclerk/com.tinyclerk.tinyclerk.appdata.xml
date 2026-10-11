@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+	<metadata_license>CC-BY-SA-4.0</metadata_license>
+
+	<id>com.tinyclerk.tinyclerk</id>
+	<name>tinyclerk</name>
+	<summary>TinyClerk is an easy to use double-entry bookkeeping application</summary>
+	<developer_name>Open Soft Oy</developer_name>
+	<url type="homepage">https://tinyclerk.com</url>
+	<project_license>LicenseRef-Proprietary</project_license>
+	<content_rating type="oars-1.0" />
+
+	<launchable type="desktop-id">com.tinyclerk.tinyclerk.desktop</launchable>
+
+	<description>
+		<p>TinyClerk is an easy to use double-entry bookkeeping application.
+It is designed for the entrepreneur, consultant, free-lancer or small-business owner who wants to do his own bookkeeping.
+TinyClerk is single-user, off-line, secure and free.
+It is available for Windows, Linux and Android, the data can be shared with multiple devices and across platforms.</p>
+	</description>
+
+	<!-- Freedesktop Categories -->
+	<categories>
+		<category>Office</category>
+	</categories>
+
+	<keywords>
+		<keyword>accounting</keyword>
+		<keyword>bookkeeping</keyword>
+		<keyword>office</keyword>
+		<keyword>business</keyword>
+	</keywords>
+
+	<screenshots>
+		<screenshot type="default">
+			<image>https://tinyclerk.com/sswin/win01-main.jpg</image>
+		</screenshot>
+	</screenshots>
+
+	<releases>
+		<release version="Version 1.4.0" date="2025-02-15"><description><ul>
+<li>Initial release for .NET Core v8.0</li>
+<li>Initial release for Linux</li>
+<li>Linux packaging with PupNet Deploy</li>
+<li>Old Voucher UI (pre 1.4.0) removed</li>
+</ul></description></release>
+	</releases>
+
+</component>

@@ -1,0 +1,10 @@
+{
+  "name": "slopinator",
+  "productName": "Slopinator",
+  "version": "0.3.0",
+  "description": "Audio mastering app wrapping the master.py chain",
+  "main": "src/main/main.js",
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true
+}

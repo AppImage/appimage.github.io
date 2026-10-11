@@ -1,0 +1,15 @@
+{
+  "name": "requesto-electron",
+  "version": "1.10.2",
+  "description": "Requesto - API Client",
+  "homepage": "https://requesto.com.au",
+  "main": "dist/main.js",
+  "author": {
+    "name": "Matthew Allen",
+    "email": "matt@retoggle.com.au"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

@@ -3,6 +3,7 @@ layout: app
 
 permalink: /OVideo/
 description: Video Editor
+license: AGPL-3.0
 
 icons:
   - OVideo/icons/128x128/ovideo.png
@@ -33,6 +34,9 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: bundled
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: true
 
 appdata:
   Type: desktop-application

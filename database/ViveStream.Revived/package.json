@@ -1,0 +1,17 @@
+{
+  "name": "vivestream-revived",
+  "version": "13.3.0",
+  "description": "Your personal, offline, and stylish media sanctuary. Revived.",
+  "main": "src/main/main.js",
+  "author": "Md Siam Mia",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.3.3",
+    "knex": "^3.1.0",
+    "sortablejs": "^1.15.6",
+    "sqlite3": "^5.1.7"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}

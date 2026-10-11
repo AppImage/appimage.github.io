@@ -1,0 +1,43 @@
+{
+  "name": "@blackbelt-technology/pi-dashboard-electron",
+  "productName": "pi-dashboard",
+  "version": "0.8.0",
+  "private": true,
+  "description": "Electron desktop app for pi-dashboard",
+  "author": "BlackBelt Technology <oss@blackbelt.hu>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlackBeltTechnology/pi-agent-dashboard"
+  },
+  "type": "module",
+  "main": ".vite/build/main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "start:dev": "ELECTRON_DEV=1 NODE_OPTIONS='--import tsx' electron src/main.ts",
+    "dev:cdp": "ELECTRON_DEV=1 NODE_OPTIONS='--import tsx' electron src/main.ts --debug-cdp",
+    "make": "electron-forge make",
+    "package": "electron-forge package",
+    "icons": "electron-icon-builder --input=resources/icon.png --output=resources --flatten",
+    "test": "HOME=$(mktemp -d -t pi-elec-test-XXXXXX) vitest run"
+  },
+  "dependencies": {
+    "@blackbelt-technology/pi-dashboard-shared": "^0.8.0",
+    "electron-updater": "^6.3.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.6.0",
+    "@electron-forge/maker-deb": "^7.6.0",
+    "@electron-forge/plugin-vite": "^7.6.0",
+    "@pengx17/electron-forge-maker-appimage": "^1.2.1",
+    "@types/semver": "^7.7.0",
+    "electron": "43.4.1",
+    "electron-builder": "^26.8.1",
+    "png-to-ico": "^2.1.8",
+    "semver": "^7.7.1",
+    "sharp": "^0.33.5",
+    "vite": "^6.0.0"
+  },
+  "optionalDependencies": {
+    "electron-icon-builder": "^2.0.1"
+  }
+}

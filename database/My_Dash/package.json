@@ -1,0 +1,28 @@
+{
+  "name": "claude-mission-control",
+  "version": "1.0.0-beta",
+  "private": true,
+  "description": "A local, read-only observability dashboard for Claude Code — live event stream, session kanban, token/cost charts and a 3D tool-call graph.",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "author": {
+    "name": "Belkis Aslani",
+    "email": "129214713+BEKO2210@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/BEKO2210/My_Dash",
+  "main": "electron/main.js",
+  "dependencies": {
+    "better-sqlite3": "^12.10.0",
+    "ccusage": "^20.0.3",
+    "clsx": "^2.1.1",
+    "d3-force-3d": "^3.0.6",
+    "lucide-react": "^1.16.0",
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-force-graph-3d": "^1.29.1",
+    "recharts": "^3.8.1",
+    "tailwind-merge": "^2.6.0",
+    "three": "^0.184.0",
+    "zod": "^4.4.3"
+  }
+}

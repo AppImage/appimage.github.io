@@ -1,0 +1,38 @@
+{
+  "name": "lampaua-desktop",
+  "productName": "LampaUa",
+  "version": "1.5.21",
+  "description": "Десктопний клієнт LampaUa",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hlushok/lampaua-desktop"
+  },
+  "main": "src/main.js",
+  "engines": {
+    "node": ">=24.0.0 <25.0.0",
+    "npm": "please-use-yarn",
+    "yarn": ">= 4.0.0"
+  },
+  "commit-and-tag-version": {
+    "scripts": {
+      "postchangelog": "yarn lintfix"
+    }
+  },
+  "dependencies": {
+    "electron-store": "11.0.2",
+    "electron-updater": "6.8.9",
+    "which": "7.0.0"
+  },
+  "author": {
+    "name": "yumata, Kolovatoff, Hlushok",
+    "email": "stpuh2@gmail.com"
+  },
+  "license": "GPL-2.0",
+  "files": [
+    "assets/**/*",
+    "src/**/*",
+    "node_modules/*",
+    "!dist/*"
+  ],
+  "packageManager": "yarn@4.9.4"
+}

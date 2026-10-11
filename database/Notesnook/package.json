@@ -2,18 +2,18 @@
   "name": "@notesnook/desktop",
   "productName": "Notesnook",
   "description": "Your private note taking space",
-  "version": "1.8.9",
+  "version": "2.2.1",
+  "appAppleId": "1544027013",
   "private": true,
   "main": "./build/electron.js",
   "homepage": "https://notesnook.com/",
   "repository": "https://github.com/streetwriters/notesnook",
   "dependencies": {
-    "diary": "^0.3.0",
+    "diary": "^0.3.1",
     "electron-better-ipc": "^2.0.1",
     "electron-serve": "^1.1.0",
-    "electron-updater": "^4.6.5",
-    "isomorphic-fetch": "^3.0.0",
-    "showdown": "^2.0.3"
+    "electron-updater": "^5.2.1",
+    "isomorphic-fetch": "^3.0.0"
   },
   "author": {
     "name": "Streetwriters (Private) Ltd.",

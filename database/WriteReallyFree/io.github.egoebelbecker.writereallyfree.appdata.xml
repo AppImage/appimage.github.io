@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.egoebelbecker.writereallyfree</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>WriteReallyFree</name>
+  <summary>Synchronize and manage FreeWrite smart typewriter documents</summary>
+  <description>
+    <p>
+      WriteReallyFree is a desktop utility designed to backup and organize document files directly from FreeWrite smart typewriters over USB without requiring third-party cloud services.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Automatic device detection and local backup sync for FreeWrite devices</li>
+      <li>Document organization with customizable folder prefixes</li>
+      <li>Automatic document format conversion (including TXT and DOCX)</li>
+      <li>Clean desktop interface with customizable themes</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">writereallyfree.desktop</launchable>
+  <url type="homepage">https://github.com/egoebelbecker/writereallyfree</url>
+  <url type="bugtracker">https://github.com/egoebelbecker/writereallyfree/issues</url>
+  <url type="donation">https://ko-fi.com/egoebelbecker</url>
+  <developer id="io.github.egoebelbecker">
+    <name>egoebelbecker</name>
+  </developer>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main application interface</caption>
+      <image>https://raw.githubusercontent.com/egoebelbecker/writereallyfree/main/packaging/wrf_screen.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.2.1" date="2026-07-27"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Name=e2 SAT Editor
+Comment=Satellite channel lists editor
+TryExec=e2-sat-editor
+Exec=e2-sat-editor %F
+Icon=e2-sat-editor
+Categories=AudioVideo;Video;TV;
+X-AppImage-Version=18d3358
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Tue Jun 13 19:57:14 2023 UTC                using RSA key A0ED503659EA1F207E3EF378D6D3CC50B6D8434D Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

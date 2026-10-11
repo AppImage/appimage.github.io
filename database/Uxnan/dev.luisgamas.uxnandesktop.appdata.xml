@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata for the Linux packages (AppImage, .deb, .rpm). Software
+  centres and the AppImage catalog read the name, summary, description,
+  license and links from here. Wired in through `bundle.linux.*.files` in
+  `tauri.conf.json`; the component id is the app's Tauri `identifier`, and the
+  launchable is the desktop file Tauri generates from `productName`.
+
+  The `.appdata.xml` suffix is deliberate: the AppImage catalog's lint and
+  page generator only look for `*appdata.xml`. No version list or screenshot
+  lives here, so nothing in this file goes stale with a release.
+
+  Written for AppStream 0.15 (Ubuntu 22.04, what `linux-appimage.sh check`
+  validates with), which rejects newer tags as warnings: hence
+  `developer_name` rather than `<developer>`, and no `vcs-browser` link.
+-->
+<component type="desktop-application">
+  <id>dev.luisgamas.uxnandesktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MPL-2.0</project_license>
+  <name>Uxnan Desktop</name>
+  <summary>Run and review several CLI coding agents in parallel</summary>
+  <developer_name>Luis Gamas</developer_name>
+  <description>
+    <p>
+      Uxnan Desktop is an Agent Development Environment: a lightweight,
+      terminal-centric app to orchestrate several CLI coding agents at once,
+      each isolated in its own git worktree and terminal. It is not an IDE, but
+      an orchestration, monitoring and change-review layer around the agents
+      you already use.
+    </p>
+    <ul>
+      <li>Run agents side by side, each in its own worktree and pseudoterminal</li>
+      <li>Follow every agent's state and review its changes as diffs before you keep them</li>
+      <li>Continue a session as a chat, or from your phone through the Uxnan bridge</li>
+      <li>Renders through the system webview, so it stays light on memory</li>
+    </ul>
+    <p>Uxnan is in alpha.</p>
+  </description>
+  <launchable type="desktop-id">Uxnan Desktop.desktop</launchable>
+  <url type="homepage">https://uxnan.pages.dev</url>
+  <url type="bugtracker">https://github.com/luisgamas/uxnan/issues</url>
+  <categories>
+    <category>Development</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+</component>

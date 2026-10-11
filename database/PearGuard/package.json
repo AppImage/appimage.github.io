@@ -1,0 +1,24 @@
+{
+  "name": "pearguard-desktop",
+  "version": "1.0.23",
+  "description": "PearGuard desktop child client",
+  "homepage": "https://github.com/peerloomllc/pearguard",
+  "author": {
+    "name": "PeerLoom LLC",
+    "email": "support@peerloomllc.com"
+  },
+  "private": true,
+  "main": "src/main/index.js",
+  "dependencies": {
+    "active-win": "^8.2.1",
+    "b4a": "^1.8.0",
+    "electron-updater": "^6.8.3",
+    "hyperbee": "^2.27.3",
+    "hypercore": "^11.26.0",
+    "hypercore-errors": "^1.5.0",
+    "hyperdht": "^6.29.0",
+    "hyperswarm": "^4.17.0",
+    "sodium-native": "^4.3.3",
+    "z32": "^1.1.0"
+  }
+}
