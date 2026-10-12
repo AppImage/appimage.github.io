@@ -144,21 +144,27 @@ GitHub Pages (Jekyll) from this repository.
    other forges, the owner on shared hosting, else the domain). If it points
    to a different owner, it posts a comment marked
    `<!-- appimagehub-origin-check -->` and sets the yellow
-   `manual-check-needed` label (possible takeover of an entry); both are
-   withdrawn when a later push undoes the change. Exception: if both are GitHub
-   repositories and GitHub itself redirects the old repository to the new one
-   (a rename or transfer, so the same project), `check-origin.sh` exits 2 and
-   the workflow posts a neutral informational note instead — no warning, no
-   `manual-check-needed` label. This does not depend on the PR's own test run,
-   which a PR could alter.
+   `manual-check-needed` label plus `origin-changed` (the reason; possible
+   takeover of an entry); all are withdrawn when a later push undoes the
+   change. Exception: when the two are the same project after all,
+   `check-origin.sh` exits 2 and the workflow posts a neutral informational
+   note instead — no warning, no labels: both are GitHub repositories and
+   GitHub itself redirects the old one to the new one (a rename or transfer),
+   or exactly one of them is a GitHub repository whose `homepage` field is on
+   the other one's site (a project moving between its own website, download
+   server or CI bucket and its repository; in October 2026, 22 of 26 flagged
+   PRs were of this kind). An OBS sub-project of the same user
+   (`home:/USER:/apps/`) counts as the same owner. This does not depend on the
+   PR's own test run, which a PR could alter.
    (`check-origin.sh` exits 1 or 2 for a changed owner; the step must read that
    with `RC=0 ; RESULT=$(...) || RC=$?`, as `RESULT=$(...) ; RC=$?` ends the step
    under `bash -e` before anything is reported.)
    The same workflow also sets `manual-check-needed` (with its own comment,
    `<!-- appimagehub-name-check -->`) on a PR that adds or renames to a file in
    `data/` whose name has more than two hyphens (often a version or file name
-   instead of the application's name); withdrawn when a later push fixes it, and
-   the label stays while either check flags the PR.
+   instead of the application's name), plus the reason label `name-check`;
+   withdrawn when a later push fixes it, and `manual-check-needed` stays while
+   either check flags the PR.
 
    `.github/workflows/one-file-per-pr.yml` (`pull_request_target`, `opened` and
    `reopened`) closes a pull request from a fork whose author is not a maintainer
