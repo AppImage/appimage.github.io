@@ -6,9 +6,12 @@
 #
 # Usage: check-origin.sh OLD_URL NEW_URL
 #   Prints the origins and exits 0 if they are the same, 1 if they differ,
-#   or 2 if they differ but both are on GitHub and GitHub itself redirects the
-#   old repository to the new one (a rename or transfer: the same project, not
-#   a takeover). Uses the GitHub API (GH_TOKEN if set, else unauthenticated).
+#   or 2 if they differ but are the same project after all: both are on GitHub
+#   and GitHub itself redirects the old repository to the new one (a rename or
+#   transfer), or one of them is a GitHub repository whose homepage is the
+#   other one's site (a project moving between its own website, download
+#   server or CI bucket and its repository). Uses the GitHub API (GH_TOKEN if
+#   set, else unauthenticated).
 #        check-origin.sh --origin URL
 #   Prints the origin of URL, e.g. "github.com/owner", "gitlab.com/owner",
 #   "sourceforge.net/projects/name" or "example.com".
@@ -43,8 +46,9 @@ origin() {
       elif [[ "$HOST" != downloads.* && "$HOST" != master.dl.* ]] ; then echo "sourceforge.net/projects/${HOST%%.*}"
       else echo "$HOST" ; fi ;;
     download.opensuse.org)
-      # https://download.opensuse.org/repositories/home:/USER/...
-      [ "$FIRST" == repositories ] && echo "$HOST/repositories/$SECOND$(echo "$PATHPART" | cut -d / -f 4 | tr 'A-Z' 'a-z' | sed 's|^\(.\)|/\1|')" || echo "$HOST" ;;
+      # https://download.opensuse.org/repositories/home:/USER/... ; a sub-project
+      # of the same user (home:/USER:/apps/...) is the same owner
+      [ "$FIRST" == repositories ] && echo "$HOST/repositories/$SECOND$(echo "$PATHPART" | cut -d / -f 4 | tr 'A-Z' 'a-z' | sed 's|:$||; s|^\(.\)|/\1|')" || echo "$HOST" ;;
     s3.amazonaws.com|s3.*.amazonaws.com|storage.googleapis.com|dl.bintray.com|bintray.com|transfer.sh|ipfs.io|keybase.pub)
       # Shared hosting with the owner (bucket, user) in the path
       echo "$HOST/$FIRST" ;;
@@ -98,6 +102,32 @@ github_moved() {
   [ -n "$RESOLVED" ] && [ "$RESOLVED" == "$NEW" ]
 }
 
+# The homepage GitHub lists for a repository (empty if none or not readable)
+gh_homepage() {
+  local AUTH=()
+  [ -n "${GH_TOKEN:-}" ] && AUTH=(-H "Authorization: Bearer $GH_TOKEN")
+  curl -sSL --max-time 20 "${AUTH[@]}" \
+      -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" \
+      "https://api.github.com/repos/$1" 2>/dev/null \
+    | grep -o '"homepage"[[:space:]]*:[[:space:]]*"[^"]*"' | head -n 1 \
+    | sed -E 's/.*:[[:space:]]*"([^"]*)"$/\1/'
+}
+
+# Whether one URL is a GitHub repository whose homepage is on the other URL's
+# site: the project moved between its own website (download server, CI
+# bucket) and its repository, in either direction. Same project, not a
+# takeover. Only when exactly one of the two is a GitHub repository.
+github_homepage_matches() {
+  local A B REPO SITE HOME
+  A=$(gh_repo "$1" || true) ; B=$(gh_repo "$2" || true)
+  if [ -n "$B" ] && [ -z "$A" ] ; then REPO="$B" ; SITE="$1"
+  elif [ -n "$A" ] && [ -z "$B" ] ; then REPO="$A" ; SITE="$2"
+  else return 1 ; fi
+  HOME=$(gh_homepage "$REPO")
+  [[ "$HOME" == http* ]] || return 1
+  [ "$(origin "$HOME")" == "$(origin "$SITE")" ]
+}
+
 if [ "$1" == "--origin" ] ; then
   origin "$2"
   echo
@@ -108,7 +138,9 @@ OLD=$(origin "$1")
 NEW=$(origin "$2")
 echo "$OLD $NEW"
 [ "$OLD" == "$NEW" ] && exit 0
-# Different owner, but GitHub redirects the old repository to the new one:
-# a rename or transfer, the same project (informational, not a takeover warning)
+# Different owner, but the same project after all (informational, not a
+# takeover warning): GitHub redirects the old repository to the new one (a
+# rename or transfer), or the GitHub repository's homepage is the other site
 github_moved "$1" "$2" && exit 2
+github_homepage_matches "$1" "$2" && exit 2
 exit 1
