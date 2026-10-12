@@ -735,22 +735,42 @@ while read -r FULLNAME ; do
     fi
   done
 
-  # Very high star count for a brand-new project: a sign of bought or
-  # botted stars, so a maintainer should look (label manual-check-needed).
-  # Suspicious when the repository gathered stars implausibly fast: created
-  # not long ago yet already highly starred (age in days from .created_at).
+  # Very high star count for a brand-new project: can be a sign of bought or
+  # botted stars, so a maintainer should look (labels suspicious-stars and
+  # manual-check-needed). Suspicious when the repository gathered stars
+  # implausibly fast (created not long ago yet already highly starred) AND
+  # the rest of the repository does not look like a real project: real
+  # projects that take off (the press writes about them) have forks in
+  # proportion to their stars and a commit history, bought stars have
+  # neither. In October 2026, 61 of 73 PRs flagged by the velocity rule alone
+  # were genuine (fork ratio and commit count cleared them), so a flag now
+  # needs stars/forks above 30 (or fewer than 10 forks) and fewer than 300
+  # commits (one request: the last page number of commits?per_page=1).
   SUSPICIOUS_STARS=""
+  STARS_FACTS=""
   CREATED=$(jq -r '.created_at // empty' <<<"$META")
+  FORKS=$(jq -r '.forks_count // 0' <<<"$META")
+  [[ "$FORKS" =~ ^[0-9]+$ ]] || FORKS=0
   if [[ "$CREATED" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2} ]] && [[ "$STARS" =~ ^[0-9]+$ ]] ; then
     CREATED_S=$(date -u -d "${CREATED%%T*}" +%s 2>/dev/null || date -u -j -f %Y-%m-%d "${CREATED%%T*}" +%s 2>/dev/null || echo 0)
     if [ "$CREATED_S" -gt 0 ] ; then
       AGE_DAYS=$(( ( $(date -u +%s) - CREATED_S ) / 86400 ))
       [ "$AGE_DAYS" -lt 1 ] && AGE_DAYS=1
       # More than 15 stars per day on average, and young enough that this is
-      # not just an old popular project (under ~2 years): flag it
+      # not just an old popular project (under ~2 years)
       if [ "$AGE_DAYS" -lt 730 ] && [ "$STARS" -ge $(( AGE_DAYS * 15 )) ] && [ "$STARS" -ge 300 ] ; then
-        SUSPICIOUS_STARS="$STARS stars for a repository created $AGE_DAYS day(s) ago ($(sanitize "${CREATED%%T*}"))"
-        echo "    suspicious stars? $SUSPICIOUS_STARS"
+        COMMITS=$(api GET "repos/$OWNER/$RNAME/commits?per_page=1" -D - -o /dev/null 2>/dev/null \
+          | grep -i '^link:' | grep -o 'page=[0-9]*>; rel="last"' | grep -o '[0-9]*' | head -n 1)
+        [[ "$COMMITS" =~ ^[0-9]+$ ]] || COMMITS=1
+        STARS_FACTS="$STARS stars, $FORKS forks, $COMMITS commits, created $AGE_DAYS day(s) ago ($(sanitize "${CREATED%%T*}"))"
+        # Established after all: forks in proportion (at least 10, and no more
+        # than 30 stars per fork), or a real commit history
+        if { [ "$FORKS" -ge 10 ] && [ $(( STARS / FORKS )) -le 30 ] ; } || [ "$COMMITS" -ge 300 ] ; then
+          echo "    fast-growing but established: $STARS_FACTS"
+        else
+          SUSPICIOUS_STARS="$STARS_FACTS"
+          echo "    suspicious stars? $SUSPICIOUS_STARS"
+        fi
       fi
     fi
   fi
@@ -769,7 +789,11 @@ while read -r FULLNAME ; do
   if [ -n "$SUSPICIOUS_STARS" ] ; then
     NOTE="$NOTE
 
-**Unusual star count:** $SUSPICIOUS_STARS (label \`manual-check-needed\`). A very high star count on a brand-new project can mean bought or botted stars; please check that the project is genuine before merging."
+**Unusual star count:** $SUSPICIOUS_STARS (labels \`suspicious-stars\` and \`manual-check-needed\`). Many stars on a brand-new repository with few forks and commits can mean bought or botted stars; please check that the project is genuine before merging. \`.github/workflows/review-suspicious-stars.yml\` looks at these numbers again after 30 days and removes the labels when they have become healthy."
+  elif [ -n "$STARS_FACTS" ] ; then
+    NOTE="$NOTE
+
+**Fast-growing project:** $STARS_FACTS. The forks and commits are in proportion to the stars, so it was not flagged."
   fi
   if [ -n "$VIA" ] ; then
     NOTE="$NOTE
@@ -855,7 +879,11 @@ discover-apps.yml. Needs a maintainer's review."
         API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/labels" -d "$(jq -n '{name:"repackaged", color:"d4c5f9", description:"Built by a third party from someone else'"'"'s application (an unofficial AppImage, repackaged)"}')" >/dev/null
     fi
     if [ -n "$SUSPICIOUS_STARS" ] ; then
-      LABELS+=(manual-check-needed)
+      # suspicious-stars says why; manual-check-needed is what the other
+      # workflows (auto-merge, health report) look at
+      LABELS+=(suspicious-stars manual-check-needed)
+      API_TOKEN="$PR_TOKEN" api GET "repos/$REPO/labels/suspicious-stars" >/dev/null 2>&1 || \
+        API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/labels" -d "$(jq -n '{name:"suspicious-stars", color:"fbca04", description:"Many stars on a brand-new repository with few forks and commits: possibly bought; review-suspicious-stars.yml re-checks after 30 days"}')" >/dev/null
       API_TOKEN="$PR_TOKEN" api GET "repos/$REPO/labels/manual-check-needed" >/dev/null 2>&1 || \
         API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/labels" -d "$(jq -n '{name:"manual-check-needed", color:"fbca04", description:"A maintainer should check this before merging"}')" >/dev/null
     fi

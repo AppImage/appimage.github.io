@@ -288,8 +288,20 @@ GitHub Pages (Jekyll) from this repository.
    a fork whose source publishes no AppImage gets the `not-upstream` label.
    A very high star count for a brand-new repository (more than ~15 stars per
    day since it was created, at least 300, under ~2 years old) can mean bought
-   or botted stars, so the PR gets the yellow `manual-check-needed` label and
-   a note (which also keeps it out of auto-merge).
+   or botted stars, but genuine projects take off like that too (in October
+   2026, 61 of 73 PRs flagged by that rule alone were genuine): so the PR is
+   only flagged when the repository also looks hollow, with fewer than 10
+   forks or more than 30 stars per fork AND fewer than 300 commits (one
+   request, the last page of `commits?per_page=1`). Then it gets the labels
+   `suspicious-stars` (the reason) and `manual-check-needed` (what auto-merge
+   and the health report look at) and a note with the numbers; a fast-growing
+   but established repository gets the numbers as a neutral note instead.
+   `.github/workflows/review-suspicious-stars.yml` (monthly, and
+   `workflow_dispatch` with `days` (30), `limit` (50) and `dry_run` (default
+   true); `code/review-suspicious-stars.sh`) looks at the labeled PRs again
+   once they are 30 days old and removes both labels with one comment (marker
+   `<!-- appimagehub-stars-review -->`) when forks or commits have caught up;
+   a repository that still looks hollow keeps them.
    The name (file in `data/`, branch
    and PR title) is the proper spelling picked by `code/pick-name.sh` from the
    repository name, the AppImage's name, the description and the README's
