@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.vibewallet.App</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://vibewallet.net/eula AND GPL-3.0-only</project_license>
+  <name>Vibe Wallet</name>
+  <summary>Non-custodial Solana wallet for Linux</summary>
+  <developer id="net.vibewallet">
+    <name>Old Growth Crypto</name>
+  </developer>
+  <description>
+    <p>
+      Vibe Wallet is a native GTK 4 and libadwaita desktop wallet for Solana.
+      It is non-custodial: your keys are encrypted and stored only on your
+      computer by the bundled signer (vibe-vault), and every transaction is
+      reviewed and confirmed locally before it is signed.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Send and receive SOL and SPL / Token-2022 tokens, including .sol and .sns names</li>
+      <li>Token swaps routed through Jupiter, with the quote and fee shown before you confirm</li>
+      <li>Native SOL staking</li>
+      <li>Ledger and Trezor hardware wallet support, with confirmation on the device</li>
+      <li>NFT gallery and a portfolio view of your holdings</li>
+      <li>Optional startup password and idle auto-lock</li>
+    </ul>
+    <p>
+      Vibe Wallet is not a bank, broker or custodian. Always keep an offline
+      backup of your recovery phrase.
+    </p>
+  </description>
+  <launchable type="desktop-id">com.vibewallet.App.desktop</launchable>
+  <icon type="stock">com.vibewallet.App</icon>
+  <url type="homepage">https://vibewallet.net</url>
+  <url type="help">https://vibewallet.net/tutorial.html</url>
+  <categories>
+    <category>Office</category>
+    <category>Finance</category>
+  </categories>
+  <keywords>
+    <keyword>solana</keyword>
+    <keyword>wallet</keyword>
+    <keyword>crypto</keyword>
+    <keyword>ledger</keyword>
+    <keyword>trezor</keyword>
+  </keywords>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Wallet overview with holdings, send, swap and stake</caption>
+      <image type="source" width="1861" height="987">https://vibewallet.net/images/screens/wallet-desk.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Portfolio view</caption>
+      <image type="source" width="1481" height="889">https://vibewallet.net/images/screens/portfolio-desk.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>vibe-wallet</binary>
+  </provides>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <content_rating type="oars-1.1">
+    <content_attribute id="money-purchasing">mild</content_attribute>
+  </content_rating>
+  <releases>
+    <release version="1.9.0" date="2026-09-28">
+      <description>
+        <p>Custom priority fees (the vault refuses fees above 0.05 SOL), multi-RPC failover, AI agent access through MCP with per-tool permissions, caps and an approval queue, a transaction explorer and network stats, searchable history with CSV export, staking validators and rewards, readable Anchor program details in the vault Confirm, and six languages (English, Español, Français, Deutsch, Italiano, Português).</p>
+      </description>
+    </release>
+    <release version="1.8.1" date="2026-09-28">
+      <description>
+        <p>Security hotfix: the browser bridge is off by default and only answers a paired VIBE extension. The desk is now distributed under the VIBE Wallet EULA and vibe-vault under GPL-3.0-only (1.8.0 was labeled MIT).</p>
+      </description>
+    </release>
+    <release version="1.8.0" date="2026-09-17">
+      <description>
+        <p>Ledger and Trezor hardware wallet signing, mass send, Token-2022 token creation, limit orders, and more accurate FIFO profit and loss.</p>
+      </description>
+    </release>
+  </releases>
+</component>
