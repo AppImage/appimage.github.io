@@ -54,7 +54,10 @@ jq -r 'select((.labels|index("auto-discovered")) and (.labels|index("screenshot-
 has manual-check-needed > "$WORKDIR/manual.txt"
 { cat "$WORKDIR/contrib-ok.txt" "$WORKDIR/disc-ok.txt" "$WORKDIR/manual.txt" ; } | sort -un > "$WORKDIR/needs.txt"
 N_NEEDS=$(count < "$WORKDIR/needs.txt")
-jq -r '.labels[]' "$WORKDIR/prs.jsonl" | grep '^error-' | sort | uniq -c | sort -rn | head -n 12 | awk '{printf "| `%s` | %s |\n", $2, $1}' > "$WORKDIR/errors.md"
+# Every count links to the GitHub search that lists exactly those pull requests
+Q="https://github.com/$REPO/pulls?q=is%3Apr+is%3Aopen"
+jq -r '.labels[]' "$WORKDIR/prs.jsonl" | grep '^error-' | sort | uniq -c | sort -rn | head -n 12 \
+  | awk -v q="$Q" '{printf "| [`%s`](%s+label%%3A%s) | [%s](%s+label%%3A%s) |\n", $2, q, $2, $1, q, $2}' > "$WORKDIR/errors.md"
 
 # --- the catalog -------------------------------------------------------------
 N_DATA=$(ls data | wc -l)
@@ -121,14 +124,14 @@ cat <<EOT
 
 ### Needs a maintainer: $N_NEEDS pull requests$LABEL_NOTE
 
-- **$N_DISC_OK auto-discovered and passed** ([list](https://github.com/$REPO/pulls?q=is%3Apr+is%3Aopen+label%3Aauto-discovered+label%3Ascreenshot-ok)): merge, or close
-- **$N_CONTRIB_OK from contributors, passed but not merged** ([list](https://github.com/$REPO/pulls?q=is%3Apr+is%3Aopen+label%3Ascreenshot-ok+-label%3Aauto-discovered)): first-time contributors or a changed download location; merge, or close
-- **$N_MANUAL flagged \`manual-check-needed\`** ([list](https://github.com/$REPO/pulls?q=is%3Apr+is%3Aopen+label%3Amanual-check-needed)): a changed owner, a suspicious name or star count, or an author who says a \`not-upstream\` label is wrong
+- **[$N_DISC_OK auto-discovered and passed]($Q+label%3Aauto-discovered+label%3Ascreenshot-ok)**: merge, or close
+- **[$N_CONTRIB_OK from contributors, passed but not merged]($Q+label%3Ascreenshot-ok+-label%3Aauto-discovered)**: first-time contributors or a changed download location; merge, or close
+- **[$N_MANUAL flagged \`manual-check-needed\`]($Q+label%3Amanual-check-needed)**: a changed owner, a suspicious name or star count, or an author who says a \`not-upstream\` label is wrong
 
 ### Handled by the automation
 
-- $TOTAL open pull requests in all: $N_DISC auto-discovered ($N_DISC_ERR of them failed their test), $N_ERR with an \`error-*\` label, $N_RETEST re-tests of catalog entries, $N_UNLABELED without any label (never tested, or the result was lost)
-- Failed tests by cause (open pull requests):
+- [$TOTAL open pull requests]($Q) in all: [$N_DISC auto-discovered]($Q+label%3Aauto-discovered) ($N_DISC_ERR of them failed their test), $N_ERR with an \`error-*\` label (the table below), $N_RETEST re-tests of catalog entries, [$N_UNLABELED without any label]($Q+no%3Alabel) (never tested, or the result was lost)
+- Failed tests by cause (open pull requests; click a label to list them):
 
 | label | pull requests |
 |---|---|
@@ -139,7 +142,7 @@ $(cat "$WORKDIR/errors.md")
 - $N_DATA entries in \`data/\`; $N_DB with a stored test result (\`database/\`), **$N_NO_DB without one** (no page on the site)
 - $N_STALE entries whose stored result is more than a year old (\`retest-stale.yml\` refreshes them, oldest first)
 - $N_PINNED entries point to one particular release (they never get a newer version; \`/retest\` on their pull request points them to the repository)
-- $N_DEAD open \`entry-unavailable\` issues (ping-authors.yml): the AppImage is gone and nobody answered
+- [$N_DEAD open \`entry-unavailable\` issues](https://github.com/$REPO/issues?q=is%3Aissue+is%3Aopen+label%3Aentry-unavailable) (ping-authors.yml): the AppImage is gone and nobody answered
 
 ### The automation
 
