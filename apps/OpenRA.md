@@ -2,16 +2,16 @@
 layout: app
 
 permalink: /OpenRA/
+license: "GPL-3.0"
 
 icons:
   - OpenRA/icons/scalable/openra-ra.svg
-
 screenshots:
-  - OpenRA/screenshot.png
+- https://www.openra.net/images/appdata/ingame-ra.png
 
 authors:
-  - name: OpenRA
-    url: https://github.com/OpenRA
+  - name: "OpenRA"
+    url: "https://github.com/OpenRA"
 
 links:
   - type: GitHub
@@ -30,10 +30,10 @@ desktop:
     Exec: openra-ra %U
     Terminal: false
     Categories: Game
-    StartupWMClass: openra-ra-release-20250330
-    MimeType: x-scheme-handler/openra-ra-release-20250330
+    StartupWMClass: openra-ra-playtest-20261011
+    MimeType: x-scheme-handler/openra-ra-playtest-20261011
   AppImageHub:
-    X-AppImage-UpdateInformation: zsync|https://master.openra.net/appimagecheck.zsync?mod=ra&channel=release
+    X-AppImage-UpdateInformation: zsync|https://master.openra.net/appimagecheck.zsync?mod=ra&channel=playtest
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)
