@@ -1,0 +1,17 @@
+{
+  "name": "tabchat",
+  "version": "1.25.0",
+  "description": "WhatsApp, Discord, Teams, Outlook en OneDrive in één venster",
+  "main": "src/main/index.js",
+  "homepage": "https://github.com/MMV2408/tabchat",
+  "author": {
+    "name": "Mike Vijverberg",
+    "email": "188231316+MMV2408@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "desktopName": "tabchat.desktop",
+  "dependencies": {
+    "dbus-next": "^0.10.2",
+    "electron-updater": "^6.6.2"
+  }
+}
