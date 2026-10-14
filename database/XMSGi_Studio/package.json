@@ -1,0 +1,26 @@
+{
+  "name": "xmsgi-studio",
+  "private": true,
+  "version": "1.1.0",
+  "license": "MIT",
+  "repository": "https://github.com/molodoy01/XMSGi-Studio",
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^2.21.0",
+    "dotenv": "^17.4.2",
+    "lucide-react": "^0.446.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "teleproto": "^1.229.0"
+  },
+  "overrides": {
+    "socks": {
+      "ip-address": "10.7.3"
+    }
+  },
+  "main": "main.cjs",
+  "xmsgiApi": {
+    "apiId": "32410711",
+    "apiHash": "0ff4fb84d6816badda23acdb9dd78705"
+  }
+}
