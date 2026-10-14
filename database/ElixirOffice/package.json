@@ -1,0 +1,9 @@
+{
+  "name": "elixiroffice-desktop",
+  "version": "0.1.0",
+  "description": "Local ElixirOffice desktop editors",
+  "main": "main.cjs",
+  "license": "AGPL-3.0-only",
+  "author": "ElixirOffice contributors",
+  "desktopName": "org.elixiroffice.desktop.desktop"
+}
