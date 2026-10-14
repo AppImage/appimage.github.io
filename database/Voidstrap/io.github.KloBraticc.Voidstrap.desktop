@@ -1,0 +1,39 @@
+[Desktop Entry]
+Type=Application
+Name=Voidstrap
+GenericName=Roblox Bootstrapper
+Comment=Customize and launch Roblox through Sober on Linux
+Exec=voidstrap %u
+TryExec=voidstrap
+Icon=io.github.KloBraticc.Voidstrap
+Terminal=false
+Categories=Game;
+Keywords=roblox;voidstrap;bootstrapper;sober;
+StartupNotify=true
+StartupWMClass=voidstrap
+X-GNOME-WMClass=voidstrap
+MimeType=x-scheme-handler/roblox;x-scheme-handler/roblox-player;x-scheme-handler/roblox-studio;x-scheme-handler/roblox-studio-auth;x-scheme-handler/voidstrap;
+Actions=LaunchRoblox;LaunchRobloxStudio;Settings;
+
+[Desktop Action LaunchRoblox]
+Name=Launch Roblox
+Exec=voidstrap -player
+
+[Desktop Action LaunchRobloxStudio]
+Name=Launch Roblox Studio
+Exec=voidstrap -studio
+
+[Desktop Action Settings]
+Name=Voidstrap Settings
+Exec=voidstrap -settings
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|KloBraticc|Voidstrap|latest|Voidstrap_*_x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.29
+X-AppImage-Payload-License=MIT
