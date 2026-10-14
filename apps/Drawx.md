@@ -3,18 +3,22 @@ layout: app
 
 permalink: /Drawx/
 description: "Offline first brainstorming and whiteboard app"
+license: "Apache-2.0"
 
 icons:
   - Drawx/icons/128x128/drawx.png
-
 screenshots:
-  - Drawx/screenshot.png
+- https://ibb.co/ZRPL5xnt
 
 authors:
+  - name: "Pratyay360"
+    url: "https://github.com/Pratyay360"
 
 links:
+  - type: GitHub
+    url: Pratyay360/drawx
   - type: Download
-    url: https://cdn.crabnebula.app/asset/01M4KFXS0B316TQ0SNNF61P4CV
+    url: https://github.com/Pratyay360/drawx/releases
 
 desktop:
   Desktop Entry:
@@ -37,4 +41,5 @@ desktop:
     X-AppImage-Runtime: static
     X-AppImage-Self-Contained: false
     X-AppImage-Glibc-Required: GLIBC_2.35
+    X-AppImage-Payload-License: Apache-2.0
 ---

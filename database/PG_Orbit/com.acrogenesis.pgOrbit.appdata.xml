@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.acrogenesis.pgOrbit</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://github.com/acrogenesis/pg-orbit-releases</project_license>
+  <name>PG Orbit</name>
+  <developer id="com.acrogenesis">
+    <name>Acrogenesis LLC</name>
+  </developer>
+  <summary>Browse, query, and edit PostgreSQL databases</summary>
+  <description>
+    <p>
+      PG Orbit is a PostgreSQL client for your desktop and your phone. Browse
+      databases, schemas, and tables, run SQL with highlighting and
+      autocomplete, and edit rows in place.
+    </p>
+    <ul>
+      <li>Schema browser for tables, views, materialized views, functions, and sequences</li>
+      <li>SQL editor with syntax highlighting, autocomplete, query parameters, history, and saved queries</li>
+      <li>Results grid with filtering, sorting, inline editing, and CSV export</li>
+      <li>Connections over SSL, SSH tunnels, and Kubernetes port forwarding</li>
+      <li>Passwords and SSH keys stay in your system keyring</li>
+      <li>On Omarchy, the app follows your desktop theme and changes with it</li>
+    </ul>
+    <p>
+      Browsing and read-only queries are free. Premium, a one-time purchase,
+      unlocks writes, table design, and CSV export. An optional subscription
+      syncs connections and saved queries across your devices.
+    </p>
+  </description>
+  <url type="homepage">https://pgorbit.com</url>
+  <url type="help">https://pgorbit.com/faq</url>
+  <url type="contact">https://pgorbit.com/faq</url>
+  <launchable type="desktop-id">com.acrogenesis.pgOrbit.desktop</launchable>
+  <branding>
+    <color type="primary" scheme_preference="light">#d6e4ff</color>
+    <color type="primary" scheme_preference="dark">#1a1b26</color>
+  </branding>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Run SQL and browse the results</caption>
+      <image>https://pgorbit.com/images/screenshots/linux-query.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Browse and edit table data</caption>
+      <image>https://pgorbit.com/images/screenshots/linux-table.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Follows your Omarchy theme, light or dark</caption>
+      <image>https://pgorbit.com/images/screenshots/linux-theme.png</image>
+    </screenshot>
+  </screenshots>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <keywords>
+    <keyword>postgres</keyword>
+    <keyword>postgresql</keyword>
+    <keyword>sql</keyword>
+    <keyword>database</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="2.6.0" date="2026-10-12">
+      <description>
+        <p>PG Orbit is now available for Linux.</p>
+        <ul>
+          <li>On Omarchy, the app, SQL editor, and results grid follow the active theme and change with it</li>
+          <li>After an update, PG Orbit shows what's new in the version you just installed</li>
+          <li>Sidebar objects no longer indent far past their folder</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,31 @@
+{
+  "name": "EDRLab.ThoriumReader",
+  "version": "3.5.1",
+  "description": "Desktop application to read ebooks",
+  "main": "./main.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:edrlab/readium-desktop.git"
+  },
+  "author": {
+    "name": "EDRLab",
+    "organization": "EDRLab",
+    "email": "contact@edrlab.org",
+    "url": "http://github.com/edrlab/"
+  },
+  "license": "BSD-3-Clause",
+  "licenses": [
+    {
+      "type": "BSD-3-Clause",
+      "url": "http://opensource.org/licenses/BSD-3-Clause"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/edrlab/readium-desktop/issues"
+  },
+  "homepage": "https://github.com/edrlab/readium-desktop",
+  "dependencies": {
+    "yargs": "^18.1.0"
+  },
+  "optionalDependencies": {}
+}

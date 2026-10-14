@@ -1,0 +1,49 @@
+---
+layout: app
+
+permalink: /MQTTX/
+description: "MQTT desktop client"
+license: "Apache-2.0"
+
+icons:
+  - MQTTX/icons/512x512/mqttx.png
+
+screenshots:
+  - MQTTX/screenshot.png
+
+authors:
+  - name: "emqx"
+    url: "https://github.com/emqx"
+
+links:
+  - type: GitHub
+    url: emqx/MQTTX
+  - type: Download
+    url: https://github.com/emqx/MQTTX/releases
+
+desktop:
+  Desktop Entry:
+    Name: MQTTX
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: mqttx
+    StartupWMClass: MQTTX
+    X-AppImage-Version: 1.13.1
+    Comment: MQTT desktop client
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: Apache-2.0
+
+electron: {"name":"MQTTX","version":"1.13.1","description":"MQTT desktop client","author":"EMQX Team <yusf@emqx.io>","main":"background.js","engines":{"node":">=18"},"dependencies":{"@modelcontextprotocol/sdk":"^1.7.0","electron-store":"^8.1.0","fix-path":"3.0.0","log4js":"^6.4.0","mqtt":"4.3.7","sqlite3":"5.1.6","typedi":"^0.8.0","typeorm":"^0.2.34","typeorm-typedi-extensions":"^0.2.3","vm2":"^3.9.18"},"browserslist":["> 1%","last 2 versions"],"husky":{"hooks":{"pre-commit":"lint-staged"}},"lint-staged":{"*.{vue,ts,js,scss}":["prettier --write \"src/**/*.ts\" \"src/**/*.vue\" \"src/**/*.scss\" \"web/**/*.ts\" \"web/**/*.vue\" \"web/**/*.scss\" \"cli/**/*.ts\" \"cli/**/*.js\""]},"license":"Apache-2.0","repository":"https://github.com/emqx/MQTTX","resolutions":{"electron-builder":"23.6.0","webpack":"4.47.0"}}
+---
