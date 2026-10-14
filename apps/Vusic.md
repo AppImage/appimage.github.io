@@ -2,64 +2,46 @@
 layout: app
 
 permalink: /Vusic/
+license: "MIT"
 
 icons:
-  - Vusic/icons/128x128/vusic.png
+  - Vusic/icons/128x128/dawg.png
 
 screenshots:
   - Vusic/screenshot.png
 
 authors:
+  - name: "dawg"
+    url: "https://github.com/dawg"
 
 links:
+  - type: GitHub
+    url: dawg/dawg
+  - type: Download
+    url: https://github.com/dawg/dawg/releases
 
 desktop:
   Desktop Entry:
-    Name: vusic
-    Comment: 
+    Name: DAWG
     Exec: AppRun
     Terminal: false
     Type: Application
-    Icon: vusic
-    StartupWMClass: vusic
-    X-AppImage-Version: 0.1.0
-    Categories: Utility
-    X-AppImage-BuildId: 1IGubW7uTt0dCfmTukfbiZGq7ZW
+    Icon: dawg
+    StartupWMClass: DAWG
+    X-AppImage-Version: 0.2.3
+    Categories: Audio
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: MIT
 
-electron:
-  dependencies:
-    "@dawgjs/specification": "^0.1.0"
-    "@types/cors": "^2.8.4"
-    "@types/tmp": 0.0.34
-    cors: "^2.8.5"
-    electron-context-menu: "^0.10.0"
-    lodash.throttle: "^4.1.1"
-    mz: "^2.7.0"
-    node-wav: 0.0.2
-    resize-observer-polyfill: "^1.5.0"
-    restyped-axios: "^2.0.0"
-    tinycolor2: "^1.4.1"
-    tmp: 0.0.33
-    tone: next
-    typescript-collections: "^1.3.2"
-    uuid: "^3.3.2"
-    vue: "^2.5.17"
-    vue-awesome: "^3.1.2"
-    vue-class-component: "^6.0.0"
-    vue-drag-drop: "^1.1.4"
-    vue-draggable-resizable: "^1.7.1"
-    vue-perfect-scrollbar: "^0.1.0"
-    vue-property-decorator: "^7.0.0"
-    vuejs-logger: "^1.5.3"
-    vuetify: "^1.5.5"
-    vuex: "^3.0.1"
-    vuex-module-decorators: "^0.9.7"
-    wavesurfer.js: "^2.1.2"
-  main: background.js
+electron: {"name":"dawg","productName":"DAWG","version":"0.2.3","private":true,"author":"Jacob Smith <jacob.smith@unb.ca>","main":"background.js","dependencies":{"lodash.throttle":"^4.1.1","python-shell":"^1.0.7"},"engines":{"node":"10.x || 11.x","npm":"6.x"},"homepage":"https://dawg.dev"}
 ---
