@@ -15,7 +15,7 @@ Keywords[pl]=audiobook;audiobooki;książka;podcast;odtwarzacz;streaming;
 Keywords=audiobook;podcast;player;streaming;
 StartupNotify=true
 X-Purism-FormFactor=workstation;mobile;
-X-AppImage-Version=0.9.8
+X-AppImage-Version=0.9.9
 
 [AppImageHub]
 X-AppImage-UpdateInformation=gh-releases-zsync|gdr-aislop|audiobooklet|latest|audiobooklet-*-x86_64.AppImage.zsync
