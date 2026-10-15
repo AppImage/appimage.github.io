@@ -224,13 +224,24 @@ while : ; do
   PAGE_JSON=$(api GET "repos/$REPO/issues?labels=$LABEL&state=all&per_page=100&page=$LABELED_PAGE")
   N_THIS_PAGE=$(jq 'if type == "array" then length else 0 end' <<<"$PAGE_JSON" 2>/dev/null || echo 0)
   [ "${N_THIS_PAGE:-0}" -gt 0 ] || break
-  jq -r '.[] | select(.pull_request) | .body // ""' <<<"$PAGE_JSON" 2>/dev/null \
+  # A pull request closed by close-stale-discovered.yml (label auto-closed) was
+  # not rejected by a maintainer: its repository counts as checked without
+  # success on the day it was closed (proposed again when it is pushed to later),
+  # not as proposed before
+  jq -r '.[] | select(.pull_request) | select([.labels[]?.name] | index("auto-closed") | not) | .body // ""' <<<"$PAGE_JSON" 2>/dev/null \
     | sed -n 's/^Repository: *\(https:\/\/github\.com\/[^ ]*\).*/\1/p' | tr -d '\r' \
     | while read -r LINE ; do parse_owner_repo "$LINE" ; done >> "$WORKDIR/labeled.txt"
+  jq -r '.[] | select(.pull_request) | select([.labels[]?.name] | index("auto-closed")) | [(.closed_at // .updated_at // "")[0:10], (.body // "")] | @tsv' <<<"$PAGE_JSON" 2>/dev/null \
+    | while IFS=$'\t' read -r DAY BODY ; do
+        OR=$(sed -n 's/^Repository: *\(https:\/\/github\.com\/[^ ]*\).*/\1/p' <<<"$BODY" | head -n 1 | tr -d '\r')
+        OR=$(parse_owner_repo "$OR") && printf '%s\t%s\n' "$OR" "$DAY"
+      done >> "$WORKDIR/autoclosed.tsv"
   [ "$N_THIS_PAGE" -lt 100 ] && break
   LABELED_PAGE=$((LABELED_PAGE + 1))
 done
 [ -f "$WORKDIR/labeled.txt" ] && while read -r OR ; do [ -n "$OR" ] && SKIP_LABELED["$OR"]=1 ; done < "$WORKDIR/labeled.txt"
+# (the auto-closed ones join the recently-checked below, with their closing day)
+[ -f "$WORKDIR/autoclosed.tsv" ] && echo "$(grep -c . "$WORKDIR/autoclosed.tsv") repositories were auto-closed before (proposed again when pushed to)" >&2
 echo "$(sort -u "$WORKDIR/labeled.txt" 2>/dev/null | grep -c .) repositories were proposed before (label $LABEL)" >&2
 
 # --- 3b. Apps a maintainer opted out (label opt-out on any PR) -------------
@@ -323,6 +334,15 @@ done > "$WORKDIR/recent.txt"
 # that, at least a week later, is checked again (it may publish an AppImage now)
 declare -A SKIP_RECENT_ON=()
 while IFS=$'\t' read -r OR DATE ; do [ -n "$OR" ] && { SKIP_RECENT["$OR"]=1 ; SKIP_RECENT_ON["$OR"]="$DATE" ; } ; done < "$WORKDIR/recent.txt"
+# Auto-closed pull requests: like checked without success on the closing day
+# (skipped for 90 days, unless the repository is pushed to in the meantime)
+if [ -f "$WORKDIR/autoclosed.tsv" ] ; then
+  while IFS=$'\t' read -r OR DATE ; do
+    [ -n "$OR" ] || continue
+    [ -n "${SKIP_KNOWN[$OR]:-}${SKIP_LABELED[$OR]:-}" ] && continue
+    if [[ "$DATE" > "$CUTOFF" ]] ; then SKIP_RECENT["$OR"]=1 ; SKIP_RECENT_ON["$OR"]="$DATE" ; fi
+  done < "$WORKDIR/autoclosed.tsv"
+fi
 
 # --- 9. Persist the state file -------------------------------------------
 # Called after every opened PR, every 10 slices and at the end, so that a
@@ -715,22 +735,42 @@ while read -r FULLNAME ; do
     fi
   done
 
-  # Very high star count for a brand-new project: a sign of bought or
-  # botted stars, so a maintainer should look (label manual-check-needed).
-  # Suspicious when the repository gathered stars implausibly fast: created
-  # not long ago yet already highly starred (age in days from .created_at).
+  # Very high star count for a brand-new project: can be a sign of bought or
+  # botted stars, so a maintainer should look (labels suspicious-stars and
+  # manual-check-needed). Suspicious when the repository gathered stars
+  # implausibly fast (created not long ago yet already highly starred) AND
+  # the rest of the repository does not look like a real project: real
+  # projects that take off (the press writes about them) have forks in
+  # proportion to their stars and a commit history, bought stars have
+  # neither. In October 2026, 61 of 73 PRs flagged by the velocity rule alone
+  # were genuine (fork ratio and commit count cleared them), so a flag now
+  # needs stars/forks above 30 (or fewer than 10 forks) and fewer than 300
+  # commits (one request: the last page number of commits?per_page=1).
   SUSPICIOUS_STARS=""
+  STARS_FACTS=""
   CREATED=$(jq -r '.created_at // empty' <<<"$META")
+  FORKS=$(jq -r '.forks_count // 0' <<<"$META")
+  [[ "$FORKS" =~ ^[0-9]+$ ]] || FORKS=0
   if [[ "$CREATED" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2} ]] && [[ "$STARS" =~ ^[0-9]+$ ]] ; then
     CREATED_S=$(date -u -d "${CREATED%%T*}" +%s 2>/dev/null || date -u -j -f %Y-%m-%d "${CREATED%%T*}" +%s 2>/dev/null || echo 0)
     if [ "$CREATED_S" -gt 0 ] ; then
       AGE_DAYS=$(( ( $(date -u +%s) - CREATED_S ) / 86400 ))
       [ "$AGE_DAYS" -lt 1 ] && AGE_DAYS=1
       # More than 15 stars per day on average, and young enough that this is
-      # not just an old popular project (under ~2 years): flag it
+      # not just an old popular project (under ~2 years)
       if [ "$AGE_DAYS" -lt 730 ] && [ "$STARS" -ge $(( AGE_DAYS * 15 )) ] && [ "$STARS" -ge 300 ] ; then
-        SUSPICIOUS_STARS="$STARS stars for a repository created $AGE_DAYS day(s) ago ($(sanitize "${CREATED%%T*}"))"
-        echo "    suspicious stars? $SUSPICIOUS_STARS"
+        COMMITS=$(api GET "repos/$OWNER/$RNAME/commits?per_page=1" -D - -o /dev/null 2>/dev/null \
+          | grep -i '^link:' | grep -o 'page=[0-9]*>; rel="last"' | grep -o '[0-9]*' | head -n 1)
+        [[ "$COMMITS" =~ ^[0-9]+$ ]] || COMMITS=1
+        STARS_FACTS="$STARS stars, $FORKS forks, $COMMITS commits, created $AGE_DAYS day(s) ago ($(sanitize "${CREATED%%T*}"))"
+        # Established after all: forks in proportion (at least 10, and no more
+        # than 30 stars per fork), or a real commit history
+        if { [ "$FORKS" -ge 10 ] && [ $(( STARS / FORKS )) -le 30 ] ; } || [ "$COMMITS" -ge 300 ] ; then
+          echo "    fast-growing but established: $STARS_FACTS"
+        else
+          SUSPICIOUS_STARS="$STARS_FACTS"
+          echo "    suspicious stars? $SUSPICIOUS_STARS"
+        fi
       fi
     fi
   fi
@@ -749,7 +789,11 @@ while read -r FULLNAME ; do
   if [ -n "$SUSPICIOUS_STARS" ] ; then
     NOTE="$NOTE
 
-**Unusual star count:** $SUSPICIOUS_STARS (label \`manual-check-needed\`). A very high star count on a brand-new project can mean bought or botted stars; please check that the project is genuine before merging."
+**Unusual star count:** $SUSPICIOUS_STARS (labels \`suspicious-stars\` and \`manual-check-needed\`). Many stars on a brand-new repository with few forks and commits can mean bought or botted stars; please check that the project is genuine before merging. \`.github/workflows/review-suspicious-stars.yml\` looks at these numbers again after 30 days and removes the labels when they have become healthy."
+  elif [ -n "$STARS_FACTS" ] ; then
+    NOTE="$NOTE
+
+**Fast-growing project:** $STARS_FACTS. The forks and commits are in proportion to the stars, so it was not flagged."
   fi
   if [ -n "$VIA" ] ; then
     NOTE="$NOTE
@@ -835,7 +879,11 @@ discover-apps.yml. Needs a maintainer's review."
         API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/labels" -d "$(jq -n '{name:"repackaged", color:"d4c5f9", description:"Built by a third party from someone else'"'"'s application (an unofficial AppImage, repackaged)"}')" >/dev/null
     fi
     if [ -n "$SUSPICIOUS_STARS" ] ; then
-      LABELS+=(manual-check-needed)
+      # suspicious-stars says why; manual-check-needed is what the other
+      # workflows (auto-merge, health report) look at
+      LABELS+=(suspicious-stars manual-check-needed)
+      API_TOKEN="$PR_TOKEN" api GET "repos/$REPO/labels/suspicious-stars" >/dev/null 2>&1 || \
+        API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/labels" -d "$(jq -n '{name:"suspicious-stars", color:"fbca04", description:"Many stars on a brand-new repository with few forks and commits: possibly bought; review-suspicious-stars.yml re-checks after 30 days"}')" >/dev/null
       API_TOKEN="$PR_TOKEN" api GET "repos/$REPO/labels/manual-check-needed" >/dev/null 2>&1 || \
         API_TOKEN="$PR_TOKEN" api POST "repos/$REPO/labels" -d "$(jq -n '{name:"manual-check-needed", color:"fbca04", description:"A maintainer should check this before merging"}')" >/dev/null
     fi

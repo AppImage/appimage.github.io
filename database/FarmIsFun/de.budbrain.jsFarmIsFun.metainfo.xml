@@ -130,6 +130,12 @@
   </recommends>
 
   <releases>
+    <release version="1.0.8" date="2026-08-31">
+      <description>
+        <p>Walls and gates can be built in every direction without gaps, side sections sit flush against the tile edge, and a demolish tool puts the material back into your bag. Zombies and skeletons attack at night, Tesla coils defend the farm, and a new message log records every gain and loss.</p>
+        <p xml:lang="de">Mauern und Tore lassen sich in jede Richtung lückenlos bauen, Seitenteile sitzen bündig an der Kachelkante, und ein Abriss-Werkzeug legt den Baustoff zurück in den Rucksack. Nachts greifen Zombies und Skelette an, Tesla-Spulen verteidigen den Hof, und ein Meldungsbuch verzeichnet jeden Zugang und Abgang.</p>
+      </description>
+    </release>
     <release version="1.0.3" date="2026-08-29">
       <description>
         <p>Wild chickens can be caught again, build recipes name the building instead of its material, and the day change reports what the animals produced overnight.</p>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- UDCalc's AppStream metadata: what software centres and the AppImage
+     catalog show (name, description, screenshots). Installed into the
+     AppImage by gnustep-release-actions' appimage, as *.appdata.xml (the name the
+     catalog's appdir-lint.sh looks for) in usr/share/metainfo. Ported from
+     TopoText's. -->
+<component type="desktop-application">
+  <id>io.github.ashalkhakov.UDCalc</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>BSD-2-Clause</project_license>
+
+  <name>UDCalc</name>
+  <summary>A clone of the macOS Calculator, for GNUstep</summary>
+  <developer_name>Artyom Shalkhakov</developer_name>
+
+  <description>
+    <p>
+      A clone of the Calculator that comes with macOS, ported to GNUstep.
+    </p>
+    <ul>
+      <li>Basic, scientific and programmer modes</li>
+      <li>Reverse Polish Notation</li>
+      <li>A paper tape of the calculations made</li>
+      <li>Unit conversions, with the recent ones a click away</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">udcalc.desktop</launchable>
+
+  <url type="homepage">https://github.com/ashalkhakov/UDCalc</url>
+  <url type="bugtracker">https://github.com/ashalkhakov/UDCalc/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Basic mode</caption>
+      <image>https://raw.githubusercontent.com/ashalkhakov/UDCalc/main/docs/images/basic-mode.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Scientific mode</caption>
+      <image>https://raw.githubusercontent.com/ashalkhakov/UDCalc/main/docs/images/scientific-mode.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Programmer mode</caption>
+      <image>https://raw.githubusercontent.com/ashalkhakov/UDCalc/main/docs/images/programmer-mode.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+</component>

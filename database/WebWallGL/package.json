@@ -1,0 +1,33 @@
+{
+  "name": "webwallgl-app",
+  "productName": "WebWallGL",
+  "version": "2.2.0-beta1",
+  "description": "WebWallGL desktop app: Wallpaper Engine wallpaper player and scene editor (Electron / browser)",
+  "license": "MIT",
+  "author": {
+    "name": "oneincase",
+    "email": "462534624@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oneincase/webwallgl.git"
+  },
+  "homepage": "https://github.com/oneincase/webwallgl#readme",
+  "bugs": "https://github.com/oneincase/webwallgl/issues",
+  "type": "module",
+  "main": "main.mjs",
+  "bin": {
+    "webwallgl-app": "cli.mjs"
+  },
+  "files": [
+    "cli.mjs",
+    "main.mjs",
+    "preload.cjs",
+    "server.mjs",
+    "web-shim.js",
+    "site"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}

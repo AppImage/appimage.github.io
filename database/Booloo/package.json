@@ -1,0 +1,15 @@
+{
+  "name": "prismoo",
+  "version": "0.4.0",
+  "description": "Prismoo · 跨平台透明桌面宠物 / Cross-platform desktop pet (Electron + TypeScript + HTML5 Canvas)",
+  "main": "dist/main/main.js",
+  "author": "Prismoo Contributors",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "electron-updater": "^6.3.9",
+    "onnxruntime-node": "^1.29.0",
+    "sharp": "^0.34.5",
+    "three": "^0.147.0"
+  }
+}

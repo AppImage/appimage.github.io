@@ -1,0 +1,26 @@
+{
+  "name": "Beyond-All-Reason",
+  "version": "1.2988.0",
+  "description": "Electron-based SpringRTS Launcher app",
+  "main": "src/main.js",
+  "author": "BAR Team",
+  "license": "ISC",
+  "dependencies": {
+    "@electron/remote": "2.1.2",
+    "7zip-bin": "5.1.1",
+    "chokidar": "3.6.0",
+    "discord-rpc": "^4.0.1",
+    "electron-log": "5.1.1",
+    "electron-settings": "4.0.2",
+    "electron-updater": "6.1.8",
+    "extract-zip": "2.0.1",
+    "got": "11.8.6",
+    "json-stable-stringify": "^1.1.1",
+    "node-7z": "3.0.0",
+    "node-downloader-helper": "^2.1.9",
+    "sdfz-demo-parser": "5.11.0",
+    "spring-map-parser": "6.1.1",
+    "yargs": "17.7.2"
+  },
+  "repository": "github:beyond-all-reason/BYAR-Chobby"
+}

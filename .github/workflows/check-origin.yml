@@ -93,6 +93,14 @@ jobs:
               done > hyphens.md
           cat hyphens.md
 
+          # One label per reason next to manual-check-needed, so that the reason
+          # stays visible and a later cleanup can tell the bot's labels apart
+          ensure_label() { gh api "repos/$REPO/labels/$1" > /dev/null 2>&1 || gh api "repos/$REPO/labels" -f name="$1" -f color=fbca04 -f description="$2" > /dev/null ; }
+          add_label() { gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=$1" > /dev/null ; }
+          drop_label() { gh api -X DELETE "repos/$REPO/issues/$PR/labels/$1" > /dev/null 2>&1 || true ; }
+          L_ORIGIN=origin-changed
+          L_NAME=name-check
+
           ID=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
                  --jq ".[] | select(.user.login == \"github-actions[bot]\") | select(.body | startswith(\"$MARKER\")) | .id" \
                | tail -n 1)
@@ -118,7 +126,7 @@ jobs:
               echo "- **Maintainers:** please check that the new location belongs to the same project before merging."
               if [ -s moved.md ] ; then
                 echo
-                echo "For reference, these other changes are confirmed GitHub redirects (the old repository was renamed or transferred to the new one — the same project):"
+                echo "For reference, these other changes are confirmed to be the same project (GitHub redirects the old repository to the new one, or the GitHub repository names the other site as its homepage):"
                 echo
                 cat moved.md
               fi
@@ -137,15 +145,19 @@ jobs:
               fi
               gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=$LABEL" > /dev/null
             fi
+            ensure_label "$L_ORIGIN" "The download location of an existing entry changes to another owner or site (check-origin.yml); a maintainer checks that it is the same project"
+            add_label "$L_ORIGIN"
           elif [ -s moved.md ] ; then
-            # Different GitHub owner, but GitHub redirects the old repository to
-            # the new one: a rename or transfer, the same project. Just inform;
-            # this is not a takeover, so no warning and no manual-check label.
+            # Different owner, but the same project: GitHub redirects the old
+            # repository to the new one (a rename or transfer), or the GitHub
+            # repository names the other site as its homepage (a project moving
+            # between its own website or download server and its repository).
+            # Just inform; this is not a takeover, so no warning and no label.
             {
               echo "$MARKER"
               echo "### :information_source: Download location moved (same project)"
               echo
-              echo "This PR points the entry to a different GitHub location, and GitHub itself redirects the old repository to the new one, so it is the same project (a rename or transfer), not a takeover:"
+              echo "This PR points the entry to a different owner or site, but it is the same project, not a takeover: GitHub redirects the old repository to the new one (a rename or transfer), or the GitHub repository names the other site as its homepage:"
               echo
               cat moved.md
               echo
@@ -163,6 +175,7 @@ jobs:
             if [ -n "$HAS_LABEL" ] && [ ! -s hyphens.md ] ; then
               gh api -X DELETE "repos/$REPO/issues/$PR/labels/$LABEL" > /dev/null
             fi
+            drop_label "$L_ORIGIN"
           else
             # No (more) change of owner: withdraw an earlier warning
             if [ -n "$ID" ] ; then
@@ -173,6 +186,7 @@ jobs:
             if [ -n "$HAS_LABEL" ] && [ -n "$ID" ] && [ ! -s hyphens.md ] ; then
               gh api -X DELETE "repos/$REPO/issues/$PR/labels/$LABEL" > /dev/null
             fi
+            [ -n "$ID" ] && drop_label "$L_ORIGIN"
           fi
 
           # More than two hyphens in the name of a file: its own comment, and the
@@ -208,6 +222,8 @@ jobs:
               fi
               gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=$LABEL" > /dev/null
             fi
+            ensure_label "$L_NAME" "The name of a new file in data/ has more than two hyphens (check-origin.yml); often a version or file name instead of the application's name"
+            add_label "$L_NAME"
           elif [ -n "$NAME_ID" ] ; then
             # No (more) such name: withdraw the earlier warning, and the label
             # unless the origin check flags the PR
@@ -217,4 +233,5 @@ jobs:
             if [ ! -s changes.md ] && has_label ; then
               gh api -X DELETE "repos/$REPO/issues/$PR/labels/$LABEL" > /dev/null
             fi
+            drop_label "$L_NAME"
           fi

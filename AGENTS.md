@@ -44,7 +44,10 @@ GitHub Pages (Jekyll) from this repository.
      collide) and fails rather than guesses when several fit; a URL
      ending with `/` that is no listing is downloaded as it is),
      checks its type, mounts it with a separate runtime (never executes the
-     AppImage's own runtime), runs `appdir-lint.sh`, finds the icon;
+     AppImage's own runtime), runs `code/appdir-lint.sh` (vendored from
+     AppImage/AppImages with fixes: errors are reported instead of ending the
+     script under `set -e`, the excludelist check works with several matches; the
+     `excludelist` itself is still downloaded from there), finds the icon;
    - `code/check-libc.sh`: does it need a compatible C library on the host?
      (`X-AppImage-Libc=none|bundled|host`, `X-AppImage-Runtime`,
      `X-AppImage-Self-Contained`, `X-AppImage-Glibc-Required=GLIBC_2.xx`, stored
@@ -141,21 +144,27 @@ GitHub Pages (Jekyll) from this repository.
    other forges, the owner on shared hosting, else the domain). If it points
    to a different owner, it posts a comment marked
    `<!-- appimagehub-origin-check -->` and sets the yellow
-   `manual-check-needed` label (possible takeover of an entry); both are
-   withdrawn when a later push undoes the change. Exception: if both are GitHub
-   repositories and GitHub itself redirects the old repository to the new one
-   (a rename or transfer, so the same project), `check-origin.sh` exits 2 and
-   the workflow posts a neutral informational note instead — no warning, no
-   `manual-check-needed` label. This does not depend on the PR's own test run,
-   which a PR could alter.
+   `manual-check-needed` label plus `origin-changed` (the reason; possible
+   takeover of an entry); all are withdrawn when a later push undoes the
+   change. Exception: when the two are the same project after all,
+   `check-origin.sh` exits 2 and the workflow posts a neutral informational
+   note instead — no warning, no labels: both are GitHub repositories and
+   GitHub itself redirects the old one to the new one (a rename or transfer),
+   or exactly one of them is a GitHub repository whose `homepage` field is on
+   the other one's site (a project moving between its own website, download
+   server or CI bucket and its repository; in October 2026, 22 of 26 flagged
+   PRs were of this kind). An OBS sub-project of the same user
+   (`home:/USER:/apps/`) counts as the same owner. This does not depend on the
+   PR's own test run, which a PR could alter.
    (`check-origin.sh` exits 1 or 2 for a changed owner; the step must read that
    with `RC=0 ; RESULT=$(...) || RC=$?`, as `RESULT=$(...) ; RC=$?` ends the step
    under `bash -e` before anything is reported.)
    The same workflow also sets `manual-check-needed` (with its own comment,
    `<!-- appimagehub-name-check -->`) on a PR that adds or renames to a file in
    `data/` whose name has more than two hyphens (often a version or file name
-   instead of the application's name); withdrawn when a later push fixes it, and
-   the label stays while either check flags the PR.
+   instead of the application's name), plus the reason label `name-check`;
+   withdrawn when a later push fixes it, and `manual-check-needed` stays while
+   either check flags the PR.
 
    `.github/workflows/one-file-per-pr.yml` (`pull_request_target`, `opened` and
    `reopened`) closes a pull request from a fork whose author is not a maintainer
@@ -166,6 +175,35 @@ GitHub Pages (Jekyll) from this repository.
    `<!-- appimagehub-one-file -->`). A maintainer who reopens it on purpose is
    respected. Only the list of changed files is read, via the API.
 
+   `.github/workflows/stale-discovered.yml` (`workflow_dispatch` only; inputs
+   `limit` (default 20), `days` (default 90), `close_days` (default 60), `dry_run`
+   (default true); `code/stale-discovered.sh`) walks auto-discovered PRs whose test
+   failed and that no human commented on up a ladder, one step per PR and run:
+   (1) a last result older than `days` → re-test (`retest-pr.sh`, with
+   `SCREENSHOT_UPLOAD_TOKEN`), label `retested-stale`; (2) the re-test's result is
+   in and still failed → one comment that @mentions the GitHub account the AppImage
+   comes from (`upstream-owner.sh`; never a maintainer or bot), asks for `/retest`
+   when fixed and announces the closing, label `pinged-author` (marker
+   `<!-- appimagehub-stale-ping -->`); (3) `close_days` after the ping with no human
+   comment → closed with a comment, label `auto-closed` (the other two removed).
+   A PR that passes the re-test keeps `screenshot-ok` and waits for a maintainer.
+   `discover-apps.sh` treats an `auto-closed` PR like a repository checked without
+   success on its closing day (proposed again when pushed to later), not like one
+   rejected by a maintainer. API budget: the comments of a PR are only fetched
+   when it is on the ladder or had no activity (`updated_at`) for `days`; the run
+   stops with exit 4 when fewer than `RESERVE` (200) requests of the hour are left,
+   and prints how many it used (see "GitHub API budget" below).
+   `.github/workflows/health-report.yml` (weekly, Monday, and `workflow_dispatch`;
+   `code/health-report.sh`) writes one issue, updated in place (marker
+   `<!-- appimagehub-health-report -->`, label `health-report`): what needs a
+   maintainer (auto-discovered PRs that passed, contributors' PRs that passed but
+   were not merged, `manual-check-needed`), what the bots handle (open PRs by
+   error label), the catalog (entries without `database/`, stale, pinned to a
+   release, `entry-unavailable` issues), and the automation (whether
+   `SCREENSHOT_UPLOAD_TOKEN` works and when it expires, last runs). It sets the
+   `needs-maintainer` label exactly on the PRs blocked on a maintainer (and removes
+   it elsewhere), so that they can be found among the thousands handled by bots.
+
 4. `.github/workflows/ping-authors.yml` (monthly `schedule`, a real run, and
    `workflow_dispatch` with `dry_run` (default true), `max_issues`
    (default 5) and `full_scan`) runs `code/check-entry.sh` over the files in
@@ -173,7 +211,7 @@ GitHub Pages (Jekyll) from this repository.
    entries are found unless `full_scan`) to find
    entries whose AppImage is gone (repository not found, no AppImage in its
    releases or in a directory listing, or a direct download URL returning
-   404/410; timeouts and other errors are `unknown` and are never pinged),
+   404/410; timeouts and other errors are `unknown` and are never pinged, and so is a gone release asset whose repository still has AppImages that `find-appimage.sh` cannot pick for the entry, e.g. python2 and python3 from one release),
    writes a summary, and runs `code/ping-authors.sh`. A dead link to a
    release asset (GitHub, Codeberg or GitLab) whose repository still has an
    AppImage (`find-appimage.sh`), or to a file in a directory listing when a
@@ -191,6 +229,15 @@ GitHub Pages (Jekyll) from this repository.
    upstream GitHub owner (never `probonopd` or bots), each entry at most
    once. It never removes an entry. One run at a time (`concurrency`). Run it by hand from the Actions tab (dry run
    first); see `MAINTAINER.md`.
+
+   `.github/workflows/remove-dead-entries.yml` (`workflow_dispatch` only; inputs
+   `limit` (default 10), `days` (default 90), `dry_run` (default true);
+   `code/remove-dead-entries.sh`) removes the entries whose `entry-unavailable`
+   issue is at least `days` old, has no comment by anyone but github-actions, and
+   whose entry `check-entry.sh` finds `dead` again right now (`unknown`, `fixable`
+   and `ok` keep it): `remove-entry.sh` in one commit on master, and each issue is
+   closed with a comment that a new PR brings the application back. Same
+   concurrency group as `remove-entry.yml`.
 
 5. `.github/workflows/remove-entry.yml` removes entries completely with
    `code/remove-entry.sh` (`data/NAME`, `database/NAME/`, `apps/NAME.md`): on
@@ -247,8 +294,20 @@ GitHub Pages (Jekyll) from this repository.
    a fork whose source publishes no AppImage gets the `not-upstream` label.
    A very high star count for a brand-new repository (more than ~15 stars per
    day since it was created, at least 300, under ~2 years old) can mean bought
-   or botted stars, so the PR gets the yellow `manual-check-needed` label and
-   a note (which also keeps it out of auto-merge).
+   or botted stars, but genuine projects take off like that too (in October
+   2026, 61 of 73 PRs flagged by that rule alone were genuine): so the PR is
+   only flagged when the repository also looks hollow, with fewer than 10
+   forks or more than 30 stars per fork AND fewer than 300 commits (one
+   request, the last page of `commits?per_page=1`). Then it gets the labels
+   `suspicious-stars` (the reason) and `manual-check-needed` (what auto-merge
+   and the health report look at) and a note with the numbers; a fast-growing
+   but established repository gets the numbers as a neutral note instead.
+   `.github/workflows/review-suspicious-stars.yml` (monthly, and
+   `workflow_dispatch` with `days` (30), `limit` (50) and `dry_run` (default
+   true); `code/review-suspicious-stars.sh`) looks at the labeled PRs again
+   once they are 30 days old and removes both labels with one comment (marker
+   `<!-- appimagehub-stars-review -->`) when forks or commits have caught up;
+   a repository that still looks hollow keeps them.
    The name (file in `data/`, branch
    and PR title) is the proper spelling picked by `code/pick-name.sh` from the
    repository name, the AppImage's name, the description and the README's
@@ -447,8 +506,11 @@ GitHub Pages (Jekyll) from this repository.
   Failed PRs are also re-tested when their author says it is fixed (item 7
   above), and `code/retest-pr.sh [-n] NUMBER` re-tests one PR by hand (needs
   `PAT`). The comment patterns: `echo "v1.2 is out" | code/retest-comment.sh`.
-- `.github/workflows/retest-stale.yml` (`workflow_dispatch` only; inputs `limit`
-  (default 10), `days` (default 365) and `dry_run` (default true)) re-tests the
+- `.github/workflows/retest-stale.yml` (monthly `schedule`, a real run of 20 entries;
+  `workflow_dispatch` with inputs `limit` (default 20), `days` (default 365), `pinned`
+  and `dry_run` (default true); `--pinned` re-tests the entries pinned to one release
+  (`.../releases/download/...`, 235 in October 2026) instead, whatever their age, which
+  points them to the repository) re-tests the
   entries whose `database/NAME` was last changed more than `days` days ago
   (`code/retest-stale.sh`: from the git history, oldest first, about 1200 of
   them in October 2026): one `retest/stale-NAME-<time>` pull request per entry
@@ -501,6 +563,49 @@ Write the answer:
   line. No guesses; say what they can do (e.g. remove or rebuild a file),
   and mention further findings only as friendly suggestions.
 - Follow the attribution rules of the environment the agent runs in.
+
+## GitHub API budget
+
+GitHub allows 5000 REST requests an hour per user, and `GITHUB_TOKEN` in a
+workflow 1000 an hour per repository; every token and tool that acts as the
+same account (a personal token, `gh api`, an agent's own client) draws from
+one bucket, so one careless loop stops everything else for the rest of the
+hour. The repository has thousands of open pull requests: one request per
+pull request is already most of the budget. In October 2026 an agent spent
+the whole hour with an analysis that made four requests per pull request,
+eight in parallel, while a dry run of `stale-discovered.sh` walked the
+comments of 3400 pull requests at the same time.
+
+Rules for scripts and workflows:
+- Count the requests before writing the loop: `(items / 100)` pages for a
+  list, plus the per-item requests, plus the actions. Anything over a few
+  hundred per run needs a cheaper design. Prefer one list of all pull
+  requests (100 per page: 50 requests for 5000) and filter it locally by
+  its fields (`labels`, `updated_at`, `head.ref`, `title`) over anything
+  per pull request; fetch comments, files or events only for the handful of
+  candidates that survive (`stale-discovered.sh`, `retest-stale.sh`).
+- Send every request through one function (`api()` in
+  `stale-discovered.sh`), count them, check `rate_limit` every 50 requests
+  and stop when fewer than a reserve (200) are left, with a clear message
+  and exit code; print the count in the summary so that a regression shows.
+- Stop after `limit` actions, not after the whole list is read.
+- Never run two request-heavy jobs at once (`concurrency` in the workflow;
+  by hand, one at a time).
+- The search API has its own limit (30 requests a minute); wait it out
+  (`discover-apps.sh`), do not retry in a tight loop.
+
+Rules for an agent working on the repository by hand:
+- Use git where it gives the same answer for free: `git fetch origin
+  refs/pull/N/head` gets a pull request's files and content (one fetch
+  for hundreds of pull requests), `git ls-remote https://github.com/o/r`
+  tells whether a repository is gone, `raw.githubusercontent.com` serves
+  file contents.
+- Before a batch, read `rate_limit` (`gh api rate_limit --jq
+  .resources.core`), budget the batch and keep a reserve for the actions
+  that follow; save responses to disk so that a re-run does not fetch
+  them again; run at most 2-3 requests in parallel; and stop at the first
+  "API rate limit exceeded" instead of retrying (the reset time is in the
+  `X-RateLimit-Reset` header).
 
 ## Conventions
 

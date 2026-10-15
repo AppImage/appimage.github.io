@@ -1,0 +1,26 @@
+[Desktop Entry]
+Type=Application
+Name=WhatsApp
+Comment=WhatsApp Web
+Exec=whatsapp-desktop %u
+Icon=io.github.shehawey.whatsapp-desktop
+Terminal=false
+Categories=Network;InstantMessaging;
+Keywords=whatsapp;chat;messaging;
+# Makes this client an option for the links "Open app" hands to the desktop;
+# see src/links.js, which then asks to be the default.
+MimeType=x-scheme-handler/whatsapp;
+StartupNotify=true
+StartupWMClass=WhatsApp
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.25
+X-AppImage-Payload-License=GPL-3.0

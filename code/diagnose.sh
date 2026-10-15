@@ -20,7 +20,7 @@
 HINTS=(
   "GLIBC_[0-9.]*' not found|GLIBCXX_[0-9.]*' not found|CXXABI_[0-9.]*' not found"
   "error-glibc-too-new"
-  "The AppImage was built on a system that is too new. Please build it on the oldest still-supported Ubuntu LTS release so that it runs on all supported systems."
+  "The AppImage needs a newer C library (glibc, or the C++ library libstdc++) than the test system has; the error names the version that is missing (e.g. GLIBC_2.38). The test runs on the oldest Ubuntu LTS release that is still in standard support (see https://ubuntu.com/about/release-cycle), because an AppImage is meant to run on any current Linux distribution, including older ones, and glibc can only be as old as the system the AppImage was built on: a program built on a newer system links against symbols that older systems do not have. The fix is to build on the oldest still-supported LTS release (in GitHub Actions, the oldest ubuntu-* runner still offered, or a container of that release), not on the newest system. If the program itself needs a newer compiler, build in a container of the old release with a newer toolchain (e.g. the toolchain PPAs), statically link what needs it, or bundle the C library together with its dynamic loader (ld-linux) in the AppImage: then the host's glibc does not matter at all (the test reports X-AppImage-Libc=bundled). See https://docs.appimage.org/reference/best-practices.html#binaries-compiled-on-old-enough-base-system"
 
   "Running as root without --no-sandbox is not supported|SUID sandbox helper binary"
   "error-electron-sandbox"
@@ -40,7 +40,7 @@ HINTS=(
 
   "^ERROR: The application exited within [0-9]+ seconds"
   "error-app-exits"
-  "The application quit or crashed right after starting. The error below usually shows why."
+  "The application quit or crashed right after starting; the error below usually shows why. Note that the test runs the application without network access, on purpose, and that this is a requirement for the catalog: an AppImage must start without network (users are offline too). If the application needs a server, a login or an update check to start, please make it show its window (or at least a message) first and connect afterwards, and handle a failed connection instead of exiting."
 
   "^ERROR: Could not find a single window on screen"
   "error-no-window"

@@ -2,18 +2,17 @@
 layout: app
 
 permalink: /SkerrySSH/
-description: Cross-platform SSH client with a single core
-license: GPL-3.0
+description: "Manage SSH terminals, remote files and port forwarding"
+license: "GPL-3.0-onlyGPL-3.0-only"
 
 icons:
   - SkerrySSH/icons/512x512/skerry.png
-
 screenshots:
-  - SkerrySSH/screenshot.png
+- https://github.com/user-attachments/assets/8305709e-f876-4187-9b5b-799a72a2c235
 
 authors:
-  - name: SeCherkasov
-    url: https://github.com/SeCherkasov
+  - name: "SeCherkasov"
+    url: "https://github.com/SeCherkasov"
 
 links:
   - type: GitHub
@@ -32,7 +31,7 @@ desktop:
     Terminal: false
     Categories: Network
     Keywords: SSH
-    X-AppImage-Version: 0.5.0
+    X-AppImage-Version: 0.5.2
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
@@ -45,4 +44,40 @@ desktop:
     X-AppImage-Self-Contained: false
     X-AppImage-Glibc-Required: GLIBC_2.29
     X-AppImage-Payload-License: GPL-3.0
+
+appdata:
+  Type: desktop-application
+  ID: io.github.SeCherkasov.SkerrySSH
+  Name:
+    C: Skerry
+  Summary:
+    C: Manage SSH terminals, remote files and port forwarding
+  Description:
+    C: >-
+      <p>Skerry is a cross-platform SSH client with split terminal sessions,
+          an SFTP file manager and port forwarding.</p>
+      <p>Organize hosts, store credentials in an encrypted vault and automate
+          repeatable tasks with snippets and runbooks.</p>
+  ProjectLicense: GPL-3.0-only
+  Url:
+    homepage: https://github.com/SeCherkasov/SkerrySSH
+    bugtracker: https://github.com/SeCherkasov/SkerrySSH/issues
+  Launchable:
+    desktop-id:
+    - io.github.SeCherkasov.SkerrySSH.desktop
+  Screenshots:
+  - default: true
+    caption:
+      C: The Skerry desktop workspace
+    thumbnails: []
+    source-image:
+      url: https://github.com/user-attachments/assets/8305709e-f876-4187-9b5b-799a72a2c235
+      width: 1280
+      height: 1015
+      lang: C
+  Releases:
+  - version: 0.5.1
+    unix-timestamp: 1790812800
+  ContentRating:
+    oars-1.1: {}
 ---

@@ -1,0 +1,24 @@
+{
+  "name": "@aurora/desktop",
+  "version": "0.6.7",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "private": true,
+  "description": "Aurora Music - 跨平台音乐播放器",
+  "author": "Aurora Music <aurora-music@example.com>",
+  "homepage": "https://github.com/yib0601/aurora-music",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yib0601/aurora-music.git",
+    "directory": "packages/desktop"
+  },
+  "main": "dist-electron/main.js",
+  "desktopName": "Aurora-Music",
+  "dependencies": {
+    "@aurora/shared": "workspace:*",
+    "better-sqlite3": "^12.11.1",
+    "iconv-lite": "^0.6.3",
+    "mpris-service": "^2.1.2",
+    "music-metadata": "^10.5.0",
+    "uuid": "^10.0.0"
+  }
+}

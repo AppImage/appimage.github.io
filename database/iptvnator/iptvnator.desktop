@@ -1,12 +1,16 @@
 [Desktop Entry]
-Name=iptvnator
-Exec=AppRun %U
+Name=IPTVnator
+Exec=AppRun --ozone-platform=x11 %U
 Terminal=false
 Type=Application
 Icon=iptvnator
 StartupWMClass=iptvnator
-X-AppImage-Version=0.8.0
+X-AppImage-Version=0.24.0
+X-AppImage-Name=IPTVnator
+X-AppImage-Homepage=https://github.com/4gray/iptvnator
+X-AppImage-UpdateURL=https://github.com/4gray/iptvnator
 Comment=IPTV player application.
+MimeType=audio/x-mpegurl;application/vnd.apple.mpegurl;
 Categories=Video;
 
 [AppImageHub]
@@ -15,3 +19,8 @@ Categories=Video;
 X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=MIT

@@ -140,6 +140,18 @@ case "$HTTP_CODE" in
         echo "fixable: $FIX"
         exit 0
       fi
+      # The repository still publishes AppImages, but find-appimage.sh cannot
+      # pick one for this entry (several fit, e.g. python2 and python3 from one
+      # release, or the file was renamed): not dead, and nobody is pinged; a
+      # maintainer decides (the ping-authors summary lists it under unknown)
+      REL_JSON=$(mktemp)
+      if timeout 120 bash "$(dirname "$0")/fetch-releases.sh" "$REPO_URL" "$REL_JSON" >/dev/null 2>&1 \
+         && jq -e '[.[].assets[]?.name | select(test("\\.appimage$"; "i"))] | length > 0' "$REL_JSON" >/dev/null 2>&1 ; then
+        rm -f "$REL_JSON"
+        echo "unknown: the file is gone but $REPO_URL still has AppImages in its releases; none could be picked for this entry"
+        exit 0
+      fi
+      rm -f "$REL_JSON"
     fi
     # A file that is gone from a directory listing: maybe a directory above
     # it has the AppImage of a newer version (e.g. download.kde.org)

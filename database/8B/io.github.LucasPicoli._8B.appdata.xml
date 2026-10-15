@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.LucasPicoli._8B</id>
+  <name>8B</name>
+  <summary>Edit the profiles stored on an 8BitDo Pro 3</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="io.github.lucaspicoli">
+    <name>Lucas Picoli</name>
+  </developer>
+  <description>
+    <p>8B reads and edits the profiles stored on an 8BitDo Pro 3 over a USB cable. It edits button mapping, sticks, triggers and vibration in every slot of the XInput, Switch and DInput modes, clears slots, and imports and exports profiles as JSON.</p>
+    <p>8B is an independent project, not made or endorsed by 8BitDo.</p>
+  </description>
+  <launchable type="desktop-id">io.github.LucasPicoli._8B.desktop</launchable>
+  <url type="homepage">https://github.com/LucasPicoli/8B</url>
+  <url type="bugtracker">https://github.com/LucasPicoli/8B/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/LucasPicoli/8B/v0.1.1/docs/images/screenshot.png</image>
+      <caption>Editing a DInput profile: saved remaps in blue, unsaved edits in orange</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.1.1" date="2026-10-09"/>
+    <release version="0.1.0" date="2026-10-06"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+  <branding>
+    <color type="primary" scheme_preference="light">#a9cfe6</color>
+    <color type="primary" scheme_preference="dark">#1f2d44</color>
+  </branding>
+  <categories>
+    <category>Utility</category>
+  </categories>
+</component>
