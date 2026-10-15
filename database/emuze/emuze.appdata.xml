@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>emuze</id>
+	<metadata_license>GPL-3.0</metadata_license>
+	<project_license>GPL-3.0</project_license>
+	<name>emuze</name>
+	<summary>Launch your Retro Games fast and simple</summary>
+	<description>
+		<p>emuze is an emulation frontend designed to simplify your retro gaming experience. It automates the configuration of each emulator, including seamless gamepad integration and automatic import of games along with their metadata. With its console-like interface and intuitive controls, emuze lets you focus on enjoying your retro games, just like you would on a gaming console.</p>
+		<p>Features:</p>
+		<ul>
+			<li>⚡️ Intuitive console-like interface</li>
+			<li>🚂 Import all your roms with a click of a button</li>
+			<li>🪄 Provides Metadata from [IGDB](https://www.igdb.com) based on the filenames of your roms</li>
+			<li>🎮️ Seamless gamepad integration for all Systems</li>
+			<li>📦️ Bundles emulators for all Systems</li>
+			<li>🔫 Basic lightgun integration for some Systems</li>
+			<li>💻️ Windows, Linux and Steam Deck support</li>
+			<li>💫 Updates itself</li>
+			<li>🛠️ BIOS handling</li>
+		</ul>
+	</description>
+	<launchable type="desktop-id">emuze.desktop</launchable>
+	<url type="homepage">https://github.com/bmsuseluda/emuze</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://github.com/bmsuseluda/emuze/blob/main/screenshots/library.png?raw=true</image>
+		</screenshot>
+		<screenshot>
+			<image>https://github.com/bmsuseluda/emuze/blob/main/screenshots/library_collapsed.png?raw=true</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>emuze.desktop</id>
+	</provides>
+</component>

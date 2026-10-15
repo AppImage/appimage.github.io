@@ -5,7 +5,7 @@ Terminal=false
 Type=Application
 Icon=emuze
 StartupWMClass=emuze
-X-AppImage-Version=0.59.1
+X-AppImage-Version=0.59.2
 Comment=Launch your Retro Games fast and simple
 Categories=Emulator;
 
