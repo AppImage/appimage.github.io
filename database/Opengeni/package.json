@@ -1,0 +1,12 @@
+{
+  "name": "opengeni-desktop",
+  "productName": "Opengeni",
+  "version": "0.1.15",
+  "description": "Opengeni for macOS, Windows and Linux.",
+  "homepage": "https://opengeni.ai",
+  "license": "Apache-2.0",
+  "author": "Opengeni",
+  "type": "module",
+  "main": "main.mjs",
+  "desktopName": "opengeni.desktop"
+}
