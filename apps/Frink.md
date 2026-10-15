@@ -1,0 +1,50 @@
+---
+layout: app
+
+permalink: /Frink/
+description: "Frink - Personal AI coding assistant with trigger-based automation"
+license: "MIT"
+
+icons:
+  - Frink/icons/128x128/frink.png
+
+screenshots:
+  - Frink/screenshot.png
+
+authors:
+  - name: "benord-labs"
+    url: "https://github.com/benord-labs"
+
+links:
+  - type: GitHub
+    url: benord-labs/frink
+  - type: Download
+    url: https://github.com/benord-labs/frink/releases
+
+desktop:
+  Desktop Entry:
+    Name: Frink
+    Exec: AppRun %U
+    Terminal: false
+    Type: Application
+    Icon: frink
+    StartupWMClass: frink
+    X-AppImage-Version: 0.3.0
+    Comment: Frink - Personal AI coding assistant with trigger-based automation
+    MimeType: x-scheme-handler/frink
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.38
+    X-AppImage-Payload-License: MIT
+
+electron: {"name":"frink","version":"0.3.0","private":true,"description":"Frink - Personal AI coding assistant with trigger-based automation","license":"MIT","author":{"name":"Benji Norval"},"main":"out/main/index.js","desktopName":"frink.desktop","engines":{"node":">=22.12"},"dependencies":{"@ai-sdk/react":"^4.0.112","@anthropic-ai/claude-agent-sdk":"^0.3.278","@anthropic-ai/sdk":"^0.127.0","@benord-labs/frink-primitives":"^0.10.8","@dagrejs/dagre":"^3.1.1","@dnd-kit/core":"^6.3.1","@dnd-kit/sortable":"^10.0.0","@dnd-kit/utilities":"^3.2.2","@iconify-icons/logos":"2.0.1","@iconify-icons/ri":"2.0.0","@iconify-icons/simple-icons":"2.0.4","@iconify-icons/vscode-icons":"2.0.6","@iconify/react":"6.0.2","@modelcontextprotocol/sdk":"^1.30.0","@monaco-editor/react":"^4.7.0","@parcel/watcher":"^2.6.0","@pierre/diffs":"^1.4.3","@radix-ui/react-alert-dialog":"^1.1.23","@radix-ui/react-checkbox":"^1.3.11","@radix-ui/react-collapsible":"^1.1.20","@radix-ui/react-compose-refs":"^1.1.5","@radix-ui/react-context-menu":"^2.3.7","@radix-ui/react-dialog":"^1.1.23","@radix-ui/react-dropdown-menu":"^2.1.24","@radix-ui/react-hover-card":"^1.1.23","@radix-ui/react-label":"^2.1.15","@radix-ui/react-popover":"^1.1.23","@radix-ui/react-select":"^2.3.7","@radix-ui/react-slider":"^1.4.7","@radix-ui/react-switch":"^1.3.7","@radix-ui/react-tabs":"^1.1.21","@radix-ui/react-tooltip":"^1.2.16","@react-three/fiber":"^9.7.0","@sentry/electron":"^7.19.0","@tanstack/react-query":"^5.103.2","@tanstack/react-virtual":"^3.14.13","@trpc/client":"^11.19.0","@trpc/react-query":"^11.19.0","@trpc/server":"^11.19.0","@typescript/ata":"^0.9.8","@xterm/addon-canvas":"^0.7.0","@xterm/addon-fit":"^0.11.0","@xterm/addon-search":"^0.16.0","@xterm/addon-serialize":"^0.14.0","@xterm/addon-web-links":"^0.12.0","@xterm/addon-webgl":"^0.19.0","@xyflow/react":"^12.11.6","acorn":"^8.18.0","ai":"^7.0.109","async-mutex":"^0.5.0","class-variance-authority":"^0.7.1","clsx":"^2.1.1","croner":"^10.0.1","culori":"^4.0.2","date-fns":"4.4.0","diff":"^9.0.0","drizzle-orm":"^0.45.3","electron-log":"^5.4.4","electron-updater":"^6.8.9","fast-json-stable-stringify":"^2.1.0","gray-matter":"^4.0.3","hono":"^4.13.8","isomorphic-dompurify":"^4.3.0","jotai":"^2.20.3","jsonc-parser":"^3.3.1","lucide-react":"^1.47.0","mermaid":"^12.0.0","monaco-editor":"^0.56.0","motion":"^13.4.0","next-themes":"^0.4.6","node-pty":"^1.1.0","path-browserify":"^1.0.1","picomatch":"^4.0.7","pidtree":"^1.0.0","posthog-node":"^5.52.5","qrcode.react":"^4.2.0","react":"^19.3.0","react-colorful":"^5.8.1","react-dom":"^19.3.0","react-zoom-pan-pinch":"^4.2.0","remark-breaks":"^4.0.0","remark-gfm":"^4.0.1","shell-quote":"^1.10.0","shiki":"4.4.3","simple-git":"^3.36.0","smol-toml":"^1.8.0","socket.io-client":"^4.8.3","sonner":"^2.0.8","streamdown":"^2.6.0","superjson":"^2.2.6","tailwind-merge":"^3.7.0","three":"^0.186.0","trpc-electron":"^0.1.2","tweetnacl":"^1.0.3","unique-names-generator":"^4.7.1","use-stick-to-bottom":"^1.1.6","vscode-jsonrpc":"^8.2.1","xterm":"^5.3.0","zod":"^4.6.5","zustand":"^5.0.15"},"overrides":{"mermaid":"^12.0.0"},"patchedDependencies":{"@tailwindcss/typography@0.5.20":"patches/@tailwindcss%2Ftypography@0.5.20.patch"}}
+---
