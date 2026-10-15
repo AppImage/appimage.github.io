@@ -350,6 +350,33 @@ GitHub Pages (Jekyll) from this repository.
    and `repackaged` (not `not-upstream`: `repackaged` already says it): a maintainer decides. It keeps no state
    (repositories without a usable AppImage are checked again on the next run).
 
+   `.github/workflows/discover-forges.yml` (`workflow_dispatch` only; inputs
+   `count` (default 1), `forges` (default `gitlab.com codeberg.org`: the hosts
+   `fetch-releases.sh` and the test understand), `months` (default 24) and
+   `dry_run` (default true)) does the same for **GitLab and Codeberg** with
+   `code/discover-forges.sh`. Candidates come from each forge's own search API,
+   anonymously (GitLab `/api/v4/projects` with `topic=appimage` and
+   `search=appimage`, Gitea/Forgejo `/api/v1/repos/search` with the topic and the
+   word, most recently active first; the forge type is detected from
+   `/api/v1/version` or `/api/v4/version`), a few pages per query; GitLab projects
+   in subgroups are skipped (`fetch-releases.sh` takes `OWNER/REPO`). Skipped
+   without a request to the forge: forks, archived repositories, repositories
+   without activity in `months`, those already in `data/` (by `host/owner/repo`
+   or by name), added by an open PR or named by an `auto-discovered`/`opt-out` PR
+   (any state; all PRs are read once, one GitHub request per 100). The rest is
+   checked like in `discover-apps.yml` (`fetch-releases.sh`, `find-appimage.sh`:
+   exactly one x86_64 AppImage in a release less than 2 years old; `pick-name.sh`
+   with the README fetched raw from the forge; `check-name.sh`;
+   `not-upstream-phrase.sh` for the `not-upstream`/`repackaged` labels). The
+   entry's first line is the repository URL (`https://gitlab.com/o/r`,
+   `https://codeberg.org/o/r`). No state is kept (repositories without a usable
+   AppImage are checked again on the next run, one forge request each); GitHub
+   requests go through a counting `gh_api()` with a quota reserve. Same
+   `auto-discovered` label and `DISCOVER_TOKEN`/`SCREENSHOT_UPLOAD_TOKEN`/`GITHUB_TOKEN`
+   handling as `discover-apps.yml`; a maintainer reviews the PRs. Other forges
+   (Framagit, gitea.com, ...) need `fetch-releases.sh` (and thus the test) to
+   know their host first; the script itself only needs the host added to `forges`.
+
    `.github/workflows/discover-apphub.yml` (`workflow_dispatch` only; inputs
    `count` (default 1) and `dry_run`) does the same for **AppImageHub** (the
    openDesktop/Pling store) with `code/discover-apphub.sh`. AppImageHub's own

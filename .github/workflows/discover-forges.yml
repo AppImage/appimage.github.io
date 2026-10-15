@@ -1,0 +1,60 @@
+# Finds applications that publish AppImages on GitLab (gitlab.com) and
+# Codeberg (codeberg.org) but are not in the catalog yet, and proposes each as
+# a new entry in its own pull request, labeled auto-discovered, for a
+# maintainer to review (code/discover-forges.sh; the GitHub counterpart is
+# discover-apps.yml). Runs only when started by hand; a dry run by default.
+
+name: Discover apps on other forges
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Maximum number of apps to propose (one pull request each)'
+        type: number
+        default: 1
+      forges:
+        description: 'Forges to search, blank-separated (the hosts fetch-releases.sh understands)'
+        type: string
+        default: 'gitlab.com codeberg.org'
+      months:
+        description: 'Only repositories with activity in the last N months'
+        type: number
+        default: 24
+      dry_run:
+        description: 'Dry run (only print what would be opened)'
+        type: boolean
+        default: true
+
+jobs:
+  discover:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    concurrency:
+      group: discover-forges
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # A pull request opened with GITHUB_TOKEN starts no Test run: the branch
+      # is pushed and the pull request opened with one of these when set
+      DISCOVER_TOKEN: ${{ secrets.DISCOVER_TOKEN }}
+      SCREENSHOT_UPLOAD_TOKEN: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Discover
+        env:
+          COUNT: ${{ github.event.inputs.count || '1' }}
+          FORGES: ${{ github.event.inputs.forges || 'gitlab.com codeberg.org' }}
+          MONTHS: ${{ github.event.inputs.months || '24' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          ARGS=(--limit "$COUNT" --forges "$FORGES" --months "$MONTHS")
+          [ "$DRY_RUN" != "false" ] && ARGS+=(--dry-run)
+          bash code/discover-forges.sh "${ARGS[@]}"
