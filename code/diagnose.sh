@@ -106,6 +106,10 @@ HINTS=(
   "error-message-on-screen"
   "The screenshot shows an error message (see below)."
 
+  "^WARNING: The window is larger than the "
+  "-"
+  "The application's window is larger than the 800x600 screen of the test and could not be made smaller (it probably has a minimum size), so the screenshot shows only part of it. Please check that it still shows the main window; or provide your own screenshot with an AppStream metainfo file (see /appstream)."
+
   "^WARNING: The window is mostly empty"
   "-"
   "The window is mostly empty; please check that the screenshot shows the application's main window."
