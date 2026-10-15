@@ -361,7 +361,9 @@ GitHub Pages (Jekyll) from this repository.
    `/api/v1/version` or `/api/v4/version`), a few pages per query; GitLab projects
    in subgroups are skipped (`fetch-releases.sh` takes `OWNER/REPO`). Skipped
    without a request to the forge: forks, archived repositories, repositories
-   without activity in `months`, those already in `data/` (by `host/owner/repo`
+   whose name ends in `-AppImage` (any capitalization: a build of someone else's
+   application), repositories without activity in `months`, those already in
+   `data/` (by `host/owner/repo`
    or by name), added by an open PR or named by an `auto-discovered`/`opt-out` PR
    (any state; all PRs are read once, one GitHub request per 100). The rest is
    checked like in `discover-apps.yml` (`fetch-releases.sh`, `find-appimage.sh`:

@@ -21,7 +21,8 @@
 # and word, most recently updated first). GitLab projects in subgroups
 # (group/subgroup/project) are skipped: fetch-releases.sh takes OWNER/REPO.
 # Skipped without a request to the forge: forks and archived repositories,
-# repositories already in data/ (by URL, or by the application's name: letters
+# repositories whose name ends in "-AppImage" (any capitalization: a build of
+# someone else's application, not the application's own), repositories already in data/ (by URL, or by the application's name: letters
 # and digits, any capitalization), added by an open pull request, or proposed
 # or opted out before (a pull request labeled auto-discovered or opt-out, any
 # state, titled "Add NAME"). The rest is checked with fetch-releases.sh +
@@ -212,6 +213,9 @@ while IFS="$US" read -r HOST TYPE FULL STARS DESC ACTIVE FORK ARCHIVED ; do
   [[ "$FULL" =~ ^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$ ]] || { N_NOTAPP=$((N_NOTAPP + 1)) ; continue ; }
   OWNER=${FULL%/*} ; RNAME=${FULL#*/}
   if [ "$FORK" == true ] || [ "$ARCHIVED" == true ] ; then N_NOTAPP=$((N_NOTAPP + 1)) ; continue ; fi
+  # "Foo-AppImage" (any capitalization) is a repository that builds an AppImage
+  # of someone else's application, not the application's own
+  if grep -qiE -- '-appimage$' <<<"$RNAME" ; then N_NOTAPP=$((N_NOTAPP + 1)) ; echo "    $FULL: a -AppImage build repository, skipped" >&2 ; continue ; fi
   if [[ -n "$ACTIVE" && "$ACTIVE" < "$ACTIVE_SINCE" ]] ; then N_INACTIVE=$((N_INACTIVE + 1)) ; continue ; fi
   LOWER=$(tr 'A-Z' 'a-z' <<<"$HOST/$FULL")
   if [ -n "${KNOWN_REPO[$LOWER]:-}" ] || [ -n "${KNOWN[$(key_of "$RNAME")]:-}" ] ; then
@@ -367,7 +371,7 @@ done < "$WORKDIR/sorted.tsv"
   echo "## Discover apps on other forges"
   echo
   echo "Forges: $FORGES. $TOTAL candidate repositories; stopped: $STOP_REASON."
-  echo "Skipped without checking: $N_NOTAPP forks, archived or in a subgroup, $N_INACTIVE without activity in $MONTHS months, $N_KNOWN already known."
+  echo "Skipped without checking: $N_NOTAPP forks, archived, named -AppImage or in a subgroup, $N_INACTIVE without activity in $MONTHS months, $N_KNOWN already known."
   echo "Checked: $CHECKED. Skipped after checking: $N_NOAPPIMAGE no AppImage, $N_AMBIGUOUS several AppImages, $N_OLD too old, $N_NAME name taken or invalid."
   echo "Pull requests opened: $OPENED (limit $LIMIT). GitHub API requests: $(wc -l < "$WORKDIR/requests")."
   [ "$DRY_RUN" == true ] && echo && echo "(dry run: nothing was pushed)"
