@@ -84,7 +84,11 @@ GitHub Pages (Jekyll) from this repository.
    - `code/check-screenshot.sh`: fails on an (almost) empty window or an error
      message found by OCR (tesseract), or text mostly in Chinese, Arabic,
      Cyrillic or Greek script (OCR with those models, confident words only;
-     label `error-not-english`);
+     label `error-not-english`); warns when the window is mostly dark (at least
+     60 % of a downscaled gray version darker than 35 % gray, mean below 35 %):
+     the test system has no dark-mode preference, so the application defaults
+     to a dark theme, which the README asks not to do (a dark canvas of a video
+     player or game is fine; warning only, skipped for `terminal` and `tray`);
    - warns when the AppImage has no (or broken) update information;
    - writes `database/` and `apps/`. `links:` in `apps/<Name>.md` (shown on
      the page and in `feed.json`) gets the repository and its releases for
