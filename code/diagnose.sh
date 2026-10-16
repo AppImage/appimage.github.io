@@ -116,7 +116,7 @@ HINTS=(
 
   "^WARNING: The window is mostly dark"
   "-"
-  "The window is mostly dark, so the application seems to start in a dark theme although the test system is not set to dark mode. Please start in a light theme by default and use the dark theme only when the system is configured for dark mode (e.g. the GTK/Qt or portal color-scheme setting) or the user chooses it in the settings. A dark canvas by nature (a video player, a game) is fine; please say so in the pull request."
+  "The window is mostly dark, so the application seems to start in a dark theme although the test system is not set to dark mode. Please use a light mode by default and use the dark theme only when the system is configured for dark mode (e.g. the GTK/Qt or theme setting) or the user chooses it in the settings."
 
   "^WARNING: The screenshot may show an error message"
   "-"
