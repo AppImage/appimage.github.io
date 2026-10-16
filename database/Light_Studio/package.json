@@ -1,0 +1,31 @@
+{
+  "name": "@tenzen/light-studio",
+  "productName": "Light Studio",
+  "version": "0.1.19",
+  "private": true,
+  "description": "Offline photo organization and nondestructive development.",
+  "author": "Tenzen",
+  "main": "dist-electron/electron/main.js",
+  "desktopName": "light-studio.desktop",
+  "dependencies": {
+    "@msgpack/msgpack": "3.1.2",
+    "@tenzen/desktop-core": "*",
+    "@tenzen/editor-core": "*",
+    "@tenzen/editor-ui": "*",
+    "@tenzen/photo-core": "*",
+    "@tenzen/photo-engine": "*",
+    "@tenzen/photo-ui": "*",
+    "@tenzen/ui": "*",
+    "lucide-react": "^0.468.0",
+    "mp4-muxer": "5.2.2",
+    "mp4box": "2.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "0.34.5",
+    "@tenzen/automation": "*",
+    "@tenzen/contracts": "*",
+    "ajv": "^8.17.1",
+    "jsonc-parser": "^3.3.1",
+    "@tenzen/suite-auth": "*"
+  }
+}
