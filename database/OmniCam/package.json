@@ -1,0 +1,15 @@
+{
+  "name": "@omnicam/desktop",
+  "productName": "OmniCam",
+  "version": "2.1.0",
+  "private": true,
+  "description": "OmniCam desktop — turns your phone into a virtual webcam",
+  "main": "./out/main/index.js",
+  "desktopName": "omnicam.desktop",
+  "author": {
+    "name": "Orest Zogju",
+    "url": "https://github.com/Orest-Z"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/Orest-Z/OmniCam"
+}
