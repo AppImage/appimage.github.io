@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The store listing, for the Snap Store, Flathub, the Ubuntu App Center and KDE
+  Discover alike. snapcraft's adopt-info reads the summary, description and icon
+  from here; Flathub and Discover read all of it.
+
+  THE NEWEST <release> MUST BE THE VERSION BEING PACKED. pack-snap.sh and
+  pack-flatpak.sh both refuse to run otherwise, because a store page that lists
+  last month's release as the current one is the kind of wrong nobody reports.
+  Add the new release at the TOP when <VstVersion> is bumped.
+-->
+<component type="desktop-application">
+  <id>io.github.hananel_hazan.VibeSuperTonic</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <!-- The source is MIT. The packages bundle espeak-ng, which makes each
+       package as a whole GPL-3.0-or-later; see LICENSE-PHONEMIZER.txt. -->
+  <project_license>MIT AND GPL-3.0-or-later</project_license>
+
+  <name>VibeSuperTonic</name>
+  <summary>Reads selected text aloud in a natural voice that runs on your computer</summary>
+
+  <developer id="io.github.hananel_hazan">
+    <name>Hananel Hazan</name>
+  </developer>
+
+  <description>
+    <p>
+      Select text in any application and press a key: VibeSuperTonic reads it
+      aloud in a neural voice. Speech is generated on your own machine, so
+      nothing you read is sent anywhere.
+    </p>
+    <p>
+      It is also a Speech Dispatcher voice, so Orca and other programs that
+      speak on Linux can use the same voices.
+    </p>
+    <ul>
+      <li>Two engines: Supertonic, and Piper with 65 voices in 35 languages</li>
+      <li>Global hotkeys: Ctrl+` reads the selection, Ctrl+~ stops</li>
+      <li>A window that follows along as it reads, with speed, voice and pronunciation controls</li>
+      <li>Works on X11, and on Wayland with KDE Plasma. On GNOME's Wayland session the
+        hotkey cannot read the selection, because GNOME does not offer the protocol
+        that allows it; the screen reader voices work everywhere</li>
+      <li>Optional GPU acceleration, falling back to the CPU on its own</li>
+    </ul>
+    <p>
+      The voice models are downloaded on first run, from Hugging Face, after you
+      accept their licence. Connecting the hotkeys and the screen reader is one
+      command in a terminal, which the application shows you.
+    </p>
+  </description>
+
+  <!-- Pinned to the release tag so the URLs never move (Flathub asks for that).
+       They resolve once v0.2.17 is pushed; the build validates with no network. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Reading the selection aloud, highlighting each word</caption>
+      <image>https://raw.githubusercontent.com/Hananel-Hazan/VibeSuperTonic/v0.2.17/docs/screenshots/reader.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Downloading voices, with each voice's licence shown first</caption>
+      <image>https://raw.githubusercontent.com/Hananel-Hazan/VibeSuperTonic/v0.2.17/docs/screenshots/voices.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Engine, voice, speed and quality, for all voices or just one</caption>
+      <image>https://raw.githubusercontent.com/Hananel-Hazan/VibeSuperTonic/v0.2.17/docs/screenshots/tune.png</image>
+    </screenshot>
+  </screenshots>
+
+  <launchable type="desktop-id">VibeSuperTonic.desktop</launchable>
+
+  <categories>
+    <category>Accessibility</category>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>text to speech</keyword>
+    <keyword>tts</keyword>
+    <keyword>screen reader</keyword>
+    <keyword>speech</keyword>
+    <keyword>voice</keyword>
+    <keyword>accessibility</keyword>
+    <keyword>orca</keyword>
+    <keyword>speech-dispatcher</keyword>
+  </keywords>
+
+  <url type="homepage">https://github.com/Hananel-Hazan/VibeSuperTonic</url>
+  <url type="bugtracker">https://github.com/Hananel-Hazan/VibeSuperTonic/issues</url>
+  <url type="vcs-browser">https://github.com/Hananel-Hazan/VibeSuperTonic</url>
+
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <!-- The date is the day it is packed; docs/RELEASE-0.2.17.md step 3 sets it. -->
+    <release version="0.2.17" date="2026-10-16" type="stable">
+      <description>
+        <p>First release as a snap and a Flatpak, so it can be installed from the
+          Ubuntu App Center and from KDE Discover.</p>
+        <ul>
+          <li>Models and settings are kept in the sandbox's own folder and survive updates</li>
+          <li>The hotkeys and the screen reader voice are connected with one command,
+            which the Status tab shows</li>
+          <li>Installing the screen reader voice now undoes itself if any other voice
+            stops answering afterwards, and it no longer waits forever on a stuck
+            Speech Dispatcher</li>
+          <li>The window opens from the tray again after you log out and back in</li>
+          <li>Export to MP3, AAC and FLAC works inside the sandbox, with its own small ffmpeg</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>
