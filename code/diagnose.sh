@@ -114,6 +114,10 @@ HINTS=(
   "-"
   "The application showed no window but an icon in the system tray, so it was tested as a system tray application: the screenshot shows what clicking its icon opened (its window, or its menu with the icon). Please check that it shows the application working."
 
+  "^WARNING: The window is mostly dark"
+  "-"
+  "The window is mostly dark, so the application seems to start in a dark theme although the test system is not set to dark mode. Please use a light mode by default and use the dark theme only when the system is configured for dark mode (e.g. the GTK/Qt or theme setting) or the user chooses it in the settings."
+
   "^WARNING: The screenshot may show an error message"
   "-"
   "The screenshot may show an error message; please check it."
