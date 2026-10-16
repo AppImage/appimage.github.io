@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:dc="http://purl.org/dc/terms/"
+	xmlns:cc="http://creativecommons.org/ns#"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	version="1.1"
+	viewBox="0 0 100 100"
+	xml:space="preserve"
+	width="500"
+	height="500"
+>
+	<title>git-gamble's logo</title>
+
+	<desc>
+		<a xlink:href="https://git-gamble.is-cool.dev">git-gamble</a>
+		is a tool that blends TDD + TCR to make sure to develop the right thing 😌, baby step by baby step 👶🦶
+		<html:br></html:br>
+
+		The idea of the logo is to have a "git coin"
+		<html:ul>
+			<html:li>something that we recognize as git (the graph, the color)</html:li>
+			<html:li>
+				something that looks like a coin that can we flip (like in the expression : "to flip a coin")
+			</html:li>
+		</html:ul>
+		<html:br></html:br>
+
+		The graph in the logo come from the git's logo who come from
+		<a xlink:href="https://fr.wikipedia.org/wiki/Fichier:Git_icon.svg">Wikipedia Fr</a>
+		and the file as been converted from EPS or PNG to SVG by
+		<a xlink:href="https://en.wikipedia.org/wiki/User:Varnent">Varnent</a>
+		<html:br></html:br>
+
+		But the
+		<a xlink:href="https://git-scm.com/downloads/logos">original source</a>
+		has been made by
+		<a xlink:href="https://twitter.com/jasonlong">Jason Long</a>
+		who licensed under the
+		<a xlink:href="https://creativecommons.org/licenses/by/3.0/">
+			Creative Commons Attribution 3.0 Unported License
+		</a>
+	</desc>
+
+	<metadata>
+		<rdf:RDF>
+			<cc:Work rdf:about="https://git-gamble.is-cool.dev/assets/logo/git-gamble.svg">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+				<dc:title>git-gamble's logo</dc:title>
+				<dc:source>https://git-gamble.is-cool.dev/assets/logo/git-gamble.svg</dc:source>
+				<dc:creator>
+					<cc:Agent>
+						<dc:title>pinage404</dc:title>
+					</cc:Agent>
+				</dc:creator>
+				<dc:description>
+					<a xlink:href="https://git-gamble.is-cool.dev">git-gamble</a>
+					is a tool that blends TDD + TCR to make sure to develop the right thing 😌, baby step by baby step 👶🦶
+					<html:br></html:br>
+
+					The idea of the logo is to have a "git coin" (like in the expression : "to flip a coin")
+					<html:ul>
+						<html:li>something that we recognize as git (the graph, the color)</html:li>
+						<html:li>something that looks like a coin that can we flip</html:li>
+					</html:ul>
+					<html:br></html:br>
+
+					The graph in the logo come from the git's logo who come from
+					<a xlink:href="https://fr.wikipedia.org/wiki/Fichier:Git_icon.svg">Wikipedia Fr</a>
+					and the file as been converted from EPS or PNG to SVG by
+					<a xlink:href="https://en.wikipedia.org/wiki/User:Varnent">Varnent</a>
+					<html:br></html:br>
+
+					But the
+					<a xlink:href="https://git-scm.com/downloads/logos">original source</a>
+					has been made by
+					<a xlink:href="https://twitter.com/jasonlong">Jason Long</a>
+					who licensed under the
+					<a xlink:href="https://creativecommons.org/licenses/by/3.0/">
+						Creative Commons Attribution 3.0 Unported License
+					</a>
+				</dc:description>
+				<cc:attributionURL>https://git-gamble.is-cool.dev</cc:attributionURL>
+				<cc:attributionName>pinage404</cc:attributionName>
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
+			</cc:Work>
+			<cc:License rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
+				<cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction" />
+				<cc:permits rdf:resource="http://creativecommons.org/ns#Distribution" />
+				<cc:requires rdf:resource="http://creativecommons.org/ns#Notice" />
+				<cc:requires rdf:resource="http://creativecommons.org/ns#Attribution" />
+				<cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+				<cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+			</cc:License>
+		</rdf:RDF>
+	</metadata>
+
+	<g class="scene" fill-opacity="0">
+		<g class="coin">
+			<circle cx="53" cy="48" r="46" class="edge" />
+			<circle cx="53" cy="48" r="46" class="edge-stripes" />
+			<g id="time-keeper" transform="translate(0 7)">
+				<g class="button">
+					<rect
+						fill="url(#color-dark)"
+						x="45"
+						y="6"
+						width="10"
+						height="5"
+					/>
+					<rect
+						fill="url(#color-light)"
+						x="42"
+						y="-4"
+						width="16"
+						height="10"
+						rx="2"
+					/>
+
+					<rect
+						fill="url(#color-light)"
+						x="45"
+						y="0"
+						width="10"
+						height="12"
+						rx="2"
+						transform="translate(50 50) rotate(45) translate(-50 -50)"
+					/>
+				</g>
+
+				<g transform="translate(50 50) scale(.8) translate(-50 -50)">
+					<use href="#face" />
+
+					<g class="ticks">
+						<use href="#tick-big" fill-opacity="1.0" />
+						<use href="#tick-small" fill-opacity=".65" transform="translate(50 50) rotate(30) translate(-50 -50)" />
+						<use href="#tick-small" fill-opacity=".65" transform="translate(50 50) rotate(60) translate(-50 -50)" />
+						<use href="#tick-big" fill-opacity="1.0" transform="translate(50 50) rotate(90) translate(-50 -50)" />
+						<use href="#tick-small" fill-opacity=".65" transform="translate(50 50) rotate(120) translate(-50 -50)" />
+						<use href="#tick-small" fill-opacity=".65" transform="translate(50 50) rotate(150) translate(-50 -50)" />
+						<use href="#tick-big" fill-opacity="1.0" transform="translate(50 50) rotate(180) translate(-50 -50)" />
+						<use href="#tick-small" fill-opacity=".65" transform="translate(50 50) rotate(210) translate(-50 -50)" />
+						<use href="#tick-small" fill-opacity=".65" transform="translate(50 50) rotate(240) translate(-50 -50)" />
+						<use href="#tick-big" fill-opacity="1.0" transform="translate(50 50) rotate(270) translate(-50 -50)" />
+						<use href="#tick-small" fill-opacity=".65" transform="translate(50 50) rotate(300) translate(-50 -50)" />
+						<use href="#tick-small" fill-opacity=".65" transform="translate(50 50) rotate(330) translate(-50 -50)" />
+					</g>
+
+					<use
+						href="#git-graph"
+						transform="translate(50 50) scale(0.75) rotate(-107) translate(-50 -50) translate(0 15)"
+					/>
+				</g>
+			</g>
+			<g id="back">
+				<use href="#face" />
+
+				<polygon
+					class="git-graph"
+					stroke="url(#color-dark)"
+					stroke-width="15"
+					points="50,50 72,72 28,28 50,50 28,72 72,28 50,50"
+				/>
+			</g>
+			<g id="front">
+				<use href="#face" />
+
+				<!--
+					`transform-origin: center;` doesn't work everywhere
+					use the technic `translate(x y) function() translate(-x -y)`
+					from https://css-tricks.com/transforms-on-svg-elements/
+				-->
+				<use
+					href="#git-graph"
+					transform="translate(50 50) scale(1.1) translate(-50 -50)"
+				/>
+			</g>
+		</g>
+	</g>
+
+	<defs>
+		<g class="git-graph" id="git-graph">
+			<path
+				fill="url(#color-dark)"
+				fill-opacity="1"
+				d="
+					M 35.892,19.623 46.459,30.19
+						c 2.456,-0.83 5.272,-0.273 7.229,1.685
+						c 1.969,1.97 2.521,4.81 1.67,7.275
+						l 10.186,10.185
+						c 2.465,-0.85 5.307,-0.3 7.275,1.671
+						c 2.75,2.75 2.75,7.206 0,9.958
+						c -2.752,2.751 -7.208,2.751 -9.961,0
+						c -2.068,-2.07 -2.58,-5.11 -1.531,-7.658
+						l -9.5,-9.499
+						v 24.997
+						c 0.67,0.332 1.303,0.774 1.861,1.332
+						c 2.75,2.75 2.75,7.206 0,9.959
+						c -2.75,2.749 -7.209,2.749 -9.957,0
+						c -2.75,-2.754 -2.75,-7.21 0,-9.959
+						c 0.68,-0.679 1.467,-1.193 2.307,-1.537
+						v -25.23
+						c -0.84,-0.344 -1.625,-0.853 -2.307,-1.537
+						c -2.083,-2.082 -2.584,-5.14 -1.516,-7.698
+					L 31.798,23.715
+					Z
+				"
+			/>
+		</g>
+
+		<g class="face" id="face">
+			<circle cx="50" cy="50" r="50" class="background" fill="url(#color-light)" fill-opacity="1" />
+			<circle cx="50" cy="50" r="45" class="border-shadow" />
+			<circle cx="50" cy="50" r="45" class="border" stroke="url(#color-dark)" stroke-width="10.1" />
+		</g>
+
+		<g id="tick-big">
+			<rect
+				fill="url(#color-dark)"
+				x="47"
+				y="9"
+				width="6"
+				height="12"
+				rx="1"
+			/>
+		</g>
+
+		<g id="tick-small">
+			<rect
+				fill="url(#color-dark)"
+				x="48"
+				y="9"
+				width="4"
+				height="9"
+				rx="0.7"
+			/>
+		</g>
+
+		<linearGradient id="color-light">
+			<!-- <stop offset="0" stop-color="hsl(10, 86%, 57%)" /> -->
+			<stop offset="0" stop-color="#f05133" />
+		</linearGradient>
+		<linearGradient id="color-dark">
+			<!-- <stop offset="0" stop-color="hsl(10, 30%, 27%)" /> -->
+			<stop offset="0" stop-color="#5a3730" />
+		</linearGradient>
+		<linearGradient id="color-darken">
+			<!-- <stop offset="0" stop-color="hsl(10, 50%, 17%)" /> -->
+			<stop offset="0" stop-color="#411d16" />
+		</linearGradient>
+		<linearGradient id="color-darken-light">
+			<stop offset="0" stop-color="#aaaaaa" />
+		</linearGradient>
+
+		<!-- faces -->
+		<style type="text/css">
+			.coin:has(#front:target) {
+				#back {
+					display: none;
+				}
+			}
+
+			.coin:has(#back:target) {
+				#front {
+					display: none;
+				}
+			}
+		</style>
+
+		<!-- time-keeper -->
+		<style type="text/css">
+			.coin:has(#time-keeper:target) {
+				#time-keeper {
+					display: initial;
+
+					.button {
+						fill-opacity: 1;
+					}
+				}
+
+				#back,
+				#front {
+					display: none;
+				}
+			}
+
+			.coin #time-keeper {
+				display: none;
+			}
+		</style>
+
+		<!-- edge -->
+		<style type="text/css">
+			@supports (transform: scale(0.95) translate(-1%, 0.5%)) and (transform-origin: center) {
+				@media (min-width: 200px) and (min-height: 200px) {
+					svg:not(:has(:target)) {
+						.scene {
+							transform: scale(0.95) translate(-1%, 0.5%);
+							transform-origin: center;
+						}
+
+						.edge,
+						.edge-stripes {
+							stroke: url(#color-darken);
+							stroke-width: 6;
+						}
+					}
+				}
+			}
+		</style>
+
+		<!-- big edge -->
+		<style type="text/css">
+			@supports (stroke-dasharray: 3 0.3) {
+				@media (min-width: 450px) and (min-height: 450px) {
+					svg:not(:has(:target)) {
+						.edge-stripes {
+							stroke-dasharray: 3 0.3;
+						}
+					}
+				}
+			}
+		</style>
+
+		<!-- filter -->
+		<filter id="light-and-shadow">
+			<feSpecularLighting in="SourceGraphic" specularExponent="20">
+				<fePointLight x="0" y="0" z="20" />
+			</feSpecularLighting>
+			<feComposite in2="SourceAlpha" operator="in" />
+			<feGaussianBlur stdDeviation="0.05" result="sparkle" />
+
+			<feSpecularLighting in="SourceGraphic" specularExponent="30">
+				<fePointLight x="100" y="100" z="100" />
+			</feSpecularLighting>
+			<feColorMatrix
+				values="0 0 0 0 0,
+				        0 0 0 0 0,
+				        0 0 0 0 0,
+				        0 0 0 3 0"
+			/>
+			<feComposite in2="SourceAlpha" operator="in" />
+			<feGaussianBlur stdDeviation="1" result="drop-shadow" />
+
+			<feMerge>
+				<feMergeNode in="drop-shadow" />
+				<feMergeNode in="SourceGraphic" />
+				<feMergeNode in="sparkle" />
+			</feMerge>
+		</filter>
+		<filter id="edge-light">
+			<feSpecularLighting in="SourceGraphic" specularExponent="20">
+				<fePointLight x="70" y="-30" z="35" />
+			</feSpecularLighting>
+			<feComposite in2="SourceGraphic" operator="arithmetic" k1="0" k2="0.4" k3="0" />
+			<feComposite in2="SourceAlpha" operator="in" />
+			<feGaussianBlur stdDeviation="0.5" result="sparkle" />
+
+			<feSpecularLighting in="SourceGraphic" specularExponent="30">
+				<fePointLight x="100" y="100" z="80" />
+			</feSpecularLighting>
+			<feColorMatrix
+				values="0 0 0 0 0,
+				        0 0 0 0 0,
+				        0 0 0 0 0,
+				        0 0 0 1 0"
+			/>
+			<feComposite in2="SourceAlpha" operator="in" result="inner-curve-shadow" />
+
+			<feMerge>
+				<feMergeNode in="SourceGraphic" />
+				<feMergeNode in="inner-curve-shadow" />
+				<feMergeNode in="sparkle" />
+			</feMerge>
+		</filter>
+		<filter id="bas-relief-border">
+			<feSpecularLighting in="SourceGraphic" specularExponent="30">
+				<fePointLight x="0" y="0" z="50" />
+			</feSpecularLighting>
+			<feColorMatrix
+				values="0 0 0 0 0,
+				        0 0 0 0 0,
+				        0 0 0 0 0,
+				        0 0 0 5 0"
+			/>
+			<feComposite in2="SourceAlpha" operator="in" />
+			<feGaussianBlur stdDeviation="1" />
+		</filter>
+		<filter id="bas-relief">
+			<feSpecularLighting in="SourceGraphic" specularExponent="30">
+				<fePointLight x="100" y="100" z="100" />
+			</feSpecularLighting>
+			<feColorMatrix
+				values="0 0 0 0 0,
+				        0 0 0 0 0,
+				        0 0 0 0 0,
+				        0 0 0 3 0"
+			/>
+			<feComposite in2="SourceAlpha" operator="in" />
+			<feGaussianBlur stdDeviation="0.5" />
+			<feBlend in2="SourceGraphic" mode="lighten" />
+		</filter>
+		<style type="text/css">
+			@supports (filter: url(#light-and-shadow)) {
+				@media (prefers-color-scheme: dark) {
+					feSpecularLighting {
+						lighting-color: url(#color-darken-light);
+					}
+				}
+
+				@media (min-width: 250px) and (min-height: 250px) {
+					.scene {
+						filter: url(#light-and-shadow);
+					}
+
+					svg:not(:has(:target)) {
+						.edge {
+							filter: url(#edge-light);
+						}
+
+						.border-shadow {
+							/* stroke is only needed to have an alpha channel for filter */
+							stroke: #ffffff;
+							stroke-width: 5.5px;
+							filter: url(#bas-relief-border);
+						}
+					}
+
+					.git-graph {
+						filter: url(#bas-relief);
+					}
+				}
+			}
+		</style>
+	</defs>
+</svg>
