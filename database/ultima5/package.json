@@ -1,0 +1,17 @@
+{
+  "name": "ultima5-desktop",
+  "productName": "Ultima V",
+  "version": "1.1.70",
+  "description": "Ultima V: Warriors of Destiny, a new engine for the DOS game's files, as a desktop app",
+  "author": "synthwave-pixel",
+  "license": "MIT",
+  "private": true,
+  "main": "main.cjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synthwave-pixel/ultima5.git"
+  },
+  "dependencies": {
+    "electron-updater": "6.8.9"
+  }
+}
