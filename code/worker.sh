@@ -505,9 +505,12 @@ fit_main_window() {
   local SW SH LINE WID WW WH NW NH
   read -r SW SH < <(timeout 5 xdotool getdisplaygeometry 2>/dev/null)
   [[ "$SW" =~ ^[0-9]+$ && "$SH" =~ ^[0-9]+$ ]] || return 0
-  # The largest managed window (as take-screenshot.sh picks the app window)
-  LINE=$(timeout 20 xwininfo -tree -root 2>/dev/null | grep '": ("' \
-    | sed -nE 's/^[[:space:]]*(0x[0-9a-f]+) .* ([0-9]+)x([0-9]+)[-+][-0-9]+[-+][-0-9]+ +[-+][0-9]+[-+][0-9]+$/\1 \2 \3/p' \
+  # The largest managed window (as take-screenshot.sh picks the app window),
+  # not the window manager's own (IceWM's taskbar). A window placed partly off
+  # screen has negative absolute coordinates, which X11 writes as "+-320+-150"
+  # (#10156: a 1440x900 window centered on the 800x600 screen).
+  LINE=$(timeout 20 xwininfo -tree -root 2>/dev/null | grep '": ("' | grep -vi '"icewm"' \
+    | sed -nE 's/^[[:space:]]*(0x[0-9a-f]+) .* ([0-9]+)x([0-9]+)[-+]-?[0-9]+[-+]-?[0-9]+ +[-+]-?[0-9]+[-+]-?[0-9]+$/\1 \2 \3/p' \
     | awk '{ print $2 * $3, $0 }' | sort -rn | head -n 1 | cut -d ' ' -f 2-)
   read -r WID WW WH <<<"$LINE"
   [[ -n "$WID" && "$WW" =~ ^[0-9]+$ && "$WH" =~ ^[0-9]+$ ]] || return 0
