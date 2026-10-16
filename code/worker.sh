@@ -77,10 +77,17 @@ if [[ "$URL" == https://github.com/*/* || "$URL" == https://codeberg.org/*/* || 
   FORGE_INFO=$(bash "$(dirname "$0")/fetch-releases.sh" "$URL" "$API_JSON")
   FETCH_RC=$?
   set -e
-  if [ $FETCH_RC -ne 0 ] ; then
+  if [ $FETCH_RC -eq 2 ] ; then
+    # Not a repository front page after all (a GitLab upload or raw file, a
+    # Codeberg attachment): a direct link, downloaded as it is
+    echo "Not a repository page but a direct link, downloading it as it is"
+    rm -f "$API_JSON"
+  elif [ $FETCH_RC -ne 0 ] ; then
     echo "Unable to get the releases of the repository $URL. Does the repository exist, and is it public?"
     exit 1
   fi
+fi
+if [ -n "${FORGE_INFO:-}" ] ; then
   FORGE=$(echo "$FORGE_INFO" | cut -d ' ' -f 1)
   GHUSER=$(echo "$FORGE_INFO" | cut -d ' ' -f 2)
   GHREPO=$(echo "$FORGE_INFO" | cut -d ' ' -f 3)
