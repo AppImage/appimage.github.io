@@ -132,6 +132,15 @@ GitHub Pages (Jekyll) from this repository.
    (`code/repo-url-for-entry.sh --shortens`: `https://github.com/o/r/releases` or
    `.../releases/download/...` to `https://github.com/o/r`); even a change within
    the same owner may be a different project that shares the file name (#8569).
+   Two opt-in policies, off unless the repository variable is `true`:
+   `AUTO_MERGE_DISCOVERED=true` also merges an auto-discovered PR that passed
+   with `screenshot-ok`, has no `not-upstream`, `repackaged`, `manual-check-needed`
+   or `do-not-merge` label, adds a new entry that links to a GitHub repository which
+   is not a fork, at least 180 days old, with at least `AUTO_MERGE_MIN_STARS`
+   (default 20) stars, and on which nobody but github-actions commented;
+   `AUTO_MERGE_OWN_APP=true` also merges a first contribution (author association
+   below CONTRIBUTOR) that adds a new entry when the author is the GitHub account
+   the AppImage comes from (`code/upstream-owner.sh`), i.e. adds their own app.
    `merge-labeled.yml` applies the same rule. A merge with the
    workflow's token does not trigger push workflows, so it starts `test.yml`
    by `workflow_dispatch` with the merge commit (input `commit`), which writes
