@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.fredrikborgstrom.moviecat</id>
+  <name>MovieCat</name>
+  <summary>Your movie and TV file library</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="org.moviecat">
+    <name>AB Cx3</name>
+  </developer>
+  <description>
+    <p>
+      MovieCat scans your folders for movie and TV files, recognises each title from its file name,
+      and shows the poster, rating, year and a short summary. No account, sign-up or API key needed.
+    </p>
+    <ul>
+      <li>Understands messy release names, folder layouts, TV episodes and foreign titles</li>
+      <li>Finds the folders that hold your movies and shows automatically</li>
+      <li>Leaves out home videos, screen recordings and tutorials</li>
+      <li>Rate titles yourself, search, filter and sort</li>
+      <li>Fix a wrong match in seconds; play a file or show it in its folder with one click</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github.fredrikborgstrom.moviecat.desktop</launchable>
+  <url type="homepage">https://moviecat.org</url>
+  <url type="bugtracker">https://github.com/FredrikBorgstrom/moviecat/issues</url>
+  <url type="vcs-browser">https://github.com/FredrikBorgstrom/moviecat</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The library with posters and ratings</caption>
+      <image>https://raw.githubusercontent.com/FredrikBorgstrom/moviecat/main/appstore/screenshots/1-library.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Details of a movie</caption>
+      <image>https://raw.githubusercontent.com/FredrikBorgstrom/moviecat/main/appstore/screenshots/2-detail.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <provides>
+    <binary>moviecat</binary>
+  </provides>
+  <releases>
+    <release version="1.1.0" date="2026-10-18">
+      <description>
+        <p>Sort by date modified, and move movies and episodes to the Trash from the details view.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-10-17"/>
+  </releases>
+</component>
