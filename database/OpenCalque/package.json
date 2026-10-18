@@ -1,0 +1,11 @@
+{
+  "name": "@opencalque/desktop",
+  "productName": "OpenCalque",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "./out/main/index.js",
+  "description": "Open-source 2D architectural editor: floor plans and layouts.",
+  "author": "OpenCalque contributors",
+  "homepage": "https://github.com/laurent512/opencalque"
+}
