@@ -56,6 +56,7 @@ jobs:
           ref: master
           sparse-checkout: |
             code/upstream-owner.sh
+            code/is-upstream-account.sh
             code/repo-url-for-entry.sh
             code/fetch-releases.sh
             code/find-appimage.sh
@@ -70,8 +71,9 @@ jobs:
           # (e.g. repeated /retest) go to the re-test pull request it points to
           lock_old() { gh api -X PUT "repos/$REPO/issues/$PR/lock" -f lock_reason=resolved >/dev/null 2>&1 || true ; }
           # Who may: maintainers, the PR's author, and the GitHub account the
-          # AppImage comes from (auto-discovered PRs are opened by a
-          # maintainer, so there the upstream author is not the PR's author).
+          # AppImage comes from, or a public member of that organization
+          # (auto-discovered PRs are opened by a maintainer, so there the
+          # upstream author is not the PR's author; code/is-upstream-account.sh).
           # The URL is read from the PR's data/ files via the API.
           ALLOWED=false
           case "$ASSOCIATION" in OWNER|MEMBER|COLLABORATOR) ALLOWED=true ;; esac
@@ -81,12 +83,12 @@ jobs:
             for FILE in $(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' | head -n 5) ; do
               URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$SHA" 2>/dev/null | head -n 1)
               OWNER=$(bash code/upstream-owner.sh "$URL")
-              [ -n "$OWNER" ] && [ "$(lc "$OWNER")" = "$(lc "$COMMENTER")" ] && ALLOWED=true
+              [ -n "$OWNER" ] && bash code/is-upstream-account.sh "$COMMENTER" "$OWNER" && ALLOWED=true
             done
           fi
           if [ "$ALLOWED" != true ] ; then
             react confused
-            reply "\`/retest\` can be used by the author of this pull request, by the GitHub account the AppImage comes from, and by maintainers."
+            reply "\`/retest\` can be used by the author of this pull request, by the GitHub account the AppImage comes from (for an organization: its members who show their membership on the organization's page), and by maintainers."
             exit 0
           fi
           react eyes
