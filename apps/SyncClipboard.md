@@ -2,14 +2,13 @@
 layout: app
 
 permalink: /SyncClipboard/
-description: "A Clibpoard Syncing Tool"
+description: "A clipboard syncing tool"
 license: "MIT"
 
 icons:
   - SyncClipboard/icons/scalable/xyz.jericx.desktop.syncclipboard.svg
-
 screenshots:
-  - SyncClipboard/screenshot.png
+- https://raw.githubusercontent.com/Jeric-X/SyncClipboard/master/docs/image/screenshot/linux_home.png
 
 authors:
   - name: "Jeric-X"
@@ -26,9 +25,9 @@ desktop:
     Type: Application
     Name: SyncClipboard
     Icon: xyz.jericx.desktop.syncclipboard
-    Comment: A Clibpoard Syncing Tool
-    Exec: "/usr/bin/SyncClipboard.Desktop.Default"
-    TryExec: "/usr/bin/SyncClipboard.Desktop.Default"
+    Comment: A clipboard syncing tool
+    Exec: SyncClipboard.Desktop.Default
+    TryExec: SyncClipboard.Desktop.Default
     NoDisplay: false
     X-AppImage-Integrate: true
     Terminal: false
@@ -44,9 +43,8 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Libc: host
+    X-AppImage-Libc: bundled
     X-AppImage-Runtime: static
-    X-AppImage-Self-Contained: false
-    X-AppImage-Glibc-Required: GLIBC_2.38
+    X-AppImage-Self-Contained: true
     X-AppImage-Payload-License: MIT
 ---
