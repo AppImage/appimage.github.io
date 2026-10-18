@@ -1,0 +1,26 @@
+{
+  "name": "@frogg/desktop",
+  "version": "1.6.11",
+  "private": true,
+  "description": "Frogg Electron desktop shell",
+  "homepage": "https://frogg.app",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Frogg App",
+    "email": "hello@frogg.app"
+  },
+  "main": "dist/main.js",
+  "dependencies": {
+    "@frogg/branding": "*",
+    "@frogg/protocol": "*",
+    "builder-util-runtime": "^9.5.1",
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.6.2",
+    "semver": "^7.7.3",
+    "ws": "^8.20.0",
+    "zod": "^4.4.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
