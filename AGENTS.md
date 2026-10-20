@@ -36,6 +36,8 @@ GitHub Pages (Jekyll) from this repository.
      the same shape with the listing's dates; then `code/find-appimage.sh`
      picks the AppImage by rules (among them: the newest toolkit build, e.g.
      Qt6 over Qt5; and the channel asked for with `#Channel` at the end of the URL
+     (a word of the file name, or a pattern with the wildcards `*` and `?` that
+     may match anywhere in the name: `#RapidRAW*ubuntu-24.04`)
      in `data/`, e.g. `https://github.com/srevinsaju/Firefox-Appimage#ESR`, independent of
      the name of the file: only releases or AppImages with that word in their tag or
      file name count, and it is an error if there are none; without a channel,
