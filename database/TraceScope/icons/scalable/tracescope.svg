@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="256"
+    height="256"
+    viewBox="0 0 256 256"
+    role="img"
+    aria-labelledby="title description">
+
+  <title id="title">TraceScope application icon</title>
+  <desc id="description">
+    A telemetry timeline and inspection lens representing structured log analysis.
+  </desc>
+
+  <rect
+      x="16"
+      y="16"
+      width="224"
+      height="224"
+      rx="36"
+      fill="#172033" />
+
+  <path
+      d="M42 82 H214"
+      stroke="#3A4963"
+      stroke-width="8"
+      stroke-linecap="round" />
+
+  <path
+      d="M42 128 H92 L110 94 L132 166 L154 116 L170 136 H214"
+      fill="none"
+      stroke="#6FD3FF"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-linejoin="round" />
+
+  <path
+      d="M42 180 H138"
+      stroke="#3A4963"
+      stroke-width="8"
+      stroke-linecap="round" />
+
+  <circle
+      cx="171"
+      cy="174"
+      r="35"
+      fill="none"
+      stroke="#F3F7FF"
+      stroke-width="10" />
+
+  <path
+      d="M196 199 L220 223"
+      stroke="#F3F7FF"
+      stroke-width="12"
+      stroke-linecap="round" />
+
+  <circle
+      cx="66"
+      cy="82"
+      r="7"
+      fill="#FFB454" />
+
+  <circle
+      cx="93"
+      cy="82"
+      r="7"
+      fill="#FF6B7A" />
+</svg>
