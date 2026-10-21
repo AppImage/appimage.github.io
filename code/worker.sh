@@ -42,7 +42,7 @@ echo $URL
 # of the name of the file; not part of the URL itself
 CHANNEL=""
 if [[ "$URL" == *"#"* ]] ; then
-  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._-')
+  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._*?-')
   URL="${URL%%#*}"
 fi
 

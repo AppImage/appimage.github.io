@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <!-- AppStream metainfo for Actioneer GTK -->
+  <id>me.spaceinbox.actioneer</id>
+  <metadata_license>MIT</metadata_license>
+  <name>Actioneer</name>
+  <name xml:lang="ja">Actioneer</name>
+  <name xml:lang="it">Actioneer</name>
+  <summary>Track GitHub Actions runs</summary>
+  <summary xml:lang="ja">GitHub Actions の実行をトラッキング</summary>
+  <summary xml:lang="it">Monitora le esecuzioni di GitHub Actions</summary>
+  <summary xml:lang="ur">GitHub Actions رنز کو ٹریک کریں</summary>
+  <summary xml:lang="ru">Отслеживайте запуски GitHub Actions</summary>
+  <summary xml:lang="pt-BR">Acompanhe execuções do GitHub Actions</summary>
+  <summary xml:lang="bn">GitHub Actions রান ট্র্যাক করুন</summary>
+  <summary xml:lang="ar">تتبّع عمليات تشغيل GitHub Actions</summary>
+  <summary xml:lang="fr">Suivez les exécutions GitHub Actions</summary>
+  <summary xml:lang="es">Sigue las ejecuciones de GitHub Actions</summary>
+  <summary xml:lang="hi">GitHub Actions रन ट्रैक करें</summary>
+  <summary xml:lang="zh-Hans">跟踪 GitHub Actions 运行</summary>
+  <summary xml:lang="nl">GitHub Actions-uitvoeringen volgen</summary>
+  <summary xml:lang="de">GitHub-Actions-Ausführungen verfolgen</summary>
+  <!-- Declared inside <languages>: AppStream ignores bare <lang> tags in the
+       component root, which is where these sat and why the validator listed
+       them as unknown. -->
+  <languages>
+    <lang>ar</lang>
+    <lang>bn</lang>
+    <lang>de</lang>
+    <lang>en</lang>
+    <lang>es</lang>
+    <lang>fr</lang>
+    <lang>hi</lang>
+    <lang>it</lang>
+    <lang>ja</lang>
+    <lang>nl</lang>
+    <lang>pt</lang>
+    <lang>ru</lang>
+    <lang>ur</lang>
+    <lang>zh</lang>
+  </languages>
+  <description>
+    <p>Actioneer lets you browse GitHub repositories, inspect workflow runs, check job logs, and refresh status without leaving your desktop.</p>
+    <p xml:lang="ja">Actioneer で GitHub リポジトリを閲覧し、ワークフロー実行を確認し、ジョブログを表示して、デスクトップから離れずに状態を更新できます。</p>
+    <p xml:lang="it">Actioneer ti consente di sfogliare i repository GitHub, ispezionare le esecuzioni dei workflow, consultare i log dei job e aggiornare lo stato senza lasciare il desktop.</p>
+    <p xml:lang="ur">Actioneer آپ کو GitHub ریپازٹریز براؤز کرنے، ورک فلو رنز دیکھنے، جاب لاگز چیک کرنے اور ڈیسک ٹاپ چھوڑے بغیر اسٹیٹس ریفریش کرنے دیتا ہے۔</p>
+    <p xml:lang="ru">Actioneer позволяет просматривать репозитории GitHub, проверять запуски workflow, смотреть логи заданий и обновлять статус, не выходя из рабочего стола.</p>
+    <p xml:lang="pt-BR">O Actioneer permite navegar por repositórios do GitHub, inspecionar execuções de workflow, conferir logs de jobs e atualizar o status sem sair da área de trabalho.</p>
+    <p xml:lang="bn">Actioneer আপনাকে GitHub রিপোজিটরি ব্রাউজ করতে, ওয়ার্কফ্লো রান দেখতে, জব লগ পরীক্ষা করতে এবং ডেস্কটপ না ছাড়াই স্ট্যাটাস রিফ্রেশ করতে দেয়।</p>
+    <p xml:lang="ar">يتيح لك Actioneer تصفح مستودعات GitHub وفحص عمليات تشغيل سير العمل ومراجعة سجلات المهام وتحديث الحالة دون مغادرة سطح المكتب.</p>
+    <p xml:lang="fr">Actioneer vous permet de parcourir des dépôts GitHub, d’inspecter les exécutions de workflows, de consulter les journaux de jobs et d’actualiser l’état sans quitter votre bureau.</p>
+    <p xml:lang="es">Actioneer te permite explorar repositorios de GitHub, revisar ejecuciones de workflows, consultar logs de jobs y actualizar el estado sin salir del escritorio.</p>
+    <p xml:lang="hi">Actioneer आपको GitHub रिपॉज़िटरी ब्राउज़ करने, वर्कफ़्लो रन देखने, जॉब लॉग जांचने और डेस्कटॉप छोड़े बिना स्थिति रीफ़्रेश करने देता है।</p>
+    <p xml:lang="zh-Hans">Actioneer 让你浏览 GitHub 仓库、检查工作流运行、查看作业日志，并在不离开桌面的情况下刷新状态。</p>
+    <p xml:lang="nl">Met Actioneer kun je GitHub-repositories doorzoeken, workflow-uitvoeringen inspecteren, joblogs bekijken en de status verversen zonder je desktop te verlaten.</p>
+    <p xml:lang="de">Actioneer ermöglicht es Ihnen, GitHub-Repositories zu durchsuchen, Workflow-Ausführungen zu prüfen, Job-Protokolle einzusehen und den Status zu aktualisieren, ohne den Desktop zu verlassen.</p>
+    <p>Key features</p>
+    <p xml:lang="ja">主な機能</p>
+    <p xml:lang="it">Funzionalità principali</p>
+    <p xml:lang="ur">اہم خصوصیات</p>
+    <p xml:lang="ru">Ключевые возможности</p>
+    <p xml:lang="pt-BR">Principais recursos</p>
+    <p xml:lang="bn">প্রধান বৈশিষ্ট্য</p>
+    <p xml:lang="ar">الميزات الرئيسية</p>
+    <p xml:lang="fr">Fonctionnalités principales</p>
+    <p xml:lang="es">Funciones principales</p>
+    <p xml:lang="hi">मुख्य विशेषताएँ</p>
+    <p xml:lang="zh-Hans">主要功能</p>
+    <p xml:lang="nl">Belangrijkste functies</p>
+    <p xml:lang="de">Hauptfunktionen</p>
+    <ul>
+      <li>Browse your GitHub repositories and view Actions workflows and recent runs quickly.</li>
+      <li xml:lang="ja">GitHub リポジトリを閲覧し、Actions ワークフローと最近の実行をすばやく表示します。</li>
+      <li xml:lang="it">Sfoglia i tuoi repository GitHub e visualizza rapidamente i workflow di Actions e le esecuzioni recenti.</li>
+      <li xml:lang="ur">اپنی GitHub ریپازٹریز تیزی سے براؤز کریں اور Actions ورک فلوز اور حالیہ رنز دیکھیں۔</li>
+      <li xml:lang="ru">Быстро просматривайте свои репозитории GitHub и последние запуски в Actions.</li>
+      <li xml:lang="pt-BR">Navegue rapidamente pelos seus repositórios do GitHub e veja workflows do Actions e execuções recentes.</li>
+      <li xml:lang="bn">দ্রুত আপনার GitHub রিপোজিটরি ব্রাউজ করুন এবং Actions ওয়ার্কফ্লো ও সাম্প্রতিক রান দেখুন।</li>
+      <li xml:lang="ar">تصفّح مستودعات GitHub بسرعة واطّلع على سير عمل Actions وأحدث عمليات التشغيل.</li>
+      <li xml:lang="fr">Parcourez rapidement vos dépôts GitHub et consultez les workflows Actions et les exécutions récentes.</li>
+      <li xml:lang="es">Explora rápidamente tus repositorios de GitHub y consulta workflows de Actions y ejecuciones recientes.</li>
+      <li xml:lang="hi">अपने GitHub रिपॉज़िटरी जल्दी ब्राउज़ करें और Actions वर्कफ़्लो व हाल के रन देखें।</li>
+      <li xml:lang="zh-Hans">快速浏览你的 GitHub 仓库，查看 Actions 工作流和最近运行。</li>
+      <li xml:lang="nl">Blader snel door je GitHub-repositories en bekijk Actions-workflows en recente uitvoeringen.</li>
+      <li xml:lang="de">Durchsuchen Sie Ihre GitHub-Repositories und sehen Sie schnell Actions-Workflows und aktuelle Ausführungen.</li>
+      <li>Inspect run status (success, failure, queued, in progress) with clear badges and counts.</li>
+      <li xml:lang="ja">実行状態(成功、失敗、キュー中、進行中)を明瞭なバッジと件数で確認します。</li>
+      <li xml:lang="it">Ispeziona lo stato delle esecuzioni (riuscita, fallita, in coda, in corso) con badge e conteggi chiari.</li>
+      <li xml:lang="ur">واضح بیجز اور گنتی کے ساتھ رن اسٹیٹس (کامیاب، ناکام، قطار میں، جاری) دیکھیں۔</li>
+      <li xml:lang="ru">Проверяйте статус запусков (успех, ошибка, в очереди, выполняется) с наглядными метками и счётчиками.</li>
+      <li xml:lang="pt-BR">Inspecione o status das execuções (sucesso, falha, em fila, em andamento) com badges e contagens claras.</li>
+      <li xml:lang="bn">পরিষ্কার ব্যাজ ও কাউন্টসহ রান স্ট্যাটাস (সফল, ব্যর্থ, কিউড, চলমান) দেখুন।</li>
+      <li xml:lang="ar">افحص حالة التشغيل (نجاح، فشل، في قائمة الانتظار، قيد التنفيذ) عبر شارات وعدّادات واضحة.</li>
+      <li xml:lang="fr">Inspectez l’état des exécutions (succès, échec, en file, en cours) avec des badges et compteurs clairs.</li>
+      <li xml:lang="es">Revisa el estado de las ejecuciones (éxito, fallo, en cola, en progreso) con insignias y conteos claros.</li>
+      <li xml:lang="hi">स्पष्ट बैज और गिनती के साथ रन स्थिति (सफल, विफल, कतार में, प्रगति में) जांचें।</li>
+      <li xml:lang="zh-Hans">通过清晰的徽章和计数查看运行状态（成功、失败、排队、进行中）。</li>
+      <li xml:lang="nl">Inspecteer de uitvoeringsstatus (succes, mislukt, in wachtrij, bezig) met duidelijke badges en aantallen.</li>
+      <li xml:lang="de">Prüfen Sie den Ausführungsstatus (erfolgreich, fehlgeschlagen, in Warteschlange, in Ausführung) mit klaren Badges und Zählern.</li>
+      <li>Filter runs and focus on what matters most.</li>
+      <li xml:lang="ja">実行をフィルタリングして、最も重要なものに集中します。</li>
+      <li xml:lang="it">Filtra le esecuzioni e concentrati su ciò che conta di più.</li>
+      <li xml:lang="ur">رنز فلٹر کریں اور اہم ترین چیزوں پر توجہ دیں۔</li>
+      <li xml:lang="ru">Фильтруйте запуски и фокусируйтесь на самом важном.</li>
+      <li xml:lang="pt-BR">Filtre execuções e foque no que mais importa.</li>
+      <li xml:lang="bn">রান ফিল্টার করুন এবং সবচেয়ে গুরুত্বপূর্ণ বিষয়ে ফোকাস করুন।</li>
+      <li xml:lang="ar">صفِّ عمليات التشغيل وركّز على ما يهم أكثر.</li>
+      <li xml:lang="fr">Filtrez les exécutions et concentrez-vous sur l’essentiel.</li>
+      <li xml:lang="es">Filtra ejecuciones y céntrate en lo más importante.</li>
+      <li xml:lang="hi">रन फ़िल्टर करें और सबसे महत्वपूर्ण चीज़ों पर ध्यान दें।</li>
+      <li xml:lang="zh-Hans">筛选运行记录，专注最重要的内容。</li>
+      <li xml:lang="nl">Filter uitvoeringen en focus op wat het belangrijkst is.</li>
+      <li xml:lang="de">Filtern Sie Ausführungen und konzentrieren Sie sich auf das Wesentliche.</li>
+      <li>View job logs: download and preview run logs for quick troubleshooting.</li>
+      <li xml:lang="ja">ジョブログを表示: 実行ログをダウンロードしてプレビューし、すばやくトラブルシューティングします。</li>
+      <li xml:lang="it">Visualizza i log dei job: scarica e anteprima i log delle esecuzioni per una risoluzione rapida dei problemi.</li>
+      <li xml:lang="ur">جاب لاگز دیکھیں: تیز ٹربل شوٹنگ کے لیے رن لاگز ڈاؤن لوڈ اور پری ویو کریں۔</li>
+      <li xml:lang="ru">Просматривайте логи заданий: скачивайте и предварительно смотрите логи для быстрой диагностики.</li>
+      <li xml:lang="pt-BR">Veja logs de jobs: baixe e visualize logs de execução para troubleshooting rápido.</li>
+      <li xml:lang="bn">জব লগ দেখুন: দ্রুত সমস্যা সমাধানের জন্য রান লগ ডাউনলোড ও প্রিভিউ করুন।</li>
+      <li xml:lang="ar">اعرض سجلات المهام: نزّل السجلات وعاينها لحلّ المشاكل بسرعة.</li>
+      <li xml:lang="fr">Consultez les journaux des jobs : téléchargez et prévisualisez les logs pour dépanner rapidement.</li>
+      <li xml:lang="es">Consulta logs de jobs: descarga y previsualiza logs para resolver problemas rápidamente.</li>
+      <li xml:lang="hi">जॉब लॉग देखें: तेज़ ट्रबलशूटिंग के लिए रन लॉग डाउनलोड और प्रीव्यू करें।</li>
+      <li xml:lang="zh-Hans">查看作业日志：下载并预览运行日志，快速排查问题。</li>
+      <li xml:lang="nl">Bekijk joblogs: download en bekijk uitvoeringslogs voor snelle probleemoplossing.</li>
+      <li xml:lang="de">Zeigen Sie Job-Protokolle an: Laden Sie Ausführungsprotokolle herunter und sehen Sie sie zur schnellen Fehlerbehebung an.</li>
+      <li>Dispatch workflows, cancel running workflows, and re-run failed runs directly from the app.</li>
+      <li xml:lang="ja">ワークフローをトリガーし、実行中のワークフローをキャンセルし、失敗した実行をアプリから直接再実行できます。</li>
+      <li xml:lang="it">Avvia workflow, annulla workflow in esecuzione e riexecuta esecuzioni fallite direttamente dall'app.</li>
+      <li xml:lang="ur">ایپ سے براہ راست ورک فلوز چلائیں، جاری ورک فلوز منسوخ کریں، اور ناکام رنز دوبارہ چلائیں۔</li>
+      <li xml:lang="ru">Запускайте workflow, отменяйте выполняющиеся и перезапускайте неудачные запуски прямо из приложения.</li>
+      <li xml:lang="pt-BR">Dispare workflows, cancele workflows em execução e reexecute falhas diretamente no app.</li>
+      <li xml:lang="bn">অ্যাপ থেকেই ওয়ার্কফ্লো চালু করুন, চলমান ওয়ার্কফ্লো বাতিল করুন, এবং ব্যর্থ রান পুনরায় চালান।</li>
+      <li xml:lang="ar">شغّل سير العمل، وألغِ السير قيد التنفيذ، وأعد تشغيل الحالات الفاشلة مباشرة من التطبيق.</li>
+      <li xml:lang="fr">Déclenchez des workflows, annulez ceux en cours et relancez les exécutions en échec depuis l’application.</li>
+      <li xml:lang="es">Lanza workflows, cancela workflows en ejecución y vuelve a ejecutar fallos directamente desde la app.</li>
+      <li xml:lang="hi">ऐप से सीधे वर्कफ़्लो ट्रिगर करें, चल रहे वर्कफ़्लो रद्द करें और विफल रन फिर से चलाएँ।</li>
+      <li xml:lang="zh-Hans">可直接在应用中触发工作流、取消进行中的工作流，并重新运行失败的运行。</li>
+      <li xml:lang="nl">Start workflows, annuleer lopende workflows en start mislukte uitvoeringen direct vanuit de app opnieuw.</li>
+      <li xml:lang="de">Starten Sie Workflows, brechen Sie laufende Workflows ab und starten Sie fehlgeschlagene Ausführungen direkt in der App neu.</li>
+      <li>Favorites and quick search let you focus on the repositories and workflows that matter most.</li>
+      <li xml:lang="ja">お気に入りやクイック検索で、最も重要なリポジトリとワークフローに集中できます。</li>
+      <li xml:lang="it">Preferiti e ricerca rapida ti consentono di concentrarti sui repository e sui workflow più importanti.</li>
+      <li xml:lang="ur">فیورٹس اور فوری تلاش آپ کو سب سے اہم ریپازٹریز اور ورک فلوز پر توجہ دینے میں مدد دیتے ہیں۔</li>
+      <li xml:lang="ru">Избранное и быстрый поиск помогают сосредоточиться на самых важных репозиториях и workflow.</li>
+      <li xml:lang="pt-BR">Favoritos e busca rápida ajudam você a focar nos repositórios e workflows mais importantes.</li>
+      <li xml:lang="bn">ফেভারিটস ও কুইক সার্চ আপনাকে সবচেয়ে গুরুত্বপূর্ণ রিপোজিটরি ও ওয়ার্কফ্লোতে ফোকাস করতে দেয়।</li>
+      <li xml:lang="ar">تساعدك المفضلة والبحث السريع على التركيز على المستودعات وسير العمل الأكثر أهمية.</li>
+      <li xml:lang="fr">Les favoris et la recherche rapide vous aident à cibler les dépôts et workflows qui comptent le plus.</li>
+      <li xml:lang="es">Favoritos y búsqueda rápida te ayudan a enfocarte en los repositorios y workflows que más importan.</li>
+      <li xml:lang="hi">फ़ेवरिट्स और क्विक सर्च आपको सबसे ज़रूरी रिपॉज़िटरी और वर्कफ़्लो पर ध्यान देने देते हैं।</li>
+      <li xml:lang="zh-Hans">收藏与快速搜索可帮助你聚焦最重要的仓库和工作流。</li>
+      <li xml:lang="nl">Favorieten en snel zoeken helpen je te focussen op de repositories en workflows die het belangrijkst zijn.</li>
+      <li xml:lang="de">Favoriten und schnelle Suche helfen Ihnen, sich auf die wichtigsten Repositories und Workflows zu konzentrieren.</li>
+      <li>Desktop notifications for run completions and failures so you never miss important results.</li>
+      <li xml:lang="ja">実行の完了と失敗のデスクトップ通知で、重要な結果を見逃しません。</li>
+      <li xml:lang="it">Notifiche desktop per il completamento e il fallimento delle esecuzioni, così non perdi mai risultati importanti.</li>
+      <li xml:lang="ur">رن مکمل یا ناکام ہونے پر ڈیسک ٹاپ نوٹیفکیشنز ملیں تاکہ اہم نتائج آپ سے رہ نہ جائیں۔</li>
+      <li xml:lang="ru">Получайте уведомления о завершённых и неудачных запусках, чтобы не пропустить важные результаты.</li>
+      <li xml:lang="pt-BR">Notificações de desktop para conclusões e falhas de execução para você não perder resultados importantes.</li>
+      <li xml:lang="bn">রান সম্পন্ন/ব্যর্থ হলে ডেস্কটপ নোটিফিকেশন পান, যাতে গুরুত্বপূর্ণ ফল মিস না হয়।</li>
+      <li xml:lang="ar">إشعارات سطح المكتب لعمليات التشغيل المكتملة والفاشلة حتى لا تفوّت النتائج المهمة.</li>
+      <li xml:lang="fr">Notifications de bureau pour les exécutions terminées et en échec afin de ne rien manquer d’important.</li>
+      <li xml:lang="es">Notificaciones de escritorio para ejecuciones completadas y fallidas para no perder resultados importantes.</li>
+      <li xml:lang="hi">रन पूरा होने और विफल होने पर डेस्कटॉप सूचनाएँ मिलती हैं ताकि महत्वपूर्ण परिणाम न छूटें।</li>
+      <li xml:lang="zh-Hans">提供运行完成与失败的桌面通知，不错过关键结果。</li>
+      <li xml:lang="nl">Desktopmeldingen voor voltooide en mislukte uitvoeringen, zodat je geen belangrijke resultaten mist.</li>
+      <li xml:lang="de">Desktop-Benachrichtigungen bei abgeschlossenen und fehlgeschlagenen Ausführungen, damit Sie keine wichtigen Ergebnisse verpassen.</li>
+      <li>Keep recent workflow data available offline.</li>
+      <li xml:lang="ja">最近のワークフローデータをオフラインで利用可能にします。</li>
+      <li xml:lang="it">Mantieni i dati recenti dei workflow disponibili offline.</li>
+      <li xml:lang="ur">حالیہ ورک فلو ڈیٹا آف لائن دستیاب رہتا ہے۔</li>
+      <li xml:lang="ru">Последние данные workflow доступны офлайн.</li>
+      <li xml:lang="pt-BR">Mantenha dados recentes de workflow disponíveis offline.</li>
+      <li xml:lang="bn">সাম্প্রতিক ওয়ার্কফ্লো ডেটা অফলাইনে উপলব্ধ থাকে।</li>
+      <li xml:lang="ar">إتاحة بيانات سير العمل الحديثة دون اتصال.</li>
+      <li xml:lang="fr">Conservez les données récentes des workflows disponibles hors ligne.</li>
+      <li xml:lang="es">Mantén disponibles sin conexión los datos recientes de workflows.</li>
+      <li xml:lang="hi">हाल का वर्कफ़्लो डेटा ऑफ़लाइन उपलब्ध रहता है।</li>
+      <li xml:lang="zh-Hans">最近的工作流数据可离线访问。</li>
+      <li xml:lang="nl">Houd recente workflowgegevens offline beschikbaar.</li>
+      <li xml:lang="de">Halten Sie aktuelle Workflow-Daten offline verfügbar.</li>
+      <li>Fast refreshes that keep the interface responsive.</li>
+      <li xml:lang="ja">インターフェースをレスポンシブに保つ高速な更新。</li>
+      <li xml:lang="it">Aggiornamenti rapidi che mantengono l'interfaccia reattiva.</li>
+      <li xml:lang="ur">تیز ریفریش انٹرفیس کو جواب دہ رکھتی ہیں۔</li>
+      <li xml:lang="ru">Быстрые обновления сохраняют отзывчивость интерфейса.</li>
+      <li xml:lang="pt-BR">Atualizações rápidas mantêm a interface responsiva.</li>
+      <li xml:lang="bn">দ্রুত রিফ্রেশ ইন্টারফেসকে রেসপন্সিভ রাখে।</li>
+      <li xml:lang="ar">تحديثات سريعة تُبقي الواجهة سريعة الاستجابة.</li>
+      <li xml:lang="fr">Des rafraîchissements rapides gardent l’interface réactive.</li>
+      <li xml:lang="es">Actualizaciones rápidas que mantienen la interfaz fluida.</li>
+      <li xml:lang="hi">तेज़ रिफ्रेश इंटरफ़ेस को उत्तरदायी बनाए रखते हैं।</li>
+      <li xml:lang="zh-Hans">快速刷新，保持界面响应。</li>
+      <li xml:lang="nl">Snelle verversingen houden de interface responsief.</li>
+      <li xml:lang="de">Schnelle Aktualisierungen halten die Oberfläche reaktionsschnell.</li>
+    </ul>
+    <p>This package contains the desktop application, icons and AppStream metadata required for distribution via Flatpak/Flathub. See the project repository for source code, contribution guidelines, and additional documentation.</p>
+    <p xml:lang="ja">このパッケージには、デスクトップアプリケーション、Flatpak/Flathub 経由での配布に必要なアイコンと AppStream メタデータが含まれます。ソースコード、貢献ガイドライン、追加ドキュメントはプロジェクトリポジトリを参照してください。</p>
+    <p xml:lang="it">Questo pacchetto contiene l'applicazione desktop, le icone e i metadati AppStream necessari per la distribuzione tramite Flatpak/Flathub. Consulta il repository del progetto per il codice sorgente, le linee guida di contribuzione e la documentazione aggiuntiva.</p>
+    <p xml:lang="ur">اس پیکیج میں Flatpak/Flathub کے ذریعے تقسیم کے لیے درکار ڈیسک ٹاپ ایپ، آئیکنز اور AppStream میٹاڈیٹا شامل ہیں۔ سورس کوڈ، شراکت کے رہنما اصول اور اضافی دستاویزات کے لیے پروجیکٹ ریپازٹری دیکھیں۔</p>
+    <p xml:lang="ru">Этот пакет содержит настольное приложение, иконки и метаданные AppStream, необходимые для распространения через Flatpak/Flathub. Исходный код, правила участия и дополнительная документация доступны в репозитории проекта.</p>
+    <p xml:lang="pt-BR">Este pacote contém o aplicativo de desktop, ícones e metadados AppStream necessários para distribuição via Flatpak/Flathub. Veja o repositório do projeto para código-fonte, diretrizes de contribuição e documentação adicional.</p>
+    <p xml:lang="bn">এই প্যাকেজে Flatpak/Flathub এর মাধ্যমে বিতরণের জন্য প্রয়োজনীয় ডেস্কটপ অ্যাপ, আইকন এবং AppStream মেটাডেটা রয়েছে। সোর্স কোড, অবদান নির্দেশিকা এবং অতিরিক্ত ডকুমেন্টেশনের জন্য প্রকল্পের রিপোজিটরি দেখুন।</p>
+    <p xml:lang="ar">تتضمن هذه الحزمة تطبيق سطح المكتب والأيقونات وبيانات AppStream الوصفية المطلوبة للتوزيع عبر Flatpak/Flathub. راجع مستودع المشروع للحصول على الشيفرة المصدرية وإرشادات المساهمة ووثائق إضافية.</p>
+    <p xml:lang="fr">Ce paquet contient l’application de bureau, les icônes et les métadonnées AppStream nécessaires à la distribution via Flatpak/Flathub. Consultez le dépôt du projet pour le code source, les consignes de contribution et la documentation complémentaire.</p>
+    <p xml:lang="es">Este paquete incluye la aplicación de escritorio, los iconos y los metadatos de AppStream necesarios para distribuir mediante Flatpak/Flathub. Consulta el repositorio del proyecto para el código fuente, las guías de contribución y documentación adicional.</p>
+    <p xml:lang="hi">इस पैकेज में Flatpak/Flathub के माध्यम से वितरण के लिए आवश्यक डेस्कटॉप ऐप, आइकन और AppStream मेटाडेटा शामिल हैं। सोर्स कोड, योगदान दिशानिर्देश और अतिरिक्त दस्तावेज़ के लिए प्रोजेक्ट रिपॉज़िटरी देखें।</p>
+    <p xml:lang="zh-Hans">此软件包包含通过 Flatpak/Flathub 分发所需的桌面应用、图标和 AppStream 元数据。源代码、贡献指南和更多文档请见项目仓库。</p>
+    <p xml:lang="nl">Dit pakket bevat de desktopapplicatie, pictogrammen en AppStream-metadata die nodig zijn voor distributie via Flatpak/Flathub. Zie de projectrepository voor broncode, bijdragerichtlijnen en aanvullende documentatie.</p>
+    <p xml:lang="de">Dieses Paket enthält die Desktop-Anwendung, Symbole und AppStream-Metadaten, die für die Verteilung über Flatpak/Flathub erforderlich sind. Quellcode, Beitragsrichtlinien und weitere Dokumentation finden Sie im Projekt-Repository.</p>
+  </description>
+  <project_license>MIT</project_license>
+  <url type="homepage">https://github.com/makoni/actioneer-gtk</url>
+  <url type="donation">https://nowpayments.io/donation/makoni</url>
+  <url type="bugtracker">https://github.com/makoni/actioneer-gtk/issues</url>
+  <url type="vcs-browser">https://github.com/makoni/actioneer-gtk</url>
+  <developer id="com.spaceinbox">
+    <name>Sergey Armodin</name>
+    <name xml:lang="ja">Sergey Armodin</name>
+    <name xml:lang="it">Sergey Armodin</name>
+    <url>https://spaceinbox.com</url>
+  </developer>
+  <!-- Content rating and categories -->
+  <content_rating type="oars-1.1"/>
+  <categories>
+    <category>Development</category>
+    <category>Utility</category>
+  </categories>
+  <launchable type="desktop-id">me.spaceinbox.actioneer.desktop</launchable>
+  <branding>
+    <color type="primary" scheme_preference="light">#2F81F7</color>
+    <color type="primary" scheme_preference="dark">#58A6FF</color>
+  </branding>
+  <keywords>
+    <keyword>GitHub</keyword>
+    <keyword xml:lang="ja">GitHub</keyword>
+    <keyword xml:lang="it">GitHub</keyword>
+    <keyword>Actions</keyword>
+    <keyword xml:lang="ja">Actions</keyword>
+    <keyword xml:lang="it">Actions</keyword>
+    <keyword>CI</keyword>
+    <keyword xml:lang="ja">CI</keyword>
+    <keyword xml:lang="it">CI</keyword>
+    <keyword>workflow</keyword>
+    <keyword xml:lang="ja">ワークフロー</keyword>
+    <keyword xml:lang="it">flusso di lavoro</keyword>
+    <keyword>automation</keyword>
+    <keyword xml:lang="ja">オートメーション</keyword>
+    <keyword xml:lang="it">automazione</keyword>
+    <keyword>DevOps</keyword>
+    <keyword xml:lang="ja">DevOps</keyword>
+    <keyword xml:lang="it">DevOps</keyword>
+  </keywords>
+  <provides>
+    <binary>actioneer</binary>
+  </provides>
+  <!-- Adaptive down to a phone in portrait (360 px wide): the store shows the
+       app as working on phones, and Phosh offers it in its app list. -->
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
+  <!-- Icons and screenshots: include icon names that match files in the icons/ directory.
+       Add screenshot entries when screenshots are available in data/screenshots/ or icons/preview. -->
+  <screenshots>
+    <!-- Referencing screenshots added under data/screenshots/ -->
+    <screenshot type="default">
+      <caption>Browse Actions workflows</caption>
+      <caption xml:lang="ja">Actions ワークフローを閲覧します</caption>
+      <caption xml:lang="it">Sfoglia i workflow di Actions</caption>
+      <caption xml:lang="ur">Actions ورک فلوز براؤز کریں</caption>
+      <caption xml:lang="ru">Просматривайте workflows в Actions</caption>
+      <caption xml:lang="pt-BR">Navegue pelos workflows do Actions</caption>
+      <caption xml:lang="bn">Actions ওয়ার্কফ্লো ব্রাউজ করুন</caption>
+      <caption xml:lang="ar">تصفّح سير عمل Actions</caption>
+      <caption xml:lang="fr">Parcourez les workflows Actions</caption>
+      <caption xml:lang="es">Explora workflows de Actions</caption>
+      <caption xml:lang="hi">Actions वर्कफ़्लो ब्राउज़ करें</caption>
+      <caption xml:lang="zh-Hans">浏览 Actions 工作流</caption>
+      <caption xml:lang="nl">Blader door Actions-workflows</caption>
+      <caption xml:lang="de">Actions-Workflows durchsuchen</caption>
+      <image type="source" width="2000" height="1400">https://raw.githubusercontent.com/makoni/actioneer-gtk/develop/data/screenshots/en-1.png</image>
+    </screenshot>
+    <screenshot type="detail">
+      <caption>Inspect workflow runs and drill into job details quickly</caption>
+      <caption xml:lang="ja">ワークフロー実行を確認し、すばやくジョブの詳細にアクセスします</caption>
+      <caption xml:lang="it">Ispeziona le esecuzioni dei workflow e accedi rapidamente ai dettagli dei job</caption>
+      <caption xml:lang="ur">ورک فلو رنز دیکھیں اور جلدی سے جاب کی تفصیلات میں جائیں</caption>
+      <caption xml:lang="ru">Проверяйте запуски workflow и быстро переходите к деталям заданий</caption>
+      <caption xml:lang="pt-BR">Inspecione execuções de workflow e aprofunde-se rapidamente nos detalhes dos jobs</caption>
+      <caption xml:lang="bn">ওয়ার্কফ্লো রান পরীক্ষা করুন এবং দ্রুত জবের বিস্তারিত দেখুন</caption>
+      <caption xml:lang="ar">افحص عمليات تشغيل سير العمل وتعمّق سريعًا في تفاصيل المهام</caption>
+      <caption xml:lang="fr">Inspectez les exécutions de workflows et accédez rapidement aux détails des jobs</caption>
+      <caption xml:lang="es">Inspecciona ejecuciones de workflows y profundiza rápido en los detalles de jobs</caption>
+      <caption xml:lang="hi">वर्कफ़्लो रन जांचें और जल्दी से जॉब विवरण देखें</caption>
+      <caption xml:lang="zh-Hans">检查工作流运行并快速查看作业详情</caption>
+      <caption xml:lang="nl">Inspecteer workflow-uitvoeringen en ga snel naar jobdetails</caption>
+      <caption xml:lang="de">Workflow-Ausführungen prüfen und schnell zu Job-Details springen</caption>
+      <image type="source" width="2000" height="1400">https://raw.githubusercontent.com/makoni/actioneer-gtk/develop/data/screenshots/en-2.png</image>
+    </screenshot>
+    <screenshot type="detail">
+      <caption>Review job logs inline without leaving the app</caption>
+      <caption xml:lang="ja">アプリを離れずにジョブログをインラインで確認します</caption>
+      <caption xml:lang="it">Consulta i log dei job in linea senza lasciare l'app</caption>
+      <caption xml:lang="ur">ایپ چھوڑے بغیر جاب لاگز یہیں دیکھیں</caption>
+      <caption xml:lang="ru">Просматривайте логи заданий прямо в приложении</caption>
+      <caption xml:lang="pt-BR">Revise logs de jobs no próprio app, sem sair dele</caption>
+      <caption xml:lang="bn">অ্যাপ না ছেড়ে ইনলাইনেই জব লগ দেখুন</caption>
+      <caption xml:lang="ar">راجع سجلات المهام داخل التطبيق دون مغادرته</caption>
+      <caption xml:lang="fr">Consultez les journaux des jobs directement dans l’application</caption>
+      <caption xml:lang="es">Revisa logs de jobs en línea sin salir de la aplicación</caption>
+      <caption xml:lang="hi">ऐप छोड़े बिना जॉब लॉग यहीं देखें</caption>
+      <caption xml:lang="zh-Hans">在应用内直接查看作业日志，无需离开应用</caption>
+      <caption xml:lang="nl">Bekijk joblogs inline zonder de app te verlaten</caption>
+      <caption xml:lang="de">Job-Protokolle direkt in der App prüfen</caption>
+      <image type="source" width="1988" height="1384">https://raw.githubusercontent.com/makoni/actioneer-gtk/develop/data/screenshots/en-3.png</image>
+    </screenshot>
+    <screenshot type="detail">
+      <caption>Run a job on any branch</caption>
+      <caption xml:lang="ja">任意のブランチでジョブを実行します</caption>
+      <caption xml:lang="it">Esegui un job su qualsiasi branch</caption>
+      <caption xml:lang="ur">کسی بھی برانچ پر جاب چلائیں</caption>
+      <caption xml:lang="ru">Запускайте задание на любой ветке</caption>
+      <caption xml:lang="pt-BR">Execute um job em qualquer branch</caption>
+      <caption xml:lang="bn">যেকোনো ব্রাঞ্চে একটি জব চালান</caption>
+      <caption xml:lang="ar">شغّل مهمة على أي فرع</caption>
+      <caption xml:lang="fr">Exécutez un job sur n’importe quelle branche</caption>
+      <caption xml:lang="es">Ejecuta un job en cualquier rama</caption>
+      <caption xml:lang="hi">किसी भी ब्रांच पर जॉब चलाएँ</caption>
+      <caption xml:lang="zh-Hans">在任意分支上运行作业</caption>
+      <caption xml:lang="nl">Voer een job uit op elke branch</caption>
+      <caption xml:lang="de">Einen Job auf jedem Branch ausführen</caption>
+      <image type="source" width="2000" height="1400">https://raw.githubusercontent.com/makoni/actioneer-gtk/develop/data/screenshots/en-4.png</image>
+    </screenshot>
+    <screenshot type="detail">
+      <caption>Browse repositories on your phone</caption>
+      <caption xml:lang="ja">スマートフォンでリポジトリを閲覧</caption>
+      <caption xml:lang="it">Sfoglia i repository dal telefono</caption>
+      <caption xml:lang="ur">اپنے فون پر ریپوزٹریز دیکھیں</caption>
+      <caption xml:lang="ru">Просматривайте репозитории на телефоне</caption>
+      <caption xml:lang="pt-BR">Navegue pelos repositórios no seu celular</caption>
+      <caption xml:lang="bn">আপনার ফোনে রিপোজিটরিগুলো ব্রাউজ করুন</caption>
+      <caption xml:lang="ar">تصفح المستودعات على هاتفك</caption>
+      <caption xml:lang="fr">Parcourez les dépôts sur votre téléphone</caption>
+      <caption xml:lang="es">Explora repositorios en tu teléfono</caption>
+      <caption xml:lang="hi">अपने फ़ोन पर रिपॉज़िटरी ब्राउज़ करें</caption>
+      <caption xml:lang="zh-Hans">在手机上浏览仓库</caption>
+      <caption xml:lang="nl">Blader door repositories op je telefoon</caption>
+      <caption xml:lang="de">Repositories auf dem Smartphone durchsuchen</caption>
+      <image type="source" width="796" height="1516">https://raw.githubusercontent.com/makoni/actioneer-gtk/develop/data/screenshots/en-mobile-1.png</image>
+    </screenshot>
+    <screenshot type="detail">
+      <caption>Follow runs and their jobs on a phone</caption>
+      <caption xml:lang="ja">スマートフォンで実行とそのジョブを追跡</caption>
+      <caption xml:lang="it">Segui le esecuzioni e i loro job dal telefono</caption>
+      <caption xml:lang="ur">فون پر رنز اور ان کی جابز پر نظر رکھیں</caption>
+      <caption xml:lang="ru">Следите за запусками и их заданиями на телефоне</caption>
+      <caption xml:lang="pt-BR">Acompanhe execuções e seus jobs no celular</caption>
+      <caption xml:lang="bn">ফোনে রান ও সেগুলোর জব অনুসরণ করুন</caption>
+      <caption xml:lang="ar">تابع عمليات التشغيل ومهامها على الهاتف</caption>
+      <caption xml:lang="fr">Suivez les exécutions et leurs jobs sur votre téléphone</caption>
+      <caption xml:lang="es">Sigue las ejecuciones y sus jobs en el teléfono</caption>
+      <caption xml:lang="hi">फ़ोन पर रन और उनके जॉब देखें</caption>
+      <caption xml:lang="zh-Hans">在手机上跟踪运行及其作业</caption>
+      <caption xml:lang="nl">Volg uitvoeringen en hun taken op je telefoon</caption>
+      <caption xml:lang="de">Ausführungen und ihre Aufgaben auf dem Smartphone verfolgen</caption>
+      <image type="source" width="796" height="1516">https://raw.githubusercontent.com/makoni/actioneer-gtk/develop/data/screenshots/en-mobile-2.png</image>
+    </screenshot>
+    <screenshot type="detail">
+      <caption>Read job logs on the go</caption>
+      <caption xml:lang="ja">外出先でジョブログを確認</caption>
+      <caption xml:lang="it">Leggi i log dei job ovunque tu sia</caption>
+      <caption xml:lang="ur">کہیں بھی جاب لاگز پڑھیں</caption>
+      <caption xml:lang="ru">Читайте логи заданий где угодно</caption>
+      <caption xml:lang="pt-BR">Leia logs de jobs em qualquer lugar</caption>
+      <caption xml:lang="bn">যেকোনো জায়গা থেকে জব লগ পড়ুন</caption>
+      <caption xml:lang="ar">اقرأ سجلات المهام أينما كنت</caption>
+      <caption xml:lang="fr">Lisez les journaux des jobs où que vous soyez</caption>
+      <caption xml:lang="es">Lee los logs de los jobs desde cualquier lugar</caption>
+      <caption xml:lang="hi">कहीं भी जॉब लॉग पढ़ें</caption>
+      <caption xml:lang="zh-Hans">随时随地查看作业日志</caption>
+      <caption xml:lang="nl">Lees joblogs onderweg</caption>
+      <caption xml:lang="de">Job-Protokolle unterwegs lesen</caption>
+      <image type="source" width="796" height="1516">https://raw.githubusercontent.com/makoni/actioneer-gtk/develop/data/screenshots/en-mobile-3.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.2.2" date="2026-10-19">
+      <description>
+        <ul>
+          <li>The AppImage uses the standard SquashFS format again, so tools such as AppImageLauncher can integrate it.</li>
+          <li xml:lang="ja">AppImageが再び標準のSquashFS形式になり、AppImageLauncherなどのツールで統合できるようになりました。</li>
+          <li xml:lang="it">L'AppImage usa di nuovo il formato standard SquashFS, così strumenti come AppImageLauncher possono integrarla.</li>
+          <li xml:lang="ur">AppImage اب پھر سے معیاری SquashFS فارمیٹ استعمال کرتا ہے، اس لیے AppImageLauncher جیسے ٹولز اسے مربوط کر سکتے ہیں۔</li>
+          <li xml:lang="ru">AppImage снова собран в стандартном формате SquashFS, поэтому его могут интегрировать инструменты вроде AppImageLauncher.</li>
+          <li xml:lang="pt-BR">O AppImage volta a usar o formato padrão SquashFS, então ferramentas como o AppImageLauncher podem integrá-lo.</li>
+          <li xml:lang="bn">AppImage আবার আদর্শ SquashFS ফরম্যাট ব্যবহার করে, তাই AppImageLauncher-এর মতো টুল এটি ইন্টিগ্রেট করতে পারে।</li>
+          <li xml:lang="ar">تستخدم حزمة AppImage مجددًا تنسيق SquashFS القياسي، لذا يمكن لأدوات مثل AppImageLauncher دمجها.</li>
+          <li xml:lang="fr">L’AppImage utilise de nouveau le format standard SquashFS, si bien que des outils comme AppImageLauncher peuvent l’intégrer.</li>
+          <li xml:lang="es">La AppImage vuelve a usar el formato estándar SquashFS, así que herramientas como AppImageLauncher pueden integrarla.</li>
+          <li xml:lang="hi">AppImage फिर से मानक SquashFS प्रारूप का उपयोग करता है, इसलिए AppImageLauncher जैसे टूल इसे एकीकृत कर सकते हैं।</li>
+          <li xml:lang="zh-Hans">AppImage 重新采用标准的 SquashFS 格式，因此 AppImageLauncher 等工具可以集成它。</li>
+          <li xml:lang="nl">De AppImage gebruikt weer het standaardformaat SquashFS, zodat hulpmiddelen zoals AppImageLauncher hem kunnen integreren.</li>
+          <li xml:lang="de">Das AppImage verwendet wieder das Standardformat SquashFS, sodass Werkzeuge wie AppImageLauncher es integrieren können.</li>
+          <li>The AppImage shows all of its icons even where no Adwaita icon theme is installed.</li>
+          <li xml:lang="ja">Adwaitaアイコンテーマがインストールされていない環境でも、AppImageのすべてのアイコンが表示されるようになりました。</li>
+          <li xml:lang="it">L'AppImage mostra tutte le sue icone anche dove il tema di icone Adwaita non è installato.</li>
+          <li xml:lang="ur">جہاں Adwaita آئیکن تھیم انسٹال نہ ہو، وہاں بھی AppImage اپنے تمام آئیکن دکھاتا ہے۔</li>
+          <li xml:lang="ru">AppImage показывает все свои значки даже там, где не установлена тема значков Adwaita.</li>
+          <li xml:lang="pt-BR">O AppImage mostra todos os seus ícones mesmo onde o tema de ícones Adwaita não está instalado.</li>
+          <li xml:lang="bn">যেখানে Adwaita আইকন থিম ইনস্টল করা নেই, সেখানেও AppImage তার সব আইকন দেখায়।</li>
+          <li xml:lang="ar">تعرض حزمة AppImage جميع أيقوناتها حتى عند عدم تثبيت سمة أيقونات Adwaita.</li>
+          <li xml:lang="fr">L’AppImage affiche toutes ses icônes, même là où le thème d’icônes Adwaita n’est pas installé.</li>
+          <li xml:lang="es">La AppImage muestra todos sus iconos incluso donde no está instalado el tema de iconos Adwaita.</li>
+          <li xml:lang="hi">जहाँ Adwaita आइकन थीम इंस्टॉल नहीं है, वहाँ भी AppImage अपने सभी आइकन दिखाता है।</li>
+          <li xml:lang="zh-Hans">即使未安装 Adwaita 图标主题，AppImage 也能显示其全部图标。</li>
+          <li xml:lang="nl">De AppImage toont al zijn pictogrammen, ook als er geen Adwaita-pictogramthema is geïnstalleerd.</li>
+          <li xml:lang="de">Das AppImage zeigt alle seine Symbole an, auch wenn kein Adwaita-Symbolthema installiert ist.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.1" date="2026-10-19">
+      <description>
+        <ul>
+          <li>The sign-in dialog shows the code and both of its buttons in full again, without scrolling.</li>
+          <li xml:lang="ja">サインインダイアログで、コードと2つのボタンが再びスクロールなしですべて表示されるようになりました。</li>
+          <li xml:lang="it">La finestra di accesso mostra di nuovo per intero il codice e i suoi due pulsanti, senza scorrere.</li>
+          <li xml:lang="ur">سائن اِن ڈائیلاگ اب پھر سے کوڈ اور اس کے دونوں بٹن پورے دکھاتا ہے، اسکرول کیے بغیر۔</li>
+          <li xml:lang="ru">Диалог входа снова показывает код и обе кнопки целиком, без прокрутки.</li>
+          <li xml:lang="pt-BR">A caixa de diálogo de login volta a mostrar o código e seus dois botões por inteiro, sem rolagem.</li>
+          <li xml:lang="bn">সাইন-ইন ডায়ালগ আবার কোড ও তার দুটি বোতাম পুরোপুরি দেখায়, স্ক্রল ছাড়াই।</li>
+          <li xml:lang="ar">يعرض مربع حوار تسجيل الدخول الرمز وزرّيه كاملين مرة أخرى، دون تمرير.</li>
+          <li xml:lang="fr">La boîte de dialogue de connexion affiche de nouveau le code et ses deux boutons en entier, sans défilement.</li>
+          <li xml:lang="es">El diálogo de inicio de sesión vuelve a mostrar el código y sus dos botones completos, sin desplazarse.</li>
+          <li xml:lang="hi">साइन-इन डायलॉग फिर से कोड और उसके दोनों बटन पूरे दिखाता है, बिना स्क्रॉल किए।</li>
+          <li xml:lang="zh-Hans">登录对话框再次完整显示验证码及两个按钮，无需滚动。</li>
+          <li xml:lang="nl">Het aanmeldvenster toont de code en beide knoppen weer volledig, zonder scrollen.</li>
+          <li xml:lang="de">Der Anmeldedialog zeigt den Code und beide Schaltflächen wieder vollständig an, ohne Scrollen.</li>
+          <li>The AppImage runs on older distributions again, including Ubuntu 22.04 and 24.04, and now appears in your language.</li>
+          <li xml:lang="ja">AppImageがUbuntu 22.04や24.04などの古いディストリビューションで再び動作し、お使いの言語で表示されるようになりました。</li>
+          <li xml:lang="it">L'AppImage funziona di nuovo sulle distribuzioni più vecchie, tra cui Ubuntu 22.04 e 24.04, e ora è nella tua lingua.</li>
+          <li xml:lang="ur">AppImage اب پھر سے پرانی ڈسٹری بیوشنز پر چلتا ہے، جن میں Ubuntu 22.04 اور 24.04 شامل ہیں، اور اب آپ کی زبان میں نظر آتا ہے۔</li>
+          <li xml:lang="ru">AppImage снова запускается на более старых дистрибутивах, включая Ubuntu 22.04 и 24.04, и теперь работает на вашем языке.</li>
+          <li xml:lang="pt-BR">O AppImage volta a funcionar em distribuições mais antigas, incluindo Ubuntu 22.04 e 24.04, e agora aparece no seu idioma.</li>
+          <li xml:lang="bn">AppImage আবার পুরোনো ডিস্ট্রিবিউশনে চলে, যার মধ্যে Ubuntu 22.04 ও 24.04 রয়েছে, এবং এখন আপনার ভাষায় দেখায়।</li>
+          <li xml:lang="ar">تعمل حزمة AppImage مجددًا على التوزيعات الأقدم، ومنها Ubuntu 22.04 و24.04، وأصبحت تظهر الآن بلغتك.</li>
+          <li xml:lang="fr">L’AppImage fonctionne de nouveau sur les distributions plus anciennes, dont Ubuntu 22.04 et 24.04, et s’affiche désormais dans votre langue.</li>
+          <li xml:lang="es">La AppImage vuelve a funcionar en distribuciones más antiguas, como Ubuntu 22.04 y 24.04, y ahora aparece en tu idioma.</li>
+          <li xml:lang="hi">AppImage फिर से पुराने डिस्ट्रीब्यूशन पर चलता है, जिनमें Ubuntu 22.04 और 24.04 शामिल हैं, और अब आपकी भाषा में दिखता है।</li>
+          <li xml:lang="zh-Hans">AppImage 再次可在较旧的发行版上运行，包括 Ubuntu 22.04 和 24.04，并且现在会以你的语言显示。</li>
+          <li xml:lang="nl">De AppImage werkt weer op oudere distributies, waaronder Ubuntu 22.04 en 24.04, en is nu in je eigen taal.</li>
+          <li xml:lang="de">Das AppImage läuft wieder auf älteren Distributionen, darunter Ubuntu 22.04 und 24.04, und erscheint jetzt in Ihrer Sprache.</li>
+          <li>Notifications from the AppImage now appear, and once the AppImage is integrated, docks show Actioneer's name and icon.</li>
+          <li xml:lang="ja">AppImageからの通知が表示されるようになり、AppImageを統合するとドックにActioneerの名前とアイコンが表示されます。</li>
+          <li xml:lang="it">Le notifiche dell'AppImage ora vengono mostrate e, una volta integrata l'AppImage, le dock mostrano il nome e l'icona di Actioneer.</li>
+          <li xml:lang="ur">AppImage سے اطلاعات اب ظاہر ہوتی ہیں، اور AppImage کو مربوط کرنے کے بعد ڈاک Actioneer کا نام اور آئیکن دکھاتا ہے۔</li>
+          <li xml:lang="ru">Уведомления из AppImage теперь появляются, а после интеграции AppImage док показывает имя и значок Actioneer.</li>
+          <li xml:lang="pt-BR">As notificações do AppImage agora aparecem e, depois que o AppImage é integrado, as docks mostram o nome e o ícone do Actioneer.</li>
+          <li xml:lang="bn">AppImage থেকে বিজ্ঞপ্তি এখন দেখা যায়, এবং AppImage ইন্টিগ্রেট করার পর ডক Actioneer-এর নাম ও আইকন দেখায়।</li>
+          <li xml:lang="ar">تظهر الآن الإشعارات من حزمة AppImage، وبعد دمج AppImage تعرض أشرطة التطبيقات اسم Actioneer وأيقونته.</li>
+          <li xml:lang="fr">Les notifications de l’AppImage s’affichent désormais et, une fois l’AppImage intégrée, les docks affichent le nom et l’icône d’Actioneer.</li>
+          <li xml:lang="es">Las notificaciones de la AppImage ahora aparecen y, una vez integrada la AppImage, los docks muestran el nombre y el icono de Actioneer.</li>
+          <li xml:lang="hi">AppImage से सूचनाएँ अब दिखाई देती हैं, और AppImage के एकीकृत होने के बाद डॉक Actioneer का नाम और आइकन दिखाता है।</li>
+          <li xml:lang="zh-Hans">AppImage 的通知现在可以正常显示；集成 AppImage 后，程序坞会显示 Actioneer 的名称和图标。</li>
+          <li xml:lang="nl">Meldingen uit de AppImage verschijnen nu, en zodra de AppImage is geïntegreerd, tonen docks de naam en het pictogram van Actioneer.</li>
+          <li xml:lang="de">Benachrichtigungen aus dem AppImage werden jetzt angezeigt, und sobald das AppImage integriert ist, zeigen Docks den Namen und das Symbol von Actioneer.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.0" date="2026-10-18">
+      <description>
+        <ul>
+          <li>Actioneer now fits phones and narrow windows: every window and dialog adapts down to 360 pixels wide, and on a phone the repository list and a repository's workflows open as separate pages.</li>
+          <li xml:lang="ja">Actioneerがスマートフォンや幅の狭いウィンドウに対応しました。すべてのウィンドウとダイアログが幅360ピクセルまで適応し、スマートフォンではリポジトリ一覧とリポジトリのワークフローが別々のページで開きます。</li>
+          <li xml:lang="it">Actioneer ora si adatta a telefoni e finestre strette: ogni finestra e ogni finestra di dialogo si adegua fino a 360 pixel di larghezza, e su un telefono l'elenco dei repository e i workflow di un repository si aprono in pagine separate.</li>
+          <li xml:lang="ur">Actioneer اب فونز اور تنگ ونڈوز کے مطابق ڈھل جاتا ہے: ہر ونڈو اور ڈائیلاگ 360 پکسل چوڑائی تک ایڈجسٹ ہو جاتا ہے، اور فون پر ریپوزٹریز کی فہرست اور کسی ریپوزٹری کے ورک فلوز الگ الگ صفحات میں کھلتے ہیں۔</li>
+          <li xml:lang="ru">Actioneer теперь подходит для телефонов и узких окон: все окна и диалоги подстраиваются под ширину вплоть до 360 пикселей, а на телефоне список репозиториев и рабочие процессы репозитория открываются отдельными страницами.</li>
+          <li xml:lang="pt-BR">O Actioneer agora se adapta a celulares e janelas estreitas: todas as janelas e caixas de diálogo se ajustam até 360 pixels de largura, e no celular a lista de repositórios e os fluxos de trabalho de um repositório abrem em páginas separadas.</li>
+          <li xml:lang="bn">Actioneer এখন ফোন ও সরু উইন্ডোতে মানিয়ে যায়: প্রতিটি উইন্ডো ও ডায়ালগ ৩৬০ পিক্সেল প্রস্থ পর্যন্ত খাপ খায়, আর ফোনে রিপোজিটরির তালিকা ও কোনো রিপোজিটরির ওয়ার্কফ্লো আলাদা পাতায় খোলে।</li>
+          <li xml:lang="ar">أصبح Actioneer الآن مناسبًا للهواتف والنوافذ الضيقة: تتكيف كل نافذة وكل مربع حوار حتى عرض 360 بكسل، وعلى الهاتف تُفتح قائمة المستودعات ومسارات عمل المستودع في صفحات منفصلة.</li>
+          <li xml:lang="fr">Actioneer s’adapte désormais aux téléphones et aux fenêtres étroites : chaque fenêtre et chaque boîte de dialogue s’ajuste jusqu’à 360 pixels de large, et sur un téléphone la liste des dépôts et les workflows d’un dépôt s’ouvrent sur des pages distinctes.</li>
+          <li xml:lang="es">Actioneer ahora se adapta a teléfonos y ventanas estrechas: todas las ventanas y diálogos se ajustan hasta 360 píxeles de ancho, y en un teléfono la lista de repositorios y los flujos de trabajo de un repositorio se abren como páginas separadas.</li>
+          <li xml:lang="hi">Actioneer अब फ़ोन और संकरी विंडो में फ़िट होता है: हर विंडो और डायलॉग 360 पिक्सेल चौड़ाई तक ढल जाता है, और फ़ोन पर रिपॉज़िटरी सूची और किसी रिपॉज़िटरी के वर्कफ़्लो अलग-अलग पेजों में खुलते हैं।</li>
+          <li xml:lang="zh-Hans">Actioneer 现已适配手机和窄窗口：所有窗口和对话框都能自适应到 360 像素宽；在手机上，仓库列表和仓库的工作流会以独立页面打开。</li>
+          <li xml:lang="nl">Actioneer past nu op telefoons en in smalle vensters: elk venster en elk dialoogvenster past zich aan tot 360 pixels breed, en op een telefoon openen de lijst met repositories en de workflows van een repository als aparte pagina’s.</li>
+          <li xml:lang="de">Actioneer passt jetzt auf Smartphones und in schmale Fenster: Alle Fenster und Dialoge passen sich bis hinunter zu 360 Pixeln Breite an, und auf dem Smartphone öffnen sich die Repository-Liste und die Workflows eines Repositorys als eigene Seiten.</li>
+          <li>On Omarchy, Actioneer follows the desktop theme, including its colors, light or dark style and square corners, and updates when the theme changes. A switch in Preferences turns this off.</li>
+          <li xml:lang="ja">Omarchyでは、Actioneerがデスクトップのテーマ（配色、ライトまたはダークのスタイル、角の丸みのない形状）に従い、テーマが変わると追従します。設定のスイッチでオフにできます。</li>
+          <li xml:lang="it">Su Omarchy, Actioneer segue il tema del desktop — i suoi colori, lo stile chiaro o scuro e gli angoli squadrati — e si aggiorna quando il tema cambia. Un interruttore nelle Preferenze lo disattiva.</li>
+          <li xml:lang="ur">Omarchy پر Actioneer ڈیسک ٹاپ تھیم کی پیروی کرتا ہے — اس کے رنگ، ہلکا یا گہرا انداز اور چوکور کونے — اور تھیم بدلنے پر اپ ڈیٹ ہو جاتا ہے۔ ترجیحات میں ایک سوئچ سے اسے بند کیا جا سکتا ہے۔</li>
+          <li xml:lang="ru">В Omarchy Actioneer следует теме рабочего стола — её цветам, светлому или тёмному стилю и прямым углам — и обновляется при смене темы. Это отключается переключателем в настройках.</li>
+          <li xml:lang="pt-BR">No Omarchy, o Actioneer segue o tema da área de trabalho — suas cores, o estilo claro ou escuro e os cantos retos — e se atualiza quando o tema muda. Um botão em Preferências desativa isso.</li>
+          <li xml:lang="bn">Omarchy-তে Actioneer ডেস্কটপ থিম অনুসরণ করে — এর রং, হালকা বা গাঢ় স্টাইল এবং চৌকো কোণ — এবং থিম বদলালে হালনাগাদ হয়। পছন্দসমূহে একটি সুইচ দিয়ে এটি বন্ধ করা যায়।</li>
+          <li xml:lang="ar">على Omarchy، يتبع Actioneer سمة سطح المكتب — ألوانها ونمطها الفاتح أو الداكن وزواياها القائمة — ويتحدّث عند تغيير السمة. يمكن إيقاف ذلك بمفتاح في التفضيلات.</li>
+          <li xml:lang="fr">Sous Omarchy, Actioneer suit le thème du bureau — ses couleurs, son style clair ou sombre et ses angles droits — et se met à jour quand le thème change. Un interrupteur dans les Préférences permet de le désactiver.</li>
+          <li xml:lang="es">En Omarchy, Actioneer sigue el tema del escritorio —sus colores, el estilo claro u oscuro y las esquinas rectas— y se actualiza cuando cambia el tema. Un interruptor en Preferencias lo desactiva.</li>
+          <li xml:lang="hi">Omarchy पर Actioneer डेस्कटॉप थीम का अनुसरण करता है — उसके रंग, हल्की या गहरी शैली और चौकोर कोने — और थीम बदलने पर अपडेट हो जाता है। प्राथमिकताएँ में एक स्विच से इसे बंद किया जा सकता है।</li>
+          <li xml:lang="zh-Hans">在 Omarchy 上，Actioneer 会跟随桌面主题——包括配色、浅色或深色风格以及直角——并在主题切换时随之更新。可在首选项中通过开关关闭此功能。</li>
+          <li xml:lang="nl">Op Omarchy volgt Actioneer het bureaubladthema – de kleuren, de lichte of donkere stijl en de vierkante hoeken – en past zich aan wanneer het thema verandert. Een schakelaar in Voorkeuren zet dit uit.</li>
+          <li xml:lang="de">Unter Omarchy folgt Actioneer dem Desktop-Thema – seinen Farben, dem hellen oder dunklen Stil und den eckigen Ecken – und passt sich an, wenn das Thema wechselt. Ein Schalter in den Einstellungen schaltet das ab.</li>
+          <li>If there is no secure storage for your sign-in token, Actioneer now says so plainly instead of reporting a broken keyring.</li>
+          <li xml:lang="ja">サインイントークンを保存できる安全なストレージがない場合、キーリングの故障として報告するのではなく、そのことをはっきり伝えるようになりました。</li>
+          <li xml:lang="it">Se non c'è un archivio sicuro per il token di accesso, Actioneer ora lo dice chiaramente invece di segnalare un portachiavi guasto.</li>
+          <li xml:lang="ur">اگر آپ کے سائن اِن ٹوکن کے لیے کوئی محفوظ اسٹوریج نہ ہو تو Actioneer اب خراب کی رنگ کی اطلاع دینے کے بجائے صاف صاف یہی بتاتا ہے۔</li>
+          <li xml:lang="ru">Если для токена входа нет защищённого хранилища, Actioneer теперь прямо говорит об этом, а не сообщает о неисправной связке ключей.</li>
+          <li xml:lang="pt-BR">Se não houver armazenamento seguro para o seu token de login, o Actioneer agora diz isso claramente em vez de relatar um chaveiro com defeito.</li>
+          <li xml:lang="bn">আপনার সাইন-ইন টোকেনের জন্য কোনো নিরাপদ সংরক্ষণস্থল না থাকলে Actioneer এখন ভাঙা কীরিং-এর কথা না বলে সরাসরি সেটাই জানায়।</li>
+          <li xml:lang="ar">إذا لم يتوفر تخزين آمن لرمز تسجيل الدخول، فإن Actioneer يوضح ذلك الآن صراحةً بدلًا من الإبلاغ عن حلقة مفاتيح معطلة.</li>
+          <li xml:lang="fr">S’il n’existe aucun stockage sécurisé pour votre jeton de connexion, Actioneer le dit désormais clairement au lieu de signaler un trousseau défectueux.</li>
+          <li xml:lang="es">Si no hay almacenamiento seguro para tu token de inicio de sesión, Actioneer ahora lo dice claramente en lugar de informar de un llavero dañado.</li>
+          <li xml:lang="hi">अगर आपके साइन-इन टोकन के लिए कोई सुरक्षित भंडारण नहीं है, तो Actioneer अब टूटी हुई कीरिंग बताने के बजाय साफ़-साफ़ यही बताता है।</li>
+          <li xml:lang="zh-Hans">如果没有可用于保存登录令牌的安全存储，Actioneer 现在会直接说明，而不再报告密钥环损坏。</li>
+          <li xml:lang="nl">Als er geen veilige opslag is voor je aanmeldtoken, zegt Actioneer dat nu duidelijk in plaats van een defecte sleutelbos te melden.</li>
+          <li xml:lang="de">Wenn es keinen sicheren Speicher für Ihr Anmelde-Token gibt, sagt Actioneer das jetzt klar, statt einen defekten Schlüsselbund zu melden.</li>
+          <li>The AppImage now requires glibc 2.43 or newer, as found in Ubuntu 26.04. On older systems, use the Flatpak or the Snap.</li>
+          <li xml:lang="ja">AppImageにはglibc 2.43以降（Ubuntu 26.04など）が必要になりました。古いシステムではFlatpakまたはSnapをご利用ください。</li>
+          <li xml:lang="it">L'AppImage ora richiede glibc 2.43 o successiva, come in Ubuntu 26.04. Sui sistemi più vecchi, usa il Flatpak o lo Snap.</li>
+          <li xml:lang="ur">AppImage کو اب glibc 2.43 یا نیا ورژن درکار ہے، جیسا کہ Ubuntu 26.04 میں ہے۔ پرانے سسٹمز پر Flatpak یا Snap استعمال کریں۔</li>
+          <li xml:lang="ru">Для AppImage теперь нужна glibc 2.43 или новее, как в Ubuntu 26.04. В более старых системах используйте Flatpak или Snap.</li>
+          <li xml:lang="pt-BR">O AppImage agora requer glibc 2.43 ou mais recente, como no Ubuntu 26.04. Em sistemas mais antigos, use o Flatpak ou o Snap.</li>
+          <li xml:lang="bn">AppImage-এর জন্য এখন glibc 2.43 বা তার নতুন সংস্করণ লাগে, যেমন Ubuntu 26.04-এ আছে। পুরোনো সিস্টেমে Flatpak বা Snap ব্যবহার করুন।</li>
+          <li xml:lang="ar">تتطلب حزمة AppImage الآن الإصدار 2.43 من glibc أو أحدث، كما في Ubuntu 26.04. على الأنظمة الأقدم، استخدم Flatpak أو Snap.</li>
+          <li xml:lang="fr">L’AppImage nécessite désormais glibc 2.43 ou plus récent, comme dans Ubuntu 26.04. Sur les systèmes plus anciens, utilisez le Flatpak ou le Snap.</li>
+          <li xml:lang="es">La AppImage ahora requiere glibc 2.43 o posterior, como la de Ubuntu 26.04. En sistemas más antiguos, usa el Flatpak o el Snap.</li>
+          <li xml:lang="hi">AppImage को अब glibc 2.43 या नया संस्करण चाहिए, जैसा Ubuntu 26.04 में है। पुराने सिस्टम पर Flatpak या Snap का उपयोग करें।</li>
+          <li xml:lang="zh-Hans">AppImage 现在需要 glibc 2.43 或更高版本（如 Ubuntu 26.04）。在较旧的系统上，请使用 Flatpak 或 Snap。</li>
+          <li xml:lang="nl">De AppImage vereist nu glibc 2.43 of nieuwer, zoals in Ubuntu 26.04. Gebruik op oudere systemen de Flatpak of de Snap.</li>
+          <li xml:lang="de">Das AppImage benötigt jetzt glibc 2.43 oder neuer, wie in Ubuntu 26.04. Verwenden Sie auf älteren Systemen das Flatpak oder das Snap.</li>
+          <li>Updated bundled components help keep Actioneer reliable and up to date.</li>
+          <li xml:lang="ja">同梱コンポーネントの更新により、Actioneerの信頼性と最新性を保ちます。</li>
+          <li xml:lang="it">I componenti integrati aggiornati aiutano a mantenere Actioneer affidabile e aggiornato.</li>
+          <li xml:lang="ur">اپ ڈیٹ شدہ بندلڈ اجزاء Actioneer کو قابلِ اعتماد اور تازہ رکھنے میں مدد دیتے ہیں۔</li>
+          <li xml:lang="ru">Обновлённые компоненты помогают Actioneer оставаться надёжным и актуальным.</li>
+          <li xml:lang="pt-BR">Componentes embutidos atualizados ajudam a manter o Actioneer confiável e atualizado.</li>
+          <li xml:lang="bn">হালনাগাদ করা বান্ডল্ড উপাদান Actioneer-কে নির্ভরযোগ্য ও হালনাগাদ রাখতে সাহায্য করে।</li>
+          <li xml:lang="ar">المكوّنات المضمّنة المحدّثة تساعد على إبقاء Actioneer موثوقاً وحديثاً.</li>
+          <li xml:lang="fr">Les composants intégrés mis à jour aident à garder Actioneer fiable et à jour.</li>
+          <li xml:lang="es">Los componentes integrados actualizados ayudan a mantener Actioneer fiable y actualizado.</li>
+          <li xml:lang="hi">अपडेटेड बंडल्ड कंपोनेंट Actioneer को विश्वसनीय और अप-टू-डेट रखने में मदद करते हैं।</li>
+          <li xml:lang="zh-Hans">更新内置组件，让 Actioneer 保持可靠且持续更新。</li>
+          <li xml:lang="nl">Bijgewerkede meegeleverde componenten helpen Actioneer betrouwbaar en actueel te houden.</li>
+          <li xml:lang="de">Aktualisierte mitgelieferte Komponenten helfen, Actioneer zuverlässig und auf dem neuesten Stand zu halten.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.2" date="2026-10-05">
+      <description>
+        <ul>
+          <li>Signing out now always returns to the welcome screen right away, including in demo mode and when the system keyring is unavailable.</li>
+          <li xml:lang="ja">サインアウトすると、デモモードやシステムのキーリングが利用できない場合も含め、常にすぐにウェルカム画面に戻るようになりました。</li>
+          <li xml:lang="it">Disconnettendosi, l'app ora torna sempre subito alla schermata di benvenuto, anche in modalità demo e quando il portachiavi di sistema non è disponibile.</li>
+          <li xml:lang="ur">سائن آؤٹ کرنے پر اب ایپ ہمیشہ فوراً خوش آمدید اسکرین پر واپس آ جاتی ہے، ڈیمو موڈ میں بھی اور اس وقت بھی جب سسٹم کی رنگ دستیاب نہ ہو۔</li>
+          <li xml:lang="ru">При выходе из аккаунта приложение теперь всегда сразу возвращается на экран приветствия — в том числе в демо-режиме и когда системная связка ключей недоступна.</li>
+          <li xml:lang="pt-BR">Sair da conta agora sempre volta imediatamente para a tela de boas-vindas, inclusive no modo de demonstração e quando o chaveiro do sistema não está disponível.</li>
+          <li xml:lang="bn">সাইন আউট করলে এখন অ্যাপ সবসময় সঙ্গে সঙ্গে স্বাগত স্ক্রিনে ফিরে যায়, ডেমো মোডেও এবং যখন সিস্টেম কীরিং উপলব্ধ থাকে না তখনও।</li>
+          <li xml:lang="ar">يعيدك تسجيل الخروج الآن دائمًا إلى شاشة الترحيب فورًا، بما في ذلك في وضع العرض التجريبي وعندما تكون حلقة مفاتيح النظام غير متاحة.</li>
+          <li xml:lang="fr">La déconnexion ramène désormais toujours immédiatement à l’écran d’accueil, y compris en mode démo et lorsque le trousseau du système n’est pas disponible.</li>
+          <li xml:lang="es">Al cerrar sesión, la aplicación ahora vuelve siempre de inmediato a la pantalla de bienvenida, también en el modo demo y cuando el llavero del sistema no está disponible.</li>
+          <li xml:lang="hi">साइन आउट करने पर अब ऐप हमेशा तुरंत स्वागत स्क्रीन पर लौट आता है, डेमो मोड में भी और तब भी जब सिस्टम कीरिंग उपलब्ध न हो।</li>
+          <li xml:lang="zh-Hans">退出登录后现在总会立即返回欢迎界面，包括在演示模式下以及系统密钥环不可用时。</li>
+          <li xml:lang="nl">Afmelden brengt je nu altijd direct terug naar het welkomstscherm, ook in de demomodus en wanneer de systeemsleutelbos niet beschikbaar is.</li>
+          <li xml:lang="de">Beim Abmelden kehrt die App jetzt immer sofort zum Willkommensbildschirm zurück, auch im Demo-Modus und wenn der Systemschlüsselbund nicht verfügbar ist.</li>
+          <li>Updated bundled components help keep Actioneer reliable and up to date.</li>
+          <li xml:lang="ja">同梱コンポーネントの更新により、Actioneerの信頼性と最新性を保ちます。</li>
+          <li xml:lang="it">I componenti integrati aggiornati aiutano a mantenere Actioneer affidabile e aggiornato.</li>
+          <li xml:lang="ur">اپ ڈیٹ شدہ بندلڈ اجزاء Actioneer کو قابلِ اعتماد اور تازہ رکھنے میں مدد دیتے ہیں۔</li>
+          <li xml:lang="ru">Обновлённые компоненты помогают Actioneer оставаться надёжным и актуальным.</li>
+          <li xml:lang="pt-BR">Componentes embutidos atualizados ajudam a manter o Actioneer confiável e atualizado.</li>
+          <li xml:lang="bn">হালনাগাদ করা বান্ডল্ড উপাদান Actioneer-কে নির্ভরযোগ্য ও হালনাগাদ রাখতে সাহায্য করে।</li>
+          <li xml:lang="ar">المكوّنات المضمّنة المحدّثة تساعد على إبقاء Actioneer موثوقاً وحديثاً.</li>
+          <li xml:lang="fr">Les composants intégrés mis à jour aident à garder Actioneer fiable et à jour.</li>
+          <li xml:lang="es">Los componentes integrados actualizados ayudan a mantener Actioneer fiable y actualizado.</li>
+          <li xml:lang="hi">अपडेटेड बंडल्ड कंपोनेंट Actioneer को विश्वसनीय और अप-टू-डेट रखने में मदद करते हैं।</li>
+          <li xml:lang="zh-Hans">更新内置组件，让 Actioneer 保持可靠且持续更新。</li>
+          <li xml:lang="nl">Bijgewerkede meegeleverde componenten helpen Actioneer betrouwbaar en actueel te houden.</li>
+          <li xml:lang="de">Aktualisierte mitgelieferte Komponenten helfen, Actioneer zuverlässig und auf dem neuesten Stand zu halten.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.1" date="2026-08-31">
+      <description>
+        <ul>
+          <li>Updated bundled components help keep Actioneer reliable and up to date.</li>
+          <li xml:lang="ja">同梱コンポーネントの更新により、Actioneerの信頼性と最新性を保ちます。</li>
+          <li xml:lang="it">I componenti integrati aggiornati aiutano a mantenere Actioneer affidabile e aggiornato.</li>
+          <li xml:lang="ur">اپ ڈیٹ شدہ بندلڈ اجزاء Actioneer کو قابلِ اعتماد اور تازہ رکھنے میں مدد دیتے ہیں۔</li>
+          <li xml:lang="ru">Обновлённые компоненты помогают Actioneer оставаться надёжным и актуальным.</li>
+          <li xml:lang="pt-BR">Componentes embutidos atualizados ajudam a manter o Actioneer confiável e atualizado.</li>
+          <li xml:lang="bn">হালনাগাদ করা বান্ডল্ড উপাদান Actioneer-কে নির্ভরযোগ্য ও হালনাগাদ রাখতে সাহায্য করে।</li>
+          <li xml:lang="ar">المكوّنات المضمّنة المحدّثة تساعد على إبقاء Actioneer موثوقاً وحديثاً.</li>
+          <li xml:lang="fr">Les composants intégrés mis à jour aident à garder Actioneer fiable et à jour.</li>
+          <li xml:lang="es">Los componentes integrados actualizados ayudan a mantener Actioneer fiable y actualizado.</li>
+          <li xml:lang="hi">अपडेटेड बंडल्ड कंपोनेंट Actioneer को विश्वसनीय और अप-टू-डेट रखने में मदद करते हैं।</li>
+          <li xml:lang="zh-Hans">更新内置组件，让 Actioneer 保持可靠且持续更新。</li>
+          <li xml:lang="nl">Bijgewerkede meegeleverde componenten helpen Actioneer betrouwbaar en actueel te houden.</li>
+          <li xml:lang="de">Aktualisierte mitgelieferte Komponenten helfen, Actioneer zuverlässig und auf dem neuesten Stand zu halten.</li>
+          <li>AppImage packages now include zsync update information, so package managers can update the app incrementally.</li>
+          <li xml:lang="ja">AppImage パッケージには zsync の更新情報が含まれるようになり、パッケージマネージャーがアプリを増分更新できるようになりました。</li>
+          <li xml:lang="it">I pacchetti AppImage ora includono le informazioni di aggiornamento zsync, consentendo ai gestori di pacchetti di aggiornare l'app in modo incrementale.</li>
+          <li xml:lang="ur">AppImage پیکجز اب zsync کی اپ ڈیٹ معلومات شامل کرتے ہیں، تاکہ پیکج مینیجرز ایپ کو تدریجی طور پر اپ ڈیٹ کر سکیں۔</li>
+          <li xml:lang="ru">Пакеты AppImage теперь содержат информацию для обновления zsync, чтобы менеджеры пакетов могли обновлять приложение инкрементально.</li>
+          <li xml:lang="pt-BR">Os pacotes AppImage agora incluem informações de atualização zsync, permitindo que os gerenciadores de pacotes atualizem o aplicativo de forma incremental.</li>
+          <li xml:lang="bn">AppImage প্যাকেজে এখন zsync আপডেট তথ্য রয়েছে, ফলে প্যাকেজ ম্যানেজাররা অ্যাপটি ক্রমিকভাবে আপডেট করতে পারবেন।</li>
+          <li xml:lang="ar">تتضمن حزم AppImage الآن معلومات تحديث zsync، مما يتيح لمشرفي الحزم تحديث التطبيق بشكل تدريجي.</li>
+          <li xml:lang="fr">Les paquets AppImage incluent désormais des informations de mise à jour zsync, permettant aux gestionnaires de paquets de mettre à jour l'application de manière incrémentale.</li>
+          <li xml:lang="es">Los paquetes AppImage ahora incluyen información de actualización zsync, de modo que los gestores de paquetes puedan actualizar la aplicación de forma incremental.</li>
+          <li xml:lang="hi">AppImage पैकेज अब zsync अपडेट जानकारी शामिल करते हैं, जिससे पैकेज मैनेजर एप्लिकेशन को क्रमिक रूप से अपडेट कर सकें।</li>
+          <li xml:lang="zh-Hans">AppImage 软件包现在包含 zsync 更新信息，因此包管理器可以增量更新该应用。</li>
+          <li xml:lang="nl">AppImage-pakketten bevatten nu zsync-updateinformatie, zodat pakketbeheerders de app incrementaal kunnen bijwerken.</li>
+          <li xml:lang="de">AppImage-Pakete enthalten jetzt zsync-Updateinformationen, damit Paketmanager die App inkrementell aktualisieren können.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-08-25">
+      <description>
+        <ul>
+          <li>The workflow detail pane was redesigned: workflows, runs, jobs, and steps now expand inline in one place, without opening extra windows.</li>
+          <li xml:lang="ja">ワークフロー詳細ペインを再設計しました：ワークフロー、実行、ジョブ、ステップはすべて余計なウィンドウを開かずに1か所でインライン展開できます。</li>
+          <li xml:lang="it">Il pannello di dettaglio dei workflow è stato ridisegnato: workflow, esecuzioni, job e passaggi si espandono ora inline in un unico punto, senza aprire finestre aggiuntive.</li>
+          <li xml:lang="ur">ورک فلو تفصیلات کے پینل کو دوبارہ ڈیزائن کیا گیا: ورک فلو، رنز، جابز اور اسٹیپس اب ایک ہی جگہ پر ان لائن کھلتے ہیں، بغیر کسی اضافی ونڈو کھولے۔</li>
+          <li xml:lang="ru">Панель деталей рабочих процессов переработана: рабочие процессы, запуски, задачи и шаги теперь разворачиваются прямо на месте, без дополнительных окон.</li>
+          <li xml:lang="pt-BR">O painel de detalhes de fluxos de trabalho foi redesenhado: fluxos de trabalho, execuções, jobs e etapas agora se expandem inline em um só lugar, sem abrir janelas extras.</li>
+          <li xml:lang="bn">ওয়ার্কফ্লো বিবরণ প্যানেলটি নতুন করে ডিজাইন করা হয়েছে: ওয়ার্কফ্লো, রান, জব এবং স্টেপ এখন এক জায়গায় ইনলাইন খোলে, বাড়তি উইন্ডো ছাড়াই।</li>
+          <li xml:lang="ar">أعيد تصميم لوحة تفاصيل سير العمل: يتم الآن توسيع سلاسل العمل وتشغيلاتها ومهامها وخطواتها مضمّنةً في مكان واحد دون فتح نوافذ إضافية.</li>
+          <li xml:lang="fr">Le volet de détails des workflows a été repensé : workflows, exécutions, jobs et étapes se déploient désormais en ligne à un seul endroit, sans ouvrir de fenêtres supplémentaires.</li>
+          <li xml:lang="es">El panel de detalles de flujos de trabajo se ha rediseñado: los flujos, las ejecuciones, los trabajos y los pasos ahora se expanden en línea en un solo lugar, sin abrir ventanas adicionales.</li>
+          <li xml:lang="hi">वर्कफ़्लो विवरण पैनल को फिर से डिज़ाइन किया गया: वर्कफ़्लो, रन, जॉब्स और चरण अब एक ही जगह पर इनलाइन खोलते हैं, बिना किसी अतिरिक्त विंडो खोले।</li>
+          <li xml:lang="zh-Hans">工作流详情窗格已重新设计：工作流、运行、作业和步骤现在可以在一处内联展开，无需打开额外窗口。</li>
+          <li xml:lang="nl">Het workflowdetailpaneel is opnieuw ontworpen: workflows, uitvoeringen, jobs en stappen worden nu inline op één plek uitgeklapt, zonder extra vensters te openen.</li>
+          <li xml:lang="de">Der Workflow-Detailsbereich wurde neu gestaltet: Workflows, Läufe, Jobs und Schritte werden jetzt inline an einem Ort ausgeklappt, ohne zusätzliche Fenster zu öffnen.</li>
+          <li>Running jobs and steps now show live durations.</li>
+          <li xml:lang="ja">実行中のジョブとステップで、経過時間がリアルタイムで表示されるようになりました。</li>
+          <li xml:lang="it">I job e i passaggi in esecuzione mostrano ora le durate in tempo reale.</li>
+          <li xml:lang="ur">چل رہی جابز اور اسٹیپس اب لائیو مدت دکھاتی ہیں۔</li>
+          <li xml:lang="ru">Выполняющиеся задачи и шаги теперь показывают длительность в реальном времени.</li>
+          <li xml:lang="pt-BR">Jobs e etapas em execução agora mostram durações ao vivo.</li>
+          <li xml:lang="bn">চলমান জব ও স্টেপ এখন লাইভ সময়কাল দেখায়।</li>
+          <li xml:lang="ar">تعرض المهام والخطوات قيد التنفيذ الآن مدتها الفورية.</li>
+          <li xml:lang="fr">Les jobs et étapes en cours affichent désormais une durée en temps réel.</li>
+          <li xml:lang="es">Los trabajos y pasos en ejecución ahora muestran duraciones en vivo.</li>
+          <li xml:lang="hi">चल रहे जॉब्स और चरण अब लाइव अवधि दिखाते हैं।</li>
+          <li xml:lang="zh-Hans">正在运行的作业和步骤现在会显示实时时长。</li>
+          <li xml:lang="nl">Draaiende jobs en stappen tonen nu live duurtijden.</li>
+          <li xml:lang="de">Laufende Jobs und Schritte zeigen jetzt Live-Dauerzeiten an.</li>
+          <li>Italian and Japanese translations added; Actioneer is now available in 14 languages.</li>
+          <li xml:lang="ja">イタリア語と日本語の翻訳を追加。Actioneerは14言語に対応しました。</li>
+          <li xml:lang="it">Traduzioni in italiano e in giapponese aggiunte; Actioneer è ora disponibile in 14 lingue.</li>
+          <li xml:lang="ur">اطالوی اور جاپانی تراجم شامل کر دی گئیں؛ Actioneer اب 14 زبانوں میں دستیاب ہے۔</li>
+          <li xml:lang="ru">Добавлены переводы на итальянский и японский языки; Actioneer теперь доступен на 14 языках.</li>
+          <li xml:lang="pt-BR">Traduções para italiano e japonês adicionadas; o Actioneer está disponível em 14 idiomas.</li>
+          <li xml:lang="bn">ইতালীয় ও জাপানি অনুবাদ যোগ হয়েছে; Actioneer এখন 14টি ভাষায় উপলব্ধ।</li>
+          <li xml:lang="ar">أُضيفت الترجمات الإيطالية واليابانية؛ Actioneer متاح الآن بـ14 لغة.</li>
+          <li xml:lang="fr">Traductions en italien et en japonais ajoutées ; Actioneer est désormais disponible en 14 langues.</li>
+          <li xml:lang="es">Se añadieron traducciones al italiano y al japonés; Actioneer está ahora disponible en 14 idiomas.</li>
+          <li xml:lang="hi">इतालवी और जापानी अनुवाद जोड़े गए; Actioneer अब 14 भाषाओं में उपलब्ध है।</li>
+          <li xml:lang="zh-Hans">新增意大利语和日语翻译；Actioneer 现已提供 14 种语言。</li>
+          <li xml:lang="nl">Italiaanse en Japanse vertoningen toegevoegd; Actioneer is nu beschikbaar in 14 talen.</li>
+          <li xml:lang="de">Italienische und japanische Übersetzungen hinzugefügt; Actioneer ist jetzt in 14 Sprachen verfügbar.</li>
+          <li>Reviewed and completed the existing translations: every remaining untranslated string is now translated in all languages, with diacritics and wording corrected.</li>
+          <li xml:lang="ja">既存の翻訳を見直し、補完しました: 未翻訳だった文字列を全言語で翻訳し、発音区別符号や表現を修正しました。</li>
+          <li xml:lang="it">Revisione e completamento delle traduzioni esistenti: tutte le stringhe non ancora tradotte sono ora tradotte in tutte le lingue, con correzioni di accenti e formulazioni.</li>
+          <li xml:lang="ur">موجود ترجمات کا جائزہ لیا اور تکمیل کی گئی: تمام باقی ماندہ غیر مترجم متن اب تمام زبانوں میں مکمل ہو گئے ہیں، علاماتِ اِظہار اور لفظی انتخاب میں بہتری کے ساتھ۔</li>
+          <li xml:lang="ru">Существующие переводы проверены и дополнены: все оставшиеся непереведённые строки теперь переведены на все языки, исправлены диакритика и формулировки.</li>
+          <li xml:lang="pt-BR">As traduções existentes foram revisadas e complementadas: todas as strings ainda não traduzidas agora estão traduzidas em todos os idiomas, com correções de acentuação e redação.</li>
+          <li xml:lang="bn">বর্তমান অনুবাদগুলি পর্যালোচনা ও সম্পূর্ণ করা হয়েছে: অবশিষ্ট অনুবাদবিহীন স্ট্রিংগুলি এখন সব ভাষায় অনুদিত হয়েছে, বানান ও শব্দচয়ন সংশোধনসহ।</li>
+          <li xml:lang="ar">مراجعة وإكمال الترجمات الموجودة: أصبحت جميع النصوص غير المترجمة الآن مترجمة في جميع اللغات، مع تصحيح علامات التشكيل والصياغة.</li>
+          <li xml:lang="fr">Audit et complétion des traductions existantes : toutes les chaînes restées sans traduction sont désormais traduites dans toutes les langues, avec corrections des diacritiques et de la formulation.</li>
+          <li xml:lang="es">Se revisaron y completaron las traducciones existentes: todas las cadenas sin traducir ahora están traducidas en todos los idiomas, con correcciones de diacríticos y redacción.</li>
+          <li xml:lang="hi">मौजूदा अनुवादों की समीक्षा और पूर्णता: सभी शेष अनुवाद-रहित स्ट्रिंग्स अब सभी भाषाओं में अनुवादित हैं, अक्षर-चिह्नों और शब्दचयन में सुधार सहित।</li>
+          <li xml:lang="zh-Hans">已审查并补全现有翻译:所有未翻译的字符串现已在全部语言中完成翻译,并修正了变音符号和措辞。</li>
+          <li xml:lang="nl">De bestaande vertalingen zijn gecontroleerd en aangevuld: alle nog niet vertaalde teksten zijn nu in elke taal vertaald, met correcties aan diakritische tekens en woordkeuze.</li>
+          <li xml:lang="de">Die bestehenden Übersetzungen wurden überprüft und vervollständigt: Alle noch nicht übersetzten Texte sind jetzt in allen Sprachen übersetzt, mit Korrekturen von Diakritika und Wortwahl.</li>
+          <li>Updated bundled components help keep Actioneer reliable and up to date.</li>
+          <li xml:lang="ja">同梱コンポーネントの更新により、Actioneerの信頼性と最新性を保ちます。</li>
+          <li xml:lang="it">I componenti integrati aggiornati aiutano a mantenere Actioneer affidabile e aggiornato.</li>
+          <li xml:lang="ur">اپ ڈیٹ شدہ بندلڈ اجزاء Actioneer کو قابلِ اعتماد اور تازہ رکھنے میں مدد دیتے ہیں۔</li>
+          <li xml:lang="ru">Обновлённые компоненты помогают Actioneer оставаться надёжным и актуальным.</li>
+          <li xml:lang="pt-BR">Componentes embutidos atualizados ajudam a manter o Actioneer confiável e atualizado.</li>
+          <li xml:lang="bn">হালনাগাদ করা বান্ডল্ড উপাদান Actioneer-কে নির্ভরযোগ্য ও হালনাগাদ রাখতে সাহায্য করে।</li>
+          <li xml:lang="ar">المكوّنات المضمّنة المحدّثة تساعد على إبقاء Actioneer موثوقاً وحديثاً.</li>
+          <li xml:lang="fr">Les composants intégrés mis à jour aident à garder Actioneer fiable et à jour.</li>
+          <li xml:lang="es">Los componentes integrados actualizados ayudan a mantener Actioneer fiable y actualizado.</li>
+          <li xml:lang="hi">अपडेटेड बंडल्ड कंपोनेंट Actioneer को विश्वसनीय और अप-टू-डेट रखने में मदद करते हैं।</li>
+          <li xml:lang="zh-Hans">更新内置组件，让 Actioneer 保持可靠且持续更新。</li>
+          <li xml:lang="nl">Bijgewerkede meegeleverde componenten helpen Actioneer betrouwbaar en actueel te houden.</li>
+          <li xml:lang="de">Aktualisierte mitgelieferte Komponenten helfen, Actioneer zuverlässig und auf dem neuesten Stand zu halten.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.15" date="2026-06-23">
+      <description>
+        <ul>
+          <li>Sign-in works more reliably on newer Linux systems thanks to improved secure token storage compatibility.</li>
+          <li xml:lang="ja">セキュアなトークン保存の互換性が向上し、新しい Linux システムではサインインがより確実に動作します。</li>
+          <li xml:lang="it">L'accesso funziona in modo più affidabile sui sistemi Linux più recenti grazie alla migliorata compatibilità dello storage sicuro dei token.</li>
+          <li xml:lang="ur">محفوظ ٹوکن اسٹوریج کی بہتر مطابقت کی بدولت نئے Linux سسٹمز پر سائن اِن زیادہ قابلِ بھروسا ہو گیا ہے۔</li>
+          <li xml:lang="ru">Вход в систему на новых версиях Linux работает надёжнее благодаря улучшенной совместимости безопасного хранения токенов.</li>
+          <li xml:lang="pt-BR">O login funciona com mais confiabilidade em sistemas Linux mais novos graças à melhoria de compatibilidade do armazenamento seguro de tokens.</li>
+          <li xml:lang="bn">নিরাপদ টোকেন সংরক্ষণের সামঞ্জস্যতা উন্নত হওয়ায় নতুন Linux সিস্টেমে সাইন-ইন আরও নির্ভরযোগ্য হয়েছে।</li>
+          <li xml:lang="ar">أصبح تسجيل الدخول أكثر موثوقية على أنظمة لينكس الأحدث بفضل تحسين توافق التخزين الآمن للرموز.</li>
+          <li xml:lang="fr">La connexion fonctionne de façon plus fiable sur les systèmes Linux récents grâce à une meilleure compatibilité du stockage sécurisé des jetons.</li>
+          <li xml:lang="es">El inicio de sesión funciona de forma más fiable en sistemas Linux más nuevos gracias a una mejor compatibilidad del almacenamiento seguro de tokens.</li>
+          <li xml:lang="hi">सुरक्षित टोकन स्टोरेज संगतता में सुधार के कारण नए Linux सिस्टम पर साइन-इन अब अधिक भरोसेमंद है।</li>
+          <li xml:lang="zh-Hans">由于改进了安全令牌存储兼容性，在较新的 Linux 系统上登录更加可靠。</li>
+          <li xml:lang="nl">Aanmelden werkt betrouwbaarder op nieuwere Linux-systemen dankzij verbeterde compatibiliteit van veilige tokenopslag.</li>
+          <li xml:lang="de">Die Anmeldung funktioniert auf neueren Linux-Systemen zuverlässiger dank verbesserter Kompatibilität der sicheren Token-Speicherung.</li>
+          <li>Updated bundled components help keep Actioneer stable, reliable, and up to date.</li>
+          <li xml:lang="ja">更新されたバンドルコンポーネントにより、Actioneer の安定性・信頼性・最新性を保ちます。</li>
+          <li xml:lang="it">I componenti integrati aggiornati aiutano a mantenere Actioneer stabile, affidabile e aggiornato.</li>
+          <li xml:lang="ur">تازہ کردہ بنڈلڈ اجزا Actioneer کو مستحکم، قابلِ بھروسا اور تازہ ترین رکھنے میں مدد دیتے ہیں۔</li>
+          <li xml:lang="ru">Обновлённые встроенные компоненты помогают поддерживать Actioneer стабильным, надёжным и актуальным.</li>
+          <li xml:lang="pt-BR">Componentes incluídos atualizados ajudam a manter o Actioneer estável, confiável e em dia.</li>
+          <li xml:lang="bn">হালনাগাদ বান্ডেলকৃত কম্পোনেন্টগুলো Actioneer-কে স্থিতিশীল, নির্ভরযোগ্য এবং আপ-টু-ডেট রাখতে সহায়তা করে।</li>
+          <li xml:lang="ar">تساعد المكونات المضمّنة المحدّثة في إبقاء Actioneer مستقراً وموثوقاً ومحدّثاً.</li>
+          <li xml:lang="fr">Les composants intégrés mis à jour aident à maintenir Actioneer stable, fiable et à jour.</li>
+          <li xml:lang="es">Los componentes incluidos actualizados ayudan a mantener Actioneer estable, fiable y al día.</li>
+          <li xml:lang="hi">अपडेट किए गए शामिल घटक Actioneer को स्थिर, भरोसेमंद और अद्यतित बनाए रखने में मदद करते हैं।</li>
+          <li xml:lang="zh-Hans">更新的捆绑组件有助于让 Actioneer 保持稳定、可靠并保持最新。</li>
+          <li xml:lang="nl">Bijgewerkte meegeleverde onderdelen helpen Actioneer stabiel, betrouwbaar en actueel te houden.</li>
+          <li xml:lang="de">Aktualisierte mitgelieferte Komponenten helfen dabei, Actioneer stabil, zuverlässig und aktuell zu halten.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.14" date="2026-05-18">
+      <description>
+        <ul>
+          <li>Closing and reopening Actioneer is more reliable, so you are less likely to see an unexpected crash report after a normal shutdown.</li>
+          <li xml:lang="ja">Actioneer の終了と再開がより確実になり、通常のシャットダウン後に予期しないクラッシュレポートが表示される可能性が低くなります。</li>
+          <li xml:lang="it">Chiusure e riaperture di Actioneer sono più affidabili, così è meno probabile vedere un rapporto di arresto imprevisto dopo un arresto normale.</li>
+          <li xml:lang="ur">اب Actioneer کو بند کرکے دوبارہ کھولنا زیادہ قابلِ اعتماد ہے، اس لیے عام طور پر بند کرنے کے بعد غیر متوقع کریش رپورٹ دیکھنے کا امکان کم ہے۔</li>
+          <li xml:lang="ru">Закрытие и повторный запуск Actioneer стали надёжнее, поэтому после обычного завершения работы вы с меньшей вероятностью увидите неожиданный отчёт о сбое.</li>
+          <li xml:lang="pt-BR">Fechar e abrir o Actioneer novamente agora está mais confiável, então você tem menos chance de ver um relatório de falha inesperado após um encerramento normal.</li>
+          <li xml:lang="bn">Actioneer বন্ধ করে আবার চালু করা এখন আরও নির্ভরযোগ্য, তাই স্বাভাবিকভাবে বন্ধ করার পর অপ্রত্যাশিত ক্র্যাশ রিপোর্ট দেখার সম্ভাবনা কম।</li>
+          <li xml:lang="ar">أصبح إغلاق Actioneer وإعادة فتحه أكثر موثوقية، لذلك تقل احتمالية ظهور تقرير تعطل غير متوقع بعد إغلاق عادي.</li>
+          <li xml:lang="fr">La fermeture et la réouverture d’Actioneer sont désormais plus fiables, ce qui réduit les risques de voir un rapport de plantage inattendu après une fermeture normale.</li>
+          <li xml:lang="es">Cerrar y volver a abrir Actioneer ahora es más fiable, así que es menos probable que aparezca un informe de fallo inesperado después de un cierre normal.</li>
+          <li xml:lang="hi">Actioneer को बंद करके फिर से खोलना अब अधिक भरोसेमंद है, इसलिए सामान्य रूप से बंद करने के बाद अनपेक्षित क्रैश रिपोर्ट देखने की संभावना कम हो गई है।</li>
+          <li xml:lang="zh-Hans">现在关闭并重新打开 Actioneer 更可靠了，因此在正常退出后更不容易看到意外的崩溃报告。</li>
+          <li xml:lang="nl">Actioneer afsluiten en opnieuw openen is nu betrouwbaarder, zodat je na normaal afsluiten minder snel een onverwacht crashrapport ziet.</li>
+          <li xml:lang="de">Das Schließen und erneute Öffnen von Actioneer ist jetzt zuverlässiger, sodass nach einem normalen Beenden seltener unerwartete Absturzberichte erscheinen.</li>
+          <li>Sign-in checks and secure storage now recover more gracefully when desktop services are slow to respond.</li>
+          <li xml:lang="ja">デスクトップサービスの応答が遅い場合でも、サインインのチェックとセキュアな保存がよりスムーズに回復します。</li>
+          <li xml:lang="it">I controlli di accesso e lo storage sicuro ora si riprendono in modo più elegante quando i servizi desktop rispondono lentamente.</li>
+          <li xml:lang="ur">جب ڈیسک ٹاپ سروسز آہستہ جواب دیں تو سائن اِن کی جانچ اور محفوظ ذخیرہ اب زیادہ بہتر انداز میں بحال ہوتے ہیں۔</li>
+          <li xml:lang="ru">Проверка входа и безопасное хранилище теперь лучше восстанавливаются, если службы рабочего стола отвечают медленно.</li>
+          <li xml:lang="pt-BR">As verificações de login e o armazenamento seguro agora se recuperam melhor quando os serviços do desktop demoram a responder.</li>
+          <li xml:lang="bn">ডেস্কটপ পরিষেবাগুলি ধীরে সাড়া দিলে সাইন-ইন যাচাই ও নিরাপদ সংরক্ষণ এখন আরও ভালোভাবে স্বাভাবিক অবস্থায় ফিরে আসে।</li>
+          <li xml:lang="ar">أصبحت عمليات التحقق من تسجيل الدخول والتخزين الآمن تتعافى بشكل أفضل عندما تكون خدمات سطح المكتب بطيئة في الاستجابة.</li>
+          <li xml:lang="fr">Les vérifications de connexion et le stockage sécurisé se rétablissent désormais plus proprement lorsque les services du bureau répondent lentement.</li>
+          <li xml:lang="es">Las comprobaciones de inicio de sesión y el almacenamiento seguro ahora se recuperan mejor cuando los servicios del escritorio tardan en responder.</li>
+          <li xml:lang="hi">जब डेस्कटॉप सेवाएं धीमे जवाब देती हैं, तब साइन-इन जांच और सुरक्षित भंडारण अब अधिक सहजता से संभल जाते हैं।</li>
+          <li xml:lang="zh-Hans">当桌面服务响应较慢时，登录检查和安全存储现在也能更从容地恢复。</li>
+          <li xml:lang="nl">Aanmeldcontroles en veilige opslag herstellen nu beter als desktopdiensten traag reageren.</li>
+          <li xml:lang="de">Anmeldeprüfungen und die sichere Speicherung erholen sich jetzt robuster, wenn Desktop-Dienste langsam reagieren.</li>
+          <li>Updated bundled components help keep the app reliable and up to date.</li>
+          <li xml:lang="ja">更新されたバンドルコンポーネントにより、アプリの信頼性と最新性を保ちます。</li>
+          <li xml:lang="it">I componenti integrati aggiornati aiutano a mantenere l'app affidabile e aggiornata.</li>
+          <li xml:lang="ur">تازہ کاری شدہ شامل اجزا ایپ کو قابلِ اعتماد اور جدید رکھنے میں مدد دیتے ہیں۔</li>
+          <li xml:lang="ru">Обновлённые встроенные компоненты помогают приложению оставаться надёжным и актуальным.</li>
+          <li xml:lang="pt-BR">Componentes incluídos atualizados ajudam a manter o aplicativo confiável e em dia.</li>
+          <li xml:lang="bn">হালনাগাদ করা অন্তর্ভুক্ত কম্পোনেন্টগুলো অ্যাপটিকে নির্ভরযোগ্য ও আধুনিক রাখতে সহায়তা করে।</li>
+          <li xml:lang="ar">تساعد المكونات المضمنة المحدّثة في الحفاظ على موثوقية التطبيق وحداثته.</li>
+          <li xml:lang="fr">Des composants intégrés mis à jour contribuent à garder l’application fiable et à jour.</li>
+          <li xml:lang="es">Los componentes incluidos actualizados ayudan a mantener la aplicación fiable y al día.</li>
+          <li xml:lang="hi">अपडेट किए गए शामिल घटक ऐप को भरोसेमंद और अद्यतित बनाए रखने में मदद करते हैं।</li>
+          <li xml:lang="zh-Hans">更新后的内置组件有助于让应用保持可靠并与时俱进。</li>
+          <li xml:lang="nl">Bijgewerkte meegeleverde onderdelen helpen de app betrouwbaar en actueel te houden.</li>
+          <li xml:lang="de">Aktualisierte mitgelieferte Komponenten helfen dabei, die App zuverlässig und aktuell zu halten.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.13" date="2026-05-12">
+      <description>
+        <ul>
+          <li>Older workflow runs now show dates in your selected app language, making run history easier to scan.</li>
+          <li xml:lang="ja">古いワークフロー実行の日付が選択したアプリの言語で表示され、実行履歴が見やすくなりました。</li>
+          <li xml:lang="it">Le esecuzioni dei workflow più vecchie ora mostrano le date nella lingua selezionata dell'app, rendendo lo storico delle esecuzioni più facile da consultare.</li>
+          <li xml:lang="ur">پرانے ورک فلو رنز اب تاریخیں آپ کی منتخب کردہ ایپ زبان میں دکھاتے ہیں، جس سے رن ہسٹری دیکھنا آسان ہو جاتا ہے۔</li>
+          <li xml:lang="ru">Старые запуски workflow теперь показывают даты на выбранном в приложении языке, поэтому историю запусков стало легче просматривать.</li>
+          <li xml:lang="pt-BR">Execuções antigas de workflow agora mostram as datas no idioma escolhido no app, facilitando a leitura do histórico.</li>
+          <li xml:lang="bn">পুরোনো ওয়ার্কফ্লো রান এখন আপনার নির্বাচিত অ্যাপ ভাষায় তারিখ দেখায়, ফলে রান ইতিহাস দেখা আরও সহজ হয়।</li>
+          <li xml:lang="ar">تعرض الآن تشغيلات سير العمل الأقدم التواريخ باللغة التي اخترتها للتطبيق، مما يجعل سجل التشغيل أسهل في التصفح.</li>
+          <li xml:lang="fr">Les anciens lancements de workflow affichent désormais les dates dans la langue choisie pour l’application, ce qui facilite la lecture de l’historique.</li>
+          <li xml:lang="es">Las ejecuciones antiguas de workflows ahora muestran las fechas en el idioma de la aplicación que hayas elegido, lo que facilita revisar el historial.</li>
+          <li xml:lang="hi">पुराने वर्कफ़्लो रन अब आपकी चुनी हुई ऐप भाषा में तारीखें दिखाते हैं, जिससे रन इतिहास को देखना आसान हो जाता है।</li>
+          <li xml:lang="zh-Hans">较早的工作流运行现在会按你选择的应用语言显示日期，让运行历史更易浏览。</li>
+          <li xml:lang="nl">Oudere workflow-runs tonen datums nu in de door jou gekozen app-taal, zodat de geschiedenis makkelijker te overzien is.</li>
+          <li xml:lang="de">Ältere Workflow-Ausführungen zeigen Datumsangaben jetzt in der ausgewählten App-Sprache an, damit sich der Verlauf leichter überblicken lässt.</li>
+          <li>Updated components and build improvements help keep Linux releases more reliable.</li>
+          <li xml:lang="ja">コンポーネントの更新とビルドの改善により、Linux リリースの信頼性が向上します。</li>
+          <li xml:lang="it">Componenti aggiornati e miglioramenti di build aiutano a mantenere i rilasci Linux più affidabili.</li>
+          <li xml:lang="ur">اپ ڈیٹ شدہ اجزاء اور بلڈ میں بہتری Linux ریلیزز کو زیادہ قابلِ اعتماد رکھنے میں مدد دیتی ہے۔</li>
+          <li xml:lang="ru">Обновлённые компоненты и улучшения сборки помогают сделать Linux-релизы более надёжными.</li>
+          <li xml:lang="pt-BR">Componentes atualizados e melhorias no build ajudam a manter as versões para Linux mais confiáveis.</li>
+          <li xml:lang="bn">আপডেট করা কম্পোনেন্ট ও বিল্ড উন্নতি Linux রিলিজকে আরও নির্ভরযোগ্য রাখতে সাহায্য করে।</li>
+          <li xml:lang="ar">تساعد المكونات المحدّثة وتحسينات البناء في جعل إصدارات لينكس أكثر موثوقية.</li>
+          <li xml:lang="fr">Des composants mis à jour et des améliorations de build contribuent à rendre les versions Linux plus fiables.</li>
+          <li xml:lang="es">Los componentes actualizados y las mejoras de compilación ayudan a que las versiones para Linux sean más fiables.</li>
+          <li xml:lang="hi">अपडेट किए गए कॉम्पोनेंट और बिल्ड सुधार Linux रिलीज़ को अधिक भरोसेमंद बनाए रखने में मदद करते हैं।</li>
+          <li xml:lang="zh-Hans">更新的组件和构建改进有助于让 Linux 版本更加可靠。</li>
+          <li xml:lang="nl">Bijgewerkte onderdelen en verbeteringen aan het buildproces helpen Linux-releases betrouwbaarder te houden.</li>
+          <li xml:lang="de">Aktualisierte Komponenten und Verbesserungen am Build helfen dabei, Linux-Veröffentlichungen zuverlässiger zu machen.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.12" date="2026-04-23">
+      <description>
+        <ul>
+          <li>Refreshed the GNOME desktop libraries and HTTP stack for a more reliable, up-to-date experience.</li>
+          <li xml:lang="ja">より信頼でき、最新のエクスペリエンスのために、GNOME デスクトップライブラリと HTTP スタックを更新しました。</li>
+          <li xml:lang="it">Aggiornate le librerie del desktop GNOME e la pila HTTP per un'esperienza più affidabile e aggiornata.</li>
+          <li xml:lang="ur">GNOME ڈیسک ٹاپ لائبریریاں اور HTTP اسٹیک تازہ کر دیے گئے ہیں تاکہ استعمال کا تجربہ زیادہ قابلِ اعتماد اور جدید رہے۔</li>
+          <li xml:lang="ru">Обновлены библиотеки рабочего стола GNOME и HTTP-стек — работа приложения стала надёжнее и актуальнее.</li>
+          <li xml:lang="pt-BR">As bibliotecas de desktop do GNOME e a pilha HTTP foram atualizadas para oferecer uma experiência mais confiável e atual.</li>
+          <li xml:lang="bn">GNOME ডেস্কটপ লাইব্রেরি ও HTTP স্ট্যাক আপডেট করা হয়েছে, যাতে অভিজ্ঞতা আরও নির্ভরযোগ্য ও আধুনিক থাকে।</li>
+          <li xml:lang="ar">تم تحديث مكتبات سطح مكتب GNOME وطبقة HTTP لتقديم تجربة أكثر موثوقية وحداثة.</li>
+          <li xml:lang="fr">Les bibliothèques du bureau GNOME et la pile HTTP ont été actualisées pour offrir une expérience plus fiable et plus à jour.</li>
+          <li xml:lang="es">Se han actualizado las bibliotecas del escritorio GNOME y la pila HTTP para ofrecer una experiencia más fiable y al día.</li>
+          <li xml:lang="hi">GNOME डेस्कटॉप लाइब्रेरी और HTTP स्टैक अपडेट किए गए हैं, ताकि अनुभव अधिक भरोसेमंद और आधुनिक रहे।</li>
+          <li xml:lang="zh-Hans">已更新 GNOME 桌面库与 HTTP 栈，带来更可靠、更新鲜的使用体验。</li>
+          <li xml:lang="nl">GNOME-desktopbibliotheken en de HTTP-stack zijn vernieuwd voor een betrouwbaardere en actuelere ervaring.</li>
+          <li xml:lang="de">Die GNOME-Desktop-Bibliotheken und der HTTP-Stack wurden aktualisiert für ein zuverlässigeres und aktuelleres Nutzungserlebnis.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.11" date="2026-04-21">
+      <description>
+        <ul>
+          <li>Refreshed bundled components for a more reliable and up-to-date experience.</li>
+          <li xml:lang="ja">より信頼でき、最新のエクスペリエンスのために、バンドルコンポーネントを更新しました。</li>
+          <li xml:lang="it">Componenti integrati aggiornati per un'esperienza più affidabile e aggiornata.</li>
+          <li xml:lang="ur">شامل اجزا کو تازہ کر دیا گیا ہے تاکہ استعمال کا تجربہ زیادہ قابلِ اعتماد اور جدید رہے۔</li>
+          <li xml:lang="ru">Встроенные компоненты обновлены для более надёжной и актуальной работы приложения.</li>
+          <li xml:lang="pt-BR">Componentes incluídos atualizados para oferecer uma experiência mais confiável e atual.</li>
+          <li xml:lang="bn">অন্তর্ভুক্ত কম্পোনেন্টগুলো নতুন করে আপডেট করা হয়েছে, যাতে অভিজ্ঞতা আরও নির্ভরযোগ্য ও আধুনিক থাকে।</li>
+          <li xml:lang="ar">تم تحديث المكونات المضمنة لتقديم تجربة أكثر موثوقية وحداثة.</li>
+          <li xml:lang="fr">Composants intégrés actualisés pour offrir une expérience plus fiable et plus à jour.</li>
+          <li xml:lang="es">Componentes incluidos actualizados para ofrecer una experiencia más fiable y al día.</li>
+          <li xml:lang="hi">साथ में आने वाले components अपडेट किए गए हैं, ताकि अनुभव अधिक भरोसेमंद और आधुनिक रहे।</li>
+          <li xml:lang="zh-Hans">已更新随附组件，带来更可靠、更新鲜的使用体验。</li>
+          <li xml:lang="nl">Meegeleverde componenten vernieuwd voor een betrouwbaardere en actuelere ervaring.</li>
+          <li xml:lang="de">Gebündelte Komponenten wurden für ein zuverlässigeres und aktuelleres Nutzungserlebnis aktualisiert.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.10" date="2026-03-23">
+      <description>
+        <ul>
+          <li>This release includes an important security update to help keep Actioneer safer to use.</li>
+          <li xml:lang="ja">このリリースには、Actioneer をより安全に使うための重要なセキュリティ更新が含まれます。</li>
+          <li xml:lang="it">Questa release include un importante aggiornamento di sicurezza per mantenere Actioneer più sicuro nell'uso.</li>
+          <li xml:lang="ur">اس ریلیز میں ایک اہم سیکیورٹی اپ ڈیٹ شامل ہے تاکہ Actioneer کا استعمال زیادہ محفوظ رہے۔</li>
+          <li xml:lang="ru">Этот выпуск включает важное обновление безопасности, которое помогает сделать использование Actioneer более безопасным.</li>
+          <li xml:lang="pt-BR">Esta versão inclui uma importante atualização de segurança para ajudar a manter o Actioneer mais seguro de usar.</li>
+          <li xml:lang="bn">এই রিলিজে একটি গুরুত্বপূর্ণ নিরাপত্তা আপডেট রয়েছে, যা Actioneer-কে আরও নিরাপদভাবে ব্যবহার করতে সাহায্য করে।</li>
+          <li xml:lang="ar">يتضمن هذا الإصدار تحديثًا أمنيًا مهمًا للمساعدة في جعل استخدام Actioneer أكثر أمانًا.</li>
+          <li xml:lang="fr">Cette version inclut une importante mise à jour de sécurité afin de rendre Actioneer plus sûr à l’usage.</li>
+          <li xml:lang="es">Esta versión incluye una importante actualización de seguridad para ayudar a que Actioneer siga siendo más seguro de usar.</li>
+          <li xml:lang="hi">इस रिलीज़ में एक महत्वपूर्ण सुरक्षा अपडेट शामिल है, जिससे Actioneer का उपयोग और सुरक्षित रहता है।</li>
+          <li xml:lang="zh-Hans">此版本包含一项重要的安全更新，帮助让 Actioneer 使用起来更安全。</li>
+          <li xml:lang="nl">Deze release bevat een belangrijke beveiligingsupdate om Actioneer veiliger in gebruik te houden.</li>
+          <li xml:lang="de">Dieses Release enthält ein wichtiges Sicherheitsupdate, damit Actioneer sicherer nutzbar bleibt.</li>
+          <li>Bundled components have been refreshed for a more reliable and up-to-date experience.</li>
+          <li xml:lang="ja">より信頼でき、最新のエクスペリエンスのために、バンドルコンポーネントを更新しました。</li>
+          <li xml:lang="it">I componenti integrati sono stati aggiornati per un'esperienza più affidabile e aggiornata.</li>
+          <li xml:lang="ur">شامل اجزا کو تازہ کیا گیا ہے تاکہ استعمال کا تجربہ زیادہ قابلِ اعتماد اور جدید رہے۔</li>
+          <li xml:lang="ru">Встроенные компоненты были обновлены, чтобы сделать работу приложения более надёжной и актуальной.</li>
+          <li xml:lang="pt-BR">Os componentes incluídos foram atualizados para oferecer uma experiência mais confiável e atual.</li>
+          <li xml:lang="bn">অন্তর্ভুক্ত কম্পোনেন্টগুলো নতুন করে আপডেট করা হয়েছে, যাতে অভিজ্ঞতা আরও নির্ভরযোগ্য ও আধুনিক থাকে।</li>
+          <li xml:lang="ar">تم تحديث المكونات المضمنة لتقديم تجربة أكثر موثوقية وحداثة.</li>
+          <li xml:lang="fr">Les composants intégrés ont été actualisés pour offrir une expérience plus fiable et plus à jour.</li>
+          <li xml:lang="es">Los componentes incluidos se han actualizado para ofrecer una experiencia más fiable y al día.</li>
+          <li xml:lang="hi">साथ में आने वाले components को रिफ्रेश किया गया है, ताकि अनुभव अधिक भरोसेमंद और अपडेटेड रहे।</li>
+          <li xml:lang="zh-Hans">随附组件已完成更新，带来更可靠、更新鲜的使用体验。</li>
+          <li xml:lang="nl">Meegeleverde componenten zijn vernieuwd voor een betrouwbaardere en actuelere ervaring.</li>
+          <li xml:lang="de">Gebündelte Komponenten wurden für ein zuverlässigeres und aktuelleres Nutzungserlebnis aktualisiert.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.9" date="2026-03-13">
+      <description>
+        <ul>
+          <li>Workflow runs and expanded details are now more stable during background refreshes, with badges and job summaries preserved while results update.</li>
+          <li xml:lang="ja">ワークフロー実行と展開された詳細が、バックグラウンド更新中にバッジとジョブ概要を保持したまま、より安定して更新されます。</li>
+          <li xml:lang="it">Le esecuzioni dei workflow e i dettagli espansi sono ora più stabili durante gli aggiornamenti in background, con badge e riepiloghi dei job preservati durante l'aggiornamento dei risultati.</li>
+          <li xml:lang="ur">بیک گراؤنڈ ریفریش کے دوران ورک فلو رنز اور کھلی ہوئی تفصیلات اب زیادہ مستحکم رہتی ہیں، اور نتائج اپ ڈیٹ ہوتے وقت بیجز اور جاب سمریز برقرار رہتی ہیں۔</li>
+          <li xml:lang="ru">Запуски workflow и раскрытые детали теперь стабильнее ведут себя во время фоновых обновлений: бейджи и сводки по заданиям сохраняются, пока результаты обновляются.</li>
+          <li xml:lang="pt-BR">Execuções de workflow e detalhes expandidos agora ficam mais estáveis durante atualizações em segundo plano, preservando badges e resumos de jobs enquanto os resultados são atualizados.</li>
+          <li xml:lang="bn">ব্যাকগ্রাউন্ড রিফ্রেশের সময় ওয়ার্কফ্লো রান এবং খোলা ডিটেইলস এখন আরও স্থিতিশীল থাকে, আর ফলাফল আপডেট হওয়ার সময় ব্যাজ ও জব সারাংশ বজায় থাকে।</li>
+          <li xml:lang="ar">أصبحت عمليات التشغيل وتفاصيلها المفتوحة أكثر استقرارًا أثناء التحديثات في الخلفية، مع الحفاظ على الشارات وملخصات المهام أثناء تحديث النتائج.</li>
+          <li xml:lang="fr">Les runs de workflow et leurs détails ouverts sont désormais plus stables pendant les actualisations en arrière-plan, avec conservation des badges et des résumés de jobs pendant la mise à jour des résultats.</li>
+          <li xml:lang="es">Las ejecuciones de workflow y sus detalles expandidos ahora son más estables durante las actualizaciones en segundo plano, y conservan los badges y resúmenes de jobs mientras se actualizan los resultados.</li>
+          <li xml:lang="hi">बैकग्राउंड रिफ्रेश के दौरान workflow runs और खुले हुए details अब अधिक स्थिर रहते हैं, और अपडेट के समय badges व job summaries सुरक्षित रहते हैं।</li>
+          <li xml:lang="zh-Hans">工作流运行及其展开详情在后台刷新时现在更稳定，更新结果时会保留徽章和作业摘要。</li>
+          <li xml:lang="nl">Workflow-runs en uitgeklapte details blijven nu stabieler tijdens achtergrondverversingen, waarbij badges en jobsamenvattingen behouden blijven terwijl resultaten worden bijgewerkt.</li>
+          <li xml:lang="de">Workflow-Läufe und geöffnete Details bleiben bei Hintergrundaktualisierungen jetzt stabiler; Badges und Job-Zusammenfassungen bleiben während der Aktualisierung erhalten.</li>
+          <li>Completed runs now stay collapsed when you close them, and run detail actions recover more reliably after temporary loading hiccups.</li>
+          <li xml:lang="ja">完了した実行を閉じても畳まれた状態が保持され、一時的な読み込みの不具合後も実行詳細の操作がより確実に回復します。</li>
+          <li xml:lang="it">Le esecuzioni completate ora restano compresse quando le chiudi, e le azioni dei dettagli delle esecuzioni si riprendono in modo più affidabile dopo interruzioni temporanee del caricamento.</li>
+          <li xml:lang="ur">مکمل ہونے والے رنز اب آپ کے بند کرنے کے بعد بھی سمٹے رہتے ہیں، اور عارضی لوڈنگ مسائل کے بعد رن تفصیلات کی کارروائیاں زیادہ قابلِ اعتماد طریقے سے بحال ہوتی ہیں۔</li>
+          <li xml:lang="ru">Завершённые запуски теперь остаются свернутыми после ручного закрытия, а действия в деталях запуска надёжнее восстанавливаются после временных сбоев загрузки.</li>
+          <li xml:lang="pt-BR">Execuções concluídas agora permanecem recolhidas quando você as fecha, e as ações nos detalhes do run se recuperam com mais confiabilidade após falhas temporárias de carregamento.</li>
+          <li xml:lang="bn">সম্পন্ন রান এখন আপনি বন্ধ করার পরও ভাঁজ করা অবস্থায় থাকে, আর অস্থায়ী লোডিং সমস্যার পর রান ডিটেইলের অ্যাকশনগুলো আরও নির্ভরযোগ্যভাবে ফিরে আসে।</li>
+          <li xml:lang="ar">تبقى عمليات التشغيل المكتملة مطوية الآن بعد إغلاقها، كما تستعيد إجراءات تفاصيل التشغيل عملها بشكل أكثر موثوقية بعد مشكلات تحميل مؤقتة.</li>
+          <li xml:lang="fr">Les runs terminés restent maintenant repliés quand vous les refermez, et les actions des détails de run se rétablissent plus fiablement après de brefs problèmes de chargement.</li>
+          <li xml:lang="es">Las ejecuciones completadas ahora permanecen contraídas cuando las cierras, y las acciones de los detalles del run se recuperan mejor tras problemas temporales de carga.</li>
+          <li xml:lang="hi">पूरे हो चुके runs अब आपके बंद करने के बाद collapsed ही रहते हैं, और run details की actions अस्थायी loading समस्याओं के बाद अधिक भरोसेमंद ढंग से वापस काम करती हैं।</li>
+          <li xml:lang="zh-Hans">已完成的运行在你手动收起后现在会保持折叠，运行详情中的操作在短暂加载异常后也能更可靠地恢复。</li>
+          <li xml:lang="nl">Voltooide runs blijven nu ingeklapt nadat je ze sluit, en acties in run-details herstellen betrouwbaarder na tijdelijke laadproblemen.</li>
+          <li xml:lang="de">Abgeschlossene Läufe bleiben jetzt eingeklappt, wenn Sie sie schließen, und Detailaktionen erholen sich zuverlässiger nach kurzen Ladeproblemen.</li>
+          <li>GitHub connectivity is more resilient to API and permission-related responses, helping keep repository and workflow data visible instead of unexpectedly signing you out.</li>
+          <li xml:lang="ja">GitHub の接続が API や権限に関連する応答に対してより強健になり、予期しないサインアウトの代わりにリポジトリとワークフローデータを表示し続けられます。</li>
+          <li xml:lang="it">La connettività con GitHub è più resistente alle risposte relative all'API e alle autorizzazioni, aiutando a mantenere visibili i dati di repository e workflow invece di disconnetterti inaspettatamente.</li>
+          <li xml:lang="ur">GitHub کنکشن اب API اور اجازت سے متعلق جوابات کو زیادہ مضبوطی سے سنبھالتا ہے، جس سے ریپازٹری اور ورک فلو ڈیٹا نظر آتا رہتا ہے اور غیر متوقع سائن آؤٹ کم ہوتے ہیں۔</li>
+          <li xml:lang="ru">Подключение к GitHub теперь устойчивее к ответам API и ограничениям прав, поэтому данные репозиториев и workflow чаще остаются видимыми вместо неожиданного выхода из учётной записи.</li>
+          <li xml:lang="pt-BR">A conexão com o GitHub agora lida melhor com respostas de API e permissões, ajudando a manter visíveis os dados de repositórios e workflows em vez de encerrar a sessão inesperadamente.</li>
+          <li xml:lang="bn">GitHub সংযোগ এখন API ও পারমিশন-সংক্রান্ত রেসপন্স আরও স্থিতিশীলভাবে সামলায়, ফলে রিপোজিটরি ও ওয়ার্কফ্লো ডেটা দৃশ্যমান থাকে এবং হঠাৎ সাইন-আউট হওয়ার সম্ভাবনা কমে।</li>
+          <li xml:lang="ar">أصبح الاتصال مع GitHub أكثر تحمّلًا لاستجابات الواجهة البرمجية والأذونات، مما يساعد على إبقاء بيانات المستودعات وسير العمل ظاهرة بدلًا من تسجيل الخروج بشكل غير متوقع.</li>
+          <li xml:lang="fr">La connexion à GitHub est désormais plus robuste face aux réponses liées à l’API et aux permissions, ce qui aide à garder visibles les données des dépôts et des workflows au lieu de provoquer une déconnexion inattendue.</li>
+          <li xml:lang="es">La conexión con GitHub ahora es más resistente ante respuestas de API y permisos, lo que ayuda a mantener visibles los datos de repositorios y workflows en lugar de cerrar tu sesión inesperadamente.</li>
+          <li xml:lang="hi">GitHub कनेक्शन अब API और permission से जुड़ी प्रतिक्रियाओं को अधिक मजबूती से संभालता है, जिससे repository और workflow data दिखता रहता है और अनचाहा sign-out कम होता है।</li>
+          <li xml:lang="zh-Hans">应用现在能更稳健地处理 GitHub API 和权限相关响应，帮助你继续看到仓库与工作流数据，而不是意外退出登录。</li>
+          <li xml:lang="nl">De GitHub-koppeling gaat robuuster om met API- en machtigingsreacties, zodat repository- en workflowgegevens zichtbaar blijven in plaats van dat je onverwacht wordt afgemeld.</li>
+          <li xml:lang="de">Die GitHub-Anbindung reagiert robuster auf API- und Berechtigungsantworten, sodass Repository- und Workflow-Daten sichtbar bleiben, statt unerwartet eine Abmeldung auszulösen.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.8" date="2026-03-12">
+      <description>
+        <ul>
+          <li>In-progress workflow runs now stay up to date, so jobs and steps refresh while a run is still active.</li>
+          <li xml:lang="ja">進行中のワークフロー実行が最新に保たれ、実行がまだアクティブな間にジョブとステップが更新されます。</li>
+          <li xml:lang="it">Le esecuzioni dei workflow in corso ora restano aggiornate, quindi job e passaggi si aggiornano mentre un'esecuzione è ancora attiva.</li>
+          <li xml:lang="ur">چلتے ہوئے ورک فلو رنز اب تازہ رہتے ہیں، اس لیے رن کے جاری رہنے کے دوران جابز اور مراحل بھی اپ ڈیٹ ہوتے رہتے ہیں۔</li>
+          <li xml:lang="ru">Запущенные workflow теперь обновляются прямо во время выполнения, поэтому задания и шаги видны в актуальном состоянии до завершения запуска.</li>
+          <li xml:lang="pt-BR">As execuções de workflow em andamento agora permanecem atualizadas, então jobs e etapas são atualizados enquanto a execução ainda está ativa.</li>
+          <li xml:lang="bn">চলমান ওয়ার্কফ্লো রান এখন আপডেট থাকে, তাই রান সক্রিয় থাকতেই জব ও ধাপগুলো রিফ্রেশ হয়।</li>
+          <li xml:lang="ar">أصبحت عمليات سير العمل الجارية تبقى محدّثة، لذلك يتم تحديث المهام والخطوات أثناء استمرار التشغيل.</li>
+          <li xml:lang="fr">Les exécutions de workflow en cours restent désormais à jour, de sorte que les jobs et les étapes se rafraîchissent pendant qu’un run est encore actif.</li>
+          <li xml:lang="es">Las ejecuciones de workflow en curso ahora se mantienen actualizadas, por lo que los jobs y pasos se refrescan mientras la ejecución sigue activa.</li>
+          <li xml:lang="hi">अब चल रहे workflow runs अपडेट रहते हैं, इसलिए run सक्रिय रहते समय jobs और steps भी रिफ्रेश होते रहते हैं।</li>
+          <li xml:lang="zh-Hans">进行中的工作流运行现在会持续保持最新状态，因此作业和步骤会在运行期间实时刷新。</li>
+          <li xml:lang="nl">Lopende workflow-uitvoeringen blijven nu actueel, zodat jobs en stappen worden vernieuwd terwijl een run nog actief is.</li>
+          <li xml:lang="de">Laufende Workflow-Ausführungen bleiben jetzt aktuell, sodass Jobs und Schritte aktualisiert werden, während ein Lauf noch aktiv ist.</li>
+          <li>Expanded run details are more stable and easier to follow, with clearer job badges and step numbering.</li>
+          <li xml:lang="ja">展開された実行詳細がより安定し、追従しやすくなり、ジョブバッジとステップ番号が明確になりました。</li>
+          <li xml:lang="it">I dettagli espansi delle esecuzioni sono più stabili e facili da seguire, con badge dei job e numerazione dei passaggi più chiari.</li>
+          <li xml:lang="ur">پھیلے ہوئے رن کی تفصیلات اب زیادہ مستحکم اور سمجھنے میں آسان ہیں، واضح جاب بیجز اور مرحلہ نمبرنگ کے ساتھ۔</li>
+          <li xml:lang="ru">Детали раскрытых запусков стали стабильнее и понятнее: бейджи заданий и нумерация шагов читаются лучше.</li>
+          <li xml:lang="pt-BR">Os detalhes das execuções expandidas agora estão mais estáveis e fáceis de acompanhar, com badges de jobs e numeração de etapas mais claros.</li>
+          <li xml:lang="bn">প্রসারিত রান ডিটেইলস এখন আরও স্থিতিশীল ও অনুসরণ করা সহজ, যেখানে জব ব্যাজ ও ধাপ নম্বর আরও পরিষ্কার।</li>
+          <li xml:lang="ar">أصبحت تفاصيل التشغيل الموسّعة أكثر استقرارًا وأسهل في المتابعة، مع شارات مهام وترقيم خطوات أوضح.</li>
+          <li xml:lang="fr">Les détails des runs ouverts sont désormais plus stables et plus faciles à suivre, avec des badges de job et une numérotation des étapes plus claires.</li>
+          <li xml:lang="es">Los detalles de las ejecuciones expandidas ahora son más estables y fáciles de seguir, con indicadores de jobs y numeración de pasos más claros.</li>
+          <li xml:lang="hi">खुले हुए run details अब ज़्यादा स्थिर और समझने में आसान हैं, जिनमें job badges और step numbering अधिक स्पष्ट है।</li>
+          <li xml:lang="zh-Hans">展开的运行详情现在更加稳定、也更易读，作业徽章和步骤编号更加清晰。</li>
+          <li xml:lang="nl">Details van uitgeklapte runs zijn nu stabieler en makkelijker te volgen, met duidelijkere jobbadges en stapnummering.</li>
+          <li xml:lang="de">Die Details erweiterter Läufe sind jetzt stabiler und leichter zu verfolgen, mit klareren Job-Badges und einer verständlicheren Schrittnummerierung.</li>
+          <li>Workflow status badges are now translated more consistently across the app.</li>
+          <li xml:lang="ja">ワークフロー状態バッジがアプリ全体でより一貫して翻訳されるようになりました。</li>
+          <li xml:lang="it">I badge di stato dei workflow sono ora tradotti in modo più coerente in tutta l'app.</li>
+          <li xml:lang="ur">پوری ایپ میں ورک فلو اسٹیٹس بیجز کے تراجم اب زیادہ یکساں ہیں۔</li>
+          <li xml:lang="ru">Статусы workflow теперь переведены более последовательно по всему приложению.</li>
+          <li xml:lang="pt-BR">Os badges de status dos workflows agora têm traduções mais consistentes em todo o app.</li>
+          <li xml:lang="bn">এখন পুরো অ্যাপজুড়ে ওয়ার্কফ্লো স্ট্যাটাস ব্যাজগুলোর অনুবাদ আরও সামঞ্জস্যপূর্ণ।</li>
+          <li xml:lang="ar">أصبحت شارات حالة سير العمل مترجمة بشكل أكثر اتساقًا في جميع أنحاء التطبيق.</li>
+          <li xml:lang="fr">Les badges d’état des workflows sont désormais traduits de manière plus cohérente dans toute l’application.</li>
+          <li xml:lang="es">Los indicadores de estado de workflows ahora están traducidos de forma más consistente en toda la app.</li>
+          <li xml:lang="hi">पूरे ऐप में workflow status badges का अनुवाद अब अधिक एकरूप है।</li>
+          <li xml:lang="zh-Hans">整个应用中的工作流状态徽章现在拥有更一致的翻译。</li>
+          <li xml:lang="nl">Workflow-statusbadges zijn nu consistenter vertaald in de hele app.</li>
+          <li xml:lang="de">Workflow-Status-Badges sind jetzt in der gesamten App einheitlicher übersetzt.</li>
+          <li>Background refresh is lighter on the GitHub API, which helps preserve your rate limit.</li>
+          <li xml:lang="ja">バックグラウンド更新が GitHub API への負荷を軽減し、レート制限の保護に役立ちます。</li>
+          <li xml:lang="it">L'aggiornamento in background è più leggero per l'API di GitHub, il che aiuta a preservare il tuo limite di richieste.</li>
+          <li xml:lang="ur">بیک گراؤنڈ ریفریش اب GitHub API پر کم بوجھ ڈالتا ہے، جس سے آپ کا ریٹ لمٹ بچانے میں مدد ملتی ہے۔</li>
+          <li xml:lang="ru">Фоновые обновления теперь меньше нагружают GitHub API, что помогает экономнее расходовать лимит запросов.</li>
+          <li xml:lang="pt-BR">As atualizações em segundo plano agora exigem menos da API do GitHub, o que ajuda a preservar seu limite de uso.</li>
+          <li xml:lang="bn">ব্যাকগ্রাউন্ড রিফ্রেশ এখন GitHub API-তে কম চাপ ফেলে, ফলে আপনার rate limit বেশি সময় টিকে থাকে।</li>
+          <li xml:lang="ar">أصبحت التحديثات في الخلفية أخف على واجهة GitHub API، مما يساعد في الحفاظ على حد المعدل.</li>
+          <li xml:lang="fr">Les actualisations en arrière-plan sollicitent moins l’API GitHub, ce qui aide à préserver votre quota.</li>
+          <li xml:lang="es">La actualización en segundo plano ahora consume menos de la API de GitHub, lo que ayuda a conservar tu límite de uso.</li>
+          <li xml:lang="hi">बैकग्राउंड रिफ्रेश अब GitHub API पर कम दबाव डालता है, जिससे आपका rate limit बचाने में मदद मिलती है।</li>
+          <li xml:lang="zh-Hans">后台刷新现在对 GitHub API 的占用更少，有助于保留你的速率限制额度。</li>
+          <li xml:lang="nl">Achtergrondverversingen belasten de GitHub-API nu minder, wat helpt om je rate limit te sparen.</li>
+          <li xml:lang="de">Hintergrundaktualisierungen belasten die GitHub-API jetzt weniger, was beim Schonen des Rate Limits hilft.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.7" date="2026-03-03">
+      <description>
+        <ul>
+          <li>The app now feels faster and smoother during sign-in, refreshes, and everyday navigation.</li>
+          <li xml:lang="ja">サインイン、更新、日常のナビゲーションで、アプリがより速く、スムーズに感じられます。</li>
+          <li xml:lang="it">L'app ora risulta più veloce e fluida durante l'accesso, gli aggiornamenti e la navigazione quotidiana.</li>
+          <li xml:lang="ur">لاگ اِن، ریفریش اور روزمرہ نیویگیشن کے دوران ایپ اب زیادہ تیز اور ہموار محسوس ہوتی ہے۔</li>
+          <li xml:lang="ru">Приложение стало быстрее и плавнее при входе, обновлениях и повседневной навигации.</li>
+          <li xml:lang="pt-BR">O app agora está mais rápido e fluido durante login, atualizações e navegação do dia a dia.</li>
+          <li xml:lang="bn">সাইন-ইন, রিফ্রেশ এবং দৈনন্দিন নেভিগেশনে অ্যাপ এখন আরও দ্রুত ও মসৃণ লাগে।</li>
+          <li xml:lang="ar">أصبح التطبيق أسرع وأكثر سلاسة أثناء تسجيل الدخول والتحديث والتنقل اليومي.</li>
+          <li xml:lang="fr">L’application est désormais plus rapide et fluide lors de la connexion, des actualisations et de la navigation quotidienne.</li>
+          <li xml:lang="es">La app ahora se siente más rápida y fluida al iniciar sesión, actualizar y navegar cada día.</li>
+          <li xml:lang="hi">अब साइन-इन, रिफ्रेश और रोज़मर्रा नेविगेशन के दौरान ऐप अधिक तेज़ और स्मूथ महसूस होता है।</li>
+          <li xml:lang="zh-Hans">应用在登录、刷新和日常浏览时更快、更流畅。</li>
+          <li xml:lang="nl">De app voelt nu sneller en vloeiender aan tijdens aanmelden, verversen en dagelijks gebruik.</li>
+          <li xml:lang="de">Die App fühlt sich jetzt bei Anmeldung, Aktualisierungen und der täglichen Navigation schneller und flüssiger an.</li>
+          <li>Notifications and background updates are more reliable, so important run results are less likely to be missed.</li>
+          <li xml:lang="ja">通知とバックグラウンド更新がより信頼でき、重要な実行結果を見逃す可能性が低くなります。</li>
+          <li xml:lang="it">Notifiche e aggiornamenti in background sono più affidabili, così i risultati importanti delle esecuzioni hanno meno probabilità di essere persi.</li>
+          <li xml:lang="ur">نوٹیفکیشنز اور بیک گراؤنڈ اپ ڈیٹس اب زیادہ قابلِ اعتماد ہیں، اس لیے اہم رن نتائج چھوٹنے کا امکان کم ہے۔</li>
+          <li xml:lang="ru">Уведомления и фоновые обновления стали надёжнее, поэтому важные результаты запусков реже пропускаются.</li>
+          <li xml:lang="pt-BR">As notificações e atualizações em segundo plano estão mais confiáveis, reduzindo a chance de perder resultados importantes.</li>
+          <li xml:lang="bn">নোটিফিকেশন ও ব্যাকগ্রাউন্ড আপডেট এখন আরও নির্ভরযোগ্য, তাই গুরুত্বপূর্ণ রানের ফল মিস হওয়ার সম্ভাবনা কম।</li>
+          <li xml:lang="ar">أصبحت الإشعارات والتحديثات في الخلفية أكثر موثوقية، لذا تقل احتمالية تفويت النتائج المهمة.</li>
+          <li xml:lang="fr">Les notifications et les mises à jour en arrière-plan sont plus fiables, ce qui réduit le risque de manquer des résultats importants.</li>
+          <li xml:lang="es">Las notificaciones y las actualizaciones en segundo plano son más fiables, por lo que es menos probable perder resultados importantes.</li>
+          <li xml:lang="hi">नोटिफिकेशन और बैकग्राउंड अपडेट अब अधिक विश्वसनीय हैं, इसलिए महत्वपूर्ण रन परिणाम छूटने की संभावना कम है।</li>
+          <li xml:lang="zh-Hans">通知和后台更新更加可靠，因此不容易错过重要的运行结果。</li>
+          <li xml:lang="nl">Meldingen en achtergrondupdates zijn betrouwbaarder, waardoor je belangrijke uitvoeringsresultaten minder snel mist.</li>
+          <li xml:lang="de">Benachrichtigungen und Hintergrundaktualisierungen sind zuverlässiger, sodass wichtige Ausführungsergebnisse seltener verpasst werden.</li>
+          <li>German and Dutch translations are now available across the app and listing metadata.</li>
+          <li xml:lang="ja">ドイツ語とオランダ語の翻訳が、アプリ全体とリストのメタデータで利用できるようになりました。</li>
+          <li xml:lang="it">Le traduzioni tedesca e olandese sono ora disponibili in tutta l'app e nei metadati della scheda.</li>
+          <li xml:lang="ur">اب جرمن اور ڈچ ترجمے پوری ایپ اور لسٹنگ میٹاڈیٹا میں دستیاب ہیں۔</li>
+          <li xml:lang="ru">Теперь немецкий и нидерландский переводы доступны во всём приложении и в метаданных карточки.</li>
+          <li xml:lang="pt-BR">As traduções em alemão e holandês agora estão disponíveis em todo o app e nos metadados da listagem.</li>
+          <li xml:lang="bn">এখন পুরো অ্যাপ এবং তালিকার মেটাডেটা জুড়ে জার্মান ও ডাচ অনুবাদ উপলব্ধ।</li>
+          <li xml:lang="ar">أصبحت الترجمات الألمانية والهولندية متاحة الآن عبر التطبيق وبيانات الإدراج الوصفية.</li>
+          <li xml:lang="fr">Des traductions allemande et néerlandaise sont désormais disponibles dans toute l’application et dans les métadonnées de la fiche.</li>
+          <li xml:lang="es">Ahora hay traducciones al alemán y al neerlandés disponibles en toda la app y en los metadatos de la ficha.</li>
+          <li xml:lang="hi">अब पूरे ऐप और लिस्टिंग मेटाडेटा में जर्मन और डच अनुवाद उपलब्ध हैं।</li>
+          <li xml:lang="zh-Hans">现已新增德语和荷兰语翻译，覆盖应用界面和应用条目元数据。</li>
+          <li xml:lang="nl">Duitse en Nederlandse vertalingen zijn nu beschikbaar in de hele app en in de metadata van de appvermelding.</li>
+          <li xml:lang="de">Deutsche und niederländische Übersetzungen sind jetzt in der gesamten App und in den Listing-Metadaten verfügbar.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.6" date="2026-02-27">
+      <description>
+        <ul>
+          <li>Actioneer is now localized in English, German, Dutch, Simplified Chinese, Hindi, Spanish, French, Arabic, Bengali, Brazilian Portuguese, Russian, and Urdu.</li>
+          <li xml:lang="ja">Actioneer は現在、英語、ドイツ語、オランダ語、簡体字中国語、ヒンディー語、スペイン語、フランス語、アラビア語、ベンガル語、ブラジルポルトガル語、ロシア語、ウルドゥー語でローカライズされています。</li>
+          <li xml:lang="it">Actioneer è ora localizzato in inglese, tedesco, olandese, cinese semplificato, hindi, spagnolo, francese, arabo, bengalese, portoghese brasiliano, russo e urdu.</li>
+          <li xml:lang="ur">Actioneer اب ان زبانوں میں دستیاب ہے: انگریزی، سادہ چینی، ہندی، ہسپانوی، فرانسیسی، عربی، بنگالی، برازیلی پرتگالی، روسی اور اردو۔</li>
+          <li xml:lang="ru">Actioneer теперь доступен на английском, китайском (упрощённом), хинди, испанском, французском, арабском, бенгальском, португальском (Бразилия), русском и урду.</li>
+          <li xml:lang="pt-BR">O Actioneer agora está disponível em inglês, chinês simplificado, hindi, espanhol, francês, árabe, bengali, português do Brasil, russo e urdu.</li>
+          <li xml:lang="bn">Actioneer এখন এই ভাষাগুলো সমর্থন করে: ইংরেজি, সরলীকৃত চীনা, হিন্দি, স্প্যানিশ, ফরাসি, আরবি, বাংলা, ব্রাজিলিয়ান পর্তুগিজ, রুশ এবং উর্দু।</li>
+          <li xml:lang="ar">يدعم Actioneer الآن اللغات التالية: الإنجليزية، الصينية المبسطة، الهندية، الإسبانية، الفرنسية، العربية، البنغالية، البرتغالية البرازيلية، الروسية والأردية.</li>
+          <li xml:lang="fr">Actioneer est désormais disponible en anglais, chinois simplifié, hindi, espagnol, français, arabe, bengali, portugais du Brésil, russe et ourdou.</li>
+          <li xml:lang="es">Actioneer ahora está disponible en inglés, chino simplificado, hindi, español, francés, árabe, bengalí, portugués de Brasil, ruso y urdu.</li>
+          <li xml:lang="hi">Actioneer अब इन भाषाओं में उपलब्ध है: अंग्रेज़ी, सरल चीनी, हिंदी, स्पेनिश, फ़्रेंच, अरबी, बांग्ला, ब्राज़ीलियाई पुर्तगाली, रूसी और उर्दू।</li>
+          <li xml:lang="zh-Hans">Actioneer 现已支持以下语言：英语、简体中文、印地语、西班牙语、法语、阿拉伯语、孟加拉语、巴西葡萄牙语、俄语和乌尔都语。</li>
+          <li xml:lang="nl">Actioneer is nu beschikbaar in het Engels, Duits, Nederlands, Vereenvoudigd Chinees, Hindi, Spaans, Frans, Arabisch, Bengaals, Braziliaans Portugees, Russisch en Urdu.</li>
+          <li xml:lang="de">Actioneer ist jetzt auf Englisch, Deutsch, Niederländisch, vereinfachtem Chinesisch, Hindi, Spanisch, Französisch, Arabisch, Bengalisch, brasilianischem Portugiesisch, Russisch und Urdu verfügbar.</li>
+          <li>Added Help and Shortcuts to make in-app guidance and keyboard workflows easier.</li>
+          <li xml:lang="ja">アプリ内ガイドとキーボード操作を簡単にするため、ヘルプとショートカットを追加しました。</li>
+          <li xml:lang="it">Aggiunte Guida e Scorciatoie per rendere più facili le guide in-app e i flussi da tastiera.</li>
+          <li xml:lang="ur">ایپ کے اندر رہنمائی اور کی بورڈ ورک فلو کو آسان بنانے کے لیے Help اور Shortcuts شامل کیے گئے ہیں۔</li>
+          <li xml:lang="ru">Добавлены «Справка» и «Горячие клавиши», чтобы упростить подсказки в приложении и работу с клавиатуры.</li>
+          <li xml:lang="pt-BR">Foram adicionados Ajuda e Atalhos para facilitar a orientação no app e os fluxos com teclado.</li>
+          <li xml:lang="bn">অ্যাপের ভেতরের গাইড ও কিবোর্ড ওয়ার্কফ্লো সহজ করতে Help এবং Shortcuts যোগ করা হয়েছে।</li>
+          <li xml:lang="ar">تمت إضافة «المساعدة» و«الاختصارات» لتسهيل الإرشادات داخل التطبيق والعمل عبر لوحة المفاتيح.</li>
+          <li xml:lang="fr">Aide et Raccourcis ont été ajoutés pour faciliter l’assistance intégrée et les flux au clavier.</li>
+          <li xml:lang="es">Se añadieron Ayuda y Atajos para facilitar la guía dentro de la app y los flujos con teclado.</li>
+          <li xml:lang="hi">इन-ऐप मार्गदर्शन और कीबोर्ड वर्कफ़्लो आसान बनाने के लिए Help और Shortcuts जोड़े गए।</li>
+          <li xml:lang="zh-Hans">新增“帮助”和“快捷键”，让应用内指引和键盘操作更便捷。</li>
+          <li xml:lang="nl">Help en sneltoetsen zijn toegevoegd om begeleiding in de app en toetsenbordworkflows eenvoudiger te maken.</li>
+          <li xml:lang="de">Hilfe und Tastenkombinationen wurden hinzugefügt, um In-App-Anleitungen und Tastatur-Workflows zu erleichtern.</li>
+          <li>Improved GitHub request stability with client-side timeouts.</li>
+          <li xml:lang="ja">クライアント側のタイムアウトにより、GitHub リクエストの安定性が向上しました。</li>
+          <li xml:lang="it">Migliorata la stabilità delle richieste GitHub con timeout lato client.</li>
+          <li xml:lang="ur">کلائنٹ سائیڈ ٹائم آؤٹس کے ذریعے GitHub درخواستوں کا استحکام بہتر بنایا گیا ہے۔</li>
+          <li xml:lang="ru">Повышена стабильность запросов к GitHub за счёт таймаутов на стороне клиента.</li>
+          <li xml:lang="pt-BR">A estabilidade das requisições ao GitHub foi melhorada com timeouts no cliente.</li>
+          <li xml:lang="bn">ক্লায়েন্ট-সাইড টাইমআউট যোগ করে GitHub অনুরোধের স্থিতিশীলতা উন্নত করা হয়েছে।</li>
+          <li xml:lang="ar">تم تحسين استقرار طلبات GitHub عبر مهلات زمنية على مستوى العميل.</li>
+          <li xml:lang="fr">La stabilité des requêtes GitHub a été améliorée grâce à des délais d’expiration côté client.</li>
+          <li xml:lang="es">Se mejoró la estabilidad de las solicitudes a GitHub con tiempos de espera en el cliente.</li>
+          <li xml:lang="hi">क्लाइंट-स्तरीय टाइमआउट के साथ GitHub अनुरोधों की स्थिरता बेहतर की गई।</li>
+          <li xml:lang="zh-Hans">通过客户端超时机制提升了 GitHub 请求稳定性。</li>
+          <li xml:lang="nl">De stabiliteit van GitHub-verzoeken is verbeterd met time-outs aan clientzijde.</li>
+          <li xml:lang="de">Die Stabilität von GitHub-Anfragen wurde durch clientseitige Timeouts verbessert.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.5" date="2026-02-09">
+      <description>
+        <ul>
+          <li>Manual workflow triggers now support workflow_dispatch inputs with dynamic parameter fields.</li>
+          <li xml:lang="ja">手動のワークフロートリガーが、動的なパラメータフィールド付きの workflow_dispatch 入力に対応しました。</li>
+          <li xml:lang="it">Gli avvii manuali dei workflow ora supportano gli input di workflow_dispatch con campi di parametro dinamici.</li>
+          <li xml:lang="ur">دستی ورک فلو ٹرگرز اب workflow_dispatch ان پٹس کو ڈائنامک پیرامیٹر فیلڈز کے ساتھ سپورٹ کرتے ہیں۔</li>
+          <li xml:lang="ru">Ручной запуск workflow теперь поддерживает входные параметры workflow_dispatch с динамическими полями.</li>
+          <li xml:lang="pt-BR">Disparos manuais de workflow agora suportam entradas workflow_dispatch com campos dinâmicos de parâmetros.</li>
+          <li xml:lang="bn">ম্যানুয়াল ওয়ার্কফ্লো ট্রিগার এখন ডাইনামিক প্যারামিটার ফিল্ডসহ workflow_dispatch ইনপুট সমর্থন করে।</li>
+          <li xml:lang="ar">تشغيلات سير العمل اليدوية تدعم الآن مدخلات workflow_dispatch مع حقول معلمات ديناميكية.</li>
+          <li xml:lang="fr">Les déclenchements manuels de workflows prennent désormais en charge les entrées workflow_dispatch avec des champs de paramètres dynamiques.</li>
+          <li xml:lang="es">Los disparadores manuales de workflows ahora admiten entradas workflow_dispatch con campos de parámetros dinámicos.</li>
+          <li xml:lang="hi">मैनुअल वर्कफ़्लो ट्रिगर अब workflow_dispatch इनपुट को डायनामिक पैरामीटर फ़ील्ड्स के साथ सपोर्ट करते हैं।</li>
+          <li xml:lang="zh-Hans">手动触发工作流现已支持带动态参数字段的 workflow_dispatch 输入。</li>
+          <li xml:lang="nl">Manuele workflow-triggers ondersteunen nu workflow_dispatch-ingaven met dynamische parametervelden.</li>
+          <li xml:lang="de">Manuelle Workflow-Trigger unterstützen jetzt workflow_dispatch-Eingaben mit dynamischen Parameterfeldern.</li>
+          <li>Dependency updates for ryu, unicode-ident, and zmij.</li>
+          <li xml:lang="ja">ryu、unicode-ident、zmij の依存関係を更新しました。</li>
+          <li xml:lang="it">Aggiornamenti delle dipendenze per ryu, unicode-ident e zmij.</li>
+          <li xml:lang="ur">ryu، unicode-ident اور zmij کے لیے ڈپینڈنسی اپ ڈیٹس۔</li>
+          <li xml:lang="ru">Обновления зависимостей для ryu, unicode-ident и zmij.</li>
+          <li xml:lang="pt-BR">Atualizações de dependências para ryu, unicode-ident e zmij.</li>
+          <li xml:lang="bn">ryu, unicode-ident এবং zmij-এর জন্য ডিপেন্ডেন্সি আপডেট।</li>
+          <li xml:lang="ar">تحديثات للتبعيات: ryu وunicode-ident وzmij.</li>
+          <li xml:lang="fr">Mises à jour des dépendances pour ryu, unicode-ident et zmij.</li>
+          <li xml:lang="es">Actualizaciones de dependencias para ryu, unicode-ident y zmij.</li>
+          <li xml:lang="hi">ryu, unicode-ident और zmij के लिए डिपेंडेंसी अपडेट।</li>
+          <li xml:lang="zh-Hans">更新了 ryu、unicode-ident 和 zmij 依赖。</li>
+          <li xml:lang="nl">Afhankelijkheidsupdates voor ryu, unicode-ident en zmij.</li>
+          <li xml:lang="de">Abhängigkeitsupdates für ryu, unicode-ident und zmij.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.4" date="2026-02-06">
+      <description>
+        <ul>
+          <li>Handle expired job logs (HTTP 410) with clearer messaging instead of a broken view.</li>
+          <li xml:lang="ja">期限切れのジョブログ(HTTP 410)を、壊れたビューの代わりにより明確なメッセージで処理します。</li>
+          <li xml:lang="it">Gestione dei log di job scaduti (HTTP 410) con messaggi più chiari invece di una vista rotta.</li>
+          <li xml:lang="ur">میعاد ختم شدہ جاب لاگز (HTTP 410) کے لیے اب ٹوٹی ہوئی ویو کے بجائے واضح پیغام دکھایا جاتا ہے۔</li>
+          <li xml:lang="ru">Для просроченных логов заданий (HTTP 410) теперь показывается понятное сообщение вместо «сломанного» экрана.</li>
+          <li xml:lang="pt-BR">Logs de jobs expirados (HTTP 410) agora mostram mensagens mais claras em vez de uma visualização quebrada.</li>
+          <li xml:lang="bn">মেয়াদোত্তীর্ণ জব লগ (HTTP 410) এখন ভাঙা ভিউয়ের বদলে পরিষ্কার বার্তা দেখায়।</li>
+          <li xml:lang="ar">معالجة سجلات المهام المنتهية (HTTP 410) برسائل أوضح بدل عرض مكسور.</li>
+          <li xml:lang="fr">Les logs de jobs expirés (HTTP 410) affichent désormais un message clair au lieu d’une vue cassée.</li>
+          <li xml:lang="es">Los logs de jobs expirados (HTTP 410) ahora muestran un mensaje claro en lugar de una vista rota.</li>
+          <li xml:lang="hi">एक्सपायर जॉब लॉग (HTTP 410) के लिए टूटे हुए दृश्य की जगह अधिक स्पष्ट संदेश दिखाया जाता है।</li>
+          <li xml:lang="zh-Hans">处理过期作业日志（HTTP 410）时改为更清晰的提示，而不是显示损坏视图。</li>
+          <li xml:lang="nl">Verlopen joblogs (HTTP 410) worden nu met een duidelijkere melding verwerkt in plaats van een gebroken weergave.</li>
+          <li xml:lang="de">Abgelaufene Job-Logs (HTTP 410) werden mit klarer Meldung statt einer defekten Ansicht behandelt.</li>
+          <li>Strip BOM markers in job logs so first-line timestamps render correctly.</li>
+          <li xml:lang="ja">BOM マーカーを除去し、先頭行のタイムスタンプが正しく表示されるようにしました。</li>
+          <li xml:lang="it">Rimozione dei marker BOM nei log di job così i timestamp della prima riga vengono visualizzati correttamente.</li>
+          <li xml:lang="ur">جاب لاگز سے BOM مارکر ہٹا دیے گئے تاکہ پہلی لائن کا ٹائم اسٹیمپ درست دکھے۔</li>
+          <li xml:lang="ru">Удалены BOM-маркеры в логах, чтобы метки времени в первой строке отображались корректно.</li>
+          <li xml:lang="pt-BR">Remoção de marcadores BOM nos logs para que o timestamp da primeira linha seja renderizado corretamente.</li>
+          <li xml:lang="bn">জব লগ থেকে BOM মার্কার সরানো হয়েছে, যাতে প্রথম লাইনের টাইমস্ট্যাম্প ঠিকমতো রেন্ডার হয়।</li>
+          <li xml:lang="ar">إزالة علامات BOM من السجلات لضمان عرض طابع الوقت في السطر الأول بشكل صحيح.</li>
+          <li xml:lang="fr">Suppression des marqueurs BOM dans les logs afin d’afficher correctement l’horodatage de la première ligne.</li>
+          <li xml:lang="es">Se eliminan marcadores BOM en logs para que el timestamp de la primera línea se renderice correctamente.</li>
+          <li xml:lang="hi">जॉब लॉग में BOM मार्कर हटाए गए ताकि पहली पंक्ति का टाइमस्टैम्प सही रेंडर हो।</li>
+          <li xml:lang="zh-Hans">去除日志中的 BOM 标记，确保首行时间戳正确渲染。</li>
+          <li xml:lang="nl">BOM-markeringen in joblogs worden verwijderd zodat tijdstempels van de eerste regel correct worden weergegeven.</li>
+          <li xml:lang="de">BOM-Markierungen in Job-Logs werden entfernt, damit Zeitstempel der ersten Zeile korrekt dargestellt werden.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.3" date="2026-02-04">
+      <description>
+        <ul>
+          <li>Job logs now render ANSI colors, grouped workflow sections, and clearer command/output formatting.</li>
+          <li xml:lang="ja">ジョブログが ANSI カラー、グループ化されたワークフローセクション、より明確なコマンド/出力の書式を表示するようになりました。</li>
+          <li xml:lang="it">I log dei job ora visualizzano colori ANSI, sezioni di workflow raggruppate e una formattazione più chiara di comandi e output.</li>
+          <li xml:lang="ur">جاب لاگز اب ANSI رنگ، گروپ شدہ ورک فلو سیکشنز اور زیادہ واضح کمانڈ/آؤٹ پٹ فارمیٹنگ دکھاتے ہیں۔</li>
+          <li xml:lang="ru">Логи заданий теперь отображают ANSI-цвета, сгруппированные секции workflow и более понятный формат команд/вывода.</li>
+          <li xml:lang="pt-BR">Os logs de jobs agora renderizam cores ANSI, seções de workflow agrupadas e formatação mais clara de comando/saída.</li>
+          <li xml:lang="bn">জব লগ এখন ANSI রং, গ্রুপ করা ওয়ার্কফ্লো সেকশন এবং আরও পরিষ্কার কমান্ড/আউটপুট ফরম্যাট দেখায়।</li>
+          <li xml:lang="ar">سجلات المهام تعرض الآن ألوان ANSI وأقسام سير عمل مجمّعة وتنسيقًا أوضح للأوامر/المخرجات.</li>
+          <li xml:lang="fr">Les logs de jobs affichent désormais les couleurs ANSI, des sections de workflow groupées et un format commande/sortie plus clair.</li>
+          <li xml:lang="es">Los logs de jobs ahora renderizan colores ANSI, secciones de workflow agrupadas y un formato de comandos/salida más claro.</li>
+          <li xml:lang="hi">जॉब लॉग अब ANSI रंग, समूहित वर्कफ़्लो सेक्शन और अधिक स्पष्ट कमांड/आउटपुट फॉर्मैटिंग दिखाते हैं।</li>
+          <li xml:lang="zh-Hans">日志现在支持 ANSI 颜色、分组工作流区段以及更清晰的命令/输出格式。</li>
+          <li xml:lang="nl">Joblogs tonen nu ANSI-kleuren, gegroepeerde workflowsecties en een duidelijkere opdracht-/outputopmaak.</li>
+          <li xml:lang="de">Job-Logs zeigen jetzt ANSI-Farben, gruppierte Workflow-Abschnitte und ein klareres Befehls-/Ausgabeformat.</li>
+          <li>Aligned timestamps and command prefixes improve scanability, with stronger error highlighting.</li>
+          <li xml:lang="ja">タイムスタンプとコマンド接頭語の整列により見やすさが向上し、エラーハイライトが強まりました。</li>
+          <li xml:lang="it">Timestamp e prefissi di comando allineati migliorano la leggibilità, con un'evidenziazione più marcata degli errori.</li>
+          <li xml:lang="ur">ترتیب شدہ ٹائم اسٹیمپس اور کمانڈ پری فکس پڑھنے کی سہولت بڑھاتے ہیں، اور ایرر ہائی لائٹنگ مزید بہتر ہوئی ہے۔</li>
+          <li xml:lang="ru">Выравнивание временных меток и префиксов команд улучшило читаемость, а подсветка ошибок стала заметнее.</li>
+          <li xml:lang="pt-BR">Timestamps e prefixos de comando alinhados melhoram a leitura, com realce de erros mais forte.</li>
+          <li xml:lang="bn">সারিবদ্ধ টাইমস্ট্যাম্প ও কমান্ড প্রিফিক্স পড়ার সুবিধা বাড়ায়, সঙ্গে শক্তিশালী এরর হাইলাইটিং।</li>
+          <li xml:lang="ar">محاذاة الطوابع الزمنية وبوادئ الأوامر تحسّن قابلية القراءة مع إبراز أقوى للأخطاء.</li>
+          <li xml:lang="fr">L’alignement des horodatages et préfixes de commande améliore la lisibilité, avec un surlignage des erreurs renforcé.</li>
+          <li xml:lang="es">Timestamps y prefijos de comandos alineados mejoran la legibilidad, con un resaltado de errores más fuerte.</li>
+          <li xml:lang="hi">संरेखित टाइमस्टैम्प और कमांड प्रीफ़िक्स पढ़ने में आसानी बढ़ाते हैं, साथ ही त्रुटि हाइलाइटिंग बेहतर हुई है।</li>
+          <li xml:lang="zh-Hans">对齐的时间戳和命令前缀提升了可读性，并增强了错误高亮。</li>
+          <li xml:lang="nl">Gelijkte tijdstempels en opdrachtprefixen verbeteren de leesbaarheid, met sterkere foutmarkering.</li>
+          <li xml:lang="de">Ausgerichtete Zeitstempel und Befehlsprefixe verbessern die Übersichtlichkeit, mit stärkerer Hervorhebung von Fehlern.</li>
+          <li>Packaging CI refreshed with multi-arch updates for AppImage/Snap/Flatpak builds.</li>
+          <li xml:lang="ja">AppImage/Snap/Flatpak ビルドのために、Packaging CI をマルチアーキテクチャ対応に更新しました。</li>
+          <li xml:lang="it">CI di packaging aggiornata con aggiornamenti multi-arch per le build AppImage/Snap/Flatpak.</li>
+          <li xml:lang="ur">پیکیجنگ CI کو AppImage/Snap/Flatpak بلڈز کے لیے ملٹی آرک اپ ڈیٹس کے ساتھ ریفریش کیا گیا۔</li>
+          <li xml:lang="ru">CI упаковки обновлён, включая multi-arch улучшения для сборок AppImage/Snap/Flatpak.</li>
+          <li xml:lang="pt-BR">O CI de empacotamento foi atualizado com melhorias multiarquitetura para builds AppImage/Snap/Flatpak.</li>
+          <li xml:lang="bn">AppImage/Snap/Flatpak বিল্ডের জন্য মাল্টি-আর্ক আপডেটসহ প্যাকেজিং CI রিফ্রেশ করা হয়েছে।</li>
+          <li xml:lang="ar">تم تحديث CI الخاص بالحزم مع تحسينات متعددة المعماريات لبناءات AppImage/Snap/Flatpak.</li>
+          <li xml:lang="fr">La CI de packaging a été rafraîchie avec des mises à jour multi-architecture pour AppImage/Snap/Flatpak.</li>
+          <li xml:lang="es">El CI de empaquetado se actualizó con mejoras multi-arquitectura para builds AppImage/Snap/Flatpak.</li>
+          <li xml:lang="hi">पैकेजिंग CI को AppImage/Snap/Flatpak बिल्ड्स के लिए मल्टी-आर्क अपडेट के साथ रीफ़्रेश किया गया।</li>
+          <li xml:lang="zh-Hans">打包 CI 已更新，包含 AppImage/Snap/Flatpak 的多架构构建改进。</li>
+          <li xml:lang="nl">Packaging-CI vernieuwd met multi-arch-updates voor AppImage/Snap/Flatpak-builds.</li>
+          <li xml:lang="de">Packaging-CI überarbeitet mit Multi-Arch-Updates für AppImage-/Snap-/Flatpak-Builds.</li>
+          <li>Dependency updates and demo log refreshes for improved accuracy.</li>
+          <li xml:lang="ja">正確性の向上のため、依存関係とデモログを更新しました。</li>
+          <li xml:lang="it">Aggiornamenti delle dipendenze e dei log di demo per una maggiore accuratezza.</li>
+          <li xml:lang="ur">بہتر درستگی کے لیے ڈپینڈنسی اپ ڈیٹس اور ڈیمو لاگز ریفریش کیے گئے۔</li>
+          <li xml:lang="ru">Обновлены зависимости и демонстрационные логи для повышения точности.</li>
+          <li xml:lang="pt-BR">Atualizações de dependências e atualização dos logs de demonstração para melhorar a precisão.</li>
+          <li xml:lang="bn">উন্নত নির্ভুলতার জন্য ডিপেন্ডেন্সি আপডেট ও ডেমো লগ রিফ্রেশ।</li>
+          <li xml:lang="ar">تحديثات للتبعيات وتحديث سجلات العرض التوضيحي لتحسين الدقة.</li>
+          <li xml:lang="fr">Mises à jour des dépendances et rafraîchissement des logs de démonstration pour une meilleure précision.</li>
+          <li xml:lang="es">Actualizaciones de dependencias y renovación de logs de demo para mejorar la precisión.</li>
+          <li xml:lang="hi">बेहतर सटीकता के लिए डिपेंडेंसी अपडेट और डेमो लॉग रीफ़्रेश किए गए।</li>
+          <li xml:lang="zh-Hans">依赖更新并刷新了演示日志以提高准确性。</li>
+          <li xml:lang="nl">Afhankelijkheidsupdates en vernieuwde demologs voor verbeterde nauwkeurigheid.</li>
+          <li xml:lang="de">Abhängigkeitsupdates und aktualisierte Demo-Logs für verbesserte Genauigkeit.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.2" date="2026-01-19">
+      <description>
+        <ul>
+          <li>Faster and smoother UI with refreshed repo/workflow lists and improved scrolling behavior.</li>
+          <li xml:lang="ja">リポジトリ/ワークフローリストの刷新とスクロール動作の改善により、より速く、スムーズな UI になりました。</li>
+          <li xml:lang="it">Interfaccia più veloce e fluida con liste di repository e workflow aggiornate e un comportamento di scorrimento migliorato.</li>
+          <li xml:lang="ur">ریفریشڈ repo/workflow فہرستوں اور بہتر اسکرولنگ کے ساتھ UI مزید تیز اور ہموار۔</li>
+          <li xml:lang="ru">Более быстрый и плавный интерфейс с обновлёнными списками репозиториев/workflow и улучшенной прокруткой.</li>
+          <li xml:lang="pt-BR">UI mais rápida e fluida com listas de repositórios/workflows atualizadas e rolagem aprimorada.</li>
+          <li xml:lang="bn">রিফ্রেশ করা repo/workflow তালিকা ও উন্নত স্ক্রলিংসহ আরও দ্রুত ও মসৃণ UI।</li>
+          <li xml:lang="ar">واجهة أسرع وأكثر سلاسة مع قوائم مستودعات/سير عمل محدّثة وسلوك تمرير أفضل.</li>
+          <li xml:lang="fr">Interface plus rapide et fluide avec des listes dépôts/workflows rafraîchies et un défilement amélioré.</li>
+          <li xml:lang="es">Interfaz más rápida y fluida con listas de repositorios/workflows renovadas y mejor desplazamiento.</li>
+          <li xml:lang="hi">ताज़ा repo/workflow सूचियों और बेहतर स्क्रॉलिंग के साथ UI अधिक तेज़ और स्मूथ।</li>
+          <li xml:lang="zh-Hans">更快更流畅的界面：仓库/工作流列表已刷新，滚动体验改进。</li>
+          <li xml:lang="nl">Snellere en soepelere interface met vernieuwde repository-/workflowlijsten en verbeterd scrollgedrag.</li>
+          <li xml:lang="de">Schnellere und flüssigere Oberfläche mit überarbeiteten Repository-/Workflow-Listen und verbessertem Scrollverhalten.</li>
+          <li>New run filtering controls with better caching, so switching filters is instant and doesn't reload data.</li>
+          <li xml:lang="ja">より良いキャッシュを備えた新しい実行フィルタリングコントロールにより、フィルターの切り替えが即座に行われ、データの再読み込みは不要です。</li>
+          <li xml:lang="it">Nuovi controlli di filtraggio delle esecuzioni con caching migliorato, così il cambio di filtri è istantaneo e non ricarica i dati.</li>
+          <li xml:lang="ur">بہتر کیشنگ کے ساتھ نئے رن فلٹر کنٹرولز، اس لیے فلٹر بدلنا فوری ہے اور ڈیٹا ری لوڈ نہیں ہوتا۔</li>
+          <li xml:lang="ru">Новые элементы фильтрации запусков с улучшенным кэшированием: переключение фильтров мгновенное и без перезагрузки данных.</li>
+          <li xml:lang="pt-BR">Novos controles de filtro de execuções com cache melhorado, então trocar filtros é instantâneo e sem recarregar dados.</li>
+          <li xml:lang="bn">উন্নত ক্যাশিংসহ নতুন রান ফিল্টার কন্ট্রোল; ফিল্টার বদলানো এখন তাৎক্ষণিক এবং ডেটা রিলোড লাগে না।</li>
+          <li xml:lang="ar">عناصر تحكم جديدة لتصفية التشغيل مع تخزين مؤقت أفضل، لذا يصبح تبديل المرشحات فوريًا دون إعادة تحميل البيانات.</li>
+          <li xml:lang="fr">Nouveaux contrôles de filtrage des exécutions avec un meilleur cache : le changement de filtre est instantané, sans rechargement.</li>
+          <li xml:lang="es">Nuevos controles de filtrado de ejecuciones con mejor caché: cambiar filtros es instantáneo y sin recargar datos.</li>
+          <li xml:lang="hi">नए रन फ़िल्टर नियंत्रण बेहतर कैशिंग के साथ—फ़िल्टर बदलते ही परिणाम मिलते हैं और डेटा रीलोड नहीं होता।</li>
+          <li xml:lang="zh-Hans">新增运行过滤控件并改进缓存，切换过滤条件即时生效且无需重新加载数据。</li>
+          <li xml:lang="nl">Nieuwe filteropties voor runs met beter caching, zodat het wisselen van filters direct gebeurt en gegevens niet opnieuw geladen worden.</li>
+          <li xml:lang="de">Neue Filtersteuerungen für Runs mit besserem Caching, sodass Filterwechsel sofort erfolgen und keine Daten neu geladen werden.</li>
+          <li>Better workflow auto-refresh and run status updates, including fewer duplicate fetches.</li>
+          <li xml:lang="ja">ワークフローの自動更新と実行状態の更新が改善され、重複フェッチが減少しました。</li>
+          <li xml:lang="it">Miglior aggiornamento automatico dei workflow e aggiornamenti dello stato delle esecuzioni, incluse meno richieste duplicati.</li>
+          <li xml:lang="ur">ورک فلو آٹو ریفریش اور رن اسٹیٹس اپ ڈیٹس بہتر ہوئے، اور ڈپلیکیٹ فیچز کم ہوئیں۔</li>
+          <li xml:lang="ru">Улучшено автообновление workflow и обновление статусов запусков, включая меньшее число дублирующих запросов.</li>
+          <li xml:lang="pt-BR">Melhorias na atualização automática de workflows e no status das execuções, com menos buscas duplicadas.</li>
+          <li xml:lang="bn">ওয়ার্কফ্লো অটো-রিফ্রেশ ও রান স্ট্যাটাস আপডেট উন্নত হয়েছে, ডুপ্লিকেট ফেচ কমেছে।</li>
+          <li xml:lang="ar">تحسين التحديث التلقائي لسير العمل وتحديثات الحالة مع تقليل عمليات الجلب المكررة.</li>
+          <li xml:lang="fr">Amélioration du rafraîchissement automatique des workflows et des mises à jour d’état, avec moins de requêtes en double.</li>
+          <li xml:lang="es">Mejoras en el auto-refresh de workflows y en actualizaciones de estado, con menos solicitudes duplicadas.</li>
+          <li xml:lang="hi">वर्कफ़्लो ऑटो-रिफ़्रेश और रन स्थिति अपडेट बेहतर हुए, डुप्लिकेट फ़ेच कम हुए।</li>
+          <li xml:lang="zh-Hans">改进工作流自动刷新与运行状态更新，减少重复请求。</li>
+          <li xml:lang="nl">Beter automatisch vernieuwen van workflows en statusupdates van runs, met minder dubbele ophalingen.</li>
+          <li xml:lang="de">Besserer Workflow-Autorefresh und Laufzeit-Statusaktualisierungen, einschließlich weniger doppelter Abfragen.</li>
+          <li>Notifications are more reliable across Snap/Flatpak, with improved icon handling and fallbacks.</li>
+          <li xml:lang="ja">Snap/Flatpak 全体で通知がより信頼でき、アイコン処理とフォールバックが改善されました。</li>
+          <li xml:lang="it">Le notifiche sono più affidabili su Snap/Flatpak, con gestione delle icone e fallback migliorati.</li>
+          <li xml:lang="ur">Snap/Flatpak میں نوٹیفکیشنز زیادہ قابلِ اعتماد ہوئیں، آئیکن ہینڈلنگ اور فال بیک بہتر ہوئے۔</li>
+          <li xml:lang="ru">Уведомления стали надёжнее в Snap/Flatpak благодаря улучшенной обработке иконок и fallback-механизмам.</li>
+          <li xml:lang="pt-BR">Notificações mais confiáveis em Snap/Flatpak, com tratamento de ícones e fallbacks aprimorados.</li>
+          <li xml:lang="bn">Snap/Flatpak জুড়ে নোটিফিকেশন আরও নির্ভরযোগ্য, আইকন হ্যান্ডলিং ও ফলব্যাক উন্নত।</li>
+          <li xml:lang="ar">الإشعارات أصبحت أكثر موثوقية عبر Snap/Flatpak مع تحسين معالجة الأيقونات وآليات الرجوع.</li>
+          <li xml:lang="fr">Notifications plus fiables sur Snap/Flatpak, avec une meilleure gestion des icônes et des mécanismes de repli.</li>
+          <li xml:lang="es">Las notificaciones son más fiables en Snap/Flatpak, con mejor gestión de iconos y fallbacks.</li>
+          <li xml:lang="hi">Snap/Flatpak पर नोटिफिकेशन अब अधिक भरोसेमंद हैं; आइकन हैंडलिंग और फॉलबैक बेहतर हुए।</li>
+          <li xml:lang="zh-Hans">在 Snap/Flatpak 上通知更可靠，图标处理与回退机制改进。</li>
+          <li xml:lang="nl">Meldingen zijn betrouwbaarder onder Snap/Flatpak, met verbeterde icoonverwerking en fallbacks.</li>
+          <li xml:lang="de">Benachrichtigungen sind unter Snap/Flatpak zuverlässiger, mit verbesserter Icon-Verarbeitung und Fallbacks.</li>
+          <li>Improved sandboxed credential storage using the secret portal for Snap/Flatpak.</li>
+          <li xml:lang="ja">Snap/Flatpak の secret ポータルを使用したサンドボックス化された認証情報の保存を改善しました。</li>
+          <li xml:lang="it">Storage delle credenziali in sandbox migliorato usando il secret portal per Snap/Flatpak.</li>
+          <li xml:lang="ur">Snap/Flatpak کے لیے Secret Portal کے ذریعے سینڈ باکسڈ اسناد کا ذخیرہ بہتر بنایا گیا۔</li>
+          <li xml:lang="ru">Улучшено хранение учётных данных в песочнице с использованием Secret Portal для Snap/Flatpak.</li>
+          <li xml:lang="pt-BR">Armazenamento de credenciais em sandbox aprimorado usando Secret Portal no Snap/Flatpak.</li>
+          <li xml:lang="bn">Snap/Flatpak-এর জন্য Secret Portal ব্যবহার করে স্যান্ডবক্সড ক্রেডেনশিয়াল স্টোরেজ উন্নত।</li>
+          <li xml:lang="ar">تحسين تخزين بيانات الاعتماد المعزولة باستخدام Secret Portal في Snap/Flatpak.</li>
+          <li xml:lang="fr">Amélioration du stockage des identifiants en sandbox via Secret Portal pour Snap/Flatpak.</li>
+          <li xml:lang="es">Mejor almacenamiento de credenciales en sandbox usando Secret Portal para Snap/Flatpak.</li>
+          <li xml:lang="hi">Snap/Flatpak के लिए Secret Portal आधारित सैंडबॉक्स्ड क्रेडेंशियल स्टोरेज बेहतर किया गया।</li>
+          <li xml:lang="zh-Hans">改进了 Snap/Flatpak 沙箱下的凭据存储，使用 Secret Portal。</li>
+          <li xml:lang="nl">Verbeterde opslag van aanmeldingsgegevens in een zandbak via het secret-portaal voor Snap/Flatpak.</li>
+          <li xml:lang="de">Verbesserte sandgeboxte Speicherung von Anmeldedaten über das Secret-Portal für Snap/Flatpak.</li>
+          <li>Offline-friendly cache persistence for workflows, runs, and jobs.</li>
+          <li xml:lang="ja">ワークフロー、実行、ジョブのオフライン対応のキャッシュ永続化。</li>
+          <li xml:lang="it">Persistenza della cache adatta all'offline per workflow, esecuzioni e job.</li>
+          <li xml:lang="ur">workflows, runs اور jobs کے لیے آف لائن دوست کیش پرسسٹنس شامل کی گئی۔</li>
+          <li xml:lang="ru">Добавлена офлайн-дружественная персистентность кэша для workflow, запусков и заданий.</li>
+          <li xml:lang="pt-BR">Persistência de cache amigável ao uso offline para workflows, runs e jobs.</li>
+          <li xml:lang="bn">workflows, runs ও jobs-এর জন্য অফলাইন-বান্ধব ক্যাশ স্থায়িত্ব।</li>
+          <li xml:lang="ar">استمرارية تخزين مؤقت ملائمة للعمل دون اتصال لبيانات workflows وruns وjobs.</li>
+          <li xml:lang="fr">Persistance de cache adaptée au mode hors ligne pour workflows, exécutions et jobs.</li>
+          <li xml:lang="es">Persistencia de caché apta para uso offline en workflows, ejecuciones y jobs.</li>
+          <li xml:lang="hi">workflows, runs और jobs के लिए ऑफ़लाइन-फ्रेंडली कैश पर्सिस्टेंस।</li>
+          <li xml:lang="zh-Hans">工作流、运行和任务的缓存持久化更适合离线使用。</li>
+          <li xml:lang="nl">Offline-vriendelijke cachepersistentie voor workflows, runs en jobs.</li>
+          <li xml:lang="de">Offline-freundliche Cachespeicherung für Workflows, Runs und Jobs.</li>
+          <li>Packaging and CI updates across Snap, Flatpak, and AppImage for better compatibility.</li>
+          <li xml:lang="ja">より良い互換性のために、Snap、Flatpak、AppImage 全体のパッケージと CI を更新しました。</li>
+          <li xml:lang="it">Aggiornamenti di packaging e CI per Snap, Flatpak e AppImage per una migliore compatibilità.</li>
+          <li xml:lang="ur">بہتر مطابقت کے لیے Snap، Flatpak اور AppImage میں پیکیجنگ اور CI اپ ڈیٹس۔</li>
+          <li xml:lang="ru">Обновлены упаковка и CI для Snap, Flatpak и AppImage для лучшей совместимости.</li>
+          <li xml:lang="pt-BR">Atualizações de empacotamento e CI para Snap, Flatpak e AppImage com melhor compatibilidade.</li>
+          <li xml:lang="bn">আরও ভালো সামঞ্জস্যের জন্য Snap, Flatpak ও AppImage জুড়ে প্যাকেজিং ও CI আপডেট।</li>
+          <li xml:lang="ar">تحديثات في الحزم وCI عبر Snap وFlatpak وAppImage لتحسين التوافق.</li>
+          <li xml:lang="fr">Mises à jour du packaging et de la CI pour Snap, Flatpak et AppImage afin d’améliorer la compatibilité.</li>
+          <li xml:lang="es">Actualizaciones de empaquetado y CI para Snap, Flatpak y AppImage con mejor compatibilidad.</li>
+          <li xml:lang="hi">बेहतर संगतता के लिए Snap, Flatpak और AppImage में पैकेजिंग व CI अपडेट।</li>
+          <li xml:lang="zh-Hans">更新了 Snap、Flatpak 和 AppImage 的打包与 CI，提升兼容性。</li>
+          <li xml:lang="nl">Packaging- en CI-updates voor Snap, Flatpak en AppImage voor betere compatibiliteit.</li>
+          <li xml:lang="de">Packaging- und CI-Updates für Snap, Flatpak und AppImage für bessere Kompatibilität.</li>
+          <li>Dependency updates and stability fixes.</li>
+          <li xml:lang="ja">依存関係の更新と安定性の修正。</li>
+          <li xml:lang="it">Aggiornamenti delle dipendenze e correzioni di stabilità.</li>
+          <li xml:lang="ur">ڈپینڈنسی اپ ڈیٹس اور استحکام کی اصلاحات۔</li>
+          <li xml:lang="ru">Обновления зависимостей и исправления стабильности.</li>
+          <li xml:lang="pt-BR">Atualizações de dependências e correções de estabilidade.</li>
+          <li xml:lang="bn">ডিপেন্ডেন্সি আপডেট ও স্থিতিশীলতা সংশোধন।</li>
+          <li xml:lang="ar">تحديثات للتبعيات وإصلاحات للاستقرار.</li>
+          <li xml:lang="fr">Mises à jour des dépendances et correctifs de stabilité.</li>
+          <li xml:lang="es">Actualizaciones de dependencias y correcciones de estabilidad.</li>
+          <li xml:lang="hi">डिपेंडेंसी अपडेट और स्थिरता सुधार।</li>
+          <li xml:lang="zh-Hans">依赖更新和稳定性修复。</li>
+          <li xml:lang="nl">Afhankelijkheidsupdates en stabiliteitscorrecties.</li>
+          <li xml:lang="de">Abhängigkeitsupdates und Stabilitätsfixes.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.1" date="2026-01-18">
+      <description>
+        <ul>
+          <li>Faster and smoother UI with refreshed repo/workflow lists and improved scrolling behavior.</li>
+          <li xml:lang="ja">リポジトリ/ワークフローリストの刷新とスクロール動作の改善により、より速く、スムーズな UI になりました。</li>
+          <li xml:lang="it">Interfaccia più veloce e fluida con liste di repository e workflow aggiornate e un comportamento di scorrimento migliorato.</li>
+          <li xml:lang="ur">ریفریشڈ repo/workflow فہرستوں اور بہتر اسکرولنگ کے ساتھ UI مزید تیز اور ہموار۔</li>
+          <li xml:lang="ru">Более быстрый и плавный интерфейс с обновлёнными списками репозиториев/workflow и улучшенной прокруткой.</li>
+          <li xml:lang="pt-BR">UI mais rápida e fluida com listas de repositórios/workflows atualizadas e rolagem aprimorada.</li>
+          <li xml:lang="bn">রিফ্রেশ করা repo/workflow তালিকা ও উন্নত স্ক্রলিংসহ আরও দ্রুত ও মসৃণ UI।</li>
+          <li xml:lang="ar">واجهة أسرع وأكثر سلاسة مع قوائم مستودعات/سير عمل محدّثة وسلوك تمرير أفضل.</li>
+          <li xml:lang="fr">Interface plus rapide et fluide avec des listes dépôts/workflows rafraîchies et un défilement amélioré.</li>
+          <li xml:lang="es">Interfaz más rápida y fluida con listas de repositorios/workflows renovadas y mejor desplazamiento.</li>
+          <li xml:lang="hi">ताज़ा repo/workflow सूचियों और बेहतर स्क्रॉलिंग के साथ UI अधिक तेज़ और स्मूथ।</li>
+          <li xml:lang="zh-Hans">更快更流畅的界面：仓库/工作流列表已刷新，滚动体验改进。</li>
+          <li xml:lang="nl">Snellere en soepelere interface met vernieuwde repository-/workflowlijsten en verbeterd scrollgedrag.</li>
+          <li xml:lang="de">Schnellere und flüssigere Oberfläche mit überarbeiteten Repository-/Workflow-Listen und verbessertem Scrollverhalten.</li>
+          <li>New run filtering controls with better caching, so switching filters is instant and doesn't reload data.</li>
+          <li xml:lang="ja">より良いキャッシュを備えた新しい実行フィルタリングコントロールにより、フィルターの切り替えが即座に行われ、データの再読み込みは不要です。</li>
+          <li xml:lang="it">Nuovi controlli di filtraggio delle esecuzioni con caching migliorato, così il cambio di filtri è istantaneo e non ricarica i dati.</li>
+          <li xml:lang="ur">بہتر کیشنگ کے ساتھ نئے رن فلٹر کنٹرولز، اس لیے فلٹر بدلنا فوری ہے اور ڈیٹا ری لوڈ نہیں ہوتا۔</li>
+          <li xml:lang="ru">Новые элементы фильтрации запусков с улучшенным кэшированием: переключение фильтров мгновенное и без перезагрузки данных.</li>
+          <li xml:lang="pt-BR">Novos controles de filtro de execuções com cache melhorado, então trocar filtros é instantâneo e sem recarregar dados.</li>
+          <li xml:lang="bn">উন্নত ক্যাশিংসহ নতুন রান ফিল্টার কন্ট্রোল; ফিল্টার বদলানো এখন তাৎক্ষণিক এবং ডেটা রিলোড লাগে না।</li>
+          <li xml:lang="ar">عناصر تحكم جديدة لتصفية التشغيل مع تخزين مؤقت أفضل، لذا يصبح تبديل المرشحات فوريًا دون إعادة تحميل البيانات.</li>
+          <li xml:lang="fr">Nouveaux contrôles de filtrage des exécutions avec un meilleur cache : le changement de filtre est instantané, sans rechargement.</li>
+          <li xml:lang="es">Nuevos controles de filtrado de ejecuciones con mejor caché: cambiar filtros es instantáneo y sin recargar datos.</li>
+          <li xml:lang="hi">नए रन फ़िल्टर नियंत्रण बेहतर कैशिंग के साथ—फ़िल्टर बदलते ही परिणाम मिलते हैं और डेटा रीलोड नहीं होता।</li>
+          <li xml:lang="zh-Hans">新增运行过滤控件并改进缓存，切换过滤条件即时生效且无需重新加载数据。</li>
+          <li xml:lang="nl">Nieuwe filteropties voor runs met beter caching, zodat het wisselen van filters direct gebeurt en gegevens niet opnieuw geladen worden.</li>
+          <li xml:lang="de">Neue Filtersteuerungen für Runs mit besserem Caching, sodass Filterwechsel sofort erfolgen und keine Daten neu geladen werden.</li>
+          <li>Better workflow auto-refresh and run status updates, including fewer duplicate fetches.</li>
+          <li xml:lang="ja">ワークフローの自動更新と実行状態の更新が改善され、重複フェッチが減少しました。</li>
+          <li xml:lang="it">Miglior aggiornamento automatico dei workflow e aggiornamenti dello stato delle esecuzioni, incluse meno richieste duplicati.</li>
+          <li xml:lang="ur">ورک فلو آٹو ریفریش اور رن اسٹیٹس اپ ڈیٹس بہتر ہوئے، اور ڈپلیکیٹ فیچز کم ہوئیں۔</li>
+          <li xml:lang="ru">Улучшено автообновление workflow и обновление статусов запусков, включая меньшее число дублирующих запросов.</li>
+          <li xml:lang="pt-BR">Melhorias na atualização automática de workflows e no status das execuções, com menos buscas duplicadas.</li>
+          <li xml:lang="bn">ওয়ার্কফ্লো অটো-রিফ্রেশ ও রান স্ট্যাটাস আপডেট উন্নত হয়েছে, ডুপ্লিকেট ফেচ কমেছে।</li>
+          <li xml:lang="ar">تحسين التحديث التلقائي لسير العمل وتحديثات الحالة مع تقليل عمليات الجلب المكررة.</li>
+          <li xml:lang="fr">Amélioration du rafraîchissement automatique des workflows et des mises à jour d’état, avec moins de requêtes en double.</li>
+          <li xml:lang="es">Mejoras en el auto-refresh de workflows y en actualizaciones de estado, con menos solicitudes duplicadas.</li>
+          <li xml:lang="hi">वर्कफ़्लो ऑटो-रिफ़्रेश और रन स्थिति अपडेट बेहतर हुए, डुप्लिकेट फ़ेच कम हुए।</li>
+          <li xml:lang="zh-Hans">改进工作流自动刷新与运行状态更新，减少重复请求。</li>
+          <li xml:lang="nl">Beter automatisch vernieuwen van workflows en statusupdates van runs, met minder dubbele ophalingen.</li>
+          <li xml:lang="de">Besserer Workflow-Autorefresh und Laufzeit-Statusaktualisierungen, einschließlich weniger doppelter Abfragen.</li>
+          <li>Notifications are more reliable across Snap/Flatpak, with improved icon handling and fallbacks.</li>
+          <li xml:lang="ja">Snap/Flatpak 全体で通知がより信頼でき、アイコン処理とフォールバックが改善されました。</li>
+          <li xml:lang="it">Le notifiche sono più affidabili su Snap/Flatpak, con gestione delle icone e fallback migliorati.</li>
+          <li xml:lang="ur">Snap/Flatpak میں نوٹیفکیشنز زیادہ قابلِ اعتماد ہوئیں، آئیکن ہینڈلنگ اور فال بیک بہتر ہوئے۔</li>
+          <li xml:lang="ru">Уведомления стали надёжнее в Snap/Flatpak благодаря улучшенной обработке иконок и fallback-механизмам.</li>
+          <li xml:lang="pt-BR">Notificações mais confiáveis em Snap/Flatpak, com tratamento de ícones e fallbacks aprimorados.</li>
+          <li xml:lang="bn">Snap/Flatpak জুড়ে নোটিফিকেশন আরও নির্ভরযোগ্য, আইকন হ্যান্ডলিং ও ফলব্যাক উন্নত।</li>
+          <li xml:lang="ar">الإشعارات أصبحت أكثر موثوقية عبر Snap/Flatpak مع تحسين معالجة الأيقونات وآليات الرجوع.</li>
+          <li xml:lang="fr">Notifications plus fiables sur Snap/Flatpak, avec une meilleure gestion des icônes et des mécanismes de repli.</li>
+          <li xml:lang="es">Las notificaciones son más fiables en Snap/Flatpak, con mejor gestión de iconos y fallbacks.</li>
+          <li xml:lang="hi">Snap/Flatpak पर नोटिफिकेशन अब अधिक भरोसेमंद हैं; आइकन हैंडलिंग और फॉलबैक बेहतर हुए।</li>
+          <li xml:lang="zh-Hans">在 Snap/Flatpak 上通知更可靠，图标处理与回退机制改进。</li>
+          <li xml:lang="nl">Meldingen zijn betrouwbaarder onder Snap/Flatpak, met verbeterde icoonverwerking en fallbacks.</li>
+          <li xml:lang="de">Benachrichtigungen sind unter Snap/Flatpak zuverlässiger, mit verbesserter Icon-Verarbeitung und Fallbacks.</li>
+          <li>Improved sandboxed credential storage using the secret portal for Snap/Flatpak.</li>
+          <li xml:lang="ja">Snap/Flatpak の secret ポータルを使用したサンドボックス化された認証情報の保存を改善しました。</li>
+          <li xml:lang="it">Storage delle credenziali in sandbox migliorato usando il secret portal per Snap/Flatpak.</li>
+          <li xml:lang="ur">Snap/Flatpak کے لیے Secret Portal کے ذریعے سینڈ باکسڈ اسناد کا ذخیرہ بہتر بنایا گیا۔</li>
+          <li xml:lang="ru">Улучшено хранение учётных данных в песочнице с использованием Secret Portal для Snap/Flatpak.</li>
+          <li xml:lang="pt-BR">Armazenamento de credenciais em sandbox aprimorado usando Secret Portal no Snap/Flatpak.</li>
+          <li xml:lang="bn">Snap/Flatpak-এর জন্য Secret Portal ব্যবহার করে স্যান্ডবক্সড ক্রেডেনশিয়াল স্টোরেজ উন্নত।</li>
+          <li xml:lang="ar">تحسين تخزين بيانات الاعتماد المعزولة باستخدام Secret Portal في Snap/Flatpak.</li>
+          <li xml:lang="fr">Amélioration du stockage des identifiants en sandbox via Secret Portal pour Snap/Flatpak.</li>
+          <li xml:lang="es">Mejor almacenamiento de credenciales en sandbox usando Secret Portal para Snap/Flatpak.</li>
+          <li xml:lang="hi">Snap/Flatpak के लिए Secret Portal आधारित सैंडबॉक्स्ड क्रेडेंशियल स्टोरेज बेहतर किया गया।</li>
+          <li xml:lang="zh-Hans">改进了 Snap/Flatpak 沙箱下的凭据存储，使用 Secret Portal。</li>
+          <li xml:lang="nl">Verbeterde opslag van aanmeldingsgegevens in een zandbak via het secret-portaal voor Snap/Flatpak.</li>
+          <li xml:lang="de">Verbesserte sandgeboxte Speicherung von Anmeldedaten über das Secret-Portal für Snap/Flatpak.</li>
+          <li>Offline-friendly cache persistence for workflows, runs, and jobs.</li>
+          <li xml:lang="ja">ワークフロー、実行、ジョブのオフライン対応のキャッシュ永続化。</li>
+          <li xml:lang="it">Persistenza della cache adatta all'offline per workflow, esecuzioni e job.</li>
+          <li xml:lang="ur">workflows, runs اور jobs کے لیے آف لائن دوست کیش پرسسٹنس شامل کی گئی۔</li>
+          <li xml:lang="ru">Добавлена офлайн-дружественная персистентность кэша для workflow, запусков и заданий.</li>
+          <li xml:lang="pt-BR">Persistência de cache amigável ao uso offline para workflows, runs e jobs.</li>
+          <li xml:lang="bn">workflows, runs ও jobs-এর জন্য অফলাইন-বান্ধব ক্যাশ স্থায়িত্ব।</li>
+          <li xml:lang="ar">استمرارية تخزين مؤقت ملائمة للعمل دون اتصال لبيانات workflows وruns وjobs.</li>
+          <li xml:lang="fr">Persistance de cache adaptée au mode hors ligne pour workflows, exécutions et jobs.</li>
+          <li xml:lang="es">Persistencia de caché apta para uso offline en workflows, ejecuciones y jobs.</li>
+          <li xml:lang="hi">workflows, runs और jobs के लिए ऑफ़लाइन-फ्रेंडली कैश पर्सिस्टेंस।</li>
+          <li xml:lang="zh-Hans">工作流、运行和任务的缓存持久化更适合离线使用。</li>
+          <li xml:lang="nl">Offline-vriendelijke cachepersistentie voor workflows, runs en jobs.</li>
+          <li xml:lang="de">Offline-freundliche Cachespeicherung für Workflows, Runs und Jobs.</li>
+          <li>Packaging and CI updates across Snap, Flatpak, and AppImage for better compatibility.</li>
+          <li xml:lang="ja">より良い互換性のために、Snap、Flatpak、AppImage 全体のパッケージと CI を更新しました。</li>
+          <li xml:lang="it">Aggiornamenti di packaging e CI per Snap, Flatpak e AppImage per una migliore compatibilità.</li>
+          <li xml:lang="ur">بہتر مطابقت کے لیے Snap، Flatpak اور AppImage میں پیکیجنگ اور CI اپ ڈیٹس۔</li>
+          <li xml:lang="ru">Обновлены упаковка и CI для Snap, Flatpak и AppImage для лучшей совместимости.</li>
+          <li xml:lang="pt-BR">Atualizações de empacotamento e CI para Snap, Flatpak e AppImage com melhor compatibilidade.</li>
+          <li xml:lang="bn">আরও ভালো সামঞ্জস্যের জন্য Snap, Flatpak ও AppImage জুড়ে প্যাকেজিং ও CI আপডেট।</li>
+          <li xml:lang="ar">تحديثات في الحزم وCI عبر Snap وFlatpak وAppImage لتحسين التوافق.</li>
+          <li xml:lang="fr">Mises à jour du packaging et de la CI pour Snap, Flatpak et AppImage afin d’améliorer la compatibilité.</li>
+          <li xml:lang="es">Actualizaciones de empaquetado y CI para Snap, Flatpak y AppImage con mejor compatibilidad.</li>
+          <li xml:lang="hi">बेहतर संगतता के लिए Snap, Flatpak और AppImage में पैकेजिंग व CI अपडेट।</li>
+          <li xml:lang="zh-Hans">更新了 Snap、Flatpak 和 AppImage 的打包与 CI，提升兼容性。</li>
+          <li xml:lang="nl">Packaging- en CI-updates voor Snap, Flatpak en AppImage voor betere compatibiliteit.</li>
+          <li xml:lang="de">Packaging- und CI-Updates für Snap, Flatpak und AppImage für bessere Kompatibilität.</li>
+          <li>Dependency updates and stability fixes.</li>
+          <li xml:lang="ja">依存関係の更新と安定性の修正。</li>
+          <li xml:lang="it">Aggiornamenti delle dipendenze e correzioni di stabilità.</li>
+          <li xml:lang="ur">ڈپینڈنسی اپ ڈیٹس اور استحکام کی اصلاحات۔</li>
+          <li xml:lang="ru">Обновления зависимостей и исправления стабильности.</li>
+          <li xml:lang="pt-BR">Atualizações de dependências e correções de estabilidade.</li>
+          <li xml:lang="bn">ডিপেন্ডেন্সি আপডেট ও স্থিতিশীলতা সংশোধন।</li>
+          <li xml:lang="ar">تحديثات للتبعيات وإصلاحات للاستقرار.</li>
+          <li xml:lang="fr">Mises à jour des dépendances et correctifs de stabilité.</li>
+          <li xml:lang="es">Actualizaciones de dependencias y correcciones de estabilidad.</li>
+          <li xml:lang="hi">डिपेंडेंसी अपडेट और स्थिरता सुधार।</li>
+          <li xml:lang="zh-Hans">依赖更新和稳定性修复。</li>
+          <li xml:lang="nl">Afhankelijkheidsupdates en stabiliteitscorrecties.</li>
+          <li xml:lang="de">Abhängigkeitsupdates und Stabilitätsfixes.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.0" date="2025-11-06"/>
+  </releases>
+</component>
