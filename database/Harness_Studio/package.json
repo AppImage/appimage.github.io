@@ -1,0 +1,22 @@
+{
+  "name": "@deepseek-ai/dsh-desktop",
+  "description": "Electron desktop shell for a bundled dsh runtime and external plugins",
+  "version": "0.3.4",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "semver": "^7.8.5",
+    "ws": "^8.21.3",
+    "@deepseek-ai/dsh-api-gateway": "workspace:*",
+    "@deepseek-ai/cordis": "workspace:~"
+  },
+  "homepage": "https://github.com/vigneshv1cky/harness-studio",
+  "desktopName": "harness-studio.desktop",
+  "dshDesktopAppId": "io.github.vigneshv1cky.harnessstudio",
+  "dshDesktopUpdateChannel": "nightly",
+  "dshBuildCommit": "fd1df6da2772ff836ae2dcc68d49b74c127f460f",
+  "dshBuildDirty": true
+}
