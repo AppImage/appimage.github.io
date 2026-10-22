@@ -1,0 +1,13 @@
+{
+  "name": "shiguang-isle",
+  "version": "1.4.0",
+  "description": "时光杂货店 · 摄影回忆时光机 — a local-first DSLR photo library",
+  "main": "app/main.cjs",
+  "author": "Shiguang Isle contributors",
+  "license": "MIT",
+  "dependencies": {
+    "exifr": "7.1.3",
+    "exiftool-vendored": "39.0.1",
+    "sharp": "0.35.5"
+  }
+}
