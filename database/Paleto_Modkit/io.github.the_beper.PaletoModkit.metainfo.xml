@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.the_beper.PaletoModkit</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Paleto Modkit</name>
+  <summary>Mod GTA V on Linux: archives, mods folder and OIV packages</summary>
+  <developer id="io.github.the_beper">
+    <name>the-beper</name>
+  </developer>
+  <description>
+    <p>
+      Paleto Modkit is a native Linux tool for modding Grand Theft Auto V, both the
+      Legacy and the Enhanced edition. It opens the game's RPF archives, lets you
+      change them and installs mods packaged as OIV files.
+    </p>
+    <ul>
+      <li>Browse the game folder and its archives, nested archives included</li>
+      <li>Add, replace, extract and delete files, or drop them on the window</li>
+      <li>Edit XML and META files with syntax highlighting</li>
+      <li>View, export, replace, add and rename textures, importing PNG or DDS</li>
+      <li>Edit binary metadata (.ymap, .ytyp, .ymt, .pso) as XML and text tables (.gxt2) as text</li>
+      <li>Preview 3D models; play, export or replace game audio, radio songs included</li>
+      <li>Install OIV packages and add-on packs (dlc.rpf), with a preview of what they contain</li>
+      <li>On the Enhanced edition, convert models and textures made for Legacy</li>
+      <li>Export your own changes to the game as an OIV package</li>
+      <li>Check that the game loads the mods folder, and what it read in the last session</li>
+      <li>Read the game's last crash, find the mod that crashes it, and keep snapshots of the mods folder</li>
+      <li>Prepare the game's Wine prefix for ScriptHookVDotNet mods</li>
+      <li>Never touches the original game files: changes go to the mods folder</li>
+    </ul>
+    <p>
+      Encryption keys are not included: they are read from your own copy of the game.
+      Loading the mods folder in game needs an ASI loader, installed separately.
+      Paleto Modkit is not affiliated with Rockstar Games or the OpenIV team.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.the_beper.PaletoModkit.desktop</launchable>
+  <url type="homepage">https://github.com/the-beper/PaletoModkit</url>
+  <url type="bugtracker">https://github.com/the-beper/PaletoModkit/issues</url>
+  <url type="vcs-browser">https://github.com/the-beper/PaletoModkit</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/the-beper/PaletoModkit/main/screenshots/archive-browser.png</image>
+      <caption>Archive browser with a 3D preview of a vehicle</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/the-beper/PaletoModkit/main/screenshots/texture-viewer.png</image>
+      <caption>Texture dictionary viewer: export, replace, add and rename textures</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/the-beper/PaletoModkit/main/screenshots/xml-editor.png</image>
+      <caption>Binary metadata (.ymt, .ytyp, .ymap) edited as XML</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/the-beper/PaletoModkit/main/screenshots/audio-preview.png</image>
+      <caption>Audio container preview: play, export and replace sounds</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/the-beper/PaletoModkit/main/screenshots/oiv-installer.png</image>
+      <caption>OpenIV package (.oiv) installer targeting the mods folder</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/the-beper/PaletoModkit/main/screenshots/game-folder.png</image>
+      <caption>Game folder with its archives</caption>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>paleto-modkit</binary>
+    <binary>paleto</binary>
+    <mediatype>application/x-openiv-package</mediatype>
+    <mediatype>application/x-rage-package</mediatype>
+  </provides>
+  <keywords>
+    <keyword>GTA V</keyword>
+    <keyword>mod</keyword>
+    <keyword>OpenIV</keyword>
+    <keyword>OIV</keyword>
+    <keyword>RPF</keyword>
+  </keywords>
+  <branding>
+    <color type="primary" scheme_preference="light">#FFC15E</color>
+    <color type="primary" scheme_preference="dark">#7B3F98</color>
+  </branding>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.3.2" date="2026-10-22">
+      <description>
+        <p>AppImage fixes for the AppImage catalog.</p>
+        <ul>
+          <li>The AppImage is built on Ubuntu 22.04, so it needs glibc 2.35 instead of 2.39 and runs on older distributions.</li>
+          <li>The AppImage carries libxkbcommon-x11, so it starts in an X11-only session.</li>
+          <li>The AppImage has update information and a .zsync file, so AppImageUpdate can update it.</li>
+          <li>The system theme falls back to light when the desktop states no colour preference.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.1" date="2026-10-22">
+      <description>
+        <p>Desktop entry fix for the AppImage catalog.</p>
+        <ul>
+          <li>The desktop file uses the standard X- prefix for the non-standard SingleMainWindow key, so it passes desktop-file-validate.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.0" date="2026-10-16">
+      <description>
+        <p>Prefix tweaks works for games that are not in Steam's library.</p>
+        <ul>
+          <li>When the game's Wine prefix is not found, Prefix tweaks offers Choose prefix folder: pick the game's compatdata folder (the one with pfx inside), for example a non-Steam game added to Steam or a Faugus prefix. The choice is remembered; Use Steam's prefix again forgets it. From a terminal: paleto prefix use PATH.</li>
+          <li>For a prefix whose pfx is a link to its own folder (Faugus), the window warns that the game must be closed first and that Restore is not supported; backups still work.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.1" date="2026-10-16">
+      <description>
+        <p>Updated interface toolkit, with the icons drawn from bundled fonts.</p>
+        <ul>
+          <li>Icons and symbols in buttons and labels are centred on the text. They come from fonts bundled with the app, so they look the same on every system.</li>
+          <li>Format on an XML file also removes the blank lines between tags, besides indenting.</li>
+          <li>The Mods in game window keeps its buttons on screen in a small window.</li>
+          <li>Updated egui, the cryptography crates, the zip library and the Wayland toolkit.</li>
+          <li>The Flatpak is built from the source tree instead of a fixed commit. The converter script works with podman when .NET is not installed.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.0" date="2026-10-13">
+      <description>
+        <p>Prefix tweaks asks for the permission it needs, step by step.</p>
+        <ul>
+          <li>Without the permission to run Wine on the host, Prefix tweaks shows only how to grant it: copy the command, run it in a terminal, then close and reopen the app, and check again. To successfuly apply the permission the app needs to be restarted.</li>
+          <li>The copy and check buttons show a small icon for the result.</li>
+          <li>The Original and Mods copy switch buttons centre their label.</li>
+          <li>The project moved to the PaletoModkit repository; links are updated.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-10-12">
+      <description>
+        <p>Prefix tweaks now works in the Flatpak.</p>
+        <ul>
+          <li>In the Flatpak, Wine runs on the host through flatpak-spawn, because the sandbox does not allow the 32-bit processes of Proton's Wine. This needs the permission to talk to org.freedesktop.Flatpak, which the Flatpak now asks for.</li>
+          <li>Without that permission, Prefix tweaks shows a warning with the command to grant it, instead of crashing.</li>
+          <li>Release files are named PaletoModkit-x86_64 followed by the extension.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-10-11">
+      <description>
+        <p>Initial release</p>
+      </description>
+    </release>
+  </releases>
+</component>
