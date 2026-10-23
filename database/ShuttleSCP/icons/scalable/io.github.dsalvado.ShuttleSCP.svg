@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <!-- ShuttleSCP: a folder with arrows going both ways (upload and download).
+       Flat colours only, so every icon renderer draws it the same. -->
+  <path d="M24 56c0-8.8 7.2-16 16-16h56l20 20h100c8.8 0 16 7.2 16 16v124c0 8.8-7.2 16-16 16H40c-8.8 0-16-7.2-16-16z" fill="#3a7bd5"/>
+  <rect x="24" y="84" width="208" height="132" rx="16" fill="#62a8f0"/>
+  <g fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M76 128h96"/>
+    <path d="M150 106l22 22-22 22"/>
+    <path d="M180 174H84"/>
+    <path d="M106 152l-22 22 22 22"/>
+  </g>
+</svg>
