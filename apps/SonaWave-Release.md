@@ -3,12 +3,12 @@ layout: app
 
 permalink: /SonaWave-Release/
 description: "Music player for Navidrome, Emby, Jellyfin, WebDAV, SMB and local files"
+license: "LicenseRef-proprietary"
 
 icons:
   - SonaWave-Release/icons/512x512/sonawave.png
-
 screenshots:
-  - SonaWave-Release/screenshot.png
+- https://music.http5.cn/image/appstream/desktop-home.png
 
 authors:
   - name: "Tlntin"
@@ -38,6 +38,7 @@ desktop:
     StartupWMClass: com.tlntin.sonawave
     X-AppImage-Version: 0.5.1
   AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|Tlntin|SonaWave-Release|latest|SonaWave-*-x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)
