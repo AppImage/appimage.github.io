@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Filename must stay *appdata.xml. AppImageHub appdir-lint.sh only detects
+  usr/share/metainfo/*appdata.xml (and usr/share/appdata/*appdata.xml).
+  The component id uses an underscore because AppStream rejects hyphens outside
+  the last segment (cid-rdns-contains-hyphen). The Tauri identifier remains
+  dev.md-editor.app; launchable is the desktop file Inkpoint.desktop.
+-->
+<component type="desktop-application">
+  <id>dev.md_editor.app</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Inkpoint</name>
+  <summary>Daily-usable Markdown and MDX desktop editor</summary>
+  <description>
+    <p>A sleek, daily-usable Markdown and MDX desktop editor with local-first file workflows.</p>
+  </description>
+  <launchable type="desktop-id">Inkpoint.desktop</launchable>
+  <icon type="stock">md-editor</icon>
+  <!-- homepage is the repository. vcs-browser is rejected as a failing warning by
+       appstreamcli 0.15 on Ubuntu 22.04, which is the x86_64 release runner. -->
+  <url type="homepage">https://github.com/wmasfoe/md-editor</url>
+  <url type="bugtracker">https://github.com/wmasfoe/md-editor/issues</url>
+  <provides>
+    <binary>md-editor</binary>
+  </provides>
+  <developer id="dev.md-editor.app">
+    <name>Inkpoint Contributors</name>
+  </developer>
+  <categories>
+    <category>Office</category>
+  </categories>
+  <keywords>
+    <keyword>markdown</keyword>
+    <keyword>mdx</keyword>
+    <keyword>editor</keyword>
+  </keywords>
+</component>
