@@ -1,0 +1,14 @@
+{
+  "name": "mc707-toolbox",
+  "productName": "MC-707 Toolbox",
+  "version": "1.4.1",
+  "description": "Unofficial song arranger and live performance tool for the Roland MC-707",
+  "main": "main.js",
+  "private": true,
+  "author": "Aaron",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "dependencies": {
+    "lamejs": "^1.2.1"
+  },
+  "homepage": "https://github.com/Mendo-707/mc707-toolbox"
+}
