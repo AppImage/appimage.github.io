@@ -1,0 +1,18 @@
+{
+  "name": "google-maps-scrapper",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  },
+  "allowScripts": {
+    "electron@34.5.8": true
+  },
+  "description": "GMST Scraper - Google Maps business directory intelligence desktop app",
+  "author": {
+    "name": "99apps.id",
+    "email": "support@99apps.id",
+    "url": "https://99apps.id"
+  }
+}

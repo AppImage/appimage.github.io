@@ -36,8 +36,8 @@ if [ -n "$WINDOW" ] ; then
   H=$(sed -n 's/.*Height: *\([0-9]*\).*/\1/p' <<<"$INFO")
 else
   # The largest application window, e.g.: 0x200006 "Game": ("game" "Game")  800x600+0+0  +0+0
-  read -r W H X Y < <(timeout 20 xwininfo -tree -root 2>/dev/null | grep '": ("' \
-    | sed -nE 's/.* ([0-9]+)x([0-9]+)[-+][-0-9]+[-+][-0-9]+ +([-+][0-9]+)([-+][0-9]+)$/\1 \2 \3 \4/p' \
+  read -r W H X Y < <(timeout 20 xwininfo -tree -root 2>/dev/null | grep '": ("' | grep -vi '"icewm"' \
+    | sed -nE 's/.* ([0-9]+)x([0-9]+)[-+]-?[0-9]+[-+]-?[0-9]+ +([-+]-?[0-9]+)([-+]-?[0-9]+)$/\1 \2 \3 \4/p' \
     | awk '{ print $1 * $2, $0 }' | sort -rn | head -n 1 | cut -d " " -f 2-)
   X=${X#+} ; Y=${Y#+}
 fi

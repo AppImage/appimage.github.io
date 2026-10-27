@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- App icon: a slip of squared notebook paper with a 4x4 sudoku on it,
+       digits in the same coloured-pencil tones as the game's logo. Drawn as
+       plain shapes so it stays legible down to 16 px. -->
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffdf6"/>
+      <stop offset="0.5" stop-color="#fdf9ee"/>
+      <stop offset="1" stop-color="#f3ecd8"/>
+    </linearGradient>
+    <linearGradient id="desk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8f1e0"/>
+      <stop offset="1" stop-color="#e9dcbe"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="512" height="512" rx="96" fill="url(#desk)"/>
+
+  <!-- the paper slip, pinned a touch askew -->
+  <g transform="rotate(-3 256 256)">
+    <rect x="66" y="70" width="380" height="372" rx="18" fill="#3a2d19" opacity="0.16"
+          transform="translate(4 10)"/>
+    <rect x="66" y="70" width="380" height="372" rx="18" fill="url(#paper)" stroke="#e2d7ba"
+          stroke-width="3"/>
+
+    <!-- squared-paper grid -->
+    <g stroke="#647da0" stroke-opacity="0.25" stroke-width="2">
+      <path d="M108 70V442M150 70V442M192 70V442M234 70V442M276 70V442M318 70V442M360 70V442M402 70V442"/>
+      <path d="M66 112H446M66 154H446M66 196H446M66 238H446M66 280H446M66 322H446M66 364H446M66 406H446"/>
+    </g>
+
+    <!-- the board: 4x4 with heavy 2x2 box seams -->
+    <g stroke="#a89e85" stroke-width="4" stroke-linecap="square">
+      <path d="M186 148V364M256 148V364M326 148V364"/>
+      <path d="M116 218H396M116 256H396M116 294H396"/>
+    </g>
+    <g stroke="#3a3328" stroke-width="9" stroke-linecap="square">
+      <rect x="116" y="148" width="280" height="216" fill="none"/>
+      <path d="M256 148V364M116 256H396"/>
+    </g>
+
+    <!-- clues in ink, the player's answers in coloured pencil -->
+    <g font-family="DejaVu Sans, sans-serif" font-weight="bold" font-size="44"
+       text-anchor="middle">
+      <text x="151" y="191" fill="#2b261d">1</text>
+      <text x="291" y="191" fill="#c45a3f">2</text>
+      <text x="361" y="191" fill="#2b261d">4</text>
+      <text x="221" y="245" fill="#3b6fb0">3</text>
+      <text x="361" y="245" fill="#2b261d">1</text>
+      <text x="151" y="299" fill="#2b261d">2</text>
+      <text x="291" y="299" fill="#6a8f3e">1</text>
+      <text x="221" y="353" fill="#8a5fa8">4</text>
+      <text x="361" y="353" fill="#2b261d">3</text>
+    </g>
+  </g>
+</svg>

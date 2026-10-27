@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.ivkan.splitlane</id>
+  <name>Splitlane</name>
+  <summary>Terminal for coding agents</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <!-- Legacy pre-AppStream-1.0 form. The newer <developer id=..> block
+       is rejected by the appstream package on ubuntu-22.04 (release.yml
+       build base). -->
+  <developer_name>Ivan Kalashnik</developer_name>
+
+  <description>
+    <p>
+      Splitlane is a native terminal workspace for running coding agents in
+      parallel. Launch Claude Code, Codex, opencode, Pi, or any CLI agent in
+      real panes, keep each session visible, and react when one needs input.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>One-click coding-agent launchers with per-session status tracking</li>
+      <li>Horizontal and vertical split panes with drag-to-resize, up to 32 panes</li>
+      <li>Branch-aware workspaces with rename, quick-switch, and session restore</li>
+      <li>In-app Git diff viewer and branch review prompts for agents</li>
+      <li>MCP bridge so capable agents can read other panes without copy/paste</li>
+      <li>JSON-RPC 2.0 IPC for local automation and integrations</li>
+      <li>Native Rust/GPUI rendering with Wayland and X11 support on Linux</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">splitlane.desktop</launchable>
+
+  <url type="homepage">https://github.com/ivkan/splitlane</url>
+  <url type="bugtracker">https://github.com/ivkan/splitlane/issues</url>
+  <!-- vcs-browser URL type is flagged url-invalid-type by the
+       appstream package on ubuntu-22.04; homepage already points at
+       the repo so no information is lost. -->
+
+
+  <categories>
+    <category>System</category>
+    <category>TerminalEmulator</category>
+  </categories>
+
+  <keywords>
+    <keyword>terminal</keyword>
+    <keyword>coding agents</keyword>
+    <keyword>ai agents</keyword>
+    <keyword>claude code</keyword>
+    <keyword>codex</keyword>
+    <keyword>opencode</keyword>
+    <keyword>gpui</keyword>
+    <keyword>rust</keyword>
+  </keywords>
+
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="0.2.13" date="2026-10-23">
+      <description>
+        <p>Each agent session started in a git repository gets its own branch
+        and worktree, so two sessions never edit the same checkout. Closing a
+        session with work in its branch asks whether to keep it, and saves a
+        snapshot before deleting it. Hovering a session's row lists what you
+        wrote in it, and the History tab searches everything you wrote in old
+        sessions, including those that ran in a worktree. Codex and other
+        sessions opened from history resume instead of starting empty, and the
+        theme follows the OS appearance until you choose one.</p>
+      </description>
+    </release>
+    <release version="0.2.12" date="2026-10-21">
+      <description>
+        <p>A phone follows the agent sessions on the computer and answers them,
+        from a page at splitlane.dev/app added to its home screen. Pair it in
+        Settings, Phone, by scanning a code and typing the six digits the phone
+        shows. Everything between the phone and the computer is encrypted end
+        to end through a relay that forwards it unread, and it works while the
+        window is closed. A session that takes up its next turn by itself now
+        tells the session that opened it about each end.</p>
+      </description>
+    </release>
+    <release version="0.2.11" date="2026-10-18">
+      <description>
+        <p>With the window closed, the command-line tool still answers for the
+        agent sessions the session host keeps: it lists them with what the
+        window last saw, reads their output, returns an agent's last answer,
+        sends text when writing was allowed at launch, and waits for a turn to
+        end from the agent's own reports. A session kept with no pane opens in
+        a pane of its own project when no pane is open.</p>
+      </description>
+    </release>
+    <release version="0.2.10" date="2026-10-17">
+      <description>
+        <p>A Running sheet lists every agent session and every command running
+        in a shell, with a way to go to each or stop it. Quitting counts
+        commands running in shells as work, names them, and offers to review
+        them first; sessions kept running are mentioned on the next launch.
+        Active only keeps a shell while a command runs in it.</p>
+      </description>
+    </release>
+    <release version="0.2.9" date="2026-10-14">
+      <description>
+        <p>The Activity chip shows how many agent sessions are failed, waiting
+        and running, and its list now includes the running ones, with a way
+        to jump to each. An Active only filter hides the sessions nothing is
+        happening in. The TLS library used for updates is updated for four
+        security advisories.</p>
+      </description>
+    </release>
+    <release version="0.2.8" date="2026-10-14">
+      <description>
+        <p>On macOS and Linux, agent sessions outlive the window: they run in
+        a process of their own, so quitting with the sessions kept, an update
+        and a crash of the window leave them working, and the next start shows
+        each in its pane again. On Linux, keeping the sessions is now the
+        default when quitting. A lead agent is told when a session it opened
+        finishes even if that took only seconds, and the context meter no
+        longer takes an idle compaction for the size of the context window.</p>
+      </description>
+    </release>
+    <release version="0.2.7" date="2026-10-13">
+      <description>
+        <p>Quitting no longer has to stop your agents: with agent sessions
+        open the window is put away and they keep working. Starting Splitlane
+        while it is running brings its window forward. On macOS, commands
+        whose answer is longer than 8 KiB no longer fail. A lead agent whose
+        own waiting went wrong is still told that a session it opened has
+        finished.</p>
+      </description>
+    </release>
+    <release version="0.2.6" date="2026-10-11">
+      <description>
+        <p>Codex sessions report their state again, and a Codex session can
+        open sessions and work through them. A script or a scheduled job can
+        start an agent on a task with nothing set up first, from a directory
+        of an open project. A finished run is no longer reported as longer
+        than it took.</p>
+      </description>
+    </release>
+    <release version="0.2.5" date="2026-10-11">
+      <description>
+        <p>A working agent is now green and an agent waiting for you is amber,
+        and focus is shown without colour. A session is told when a session it
+        opened ends its turn. Notifications about a waiting agent or a broken
+        session play the system sound. On macOS a Codex session can open and
+        read other sessions once you allow it in Settings.</p>
+      </description>
+    </release>
+    <release version="0.2.4" date="2026-10-11">
+      <description>
+        <p>A terminal left one column wide inside a full-width pane is now
+        put back to its size within a few seconds on macOS, and every size
+        sent to a terminal is recorded for diagnosis.</p>
+      </description>
+    </release>
+    <release version="0.2.3" date="2026-10-10">
+      <description>
+        <p>A Claude Code session opened by another session no longer
+        declines its task as pasted text, a question an agent asks before
+        its first prompt shows as waiting, "splitlane add" reports what
+        became of the prompt, and updates can be checked for on request.</p>
+      </description>
+    </release>
+    <release version="0.2.2" date="2026-10-10">
+      <description>
+        <p>A lead agent now hears when a session it opened has finished,
+        "splitlane ps" and "status" report agent sessions, "splitlane read"
+        returns the screen as well as the history, and panes keep their
+        script names across a restart.</p>
+      </description>
+    </release>
+    <release version="0.2.1" date="2026-10-09">
+      <description>
+        <p>On macOS the app can update itself again: earlier versions
+        refused every release and have to be replaced by hand once.</p>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-10-09">
+      <description>
+        <p>An agent in a pane can open agent sessions of its own and work
+        through them: each is a row in the rail under the one that opened it,
+        and a session that is waiting for you says so in a notification
+        whichever way Splitlane learned of it. The skill that teaches Claude
+        Code and Codex the commands is installed at every start.</p>
+      </description>
+    </release>
+    <release version="0.1.4" date="2026-10-04">
+      <description>
+        <p>Updates are checked for while the app stays open, a worktree is
+        removed when its project closes if nothing in it would be lost, and
+        background git no longer runs programs named by a repository's own
+        configuration.</p>
+      </description>
+    </release>
+    <release version="0.1.3" date="2026-09-28">
+      <description>
+        <p>Codex and Claude Code no longer show as running before their first
+        message, and every package ships the licenses of its dependencies.</p>
+      </description>
+    </release>
+    <release version="0.1.2" date="2026-09-28">
+      <description>
+        <p>Free access for agents can now be turned on only from Settings,
+        not by editing the config file.</p>
+      </description>
+    </release>
+    <release version="0.1.1" date="2026-09-28">
+      <description>
+        <p>A freshly started agent without hooks no longer shows as running
+        until its first message, and the window has a title on Linux.</p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-09-27">
+      <description>
+        <p>First Splitlane release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

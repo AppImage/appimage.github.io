@@ -1,0 +1,25 @@
+{
+  "name": "openwar3",
+  "version": "0.3.36",
+  "private": true,
+  "description": "Browser-first, asset-compatible re-creation of the Warcraft III engine (TypeScript). Ships zero Blizzard assets.",
+  "type": "module",
+  "packageManager": "pnpm@10.33.1",
+  "dependencies": {
+    "electron-updater": "^6.6.2",
+    "ws": "^8.21.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "electron"
+    ],
+    "patchedDependencies": {
+      "mdx-m3-viewer@5.12.0": "patches/mdx-m3-viewer@5.12.0.patch",
+      "fengari@0.1.5": "patches/fengari@0.1.5.patch"
+    }
+  },
+  "main": "electron/main.mjs",
+  "author": "elevchyt",
+  "desktopName": "openwar3.desktop"
+}

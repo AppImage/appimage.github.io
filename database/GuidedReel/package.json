@@ -1,0 +1,24 @@
+{
+  "name": "@guidedreel/desktop",
+  "version": "0.2.0",
+  "private": true,
+  "description": "GuidedReel desktop app, developed by Padma Raj Lama",
+  "author": {
+    "name": "Padma Raj Lama",
+    "url": "https://github.com/prlama55"
+  },
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@guidedreel/core": "workspace:*",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "zod": "catalog:"
+  },
+  "homepage": "https://github.com/prlama55/GuidedReel#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prlama55/GuidedReel.git",
+    "directory": "apps/desktop"
+  },
+  "license": "MIT"
+}

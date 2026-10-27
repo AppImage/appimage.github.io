@@ -1,0 +1,19 @@
+{
+  "name": "adventura",
+  "productName": "Adventura",
+  "version": "3.2.1",
+  "description": "Adventura — a word processor for screenplays and books",
+  "main": "main.js",
+  "author": "English Access",
+  "dependencies": {
+    "@breezystack/lamejs": "^1.2.7",
+    "docx": "^9.0.0",
+    "harper.js": "^2.10.0",
+    "jszip": "^3.10.2",
+    "mammoth": "^1.13.0",
+    "pagedjs": "^0.4.3",
+    "pdf-lib": "^1.17.1"
+  },
+  "homepage": "https://englishaccess.net",
+  "desktopName": "adventura.desktop"
+}

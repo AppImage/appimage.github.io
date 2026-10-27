@@ -1,0 +1,32 @@
+[Desktop Entry]
+Name=Orivon Browser
+Exec=AppRun --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=orivon
+StartupWMClass=orivon
+X-AppImage-Version=0.0.8
+Comment=Orivon reaches the network and filesystem under user-granted, per-app capabilities, so that ordinary web frontends delivered from a URL can do what today requires a native install. Pre-alpha.
+Actions=new-window;new-private-window;
+MimeType=text/html;application/xhtml+xml;image/svg+xml;application/pdf;x-scheme-handler/http;x-scheme-handler/https;
+Categories=Network;WebBrowser;
+
+[Desktop Action new-window]
+Name=New Window
+Exec=/opt/Orivon/orivon --new-window
+
+[Desktop Action new-private-window]
+Name=New Private Window
+Exec=/opt/Orivon/orivon --new-private-window
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.25
+X-AppImage-Payload-License=AGPL-3.0

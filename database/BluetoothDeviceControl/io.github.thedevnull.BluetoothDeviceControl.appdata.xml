@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.thedevnull.BluetoothDeviceControl</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Bluetooth Device Control</name>
+  <summary>Re-pair Bluetooth devices from the system tray</summary>
+  <description>
+    <p>Lists your Bluetooth devices and lets you remove and re-pair them with
+    a click from the system tray. Requires BlueZ.</p>
+  </description>
+  <launchable type="desktop-id">io.github.thedevnull.BluetoothDeviceControl.desktop</launchable>
+  <url type="homepage">https://github.com/thedevnull/BluetoothDeviceControl</url>
+  <provides><binary>BluetoothDeviceControl</binary></provides>
+
+  <releases>
+    <release version="1.0.0" date="2026-10-18"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

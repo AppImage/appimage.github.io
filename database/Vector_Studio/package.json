@@ -1,0 +1,14 @@
+{
+  "name": "@tenzen/vector-studio",
+  "productName": "Vector Studio",
+  "version": "0.1.11",
+  "private": true,
+  "description": "Offline vector illustration with editable vector documents and Tenzen workspaces.",
+  "author": "Tenzen",
+  "homepage": "https://tenzen.studio/vector/",
+  "main": "dist-electron/electron/main.js",
+  "desktopName": "vector-studio.desktop",
+  "dependencies": {
+    "sharp": "0.34.5"
+  }
+}

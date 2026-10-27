@@ -45,6 +45,21 @@ if [ "$TERMINAL" != terminal ] && [ "$TERMINAL" != tray ] ; then
   fi
 fi
 
+# Dark mode by default? AppImageHub's test runs on a plain X session with no
+# dark-mode preference set, so a window that is mostly dark means the
+# application chose a dark theme on its own. Applications should start in a
+# light theme and only go dark when the system is configured for dark mode or
+# the user chooses it in the settings (README). A warning, not an error: a
+# video player's or game's canvas is dark by nature. Measured on a downscaled
+# gray version: the share of pixels darker than 35 % gray, and the mean.
+if [ "$TERMINAL" != terminal ] && [ "$TERMINAL" != tray ] ; then
+  MEAN_PCT=$(convert "$SCREENSHOT" -alpha off -resize '160x160>' -colorspace Gray -format "%[fx:int(mean*100)]" info:- 2>/dev/null)
+  DARK_PCT=$(convert "$SCREENSHOT" -alpha off -resize '160x160>' -colorspace Gray -threshold 35% -format "%[fx:int((1-mean)*100)]" info:- 2>/dev/null)
+  if [[ "$DARK_PCT" =~ ^[0-9]+$ && "$MEAN_PCT" =~ ^[0-9]+$ ]] && [ "$DARK_PCT" -ge 60 ] && [ "$MEAN_PCT" -lt 35 ] ; then
+    echo "WARNING: The window is mostly dark (${DARK_PCT}% of it darker than 35% gray): the application seems to default to a dark theme, although the test system is not set to dark mode"
+  fi
+fi
+
 HARD='traceback|exception|segmentation fault|fatal|error while loading|glibc|not installed|cannot open display|permission denied|no such file|could not (load|find|open|start|initiali)|failed to (load|start|open|initiali|create)|cannot (load|find|open|execute|configure)|unable to (load|find|open|start)|command not found|core dumped'
 SOFT='error|failed|failure|could not|cannot|unable to|not found'
 MATCH=$(echo "$TEXT" | grep -oiE ".{0,40}(${HARD}).{0,60}" | head -n 1)

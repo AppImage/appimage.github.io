@@ -1,0 +1,13 @@
+{
+  "name": "@pensieve/desktop",
+  "productName": "Pensieve",
+  "version": "0.6.3",
+  "homepage": "https://photonghost308.github.io/pensieve-app/",
+  "private": true,
+  "description": "Pensieve desktop app",
+  "author": "Pensieve",
+  "main": "main.cjs",
+  "dependencies": {
+    "node-pty": "^1.1.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "clippy-vision",
+  "productName": "Clippy Vision",
+  "version": "2.1.0",
+  "description": "Local AI desktop companion with screen awareness",
+  "author": "Clippy Vision",
+  "license": "AGPL-3.0-only",
+  "main": "electron/main.js",
+  "dependencies": {
+    "dompurify": "^3.4.13",
+    "marked": "^18.0.9"
+  },
+  "overrides": {
+    "js-yaml": "^4.3.1"
+  }
+}

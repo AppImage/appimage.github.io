@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.omc.open-media-converter</id>
+  <launchable type="desktop-id">open-media-converter.desktop</launchable>
+  <name>Open Media Converter</name>
+  <summary>Convert video, audio, images and documents on Linux</summary>
+  <description>
+    <p>
+      Open Media Converter is a native Linux desktop application with a GTK 4 interface
+      for converting video, audio, image and document formats. It orchestrates proven
+      command-line tools so you get one consistent UI for batch workflows, presets and
+      per-file progress tracking.
+    </p>
+    <p>Highlights:</p>
+    <ul>
+      <li>Video and audio via FFmpeg (GPU acceleration, codecs, batch queue)</li>
+      <li>Images via ImageMagick (resize, rotate, flip, quality, image-to-PDF)</li>
+      <li>Documents via Pandoc and LibreOffice (PDF, DOCX, ODT, HTML, Markdown, EPUB)</li>
+      <li>Batch processing with pause, resume and cancel controls</li>
+      <li>Conversion presets plus per-file overrides</li>
+      <li>Portable AppImage with bundled converters, or native packages with system converters</li>
+    </ul>
+  </description>
+  <developer id="org.omc">
+    <name>Open Media Converter Team</name>
+  </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <url type="homepage">https://github.com/albilu/open-media-converter</url>
+  <url type="bugtracker">https://github.com/albilu/open-media-converter/issues</url>
+  <url type="help">https://github.com/albilu/open-media-converter#usage</url>
+  <url type="donation">https://github.com/albilu/open-media-converter</url>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Video</category>
+    <category>Graphics</category>
+    <category>Office</category>
+    <category>Utility</category>
+    <category>GTK</category>
+  </categories>
+  <keywords>
+    <keyword>media</keyword>
+    <keyword>convert</keyword>
+    <keyword>video</keyword>
+    <keyword>audio</keyword>
+    <keyword>image</keyword>
+    <keyword>document</keyword>
+    <keyword>transcode</keyword>
+    <keyword>ffmpeg</keyword>
+    <keyword>imagemagick</keyword>
+    <keyword>pandoc</keyword>
+  </keywords>
+  <icon type="stock">open-media-converter</icon>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window with batch file list and conversion progress</caption>
+      <image>https://raw.githubusercontent.com/albilu/open-media-converter/main/resources/omc.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>open-media-converter</binary>
+    <mediatype>video/mp4</mediatype>
+    <mediatype>video/x-matroska</mediatype>
+    <mediatype>video/webm</mediatype>
+    <mediatype>audio/mpeg</mediatype>
+    <mediatype>audio/x-flac</mediatype>
+    <mediatype>image/jpeg</mediatype>
+    <mediatype>image/png</mediatype>
+    <mediatype>image/svg+xml</mediatype>
+    <mediatype>application/pdf</mediatype>
+  </provides>
+  <releases>
+    <release version="0.1.1" date="2026-09-27">
+      <description>
+        <p>Fixed AppImage startup on Ubuntu 22.04 and compatible systems with a complete GTK dependency bundle and a modern AppImage runtime.</p>
+        <p>Added clean-system portability checks and corrected desktop icons and AppStream metadata.</p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-09-27">
+      <description>
+        <p>Improved conversion correctness, process pause/resume, progress reporting and application logging.</p>
+        <p>DEB, RPM and Arch packages use system conversion tools. AppImage bundles FFmpeg, ffprobe and Pandoc. All packages include a Java runtime.</p>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+</component>

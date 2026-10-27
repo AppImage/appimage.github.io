@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.foldynl.QLog</id>
+  <launchable type="desktop-id">qlog.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>QLog</name>
+  <developer_name>Ladislav Foldyna</developer_name>
+  <developer id="io.github.foldynl">
+    <name>Ladislav Foldyna</name>
+  </developer>
+  <summary>Amateur radio logbook</summary>
+  <description>
+    <p>
+      QLog is an Amateur Radio logging application for Linux, Windows. It is based on the Qt framework and uses SQLite as database backend.
+      QLog aims to be as simple as possible, but to provide everything the operator expects from the log to be. This log is not currently focused on contests.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Customizable GUI</li>
+      <li>Rig control via Hamlib, TCI, FLRig</li>
+      <li>Rotator control via Hamlib</li>
+      <li>HamQTH and QRZ.com callbook integration</li>
+      <li>DX cluster integration</li>
+      <li>LoTW, eQSL, QRZ.com, Clublog, HRDLog.net, ON4KST Chat, Cloudlog/Wavelog integration (eQSL includes QSL pictures download)</li>
+      <li>Secure Password Storage for all services with password or security token</li>
+      <li>Online and Offline map</li>
+      <li>Club Member lookup</li>
+      <li>CW Keyer Support - CWDaemon, FLDigi (all supported modes), Morse Over CAT, WinKey v1 or v2</li>
+      <li>Bandmap</li>
+      <li>CW Console</li>
+      <li>WSJT-X integration</li>
+      <li>Station Location Profile support</li>
+      <li>Various station statistics</li>
+      <li>Basic Awards support</li>
+      <li>Custom QSO Filters</li>
+      <li>NO ads, NO user tracking, NO hidden telemetry - simply free and open-source</li>
+      <li>SQLite backend</li>
+    </ul>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The QLog main window</caption>
+      <image type="source">https://foldynl.github.io/QLog/screens/qlog_main.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/foldynl/QLog</url>
+  <url type="bugtracker">https://github.com/foldynl/QLog/issues</url>
+  <url type="help">https://github.com/foldynl/QLog/wiki</url>
+  <url type="contact">https://github.com/foldynl</url>
+  <url type="vcs-browser">https://github.com/foldynl/QLog</url>
+  <url type="contribute">https://github.com/foldynl/QLog/blob/master/CONTRIBUTING.md</url>
+  <releases>
+    <release version="0.54.0" date="2026-10-20">
+      <description>
+        <ul>
+          <li>[NEW] - QSL Printing - Added QSL ordering, QSL Manager and QSL DXCC (issue #1145)</li>
+          <li>[NEW] - Awards - Added WAJA, Polish PGA</li>
+          <li>[NEW] - Awards - Remember dialog filter selection</li>
+          <li>[NEW] - Settings - Rig - Added Winkeyer multi-output support (issue #1034)</li>
+          <li>[NEW] - Settings - Backup - Added new option for alternative folder (issue #678)</li>
+          <li>[NEW] - Alerts - Added OS Native Notifications</li>
+          <li>[NEW] - ADIF 3.1.8 - Added new mode JTTY</li>
+          <li>[NEW] - ADIF 3.1.8 - Added new Contest IDs</li>
+          <li>[NEW] - WSJTX - Added support for multiple WSJT-X instances (issue #1184)</li>
+          <li>[NEW] - DXC - Added Command History and Help (issue #1168)</li>
+          <li>[NEW] - DXC - Added Editable DX Comment Template (issue #1168)</li>
+          <li>[NEW] - MCP Bridge - Added read-only bridge between QLog-MCP and QLog</li>
+          <li>[NEW] - MCP Bridge - Added Rig, Rotator, Antenna, Station and Activity information</li>
+          <li>[CHANGED] - Rig Widget - The mouse wheel adjusts the frequency digit under the pointer</li>
+          <li>[CHANGED] - Rig Widget - Changed tunning step from 1kHz to 10Hz</li>
+          <li>[CHANGED] - New Contact - Changed tunning step from 1kHz to 10Hz</li>
+          <li>[CHANGED] - Alerts - Alerts Rule: Reworked DXCC Status setting</li>
+          <li>[CHANGED] - WSJTX - Replaced "Last Activity" with "Activity Bars"</li>
+          <li>[CHANGED] - DXC - Send Last QSO dynamically switches to Spot QSO</li>
+          <li>[CHANGED] - Autobackup - Backup is performed in the background using a copy of DB.</li>
+          <li>[CHANGED] - List of Values - Prepare updates in the background and apply them at startup (issue #949)</li>
+          <li>Fixed QSO Filter does not accept filtering by Country in selected language (issue #731)</li>
+          <li>Fixed Limit Grid input field to 8 characters (issue #1028)</li>
+          <li>Fixed CI DEB artifact path assumes the repository is named QLog (issue #1182)</li>
+          <li>Fixed link to Awards Japanese Cities</li>
+          <li>Fixed AppImage not possible to run on older distros</li>
+          <li>Fixed missing ADIF Modes - ARDOP, JT44, OPERA, PAC</li>
+          <li>Fixed Removed incorrect JTMSK mode entry (issue #1190)</li>
+          <li>Fixed TCI rig profile saved without Host Name gets stuck (issue #1197)</li>
+          <li>Fixed Cabrillo VHF frequency and band-only QSO export and filtering</li>
+          <li>Fixed Cabrillo missing LOCATION Header</li>
+          <li>Fixed Cabrillo ending minute filter</li>
+          <li>Fixed Disabled foreign keys during migration process</li>
+          <li>Fixed Normalization ADIF fields before matching and import (issue #1208)</li>
+          <li>Fixed Rig control frequency disappear (issue #1204 - QT issue workaround)</li>
+          <li>Hamlib - Improved Split Disable</li>
+          <li>Hamlib - Adjusted the checkChanges sequence</li>
+          <li>Pack and Unpack DB and Setting Cleanup and hardening</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.53.0" date="2026-09-18">
+      <description>
+        <ul>
+          <li>[NEW] - Online Map - Added Maps localization (issue #873)</li>
+          <li>[NEW] - QSO Filter - Added Clone Profile button (PR #1151 issue #1144 @aa5sh)</li>
+          <li>[NEW] - Alert Rules - Added Clone Rule button (PR #1151 issue #1144 @aa5sh)</li>
+          <li>[NEW] - Activity Manager - Added Clone Activity button</li>
+          <li>[NEW] - Awards - Adding Canada Award, WANA, RAC (PR #1152 issue #1075 @aa5sh @foldynl)</li>
+          <li>[NEW] - Logbook - QSO Filter - Added Change Filter Parameters Widget</li>
+          <li>[NEW] - Logbook - QSO Filter - Added date-time periods today, last week and more</li>
+          <li>[CHANGED] - Online Map - Using vector maps with a fallback to raster maps</li>
+          <li>[CHANGED] - List of Values – use uncompressed files</li>
+          <li>[CHANGED] - NewQSO - Reworked field-clearing algorithm (issue #411)</li>
+          <li>[CHANGED] - NewQSO - Freq field can be switched to Band field (issue #905 @aa5sh @foldynl)</li>
+          <li>[CHANGED] - NewQSO - Separate DXCC satellite statistic tracking</li>
+          <li>[CHANGED] - Settings - Hamlib Interface now prefills default capabilities for newly defined rigs</li>
+          <li>[CHANGED] - Settings - Rig Sharing shows the rigctld parameters set by QLog</li>
+          <li>[CHANGED] - Export - The filename suffix is added when missing (issue #1158)</li>
+          <li>[CHANGED] - Help Discussion instead of Help Mailing List</li>
+          <li>Fixed Hamlib Driver - preparation for Hamlib 5.0</li>
+          <li>Fixed External QSO - Use properly data from a matching Station Profile (issue #1148)</li>
+          <li>Fixed DX Spot frequency rounding - Added one decimal place for kHz (issue #1149)</li>
+          <li>Fixed Online Map - Aurora forecast and MUF wer not displayed west of the prime meridian</li>
+          <li>Fixed Online Map - Chat and Heard Me markers were not displayed across map boundaries</li>
+          <li>Fixed Awards DXCC EME tracking</li>
+          <li>Fixed Awards WAZ can include eQSL</li>
+          <li>Fixed Band-Only QSO processing - DXCC Status, Cabrillo Export, Awards</li>
+          <li>Fixed All dialogs have a title (PR #1150 @Fale)</li>
+          <li>Fixed DXCC Status recalculation after Import QSOs, Delete QSO</li>
+          <li>Fixed empty country selection box when DXCC list download fails (issue #1159)</li>
+          <li>Workaround - Added a bundled DXCC fallback for blocked CTY.CSV downloads</li>
+          <li>Fixed Upload and Download problems make QLog unusable (issue #1163)</li>
+          <li>Fixed QLog crash on exit (issue #1169)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.52.0" date="2026-08-21">
+      <description>
+        <ul>
+          <li>[NEW] - QSL Printing - Added Custom Paper Size (issue #1089)</li>
+          <li>[NEW] - FLDigi Logging - Added ADIF UDP logging method (issue #1113)</li>
+          <li>[NEW] - Services - Added QSLInfo.de as the QSL Manager Service (PR #1116 @aa5sh @foldynl)</li>
+          <li>[NEW] - Alerts - Added ability to clear selected alerts (PR #1104 @aa5sh)</li>
+          <li>[NEW] - LoTW - Added an All Callsigns option (PR #1084 @aa5sh)</li>
+          <li>[NEW] - LoTW/eQSL - Report reasons for unmatched QSOs</li>
+          <li>[NEW] - Online Map - Added HeardMe Spot from PSKReporter and RBN (PR #1115 #1107 @aa5sh @foldynl)</li>
+          <li>[NEW] - Online Map - WSJTX-CQ Added the second ring if SNR &gt; -15dB</li>
+          <li>[NEW] - Online Map - Added interactive antenna control; Target Antenna context menu</li>
+          <li>[NEW] - Offline Map - Added zoom, panning, and QSO path fitting</li>
+          <li>[NEW] - Settings - Antenna profile can be selected automatically by TX band (issue #392 #781)</li>
+          <li>[NEW] - Settings - Antenna profile can have an Assigned Rotator</li>
+          <li>[NEW] - Settings - Added an option to hide DXCC entity flags (issue #1129)</li>
+          <li>[NEW] - Statistics - Added QSO histogram by operator callsign (PR #1127 @mc-doge666)</li>
+          <li>[NEW] - Added direct labeling of QSL Sent QSO context menu (PR #1123 @mc-doge666)</li>
+          <li>[NEW] - Contest - Added Flexible Exchange Linking</li>
+          <li>[NEW] - Rotator Widget - Add persistent map navigation (zooming/moving)</li>
+          <li>[CHANGED] - Online Map - Improve dark mode night-side visibility</li>
+          <li>[CHANGED] - Online Map - Adapt antenna beam length to map context</li>
+          <li>[CHANGED] - ADI/ADX Import - Added checks of enumerated values (issue #1117 PR #1119 @aa5sh)</li>
+          <li>[CHANGED] - ADI/ADX Import - Warnings are displayed if an incorrect enum (issue #1117 PR #1119)</li>
+          <li>[CHANGED] - Logging External QSO - Warn once per station context is different</li>
+          <li>[CHANGED] - LoTW - Do not overwrite paper QSL received-via field</li>
+          <li>[CHANGED] - LoTW - Resolve ambiguous QSL matches by exact time</li>
+          <li>[CHANGED] - Activity Editor - Rotator Override takes priority over the antenna's Assigned Rotator</li>
+          <li>[CHANGED] - Main Menu - Removed Equipment - Added Power On-Off buttons to corresponding widgets</li>
+          <li>Fixed WAAC not connected to the Log (issue #1097)</li>
+          <li>Fixed Rig Widget displays an incorrect Bandmap Guide Label (issue #1108)</li>
+          <li>Fixed Cannot directly edit notes or multiline fields (issue #1111)</li>
+          <li>Fixed LoTW - Merge QSL credits instead of overwriting them</li>
+          <li>Fixed LoTW - Case-insensitive compare for SAT_NAME</li>
+          <li>Fixed eQSL - Refresh AG status for redownloaded confirmations</li>
+          <li>Fixed Rotator - Apply antenna azimuth offset consistently across drivers</li>
+          <li>Fixed Offline Map Ant Path calculation</li>
+          <li>Fixed Rotator Widget - Use circular distance for azimuth deadband</li>
+          <li>Fixed QSL confirmation status is not displayed correctly in QSO Detail and tooltip (issue #1125)</li>
+          <li>Fixed DXCC flag assignments and documented neutral handling of territorial disputes (issue #1129)</li>
+          <li>Fixed EQSL abort crash (issue #1138 PR #1139 @aa5sh)</li>
+          <li>Fixed serial parity configuration passed to rigctld</li>
+          <li>Fixed Added more lighthouse suffixes LH, LS, LT</li>
+          <li>Hamlib Share Rig - various fixes</li>
+          <li>Omnirig - various fixes</li>
+          <li>TCI - various fixes</li>
+          <li>Flrig - various fixes</li>
+          <li>Hamlib Rotaror - various fixes</li>
+          <li>PSTRot - various fixes</li>
+          <li>Rotator Widget - various fixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.51.1" date="2026-07-07">
+      <description>
+        <ul>
+          <li>Fixed WSJTX QSO Name Field is cleared (issue #1019)</li>
+          <li>Fixed WAAC - added missing ZS0, ZS9, displaying prefixes (issue #1070)</li>
+          <li>Fixed Cabrillo Template - Handle null dbField when saving (issue #1077 @aa5sh @foldynl)</li>
+          <li>Updated German translation (PR #1080 thx @mulecram)</li>
+          <li>Removed a length limit of qsl_via field (PR #1081 @trgosk @foldynl)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.51.0" date="2026-06-07">
+      <description>
+        <ul>
+          <li>[NEW] - Added a simple QSL Card printing</li>
+          <li>[NEW] - Added virtual column Mode/Submode to Logbook (issue #798)</li>
+          <li>[NEW] - BandMap shows IBP frequencies (issue #1014)</li>
+          <li>[NEW] - BandMap - Added Bandmap Guide (issue #1039)</li>
+          <li>[NEW] - BandMap - Tune rig from IBP and SOS markers</li>
+          <li>[NEW] - Settings - Added Bandmap Guide Setting</li>
+          <li>[NEW] - Settings - Added user defined colors for DXCC Statuses</li>
+          <li>[NEW] - Settings - Added StartUp ADI file Import (issue #941 PR #992 @aa5sh @foldynl)</li>
+          <li>[NEW] - Rig Widget - Added Emergency, IBP and Bandmap Guide Labels</li>
+          <li>[NEW} - Activity Manager - Added Bandmap Guide selection</li>
+          <li>[NEW] - Import - Added QSL Sent Status default (issue #1029)</li>
+          <li>[NEW] - Awards - Added WAAC and WAIP (issue #1013 PR #1022 @aa5sh)</li>
+          <li>[NEW] - Awards - Added Open Rule Button</li>
+          <li>[NEW] - Download - Added LoTW DXCC credits import (based on PR #965 @aa5sh @foldynl)</li>
+          <li>[NEW] - Online Map - Added civil, nautical, and astronomical twilight</li>
+          <li>[CHANGED] - Added more built-in macOS TQSL search paths (PR #1041 @aa5sh)</li>
+          <li>[CHANGED] - Clock - Improved timing</li>
+          <li>[CHANGED] - IBP - Updated Beacon statuses, enabled ZL6B 5Z4B, disabled 4S7B OH2B YV5B</li>
+          <li>[CHANGED] - New Contact - Elide member list label and add tooltip with Member IDs</li>
+          <li>Workaround for #1017: FT-950 was reported to jump to VFO-B</li>
+          <li>Fixed ADIF Export of Gridsqaure too long (issue #1028)</li>
+          <li>Fixed Shutdown: synchronize station-device teardown (PR #1035 @VA3THP @foldynl)</li>
+          <li>Fixed QRZ callbook lookups stall for certain calls (issue #1040)</li>
+          <li>Fixed ADIF multiline fields are incorrectly parsed (issue #1046)</li>
+          <li>Fixed Editing POTA entity causes crash (issue #1049)</li>
+          <li>Fixed The HTML was not rendering in the membership label properly (PR #1060 @aa5sh)</li>
+          <li>Fixed ADX app-fields and grid normalization</li>
+          <li>Fixed WSJTX Status tx_mode value</li>
+          <li>Github - Source code is signed (#1018)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.50.0" date="2026-04-26">
+      <description>
+        <ul>
+          <li>[NEW] - Added Split detection</li>
+          <li>[NEW] - Added Developer and Support tools (PR #991 @aa5sh @foldynl)</li>
+          <li>[NEW] - Added a simple QSL label printing dialog (issue #562)</li>
+          <li>[NEW] - Added Cabrillo contest export</li>
+          <li>[NEW] - Added direct labeling of QSL Requested and QSL Received to the QSO context menu (PR #982 @aa5sh)</li>
+          <li>[NEW] - DXCC Submission Report (PR #967 @aa5sh)</li>
+          <li>[NEW] - DXC - Search pre-fills the callsign from New Contact if callsign is present</li>
+          <li>[NEW] - Settings - Added Danger Zone tab with Delete all passwords and QSOs</li>
+          <li>[CHANGED] - Mutex-free Omnirig1 and Omnirig2</li>
+          <li>[CHANGED] - POTA/SOTA/WWFF/SAT list are download from QLog LOV-repo</li>
+          <li>[CHANGED] - Used an external lib for CSV parsing for LOV Download</li>
+          <li>[CHANGED] - Import - ADIF import updates DXCC only if it is missing in the QSO (issue #983)</li>
+          <li>[REMOVED] - Import - ADIF import does not include the option to update DXCC during the import - no longer needed</li>
+          <li>Fixed Callsign disappears when calling a DX in a split via VFO-B (issue #799)</li>
+          <li>Fixing Rendering issue (issue #989)</li>
+          <li>Updated debian packaging (PR @979 thx @dawkagaming)</li>
+          <li>Hamlib rigctld switching between VFO A/B doesnt change the band mode - added workaround (issue #999)</li>
+          <li>Awards internal redesign</li>
+          <li>Removed AN from the WAC award (issue #1010)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.49.1" date="2026-03-19">
+      <description>
+        <ul>
+          <li>Fixed Online Map OSM Access Blocked banner (issue #956)</li>
+          <li>Fixed Package build process issue - openssl-dev is missing (issue #957)</li>
+          <li>Fixed Missing dependence for QTKeychain (issue #964)</li>
+          <li>Added French Translation (PR #969 thx @fillods)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.49.0" date="2026-03-13">
+      <description>
+        <ul>
+          <li>[NEW] - Added Pack and Unpack Data and Setting - Computer to Computer Migration (issue #535)</li>
+          <li>[NEW] - Added Rig Sharing via Rigctld (PR #736 issue #159 @aa5sh @foldynl)</li>
+          <li>[NEW] - Added QSL Gallery</li>
+          <li>[NEW] - QSO Filter - Added REGEXP operator</li>
+          <li>[NEW] - Settings - TQSL - Added Path auto-detect and validation</li>
+          <li>[NEW] - Upload QSO - Added LoTW Station Location Combo (PR #929 @TrgoSk @foldynl)</li>
+          <li>[NEW] - QSO Export - Added Station Profile Filter</li>
+          <li>[NEW] - BandMap shows emergency frequencies (issue #462)</li>
+          <li>[NEW] - Added Speed Up Down Macros - WinKey and CWDaemon (issue #491)</li>
+          <li>[NEW] - Settings Winkey v2 - Added PaddleOnly Sidetone (issue #739)</li>
+          <li>[NEW] - Settings Winkey v2 and CWDaemon - Added Sidetone Freq</li>
+          <li>[NEW] - All County fields contain Completer for Ukraine, US, Japan, NZ, Spanish, Russia (PR #785 @aa5sh @foldynl)</li>
+          <li>[NEW] - Added County Awards for Ukraine, US, Japan, NZ, Spanish, Russia (PR #785 @aa5sh @foldynl)</li>
+          <li>[NEW] - ADIF 3.1.7 - Added new modes FT2, FREEDATA, RIBBIT_PIX, RIBBIT_SMS (issue #934)</li>
+          <li>[CHANGED] - Generic FTx for FT8/FT4 (FT2) in Alert and DXC filter (issue #937)</li>
+          <li>[CHANGED] - LoTW QSL matching algorithm uses Mode and Mode Group matching (issue #942)</li>
+          <li>[CHANGED] - Reduced download period for DXCC Entities from 21 to 7 days</li>
+          <li>LogbookWidget: Delete Performance Optimization</li>
+          <li>Fixed Awards POTA Activator Filter</li>
+          <li>Fixed man page</li>
+          <li>Fixing SATmode Activity is blank (issue #948)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.48.0" date="2026-01-30">
+      <description>
+        <ul>
+          <li>[NEW] - Rig Widget - tuning rig with mouse (issue #855)</li>
+          <li>[NEW] - Awards - Added User Filter Combo (issue #870)</li>
+          <li>[NEW] - Statistics - Added User Filter; new Dialog layout (issue #870)</li>
+          <li>[NEW] - Alerts - Added detailed Log Status settings (issue #817)</li>
+          <li>[NEW] - Settings - Enable/Disable sending color-coded status indicators back to WSJT-X (issue #885 @aa5sh @foldynl)</li>
+          <li>[CHANGED] - Omnirig Drivers: Removed QT AXContainers - pure Windows API code</li>
+          <li>[CHANGED] - Enabled Chekbox in Alerts Table (issue #867)</li>
+          <li>[CHANGED] - Serial Port Completer contains Horizontal ScrollBar</li>
+          <li>[CHANGED] - TCI - Settings - Default PWR defines the maximum output power</li>
+          <li>Fixed Omnirig drivers keep sending frequency change (issue #872)</li>
+          <li>Fixed ADIF import does not accept a default operator name (issue #884)</li>
+          <li>Fixed HamQTH URL from http to https (PR #886 @aa5sh)</li>
+          <li>Fixed Missing Band value when QSO from FLDigi (issue #892)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.47.1" date="2025-12-19">
+      <description>
+        <ul>
+          <li>[CHANGED] - DXC - VE7CC-type Cluster is correctly detected (PR #851 @kyleboyle)</li>
+          <li>[CHANGED] - Chat - Changed ON4KST URL (issue #857)</li>
+          <li>Fixed missing clear button for Search Callsign (issue #753)</li>
+          <li>Fixed Updated QSOs are not sent to wavelog (issue #847)</li>
+          <li>Fixed Fixed Omnirig(v2) getFreq, getVFO, setFreq (issue #853)</li>
+          <li>Fixed ADI Header does not follow ADIF Spec (issue #859)</li>
+          <li>Fixed OmniRig settings are not saved (issue #862)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.47.0" date="2025-12-06">
+      <description>
+        <ul>
+          <li>[NEW] - Adds theme options - native, light, dark (PR #718 @kyleboyle)</li>
+          <li>[NEW] - Implemented ADIF 3.1.6</li>
+          <li>[NEW] - ADIF 3.1.6 - Added new modes FSK and MTONE</li>
+          <li>[NEW] - ADIF 3.1.6 - Added new contest IDs</li>
+          <li>[NEW] - ADIF 3.1.6 - Added new column EQSL_AG (Import/Export only)</li>
+          <li>[NEW] - Statistics, QSODetail contain deleted DXCC Entities (PR #728 @aa5sh @foldynl)</li>
+          <li>[NEW] - Settings Hamlib - Added support to define CIV Addr for Icom and Ten-Tec (issue #747)</li>
+          <li>[NEW] - Settings Hamlib - Added RTS and DTR control (PR #809 @aa5sh)</li>
+          <li>[NEW] - Settings GUI - Added options to switch distance unit</li>
+          <li>[NEW] - Added Linux manpage (PR #791 @dawkagaming)</li>
+          <li>[NEW] - Added a link to the GitHub release notes under Help-Whats New</li>
+          <li>[NEW] - Added workaround for WriteLog - always call callbook lookups (PR #833 @sjwoodr)</li>
+          <li>[NEW] - Awards - Added Not-Confirmed filter (PR #836 @aa5sh)</li>
+          <li>[NEW] - Rotator Widget - Added buttons to change button profiles</li>
+          <li>[CHANGED] - Settings - Added network loop detection for WSJTX Forward (issue #815 @aa5sh @foldynl)</li>
+          <li>[CHANGED] - Rotator - Rotator timeout is set to 5s (PR #823 @aa5sh)</li>
+          <li>[CHANGED] - Double Spin Boxes - the decimal separator is forced to be a period</li>
+          <li>[DELETED] - WSJTX Widget - Removed Freq and Mode</li>
+          <li>Fixed QSODetail - Anti-meridian bug on map (issue #786)</li>
+          <li>Fixed Statistics: Center maps on QTH longitude (issue #824)</li>
+          <li>Fixed OmniRig disconnecting when its status changed unexpectedly (issue #832)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.46.2" date="2025-10-31">
+      <description>
+        <ul>
+          <li>Fixed Spaces after QRZ.com name (issue #767)</li>
+          <li>Fixed SPID Rot1Prog Rotator more 360 deg (issue #775)</li>
+          <li>Fixed build instructions on Debian (PR #777 @leventelist)</li>
+          <li>Fixed Bandmap truncated output despite having space (issue #779)</li>
+          <li>Fixed Statistics - Anti-meridian bug on map (issue #786)</li>
+          <li>Fixed Binary file in the tarballs (issue #794)</li>
+          <li>Fixed LOTW and eQSL upload status updated even when nothing is uploaded (issue #807)</li>
+          <li>Fixed Imported QSOs contain incorrect My DXCC info (issue #812)</li>
+          <li>Fixed Statistics Dialog does not show confirmed grids</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.46.1" date="2025-09-26">
+      <description>
+        <ul>
+          <li>Fixed QSO filter incorrectly displays inserted date (issue #752)</li>
+          <li>Fixed Logbook Search Icon is not centered (issue #753)</li>
+          <li>Fixed Using CQRLog API Key for Clublog (issue #759)</li>
+          <li>Fixed Online Service Password leaking via debug files (issue #760)</li>
+          <li>Fixed Tabs are not showed properly (PR #762 @aa5sh)</li>
+          <li>Fixed inability to edit Power in QSO Detail (issue #763)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.46.0" date="2025-09-12">
+      <description>
+        <ul>
+          <li>[NEW] - NewContact: POTA/SOTA/WWFF/IOTA info is taken from the nearest spot (@aa5sh @foldynl)</li>
+          <li>[NEW] - DXSpots are sent to Flex Radio (PR #694 @aa5sh)</li>
+          <li>[NEW] - CWConsole - Added support for automatic periodic sending of CW Macros (issue #708)</li>
+          <li>[NEW] - Added mapping of Winkey hardware buttons to CW macro keys F1–F4 (issue #711)</li>
+          <li>[NEW] - Added Search Types to the Logbook Search Editbox (issue #733)</li>
+          <li>[NEW] - Rig - Periodic Rig status reporting independent of its changes (PR #730 @aa5sh)</li>
+          <li>[NEW] - Settings - Serial Port Completer for MacOS and Linux (PR #737 @aa5sh)</li>
+          <li>[NEW] - Hamlib - Attempt to send Power On when connecting the Rig</li>
+          <li>[NEW] - POTA Spots Info is received from the API at api.pota.app to improve POTA detection</li>
+          <li>[CHANGED] - Logbook Search Filter Widget - Added Search Widget</li>
+          <li>[CHANGED] - QSO Detail Country boxes use the new Search Filter Widget</li>
+          <li>[CHANGED] - NewContact - RST field uses the Overwrite Mode</li>
+          <li>[CHANGED] - NewContact - Default cursor position in RST is at the first character</li>
+          <li>[CHANGED] - Setting Dialog - Modes - Default Report can define cursor position</li>
+          <li>[CHANGED] - HamlibRot - Changed Poll Interval from 500 to 2000ms</li>
+          <li>Fixed DUPE is not detected for the first Contest QSO (issue #699)</li>
+          <li>Fixed FREQ_RX/BAND_RX is present only when RX and TX freqs are different (issue #714)</li>
+          <li>Fixed Repeated log recording (issue #722)</li>
+          <li>Fixed QSO Filter contains untranslated QSO items (issue #732)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.45.0" date="2025-07-11">
+      <description>
+        <ul>
+          <li>[NEW] - Single Dialog for Upload/Download Online Services (issue #448)</li>
+          <li>[NEW] - Added option to swap paddles to Winkey settings (issue #676)</li>
+          <li>[NEW] - Added native support for the FLRig interface (issue #679)</li>
+          <li>[NEW] - Added New Version Notification - only for MacOS and Windows (PR #669 @aa5sh)</li>
+          <li>[NEW] - QRZ Upload - Added support for multiple API Keys</li>
+          <li>[NEW] - Logbook - Added highlighting to the filter button when a filter is active</li>
+          <li>[NEW] - WSJTX - Filtered label is shown when filter is enabled</li>
+          <li>[NEW] - DXC - Filtered label is shown when filter is enabled</li>
+          <li>[NEW] - Added support to Upload Cloudlog/Wavelog</li>
+          <li>[NEW] - Add JS8 to legacy_modes.json (issue #677)</li>
+          <li>[CHANGED] - Unification Settings storage</li>
+          <li>[CHANGED] - Calculate distances according to IARU rules</li>
+          <li>Fixed missing Wsjtx Spot values in the AlertWindow</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.44.1" date="2025-05-11">
+      <description>
+        <ul>
+          <li>Fixed Rotator Widget Seg Fault for new users (issue #666)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.44.0" date="2025-05-09">
+      <description>
+        <ul>
+          <li>[NEW] - Activity Manager - Added SKCC, UKSMG and FISTS as Dynamic Fields</li>
+          <li>[NEW] - QSO - FISTS, SKCC, and UKSMG are auto-filled from MembershipQE (issue #628)</li>
+          <li>[NEW] - Rotator - Added QSO destination needle (issue #644)</li>
+          <li>[NEW] - QSO Detail - Adds grayline and short path (PR #653 @kyleboyle)</li>
+          <li>[CHANGED] - Rotator - Needle colors correspond to the online map (issue #644)</li>
+          <li>Fixed TCI cw_macros must contain RigID (issue #663)</li>
+          <li>Fixed TCI setKeySpeed sets keyer and macros speed (issue #663)</li>
+          <li>Fixed Data mode missing in rig control window - rigctld (issue #660 @aa5sh)</li>
+          <li>Improved DXC Mode detection</li>
+          <li>Updated Simplified Chinese translation</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.43.1" date="2025-04-19">
+      <description>
+        <ul>
+          <li>Fixed Click on PHONE DX Spots sets wrong mode (issue #453)</li>
+          <li>Fixed No freq via Omnirig for IC7400 (issue #639)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.43.0" date="2025-04-04">
+      <description>
+        <ul>
+          <li>[NEW] - Added support to receive QSOs from CSN SAT Device (PR #610 @aa5sh)</li>
+          <li>[NEW] - Bandmap - Multiple independent bandmap windows (PR #593 @kyleboyle @foldynl)</li>
+          <li>[NEW] - Winkey Keyer driver currently supports v1 and v2 hardware</li>
+          <li>[NEW] - QSO Detail - QSLs QSLr Msg is editable</li>
+          <li>[NEW] - Activity Manager - Added new dynamic field - QSL Message Send</li>
+          <li>[CHANGED] - HamlibDrv - Enabled Power, RIT, XIT, Morse for RIG Netctl</li>
+          <li>[CHANGED] - QSO Detail - QSLMSG replaced by QSLMSG_RCVD (issue #633)</li>
+          <li>[CHANGED] - eQSL Upload - Added an option to choose a QSLMsg field</li>
+          <li>[CHANGED] - eQSL Download - eQSL QSLMSG is stored to QLog QSLMSG_RCVD</li>
+          <li>[CHANGED] - eQSL Download - Added QSLMSG_RCVD merging - eQSL message is appended</li>
+          <li>Fixed Speed pot doesn't seem to work with a WinKeyer; double chars (issue #618)</li>
+          <li>Fixed BandMap Spots colour change after a QSO (issue #632)</li>
+          <li>Fixed Incorrect Field Mapping for Received eQSL Messages (issue #633)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.42.2" date="2025-03-07">
+      <description>
+        <ul>
+          <li>Fixed Logbook country translations (issue #608)</li>
+          <li>Fixed Unexpected dialog when QSO after contest (issue #614)</li>
+          <li>Fixed Statistics Widget does not display NULL continents (@aa5sh)</li>
+          <li>Fixed Statistics Widget does not display NULL Band, Mode</li>
+          <li>Fixed Statistics Widget TOP10 does not display removed DXCCs</li>
+          <li>Fixed Statistics Widget TOP10 does not display translated country names</li>
+          <li>Fixed Awards Widget does not display removed DXCCs</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.42.1" date="2025-02-22">
+      <description>
+        <ul>
+          <li>Fixed Unexpected timezone info (issue #600)</li>
+          <li>Fixed DXCC Statistics picks more entities (issue #601)</li>
+          <li>Fixed a crash when no internet connection</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.42.0" date="2025-02-14">
+      <description>
+        <ul>
+          <li>[NEW] - Awards - Added Slots - total over each band (issue #538)</li>
+          <li>[NEW] - Awards - Added Grid Award - 2/4/6 Chars grid (issue #564)</li>
+          <li>[NEW] - Settings - Added options to switch 12/24 time and date format (issue #573)</li>
+          <li>[NEW] - Activity Manager - Added new dynamic fields - Rig (issue #575)</li>
+          <li>[NEW] - LoTW Import - Fill missing information also for confirmed QSOs (@aa5sh)</li>
+          <li>[NEW] - Added CW macro QTH</li>
+          <li>[NEW] - DXC - Added 15min Trend</li>
+          <li>[CHANGED] - Changed IOTA LOV Source, the official web is used</li>
+          <li>[CHANGED] - CSV Export: Time and Date formats use ISO8601 format (issue #562)</li>
+          <li>[CHANGED] - Settings - Renamed Shortcuts to GUI tab</li>
+          <li>[CHANGED] - LOV - Improved LOV download performance (PR #582 @aa5sh)</li>
+          <li>Partial fix Windows State/Size does not save in case of fullscreen (issue #418)</li>
+          <li>Fixing TCI error when you change Rig (issue #526)</li>
+          <li>Fixed DXCC Award total worked confirmed counts included deleted entities (PR #588 @aa5sh)</li>
+          <li>Fixed Raspberry PI Flatpak - Import Select file dialog crashes (issue #589)</li>
+          <li>Suppressed the ability to edit Contest fields after the start (issue #590)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.41.1" date="2025-01-21">
+      <description>
+        <ul>
+          <li>Fixed compilation issue under Debian 12 (issue #571)</li>
+          <li>Fixed Incorrect GPL version in rpm/deb packages (issue #572)</li>
+          <li>Fixed MacOS floating utility window bug (PR #576 @kyleboyle)</li>
+          <li>Updated IT translation</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.41.0" date="2025-01-11">
+      <description>
+        <ul>
+          <li>[NEW] - Logbook - Added a new context menu item - Update QSO from Callbook (issue #450 @aa5sh)</li>
+          <li>[NEW] - DIGI mode is used in case of DXC Digi Spots (issue #480)</li>
+          <li>[NEW] - DXC - Retrieve information about SOTA, POTA, IOTA and WWFF from comment (issue #482)</li>
+          <li>[NEW] - Alert - Added SOTA, POTA, IOTA and WWFF filter</li>
+          <li>[NEW] - Added the COM Port Completer for Windows platform (issue #490)</li>
+          <li>[NEW] - Settings - Added DXCC Confirmed By options (issue #508)</li>
+          <li>[NEW] - Added POTA Export Formatter (activator/hunter) (PR #514 @kyleboyle)</li>
+          <li>[NEW] - CW Console - CW Halt with the user-defined shortcut (issue #518)</li>
+          <li>[NEW] - Added an input parameter to save debug message to file</li>
+          <li>[NEW] - Logbook - Added sorting function to logbook table columns (PR #540 @kyleboyle)</li>
+          <li>[NEW] - Network Notification - Added Rig Status Notification</li>
+          <li>[NEW] - Implemented ADIF 3.1.5</li>
+          <li>[NEW] - ADIF 3.1.5 - Added new submodes FSKH245 and FSKH105 for HELL</li>
+          <li>[NEW] - ADIF 3.1.5 - Added new contest IDs</li>
+          <li>[NEW] - ADIF 3.1.5 - Added new columns (Import/Export only)</li>
+          <li>[NEW] - ADIF 3.1.5 - Added My DARC DOK to Station Profile</li>
+          <li>[CHANGED] - Settings: disabled band and mode name modification</li>
+          <li>[CHANGED] - DX Stats contain all enabled bands (issue #538)</li>
+          <li>[CHANGED] - Removed Freq, TimeDate On/Off Data Type Indicators (issue #552)</li>
+          <li>[CHANGED] - ADIF 3.1.5 - VUCC and MY_VUCC can contain 6 or 4-chars locators</li>
+          <li>[CHANGED] - Stop exporting default value N for qsl_rcvd, qsl_sent, lotw/dcl/eslq_qsl_rcvd/sent</li>
+          <li>[CHANGED] - Extended QSL/Import Dupe matching rule to Callsign, Band, Mode, Time and Sat_Name (issue #563)</li>
+          <li>Fixed MacOS - keep floating windows visible on app unfocus (issue #530)</li>
+          <li>Fixed Contest Filter ignores the first QSO (issue #529)</li>
+          <li>Fixed It is not possible to quit Qlog with detached widgets Rot and Rig (issue #534)</li>
+          <li>Fixed ADX/CSV/JSON do not export non-ASCII chars (issue #542)</li>
+          <li>Fixed Checking the 60m checkbox in cluster filters allows 160m spots to appear (issue #543 @aa5sh)</li>
+          <li>Fixed Problems uploading to QRZ.com (issue #559 PR #561 @aa5sh)</li>
+          <li>Fixed DX Stat screen is jumping up/down</li>
+          <li>Fixed Omnirig drivers: Digi modes are not correclty recognized</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.40.1" date="2024-11-29">
+      <description>
+        <ul>
+          <li>Fixed Bands - Added missing 8m band (issue #515)</li>
+          <li>Fixed CW Console - EXCSTR does not work properly (issue #517)</li>
+          <li>Fixed Activity Manager - Missing Propagation Mode None (issue #519)</li>
+          <li>Fixed QSO Filter - filter fields with random order (PR #525 @aa5sh)</li>
+          <li>Fixed TCI error when you change Rig (issue #526)</li>
+          <li>Fixed NewContact - satellite mode too wide (issue #527)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.40.0" date="2024-11-24">
+      <description>
+        <ul>
+          <li>[NEW] - Activity Manager - merged Layout Manager and profiles (issue #408)</li>
+          <li>[NEW] - Activity Manager - Added new dynamic fields - Contest fields, RX/TX Power</li>
+          <li>[NEW] - Added light support for contests (issue #345)</li>
+          <li>[NEW] - Added CW macros EXCHSTR, EXCHNR, EXCHNRN</li>
+          <li>[NEW] - Export Filter - Added user filter combo (original idea PR #476 @aa5sh)</li>
+          <li>[NEW] - New Contact -  Added expand/collapse button to QSO field tab widget (PR #495 @kyleboyle)</li>
+          <li>[NEW] - Alert - Added CQZ and ITUZ filters</li>
+          <li>[NEW] - KSTChat - Added a new 40MHz room (PR #496 @kyleboyle)</li>
+          <li>[NEW] - Station Profile contains Operator Callsign (issue #441 @kyleboyle)</li>
+          <li>[NEW] - Station Profile contains County (issue #493 @kyleboyle)</li>
+          <li>[NEW] - Statistics - Adds time of day and better qso mapping (PR #501 @kyleboyle)</li>
+          <li>[NEW] - Bandmap - Tooltip shows a spotter callsign (PR #507 @Skittlebrau)</li>
+          <li>[CHANGED] - New Contact - Renamed DXCC Tab to DX Stats contains DXCC and Station Statistics (issue #477)</li>
+          <li>[CHANGED] - QSL Import dialog - Detail text is selectable by mouse and keyboard</li>
+          <li>[CHANGED] - Removed Main Menu Layout; Activity Manager is in the bottom-left corner</li>
+          <li>[CHANGED] - Removed Keep Options from the Equipment Menu - use Activity Manager for it</li>
+          <li>Fixed issue when CW is always selected after Settings exiting or connecting the Rig</li>
+          <li>Updated Timezone definition file - version 2024b</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.39.0" date="2024-10-05">
+      <description>
+        <ul>
+          <li>[NEW] - DXC - Added Full-text search</li>
+          <li>[NEW] - Select S in RST Edit when focused (issue #454)</li>
+          <li>[NEW] - Alerts - Added Member Column</li>
+          <li>[CHANGED] - HamlibDrv Rig/Rot- Added multiplatform reliable sleep</li>
+          <li>[CHANGED] - Changed Backup policy</li>
+          <li>[CHANGED] - Logbook page size - improved performance</li>
+          <li>[CHANGED] - Logbook - CTRL-A (Select All) is disabled</li>
+          <li>[CHANGED] - Awards - Bands are displayed based on the Settings (issue #452)</li>
+          <li>[CHANGED] - WSJTX - More reliable detection of CQ stations (PR #471 @aa5sh)</li>
+          <li>[CHANGED] - WSJTX - SOTA/POTA/WWFF/SIG are being added to the logged QSO (PR #463 @aa5sh)</li>
+          <li>[CHANGED] - Stats - Add a confirmation dialog for displaying over 50k QSOs on the map</li>
+          <li>[CHANGED] - New Contact - Starting QSO Timer when Rig online and WSJTX Update Callsign Status is received</li>
+          <li>[CHANGED] - Added a postponed handling for Rig soft errors (issue #472)</li>
+          <li>Fixed WSJT-X does not emit band change if rig is disconnected (issue #447)</li>
+          <li>Fixed Wrong import of ADIF file of another log program (issue #455)</li>
+          <li>Fixed WSJTX log record is stored incorrectly if it contains non-ASCII chars(issue #458)</li>
+          <li>Fixed ADIF import does not import records with old DXCC Entities (issue #459)</li>
+          <li>Fixed ADIF import incorrectly uses Station Profile parameters (issue #461)</li>
+          <li>Fixed Logbook - QSO Table Column Width Does Not Stick (issue #464)</li>
+          <li>Fixed Alerts Window displays OOB Spots (issue #469)</li>
+          <li>Fixed Field values from past QSOs are used incorrectly in case of WSJTX QSOs (#issue 470)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.38.0" date="2024-08-29">
+      <description>
+        <ul>
+          <li>[NEW] - Logbook - Added Send DX Spot to the QSO Context Menu</li>
+          <li>[NEW] - DX Filter - Added Dedup Time/Freq difference setting (@aa5sh)</li>
+          <li>[NEW] - Rig Setting - Added RTS/DTR PTT Type support (issue #353)</li>
+          <li>[NEW] - Bandmap - Scrollbar position is saved per band (issue #415)</li>
+          <li>[NEW] - New Contact - Added a dynamic value completer for SIG field (issue #425)</li>
+          <li>[NEW] - Awards - Added SOTA/POTA/WWFF (@aa5sh issue #311)</li>
+          <li>[NEW] - Awards - Added Not-Worked Filter</li>
+          <li>[NEW] - New Contact - Added Long Path Azimuth info</li>
+          <li>[NEW] - POTA Fields allow a comma-delimited list of one or more POTA Refs</li>
+          <li>[NEW] - WSJTX tunes freq/mode like Rig if rig is disconnected</li>
+          <li>[CHANGED] - Alert Widget is a Dock Widget (issue #399)</li>
+          <li>[CHANGED] - QLog adds more information from callbook for WSJTX QSOs (issues #403 #405 #420)</li>
+          <li>[CHANGED] - File Open dialogs are not a native dialog under Linux (issue #427)</li>
+          <li>[CHANGED] - Profiles transferred to DB</li>
+          <li>[CHANGED] - LOV last_dates transferred to DB</li>
+          <li>[CHANGED] - DX Cluster - Login Callsign is always the base Callsign</li>
+          <li>[REMOVED] - Setting DXCC Date</li>
+          <li>Fix for MacOS Layout Geometry Restore (@aa5sh)</li>
+          <li>Fixed TQSL does not block GUI thread</li>
+          <li>Fixed MacOS build process (@aa5sh)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.37.2" date="2024-07-26">
+      <description>
+        <ul>
+          <li>Fixed Field QSL Send Via should be retained (issue #413)</li>
+          <li>Fixed Set rotator position fails if azimuth > 180 (issue #417)</li>
+          <li>Fixed Windows State/Size does not save in case of fullscreen (issue #418)</li>
+          <li>Fixed Significant rounding during azimuth calculation (issue #422)</li>
+          <li>Updated Simplified Chinese translation</li>
+          <li>Updated Spanish translaction</li>
+          <li>Added Italian translation (thx IK1VQY)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.37.1" date="2024-07-10">
+      <description>
+        <ul>
+          <li>Fixed QSO Table Callsign filter is not filled properly (issue #401)</li>
+          <li>Fixed DXC zero frequency for last QSO in case of FT8 QSOs (issue #404)</li>
+          <li>Fixed Callsign Context Menu does not work (issue #409)</li>
+          <li>Fixed QSO Detail Save and Edit buttons are not translated (issue #410)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.37.0" date="2024-07-01">
+      <description>
+        <ul>
+          <li>[NEW] - Added Shortcuts Editor (issue #293)</li>
+          <li>[NEW] - Added QO100 Bandplan to correctly categorize the DX Spots</li>
+          <li>[NEW] - Improveded detection of SH/DX SHF Spots</li>
+          <li>[NEW] - Online Map - Added WSJTX CQ Spots</li>
+          <li>[NEW] - WSJTX - Sortable View</li>
+          <li>[NEW] - Alerts - Sortable View</li>
+          <li>[NEW] - Added Spanish translation (thx LU1IDC)</li>
+          <li>[NEW[ - Added Search Callsign Clear Button (issue #396)</li>
+          <li>[CHANGED] - QRZ auth should be over POST with form data (issue #389)</li>
+          <li>[CHANGED] - Big CTY file is used</li>
+          <li>[CHANGED] - Callbook Country DXCC ID is used in case of difference from Big CTY</li>
+          <li>[CHANGED] - Removed ALT+W and CTRL+DEL shortcuts</li>
+          <li>[CHANGED] - Removed New Contact and Save Contact from Logbook Main Menu</li>
+          <li>Fixed Guantanamo KG4 Issue (issue #372)</li>
+          <li>Fixed QRZ Lookup Not Including Full Name - History (issue #388)</li>
+          <li>Fixed Spot Last QSO contains TX freq, should contain RX freq (issue #390)</li>
+          <li>Fixed Spot Last QSO must contain Freq in kHz (issue #391)</li>
+          <li>Fixed Bandmap select previous selected callsign issue (issue #394)</li>
+          <li>Fixed Malfunctioning tuning of WSJTX Alert spot</li>
+          <li>Fixed DXCC Status for FT4 Spots incorrectly identified in WSJTX</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

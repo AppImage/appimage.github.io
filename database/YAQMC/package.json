@@ -1,0 +1,20 @@
+{
+  "name": "@yaqmc/desktop",
+  "version": "0.1.1",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "description": "YAQMC Electron desktop host.",
+  "author": "YAQMC contributors",
+  "homepage": "https://github.com/YAQMC/YAQMC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YAQMC/YAQMC.git"
+  },
+  "desktopName": "org.yaqmc.desktop",
+  "main": "dist/main/index.js",
+  "dependencies": {
+    "@yaqmc/client": "*",
+    "electron-updater": "6.8.9"
+  }
+}

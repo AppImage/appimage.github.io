@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="28.5 28.5 455 455">
+  <defs>
+    <!-- پس‌زمینه دارک -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#11111b"/>
+    </linearGradient>
+
+    <!-- حاشیه نوری نئونی -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#51a2da" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#89b4fa" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#a6e3a1" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- گرادیان پکیج اصلی (Fedora Blue) -->
+    <linearGradient id="pkgTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#89b4fa"/>
+      <stop offset="100%" stop-color="#51a2da"/>
+    </linearGradient>
+    <linearGradient id="pkgLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3c6eb4"/>
+      <stop offset="100%" stop-color="#2a4e80"/>
+    </linearGradient>
+    <linearGradient id="pkgRight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2b528a"/>
+      <stop offset="100%" stop-color="#1c355a"/>
+    </linearGradient>
+
+    <!-- گرادیان شاخه‌های درختی -->
+    <linearGradient id="branchGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#89b4fa"/>
+      <stop offset="100%" stop-color="#a6e3a1"/>
+    </linearGradient>
+    <linearGradient id="branchGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#89b4fa"/>
+      <stop offset="100%" stop-color="#94e2d5"/>
+    </linearGradient>
+
+    <!-- افکت درخشش گره‌ها -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- پس‌زمینه کادر اصلی برنامه (Squircle) -->
+  <rect x="32" y="32" width="448" height="448" rx="105" fill="url(#bgGrad)"/>
+  <rect x="32" y="32" width="448" height="448" rx="105" fill="none" stroke="url(#borderGrad)" stroke-width="4"/>
+
+  <!-- خطوط شبکه درختی (گراف وابستگی‌ها) -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- خطوط متصل‌کننده به گره‌های ریشه -->
+    <path d="M 256 220 L 256 310" stroke="url(#branchGrad1)" stroke-width="7" stroke-dasharray="8 6" fill="black"/>
+    <path d="M 256 310 Q 190 310 140 370" fill="none" stroke="url(#branchGrad1)" stroke-width="7"/>
+    <path d="M 256 310 Q 322 310 372 370" fill="none" stroke="url(#branchGrad2)" stroke-width="7"/>
+    <path d="M 256 310 L 256 405" stroke="url(#branchGrad1)" stroke-width="7" fill="black"/>
+
+    <!-- شاخه‌های فرعی کوچک -->
+    <path d="M 140 370 L 95 420" stroke="#a6e3a1" stroke-width="5" stroke-dasharray="4 4" fill="black"/>
+    <path d="M 140 370 L 175 425" stroke="#a6e3a1" stroke-width="5" stroke-dasharray="4 4" fill="black"/>
+    <path d="M 372 370 L 337 425" stroke="#94e2d5" stroke-width="5" stroke-dasharray="4 4" fill="black"/>
+    <path d="M 372 370 L 417 420" stroke="#94e2d5" stroke-width="5" stroke-dasharray="4 4" fill="black"/>
+  </g>
+
+  <!-- جعبه پکیج ایزومتریک اصلی (Root Package) -->
+  <g id="PackageBox" filter="url(#glow)">
+    <!-- وجه بالا -->
+    <polygon points="256,95 336,138 256,181 176,138" fill="url(#pkgTop)"/>
+    <!-- وجه چپ -->
+    <polygon points="176,138 256,181 256,260 176,217" fill="url(#pkgLeft)"/>
+    <!-- وجه راست -->
+    <polygon points="256,181 336,138 336,217 256,260" fill="url(#pkgRight)"/>
+    
+    <!-- خطوط نوار چسب روی کارتن پکیج -->
+    <polygon points="256,115 286,131 256,147 226,131" fill="#cdd6f4" fill-opacity="0.3"/>
+    <polygon points="246,142 256,147 256,260 246,254" fill="#cdd6f4" fill-opacity="0.2"/>
+  </g>
+
+  <!-- گره‌های وابستگی (Dependency Nodes) -->
+  <!-- گره مرکزی اصلی -->
+  <circle cx="256" cy="310" r="14" fill="#89b4fa" stroke="#1e1e2e" stroke-width="4"/>
+
+  <!-- گره سمت چپ (سبز زمردی) -->
+  <g filter="url(#glow)">
+    <circle cx="140" cy="370" r="18" fill="#a6e3a1" stroke="#11111b" stroke-width="5"/>
+    <circle cx="140" cy="370" r="7" fill="#11111b"/>
+  </g>
+
+  <!-- گره سمت راست (فیروزه‌ای) -->
+  <g filter="url(#glow)">
+    <circle cx="372" cy="370" r="18" fill="#94e2d5" stroke="#11111b" stroke-width="5"/>
+    <circle cx="372" cy="370" r="7" fill="#11111b"/>
+  </g>
+
+  <!-- گره پایینی (آبی روشن) -->
+  <g filter="url(#glow)">
+    <circle cx="256" cy="405" r="15" fill="#89b4fa" stroke="#11111b" stroke-width="4"/>
+  </g>
+
+  <!-- زیرگره‌های ریز انتهایی ( برگ‌های درخت ) -->
+  <circle cx="95" cy="420" r="8" fill="#a6e3a1"/>
+  <circle cx="175" cy="425" r="8" fill="#a6e3a1"/>
+  <circle cx="337" cy="425" r="8" fill="#94e2d5"/>
+  <circle cx="417" cy="420" r="8" fill="#94e2d5"/>
+</svg>

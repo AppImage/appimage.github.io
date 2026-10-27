@@ -1,0 +1,18 @@
+{
+  "name": "teslacam-viewer-desktop",
+  "productName": "TeslaCam Viewer",
+  "version": "2.1.0",
+  "description": "TeslaCam Viewer as a desktop app: your Tesla's Sentry and dashcam clips, on your own computer",
+  "private": true,
+  "main": "./out/main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  },
+  "author": "TeslaCam Viewer contributors",
+  "license": "MIT",
+  "homepage": "https://github.com/darkmariachi/teslacamviewer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darkmariachi/teslacamviewer.git"
+  }
+}

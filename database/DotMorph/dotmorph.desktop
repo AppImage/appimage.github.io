@@ -1,0 +1,24 @@
+[Desktop Entry]
+Type=Application
+Name=DotMorph
+GenericName=File Converter
+Comment=Convert images, PDF, video, audio and documents from a radial menu
+Comment[ar]=حوّل الصور وPDF والفيديو والصوت والمستندات من قائمة دائرية
+Exec=dotmorph %F
+Icon=dotmorph
+Terminal=false
+StartupNotify=false
+Categories=Utility;FileTools;
+Keywords=convert;converter;pdf;png;jpg;webp;mp4;mp3;compress;
+MimeType=application/epub+zip;application/msword;application/pdf;application/postscript;application/rtf;application/vnd.ms-excel;application/vnd.ms-powerpoint;application/vnd.oasis.opendocument.presentation;application/vnd.oasis.opendocument.spreadsheet;application/vnd.oasis.opendocument.text;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.openxmlformats-officedocument.wordprocessingml.document;audio/aac;audio/flac;audio/mp4;audio/mpeg;audio/ogg;audio/vnd.wave;audio/x-ms-wma;audio/x-opus+ogg;audio/x-vorbis+ogg;audio/x-wav;image/avif;image/bmp;image/gif;image/heic;image/heif;image/jpeg;image/jxl;image/png;image/svg+xml;image/tiff;image/vnd.adobe.photoshop;image/vnd.microsoft.icon;image/webp;image/x-tga;image/x-xcf;text/csv;text/html;text/markdown;text/org;text/plain;text/rtf;text/x-rst;video/3gpp;video/mp2t;video/mp4;video/mpeg;video/quicktime;video/vnd.avi;video/webm;video/x-flv;video/x-m4v;video/x-matroska;video/x-ms-wmv;video/x-msvideo;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|kareem2099|DotMorph|latest|DotMorph-*x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.28
+X-AppImage-Payload-License=Apache-2.0

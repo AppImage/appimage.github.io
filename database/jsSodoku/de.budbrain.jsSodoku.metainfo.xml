@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsSodoku</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Budbrain's Sudoku</name>
+  <summary>Sudoku from 4×4 to 25×25 with 100 levels and a daily puzzle</summary>
+  <summary xml:lang="de">Sudoku von 4×4 bis 25×25 mit 100 Leveln und einem täglichen Rätsel</summary>
+
+  <description>
+    <p>
+      A quiet sudoku on notebook paper. A hundred levels lead from a 4×4 warm-up
+      to a 25×25 board, every one of them with exactly one solution.
+    </p>
+    <p xml:lang="de">
+      Ein ruhiges Sudoku auf Notizpapier. Hundert Level führen von einem 4×4 zum
+      Aufwärmen bis zu einem 25×25-Brett, jedes mit genau einer Lösung.
+    </p>
+    <ul>
+      <li>100 levels from 4×4 to 25×25, unique solution guaranteed</li>
+      <li>A daily puzzle in three sizes and three difficulties</li>
+      <li>Notes, hints, undo, zoom and a star rating per level</li>
+      <li>Every solved board is kept as a picture on the achievements wall</li>
+      <li>22 languages</li>
+    </ul>
+    <ul xml:lang="de">
+      <li>100 Level von 4×4 bis 25×25, immer mit eindeutiger Lösung</li>
+      <li>Ein tägliches Rätsel in drei Größen und drei Schwierigkeiten</li>
+      <li>Notizen, Tipps, Rückgängig, Zoom und Sterne je Level</li>
+      <li>Jedes gelöste Brett bleibt als Bild in der Erfolgs-Wand</li>
+      <li>22 Sprachen</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">de.budbrain.jsSodoku.desktop</launchable>
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <categories>
+    <category>Game</category>
+    <category>LogicGame</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main menu on notebook paper</caption>
+      <caption xml:lang="de">Das Hauptmenü auf Notizpapier</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jssodoku_01-menu.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A puzzle in play, with notes and the number row</caption>
+      <caption xml:lang="de">Ein Rätsel im Spiel, mit Notizen und Zahlenreihe</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jssodoku_02-playing.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The level list with a star rating per level</caption>
+      <caption xml:lang="de">Die Levelauswahl mit Sternen je Level</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jssodoku_03-levels.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A solved board with time and stars</caption>
+      <caption xml:lang="de">Ein gelöstes Brett mit Zeit und Sternen</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jssodoku_04-solved.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The daily puzzle in three sizes and three difficulties</caption>
+      <caption xml:lang="de">Das tägliche Rätsel in drei Größen und drei Schwierigkeiten</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jssodoku_05-daily.png</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>jsSodoku</binary>
+  </provides>
+
+  <releases>
+    <release version="1.4.0" date="2026-08-19">
+      <description>
+        <p>First Linux release — the port of the phone game to the desktop.</p>
+        <p xml:lang="de">Erste Linux-Fassung — die Portierung des Telefonspiels auf den Rechner.</p>
+      </description>
+    </release>
+  </releases>
+</component>

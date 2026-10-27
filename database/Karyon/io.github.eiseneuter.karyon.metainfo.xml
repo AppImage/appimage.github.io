@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.eiseneuter.karyon</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Karyon</name>
+  <summary>Radial launcher and task switcher for KDE Plasma</summary>
+  <developer id="io.github.eiseneuter">
+    <name>eiseneuter</name>
+  </developer>
+  <description>
+    <p>
+      Karyon is a radial overlay launcher and window manager for KDE Plasma.
+      By holding the right mouse button, Karyon opens a sleek, highly responsive
+      radial menu right at your cursor, providing instant access to open windows,
+      favorite applications, recent files, and 8-directional mouse gestures.
+    </p>
+  </description>
+  <launchable type="desktop-id">karyon.desktop</launchable>
+  <url type="homepage">https://github.com/eiseneuter/karyon</url>
+  <url type="bugtracker">https://github.com/eiseneuter/karyon/issues</url>
+  <provides>
+    <binary>karyon</binary>
+  </provides>
+  <content_rating type="oars-1.1" />
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/eiseneuter/karyon/main/resources/screenshot.png</image>
+      <caption>Karyon radial menu in action</caption>
+    </screenshot>
+  </screenshots>
+</component>

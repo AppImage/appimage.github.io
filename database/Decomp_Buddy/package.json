@@ -1,0 +1,24 @@
+{
+  "name": "decomp-buddy",
+  "version": "0.30.6",
+  "description": "Point it at a decomp/recomp repo; it sets the PC build up so you only drop in your game.",
+  "type": "module",
+  "main": "main.js",
+  "author": "Maddie",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.125.0",
+    "7zip-bin": "^5.2.0",
+    "adm-zip": "^0.6.1",
+    "electron-updater": "^6.8.9",
+    "marked": "^18.0.13",
+    "node-unrar-js": "^2.0.2",
+    "qrcode": "^1.5.4",
+    "zod": "^4.6.4"
+  },
+  "homepage": "https://decompbuddy.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TanookiStudios/decomp-buddy.git"
+  }
+}

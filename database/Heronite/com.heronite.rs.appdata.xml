@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream data: software centres (GNOME Software, Discover) show it for the packages. -->
+<component type="desktop-application">
+  <id>com.heronite.rs</id>
+  <name>Heronite</name>
+  <summary>Every game you own, on Linux, in one native launcher</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <developer id="io.github.rafaelgoulartb">
+    <name>RafaGoulartB</name>
+  </developer>
+  <description>
+    <p>
+      Heronite gathers Epic Games, sideloaded and Steam games and emulated ROMs in one
+      Collection, and launches them with Wine, Proton or natively.
+    </p>
+    <ul>
+      <li>Statuses, ratings, playtime, sessions and statistics for every game</li>
+      <li>Metadata and artwork from IGDB, Steam and Lutris</li>
+      <li>Wine and Proton manager, save backups with Ludusavi</li>
+      <li>A controller-first console mode</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">com.heronite.rs.desktop</launchable>
+  <url type="homepage">https://github.com/RafaelGoulartB/Heronite</url>
+  <url type="bugtracker">https://github.com/RafaelGoulartB/Heronite/issues</url>
+  <categories>
+    <category>Game</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <provides>
+    <binary>heronite-rs</binary>
+  </provides>
+</component>

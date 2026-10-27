@@ -1,0 +1,26 @@
+{
+  "name": "loaderly",
+  "productName": "Loaderly",
+  "version": "2.3.0",
+  "private": true,
+  "type": "module",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "lucide-react": "^1.21.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "x11": "2.3.0",
+    "yauzl": "^3.4.0"
+  },
+  "description": "Download, organize and edit video and audio with Loaderly.",
+  "author": {
+    "name": "VOIDKSA",
+    "url": "https://github.com/voidksa"
+  },
+  "homepage": "https://loaderly.app",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "desktopName": "com.loaderly.app.desktop",
+  "optionalDependencies": {
+    "electron-liquid-glass": "1.1.1"
+  }
+}

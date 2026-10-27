@@ -1,0 +1,18 @@
+{
+  "name": "remindme",
+  "private": true,
+  "version": "2.0.1",
+  "description": "A lightweight, cross-platform app to schedule and manage custom periodic reminders.",
+  "author": "Dennis Turco",
+  "homepage": "https://github.com/DennisTurco/RemindMe",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "date-fns": "^4.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.26.2",
+    "remark-gfm": "^4.0.0"
+  }
+}
