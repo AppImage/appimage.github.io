@@ -1,0 +1,19 @@
+{
+  "name": "drag-shift",
+  "productName": "DragShift",
+  "author": "aliyigit",
+  "version": "1.5.0",
+  "description": "Drag any file, press Shift, drop it on an action.",
+  "main": "main.js",
+  "dependencies": {
+    "jspdf": "2.5.1",
+    "jszip": "3.10.1",
+    "koffi": "^3.3.3",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "3.11.174"
+  },
+  "allowScripts": {
+    "electron@33.4.11": true
+  },
+  "homepage": "https://github.com/aytcode/Drag-Shift"
+}
