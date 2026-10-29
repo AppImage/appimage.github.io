@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d82f0"/>
+      <stop offset="1" stop-color="#1c46a6"/>
+    </linearGradient>
+    <linearGradient id="nib" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f2c037"/>
+      <stop offset="0.5" stop-color="#ffe58a"/>
+      <stop offset="1" stop-color="#d39500"/>
+    </linearGradient>
+    <linearGradient id="barrel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1b2433"/>
+      <stop offset="0.45" stop-color="#43546f"/>
+      <stop offset="1" stop-color="#121925"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="12" width="232" height="232" rx="54" fill="url(#bg)"/>
+  <!-- paper with folded corner -->
+  <path d="M50 40 h82 l40 40 v130 a10 10 0 0 1 -10 10 h-112 a10 10 0 0 1 -10 -10 v-160 a10 10 0 0 1 10 -10 z" fill="#ffffff"/>
+  <path d="M132 40 v30 a10 10 0 0 0 10 10 h30 z" fill="#c9d9f6"/>
+  <!-- text, one line highlighted -->
+  <rect x="58" y="96" width="62" height="9" rx="4.5" fill="#c3cddb"/>
+  <rect x="52" y="116" width="106" height="22" rx="4" fill="#ffd400"/>
+  <rect x="58" y="123" width="92" height="8" rx="4" fill="#8a6d00"/>
+  <rect x="58" y="150" width="96" height="9" rx="4.5" fill="#c3cddb"/>
+  <rect x="58" y="170" width="70" height="9" rx="4.5" fill="#c3cddb"/>
+  <rect x="58" y="190" width="86" height="9" rx="4.5" fill="#c3cddb"/>
+  <!-- fountain pen writing at the end of the highlight -->
+  <g transform="translate(160 140) rotate(42) scale(0.84)">
+    <path d="M0 0 L-17 -46 C-21 -58 -18 -70 -12 -78 L12 -78 C18 -70 21 -58 17 -46 Z" fill="url(#nib)" stroke="#8a6200" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M0 -6 L0 -44" stroke="#5c4100" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="0" cy="-48" r="5" fill="#5c4100"/>
+    <rect x="-16" y="-92" width="32" height="15" rx="3" fill="#d6dde8" stroke="#0e1520" stroke-width="2"/>
+    <rect x="-19" y="-140" width="38" height="50" rx="8" fill="url(#barrel)" stroke="#0e1520" stroke-width="2"/>
+  </g>
+</svg>
