@@ -34,11 +34,11 @@ desktop:
     Keywords: TOTP
     StartupNotify: true
     StartupWMClass: keyroost
-    X-AppImage-Version: 0.14.0
+    X-AppImage-Version: 0.15.0
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|framefilter|keyroost|latest|keyroost-*x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
-      created Signature made Tue Oct 20 03:17:34 2026 UTC                using EDDSA
+      created Signature made Thu Oct 29 00:42:17 2026 UTC                using EDDSA
       key F9E04EED9DC5DC94AB2E61006C81DC353794478B Can''t check signature: No public
       key'
     X-AppImage-Type: 2
