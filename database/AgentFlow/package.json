@@ -1,0 +1,21 @@
+{
+  "name": "agentflow",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "AgentFlow desktop workspace for multi-agent workflows",
+  "homepage": "https://github.com/v1xerunt/AgentFlow",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v1xerunt/AgentFlow.git",
+    "directory": "apps/desktop"
+  },
+  "author": "AgentFlow contributors",
+  "license": "AGPL-3.0-only",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "node-pty": "1.2.0-beta.15",
+    "electron-updater": "6.8.9"
+  },
+  "agentflowSigned": false
+}

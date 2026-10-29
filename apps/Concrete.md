@@ -1,0 +1,49 @@
+---
+layout: app
+
+permalink: /Concrete/
+description: "Concrete — a local Markdown vault for knowledge you can build on"
+license: "MIT"
+
+icons:
+  - Concrete/icons/1024x1024/concrete.png
+
+screenshots:
+  - Concrete/screenshot.png
+
+authors:
+  - name: "danielgraviet"
+    url: "https://github.com/danielgraviet"
+
+links:
+  - type: GitHub
+    url: danielgraviet/concrete
+  - type: Download
+    url: https://github.com/danielgraviet/concrete/releases
+
+desktop:
+  Desktop Entry:
+    Name: Concrete
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: concrete
+    StartupWMClass: concrete
+    X-AppImage-Version: 0.1.5
+    Comment: Concrete — a local Markdown vault for knowledge you can build on
+    Categories: Office
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.38
+    X-AppImage-Payload-License: MIT
+
+electron: {"name":"concrete","version":"0.1.5","description":"Concrete — a local Markdown vault for knowledge you can build on","desktopName":"concrete","author":"Daniel Graviet","license":"MIT","type":"module","main":"electron/main.cjs","dependencies":{"@anthropic-ai/claude-agent-sdk":"^0.3.273","@codemirror/autocomplete":"^6.20.0","@codemirror/commands":"^6.10.0","@codemirror/lang-cpp":"^6.0.0","@codemirror/lang-css":"^6.0.0","@codemirror/lang-go":"^6.0.0","@codemirror/lang-html":"^6.0.0","@codemirror/lang-java":"^6.0.0","@codemirror/lang-javascript":"^6.0.0","@codemirror/lang-json":"^6.0.0","@codemirror/lang-markdown":"^6.5.2","@codemirror/lang-python":"^6.0.0","@codemirror/lang-rust":"^6.0.0","@codemirror/lang-sql":"^6.0.0","@codemirror/lang-yaml":"^6.0.0","@codemirror/language":"^6.12.4","@codemirror/state":"^6.7.4","@codemirror/view":"^6.43.11","@daytonaio/sdk":"0.217.0","@lezer/highlight":"^1.2.3","@mdxeditor/editor":"^4.2.4","@modelcontextprotocol/sdk":"^1.30.0","@openai/codex-sdk":"^0.154.0","@radix-ui/react-icons":"^1.3.2","@radix-ui/themes":"^3.3.0","@vitejs/plugin-react":"latest","chokidar":"^5.0.0","fflate":"^0.8.3","katex":"^0.18.7","marked":"^18.0.13","pdfjs-dist":"^6.4.299","react":"latest","react-dom":"latest","react-markdown":"^10.1.0","rehype-katex":"^7.0.1","remark-breaks":"^4.0.0","remark-gfm":"^4.0.1","remark-math":"^6.0.0","ts-fsrs":"^5.4.2","unpdf":"^1.8.1","zod":"^4.6.5"}}
+---

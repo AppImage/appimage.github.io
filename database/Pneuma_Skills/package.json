@@ -1,0 +1,16 @@
+{
+  "name": "pneuma-skills-desktop",
+  "productName": "Pneuma Skills",
+  "version": "3.55.1",
+  "description": "Pneuma Skills — Desktop Client",
+  "author": {
+    "name": "pandazki",
+    "email": "onlrrr@gmail.com"
+  },
+  "homepage": "https://github.com/pandazki/pneuma-skills",
+  "main": "dist-electron/main/index.js",
+  "private": true,
+  "dependencies": {
+    "electron-updater": "^6.8.3"
+  }
+}

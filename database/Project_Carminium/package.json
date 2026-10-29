@@ -1,0 +1,22 @@
+{
+  "name": "Carminium",
+  "version": "1.0.22-0",
+  "description": "Carminium",
+  "main": "electron/main.js",
+  "author": {
+    "name": "Seirai Haraguchi",
+    "email": "chihuyou90@gmail.com"
+  },
+  "homepage": "https://gitlab.com/Seirai-Haraguchi/carminium/",
+  "license": "LGPL-3.0-or-later",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.2",
+    "koffi": "^3.1.4",
+    "music-metadata": "^11.14.0",
+    "pinyin-pro": "^3.28.2",
+    "sharp": "^0.35.3"
+  }
+}

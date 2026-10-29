@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata for the AppImage / Linux packages. 1.1.0 and 2026-10-01
+     are filled in by packaging/linux/build-appimage.sh from the release tag. -->
+<component type="desktop-application">
+  <id>io.github.nemu_x.SwissKnifeGraph</id>
+  <launchable type="desktop-id">swissknife-graph.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>SwissKnife for MS Graph</name>
+  <summary>Microsoft Graph desktop client for IT admins</summary>
+  <developer id="io.github.nemu-x">
+    <name>Nemu-x</name>
+  </developer>
+  <description>
+    <p>
+      A lightweight cross-platform desktop client for the Microsoft Graph API, built for
+      IT administrators who prefer clean UI actions over PowerShell scripts. One window
+      covers Entra ID users and groups, Teams and chats, mail, OneDrive and SharePoint,
+      Intune and devices, app registrations, licensing, audit logs, usage reports and
+      guided onboarding/offboarding runbooks.
+    </p>
+    <p>
+      The app is organised around tasks, not endpoints: every page is a grid of the jobs
+      it can do, and Ctrl+K finds a task by describing it in English or Russian.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/Nemu-x/SwissKnife-for-MS-Graph</url>
+  <url type="bugtracker">https://github.com/Nemu-x/SwissKnife-for-MS-Graph/issues</url>
+  <url type="help">https://github.com/Nemu-x/SwissKnife-for-MS-Graph/wiki</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Dashboard with tenant counts and license usage</caption>
+      <image>https://raw.githubusercontent.com/Nemu-x/SwissKnife-for-MS-Graph/main/docs/screenshots/dashboard.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Action-first Teams page</caption>
+      <image>https://raw.githubusercontent.com/Nemu-x/SwissKnife-for-MS-Graph/main/docs/screenshots/teams.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Utility</category>
+    <category>Network</category>
+  </categories>
+  <keywords>
+    <keyword>Microsoft</keyword>
+    <keyword>Graph</keyword>
+    <keyword>Entra</keyword>
+    <keyword>Intune</keyword>
+    <keyword>M365</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.1.0" date="2026-10-01"/>
+  </releases>
+</component>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 8 112 112">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00897B"/>
+      <stop offset="1" stop-color="#00695C"/>
+    </linearGradient>
+  </defs>
+  <!-- MD3-style rounded square -->
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)"/>
+  <!-- timer ring, three-quarter arc -->
+  <circle cx="64" cy="64" r="34" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="8"/>
+  <path d="M 64 30 A 34 34 0 1 1 30 64" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  <!-- pause glyph: the break -->
+  <rect x="50" y="50" width="10" height="28" rx="5" fill="#FFFFFF"/>
+  <rect x="68" y="50" width="10" height="28" rx="5" fill="#FFFFFF"/>
+</svg>

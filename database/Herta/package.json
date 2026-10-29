@@ -1,0 +1,15 @@
+{
+  "name": "@herta/gui",
+  "version": "0.1.7",
+  "private": true,
+  "license": "MIT",
+  "productName": "Herta",
+  "desktopName": "Herta.desktop",
+  "description": "Herta — the self that uses the agent",
+  "author": "PersonaCLI",
+  "type": "module",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "sherpa-onnx-node": "1.13.6"
+  }
+}

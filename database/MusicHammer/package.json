@@ -1,0 +1,14 @@
+{
+  "name": "musichammer",
+  "productName": "MusicHammer",
+  "version": "0.1.2",
+  "description": "Local, offline music stem separation with a focus on guitar",
+  "author": {
+    "name": "mimrock",
+    "email": "mimrock@users.noreply.github.com"
+  },
+  "main": "electron/main.js",
+  "private": true,
+  "license": "MIT",
+  "repository": "github:mimrock/musichammer"
+}

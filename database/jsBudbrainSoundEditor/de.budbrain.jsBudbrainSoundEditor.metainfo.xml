@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainSoundEditor</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsBudbrainSoundEditor</name>
+  <summary>Cut, clean up and polish audio files</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <!-- Derselbe Text wie im Snap Store (snap/snapcraft.yaml, dist/snap.txt). -->
+  <description>
+    <p>
+      A sound editor for your recordings and your music: cut, copy and paste with the waveform in view, zoom in down to a single sample, set markers and play just the part between two of them. Every step can be undone, and long files stay in memory as long as there is room.
+    </p>
+    <p>
+      Clean up and polish: normalize to a peak or a loudness target, fade in and out, remove background noise with a noise profile, find the tempo and the bass drum, and change the tempo with or without changing the pitch. The effects of the Budbrain sound apps are built in — equalizer, tube and compressor, limiter and FX studio — each with live preview.
+    </p>
+    <p>
+      Opens and saves WAV, AIFF, FLAC, Ogg Vorbis and Opus. Opens MP3, and saves MP3 when the MP3 encoder of the system is installed.
+    </p>
+    <ul>
+      <li>Cut, copy, paste, mix in, delete and trim</li>
+      <li>Zoom with the mouse wheel down to single samples</li>
+      <li>Markers: set, name, play or select between them</li>
+      <li>Undo without a fixed limit</li>
+      <li>Several files in tabs, and the last session comes back</li>
+      <li>Normalize to a peak or to loudness (LUFS), fade, reverse, invert, remove DC offset, change the sample rate</li>
+      <li>Noise removal with a noise profile and live preview</li>
+      <li>Tempo detection (BPM) with bass drum, beat grid and snapping</li>
+      <li>Change the tempo: keep the pitch, or like a turntable</li>
+      <li>Equalizer, tube and compressor, limiter and FX studio with live preview</li>
+      <li>Record from any input, choose the output</li>
+      <li>Level meters, statistics and loudness measurement</li>
+      <li>Light and dark design</li>
+      <li>Available in 47 languages</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">jsbudbrainsoundeditor.desktop</launchable>
+
+  <provides>
+    <binary>jsBudbrainSoundEditor</binary>
+    <mediatype>audio/x-wav</mediatype>
+    <mediatype>audio/flac</mediatype>
+    <mediatype>audio/ogg</mediatype>
+    <mediatype>audio/x-opus+ogg</mediatype>
+    <mediatype>audio/x-aiff</mediatype>
+    <mediatype>audio/mpeg</mediatype>
+  </provides>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>AudioVideoEditing</category>
+  </categories>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <!-- Die Aufnahmen aus dist/screenshots/, auf der Website unter
+       images/linux/ mit dem Praefix jsbudbrainsoundeditor_
+       (website-software/generate-site.sh). -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Waveform with markers, tempo and level meters</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsoundeditor_01-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The same in the light design</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsoundeditor_02-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Effects with live preview</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsoundeditor_03-effects.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Noise removal with a noise profile</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsoundeditor_04-denoise.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Bass drum and beat grid after tempo detection</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsoundeditor_05-tempo.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-10-12">
+      <description>
+        <p>First release: a sound editor with markers, undo without a fixed limit, noise removal, tempo detection and tempo change, the effects of the Budbrain sound apps and 47 languages.</p>
+      </description>
+    </release>
+  </releases>
+</component>

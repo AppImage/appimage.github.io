@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsMahjong</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Budbrain's Mahjong</name>
+  <summary>Relaxed mahjong solitaire with a hundred levels</summary>
+  <summary xml:lang="de">Ruhiges Mahjong-Solitär mit hundert Leveln</summary>
+
+  <description>
+    <p>
+      Find two tiles that look the same and lie free. They disappear. Clear the
+      table and the level is yours.
+    </p>
+    <p xml:lang="de">
+      Zwei Steine finden, die gleich aussehen und frei liegen. Sie
+      verschwinden. Wer den Tisch leer räumt, hat das Level.
+    </p>
+    <p>
+      The first levels are small and quick. Later ones pile up high and keep
+      you busy for a while — a hundred of them, and every one can be won.
+    </p>
+    <p xml:lang="de">
+      Die ersten Level sind klein und schnell vorbei. Später türmen sich die
+      Steine und beschäftigen eine Weile — hundert Stück, und jedes davon ist
+      zu schaffen.
+    </p>
+    <ul>
+      <li>A hundred levels, from a quick round to a long one</li>
+      <li>Ten different tables, so it never looks the same twice</li>
+      <li>A tip, a shuffle and an undo whenever you like</li>
+      <li>Up to three stars if you manage without help</li>
+      <li>Every table you clear stays as a picture</li>
+      <li>Available in 22 languages</li>
+    </ul>
+    <ul xml:lang="de">
+      <li>Hundert Level, von der kurzen Runde bis zur langen</li>
+      <li>Zehn verschiedene Tische — es sieht nie zweimal gleich aus</li>
+      <li>Tipp, Mischen und Zurück, wann immer man mag</li>
+      <li>Bis zu drei Sterne, wenn es ohne Hilfe gelingt</li>
+      <li>Jeder geräumte Tisch bleibt als Bild erhalten</li>
+      <li>In 22 Sprachen</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">de.budbrain.jsMahjong.desktop</launchable>
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <categories>
+    <category>Game</category>
+    <category>LogicGame</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+
+  <!-- The catalogue takes its own screenshot when this block is missing — in an
+       empty test container, which is the ugliest picture the game has. The URLs
+       point at the files generate-site.sh uploads for the website. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main menu on the jade table</caption>
+      <caption xml:lang="de">Das Hauptmenü auf dem Jadetisch</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsmahjong_01-menu.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A table in play, with tip, shuffle and undo</caption>
+      <caption xml:lang="de">Ein Tisch im Spiel, mit Tipp, Mischen und Zurück</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsmahjong_02-playing.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The level list, with a look at each table and your stars</caption>
+      <caption xml:lang="de">Die Levelauswahl mit einem Blick auf jeden Tisch und die Sterne</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsmahjong_03-levels.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A cleared level with time and stars</caption>
+      <caption xml:lang="de">Ein geräumtes Level mit Zeit und Sternen</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsmahjong_04-solved.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The achievements wall of the cleared boards</caption>
+      <caption xml:lang="de">Die Erfolgs-Wand der geräumten Bretter</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsmahjong_05-gallery.png</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>jsMahjong</binary>
+  </provides>
+
+  <releases>
+    <release version="1.1.0" date="2026-08-21">
+      <description>
+        <p>First Linux release — the port of the phone game to the desktop.</p>
+        <p xml:lang="de">Erste Linux-Fassung — die Portierung des Telefonspiels auf den Rechner.</p>
+      </description>
+    </release>
+  </releases>
+</component>

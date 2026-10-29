@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>comic-strip-browser</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>MIT</project_license>
+	<name>Comic Strip Browser</name>
+	<summary>A standalone PyQt6 application for browsing a selection of comic strips from GoComics and Comics Kingdom</summary>
+	<description>
+		<p>Browse a selection of comic strips from GoComics and Comics Kingdom. Features include calendar navigation, caching, and support for more than 90 popular titles, including Calvin and Hobbes, Peanuts, Garfield, Shoe, Pearls Before Swine, Bizarro, and more.</p>
+	</description>
+	<launchable type="desktop-id">comic-strip-browser.desktop</launchable>
+	<url type="homepage">https://github.com/DerLudditus/comic-strip-browser/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/DerLudditus/comic-strip-browser/main/ComicStripBrowser_Debian13_a.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>comic-strip-browser.desktop</id>
+	</provides>
+</component>

@@ -1,0 +1,13 @@
+{
+  "name": "@illusion/desktop",
+  "version": "0.4.14",
+  "description": "Illusion Agent 桌面版 - Electron 壳，内置 Python / Node.js 运行时",
+  "author": "YunTaiHua <3597489498@qq.com>",
+  "homepage": "https://github.com/YunTaiHua/illusion-agent",
+  "license": "MIT",
+  "private": true,
+  "main": "dist/main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

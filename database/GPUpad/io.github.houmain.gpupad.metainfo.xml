@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.houmain.gpupad</id>
+  
+  <name>GPUpad</name>
+  <summary>A flexible GLSL shader editor and IDE. </summary>
+  
+  <metadata_license>CC-BY-SA-4.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  
+  <description>
+    <p>
+      A lightweight editor for GLSL shaders of all kinds and a fully-featured IDE for developing GPU based algorithms.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">io.github.houmain.gpupad.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/houmain/gpupad/main/screenshot2.png</image>
+    </screenshot>
+  </screenshots>
+</component>

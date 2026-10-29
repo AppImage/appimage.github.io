@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>com.aptakube</id>
+	<metadata_license>FSFAP</metadata_license>
+	<project_license>LicenseRef-proprietary</project_license>
+	<name>Aptakube</name>
+	<summary>Modern, lightweight and multi-cluster Kubernetes management UI</summary>
+	<description>
+		<p>Aptakube is a Desktop Client for Kubernetes. You can connect to multiple clusters, manage workloads, view logs, compare resources, and a lot more.</p>
+	</description>
+	<launchable type="desktop-id">aptakube.desktop</launchable>
+	<url type="homepage">https://aptakube.com</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://aptakube.com/screenshot.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>aptakube.desktop</id>
+	</provides>
+</component>

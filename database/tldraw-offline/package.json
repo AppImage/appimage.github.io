@@ -1,0 +1,38 @@
+{
+  "name": "@tl/offline",
+  "version": "1.20.0",
+  "description": "A desktop app for tldraw",
+  "homepage": "https://tldraw.com",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "tldraw.com",
+    "email": "hello@tldraw.com",
+    "url": "https://tldraw.com"
+  },
+  "type": "module",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
+    "@fastify/static": "^10.1.2",
+    "@fastify/websocket": "^11.2.0",
+    "@noble/hashes": "^2.2.0",
+    "@parcel/watcher": "^2.5.6",
+    "@tl/file-format": "workspace:^",
+    "@tl/offline-server-core": "workspace:^",
+    "@tl/shared": "workspace:^",
+    "@tldraw/state": "5.5.0-next.c91b2de0a423",
+    "@tldraw/store": "5.5.0-next.c91b2de0a423",
+    "@tldraw/sync-core": "5.5.0-next.c91b2de0a423",
+    "@tldraw/tlschema": "5.5.0-next.c91b2de0a423",
+    "@tldraw/utils": "5.5.0-next.c91b2de0a423",
+    "dotenv": "^17.0.0",
+    "electron-updater": "^6.6.2",
+    "fastify": "^5.8.1",
+    "htmlparser2": "^12.0.0",
+    "multicast-dns": "^7.2.5",
+    "p-queue": "^9.2.0",
+    "vm2": "^3.11.5",
+    "ws": "^8.19.0"
+  },
+  "productName": "tldraw offline"
+}

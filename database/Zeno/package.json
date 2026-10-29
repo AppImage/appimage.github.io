@@ -1,0 +1,41 @@
+{
+  "name": "@zeno/desktop",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Desktop shell for the pi coding agent",
+  "homepage": "https://github.com/aletheics/zeno",
+  "author": "aletheics <noreply@users.noreply.github.com>",
+  "type": "module",
+  "main": "dist/main/main.mjs",
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "catalog:",
+    "@shadcn/react": "catalog:",
+    "@silvia-odwyer/photon-node": "catalog:",
+    "@zeno/agent-runtime": "workspace:*",
+    "@zeno/contracts": "workspace:*",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
+    "cmdk": "catalog:",
+    "electron-updater": "6.8.9",
+    "ghostty-web": "catalog:",
+    "highlight.js": "catalog:",
+    "katex": "catalog:",
+    "lucide-react": "catalog:",
+    "mermaid": "catalog:",
+    "node-pty": "catalog:",
+    "radix-ui": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-markdown": "catalog:",
+    "rehype-katex": "catalog:",
+    "rehype-sanitize": "catalog:",
+    "remark-gfm": "catalog:",
+    "remark-math": "catalog:",
+    "tailwind-merge": "catalog:",
+    "tw-animate-css": "catalog:",
+    "zustand": "catalog:"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "xodus-nexus",
+  "version": "0.3.6",
+  "description": "Xbox-inspired Microsoft Store game launcher for Linux",
+  "license": "MIT",
+  "author": "Xodus Nexus contributors",
+  "type": "module",
+  "main": "dist-electron/main/index.js",
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "allowScripts": {
+    "electron@44.8.0": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.21.5": true
+  }
+}

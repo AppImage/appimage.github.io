@@ -1,0 +1,56 @@
+# Once a week (and by hand): one issue, updated in place, that says what needs a
+# maintainer (pull requests that passed and wait for a review, manual checks),
+# what the automation is handling, the state of the catalog (entries without a
+# stored result, stale and dead entries), and whether the personal token that
+# starts the tests of bot-opened pull requests still works. It also sets the
+# needs-maintainer label exactly on the pull requests that are blocked on a
+# maintainer, so that they can be found among the thousands handled by bots.
+# code/health-report.sh writes the report; nothing from any pull request is run.
+
+name: Health report
+
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  report:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+      actions: read
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PAT: ${{ secrets.SCREENSHOT_UPLOAD_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the age of entries comes from the history of database/
+
+      - name: Write the report and label the pull requests that need a maintainer
+        run: |
+          bash code/health-report.sh --label > report.md
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+          MARKER='<!-- appimagehub-health-report -->'
+          # The one issue that carries the report (by its marker), else a new one
+          NUM=$(gh api --paginate "repos/$GITHUB_REPOSITORY/issues?state=open&creator=github-actions%5Bbot%5D&per_page=100" \
+                  --jq ".[] | select(.pull_request | not) | select(.body | contains(\"$MARKER\")) | .number" | head -n 1)
+          if [ -z "$NUM" ] ; then
+            NUM=$(gh api --paginate "repos/$GITHUB_REPOSITORY/issues?state=open&labels=health-report&per_page=100" --jq '.[] | select(.pull_request | not) | .number' | head -n 1)
+          fi
+          gh api "repos/$GITHUB_REPOSITORY/labels/health-report" >/dev/null 2>&1 || \
+            gh api -X POST "repos/$GITHUB_REPOSITORY/labels" -f name=health-report -f color=1d76db -f description="The weekly report on the state of the catalog and its automation" >/dev/null
+          if [ -n "$NUM" ] ; then
+            gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/$NUM" -F body=@report.md -f title="Catalog health report" >/dev/null
+            echo "Updated issue #$NUM"
+          else
+            NUM=$(gh api -X POST "repos/$GITHUB_REPOSITORY/issues" -f title="Catalog health report" -F body=@report.md -f "labels[]=health-report" --jq .number)
+            echo "Opened issue #$NUM"
+          fi

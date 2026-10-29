@@ -1,0 +1,38 @@
+{
+  "name": "retrogbfull-toolkit",
+  "version": "1.0.3",
+  "description": "Toolkit for building RetroGBFull projects",
+  "main": "./out/main/index.js",
+  "author": "Pablo Rodríguez García",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pablordgez/RetroGBFull-Toolkit.git"
+  },
+  "dependencies": {
+    "@clangd-wasm/core": "^15.0.7",
+    "@codingame/monaco-vscode-api": "^25.1.2",
+    "@codingame/monaco-vscode-cpp-default-extension": "^25.1.2",
+    "@codingame/monaco-vscode-environment-service-override": "^25.1.2",
+    "@codingame/monaco-vscode-explorer-service-override": "^25.1.2",
+    "@codingame/monaco-vscode-files-service-override": "^25.1.2",
+    "@codingame/monaco-vscode-keybindings-service-override": "^25.1.2",
+    "@codingame/monaco-vscode-lifecycle-service-override": "^25.1.2",
+    "@codingame/monaco-vscode-remote-agent-service-override": "^25.1.2",
+    "@codingame/monaco-vscode-secret-storage-service-override": "^25.1.2",
+    "@codingame/monaco-vscode-view-banner-service-override": "^25.1.2",
+    "@codingame/monaco-vscode-view-status-bar-service-override": "^25.1.2",
+    "@codingame/monaco-vscode-view-title-bar-service-override": "^25.1.2",
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@monaco-editor/react": "^4.7.0",
+    "extract-zip": "^2.0.1",
+    "monaco-editor": "^0.55.1",
+    "monaco-languageclient": "^10.7.0",
+    "react-router-dom": "^7.12.0",
+    "tar": "^7.5.13",
+    "vscode": "npm:@codingame/monaco-vscode-extension-api@^25.1.2",
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "wtd-core": "^4.0.1"
+  }
+}

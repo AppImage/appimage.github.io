@@ -1,0 +1,17 @@
+{
+  "name": "xyz.chatboxapp.app",
+  "productName": "xyz.chatboxapp.app",
+  "version": "1.20.3",
+  "description": "A desktop client for multiple cutting-edge AI models",
+  "author": {
+    "name": "Mediocre Company",
+    "email": "hi@chatboxai.com",
+    "url": "https://github.com/chatboxai"
+  },
+  "main": "./dist/main/main.js",
+  "dependencies": {
+    "@anthropic-ai/sandbox-runtime": "^0.0.34",
+    "@libsql/client": "^0.15.6",
+    "gray-matter": "^4.0.3"
+  }
+}

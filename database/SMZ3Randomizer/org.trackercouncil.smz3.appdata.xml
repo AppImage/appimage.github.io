@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <metadata_license>MIT</metadata_license>
+
+    <id>org.trackercouncil.smz3</id>
+    <name>SMZ3 Cas&apos; Randomizer</name>
+    <summary>Casual standalone version of the SMZ3 randomizer</summary>
+    <url type="homepage">https://github.com/TheTrackerCouncil</url>
+    <project_license>MIT</project_license>
+    <content_rating type="oars-1.1" />
+
+    <developer id="org.trackercouncil">
+        <name>The Tracker Council</name>
+    </developer>
+
+    <launchable type="desktop-id">org.trackercouncil.smz3.desktop</launchable>
+
+    <description>
+        <p>UI application for selecting, randomizing, and shuffling MSUs for various rom hacks and randomizers.</p>
+    </description>
+
+    <!-- Freedesktop Categories -->
+    <categories>
+        <category>Game</category>
+    </categories>
+
+    <keywords>
+        <keyword>development</keyword>
+        <keyword>programming</keyword>
+    </keywords>
+    <!-- 
+    <screenshots>
+        <screenshot type="default">
+            <image></image>
+        </screenshot>
+    </screenshots> -->
+
+    <releases>
+        <release version="10.0.1" date="2026-05-21"/>
+    </releases>
+
+</component>

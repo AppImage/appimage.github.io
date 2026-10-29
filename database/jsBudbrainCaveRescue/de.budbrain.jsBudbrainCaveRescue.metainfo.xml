@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainCaveRescue</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Budbrain Cave Rescue</name>
+  <summary>Fly into deep moon caves and bring stranded astronauts back home</summary>
+  <summary xml:lang="de">Fliege in tiefe Mondhöhlen und bring gestrandete Astronauten heim</summary>
+
+  <description>
+    <p>
+      Lift off from the moon base, find the way down into the caves and land
+      gently next to the stranded astronauts. They run to your ship and climb
+      aboard. Fly them back to the base, refuel and head out again.
+    </p>
+    <p xml:lang="de">
+      Starte von der Mondbasis, such den Weg hinab in die Höhlen und lande sanft
+      neben den gestrandeten Astronauten. Sie laufen zu deinem Schiff und steigen
+      ein. Flieg sie zurück zur Basis, tank auf und starte wieder.
+    </p>
+    <p>
+      Every world has its real gravity, from the Moon to Io, so every flight
+      feels different. The caves grow deeper and more winding from level to
+      level. Land too hard or scrape the rock and your shield takes the hit.
+    </p>
+    <p xml:lang="de">
+      Jede Welt hat ihre echte Schwerkraft, vom Mond bis Io, und jeder Flug
+      fühlt sich anders an. Von Level zu Level werden die Höhlen tiefer und
+      verwinkelter. Wer zu hart aufsetzt oder am Fels entlangschrammt, kostet
+      sein Schild.
+    </p>
+    <ul>
+      <li>100 levels on ten real worlds, each one checked to be solvable</li>
+      <li>Simple controls: four buttons, nothing more</li>
+      <li>Upgrade your ship with experience and credits</li>
+      <li>Fuel cans and shield cells to pick up along the way</li>
+      <li>Four difficulty levels, from Normal to Hardcore</li>
+      <li>A mission gallery with a map of every flight</li>
+      <li>Available in 44 languages</li>
+    </ul>
+    <ul xml:lang="de">
+      <li>100 Level auf zehn echten Welten, jedes auf Lösbarkeit geprüft</li>
+      <li>Einfache Steuerung: vier Knöpfe, mehr nicht</li>
+      <li>Schiff ausbauen mit Erfahrung und Credits</li>
+      <li>Kanister und Schildzellen zum Einsammeln unterwegs</li>
+      <li>Vier Schwierigkeitsstufen, von Normal bis Hardcore</li>
+      <li>Eine Missionsgalerie mit der Karte jedes Flugs</li>
+      <li>In 44 Sprachen</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">de.budbrain.jsBudbrainCaveRescue.desktop</launchable>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <!-- ACHTUNG: <url type="contact"> nimmt KEIN mailto: — appstreamcli verwirft
+       dann die ganze Datei, und die App erscheint in keinem Software-Center. -->
+  <url type="contact">https://www.budbrain.de/kontakt.html</url>
+
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+
+  <categories>
+    <category>Game</category>
+    <category>ArcadeGame</category>
+  </categories>
+
+  <keywords>
+    <keyword>cave</keyword>
+    <keyword>rescue</keyword>
+    <keyword>space</keyword>
+    <keyword>moon</keyword>
+    <keyword>astronaut</keyword>
+    <keyword>gravity</keyword>
+  </keywords>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>gamepad</control>
+  </supports>
+
+  <requires>
+    <display_length compare="ge">560</display_length>
+  </requires>
+
+  <!-- Ehrlich angegeben: Wandgeschütze, Drohnen und Wachposten, die man mit
+       Laser und Ausrüstung ausschalten kann — Comic-Stil, ohne Blut. -->
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">mild</content_attribute>
+  </content_rating>
+
+  <!-- Ohne <screenshots> nimmt AppImageHub selbst eines auf. Die URLs zeigen auf
+       die Bilder der Website (website-software/generate-site.sh, dieselben
+       Dateien wie dist/screenshots/); optimize-images.py laesst genau diese
+       PNGs auf dem Server stehen, weil sie hier genannt sind. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Rescued astronauts step out at the base</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/caverescue_01-delivery.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Landed deep in the cave</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/caverescue_02-cave.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>On the way over the Moon</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/caverescue_03-flight.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The main menu at the base</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/caverescue_04-menu.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Upgrading the ship in the hangar</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/caverescue_05-hangar.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.0.0" date="2026-10-07">
+      <description>
+        <p>First release.</p>
+        <p xml:lang="de">Erste Fassung.</p>
+      </description>
+    </release>
+  </releases>
+</component>

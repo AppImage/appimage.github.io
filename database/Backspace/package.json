@@ -1,0 +1,19 @@
+{
+  "name": "@backspace/desktop",
+  "version": "1.7.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "description": "Backspace",
+  "author": {
+    "name": "Jannis Braun",
+    "email": "backspace@backspace.chat"
+  },
+  "homepage": "https://github.com/TheZwiss/backspace",
+  "main": "dist/main.js",
+  "desktopName": "io.github.TheZwiss.backspace.desktop",
+  "dependencies": {
+    "dbus-next": "0.10.2",
+    "electron-updater": "^6.8.9",
+    "uiohook-napi": "^1.5.5"
+  }
+}

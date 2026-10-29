@@ -1,0 +1,28 @@
+{
+  "name": "kubermeister",
+  "version": "0.9.1",
+  "description": "Desktop Kubernetes client",
+  "private": true,
+  "license": "MIT",
+  "author": "Ararat Poghosyan",
+  "homepage": "https://github.com/kubermeister/kubermeister#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kubermeister/kubermeister.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kubermeister/kubermeister/issues"
+  },
+  "type": "module",
+  "main": "./out/main/index.mjs",
+  "engines": {
+    "node": ">=24",
+    "npm": ">=11.19"
+  },
+  "dependencies": {
+    "@kubernetes/client-node": "^2.0.0",
+    "electron-updater": "^6.8.9",
+    "js-yaml": "^5.4.2",
+    "zod": "^4.6.5"
+  }
+}

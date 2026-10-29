@@ -1,0 +1,14 @@
+{
+  "name": "diskpilot",
+  "productName": "DiskPilot",
+  "version": "2.1.2",
+  "description": "DiskPilot – Disk Space Analyzer (TreeSize clone)",
+  "author": {
+    "name": "mhkasif",
+    "email": "mhkasif97@gmail.com"
+  },
+  "main": "src/main/index.js",
+  "dependencies": {
+    "electron-updater": "^6.3.0"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "coffer",
+  "version": "0.3.4",
+  "description": "A capture buffer and prompt queue for AI-assisted work. Local-only.",
+  "main": "./out/main/index.js",
+  "author": "nuu-maan <n82238895@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@homebridge/dbus-native": "^0.7.8",
+    "@hugeicons/core-free-icons": "^4.3.0",
+    "@hugeicons/react": "^1.1.10",
+    "electron-updater": "^6.8.9",
+    "nanoid": "^5.0.9",
+    "uiohook-napi": "^1.5.5"
+  },
+  "homepage": "https://github.com/Nuu-maan/coffer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nuu-maan/coffer.git"
+  }
+}

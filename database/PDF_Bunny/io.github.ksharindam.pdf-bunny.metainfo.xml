@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2023-2026 Arindam Chaudhuri <arindamsoft94@gmail.com> -->
+<component type="desktop-application">
+  <id>io.github.ksharindam.pdf-bunny</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="io.github.ksharindam">
+    <name>Arindam Chaudhuri</name>
+  </developer>
+
+  <name>PDF Bunny</name>
+  <summary>A fast, simple Pdf Viewer</summary>
+  <description>
+    <p>
+      A fast pdf viewer based on Poppler or MuPdf.
+    </p>
+  </description>
+
+  <categories>
+    <category>Office</category>
+  </categories>
+
+  <launchable type="desktop-id">io.github.ksharindam.pdf-bunny.desktop</launchable>
+  <url type="homepage">https://ksharindam.github.io/pdf-bunny-viewer/</url>
+  <content_rating type="oars-1.0" />
+
+  <branding>
+    <color type="primary" scheme_preference="light">#f5f5b4</color>
+    <color type="primary" scheme_preference="dark">#757500</color>
+  </branding>
+
+  <screenshots>
+    <screenshot type="default">
+        <caption>Screenshot 1</caption>
+        <image>https://github.com/ksharindam/pdf-bunny-viewer/raw/main/data/screenshots/Screenshot1.jpg</image>
+      </screenshot>
+    <screenshot>
+        <caption>Screenshot 2</caption>
+        <image>https://github.com/ksharindam/pdf-bunny-viewer/raw/main/data/screenshots/Screenshot2.jpg</image>
+      </screenshot>
+    <screenshot>
+        <caption>Screenshot 3</caption>
+        <image>https://github.com/ksharindam/pdf-bunny-viewer/raw/main/data/screenshots/Screenshot3.jpg</image>
+      </screenshot>
+    </screenshots>
+
+
+</component>

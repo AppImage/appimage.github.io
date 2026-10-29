@@ -1,0 +1,41 @@
+{
+  "name": "prompt-self-tuning",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "LLM 提示词自动优化工具 - 纯前端 React 实现",
+  "author": "Ikaros-521",
+  "main": "electron/main.cjs",
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.2",
+    "@radix-ui/react-dialog": "^1.1.4",
+    "@radix-ui/react-label": "^2.1.1",
+    "@radix-ui/react-select": "^2.1.4",
+    "@radix-ui/react-separator": "^1.1.1",
+    "@radix-ui/react-slider": "^1.2.2",
+    "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-tabs": "^1.1.2",
+    "@radix-ui/react-toast": "^1.2.4",
+    "@radix-ui/react-tooltip": "^1.1.6",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dexie": "^4.0.10",
+    "dexie-react-hooks": "^1.1.7",
+    "i18next": "^24.2.0",
+    "lucide-react": "^0.469.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.4.0",
+    "recharts": "^2.15.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^5.0.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "electron",
+      "electron-winstaller"
+    ]
+  }
+}

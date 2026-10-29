@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.sliva_name.UltimaVLESS</id>
+  <name>UltimaVLESS</name>
+  <summary>Desktop VLESS/Xray VPN client</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="io.github.sliva_name">
+    <name>UltimaVPN</name>
+  </developer>
+  <description>
+    <p>
+      UltimaVLESS is an open-source desktop client for VLESS servers, built on Xray-core.
+      It supports Reality and Vision, subscriptions, a system proxy mode and a TUN mode
+      that routes all traffic of the system through the VPN.
+    </p>
+  </description>
+  <launchable type="desktop-id">ultima-vless-client.desktop</launchable>
+  <icon type="stock">ultima-vless-client</icon>
+  <categories>
+    <category>Network</category>
+  </categories>
+  <keywords>
+    <keyword>VPN</keyword>
+    <keyword>VLESS</keyword>
+    <keyword>Xray</keyword>
+    <keyword>Proxy</keyword>
+  </keywords>
+  <url type="homepage">https://github.com/sliva-name/ultimaVLESS</url>
+  <url type="bugtracker">https://github.com/sliva-name/ultimaVLESS/issues</url>
+  <url type="vcs-browser">https://github.com/sliva-name/ultimaVLESS</url>
+  <content_rating type="oars-1.1"/>
+</component>

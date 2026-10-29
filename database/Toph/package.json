@@ -1,0 +1,18 @@
+{
+  "name": "@toph/desktop",
+  "version": "0.0.8",
+  "private": true,
+  "description": "Toph is a modern dictation software",
+  "author": "YourTechBud <noorain@yourtechbud.studio>",
+  "type": "module",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "@ricky0123/vad-web": "^0.0.30",
+    "@toph/desktop-contracts": "workspace:*",
+    "@toph/desktop-ui": "workspace:*",
+    "better-sqlite3": "^13.0.1",
+    "drizzle-orm": "^0.45.2",
+    "electron-updater": "^6.8.3",
+    "zod": "^4.4.3"
+  }
+}

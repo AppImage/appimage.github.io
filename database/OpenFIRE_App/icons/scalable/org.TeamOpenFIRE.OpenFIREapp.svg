@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   viewBox="0 0 90.691005 90.691005"
+   id="svg4"
+   width="90.691002"
+   height="90.691002"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .cls-1 {
+        fill: #ed1a3b;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #00b3f0;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+      }
+    </style>
+  </defs>
+  <g
+     id="uuid-1225c850-ef75-4cdc-b195-48a4f32c03c2"
+     transform="translate(2,2)">
+    <g
+       id="uuid-860b055d-dac9-4be5-b553-a0b9bd726899">
+      <rect
+         x="-2"
+         y="-2"
+         width="90.691002"
+         height="90.691002"
+         ry="9.6002998"
+         fill="#2a2a2a"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1.1"
+         id="rect1"
+         style="display:inline" />
+      <path
+         class="cls-3"
+         d="M 86.6,40 H 81.3 C 79.6,22.2 65.4,7.9 47.6,6.3 V 0 h -7 V 6.1 C 22.8,7.9 8.5,22.1 6.9,40 h -7 v 7 h 7 c 1.7,17.8 15.9,32.1 33.7,33.7 v 5.6 h 7 V 80.7 C 65.4,79 79.7,64.8 81.3,47 h 5.3 z m -72.9,3.5 c 0,-16.8 13.6,-30.4 30.4,-30.4 16.8,0 28.4,11.8 30.2,26.9 H 40.6 V 73.7 C 25.5,72 13.7,59.1 13.7,43.5 Z M 47.6,73.6 V 60.9 H 59.8 V 55.2 H 47.6 V 46.9 H 74.3 C 72.7,60.9 61.6,72 47.6,73.6 Z"
+         id="path1"
+         style="display:inline;fill:#ffffff;fill-opacity:1" />
+    </g>
+    <circle
+       class="cls-1"
+       cx="24.9"
+       cy="49"
+       r="3.0999999"
+       id="circle1" />
+    <circle
+       class="cls-1"
+       cx="34"
+       cy="49"
+       r="3.0999999"
+       id="circle2" />
+    <circle
+       class="cls-1"
+       cx="24.9"
+       cy="57.799999"
+       r="3.0999999"
+       id="circle3" />
+    <circle
+       class="cls-1"
+       cx="34"
+       cy="57.799999"
+       r="3.0999999"
+       id="circle4" />
+  </g>
+  <g
+     id="Isolation_Mode"
+     data-name="Isolation Mode"
+     transform="translate(2,2)">
+    <path
+       class="cls-2"
+       d="M 44.3,20.2 C 33,20.2 23.6,28.7 22.2,39.7 h 4.7 c 1.3,-8.4 8.6,-14.9 17.4,-14.9 8.8,0 9.1,1.8 12.5,5.2 l 3.3,-3.3 C 55.9,22.5 50.3,20.2 44.4,20.2 Z"
+       id="path4" />
+  </g>
+</svg>

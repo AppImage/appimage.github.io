@@ -1,0 +1,47 @@
+---
+layout: app
+
+permalink: /AITracker/
+description: "Local-first dashboard for AI token usage, cost, skills and memory."
+
+icons:
+  - AITracker/icons/128x128/aitracker.png
+
+screenshots:
+  - AITracker/screenshot.png
+
+authors:
+  - name: "estelwalks"
+    url: "https://github.com/estelwalks"
+
+links:
+  - type: GitHub
+    url: estelwalks/aitracker
+  - type: Download
+    url: https://github.com/estelwalks/aitracker/releases
+
+desktop:
+  Desktop Entry:
+    Name: AITracker
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: aitracker
+    StartupWMClass: aitracker
+    X-AppImage-Version: 1.0.8
+    Comment: Local-first dashboard for AI token usage, cost, skills and memory.
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+
+electron: {"name":"aitracker-desktop","version":"1.0.8","description":"AITracker local AI development asset dashboard","private":true,"license":"SEE LICENSE IN LICENSE","main":"build/electron/main.js","sideEffects":false,"type":"module","repository":{"type":"git","url":"git+https://github.com/estelwalks/aitracker.git"},"homepage":"https://github.com/estelwalks/aitracker#readme","desktopName":"aitracker.desktop","bugs":{"url":"https://github.com/estelwalks/aitracker/issues"},"dependencies":{"@estelwalks/agent-threat-scanner":"^0.1.0","@fontsource-variable/inter":"^5.3.0","@fontsource-variable/jetbrains-mono":"^5.3.0","@fontsource-variable/noto-sans-jp":"^5.3.1","@fontsource-variable/noto-sans-kr":"^5.3.1","@fontsource-variable/noto-sans-sc":"^5.3.0","@radix-ui/react-accordion":"^1.2.12","@radix-ui/react-alert-dialog":"^1.1.15","@radix-ui/react-aspect-ratio":"^1.1.8","@radix-ui/react-avatar":"^1.1.11","@radix-ui/react-checkbox":"^1.3.3","@radix-ui/react-collapsible":"^1.1.12","@radix-ui/react-context-menu":"^2.2.16","@radix-ui/react-dialog":"^1.1.15","@radix-ui/react-dropdown-menu":"^2.1.16","@radix-ui/react-hover-card":"^1.1.15","@radix-ui/react-label":"^2.1.8","@radix-ui/react-menubar":"^1.1.16","@radix-ui/react-navigation-menu":"^1.2.14","@radix-ui/react-popover":"^1.1.15","@radix-ui/react-progress":"^1.1.8","@radix-ui/react-radio-group":"^1.3.8","@radix-ui/react-scroll-area":"^1.2.10","@radix-ui/react-select":"^2.2.6","@radix-ui/react-separator":"^1.1.8","@radix-ui/react-slider":"^1.3.6","@radix-ui/react-slot":"^1.2.4","@radix-ui/react-switch":"^1.2.6","@radix-ui/react-tabs":"^1.1.13","@radix-ui/react-toggle":"^1.1.10","@radix-ui/react-toggle-group":"^1.1.11","@radix-ui/react-tooltip":"^1.2.8","@tailwindcss/vite":"^4.2.1","@tanstack/react-query":"^5.101.1","@tanstack/react-router":"^1.170.16","@tanstack/react-start":"^1.168.26","class-variance-authority":"^0.7.1","clsx":"^2.1.1","cmdk":"^1.1.1","embla-carousel-react":"^8.6.0","input-otp":"^1.4.2","lucide-react":"^0.575.0","react":"^19.2.0","react-day-picker":"^9.14.0","react-dom":"^19.2.0","react-hook-form":"^7.71.2","react-resizable-panels":"^4.6.5","recharts":"^2.15.4","sonner":"^2.0.7","tailwind-merge":"^3.5.0","tailwindcss":"^4.2.1","tw-animate-css":"^1.3.4","vaul":"^1.1.2","vite-tsconfig-paths":"^6.0.2","zod":"^3.24.2"},"engines":{"node":">=24"},"overrides":{"tsup":{"esbuild":"0.28.2"},"test-exclude":{"glob":"10.5.0"}},"packageManager":"npm@10.9.2"}
+---

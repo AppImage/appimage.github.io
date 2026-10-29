@@ -1,0 +1,25 @@
+{
+  "name": "electron-vvt",
+  "version": "0.0.2",
+  "type": "module",
+  "author": {
+    "name": "徐晓伟",
+    "email": "xuxiaowei@xuxiaowei.com.cn",
+    "url": "https://xuxiaowei.com.cn"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/xuxiaowei-com-cn/electron-vvt#readme",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xuxiaowei-com-cn/electron-vvt.git"
+  },
+  "dependencies": {
+    "electron-log": "5.3.4",
+    "electron-store": "10.0.1",
+    "electron-updater": "6.6.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

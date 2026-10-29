@@ -1,0 +1,23 @@
+{
+  "name": "dockterm",
+  "version": "0.29.4",
+  "description": "Terminal-first workspace for Claude Code — files, Git, MCP, and skills panels on demand. No telemetry.",
+  "author": "Menua Vardanyan <taronmenua@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "main": "./out/main/index.js",
+  "homepage": "https://github.com/munvard/dockterm",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/munvard/dockterm.git"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "diff": "^9.0.0",
+    "dompurify": "^3.4.11",
+    "marked": "^18.0.5",
+    "node-pty": "^1.0.0",
+    "simple-git": "^3.27.0",
+    "zod": "^3.24.1"
+  }
+}

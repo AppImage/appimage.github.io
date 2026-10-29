@@ -1,0 +1,27 @@
+[Desktop Entry]
+Type=Application
+Name=Husi
+Name[zh_CN]=虎兕
+Name[zh_TW]=虎兕
+Comment=Husi is a non-professional proxy-set-based multiplatform proxy tool set.
+Comment[zh_CN]=虎兕 是一个非专业的基于代理集的跨平台代理工具集。
+Comment[zh_TW]=虎兕 是一個非專業的基於代理集的跨平台代理工具集。
+Exec=AppRun open %u
+Icon=fr.husi
+Terminal=false
+Categories=Network;
+StartupNotify=true
+StartupWMClass=fr-husi-DesktopMainKt
+MimeType=x-scheme-handler/husi;x-scheme-handler/sing-box;x-scheme-handler/ss;x-scheme-handler/socks;x-scheme-handler/socks4;x-scheme-handler/socks4a;x-scheme-handler/sock5;x-scheme-handler/vmess;x-scheme-handler/vless;x-scheme-handler/trojan;x-scheme-handler/trojan-go;x-scheme-handler/naive+https;x-scheme-handler/naive+quic;x-scheme-handler/hysteria;x-scheme-handler/hysteria2;x-scheme-handler/hy2;x-scheme-handler/tuic;x-scheme-handler/juicity;x-scheme-handler/sq;x-scheme-handler/shadowquic;x-scheme-handler/mieru;x-scheme-handler/anytls;x-scheme-handler/tt;
+X-AppImage-Version=2.1.6
+X-AppImage-Homepage=https://github.com/xchacha20-poly1305/husi
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|xchacha20-poly1305|husi|latest|fr.husi-*-linux-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.29

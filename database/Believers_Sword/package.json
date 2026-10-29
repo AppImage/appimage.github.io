@@ -1,0 +1,21 @@
+{
+  "name": "believers-sword",
+  "description": "Believers Sword is an application for believers community, it is used to study bible, also used for praying, social or connect with other believers.",
+  "author": "JenuelDev",
+  "version": "1.8.4",
+  "main": "./dist/main.js",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "dayjs": "^1.11.20",
+    "electron-dl": "^3.5.2",
+    "electron-log": "^4.4.8",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.1.1",
+    "electron-window-state": "^5.0.3",
+    "extract-zip": "^2.0.1",
+    "knex": "^3.2.9",
+    "sqlite3": "5.1.6",
+    "upath": "^2.0.1"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

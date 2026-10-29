@@ -1,0 +1,28 @@
+{
+  "name": "king-louie",
+  "version": "26.5.27",
+  "description": "Cross-platform Electron desktop chat application",
+  "main": "main.js",
+  "author": {
+    "name": "Fiscus Technology, LLC",
+    "email": "info@fiscus.technology"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "@mozilla/readability": "^0.6.0",
+    "@slack/bolt": "^4.6.0",
+    "cron-parser": "^5.5.0",
+    "discord.js": "^14.25.1",
+    "dompurify": "^3.3.3",
+    "electron-store": "^11.0.2",
+    "fast-glob": "^3.3.3",
+    "highlight.js": "^11.11.1",
+    "linkedom": "^0.18.12",
+    "marked": "^17.0.5",
+    "turndown": "^7.2.2",
+    "ws": "^8.20.0",
+    "xlsx": "^0.18.5",
+    "playwright": "^1.58.2"
+  }
+}

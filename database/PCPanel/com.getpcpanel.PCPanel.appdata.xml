@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata. Required by Flatpak and used by the .deb / app stores. -->
+<component type="desktop-application">
+  <id>com.getpcpanel.PCPanel</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>PCPanel</name>
+  <summary>Control software for PCPanel devices</summary>
+  <description>
+    <p>
+      Third-party / community controller software for PCPanel devices. Map dials and
+      sliders to volume, focus volume, WaveLink, OBS, MQTT, OSC and more.
+    </p>
+    <p>
+      This software is not affiliated with PCPanel Software.
+    </p>
+  </description>
+  <launchable type="desktop-id">com.getpcpanel.PCPanel.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>A device's knobs, sliders and buttons, with the connected integrations</caption>
+      <image>https://raw.githubusercontent.com/nvdweem/PCPanel/main/docs/images/main-window.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Binding an action to a knob</caption>
+      <image>https://raw.githubusercontent.com/nvdweem/PCPanel/main/docs/images/bind-control.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>RGB lighting with a live device preview</caption>
+      <image>https://raw.githubusercontent.com/nvdweem/PCPanel/main/docs/images/lighting.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/nvdweem/PCPanel</url>
+  <url type="bugtracker">https://github.com/nvdweem/PCPanel/issues</url>
+  <developer id="com.getpcpanel">
+    <name>nvdweem</name>
+  </developer>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="2.1.0" date="2026-09-28" />
+  </releases>
+</component>

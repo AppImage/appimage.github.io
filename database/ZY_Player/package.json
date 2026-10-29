@@ -1,0 +1,9 @@
+{
+  "name": "zy",
+  "version": "2.8.8",
+  "private": true,
+  "main": "background.js",
+  "dependencies": {
+    "electron-localshortcut": "^3.2.1"
+  }
+}

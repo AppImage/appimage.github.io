@@ -1,0 +1,11 @@
+{
+  "name": "voice-factory-electron",
+  "version": "0.1.1",
+  "private": true,
+  "description": "Electron frontend for Voice Factory",
+  "main": "main.js",
+  "voiceFactoryDistributionFlavor": "linux-nvidia",
+  "voiceFactoryBackendProfile": "nvidia",
+  "voiceFactoryDefaultComputeTarget": "gpu:0",
+  "voiceFactoryCudaChannel": "latest"
+}

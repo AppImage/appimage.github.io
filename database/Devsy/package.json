@@ -1,0 +1,22 @@
+{
+  "name": "devsy-desktop",
+  "version": "1.19.0",
+  "private": true,
+  "homepage": "https://devsy.sh",
+  "author": {
+    "name": "Devsy",
+    "email": "dev@devsy.sh"
+  },
+  "type": "module",
+  "main": "dist/main/index.js",
+  "dependencies": {
+    "chokidar": "^5.0.0",
+    "dompurify": "^3.4.7",
+    "electron-updater": "^6.8.3",
+    "node-pty": "^1.0.0",
+    "posthog-node": "^5.34.2",
+    "semver": "^7.8.5",
+    "svelte-spa-router": "^5.0.1",
+    "unique-names-generator": "^4.7.1"
+  }
+}

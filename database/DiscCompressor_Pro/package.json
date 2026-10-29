@@ -1,0 +1,17 @@
+{
+  "name": "disccompressor-pro",
+  "version": "2.3.1",
+  "description": "Convert disc images between BIN/CUE, GDI, CDI, ISO, CHD, CSO and ZSO",
+  "author": "DiscCompressor",
+  "homepage": "https://github.com/pwnedbygary/DiscCompressor-Pro",
+  "private": true,
+  "type": "module",
+  "main": "./out/main/index.js",
+  "desktopName": "disccompressor-pro.desktop",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "koffi": "^3.3.1"
+  }
+}

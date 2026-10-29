@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Name=PiST
+GenericName=Atari ST Assembly IDE
+Comment=Write, build, run and debug 68000 assembly for the Atari ST
+Exec=pist %f
+Icon=pist
+Terminal=false
+Categories=Development;IDE;
+MimeType=text/x-asm;
+Keywords=atari;st;68000;m68k;assembly;asm;hatari;vasm;
+StartupWMClass=pist
+X-AppImage-Version=0.8.7
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34
+X-AppImage-Payload-License=GPL-2.0

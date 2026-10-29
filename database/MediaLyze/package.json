@@ -1,0 +1,18 @@
+{
+  "name": "medialyze-desktop",
+  "version": "0.18.1",
+  "private": true,
+  "license": "AGPL-3.0",
+  "description": "Desktop packaging for the MediaLyze local media analysis app.",
+  "author": "Frederik Emmer",
+  "main": "main.cjs",
+  "overrides": {
+    "brace-expansion@1.1.14": "1.1.18",
+    "brace-expansion@2.1.0": "2.1.4",
+    "brace-expansion@5.0.6": "5.0.9",
+    "fast-uri": "4.1.2",
+    "js-yaml": "4.3.1",
+    "sharp": "0.35.3",
+    "tmp": "^0.2.7"
+  }
+}

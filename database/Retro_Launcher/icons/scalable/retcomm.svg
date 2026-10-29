@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Retro">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a2332"/>
+      <stop offset="100%" stop-color="#0d121a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5eead4"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <rect x="96" y="128" width="320" height="256" rx="28" fill="none" stroke="url(#accent)" stroke-width="28"/>
+  <circle cx="176" cy="256" r="28" fill="url(#accent)"/>
+  <rect x="240" y="220" width="120" height="24" rx="8" fill="url(#accent)"/>
+  <rect x="240" y="268" width="80" height="24" rx="8" fill="url(#accent)" opacity="0.7"/>
+</svg>

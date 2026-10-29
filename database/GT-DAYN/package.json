@@ -1,0 +1,22 @@
+{
+  "name": "gt-dayn",
+  "version": "1.0.2",
+  "description": "أداة إدارة الديون والمصاريف الشخصية — GT-DAYN",
+  "author": {
+    "name": "SalehGNUTUX",
+    "url": "https://github.com/SalehGNUTUX"
+  },
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/SalehGNUTUX/GT-DAYN",
+  "private": true,
+  "main": "platforms/electron/main.js",
+  "dependencies": {
+    "@capacitor-community/sqlite": "^6.0.0",
+    "@capacitor/android": "^6.2.1",
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/filesystem": "^6.0.0",
+    "@capacitor/share": "^6.0.0",
+    "sql.js": "^1.10.3"
+  }
+}

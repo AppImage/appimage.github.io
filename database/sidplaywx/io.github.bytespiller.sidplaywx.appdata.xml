@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>io.github.bytespiller.sidplaywx</id>
+    <name>sidplaywx</name>
+    <content_rating type="oars-1.1" />
+    <summary>A GUI player for Commodore 64 SID music files</summary>
+    <description>
+        <p>The sidplaywx is a GUI player for Commodore 64 SID chip tunes aiming to provide a feature-rich &amp; intuitive SID tune playback experience on the PC.</p>
+        <p>The current alpha version is fully usable, supporting QoL features like seeking, drag &amp; drop, unicode paths, DPI awareness and much more.</p>
+        <p>The sidplaywx uses libsidplayfp (with ReSIDfp) for ultimate quality in SID emulation, wxWidgets for native GUI on supported platforms, and PortAudio for audio output.</p>
+    </description>
+
+    <metadata_license>FSFAP</metadata_license>
+    <project_license>GPL-3.0-or-later</project_license>
+    <launchable type="desktop-id">io.github.bytespiller.sidplaywx.desktop</launchable>
+    <url type="homepage">https://github.com/bytespiller/sidplaywx</url>
+
+    <screenshots>
+        <screenshot type="default">
+            <caption>The main window (dark theme on Debian)</caption>
+            <image>https://raw.githubusercontent.com/bytespiller/sidplaywx/refs/heads/assets/screenshots/sidplaywx-debian-dark.png</image>
+        </screenshot>
+        <screenshot type="gnome:light">
+            <caption>The main window (light theme on Debian)</caption>
+            <image>https://raw.githubusercontent.com/bytespiller/sidplaywx/refs/heads/assets/screenshots/sidplaywx-debian-light.png</image>
+        </screenshot>
+    </screenshots>
+
+    <developer id="io.github.bytespiller">
+        <name>Jasmin Rutić</name>
+    </developer>
+
+    <categories>
+        <category>Audio</category>
+        <category>Player</category>
+        <category>GTK</category>
+    </categories>
+</component>

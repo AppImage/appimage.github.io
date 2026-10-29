@@ -1,0 +1,22 @@
+{
+  "name": "@crew/desktop",
+  "productName": "StandBye",
+  "version": "0.3.3",
+  "description": "BYOK desktop app for 24/7 agent teams",
+  "author": "StandBye <hello@navid.tr>",
+  "homepage": "https://standbye.navid.tr",
+  "repository": "https://github.com/mirzaaghazadeh/StandBye",
+  "license": "Apache-2.0",
+  "private": true,
+  "main": "./out/main/index.js",
+  "//desktopName": "Read by electron-builder (with linux.syncDesktopName) as the .desktop file name and the app_id/WM_CLASS Linux desktops match running windows against.",
+  "desktopName": "standbye.desktop",
+  "dependencies": {
+    "@crew/shared": "workspace:*",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "simple-icons": "^16.29.0",
+    "ws": "^8.18.3"
+  },
+  "//@crew/supervisor": "A devDependency on purpose, and it has to stay one. electron-builder packs every production dependency into app.asar no matter what `files` allows, and this one drags in the 190MB `claude` binary from @anthropic-ai/claude-agent-sdk-<platform>. The packaged app never loads that copy — main/index.ts resolves the supervisor from process.resourcesPath, where scripts/after-pack.cjs puts a pruned tree — so it was 270MB of bundle nobody could reach. Dev still resolves it from node_modules, which devDependencies satisfies."
+}

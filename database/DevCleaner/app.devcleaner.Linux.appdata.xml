@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>app.devcleaner.Linux</id>
+  <name>DevCleaner</name>
+  <summary>Find and clean developer caches</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0</project_license>
+  <developer_name>David Tereba</developer_name>
+  <url type="homepage">https://devcleaner.app/linux</url>
+  <description>
+    <p>DevCleaner for Linux scans developer caches and temporary files, explains cleanup risks, and can move selected Safe caches to Trash.</p>
+  </description>
+  <launchable type="desktop-id">app.devcleaner.Linux.desktop</launchable>
+  <provides>
+    <binary>devcleaner-linux</binary>
+  </provides>
+  <releases>
+    <release version="1.1.0" date="2026-10-12"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

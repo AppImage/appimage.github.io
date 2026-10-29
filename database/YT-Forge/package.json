@@ -1,0 +1,17 @@
+{
+  "name": "yt-forge",
+  "productName": "YT-Forge",
+  "version": "2.0.1",
+  "description": "A desktop universal video downloader powered by yt-dlp",
+  "main": "dist-electron/main.js",
+  "author": {
+    "name": "Suja",
+    "email": "sujarahaman.dms.727@gmail.com"
+  },
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "dependencies": {
+    "electron-store": "^8.2.0",
+    "ffmpeg-static": "^5.2.0",
+    "ffprobe-static": "^3.1.0"
+  }
+}

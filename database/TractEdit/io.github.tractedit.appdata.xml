@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.tractedit</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>TractEdit</name>
+  <summary>Interactive tractography bundle editor</summary>
+  <description>
+    <p>
+      TractEdit is a Python-based graphical interface for interactively
+      viewing, selecting, and editing tractography bundles in .trk, .tck, .trx, 
+      .vtk, and .vtp formats.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/marcotag93/TractEdit</url>
+  <url type="bugtracker">https://github.com/marcotag93/TractEdit/issues</url>
+  <launchable type="desktop-id">tractedit.desktop</launchable>
+  <provides>
+    <binary>tractedit</binary>
+  </provides>
+</component>

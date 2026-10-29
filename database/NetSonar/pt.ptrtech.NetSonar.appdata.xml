@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>pt.ptrtech.NetSonar</id>
+  <name>NetSonar</name>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+  <content_rating type="oars-1.0" />
+  <summary>Cross-platform network service monitoring, interface management, and speed tes</summary>
+  <description>
+    <p>NetSonar is a network diagnostics and monitoring tool for probing hosts and services with ICMP, TCP, UDP, TLS, DNS, NTP, HTTP, WebSocket, SSH, SMTP, IMAP, MQTT, STUN, and SIP.
+            Features protocol-aware latency checks, live single-service and multi-service response-time charts, network-interface inspection and configuration, and internet speed testing.
+            Designed for administrators and developers needing lightweight, cross-platform network analysis.
+        </p>
+  </description>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+  <recommends>
+    <display_length compare="ge">760</display_length>
+  </recommends>
+  <launchable type="desktop-id">pt.ptrtech.NetSonar.desktop</launchable>
+  <url type="homepage">https://github.com/sn4k3/NetSonar</url>
+  <developer id="pt.ptrtech">
+    <name>Tiago Conceição</name>
+  </developer>
+  <provides>
+    <binary>NetSonar</binary>
+  </provides>
+</component>

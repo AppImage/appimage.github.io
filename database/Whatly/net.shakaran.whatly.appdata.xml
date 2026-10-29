@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>net.shakaran.whatly</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Whatly</name>
+  <summary>Feature-rich WhatsApp Web client for the Linux desktop</summary>
+
+  <developer id="net.shakaran">
+    <name>Ángel Guzmán Maeso</name>
+  </developer>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#77a27d</color>
+    <color type="primary" scheme_preference="dark">#16461d</color>
+  </branding>
+
+  <description>
+    <p>
+      Whatly is a native desktop wrapper for WhatsApp Web, built on Qt
+      and QtWebEngine.  It brings WhatsApp out of the browser tab and into a
+      proper desktop application with system integration, privacy controls, and
+      customization options unavailable in a plain browser.
+    </p>
+    <p>
+      This is a fork maintained by Ángel Guzmán Maeso, based on the original
+      WhatSie created by Keshav Bhatt and released under the MIT licence.
+    </p>
+    <p>Core features:</p>
+    <ul>
+      <li>Multiple WhatsApp accounts: as separate windows or as tabs in one window, each with its own session and settings</li>
+      <li>Scheduled messages, sent later and delivered on the next launch if the app was closed when they came due</li>
+      <li>Fourteen chat themes, a chat wallpaper and custom CSS</li>
+      <li>Privacy blur that hides the chat list and open conversation until you hover</li>
+      <li>Choose the font family WhatsApp Web renders in, plus an adjustable interface font size</li>
+      <li>Spell checker with 31 languages, several checked at once</li>
+      <li>App lock with PIN protection and a configurable auto-lock timeout</li>
+      <li>Light and Dark themes, optionally following the system preference live</li>
+    </ul>
+    <p>Desktop integration:</p>
+    <ul>
+      <li>Native system notifications and custom in-app notification popups</li>
+      <li>System tray with an unread badge, an optional monochrome icon and a connection-status indicator</li>
+      <li>Unread count shown on the taskbar (Unity LauncherEntry: KDE, Dash-to-Dock and others)</li>
+      <li>Connection watchdog that reloads a stalled session, and optional automatic reload after a page crash</li>
+      <li>Global keyboard shortcuts and a built-in download manager</li>
+      <li>Per-session audio mute and notification suppression</li>
+      <li>HiDPI/4K scaling, configurable zoom and a custom user-agent string</li>
+      <li>Runs on Linux and Windows (plus an experimental macOS build); interface translated into 30 languages</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">net.shakaran.whatly.desktop</launchable>
+
+  <url type="homepage">https://github.com/shakaran/whatly</url>
+  <url type="bugtracker">https://github.com/shakaran/whatly/issues</url>
+  <url type="vcs-browser">https://github.com/shakaran/whatly</url>
+  <url type="donation">https://ko-fi.com/shakaran</url>
+
+  <keywords>
+    <keyword translate="no">WhatsApp</keyword>
+    <keyword>messaging</keyword>
+    <keyword>chat</keyword>
+    <keyword>communication</keyword>
+    <keyword>instant-messaging</keyword>
+    <keyword>social</keyword>
+  </keywords>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>A native desktop window for WhatsApp Web</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-chat.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Light and dark themes</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-lightdark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Chat themes</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-themes.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Multiple accounts</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-accounts.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>App lock and privacy blur</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-lock.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Multi-language spell checker</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-spellcheck.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Keyboard shortcuts</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-shortcuts.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Desktop notifications</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-notifications.png</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>whatly</binary>
+  </provides>
+
+  <content_rating type="oars-1.0" />
+
+  <releases>
+    <release version="7.6.5" date="2026-09-26">
+      <description>
+        <ul>
+          <li>WhatsApp's "Refresh to update" notice is handled in the collapsed chat list whenever it appears, including when it arrives while the list is already collapsed (#117)</li>
+          <li>The collapsed chat list no longer mistakes the filter row for an update notice (#117)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.6.4" date="2026-09-13">
+      <description>
+        <ul>
+          <li>The colour tray icon is sharp on HiDPI too: it is now rendered from the scalable app logo and composed at up to 256px, instead of upscaling a 64px raster (#112)</li>
+          <li>New optional setting to draw the unread count in red on the monochrome tray icon, so the number stands out while the glyph stays colourless (#112)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.6.3" date="2026-09-12">
+      <description>
+        <ul>
+          <li>The taskbar icon is sharp again while there are unread messages: the unread badge is now composited over the high-resolution app icon instead of the 64px tray artwork a HiDPI panel had to upscale (#112)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.6.2" date="2026-09-12">
+      <description>
+        <ul>
+          <li>Eight new interface languages, taking the total to 30: Portuguese (Portugal), Catalan, Romanian, Swedish, Galician, Danish, Norwegian Bokmål and Greek</li>
+          <li>A manual "Check for updates" action in the tray menu and the command palette that forces a check and reports the result either way (#114)</li>
+          <li>Sharper taskbar icon on portable and HiDPI setups: a 512x512 size, the scalable SVG on the window icon, and Wayland's xdg-toplevel-icon (#112)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.6.1" date="2026-09-08">
+      <description>
+        <ul>
+          <li>Settings are no longer lost on every launch, a 7.6.0 regression: the application and organization names are now set before the first setting is read, so the settings store is scoped correctly again</li>
+          <li>The same startup-ordering fix is expected to resolve the 100% CPU hang on restart (#98)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.6.0" date="2026-09-08">
+      <description>
+        <ul>
+          <li>The AppImage self-update now verifies the new image's signature before restarting into it, and rolls back a tampered one (#85)</li>
+          <li>The restart no longer risks wedging the new instance at 100% CPU, an AppImage-on-Wayland hang in particular (#98)</li>
+          <li>"Link with phone number" can be made to work again: the browser name reported while linking is now configurable (#43)</li>
+          <li>A global "boss key" (Ctrl+Alt+H) hides every window at once and suppresses message popups while hidden</li>
+          <li>The Flatpak build moves off the end-of-life KDE 6.9 runtime to KDE 6.10 (#111)</li>
+          <li>"Find in chats" is now reachable from the command palette</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.5.0" date="2026-09-07">
+      <description>
+        <ul>
+          <li>A fresh install fetches the spell-check dictionary for the system language on first run and bundles none, so a non-English user gets their own language instead of a bundled en_US (#110)</li>
+          <li>The release pipeline can sign the AppImage when a signing key is configured, groundwork for verifying self-updates (#85)</li>
+          <li>WhatsApp's own "Refresh to update" notice no longer wrecks the collapsed chat list; it is shown like the topmost chat instead (#109)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.4.0" date="2026-09-06">
+      <description>
+        <ul>
+          <li>Settings can be opened without a system tray: a small gear appears in the page when no tray is available (#103)</li>
+          <li>The app icon is sharp in the task bar again, including on Flatpak (#105)</li>
+          <li>Whatly auto-reloads to recover when WhatsApp Web's module loader collapses on a flaky network (#43)</li>
+          <li>With the custom window frame on, WhatsApp Web no longer stops loading older messages when switching chats (#104)</li>
+          <li>The "no H.264 codecs" notice now also explains why voice/video calls are greyed out (#97)</li>
+          <li>Scheduled messages send again whatever the interface language, sending in HD works and no longer nags per image, and wheel scrolling is smoother; plus an opt-in scroll-diagnostics switch for bug reports and a Windows spell-check fix</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.3.1" date="2026-08-23">
+      <description>
+        <p>A maintenance release:</p>
+        <ul>
+          <li>The NVIDIA-on-Wayland fix no longer forces XCB on setups where Wayland renders fine; it only relaunches on XCB if the backing store actually fails (#84)</li>
+          <li>The "storage bucket persistence denied" console error is gone, and the OpenType font-fallback log spam is quieted</li>
+          <li>The Windows/macOS codec notice no longer points at a package that does not exist, and now offers a real way through (#93)</li>
+          <li>Under the hood: unit-test coverage raised to about 90%, with OpenSSF Scorecard and Codecov added</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.3.0" date="2026-08-15">
+      <description>
+        <ul>
+          <li>Settings now has a live search box that filters the page to the settings that match (#39)</li>
+          <li>Two new interface languages, Bengali and Urdu, for 22 in total</li>
+          <li>The AppImage can update itself in place; on NVIDIA + Wayland the window no longer opens blank; a stuck media download explains itself; the tray badge counts past nine; and many diagnostics, translation and packaging fixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.2.2" date="2026-08-13">
+      <description>
+        <p>Two fixes:</p>
+        <ul>
+          <li>The "update available" notification is clickable again on KDE/Linux — it now uses the same notification path as messages, with an "Open" action (#74)</li>
+          <li>The spell-check language box opens on the first click instead of flashing and closing (a regression since 7.2.0) (#75)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.2.1" date="2026-08-13">
+      <description>
+        <p>A packaging point release (no application changes):</p>
+        <ul>
+          <li>Windows point releases now also ship a small update patch (.msp), built against the minor's x.y.0 installer, so an existing install can update by a couple of megabytes instead of re-downloading the whole ~140 MB</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.2.0" date="2026-08-12">
+      <description>
+        <p>Builds on 7.1.0, all local and private:</p>
+        <ul>
+          <li>AI (local Ollama or any OpenAI-compatible endpoint): one-click tone rewrites of your draft (more formal, friendlier, shorter), a digest of your unread chats, and reply reminders that reopen a chat when they come due</li>
+          <li>Do Not Disturb on demand with quick durations; switch the spell-check language mid-sentence</li>
+          <li>A linked account survives a corrupt or wiped profile without re-linking (automatic session backup + Service Worker recovery)</li>
+          <li>A low-disk warning offers to move the data folder before a full disk can corrupt it</li>
+          <li>Packaging: the Windows installer and portable zip carry the MSVC runtime; the update notice advises correctly per installation; the Linux .deb/.rpm ship all icons and AppStream data</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.1.0" date="2026-08-11">
+      <description>
+        <p>A feature release on top of 7.0.0:</p>
+        <ul>
+          <li>Spell-check dictionaries are downloadable per language: a fresh install ships only en_US (about 45 MB smaller) and fetches the rest on demand, each verified by SHA-256; never-bundled languages such as Esperanto can now be installed from the UI</li>
+          <li>Resize the custom window frame from every edge and corner</li>
+          <li>The unread badge is configurable and read from WhatsApp's own store, and the collapsed chat strip shows unread counts</li>
+          <li>No window is treated as the main one, and the running build identifies itself in the window and at startup</li>
+          <li>A clearer notice when WhatsApp Web fails to load, Noto Sans pulled in by the packages, a lighter Flatpak, and many account and window fixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="7.0.0" date="2026-08-03">
+      <description>
+        <p>A major feature release:</p>
+        <ul>
+          <li>Built-in AI assistant using any OpenAI-compatible endpoint, with a one-click helper to set up a private local model via Ollama</li>
+          <li>Inline translation, chat and media export, and undo-send</li>
+          <li>Reply straight from notifications, and a quick-compose overlay to send without opening the window</li>
+          <li>Native Wayland in the portable builds, and a progress bar for dropped attachments</li>
+          <li>Flatpak drag-and-drop now works from the Pictures, Videos, Documents and Music folders</li>
+          <li>Security: App Lock blocks sending while locked and stores the passcode as a salted hash instead of reversible Base64</li>
+          <li>Four more interface languages (Persian, Ukrainian, Vietnamese, Traditional Chinese), for 20 in total, plus new openSUSE and Gentoo packages</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.8.4" date="2026-07-31">
+      <description>
+        <p>A maintenance release:</p>
+        <ul>
+          <li>New "Font hinting" option under Settings → Performance (Automatic, None, Slight, Medium, Full), for when WhatsApp Web text looks heavy or uneven</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.8.3" date="2026-07-31">
+      <description>
+        <p>A maintenance release:</p>
+        <ul>
+          <li>Drag and drop no longer depends on the FileTransfer portal outside a sandbox, fixing attachments on some desktops</li>
+          <li>No more "HD quality" dialog loop when attaching sub-HD images with HD-by-default on</li>
+          <li>Chat themes also recolour the message options button fade</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.8.2" date="2026-07-30">
+      <description>
+        <p>A maintenance release:</p>
+        <ul>
+          <li>Add spell-check dictionaries without repacking: Whatly mirrors the bundled dictionaries into a writable user folder and picks up any .bdic you drop there</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.8.1" date="2026-07-30">
+      <description>
+        <p>A feature release:</p>
+        <ul>
+          <li>Group invite links (chat.whatsapp.com) now open WhatsApp Web's "Join group" preview</li>
+          <li>A sound for new-message notifications, on by default with a "Play sound" toggle</li>
+          <li>The call "Move to new window" popout now opens in its own Whatly window; voice and video calls work out of the box</li>
+          <li>Each account tab shows the WhatsApp Web version in its tooltip</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.8.0" date="2026-07-28">
+      <description>
+        <p>A feature release:</p>
+        <ul>
+          <li>Collapse the chat list to a strip of profile pictures, giving the conversation the width</li>
+          <li>A "Restart now" button for settings that only take effect at launch; the tray menu now brings the window to the front</li>
+          <li>Optionally keep the account strip with a single account, and optionally hide the title bar</li>
+          <li>Esperanto interface (a sixteenth language)</li>
+          <li>Drag and drop attachments now work inside the Flatpak sandbox</li>
+          <li>No more endless "render process exited" dialog loop when the page keeps crashing</li>
+          <li>Available on the AUR (whatly and whatly-bin)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.7.2" date="2026-07-28">
+      <description>
+        <p>Drag and drop files onto the window to send them as attachments (any file type), opening WhatsApp Web's media editor for images and videos or the document preview otherwise.</p>
+      </description>
+    </release>
+    <release version="6.7.1" date="2026-07-28">
+      <description>
+        <p>A small patch release:</p>
+        <ul>
+          <li>Windows releases now ship a proper .msi installer alongside the portable zip</li>
+          <li>Softened the monochrome tray icon outline so it is not noticeable on a dark panel</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.7.0" date="2026-07-27">
+      <description>
+        <p>A polish and fixes release:</p>
+        <ul>
+          <li>Lower idle memory: V8 now starts in optimize-for-size mode by default, with a toggle and a JS heap limit in Settings &gt; Performance</li>
+          <li>The monochrome tray icon now applies even when there are no unread messages, not only when a count is shown</li>
+          <li>Adding a second account is discoverable: the account bar with its "+" shows with a single account, and the tray menu gains an "Add account…" entry</li>
+          <li>The window is never stranded when the tray icon is hidden</li>
+          <li>Windows build and start-up fixes (spell-check tool lookup, and launching from the system directory)</li>
+          <li>The test suite no longer writes into your real settings</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.6.0" date="2026-07-26">
+      <description>
+        <p>A large feature release, plus a start-up fix:</p>
+        <ul>
+          <li>Send messages from the command line and an opt-in local HTTP API — text, media and reusable templates, to a phone number or to a contact or group by name</li>
+          <li>Cloud API backend: send through the Meta WhatsApp Business Cloud API with no browser session, and receive incoming messages via webhooks so auto-reply works over the cloud too</li>
+          <li>Auto-reply rules answer incoming messages (exact, contains, hashtag or regex)</li>
+          <li>Multi-window account tabs (Chrome-style), with detachable per-account windows and a resizable grid view</li>
+          <li>Zoom buttons in WhatsApp's own sidebar to scale the page live</li>
+          <li>Fixed a start-up crash on distros with a newer NSS (Debian 14, PikaOS): the packages now bundle the NSS PKCS#11 modules</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.5.0" date="2026-07-24">
+      <description>
+        <p>Fixes and refinements, several from community pull requests:</p>
+        <ul>
+          <li>Automatic recovery from a start-up crash: if the browser engine aborts before the page loads, the next launch falls back to safer software rendering, and Chromium's own output is logged for bug reports</li>
+          <li>Settings reorganised into themed, collapsible sections</li>
+          <li>Picking an emoji skin tone no longer closes the emoji panel</li>
+          <li>HD photos render as soon as linked devices receive them</li>
+          <li>The notification popup stays fully on-screen (top-right)</li>
+          <li>Consistent forward-slash download paths on every platform</li>
+          <li>On Windows, clicking the tray icon while the window is frontmost hides it again</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.4.0" date="2026-07-20">
+      <description>
+        <p>A large feature release:</p>
+        <ul>
+          <li>Command palette (Ctrl+K) with fuzzy search over every action, account and saved reply</li>
+          <li>Do Not Disturb schedule and keyword highlights for notifications</li>
+          <li>Recurring scheduled messages, plus a reminder mode that notifies instead of sending</li>
+          <li>Once-a-day update checker (opt-out) and a storage manager with its own Clear cache</li>
+          <li>Customisable keyboard shortcuts, with conflict detection</li>
+          <li>Profile backup and restore as a single .tar.gz</li>
+          <li>Lock Whatly when the desktop session locks</li>
+          <li>Screen sharing in calls now works: a screen/window picker plus PipeWire capture on Wayland</li>
+          <li>Quick reply (the composer is focused when you open a notification), focus mode and saved replies</li>
+          <li>Grid tiles now show the account name and unread count</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.3.0" date="2026-07-20">
+      <description>
+        <p>A sweep of engine-tuning, connectivity and customisation features:</p>
+        <ul>
+          <li>Performance &amp; Privacy settings: GPU, process-model, JavaScript-heap and HTTP-cache controls, plus a WebRTC IP-leak shield</li>
+          <li>Network proxy: system, direct, or a manual SOCKS5 / HTTP proxy with credentials</li>
+          <li>Start at login, a configurable interface scale, and an optional custom (frameless) window title bar</li>
+          <li>Portal-based notifications for Flatpak, selectable per delivery backend</li>
+          <li>Custom JavaScript addons, sandboxed and toggleable; custom CSS and addons are now stored per account</li>
+          <li>Grid view to show every in-window account at once, alongside tabs and separate windows</li>
+          <li>A first-run setup wizard</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.2.1" date="2026-07-19">
+      <description>
+        <p>Bug-fix and hardening release:</p>
+        <ul>
+          <li>Fix a crash when opening the automatic-theme setup on a system with no geolocation backend</li>
+          <li>Quit gracefully on SIGTERM (session managers, systemd)</li>
+          <li>Stop echoing Qt WebEngine's benign thread-teardown noise to the terminal</li>
+          <li>Restore the missing icons on the About dialog's buttons</li>
+          <li>Add a unit-test suite (~92% of the logic layer) plus integration coverage of the app</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.2.0" date="2026-07-18">
+      <description>
+        <p>Desktop-integration features and finer control:</p>
+        <ul>
+          <li>Taskbar unread badge via the Unity LauncherEntry protocol (KDE, Dash-to-Dock and others)</li>
+          <li>Adjustable interface font size, separate from the WhatsApp Web zoom</li>
+          <li>Optional automatic reload if the page process crashes</li>
+          <li>"Waiting for network" shown in the tray tooltip when disconnected</li>
+          <li>HiDPI/4K: QT_SCALE_FACTOR now scales the web content too; WHATLY_MAX_FPS lifts the frame-rate cap</li>
+          <li>Build a subset of spell-check dictionaries with -DWHATLY_DICTIONARIES</li>
+          <li>Optional Windows code signing via SignPath Foundation</li>
+          <li>Experimental macOS build (unsigned .dmg, community testing welcome)</li>
+          <li>Window and dialog sizes adapt to small screens such as a Linux phone</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.1.1" date="2026-07-18">
+      <description>
+        <p>Bug-fix release:</p>
+        <ul>
+          <li>Native notifications now use a high-resolution app icon, so the logo no longer looks blurry on desktops with large notification popups such as Cinnamon on Linux Mint (issue #2)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.1.0" date="2026-07-17">
+      <description>
+        <p>New features and more ways to install:</p>
+        <ul>
+          <li>Scheduled messages: write a message now and have it sent later; it still goes out on the next launch if the app was closed when it came due</li>
+          <li>Choose the font family WhatsApp Web renders text in, from the fonts installed on your system</li>
+          <li>Option to hide muted contacts' status updates</li>
+          <li>Wise added as a donation option</li>
+          <li>Flatpak and AppImage packaging, alongside the snap</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.0.0" date="2026-07-16">
+      <description>
+        <p>The app is rebranded WhatSie → Whatly, with a new teal identity. Highlights of this fork on top of upstream:</p>
+        <ul>
+          <li>Multiple WhatsApp accounts, as separate windows or as tabs in one window</li>
+          <li>Chat themes, chat wallpaper, custom CSS and a privacy blur</li>
+          <li>Working spell checker with several languages checked at once</li>
+          <li>Monochrome tray option, connection-status indicator and following the system light/dark theme</li>
+          <li>Native Windows 10+ support, a connection watchdog and many bug fixes</li>
+          <li>Automatic data migration from the previous WhatSie install (no re-login)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.1.0" date="2026-04-03">
+      <description>
+        <p>Minor release focused on build-system and runtime stability improvements:</p>
+        <ul>
+          <li>Migrated primary build workflow to CMake + Ninja for Qt 6 development</li>
+          <li>Refined Qt 6 WebEngine integration and permission handling paths</li>
+          <li>Improved desktop notification delivery by using org.freedesktop.Notifications directly on Qt 6</li>
+          <li>Improved session persistence behavior via consistent profile handling</li>
+          <li>Updated in-app theme application logic for current WhatsApp Web changes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.0.0" date="2026-03-26">
+      <description>
+        <p>Major release — Qt 6 port with significant improvements:</p>
+        <ul>
+          <li>Ported to Qt 6 and QtWebEngine 6 for better performance and long-term support</li>
+          <li>Reliable light/dark theme toggle without requiring a page reload</li>
+          <li>Persistent named WebEngine profile with proper cookie and storage handling</li>
+          <li>Improved permission handling for camera, microphone, and notifications</li>
+          <li>Centralised profile management and refactored codebase</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.16.3" date="2024-11-01" />
+    <release version="4.16.2" date="2024-10-26" />
+    <release version="4.16.1" date="2024-10-20" />
+    <release version="4.16.0" date="2024-10-09" />
+  </releases>
+</component>

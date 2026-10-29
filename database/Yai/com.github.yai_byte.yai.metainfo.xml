@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.github.yai_byte.yai</id>
+  <name>yai</name>
+  <summary>Fast, dependency-light AppImage package manager</summary>
+  <description>
+    <p>yai installs, updates, upgrades, rolls back and repairs Linux AppImage
+    applications. It resolves download URLs from GitHub releases, custom
+    repository indexes, AppImageHub feeds and project websites, and keeps every
+    installed app independently versioned with rollback snapshots.</p>
+  </description>
+  <launchable type="desktop-id">com.github.yai_byte.yai.desktop</launchable>
+  <url type="homepage">https://github.com/yai-byte/yai</url>
+  <url type="bugtracker">https://github.com/yai-byte/yai/issues</url>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="com.github.yai-byte">
+    <name>yai-byte</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.2.2" date="2026-09-27"/>
+  </releases>
+</component>

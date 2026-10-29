@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.evilmordy.yolotxtmaker</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>YOLO Label Tool</name>
+  <summary>YOLOTxtMaker: create and edit YOLO annotation files</summary>
+  <description>
+    <p>YOLO Label Tool (YOLOTxtMaker) draws rectangles, oriented boxes, and polygons on images and saves them as YOLO text labels. An empty label file marks a background image that has no objects.</p>
+  </description>
+  <launchable type="desktop-id">YOLOTxtMaker.desktop</launchable>
+  <provides>
+    <binary>YOLOTxtMaker</binary>
+  </provides>
+  <url type="homepage">https://github.com/evilmordy/yolo-label-tool</url>
+  <developer_name>YOLOTxtMaker</developer_name>
+  <content_rating type="oars-1.1"/>
+</component>

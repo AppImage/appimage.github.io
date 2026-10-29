@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 Digital Grease -->
+<component type="desktop-application">
+  <id>net.digitalgrease.FauxxDesktop</id>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-only</project_license>
+
+  <name>Fauxx Desktop Companion</name>
+  <summary>Generate realistic decoy web activity to pollute data-broker profiles</summary>
+
+  <description>
+    <p>
+      Fauxx Desktop Companion is a privacy command center for the desktop: it
+      generates realistic decoy web activity through synthetic personas to
+      pollute the profiles that data brokers and ad-tech build about you. It is
+      the cross-device companion to the Fauxx Android app, sharing the same
+      persona model so a household can present one coherent, deliberately
+      misleading picture across phone and desktop.
+    </p>
+    <p>
+      It is decoy-only and local-first by design: it never touches your real
+      accounts, never logs in anywhere, sends no telemetry, and keeps all state
+      in an encrypted store on your own machine.
+    </p>
+    <p>What it does:</p>
+    <ul>
+      <li>Coherent synthetic personas drawn from a real US Census ACS-PUMS distribution.</li>
+      <li>A real-browser decoy that drives a dedicated, isolated Chromium profile over the DevTools Protocol.</li>
+      <li>Cross-device coordination: pair with the phone over the LAN to run or rotate the same persona.</li>
+      <li>Per-persona egress (proxy, Tor, VPN) and DNS strategy, fail-closed so it never falls back to your real IP.</li>
+      <li>Measurement: KL-divergence and per-category drift, plus CSV/JSON/PDF efficacy snapshots.</li>
+    </ul>
+    <p>
+      The real-browser decoy uses your system-installed Chromium at run time.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">net.digitalgrease.FauxxDesktop.desktop</launchable>
+
+  <url type="homepage">https://github.com/digital-grease/fauxx-desktop</url>
+  <url type="bugtracker">https://github.com/digital-grease/fauxx-desktop/issues</url>
+  <url type="vcs-browser">https://github.com/digital-grease/fauxx-desktop</url>
+
+  <developer id="net.digitalgrease">
+    <name>Digital Grease</name>
+  </developer>
+
+  <provides>
+    <binary>fauxx-desktop</binary>
+  </provides>
+
+  <categories>
+    <category>Network</category>
+    <category>Security</category>
+  </categories>
+
+  <keywords>
+    <keyword>privacy</keyword>
+    <keyword>tracking</keyword>
+    <keyword>data-broker</keyword>
+    <keyword>decoy</keyword>
+    <keyword>persona</keyword>
+    <keyword>topics</keyword>
+  </keywords>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.3.0" date="2026-08-26">
+      <description>
+        <p>Fixes a blank-text window on Linux hosts with no sans-serif font configured, by bundling the UI typeface.</p>
+        <p>Repairs LAN device pairing: pairing is now symmetric with a clear error when only one side has paired, and the desktop shows and shares the addresses a phone can dial when mDNS discovery fails.</p>
+        <p>Fixes the browser extension refusing to install in Firefox and its forks.</p>
+        <p>Adds an option to confine decoy traffic to TCP port 443 for strict egress firewalls.</p>
+        <p>Adds a Check for updates button in Settings. It runs only when pressed; nothing checks in the background.</p>
+      </description>
+    </release>
+    <release version="0.2.1" date="2026-07-10">
+      <description>
+        <p>Packaging fix for the Linux AppImage release upload.</p>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-07-10">
+      <description>
+        <p>Adds a stable per-persona desktop device identity (user-agent and client hints) for the decoy browser.</p>
+      </description>
+    </release>
+  </releases>
+</component>

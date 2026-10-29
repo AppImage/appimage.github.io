@@ -1,0 +1,42 @@
+{
+  "name": "@research-copilot/app",
+  "version": "0.4.0",
+  "private": true,
+  "description": "AI-powered research assistant desktop application",
+  "homepage": "https://github.com/DIR-LAB/Research-Pilot",
+  "main": "./out/main/index.mjs",
+  "author": {
+    "name": "Dong Dai",
+    "email": "daidongly@gmail.com"
+  },
+  "dependencies": {
+    "@codemirror/lang-markdown": "^6.5.0",
+    "@codemirror/state": "^6.6.0",
+    "@codemirror/theme-one-dark": "^6.1.3",
+    "@codemirror/view": "^6.40.0",
+    "@mariozechner/pi-agent-core": "^0.70.2",
+    "@mariozechner/pi-ai": "^0.70.2",
+    "@mariozechner/pi-coding-agent": "^0.70.2",
+    "@milkdown/plugin-diagram": "^7.7.0",
+    "@milkdown/react": "^7.18.0",
+    "@sinclair/typebox": "^0.34.48",
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/addon-web-links": "^0.12.0",
+    "@xterm/xterm": "^6.0.0",
+    "adm-zip": "^0.5.16",
+    "codemirror": "^6.0.2",
+    "electron-updater": "^6.8.3",
+    "katex": "^0.16.28",
+    "lucide-react": "^0.469.0",
+    "mermaid": "^11.12.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-force-graph-2d": "^1.29.1",
+    "react-markdown": "^9.0.3",
+    "remark-gfm": "^4.0.0",
+    "zustand": "^5.0.3"
+  },
+  "optionalDependencies": {
+    "node-pty": "^1.1.0"
+  }
+}

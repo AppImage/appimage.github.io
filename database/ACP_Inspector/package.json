@@ -1,0 +1,35 @@
+{
+  "name": "acp-inspector",
+  "version": "1.1.3",
+  "private": true,
+  "description": "ACP Inspector - developer tool for testing and debugging ACP agents",
+  "author": {
+    "name": "Nan Qin",
+    "email": "qinnan0416@gmail.com",
+    "url": "https://newio.app"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/newioapp/acp-inspector",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/newioapp/acp-inspector.git"
+  },
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@agentclientprotocol/sdk": "^0.17.1",
+    "@electron-toolkit/utils": "^4.0.0",
+    "electron-store": "^8.2.0",
+    "lucide-react": "^0.577.0",
+    "zod": "^4.3.6",
+    "zustand": "^5.0.11"
+  },
+  "engines": {
+    "node": ">=20.19.4"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

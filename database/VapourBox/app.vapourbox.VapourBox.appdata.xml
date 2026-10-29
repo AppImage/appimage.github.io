@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata: what software centres and the AppImage catalog
+  (appimage.github.io) show for VapourBox. Installed by
+  Scripts/package-linux.sh to usr/share/metainfo/ in the AppImage.
+
+  Named .appdata.xml, not the newer .metainfo.xml, because the catalog's lint
+  and its listing generator only look for *appdata.xml; both names are valid
+  AppStream. For the same reason this sticks to tags a 2021 appstreamcli
+  knows (developer_name, no vcs-browser URL): that is what the catalog runs.
+
+  1.3.0 and 2026-10-19 are filled in at package time, so the release entry and
+  the screenshot (pinned to that release's tag) can never go stale.
+
+  The <id> is APPLICATION_ID (app/linux/CMakeLists.txt) and must match the
+  desktop file's name; packaging_test.dart asserts all three agree.
+-->
+<component type="desktop-application">
+  <id>app.vapourbox.VapourBox</id>
+  <launchable type="desktop-id">app.vapourbox.VapourBox.desktop</launchable>
+
+  <name>VapourBox</name>
+  <summary>Deinterlace, restore and convert video with VapourSynth and QTGMC</summary>
+  <developer_name>Stuart Cameron</developer_name>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <description>
+    <p>
+      VapourBox is a desktop app for archiving and converting video: tape
+      captures, camcorder footage, film scans, DVDs, and the digital files you
+      already have. It runs VapourSynth, QTGMC and FFmpeg, the tools the video
+      restoration community already uses, without requiring you to write a
+      script.
+    </p>
+    <ul>
+      <li>Converts DV, AVCHD, MPEG-2, MXF and ordinary MP4, MKV, AVI and MOV files, DVD folders and discs</li>
+      <li>Deinterlaces with QTGMC and reverses telecine, after detecting how the source is stored</li>
+      <li>Optional cleanup filters for tape noise, colour bleed, film dust and scratches, ghosting and more</li>
+      <li>Presets named after the source: VHS, DV camcorder tape, DVD and broadcast, anime, 8mm and Super 8 film</li>
+      <li>A side-by-side preview of the source and the processed result, and a queue for batches</li>
+      <li>Encodes to H.264, HEVC, ProRes and lossless formats, with hardware encoders where available</li>
+      <li>Transcribes speech to subtitles</li>
+    </ul>
+    <p>
+      The AppImage includes the processing components, so it works without a
+      network connection. It needs glibc 2.39 or newer (Ubuntu 24.04,
+      Debian 13).
+    </p>
+  </description>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Video</category>
+  </categories>
+  <keywords>
+    <keyword>deinterlace</keyword>
+    <keyword>QTGMC</keyword>
+    <keyword>VapourSynth</keyword>
+    <keyword>VHS</keyword>
+    <keyword>DV</keyword>
+    <keyword>DVD</keyword>
+    <keyword>convert</keyword>
+  </keywords>
+
+  <url type="homepage">https://github.com/StuartCameronCode/VapourBox</url>
+  <url type="bugtracker">https://github.com/StuartCameronCode/VapourBox/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>An interlaced capture with the original and the deinterlaced result side by side</caption>
+      <image type="source" width="2024" height="1624">https://raw.githubusercontent.com/StuartCameronCode/VapourBox/v1.3.0/docs/images/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.3.0" date="2026-10-19">
+      <url type="details">https://github.com/StuartCameronCode/VapourBox/releases/tag/v1.3.0</url>
+    </release>
+  </releases>
+</component>

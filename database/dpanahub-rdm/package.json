@@ -1,0 +1,21 @@
+{
+  "name": "dpanahub-rdm",
+  "private": true,
+  "version": "1.9.0",
+  "description": "Dpana Hub – ROM Download Manager - Explorador y gestor de descargas de ROMs (Myrient, LoLROMs)",
+  "author": "Bastian Aguirre (CRT Gamers Chile), Pablo M. Iglesias",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "engines": {
+    "node": "24.13.1"
+  },
+  "dependencies": {
+    "7zip-bin": "^5.2.0",
+    "better-sqlite3": "12.5.0",
+    "electron-log": "^5.4.3"
+  },
+  "overrides": {
+    "minimatch": "^10.2.1"
+  }
+}

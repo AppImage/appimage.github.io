@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.benoks.EShot</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>EShot</name>
+  <developer id="io.github.benoks">
+    <name>Benoks</name>
+  </developer>
+  <summary>Screenshot, annotation, OCR, upload, GIF and video capture tool</summary>
+  <icon type="stock">io.github.benoks.EShot</icon>
+  <description>
+    <p>
+      EShot is a native desktop screenshot workflow tool for Windows and Linux.
+      It captures regions, annotates images, copies or saves output, uploads
+      screenshots, extracts text with OCR, pins references, and records GIF or
+      MP4 captures.
+    </p>
+    <p>
+      On Linux, EShot integrates with KDE Plasma 6 and GNOME Wayland through
+      desktop portals for screenshots, global shortcuts, notifications, and
+      PipeWire screen recording.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.benoks.EShot.desktop</launchable>
+  <provides>
+    <binary>EShot</binary>
+  </provides>
+  <categories>
+    <category>Utility</category>
+    <category>Graphics</category>
+    <category>Photography</category>
+  </categories>
+  <url type="homepage">https://github.com/Benoks/EShot</url>
+  <url type="bugtracker">https://github.com/Benoks/EShot/issues</url>
+  <releases>
+    <release version="4.2.7" date="2026-08-10">
+      <description>
+        <p>Makes folder opening an explicit, optional notification action and restores capture shortcuts after selecting an entire screen on KDE Wayland.</p>
+      </description>
+    </release>
+    <release version="4.2.6" date="2026-08-03">
+      <description>
+        <p>Fixes capture-selection frame alignment and prevents the frame from showing through resize handles on scaled displays.</p>
+      </description>
+    </release>
+    <release version="4.2.5" date="2026-08-02">
+      <description>
+        <p>Adds single-edge capture selection resizing with compact midpoint handles and keeps the selection border visually consistent at fractional display scales.</p>
+      </description>
+    </release>
+    <release version="4.2.4" date="2026-08-01">
+      <description>
+        <p>Stabilizes simultaneous desktop and microphone audio recording on PipeWire and EasyEffects setups, while retaining compatibility with the GStreamer version used by supported Linux builds.</p>
+      </description>
+    </release>
+    <release version="4.2.3" date="2026-08-01">
+      <description>
+        <p>Fixes the capture guidance panel leaving trails when region selection starts and restores a compact, consistently sized application control window.</p>
+      </description>
+    </release>
+    <release version="4.2.2" date="2026-07-30">
+      <description>
+        <p>Polishes the compact capture panels, improves selection responsiveness and memory use, makes recording finalization non-blocking, adds optional settings-window size memory, and prevents package-managed AppImages from creating a second user installation.</p>
+      </description>
+    </release>
+    <release version="4.2.1" date="2026-07-29">
+      <description>
+        <p>Adds a consistent control window when EShot is launched normally, secure operating-system storage for OAuth tokens, and optional silent updates for self-managed installations that are at least two stable releases behind.</p>
+      </description>
+    </release>
+    <release version="4.2.0" date="2026-07-28">
+      <description>
+        <p>Improves text editing and resizing, adds OCR translation handoff, restores annotation shortcuts, and expands trayless GNOME support with reliable recording completion.</p>
+      </description>
+    </release>
+    <release version="4.1.6" date="2026-07-27">
+      <description>
+        <p>Adds free text and shape rotation, a focused recording setup panel with microphone selection, and recording-border lock and tray cancellation controls.</p>
+      </description>
+    </release>
+    <release version="4.1.5" date="2026-07-23">
+      <description>
+        <p>Eliminates subtle capture preview flickering while moving regions on fractionally scaled displays.</p>
+      </description>
+    </release>
+    <release version="4.1.4" date="2026-07-23">
+      <description>
+        <p>Keeps the physical selection size stable while moving a capture region on fractionally scaled displays.</p>
+      </description>
+    </release>
+    <release version="4.1.3" date="2026-07-22">
+      <description>
+        <p>Fixes unfinished annotations carrying into the next capture and reports the correct physical selection resolution on scaled displays.</p>
+      </description>
+    </release>
+    <release version="4.1.2" date="2026-07-19">
+      <description>
+        <p>Improves settings localization and layout, adds resilient visual search uploads, repairs TmpFiles links, removes the unavailable Litterbox provider, restores Yandex Disk, and improves Windows dependency caching.</p>
+      </description>
+    </release>
+    <release version="4.1.1" date="2026-07-18">
+      <description>
+        <p>Restores capture shortcuts after modal dialogs on Linux, fixes the XWayland color picker freeze, and makes the vertical Quick Settings tab responsive to longer translations.</p>
+      </description>
+    </release>
+    <release version="4.1.0" date="2026-07-17">
+      <description>
+        <p>Improves KDE Plasma and GNOME capture reliability, restores capture shortcuts after dialogs, fixes the annotation color picker and theme startup, and improves first-run GNOME shortcut and tray integration.</p>
+      </description>
+    </release>
+    <release version="4.0.9" date="2026-07-16">
+      <description>
+        <p>Adds a dedicated animated window capture mode on Windows, improves recording defaults and controls, and fixes Windows tray startup, audio device, and packaged SVG icon issues.</p>
+      </description>
+    </release>
+    <release version="4.0.8" date="2026-07-16">
+      <description>
+        <p>Fixes false missing AAC encoder errors on Linux when GStreamer plugin discovery takes longer during its first run.</p>
+      </description>
+    </release>
+    <release version="4.0.7" date="2026-07-16">
+      <description>
+        <p>Improves draggable capture-safe recording controls on Windows and Linux, fixes KDE Plasma full-screen recording geometry, adds experimental GNOME Wayland integration, and expands Linux portal and package-manager compatibility.</p>
+      </description>
+    </release>
+    <release version="4.0.6" date="2026-07-14">
+      <description>
+        <p>Adds automatic OCR language selection, a configurable capture help panel, dynamic settings tab sizing, immediate update state sharing, safer KDE Wayland capture authorization, and allows unrelated settings to save when an unchanged hotkey is unavailable.</p>
+      </description>
+    </release>
+    <release version="4.0.5" date="2026-07-14">
+      <description>
+        <p>Redesigns the GIF and video recording controls, adds GIF pause and resume, fixes clickable KDE Plasma notifications, and prevents translation tests from changing the saved application language.</p>
+      </description>
+    </release>
+    <release version="4.0.4" date="2026-07-13">
+      <description>
+        <p>Adds DNF dependency setup for Fedora and Nobara, localizes setup errors, makes the tray respond to a normal click, and falls back to the desktop shortcut portal when KDE cannot claim PrintScreen.</p>
+      </description>
+    </release>
+    <release version="4.0.3" date="2026-07-13">
+      <description>
+        <p>Rebuilds the Linux AppImage for baseline x86-64 CPUs and older glibc versions instead of inheriting CachyOS build-host requirements.</p>
+      </description>
+    </release>
+    <release version="4.0.2" date="2026-07-13">
+      <description>
+        <p>Reduces KDE Plasma 6 capture latency by preparing direct KWin screenshot access for integrated AppImages while preserving the cursor-free Spectacle fallback.</p>
+      </description>
+    </release>
+    <release version="4.0.1" date="2026-07-13">
+      <description>
+        <p>Polishes capture annotations, improves KDE Plasma 6 integration, fixes cursor-free Wayland screenshots and AppImage autostart, and restores reliable text entry on KDE/XWayland.</p>
+      </description>
+    </release>
+    <release version="4.0.0" date="2026-07-13">
+      <description>
+        <p>Adds the complete Linux and KDE Plasma 6 port, AppImage and native packages, Wayland capture and recording, Linux desktop integration, and selectable Google Lens or Yandex visual search.</p>
+      </description>
+    </release>
+    <release version="3.1.0" date="2026-07-09">
+      <description>
+        <p>Windows maintenance release preceding the experimental Linux port.</p>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1" />
+</component>

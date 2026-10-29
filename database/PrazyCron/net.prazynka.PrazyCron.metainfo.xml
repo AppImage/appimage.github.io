@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>net.prazynka.PrazyCron</id>
+  <name>PrazyCron</name>
+  <summary>Cron made simple</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>PrazyCron Task Manager provides graphical and terminal interfaces for inspecting, validating, backing up, and modifying Linux Cron jobs and systemd timers.</p>
+    <p>The built-in Cron analyzer works offline and is selected by default. Optional local and online explanation providers can be configured separately.</p>
+  </description>
+  <url type="homepage">https://github.com/Prazynka/prazycron</url>
+  <url type="bugtracker">https://github.com/Prazynka/prazycron/issues</url>
+  <url type="vcs-browser">https://github.com/Prazynka/prazycron</url>
+  <developer id="io.github.prazynka"><name>Prazynka</name></developer>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Prazynka/prazycron/main/docs/images/gui-dark-en.png</image>
+      <caption>PrazyCron graphical interface using the default dark theme and English language</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Prazynka/prazycron/main/docs/images/tui-dark-en.png</image>
+      <caption>PrazyCron terminal interface</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <launchable type="desktop-id">prazycron.desktop</launchable>
+  <provides><binary>prazycron</binary></provides>
+  <categories><category>System</category><category>Utility</category></categories>
+  <releases><release version="2.1.0" date="2026-08-04"/><release version="2.0.2" date="2026-08-04"/><release version="2.0.1" date="2026-08-04"/><release version="2.0.0" date="2026-08-04"/><release version="1.4.5" date="2026-08-04"/><release version="1.4.4" date="2026-08-04"/><release version="1.4.3" date="2026-08-04"/><release version="1.4.2" date="2026-08-04"/><release version="1.4.1" date="2026-08-04"/><release version="1.4.0" date="2026-08-04"/></releases>
+</component>

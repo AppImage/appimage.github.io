@@ -1,0 +1,19 @@
+{
+  "name": "kitab",
+  "version": "1.0.0",
+  "description": "Kitab — Azerbaijan National Library Downloader",
+  "author": "Javid Agha <javid@cavid.info>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cavidaga/kitab.git"
+  },
+  "main": "src/main/main.js",
+  "dependencies": {
+    "@fontsource/dm-mono": "^5.3.0",
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/syne": "^5.3.0",
+    "pdf-lib": "^1.17.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

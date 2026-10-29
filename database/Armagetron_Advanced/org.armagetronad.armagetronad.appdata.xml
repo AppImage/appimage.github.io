@@ -20,20 +20,28 @@
     </p>
   </description>
   
-  <!-- <launchable type="desktop-id">org.armagetronad.armagetronad.desktop</launchable> -->
+  <x-flatpak-launchable type="desktop-id">org.armagetronad.armagetronad.desktop</x-flatpak-launchable>
   <screenshots>
     <screenshot type="default">
-      <image>http://www.armagetronad.org/screenshots/ss_fort_1.png</image>
+      <image>https://www.armagetronad.org/screenshots/ss_fort_1.png</image>
     </screenshot>
     <screenshot>
-      <image>http://www.armagetronad.org/screenshots/ss_sumo_1.png</image>
+      <image>https://www.armagetronad.org/screenshots/ss_sumo_1.png</image>
     </screenshot>
     <screenshot>
-      <image>http://www.armagetronad.org/screenshots/screenshot_23.png</image>
+      <image>https://www.armagetronad.org/screenshots/screenshot_23.png</image>
     </screenshot>
   </screenshots>
 
-  <url type="homepage">http://www.armagetronad.org</url>
+  <url type="homepage">https://www.armagetronad.org</url>
   <url type="bugtracker">https://gitlab.com/armagetronad/armagetronad/-/issues</url>
+
+  <releases>
+    <release version="0.2.9.2.3" date="2024-03-17"/>
+  </releases>
+
+  <x-flatpak-content_rating type="oars-1.1">
+    <content_attribute id="social-chat">moderate</content_attribute>
+  </x-flatpak-content_rating>
 
 </component>

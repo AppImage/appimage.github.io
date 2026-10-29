@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.aaddrick.claude-desktop-debian</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <developer id="io.github.aaddrick">
+    <name>aaddrick</name>
+  </developer>
+
+  <name>Claude Desktop</name>
+  <summary>Unofficial desktop client for Claude AI</summary>
+
+  <description>
+    <p>
+      Provides a desktop experience for interacting with Claude AI, wrapping the web interface.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.aaddrick.claude-desktop-debian.desktop</launchable>
+
+  <icon type="stock">io.github.aaddrick.claude-desktop-debian</icon>
+  <url type="homepage">https://github.com/aaddrick/claude-desktop-debian</url>
+  <screenshots>
+      <screenshot type="default">
+          <image>https://github.com/user-attachments/assets/93080028-6f71-48bd-8e59-5149d148cd45</image>
+      </screenshot>
+  </screenshots>
+  <provides>
+    <binary>AppRun</binary>
+  </provides>
+
+  <categories>
+    <category>Network</category>
+    <category>Utility</category>
+  </categories>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="2.9939.4-3.3.3" date="2026-10-01">
+      <description>
+        <p>Version 2.9939.4-3.3.3.</p>
+      </description>
+    </release>
+  </releases>
+
+</component>

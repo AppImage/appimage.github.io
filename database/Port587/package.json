@@ -1,0 +1,16 @@
+{
+  "name": "port587",
+  "version": "1.1.0",
+  "description": "Desktop email client for multiple senders — sending stats, sandbox testing, and more",
+  "main": "dist/electron/main.js",
+  "author": "Port587",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.13.0",
+    "date-fns": "^4.1.0",
+    "prismjs": "^1.30.0",
+    "react-router-dom": "^7.13.0",
+    "recharts": "^3.7.0",
+    "zustand": "^5.0.0"
+  }
+}

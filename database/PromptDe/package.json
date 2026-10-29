@@ -1,0 +1,22 @@
+{
+  "name": "promptde",
+  "version": "0.1.9",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "desktop/main.mjs",
+  "desktopName": "promptde",
+  "description": "Voice-to-agent prompt compiler for Hindi, English, and Hinglish.",
+  "homepage": "https://github.com/ITISH7/PromptDe#readme",
+  "author": "Itish Jain",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ITISH7/PromptDe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ITISH7/PromptDe/issues"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

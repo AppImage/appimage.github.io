@@ -1,0 +1,32 @@
+{
+  "name": "rigcontrol-web",
+  "private": true,
+  "version": "1.5.0",
+  "license": "Apache-2.0",
+  "author": "Jason Weisberger NT0Y",
+  "homepage": "https://github.com/jbdubbs/Rig-Control-Web",
+  "description": "A web-based frontend for hamlib rigctld for local installation and portable backend capabilities.",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "type": "module",
+  "main": "dist-electron/main.cjs",
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "bcryptjs": "^3.0.3",
+    "clsx": "^2.1.1",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.3",
+    "libopus-node": "^1.3.1",
+    "lucide-react": "^0.546.0",
+    "naudiodon": "github:jbdubbs/naudiodon-gcc15#v2.5.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "selfsigned": "^5.5.0",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
+    "tailwind-merge": "^3.5.0"
+  }
+}

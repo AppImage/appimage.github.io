@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <title>Penguins GUI</title>
+  <rect x="4" y="4" width="120" height="120" rx="26" fill="#264653"/>
+  <ellipse cx="64" cy="66" rx="35" ry="46" fill="#17212b"/>
+  <ellipse cx="64" cy="77" rx="25" ry="31" fill="#f5f5ef"/>
+  <ellipse cx="52" cy="43" rx="8" ry="10" fill="#f5f5ef"/>
+  <ellipse cx="76" cy="43" rx="8" ry="10" fill="#f5f5ef"/>
+  <circle cx="54" cy="44" r="3" fill="#17212b"/>
+  <circle cx="74" cy="44" r="3" fill="#17212b"/>
+  <path d="M53 55 L75 55 L64 66 Z" fill="#f4b942"/>
+  <ellipse cx="45" cy="108" rx="16" ry="7" fill="#f4b942"/>
+  <ellipse cx="83" cy="108" rx="16" ry="7" fill="#f4b942"/>
+</svg>

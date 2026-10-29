@@ -1,0 +1,19 @@
+{
+  "name": "yoke-calendar",
+  "productName": "Yoke Calendar",
+  "version": "1.0.2",
+  "description": "Yoke Calendar — a macOS-style work-scheduling calendar (Electron)",
+  "main": "./out/main/index.js",
+  "author": "Xheldon",
+  "license": "MIT",
+  "overrides": {
+    "glob": "^13.0.6",
+    "tar": "^7.4.3"
+  },
+  "dependencies": {
+    "@aptabase/electron": "^0.3.1",
+    "@sentry/electron": "^7.13.0",
+    "electron-updater": "^6.8.9",
+    "yjs": "^13.6.31"
+  }
+}

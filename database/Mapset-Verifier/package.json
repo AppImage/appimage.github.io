@@ -1,0 +1,20 @@
+{
+  "name": "mapsetverifier",
+  "version": "2.1.0",
+  "description": "Mapset Verifier",
+  "author": {
+    "name": "Greaper",
+    "url": "https://osu.ppy.sh/users/2369776"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Naxesss/MapsetVerifier.git"
+  },
+  "main": "electron-app/electron/main.cjs",
+  "dependencies": {
+    "electron-updater": "6.8.3"
+  },
+  "overrides": {
+    "rollup": "4.60.2"
+  }
+}

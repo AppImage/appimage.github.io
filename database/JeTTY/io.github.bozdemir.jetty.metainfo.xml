@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata, installed as usr/share/metainfo/<id>.metainfo.xml in the
+     .deb and the AppImage (the AppImage catalog reads it for the app page).
+     Check with: appstreamcli validate-tree AppDir
+     Add a <release> entry for every release. -->
+<component type="desktop-application">
+  <id>io.github.bozdemir.jetty</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>JeTTY</name>
+  <summary>Blazing-fast GPU terminal you summon with a hotkey</summary>
+  <description>
+    <p>
+      JeTTY is a GPU-accelerated terminal emulator written in Rust. It drops into
+      the center of your screen — or slides down from the top, Yakuake-style — on a
+      global hotkey, and hides again just as fast, keeping your shells running.
+    </p>
+    <ul>
+      <li>Tabs, scrollback search, hint mode and a keyboard copy mode</li>
+      <li>Sixel and Kitty inline images</li>
+      <li>Shell integration: jump between prompts and get notified when long commands finish</li>
+      <li>Themes, a live-reloaded configuration file and configurable keybindings</li>
+      <li>Works on X11 and Wayland, on any desktop environment</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">jetty.desktop</launchable>
+  <url type="homepage">https://github.com/bozdemir/JeTTY</url>
+  <url type="bugtracker">https://github.com/bozdemir/JeTTY/issues</url>
+  <developer id="io.github.bozdemir">
+    <name>Burak Ozdemir</name>
+  </developer>
+  <screenshots>
+    <screenshot type="default">
+      <caption>A summoned JeTTY window with tabs and a powerlevel10k prompt</caption>
+      <image>https://raw.githubusercontent.com/bozdemir/JeTTY/main/assets/screenshots/hero.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The Neon Night look, one click away in Settings</caption>
+      <image>https://raw.githubusercontent.com/bozdemir/JeTTY/main/assets/screenshots/look-neon-night.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The Settings window: one-click Looks and the theme gallery</caption>
+      <image>https://raw.githubusercontent.com/bozdemir/JeTTY/main/assets/screenshots/settings.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>System</category>
+    <category>TerminalEmulator</category>
+  </categories>
+  <keywords>
+    <keyword>terminal</keyword>
+    <keyword>shell</keyword>
+    <keyword>console</keyword>
+    <keyword>dropdown</keyword>
+  </keywords>
+  <provides>
+    <binary>jetty</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.30.0" date="2026-10-10"/>
+    <release version="0.29.1" date="2026-10-09"/>
+    <release version="0.29.0" date="2026-10-09"/>
+    <release version="0.28.1" date="2026-10-09"/>
+    <release version="0.28.0" date="2026-10-09"/>
+    <release version="0.27.0" date="2026-10-09"/>
+    <release version="0.26.1" date="2026-10-08"/>
+    <release version="0.26.0" date="2026-10-08"/>
+    <release version="0.25.2" date="2026-10-02"/>
+    <release version="0.25.1" date="2026-08-11"/>
+  </releases>
+</component>

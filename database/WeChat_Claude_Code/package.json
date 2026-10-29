@@ -1,0 +1,39 @@
+{
+  "name": "wechat-claude-code",
+  "version": "2026.4.12-15",
+  "description": "Chat with Claude Code from WeChat — desktop app (Electron) + CLI",
+  "license": "MIT",
+  "author": "AceDataCloud",
+  "type": "module",
+  "main": "dist-electron/electron/main.js",
+  "files": [
+    "dist/**",
+    "dist-electron/**",
+    "electron/preload.cjs",
+    "electron/renderer/**",
+    "scripts/**",
+    "src/i18n/locales/**",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AceDataCloud/WeChatClaudeCode.git"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.1.0",
+    "qrcode": "^1.5.4"
+  },
+  "lint-staged": {
+    "*.{ts,js,mjs,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}

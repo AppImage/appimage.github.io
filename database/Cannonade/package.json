@@ -1,0 +1,35 @@
+{
+  "name": "cannonade",
+  "version": "0.4.9",
+  "description": "Local-first desktop app for building LLM test suites and running them against many local or cloud models at once",
+  "main": "./out/main/index.js",
+  "author": "Cannonade",
+  "homepage": "https://cannonade.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cannonade-ai/cannonade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cannonade-ai/cannonade/issues"
+  },
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@huggingface/transformers": "^4.2.0",
+    "@lmstudio/sdk": "^1.5.0",
+    "@tabler/icons-vue": "^3.44.0",
+    "ai": "^7.0.46",
+    "bleu-score": "^1.0.4",
+    "electron-log": "^5.4.4",
+    "electron-updater": "^6.8.3",
+    "fastest-levenshtein": "^1.0.16",
+    "js-rouge": "^3.2.0",
+    "markdown-it": "^14.3.0",
+    "ollama": "^0.6.3",
+    "parse5": "^8.0.1",
+    "pinia": "^3.0.4",
+    "quickjs-emscripten": "^0.32.0",
+    "slugify": "^1.6.9",
+    "write-file-atomic": "^8.0.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "taksim",
+  "productName": "taksim",
+  "version": "0.2.1",
+  "private": true,
+  "description": "A live canvas for coding agents on your own subscriptions.",
+  "author": "halil akkaya <contact@halilakkaya.dev>",
+  "homepage": "https://github.com/0xhalil/taksim",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "main.cjs",
+  "dependencies": {
+    "electron-updater": "6.8.10"
+  }
+}

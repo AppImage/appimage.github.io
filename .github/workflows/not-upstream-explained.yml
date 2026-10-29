@@ -1,0 +1,103 @@
+# When the account the AppImage comes from explains, in a comment on a pull
+# request labeled not-upstream (the README says "unofficial", "not affiliated",
+# ... or the repository is a fork), that the application is its own upstream
+# project, this removes the not-upstream label and puts manual-check-needed on
+# the PR instead, so that a maintainer looks at it before it is merged.
+#
+# Only when ALL of this holds:
+#   - the commenter is the GitHub account of the repository in the PR's single
+#     file in data/ (code/upstream-owner.sh), read at the PR's head commit;
+#   - that repository is on GitHub and is not a fork (the API says so);
+#   - the comment says who the author is and that the repository is the
+#     original, in at least 15 words, with no sign that it repackages someone
+#     else's application (code/upstream-claim.sh).
+# Maintainers' own comments are not looked at (they can change labels
+# themselves). Once per PR (marker <!-- appimagehub-not-upstream -->).
+#
+# Nothing from the PR is checked out or run here: this runs from master and
+# reads the PR via the API. The comment is untrusted text: it is passed via the
+# environment and only matched against fixed patterns, never quoted back.
+name: Not-upstream explained
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  explained:
+    if: >-
+      github.repository == 'AppImage/appimage.github.io' &&
+      github.event.issue.pull_request &&
+      github.event.issue.state == 'open' &&
+      contains(github.event.issue.labels.*.name, 'not-upstream') &&
+      !startsWith(github.event.comment.body, '/') &&
+      github.event.comment.user.type != 'Bot' &&
+      !endsWith(github.event.comment.user.login, '[bot]') &&
+      !contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: not-upstream-explained-${{ github.event.issue.number }}
+      cancel-in-progress: false
+    permissions:
+      contents: read # read the PR's data/ file via the API
+      issues: write # labels and comment
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.issue.number }}
+      COMMENTER: ${{ github.event.comment.user.login }}
+      BODY: ${{ github.event.comment.body }}
+    steps:
+      # master, not the PR
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: code
+
+      - name: Swap the labels if the owner explains
+        run: |
+          lower() { echo "$1" | tr '[:upper:]' '[:lower:]' ; }
+          skip() { echo "Not changing the labels: $1" ; exit 0 ; }
+          PHRASE=$(printf '%s\n' "$BODY" | bash code/upstream-claim.sh) || skip "the comment is no clear explanation that this is the author's own project"
+          echo "The comment says: \"$PHRASE\""
+
+          # Once per PR
+          MARKER='<!-- appimagehub-not-upstream -->'
+          if gh api --paginate "repos/$REPO/issues/$PR/comments" --jq '.[].body' | grep -qF "$MARKER" ; then
+            skip "done for this pull request already"
+          fi
+          LABELS=$(gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name')
+          echo "$LABELS" | grep -qx not-upstream || skip "no not-upstream label"
+
+          # One file in data/, whose repository belongs to the commenter
+          SHA=$(gh api "repos/$REPO/pulls/$PR" --jq .head.sha)
+          FILES=$(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename')
+          [ "$(echo "$FILES" | grep -c .)" -eq 1 ] || skip "the pull request does not change exactly one file in data/"
+          URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILES?ref=$SHA" 2>/dev/null | head -n 1 | tr -d '\r')
+          OWNER=$(bash code/upstream-owner.sh "$URL")
+          [ -n "$OWNER" ] && [ "$(lower "$OWNER")" = "$(lower "$COMMENTER")" ] || skip "$COMMENTER is not the account the AppImage comes from"
+
+          # A GitHub repository that is not a fork
+          if [[ "$URL" =~ ^https://github\.com/([^/]+)/([^/?#]+) ]] ; then
+            SLUG="${BASH_REMATCH[1]}/${BASH_REMATCH[2]%.git}"
+          elif [[ "$URL" =~ ^https://api\.github\.com/repos/([^/]+)/([^/?#]+) ]] ; then
+            SLUG="${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+          else
+            skip "the entry does not point to a GitHub repository, so its owner cannot be checked"
+          fi
+          [ "$(gh api "repos/$SLUG" --jq '.fork' 2>/dev/null)" = false ] || skip "$SLUG is a fork, or could not be read"
+
+          # Swap the labels, and say so (once)
+          gh api -X DELETE "repos/$REPO/issues/$PR/labels/not-upstream" >/dev/null
+          if ! gh api "repos/$REPO/labels/manual-check-needed" >/dev/null 2>&1 ; then
+            gh api "repos/$REPO/labels" -f name=manual-check-needed -f color=fbca04 \
+              -f description="A maintainer needs to check this PR, see its comments" >/dev/null
+          fi
+          gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=manual-check-needed" >/dev/null
+          {
+            echo "$MARKER"
+            echo "Thank you, @$COMMENTER. You are the GitHub account of this repository (it is not a fork), and your comment says that the application is your own project, so the \`not-upstream\` label is removed. A maintainer will have a look before this is merged, hence \`manual-check-needed\`."
+          } > reply.md
+          gh pr comment "$PR" -R "$REPO" --body-file reply.md

@@ -2,7 +2,8 @@
 layout: app
 
 permalink: /Tutanota/
-description: The desktop client for Tutanota, the secure e-mail service.
+description: The desktop client for Tuta, the secure e-mail, calendar and drive service.
+license: GPL-3.0
 
 icons:
   - Tutanota/icons/512x512/tutanota-desktop.png
@@ -22,27 +23,33 @@ links:
 
 desktop:
   Desktop Entry:
-    Name: Tutanota Desktop
-    Exec: AppRun --no-sandbox %U
+    Name: Tuta
+    Exec: AppRun %U
     Terminal: false
     Type: Application
     Icon: tutanota-desktop
-    StartupWMClass: tutanota-desktop
-    X-AppImage-Version: 3.106.5.276
-    Comment: The desktop client for Tutanota, the secure e-mail service.
+    StartupWMClass: Tuta
+    X-AppImage-Version: 360.260922.0.1406
+    Comment: The desktop client for Tuta, the secure e-mail, calendar and drive service.
     MimeType: x-scheme-handler/mailto
     Categories: Network
   AppImageHub:
-    X-AppImage-Signature: 'keybox ''/home/runner/.gnupg/pubring.kbx'' created [don''t
-      know]: invalid packet (ctb=0a) no signature found the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.'
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: GPL-3.0
 
 electron:
   author: Tutao GmbH
-  description: The desktop client for Tutanota, the secure e-mail service.
+  description: The desktop client for Tuta, the secure e-mail, calendar and drive service.
+  type: module
   tutao-config:
     pubKeys:
     - |-
@@ -67,20 +74,18 @@ electron:
       -----END PUBLIC KEY-----
     - 
     pollingInterval: 10800000
-    webAssetsPath: "."
     iconName: logo-solo-red.png
     fileManagerTimeout: 30000
-    checkUpdateSignature: true
+    checkUpdateSignature: false
     appUserModelId: de.tutao.tutanota
     initialSseConnectTimeoutInSeconds: 60
     maxSseConnectTimeoutInSeconds: 2400
     configMigrationFunction: migrateClient
-    updateUrl: https://mail.tutanota.com/desktop
+    updateUrl: https://app.tuta.com/desktop
     defaultDesktopConfig:
       heartbeatTimeoutInSeconds: 30
       defaultDownloadPath: 
       enableAutoUpdate: true
       runAsTrayApp: true
-  dependencies:
-    electron-updater: 5.3.0
+  dependencies: {}
 ---

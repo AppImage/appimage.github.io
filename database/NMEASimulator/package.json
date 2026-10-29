@@ -1,0 +1,18 @@
+{
+  "name": "nmeasimulator",
+  "productName": "NMEASimulator",
+  "version": "1.6.1",
+  "description": "NMEA Sentence Generator",
+  "homepage": "https://panazzolo.com",
+  "author": {
+    "name": "AdrianP",
+    "email": "panaaj@hotmail.com"
+  },
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+    "netmask": "^2.0.2",
+    "serialport": "^11.0.0",
+    "ws": "^8.13.0"
+  }
+}

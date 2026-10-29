@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 Gavin Graham -->
+<component type="desktop-application">
+  <id>com.mtsync.MtSync</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+
+  <name>Mt. Sync</name>
+  <summary>Mount or sync cloud storage anywhere</summary>
+
+  <developer id="com.mtsync">
+    <name>Gavin Graham</name>
+  </developer>
+
+  <description>
+    <p>
+      Mt. Sync is a native GTK4/libadwaita frontend to rclone. Configure cloud and network storage
+      backends, browse remote file systems side by side, and manage sync, copy, move and mount jobs
+      with live progress, all backed by a persistent background daemon.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Create and edit rclone remotes through forms generated from rclone's own provider options</li>
+      <li>Dual-pane file browser with remote-to-remote comparison</li>
+      <li>Sync, copy, move and mount jobs, run on demand, on a cron schedule, or automatically when local files change</li>
+      <li>Dry-run preview showing exactly which files a job would copy, update or delete</li>
+      <li>Real-time transfer progress, activity log and desktop notifications</li>
+      <li>System tray indicator; jobs keep running after the window is closed</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">com.mtsync.MtSync.desktop</launchable>
+
+  <provides>
+    <binary>mtsync</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/gavindi/MtSync</url>
+  <url type="bugtracker">https://github.com/gavindi/MtSync/issues</url>
+  <url type="vcs-browser">https://github.com/gavindi/MtSync</url>
+  <url type="donation">https://ko-fi.com/P5P21M7MBS</url>
+
+  <categories>
+    <category>Utility</category>
+    <category>Network</category>
+    <category>FileTransfer</category>
+  </categories>
+
+  <keywords>
+    <keyword>rclone</keyword>
+    <keyword>cloud</keyword>
+    <keyword>sync</keyword>
+    <keyword>backup</keyword>
+    <keyword>mount</keyword>
+  </keywords>
+
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="0.9.24" date="2026-09-30">
+      <description>
+        <p>The AppImage is now built on Ubuntu 22.04, so it runs on Ubuntu 22.04, Debian 12, Fedora 36 and anything newer.</p>
+      </description>
+    </release>
+    <release version="0.9.23" date="2026-09-30">
+      <description>
+        <p>The AppImage now starts its background daemon correctly when run inside the firejail sandbox.</p>
+      </description>
+    </release>
+    <release version="0.9.22" date="2026-09-30">
+      <description>
+        <p>Self-contained AppImage: it now bundles rclone, so nothing else needs installing, and runs on Ubuntu 24.04 or any newer distro. Also fixes the background daemon and "Start daemon on login" when running from the AppImage.</p>
+      </description>
+    </release>
+    <release version="0.9.21" date="2026-09-26">
+      <description>
+        <p>Dry Run preview: simulate a Sync, Copy or Move job from the job dialog and see every file it would copy, update or delete in the Compare window before running it for real.</p>
+      </description>
+    </release>
+    <release version="0.9.20" date="2026-09-12">
+      <description>
+        <p>Watch mode: jobs with a local source can sync automatically shortly after files change, with debouncing so bursts of changes trigger a single run.</p>
+      </description>
+    </release>
+    <release version="0.9.19" date="2026-09-09">
+      <description>
+        <p>Double-click an Activity Log entry to see its details and the full error log.</p>
+      </description>
+    </release>
+    <release version="0.9.18" date="2026-09-07">
+      <description>
+        <p>The interface is now translatable, with complete French and German translations.</p>
+      </description>
+    </release>
+  </releases>
+</component>

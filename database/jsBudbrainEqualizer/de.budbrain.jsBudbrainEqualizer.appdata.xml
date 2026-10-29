@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainEqualizer</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsBudbrainEqualizer</name>
+  <summary>An equalizer for everything your computer plays, with a live spectrum</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <!-- Derselbe Text wie im Snap Store (snap/snapcraft.yaml, dist/snap.txt). -->
+  <description>
+    <p>
+      Music, videos, games, calls in the browser — everything your computer
+      plays goes through ten sliders, and above them a colourful display shows
+      what you are hearing right now.
+    </p>
+    <p>
+      Pick one of the ready-made sound settings or shape your own and save it
+      under a name. One click switches the equalizer off, and the sound goes
+      straight to your speakers again.
+    </p>
+    <p>
+      Make it as big as you like, fold the sliders away, or keep a small
+      window on top while you work.
+    </p>
+    <ul>
+      <li>Ten sliders from deep bass to bright treble</li>
+      <li>Live display of what is playing, left, right or both</li>
+      <li>Ready-made sound settings and your own, saved under a name</li>
+      <li>Sliders glide smoothly into place when you switch</li>
+      <li>Mute button for when the phone rings</li>
+      <li>Choose which speakers or headphones to use</li>
+      <li>Fold the sliders away and keep only the display</li>
+      <li>Small window that stays on top</li>
+      <li>Starts when you log in, if you like</li>
+      <li>Light and dark design</li>
+      <li>Available in 44 languages</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">jsbudbrainequalizer.desktop</launchable>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Mixer</category>
+  </categories>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <!-- Ohne <screenshots> nimmt AppImageHub selbst eines auf, in einem leeren
+       Testcontainer. Die URLs zeigen auf die Bilder der Website
+       (website-software/generate-site.sh, Praefix jsbudbrainequalizer_). -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Ten sliders and a live display of what is playing</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainequalizer_01-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Light design</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainequalizer_02-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Sliders folded away, only the display remains</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainequalizer_03-folded.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Small window that stays on top</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainequalizer_04-compact.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Ready-made sound settings and your own</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainequalizer_05-presets.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-09-28">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

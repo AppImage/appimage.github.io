@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Template. 3.6.0 and 2026-10-03 are substituted by packaging/render_metainfo.sh,
+  which both the AppImage build and the .deb build call — a hand-maintained
+  <release> block goes stale the release after someone forgets it.
+-->
+<component type="desktop-application">
+  <id>io.github._0xzerolight.AnkiMiner</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Anki Miner</name>
+  <summary>Mine vocabulary from video, audio and books into Anki flashcards</summary>
+
+  <!--
+    AppStream 1.0 form. 0.15 reports it as an unknown tag, but that is an INFO
+    and infos do not fail validation, so the deprecated <developer_name> is not
+    worth carrying alongside it.
+  -->
+  <developer id="io.github._0xzerolight">
+    <name>Anki Miner Contributors</name>
+  </developer>
+
+  <description>
+    <p>
+      Anki Miner turns the media you already watch and read into Anki flashcards.
+      Point it at a video and its subtitles, a YouTube URL, a manga volume, an
+      EPUB or a plain subtitle file, and it finds the words you do not know yet.
+    </p>
+    <p>
+      Each card is built for you: the sentence the word appeared in, a screenshot
+      or animated clip of that moment, the sentence audio, a dictionary
+      definition, a frequency rank, pitch accent and word audio.
+    </p>
+    <p>
+      Words you already know are filtered out by reading your own Anki
+      collection, so a run only ever proposes something new. Thirty-two
+      mining languages are supported, including Japanese, Chinese, Cantonese,
+      Korean, Arabic, Hebrew, Persian, Thai, Vietnamese and twenty-one
+      European languages.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">anki-miner.desktop</launchable>
+
+  <categories>
+    <category>Education</category>
+    <category>Languages</category>
+  </categories>
+
+  <keywords>
+    <keyword>Anki</keyword>
+    <keyword>flashcards</keyword>
+    <keyword>language learning</keyword>
+    <keyword>Japanese</keyword>
+    <keyword>subtitles</keyword>
+    <keyword>vocabulary</keyword>
+  </keywords>
+
+  <!--
+    Only url types AppStream 0.15.2 knows. The release runner is pinned to
+    ubuntu-22.04 for its glibc floor, so that is the appstreamcli this file is
+    validated with, and there an unrecognised url type is a WARNING — which
+    fails the validation. vcs-browser and contribute arrived in 0.15.5; do not
+    add them back. The repository is already the homepage url.
+  -->
+  <url type="homepage">https://github.com/0xzerolight/anki_miner</url>
+  <url type="bugtracker">https://github.com/0xzerolight/anki_miner/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Mining a video into Anki cards</caption>
+      <image>https://raw.githubusercontent.com/0xzerolight/anki_miner/main/gifs/anki_miner_showcase.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="3.6.0" date="2026-10-03"/>
+  </releases>
+</component>

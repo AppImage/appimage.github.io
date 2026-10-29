@@ -1,0 +1,13 @@
+{
+  "name": "notebooklm-chunker-desktop",
+  "version": "0.5.0",
+  "description": "Desktop app for NotebookLM Chunker",
+  "homepage": "https://github.com/cmlonder/notebooklm-chunker",
+  "main": "src/main.js",
+  "author": {
+    "name": "cmlonder",
+    "email": "cmlonder@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

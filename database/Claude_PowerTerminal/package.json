@@ -1,0 +1,13 @@
+{
+  "name": "@kkrassmann/claude-powerterminal",
+  "version": "1.2.0",
+  "description": "Multi-session terminal manager for Claude CLI with status monitoring",
+  "main": "dist/electron/main.js",
+  "author": "",
+  "license": "GPL-3.0-only",
+  "type": "commonjs",
+  "dependencies": {
+    "node-pty": "^1.1.0",
+    "ws": "^8.19.0"
+  }
+}

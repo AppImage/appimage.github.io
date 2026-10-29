@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata for SRS (used by the AppImage and software centres). Check with:
+     appstreamcli validate packaging/appimage/io.github.eugenesflanagin_spec.srs_sysinfo.metainfo.xml -->
+<component type="desktop-application">
+  <id>io.github.eugenesflanagin_spec.srs_sysinfo</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <name>SRS System Information</name>
+  <summary>Show what is inside your PC and whether it is healthy</summary>
+  <developer id="io.github.eugenesflanagin_spec">
+    <name>Eugene Flanagin</name>
+  </developer>
+  <description>
+    <p>
+      SRS is a system information viewer for Linux. It shows the processor, memory, motherboard
+      and BIOS, graphics and audio, drives, network, sensors, USB and PCI devices and the operating
+      system, in plain words first and with every detail one click away.
+    </p>
+    <p>
+      The Overview answers "Is my PC OK?": temperatures judged against each sensor's own limit,
+      drive health (SMART), hardware errors, free disk space and memory in use, each with a status
+      light and an explanation.
+    </p>
+    <p>
+      SRS is inspired by SIV (System Information Viewer) by Ray Hinchliffe, RH Software. It is an
+      independent project, not affiliated with SIV or its author, and contains no SIV code or data.
+      A classic view with SIV-style windows is included.
+    </p>
+    <p>
+      The GPU tests run through Vulkan, ROCm / HIP, CUDA (also ZLUDA on AMD cards, with SRS's
+      built-in CUDA kernels) and OpenCL. The NVIDIA CUDA toolkit is optional; SRS explains what it is
+      for and can install it later from its Options menu.
+    </p>
+    <p>Also included:</p>
+    <ul>
+      <li>Stress tests and benchmarks are used at your own risk: SRS is provided without warranty and asks you to agree once before the first one</li>
+      <li>CPU and GPU burn-in and stress tests in one Stress &amp; Burnin window; Dhrystone, Whetstone, Cache &amp; Memory, Storage, OS Latency, CPU Compute, Everyday Work, Network, GPU, GPU Compute comparison (Vulkan, ROCm/HIP, CUDA, OpenCL), SRS Pi, Crypto and Prime Sieve benchmarks and a memory latency test</li>
+      <li>Power &amp; Cost: an estimate of the whole PC's power use and its cost, with recorded history (estimates, not a meter reading)</li>
+      <li>Tabs you can arrange and save as lineups, sortable tables and a startup manager</li>
+      <li>Device ID lookup for PCI and USB devices</li>
+      <li>Reports saved as text, and a command-line report search</li>
+      <li>Optional root-only details (DMI, memory SPD, SMART, MSRs) collected with one password prompt</li>
+      <li>A built-in user guide: F1 opens it at the section for the item you are looking at</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">srs-gui.desktop</launchable>
+  <icon type="stock">srs</icon>
+  <url type="homepage">https://github.com/eugenesflanagin-spec/srs-sysinfo</url>
+  <url type="bugtracker">https://github.com/eugenesflanagin-spec/srs-sysinfo/issues</url>
+  <categories>
+    <category>System</category>
+    <category>Monitor</category>
+  </categories>
+  <keywords>
+    <keyword>system information</keyword>
+    <keyword>hardware</keyword>
+    <keyword>sensors</keyword>
+    <keyword>SMART</keyword>
+    <keyword>benchmark</keyword>
+  </keywords>
+  <provides>
+    <binary>srs-gui</binary>
+    <binary>sysreport-search</binary>
+  </provides>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main window with the Overview page</caption>
+      <image>https://raw.githubusercontent.com/eugenesflanagin-spec/srs-sysinfo/main/docs/images/overview-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The classic SIV-style main window</caption>
+      <image>https://raw.githubusercontent.com/eugenesflanagin-spec/srs-sysinfo/main/docs/images/main-window.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The sensors panel in the classic view</caption>
+      <image>https://raw.githubusercontent.com/eugenesflanagin-spec/srs-sysinfo/main/docs/images/sensors.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="2.3.1" date="2026-10-29">
+      <description>
+        <p>Stress &amp; Burnin: CPU Burnin, CPU Stress and GPU Burnin in one window, the GPU load for
+        its own time or in sync with the CPU load, a custom GPU command as the other choice. In the
+        new main window every benchmark and stress test is a tab of the Benchmarks &amp; Stress page.</p>
+        <p>Use at your own risk: the first stress test or benchmark asks you to agree to plain-English
+        terms (provided as is, without warranty). Columns now line up on every page; very long entries
+        end in "..." with the full text in the tooltip and in Copy.</p>
+        <p>Tested on one PC (Ryzen 7 7800X3D, Radeon RX 9070 XT): the built-in GPU Burnin in Stress &amp;
+        Burnin was tested on a software renderer only; parts that need other hardware may have a bug or
+        two - please report them.</p>
+      </description>
+    </release>
+    <release version="2.3.0" date="2026-10-29">
+      <description>
+        <p>CUDA without the NVIDIA runtime compiler: SRS's CUDA test kernels are now built in
+        (pre-compiled PTX), so GPU Burnin and every CUDA row of the GPU Compute comparison run
+        with ZLUDA on AMD cards too. OpenCL drivers without double precision now say "not
+        available" with the reason instead of "failed".</p>
+        <p>The NVIDIA CUDA toolkit is explained and optional: SRS asks once before the first CUDA
+        run when it is missing, and it can be installed later from Options; with ZLUDA, SRS warns
+        that installing it can break or remove ZLUDA.</p>
+        <p>Tested on one PC (Ryzen 7 7800X3D, Radeon RX 9070 XT, wired connection): parts that
+        need other hardware may have a bug or two; the built-in CUDA kernels were never run on
+        NVIDIA hardware. Please report problems on GitHub Issues.</p>
+      </description>
+    </release>
+    <release version="2.2.2" date="2026-10-27">
+      <description>
+        <p>Fix: GPU Comparison and GPU Burnin no longer crash when the vendor GEMM library
+        (hipBLAS or cuBLAS) is measured before the own kernels; a missing runtime compiler is
+        now reported with a clear message.</p>
+        <p>Tested on one PC (Ryzen 7 7800X3D, Radeon RX 9070 XT, wired connection): parts that
+        need other hardware may have a bug or two. Please report them on GitHub Issues.</p>
+      </description>
+    </release>
+    <release version="2.2.1" date="2026-10-27">
+      <description>
+        <p>Fixes: clear messages after a hung GPU driver call and when CPU Burnin cannot start,
+        an honest All GPUs verdict in GPU Burnin when one card cannot start, a safer CPU/GPU
+        burn-in start check on ARM, and a default window size that fits the screen.</p>
+        <p>Tested on one PC (Ryzen 7 7800X3D, Radeon RX 9070 XT, wired connection): parts that
+        need other hardware may have a bug or two. Please report them on GitHub Issues.</p>
+      </description>
+    </release>
+    <release version="2.2.0" date="2026-10-26">
+      <description>
+        <p>A Power &amp; cost page that estimates the whole PC's power use and what it costs, with
+        history, sessions, alarms and offline price tables. New benchmarks: Cache &amp; Memory,
+        Storage, OS Latency, CPU Compute, Everyday Work, Network, GPU Benchmark, GPU Burnin, GPU Compute comparison, SRS Pi, Crypto and Prime Sieve, with a run history; each asks before
+        it starts. Tabs you can arrange and save
+        as lineups, sortable tables, a Startup manager that turns startup items off and on without
+        deleting anything, a Full access / Limited badge, and stock-versus-in-effect clocks on CPU
+        Clocks.</p>
+        <p>Tested on one PC (Ryzen 7 7800X3D, Radeon RX 9070 XT, wired connection): parts that
+        need other hardware may have a bug or two. Please report them on GitHub Issues.</p>
+      </description>
+    </release>
+    <release version="2.0.0" date="2026-10-26">
+      <description>
+        <p>A new main window with an Overview that answers "Is my PC OK?", one page per category,
+        search, and an AppImage for any distribution that can update itself. The classic SIV-style
+        windows are still available.</p>
+      </description>
+    </release>
+  </releases>
+</component>

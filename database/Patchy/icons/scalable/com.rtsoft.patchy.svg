@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="872" height="872" viewBox="0 0 872 872">
+  <title>Patchy logo, folded paper</title>
+  <defs>
+    <linearGradient id="armFold" gradientUnits="userSpaceOnUse" x1="0" y1="256" x2="0" y2="292">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="armOnTile" gradientUnits="userSpaceOnUse" x1="0" y1="256" x2="0" y2="274">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="stemSeam" gradientUnits="userSpaceOnUse" x1="300" y1="0" x2="318" y2="0">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="patchShadow" gradientUnits="userSpaceOnUse" x1="640" y1="368" x2="606" y2="402">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cornerFold" gradientUnits="userSpaceOnUse" x1="792" y1="80" x2="764" y2="108">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="body">
+    <path id="tile" d="M84,0 H698 Q712,0 722,10 L862,150 Q872,160 872,174 V788 A84,84 0 0 1 788,872 H84 A84,84 0 0 1 0,788 V84 A84,84 0 0 1 84,0 Z" fill="#FEBA20"/>
+    <path id="corner-fold" d="M698,0 Q712,0 722,10 L862,150 Q872,160 872,174 V216 L656,0 Z" fill="url(#cornerFold)"/>
+    <g id="letter" transform="translate(0 16)">
+      <path id="p" d="M232,96 H664 L772,204 V384 L600,556 H300 V612 L168,744 H100 V228 Z M300,256 H564 V396 H300 Z" fill="#363F3B" fill-rule="evenodd"/>
+      <path id="patch-shadow" d="M564,284 H572 L722,434 L680,476 L564,360 Z" fill="url(#patchShadow)"/>
+      <path id="patch" d="M536,96 H664 L772,204 V384 L714,442 L536,264 Z" fill="#FFFFFF"/>
+      <g id="folds">
+        <path id="arm-fold" d="M100,228 L134,256 H300 V292 H100 Z" fill="url(#armFold)"/>
+        <path id="arm-on-tile" d="M300,256 H536 V274 H300 Z" fill="url(#armOnTile)"/>
+        <path id="stem-seam" d="M300,396 H318 V556 H300 Z" fill="url(#stemSeam)"/>
+      </g>
+    </g>
+  </g>
+</svg>

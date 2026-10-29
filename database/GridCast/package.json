@@ -1,0 +1,14 @@
+{
+  "name": "gridcast",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "author": "Austin Songer",
+  "license": "MIT",
+  "description": "Gridcast for macOS",
+  "dependencies": {
+    "electron-log": "^5.3.0",
+    "electron-store": "^8.2.0",
+    "ffmpeg-static": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.3"
+  }
+}

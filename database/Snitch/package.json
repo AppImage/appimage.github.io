@@ -1,0 +1,13 @@
+{
+  "name": "snitch",
+  "version": "1.6.3",
+  "description": "Snitch — real-time network traffic visualizer / visualiseur de trafic réseau en temps réel",
+  "main": "main.js",
+  "license": "AGPL-3.0-or-later",
+  "homepage": "https://github.com/aixisstudio/Snitch",
+  "desktopName": "Snitch",
+  "author": "aiXis Studio",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

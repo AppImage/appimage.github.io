@@ -1,0 +1,90 @@
+---
+layout: app
+
+permalink: /FIXYL/
+license: Apache-2.0
+
+icons:
+  - FIXYL/icons/128x128/fixyl.png
+
+screenshots:
+  - FIXYL/screenshot.png
+
+authors:
+  - name: yaalalabs
+    url: https://github.com/yaalalabs
+
+links:
+  - type: GitHub
+    url: yaalalabs/fixyl
+  - type: Download
+    url: https://github.com/yaalalabs/fixyl/releases
+
+desktop:
+  Desktop Entry:
+    Name: FIXYL
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: fixyl
+    StartupWMClass: FIXYL
+    X-AppImage-Version: 1
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: Apache-2.0
+
+electron:
+  author:
+    name: Yaala Labs
+    email: hello@yaalalabs.com
+  engines:
+    node: ">=22.12.0"
+  dependencies:
+    ag-grid-community: 35.2.0
+    ag-grid-react: 35.2.0
+    antd: "^4.16.13"
+    antd-mask-input: "^0.1.15"
+    electron-is-dev: "^2.0.0"
+    electron-log: "^5.2.4"
+    flexlayout-react: "^0.5.16"
+    keytar: "^7.7.0"
+    mark.js: "^8.11.1"
+    moment: "^2.29.4"
+    react: "^18.3.1"
+    react-diff-viewer: "^3.1.1"
+    react-dom: "^18.3.1"
+    react-intl-universal: "^2.13.4"
+    react-joyride: "^2.5.0"
+    react-json-view: "^1.21.3"
+    react-sortable-hoc: "^2.0.0"
+    resize-observer-polyfill: "^1.5.1"
+    rxjs: "^7.1.0"
+    uuid: "^8.3.2"
+    vite-plugin-commonjs: "^0.10.4"
+    web-vitals: "^1.0.1"
+    xml-reader: "^2.4.3"
+  homepage: "./"
+  main: "./src/app/electron-starter.js"
+  optionalDependencies:
+    iconv-corefoundation: "^1.1.7"
+  overrides:
+    tar: "^7.5.22"
+    "@xmldom/xmldom": "^0.8.15"
+    form-data: "^4.0.6"
+    immutable: "^5.1.9"
+    js-yaml: "^4.3.2"
+    tmp: "^0.2.7"
+    brace-expansion@1: 1.1.18
+    brace-expansion@2: 2.1.4
+    brace-expansion@5: 5.0.9
+---

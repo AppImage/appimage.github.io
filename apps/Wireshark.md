@@ -1,0 +1,142 @@
+---
+layout: app
+
+permalink: /Wireshark/
+description: Network traffic analyzer
+license: GPL-2.0
+
+icons:
+  - Wireshark/icons/128x128/org.wireshark.Wireshark.png
+screenshots:
+- https://www.wireshark.org/docs/wsug_html/images/ws-main.png
+
+authors:
+  - name: ryuuzaki42
+    url: https://github.com/ryuuzaki42
+
+links:
+  - type: GitHub
+    url: ryuuzaki42/Wireshark_AppImage
+  - type: Download
+    url: https://github.com/ryuuzaki42/Wireshark_AppImage/releases
+
+desktop:
+  Desktop Entry:
+    Type: Application
+    Version: 1.0
+    Name: Wireshark
+    Name[vi]: Wireshark
+    GenericName: Network Analyzer
+    GenericName[af]: Netwerk Analiseerder
+    GenericName[az]: Şəbəkə Analiz Proqramı
+    GenericName[bg]: Анализатор на мрежови трафик
+    GenericName[bs]: Mrežni analizer
+    GenericName[ca]: Analitzador de xarxa
+    GenericName[cs]: Analyzátor sítě
+    GenericName[da]: Netværksanalyse
+    GenericName[de]: Programm für die Netzwerk-Analyse
+    GenericName[el]: Αναλυτής Δικτύων
+    GenericName[en_GB]: Network Analyser
+    GenericName[eo]: Retanalizilo
+    GenericName[es]: Analizador de redes
+    GenericName[et]: Võrguliikluse analüsaator
+    GenericName[eu]: Sare ikerketaria
+    GenericName[fa]: تحلیل‌گر شبکه
+    GenericName[fi]: Verkkoanalysaattori
+    GenericName[fr]: Analyseur réseau
+    GenericName[he]: מאבחן רשת
+    GenericName[hr]: Program za analiziranje mreža
+    GenericName[hu]: hálózatanalizáló
+    GenericName[id]: Analisis jaringan
+    GenericName[is]: Netskoðunartól
+    GenericName[it]: Analizzatore di rete
+    GenericName[ja]: ネットワークアナライザ
+    GenericName[ko]: 네트워크 분석기
+    GenericName[lo]: ເຄື່ອງມືວິເຄາະເຄືອຂ່າຍ
+    GenericName[lt]: Tinklo analizatorius
+    GenericName[lv]: Tīkla Analizators
+    GenericName[mk]: Анализатор на мрежи
+    GenericName[mn]: Сүлжээ-шинжлэлийн програм
+    GenericName[mt]: Analizzatur tan-network
+    GenericName[nb]: Nettverksanalysator
+    GenericName[nl]: netwerkanalyseprogramma
+    GenericName[nn]: Nettverksanalysator
+    GenericName[nso]: Moahlaahli wa Kgokagano
+    GenericName[pl]: Analizator sieci
+    GenericName[pt]: Analisador de Redes
+    GenericName[pt_BR]: Analisador de rede
+    GenericName[ro]: Analizor de reţea
+    GenericName[ru]: Анализатор сетевого трафика
+    GenericName[se]: Fierbmeanalysa
+    GenericName[sk]: Analyzátor siete
+    GenericName[sl]: Analizator omrežij
+    GenericName[sr]: Analizatror mreže
+    GenericName[ss]: Sihlatiyi seluchungechunge
+    GenericName[sv]: Nätverksanalyserare
+    GenericName[ta]: Å¨Ä ¬öÅ¡Ç÷
+    GenericName[th]: เครื่องมือวิเคราะห์เครือข่าย
+    GenericName[tr]: Ağ Analiz Programı
+    GenericName[uk]: Аналізатор мережі
+    GenericName[ven]: Musengulusi wa Vhukwamani
+    GenericName[vi]: Trình phân tích  mạng
+    GenericName[xh]: Umcukucezi Womsebenzi womnatha
+    GenericName[zh_CN]: 网络分析程序
+    GenericName[zh_TW]: 網路分析程式
+    GenericName[zu]: Umhloli Woxhumano olusakazekile
+    Comment: Network traffic analyzer
+    Comment[fi]: Verkkoliikenne analysaattori
+    Comment[fr]: Analyseur de trafic réseau
+    Comment[sv]: Nätverkstrafikanalysator
+    Comment[af]: Netwerkverkeer analiseerder
+    Comment[sq]: Analizues i trafikut të rrjetit
+    Comment[ast]: Analizador de tráficu de rede
+    Comment[bn]: নেটওয়ার্ক ট্রাফিক বিশ্লেষক
+    Comment[bg]: Анализатор на мрежовия трафик
+    Comment[bs]: Analizator mrežnoga prometa
+    Comment[pt_BR]: Analisador de tráfego de rede
+    Comment[et]: Võrguliikluse analüüsija
+    Comment[nl]: Netwerkverkeer analyseren
+    Comment[da]: Netværkstrafikanalyse
+    Comment[cs]: Analyzátor síťového přenosu
+    Comment[gl]: Analizador do tráfico de rede
+    Comment[el]: Ανάλυση κίνησης δικτύου
+    Comment[de]: Netzwerkverkehr-Analyseprogramm
+    Comment[hu]: Hálózatiforgalom-elemző
+    Comment[it]: Analizzatore del traffico di rete
+    Comment[ja]: ネットワークトラフィックアナライザー
+    Comment[ko]: 네트워크 트래픽 분석기
+    Comment[ky]: Тармактык трафикти анализдөө
+    Comment[lt]: Tinklo duomenų srauto analizatorius
+    Comment[ms]: Penganalisa trafik rangkaian
+    Comment[nb]: Nettverkstrafikk-analysator
+    Comment[oc]: Analisador de tramas de ret
+    Comment[pt]: Analisador de tráfego da rede
+    Comment[pl]: Analizator ruchu sieciowego
+    Comment[ro]: Analizator trafic de rețea
+    Comment[ru]: Анализ сетевого трафика
+    Comment[sk]: Analyzátor sieťovej premávky
+    Comment[es]: Analizador de tráfico de red
+    Comment[sl]: Preučevalnik omrežnega prometa
+    Comment[tr]: Ağ trafiği çözümleyicisi
+    Comment[vi]: Trình phân tích giao thông mạng
+    Comment[uk]: Аналізатор мережевого трафіку
+    Icon: org.wireshark.Wireshark
+    TryExec: wireshark
+    Exec: wireshark %f
+    Terminal: false
+    MimeType: application/vnd.tcpdump.pcap
+    Categories: Network
+    X-AppImage-Version: 4.6.6.glibc2.34-1_JB
+  AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|ryuuzaki42|Wireshark_AppImage|latest|Wireshark-*-x86_64.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.35
+---

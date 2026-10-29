@@ -1,0 +1,34 @@
+{
+  "name": "db-tool",
+  "version": "1.0.0",
+  "description": "DBTool — a full-featured desktop database client for PostgreSQL, MySQL, MariaDB, SQLite, Oracle and SQL Server (Electron + React + TypeScript)",
+  "main": "./out/main/index.js",
+  "author": {
+    "name": "ALL PAY WAY, LLC",
+    "email": "ceo@apw.ge"
+  },
+  "homepage": "https://github.com/achi777/db-tool",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/achi777/db-tool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/achi777/db-tool/issues"
+  },
+  "license": "AGPL-3.0-only",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@dagrejs/dagre": "^3.0.0",
+    "better-sqlite3": "^11.8.1",
+    "html-to-image": "^1.11.13",
+    "lucide-react": "^1.25.0",
+    "mssql": "^12.7.0",
+    "mysql2": "^3.11.5",
+    "node-sql-parser": "^5.4.0",
+    "oracledb": "^7.0.1",
+    "papaparse": "^5.5.4",
+    "pg": "^8.13.1",
+    "xlsx": "^0.18.5"
+  }
+}

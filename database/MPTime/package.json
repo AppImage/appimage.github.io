@@ -1,0 +1,17 @@
+{
+  "name": "mptime",
+  "version": "0.1.0",
+  "description": "ATEM frame-store clock/timer driven from Ontime, Simple timer, or system clock. FloatTime-aligned operator panel for live productions.",
+  "author": "matiaspl",
+  "license": "GPL-3.0",
+  "main": "dist/main/index.js",
+  "dependencies": {
+    "@atem-connection/image-tools": "^1.0.0",
+    "@types/multicast-dns": "^7.2.4",
+    "atem-connection": "^3.9.0",
+    "electron-store": "^8.2.0",
+    "fastify": "^4.28.1",
+    "multicast-dns": "^7.2.5",
+    "ws": "^8.18.0"
+  }
+}

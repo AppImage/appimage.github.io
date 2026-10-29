@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>io.github.dmezhnov.knitcalc</id>
+  <name>KnitCalc</name>
+  <summary>Knitting calculator</summary>
+  <summary xml:lang="ru">Вязальный калькулятор</summary>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="io.github.dmezhnov">
+    <name>Dmitry Mezhnov</name>
+  </developer>
+  <launchable type="desktop-id">io.github.dmezhnov.knitcalc.desktop</launchable>
+  <provides>
+    <binary>knitcalc</binary>
+  </provides>
+  <description>
+    <p>
+      KnitCalc helps with the arithmetic of knitting: it converts counts
+      between gauges, distributes increases and decreases evenly across a row,
+      and estimates how much yarn a project needs.
+    </p>
+    <p xml:lang="ru">
+      KnitCalc берёт на себя вязальную арифметику: пересчитывает петли между
+      плотностями, равномерно распределяет прибавки и убавки в ряду и
+      оценивает расход пряжи.
+    </p>
+    <ul>
+      <li>Gauge conversion between a swatch and a pattern</li>
+      <li xml:lang="ru">Пересчёт петель по плотности образца и описания</li>
+      <li>Even distribution of increases and decreases</li>
+      <li xml:lang="ru">Равномерное распределение прибавок и убавок</li>
+      <li>Yarn usage estimation</li>
+      <li xml:lang="ru">Оценка расхода пряжи</li>
+      <li>Project notes with photos, optionally synced between devices</li>
+      <li xml:lang="ru">Заметки о проектах с фото и необязательной синхронизацией между устройствами</li>
+    </ul>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/dmezhnov/knitcalc/main/packaging/flatpak/screenshots/calculator.png</image>
+      <image xml:lang="ru">https://raw.githubusercontent.com/dmezhnov/knitcalc/main/packaging/flatpak/screenshots/calculator.ru.png</image>
+      <caption>Gauge conversion for a new project</caption>
+      <caption xml:lang="ru">Пересчёт петель для нового изделия</caption>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/dmezhnov/knitcalc</url>
+  <url type="bugtracker">https://github.com/dmezhnov/knitcalc/issues</url>
+  <url type="vcs-browser">https://github.com/dmezhnov/knitcalc</url>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.8.71+94" date="2026-06-29"/>
+  </releases>
+</component>

@@ -1,0 +1,23 @@
+{
+  "name": "kura",
+  "version": "1.6.50",
+  "description": "Kura â€” one library for every PlayStation. Scan, identify, organise, rename, transfer and install your PS1, PS2, PSP, PS3, PS4, PS5 and PS Vita games. No installer, no login, no account.",
+  "main": "main.js",
+  "author": {
+    "name": "Nookie"
+  },
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "basic-ftp": "^5.3.1",
+    "bytenode": "^1.5.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NookieAI/kura"
+  },
+  "homepage": "https://github.com/NookieAI/kura",
+  "bugs": {
+    "url": "https://github.com/NookieAI/kura/issues"
+  },
+  "productName": "Kura"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "unseen",
+  "version": "0.1.0",
+  "description": "Open-source real-time meeting copilot — listens, transcribes, and assists live, with swappable LLM/STT providers and profile-driven behavior.",
+  "license": "MIT",
+  "private": true,
+  "author": {
+    "name": "repowise-dev",
+    "email": "noreply@github.com"
+  },
+  "main": "out/main/index.js",
+  "homepage": "https://github.com/repowise-dev/unseen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/repowise-dev/unseen.git"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.104.1",
+    "@google/genai": "^2.8.0",
+    "dotenv": "^17.4.2",
+    "js-yaml": "^4.2.0",
+    "openai": "^6.42.0",
+    "zod": "^4.4.3"
+  }
+}

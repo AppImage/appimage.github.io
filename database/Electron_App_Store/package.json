@@ -2,17 +2,20 @@
   "name": "electron-store",
   "productName": "Electron Store",
   "appId": "electron-store",
+  "license": "MIT",
   "author": {
-    "name": "Patrick Waweru",
-    "email": "pntxall100@gmail.com"
+    "name": "Electron Store Team",
+    "email": "info@electron-app-store.ml"
   },
   "description": "A Simple App Store for Apps Built with Electron",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Patrick-web/electron-app-store.git"
   },
   "private": true,
   "main": "background.js",
-  "dependencies": {}
+  "dependencies": {
+    "downloads-folder": "latest"
+  }
 }

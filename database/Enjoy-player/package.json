@@ -1,0 +1,26 @@
+{
+  "name": "enjoy-player",
+  "version": "1.0.3",
+  "private": true,
+  "type": "module",
+  "main": "./electron/main.js",
+  "dependencies": {
+    "@he-tree/vue": "^2.8.6",
+    "ant-design-vue": "4.x",
+    "axios": "^1.7.7",
+    "electron-is-dev": "^3.0.1",
+    "electron-localshortcut": "^3.2.1",
+    "electron-window-state": "^5.0.3",
+    "hls.js": "^1.5.15",
+    "hotkeys-js": "^3.13.7",
+    "nanoid": "^5.0.7",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^4.0.1",
+    "plyr": "^3.7.8",
+    "qs": "^6.13.0",
+    "vue": "^3.4.29",
+    "vue-i18n": "^10.0.1",
+    "vue-pick-colors": "^1.7.6",
+    "vue-router": "^4.3.3"
+  }
+}

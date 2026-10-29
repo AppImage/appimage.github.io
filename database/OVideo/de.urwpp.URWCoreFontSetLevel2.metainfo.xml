@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="font">
+  <id>de.urwpp.URWCoreFontSetLevel2</id>
+  <developer_name>URW++ Design and Development GmbH</developer_name>
+
+  <metadata_license>CC-BY-4.0</metadata_license>
+  <project_license>AGPL-3.0</project_license>
+
+  <url type="homepage">https://www.urwpp.de/en/</url>
+  <url type="bugtracker">https://bugs.ghostscript.com/</url>
+
+  <update_contact>dkaspar@redhat.com</update_contact>
+
+  <!-- NOTE: This is a meta-package to install all the Level 2 fonts -->
+  <name>(URW)++ Core Font Set [Level 2]</name>
+  <summary>Core Font Set containing 35 freely distributable fonts from (URW)++</summary>
+  <description>
+    <p>
+      The Level 2 Core Font Set is a PostScript specification of 35 base fonts
+      that can be used with any PostScript file. These fonts are provided
+      freely by (URW++) company, and are mainly utilized by Ghostscript,
+      or other applications using it.
+    </p>
+    <p>
+      This packages will install all these 35 fonts to your system.
+    </p>
+  </description>
+
+  <provides>
+    <font>C059 Roman</font>
+    <font>C059 Italic</font>
+    <font>C059 Bold</font>
+    <font>C059 Bold Italic</font>
+    <font>D050000L</font>
+    <font>Nimbus Mono PS Regular</font>
+    <font>Nimbus Mono PS Italic</font>
+    <font>Nimbus Mono PS Bold</font>
+    <font>Nimbus Mono PS Bold Italic</font>
+    <font>Nimbus Roman Regular</font>
+    <font>Nimbus Roman Italic</font>
+    <font>Nimbus Roman Bold</font>
+    <font>Nimbus Roman Bold Italic</font>
+    <font>Nimbus Sans Regular</font>
+    <font>Nimbus Sans Italic</font>
+    <font>Nimbus Sans Bold</font>
+    <font>Nimbus Sans Bold Italic</font>
+    <font>Nimbus Sans Narrow Regular</font>
+    <font>Nimbus Sans Narrow Oblique</font>
+    <font>Nimbus Sans Narrow Bold</font>
+    <font>Nimbus Sans Narrow Bold Oblique</font>
+    <font>P052 Roman</font>
+    <font>P052 Italic</font>
+    <font>P052 Bold</font>
+    <font>P052 Bold Italic</font>
+    <font>Standard Symbols PS</font>
+    <font>URW Bookman Light</font>
+    <font>URW Bookman Light Italic</font>
+    <font>URW Bookman Demi</font>
+    <font>URW Bookman Demi Italic</font>
+    <font>URW Gothic Book</font>
+    <font>URW Gothic Book Oblique</font>
+    <font>URW Gothic Demi</font>
+    <font>URW Gothic Demi Oblique</font>
+    <font>Z003 Medium Italic</font>
+  </provides>
+
+  <!-- NOTE: No <suggests/> tag here, this metapackages provides all fonts ^-->
+
+  <!-- NOTE: Medium urgency of updates is implicitly assumed with AppStream -->
+  <releases>
+    <release version="20170801" date="2017-08-01" />
+    <release version="20160926" date="2016-09-26" />
+  </releases>
+
+  <!-- NOTE: These font locales are superset of all languages supported -->
+  <languages>
+    <lang>aa</lang>
+    <lang>af</lang>
+    <lang>an</lang>
+    <lang>av</lang>
+    <lang>ay</lang>
+    <lang>ba</lang>
+    <lang>be</lang>
+    <lang>bg</lang>
+    <lang>bi</lang>
+    <lang>br</lang>
+    <lang>bs</lang>
+    <lang>bua</lang>
+    <lang>ca</lang>
+    <lang>ce</lang>
+    <lang>ch</lang>
+    <lang>co</lang>
+    <lang>crh</lang>
+    <lang>csb</lang>
+    <lang>cs</lang>
+    <lang>cy</lang>
+    <lang>da</lang>
+    <lang>de</lang>
+    <lang>el</lang>
+    <lang>en</lang>
+    <lang>eo</lang>
+    <lang>es</lang>
+    <lang>et</lang>
+    <lang>eu</lang>
+    <lang>fi</lang>
+    <lang>fil</lang>
+    <lang>fj</lang>
+    <lang>fo</lang>
+    <lang>fr</lang>
+    <lang>fur</lang>
+    <lang>fy</lang>
+    <lang>gd</lang>
+    <lang>gl</lang>
+    <lang>gv</lang>
+    <lang>ho</lang>
+    <lang>hr</lang>
+    <lang>hsb</lang>
+    <lang>ht</lang>
+    <lang>hu</lang>
+    <lang>ia</lang>
+    <lang>id</lang>
+    <lang>ie</lang>
+    <lang>ik</lang>
+    <lang>io</lang>
+    <lang>is</lang>
+    <lang>it</lang>
+    <lang>jv</lang>
+    <lang>kaa</lang>
+    <lang>ki</lang>
+    <lang>kj</lang>
+    <lang>kk</lang>
+    <lang>kl</lang>
+    <lang>kum</lang>
+    <lang>ku-tr</lang>
+    <lang>kwm</lang>
+    <lang>ky</lang>
+    <lang>la</lang>
+    <lang>lb</lang>
+    <lang>lez</lang>
+    <lang>lg</lang>
+    <lang>li</lang>
+    <lang>lt</lang>
+    <lang>lv</lang>
+    <lang>mg</lang>
+    <lang>mh</lang>
+    <lang>mk</lang>
+    <lang>mn-mn</lang>
+    <lang>mo</lang>
+    <lang>ms</lang>
+    <lang>mt</lang>
+    <lang>na</lang>
+    <lang>nb</lang>
+    <lang>nds</lang>
+    <lang>ng</lang>
+    <lang>nl</lang>
+    <lang>nn</lang>
+    <lang>no</lang>
+    <lang>nr</lang>
+    <lang>nso</lang>
+    <lang>ny</lang>
+    <lang>oc</lang>
+    <lang>om</lang>
+    <lang>os</lang>
+    <lang>pap-an</lang>
+    <lang>pap-aw</lang>
+    <lang>pl</lang>
+    <lang>pt</lang>
+    <lang>rm</lang>
+    <lang>rn</lang>
+    <lang>ro</lang>
+    <lang>ru</lang>
+    <lang>rw</lang>
+    <lang>sc</lang>
+    <lang>se</lang>
+    <lang>sel</lang>
+    <lang>sg</lang>
+    <lang>sh</lang>
+    <lang>sk</lang>
+    <lang>sl</lang>
+    <lang>sma</lang>
+    <lang>smj</lang>
+    <lang>smn</lang>
+    <lang>sn</lang>
+    <lang>so</lang>
+    <lang>sq</lang>
+    <lang>sr</lang>
+    <lang>ss</lang>
+    <lang>st</lang>
+    <lang>su</lang>
+    <lang>sv</lang>
+    <lang>sw</lang>
+    <lang>tg</lang>
+    <lang>tk</lang>
+    <lang>tl</lang>
+    <lang>tn</lang>
+    <lang>tr</lang>
+    <lang>ts</lang>
+    <lang>tt</lang>
+    <lang>tyv</lang>
+    <lang>uk</lang>
+    <lang>uz</lang>
+    <lang>vo</lang>
+    <lang>vot</lang>
+    <lang>wa</lang>
+    <lang>wen</lang>
+    <lang>wo</lang>
+    <lang>xh</lang>
+    <lang>yap</lang>
+    <lang>za</lang>
+    <lang>zu</lang>
+  </languages>
+</component>

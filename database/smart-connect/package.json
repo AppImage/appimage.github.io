@@ -1,0 +1,21 @@
+{
+  "name": "smart-connect",
+  "author": {
+    "name": "Jobsi, inc.",
+    "email": "brian@smartconnections.app",
+    "url": "https://smartconnections.app"
+  },
+  "version": "2.1.4",
+  "description": "Smart Connect",
+  "main": "main.js",
+  "license": "ISC",
+  "dependencies": {
+    "sc-desktop": "file:../sc-desktop"
+  },
+  "workspaces": [
+    "../sc-desktop/*",
+    "../jsbrains/*",
+    "../advanced-env/*"
+  ],
+  "bundled": true
+}

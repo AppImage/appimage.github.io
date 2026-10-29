@@ -1,0 +1,22 @@
+[Desktop Entry]
+Type=Application
+Name=USBSID-Configtool
+GenericName=USBSID-Pico configuration tool
+Comment=Configuration tool for USBSID-Pico boards
+Exec=USBSID-Configtool
+Icon=nl.loudai.usbsid.configtool
+Terminal=false
+Categories=Utility;Electronics;
+Keywords=USBSID;SID;C64;Commodore;Pico;USB;
+X-AppImage-Version=0.4.8
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|LouDnl|USBSID-Configtool|latest|USBSID-Configtool-*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Wed Sep 30 18:49:58 2026 UTC                using RSA key 35AF88BAE43DC2EF11E232DFDD4F7F97D00FE44C Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.17
+X-AppImage-Payload-License=GPL-3.0

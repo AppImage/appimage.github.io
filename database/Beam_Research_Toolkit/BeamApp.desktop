@@ -1,0 +1,24 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Beam Research Toolkit
+GenericName=Particle beam simulation
+Comment=Interactive Geant4 explorer for particle-beam simulation
+Exec=BeamApp
+Icon=BeamApp
+Terminal=false
+Categories=Science;Education;Physics;
+Keywords=Geant4;physics;simulation;beam;dose;
+StartupWMClass=BeamApp
+X-AppImage-Version=1.0.2
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Thu Sep 17 09:37:25 2026 UTC                using EDDSA key FF75EE592C309C229B6EFA01E74D148BFF199453 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=2.35

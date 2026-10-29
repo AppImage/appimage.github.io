@@ -1,0 +1,12 @@
+{
+  "name": "@wevir/desktop",
+  "productName": "Wevir",
+  "version": "0.0.1-beta.457",
+  "private": true,
+  "description": "Wevir desktop shell (Electron + React): discovers or launches the local Host and connects the renderer to it.",
+  "license": "MIT",
+  "homepage": "https://wevir.si",
+  "desktopName": "wevir.desktop",
+  "type": "module",
+  "main": "./out/main/index.js"
+}

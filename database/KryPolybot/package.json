@@ -1,0 +1,18 @@
+{
+  "name": "krypt-polybot",
+  "productName": "Krypt PolyBot",
+  "version": "3.0.0",
+  "description": "A free, fully-featured Polymarket auto-trading bot. Whale tracker, momentum scanner, copy trading, and your own Python strategy scripts in one polished desktop app. Part of the Krypt free tools suite.",
+  "main": "dist-electron/main.js",
+  "author": {
+    "name": "Krypt",
+    "email": "hi@krypt.cc",
+    "url": "https://krypt.cc"
+  },
+  "homepage": "https://krypt.cc/tools/polybot",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "discord-rpc": "^4.0.1"
+  }
+}

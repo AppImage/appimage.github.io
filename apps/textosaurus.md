@@ -2,8 +2,8 @@
 layout: app
 
 permalink: /textosaurus/
-description: Simple cross-platform text editor based on Qt and QScintilla
-license: GPL-3.0
+description: "Simple cross-platform text editor based on Qt and QScintilla"
+license: "GPL-3.0"
 
 icons:
   - textosaurus/icons/512x512/textosaurus.png
@@ -11,8 +11,14 @@ screenshots:
 - https://raw.githubusercontent.com/martinrotter/textosaurus/master/resources/screenshots/textosaurus-linux.png
 
 authors:
+  - name: "martinrotter"
+    url: "https://github.com/martinrotter"
 
 links:
+  - type: GitHub
+    url: martinrotter/textosaurus
+  - type: Download
+    url: https://github.com/martinrotter/textosaurus/releases
 
 desktop:
   Desktop Entry:
@@ -26,12 +32,19 @@ desktop:
     Terminal: false
     Categories: Office
     MimeType: text/plain
+    X-AppImage-Version: 9cb7064
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.18
+    X-AppImage-Payload-License: GPL-3.0
 
 appdata:
   Type: desktop-application
@@ -72,8 +85,8 @@ appdata:
       url: https://raw.githubusercontent.com/martinrotter/textosaurus/master/resources/screenshots/textosaurus.png
       lang: C
   Releases:
-  - version: 0.9.8
-    unix-timestamp: 1529280000
+  - version: 0.9.12
+    unix-timestamp: 1554422400
   ContentRating:
     oars-1.0:
       violence-cartoon: none

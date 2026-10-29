@@ -1,0 +1,42 @@
+{
+  "name": "stashbase",
+  "version": "2.13.1",
+  "packageManager": "pnpm@11.5.1",
+  "description": "StashBase is an IDE for writing: brainstorm, draft, and revise in local projects.",
+  "author": {
+    "name": "liliu-z",
+    "email": "bingwuthu@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liliu-z/stashbase.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liliu-z/stashbase/issues"
+  },
+  "homepage": "https://github.com/liliu-z/stashbase#readme",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "engines": {
+    "node": ">=24.11.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.161",
+    "@modelcontextprotocol/sdk": "^1.21.0",
+    "@noble/hashes": "^2.2.0",
+    "@opencode-ai/sdk": "1.18.19",
+    "better-sqlite3": "^12.10.0",
+    "electron-updater": "^6.8.9",
+    "express": "^4.21.2",
+    "mammoth": "^1.12.0",
+    "multer": "^2.2.0",
+    "opencode-ai": "1.18.19",
+    "pdfjs-dist": "^5.7.284",
+    "sanitize-html": "^2.17.6",
+    "tar": "7.5.22",
+    "toml-eslint-parser": "^0.10.1",
+    "ws": "^8.20.1",
+    "zod": "3.25.76"
+  }
+}

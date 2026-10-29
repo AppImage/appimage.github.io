@@ -1,0 +1,28 @@
+{
+  "name": "zap-browser",
+  "version": "0.6.0-beta",
+  "description": "Privacy-first Bitcoin browser with Lightning, Liquid, Cashu and Nostr",
+  "homepage": "https://github.com/shadowbipnode/Zap-Browser",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shadowbipnode/Zap-Browser.git"
+  },
+  "main": "src/main/index.js",
+  "dependencies": {
+    "@cashu/cashu-ts": "^2.5.3",
+    "@noble/hashes": "^1.4.0",
+    "@noble/secp256k1": "^2.1.0",
+    "axios": "^1.16.0",
+    "better-sqlite3": "^9.4.3",
+    "bip39": "^3.1.0",
+    "electron-store": "^8.1.0",
+    "keytar": "^7.9.0",
+    "nostr-tools": "^1.17.0",
+    "qrcode.react": "^4.2.0",
+    "ws": "^8.20.0"
+  },
+  "author": {
+    "name": "Zap Browser Contributors",
+    "email": "dev@zapbrowser.org"
+  }
+}

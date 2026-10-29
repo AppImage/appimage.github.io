@@ -1,0 +1,48 @@
+---
+layout: app
+
+permalink: /KIT_Scenarist/
+
+icons:
+  - KIT_Scenarist/icons/512x512/scenarist.png
+
+screenshots:
+  - KIT_Scenarist/screenshot.png
+
+authors:
+  - name: AndnoVember
+    url: https://build.opensuse.org/user/show/AndnoVember
+
+links:
+  - type: Download
+    url: https://download.opensuse.org/repositories/home:/AndnoVember:/KITScenarist/AppImage/kitscenarist-latest-x86_64.AppImage.mirrorlist
+
+desktop:
+  Desktop Entry:
+    Version: 1.0
+    Terminal: false
+    Type: Application
+    Icon: scenarist
+    Categories: Office
+    Exec: scenarist %f
+    MimeType: application/x-kit-scenarist-project
+    Name: KIT Scenarist
+    GenericName: Screenwriting Software
+    Name[ru]: КИТ Сценарист
+    GenericName[ru]: Программа для написания сценариев
+    Name[fr]: KIT Scenarist
+    GenericName[fr]: Screenwriting Software
+    Name[es]: KIT Scenarist
+    GenericName[es]: Screenwriting Software
+  AppImageHub:
+    X-AppImage-UpdateInformation: zsync|https://download.opensuse.org/repositories/home:/AndnoVember:/KITScenarist/AppImage/kitscenarist-latest-x86_64.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created Signature made Tue Sep  1 10:00:56 2026 UTC                using RSA key
+      4B324A81BFC23B5A Can''t check signature: No public key'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+---

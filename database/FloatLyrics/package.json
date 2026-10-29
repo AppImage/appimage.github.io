@@ -1,0 +1,24 @@
+{
+  "name": "floatlyrics",
+  "version": "0.5.2",
+  "private": true,
+  "description": "Transparent macOS, Windows, and Linux desktop overlay for synced lyrics.",
+  "desktopName": "floatlyrics.desktop",
+  "author": {
+    "name": "Jason Li",
+    "email": "jasonnn404l@gmail.com"
+  },
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "dbus-native": "^0.15.1",
+    "kuroshiro": "^1.2.0",
+    "kuroshiro-analyzer-kuromoji": "^1.1.0",
+    "lucide-react": "^1.14.0",
+    "path-browserify": "^1.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "transliteration": "^2.6.1",
+    "vite": "^7.0.0"
+  }
+}

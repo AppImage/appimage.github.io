@@ -3,7 +3,6 @@ layout: app
 
 permalink: /SiliconSneaker/
 description: View runs from your Garmin brand watch
-license: GPL-2.0
 
 icons:
   - SiliconSneaker/icons/scalable/siliconsneaker.svg
@@ -12,19 +11,26 @@ screenshots:
   - SiliconSneaker/screenshot.png
 
 authors:
+  - name: cprevallet
+    url: https://github.com/cprevallet
 
 links:
+  - type: GitHub
+    url: cprevallet/siliconsneaker
+  - type: Download
+    url: https://github.com/cprevallet/siliconsneaker/releases
 
 desktop:
   Desktop Entry:
     X-AppImage-Arch: x86_64
-    X-AppImage-Version: 1610a3f
+    X-AppImage-Version: 38886d2
     X-AppImage-Name: SiliconSneaker
     Version: 1.0
     Name: SiliconSneaker
     GenericName: Garmin Watch File Viewer
     Comment: View runs from your Garmin brand watch
-    Exec: siliconsneaker
+    MimeType: application/x-siliconsneaker
+    Exec: siliconsneaker %u
     Icon: siliconsneaker
     Terminal: false
     Type: Application
@@ -37,5 +43,4 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
-    X-AppImage-Payload-License: GPL-2.0
 ---

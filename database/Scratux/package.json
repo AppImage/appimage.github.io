@@ -7,14 +7,15 @@
     "email": "joancipria@gmail.com",
     "url": "https://joancipria.com"
   },
-  "version": "1.1.0",
+  "version": "1.4.1",
+  "scratchVersion": "3.10.2",
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/scratux/scratux-desktop.git"
   },
   "dependencies": {
-    "source-map-support": "^0.5.9"
+    "source-map-support": "^0.5.12"
   },
   "resolutions": {
     "upath": "^1.0.5"

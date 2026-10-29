@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>DeskPort — a workspace lifted by a kite</title>
+  <defs>
+    <linearGradient id="tile-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2c5265"/><stop offset=".52" stop-color="#19394b"/><stop offset="1" stop-color="#0c202e"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2=".8" y2="1">
+      <stop stop-color="#a1d4d6" stop-opacity=".5"/><stop offset="1" stop-color="#4c8b93" stop-opacity=".12"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="0" y1="0" x2=".9" y2="1">
+      <stop stop-color="#f0fff9"/><stop offset=".5" stop-color="#c4f5e8"/><stop offset="1" stop-color="#82cbbd"/>
+    </linearGradient>
+    <linearGradient id="screen-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#328f86"/><stop offset="1" stop-color="#12534e"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#a4f6dc"/><stop offset="1" stop-color="#43baa6"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2=".3" y2="1">
+      <stop stop-color="#ffde9c"/><stop offset="1" stop-color="#f5b565"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f9b771"/><stop offset="1" stop-color="#de854c"/>
+    </linearGradient>
+  </defs>
+  <!-- Layer IDs are also the source of the generated Apple .icon artwork. -->
+  <g id="tile" data-icon-name="Ocean glass" data-icon-dark="#060f19">
+    <rect x="64" y="64" width="896" height="896" rx="210" fill="url(#tile-fill)"/>
+    <rect x="67" y="67" width="890" height="890" rx="207" fill="none" stroke="url(#edge)" stroke-width="6"/>
+  </g>
+  <g id="tether" data-icon-name="Lift line">
+    <path d="M663 513C667 616 526 538 475 616" fill="none" stroke="#d4f8ed" stroke-width="24" stroke-linecap="round"/>
+    <path d="M673 515C785 547 698 595 805 642" fill="none" stroke="#78ddc0" stroke-width="16" stroke-linecap="round"/>
+    <path d="M744 556L796 546L782 596ZM751 610L800 594L813 645Z" fill="url(#amber)"/>
+  </g>
+  <g id="stand" data-icon-name="Floating desk" transform="rotate(-8 404 704)">
+    <path d="M407 828V878M333 881H481" fill="none" stroke="#143e46" stroke-width="38" stroke-linecap="round"/>
+    <path d="M407 822V868M333 871H481" fill="none" stroke="url(#frame)" stroke-width="28" stroke-linecap="round"/>
+  </g>
+  <g id="monitor" data-icon-name="Workspace frame" transform="rotate(-8 404 704)">
+    <rect x="182" y="560" width="450" height="282" rx="48" fill="#081923" opacity=".25" data-icon-shadow="true"/>
+    <rect x="182" y="548" width="450" height="282" rx="48" fill="url(#frame)"/>
+    <rect x="210" y="576" width="394" height="226" rx="23" fill="#102c37"/>
+    <path d="M232 563H582" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g id="screen" data-icon-name="Teal display" transform="rotate(-8 404 704)">
+    <rect x="222" y="588" width="370" height="202" rx="15" fill="url(#screen-fill)"/>
+    <path d="M238 602H576" fill="none" stroke="#8bf2d1" stroke-opacity=".26" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g id="prompt" data-icon-name="Terminal cursor" transform="rotate(-8 404 704)">
+    <path d="M283 653L328 688L283 723M382 727H450" fill="none" stroke="#b9f9df" stroke-width="23" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="kite" data-icon-name="Mint and amber kite">
+    <path d="M720 151L896 315L663 522L568 303Z" fill="#091c25" opacity=".18" transform="translate(0 12)" data-icon-shadow="true"/>
+    <path d="M720 151L896 315L663 522L568 303Z" fill="url(#mint)"/>
+    <path d="M720 151L706 310L568 303Z" fill="#d9fff0"/>
+    <path d="M720 151L896 315L706 310Z" fill="url(#amber)"/>
+    <path d="M706 310L896 315L663 522Z" fill="url(#orange)"/>
+    <path d="M581 303L706 310L720 165" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+</svg>

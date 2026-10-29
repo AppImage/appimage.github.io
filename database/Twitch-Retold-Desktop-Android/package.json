@@ -1,0 +1,13 @@
+{
+  "name": "twitch-retold",
+  "version": "2.7.0",
+  "description": "Twitch Retold",
+  "main": "main.js",
+  "author": "Twitch Retold <timdenny05@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bytenode": "^1.6.0",
+    "electron-updater": "^6.8.9",
+    "hls.js": "^1.7.1"
+  }
+}

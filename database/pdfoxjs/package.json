@@ -1,0 +1,21 @@
+{
+  "name": "pdfoxjs",
+  "author": "Khiet Tam Nguyen",
+  "license": "MIT",
+  "version": "0.3.0",
+  "description": "Standalone desktop app for Mozilla's pdfjs with extendable vim keybindings",
+  "main": "./out/main.cjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nktnet1/pdfoxjs"
+  },
+  "dependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
+    "@hono/node-server": "^2.0.4",
+    "electron-context-menu": "^4.1.2",
+    "electron-updater": "^6.8.8",
+    "hono": "^4.12.23",
+    "url-join": "^5.0.0"
+  },
+  "packageManager": "pnpm@11.5.1"
+}

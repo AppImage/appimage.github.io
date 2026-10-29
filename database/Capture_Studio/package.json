@@ -1,0 +1,15 @@
+{
+  "name": "@tenzen/capture-studio",
+  "productName": "Capture Studio",
+  "version": "0.1.34",
+  "private": true,
+  "description": "Capture Studio — screen recording and video editing by Tenzen Studio.",
+  "author": "Tenzen",
+  "main": "dist-electron/electron/main.js",
+  "homepage": "https://tenzen.studio/",
+  "desktopName": "tenzen.desktop",
+  "dependencies": {
+    "@tenzen/desktop-runtime": "*",
+    "@tenzen/suite-auth": "*"
+  }
+}

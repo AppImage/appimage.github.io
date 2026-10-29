@@ -1,0 +1,45 @@
+[Desktop Entry]
+Type=Application
+Name=Patchy
+GenericName=Image Editor
+GenericName[de]=Bildeditor
+GenericName[es]=Editor de imágenes
+GenericName[fr]=Éditeur d'images
+GenericName[it]=Editor di immagini
+GenericName[ja]=画像エディタ
+GenericName[ko]=이미지 편집기
+GenericName[pl]=Edytor obrazów
+GenericName[pt_BR]=Editor de imagens
+GenericName[ru]=Редактор изображений
+GenericName[zh_CN]=图像编辑器
+GenericName[zh_TW]=影像編輯器
+Comment=PSD-oriented raster image editor
+Comment[de]=Rastergrafik-Editor mit Schwerpunkt auf dem PSD-Format
+Comment[es]=Editor de imágenes de mapa de bits centrado en el formato PSD
+Comment[fr]=Éditeur d'images matricielles axé sur le format PSD
+Comment[it]=Editor di immagini raster incentrato sul formato PSD
+Comment[ja]=PSD 対応のラスター画像エディタ
+Comment[ko]=PSD 중심의 래스터 이미지 편집기
+Comment[pl]=Edytor grafiki rastrowej z obsługą formatu PSD
+Comment[pt_BR]=Editor de imagens raster com foco no formato PSD
+Comment[ru]=Редактор растровых изображений с поддержкой формата PSD
+Comment[zh_CN]=以 PSD 为核心的位图图像编辑器
+Comment[zh_TW]=以 PSD 為核心的點陣圖影像編輯器
+Exec=patchy %F
+Icon=com.rtsoft.patchy
+Terminal=false
+Categories=Graphics;RasterGraphics;2DGraphics;
+MimeType=image/vnd.adobe.photoshop;image/png;image/apng;image/jpeg;image/bmp;image/gif;image/x-aseprite;image/tiff;image/webp;image/jxl;image/jp2;image/jpx;image/x-jp2-codestream;image/avif;image/heif;image/svg+xml;image/svg+xml-compressed;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/vnd.microsoft.icon;image/x-win-bitmap;image/x-tga;image/vnd.zbrush.pcx;image/x-ilbm;image/vnd.ms-dds;image/x-dds;image/openraster;image/x-exr;image/vnd.radiance;image/x-adobe-dng;image/x-canon-cr2;image/x-canon-cr3;image/x-canon-crw;image/x-nikon-nef;image/x-nikon-nrw;image/x-sony-arw;image/x-sony-sr2;image/x-sony-srf;image/x-olympus-orf;image/x-fuji-raf;image/x-panasonic-rw2;image/x-pentax-pef;image/x-minolta-mrw;image/x-kodak-kdc;image/x-kodak-dcr;image/x-sigma-x3f;image/x-samsung-srw;image/x-hasselblad-3fr;image/x-hasselblad-fff;image/x-phaseone-iiq;image/x-epson-erf;image/x-leaf-mos;
+StartupWMClass=patchy
+X-AppImage-Version=1.22
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|SethRobinson|Patchy|latest|PatchyLinux.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=MIT

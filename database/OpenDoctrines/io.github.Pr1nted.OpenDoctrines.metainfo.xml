@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.Pr1nted.OpenDoctrines</id>
+
+  <name>OpenDoctrines</name>
+  <summary>Grand strategy: run a country and its neighbours</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <!-- Not an OSI-approved licence: free to play, modify and share
+       NON-COMMERCIALLY. Flathub accepts this and will mark the app
+       accordingly; see README.md beside this file. -->
+  <project_license>LicenseRef-proprietary=https://github.com/Pr1nted/Open-Doctrines/blob/main/LICENSE</project_license>
+
+  <developer id="io.github.pr1nted">
+    <name>Pr1nted</name>
+  </developer>
+
+  <description>
+    <p>
+      OpenDoctrines is a grand strategy game about running a country: its
+      industry, its armies, its research, its politics and its neighbours.
+    </p>
+    <p>
+      Provinces have population, industry, fortification, resources and an
+      ethnic composition. Countries have a treasury, a research programme, a
+      political compass, claims on their neighbours and opinions about each
+      other. Rebellions spawn from unrest and hold real territory, wars pull in
+      guarantee chains, and ceasefires are negotiated over provinces, money and
+      dropped claims.
+    </p>
+    <p>Six historical scenarios on a 1641-province world map:</p>
+    <ul>
+      <li>Modern Day (2000) — 185 countries, populations from World Bank totals</li>
+      <li>The Powder Keg (1914) — five empires and a continent of alliances</li>
+      <li>The Last Spring (1918) — Germany has won in the east, and is losing in the west</li>
+      <li>The Gathering Storm (1939)</li>
+      <li>Year Zero (1945) — the war is over and nothing has been settled</li>
+      <li>The Missile Crisis (1962)</li>
+    </ul>
+    <p>
+      There is also a map editor with a procedural generator, host-authoritative
+      multiplayer that needs no port forwarding, and a WebAssembly mod SDK with
+      bindings for thirteen languages.
+    </p>
+    <p>
+      This is an alpha. It is playable and it is not finished — most notably
+      there is no tutorial yet.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.Pr1nted.OpenDoctrines.desktop</launchable>
+
+  <url type="homepage">https://pr1nted.itch.io/open-doctrines</url>
+  <url type="bugtracker">https://github.com/Pr1nted/Open-Doctrines/issues</url>
+  <url type="vcs-browser">https://github.com/Pr1nted/Open-Doctrines</url>
+  <url type="help">https://github.com/Pr1nted/Open-Doctrines/wiki</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://cdn.jsdelivr.net/gh/Pr1nted/Open-Doctrines@main/docs/img/world-map.png</image>
+      <caption>The 1641-province world map</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://cdn.jsdelivr.net/gh/Pr1nted/Open-Doctrines@main/docs/img/province.png</image>
+      <caption>A province: population, industry, garrison and orders</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://cdn.jsdelivr.net/gh/Pr1nted/Open-Doctrines@main/docs/img/policies.png</image>
+      <caption>Doctrines on a left/right and authoritarian/libertarian compass</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://cdn.jsdelivr.net/gh/Pr1nted/Open-Doctrines@main/docs/img/map-editor.png</image>
+      <caption>The map editor, for building your own world</caption>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Game</category>
+    <category>StrategyGame</category>
+  </categories>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>gamepad</control>
+  </supports>
+
+  <recommends>
+    <display_length compare="ge">1024</display_length>
+  </recommends>
+
+  <!-- Warfare is abstract: provinces change colour and troop counts fall.
+       Nothing is depicted, so every OARS attribute is none. -->
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.2.2a" date="2026-09-21">
+      <description>
+        <p>Reported bugs, three of which stopped people playing: sign-in on Windows, and two save faults.</p>
+      </description>
+    </release>
+    <release version="1.2.1a" date="2026-09-15">
+      <description>
+        <p>Forty-four languages, and the twenty already there finished.</p>
+      </description>
+    </release>
+    <release version="1.2.0a" date="2026-09-10">
+      <description>
+        <p>Plays inside Discord as an Activity; join a game with an invite code
+           alone, through the account service's relay.</p>
+      </description>
+    </release>
+  </releases>
+</component>

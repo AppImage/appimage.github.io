@@ -1,0 +1,11 @@
+{
+  "name": "open-recruiter",
+  "version": "3.0.1",
+  "private": true,
+  "description": "AI-powered recruitment automation agent",
+  "author": "Open Recruiter Contributors",
+  "main": "electron/dist/main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.3"
+  }
+}

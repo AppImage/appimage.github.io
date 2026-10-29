@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>app.pipette.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Pipette</name>
+  <summary>Keymap editor for Vial-compatible keyboards</summary>
+  <description>
+    <p>
+      Pipette is an independent keymap editor compatible with Vial. It communicates with
+      Vial keyboards over USB HID to configure keymaps, macros, lighting, and more.
+    </p>
+    <ul>
+      <li>Keymap editing with layers, drag and drop, and undo/redo</li>
+      <li>Tap dance, combo, key override, alternate repeat key, and macro editors</li>
+      <li>RGB lighting, QMK settings, and a matrix tester</li>
+      <li>Snapshots, favorites, and import/export (.vil, .pipette, keymap.c, PDF)</li>
+      <li>Built-in typing test and typing analytics</li>
+      <li>Optional cloud sync across devices and sharing on Pipette Hub</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">pipette-desktop.desktop</launchable>
+  <developer id="io.github.darakuneko">
+    <name>darakuneko</name>
+  </developer>
+  <url type="homepage">https://github.com/darakuneko/pipette-desktop</url>
+  <url type="bugtracker">https://github.com/darakuneko/pipette-desktop/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Keymap editor</caption>
+      <image>https://raw.githubusercontent.com/darakuneko/pipette-desktop/main/docs/screenshots/layer-panel-collapsed.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Typing analytics</caption>
+      <image>https://raw.githubusercontent.com/darakuneko/pipette-desktop/main/docs/screenshots/analyze-heatmap.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+</component>

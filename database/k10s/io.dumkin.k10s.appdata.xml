@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  What Linux software centers and the AppImage catalog (appimage.github.io) show about k10s. The deb, rpm and AppImage
+  install it in /usr/share/metainfo (bundle.linux in crates/k10s-app/tauri.conf.json).
+
+  .appdata.xml is the older of the two names AppStream reads, kept for the catalog: it takes the summary and the
+  description only from *.appdata.xml, and from *.metainfo.xml just the screenshot and the license.
+
+  scripts/version.mjs adds each version to <releases> and points the screenshots at its tag. They are docs/assets/*.jpg,
+  half-size JPEG copies of the README's WebP screenshots: AppStream takes only PNG and JPEG.
+-->
+<component type="desktop-application">
+  <id>io.dumkin.k10s</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-only</project_license>
+
+  <name>k10s</name>
+  <summary>Multi-cluster Kubernetes desktop client</summary>
+  <developer id="io.dumkin">
+    <name>Danil Dumkin</name>
+  </developer>
+  <!-- What AppStream before 1.0 reads instead (Ubuntu 22.04, Debian 12). -->
+  <developer_name>Danil Dumkin</developer_name>
+
+  <description>
+    <p>
+      k10s is a Kubernetes client for people who look after many clusters at once: the zones of one data center,
+      regions, staging and production. Often they can see only a few namespaces in each. k10s puts all of those
+      clusters in one live table, checks your permissions before you act, and stays fast when the fleet is large.
+    </p>
+    <ul>
+      <li>Every selected cluster in one table, connected in parallel: a slow or broken one never holds the rest
+        back</li>
+      <li>Made for namespace-restricted RBAC: a prompt instead of a wall of 403 errors, and actions you may not take
+        grayed out with the reason</li>
+      <li>Compare an object with its copies in every cluster and see only the fields that differ</li>
+      <li>Needs attention: what is failing in all the clusters, on one screen</li>
+      <li>Logs of pods and whole workloads across clusters, merged by time, with a query language, JSON fields and
+        patterns</li>
+      <li>Shells, debug containers and port-forwards without kubectl, and Helm releases read straight from the
+        cluster</li>
+      <li>A read-only mode enforced by the engine, and confirmations that list every object with its cluster</li>
+      <li>Keyboard first, with k9s habits, a command palette and a cheat sheet</li>
+    </ul>
+    <p>It's free and open source. No account, no telemetry, no license server.</p>
+  </description>
+
+  <launchable type="desktop-id">k10s.desktop</launchable>
+  <provides>
+    <binary>k10s</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/dumkin/k10s</url>
+  <url type="bugtracker">https://github.com/dumkin/k10s/issues</url>
+
+  <content_rating type="oars-1.1"/>
+
+  <!-- The smallest window is 980 × 620. -->
+  <requires>
+    <display_length compare="ge">620</display_length>
+  </requires>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </recommends>
+
+  <keywords>
+    <keyword>Kubernetes</keyword>
+    <keyword>k8s</keyword>
+    <keyword>kubectl</keyword>
+    <keyword>cluster</keyword>
+    <keyword>Helm</keyword>
+  </keywords>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The deployments of four clusters in one table, next to the merged logs of one deployment</caption>
+      <image>https://raw.githubusercontent.com/dumkin/k10s/v0.2.0/docs/assets/hero-dark.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Compare: one deployment against its copies in four clusters</caption>
+      <image>https://raw.githubusercontent.com/dumkin/k10s/v0.2.0/docs/assets/compare.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Needs attention: one row per problem, with the clusters where it happens</caption>
+      <image>https://raw.githubusercontent.com/dumkin/k10s/v0.2.0/docs/assets/attention.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Relations: from the ingress to the pods, and what is missing</caption>
+      <image>https://raw.githubusercontent.com/dumkin/k10s/v0.2.0/docs/assets/relations.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>My permissions: what you may do, in each cluster</caption>
+      <image>https://raw.githubusercontent.com/dumkin/k10s/v0.2.0/docs/assets/permissions.jpg</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.2.0" date="2026-10-08"/>
+    <release version="0.1.1" date="2026-10-07"/>
+    <release version="0.1.0" date="2026-10-06"/>
+  </releases>
+</component>

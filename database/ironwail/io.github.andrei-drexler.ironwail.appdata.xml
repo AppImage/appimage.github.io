@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014-2025 Andrei Drexler -->
+
+<component type="desktop">
+  <id>io.github.andrei-drexler.ironwail</id>
+  <name>Ironwail</name>
+  <summary>A fork of the popular GLQuake descendant QuakeSpasm</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0</project_license>
+
+  <developer_name>Andrei Drexler</developer_name>
+
+  <url type="homepage">https://github.com/andrei-drexler/ironwail</url>
+  <url type="bugtracker">https://github.com/andrei-drexler/ironwail/issues</url>
+  <url type="help">https://github.com/andrei-drexler/ironwail/discussions</url>
+
+  <launchable type="desktop-id">io.github.andrei-drexler.ironwail.desktop</launchable>
+
+  <description>
+    <p>Ironwail a fork of the popular GLQuake descendant QuakeSpasm with a focus on high performance 
+        instead of maximum compatibility, with a few extra features sprinkled on top.. By moving work from
+        the CPU to the GPU (culling, lightmap updates) and taking advantage of more modern OpenGL features
+        (instancing, compute shaders, persistent buffer mapping, indirect multi-draw, bindless textures),
+        this fork is capable of handling even the most demanding maps at very high framerates.</p>
+    <p>Features:</p>
+      <ul>
+        <li>Supports Windows, Linux, other unices.</li>
+        <li>Well tested on both 32 bit and 64 bit platforms.</li>
+        <li>Well tested on both little endian and big endian platforms.</li>
+        <li>OpenGL improvements. In-game resolution changing.</li>
+        <li>Widescreen FOV (field of view) support and automatic Hor+ FOV scaling.</li>
+        <li>Improved sound support. Support for OGG, MP3, Opus and WAV external music files.</li>
+        <li>Improved game controller support using SDL2.</li>
+        <li>Countless bug fixes, security fixes and other improvements.</li>
+        <li>Support for playing the 'Quake 2021 re-release' content</li>
+      </ul>
+    <p>Ironwail requires a copy of the Quake game data (Steam, GOG or Quake original CD), at the least in the
+      form of the shareware data file pak0.pak. In order to set this up, open (and if necessary create) the directory
+      <code>~/.ironwail</code> on your computer and copy the <code>id1</code> directory from a copy of Quake original CD
+      there. For more info visit: https://github.com/andrei-drexler/ironwail</p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/tx00100xt/ironwail-appimage/main/Linux/AppImage/Img/ironwail_1.png</image>
+      <caption>Ironwail screenshot 1</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/tx00100xt/ironwail-appimage/main/Linux/AppImage/Img/ironwail_2.png</image>
+      <caption>Ironwail screenshot 2</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/tx00100xt/ironwail-appimage/main/Linux/AppImage/Img/ironwail_3.png</image>
+      <caption>Ironwail screenshot 3</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/tx00100xt/ironwail-appimage/main/Linux/AppImage/Img/ironwail_4.png</image>
+      <caption>Ironwail screenshot 4</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.8.0" date="2024-11-10">
+      <description>
+        <p>Stable release of Ironwail.</p>
+      </description>
+    </release>
+    <release version="0.7.0" date="2023-03-17">
+      <description>
+        <p>Stable release of Ironwail.</p>
+      </description>
+    </release>
+    <release version="0.6.0" date="2022-05-12">
+      <description>
+        <p>Stable release of Ironwail.</p>
+      </description>
+    </release>
+    <release version="0.5.0" date="2022-04-02">
+      <description>
+        <p>Stable release of Ironwail.</p>
+      </description>
+    </release>
+    <release version="0.4.0" date="2021-01-29">
+      <description>
+        <p>Stable release of Ironwail.</p>
+      </description>
+    </release>
+    <release version="0.3.0" date="2022-01-08">
+      <description>
+        <p>Pre-release of Ironwail.</p>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1">
+    <!-- PEGI gives it 16+ in 2004 -->
+    <content_attribute id="violence-realistic">moderate</content_attribute>
+    <content_attribute id="violence-bloodshed">moderate</content_attribute>
+    <!-- The amount of torture and human suffering is not insignificant with the Strogg -->
+    <content_attribute id="violence-desecration">moderate</content_attribute>
+    <!-- Full multiplayer functionality -->
+    <content_attribute id="social-chat">intense</content_attribute>
+  </content_rating>
+</component>
+

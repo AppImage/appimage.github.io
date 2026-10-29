@@ -3,6 +3,7 @@ layout: app
 
 permalink: /ElectroCRUD/
 description: No coding is required; Create basic CRUD (Create, Read, Update, Delete) for your Database Database in minutes
+license: MIT
 
 icons:
   - ElectroCRUD/icons/256x256/electrocrud.png
@@ -23,18 +24,100 @@ links:
 desktop:
   Desktop Entry:
     Name: ElectroCRUD
-    Exec: AppRun
+    Exec: AppRun %U
     Terminal: false
     Type: Application
     Icon: electrocrud
     StartupWMClass: ElectroCRUD
-    X-AppImage-Version: 2.7.0
+    X-AppImage-Version: 2.8.0
     Comment: No coding is required
     Categories: Utility
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.16
+    X-AppImage-Payload-License: MIT
+
+electron:
+    for your Database Database in minutes
+  homepage: https://github.com/garrylachman/ElectroCRUD
+  author:
+    name: Garry Lachman
+    email: garry@lachman.co
+  main: main.js
+  private: true
+  engines:
+    node: ">=v13.7.0"
+  optionalDependencies:
+    fsevents: "^1.2.9"
+  dependencies:
+    "@angular-devkit/build-angular": 0.1002.0
+    "@angular-devkit/schematics": "^10.0.0"
+    "@angular/animations": 10.2.3
+    "@angular/cdk": 10.2.3
+    "@angular/cli": 10.2.0
+    "@angular/common": 10.2.3
+    "@angular/compiler": 10.2.3
+    "@angular/compiler-cli": 10.2.3
+    "@angular/core": 10.2.3
+    "@angular/forms": "^10.0.0"
+    "@angular/language-service": 10.2.3
+    "@angular/platform-browser": 10.2.3
+    "@angular/platform-browser-dynamic": 10.2.3
+    "@angular/router": 10.2.3
+    "@bugsnag/core": "^7.3.5"
+    "@bugsnag/js": "^7.5.1"
+    "@bugsnag/plugin-angular": "^7.5.1"
+    "@handsontable/angular": "^5.1.0"
+    "@materia-ui/ngx-monaco-editor": "^4.0.1"
+    "@nebular/date-fns": "^4.1.1"
+    "@nebular/eva-icons": "^4.0.0-rc.8"
+    "@nebular/theme": "^6.2.1"
+    "@ngx-formly/bootstrap": "^5.2.0"
+    "@ngx-formly/core": "^5.2.0"
+    "@sqltools/formatter": "^1.2.2"
+    "@swimlane/ngx-datatable": "^18.0.0"
+    "@trodi/electron-splashscreen": "^0.3.4"
+    "@types/tunnel-ssh": "^4.1.0"
+    "@types/uuid": "^3.4.9"
+    angular-fittext: "^2.1.1"
+    bootstrap: "^4.5.3"
+    date-fns: "^2.16.1"
+    dhx-spreadsheet: "^3.1.4"
+    electron-better-ipc: "^1.1.1"
+    electron-store: "^6.0.1"
+    eva-icons: "^1.1.3"
+    fast-equals: "^2.0.0"
+    get-current-line: "^6.3.0"
+    get-port: "^5.1.1"
+    grpc: "^1.24.4"
+    inversify: "^5.0.1"
+    inversify-binding-decorators: "^4.0.0"
+    jquery: "^3.5.1"
+    knex: "^0.20.15"
+    monaco-editor: "^0.18.1"
+    mysql: "^2.18.1"
+    ng-bootstrap-form-validation: "^9.0.0"
+    ng-dynamic-breadcrumb: "^4.0.0"
+    ng2-fittext: "^1.2.12"
+    ngx-chips: "^2.2.2"
+    ngx-mask: "^11.0.0"
+    open-ssh-tunnel: "^0.3.1"
+    parent-module: "^2.0.0"
+    pg: "^7.18.2"
+    popper.js: "^1.16.1"
+    reflect-metadata: "^0.1.13"
+    sqlite3: "^4.2.0"
+    stringify-object: "^3.3.0"
+    tunnel-ssh: "^4.1.4"
+    type-fest: "^0.8.1"
+    uuid: "^3.4.0"
+  browser:
+    crypto: false
 ---

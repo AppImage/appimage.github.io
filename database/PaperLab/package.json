@@ -1,0 +1,11 @@
+{
+  "name": "paperlab-desktop",
+  "productName": "PaperLab",
+  "version": "0.1.2",
+  "description": "PaperLab, a local-first research reader, in its own window over Docker.",
+  "homepage": "https://github.com/khannoussi-malek/PaperLab",
+  "author": "malek khannoussi",
+  "license": "Apache-2.0",
+  "private": true,
+  "main": "dist/main.js"
+}

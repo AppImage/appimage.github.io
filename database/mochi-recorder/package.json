@@ -1,0 +1,18 @@
+{
+  "name": "mochi",
+  "version": "1.0.22",
+  "description": "Screen recording tool for Linux with automatic zoom - Screen Studio alternative",
+  "main": "src/main/main.js",
+  "homepage": "https://github.com/mochi/mochi",
+  "author": {
+    "name": "Mochi",
+    "email": "dev@mochi.app"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^3.2.0",
+    "electron-updater": "^6.1.7",
+    "tar": "^6.2.1",
+    "x11": "^2.3.0"
+  }
+}

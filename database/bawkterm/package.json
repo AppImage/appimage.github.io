@@ -1,0 +1,29 @@
+{
+  "name": "bawkterm",
+  "version": "0.9.4",
+  "description": "SSH, SFTP, Docker and Remote Desktop client with an encrypted vault",
+  "main": "./out/main/index.js",
+  "author": "CKH",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juddisjudd/bawkterm.git"
+  },
+  "private": true,
+  "dependencies": {
+    "electron-updater": "6.8.9",
+    "node-pty": "1.1.0",
+    "ssh2": "1.17.0"
+  },
+  "packageManager": "bun@1.4.0",
+  "trustedDependencies": [
+    "esbuild",
+    "node-pty"
+  ],
+  "homepage": "https://github.com/juddisjudd/bawkterm",
+  "desktopName": "bawkterm.desktop",
+  "patchedDependencies": {
+    "ssh2@1.17.0": "patches/ssh2@1.17.0.patch",
+    "node-pty@1.1.0": "patches/node-pty@1.1.0.patch"
+  }
+}

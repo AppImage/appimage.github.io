@@ -3,6 +3,7 @@ layout: app
 
 permalink: /BetterDiscord/
 description: A simple standalone program which automates the installation, removal and maintenance of BetterDiscord.
+license: MIT
 
 icons:
   - BetterDiscord/icons/128x128/betterdiscord-installer.png
@@ -23,12 +24,12 @@ links:
 desktop:
   Desktop Entry:
     Name: BetterDiscord
-    Exec: AppRun
+    Exec: AppRun --no-sandbox %U
     Terminal: false
     Type: Application
     Icon: betterdiscord-installer
     StartupWMClass: BetterDiscord
-    X-AppImage-Version: 1.0.0
+    X-AppImage-Version: 1.3.0
     Comment: A simple standalone program which automates the installation, removal and
       maintenance of BetterDiscord.
     Categories: Utility
@@ -39,11 +40,16 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: MIT
 
 electron:
     and maintenance of BetterDiscord.
   author: BetterDiscord
-  version: 1.0.0
+  version: 1.3.0
   license: MIT
   dependencies:
     source-map-support: "^0.5.16"
@@ -51,5 +57,7 @@ electron:
     staticSourceDirectory: assets
     renderer:
       webpackConfig: webpack.renderer.js
+    main:
+      webpackConfig: webpack.main.js
   main: main.js
 ---

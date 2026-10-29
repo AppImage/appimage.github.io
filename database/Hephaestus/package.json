@@ -1,0 +1,15 @@
+{
+  "name": "hephaestus",
+  "version": "0.4.0",
+  "description": "A multi-harness workspace for local LLM agents — Forge & Folio.",
+  "type": "module",
+  "main": "./out/main/index.js",
+  "author": "Ellian-Eorwyn",
+  "license": "MIT",
+  "//desktopName": "Read from the package root (not build.linux). Electron derives the Linux app_id / WM_CLASS from it, so without it desktop environments can't link a running window to its launcher icon.",
+  "desktopName": "hephaestus.desktop",
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "xlsx": "^0.18.5"
+  }
+}

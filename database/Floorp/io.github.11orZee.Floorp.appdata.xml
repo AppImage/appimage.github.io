@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>io.github.11orZee.Floorp</id>
+	<launchable type="desktop-id">io.github.11orZee.Floorp.desktop</launchable>
+	<name>Floorp</name>
+	<developer_name>11orZee</developer_name>
+	<summary>Floorp Web Browser</summary>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>MPL-2.0</project_license>
+	<screenshots>
+		<screenshot type="default">
+			<image
+				width="1132"
+				height="802">
+				https://imgproxy.flathub.org/insecure/dpr:2/f:avif/rs:fill-down/aHR0cHM6Ly9kbC5mbGF0aHViLm9yZy9tZWRpYS9vbmUvYWJsYXplL2Zsb29ycC9lMWE1YmYzMTllZGYwMjQ1YjY4NWM3MTE1ODdjZGUxYS9zY3JlZW5zaG90cy9pbWFnZS0zX29yaWcucG5n
+			</image>
+			<caption>Welcome to Floorp</caption>
+		</screenshot>
+		<screenshot>
+			<image
+				width="1132"
+				height="802">
+				https://imgproxy.flathub.org/insecure/dpr:2/f:avif/rs:fill-down/aHR0cHM6Ly9kbC5mbGF0aHViLm9yZy9tZWRpYS9vbmUvYWJsYXplL2Zsb29ycC9lMWE1YmYzMTllZGYwMjQ1YjY4NWM3MTE1ODdjZGUxYS9zY3JlZW5zaG90cy9pbWFnZS0xX29yaWcucG5n
+			</image>
+			<caption>Home page</caption>
+		</screenshot>
+		<screenshot>
+			<image
+				width="1680"
+				height="899">
+				https://forum.vivaldi.net/assets/uploads/files/1699620946671-15796e4b-b322-4b25-85a1-bc31c6c75bf0-image.png
+			</image>
+			<caption>Split-screen</caption>
+		</screenshot>
+	</screenshots>
+	<description>
+		<p>Floorp is a free and open-source web browser project that was launched in Japan, based on the Firefox platform.</p>
+		<p>The browser's development is guided by a user-centric philosophy, which aims to provide users with greater
+			customization options, modern features like split-screen mode and mouse gestures, and enhanced privacy
+			protection.</p>
+	</description>
+	<releases>
+		<release
+			version="12.18.0"
+			date="2026-09-19">
+			<description>
+				<p> Release Page: <a href="https://github.com/11orZee/Floorp-AppImage/releases/tag/v12.18.0">v12.18.0</a> </p>
+			</description>
+		</release>
+	</releases>
+	<keywords>
+		<keyword>floorp</keyword>
+		<keyword>internet</keyword>
+		<keyword>web</keyword>
+	</keywords>
+	<url type="homepage">https://github.com/Floorp-Projects</url>
+	<provides>
+		<id>io.github.11orZee.Floorp</id>
+	</provides>
+	<content_rating type="oars-1.1"/>
+</component>

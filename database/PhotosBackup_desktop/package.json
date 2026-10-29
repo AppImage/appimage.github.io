@@ -1,0 +1,9 @@
+{
+  "name": "photos-backup-desktop",
+  "productName": "Photos Backup",
+  "version": "0.1.7",
+  "description": "Back up folders of photos and videos to Google Photos (desktop port of the PhotosBackup iOS app)",
+  "main": "src/main/main.js",
+  "license": "MIT",
+  "author": "g8row"
+}

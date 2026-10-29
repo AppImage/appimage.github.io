@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.wolfgangwarehaus.jellytoast</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+
+  <name>jellytoast</name>
+  <summary>A desktop music player for Jellyfin and Navidrome servers</summary>
+
+  <description>
+    <p>
+      jellytoast is a desktop music player for Jellyfin and Navidrome
+      servers (and any Subsonic / OpenSubsonic server). Bit-perfect mpv
+      playback, gapless audio, MPRIS2 system integration, system-tray
+      controls, and a floating mini player.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Browse albums, artists, songs, playlists, genres, and internet radio</li>
+      <li>Native search across both providers with offline-aware filtering</li>
+      <li>Bit-perfect mpv playback with optional server-side transcode tiers and ReplayGain (track / album)</li>
+      <li>Casting: Chromecast, AirPlay 2, DLNA, and Sonos — each toggleable per-protocol</li>
+      <li>Local cast relay for remote / Tailscale / self-signed servers (devices that can't reach the source)</li>
+      <li>Explicit downloads with full offline playback (cascade by album / artist / playlist) and offline indicator</li>
+      <li>Synced and plain lyrics, with a dedicated now-playing page</li>
+      <li>Floating mini player with optional always-on-top on KDE Wayland</li>
+      <li>MPRIS2 + system-tray integration; media-key support</li>
+      <li>ListenBrainz scrobbling with offline queue</li>
+      <li>Smart shuffle, smart playlists, sleep timer with fade-to-stop, tag editing (Jellyfin)</li>
+      <li>Theming: built-in theme families (Catppuccin, Dracula, Gruvbox, Nord, and more), base16 import, a watched themes folder, pywal/wallust follow, system-accent follow, and a glass-opacity slider</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.github.wolfgangwarehaus.jellytoast.desktop</launchable>
+
+  <url type="homepage">https://github.com/wolfgangwarehaus/jellytoast</url>
+  <url type="bugtracker">https://github.com/wolfgangwarehaus/jellytoast/issues</url>
+
+  <developer id="io.github.wolfgangwarehaus">
+    <name>wolfgangwarehaus</name>
+  </developer>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Player</category>
+  </categories>
+
+  <keywords>
+    <keyword>jellyfin</keyword>
+    <keyword>subsonic</keyword>
+    <keyword>navidrome</keyword>
+    <keyword>music</keyword>
+    <keyword>chromecast</keyword>
+    <keyword>airplay</keyword>
+  </keywords>
+
+  <content_rating type="oars-1.1"/>
+
+  <!-- URLs use /main/ so they resolve immediately. For a release listing,
+       pin them to the release TAG (not /main/) for a reproducible result. -->
+  <screenshots>
+    <screenshot type="default">
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/wolfgangwarehaus/jellytoast/main/docs/screenshots/library.png</image>
+      <caption>Browse your library as a clean album grid</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/wolfgangwarehaus/jellytoast/main/docs/screenshots/now-playing.png</image>
+      <caption>Now playing with the album queue and a live audio visualizer</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/wolfgangwarehaus/jellytoast/main/docs/screenshots/cast.png</image>
+      <caption>Cast to Chromecast, AirPlay, DLNA, or Sonos</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/wolfgangwarehaus/jellytoast/main/docs/screenshots/smart-playlists.png</image>
+      <caption>Build smart playlists from rule-based filters</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/wolfgangwarehaus/jellytoast/main/docs/screenshots/radio.png</image>
+      <caption>Tune in to internet radio stations</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/wolfgangwarehaus/jellytoast/main/docs/screenshots/downloads.png</image>
+      <caption>Download albums for offline playback</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/wolfgangwarehaus/jellytoast/main/docs/screenshots/settings.png</image>
+      <caption>Bit-perfect playback with equalizer and crossfade</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1280" height="720">https://raw.githubusercontent.com/wolfgangwarehaus/jellytoast/main/docs/screenshots/mini-compact.png</image>
+      <caption>A compact floating mini player</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1280" height="720">https://raw.githubusercontent.com/wolfgangwarehaus/jellytoast/main/docs/screenshots/mini-expanded.png</image>
+      <caption>The expanded mini player with album artwork</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.2.1" type="stable" date="2026-07-14">
+      <description>
+        <p>See the release notes for 0.2.1.</p>
+      </description>
+    </release>
+    <release version="0.2.0" type="stable" date="2026-07-12">
+      <description>
+        <p>See the release notes for 0.2.0.</p>
+      </description>
+    </release>
+    <release version="0.1.9" type="stable" date="2026-07-10">
+      <description>
+        <p>See the release notes for 0.1.9.</p>
+      </description>
+    </release>
+    <release version="0.1.8" type="stable" date="2026-07-06">
+      <description>
+        <p>See the release notes for 0.1.8.</p>
+      </description>
+    </release>
+    <release version="0.1.7" type="stable" date="2026-07-03">
+      <description>
+        <p>See the release notes for 0.1.7.</p>
+      </description>
+    </release>
+    <release version="0.1.6" type="stable" date="2026-07-01">
+      <description>
+        <p>See the release notes for 0.1.6.</p>
+      </description>
+    </release>
+    <release version="0.1.5" type="stable" date="2026-06-29">
+      <description>
+        <p>See the release notes for 0.1.5.</p>
+      </description>
+    </release>
+    <release version="0.1.4" type="stable" date="2026-06-26">
+      <description>
+        <p>See the release notes for 0.1.4.</p>
+      </description>
+    </release>
+    <release version="0.1.3" type="stable" date="2026-06-21">
+      <description>
+        <p>See the release notes for 0.1.3.</p>
+      </description>
+    </release>
+    <release version="0.1.2" type="stable" date="2026-06-20">
+      <description>
+        <p>See the release notes for 0.1.2.</p>
+      </description>
+    </release>
+    <release version="0.1.1" type="stable" date="2026-06-17">
+      <description>
+        <p>See the release notes for 0.1.1.</p>
+      </description>
+    </release>
+    <release version="0.1.0" type="stable" date="2026-06-16">
+      <description>
+        <p>
+          Initial pre-release. Casting (Chromecast, AirPlay 2, DLNA,
+          Sonos, Snapcast control surface), explicit downloads with
+          offline playback, MPRIS2 + system tray, floating mini player,
+          ListenBrainz scrobbling, smart shuffle, smart
+          playlists, sleep timer with fade-to-stop, tag editing
+          (Jellyfin), per-protocol cast toggles + discovery timing.
+        </p>
+      </description>
+    </release>
+  </releases>
+
+  <provides>
+    <binary>jellytoast</binary>
+  </provides>
+
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </recommends>
+
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+</component>

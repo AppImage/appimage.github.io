@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata, shipped inside the AppImage at usr/share/metainfo/.
+     release.yml adds the <releases> entry for the version it builds. -->
+<component type="desktop-application">
+  <id>io.github.thorstenfoltz.octa</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Octa</name>
+  <summary>View, edit and query data files</summary>
+  <developer id="io.github.thorstenfoltz">
+    <name>Thorsten Foltz</name>
+  </developer>
+  <description>
+    <p>
+      Octa opens a data file in a spreadsheet-like table with sorting, filtering
+      and search. Edit cells in place, insert or delete rows and columns, find and
+      replace or transform a column, all with undo, then save in the original
+      format or convert to another one.
+    </p>
+    <p>
+      Any open table can be reshaped with SQL through DuckDB: aggregate it, join it
+      with another file, and keep the result as a new tab or write it to a file or
+      a database.
+    </p>
+    <ul>
+      <li>CSV, Parquet, Excel, JSON, Arrow, Avro, ORC, SQLite, DuckDB and many more formats</li>
+      <li>Live databases such as PostgreSQL, MySQL and SQL Server</li>
+      <li>Files on S3, Azure, Google Cloud Storage, SFTP and WebDAV</li>
+      <li>Charts, summaries, file comparison and data quality checks</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">octa.desktop</launchable>
+  <provides>
+    <binary>octa</binary>
+  </provides>
+  <url type="homepage">https://thorstenfoltz.github.io/octa/</url>
+  <url type="bugtracker">https://github.com/thorstenfoltz/octa/issues</url>
+  <url type="vcs-browser">https://github.com/thorstenfoltz/octa</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>A Parquet file in the table view</caption>
+      <image>https://thorstenfoltz.github.io/octa/assets/screenshots/hero-table-view.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.21.0" date="2026-10-17"/>
+  </releases>
+</component>

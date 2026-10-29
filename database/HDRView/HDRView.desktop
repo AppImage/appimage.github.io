@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Name=HDRView
+GenericName=HDR Image Viewer
+Comment=A simple research-oriented image viewer with an emphasis on examining and comparing high-dynamic range (HDR) images
+Exec=HDRView %F
+Icon=HDRView
+Terminal=false
+Categories=Graphics;Viewer;Photography;
+MimeType=image/x-exr;image/x-hdr;image/x-portable-floatmap;image/png;image/jpeg;image/tiff;image/webp;image/avif;image/heic;image/jp2;image/jxl;image/bmp;image/x-dds;image/x-qoi;application/x-hdrview-session;
+Keywords=image;viewer;hdr;exr;openexr;photography;
+StartupNotify=true
+X-AppImage-Version=3.0.1
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=BSD-3-Clause

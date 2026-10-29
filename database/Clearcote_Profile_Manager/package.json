@@ -1,0 +1,13 @@
+{
+  "name": "clearcote-profile-manager",
+  "version": "0.14.2",
+  "private": true,
+  "description": "Desktop manager for Clearcote browser profiles — create, save, organize, and launch coherent, persistent browser identities.",
+  "license": "BSD-3-Clause",
+  "author": "clearcotelabs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clearcotelabs/clearcote-profile-manager.git"
+  },
+  "main": "dist-electron/main.js"
+}

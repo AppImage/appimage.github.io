@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream 元数据，随 AppImage 安装到 usr/share/metainfo/。AppImageHub 与软件中心
+  据此显示名称、简介与许可（docs/Decisions.md 第 4 节）。
+  文件名用 .appdata.xml 而不是 .metainfo.xml：AppImageHub 的检查脚本只认前者。
+  角色素材不属于 GPL，按其单独条款发行，因此许可表达式里单独列出。
+-->
+<component type="desktop-application">
+  <id>io.github.hz_tyzq.MoneyUnderBedDeskPet</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later AND OFL-1.1 AND LicenseRef-proprietary=https://github.com/HZ-TYZQ/MoneyUnderBed-DeskPet/blob/main/assets/LICENSE.md</project_license>
+
+  <name>MoneyUnderBed DeskPet</name>
+  <name xml:lang="zh-CN">床下有罐钱桌宠</name>
+  <summary>Unofficial desktop pet for MoneyUnderBed</summary>
+  <summary xml:lang="zh-CN">《床下有罐钱》非官方非商业桌宠</summary>
+
+  <description>
+    <p>
+      Puts the heroine of MoneyUnderBed on your desktop. She walks around, rests and
+      says a few lines on her own, and you can click, drag and feed her.
+    </p>
+    <p xml:lang="zh-CN">
+      把《床下有罐钱》的女主放到桌面上：她会自己走动、休息、说几句话，也可以被点击、拖动和投喂。
+    </p>
+    <ul>
+      <li>Pixel animations in four directions</li>
+      <li xml:lang="zh-CN">四方向移动与像素动画</li>
+      <li>Click, drag and ice cream feeding</li>
+      <li xml:lang="zh-CN">点击、拖动和冰淇淋投喂互动</li>
+      <li>Short lines and conversations true to the original character (in Chinese)</li>
+      <li xml:lang="zh-CN">符合原作人设的短句和连续对话</li>
+      <li>Adjustable activity, dialogue, animation, display scale and window behavior</li>
+      <li xml:lang="zh-CN">可调整活动、对话、动画、显示倍率与窗口行为</li>
+    </ul>
+    <p>
+      This is an unofficial, non-commercial fan project. It is not affiliated with,
+      published by, or endorsed by the developers of MoneyUnderBed. The character
+      assets are not covered by the GPL: no commercial use, no R18 content and no use
+      for AI training.
+    </p>
+    <p xml:lang="zh-CN">
+      本程序是非官方、非商业的二次创作项目，与《床下有罐钱》的开发者没有隶属关系，也不由其发布或背书。
+      角色素材不属于 GPL：不可商用、禁止 R18、禁止用于 AI 训练。
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.hz_tyzq.MoneyUnderBedDeskPet.desktop</launchable>
+  <url type="homepage">https://github.com/HZ-TYZQ/MoneyUnderBed-DeskPet</url>
+  <url type="bugtracker">https://github.com/HZ-TYZQ/MoneyUnderBed-DeskPet/issues</url>
+  <!-- AppImageHub 的工具链仍是 AppStream 0.11/0.15，不认识 1.0 的 <developer>。 -->
+  <developer_name>HZ-TYZQ</developer_name>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+  </content_rating>
+
+  <provides>
+    <binary>money-under-bed-deskpet</binary>
+  </provides>
+</component>

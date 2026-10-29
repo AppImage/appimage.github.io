@@ -1,0 +1,19 @@
+{
+  "name": "slopera",
+  "productName": "Slopera",
+  "version": "1.1.0",
+  "description": "The browser for the slop era.",
+  "author": "Andreas Siegrist",
+  "license": "MIT",
+  "type": "module",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.104.1",
+    "lucide-react": "^1.18.0",
+    "openai": "^6.42.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "zod": "^4.4.3",
+    "zustand": "^5.0.14"
+  }
+}

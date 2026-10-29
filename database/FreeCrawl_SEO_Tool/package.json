@@ -1,0 +1,48 @@
+{
+  "name": "@freecrawl/desktop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FreeCrawl SEO â€” desktop application",
+  "homepage": "https://github.com/kemalai/FreeCrawl-SEO-Tool",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kemalai/FreeCrawl-SEO-Tool.git"
+  },
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/kemalacar"
+  },
+  "author": {
+    "name": "kemalai",
+    "email": "kemalacarofficial@gmail.com"
+  },
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@freecrawl/core": "*",
+    "@freecrawl/db": "*",
+    "@freecrawl/shared-types": "*",
+    "@tanstack/react-table": "^8.20.5",
+    "@tanstack/react-virtual": "^3.10.0",
+    "@types/cytoscape": "^3.21.9",
+    "3d-force-graph": "^1.80.0",
+    "clsx": "^2.1.1",
+    "cytoscape": "^3.33.2",
+    "cytoscape-dagre": "^2.5.0",
+    "dagre": "^0.8.5",
+    "dictionary-tr": "^2.0.0",
+    "eld": "^2.0.3",
+    "franc": "^6.2.0",
+    "i18next": "^26.2.0",
+    "lucide-react": "^0.544.0",
+    "nspell": "^2.1.5",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-i18next": "^17.0.8",
+    "react-resizable-panels": "^2.1.9",
+    "undici": "^8.0.0",
+    "zustand": "^5.0.2"
+  }
+}

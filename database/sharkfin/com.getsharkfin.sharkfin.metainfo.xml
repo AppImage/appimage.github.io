@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.getsharkfin.sharkfin</id>
+  <name>sharkfin</name>
+  <summary>Configurator for Attack Shark and other ROYUAN keyboards</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <description>
+    <p>Remap keys, set the RGB, record macros and change device settings on keyboards built on ROYUAN hardware.</p>
+    <p>Writes need a USB cable. sharkfin never flashes firmware.</p>
+  </description>
+  <launchable type="desktop-id">sharkfin.desktop</launchable>
+  <url type="homepage">https://github.com/dniminenn/sharkfin</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Remapping keys on an Attack Shark X86</caption>
+      <image type="source" width="1280" height="820">https://raw.githubusercontent.com/dniminenn/sharkfin/master/docs/keys-abyss.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.9.3" date="2026-09-29"/>
+  </releases>
+</component>

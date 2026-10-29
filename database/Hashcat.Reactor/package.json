@@ -1,0 +1,20 @@
+{
+  "name": "hashcat-reactor",
+  "version": "1.0.10",
+  "description": "Hashcat Reactor GUI",
+  "main": "electron.js",
+  "dependencies": {
+    "i18next": "^23.7.11",
+    "i18next-browser-languagedetector": "^7.2.0",
+    "lucide-react": "^0.263.1",
+    "node-pty": "^1.1.0-beta39",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.5.0",
+    "react-virtuoso": "^4.7.0",
+    "recharts": "^2.7.2",
+    "socket.io-client": "^4.7.2",
+    "xterm": "^5.3.0",
+    "xterm-addon-fit": "^0.8.0"
+  }
+}

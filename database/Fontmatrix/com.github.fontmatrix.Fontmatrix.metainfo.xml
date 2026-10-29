@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SPDX-FileCopyrightText: 2020 Fontmatrix developers
+  SPDX-FileCopyrightText: 2026 Blagovest Petrov &lt;blagovest@petrovs.info&gt;
+  SPDX-License-Identifier: CC0-1.0
+-->
+<component type="desktop-application">
+  <id>com.github.fontmatrix.Fontmatrix</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+
+  <name>Fontmatrix</name>
+  <summary>Organise, inspect and compare your fonts</summary>
+  <summary xml:lang="bg">Подреждане, разглеждане и сравняване на шрифтове</summary>
+
+  <description>
+    <p>
+      Fontmatrix is a font manager for graphic designers and typesetters who work with
+      hundreds or thousands of fonts and do not want to browse overly long lists in dialogs.
+    </p>
+    <p xml:lang="bg">
+      Fontmatrix е приложение за управление на шрифтове за графични дизайнери и предпечатари,
+      които работят със стотици или хиляди шрифтове и не искат да ги търсят в безкрайни списъци.
+    </p>
+    <p>With it you can:</p>
+    <p xml:lang="bg">С него може:</p>
+    <ul>
+      <li>Activate and deactivate fonts for the other applications</li>
+      <li xml:lang="bg">да активирате и деактивирате шрифтове за останалите приложения</li>
+      <li>Tag fonts and group them into sets</li>
+      <li xml:lang="bg">да поставяте етикети на шрифтовете и да ги групирате в набори</li>
+      <li>Find fonts with simple or combined filters: tags, metadata, PANOSE classification</li>
+      <li xml:lang="bg">да намирате шрифтове с прости или съставни филтри: етикети, метаданни, класификация по PANOSE</li>
+      <li>Inspect a font in detail: glyphs, OpenType features, name and TrueType tables</li>
+      <li xml:lang="bg">да разглеждате шрифт в подробности: глифи, функции на OpenType, таблици с имена и на TrueType</li>
+      <li>Compare the glyphs of several fonts on top of each other</li>
+      <li xml:lang="bg">да сравнявате глифите на няколко шрифта, насложени един върху друг</li>
+      <li>Produce font books as PDF and extract the fonts embedded in a PDF file</li>
+      <li xml:lang="bg">да създавате каталози с шрифтове в PDF и да извличате шрифтовете, вградени в PDF файл</li>
+    </ul>
+  </description>
+
+  <developer id="io.fontmatrix">
+    <name>Fontmatrix Developers</name>
+  </developer>
+
+  <launchable type="desktop-id">com.github.fontmatrix.Fontmatrix.desktop</launchable>
+  <provides>
+    <binary>fontmatrix</binary>
+  </provides>
+  <translation type="gettext">fontmatrix</translation>
+
+  <categories>
+    <category>Graphics</category>
+    <category>Viewer</category>
+  </categories>
+  <keywords>
+    <keyword>font</keyword>
+    <keyword>typeface</keyword>
+    <keyword>typography</keyword>
+    <keyword>OpenType</keyword>
+    <keyword>PANOSE</keyword>
+  </keywords>
+
+  <url type="homepage">https://github.com/fontmatrix/fontmatrix</url>
+  <url type="bugtracker">https://github.com/fontmatrix/fontmatrix/issues</url>
+  <url type="vcs-browser">https://github.com/fontmatrix/fontmatrix</url>
+
+  <content_rating type="oars-1.1"/>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>A font family with its sample text</caption>
+      <caption xml:lang="bg">Семейство шрифтове с примерен текст</caption>
+      <image type="source">https://raw.githubusercontent.com/fontmatrix/fontmatrix/master/doc/screenshots/family.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The font list with previews and filters</caption>
+      <caption xml:lang="bg">Списъкът с шрифтове с изгледи и филтри</caption>
+      <image type="source">https://raw.githubusercontent.com/fontmatrix/fontmatrix/master/doc/screenshots/list.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.0.1" date="2026-09-30">
+      <url type="details">https://github.com/fontmatrix/fontmatrix/releases/tag/v1.0.1</url>
+      <description>
+        <ul>
+          <li>The Flatpak no longer needs access to the whole home folder: files are opened and saved through the file chooser</li>
+          <li>The single-instance D-Bus service is named after the application ID</li>
+          <li>Built on the KDE 6.11 Flatpak runtime</li>
+          <li>An AppImage for Linux distributions with glibc 2.34 or newer</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-09-28">
+      <url type="details">https://github.com/fontmatrix/fontmatrix/releases/tag/v1.0.0</url>
+      <description>
+        <p>The port to Qt 6 and KDE Frameworks 6 is complete.</p>
+        <ul>
+          <li>Variable fonts: named instances and a slider for each axis</li>
+          <li>Colour fonts: CBDT, sbix, COLR v0 and v1, and OpenType-SVG</li>
+          <li>Right-to-left text, laid out with the Unicode bidirectional algorithm</li>
+          <li>Font activation on Linux, macOS and Windows</li>
+          <li>Filters for language coverage, licence, font technology and duplicates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.0~alpha" type="development" date="2026-09-19">
+      <description>
+        <p>Preview of the port to KDE Frameworks 6.</p>
+      </description>
+    </release>
+    <release version="0.11.0" date="2026-04-23">
+      <description>
+        <ul>
+          <li>Bulgarian translation</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.10.1" date="2026-04-22">
+      <description>
+        <ul>
+          <li>Fixes for several crashes</li>
+          <li>Build versions follow the release tag</li>
+          <li>Nicer splash screen</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.10.0" type="development" date="2026-03-14">
+      <description>
+        <ul>
+          <li>Qt 6 support</li>
+          <li>New Windows builds</li>
+          <li>Standard XDG directories on Linux</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.100" date="2020-09-15"/>
+  </releases>
+</component>

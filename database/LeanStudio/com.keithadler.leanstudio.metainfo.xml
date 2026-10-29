@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata for Linux software centres and AppImage catalogues. build-appimage.sh fills in 0.10.0 and 2026-09-28. -->
+<component type="desktop-application">
+  <id>com.keithadler.leanstudio</id>
+  <name>Lean Studio</name>
+  <summary>A desktop IDE for the Lean 4 theorem prover</summary>
+  <developer id="com.keithadler">
+    <name>Keith Adler (@keithadler)</name>
+  </developer>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>
+      Lean Studio is a native desktop IDE built only for Lean 4. It shows the tactic state with Lean's own diff of
+      each step, lists every tactic in a proof with what it changed, and re-checks each declaration you build with
+      Tenet, an independent implementation of Lean's kernel.
+    </p>
+    <p>
+      It includes a tutorial for newcomers, Prove It (a portfolio of tactics tried on each sorry), a search of
+      Mathlib in plain English, Git and GitHub, and an MCP server so AI assistants can use Lean while they work.
+      Lean itself is installed through elan, which Lean Studio offers to set up.
+    </p>
+  </description>
+  <launchable type="desktop-id">leanstudio.desktop</launchable>
+  <url type="homepage">https://github.com/keithadler/leanstudio</url>
+  <url type="bugtracker">https://github.com/keithadler/leanstudio/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The editor, the tactic state and the proof's steps</caption>
+      <image>https://raw.githubusercontent.com/keithadler/leanstudio/main/docs/images/tactic-state.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Development</category>
+    <category>Education</category>
+    <category>Math</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.10.0" date="2026-09-28"/>
+  </releases>
+</component>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metainfo de PDF-Equilibrist (AppImage). 0.1.26 et 2026-10-17 sont remplacés par
+     build_appimage.sh. Validation : appstreamcli validate (options pedantic et no-net). -->
+<component type="desktop-application">
+  <id>org.pdf_equilibrist.pdf_equilibrist</id>
+  <name>PDF-Equilibrist</name>
+  <summary>Free PDF editor that works entirely offline</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer_name>Bit-Scripts</developer_name>
+  <description>
+    <p>
+      PDF-Equilibrist is a free and open-source desktop PDF editor. Everything runs on your own
+      computer: documents are never uploaded, there is no account and no telemetry.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Edit existing text block by block, keeping the original font, size and colour</li>
+      <li>Add text, images, stamps and signature images, placed interactively on the page</li>
+      <li>Annotate: highlight, strike out, underline, text boxes</li>
+      <li>Insert, split, merge, reverse and rotate pages</li>
+      <li>Convert PDF to Word, Excel, PowerPoint or images, and Office documents or images to PDF</li>
+      <li>Built-in offline OCR: scanned PDFs become searchable or editable Word and Excel files</li>
+      <li>AES-256 encryption and watermarks</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">pdf-equilibrist.desktop</launchable>
+  <url type="homepage">https://pdf-equilibrist.org</url>
+  <url type="bugtracker">https://github.com/Bit-Scripts/PDF-Equilibrist/issues</url>
+  <url type="faq">https://pdf-equilibrist.org/#faq</url>
+  <categories>
+    <category>Office</category>
+    <category>Viewer</category>
+  </categories>
+  <keywords>
+    <keyword>PDF</keyword>
+    <keyword>editor</keyword>
+    <keyword>OCR</keyword>
+    <keyword>convert</keyword>
+    <keyword>annotate</keyword>
+  </keywords>
+  <provides>
+    <binary>PDF-Equilibrist</binary>
+  </provides>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <content_rating type="oars-1.1"/>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Bit-Scripts/PDF-Equilibrist/main/assets/images/PDF-Equilibrist.png</image>
+      <caption>Main window</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Bit-Scripts/PDF-Equilibrist/main/assets/images/feature-modifier.png</image>
+      <caption>Editing text and adding stamps</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Bit-Scripts/PDF-Equilibrist/main/assets/images/feature-convertir.png</image>
+      <caption>Converting documents</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.1.26" date="2026-10-17"/>
+  </releases>
+</component>

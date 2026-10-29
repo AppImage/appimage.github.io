@@ -1,0 +1,26 @@
+[Desktop Entry]
+Name=Control Center
+Comment=Multi-Agent Developer Control Center
+Exec=control_center %U
+Icon=control_center
+Type=Application
+Terminal=false
+Categories=Development;IDE;
+# The second handler is the reversed Google OAuth iOS client id (public, not a
+# secret); it must match GOOGLE_OAUTH_CLIENT_ID in .env. Update both on rotation.
+MimeType=x-scheme-handler/control-center;x-scheme-handler/com.googleusercontent.apps.806422936280-h53u9n27h9pmvrbs2ci86hisla0addqn;
+NoDisplay=false
+StartupNotify=true
+StartupWMClass=control_center
+X-AppImage-Version=0.0.6
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|SamuelAlev|control-center|latest|Control-Center-*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34
+X-AppImage-Payload-License=MIT

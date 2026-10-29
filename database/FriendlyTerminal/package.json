@@ -1,0 +1,17 @@
+{
+  "name": "friendlyterminal-linux",
+  "version": "1.2.0",
+  "description": "A friendly, modern terminal for Linux",
+  "author": "FriendlyTerminal contributors <Friendly-Terminal@users.noreply.github.com>",
+  "homepage": "https://github.com/Friendly-Terminal/friendlyterminal",
+  "license": "GPL-3.0-only",
+  "private": true,
+  "main": "dist/main/index.js",
+  "dependencies": {
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/addon-search": "^0.16.0",
+    "@xterm/addon-web-links": "^0.12.0",
+    "@xterm/xterm": "^5.5.0",
+    "node-pty": "^1.0.0"
+  }
+}

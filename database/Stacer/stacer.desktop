@@ -1,18 +1,24 @@
 [Desktop Entry]
-Name=Stacer
-Exec=stacer
-Comment=Linux System Optimizer and Monitoring
-Icon=stacer
 Type=Application
+Name=Stacer
+GenericName=Linux System Optimizer and Monitoring
+GenericName[fr]=Optimiseur et moniteur du système Linux
+GenericName[ru]=Оптимизатор и монитор системы Linux
+Comment=Optimize and monitor your Linux system
+Comment[fr]=Optimisation et contrôle de votre système Linux
+Comment[ru]=Оптимизация и контроль вашей системы Linux
+Icon=stacer
+Hidden=false
+Exec=stacer
 Terminal=false
-Encoding=UTF-8
-Categories=Utility;
-X-AppImage-Version=e99485e
+Categories=Utility;System;Monitor
+X-AppImage-Version=1.8.0
 
 [AppImageHub]
-# Dear upstream developer, please include update information in your AppImage
-# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-UpdateInformation=gh-releases-zsync|QuentiumYT|Stacer|latest|Stacer-*-x86_64.AppImage.zsync
 X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
-X-AppImage-Payload-License=GPL-3.0
+X-AppImage-Libc=bundled
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=true

@@ -1,0 +1,14 @@
+{
+  "name": "zune-explorer",
+  "version": "1.5.0",
+  "description": "A Zune HD-inspired file explorer built with Electron",
+  "main": "src/main/main.js",
+  "author": "NiceBeard",
+  "license": "MIT",
+  "dependencies": {
+    "fast-xml-parser": "^4.5.1",
+    "ffmpeg-static": "^5.3.0",
+    "music-metadata": "^11.12.1",
+    "usb": "^2.17.0"
+  }
+}

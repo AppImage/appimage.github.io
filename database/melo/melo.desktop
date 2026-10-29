@@ -1,0 +1,35 @@
+[Desktop Entry]
+Type=Application
+Name=melo
+Comment=YouTube integrated native desktop music player
+Exec=melo %U
+Icon=melo
+Terminal=false
+Categories=AudioVideo;Audio;Player;
+StartupWMClass=melo
+Keywords=music;audio;player;youtube;stream;playlist;
+MimeType=audio/mpeg;audio/mp4;audio/flac;audio/ogg;audio/x-vorbis+ogg;audio/x-opus+ogg;audio/x-wav;audio/webm;x-scheme-handler/melo;
+Actions=PlayPause;Next;Previous;
+
+[Desktop Action PlayPause]
+Name=Play/Pause
+Exec=melo --play-pause
+
+[Desktop Action Next]
+Name=Next Track
+Exec=melo --next
+
+[Desktop Action Previous]
+Name=Previous Track
+Exec=melo --previous
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35

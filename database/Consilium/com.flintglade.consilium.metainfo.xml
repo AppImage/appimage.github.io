@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Metadata is CC0-1.0; the application is Apache-2.0. -->
+<component type="desktop-application">
+  <id>com.flintglade.consilium</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0</project_license>
+  <name>Consilium</name>
+  <summary>Route AI chats across local and optional providers</summary>
+  <developer id="com.flintglade">
+    <name>Flintglade</name>
+  </developer>
+  <description>
+    <p>Consilium is a free and open-source desktop harness for chatting with local models, official provider command-line tools, and optional direct APIs.</p>
+    <p>Choose a provider manually or use an explainable routing profile. Conversations stay in a recoverable local session store, and the application has no first-party telemetry or paid feature gates.</p>
+  </description>
+  <launchable type="desktop-id">Consilium.desktop</launchable>
+  <provides>
+    <binary>grok-chat-desktop</binary>
+  </provides>
+  <url type="homepage">https://flintglade.com/</url>
+  <url type="vcs-browser">https://github.com/flintglade/consilium</url>
+  <url type="bugtracker">https://github.com/flintglade/consilium/issues</url>
+  <url type="donation">https://www.patreon.com/c/zach457</url>
+  <content_rating type="oars-1.1" />
+  <branding>
+    <color type="primary" scheme_preference="light">#ff1745</color>
+    <color type="primary" scheme_preference="dark">#ff1745</color>
+  </branding>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+  <releases>
+    <release version="0.1.0" date="2026-07-13">
+      <description>
+        <p>Initial Consilium desktop release with local and optional provider routes, explainable routing, streaming responses, and recoverable session history.</p>
+      </description>
+    </release>
+  </releases>
+</component>

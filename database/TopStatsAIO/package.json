@@ -1,0 +1,19 @@
+{
+  "name": "topstatsaio",
+  "version": "3.4.5",
+  "description": "Your one stop shop for generating top stats for Guild Wars 2 WvW.",
+  "main": "main.js",
+  "author": "Darkharasho <darkharasho@users.noreply.github.com>",
+  "license": "ISC",
+  "type": "commonjs",
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "semver": "^7.7.2"
+  }
+}

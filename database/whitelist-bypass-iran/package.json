@@ -1,0 +1,5 @@
+{
+  "name": "whitelist-bypass-iran-joiner",
+  "version": "0.1.2",
+  "main": "dist/main/index.js"
+}

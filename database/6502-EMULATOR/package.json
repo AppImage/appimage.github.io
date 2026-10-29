@@ -1,0 +1,29 @@
+{
+  "name": "6502-emulator",
+  "version": "3.5.0",
+  "private": true,
+  "description": "Desktop (Electron) and web emulator for the AC6502 family of computers",
+  "author": {
+    "name": "A.C. Wright",
+    "email": "acwrightdesign@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acwright/6502-Emulator.git"
+  },
+  "homepage": "https://github.com/acwright/6502-Emulator",
+  "license": "MIT",
+  "main": "./out/main/index.js",
+  "desktopName": "ac6502-emulator.desktop",
+  "dependencies": {
+    "@electron-toolkit/utils": "^3.0.0",
+    "@heroicons/vue": "^2.2.0",
+    "buffer": "^6.0.3",
+    "pinia": "^3.0.4",
+    "serialport": "^13.0.0",
+    "vue": "^3.5.29"
+  },
+  "bin": {
+    "6502": "./bin/6502"
+  }
+}

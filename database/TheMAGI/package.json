@@ -1,0 +1,32 @@
+{
+  "name": "magi-melee",
+  "version": "1.8.0",
+  "description": "AI-powered Melee coaching from your Slippi replays",
+  "main": "src/main/entry.js",
+  "author": {
+    "name": "Bloodshed-Rain",
+    "email": "268419293+Bloodshed-Rain@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@slippi/slippi-js": "^9.0.0",
+    "@tanstack/react-query": "^5.95.2",
+    "better-sqlite3": "^12.8.0",
+    "chokidar": "^5.0.0",
+    "electron-updater": "^6.8.9",
+    "framer-motion": "^12.38.0",
+    "koffi": "^2.16.2",
+    "lucide-react": "^1.7.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.18.2",
+    "recharts": "^3.8.0",
+    "zustand": "^5.0.12"
+  },
+  "overrides": {
+    "esbuild": "^0.28.2"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "pokemmo-tool",
+  "version": "3.3.8",
+  "private": true,
+  "description": "3's PokeMMO Tool — For Blueberries",
+  "author": "3",
+  "main": "electron/bootstrap.js",
+  "dependencies": {
+    "electron-updater": "^6.1.1",
+    "eslint": "^9.34.0",
+    "marked": "^16.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "undici": "^6.21.3",
+    "xlsx": "^0.18.5"
+  }
+}

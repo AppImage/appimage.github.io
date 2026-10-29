@@ -1,0 +1,51 @@
+---
+layout: app
+
+permalink: /Netcatty/
+description: "Netcatty is a modern SSH manager and terminal app with host grouping, SFTP, keychain, port forwarding, and a rich UI."
+license: "GPL-3.0"
+
+icons:
+  - Netcatty/icons/128x128/netcatty.png
+
+screenshots:
+  - Netcatty/screenshot.png
+
+authors:
+  - name: "binaricat"
+    url: "https://github.com/binaricat"
+
+links:
+  - type: GitHub
+    url: binaricat/Netcatty
+  - type: Download
+    url: https://github.com/binaricat/Netcatty/releases
+
+desktop:
+  Desktop Entry:
+    Name: Netcatty
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: netcatty
+    StartupWMClass: Netcatty
+    X-AppImage-Version: 1.1.83
+    Comment: Netcatty is a modern SSH manager and terminal app with host grouping, SFTP,
+      keychain, port forwarding, and a rich UI.
+    MimeType: x-scheme-handler/ssh
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.28
+    X-AppImage-Payload-License: GPL-3.0
+
+electron: {"name":"netcatty","description":"Netcatty is a modern SSH manager and terminal app with host grouping, SFTP, keychain, port forwarding, and a rich UI.","homepage":"https://github.com/binaricat/Netcatty","private":true,"version":"1.1.83","type":"module","workspaces":["packages/*","examples/plugins/*"],"author":"binaricat <support@netcatty.com>","license":"GPL-3.0-or-later","engines":{"node":">=22"},"main":"electron/main.cjs","bin":{"netcatty-tool-cli":"./electron/cli/netcatty-tool-cli.cjs"},"dependencies":{"@ai-sdk/anthropic":"^4.0.0","@ai-sdk/google":"^4.0.0","@ai-sdk/openai":"^4.0.0","@aws-sdk/client-s3":"^3.956.0","@eslint-community/regexpp":"4.12.2","@fontsource/jetbrains-mono":"^5.2.8","@fontsource/mona-sans":"^5.2.8","@fontsource/space-grotesk":"^5.2.10","@mdxeditor/editor":"^4.0.4","@modelcontextprotocol/sdk":"^1.29.0","@monaco-editor/react":"^4.7.0","@netcatty/plugin-cli":"0.1.0-internal","@netcatty/plugin-contract":"0.1.0-internal","@netcatty/plugin-sdk":"0.1.0-internal","@openai/codex-sdk":"0.144.3","@radix-ui/react-collapsible":"1.1.12","@radix-ui/react-context-menu":"2.2.16","@radix-ui/react-dialog":"1.1.15","@radix-ui/react-hover-card":"^1.1.15","@radix-ui/react-popover":"1.1.15","@radix-ui/react-scroll-area":"1.2.10","@radix-ui/react-select":"2.2.6","@radix-ui/react-tabs":"1.1.13","@radix-ui/react-tooltip":"^1.2.8","@smithy/node-http-handler":"^4.4.9","@streamdown/cjk":"^1.0.2","@streamdown/code":"^1.1.0","@tanstack/react-virtual":"^3.14.8","@withfig/autocomplete":"^2.692.3","@xterm/addon-fit":"0.12.0-beta.292","@xterm/addon-image":"0.10.0-beta.292","@xterm/addon-search":"0.17.0-beta.292","@xterm/addon-serialize":"0.15.0-beta.292","@xterm/addon-unicode-graphemes":"0.5.0-beta.292","@xterm/addon-web-links":"0.13.0-beta.292","@xterm/addon-webgl":"0.20.0-beta.291","@xterm/xterm":"6.1.0-beta.292","ai":"^7.0.2","ajv":"8.18.0","ajv-formats":"3.0.1","clsx":"2.1.1","electron-updater":"^6.8.3","http-proxy-agent":"^7.0.2","https-proxy-agent":"^7.0.6","iconv-lite":"^0.6.3","katex":"^0.18.4","lucide-react":"0.560.0","mdast-util-from-markdown":"^2.0.3","mdast-util-gfm-strikethrough":"^2.0.0","mdast-util-to-string":"^4.0.0","micromark-extension-gfm-strikethrough":"^2.1.0","monaco-editor":"^0.55.1","node-pty":"1.1.0","pinyin-pro":"^3.28.1","re2js":"2.8.6","react":"^19.2.1","react-dom":"^19.2.1","serialport":"^13.0.0","socks-proxy-agent":"^8.0.5","ssh2-sftp-client":"^12.0.1","streamdown":"^2.4.0","tailwind-merge":"3.4.0","turndown":"^7.2.4","turndown-plugin-gfm":"^1.0.2","use-stick-to-bottom":"^1.1.3","webdav":"^5.8.0","zmodem.js":"^0.1.10","zod":"^4.3.6"},"optionalDependencies":{"@anthropic-ai/claude-agent-sdk":"^0.3.161","@cursor/sdk":"^1.0.18","@github/copilot-sdk":"1.0.0","@opencode-ai/sdk":"^1.17.9","@tencent-ai/agent-sdk":"^0.3.230","@vscode/windows-process-tree":"^0.7.0"},"overrides":{"cpu-features":"npm:empty-npm-package@1.0.0","axios":"1.13.5","node-abi":"4.31.0","@electron/asar":"4.2.0"}}
+---

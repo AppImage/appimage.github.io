@@ -1,0 +1,29 @@
+{
+  "name": "beacon",
+  "private": true,
+  "version": "2.1.8",
+  "description": "A glanceable desktop productivity island for Windows and Linux",
+  "author": {
+    "name": "kachakaran6",
+    "email": "kachakaran06@gmail.com"
+  },
+  "homepage": "https://github.com/kachakaran6/beacon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kachakaran6/beacon.git"
+  },
+  "type": "module",
+  "main": "electron/main.js",
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "clsx": "^2.1.1",
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.3.9",
+    "framer-motion": "^13.4.0",
+    "lucide-react": "^1.47.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tailwind-merge": "^3.7.0",
+    "zustand": "^5.0.15"
+  }
+}

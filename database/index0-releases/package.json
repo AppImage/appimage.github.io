@@ -1,0 +1,23 @@
+{
+  "name": "index_0",
+  "version": "1.7.0",
+  "private": true,
+  "main": "electron/main.cjs",
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "better-sqlite3": "^13.0.3",
+    "electron-updater": "^6.8.9",
+    "mermaid": "^11.17.2",
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "uuid": "^14.0.1",
+    "yaml": "^2.9.0",
+    "zod": "^4.4.3"
+  },
+  "allowScripts": {
+    "better-sqlite3@13.0.3": true,
+    "unrs-resolver@1.12.2": true,
+    "electron-winstaller@5.4.0": true
+  }
+}

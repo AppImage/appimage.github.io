@@ -1,0 +1,28 @@
+{
+  "name": "sameko-dev-cpp",
+  "version": "1.2.0",
+  "description": "A fast, modern, and beautiful C++ IDE built with Electron and Monaco Editor",
+  "main": "app/main.js",
+  "author": "QuangquyNguyenvo",
+  "license": "MIT",
+  "homepage": "https://github.com/QuangquyNguyenvo/Sameko-Dev-CPP",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QuangquyNguyenvo/Sameko-Dev-CPP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/QuangquyNguyenvo/Sameko-Dev-CPP/issues"
+  },
+  "dependencies": {
+    "discord-rpc": "^4.0.1",
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.7.3",
+    "golden-layout": "^2.6.0",
+    "monaco-editor": "^0.45.0",
+    "tree-sitter": "^0.21.1",
+    "tree-sitter-cpp": "^0.23.4",
+    "v8-compile-cache": "^2.4.0",
+    "xterm": "^5.3.0",
+    "xterm-addon-fit": "^0.8.0"
+  }
+}

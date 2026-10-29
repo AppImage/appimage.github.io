@@ -1,0 +1,12 @@
+{
+  "name": "ragnarokoffline",
+  "productName": "Ragnarok Offline",
+  "version": "1.6.6",
+  "description": "Ragnarok Online, offline, in one app",
+  "license": "GPL-3.0",
+  "private": true,
+  "main": "electron/main.js",
+  "dependencies": {
+    "electron-updater": "6.3.9"
+  }
+}

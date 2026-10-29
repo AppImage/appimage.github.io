@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Quillwright icon: a pen nib on the Paper theme's page. -->
+  <rect x="24" y="24" width="464" height="464" rx="104" fill="#FBF9F4"/>
+  <rect x="24.5" y="24.5" width="463" height="463" rx="103.5" fill="none" stroke="#E2DACB" stroke-width="3"/>
+  <!-- The line being written -->
+  <path d="M120 404 H392" stroke="#2B2722" stroke-width="14" stroke-linecap="round" opacity="0.18"/>
+  <path d="M120 404 H214" stroke="#2B2722" stroke-width="14" stroke-linecap="round"/>
+  <g transform="translate(34 30) rotate(38 256 256) translate(10 -26)">
+    <!-- Nib -->
+    <path d="M256 420 C238 372 180 318 180 236 L180 168 Q180 124 222 118 L290 118 Q332 124 332 168 L332 236 C332 318 274 372 256 420 Z" fill="#A4532F"/>
+    <!-- Shoulder -->
+    <path d="M180 168 Q180 124 222 118 L290 118 Q332 124 332 168 L332 182 L180 182 Z" fill="#7E3C20"/>
+    <!-- Breather hole and slit -->
+    <circle cx="256" cy="250" r="19" fill="#FBF9F4"/>
+    <path d="M256 268 V410" stroke="#FBF9F4" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

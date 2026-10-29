@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>uartx</id>
+  <name>UartX</name>
+  <summary>UART debugging and log analysis tool for firmware developers</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <description>
+    <p>
+      UartX is a serial terminal for working with any device that communicates
+      over UART. It displays incoming data in real time, highlights the lines
+      that matter using rules you define, lets you view a filtered subset of
+      the traffic in its own window, and can record sessions to disk.
+    </p>
+    <p>
+      UartX makes no assumption about how a device formats its messages. Every
+      colour rule and every filter is defined by the user, so the same tool
+      suits any firmware, board or module.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Configurable baud rate, data bits, parity, stop bits and flow control</li>
+      <li>Keyword colour rules for highlighting important lines</li>
+      <li>Filter windows showing only the lines you select, with savable output</li>
+      <li>Optional session logging to plain-text files</li>
+      <li>Named configurations that persist between runs</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">uartx.desktop</launchable>
+  <url type="homepage">https://github.com/Shamanthpoojary/UartX</url>
+  <url type="bugtracker">https://github.com/Shamanthpoojary/UartX/issues</url>
+  <developer_name>Shamanth</developer_name>
+
+  <provides>
+    <binary>UartX</binary>
+  </provides>
+
+  <categories>
+    <category>Development</category>
+    <category>Electronics</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.1.2"/>
+  </releases>
+</component>

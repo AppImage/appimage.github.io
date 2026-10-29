@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.mfat.systemdpilot</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>systemd Pilot</name>
+  <summary>Manage systemd units</summary>
+  <description>
+    <p>
+      systemd Pilot is a graphical front end for systemctl. Manage the units on this
+      computer, or on remote machines over SSH, from one window.
+    </p>
+    <ul>
+      <li>Browse system and user units of every type, with instant search</li>
+      <li>Start, stop, restart, enable and disable units</li>
+      <li>Read a unit's status, logs, unit file and properties</li>
+      <li>Read the system journal, with filters and a custom time range</li>
+      <li>Create new units from templates</li>
+      <li>Connect to remote hosts with a password, a private key or your SSH agent</li>
+    </ul>
+  </description>
+  <developer id="io.github.mfat">
+    <name>mFat</name>
+  </developer>
+  <launchable type="desktop-id">io.github.mfat.systemdpilot.desktop</launchable>
+  <translation type="gettext">systemd-pilot</translation>
+  <url type="homepage">https://github.com/mfat/systemd-pilot</url>
+  <url type="bugtracker">https://github.com/mfat/systemd-pilot/issues</url>
+  <url type="vcs-browser">https://github.com/mfat/systemd-pilot</url>
+  <content_rating type="oars-1.1"/>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Units on this computer</caption>
+      <image>https://raw.githubusercontent.com/mfat/systemd-pilot/main/data/screenshots/main.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Details and logs of a unit</caption>
+      <image>https://raw.githubusercontent.com/mfat/systemd-pilot/main/data/screenshots/details.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="4.2.1" date="2026-10-11">
+      <description>
+        <p>The journal opens quickly in the AppImage again: in about a second, instead of up to eight.</p>
+      </description>
+    </release>
+    <release version="4.2.0" date="2026-10-11">
+      <description>
+        <p>Every unit type, and a closer look at each unit.</p>
+        <ul>
+          <li>List every unit type, not just services, with type and status filters in the sidebar</li>
+          <li>A Dependencies tab shows what a unit requires, what requires it, and what it starts after or before</li>
+          <li>Reload units, run a timer's job now, clear a failed state, send signals, and mask or unmask units</li>
+          <li>Create timer and path units along with their service, and enable and start them in one step</li>
+          <li>Follow the journal as new entries are logged</li>
+          <li>On this computer, polkit asks for the password and remembers it for a few minutes</li>
+          <li>Icons are bundled, so the app looks the same on every desktop</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.1.1" date="2026-10-11">
+      <description>
+        <p>The journal and the services list now share the main window.</p>
+        <ul>
+          <li>Read the journal with filters, common-problem presets, search and a custom time range</li>
+          <li>System and user services are listed together, with filters in the sidebar</li>
+          <li>Service details open beside the list, including the log and an editor for the unit file</li>
+          <li>A failed command is shown with its output, which can be copied</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.1.0" date="2026-10-11">
+      <description>
+        <p>The journal and the services list now share the main window.</p>
+        <ul>
+          <li>Read the journal with filters, common-problem presets, search and a custom time range</li>
+          <li>System and user services are listed together, with filters in the sidebar</li>
+          <li>Service details open beside the list, including the log and an editor for the unit file</li>
+          <li>A failed command is shown with its output, which can be copied</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.0.0" date="2026-10-09">
+      <description>
+        <p>A complete rewrite for GTK 4 and libadwaita.</p>
+        <ul>
+          <li>Local and remote machines in one sidebar, with an adaptive layout</li>
+          <li>User services work everywhere, including logs and controls</li>
+          <li>Service details now include logs, the unit file and searchable properties</li>
+          <li>Remote host keys are verified, and passwords are never placed on a command line</li>
+          <li>Errors from systemctl are reported instead of being shown as success</li>
+          <li>Hosts can be removed, and editing a host keeps its saved password</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.0.0" date="2024-12-28"/>
+    <release version="2.0.0" date="2024-12-20"/>
+    <release version="1.0.0" date="2024-12-17"/>
+  </releases>
+</component>

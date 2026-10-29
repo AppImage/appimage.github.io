@@ -1,0 +1,56 @@
+{
+  "name": "subatrate-ide",
+  "description": "Graphic IDE for developing Substrate blockchains",
+  "version": "0.1.1",
+  "author": {
+    "name": "Substrate IDE",
+    "email": "phil.li@obsidians.io",
+    "url": "https://obsidians.io"
+  },
+  "private": true,
+  "homepage": "./",
+  "main": "build/main/index.js",
+  "engines": {
+    "node": "12"
+  },
+  "dependencies": {
+    "@obsidians/code-editor": "^0.1.0",
+    "@obsidians/file-ops": "^0.1.0",
+    "@obsidians/filetree": "^0.1.0",
+    "@obsidians/ipc": "^0.1.0",
+    "@obsidians/navbar": "^0.1.0",
+    "@obsidians/notification": "^0.1.0",
+    "@obsidians/pty": "^0.9.0",
+    "@obsidians/substrate-bottombar": "^0.1.0",
+    "@obsidians/substrate-compiler": "^0.1.0",
+    "@obsidians/substrate-header": "^0.1.0",
+    "@obsidians/substrate-instances": "^0.1.0",
+    "@obsidians/substrate-keypair": "^0.1.0",
+    "@obsidians/substrate-node": "^0.1.0",
+    "@obsidians/substrate-project": "^0.1.1",
+    "@obsidians/substrate-welcome": "^0.1.1",
+    "@obsidians/terminal": "^0.1.0",
+    "@obsidians/workspace": "^0.1.1",
+    "@polkadot/extension-dapp": "^0.24.1",
+    "fs-extra": "^8.1.0",
+    "node-pty": "^0.9.0",
+    "strip-ansi": "^6.0.0",
+    "trash": "^6.0.0"
+  },
+  "optionalDependencies": {
+    "keytar": "^5.4.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

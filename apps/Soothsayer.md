@@ -1,0 +1,49 @@
+---
+layout: app
+
+permalink: /Soothsayer/
+description: "Path of Exile divination card tracker"
+license: "AGPL-3.0"
+
+icons:
+  - Soothsayer/icons/128x128/soothsayer.png
+
+screenshots:
+  - Soothsayer/screenshot.png
+
+authors:
+  - name: "navali-creations"
+    url: "https://github.com/navali-creations"
+
+links:
+  - type: GitHub
+    url: navali-creations/soothsayer
+  - type: Download
+    url: https://github.com/navali-creations/soothsayer/releases
+
+desktop:
+  Desktop Entry:
+    Name: Soothsayer
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: soothsayer
+    StartupWMClass: Soothsayer
+    X-AppImage-Version: 0.20.1
+    Comment: Path of Exile divination card tracker
+    Categories: Game
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: AGPL-3.0
+
+electron: {"name":"soothsayer","productName":"Soothsayer","version":"0.20.1","private":true,"description":"Path of Exile divination card tracker","license":"AGPL-3.0-or-later","main":".vite/build/main.js","repository":{"type":"git","url":"git+https://github.com/navali-creations/soothsayer.git"},"scripts":{"dev":"pnpm supabase:start && cross-env SOOTHSAYER_SUPABASE_TARGET=local electron-forge start","start":"cross-env SOOTHSAYER_SUPABASE_TARGET=production electron-forge start","package":"electron-forge package","make":"electron-forge make","publish":"electron-forge publish","typecheck":"tsc --noEmit","check":"biome check .","check:fix":"biome check --write .","migration:biome":"biome migrate --write","migration:create":"node main/modules/database/migrations/create-migration.ts","prepare-deps:electron":"pnpm rebuild electron && electron-rebuild -f -w better-sqlite3","postinstall":"pnpm prepare-deps:electron","supabase:start":"bash scripts/setup-local-dev.sh","supabase:start:fresh":"bash scripts/setup-local-dev-fresh.sh","supabase:stop":"bash scripts/stop-local-dev.sh","supabase:sync":"bash scripts/sync-data.sh","supabase:logs":"bash scripts/supabase-cli.sh functions serve --inspect-mode=run","supabase:functions:serve":"bash scripts/supabase-cli.sh functions serve","test":"node scripts/vitest-electron.mjs run --config vitest.main.config.mts && vitest run --config vitest.renderer.config.mts","test:main":"node scripts/vitest-electron.mjs run --config vitest.main.config.mts","test:main:coverage":"node scripts/vitest-electron.mjs run --config vitest.main.config.mts --coverage","test:renderer":"vitest run --config vitest.renderer.config.mts","test:renderer:coverage":"vitest run --config vitest.renderer.config.mts --coverage","test:e2e":"pnpm prepare-deps:electron && node scripts/build-e2e.mjs && pnpm test:e2e:run","test:e2e:run":"cross-env E2E_TESTING=true playwright test --config playwright.config.ts","test:supabase:db":"bash scripts/test-db.sh","test:supabase:edge":"bash scripts/test-edge.sh","test:all":"node scripts/vitest-electron.mjs run --config vitest.main.config.mts && vitest run --config vitest.renderer.config.mts && bash scripts/test-db.sh && bash scripts/test-edge.sh && pnpm test:e2e"},"engines":{"node":">=24","pnpm":">=11"},"packageManager":"pnpm@11.10.0","keywords":[],"author":{"name":"Sebastian Krzyżanowski","email":"eskrzy@gmail.com"},"devDependencies":{"@biomejs/biome":"2.5.3","@changesets/changelog-github":"^0.7.0","@changesets/cli":"^2.31.0","@electron-forge/cli":"8.0.0-alpha.9","@electron-forge/maker-base":"8.0.0-alpha.9","@electron-forge/maker-deb":"8.0.0-alpha.9","@electron-forge/maker-rpm":"8.0.0-alpha.9","@electron-forge/maker-squirrel":"8.0.0-alpha.9","@electron-forge/maker-zip":"8.0.0-alpha.9","@electron-forge/plugin-auto-unpack-natives":"8.0.0-alpha.9","@electron-forge/plugin-fuses":"8.0.0-alpha.9","@electron-forge/plugin-vite":"8.0.0-alpha.9","@electron-forge/publisher-github":"8.0.0-alpha.9","@electron-forge/shared-types":"8.0.0-alpha.9","@electron/fuses":"^2.1.2","@electron/rebuild":"^4.0.4","@playwright/test":"^1.61.1","@redux-devtools/extension":"^4.0.0","@repere/react":"^0.3.3","@sentry/electron":"^7.15.0","@sentry/vite-plugin":"^5.4.0","@supabase/supabase-js":"^2.110.2","@tailwindcss/vite":"^4.3.2","@tanstack/react-router":"^1.170.17","@tanstack/react-router-devtools":"^1.167.0","@tanstack/react-table":"^8.21.3","@tanstack/router-plugin":"^1.168.19","@testing-library/dom":"10.4.1","@testing-library/jest-dom":"^6.9.1","@testing-library/react":"^16.3.2","@testing-library/user-event":"^14.6.1","@types/better-sqlite3":"^7.6.13","@types/electron-squirrel-startup":"^1.0.2","@types/node":"^24.13.2","@types/react":"^19.2.17","@types/react-dom":"^19.2.3","@vitejs/plugin-react":"^6.0.3","@vitest/coverage-v8":"^4.1.10","@vitest/ui":"^4.1.10","app-builder-lib":"26.15.3","clsx":"^2.1.1","cross-env":"^10.1.0","daisyui":"^5.6.18","dompurify":"^3.4.12","electron":"42.4.1","electron-devtools-installer":"^4.0.0","electron-squirrel-startup":"^1.0.1","immer":"^11.1.11","jsdom":"^29.1.1","kysely":"^0.29.3","motion":"^12.42.2","react":"^19.2.7","react-dom":"^19.2.7","react-icons":"^5.7.0","react-markdown":"^10.1.0","rehype-raw":"^7.0.0","remark-gfm":"^4.0.1","supabase":"^2.109.1","tailwind-merge":"^3.6.0","tailwindcss":"^4.3.2","typescript":"^7.0.2","vite":"^8.1.4","vitest":"^4.1.10","zustand":"^5.0.14"},"dependencies":{"@navali/poe1-divination-cards":"^3.29.0","better-sqlite3":"^12.11.1","tslib":"^2.8.1"}}
+---

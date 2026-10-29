@@ -1,0 +1,79 @@
+---
+layout: app
+
+permalink: /ScreenArc/
+description: Free & Open Source Screen Recording and Editing App
+license: GPL-3.0
+
+icons:
+  - ScreenArc/icons/256x256/screenarc.png
+
+screenshots:
+  - ScreenArc/screenshot.png
+
+authors:
+  - name: tamnguyenvan
+    url: https://github.com/tamnguyenvan
+
+links:
+  - type: GitHub
+    url: tamnguyenvan/screenarc
+  - type: Download
+    url: https://github.com/tamnguyenvan/screenarc/releases
+
+desktop:
+  Desktop Entry:
+    Name: ScreenArc
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: screenarc
+    StartupWMClass: ScreenArc
+    X-AppImage-Version: 1.4.1
+    Comment: Free & Open Source Screen Recording and Editing App
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: GPL-3.0
+
+electron:
+  private: true
+  version: 1.4.1
+  type: commonjs
+  engines:
+    node: ">=18 <=22"
+  dependencies:
+    "@radix-ui/react-collapsible": "^1.1.12"
+    "@radix-ui/react-select": "^2.2.6"
+    "@radix-ui/react-switch": "^1.2.6"
+    "@radix-ui/react-tooltip": "^1.2.8"
+    "@tailwindcss/vite": "^4.1.13"
+    class-variance-authority: "^0.7.1"
+    clsx: "^2.1.1"
+    electron-audio-loopback: "^1.0.6"
+    electron-log: "^5.4.3"
+    electron-store: "^10.1.0"
+    immer: "^10.1.3"
+    react: "^18.2.0"
+    react-dom: "^18.2.0"
+    tabler-icons-react: "^1.56.0"
+    tailwind-merge: "^3.3.1"
+    tailwindcss: "^4.1.13"
+    zundo: "^2.0.0-beta.24"
+    zustand: "^4.3.0"
+  optionalDependencies:
+    global-mouse-events: github:tamnguyenvan/global-mouse-events
+    node-macos-cursor: github:tamnguyenvan/node-macos-cursor
+    node-win-cursor: github:tamnguyenvan/node-win-cursor
+    x11: github:tamnguyenvan/node-x11
+  main: dist-electron/index.cjs
+---

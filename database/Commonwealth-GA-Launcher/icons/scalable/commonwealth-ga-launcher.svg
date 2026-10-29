@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>Commonwealth GA</title>
+  <circle cx="256" cy="256" r="252" fill="#06111e"/>
+  <circle cx="256" cy="256" r="218" fill="#09263f"/>
+
+  <g fill="#d4f8ff">
+    <path d="M473.9 286.6A220 220 0 0 1 286.6 473.9L280.5 430.3A176 176 0 0 0 430.3 280.5Z"/>
+    <path d="M225.4 473.9A220 220 0 0 1 38.1 286.6L81.7 280.5A176 176 0 0 0 231.5 430.3Z"/>
+    <path d="M38.1 225.4A220 220 0 0 1 225.4 38.1L231.5 81.7A176 176 0 0 0 81.7 231.5Z"/>
+  </g>
+
+  <path d="M286.6 38.1A220 220 0 0 1 473.9 225.4L430.3 231.5A176 176 0 0 0 280.5 81.7Z" fill="#ffb21c"/>
+
+  <circle cx="256" cy="256" r="142" fill="#06111e" stroke="#12d7f4" stroke-width="28"/>
+  <circle cx="256" cy="256" r="96" fill="none" stroke="#d4f8ff" stroke-width="18"/>
+  <path d="M256 160c-35 32-50 62-50 96s15 64 50 96M256 160c35 32 50 62 50 96s-15 64-50 96M160 256h192" fill="none" stroke="#d4f8ff" stroke-width="18" stroke-linecap="round"/>
+</svg>

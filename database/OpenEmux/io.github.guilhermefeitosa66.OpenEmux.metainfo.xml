@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.guilhermefeitosa66.OpenEmux</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>OpenEmux</name>
+  <summary>Browse and play your retro game library</summary>
+
+  <developer id="io.github.guilhermefeitosa66">
+    <name>Guilherme Feitoza</name>
+  </developer>
+
+  <description>
+    <p>
+      OpenEmux is a clean, GNOME-native frontend that makes RetroArch simple and
+      enjoyable: add, browse and organize your retro game library by console and,
+      with a compatible gamepad, play the games you already own. It was inspired
+      by OpenEmu, bringing that same polished experience to Linux.
+    </p>
+    <p>
+      OpenEmux runs games through RetroArch, so the RetroArch Flatpak must be
+      installed and its cores downloaded (via RetroArch's own Online Updater).
+      Install it with: flatpak install flathub org.libretro.RetroArch
+    </p>
+    <p>
+      OpenEmux ships no games, ROMs or BIOS files. Use only content you legally
+      own. Emulation matters for preserving the history and culture of video
+      games — please respect the people who created them.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>A cover-art library organized by console, with favorites</li>
+      <li>Per-console keyboard and gamepad mappings</li>
+      <li>Per-console video shaders</li>
+      <li>BIOS status checks and cover-art syncing</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.github.guilhermefeitosa66.OpenEmux.desktop</launchable>
+
+  <!-- Pinned to a commit, not to main: a software centre re-indexes these
+       URLs long after the user installed, so a screenshot refresh that renames
+       a file under docs/assets/ (it has happened twice) 404s the Flathub
+       linter and blanks the screenshots for everyone already on the app.
+       Re-pin the commit whenever the screenshots are refreshed; the
+       refresh-screenshots skill is what does that. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>The cover-art library for a console</caption>
+      <image type="source" width="1320" height="878">https://raw.githubusercontent.com/guilhermefeitosa66/OpenEmux/5aff4d60042a9004380f9d08d02e2eb77d9e2083/docs/assets/openemux-roms-nes.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Browsing another console's games</caption>
+      <image type="source" width="1320" height="878">https://raw.githubusercontent.com/guilhermefeitosa66/OpenEmux/5aff4d60042a9004380f9d08d02e2eb77d9e2083/docs/assets/openemux-roms-snes.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Playing a game through RetroArch</caption>
+      <image type="source" width="1300" height="860">https://raw.githubusercontent.com/guilhermefeitosa66/OpenEmux/5aff4d60042a9004380f9d08d02e2eb77d9e2083/docs/assets/openemux-gameplay-gba.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Preferences</caption>
+      <image type="source" width="1320" height="878">https://raw.githubusercontent.com/guilhermefeitosa66/OpenEmux/5aff4d60042a9004380f9d08d02e2eb77d9e2083/docs/assets/openemux-settings.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/guilhermefeitosa66/OpenEmux</url>
+  <url type="bugtracker">https://github.com/guilhermefeitosa66/OpenEmux/issues</url>
+  <url type="donation">https://www.paypal.com/donate?business=BGCLFHKKB6XTU&amp;currency_code=BRL</url>
+
+  <content_rating type="oars-1.1" />
+
+  <branding>
+    <color type="primary" scheme_preference="light">#3584e4</color>
+    <color type="primary" scheme_preference="dark">#1a5fb4</color>
+  </branding>
+
+  <categories>
+    <category>Game</category>
+    <category>Emulator</category>
+  </categories>
+
+  <keywords>
+    <keyword>emulator</keyword>
+    <keyword>retro</keyword>
+    <keyword>retroarch</keyword>
+    <keyword>games</keyword>
+    <keyword>frontend</keyword>
+  </keywords>
+
+  <releases>
+    <release version="1.13.1" date="2026-09-09">
+      <description>
+        <p>OpenEmux runs on distributions that are not Debian-derived: the AppImage starts, and it can reach the network.</p>
+        <ul>
+          <li>The AppImage starts on Arch and on any distribution whose shell is newer than the bundle's libraries</li>
+          <li>HTTPS works everywhere: the bundle trusts the machine's own certificate store, so first-time setup finishes</li>
+          <li>"Open folder", the RetroArch Flatpak probe and the audio probe are no longer handed the bundle's environment</li>
+          <li>Every packaged icon is exactly the size its directory claims, with the small sizes desktops ask for</li>
+          <li>A native Arch Linux package, built and install-tested like every other format</li>
+          <li>Tamil is available as an interface language</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.13.0" date="2026-09-02">
+      <description>
+        <p>The library becomes the user's own: it remembers where it was left, it groups what it shows, and the consoles sit in the order the user puts them in.</p>
+        <ul>
+          <li>"Favorites" is in the sidebar only while something is favorited, appearing with the first star and going with the last</li>
+          <li>The library reopens on the view it was closed on, stored in a small session file of its own</li>
+          <li>"All", "Favorites" and the collections group their games by console, each group under its own header and count</li>
+          <li>The cartridge shelf works on those pages: every group is drawn in its own console's frame, with per-ROM cartridge colours</li>
+          <li>Consoles can be reordered by dragging a sidebar row, with Ctrl+Up and Ctrl+Down, or from Preferences</li>
+          <li>A console with no games right now keeps its place in the arrangement for when it comes back</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.12.0" date="2026-08-28">
+      <description>
+        <p>OpenEmux arrives on Windows and on ARM, and the library it manages is faster and safer than it has ever been.</p>
+        <ul>
+          <li>Windows is a supported platform: an installer, a portable bundle, gamepads read through SDL2 and RetroArch shipped alongside</li>
+          <li>Every Linux format is now built for aarch64 as well as x86_64</li>
+          <li>The grid builds a screenful instead of the whole collection, and stops re-reading, re-hashing and re-decoding work it had already done</li>
+          <li>Persistence is atomic: settings, playlists and favorites are written whole or not at all, and a corrupt file is kept instead of being replaced with defaults</li>
+          <li>Favorites survive a drive that is not mounted, and first boot works offline by falling back to the bundled cores</li>
+          <li>Sign in to RetroAchievements once and unlock achievements on every launch</li>
+          <li>Export and import saves and save states from one place</li>
+          <li>Advanced core settings for PlayStation and PSP, and the option to import ROMs as links instead of copies</li>
+          <li>Shader packs can no longer write outside the shader directory</li>
+          <li>The AppImage no longer needs libfuse2, and every package ships the metadata software centres read</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.11.3" date="2026-08-19">
+      <description>
+        <p>The game window never strands a game any more.</p>
+        <ul>
+          <li>When the game window cannot take over RetroArch, the game is reopened in its own decorated window instead of being left as an undecorated square that cannot be moved, resized or fullscreened</li>
+          <li>The window now shows what it is doing while the game starts, and gives up in seconds instead of after twenty silent ones</li>
+          <li>RetroArch is kept on X11 while embedding, so the window can actually be adopted on Wayland desktops</li>
+          <li>A gamepad's fullscreen button can no longer break a working embed</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.11.2" date="2026-08-16">
+      <description>
+        <p>A game's settings stay with the game.</p>
+        <ul>
+          <li>Stop writing per-launch settings into the user's own RetroArch configuration, which left borderless windows, an unbound fullscreen hotkey and OpenEmux's save-state directory behind for good</li>
+          <li>Give RetroArch its decorated window back when the OpenEmux game window is off, healing a configuration an earlier version already changed</li>
+          <li>Find the host's audio server on Flatpak installs, so games no longer run at the monitor's refresh rate with no sound</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.11.1" date="2026-08-16">
+      <description>
+        <p>Closing a game now really ends it.</p>
+        <ul>
+          <li>Closing the game window stops the emulator instead of leaving it running with no window, audible and reachable only from a process manager</li>
+          <li>Closing the library window ends a running game with it, so no game outlives the app</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.11.0" date="2026-08-15">
+      <description>
+        <p>Games now play inside OpenEmux, and artwork finds itself.</p>
+        <ul>
+          <li>Play in an OpenEmux game window that hosts the running emulator, with pause, reset, save and load state, volume and input settings in its header bar</li>
+          <li>Ship a local database of 60,600 game names, so cover lookup resolves real titles instead of guessing URLs</li>
+          <li>Ask the cover picker for suggestions by name, including approximate matches for misspelled queries</li>
+          <li>Sync covers in parallel and reveal each one as it lands, instead of only when the whole run finishes</li>
+          <li>Carry save states, battery saves and artwork with a ROM when it is renamed</li>
+          <li>Choose System, Light or Dark in Settings, or flip the theme from the header bar</li>
+          <li>Open a console's controller settings from its context menu in the sidebar</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.10.2" date="2026-08-02">
+      <description>
+        <p>A fix for the all-Flatpak setup: games launch again.</p>
+        <ul>
+          <li>Grant the sandbox read access to the RetroArch Flatpak's cores, which --filesystem=home does not cover; without it every launch failed with "No RetroArch core found"</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.10.1" date="2026-07-31">
+      <description>
+        <p>A fix for games running far too fast outside the Flatpak.</p>
+        <ul>
+          <li>Hand RetroArch an audio driver it actually has, so audio starts and the emulation runs at the right speed</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.10.0" date="2026-07-31">
+      <description>
+        <p>Controls you can actually configure, and changes that reach the running game.</p>
+        <ul>
+          <li>A remap saved mid-game now applies immediately, keeping your progress</li>
+          <li>A connected gamepad and the keyboard are configured together, not either/or</li>
+          <li>Analog deadzone and sensitivity, rumble, latency and the rest of the input knobs</li>
+          <li>Choose which controller the core is told is plugged in, per console</li>
+          <li>The missing system hotkeys, including disk control for multi-disc games</li>
+          <li>Play the left analog stick from the keyboard, and let a pad's D-pad move it</li>
+          <li>Every symbolic icon ships with the app, so none go missing on any desktop</li>
+          <li>Missing artwork is now visible and recoverable, and covers decode off the main thread</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.9.2" date="2026-07-27">
+      <description>
+        <p>The artwork Import tab, finished: it missed the 1.9.1 build.</p>
+        <ul>
+          <li>An imported image gets the whole area, with a trash button to clear it</li>
+          <li>The import controls and the save destination share a single row</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.9.1" date="2026-07-27">
+      <description>
+        <p>Fixes for the ROM artwork actions, and a friendlier artwork manager.</p>
+        <ul>
+          <li>Fix a crash when acting on a ROM's context menu</li>
+          <li>Sync one ROM's cover or label from the menu, in the background</li>
+          <li>Open the artwork manager from its own "Manage cover/label" entries</li>
+          <li>Show search results on the library's grid, and mark the picked image</li>
+          <li>Cancel a running artwork search</li>
+          <li>Give an imported image the whole area, with one row of edit controls</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.9.0" date="2026-07-27">
+      <description>
+        <p>Personalise the shelf, act on many games at once, and take control of the running game.</p>
+        <ul>
+          <li>Pick a cartridge shell colour per game, from a palette of twelve</li>
+          <li>Select several ROMs with Shift/Ctrl, the keyboard, or a gamepad selection mode</li>
+          <li>Manage artwork per ROM: search every provider by name or hash, or import and edit your own</li>
+          <li>Order and switch the artwork providers, with OpenEmux's own mirror as a new source</li>
+          <li>Adjust the running game's volume, and start a game from any save-state slot</li>
+          <li>Fold the analog stick onto the D-pad, and map a turbo/autofire modifier</li>
+          <li>OpenEmux now ships as a Flatpak</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.8.0" date="2026-07-24">
+      <description>
+        <p>ScreenScraper out of the box, cartridge labels, and per-ROM overrides.</p>
+        <ul>
+          <li>ScreenScraper works with no account: official builds embed a developer credential</li>
+          <li>Cartridge labels are scraped into their own folder and composited into the cartridge art</li>
+          <li>Per-ROM core and shader overrides from the context menu</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.7.0" date="2026-07-23">
+      <description>
+        <p>The core, the shader, the layout and the grouping, all chosen from the interface.</p>
+        <ul>
+          <li>Choose the shader per ROM from the context menu, over the per-console setting</li>
+          <li>Choose the libretro core per console (Settings) and per ROM (context menu)</li>
+          <li>Configure the library layout (view mode, sort, zoom) per console and per view</li>
+          <li>Group games into custom collections in the sidebar, spanning consoles</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.6.0" date="2026-07-23">
+      <description>
+        <p>Three layouts, six sort orders and a zoom control, one click from the toolbar.</p>
+        <ul>
+          <li>A View Mode selector: cover grid, cartridge grid and a compact list</li>
+          <li>Zoom controls for thumbnails (50%-200%), with Ctrl+plus/minus/0</li>
+          <li>Sort the library by name, recently played, recently added, size or platform</li>
+          <li>Follow the desktop language on first launch instead of defaulting to English</li>
+          <li>Open the primary menu from the gamepad, and steer with the right analog stick</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.5.2" date="2026-07-21">
+      <description>
+        <p>A fix for the AppImage, where no cartridge or cover art rendered at all.</p>
+        <ul>
+          <li>Fix cartridge frames and cover art not rendering in the AppImage</li>
+          <li>Degrade to the plain cover when a cartridge cannot be composited</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.5.1" date="2026-07-21">
+      <description>
+        <p>A fix for the 1.5.0 AppImage, which did not start at all.</p>
+        <ul>
+          <li>Fix the AppImage failing to start with "usr/bin/python3: not found"</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.5.0" date="2026-07-21">
+      <description>
+        <p>The whole library, navigable with a gamepad or the keyboard.</p>
+        <ul>
+          <li>Navigate the whole library with a gamepad, following the RetroArch button convention</li>
+          <li>Full keyboard navigation, with shortcuts for play, rename, delete, favorite, rescan, import and cover sync</li>
+          <li>Show what each control does in the bottom bar, per input device</li>
+          <li>Lay the game grid out like an icon view, with fixed card sizes per console</li>
+          <li>Fix the launcher picking a python3 without PyGObject (pyenv/conda/asdf)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.4.0" date="2026-07-21">
+      <description>
+        <p>Cartridge artwork, and managing ROMs from the library.</p>
+        <ul>
+          <li>Every game is shown inside its console's cartridge, composed from vector artwork and cached; nine consoles are covered and the look is on by default</li>
+          <li>The favorite star on a cover is a button now, so favoriting is one click</li>
+          <li>Rename a ROM from its context menu: the file, its artwork and the playlists all follow</li>
+          <li>Delete a ROM from its context menu; the file goes to the system trash, where it can be restored</li>
+          <li>Select several ROMs by dragging across the library, then delete them or sync covers for just those</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.1" date="2026-07-20">
+      <description>
+        <p>Context menu fixes and discoverability.</p>
+        <ul>
+          <li>The sidebar context menu stays open instead of closing as soon as the mouse button is released</li>
+          <li>Context menu entries now show an icon</li>
+          <li>A three-dot button on ROM covers and sidebar consoles opens the context menu with a plain click</li>
+          <li>The favorite star moved to the top-left corner of the cover</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.0" date="2026-07-20">
+      <description>
+        <p>ROM import, archive support and controller mapping.</p>
+        <ul>
+          <li>ROMs inside .zip archives are recognized; archives are extracted for cores that need a real file</li>
+          <li>Import ROMs from the main window, by button or drag and drop</li>
+          <li>Map controls by pressing the buttons on the controller, with up to four gamepad ports</li>
+          <li>Optional ScreenScraper cover source, including cartridge label art</li>
+          <li>Rotating tips status bar and a rebindable fullscreen toggle</li>
+          <li>Cover sync can be stopped while it runs</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.0" date="2026-07-17">
+      <description>
+        <p>Library and packaging update.</p>
+        <ul>
+          <li>Per-console cover proportions and a separate cartridge-label image slot</li>
+          <li>Redesigned "All" library view with per-game console labels</li>
+          <li>Background check for new releases on startup</li>
+          <li>Native .deb and .rpm packages alongside the AppImage</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.1" date="2026-07-16">
+      <description>
+        <p>Maintenance release.</p>
+        <ul>
+          <li>Cached cartridge textures and smaller frame assets</li>
+          <li>Documentation and website updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-07-15">
+      <description>
+        <p>First Flatpak release.</p>
+        <ul>
+          <li>Plays games through the RetroArch Flatpak</li>
+          <li>Renamed to OpenEmux for naming consistency</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-07-15">
+      <description>
+        <p>First stable release.</p>
+        <ul>
+          <li>GNOME HIG interface built on libadwaita</li>
+          <li>Cover-art library, per-console input and shaders, BIOS checks</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

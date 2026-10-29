@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.humane125.LANternControl</id>
+  <name>LANtern Control</name>
+  <summary>Monitor and manage devices on a local IPv4 network</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>LANtern Control shows device traffic and lets you set bandwidth limits, pause access, and block domains on your local network.</p>
+  </description>
+  <launchable type="desktop-id">lantern-control.desktop</launchable>
+  <url type="homepage">https://github.com/humane125/LANtern-Control</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Network overview with demo data</caption>
+      <image>https://raw.githubusercontent.com/humane125/LANtern-Control/master/assets/screenshots/overview.png</image>
+    </screenshot>
+  </screenshots>
+</component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">OdyTTY</title>
+  <desc id="desc">An Odyssey gateway arch with an optically centered terminal prompt.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="192" x2="0" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff8c00"/>
+      <stop offset="1" stop-color="#ffd700"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="54" fill="#090f18"/>
+  <path d="M77 190V119a51 51 0 0 1 102 0v71" fill="none" stroke="url(#gold)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M106 118l36 24-36 24" fill="none" stroke="#fff7df" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

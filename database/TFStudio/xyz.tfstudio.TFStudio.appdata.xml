@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>xyz.tfstudio.TFStudio</id>
+  <name>TFStudio</name>
+  <summary>Optical thin-film coating design and analysis</summary>
+  <developer id="xyz.tfstudio">
+    <name>Andrey Achapovsky</name>
+  </developer>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>TFStudio is a desktop application for designing and analyzing optical thin-film coatings: antireflection coatings, mirrors, beamsplitters, bandpass and edge filters, and more. It provides a double-precision optical engine, refinement and synthesis algorithms, and an analysis suite, in a docked, multi-window interface.</p>
+  </description>
+  <launchable type="desktop-id">tfstudio.desktop</launchable>
+  <url type="homepage">https://tfstudio.xyz</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>A four-passband filter after refinement: layers and spectrum</caption>
+      <image>https://raw.githubusercontent.com/aai2k/TFStudio/main/assets/screenshot-multipassband.png</image>
+    </screenshot>
+  </screenshots>
+</component>

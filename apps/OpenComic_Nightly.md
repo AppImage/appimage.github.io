@@ -1,0 +1,133 @@
+---
+layout: app
+
+permalink: /OpenComic_Nightly/
+description: Comic and manga reader
+
+icons:
+  - OpenComic_Nightly/icons/128x128/opencomic.png
+
+screenshots:
+  - OpenComic_Nightly/screenshot.png
+
+authors:
+  - name: ollm
+    url: https://github.com/ollm
+
+links:
+  - type: GitHub
+    url: ollm/OpenComic-Nightly
+  - type: Download
+    url: https://github.com/ollm/OpenComic-Nightly/releases
+
+desktop:
+  Desktop Entry:
+    Name: OpenComic
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: opencomic
+    StartupWMClass: org.opencomic.app
+    X-AppImage-Version: 1.6.6
+    Comment: Comic and manga reader
+    MimeType: application/x-cbz
+    Categories: Graphics
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.38
+
+electron:
+  version: 1.6.6
+  main: ".dist/main.js"
+  type: commonjs
+  description: Comic and manga reader
+  homepage: https://github.com/ollm/OpenComic#readme
+  license: GPL-3.0
+  author:
+    name: Oleguer Llopart
+    email: oleguer.llopart.mora@gmail.com
+    url: https://github.com/ollm
+  repository:
+    type: git
+    url: git+https://github.com/ollm/OpenComic.git
+  dependencies:
+    "@awo00/smb2": "^1.1.1"
+    "@aws-sdk/client-s3": "^3.1140.0"
+    "@electron/remote": "^2.1.3"
+    "@img-custom/sharp-libvips-linux-arm64": "^1.3.3"
+    "@img-custom/sharp-libvips-linux-x64": "^1.3.3"
+    "@img-custom/sharp-libvips-linuxmusl-arm64": "^1.3.3"
+    "@img-custom/sharp-libvips-linuxmusl-x64": "^1.3.3"
+    "@img-custom/sharp-linux-arm64": "^0.35.4"
+    "@img-custom/sharp-linux-x64": "^0.35.4"
+    "@img-custom/sharp-linuxmusl-arm64": "^0.35.4"
+    "@img-custom/sharp-linuxmusl-x64": "^0.35.4"
+    "@toondepauw/node-zstd": "^2.0.0"
+    7zip-bin-full: "^26.3.1"
+    atomically: "^2.1.1"
+    basic-ftp: "^6.2.1"
+    bezier-js: "^6.1.4"
+    diff: "^9.0.0"
+    discord-rpc: "^4.0.1"
+    dot-prop: "^10.2.0"
+    fast-xml-parser: "^5.11.1"
+    file-type: "^22.1.1"
+    foliate-js: github:johnfactotum/foliate-js
+    font-list: "^2.1.0"
+    fs-extra: "^11.4.1"
+    handlebars: "^4.7.9"
+    image-size-next: "^2.1.1"
+    jpegxr: "^0.3.0"
+    jquery: "^4.0.0"
+    jquery-bez: "^1.0.11"
+    marked: "^18.0.14"
+    minimatch: "^10.2.6"
+    node-7z: github:ollm/node-7z
+    node-scp: "^0.0.25"
+    opencomic-ai-bin: "^1.4.5"
+    pdfjs-dist: "^6.3.289"
+    sanitize-html: "^2.17.7"
+    sharp: "^0.35.4"
+    short-windows-path: "^1.0.5"
+    shosho: "^1.4.3"
+    ssh2-sftp-client: "^12.1.1"
+    systeminformation: "^5.33.13"
+    webdav: "^5.11.0"
+  overrides:
+    "@napi-rs/canvas": 0.0.0
+    "@img/sharp-wasm32": 0.0.0
+    cpu-features: 0.0.0
+    onnxruntime-node: 0.0.0
+    sharp:
+      "@img/sharp-darwin-arm64": npm:@img-custom/sharp-darwin-arm64@0.35.4
+      "@img/sharp-darwin-x64": npm:@img-custom/sharp-darwin-x64@0.35.4
+      "@img/sharp-linux-arm": npm:@img-custom/sharp-linux-arm@0.35.4
+      "@img/sharp-linux-arm64": npm:@img-custom/sharp-linux-arm64@0.35.4
+      "@img/sharp-linux-ppc64": npm:@img-custom/sharp-linux-ppc64@0.35.4
+      "@img/sharp-linux-riscv64": npm:@img-custom/sharp-linux-riscv64@0.35.4
+      "@img/sharp-linux-s390x": npm:@img-custom/sharp-linux-s390x@0.35.4
+      "@img/sharp-linux-x64": npm:@img-custom/sharp-linux-x64@0.35.4
+      "@img/sharp-linuxmusl-arm64": npm:@img-custom/sharp-linuxmusl-arm64@0.35.4
+      "@img/sharp-linuxmusl-x64": npm:@img-custom/sharp-linuxmusl-x64@0.35.4
+      "@img/sharp-win32-arm64": npm:@img-custom/sharp-win32-arm64@0.35.4
+      "@img/sharp-win32-ia32": npm:@img-custom/sharp-win32-ia32@0.35.4
+      "@img/sharp-win32-x64": npm:@img-custom/sharp-win32-x64@0.35.4
+      "@img/sharp-libvips-darwin-arm64": npm:@img-custom/sharp-libvips-darwin-arm64@1.3.3
+      "@img/sharp-libvips-darwin-x64": npm:@img-custom/sharp-libvips-darwin-x64@1.3.3
+      "@img/sharp-libvips-linux-arm": npm:@img-custom/sharp-libvips-linux-arm@1.3.3
+      "@img/sharp-libvips-linux-arm64": npm:@img-custom/sharp-libvips-linux-arm64@1.3.3
+      "@img/sharp-libvips-linux-ppc64": npm:@img-custom/sharp-libvips-linux-ppc64@1.3.3
+      "@img/sharp-libvips-linux-riscv64": npm:@img-custom/sharp-libvips-linux-riscv64@1.3.3
+      "@img/sharp-libvips-linux-s390x": npm:@img-custom/sharp-libvips-linux-s390x@1.3.3
+      "@img/sharp-libvips-linux-x64": npm:@img-custom/sharp-libvips-linux-x64@1.3.3
+      "@img/sharp-libvips-linuxmusl-arm64": npm:@img-custom/sharp-libvips-linuxmusl-arm64@1.3.3
+      "@img/sharp-libvips-linuxmusl-x64": npm:@img-custom/sharp-libvips-linuxmusl-x64@1.3.3
+---

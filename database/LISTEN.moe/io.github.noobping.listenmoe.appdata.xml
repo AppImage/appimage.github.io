@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.noobping.listenmoe</id>
+  <name>Listen Moe</name>
+  <summary>J-POP and K-POP radio</summary>
+  <description>
+    <p>
+      It is time to ditch other radios. Stream and metadata provided by LISTEN.moe.
+    </p>
+    <ul>
+      <li>Listen to J-POP and K-POP</li>
+      <li>Animated sound bars that react to the music</li>
+      <li>Dynamic colors based on the current album or artist cover</li>
+      <li>No ads</li>
+      <li>Optional Discord activity sharing</li>
+    </ul>
+  </description>
+
+  <developer id="io.github.noobping">
+    <name>noobping</name>
+  </developer>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <icon type="stock">io.github.noobping.listenmoe</icon>
+
+  <url type="homepage">https://github.com/noobping/listenmoe</url>
+  <url type="bugtracker">https://github.com/noobping/listenmoe/issues</url>
+  <url type="vcs-browser">https://github.com/noobping/listenmoe</url>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#DC8ADD</color>
+    <color type="primary" scheme_preference="dark">#AC003D</color>
+  </branding>
+
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Music</category>
+  </categories>
+
+  <keywords>
+    <keyword>Music</keyword>
+    <keyword>J-POP</keyword>
+    <keyword>K-POP</keyword>
+    <keyword>Radio</keyword>
+  </keywords>
+
+  <recommends>
+    <display_length compare="ge">300</display_length>
+  </recommends>
+
+  <content_rating type="oars-1.1" />
+
+  <launchable type="desktop-id">io.github.noobping.listenmoe.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>
+        https://raw.githubusercontent.com/noobping/listenmoe/0ef21e3e2282f046989697a5a50d5e47a7ee41a6/data/screenshot2.png</image>
+      <caption>Colored window when connected</caption>
+    </screenshot>
+    <screenshot>
+      <image>
+        https://raw.githubusercontent.com/noobping/listenmoe/0ef21e3e2282f046989697a5a50d5e47a7ee41a6/data/screenshot1.png</image>
+      <caption>When connected and there is no album or artist image</caption>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>listenmoe</binary>
+  </provides>
+
+  <releases>
+    <release version="1.3.0" date="2026-10-10">
+      <description>
+        <ul>
+          <li>Long artist and song names scroll smoothly.</li>
+          <li>Hover over the title to see the full text.</li>
+          <li>Scrolling text and background animations respect Reduce Motion.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.3" date="2026-08-24">
+      <description>
+        <ul>
+          <li>Added lyrics.</li>
+          <li>Added a song progress bar.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.2" date="2026-08-14">
+      <description>
+        <p>Volume control added.</p>
+      </description>
+    </release>
+    <release version="1.2.1" date="2026-06-14">
+      <description>
+        <p>Removed pause/resume from stable builds.</p>
+      </description>
+    </release>
+    <release version="1.2.0" date="2026-05-05">
+      <description>
+        <p>Separate experimental features from stable features.</p>
+      </description>
+    </release>
+    <release version="1.1.1" date="2026-04-02">
+      <description>
+        <ul>
+          <li>Changed pause, resume, and station switching behavior.</li>
+          <li>Added startup options for pause/resume or stop behavior, with play/stop now the default.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-03-07">
+      <description>
+        <p>Added preferences and keyboard shortcuts.</p>
+      </description>
+    </release>
+    <release version="1.0.13" date="2026-03-06">
+      <description>
+        <ul>
+          <li>Reconnect to Discord instead of disabling this feature.</li>
+          <li>Added flags to control pause behavior, autoplay, or disable Discord integration.</li>
+          <li>Fixed an issue where paused playback resumed during a network disruption.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.12" date="2026-02-06">
+      <description>
+        <p>
+          Added Discord activity sharing.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.11" date="2026-01-23">
+      <description>
+        <p>
+          Streaming logic now better handles connection issues and stream changes.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.10" date="2026-01-18">
+      <description>
+        <p>
+          Display the application icon in media controls.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.9" date="2026-01-14">
+      <description>
+        <p>
+          Updated screenshots to use a more reasonable window size
+        </p>
+      </description>
+    </release>
+    <release version="1.0.8" date="2026-01-13">
+      <description>
+        <p>
+          Updated screenshots to use a more reasonable window size
+        </p>
+      </description>
+    </release>
+    <release version="1.0.7" date="2026-01-12">
+      <description>
+        <p>
+          Updated application icon
+        </p>
+      </description>
+    </release>
+    <release version="1.0.6" date="2026-01-11">
+      <description>
+        <ul>
+          <li>Updated screenshots to use a more reasonable window size</li>
+          <li>Updated application icon</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.5" date="2026-01-10">
+      <description>
+        <ul>
+          <li>Translated image captions</li>
+          <li>Updated screenshots to use a more reasonable window size</li>
+          <li>Updated application icon</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.4" date="2026-01-06">
+      <description>
+        <p>
+          Clarified the application description.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.3" date="2025-12-26">
+      <description>
+        <p>
+          Streaming logic now better handles connection issues and stream changes.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.2" date="2025-12-24">
+      <description>
+        <p>
+          Removed gaps between sound bars.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.1" date="2025-12-23">
+      <description>
+        <p>
+          This release focuses on visuals and localization.
+        </p>
+        <ul>
+          <li>Fine-tuned dark/light mode detection so light colors are no longer mistaken for dark
+            ones.</li>
+          <li>Polished translations and improved how they are applied.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.0" date="2025-12-21">
+      <description>
+        <p>
+          Initial release.
+        </p>
+        <ul>
+          <li>Listen to J-POP and K-POP</li>
+          <li>Pause and resume the live stream</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

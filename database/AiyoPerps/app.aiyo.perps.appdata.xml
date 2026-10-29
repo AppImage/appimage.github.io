@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>app.aiyo.perps</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>AiyoPerps</name>
+  <summary>Perpetual futures desktop terminal</summary>
+  <description>
+    <p>
+      AiyoPerps is a desktop terminal for perpetual futures trading across centralized and decentralized exchanges.
+    </p>
+    <p>
+      It includes a desktop UI, a local REST API, and MCP support for AI-assisted workflows.
+    </p>
+  </description>
+  <launchable type="desktop-id">app.aiyo.perps.desktop</launchable>
+  <provides>
+    <binary>AiyoPerps</binary>
+  </provides>
+  <categories>
+    <category>Office</category>
+    <category>Finance</category>
+  </categories>
+  <url type="homepage">https://perps.aiyo.app</url>
+  <url type="bugtracker">https://github.com/phidiassj/AiyoPerps/issues</url>
+  <developer id="app.aiyo.perps">
+    <name>Chen-Si Studio</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="2026.04.03" date="2026-04-03"/>
+  </releases>
+</component>

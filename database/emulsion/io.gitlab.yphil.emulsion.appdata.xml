@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.gitlab.yphil.emulsion</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>Emulsion</name>
+  <developer id="com.github.yphil">
+    <name>yPhil</name>
+  </developer>
+  <summary>Better gaming through chemistry</summary>
+  <description>
+    <p>Display your games collection into responsive galleries, manage game metadata, cover art and emulator configuration. Launch your games in style.</p>
+    <p>Features:</p>
+    <ul>
+      <li>Flexible Storage - Your games / ROMs can be anywhere, across multiple drives / NAS, etc.</li>
+      <li>Universal Input - Keyboard, mouse, or any game controller</li>
+      <li>Responsive UX - Adapts perfectly to any screen size / orientation</li>
+      <li>Smart emulator management - Emulsion uses your installed emulator, or installs it; standard and up to date.</li>
+      <li>Flexible Metadata Management - Manual curation, and / or batch automation. Downloads from multiple sources, Wikipedia API default; all manageable from the platform page.</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">emulsion.desktop</launchable>
+  <url type="homepage">https://yphil.gitlab.io/emulsion/</url>
+  <url type="help">https://gitlab.com/yphil/emulsion</url>
+  <url type="bugtracker">https://gitlab.com/yphil/emulsion/-/issues</url>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.11.01" date="2025-12-05"/>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://yphil.gitlab.io/images/emulsion-screenshot_01-839px.png</image>
+    </screenshot>
+  </screenshots>
+</component>

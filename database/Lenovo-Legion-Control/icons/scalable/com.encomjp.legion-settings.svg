@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 24 24" role="img" aria-label="App Mark">
+  <rect x="2" y="2" width="20" height="20" rx="5" fill="#1d1d20"/>
+  <path d="M6 6h3v9h8v3H6z" fill="#f7f7f8"/>
+  <path d="M11 6h7l-2.5 3H11z" fill="#d91637"/>
+  <circle cx="18" cy="17" r="1.5" fill="#d91637"/>
+</svg>

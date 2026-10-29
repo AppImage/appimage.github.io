@@ -16,15 +16,16 @@ Terminal=false
 MimeType=image/jpeg;image/png;image/tiff;image/x-adobe-dng;image/x-canon-cr2;image/x-canon-crf;image/x-canon-crw;image/x-fuji-raf;image/x-hasselblad-3fr;image/x-hasselblad-fff;image/x-jpg;image/x-kodak-dcr;image/x-kodak-k25;image/x-kodak-kdc;image/x-leaf-mos;image/x-leica-rwl;image/x-mamiya-mef;image/x-minolta-mrw;image/x-nikon-nef;image/x-nikon-nrw;image/x-olympus-orf;image/x-panasonic-raw;image/x-panasonic-rw2;image/x-pentax-pef;image/x-pentax-raw;image/x-phaseone-iiq;image/x-raw;image/x-rwz;image/x-samsung-srw;image/x-sigma-x3f;image/x-sony-arq;image/x-sony-arw;image/x-sony-sr2;image/x-sony-srf;image/x-tif;
 Categories=Photography;Graphics;2DGraphics;RasterGraphics;GTK;
 Keywords=raw;photography;develop;pp3;graphics;
+StartupWMClass=rawtherapee
+X-AppImage-Version=-20190910_1736
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
 # (e.g., with appimagetool -u) so that users can easily update the AppImage
-# Dear upstream developer, please include a digital signature in your AppImage
-# (e.g., with appimagetool -s) so that users can easily verify the authenticity the AppImage
-X-AppImage-Type=1
-# Dear upstream developer, please consider to switch to type 2
-# so that users can benefit from the additional features like digital embedded signatures
-# see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#type-2-image-format
-# or use linuxdeployqt or appimagetool which produce type 2 automatically
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.17

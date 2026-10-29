@@ -1,0 +1,38 @@
+{
+  "name": "squad-center",
+  "version": "0.3.1",
+  "description": "Desktop app for orchestrating GitHub Copilot CLI sessions with Squad agent teams",
+  "author": {
+    "name": "Jose Corral",
+    "email": "jose.manuel.corral@gmail.com"
+  },
+  "type": "module",
+  "bin": {
+    "squad-center": "bin/squad-center.js"
+  },
+  "files": [
+    "bin/",
+    "scripts/install.js",
+    "scripts/postinstall.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmanuelcorral/squadcenter.git"
+  },
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "lucide-react": "^0.511.0",
+    "node-pty": "^1.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.2",
+    "uuid": "^11.1.0"
+  }
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>app.hibiki.client</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Hibiki</name>
+  <summary>Listen to your Plex music library</summary>
+  <description>
+    <p>Hibiki is a desktop music player for Plex, with a native audio engine and an interface shaped by your library's artwork.</p>
+    <p>Browse artists and albums, manage playlists, follow synced lyrics, and discover internet radio and podcasts. Save selected music for offline playback. Connect Last.fm or ListenBrainz for scrobbling and liked songs, and link playlists with ListenBrainz.</p>
+  </description>
+  <launchable type="desktop-id">Hibiki.desktop</launchable>
+  <developer_name>Michael Karbowiak</developer_name>
+  <url type="homepage">https://github.com/karbowiak/hibiki</url>
+  <url type="bugtracker">https://github.com/karbowiak/hibiki/issues</url>
+  <categories><category>AudioVideo</category><category>Audio</category><category>Player</category></categories>
+  <provides><binary>hibiki</binary></provides>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Browse your music library</caption>
+      <image type="source" width="2082" height="1391">https://raw.githubusercontent.com/karbowiak/hibiki/main/screenshots/main.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Explore an artist and their albums</caption>
+      <image type="source" width="2082" height="1391">https://raw.githubusercontent.com/karbowiak/hibiki/main/screenshots/artist.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Play an album from your library</caption>
+      <image type="source" width="2082" height="1391">https://raw.githubusercontent.com/karbowiak/hibiki/main/screenshots/album.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Manage playlists and offline downloads</caption>
+      <image type="source" width="2082" height="1391">https://raw.githubusercontent.com/karbowiak/hibiki/main/screenshots/playlist.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Find an internet radio station</caption>
+      <image type="source" width="2082" height="1391">https://raw.githubusercontent.com/karbowiak/hibiki/main/screenshots/internetradio.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Discover podcasts and follow your subscriptions</caption>
+      <image type="source" width="2082" height="1391">https://raw.githubusercontent.com/karbowiak/hibiki/main/screenshots/podcasts.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Search your library and revisit recent artists</caption>
+      <image type="source" width="2082" height="1391">https://raw.githubusercontent.com/karbowiak/hibiki/main/screenshots/search.png</image>
+    </screenshot>
+  </screenshots>
+  <releases><release version="0.6.0" date="2026-10-17" type="stable"/></releases>
+  <content_rating type="oars-1.1"/>
+</component>

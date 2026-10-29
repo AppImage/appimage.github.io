@@ -1,0 +1,20 @@
+{
+  "name": "lore",
+  "version": "0.2.0",
+  "description": "AI-powered thought capture and recall desktop app",
+  "main": "dist-electron/main.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@lancedb/lancedb": "^0.26.2",
+    "apache-arrow": "^18.1.0",
+    "electron-ollama": "^0.1.25",
+    "pino": "^10.3.1",
+    "radix-ui": "^1.4.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "uuid": "^13.0.0"
+  }
+}

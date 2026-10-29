@@ -1,0 +1,21 @@
+{
+  "name": "ed-unified-app",
+  "version": "0.5.0",
+  "description": "Unified browser, bookmark manager, and launcher for Elite: Dangerous 3rd-party tools",
+  "main": "./out/main/index.js",
+  "author": "Jordan Cunningham",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@ghostery/adblocker-electron": "^2.18.1",
+    "cheerio": "^1.2.0",
+    "lowdb": "^7.0.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.1": true,
+    "electron-winstaller@5.4.0": true
+  }
+}

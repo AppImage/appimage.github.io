@@ -1,0 +1,21 @@
+{
+  "name": "mixdog-desktop",
+  "version": "1.2.1",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "Mixdog desktop host for Windows, macOS, and Linux",
+  "type": "module",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@homebridge/node-pty-prebuilt-multiarch": "^0.13.1",
+    "electron-updater": "^6.8.9",
+    "koffi": "^3.3.2",
+    "vscode-jsonrpc": "8.2.1",
+    "ws": "^8.21.1"
+  },
+  "overrides": {
+    "dompurify": "^3.4.12",
+    "nanoid": "^3.3.18"
+  },
+  "homepage": "https://github.com/tribgames/mixdog#readme"
+}

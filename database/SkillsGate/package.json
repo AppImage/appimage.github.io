@@ -1,0 +1,27 @@
+{
+  "name": "@skillsgate/desktop",
+  "version": "0.7.3",
+  "description": "SkillsGate desktop app for managing AI agent skills",
+  "author": "Sultan Valiyev <valiyevsultan@gmail.com>",
+  "homepage": "https://skillsgate.ai",
+  "private": true,
+  "main": "out/main/index.js",
+  "dependencies": {
+    "@codemirror/commands": "^6.10.3",
+    "@codemirror/lang-markdown": "^6.5.0",
+    "@codemirror/language": "^6.12.3",
+    "@codemirror/language-data": "^6.5.2",
+    "@codemirror/search": "^6.6.0",
+    "@codemirror/state": "^6.6.0",
+    "@codemirror/view": "^6.41.0",
+    "@skillsgate/ui": "*",
+    "better-sqlite3": "12.11.1",
+    "electron-updater": "6.6.2",
+    "gray-matter": "4.0.3",
+    "marked": "17.0.4",
+    "react": "19.1.5",
+    "react-dom": "19.1.5",
+    "react-router-dom": "7.13.1",
+    "react-window": "^2.2.7"
+  }
+}

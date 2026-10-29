@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>art.chiph.djusbtkit</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+
+  <name>DJ USB Tkit</name>
+  <summary>Manage a DJ library and export it to CDJ-ready USB drives</summary>
+
+  <description>
+    <p>
+      DJ USB Tkit is a local-first DJ library manager and USB exporter. It
+      scans your music, analyzes tracks, and writes playlists to USB drives
+      that CDJ players read directly.
+    </p>
+    <ul>
+      <li>Library scanning, playlist management, and local playback</li>
+      <li>USB import and export with mirror and additive playlist sync</li>
+      <li>Local BPM, key, waveform, and artwork analysis</li>
+      <li>A cue editor for hot cues, beat grid, key, and playback start</li>
+      <li>USB diagnostics and repair tools, with backups made before repair writes</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">DJ_USB_Tkit.desktop</launchable>
+  <provides>
+    <binary>dj_usb_tkit_desktop</binary>
+  </provides>
+
+  <url type="homepage">https://chiph.art/en/projects/dj-usb-tkit</url>
+  <url type="bugtracker">https://github.com/haivala/dj-usb-tkit/issues</url>
+  <url type="vcs-browser">https://github.com/haivala/dj-usb-tkit</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/haivala/dj-usb-tkit/main/docs/assets/DJ-USB-Tkit.png</image>
+      <caption>Library view with playlists and a connected USB drive</caption>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+  </categories>
+
+  <developer id="art.chiph">
+    <name>DJ USB Tkit contributors</name>
+  </developer>
+
+  <content_rating type="oars-1.1" />
+</component>

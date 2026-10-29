@@ -1,0 +1,28 @@
+{
+  "name": "helix-plateforme",
+  "nomAffiche": "Helix",
+  "depotMisesAJour": "medhiclb/HelixAI",
+  "private": true,
+  "version": "2026.929.4",
+  "license": "AGPL-3.0-only",
+  "description": "Plateforme d'IA souveraine, locale et open source",
+  "desktopName": "helix-plateforme.desktop",
+  "author": {
+    "name": "Medhi Clabaut (Helix Agence, SIREN 994 907 145)",
+    "email": "contact@helix-agence.fr",
+    "url": "https://helix-agence.fr"
+  },
+  "type": "module",
+  "main": "electron/main.cjs",
+  "bin": {
+    "helix": "cli/helix.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "electron-updater": "^6.8.9",
+    "lucide-react": "^0.469.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.2"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "bulkurlopener",
+  "version": "1.12.0",
+  "description": "Desktop version of the Bulk URL Opener browser extension",
+  "main": "main.js",
+  "repository": "https://github.com/EuanRiggans/BulkURLOpener-Electron",
+  "author": "Euan Riggans",
+  "license": "ISC",
+  "dependencies": {}
+}

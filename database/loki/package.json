@@ -1,0 +1,17 @@
+{
+  "name": "loki",
+  "productName": "Lowkey Media Viewer",
+  "version": "2.31.0",
+  "description": "A Media library for quick curation.",
+  "license": "MIT",
+  "author": {
+    "name": "Callsign Media LLC",
+    "email": "dream@lowkeyviewer.com",
+    "url": "https://lowkeyviewer.com/dream"
+  },
+  "main": "./dist/main/main.js",
+  "dependencies": {
+    "@types/sqlite3": "^3.1.8",
+    "sqlite3": "^5.1.6"
+  }
+}

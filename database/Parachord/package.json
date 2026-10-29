@@ -1,0 +1,23 @@
+{
+  "name": "parachord-desktop",
+  "version": "0.9.7",
+  "description": "Parachord Desktop - Multi-source music player with cross-platform resolver support",
+  "main": "main.js",
+  "author": {
+    "name": "Jason Herskowitz",
+    "email": "team@parachord.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@jellybrick/mpris-service": "^2.1.5",
+    "better-sqlite3": "^12.6.2",
+    "chokidar": "^3.5.0",
+    "dotenv": "^16.3.1",
+    "electron-store": "^6.0.1",
+    "electron-updater": "^6.1.7",
+    "express": "^4.18.2",
+    "music-metadata": "^7.0.0",
+    "node-id3": "^0.2.6",
+    "ws": "^8.14.2"
+  }
+}

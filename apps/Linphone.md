@@ -2,7 +2,7 @@
 layout: app
 
 permalink: /Linphone/
-description: A libre SIP client
+description: "A libre SIP client"
 
 icons:
   - Linphone/icons/scalable/linphone.svg
@@ -13,6 +13,8 @@ screenshots:
 authors:
 
 links:
+  - type: Download
+    url: https://linphone.org/releases/linux/latest_app
 
 desktop:
   Desktop Entry:
@@ -25,12 +27,15 @@ desktop:
     Terminal: false
     Categories: Network
     MimeType: x-scheme-handler/sip-linphone
-    X-AppImage-Version: 0d3c37b
+    X-PulseAudio-Properties: media.role=phone
   AppImageHub:
-    X-AppImage-UpdateInformation: zsync|https://gitlab.linphone.org/BC/public/linphone-desktop/-/jobs/artifacts/master/raw/Linphone-x86_64.AppImage.zsync?job=job-centos7-ninja-gcc-package
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created Signature made Tue Sep 22 13:33:06 2026 UTC                using RSA key
+      BD50F919A18BF76E078F24A6C89D15DD115B34BD Can''t check signature: No public key'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
 ---

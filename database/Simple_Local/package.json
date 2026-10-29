@@ -1,0 +1,39 @@
+{
+  "name": "simple-local",
+  "version": "0.5.13",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild",
+      "node-pty"
+    ]
+  },
+  "description": "Desktop app for managing local dev infrastructure with devcontainer-based service isolation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ykosyakov/simple-local.git"
+  },
+  "main": "./out/main/index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@devcontainers/cli": "^0.81.1",
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@hookform/resolvers": "^5.2.2",
+    "@monaco-editor/react": "^4.7.0",
+    "@tanstack/react-virtual": "^3.13.18",
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/headless": "^6.0.0",
+    "@xterm/xterm": "^6.0.0",
+    "dockerode": "^4.0.9",
+    "electron-store": "^8.2.0",
+    "electron-updater": "^6.7.3",
+    "fix-path": "^5.0.0",
+    "lucide-react": "^0.563.0",
+    "node-pty": "^1.1.0",
+    "react-hook-form": "^7.71.1",
+    "rxjs": "^7.8.2",
+    "zod": "^4.3.6"
+  }
+}

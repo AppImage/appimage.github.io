@@ -1,0 +1,16 @@
+{
+  "name": "skytwin-desktop",
+  "version": "0.3.0",
+  "description": "SkyTwin Desktop — Your personal AI assistant",
+  "author": {
+    "name": "Jay Zalowitz",
+    "email": "jay@skytwin.dev"
+  },
+  "homepage": "https://github.com/jayzalowitz/skytwin",
+  "private": true,
+  "main": "dist/main.js",
+  "dependencies": {
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.6.0"
+  }
+}

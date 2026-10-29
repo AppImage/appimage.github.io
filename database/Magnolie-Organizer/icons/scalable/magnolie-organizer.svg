@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="leder" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7a4530"/>
+      <stop offset="0.55" stop-color="#55291c"/>
+      <stop offset="1" stop-color="#361a10"/>
+    </linearGradient>
+    <linearGradient id="seiten" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f2e9d1"/>
+      <stop offset="1" stop-color="#d9cba6"/>
+    </linearGradient>
+    <linearGradient id="metall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2f4f6"/>
+      <stop offset="0.5" stop-color="#8e979f"/>
+      <stop offset="1" stop-color="#e8ecef"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Papierblock, der rechts unter dem Einband hervorschaut -->
+  <rect x="40" y="28" width="196" height="202" rx="12" fill="url(#seiten)" stroke="#b8a87f" stroke-width="2"/>
+  <line x1="228" y1="40" x2="228" y2="218" stroke="#c9ba92" stroke-width="2"/>
+  <line x1="222" y1="38" x2="222" y2="220" stroke="#cfc09a" stroke-width="2"/>
+
+  <!-- Ledereinband -->
+  <rect x="20" y="16" width="200" height="222" rx="16" fill="url(#leder)" stroke="#2b140c" stroke-width="3"/>
+
+  <!-- Goldene Prägerahmen -->
+  <rect x="42" y="36" width="158" height="182" rx="9" fill="none" stroke="#d8b25c" stroke-width="4" opacity="0.92"/>
+  <rect x="50" y="44" width="142" height="166" rx="6" fill="none" stroke="#d8b25c" stroke-width="1.6" stroke-dasharray="5 5" opacity="0.5"/>
+
+  <!-- Geprägte Magnolienblüte -->
+  <g transform="translate(121,129.5) scale(1.9) translate(-32,-32)"
+     fill="none" stroke="#200e07" stroke-width="2.6" opacity="0.55"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 34 C 26 26, 26 16, 32 9 C 38 16, 38 26, 32 34 Z"/>
+    <path d="M32 34 C 23 32, 15 26, 13 17 C 22 17, 30 24, 32 34 Z"/>
+    <path d="M32 34 C 41 32, 49 26, 51 17 C 42 17, 34 24, 32 34 Z"/>
+    <path d="M32 34 C 24 40, 21 47, 22 54 C 28 51, 32 44, 32 34 Z"/>
+    <path d="M32 34 C 40 40, 43 47, 42 54 C 36 51, 32 44, 32 34 Z"/>
+  </g>
+  <g transform="translate(121,127.5) scale(1.9) translate(-32,-32)"
+     fill="none" stroke="#d8b25c" stroke-width="2.6"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 34 C 26 26, 26 16, 32 9 C 38 16, 38 26, 32 34 Z"/>
+    <path d="M32 34 C 23 32, 15 26, 13 17 C 22 17, 30 24, 32 34 Z"/>
+    <path d="M32 34 C 41 32, 49 26, 51 17 C 42 17, 34 24, 32 34 Z"/>
+    <path d="M32 34 C 24 40, 21 47, 22 54 C 28 51, 32 44, 32 34 Z"/>
+    <path d="M32 34 C 40 40, 43 47, 42 54 C 36 51, 32 44, 32 34 Z"/>
+  </g>
+  <line x1="86" y1="188" x2="156" y2="188" stroke="#d8b25c" stroke-width="2.5" opacity="0.8"/>
+  <circle cx="121" cy="188" r="3.4" fill="#d8b25c"/>
+
+  <!-- Ringbindung links -->
+  <circle cx="21" cy="62"  r="11" fill="none" stroke="url(#metall)" stroke-width="7"/>
+  <circle cx="21" cy="127" r="11" fill="none" stroke="url(#metall)" stroke-width="7"/>
+  <circle cx="21" cy="192" r="11" fill="none" stroke="url(#metall)" stroke-width="7"/>
+  <circle cx="21" cy="62"  r="11" fill="none" stroke="#3d444b" stroke-width="1" opacity="0.6"/>
+  <circle cx="21" cy="127" r="11" fill="none" stroke="#3d444b" stroke-width="1" opacity="0.6"/>
+  <circle cx="21" cy="192" r="11" fill="none" stroke="#3d444b" stroke-width="1" opacity="0.6"/>
+</svg>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.monghoul.app</id>
+  <name>Monghoul</name>
+  <summary>A fast, beautiful MongoDB GUI for developers</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://monghoul.com/eula</project_license>
+
+  <description>
+    <p>
+      Monghoul is a desktop MongoDB client with schema-aware autocomplete,
+      a visual aggregation builder, real-time cluster monitoring, charts,
+      custom themes, and 70+ AI tools via the Model Context Protocol.
+    </p>
+    <p>Features include:</p>
+    <ul>
+      <li>Query editor with field paths, operators, pipeline stages, and enum suggestions</li>
+      <li>Visual aggregation builder with drag-and-drop, live preview, and code sync</li>
+      <li>6 chart types with stacking, dual axis, date aggregation, and PNG export</li>
+      <li>Cluster monitoring with sparkline charts, slow queries, and database profiler</li>
+      <li>Import and export in JSON, CSV, Excel, and cross-instance collection copy</li>
+      <li>8 auth methods including SCRAM, x509, LDAP, Kerberos, and AWS IAM</li>
+      <li>SSH tunneling, SSL/TLS, and per-connection write protection</li>
+      <li>11 built-in themes and a full theme editor with 3-color generation</li>
+      <li>70+ MCP tools for AI assistant integration</li>
+    </ul>
+  </description>
+
+  <url type="homepage">https://monghoul.com</url>
+  <url type="bugtracker">https://github.com/Kontsedal/monghoul-public/issues</url>
+  <url type="help">https://monghoul.com/docs/</url>
+
+  <!--
+    `Monghoul.desktop`, NOT `com.monghoul.app.desktop`, and this is the one line where this file
+    and `packaging/flathub/`'s copy of it must differ.
+
+    Tauri's deb, rpm and AppImage bundlers name the desktop entry from `productName`, so what they
+    install is `Monghoul.desktop`. Flathub installs `com.monghoul.app.desktop`, because its
+    manifest does that itself.
+
+    A launchable naming a desktop id that is not in the bundle passes `appstreamcli validate`,
+    which reads only this XML. It fails `appstreamcli compose`, which resolves the id against the
+    tree and takes the icon from it: that reported `gui-app-without-icon` and refused the run.
+    Compose is the pass a software centre and a catalogue do, so the app would have had metainfo
+    in the right directory and still rendered without an icon.
+  -->
+  <launchable type="desktop-id">Monghoul.desktop</launchable>
+
+  <provides>
+    <binary>monghoul</binary>
+  </provides>
+
+  <branding>
+    <color type="primary" scheme_preference="dark">#00D474</color>
+    <color type="primary" scheme_preference="light">#00A85C</color>
+  </branding>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://monghoul.com/screenshots/hero.webp</image>
+      <caption>Query editor with schema-aware autocomplete</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://monghoul.com/screenshots/aggregation-builder.webp</image>
+      <caption>Visual aggregation pipeline builder</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://monghoul.com/screenshots/cluster-monitor.webp</image>
+      <caption>Real-time cluster monitoring</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://monghoul.com/screenshots/custom-themes.webp</image>
+      <caption>Custom themes with 3-color generation</caption>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1" />
+
+  <categories>
+    <category>Development</category>
+    <category>Database</category>
+  </categories>
+
+  <keywords>
+    <keyword>mongodb</keyword>
+    <keyword>database</keyword>
+    <keyword>gui</keyword>
+    <keyword>nosql</keyword>
+    <keyword>query</keyword>
+    <keyword>aggregation</keyword>
+    <keyword>mongo</keyword>
+  </keywords>
+
+  <developer id="com.monghoul">
+    <name>Monghoul</name>
+  </developer>
+
+  <releases>
+    <release version="1.12.2" date="2026-09-17">
+      <description>
+        <p>
+          Linux gets an AppImage, and with it the automatic updates the other platforms
+          already had. The launcher icon is fixed: the desktop entry named an icon that was
+          never installed, so Linux showed a placeholder.
+        </p>
+      </description>
+    </release>
+    <release version="1.12.1" date="2026-09-12">
+      <description>
+        <p>A connection set not to save query results still shows them while the app is open.</p>
+      </description>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.hexmode.light_matter</id>
+  <launchable type="desktop-id">light-matter.desktop</launchable>
+
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Light Matter</name>
+  <summary>Light Matter is an HDR image and photo viewer</summary>
+  <description>
+    <p>
+      Light Matter is an HDR image and photo viewer for Windows and Linux.
+      It features a simple and intuitive UI, photo browser with customisable locations,
+      support for both High Dynamic Range (HDR) and Standard Dynamic Range (SDR) images,
+      wide colour gamut, and ICC profiles.
+    </p>
+    <p>Supported image formats: JPEG, JPEG UltraHDR, JPEG XL, AVIF, PNG, WebP, GIF.</p>
+    <p>Supported colour gamuts: sRGB, AdobeRGB, P3, BT.2020/BT.2100, custom colour primaries.</p>
+    <p>Supported HDR EOTF: PQ (SMPTE ST 2084), HLG (ARIB STD-B67).</p>
+  </description>
+
+  <url type="homepage">https://blog.hexmode.org/software/light-matter/</url>
+  <url type="bugtracker">https://github.com/Auxx/light-matter/issues</url>
+
+  <developer id="org.hexmode">
+    <name>Hexmode</name>
+  </developer>
+
+  <content_rating type="oars-1.1" />
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Gallery view</caption>
+      <image>https://images.hexmode.org/light-matter/linux-020-01.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Image view</caption>
+      <image>https://images.hexmode.org/light-matter/linux-020-02.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>EXIF data display</caption>
+      <image>https://images.hexmode.org/light-matter/linux-020-03.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.2.2" date="2026-10-11">
+      <description>
+        <ul>
+          <li>Updated dependencies to fix security vulnerabilities.</li>
+          <li>Fixed auto-update for AppImage build.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.1" date="2026-10-07">
+      <description>
+        <ul>
+          <li>Added AppStream metadata to AppImage package.</li>
+          <li>Added missing MIME types to Linux build.</li>
+          <li>Added zsync support.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-08-28">
+      <description>
+        <ul>
+          <li>Added thumbnail size selector in the gallery.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.6" date="2026-08-21">
+      <description>
+        <ul>
+          <li>Added zooming with a scroll wheel (thanks, iuncus!).</li>
+          <li>Implemented image grouping by year and month in the gallery view.</li>
+          <li>Escape key now closes the image viewer.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.5" date="2026-08-15">
+      <description>
+        <p>The first AppImage release of Light Matter.</p>
+        <ul>
+          <li>Major performance improvement for a gallery.</li>
+          <li>Greatly reduced memory usage when generating thumbnails.</li>
+          <li>Thumbnail generator is now multithreaded and does not cause UI stutters.</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

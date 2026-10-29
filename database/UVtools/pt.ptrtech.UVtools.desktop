@@ -1,0 +1,22 @@
+[Desktop Entry]
+Type=Application
+Name=UVtools
+Comment=MSLA/DLP, file analysis, calibration, repair, conversion and manipulation
+Categories=Utility;
+Keywords=msla;dlp;resin;printer;slicer;3d printing;image processing;layers;
+Icon=UVtools
+Exec="UVtools" %F
+MimeType=application/x-sl1;application/x-sl1s;application/x-photon;application/x-cbddlp;application/x-ctb;application/x-photons;application/x-phz;application/x-pws;application/x-pw0;application/x-pwx;application/x-dlp;application/x-dl2p;application/x-pwmx;application/x-pmx2;application/x-pwmb;application/x-px6s;application/x-pwmo;application/x-pm3n;application/x-pm4n;application/x-pwms;application/x-pwma;application/x-pmsq;application/x-pm3;application/x-pm3m;application/x-pm3r;application/x-pm5;application/x-pm5s;application/x-m5sp;application/x-pwc;application/x-pm4u;application/x-pm7;application/x-pm7m;application/x-pwsz;application/x-pp1;application/x-pp1m;application/x-cws;application/x-n4;application/x-n7;application/x-lgs;application/x-lgs30;application/x-lgs120;application/x-lgs4k;application/x-vdt;application/x-cxdlp;application/x-cxdlpv4;application/x-nanodlp;application/x-fdg;application/x-goo;application/x-prz;application/x-zcode;application/x-jxs;application/x-zcodex;application/x-mdlp;application/x-gr1;application/x-svgx;application/x-qdt;application/x-osla;application/x-osf;application/x-uvj;
+Terminal=false
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34
+X-AppImage-Payload-License=AGPL-3.0

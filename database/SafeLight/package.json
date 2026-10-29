@@ -1,0 +1,18 @@
+{
+  "name": "safelight",
+  "private": true,
+  "version": "2.5.6",
+  "description": "Safelight — a fast RAW photo editor.",
+  "homepage": "https://github.com/anthonyreimche/SafeLight",
+  "desktopName": "safelight",
+  "author": "Anthony Reimche <anthonyreimche@gmail.com>",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "overrides": {
+    "@electron/asar": "^4.2.0"
+  },
+  "dependencies": {
+    "utif2": "^4.1.0"
+  }
+}

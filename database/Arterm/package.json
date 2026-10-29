@@ -1,0 +1,9 @@
+{
+  "name": "arterm",
+  "version": "0.11.7",
+  "main": "electron/main.cjs",
+  "private": true,
+  "homepage": "https://arclude.com",
+  "description": "AI-native terminal and editor",
+  "author": "Arclude <info@arclude.com>"
+}

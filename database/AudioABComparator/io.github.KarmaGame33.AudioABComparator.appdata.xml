@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.KarmaGame33.AudioABComparator</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Audio A/B Comparator</name>
+  <developer id="io.github.karmagame33">
+    <name>KarmaApps by KarmaGame</name>
+  </developer>
+  <summary>Compare two audio tracks instantly</summary>
+  <summary xml:lang="fr">Comparer instantanément deux pistes audio</summary>
+  <description>
+    <p>
+      Free and open-source A/B audio comparator for mixing, mastering and blind
+      listening tests. Audio files remain local and the application contains no
+      telemetry.
+    </p>
+    <p xml:lang="fr">
+      Comparateur audio A/B libre pour le mixage, le mastering et les tests
+      d’écoute à l’aveugle. Les fichiers audio restent locaux et l’application
+      ne contient aucune télémétrie.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.KarmaGame33.AudioABComparator.desktop</launchable>
+  <provides>
+    <binary>ab-compare</binary>
+  </provides>
+  <url type="homepage">https://github.com/KarmaGame33/AudioABComparator</url>
+  <url type="bugtracker">https://github.com/KarmaGame33/AudioABComparator/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/KarmaGame33/AudioABComparator/main/docs/media/audio-ab-comparator.png</image>
+      <caption>Express comparison with a shared timeline</caption>
+      <caption xml:lang="fr">Comparaison Express avec une timeline commune</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/KarmaGame33/AudioABComparator/main/docs/media/audio-ab-comparator-analysis.png</image>
+      <caption>Native PCM mastering analysis for both tracks</caption>
+      <caption xml:lang="fr">Analyse mastering du PCM natif des deux pistes</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/KarmaGame33/AudioABComparator/main/docs/media/audio-ab-comparator-analysis-live.png</image>
+      <caption>Paired A/B live meters with minimum and maximum markers</caption>
+      <caption xml:lang="fr">Vumètres A/B simultanés avec repères minimum et maximum</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.0.1" date="2026-08-23" type="stable"/>
+    <release version="1.0.0" date="2026-08-22" type="stable"/>
+    <release version="0.3.0-beta.3" date="2026-08-22" type="development"/>
+    <release version="0.3.0-beta.2" date="2026-08-22" type="development"/>
+    <release version="0.3.0-beta.1" date="2026-08-21" type="development"/>
+    <release version="0.2.1-beta.4" date="2026-08-21" type="development"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

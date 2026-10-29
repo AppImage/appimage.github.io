@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.naev.Naev</id>
+
+  <name>Naev</name>
+  <summary>2D action/rpg space trading combat game</summary>
+  <summary xml:lang="de">2D-Action- und RPG-Weltraumhandels- und Kampfspiel</summary>
+  <developer_name>Naev DevTeam</developer_name>
+  <icon type="stock">org.naev.Naev</icon>
+  <url type="homepage">https://naev.org</url>
+  <url type="bugtracker">https://github.com/naev/naev/issues</url>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <update_contact>bobbens_AT_gmail.com</update_contact>
+
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <!--<control>gamepad</control>-->
+  </recommends>
+
+  <description>
+    <p>
+      Naev is a 2D space trading and combat game, taking inspiration from the Escape Velocity series, among others.
+    </p>
+    <p xml:lang="de">
+      Naev ist ein 2D-Weltraumhandels- und -kampfspiel, welches Inspiration aus der „Escape Veolcity“-Serie und anderen Spielen nimmt.
+    </p>
+    <p>
+      You pilot a space ship from a top-down perspective, and are more or less free to do what you want. As the genre name implies, you’re able to trade and engage in combat at will. Beyond that, there’s an ever-growing number of storyline missions, equipment, and ships; Even the galaxy itself grows larger with each release. For the literarily-inclined, there are large amounts of lore accompanying everything from planets to equipment.
+    </p>
+    <p xml:lang="de">
+      Du steuerst ein Raumschiff aus der Vogelperspektive und kannst mehr oder weniger über dein eigenes Schicksal bestimmen. Wie der Name des Genres impliziert, kannst du beliebig handeln und kämpfen. Darüber hinaus gibt es eine beständig wachsende Anzahl an Missionen, Equipment und Schiffe; auch die Galaxie selbst wächst mit jeder Veröffentlichung. Für die literarisch geneigten Spieler gibt es viele Hintergrundgeschichten, die alles von Planeten bis zum Equipment begleiten.
+    </p>
+  </description>
+
+  <categories>
+    <category>Game</category>
+    <category>AdventureGame</category>
+  </categories>
+
+  <releases>
+    <release version="0.10.6" type="stable" date="2023-07-07">
+      <url>https://naev.org/blarg/2023-07-07_0.10.6/</url>
+    </release>
+    <release version="0.10.5" type="stable" date="2023-04-23">
+      <url>https://naev.org/blarg/2023-04-23_0.10.5/</url>
+    </release>
+    <release version="0.10.4" type="stable" date="2023-02-04">
+      <url>https://naev.org/blarg/2023-02-04_0.10.4/</url>
+    </release>
+    <release version="0.10.3" type="stable" date="2023-01-17">
+      <url>https://naev.org/blarg/2023-01-17_0.10.3/</url>
+    </release>
+    <release version="0.10.2" type="stable" date="2023-01-12">
+      <url>https://naev.org/blarg/2023-01-12_0.10.2/</url>
+    </release>
+    <release version="0.10.1" type="stable" date="2022-12-29">
+      <url>https://naev.org/blarg/2022-12-29_0.10.1/</url>
+    </release>
+    <release version="0.10.0" type="stable" date="2022-12-23">
+      <url>https://naev.org/blarg/2022-12-23_0.10.0/</url>
+    </release>
+    <release version="0.9.4" type="stable" date="2022-07-20">
+      <url>https://naev.org/blarg/2022-07-20_0.9.4/</url>
+    </release>
+    <release version="0.9.3" type="stable" date="2022-04-02">
+      <url>https://naev.org/blarg/2022-04-03_0.9.3/</url>
+    </release>
+    <release version="0.9.2" type="stable" date="2022-01-20">
+      <url>https://naev.org/blarg/2022-01-20_0.9.2</url>
+    </release>
+    <release version="0.9.1" type="stable" date="2022-01-02">
+      <url>https://naev.org/blarg/2022-01-02_0.9.1</url>
+    </release>
+    <release version="0.9.0" type="stable" date="2021-12-23">
+      <url>https://naev.org/blarg/2021-12-23_0.9.0</url>
+    </release>
+    <release version="0.8.2" type="stable" date="2021-02-12">
+      <url>https://naev.org/blarg/2021-02-12_0.8.2</url>
+    </release>
+    <release version="0.8.1" type="stable" date="2021-01-09">
+      <url>https://naev.org/blarg/2021-01-09_0.8.1</url>
+    </release>
+    <release version="0.8.0" type="stable" date="2020-12-17">
+      <url>https://naev.org/blarg/2020-12-17_0.8.0</url>
+    </release>
+    <release version="0.7.0" type="stable" date="2017-07-08">
+      <url>https://naev.org/blarg/2017-07-08_0.7.0</url>
+    </release>
+    <release version="0.6.1" type="stable" date="2015-11-15">
+      <url>https://naev.org/blarg/2015-11-15_0.6.1</url>
+    </release>
+    <release version="0.6.0" type="stable" date="2015-03-17">
+      <url>https://naev.org/blarg/2015-03-17_0.6.0</url>
+    </release>
+    <release version="0.5.3" type="stable" date="2012-04-15">
+      <url>https://naev.org/blarg/2012-04-15_0.5.3</url>
+    </release>
+    <release version="0.5.2" type="stable" date="2012-03-25">
+      <url>https://naev.org/blarg/2012-03-25_0.5.2</url>
+    </release>
+    <release version="0.5.1" type="stable" date="2012-03-01">
+      <url>https://naev.org/blarg/2012-03-01_0.5.1</url>
+    </release>
+    <release version="0.5.0" type="stable" date="2011-06-03">
+      <url>https://naev.org/blarg/2011-06-03_0.5.0</url>
+    </release>
+  </releases>
+
+  <launchable type="desktop-id">org.naev.Naev.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>A Rhino being scanned</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/scan.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A Pirate Kestrel releasing Za'lek drones</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/alteris_skirmish.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Exploring the depths of the Nebula</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/arandon.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Cruising near a black hole</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/blackhole.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A Goddard engaged in a large skirmish</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/gauntlet.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A Llama jumping into a new system</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/jump.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Mining for valuable resources</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/mining.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Racing to prove your pilot abilities</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/race.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Perusing the shipyard to obtain a better ship</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/shipyard.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Looking for work and meeting locals at the spaceport bar</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/spaceportbar.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Hiding from other ships using stealth</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/stealth.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Looking at system details with the map</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/system_map.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A Llama being attacked by a pirate</caption>
+      <image>https://naev.org/imgs/screenshots_0.10.0/png/llama_attacked.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Beware the chicken</caption>
+      <image>https://naev.org/imgs/screenshots_0.9.0/png/minerva_station.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-fantasy">moderate</content_attribute>
+    <content_attribute id="drugs-alcohol">mild</content_attribute>
+    <content_attribute id="language-humor">moderate</content_attribute>
+    <content_attribute id="money-gambling">mild</content_attribute>
+  </content_rating>
+
+  <provides>
+    <binary>naev</binary>
+  </provides>
+</component>

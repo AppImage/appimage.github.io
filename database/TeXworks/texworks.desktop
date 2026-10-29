@@ -1,0 +1,62 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=TeXworks
+GenericName=(La)TeX Editor
+GenericName[af]=(La)TeX Redigeerder
+GenericName[ar]=محرر تخ
+GenericName[ca]=Editor (La)TeX
+GenericName[cs]=(La)TeXový editor
+GenericName[de]=(La)TeX editor
+GenericName[es]=Editor (La)TeX
+GenericName[fa]=ویرایشگر (لا)تک
+GenericName[fr]=Éditeur (La)TeX
+GenericName[fo]=(La)TeX-ritil
+GenericName[it]=(La)TeX Editor
+GenericName[ja]=(La)TeXエディター
+GenericName[ko]=(라)텍 편집기
+GenericName[nl]=(La)TeX Editor
+GenericName[nn]=(La)TeX-skriveprogram
+GenericName[pl]=Edytor plików (La)TeX
+GenericName[ru]=Редактор (La)TeX
+GenericName[sl]=Urejevalnik besedil za (La)TeX
+GenericName[tr]=(La)TeX Düzenleyici
+GenericName[zh_CN]=(La)TeX 编辑器
+Comment=A simple environment for editing, typesetting, and previewing TeX documents
+Comment[af]='n Eenvoudige omgewing vir redigering, letterset, en vooraflees van TeX dokumente
+Comment[ar]=بيئة بسيطة لتحرير وصف ومعاينة مستندات تخ
+Comment[ca]=Un entorn senzill per a l'edició, composiciò i vista prèvia de documents TeX
+Comment[cs]=Jednoduché prostředí pro úpravu, sazbu a náhled TeXových dokumentů
+Comment[de]=Eine einfache Umgebung zum Bearbeiten, Setzen und Darstellen von TeX-Dokumenten
+Comment[es]=Un simple recurso para editar, compilar y previsualizar documentos TeX
+Comment[fa]=محیطی ساده برای ویرایش، حروف‌چینی، و پیش‌نمایش مستندات تک
+Comment[fo]=Eitt einfalt umhvørvi til at skriva, seta og lesa TeX-skjøl við
+Comment[fr]=Un environnement simple pour éditer, composer et prévisualiser des documents TeX
+Comment[it]=Un semplice ambiente per la modifica, la composizione e l'anteprima di documenti TeX
+Comment[ja]=TeX文書を作成、タイプセット、プレビューするためのシンプルな統合環境です
+Comment[ko]=TeX 문서를 편집, 조판, 미리보기 할 수 있는 심플한 환경
+Comment[nl]=Een eenvoudige omgeving voor het aanpassen, typesetten, en vertonen van TeX documenten
+Comment[nn]=Eit enkelt miljø for redigering, sideombrekking og vising av TeX-dokument
+Comment[pl]=Proste środowisko do edycji, składu oraz przeglądania dokumentów w TeXu.
+Comment[pt_BR]=TeXworks é um ambiente simples para editar, compilar e prever documentos TeX.
+Comment[ru]=Простая программа для редактирования, вёрстки и просмотра документов TeX.
+Comment[sl]=Okolje za enostavno urejanje, stavljenje in predogled TeX-ovih dokumentov
+Comment[tr]=TeXworks, TeX belgelerini düzenleme, dizme ve önizleme için basit bir ortamdır.
+Comment[zh_CN]=一个用于编辑、排版和预览 TeX 文档的简洁集成环境
+Icon=TeXworks
+Exec=texworks %F
+MimeType=text/x-tex;application/pdf;
+Categories=Office;Qt;
+Keywords=TeX;LaTeX;ConTeXt;XeTeX;PDF;editor;
+X-AppImage-Version=6b1c6ab
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.28

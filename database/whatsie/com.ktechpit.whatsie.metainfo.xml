@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.ktechpit.whatsie</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Whatsie</name>
+  <summary>Feature-rich WhatsApp Web client for the Linux desktop</summary>
+
+  <developer id="com.ktechpit">
+    <name>Keshav Bhatt</name>
+  </developer>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#77a27d</color>
+    <color type="primary" scheme_preference="dark">#16461d</color>
+  </branding>
+
+  <description>
+    <p>
+      Whatsie is a native Linux desktop client for WhatsApp Web, built on Qt 6 and
+      QtWebEngine. It brings WhatsApp out of the browser tab and into a proper
+      desktop application — lightweight and fast, with system integration, privacy
+      controls, and customization options a plain browser cannot offer.
+    </p>
+    <p>Core features:</p>
+    <ul>
+      <li>Light, dark and follow-system themes, kept in step with WhatsApp Web</li>
+      <li>Native desktop notifications with contact avatars</li>
+      <li>System-tray icon with an unread badge, mute and do-not-disturb</li>
+      <li>Voice, video and screen-share calls (Wayland via the desktop portal)</li>
+      <li>Built-in download manager with history; drag-and-drop and paste of attachments</li>
+      <li>Spell check for your system language</li>
+      <li>App lock with a passcode and configurable lock on start, on hide, or after idle</li>
+      <li>Privacy blur to hide message text and media until you hover</li>
+    </ul>
+    <p>More controls:</p>
+    <ul>
+      <li>Per-site camera, microphone and location permissions</li>
+      <li>HTTP / SOCKS5 network proxy with authentication</li>
+      <li>Autostart at login and start minimized to the tray</li>
+      <li>Single instance with multiple-account profiles</li>
+      <li>Zoom and interface scaling, plus a keyboard-shortcuts sheet</li>
+      <li>One-click bug reporting with diagnostics, no messages included</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">com.ktechpit.whatsie.desktop</launchable>
+
+  <categories>
+    <category>Network</category>
+    <category>InstantMessaging</category>
+  </categories>
+
+  <url type="homepage">https://github.com/keshavbhatt/whatsie</url>
+  <url type="bugtracker">https://github.com/keshavbhatt/whatsie/issues</url>
+  <url type="vcs-browser">https://github.com/keshavbhatt/whatsie</url>
+  <url type="contribute">https://github.com/keshavbhatt/whatsie</url>
+  <url type="donation">https://www.paypal.com/paypalme/keshavnrj/11</url>
+
+  <keywords>
+    <keyword translate="no">WhatsApp</keyword>
+    <keyword translate="no">WhatsApp Web</keyword>
+    <keyword>messaging</keyword>
+    <keyword>messenger</keyword>
+    <keyword>chat</keyword>
+    <keyword>communication</keyword>
+    <keyword>instant-messaging</keyword>
+    <keyword>social</keyword>
+    <keyword>video call</keyword>
+    <keyword>voice call</keyword>
+  </keywords>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>WhatsApp Web in a native desktop window</caption>
+      <image>https://raw.githubusercontent.com/keshavbhatt/whatsie/main/screenshots/store/01-whatsapp.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Appearance — themes, zoom and interface scale</caption>
+      <image>https://raw.githubusercontent.com/keshavbhatt/whatsie/main/screenshots/store/02-appearance.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Privacy — per-site permissions and screen lock</caption>
+      <image>https://raw.githubusercontent.com/keshavbhatt/whatsie/main/screenshots/store/03-privacy.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Passcode app lock</caption>
+      <image>https://raw.githubusercontent.com/keshavbhatt/whatsie/main/screenshots/store/04-lock.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>One-click bug reporting with diagnostics</caption>
+      <image>https://raw.githubusercontent.com/keshavbhatt/whatsie/main/screenshots/store/05-bug-report.png</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>whatsie</binary>
+  </provides>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+  </content_rating>
+
+  <releases>
+    <release version="6.1.1" date="2026-09-21">
+      <description>
+        <p>Fixes and small improvements:</p>
+        <ul>
+          <li>The interface now follows the desktop's light/dark preference reliably on Linux, including after resuming from sleep, instead of sometimes starting or reverting to light</li>
+          <li>After resuming from sleep with the connection briefly down, Whatsie keeps retrying and reconnects on its own instead of getting stuck on the "You appear to be offline" page</li>
+          <li>The spell-check language list now shows every bundled dictionary, not just the first few</li>
+          <li>WhatsApp channel links now open the channel preview in the app, and "share text" links without a phone number are handled</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.1.0" date="2026-09-09">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Whatsie's interface can now be translated — German, Spanish, French, Italian, Portuguese (Brazil) and Russian are included; pick one in Settings → General, or leave it on Automatic to follow your system</li>
+          <li>The unread message count now appears as a badge on the taskbar or dock launcher</li>
+          <li>Spell check can use several languages at the same time (Settings → Advanced)</li>
+          <li>New option to render at your display's refresh rate instead of the 60 FPS cap (Settings → Advanced)</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>The monochrome system-tray icon is now centred and sized correctly</li>
+          <li>On Wayland the app uses the correct desktop id, so it groups properly in the dock and task switcher</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.0.4" date="2026-09-07">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Spell check no longer silently fails to load its dictionaries, and you can now add languages yourself from Settings → Advanced → Spell check</li>
+          <li>On NVIDIA graphics under Wayland, Whatsie falls back to software rendering automatically instead of showing a black screen</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.0.3" date="2026-09-05">
+      <description>
+        <p>Fixes and small improvements:</p>
+        <ul>
+          <li>Drag-and-drop now shows a "Drop files to send" hint and, when a file can't be attached, explains why instead of doing nothing</li>
+          <li>The system-tray tooltip now reads "Whatsie"</li>
+          <li>Bug-report diagnostics include the CPU architecture</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.0.2" date="2026-09-04">
+      <description>
+        <p>Feature and fix release:</p>
+        <ul>
+          <li>New "JavaScript memory limit" (Settings → Advanced) to bound memory on long-running sessions</li>
+          <li>Group-invite links now open WhatsApp Web's "Join group" preview in the app</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.0.1" date="2026-09-04">
+      <description>
+        <p>Bug-fix release for device linking:</p>
+        <ul>
+          <li>Fixes linking a device failing with "Something went wrong" — linking by phone number and by QR code both work again</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.0.0" date="2026-08-27">
+      <description>
+        <p>
+          Whatsie 6 is a from-scratch rewrite on Qt 6.11 and QtWebEngine — lighter,
+          faster and more private. Highlights:
+        </p>
+        <ul>
+          <li>Themes that follow WhatsApp Web, with a reliable light/dark toggle</li>
+          <li>Native notifications with avatars and a system-tray unread badge</li>
+          <li>Voice, video and screen-share calls, with a reliable full-screen exit</li>
+          <li>A real downloads manager; drag-and-drop and paste of attachments</li>
+          <li>A hardened passcode app lock, privacy blur and per-site permissions</li>
+          <li>Spell check, network proxy, autostart and multiple-account profiles</li>
+          <li>Zoom, interface scaling and a one-click bug reporter with diagnostics</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.1.0" date="2026-04-03">
+      <description>
+        <p>Minor release focused on build-system and runtime stability improvements:</p>
+        <ul>
+          <li>Migrated primary build workflow to CMake + Ninja for Qt 6 development</li>
+          <li>Refined Qt 6 WebEngine integration and permission handling paths</li>
+          <li>Improved desktop notification delivery via org.freedesktop.Notifications on Qt 6</li>
+          <li>Improved session persistence via consistent profile handling</li>
+          <li>Updated in-app theme application logic for current WhatsApp Web changes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.0.0" date="2026-03-26">
+      <description>
+        <p>Major release — Qt 6 port with significant improvements:</p>
+        <ul>
+          <li>Ported to Qt 6 and QtWebEngine 6 for better performance and long-term support</li>
+          <li>Reliable light/dark theme toggle without requiring a page reload</li>
+          <li>Persistent named WebEngine profile with proper cookie and storage handling</li>
+          <li>Improved permission handling for camera, microphone, and notifications</li>
+          <li>Centralised profile management and refactored codebase</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.16.3" date="2024-11-01" />
+    <release version="4.16.2" date="2024-10-26" />
+    <release version="4.16.1" date="2024-10-20" />
+    <release version="4.16.0" date="2024-10-09" />
+  </releases>
+</component>

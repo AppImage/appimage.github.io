@@ -1,0 +1,9 @@
+{
+  "name": "materialx-playground-desktop",
+  "version": "2026.9.4",
+  "homepage": "https://joaovbs96.github.io/MaterialXPlayground/",
+  "description": "MaterialX Playground desktop app: node graph editor, viewer and node specs, fully offline.",
+  "author": "joaovbs96",
+  "private": true,
+  "main": "main/main.js"
+}

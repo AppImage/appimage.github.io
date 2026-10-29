@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata: what a software centre reports for an installed PiST.
+  Without it, GNOME Software and Discover fall back to the package file name and
+  an "Unknown Author", and nothing in the listing states the licence — which is
+  exactly how the 0.8.3 deb appeared ("pist-v0", "Unknown Author", no licence).
+
+  The component id is a reverse-DNS name and the menu entry it belongs to is
+  pist.desktop; <launchable> is what joins the two. appstreamcli warns
+  cid-desktopapp-is-not-rdns about a flat id (and so fails validation, which is
+  a trap for anyone adding a CI gate later), while the launchable link is
+  supported everywhere back to AppStream 0.10 — well past the 0.15/0.16 on
+  Ubuntu 22.04, the oldest release these packages support. The file name must
+  equal the id.
+
+  The developer is stated twice: <developer> is AppStream 1.0's form, and
+  <developer_name> is what Ubuntu 22.04's 0.15/0.16 can read — it has no support
+  for the new tag. Dropping either hides the author on one end of that range, so
+  the deprecation notice appstreamcli prints about the second one is intended.
+-->
+<component type="desktop-application">
+  <id>io.github.idontwantyourspamthanks.pist</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <name>PiST</name>
+  <summary>IDE for Atari ST 68000 assembly development</summary>
+  <developer id="io.github.idontwantyourspamthanks">
+    <name>Koala Software</name>
+  </developer>
+  <developer_name>Koala Software</developer_name>
+  <!-- The icon is a themed one, exactly as appstream-generator would record it
+       from the desktop entry's Icon key. Without an <icon> element a component
+       carries no icon at all, and a software centre then shows nothing beside
+       the name — which is what the 0.8.4 deb did in Ubuntu's App Center. -->
+  <icon type="stock">pist</icon>
+  <!-- Mirrors the desktop entry's Categories. appstreamcli only checks for them
+       once the component qualifies as a store-visible app — i.e. once it has an
+       icon — so this appeared the moment the icon element was added. -->
+  <categories>
+    <category>Development</category>
+    <category>IDE</category>
+  </categories>
+
+  <description>
+    <p>
+      Write Motorola 68000 assembly for the Atari ST, assemble it with vasm, run
+      it in the Hatari emulator and debug it with the editor following the
+      program counter.
+    </p>
+    <p>
+      Debugging covers source-line and conditional breakpoints, stepping and
+      step-over, registers, a memory viewer, labelled disassembly, watchpoints,
+      the stack and the hardware registers. Multi-file projects assemble
+      separately and link with vlink; projects keep their include paths, defines,
+      target CPU, machine, ROM, RAM and disk images in a small JSON file beside
+      the source. A sprite editor reads and writes the ST's own PI1, NEO, MBK and
+      .pim formats, and floppy images can be built for Disk A and Disk B.
+    </p>
+    <p>
+      The Linux AppImage and the Windows archive are self-contained: the
+      vasmm68k_mot assembler, the vlink linker, an EmuTOS ROM and the Hatari
+      emulator all travel inside them, so a fresh download assembles, runs and
+      debugs with nothing else installed. On macOS install Hatari yourself
+      (brew install hatari). Run pist --diagnose to see what PiST found and where
+      it looked.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">pist.desktop</launchable>
+
+  <url type="homepage">https://github.com/idontwantyourspamthanks/PiST</url>
+  <url type="bugtracker">https://github.com/idontwantyourspamthanks/PiST/issues</url>
+  <url type="vcs-browser">https://github.com/idontwantyourspamthanks/PiST</url>
+
+  <content_rating type="oars-1.1"/>
+
+  <provides>
+    <binary>pist</binary>
+  </provides>
+</component>

@@ -1,0 +1,19 @@
+{
+  "name": "scrcpy-gui",
+  "version": "2.4.5",
+  "description": "A modern, secure desktop GUI for scrcpy",
+  "author": "Simon Ma <simon@tomotoes.com>",
+  "homepage": "https://github.com/SimonAKing/scrcpy-gui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimonAKing/scrcpy-gui.git"
+  },
+  "bugs": "https://github.com/SimonAKing/scrcpy-gui/issues",
+  "desktopName": "scrcpy-gui.desktop",
+  "license": "MIT",
+  "private": true,
+  "main": "out/main/main.js",
+  "dependencies": {
+    "vue": "^3.5.41"
+  }
+}

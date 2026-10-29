@@ -1,0 +1,13 @@
+{
+  "name": "medusaclip-desktop",
+  "version": "0.1.22",
+  "description": "Medusa Clip — cortes virais de gameplay, rodando no seu PC",
+  "main": "main.js",
+  "author": "Medusa Clip",
+  "//publish": "Releases sao publicadas NESTE mesmo repo publico (medusa-clip, open source). electron-updater le este bloco pra achar o feed. Ver docs/SETUP.md.",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@ffprobe-installer/ffprobe": "^2.1.2",
+    "electron-updater": "^6.8.9"
+  }
+}

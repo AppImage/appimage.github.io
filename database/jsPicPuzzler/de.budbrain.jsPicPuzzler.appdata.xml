@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsPicPuzzler</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Budbrain's Puzzle</name>
+  <summary>Jigsaw puzzles from forty photographs, in six sizes</summary>
+  <summary xml:lang="de">Puzzeln mit vierzig Fotos, in sechs Größen</summary>
+
+  <description>
+    <p>
+      Pick a picture, pick a size, and start laying pieces. A piece that is
+      close enough to its place clicks in by itself — no fiddling for the last
+      pixel.
+    </p>
+    <p xml:lang="de">
+      Ein Bild wählen, eine Größe wählen, und Teile legen. Ein Teil, das nah
+      genug an seinem Platz ist, rastet von selbst ein — kein Gefummel um den
+      letzten Bildpunkt.
+    </p>
+    <p>
+      Forty photographs, from a quick thirty-piece round to a hundred and ten
+      that keeps you busy for an evening. The game remembers where you stopped,
+      so you can put it down and pick it up days later.
+    </p>
+    <p xml:lang="de">
+      Vierzig Fotos, von der schnellen Runde mit dreißig Teilen bis zu
+      hundertzehn, die einen Abend füllen. Das Spiel merkt sich, wo man
+      aufgehört hat — man kann es weglegen und Tage später weitermachen.
+    </p>
+    <ul>
+      <li>Forty photographs, six sizes each</li>
+      <li>Pieces in a scrolling tray, in a grid, or scattered around the board</li>
+      <li>Turn the pieces on if you want it harder</li>
+      <li>Zoom in with the mouse wheel when the pieces get small</li>
+      <li>Every picture you finish stays in the gallery, with time and date</li>
+      <li>Set your own colours for background, board, tray and grid</li>
+      <li>Available in 22 languages</li>
+    </ul>
+    <ul xml:lang="de">
+      <li>Vierzig Fotos, jedes in sechs Größen</li>
+      <li>Teile in einer Rollleiste, im Gitter oder rund ums Brett verstreut</li>
+      <li>Wer es schwerer mag, schaltet das Drehen der Teile ein</li>
+      <li>Mausrad vergrößert das Brett, wenn die Teile klein werden</li>
+      <li>Jedes fertige Bild bleibt in den Erfolgen, mit Zeit und Datum</li>
+      <li>Eigene Farben für Hintergrund, Brett, Leiste und Gitter</li>
+      <li>In 22 Sprachen</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">de.budbrain.jsPicPuzzler.desktop</launchable>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <!-- ACHTUNG: <url type="contact"> nimmt KEIN mailto: — appstreamcli verwirft
+       dann die ganze Datei, und die App erscheint in keinem Software-Center.
+       Die Adresse steht deshalb auf der Website. -->
+  <url type="contact">https://www.budbrain.de/kontakt.html</url>
+
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+
+  <categories>
+    <category>Game</category>
+    <category>LogicGame</category>
+  </categories>
+
+  <keywords>
+    <keyword>jigsaw</keyword>
+    <keyword>puzzle</keyword>
+    <keyword>photo</keyword>
+    <keyword>pieces</keyword>
+  </keywords>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <requires>
+    <display_length compare="ge">800</display_length>
+  </requires>
+
+  <content_rating type="oars-1.1"/>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://www.budbrain.de/budbrain-software/images/linux/picpuzzler_01-menu.png</image>
+      <caption>The main menu, with pieces drifting past</caption>
+      <caption xml:lang="de">Das Hauptmenü, mit driftenden Teilen</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/picpuzzler_02-playing.png</image>
+      <caption>A puzzle in progress, pieces in the tray</caption>
+      <caption xml:lang="de">Ein Puzzle im Spiel, die Teile in der Leiste</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/picpuzzler_03-levels.png</image>
+      <caption>Forty pictures, six sizes each</caption>
+      <caption xml:lang="de">Vierzig Bilder, jedes in sechs Größen</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/picpuzzler_04-settings.png</image>
+      <caption>Settings — layout, rotation and your own colours</caption>
+      <caption xml:lang="de">Einstellungen — Anordnung, Drehung und eigene Farben</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/picpuzzler_05-solved.png</image>
+      <caption>A finished picture, kept in the gallery with time and date</caption>
+      <caption xml:lang="de">Ein fertiges Bild, in den Erfolgen mit Zeit und Datum</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.1.0" date="2026-09-01">
+      <description>
+        <p>First release for the desktop.</p>
+        <p xml:lang="de">Erste Fassung für den Schreibtisch.</p>
+      </description>
+    </release>
+  </releases>
+</component>

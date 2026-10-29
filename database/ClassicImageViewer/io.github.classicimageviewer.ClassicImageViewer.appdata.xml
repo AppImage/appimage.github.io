@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2024 zhuvoy -->
+<component type="desktop-application">
+  <id>io.github.classicimageviewer.ClassicImageViewer</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>ClassicImageViewer</name>
+  <summary>Simple image viewer for Linux with some editing features</summary>
+
+  <description>
+    <p>
+      ClassicImageViewer is a simple image viewer for Linux with some editing features.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Resize, rotate, flip, adjust colors, sharpen.</li>
+      <li>Copy, cut or paste selection. Paste to side.</li>
+      <li>Effects (Unsharp, Blur, Median, Denoise, ...).</li>
+      <li>Thumbnails.</li>
+      <li>Slideshow.</li>
+      <li>Batch conversion / renaming.</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">classicimageviewer.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://classicimageviewer.github.io/images/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://classicimageviewer.github.io</url>
+  <project_group>ClassicImageViewer</project_group>
+
+  <provides>
+    <binary>civ</binary>
+  </provides>
+  <releases>
+    <release version="1.1.2" date="2024-01-03">
+        <description>
+          <ul>
+            <li>more efforts towards compatibility with appimage.github.io</li>
+          </ul>
+        </description>
+    </release>
+    <release version="1.1.1" date="2024-01-02">
+        <description>
+          <ul>
+            <li>efforts towards compatibility with appimage.github.io</li>
+          </ul>
+        </description>
+    </release>
+    <release version="1.1.0" date="2024-01-01">
+        <description>
+          <ul>
+            <li>option for "Highlight" selection tool</li>
+            <li>"Pad to size" method</li>
+            <li>bugfixes</li>
+            <li>more preferences</li>
+            <li>reduced memory usage</li>
+          </ul>
+        </description>
+    </release>
+    <release version="1.0.0" date="2023-09-14">
+        <description>
+          <ul>
+            <li>Batch conversion</li>
+            <li>bugfixes</li>
+          </ul>
+        </description>
+    </release>
+    <release version="0.9.0" date="2023-09-09">
+        <description>
+          <ul>
+            <li>Initial version</li>
+          </ul>
+        </description>
+    </release>
+  </releases>
+</component>

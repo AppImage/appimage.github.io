@@ -1,0 +1,28 @@
+{
+  "name": "Servez",
+  "version": "1.13.0",
+  "description": "A Simple Webserver for Localdev with GUI",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greggman/servez.git"
+  },
+  "author": "Gregg Tavares",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/greggman/servez/issues"
+  },
+  "homepage": "https://github.com/greggman/servez#readme",
+  "dependencies": {
+    "@electron/remote": "^2.1.2",
+    "ansi-colors": "^4.1.3",
+    "color-support": "^1.1.3",
+    "cors": "^2.8.5",
+    "debug": "^4.3.6",
+    "express": "^4.17.3",
+    "optionator": "^0.9.4",
+    "serve-index": "^1.9.1",
+    "server-destroy": "^1.0.1",
+    "servez-lib": "^2.11.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "envelopes-client",
+  "productName": "Envelopes",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Desktop client for a self-hosted Envelopes server",
+  "main": "main.cjs",
+  "homepage": "https://github.com/YOUR-USERNAME/envelopes",
+  "author": {
+    "name": "Envelopes contributors",
+    "email": "noreply@example.com"
+  }
+}

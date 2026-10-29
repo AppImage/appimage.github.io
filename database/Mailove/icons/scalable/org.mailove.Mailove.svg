@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+    <!-- Background -->
+    <rect width="500" height="500" fill="none" />
+    <!-- Heart & Mail Icon Group -->
+    <g transform="translate(250, 250)">
+        <!-- Heart Background (#b40003) -->
+        <path d="M 0,-115
+         C -63,-230 -240,-198 -240,-42
+         C -240,84 -84,178 0,240
+         C 84,178 240,84 240,-42
+         C 240,-198 63,-230 0,-115 Z" fill="#b40003" />
+        <!-- Mail Envelope Icon Base -->
+        <rect x="-115" y="-78" width="230" height="156" rx="16" ry="16" fill="#ffffff" />
+        <!-- Internal Envelope Lines (#b40003) -->
+        <path d="M -115,-73
+         L -8,12
+         Q 0,20 8,12
+         L 115,-73
+         M -115,68
+         L -37,-5
+         M 115,68
+         L 37,-5" fill="none" stroke="#b40003" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+</svg>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream Component Metadata (Metainfo)
+     Spec: https://www.freedesktop.org/software/appstream/docs/
+     Lint: appstreamcli validate dev.hivens.nexira.metainfo.xml
+-->
+<component type="desktop-application">
+  <id>dev.hivens.nexira</id>
+  <name>Nexira</name>
+  <summary>Unofficial launcher for SMARTYcraft</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <description>
+    <p>
+            Nexira is an unofficial third-party client for SMARTYcraft. It handles
+            authentication, game library management, automatic updates, and launching
+            game servers -- all from a single, lightweight application.
+        </p>
+  </description>
+  <url type="homepage">https://github.com/Kitty-Hivens/Nexira</url>
+  <url type="bugtracker">https://github.com/Kitty-Hivens/Nexira/issues</url>
+  <developer_name>Hivens</developer_name>
+  <!-- Launchable ties this metainfo to the .desktop file -->
+  <launchable type="desktop-id">nexira.desktop</launchable>
+  <provides>
+    <binary>nexira</binary>
+  </provides>
+  <categories>
+    <category>Game</category>
+  </categories>
+  <keywords>
+    <keyword>launcher</keyword>
+    <keyword>game</keyword>
+    <keyword>smartycraft</keyword>
+    <keyword>minecraft</keyword>
+    <keyword>hivens</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <!-- Minimum display requirements -->
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <releases>
+    <release version="2.4.5" date="2026-09-15">
+      <url type="details">https://github.com/Kitty-Hivens/Nexira/releases/tag/v2.4.5</url>
+    </release>
+    <release version="2.3.0" date="2026-05-20">
+      <description>
+        <p>Renamed from Aura to Nexira; mandatory data-dir migration on first launch.</p>
+      </description>
+    </release>
+  </releases>
+</component>

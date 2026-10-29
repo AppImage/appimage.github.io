@@ -1,0 +1,23 @@
+{
+  "name": "article-saver-desktop",
+  "productName": "Article Saver",
+  "version": "1.1.3",
+  "description": "Desktop application for Article Saver",
+  "author": {
+    "name": "Article Saver Team",
+    "email": "support@articlesaver.app"
+  },
+  "homepage": "https://github.com/nilukush/article_saver",
+  "main": "./dist/main/desktop/src/main/main.js",
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "@types/mozilla__readability": "^0.4.2",
+    "@types/sqlite3": "^3.1.11",
+    "electron-store": "^8.1.0",
+    "jsdom": "^23.0.1",
+    "lucide-react": "^0.518.0",
+    "sqlite3": "^5.1.6",
+    "update-electron-app": "^3.1.1",
+    "uuid": "^9.0.1"
+  }
+}

@@ -2,17 +2,18 @@
 layout: app
 
 permalink: /Firefox_Beta/
-description: Browse the Web
+description: "Browse the Web"
+license: "MIT"
 
 icons:
-  - Firefox_Beta/icons/128x128/firefox-beta.png
+  - Firefox_Beta/icons/128x128/default128.png
 
 screenshots:
   - Firefox_Beta/screenshot.png
 
 authors:
-  - name: srevinsaju
-    url: https://github.com/srevinsaju
+  - name: "srevinsaju"
+    url: "https://github.com/srevinsaju"
 
 links:
   - type: GitHub
@@ -330,10 +331,16 @@ desktop:
     Name[zh_TW]: 新增隱私視窗
     Exec: firefox-beta --private-window %u
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|srevinsaju|Firefox-AppImage|beta|Firefox*.AppImage.zsync
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-UpdateInformation: gh-releases-zsync|srevinsaju|Firefox-Appimage|firefox-beta|firefox-beta*.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.18
+    X-AppImage-Payload-License: MIT
 ---

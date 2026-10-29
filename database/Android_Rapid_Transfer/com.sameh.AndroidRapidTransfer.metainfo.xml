@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata: software centres (GNOME Software, KDE Discover,
+     Flathub) read it for the listing. Scripts/linux-build.sh validates it with
+     appstreamcli when that is installed. Keep the newest release in step with
+     AppVersion.current (the build checks it). -->
+<component type="desktop-application">
+  <id>com.sameh.AndroidRapidTransfer</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Android Rapid Transfer</name>
+  <summary>Move files between an Android phone and your computer</summary>
+  <developer id="com.sameh">
+    <name>Sameh</name>
+  </developer>
+
+  <description>
+    <p>
+      Plug in your Android phone, pick File transfer on the phone, and drag your files.
+      Android Rapid Transfer is a fast, native app for copying photos, videos and files
+      between an Android phone and this computer over USB.
+    </p>
+    <ul>
+      <li>Browse the phone's storage and camera folders as soon as it is connected</li>
+      <li>Copy in both directions with drag and drop, with progress you can follow</li>
+      <li>Talks to the phone directly over USB (MTP): no drivers, no cloud, no account</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">com.sameh.AndroidRapidTransfer.desktop</launchable>
+  <provides>
+    <binary>android-rapid-transfer</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/sameh0/android-rapid-transfer</url>
+  <url type="bugtracker">https://github.com/sameh0/android-rapid-transfer/issues</url>
+  <url type="vcs-browser">https://github.com/sameh0/android-rapid-transfer</url>
+
+  <categories>
+    <category>Utility</category>
+    <category>FileTransfer</category>
+  </categories>
+  <keywords>
+    <keyword>Android</keyword>
+    <keyword>phone</keyword>
+    <keyword>MTP</keyword>
+    <keyword>USB</keyword>
+    <keyword>photos</keyword>
+    <keyword>transfer</keyword>
+  </keywords>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#57d6a3</color>
+    <color type="primary" scheme_preference="dark">#2a4ca8</color>
+  </branding>
+
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.2" date="2026-10-24">
+      <description>
+        <p>Linux: the AppImage now brings its own GTK, libadwaita and glibc, so it also runs on older distributions such as Ubuntu 22.04 and Debian 12.</p>
+      </description>
+    </release>
+    <release version="1.0.1" date="2026-10-23">
+      <description>
+        <p>A file dropped while a copy is running now counts toward the overall progress straight away.</p>
+        <p>Linux: the desktop entry no longer limits the app to a single window.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-10-14">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-10-01">
+      <description>
+        <p>First Linux build.</p>
+      </description>
+    </release>
+  </releases>
+</component>

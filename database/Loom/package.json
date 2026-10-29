@@ -1,0 +1,18 @@
+{
+  "name": "loom-desktop",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Loom desktop — an Electron shell around the loom daemon's web app. See BUILD.md for why the build config looks like this.",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nickthelegend/loom.git"
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.9"
+  },
+  "optionalDependencies": {
+    "dmg-license": "^1.0.11"
+  }
+}

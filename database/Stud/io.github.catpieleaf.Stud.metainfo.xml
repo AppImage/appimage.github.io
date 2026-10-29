@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.catpieleaf.Stud</id>
+  <launchable type="desktop-id">io.github.catpieleaf.Stud.desktop</launchable>
+  <icon type="local" width="512" height="512">/usr/local/share/icons/hicolor/512x512/apps/io.github.catpieleaf.Stud.png</icon>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+
+  <name>Stud</name>
+  <summary>An Unofficial Open-Source Roblox Launcher for Linux</summary>
+
+  <description>
+    <p>
+      Stud runs the real, unmodified Roblox app on your Linux desktop, in its
+      own window, with your mouse and keyboard. No browser, no emulator, no
+      virtual machine.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Links from your browser open straight into the experience</li>
+      <li>Mouse and keyboard behave the way they do in the desktop client</li>
+      <li>Upscaling, so the game can render below your screen's resolution and still fill it</li>
+      <li>Discord Rich Presence, with a button friends can join through</li>
+      <li>A system tray menu, and the country a server is in when you join</li>
+    </ul>
+    <p>
+      Roblox is not included. You supply the Android application package
+      yourself, and Roblox remains subject to its own terms.
+    </p>
+    <p>
+      Stud is an independent project and is not affiliated with, endorsed by
+      or approved by Roblox Corporation.
+    </p>
+  </description>
+
+  <categories>
+    <category>Game</category>
+  </categories>
+
+  <keywords>
+    <keyword>Roblox</keyword>
+    <keyword>games</keyword>
+  </keywords>
+
+  <!--
+    Screenshots are fetched over the network by every store that shows
+    them, so they have to be URLs: a path to a file inside this package
+    is not something Discover or GNOME Software can read. They are served
+    from this repository itself, which means they resolve once main is
+    pushed; the files are in packaging/screenshots/.
+
+    The first one is the default: it is what a store lists the
+    application by.
+  -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>The Roblox home screen, running on a Linux desktop</caption>
+      <image type="source" width="1013" height="783">https://raw.githubusercontent.com/CatPieLeaf/Stud/main/packaging/screenshots/home.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>An experience in progress</caption>
+      <image type="source" width="1013" height="783">https://raw.githubusercontent.com/CatPieLeaf/Stud/main/packaging/screenshots/game1.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>An experience in progress</caption>
+      <image type="source" width="1013" height="783">https://raw.githubusercontent.com/CatPieLeaf/Stud/main/packaging/screenshots/game2.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>An experience in progress</caption>
+      <image type="source" width="1013" height="783">https://raw.githubusercontent.com/CatPieLeaf/Stud/main/packaging/screenshots/game3.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/CatPieLeaf/Stud</url>
+  <url type="bugtracker">https://github.com/CatPieLeaf/Stud/issues</url>
+  <url type="vcs-browser">https://github.com/CatPieLeaf/Stud</url>
+
+  <developer id="io.github.catpieleaf">
+    <name>CatPieLeaf</name>
+  </developer>
+
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+    <content_attribute id="social-info">moderate</content_attribute>
+    <content_attribute id="money-purchasing">intense</content_attribute>
+    <content_attribute id="violence-cartoon">moderate</content_attribute>
+  </content_rating>
+
+  <!-- Written by the release workflow (tools/bump-version.py), newest first. -->
+  <releases>
+    <release version="1.1.10" date="2026-09-30">
+      <description>
+        <ul>
+          <li>Settings opens even on a machine with no Vulkan loader</li>
+          <li>The AppImage runs on stock distributions under X11</li>
+          <li>Software centers show Stud's icon and what changed in each release</li>
+          <li>A large internal cleanup, with no change in how Stud behaves</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

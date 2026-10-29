@@ -1,0 +1,25 @@
+{
+  "name": "gerbil",
+  "version": "1.28.4",
+  "description": "Run Large Language Models locally",
+  "homepage": "./",
+  "license": "AGPL-3.0-or-later",
+  "author": {
+    "name": "lone-cloud",
+    "email": "lonecloud604@proton.me"
+  },
+  "main": "out/main/index.js",
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "mime-types": "^3.0.2",
+    "systeminformation": "^5.33.11",
+    "winston": "^3.19.0",
+    "winston-daily-rotate-file": "^5.0.0",
+    "yauzl": "^3.4.0"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "packageManager": "pnpm@12.4.2",
+  "productName": "Gerbil"
+}

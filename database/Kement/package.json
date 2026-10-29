@@ -1,0 +1,21 @@
+{
+  "name": "kement",
+  "version": "2.0.0",
+  "description": "KEMENT - AI-Powered SSH Terminal with modern cyberpunk design",
+  "main": "main.js",
+  "homepage": "./",
+  "author": "Enis",
+  "license": "MIT",
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0",
+    "electron-store": "^8.1.0",
+    "monaco-editor": "^0.53.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "ssh2": "^1.17.0",
+    "ssh2-sftp-client": "^12.0.1",
+    "styled-components": "^6.1.19"
+  }
+}

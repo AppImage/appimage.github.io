@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.asafelobotomy.reshadelinux</id>
+  <name>ReShadeLinux</name>
+  <summary>Install ReShade for Wine and Proton games on Linux</summary>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <developer id="io.github.asafelobotomy">
+    <name>asafelobotomy</name>
+  </developer>
+  <description>
+    <p>
+      Download ReShade and shader repositories, then link them into any Windows
+      game running under Wine or Proton on Linux. Provides automatic Steam game
+      detection, per-game shader selection, and a graphical or terminal UI.
+    </p>
+    <p>Features include:</p>
+    <ul>
+      <li>Automatic Steam library scanning and game detection</li>
+      <li>PE import table analysis to pick the correct DLL override</li>
+      <li>Per-game shader selection from a curated repository catalog</li>
+      <li>Batch update for all installed games at once</li>
+      <li>Flatpak and native Steam auto-detection</li>
+      <li>Graphical (yad), terminal (whiptail/dialog), and CLI interfaces</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github.asafelobotomy.reshadelinux.desktop</launchable>
+  <url type="homepage">https://github.com/asafelobotomy/reshadelinux</url>
+  <url type="bugtracker">https://github.com/asafelobotomy/reshadelinux/issues</url>
+  <url type="vcs-browser">https://github.com/asafelobotomy/reshadelinux</url>
+  <provides>
+    <binary>reshadelinux.sh</binary>
+  </provides>
+  <categories>
+    <category>Game</category>
+  </categories>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="1.3.5" date="2026-09-21">
+      <description>
+        <p>The shader picker gets Select all and Select none buttons, problems are shown with a warning icon, and output is coloured only on a terminal (NO_COLOR is honoured). The graphical launcher no longer opens a terminal window for scripted runs.</p>
+      </description>
+    </release>
+    <release version="1.3.4" date="2026-09-21">
+      <description>
+        <p>Fix the graphical interface: message, question and error dialogs did not appear on current yad, the action list could start an install instead of an uninstall, names containing angle brackets were garbled, and uninstall and update-all finished without any confirmation. Starting from the menu without yad now opens a terminal, and a symlinked ReShade.ini is kept as a link. Adds real-yad smoke tests, an opt-in shader compile check and smoke checklists.</p>
+      </description>
+    </release>
+    <release version="1.3.3" date="2026-09-21">
+      <description>
+        <p>Fix shader packs that did not compile or load under Proton: effects in subfolders now appear, a pack selected on its own gets the core headers, packs can require other packs, and effects that never compile are left out. Add 25 shader packs, fix CShade and packs that keep effects at the repository root.</p>
+      </description>
+    </release>
+    <release version="1.3.2" date="2026-09-19">
+      <description>
+        <p>Fix game detection dropping executables such as reach.exe, show an error dialog when a required program is missing, harden downloads (exact URL check, literal hash pin, pinned appimagetool), keep the ReShade latest link across failed updates, and add two official shader packs.</p>
+      </description>
+    </release>
+    <release version="1.3.1" date="2026-04-17">
+      <description>
+        <p>Route AppImage startup through the GUI wrapper, harden backend and dependency validation, and verify ReShade downloads more strictly before install.</p>
+      </description>
+    </release>
+    <release version="1.3.0" date="2026-03-17">
+      <description>
+        <p>Add "Update all installed games" option in the install/uninstall dialog. Fix shader compilation failures when a repo containing shared .fxh headers was not selected.</p>
+      </description>
+    </release>
+    <release version="1.2.1" date="2026-03-17">
+      <description>
+        <p>Diagnostics and test helpers now include explicit ShellCheck hints for clean repository-wide analysis.</p>
+      </description>
+    </release>
+    <release version="1.2.0" date="2026-03-12">
+      <description>
+        <p>Single-source versioning, rich shader repository descriptions, expanded to 18 curated repos, and improved game detection.</p>
+      </description>
+    </release>
+  </releases>
+</component>

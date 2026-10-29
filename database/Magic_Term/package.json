@@ -1,0 +1,24 @@
+{
+  "name": "@magicterm/desktop",
+  "version": "0.6.0",
+  "description": "Cross-platform SSH/SFTP client with E2E encryption",
+  "author": {
+    "name": "MagicTerm",
+    "email": "magicterm@users.noreply.github.com"
+  },
+  "private": true,
+  "type": "module",
+  "main": "out/main/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/D3FVLT/MagicTerm.git"
+  },
+  "dependencies": {
+    "@magicterm/crypto": "workspace:*",
+    "@magicterm/shared": "workspace:*",
+    "@magicterm/supabase-client": "workspace:*",
+    "electron-store": "^8.2.0",
+    "electron-updater": "^6.8.3",
+    "ssh2": "^1.15.0"
+  }
+}

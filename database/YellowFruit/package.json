@@ -1,0 +1,11 @@
+{
+  "name": "YellowFruit",
+  "version": "4.0.18",
+  "description": "Quiz bowl statkeeping application",
+  "license": "AGPL-3.0-or-later",
+  "author": {
+    "name": "Andrew Nadig"
+  },
+  "main": "./dist/main/main.js",
+  "dependencies": {}
+}

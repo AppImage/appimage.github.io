@@ -1,0 +1,13 @@
+{
+  "name": "latent-model-organizer-desktop",
+  "version": "1.3.0",
+  "description": "Desktop wrapper for Latent Model Organizer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erroralex/latent-model-organizer.git"
+  },
+  "main": "main.js",
+  "author": "Alexander Nilsson",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "commonjs"
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.openxjv.viewer</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>openXJV</name>
+  <summary>openXJV – Viewer für XJustiz-Dateien</summary>
+
+  <description>
+    <p>openXJV ist ein kostenloses Anzeigeprogramm für XJustiz-Dateien, die im Rahmen des elektronischen Rechtsverkehrs bei der Übertragung von Dokumenten Verwendung finden.</p>
+    <p>Dies ist z. B. für die Akteneinsicht in Akten / Verwaltungsakten der Bundesanstalt für Arbeit relevant, da diese auf elektronischem Wege lediglich Einzeldateien mit einem begleitenden XJustiz-Datensatz übermittelt. Erst das Auslesen des Datensatzes erzeugt aus der übermittelten &quot;Dateisammlung&quot; wieder eine sinnvolle Aktendarstellung.</p>
+    <p>Es eignet sich auch zur Anzeige beliebiger XJustiz-Datensätze der Schriftgutübermittlung über beA, eBO, beN, beBPo, usw.</p>
+  </description>
+
+  <categories>
+    <category>Office</category>
+    <category>Viewer</category>
+  </categories>
+
+  <keywords>
+    <keyword>xjustiz</keyword>
+    <keyword>egvp</keyword>
+    <keyword>osci</keyword>
+    <keyword>bea</keyword>
+    <keyword>ebo</keyword>
+    <keyword>ben</keyword>
+    <keyword>bebpo</keyword>
+    <keyword>legaltech</keyword>
+  </keywords>
+
+  <!-- Lokales Icon (empfohlen) -->
+  <icon type="stock">openxjv</icon>
+  <icon type="remote" width="512" height="512">https://openxjv.de/openxjv.svg</icon>
+
+  <launchable type="desktop-id">de.openxjv.viewer.desktop</launchable>
+
+  <url type="homepage">https://openxjv.de</url>
+  <url type="bugtracker">https://github.com/digidigital/openXJV/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://openxjv.de/openXJV_Screenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>openXJV</binary>
+  </provides>
+
+  <developer id="de.digidigital">
+    <name>Björn Seipel</name>
+  </developer>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.9.8" date="2024-04-18"/>
+  </releases>
+</component>
+

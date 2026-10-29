@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata (installed as share/metainfo/saint.dev.MailCraft.metainfo.xml by packaging/stage-unix.sh).
+     @NAME@ placeholders are filled from packaging/env.sh. The text is our own. -->
+<component type="desktop-application">
+  <id>saint.dev.MailCraft</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT OR Apache-2.0</project_license>
+  <name>MailCraft</name>
+  <summary>Desktop mail, calendar and contacts in the classic three-pane layout</summary>
+  <developer id="saint.dev">
+    <name>MailCraft contributors</name>
+  </developer>
+  <description>
+    <p>
+      MailCraft is an open-source mail client written in Rust for people who like the classic desktop mail
+      layout: a module rail, a ribbon, the folder pane, a message list and a reading pane side by side.
+      Mail, calendar, people, tasks and notes live in one window.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>IMAP and SMTP accounts with offline sync, plus local folders</li>
+      <li>Conversations, search folders, flags, categories and date-grouped lists</li>
+      <li>Rules and quick steps to file and answer mail in one click</li>
+      <li>Calendar with day, week and month views, and a contacts book</li>
+      <li>Print and save as PDF; import and export of standard mail, calendar and contact files</li>
+      <li>Light and dark themes, a simplified or classic ribbon, and a layout that adapts to narrow windows</li>
+      <li>A command-line tool and an MCP server for scripting and automation</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">saint.dev.MailCraft.desktop</launchable>
+  <icon type="stock">saint.dev.MailCraft</icon>
+  <url type="homepage">https://github.com/MonkeySaint/mailcraft</url>
+  <url type="bugtracker">https://github.com/MonkeySaint/mailcraft/issues</url>
+  <url type="vcs-browser">https://github.com/MonkeySaint/mailcraft</url>
+  <provides>
+    <binary>mailcraft</binary>
+    <binary>mailcraft-cli</binary>
+    <mediatype>message/rfc822</mediatype>
+    <mediatype>application/mbox</mediatype>
+    <mediatype>text/calendar</mediatype>
+    <mediatype>text/vcard</mediatype>
+  </provides>
+  <categories>
+    <category>Network</category>
+    <category>Email</category>
+    <category>Office</category>
+  </categories>
+  <keywords>
+    <keyword>mail</keyword>
+    <keyword>email</keyword>
+    <keyword>calendar</keyword>
+    <keyword>contacts</keyword>
+    <keyword>imap</keyword>
+  </keywords>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main window: folders, message list and reading pane</caption>
+      <image type="source" width="1600" height="900">https://raw.githubusercontent.com/MonkeySaint/mailcraft/master/docs/images/hero.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Dark theme</caption>
+      <image type="source" width="1600" height="900">https://raw.githubusercontent.com/MonkeySaint/mailcraft/master/docs/images/dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Classic ribbon</caption>
+      <image type="source" width="1600" height="900">https://raw.githubusercontent.com/MonkeySaint/mailcraft/master/docs/images/classic-ribbon.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Calendar month view</caption>
+      <image type="source" width="1600" height="900">https://raw.githubusercontent.com/MonkeySaint/mailcraft/master/docs/images/calendar.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A narrow window shows one pane at a time</caption>
+      <image type="source" width="700" height="700">https://raw.githubusercontent.com/MonkeySaint/mailcraft/master/docs/images/narrow.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <releases>
+    <release version="0.4.0" date="2026-10-29"/>
+  </releases>
+</component>
