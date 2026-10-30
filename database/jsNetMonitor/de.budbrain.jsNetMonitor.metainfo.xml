@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsNetMonitor</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>jsNetMonitor</name>
+  <summary>See what your network does — every device, every connection, every program</summary>
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+  <description>
+    <p>jsNetMonitor shows the traffic of every network connection of your computer live — cable, Wi-Fi, mobile, bundled connections, bridges, VLANs and VPN tunnels — in the look of a studio rack.</p>
+    <ul>
+      <li>Download and upload of each device, as smooth curves and level meters</li>
+      <li>Which program uses the network, and how much</li>
+      <li>Every connection with remote host, country, service, state, speed and latency</li>
+      <li>Where your traffic goes: destinations and countries at a glance</li>
+      <li>Your total traffic over minutes, hours, a week, a month or a whole year</li>
+      <li>Traffic per day and month, kept across restarts</li>
+      <li>The network chip, its driver, firmware and link details</li>
+      <li>A small minimal view that stays on top</li>
+      <li>Arrange the device units as you like — the layout is remembered</li>
+      <li>Lists you can sort, widen and trim to the columns you need</li>
+      <li>Light and dark, in 83 languages</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">jsnetmonitor.desktop</launchable>
+  <url type="homepage">https://www.budbrain.de/budbrain-software/</url>
+  <url type="contact">https://www.budbrain.de</url>
+  <!-- The pictures of the Snap Store entry (dist/screenshots/), on the website
+       under images/linux/ with the prefix jsnetmonitor_
+       (website-software/generate-site.sh). Without <screenshots> AppImageHub
+       takes one of its own, in an empty test container. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Every device with its traffic, and the total of the computer</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsnetmonitor_01-overview-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Every connection with program, remote host and country</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsnetmonitor_02-connections-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Where your traffic goes, by host and by country</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsnetmonitor_03-destinations-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The same in the light design</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsnetmonitor_04-overview-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The small window that stays on top</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsnetmonitor_05-minimal-view.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <provides>
+    <binary>jsNetMonitor</binary>
+  </provides>
+  <releases>
+    <release version="1.0.2" date="2026-10-30">
+      <description>
+        <p>On a light desktop the window now starts light when the design is set to automatic.</p>
+      </description>
+    </release>
+    <release version="1.0.1" date="2026-10-30">
+      <description>
+        <p>The window is now also found by older desktop tools that look for it by name.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-10-30">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>
