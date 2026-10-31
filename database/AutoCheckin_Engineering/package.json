@@ -1,0 +1,27 @@
+{
+  "name": "autocheckin",
+  "version": "2.0.1",
+  "private": true,
+  "description": "扫码即用的自动签到桌面应用",
+  "author": {
+    "name": "AutoCheckin Contributors",
+    "email": "256862649@qq.com"
+  },
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@10.15.0",
+  "engines": {
+    "node": ">=22.5",
+    "pnpm": ">=10"
+  },
+  "main": "out/main/index.js",
+  "type": "module",
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "axios": "^1.11.0",
+    "crypto-js": "^4.2.0",
+    "element-plus": "^2.10.7",
+    "qrcode": "^1.5.4",
+    "vue": "^3.5.18",
+    "zod": "^4.0.17"
+  }
+}
