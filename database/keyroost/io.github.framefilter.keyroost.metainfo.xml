@@ -26,7 +26,7 @@
       <li>FIDO2 / CTAP credential management and PIN handling</li>
       <li>OATH (TOTP/HOTP) on Yubico/Trussed-style applets</li>
       <li>OpenPGP Card v3.4 management</li>
-      <li>PIV (NIST SP 800-73-4) management: keys, certificates (stored compressed when they don't fit), PIN/PUK/management-key, with controls matched to the detected applet</li>
+      <li>PIV (NIST SP 800-73-4) management: keys (generated on the key or imported from a .p12/.pfx file), certificates (stored compressed when they don't fit), PIN/PUK/management-key, with controls matched to the detected applet</li>
       <li>Importing authenticator codes from Aegis, 2FAS, otpauth lists or Google Authenticator exports into any key that can store them (OATH or Token2 OTP storage, or a Molto2)</li>
       <li>Naming keys, with the name kept on this computer or stored on the key itself</li>
     </ul>
@@ -70,6 +70,7 @@
        the hand-maintained copy of the changelog drifted three releases behind
        and shipped stale AppStream versions (#80). -->
   <releases>
+    <release version="0.15.0" date="2026-10-28"/>
     <release version="0.14.0" date="2026-10-19"/>
     <release version="0.13.0" date="2026-10-10"/>
     <release version="0.12.0" date="2026-10-04"/>

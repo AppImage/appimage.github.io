@@ -25,7 +25,7 @@ Keywords[es]=diff;merge;comparar;combinar;winmerge;
 Keywords[fr]=diff;merge;comparer;fusionner;winmerge;
 Keywords[pt_BR]=diff;merge;comparar;mesclar;winmerge;
 StartupWMClass=libremerge
-X-AppImage-Version=1.1.0
+X-AppImage-Version=1.2.0
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
