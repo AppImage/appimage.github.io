@@ -1,0 +1,18 @@
+{
+  "name": "ethicalvpn",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Free VPN access with clear consent and simple desktop controls.",
+  "main": "desktop/main.cjs",
+  "dependencies": {
+    "lucide-react": "1.64.0",
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "author": "EthicalVPN",
+  "homepage": "https://ethicalvpn.app"
+}
