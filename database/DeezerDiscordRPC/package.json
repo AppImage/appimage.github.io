@@ -1,6 +1,6 @@
 {
   "name": "deezer-discord-rpc",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "A Discord RPC for Deezer",
   "desktopName": "deezer-discord-rpc.desktop",
   "main": "./build/src/index.js",

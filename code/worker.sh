@@ -42,7 +42,7 @@ echo $URL
 # of the name of the file; not part of the URL itself
 CHANNEL=""
 if [[ "$URL" == *"#"* ]] ; then
-  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._-')
+  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._*?-')
   URL="${URL%%#*}"
 fi
 
@@ -77,10 +77,17 @@ if [[ "$URL" == https://github.com/*/* || "$URL" == https://codeberg.org/*/* || 
   FORGE_INFO=$(bash "$(dirname "$0")/fetch-releases.sh" "$URL" "$API_JSON")
   FETCH_RC=$?
   set -e
-  if [ $FETCH_RC -ne 0 ] ; then
+  if [ $FETCH_RC -eq 2 ] ; then
+    # Not a repository front page after all (a GitLab upload or raw file, a
+    # Codeberg attachment): a direct link, downloaded as it is
+    echo "Not a repository page but a direct link, downloading it as it is"
+    rm -f "$API_JSON"
+  elif [ $FETCH_RC -ne 0 ] ; then
     echo "Unable to get the releases of the repository $URL. Does the repository exist, and is it public?"
     exit 1
   fi
+fi
+if [ -n "${FORGE_INFO:-}" ] ; then
   FORGE=$(echo "$FORGE_INFO" | cut -d ' ' -f 1)
   GHUSER=$(echo "$FORGE_INFO" | cut -d ' ' -f 2)
   GHREPO=$(echo "$FORGE_INFO" | cut -d ' ' -f 3)
@@ -505,9 +512,12 @@ fit_main_window() {
   local SW SH LINE WID WW WH NW NH
   read -r SW SH < <(timeout 5 xdotool getdisplaygeometry 2>/dev/null)
   [[ "$SW" =~ ^[0-9]+$ && "$SH" =~ ^[0-9]+$ ]] || return 0
-  # The largest managed window (as take-screenshot.sh picks the app window)
-  LINE=$(timeout 20 xwininfo -tree -root 2>/dev/null | grep '": ("' \
-    | sed -nE 's/^[[:space:]]*(0x[0-9a-f]+) .* ([0-9]+)x([0-9]+)[-+][-0-9]+[-+][-0-9]+ +[-+][0-9]+[-+][0-9]+$/\1 \2 \3/p' \
+  # The largest managed window (as take-screenshot.sh picks the app window),
+  # not the window manager's own (IceWM's taskbar). A window placed partly off
+  # screen has negative absolute coordinates, which X11 writes as "+-320+-150"
+  # (#10156: a 1440x900 window centered on the 800x600 screen).
+  LINE=$(timeout 20 xwininfo -tree -root 2>/dev/null | grep '": ("' | grep -vi '"icewm"' \
+    | sed -nE 's/^[[:space:]]*(0x[0-9a-f]+) .* ([0-9]+)x([0-9]+)[-+]-?[0-9]+[-+]-?[0-9]+ +[-+]-?[0-9]+[-+]-?[0-9]+$/\1 \2 \3/p' \
     | awk '{ print $2 * $3, $0 }' | sort -rn | head -n 1 | cut -d ' ' -f 2-)
   read -r WID WW WH <<<"$LINE"
   [[ -n "$WID" && "$WW" =~ ^[0-9]+$ && "$WH" =~ ^[0-9]+$ ]] || return 0

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Super MD">
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="#16181d"/>
+  <path fill="none" stroke="#f4f4f1" stroke-width="7" stroke-linecap="round" d="M34.5 18.6A9.8 9.3 0 1 0 25.3 32.4A9.8 9.3 0 1 1 16 47"/>
+  <path fill="none" stroke="#f4f4f1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M46.5 16V48.5M39.5 41.5L46.5 48.5L53.5 41.5"/>
+</svg>

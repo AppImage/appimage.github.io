@@ -1,0 +1,17 @@
+{
+  "name": "lansy-desktop",
+  "version": "1.33.0",
+  "description": "Lansy",
+  "private": true,
+  "author": "The Datum",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "builder-util-runtime": "^9.7.0",
+    "electron-updater": "^6.3.9",
+    "ffmpeg-static": "^5.2.0",
+    "js-yaml": "^4.1.0",
+    "semver": "^7.7.3",
+    "undici": "7.30.1"
+  },
+  "homepage": "https://business.lansy.ai"
+}

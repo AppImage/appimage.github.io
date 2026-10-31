@@ -1,0 +1,16 @@
+{
+  "name": "mysort",
+  "productName": "MySort",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Every file. In its place. MySort watches a folder, waits until downloads finish, and organizes files by your rules.",
+  "author": "MySort <noreply@mysort.app>",
+  "homepage": "https://github.com/Alpha-Dev001/MySort",
+  "license": "MIT",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "better-sqlite3": "13.0.3",
+    "electron-log": "5.4.4",
+    "zod": "4.6.7"
+  }
+}

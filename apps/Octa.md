@@ -7,9 +7,8 @@ license: "MIT"
 
 icons:
   - Octa/icons/256x256/octa.png
-
 screenshots:
-  - Octa/screenshot.png
+- https://thorstenfoltz.github.io/octa/assets/screenshots/hero-table-view.png
 
 authors:
   - name: "thorstenfoltz"
@@ -33,8 +32,9 @@ desktop:
     StartupNotify: false
     Categories: Office
     MimeType: text/csv
-    X-AppImage-Version: 0.20.2
+    X-AppImage-Version: 0.21.0
   AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|thorstenfoltz|octa|latest|Octa-*-x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)

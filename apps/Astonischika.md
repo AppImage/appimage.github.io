@@ -2,8 +2,8 @@
 layout: app
 
 permalink: /Astonischika/
-description: A pixel-art party RPG: three heroes, a branching map, the boss on top
-license: LicenseRef-proprietaryLicenseRef-proprietary
+description: "A pixel-art party RPG: three heroes, a branching map, the boss on top"
+license: "LicenseRef-proprietaryLicenseRef-proprietary"
 
 icons:
   - Astonischika/icons/128x128/Astonischika.png
@@ -13,6 +13,8 @@ screenshots:
 authors:
 
 links:
+  - type: Download
+    url: https://www.budbrain.de/appimage/astonischika-x86_64.AppImage
 
 desktop:
   Desktop Entry:
@@ -40,6 +42,10 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
 
 appdata:
   Type: desktop-application

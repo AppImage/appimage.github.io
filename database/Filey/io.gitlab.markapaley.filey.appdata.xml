@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by bundleme.sh; edit the script's settings, not this file. -->
+<component type="desktop-application">
+  <id>io.gitlab.markapaley.filey</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <name>filey</name>
+  <summary>Rename TV episode files consistently</summary>
+  <developer id="io.gitlab.markapaley">
+    <name>Mark A Paley Software</name>
+  </developer>
+  <description>
+    <p>filey renames the files of TV series episodes so that every one of them follows the same consistent naming pattern, keeping each season's episodes in order and easy to find.</p>
+    <p>It is available for Linux, as an AppImage, and for Windows.</p>
+  </description>
+  <launchable type="desktop-id">io.gitlab.markapaley.filey.desktop</launchable>
+  <icon type="stock">filey</icon>
+  <url type="homepage">https://gitlab.com/MarkAPaley/filey</url>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source" width="942" height="959">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Linux_-_Usenet_03_drag_drop_files_into_filey.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1320" height="966">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Linux_-_Usenet_04_after_automatic_renaming.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1311" height="644">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Linux_-_Usenet_05_All_files_containing_Flash.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1852" height="1056">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Linux_-_Usenet_06b_Episodes.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1182" height="159">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Linux_-_Usenet_06c_File_Renamed.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1830" height="432">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Linux_-_Usenet_09_Undo.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1687" height="1053">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Linux_-_Usenet_10_Source_of_episode_information.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="284" height="47">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Rename_Matched_Files_button.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="802" height="559">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Running_on_Linux.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="655" height="460">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Running_on_Windows_10.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="777" height="533">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Running_on_Windows_7.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="727" height="548">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Running_on_Wine.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="566" height="158">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Unable_to_Open_File.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="306" height="115">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_00_Recreate_01.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="276" height="115">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_00_Recreate_02.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="787" height="686">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_01_About.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1074" height="924">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_03_About_Source_Code.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1074" height="616">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_04_Right-click_to_Select_a_Series.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1074" height="616">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_05_Toggle_Hidden_Fields.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="992" height="616">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_06_Internet_disconnected_or_missing_libeay32.dll.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="979" height="712">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_07_Clicked_on_Episodes_tab.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1835" height="616">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_07_Showing_Hidden_Fields.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="762" height="602">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_AfterZappingRebuildingShowsDatabase.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="444" height="366">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_Could_not_initialize_OpenSSL.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="321" height="271">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_Getting_TV_Show_Names.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="762" height="602">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_11_-_Zap_Databases.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1574" height="608">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_7_-_02_-_Files_dropped_into_filey.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1759" height="608">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_7_-_03b_-_Looked_up_episode_names.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="902" height="695">https://gitlab.com/MarkAPaley/filey/-/raw/master/screenshots/Windows_XP_01.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>filey</binary>
+  </provides>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="3.2.0.0" date="2026-10-15" />
+  </releases>
+</component>

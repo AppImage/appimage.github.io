@@ -1,0 +1,20 @@
+{
+  "name": "vibeconferencing-agent",
+  "productName": "Vibeconferencing",
+  "version": "0.8.55",
+  "description": "AI agents as real participants in your video calls",
+  "homepage": "https://github.com/wanderingstan/vibeconf-app",
+  "author": "Stan James <stan@wanderingstan.com>",
+  "main": "main.js",
+  "dependencies": {
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.3.9",
+    "ffmpeg-static": "^5.2.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "ffmpeg-static"
+    ]
+  }
+}

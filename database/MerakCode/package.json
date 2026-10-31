@@ -1,0 +1,15 @@
+{
+  "name": "merakcode-desktop",
+  "productName": "MerakCode",
+  "version": "0.2.0",
+  "description": "MerakCode desktop app",
+  "license": "MIT",
+  "author": {
+    "name": "Tong Tong",
+    "email": "tongtong950313@gmail.com"
+  },
+  "homepage": "https://github.com/TongTong313/merakcode",
+  "type": "module",
+  "main": "main.js",
+  "desktopName": "merakcode-desktop.desktop"
+}

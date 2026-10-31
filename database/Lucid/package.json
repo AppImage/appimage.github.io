@@ -1,0 +1,34 @@
+{
+  "name": "@lucid/desktop",
+  "productName": "Lucid",
+  "version": "0.4.0",
+  "private": true,
+  "description": "Lucid: structured notes (headings, lists, tables, diagrams) built while you think, with a local model",
+  "main": "./out/main/index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Omkar Tripathi",
+    "url": "https://github.com/triggeredcode"
+  },
+  "homepage": "https://github.com/triggeredcode/lucid#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/triggeredcode/lucid.git",
+    "directory": "apps/desktop"
+  },
+  "dependencies": {
+    "@blocknote/core": "0.55.0",
+    "@blocknote/mantine": "0.55.0",
+    "@blocknote/react": "0.55.0",
+    "@fontsource/ia-writer-mono": "^5.3.0",
+    "@lucid/core": "workspace:^",
+    "@lucid/kit": "workspace:^",
+    "@lucid/llm": "workspace:^",
+    "@lucid/mcp": "workspace:^",
+    "@mermaid-js/layout-elk": "1.0.1",
+    "mermaid": "12.1.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "4.6.5"
+  }
+}

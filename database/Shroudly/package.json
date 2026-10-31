@@ -1,0 +1,29 @@
+{
+  "name": "shroudly",
+  "version": "2.5.2",
+  "description": "Shroudly - Unseen. Unstoppable. | Cross-platform DPI bypass (self-contained engine)",
+  "main": "electron/main.js",
+  "private": true,
+  "author": {
+    "name": "Codeshare Technology Ltd",
+    "email": "contact@codeshare.me"
+  },
+  "homepage": "https://codeshare.me",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umutxyp/Shroudly"
+  },
+  "bugs": {
+    "url": "https://github.com/umutxyp/Shroudly/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-store": "^8.1.0",
+    "electron-updater": "6.8.9",
+    "lucide-react": "1.47.0"
+  },
+  "overrides": {
+    "fast-uri": "3.1.8",
+    "js-yaml": "5.4.2"
+  }
+}

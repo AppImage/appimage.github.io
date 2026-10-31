@@ -1,0 +1,19 @@
+{
+  "name": "whisperio",
+  "version": "1.3.0",
+  "author": "Daniel Kasprzyk <daniel@danielkasprzyk.com>",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "description": "Whisperio — Global dictation with hotkey, overlay, and auto-paste. Press hotkey to record, press again to transcribe and paste.",
+  "homepage": "https://whisperio.danielkasprzyk.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/draenger/whisperio.git"
+  },
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "electron-updater": "^6.8.3",
+    "koffi": "^2.15.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

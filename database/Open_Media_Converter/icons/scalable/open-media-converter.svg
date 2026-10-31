@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title description">
+  <title id="title">Open Media Converter</title>
+  <desc id="description">Two flowing conversion arrows surround video, audio, image and document symbols, bringing four media types into one application.</desc>
+  <defs>
+    <linearGradient id="surface" x1="28" y1="16" x2="224" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#253b50"/>
+      <stop offset="1" stop-color="#142436"/>
+    </linearGradient>
+    <linearGradient id="conversion" x1="42" y1="128" x2="204" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20b1b7"/>
+      <stop offset="1" stop-color="#73f2d0"/>
+    </linearGradient>
+    <linearGradient id="return" x1="42" y1="128" x2="204" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#359be3"/>
+      <stop offset="1" stop-color="#96d4ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="16" width="232" height="232" rx="54" fill="#0c1928"/>
+  <rect x="12" y="8" width="232" height="232" rx="54" fill="url(#surface)"/>
+  <path d="M40 128a88 88 0 0 1 153-59" fill="none" stroke="url(#conversion)" stroke-width="16" stroke-linecap="round"/>
+  <path d="m209 87-29-5 23-23z" fill="#73f2d0" stroke="#73f2d0" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="rotate(180 128 128)">
+    <path d="M40 128a88 88 0 0 1 153-59" fill="none" stroke="url(#return)" stroke-width="16" stroke-linecap="round"/>
+    <path d="m209 87-29-5 23-23z" fill="#96d4ff" stroke="#96d4ff" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+  <g fill="#f5fcff" stroke="#f5fcff" stroke-linecap="round" stroke-linejoin="round">
+    <path id="video" d="m94 88 24 15-24 15z" stroke-width="5"/>
+    <g id="audio" fill="none" stroke-width="6">
+      <path d="M144 98v12m10-21v30m10-24v18"/>
+    </g>
+    <g id="image">
+      <rect x="84" y="138" width="35" height="28" rx="4" fill="none" stroke-width="4.5"/>
+      <circle cx="94" cy="147" r="3" stroke="none"/>
+      <path d="m86 164 12-14 9 9 6-6 4 7v4z" stroke="none"/>
+    </g>
+    <g id="document" fill="none" stroke-width="4.5">
+      <path d="M142 137h16l11 11v19h-27z"/>
+      <path d="M158 137v11h11m-20 7h12m-12 6h9" stroke-width="3.5"/>
+    </g>
+  </g>
+</svg>

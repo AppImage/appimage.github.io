@@ -1,0 +1,22 @@
+{
+  "name": "kodeida",
+  "productName": "Kodeida",
+  "version": "0.2.0",
+  "private": true,
+  "description": "A game where your code moves the hero.",
+  "license": "Apache-2.0",
+  "author": "Ihor Cherniavskyi",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "dependencies": {
+    "electron-updater": "6.8.9"
+  },
+  "overrides": {
+    "dompurify": "3.4.17"
+  },
+  "homepage": "https://f3an.github.io/kodeida/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/f3an/kodeida.git"
+  }
+}

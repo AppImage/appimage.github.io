@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Name=Libre Panel
+GenericName=System monitor panel
+GenericName[de]=Systemmonitor-Panel
+Comment=Shows system sensors on a USB monitor panel
+Comment[de]=Zeigt Systemsensoren auf einem USB-Monitor-Panel
+Exec=libre-panel
+Icon=libre-panel
+Terminal=false
+Categories=System;Monitor;
+Keywords=TURZX;Turing;smart screen;LCD;sensors;
+X-AppImage-Version=0.6.3
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=GPL-3.0

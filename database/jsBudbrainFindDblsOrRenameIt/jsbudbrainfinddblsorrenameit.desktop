@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Name=jsBudbrainFindDblsOrRenameIt
+GenericName=Duplicate Finder and Batch Renamer
+GenericName[de]=Doppelte Dateien finden und umbenennen
+Comment=Find duplicate files and rename many files by rules
+Comment[de]=Doppelte Dateien finden und viele Dateien nach Regeln umbenennen
+Exec=jsBudbrainFindDblsOrRenameIt
+Icon=jsbudbrainfinddblsorrenameit
+Terminal=false
+Categories=Utility;FileTools;
+Keywords=duplicate;duplicates;double;files;clean;cleanup;rename;renamer;batch;regex;empty folders;
+Keywords[de]=doppelt;duplikat;dateien;aufräumen;umbenennen;stapel;regex;leere Ordner;
+StartupWMClass=jsbudbrainfinddblsorrenameit
+X-AppImage-Version=1.0.0
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://www.budbrain.de/appimage/jsbudbrainfinddblsorrenameit-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34

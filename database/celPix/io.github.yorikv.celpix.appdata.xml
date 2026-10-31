@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata for the Linux AppImage. packaging/build.py copies it into
+     the AppDir and adds the <releases> entry for the version being built, so the
+     version is never written twice. Named .appdata.xml, the legacy suffix,
+     because that is the one appimagetool and the AppImage catalog look for. The screenshot is a URL, not a file in the
+     AppImage: software catalogs fetch it from the repository. -->
+<component type="desktop-application">
+  <id>io.github.yorikv.celpix</id>
+  <name>celPix</name>
+  <summary>Graphics viewer and editor for romhacking and research</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="io.github.yorikv">
+    <name>Yori Kvitchko</name>
+  </developer>
+  <description>
+    <p>
+      celPix finds, views and edits the graphics inside retro-game ROMs and
+      dumps. It reads a wide range of pixel and palette formats, decompresses
+      the common console compression schemes, and writes edited pixels and
+      palettes back to the original file.
+    </p>
+    <ul>
+      <li>A wide variety of pixel and palette formats</li>
+      <li>Compression with a decompressed preview and in-place editing</li>
+      <li>Tilemaps, spritemaps and fontmaps that render a ROM's own maps, sprites and text</li>
+      <li>Drawing tools with undo/redo and copy/paste to external image editors</li>
+      <li>Indexed and RGB PNG import and export</li>
+      <li>Slices, bookmarks and projects that save a session to pick up later</li>
+      <li>Plugins for custom formats, from config files to full Python code</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github.yorikv.celpix.desktop</launchable>
+  <url type="homepage">https://github.com/YoriKv/celpix</url>
+  <url type="bugtracker">https://github.com/YoriKv/celpix/issues</url>
+  <url type="help">https://github.com/YoriKv/celpix/wiki</url>
+  <provides>
+    <binary>celpix</binary>
+  </provides>
+  <categories>
+    <category>Graphics</category>
+    <category>2DGraphics</category>
+    <category>RasterGraphics</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Pixel formats and editing</caption>
+      <image>https://raw.githubusercontent.com/YoriKv/celpix/main/screenshots/cel_1.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.2.13" date="2026-10-17"/>
+  </releases>
+</component>

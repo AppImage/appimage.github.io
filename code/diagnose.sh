@@ -34,9 +34,9 @@ HINTS=(
   "-"
   "AppRun.wrapped (or the launcher it starts) could not be executed. This typically happens with Tauri and linuxdeploy builds when a cached launcher was packaged with mode 0770 and is owned by root, so that it is not executable for the test user. Please make the AppDir readable and executable for everyone before packaging, e.g. \`chmod -R a+rX AppDir\` (and \`chmod a+x\` on AppRun and AppRun.wrapped) before running appimagetool."
 
-  "error while loading shared libraries"
+  "error while loading shared libraries|[Ll]ibrary [^ ]+ could not be loaded|lib[^ ]*\.so[^ ]* could not be loaded|[Cc]ould not load (shared )?library"
   "error-missing-library"
-  "The application needs a library that is neither in the AppImage nor on the test system (\"error while loading shared libraries\", the first error below names it). Please bundle this library, and what it depends on, in the AppImage: an AppImage cannot rely on libraries that are not installed on every target system."
+  "The application needs a library that is neither in the AppImage nor on the test system (\"error while loading shared libraries\" or \"Library ... could not be loaded\", the first error below names it). Please bundle this library, and what it depends on, in the AppImage: an AppImage cannot rely on libraries that are not installed on every target system."
 
   "^ERROR: The application exited within [0-9]+ seconds"
   "error-app-exits"
@@ -114,6 +114,10 @@ HINTS=(
   "-"
   "The application showed no window but an icon in the system tray, so it was tested as a system tray application: the screenshot shows what clicking its icon opened (its window, or its menu with the icon). Please check that it shows the application working."
 
+  "^WARNING: The window is mostly dark"
+  "-"
+  "The window is mostly dark, so the application seems to start in a dark theme although the test system is not set to dark mode. Please use a light mode by default and use the dark theme only when the system is configured for dark mode (e.g. the GTK/Qt or theme setting) or the user chooses it in the settings."
+
   "^WARNING: The screenshot may show an error message"
   "-"
   "The screenshot may show an error message; please check it."
@@ -171,7 +175,7 @@ if [ "$1" == "--labels" ] ; then
 fi
 
 # Errors that are not worth a hint of their own but mark where things went wrong
-GENERIC="error while loading shared libraries|Segmentation fault|Traceback \\(most recent call last\\)|Exception in thread|^FATAL|^Error:|^ERROR|exited with a non-zero code"
+GENERIC="error while loading shared libraries|[Ll]ibrary [^ ]+ could not be loaded|lib[^ ]*\.so[^ ]* could not be loaded|[Cc]ould not load (shared )?library|Segmentation fault|Traceback \\(most recent call last\\)|Exception in thread|^FATAL|^Error:|^ERROR|exited with a non-zero code"
 
 if [ "$1" == "--excerpt" ] ; then
   LOG="$2"
@@ -179,7 +183,7 @@ if [ "$1" == "--excerpt" ] ; then
   # A missing library is almost always the real cause, wherever it appears;
   # otherwise the first line matching an error (not a warning or a remark:
   # hints without a label)
-  PRIORITY="error while loading shared libraries"
+  PRIORITY="error while loading shared libraries|[Ll]ibrary [^ ]+ could not be loaded|lib[^ ]*\.so[^ ]* could not be loaded|[Cc]ould not load (shared )?library"
   PATTERN="$GENERIC"
   for ((i = 0; i < ${#HINTS[@]}; i += 3)) ; do
     [ "${HINTS[$((i + 1))]}" == "-" ] && continue

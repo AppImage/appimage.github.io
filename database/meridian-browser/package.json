@@ -1,0 +1,27 @@
+{
+  "name": "meridian-browser",
+  "productName": "Meridian",
+  "version": "0.3.0",
+  "description": "Meridian — the open-source Arc browser alternative for macOS, Windows and Linux. Spaces, pinned tabs, auto-archiving Today, split view, Peek, command bar, one-click Arc import, and a built-in MCP server so AI agents like Claude can drive the browser.",
+  "main": "src/main.js",
+  "author": "Dmitry Afonchenko <undermove1@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/Undermove/meridian-browser",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Undermove/meridian-browser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Undermove/meridian-browser/issues"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.1.0",
+    "@ghostery/adblocker-electron": "^2.20.1",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "cross-fetch": "^4.1.0",
+    "monaco-editor": "^0.57.0",
+    "node-pty": "^1.1.0"
+  }
+}

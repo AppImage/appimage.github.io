@@ -7,7 +7,10 @@
 #   repos/OWNER/REPO/releases (newest first)
 #   NAME: the name of the entry (the file in data/)
 #   CHANNEL: the channel the entry asks for, from the "#Channel" at the end of
-#     the URL in its data/ file (https://github.com/o/r#Nightly), if any
+#     the URL in its data/ file (https://github.com/o/r#Nightly), if any. It is
+#     a word of the tag or file name, or a pattern with the wildcards * (any
+#     characters) and ? (one character), which may match anywhere in the name:
+#     https://github.com/o/r#App*ubuntu-24.04
 #
 # Prints "URL <download URL>" and exits 0 when exactly one AppImage fits,
 # or "ERROR: ..." (and the candidates) and exits 1 when there is none or
@@ -50,10 +53,18 @@ NAME="$2"
 
 # The channel the entry asks for (the "#Channel" of its URL), letters, digits and . _ -
 CHANNELS='esr|nightly|beta|devedition|developer[-_ ]?edition|aurora|canary'
-CHANNEL=$(echo "${3:-}" | tr -cd 'A-Za-z0-9._-')
+CHANNEL=$(echo "${3:-}" | tr -cd 'A-Za-z0-9._*?-')
 CH_RE=""
 if [ -n "$CHANNEL" ] ; then
-  CH_RE="(^|[^a-z0-9])($(echo "$CHANNEL" | sed 's/[.]/\\./g'))([^a-z0-9]|\$)"
+  if [[ "$CHANNEL" == *[*?]* ]] ; then
+    # With a wildcard (* any characters, ? one character) the pattern may match
+    # anywhere in the tag or file name: #03_RapidRAW*ubuntu-24.04 picks
+    # 03_RapidRAW_v1.6.6_ubuntu-24.04_amd64.AppImage and not
+    # 03_tethering_RapidRAW_v1.6.6_ubuntu-24.04_amd64.AppImage
+    CH_RE=$(echo "$CHANNEL" | sed 's/[.]/\\./g; s/[*]/.*/g; s/[?]/./g')
+  else
+    CH_RE="(^|[^a-z0-9])($(echo "$CHANNEL" | sed 's/[.]/\\./g'))([^a-z0-9]|\$)"
+  fi
 fi
 ALL_RE="(^|[^a-z0-9])($CHANNELS)([^a-z0-9]|\$)"
 

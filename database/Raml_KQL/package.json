@@ -1,0 +1,22 @@
+{
+  "name": "@raml-kql/desktop",
+  "productName": "Raml KQL",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Run one KQL query against many Azure Log Analytics workspaces across tenants and accounts.",
+  "license": "MIT",
+  "homepage": "https://github.com/luca-ramseyer/raml-kql",
+  "author": "Luca Ramseyer",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@azure/msal-node": "^7.0.1",
+    "@kusto/language-service-next": "12.4.1",
+    "electron-updater": "^6.8.9",
+    "exceljs": "4.4.0",
+    "fflate": "0.8.3",
+    "isomorphic-git": "1.42.6",
+    "jsonc-parser": "^3.3.1",
+    "yaml": "2.9.1",
+    "zod": "^4.6.5"
+  }
+}

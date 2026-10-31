@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.tlntin.sonawave</id>
+  <name>SonaWave</name>
+  <name xml:lang="zh_CN">听澜盒</name>
+  <name xml:lang="zh_HK">聽瀾盒</name>
+  <summary>Play music from your own libraries and servers</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <description>
+    <p>SonaWave brings your music libraries together in a desktop player.
+    Connect to Navidrome, Subsonic, Emby, Jellyfin, WebDAV and SMB, or play local files.</p>
+    <p>Browse songs, albums and artists, manage playlists, and follow synchronized lyrics.
+    Audiobookshelf support also lets you browse and listen to your audiobooks.</p>
+  </description>
+  <launchable type="desktop-id">sonawave.desktop</launchable>
+  <url type="homepage">https://music.http5.cn/</url>
+  <url type="bugtracker">https://github.com/Tlntin/SonaWave-Release/issues</url>
+  <url type="help">https://music.http5.cn/docs/</url>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Player</category>
+  </categories>
+  <provides><binary>sonawave</binary></provides>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Home with music recommendations</caption>
+      <image type="source" width="1920" height="1080">https://music.http5.cn/image/appstream/desktop-home.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Vinyl player with synchronized lyrics</caption>
+      <image type="source" width="1920" height="1080">https://music.http5.cn/image/appstream/desktop-player.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.5.1" date="2026-10-24"/>
+  </releases>
+</component>

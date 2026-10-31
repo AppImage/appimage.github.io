@@ -1,0 +1,18 @@
+{
+  "name": "zeroed",
+  "version": "1.0.0",
+  "description": "Zeroed - a free crosshair overlay. Developed and maintained by Solvra Development.",
+  "main": "src/main.js",
+  "license": "GPL-3.0-or-later",
+  "author": {
+    "name": "Solvra Development"
+  },
+  "homepage": "https://github.com/MinVT-dev/Zeroed",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MinVT-dev/Zeroed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MinVT-dev/Zeroed/issues"
+  }
+}

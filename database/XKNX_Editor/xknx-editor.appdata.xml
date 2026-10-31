@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.xknx.editor</id>
+  <launchable type="desktop-id">xknx-editor.desktop</launchable>
+  <name>XKNX Editor</name>
+  <summary>KNX project editor</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-only</project_license>
+  <description>
+    <p>
+      XKNX Editor is a multi-platform desktop app for KNX building-automation
+      projects. Import and export .knxproj files, browse product catalogs, and
+      program KNX devices over a real bus.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/XKNX/xknx-editor</url>
+  <url type="bugtracker">https://github.com/XKNX/xknx-editor/issues</url>
+  <developer id="org.xknx">
+    <name>XKNX</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.2.0" date="2026-10-11"/>
+  </releases>
+</component>

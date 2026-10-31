@@ -1,11 +1,12 @@
 {
   "name": "emuze",
   "description": "Launch your Retro Games fast and simple",
-  "version": "0.59.0",
+  "version": "0.59.2",
   "author": "bmsuseluda <gunslinger@sensonar.de>",
   "email": "gunslinger@sensonar.de",
   "url": "https://github.com/bmsuseluda/emuze",
   "license": "GNU GPLv3",
+  "desktopName": "emuze",
   "dependencies": {
     "@kmamal/sdl": "0.11.13",
     "@radix-ui/react-checkbox": "1.3.4",

@@ -30,7 +30,7 @@ URL=$(head -n 1 "$FILE" | tr -d '\r')
 # "#Channel" at the end of the URL (https://github.com/o/r#Nightly): see find-appimage.sh
 CHANNEL=""
 if [[ "$URL" == *"#"* ]] ; then
-  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._-')
+  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._*?-')
   URL="${URL%%#*}"
 fi
 
@@ -52,9 +52,11 @@ if [[ "$URL" == https://github.com/*/* || "$URL" == https://codeberg.org/*/* || 
   GHUSER=$(echo "$FORGE_INFO" | cut -d ' ' -f 2)
   GHREPO=$(echo "$FORGE_INFO" | cut -d ' ' -f 3)
   REPOID="$FORGE/$GHUSER/$GHREPO"
-  # A repository page URL always matches the glob above, so a non-zero
-  # FETCH_RC here means a fetch error, not "not a repository URL" (exit 2)
-  if [ $FETCH_RC -eq 0 ] ; then
+  # Exit 2: not a repository front page after all (a GitLab upload, a raw
+  # file, a Codeberg attachment): checked as a direct download below
+  if [ $FETCH_RC -eq 2 ] ; then
+    rm -f "$API_JSON"
+  elif [ $FETCH_RC -eq 0 ] ; then
     NAME=$(basename "$FILE")
     FOUND=$(bash "$(dirname "$0")/find-appimage.sh" "$API_JSON" "$NAME" "$CHANNEL") || true
     if echo "$FOUND" | grep -q '^URL '; then
@@ -73,7 +75,7 @@ if [[ "$URL" == https://github.com/*/* || "$URL" == https://codeberg.org/*/* || 
       *) echo "unknown: fetching releases returned '$ERR' for $URL" ;;
     esac
   fi
-  exit 0
+  [ $FETCH_RC -eq 2 ] || exit 0
 fi
 
 # The AppImage of the newest version in a directory listing (URL ends with

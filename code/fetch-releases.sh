@@ -67,6 +67,15 @@ fi
 if [[ "$URL" == *"download"* ]] ; then
   exit 2
 fi
+# Nor other direct links to files that are no repository front page: GitLab
+# uploads (https://gitlab.com/o/r/uploads/HASH/x.AppImage, and
+# https://gitlab.com/-/project/ID/uploads/...), anything under /-/ (raw files,
+# job artifacts, package files) and Codeberg attachments
+# (https://codeberg.org/attachments/UUID)
+case "$URL" in
+  https://gitlab.com/-/*|https://gitlab.com/*/*/uploads/*|https://gitlab.com/*/*/-/*|https://codeberg.org/attachments/*)
+    exit 2 ;;
+esac
 
 OWNER=$(echo "$URL" | cut -d '/' -f 4)
 REPO=$(echo "$URL" | cut -d '/' -f 5)

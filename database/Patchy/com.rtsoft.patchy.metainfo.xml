@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.rtsoft.patchy</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Patchy</name>
+  <summary>PSD-oriented raster image editor</summary>
+  <summary xml:lang="de">Rastergrafik-Editor mit Schwerpunkt auf dem PSD-Format</summary>
+  <summary xml:lang="es">Editor de imágenes de mapa de bits centrado en el formato PSD</summary>
+  <summary xml:lang="fr">Éditeur d'images matricielles axé sur le format PSD</summary>
+  <summary xml:lang="it">Editor di immagini raster incentrato sul formato PSD</summary>
+  <summary xml:lang="ja">PSD 対応のラスター画像エディタ</summary>
+  <summary xml:lang="ko">PSD 중심의 래스터 이미지 편집기</summary>
+  <summary xml:lang="pl">Edytor grafiki rastrowej z obsługą formatu PSD</summary>
+  <summary xml:lang="pt_BR">Editor de imagens raster com foco no formato PSD</summary>
+  <summary xml:lang="ru">Редактор растровых изображений с поддержкой формата PSD</summary>
+  <summary xml:lang="zh_CN">以 PSD 为核心的位图图像编辑器</summary>
+  <summary xml:lang="zh_TW">以 PSD 為核心的點陣圖影像編輯器</summary>
+  <description>
+    <p>
+      Patchy is a fast image editor built around Photoshop's PSD and PSB
+      formats: layers, groups, masks, clipping masks, adjustment layers, layer
+      styles, editable text, shape layers, and Smart Objects with Smart Filters
+      round-trip with Photoshop. It includes Photoshop-style painting,
+      retouching, and selection tools (Object Selection among them), vector
+      paths and warped text, 16 and 32-bit editing, Camera Raw, CMYK proofing
+      and CMYK export for print, PDF and Affinity import, JPEG XL,
+      palette-constrained pixel-art editing with exact indexed PNG/BMP export,
+      nearly 400 G'MIC filters with live preview, and JavaScript scripting.
+    </p>
+    <p xml:lang="de">
+      Patchy ist ein schneller Bildeditor rund um die Photoshop-Formate PSD und
+      PSB: Ebenen, Gruppen, Masken, Schnittmasken, Einstellungsebenen,
+      Ebenenstile, bearbeitbarer Text, Formebenen sowie Smart-Objekte mit
+      Smartfiltern lassen sich mit Photoshop austauschen. Er bietet Mal-,
+      Retusche- und Auswahlwerkzeuge im Photoshop-Stil (darunter die
+      Objektauswahl), Vektorpfade und verkrümmten Text, Bearbeitung mit 16 und
+      32 Bit, Camera Raw, CMYK-Proof und CMYK-Export für den Druck, Import von
+      PDF- und Affinity-Dateien, JPEG XL, palettengebundene
+      Pixel-Art-Bearbeitung mit exaktem indiziertem PNG/BMP-Export, fast 400
+      G'MIC-Filter mit Live-Vorschau und Skripting mit JavaScript.
+    </p>
+    <p xml:lang="es">
+      Patchy es un editor de imágenes rápido construido en torno a los formatos
+      PSD y PSB de Photoshop: las capas, los grupos, las máscaras, las máscaras
+      de recorte, las capas de ajuste, los estilos de capa, el texto editable,
+      las capas de forma y los objetos inteligentes con filtros inteligentes se
+      conservan al intercambiar archivos con Photoshop. Incluye herramientas de
+      pintura, retoque y selección al estilo de Photoshop (entre ellas la
+      Selección de objetos), trazados vectoriales y texto deformado, edición de
+      16 y 32 bits, Camera Raw, prueba de color CMYK y exportación CMYK para
+      imprenta, importación de PDF y Affinity, JPEG XL, edición de pixel art
+      limitada a una paleta con exportación exacta a PNG/BMP indexado, casi 400
+      filtros de G'MIC con vista previa en vivo y scripts en JavaScript.
+    </p>
+    <p xml:lang="fr">
+      Patchy est un éditeur d'images rapide conçu autour des formats PSD et PSB
+      de Photoshop : les calques, groupes, masques, masques d'écrêtage, calques
+      de réglage, styles de calque, textes modifiables, calques de forme et
+      objets dynamiques avec filtres dynamiques font l'aller-retour avec
+      Photoshop. Il propose des outils de peinture, de retouche et de sélection
+      dans l'esprit de Photoshop (dont la sélection d'objet), des tracés
+      vectoriels et du texte déformé, l'édition en 16 et 32 bits, Camera Raw,
+      l'épreuvage CMJN et l'export CMJN pour l'impression, l'import de fichiers
+      PDF et Affinity, le JPEG XL, une édition pixel art limitée à une palette
+      avec un export exact en PNG/BMP indexé, près de 400 filtres G'MIC avec
+      aperçu en direct et des scripts JavaScript.
+    </p>
+    <p xml:lang="it">
+      Patchy è un editor di immagini veloce costruito attorno ai formati PSD e
+      PSB di Photoshop: livelli, gruppi, maschere, maschere di ritaglio, livelli
+      di regolazione, stili di livello, testo modificabile, livelli forma e
+      oggetti avanzati con filtri avanzati si scambiano con Photoshop. Include
+      strumenti di pittura, ritocco e selezione in stile Photoshop (compresa la
+      selezione oggetto), tracciati vettoriali e testo alterato, modifica a 16 e
+      32 bit, Camera Raw, prova colori CMYK ed esportazione CMYK per la stampa,
+      importazione di file PDF e Affinity, JPEG XL, modifica pixel art vincolata
+      a una tavolozza con esportazione esatta in PNG/BMP indicizzato, quasi 400
+      filtri G'MIC con anteprima dal vivo e script JavaScript.
+    </p>
+    <p xml:lang="ja">
+      Patchy は Photoshop の PSD/PSB 形式を中心に設計された高速な画像エディタです。レイヤー、グループ、マスク、クリッピングマスク、調整レイヤー、レイヤースタイル、編集可能なテキスト、シェイプレイヤー、スマートフィルター付きのスマートオブジェクトを Photoshop と相互にやり取りできます。Photoshop 風のペイント、レタッチ、選択ツール（オブジェクト選択を含む）、ベクトルパスとワープテキスト、16 ビットと 32 ビットの編集、Camera Raw、印刷用の CMYK 校正と CMYK 書き出し、PDF と Affinity ファイルの読み込み、JPEG XL、正確なインデックス PNG/BMP 書き出しに対応したパレット制限付きのピクセルアート編集、ライブプレビュー付きの 400 近い G'MIC フィルター、JavaScript によるスクリプトを備えています。
+    </p>
+    <p xml:lang="ko">
+      Patchy는 Photoshop PSD 및 PSB 형식을 중심으로 설계된 빠른 이미지 편집기입니다. 레이어, 그룹, 마스크, 클리핑 마스크, 조정 레이어, 레이어 스타일, 편집 가능한 텍스트, 모양 레이어, 고급 필터가 적용된 고급 개체를 Photoshop과 주고받을 수 있습니다. Photoshop 방식의 페인팅, 리터칭, 선택 도구(개체 선택 포함), 벡터 패스와 뒤틀기 텍스트, 16비트 및 32비트 편집, Camera Raw, 인쇄용 CMYK 교정과 CMYK 내보내기, PDF 및 Affinity 파일 가져오기, JPEG XL, 정확한 인덱스 PNG/BMP 내보내기를 지원하는 팔레트 기반 픽셀 아트 편집, 실시간 미리 보기를 지원하는 400개 가까운 G'MIC 필터, JavaScript 스크립팅을 제공합니다.
+    </p>
+    <p xml:lang="pl">
+      Patchy to szybki edytor obrazów oparty na formatach PSD i PSB programu Photoshop. Warstwy, grupy, maski, maski przycinające, warstwy dopasowania, style warstw, edytowalny tekst, warstwy kształtów oraz obiekty inteligentne z filtrami inteligentnymi można wymieniać z programem Photoshop. Zawiera narzędzia do malowania, retuszu i zaznaczania w stylu Photoshopa (w tym zaznaczanie obiektu), ścieżki wektorowe i wypaczony tekst, edycję 16- i 32-bitową, Camera Raw, podgląd CMYK i eksport CMYK do druku, import plików PDF i Affinity, JPEG XL, edycję pixel artu ograniczoną do palety z dokładnym eksportem do indeksowanych formatów PNG/BMP, prawie 400 filtrów G'MIC z podglądem na żywo oraz skrypty JavaScript.
+    </p>
+    <p xml:lang="pt_BR">
+      O Patchy é um editor de imagens rápido desenvolvido em torno dos formatos PSD e PSB do Photoshop: camadas, grupos, máscaras, máscaras de corte, camadas de ajuste, estilos de camada, texto editável, camadas de forma e objetos inteligentes com filtros inteligentes podem ser trocados com o Photoshop. Inclui ferramentas de pintura, retoque e seleção no estilo do Photoshop (entre elas a Seleção de objeto), demarcadores vetoriais e texto deformado, edição em 16 e 32 bits, Camera Raw, prova de cores CMYK e exportação CMYK para impressão, importação de PDF e Affinity, JPEG XL, edição de pixel art limitada à paleta com exportação exata para PNG/BMP indexado, quase 400 filtros do G'MIC com visualização ao vivo e scripts em JavaScript.
+    </p>
+    <p xml:lang="ru">
+      Patchy: быстрый редактор изображений на основе форматов Photoshop PSD и PSB. Слои, группы, маски, обтравочные маски, корректирующие слои, стили слоёв, редактируемый текст, слои-фигуры и смарт-объекты со смарт-фильтрами сохраняются при обмене файлами с Photoshop. Редактор включает инструменты рисования, ретуши и выделения в стиле Photoshop (в том числе выделение объектов), векторные контуры и деформированный текст, редактирование в 16 и 32 битах, Camera Raw, цветопробу CMYK и экспорт в CMYK для печати, импорт файлов PDF и Affinity, JPEG XL, редактирование пиксельной графики с ограничением палитры и точным экспортом в индексированные PNG/BMP, почти 400 фильтров G'MIC с предпросмотром в реальном времени и скрипты на JavaScript.
+    </p>
+    <p xml:lang="zh_CN">
+      Patchy 是一款围绕 Photoshop PSD 和 PSB 格式打造的快速图像编辑器：图层、组、蒙版、剪贴蒙版、调整图层、图层样式、可编辑文字、形状图层以及带智能滤镜的智能对象可在与 Photoshop 交换文件时保留。它提供 Photoshop 风格的绘画、修饰和选择工具（包括对象选择）、矢量路径和变形文字、16 位与 32 位编辑、Camera Raw、用于印刷的 CMYK 校样和 CMYK 导出、PDF 和 Affinity 文件导入、JPEG XL、受调色板约束并可精确导出索引 PNG/BMP 的像素画编辑、近 400 个带实时预览的 G'MIC 滤镜，以及 JavaScript 脚本。
+    </p>
+    <p xml:lang="zh_TW">
+      Patchy 是一款以 Photoshop PSD 和 PSB 格式為核心的快速影像編輯器：圖層、群組、遮色片、剪裁遮色片、調整圖層、圖層樣式、可編輯文字、形狀圖層以及具備智慧型濾鏡的智慧型物件可在與 Photoshop 交換檔案時保留。它提供 Photoshop 風格的繪圖、修飾和選取工具（包括物件選取）、向量路徑和彎曲文字、16 位元與 32 位元編輯、Camera Raw、用於印刷的 CMYK 校樣和 CMYK 匯出、PDF 和 Affinity 檔案匯入、JPEG XL、受調色盤限制並可精確匯出索引 PNG/BMP 的像素藝術編輯、近 400 個具即時預覽的 G'MIC 濾鏡，以及 JavaScript 指令碼。
+    </p>
+  </description>
+  <launchable type="desktop-id">com.rtsoft.patchy.desktop</launchable>
+  <url type="homepage">https://github.com/SethRobinson/Patchy</url>
+  <url type="bugtracker">https://github.com/SethRobinson/Patchy/issues</url>
+  <url type="vcs-browser">https://github.com/SethRobinson/Patchy</url>
+  <developer id="com.rtsoft">
+    <name>Seth A. Robinson</name>
+  </developer>
+  <branding>
+    <color type="primary" scheme_preference="light">#a9c7bb</color>
+    <color type="primary" scheme_preference="dark">#2b3a35</color>
+  </branding>
+  <screenshots>
+    <!-- Pinned to the tag of the release that ships these captures, so the URLs resolve once it is
+         tagged and never change afterwards. scripts/release/check-metainfo.py moves the pin and
+         the release drivers fail when it is behind docs/images/screenshots (packaging/linux/README.md). -->
+    <screenshot type="default">
+      <caption>Adjustment layers, Smart Filters and editable text in a layered document</caption>
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/SethRobinson/Patchy/v1.21/docs/images/screenshots/smart_filters.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Layer styles with several effects and blending controls</caption>
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/SethRobinson/Patchy/v1.21/docs/images/screenshots/layer_styles.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Editable vector paths with gradient and pattern paint</caption>
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/SethRobinson/Patchy/v1.21/docs/images/screenshots/vector_tools.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Warped text, mixed fonts in one paragraph and vertical Japanese</caption>
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/SethRobinson/Patchy/v1.21/docs/images/screenshots/warp_text.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Palette mode for indexed-color pixel art</caption>
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/SethRobinson/Patchy/v1.21/docs/images/screenshots/palette_mode.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Brush tips and dynamics</caption>
+      <image type="source" width="1600" height="1000">https://raw.githubusercontent.com/SethRobinson/Patchy/v1.21/docs/images/screenshots/brush_tips.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>tablet</control>
+  </supports>
+  <releases>
+    <release version="1.22" date="2026-10-30">
+      <description>
+        <ul>
+          <li>Brush Dynamics in a tabbed popup with a stroke preview, and a brush tip Filter field</li>
+          <li>Brush and clone overlays that show the dab under the pointer</li>
+          <li>A Layers panel settings gear and outlined thumbnails</li>
+          <li>Image &gt; Animation Preview with delay steps and presets</li>
+          <li>GIMP drop shadows and text layers keep their styling</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.21" date="2026-10-29">
+      <description>
+        <ul>
+          <li>New Stylize and Render filters, among them Wind at any angle, Lens Flare and Flame</li>
+          <li>An Edit &gt; Presets submenu and a Custom Shapes manager that imports .csh files</li>
+          <li>Merge Selected to New Layer, blend mode shortcuts and Select &gt; All Layers</li>
+          <li>A Text size preference for the interface, from 80% to 125%</li>
+          <li>Text that matches Photoshop more closely: Strong anti-aliasing, faux bold and tracking</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.20" date="2026-10-28">
+      <description>
+        <ul>
+          <li>Theme packages with icons, sounds, backgrounds and sandboxed theme scripts</li>
+          <li>File &gt; Export for Web with live previews, animation and AVIF and JPEG XL</li>
+          <li>Filter &gt; Perspective Planes: paste, clone and paint in perspective</li>
+          <li>Layers panel export, vector mask and arrange commands; Screen Mode and the Ruler tool</li>
+          <li>Character styles such as Small Caps and fractions, and substitutes for missing fonts</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.19" date="2026-10-26">
+      <description>
+        <ul>
+          <li>Open GIMP (.xcf) and Krita (.kra) files as layered documents, and 12-bit JPEGs</li>
+          <li>Filter &gt; Camera Raw Filter, and a histogram, zoom and modifier clicks in Develop Raw</li>
+          <li>Free Transform of selected pixels, movable selection outlines and Magic Wand sampling</li>
+          <li>Layers panel eye drags, context menus and modifiers; usable Channels panel eyes</li>
+          <li>PSD and JPEG saves write metadata and thumbnails; Clone Source settings and tool hints</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.18" date="2026-10-25">
+      <description>
+        <ul>
+          <li>Open and save OpenRaster (.ora) files, and open Paint.NET (.pdn) files</li>
+          <li>Healing Brush blend modes and sampling choices, and a Red Eye tool</li>
+          <li>Panels combine into tab groups by drag, and a Color panel in the sidebar</li>
+          <li>Rotated paragraph text edits in place; caret and text box outline fixes</li>
+          <li>Export Layers as Animated PNG, and New Document names, presets and color modes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.17" date="2026-10-24">
+      <description>
+        <ul>
+          <li>Images in other RGB profiles convert to sRGB on open, and Edit &gt; Convert to Color Profile</li>
+          <li>Watermark detection in File Info and an optional invisible TrustMark watermark on save</li>
+          <li>The Perspective Crop tool, Image &gt; Trim, and tools that work with no document open</li>
+          <li>Photoshop 2025 opens Patchy text and grayscale files; files with a wrong extension open by content</li>
+          <li>Any interface scale from 50 to 300 percent, bolder tool icons and a toolbar icon size setting</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.16" date="2026-10-22">
+      <description>
+        <ul>
+          <li>Shape tools: width 0 means no stroke, Ctrl and Shift modifiers, tidier create dialogs</li>
+          <li>Crop overlay and options, Pick tool sample choices and loupe, a Hand tool options bar</li>
+          <li>A faster Liquify with more brush options and undo, and faster Warp on large files</li>
+          <li>The Polygonal Lasso, Merge Visible, a New Layer dialog and Background layer rules</li>
+          <li>Consistent options bars, HDR AVIF and high-bit-depth HEIF at full depth, Wayland color picking</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.15" date="2026-10-21">
+      <description>
+        <ul>
+          <li>Photoshop adjustment layers such as Channel Mixer, Black &amp; White, Color Lookup, Vibrance and Selective Color render and edit</li>
+          <li>Many more Photoshop Smart Filters render and edit, and unsupported ones can be hidden or deleted</li>
+          <li>Free Transform Skew, Distort and Perspective, and clearer Path Select and Direct Select roles</li>
+          <li>Layer styles listed in the Layers panel, plus CMYK PSD, lock, color label and metadata handling</li>
+          <li>A pixel grid at high zoom, and the last tool and its options remembered</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.14" date="2026-10-19">
+      <description>
+        <ul>
+          <li>Artboards, and a PDF import that brings pages in as folders with mode, bit depth and page order options</li>
+          <li>Move tool: Auto-Select by layer or group, Distribute buttons, and outlines of the layers a selection rectangle will pick</li>
+          <li>A Missing Fonts dialog and safer handling of text whose font is not installed</li>
+          <li>The status bar shows the document's size, resolution, color mode and bit depth</li>
+          <li>Right-hand panels can be reordered, keep their layout between sessions, and the Layers panel can be much narrower</li>
+          <li>Warp stays responsive on large images and fast brush strokes follow the pointer</li>
+          <li>Linux: the system title bar by default under a global menu, and the desktop's own file dialogs in the AppImage</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.13" date="2026-10-17">
+      <description>
+        <ul>
+          <li>AVIF, JPEG 2000, Radiance HDR and OpenEXR open and save; animated AVIF and animated PNG open as layers; JPEG-compressed TIFF opens</li>
+          <li>Paint strokes keep only their changed pixels in the undo history</li>
+          <li>Image rotate 180 and flips; layer rotate right, left and 180</li>
+          <li>Marquee drags stop at the image edge, with a readout pill beside the pointer</li>
+          <li>Color picker: a 48-color Basic palette, Add Custom Color, percentages for Sat and Val, Alt+click eyedropper for the background color</li>
+          <li>Tool palette overflow and icon fixes, Ctrl+K for Preferences, options-bar labels without colons</li>
+          <li>Linux: Patchy's own frameless window chrome with a system title bar option, HEIC through the system libheif, Wayland maximize and screen color picking fixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.12" date="2026-10-16">
+      <description>
+        <ul>
+          <li>A compact color well pinned to the bottom of the tool palette, with Quick Mask beside it</li>
+          <li>Shape and text drags can start outside the canvas</li>
+          <li>The options bar keeps one row until a tool needs two</li>
+          <li>Pen tool: no handle trails when moving several anchors, and masks stay targeted through undo</li>
+          <li>SVG import keeps strokes that are more opaque than their fill</li>
+          <li>The Open dialog remembers its format filter, lists HEIF only where supported, and names files it cannot read</li>
+          <li>Short screens keep the side panels on-screen, and Wayland menus open in place at any interface scale</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.11" date="2026-10-15">
+      <description>
+        <ul>
+          <li>G'MIC Filter Library: about 390 built-in G'MIC filters with a live canvas preview</li>
+          <li>CMYK for print: working profile, CMYK picker and readouts, soft proofing with plates, CMYK export</li>
+          <li>JPEG XL open and save</li>
+          <li>An official AppImage with one-click self-update</li>
+          <li>Filter &gt; Last Filter repeats the last filter with the same settings</li>
+          <li>The Background layer works like Photoshop's, and Flatten Image was added</li>
+          <li>Wayland: side panels stay docked, fixing a stuck mouse after dragging one out</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.10" date="2026-10-13">
+      <description>
+        <ul>
+          <li>Object Selection: an optional High Quality model, downloaded on request, finds objects much more accurately</li>
+          <li>Dragging a box with Object Selection analyzes just that area for sharper edges</li>
+          <li>Copy Merged keeps the shape of the selection, and filters and adjustments blend soft selection edges</li>
+          <li>AI assistants connected to Patchy report when it has been updated or a new release is out</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.09" date="2026-10-12">
+      <description>
+        <ul>
+          <li>Object Selection tool: drag a box or click an object to select it, using a model that runs on the CPU</li>
+          <li>File &gt; File Info: view, edit and strip image metadata, kept on save</li>
+          <li>Move tool arrow-key nudges work with a physical keyboard on every platform</li>
+          <li>PSD compatibility: native CMYK compositing, native color spaces kept in CMYK, grayscale and 16-bit saves, and closer knockout, stroke, duotone and noise gradient rendering</li>
+          <li>Saves and document recovery hold up better against crashes and power loss</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.08" date="2026-10-10">
+      <description>
+        <ul>
+          <li>16-bit and 32-bit editing: PSD, PSB, PNG and TIFF open and save at their bit depth, and Image &gt; Mode switches between 8, 16 and 32 bits per channel</li>
+          <li>DDS textures: open BC1 to BC7 files and save uncompressed, DXT1, DXT5, BC4, BC5 or BC7 with optional mipmaps</li>
+          <li>Text inside shapes, saved as native Photoshop area text</li>
+          <li>Gradient fill layers match Photoshop's placement more closely</li>
+          <li>Scripting: per-format save options, per-script hotkeys, and a Quick Export DDS example</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.07" date="2026-10-07">
+      <description>
+        <ul>
+          <li>Free Transform: Bicubic Smoother, Bicubic Sharper and Bicubic Automatic interpolation; Image Size remembers the chosen resampling method</li>
+          <li>Crop tool: Delete Cropped Pixels (on by default) and Delete Off-Canvas Layers options; the Crop commands use the Crop tool's box</li>
+          <li>Pressing Alt mid-drag draws a marquee or crop box from the center</li>
+          <li>The Shape Appearance dialog opens sized to all of its rows</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.06" date="2026-10-06">
+      <description>
+        <ul>
+          <li>Crop tool: frames the canvas, adopts the selection, and has a Size mode for an exact width and height</li>
+          <li>Move tool: Alt-drag duplicates the layer and Ctrl+click selects the layer under the pointer</li>
+          <li>Zoom steps along fixed zoom levels, and 100% is one document pixel per screen pixel on scaled displays</li>
+          <li>Changing the foreground color recolors the selected shape</li>
+          <li>Opens Bitmap, Indexed, Duotone, Lab and Multichannel PSDs, and adds the Exposure adjustment layer</li>
+          <li>Closing a modified document offers Save, Don't Save, and Cancel</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.05" date="2026-10-04">
+      <description>
+        <ul>
+          <li>Patchy now updates through flatpak update and the software center, from a signed repository</li>
+          <li>Open from Clipboard: File menu command that opens the copied image as a new document</li>
+          <li>Clicking a palette swatch recolors the selected text and shape layers</li>
+          <li>Type tool: press on a text layer and drag to select text in one gesture</li>
+          <li>Fixed a freeze on KDE when a drag crossed the layer action buttons</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.04" date="2026-10-03">
+      <description>
+        <ul>
+          <li>Edit shape appearance and layer styles across selected layers, with mixed-value indicators, live previews, and one undo step per edit</li>
+          <li>Merge selected vectors into one editable vector layer, with a preview and a choice of what happens to layer effects</li>
+          <li>Fixed caps on inside and outside dashed vector strokes, and pattern thumbnails in Shape Appearance</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.03" date="2026-10-02">
+      <description>
+        <ul>
+          <li>Animated WebP import and export, with frame timing preview, lossless output, partial transparency, and loop counts</li>
+          <li>Four more interface languages: Brazilian Portuguese, Russian, Polish, and Korean</li>
+          <li>PSD compatibility: fixed legacy gradient fills and empty layer masks</li>
+          <li>Clearer notices when an installed font cannot draw the text</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.02" date="2026-10-01"/>
+    <release version="1.01" date="2026-09-29"/>
+    <release version="1.00" date="2026-09-27"/>
+    <release version="0.99" date="2026-09-25"/>
+    <release version="0.98" date="2026-09-23"/>
+    <release version="0.97" date="2026-09-21"/>
+    <release version="0.96" date="2026-09-17"/>
+    <release version="0.95" date="2026-09-16"/>
+    <release version="0.94" date="2026-09-11"/>
+    <release version="0.93" date="2026-09-11"/>
+    <release version="0.92" date="2026-09-09"/>
+    <release version="0.91" date="2026-09-03"/>
+    <release version="0.90" date="2026-08-26"/>
+    <release version="0.89" date="2026-08-10"/>
+    <release version="0.88" date="2026-08-06"/>
+    <release version="0.87" date="2026-08-04"/>
+    <release version="0.86" date="2026-07-29"/>
+    <release version="0.85" date="2026-07-27"/>
+    <release version="0.84" date="2026-07-26"/>
+    <release version="0.83" date="2026-07-25"/>
+    <release version="0.82" date="2026-07-21"/>
+    <release version="0.81" date="2026-07-20"/>
+    <release version="0.80" date="2026-07-18"/>
+    <release version="0.20" date="2026-07-15"/>
+    <release version="0.16" date="2026-07-11"/>
+    <release version="0.15" date="2026-07-08"/>
+    <release version="0.14" date="2026-07-08"/>
+    <release version="0.13" date="2026-07-06"/>
+  </releases>
+</component>

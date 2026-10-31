@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>com.tijmen.Numa</id>
+  <name>Numa</name>
+  <summary>Develop raw photographs</summary>
+  <developer id="com.tijmen">
+    <name>Tijmen</name>
+  </developer>
+  <description>
+    <p>
+      A raw developer and library for Linux. It reads raw files in twenty-nine
+      formats from 850 cameras, as well as JPEG, PNG and HEIF,
+      renders them through the camera's own colour profile, and keeps every
+      edit as a list of operations rather than as pixels — so nothing is ever
+      written back over the original.
+    </p>
+    <p>What it does:</p>
+    <ul>
+      <li>Exposure, contrast, the four tone regions, and a tone curve</li>
+      <li>Colour balance, a hue/saturation/luminance mixer, and colour grading
+          across shadows, midtones and highlights</li>
+      <li>Masks: gradients, a brush, a lasso, and regions the photograph is
+          asked to find for itself — sky, subject, greenery</li>
+      <li>Heal and clone</li>
+      <li>Lens corrections from the camera's own tables, or from lensfun</li>
+      <li>Crop, straighten, noise reduction and sharpening</li>
+      <li>Looks with a Strength slider, and LUTs (.cube, .3dl)</li>
+      <li>Culling that measures sharpness, groups bursts and suggests the best
+          frame; pick and reject from the keyboard</li>
+      <li>A library with ratings and flags, and export in batches</li>
+    </ul>
+    <p>
+      Everything runs on your own computer, the models behind the masks
+      included. Numa is also coming to iPhone, iPad and Mac, as a separate app.
+    </p>
+  </description>
+  <url type="homepage">https://numa.photo</url>
+  <url type="bugtracker">https://github.com/simmmmm/Numa/issues</url>
+  <url type="help">https://numa.photo/support</url>
+  <url type="vcs-browser">https://github.com/simmmmm/Numa</url>
+  <keywords>
+    <keyword>photo editor</keyword>
+    <keyword>raw</keyword>
+    <keyword>photography</keyword>
+    <keyword>culling</keyword>
+    <keyword>masks</keyword>
+    <keyword>Fujifilm</keyword>
+    <keyword>X-Trans</keyword>
+  </keywords>
+  <launchable type="desktop-id">com.tijmen.Numa.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <releases>
+    <release version="0.46.0" date="2026-10-23">
+      <description>
+        <p>Search suggests while you type: things Numa saw, places, people, cameras, dates and libraries, each with how many photographs it keeps. A chosen suggestion becomes a filter chip, and Enter searches by words together with the chips. The date filter takes a month or a day as well as a year.</p>
+        <p>Numa reads where each photograph was taken once and keeps it in the library's catalog, so Places and its count are complete from the start; a place given from a track counts too. Places shows how far the map's download is, and offers Try Again when it stops.</p>
+      </description>
+    </release>
+    <release version="0.45.1" date="2026-10-23">
+      <description>
+        <p>The library is laid out as Numa Home's. A side list leads to Today, Photos, Libraries, People, Albums and Places, each a page of its own. Today opens first, with On This Day, what has just arrived and what waits for you; Preferences can start on Photos instead.</p>
+        <p>Tidy Up finds exact copies, frames taken twice and unusable photographs, and suggests which to keep. The Filter menu shows how many photographs each choice keeps, and filters by place. Libraries can be chosen on their page, to open, rename, remove from Numa or move to the trash.</p>
+        <p>Places shows where the photographs were taken, by country, region and town, on a map; a photograph's info has a small map too. The map is fetched once, the first time Places opens, and kept on this computer.</p>
+      </description>
+    </release>
+    <release version="0.45.0" date="2026-10-22">
+      <description>
+        <p>The library works as Numa Home's does. Select turns a click into choosing, with Select All beside the count and Esc to clear; the photographs are grouped by month, each month with its count; and a scrubber along the right edge runs through the years and months, in each library's colour where libraries mix. The flag filter reads Picked, Rejected and No Flag.</p>
+        <p>Moments has been removed. Photographs and the edits made there keep their look.</p>
+      </description>
+    </release>
+    <release version="0.44.0" date="2026-10-19">
+      <description>
+        <p>Raws from Bayer sensors are demosaicked with RCD, with fewer artefacts along edges and in fine detail, and monochrome raws develop as grey. The loupe opened on several selected photographs goes through those only, and an older Numa keeps the edits a newer one made.</p>
+        <p>Libraries come newest first. Numa Home's libraries have a shelf of their own with a house on each stack, and This Computer shows only this computer's libraries. After signing in, every Numa Home library has its stack within moments and the rest of its thumbnails sooner. Right-click a library for Remove from Numa….</p>
+      </description>
+    </release>
+    <release version="0.43.2" date="2026-10-19">
+      <description>
+        <p>Right-click a Numa Home library to keep it on this computer; a computer beside its house says it is kept, and Preferences no longer lists them. The library's name in the editor's path goes back to its grid again.</p>
+        <p>The learned stars never rate the sharpest of a burst below the rest of it, and Open in Numa from Numa Home's web page knows the server by its name, also behind https.</p>
+      </description>
+    </release>
+    <release version="0.43.1" date="2026-10-19">
+      <description>
+        <p>On Fedora, Numa brings the library GTK needs to draw its window, so it also starts on a minimal installation.</p>
+      </description>
+    </release>
+    <release version="0.43.0" date="2026-10-18">
+      <description>
+        <p>
+          Calmer around the photograph. Looks is now only presets and LUTs;
+          the camera profile, tone mapping and the camera's own look are at
+          the end of Colour, and the header, the panels and mask mode carry
+          less at rest, with nothing hidden.
+        </p>
+        <p>
+          One Numa. A dialog's main button is white, at the end of its
+          header; alerts have no blue; Numa Home has one word for each thing
+          (Send Home, Keep at Numa Home, Move to Trash), and Export sends home
+          from one Destination row. P or X on a photograph that already has
+          that mark takes it off.
+        </p>
+        <p>
+          Numa Home's libraries are libraries here. A photograph still at
+          home has a house on its tile and opens on Home's preview; editing
+          it, or Get Original, brings the original down. Keep on This
+          Computer brings a whole library down, and new photographs with it.
+        </p>
+        <p>A burst shows three cameras and how many frames, in the grid, the filmstrip and on Numa Home.</p>
+        <p>On Arch the package is numa-photo, beside Arch's own numa.</p>
+      </description>
+    </release>
+    <release version="0.42.0" date="2026-10-17">
+      <description>
+        <p>
+          Numa Home is offered once, as a small card on the Libraries page.
+          At Numa Home a trip is named after where it was taken, from its
+          GPS, in Import and Rename, and a trip without GPS borrows the
+          places of the household's photographs from the same hours; a drag
+          with the mouse chooses photographs, a right-click opens Numa's
+          menu, and By names shows only the people with photographs where
+          you are.
+        </p>
+      </description>
+    </release>
+    <release version="0.41.0" date="2026-10-16">
+      <description>
+        <p>
+          Numa Home: libraries chosen like photographs, to combine, remove or
+          delete them (a trash for 30 days); For a Book, a trip's picks as a
+          photo book's chapter folders in one zip; every place in one list,
+          with a library, album or person as a page. In Numa, Send Home shows
+          in the export dialog when signed out, with Sign In.
+        </p>
+      </description>
+    </release>
+    <release version="0.40.0" date="2026-10-15">
+      <description>
+        <p>
+          Numa Home: manage the libraries from the browser (new folders,
+          select, move, remove, a trash for 30 days), import a card by its
+          thumbnails, Tidy Up for copies, repeats and unusable frames, and a
+          night shift that checks and catches up. In Numa, an import can be
+          kept at Numa Home and synced at night, and Open in Numa works from
+          Firefox.
+        </p>
+      </description>
+    </release>
+    <release version="0.39.0" date="2026-10-15">
+      <description>
+        <p>
+          Numa Home: Open in Numa from the photograph on the web page, an
+          Activity page that shows and pauses what the server reads in the
+          background, the timeline's scrubber naming each library, and a
+          header that fits a narrow window.
+        </p>
+      </description>
+    </release>
+    <release version="0.38.0" date="2026-10-08">
+      <description>
+        <p>
+          All EXIF, at the foot of the photo info panel: every tag the file
+          holds, from the camera's settings to the lens serial and the GPS,
+          folded away until you open it.
+        </p>
+        <p>
+          Numa Home: your household's photographs on your own NAS, in a
+          browser and from Numa. Send Home from the export dialog, as JPEG or
+          as the original with its edits, and bring a library from Home back
+          into Numa to edit, kept in step both ways.
+        </p>
+      </description>
+    </release>
+    <release version="0.37.0" date="2026-10-07">
+      <description>
+        <p>
+          The photo info is a panel at the left of the editor: press I or the
+          info button beside the photograph's name to fold it open or shut.
+          Once open, it stays open until you shut it.
+        </p>
+        <p>
+          Tone mapping on Looks: next to the camera's own curve, AgX, which
+          takes very bright colours to white as film does, so lamps, neon and
+          sunsets keep their colour.
+        </p>
+      </description>
+    </release>
+    <release version="0.36.0" date="2026-10-07">
+      <description>
+        <p>
+          An import you can trust: Numa copies a card into your library, and
+          to a second drive if you like, checks every file, keeps a receipt
+          and says when the card is safe to format. With a camera on its
+          cable, its name appears in the library's header bar: shoot
+          tethered, each photograph straight into a library and onto the
+          screen, or import from the camera, only the raws if you want.
+          What comes in is analysed and read for search as it lands.
+        </p>
+        <p>
+          Search your photographs by what is in them, in English or Dutch,
+          on this computer, and find the things Numa saw in the Filter menu.
+          Moments shows a shoot by its moments, with the shoot as a tape
+          under the loupe, Review at full size and an edit per moment. Also
+          new: camera clocks that agree, As Shot (a look that follows the
+          camera's own JPEG), a camera profile made from your own
+          photographs, HEIF and HEIC files, Proof for Print, For a Book,
+          Tonight, the client's picks back from a proofing gallery, How It
+          Was Made, stars to click on a hovered photograph, Mist, a better
+          Auto, crash reports, and Send Feedback in the main menu.
+        </p>
+      </description>
+    </release>
+    <release version="0.35.0" date="2026-10-03">
+      <description>
+        <p>
+          Numa on Linux follows one design: a single white button to finish,
+          white for whatever you chose, chips for every small choice, and
+          calmer overlays on the photograph. A slider changed with the keys
+          or the wheel shows its value over the photograph, albums are stacks
+          of their prints, and face retouching is in every export, including
+          photographs exported from the grid without opening them.
+        </p>
+      </description>
+    </release>
+    <release version="0.34.0" date="2026-09-30">
+      <description>
+        <p>
+          A calmer library: a photograph in the grid is only the photograph,
+          with its stars, flag and edited mark on it, and one Filter button
+          whose choices show as a row of chips while they narrow. A selection
+          brings a bar with Rate, Pick, Reject, Paste Settings, Add to Album,
+          Merge and Export. In the editor the histogram sits on the
+          photograph while Light or Colour is open, History is beside Undo
+          and Redo, the filmstrip is as tall as you drag it, and Crop has
+          Original and shows the angle while you straighten. Editing a mask,
+          its bar slides in at the top with Done at the right and everything
+          about the mask in its chip. The Libraries page has shelves for
+          albums and people.
+        </p>
+      </description>
+    </release>
+    <release version="0.33.0" date="2026-09-29">
+      <description>
+        <p>
+          The AI models download about a fifth smaller: they come packed and
+          are unpacked once, to exactly the same files. Raws from the Sony
+          FX2 open. Add-ons and About say which models are for non-commercial
+          use only, and About links to Numa's source.
+        </p>
+      </description>
+    </release>
+    <release version="0.32.0" date="2026-09-29">
+      <description>
+        <p>
+          Numa is open source now, under the GNU General Public License,
+          version 3 or later, and Numa's own camera profiles are part of it.
+          It can be installed as a package on Fedora, openSUSE, Debian, Ubuntu
+          and Arch, from the openSUSE Build Service.
+        </p>
+      </description>
+    </release>
+    <release version="0.31.0" date="2026-09-29">
+      <description>
+        <p>
+          Most edits now render on the graphics card, including masks, point
+          colour, grading, noise reduction and HDR; light edits stay on the
+          processor, where they cost less energy. A mask's Temperature and Tint
+          now work on turned and cropped photographs. Clicks and edge
+          refinement on the card give the same masks as on the processor, the
+          subject mask is found at full precision, and two cameras' raws that
+          could stop Numa now open.
+        </p>
+      </description>
+    </release>
+    <release version="0.30.2" date="2026-09-29">
+      <description>
+        <p>
+          A photograph opened while a mask is being found waits a moment for
+          the graphics card instead of developing on the processor, which kept
+          the processor busy.
+        </p>
+      </description>
+    </release>
+    <release version="0.30.1" date="2026-09-29">
+      <description>
+        <p>
+          The editor's picture is now rendered on the graphics card where the
+          edit allows it, so dragging a slider costs the processor next to
+          nothing.
+        </p>
+      </description>
+    </release>
+    <release version="0.30.0" date="2026-09-29">
+      <description>
+        <p>
+          The library grid and the filmstrip only build the cards on screen, so
+          a library of tens of thousands of photographs opens in under a second
+          and scrolls smoothly. Each library also keeps its own filter.
+        </p>
+      </description>
+    </release>
+    <release version="0.29.0" date="2026-09-28">
+      <description>
+        <p>
+          Faster and lighter on the battery. Photographs open and switch much
+          sooner: faster raw decoders, the develop on the graphics card, the
+          editor developed at the size it is shown, previews kept beside the
+          library, and 1:1 developing only what is on screen. On battery or in
+          power-saver mode Numa does no work ahead. A spinner shows where Numa is
+          busy, the library follows its folders without rescanning every minute,
+          the Masks tab no longer runs models on every photograph, and JPEG and
+          JPEG XL export are quicker. Olympus thumbnails come from the camera.
+        </p>
+      </description>
+    </release>
+    <release version="0.28.0" date="2026-09-28">
+      <description>
+        <p>
+          A calmer editor: one bar at the top, the photograph's sections in its
+          menu, and a Looks tab with the camera profile above the presets.
+          Automatic now takes Numa's own camera profile where there is one, and
+          Preferences says what Automatic means. JPEG and HEIF files show their
+          EXIF, and the graph switches between Histogram, Waveform and Parade
+          from a right click.
+        </p>
+      </description>
+    </release>
+    <release version="0.27.0" date="2026-09-27">
+      <description>
+        <p>
+          A new tone curve, read off the JPEGs of 349 cameras: lighter shadows,
+          a gentler rise above middle grey, and whites that reach white. Colour
+          comes nearer the camera's own rendering too. Numa's own camera
+          profiles are refitted on it, with a new one for the Fujifilm X-T5.
+        </p>
+      </description>
+    </release>
+    <release version="0.26.2" date="2026-09-27">
+      <description>
+        <p>
+          The camera profile picker in the Colour tab lists your camera's profiles again.
+        </p>
+      </description>
+    </release>
+    <release version="0.26.1" date="2026-09-27">
+      <description>
+        <p>
+          Sliders stay smooth in large libraries.
+        </p>
+      </description>
+    </release>
+    <release version="0.26.0" date="2026-09-27">
+      <description>
+        <p>
+          Lens corrections now run on Numa's own code, reading the LensFun
+          database, and find more lenses and cameras by the names in their
+          files. The Colour tab has a camera profile picker again, with
+          Numa's own profiles for six cameras.
+        </p>
+        <p>
+          Twelve built-in looks, with a Strength slider once one is chosen.
+          LUTs (.cube and .3dl) with an Amount. A waveform and RGB parade
+          beside the histogram.
+        </p>
+        <p>
+          A Canon multiple exposure no longer comes out magenta.
+        </p>
+      </description>
+    </release>
+    <release version="0.25.1" date="2026-09-26">
+      <description>
+        <p>
+          A JPEG, HEIF or PNG opens looking exactly as it is: Numa no longer
+          lays its raw contrast and sharpening over a finished picture, and a
+          Display P3 or Adobe RGB photograph keeps its colours.
+        </p>
+      </description>
+    </release>
+    <release version="0.25.0" date="2026-09-26">
+      <description>
+        <p>
+          A library on a drive that is not connected stays in the list and
+          opens from what Numa remembers: the thumbnails it already made, each
+          marked as away. Stars and flags given meanwhile go into the library
+          when the drive is back.
+        </p>
+        <p>
+          The grade has a colour wheel for each range, as on the iPad.
+        </p>
+      </description>
+    </release>
+    <release version="0.24.2" date="2026-09-26">
+      <description>
+        <p>
+          On the iPhone and iPad, selecting by a tap asks for a quarter of the
+          memory it did and answers faster, with the same selections.
+        </p>
+      </description>
+    </release>
+    <release version="0.24.1" date="2026-09-26">
+      <description>
+        <p>
+          The mask models give their memory back after each use instead of
+          keeping their highest mark, so an editor with masks holds about a
+          gigabyte less.
+        </p>
+      </description>
+    </release>
+    <release version="0.24.0" date="2026-09-26">
+      <description>
+        <p>
+          A night of testing: a folder renamed inside a library keeps its
+          ratings and edits, undo and history steps are saved at once, and
+          TIFF and WebP files open. Subject and Person no longer hold up the
+          window, the mask bar fits a narrow window, the light scheme is
+          readable, a quarter turn keeps the crop and its ratio, and AVIF
+          exports carry the creator, copyright, rating and keywords.
+        </p>
+      </description>
+    </release>
+    <release version="0.23.0" date="2026-09-25">
+      <description>
+        <p>
+          Subject is what the photograph is about, found by BiRefNet, and is
+          a mask of its own rather than the person another model found.
+          Person stays as it was. Heads, hats and feet are no longer cut
+          through, and Refine edge keeps thin things.
+        </p>
+        <p>
+          Clicking on a thing follows the photograph's edge instead of
+          blocks, with far fewer stray spots and holes. The groups are
+          cleaner: Mountains is new, and sky between branches is Sky.
+        </p>
+      </description>
+    </release>
+    <release version="0.22.0" date="2026-09-25">
+      <description>
+        <p>
+          Subtract: a person, an animal, the sky or anything else the model
+          finds can be cut back out of a mask — the gradient over the sky
+          with the person on the horizon left as they were. A person or an
+          animal is cut along the matting model's edge.
+        </p>
+        <p>
+          The export's watermark is set by the same code on every platform.
+          Where the processor runs AI sharpen through Core ML, it now runs
+          at one tile size, which lets the whole model through.
+        </p>
+      </description>
+    </release>
+    <release version="0.21.0" date="2026-09-25">
+      <description>
+        <p>
+          A mask can do everything the photograph can that belongs to a
+          region: the colour mixer and black and white, its own point
+          colours and colour grade, red, green and blue curves, a Color that
+          washes the region in one hue, grain, and all of Detail.
+        </p>
+        <p>
+          AI denoise and AI sharpen are buttons rather than switches. A point
+          colour just picked is scrolled to and lit up, and its hue slider is
+          in colour like the mixer's. Masks are kept on disk, so a
+          photograph with a subject mask opens without running a model.
+        </p>
+      </description>
+    </release>
+    <release version="0.20.5" date="2026-09-24">
+      <description>
+        <p>
+          In cull mode a pick no longer flies away: it hops, moves over to be
+          the frame before, and every picked frame in the loupe is framed in
+          the accent colour.
+        </p>
+      </description>
+    </release>
+    <release version="0.20.4" date="2026-09-24">
+      <description>
+        <p>
+          A found mask with adjustments in it is no longer removed when a crop
+          or a straighten leaves it covering nothing. A mask's count of parts
+          follows every click, stroke and removal, and the Auto under
+          Perspective says so when the verticals are already upright.
+        </p>
+      </description>
+    </release>
+    <release version="0.20.3" date="2026-09-24">
+      <description>
+        <p>
+          The Auto under Perspective corrects converging verticals only, and
+          only when the photograph's lines clearly agree.
+        </p>
+      </description>
+    </release>
+    <release version="0.20.2" date="2026-09-24">
+      <description>
+        <p>
+          Straighten has its own Auto, which levels by the horizon as well as
+          by upright lines and leaves the perspective alone; the Auto under
+          Perspective no longer turns the frame.
+        </p>
+      </description>
+    </release>
+    <release version="0.20.1" date="2026-09-24">
+      <description>
+        <p>
+          Masks open ready to look at, the coverage wash is back and easy to
+          see, Space shows the matte inside a mask, and a right-click removes
+          a point.
+        </p>
+      </description>
+    </release>
+    <release version="0.20.0" date="2026-09-24">
+      <description>
+        <p>
+          Cull mode: the loupe picks with Up and rejects with Down, steps
+          through bursts, shows where the camera focused and asks about closed
+          eyes, blown highlights and slow shutters.
+        </p>
+        <p>
+          A faster editor: photographs render off the main thread, so sliders
+          move smoothly and the newest change always wins; the detail passes
+          are kept between slider ticks; zooming decodes the raw once; masks,
+          Beautify and dehaze do less work; and small exports are developed
+          near their own size.
+        </p>
+        <p>
+          A quieter library: rescans read only files that changed, ratings are
+          saved in one go, thumbnails are made the size they are shown and
+          their cache stays under 2 GB. Preferences are three pages.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.21" date="2026-09-24">
+      <description>
+        <p>
+          With HDR, Clarity or Texture on, a zoomed-in photograph renders only
+          the part on screen, and looks the same as the whole-frame render: the
+          sharp frame after a drag takes half the time, and panning reuses it.
+          The histogram at 1:1 follows a slider once it is let go.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.20" date="2026-09-24">
+      <description>
+        <p>
+          A mask with HDR, Clarity, Texture or Dehaze looks as it did before
+          0.19.10 again, and as it does in the export.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.19" date="2026-09-24">
+      <description>
+        <p>
+          A turned, mirrored or straightened photograph renders only the part
+          on screen when zoomed in, as an upright one always did: the sharp
+          frame after a drag takes a tenth of the time.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.18" date="2026-09-24">
+      <description>
+        <p>
+          Fixes 0.19.17, where the sharp render waited for a release it never
+          heard: a slider now drafts while it is held and sharpens the moment
+          it is let go.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.17" date="2026-09-24">
+      <description>
+        <p>
+          A slider stays smooth for as long as it is held: the sharp render
+          waits for the button to come up rather than starting at every pause.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.16" date="2026-09-24">
+      <description>
+        <p>
+          Any slider stays smooth on a turned or straightened photograph, at
+          any magnification: while the hand moves, the frame is drawn from the
+          proxy and sharpens when it stops.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.15" date="2026-09-24">
+      <description>
+        <p>
+          A lasso or a brush adds what it drew: neither closer look runs again
+          by itself. And dragging a slider on a turned or straightened
+          photograph is smooth at any magnification.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.14" date="2026-09-23">
+      <description>
+        <p>
+          A lasso stroke no longer runs the hair trace over the mask that was
+          just drawn. The closer look at hair is asked for and nothing else
+          starts it.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.13" date="2026-09-23">
+      <description>
+        <p>
+          Measurement only: with NUMA_TIMING the log says what each pass of the
+          stack cost.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.12" date="2026-09-23">
+      <description>
+        <p>
+          Auto no longer freezes the window while it looks at the photograph.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.11" date="2026-09-23">
+      <description>
+        <p>
+          Dragging a slider while zoomed in keeps its own draft of the region
+          on screen, instead of cutting it out of the full-resolution image at
+          every tick.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.10" date="2026-09-23">
+      <description>
+        <p>
+          A mask costs what it covers: both its coverage and its adjustments
+          are worked out over the rows it reaches rather than over the whole
+          photograph.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.9" date="2026-09-23">
+      <description>
+        <p>
+          Masks no longer slow the editor down as they are added: each one is
+          worked out over the rows it covers instead of over the whole frame.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.8" date="2026-09-23">
+      <description>
+        <p>
+          Sliders stay smooth when the photograph is zoomed in: while the hand
+          is moving, the region on screen is rendered at half its edge, and the
+          sharp one follows when it stops.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.7" date="2026-09-23">
+      <description>
+        <p>
+          The models run on the graphics card again. Handed more than one
+          device — a card and a software renderer — the WebGPU provider
+          refused, and everything fell back to the processor.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.6" date="2026-09-23">
+      <description>
+        <p>
+          A mask is carried across a crop, a straighten or a quarter turn
+          instead of being worked out again, so the clicks and strokes that
+          shaped it stay. Look puts the tool down, so the photograph can be
+          zoomed into and panned with a mask open.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.5" date="2026-09-23">
+      <description>
+        <p>
+          Refine is a button in the mask bar, with Edge and Hair to choose
+          from, and the hair pass no longer runs on its own after the edge
+          search. Subject and Background lead the found masks, then Sky and
+          Water. Rating a photograph no longer rebuilds the grid.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.4" date="2026-09-22">
+      <description>
+        <p>
+          A filter that narrows the library shows in the accent colour. The
+          order and its arrow are one control, and the arrow points the way the
+          grid runs. People moved to the right, with the other actions.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.3" date="2026-09-22">
+      <description>
+        <p>
+          The masks found in a photograph of an animal are Foreground,
+          Background and the animal again, not three of the animal.
+        </p>
+        <p>
+          The first public release, as a Flatpak bundle and an AppImage.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.2" date="2026-09-22">
+      <description>
+        <p>
+          The Flatpak can reach the network again, for model downloads and the
+          update check, and Numa keeps its icon in the menu after moving from
+          the AppImage.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.1" date="2026-09-21">
+      <description>
+        <p>
+          A menu entry left by a deleted AppImage no longer hides the Flatpak's.
+        </p>
+      </description>
+    </release>
+    <release version="0.19.0" date="2026-09-21">
+      <description>
+        <p>
+          Black and white, AI sharpen, Super Resolution, Remove and Remove
+          people, sensor dust found for you, and exports in AVIF, JPEG XL, DNG,
+          16-bit TIFF and HDR with a gain map. Photographs in the screen's own
+          colour, two to four side by side in Compare, and hair traced by
+          Refine edge. The first release built as a Flatpak, sharing its
+          libraries and models with any other Numa on the computer.
+        </p>
+      </description>
+    </release>
+    <release version="0.9.1" date="2026-09-16">
+      <description>
+        <p>
+          Renamed from Photo Editor to Numa. A catalog made under the old name
+          moves across on the first run, with its ratings and edits.
+        </p>
+      </description>
+    </release>
+    <release version="0.9.0" date="2026-09-15">
+      <description>
+        <p>
+          Everything a raw developer needs to be one: masks that find what is in
+          the photograph, heal and clone, colour grading, lens corrections for
+          every make, and export in batches. Not 1.0, because it has only ever
+          run on one machine and been pointed at two makes of camera.
+        </p>
+      </description>
+    </release>
+  </releases>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <content_rating type="oars-1.1"/>
+  <categories>
+    <category>Graphics</category>
+    <category>Photography</category>
+  </categories>
+</component>

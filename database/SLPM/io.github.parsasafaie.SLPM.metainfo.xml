@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.parsasafaie.SLPM</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>SLPM</name>
+  <summary>Simple Linux Package Manager</summary>
+  <summary xml:lang="fa">مدیر بستهٔ سادهٔ لینوکس</summary>
+  <description>
+    <p>A local web app for installing, viewing, launching and removing Linux
+    software without using package-manager commands directly. It recognises the
+    apps the user installed, manages start-up entries and application-menu
+    shortcuts, and installs local .deb, .snap, AppImage and archive files.</p>
+  </description>
+  <launchable type="desktop-id">slpm.desktop</launchable>
+  <url type="homepage">https://github.com/parsasafaie/SLPM</url>
+  <developer>
+    <name>Parsa Safaie</name>
+  </developer>
+  <provides>
+    <binary>slpm</binary>
+  </provides>
+  <releases>
+    <release version="0.3.1" date="2026-10-19"/>
+    <release version="0.3.0" date="2026-10-18">
+      <description>
+        <p>The dashboard now has a version check in its top bar. It compares
+        the running copy with the newest published release and hands over two
+        terminal commands: one to download the matching AppImage together with
+        the release's published SHA256SUMS and verify them, one to run it.
+        The commands follow the variant that is actually running - the web
+        dashboard or the desktop window.</p>
+        <p xml:lang="fa">داشبورد اکنون در نوار بالای خود یک بررسی نسخه دارد.
+        نسخهٔ در حال اجرا با جدیدترین انتشار مقایسه می‌شود و دو دستور ترمینال
+        تحویل داده می‌شود: یکی برای دانلود اپ‌ایمیج مربوطه همراه SHA256SUMS
+        منتشرشده و بررسی درستی آن، و یکی برای اجرای آن. دستورها از نوع نسخهٔ
+        در حال اجرا پیروی می‌کنند؛ داشبورد وب یا پنجرهٔ دسکتاپ.</p>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-10-17">
+      <description>
+        <p>The dashboard is now also available as a second AppImage that hosts
+        it in a native desktop window (SLPM-Desktop), falling back to the
+        browser where WebKitGTK is not installed.</p>
+        <p xml:lang="fa">داشبورد اکنون به‌صورت یک اپ‌ایمیج دوم هم عرضه می‌شود که
+        آن را در یک پنجرهٔ دسکتاپ بومی میزبانی می‌کند (SLPM-Desktop) و هرجا
+        WebKitGTK نصب نبود به مرورگر برمی‌گردد.</p>
+      </description>
+    </release>
+  </releases>
+</component>

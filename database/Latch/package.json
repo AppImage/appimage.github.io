@@ -1,0 +1,27 @@
+{
+  "name": "latch",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A focused desktop SQL workspace.",
+  "author": "Agustin Lleras",
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "out/main/index.js",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@fontsource/dm-mono": "^5.2.7",
+    "@fontsource/dm-sans": "^5.2.7",
+    "@mui/icons-material": "^9.5.0",
+    "@mui/material": "^9.5.0",
+    "monaco-editor": "^0.55.1",
+    "mssql": "^11.0.1",
+    "mysql2": "^3.11.5",
+    "pg": "^8.13.1",
+    "react": "^19.0.0",
+    "react-data-grid": "^7.0.0-beta.61",
+    "react-dom": "^19.0.0",
+    "react-resizable-panels": "^4.14.5"
+  }
+}

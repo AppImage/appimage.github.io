@@ -1,0 +1,24 @@
+{
+  "name": "microbot-launcher",
+  "version": "3.2.20",
+  "description": "Launcher for the microbot client",
+  "main": "main.js",
+  "author": "Mocrosoft",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.5.15",
+    "applicationinsights": "^2.9.6",
+    "axios": "^1.7.2",
+    "cheerio": "1.1.2",
+    "detect-browsers": "^6.1.0",
+    "electron-log": "^5.4.1",
+    "electron-updater": "^6.1.8",
+    "https-proxy-agent": "^7.0.6",
+    "patchright": "^1.52.5",
+    "proxy-chain": "^2.7.1",
+    "update-electron-app": "^3.0.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+  }
+}
