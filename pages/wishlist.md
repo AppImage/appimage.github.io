@@ -25,7 +25,7 @@ Providing an [AppImage](http://appimage.org/) has, among others, these advantage
 - Can optionally GPG2-sign your AppImages (inside the file)
 - Works on Live ISOs
 - Can use the same AppImages when dual-booting multiple distributions
-- Can be listed in the [AppImageHub](https://appimage.github.io/) central directory of available AppImages
+- Can be listed in the central directory at [appimage.github.io](https://appimage.github.io/) of available AppImages
 - Can double as a self-extracting compressed archive with the `--appimage-extract` parameter
 - No repositories needed. Suitable/optimized for air-gapped (offline) machines
 
@@ -33,6 +33,6 @@ Providing an [AppImage](http://appimage.org/) has, among others, these advantage
 
 Please see [https://docs.appimage.org/](https://docs.appimage.org/) for how to generate and upload an AppImage.
 
-Once your AppImage is available for download, please [file an issue at GitHub](https://github.com/AppImage/AppImageHub/issues/new) to get it added to have it tested and added to the list.
+Once your AppImage is available for download, please [file an issue at GitHub](https://github.com/AppImage/appimage.github.io/issues/new) to get it added to have it tested and added to the list.
 
 If you have questions, AppImage developers are on #AppImage on irc.libera.chat.

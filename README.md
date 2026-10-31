@@ -119,7 +119,7 @@ The following projects use [`feed.json`](https://appimage.github.io/feed.json) a
 
 * [AppImagePool](https://github.com/prateekmedia/appimagepool) - Flutter client for browsing and installing AppImages
 * [AppImage-Manager](https://github.com/strandzen/AppImage-Manager) - macOS-style AppImage installer and manager for KDE Plasma 6
-* [appmanager](https://github.com/codegod100/appmanager) - Flutter app that finds installed AppImages, gives them command-line aliases and searches AppImageHub
+* [appmanager](https://github.com/codegod100/appmanager) - Flutter app that finds installed AppImages, gives them command-line aliases and searches appimage.github.io
 * [AppsToGo](https://github.com/gsingh704/AppsToGo) - GTK4 application for downloading and running AppImages in portable mode
 * [Arxis](https://github.com/APapinian/Arxis) - PyQt6 package manager for Arch Linux (pacman, AUR, Flatpak, AppImage, Wine)
 * [DankSoftwareDepot](https://github.com/vinceecniv/DankSoftwareDepot) - software and updates center plugin for DankMaterialShell
@@ -136,7 +136,7 @@ The following projects use [`feed.json`](https://appimage.github.io/feed.json) a
 #### Command-line tools
 
 * [appcenter](https://github.com/sillasleal/appcenter) - small command-line AppImage manager using the catalog as its public repository
-* [appimagedl](https://github.com/simoniz0r/appimagedl) - Bash/jq command-line AppImage manager integrated with AppImageHub
+* [appimagedl](https://github.com/simoniz0r/appimagedl) - Bash/jq command-line AppImage manager integrated with appimage.github.io
 * [appimg](https://github.com/sivel/appimg) - Go command-line package manager for AppImages
 * [AppImageRepository](https://github.com/luca-vercelli/AppImageRepository) - crawler that builds a database from the feed, with a CLI and web interface
 * [bread](https://github.com/pegvin/bread) - Go CLI to install, update and remove AppImages
@@ -152,8 +152,8 @@ The following projects use [`feed.json`](https://appimage.github.io/feed.json) a
 * [Double Commander plugins](https://github.com/j2969719/doublecmd-plugins) - WFX script that lists AppImages from the feed
 * [LinuxToys](https://github.com/psygreg/linuxtoys) - software distribution platform with an AppImage catalog
 * [Rebost](https://github.com/lliurex/rebost) - software management system for LliureX with an AppImage source
-* [stout](https://github.com/neul-labs/stout) - Homebrew-compatible package manager whose [index](https://github.com/neul-labs/stout-index) includes AppImageHub applications
-* [Universal Lookup](https://github.com/Bluscream/universal-lookup) - lookup service that includes the AppImageHub catalog for application searches
-* [void-tool](https://github.com/botanichk/void-tool) - Void Linux command-line toolbox that checks AppImageHub for AppImages
+* [stout](https://github.com/neul-labs/stout) - Homebrew-compatible package manager whose [index](https://github.com/neul-labs/stout-index) includes appimage.github.io applications
+* [Universal Lookup](https://github.com/Bluscream/universal-lookup) - lookup service that includes the appimage.github.io catalog for application searches
+* [void-tool](https://github.com/botanichk/void-tool) - Void Linux command-line toolbox that checks appimage.github.io for AppImages
 
 Please contact us (or send a pull request) if you are using this data so that we can list your project here.

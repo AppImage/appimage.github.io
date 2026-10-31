@@ -76,7 +76,7 @@ HINTS=(
 
   "^ERROR: Could not mount the AppImage"
   "error-not-squashfs"
-  "The AppImage could not be mounted. AppImageHub currently supports only AppImages with a SquashFS file system; other formats such as DwarFS (used, e.g., by uruntime and quick-sharun) are not supported yet."
+  "The AppImage could not be mounted. appimage.github.io currently supports only AppImages with a SquashFS file system; other formats such as DwarFS (used, e.g., by uruntime and quick-sharun) are not supported yet."
 
   "^ERROR: File name "
   "error-filename"
@@ -132,7 +132,7 @@ HINTS=(
 
   "^(ERROR|WARNING): The screenshot shows text mostly not in English"
   "error-not-english"
-  "The text on the screenshot is mostly not in English. AppImageHub is in English: please make the application start in English when the system language is English or not set (the test runs it with the C locale), e.g. by falling back to English instead of to another language."
+  "The text on the screenshot is mostly not in English. appimage.github.io is in English: please make the application start in English when the system language is English or not set (the test runs it with the C locale), e.g. by falling back to English instead of to another language."
 
   "^FATAL: .* (is missing|not found|missing in)"
   "error-missing-file"
