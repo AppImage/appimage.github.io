@@ -406,7 +406,8 @@ GitHub Pages (Jekyll) from this repository.
    failed pull request without anyone typing `/retest`: on a comment (not
    starting with `/`, not by a bot) from a maintainer, the PR's author or the
    GitHub account the AppImage comes from (`code/upstream-owner.sh` on the first
-   line of the PR's `data/` files at its head commit) that says it is fixed
+   line of the PR's `data/` files at its head commit; for an organization also
+   its public members, `code/is-upstream-account.sh`) that says it is fixed
    or asks for a re-test (`code/retest-comment.sh`: "retest", "re-run", "is
    out", "new release", "fixed in", "should now work", ...; quoted lines,
    code and sentences about the future such as "will fix" or "in the next
@@ -525,7 +526,11 @@ GitHub Pages (Jekyll) from this repository.
   (`-u`: instead those without a test result label; `-f`: instead those whose
   test failed and that have no labels at all; `-n` to only list them).
   For one PR, comment `/retest` on it (maintainers, the PR's author, and the
-  GitHub account the AppImage comes from, per `code/upstream-owner.sh`):
+  GitHub account the AppImage comes from, per `code/upstream-owner.sh`; if that
+  is an organization, also its members who show their membership on the
+  organization's page, `code/is-upstream-account.sh` asking
+  `orgs/ORG/public_members/USER` (204); private members are not visible to
+  the API and have to make their membership public, or ask a maintainer):
   `.github/workflows/retest.yml` closes and reopens it with
   `SCREENSHOT_UPLOAD_TOKEN` (a reopen with `GITHUB_TOKEN` starts no
   workflows), or without that secret re-runs its last Test run (old workflow

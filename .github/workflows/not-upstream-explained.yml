@@ -77,7 +77,7 @@ jobs:
           [ "$(echo "$FILES" | grep -c .)" -eq 1 ] || skip "the pull request does not change exactly one file in data/"
           URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILES?ref=$SHA" 2>/dev/null | head -n 1 | tr -d '\r')
           OWNER=$(bash code/upstream-owner.sh "$URL")
-          [ -n "$OWNER" ] && [ "$(lower "$OWNER")" = "$(lower "$COMMENTER")" ] || skip "$COMMENTER is not the account the AppImage comes from"
+          [ -n "$OWNER" ] && bash code/is-upstream-account.sh "$COMMENTER" "$OWNER" || skip "$COMMENTER is not the account the AppImage comes from, nor a member of that organization"
 
           # A GitHub repository that is not a fork
           if [[ "$URL" =~ ^https://github\.com/([^/]+)/([^/?#]+) ]] ; then
