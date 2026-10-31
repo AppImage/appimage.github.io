@@ -1,17 +1,23 @@
 {
   "name": "tagspaces",
   "productName": "TagSpaces",
-  "version": "3.11.6",
+  "version": "6.14.3",
   "description": "Offline file organizer and browser with tagging support.",
   "homepage": "https://www.tagspaces.org",
-  "main": "./main.prod.js",
   "author": {
-    "name": "TagSpaces UG (haftungsbeschraenkt)",
+    "name": "TagSpaces GmbH",
     "email": "info@tagspaces.org",
     "url": "https://www.tagspaces.org"
   },
+  "main": "./dist/main/main.js",
   "license": "AGPL-3.0",
   "dependencies": {
-    "@tagspaces/extensions": "https://github.com/tagspaces/tagspaces-extensions#main"
+    "@tagspaces/extensions": "1.0.257",
+    "@tagspaces/tagspaces-common-node": "4.8.9",
+    "@tagspaces/tagspaces-ws": "4.9.1",
+    "wasm-vips": "0.0.17"
+  },
+  "optionalDependencies": {
+    "@tagspacespro/extensions": "2.0.24"
   }
 }

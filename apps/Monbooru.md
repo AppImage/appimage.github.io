@@ -2,8 +2,8 @@
 layout: app
 
 permalink: /Monbooru/
-description: Lightweight and fast private booru
-license: AGPL-3.0
+description: "Lightweight and fast private booru"
+license: "AGPL-3.0"
 
 icons:
   - Monbooru/icons/128x128/monbooru.png
@@ -12,8 +12,8 @@ screenshots:
   - Monbooru/screenshot.png
 
 authors:
-  - name: monbooru
-    url: https://github.com/monbooru
+  - name: "monbooru"
+    url: "https://github.com/monbooru"
 
 links:
   - type: GitHub
