@@ -1,0 +1,25 @@
+{
+  "name": "leviathan",
+  "productName": "Leviathan",
+  "version": "0.21.0",
+  "description": "Free and open source Git GUI with a visual commit graph. No ads, no accounts, no paywalls.",
+  "license": "MIT",
+  "author": "Leviathan contributors",
+  "homepage": "https://github.com/Galderolo/Leviathan",
+  "main": "./out/main/index.js",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Galderolo/Leviathan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Galderolo/Leviathan/issues"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.6",
+    "electron-updater": "^6.8.10",
+    "node-pty": "^1.1.0"
+  }
+}
