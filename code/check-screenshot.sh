@@ -45,7 +45,7 @@ if [ "$TERMINAL" != terminal ] && [ "$TERMINAL" != tray ] ; then
   fi
 fi
 
-# Dark mode by default? AppImageHub's test runs on a plain X session with no
+# Dark mode by default? The test at appimage.github.io runs on a plain X session with no
 # dark-mode preference set, so a window that is mostly dark means the
 # application chose a dark theme on its own. Applications should start in a
 # light theme and only go dark when the system is configured for dark mode or
@@ -71,7 +71,7 @@ else
   [ -z "$MATCH" ] || echo "WARNING: The screenshot may show an error message: ${MATCH}"
 fi
 
-# Script of the text: AppImageHub is in English, so an application must
+# Script of the text: appimage.github.io is in English, so an application must
 # start in English (the test runs with the C locale). OCR with models for
 # Latin, Chinese, Arabic, Cyrillic and Greek (Japanese and Korean models
 # made up characters from icons and textures), counting only letters of words

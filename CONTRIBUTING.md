@@ -10,9 +10,9 @@ If there is no AppImage of your favorite application available, please request i
 
 If you are an application author and would like to make your application available as an AppImage, please start here: https://github.com/AppImage/AppImageKit/wiki/Creating-AppImages. Feel free to open a [GitHub Issue](https://github.com/AppImage/AppImageKit/issues) in the AppImageKit project if you need support using the tools provided by AppImageKit.
 
-### I would like to have my AppImage included in the AppImageHub central directory of available AppImages
+### I would like to have my AppImage included in the central directory of available AppImages at appimage.github.io
 
-Please see the [AppImageHub Readme](https://github.com/AppImage/appimage.github.io/blob/master/README.md).
+Please see the [appimage.github.io Readme](https://github.com/AppImage/appimage.github.io/blob/master/README.md).
 
 ### I would like to contribute to AppImageKit development
 
