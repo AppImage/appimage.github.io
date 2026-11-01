@@ -2,7 +2,7 @@
 Name=Kye
 Comment=A classic puzzle game
 Exec=AppRun
-Icon=kye31
+Icon=kye
 Terminal=false
 Type=Application
 Categories=Game;LogicGame;

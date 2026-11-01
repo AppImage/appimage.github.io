@@ -6,7 +6,7 @@ description: "A classic puzzle game"
 license: "MIT"
 
 icons:
-  - Kye/icons/512x512/kye31.png
+  - Kye/icons/512x512/kye.png
 screenshots:
 - https://playkye.com/images/2.png
 
@@ -19,7 +19,7 @@ desktop:
     Name: Kye
     Comment: A classic puzzle game
     Exec: AppRun
-    Icon: kye31
+    Icon: kye
     Terminal: false
     Type: Application
     Categories: Game
