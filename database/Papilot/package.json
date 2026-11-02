@@ -1,0 +1,13 @@
+{
+  "name": "papilot-desktop",
+  "productName": "Papilot",
+  "version": "0.8.3",
+  "description": "A Cursor-like workspace for your papers: annotate and review PDFs directly without ever touching LaTeX.",
+  "author": "Cui Chen",
+  "homepage": "https://papilot.ai",
+  "license": "MIT",
+  "desktopName": "ai.papilot.desktop.desktop",
+  "desktopShell": 2,
+  "type": "module",
+  "main": "main.js"
+}
