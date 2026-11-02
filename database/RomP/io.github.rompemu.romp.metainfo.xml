@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.rompemu.romp</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>RomP</name>
+  <summary>Play retro games from your RomM library</summary>
+  <developer_name>RompEmu</developer_name>
+  <description>
+    <p>
+      RomP plays the games in your RomM library, with each game running in its own sandboxed process.
+    </p>
+    <ul>
+      <li>Your RomM library: platforms, favorites, collections and recently played, with search and box art</li>
+      <li>One click to play: RomP installs the right emulator and BIOS files, and downloaded games play offline</li>
+      <li>Saves that follow you: in-game saves and save states sync with RomM before and after you play</li>
+      <li>Sandboxed emulators: each game runs in a locked-down process that can only write to its own saves</li>
+      <li>RetroAchievements, with popups, leaderboards and achievement lists</li>
+      <li>Controllers and multiplayer, with any key or button remappable</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">romp.desktop</launchable>
+  <provides>
+    <binary>romp</binary>
+  </provides>
+  <url type="homepage">https://rompemu.github.io</url>
+  <url type="bugtracker">https://github.com/RompEmu/RomP/issues</url>
+  <url type="translate">https://crowdin.com/project/romp</url>
+  <categories>
+    <category>Game</category>
+    <category>Emulator</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The library, showing Amiga games</caption>
+      <image>https://raw.githubusercontent.com/RompEmu/RomP/main/docs/screenshots/library.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A game's page with its details and cover</caption>
+      <image>https://raw.githubusercontent.com/RompEmu/RomP/main/docs/screenshots/game-page.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A game running in its own window</caption>
+      <image>https://raw.githubusercontent.com/RompEmu/RomP/main/docs/screenshots/gameplay.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A Nintendo DS game with its two screens in separate windows</caption>
+      <image>https://raw.githubusercontent.com/RompEmu/RomP/main/docs/screenshots/nintendo-ds.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+</component>
