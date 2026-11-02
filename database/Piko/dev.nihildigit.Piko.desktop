@@ -1,0 +1,27 @@
+[Desktop Entry]
+Type=Application
+Name=Piko
+GenericName=PikPak Client
+GenericName[zh_CN]=PikPak 客户端
+Comment=Third-party PikPak client for browsing, streaming and transferring files
+Comment[zh_CN]=PikPak 第三方客户端：浏览网盘、在线播放、上传下载
+Exec=Piko %U
+Icon=dev.nihildigit.Piko
+Terminal=false
+Categories=Network;FileTransfer;
+Keywords=PikPak;cloud;magnet;torrent;
+Keywords[zh_CN]=PikPak;网盘;磁力;种子;
+MimeType=x-scheme-handler/magnet;application/x-bittorrent;
+StartupWMClass=dev.nihildigit.Piko
+X-AppImage-Version=1.4.0
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|NihilDigit|piko|latest|piko-linux-x64-*.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.38
+X-AppImage-Payload-License=AGPL-3.0
