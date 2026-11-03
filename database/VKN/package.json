@@ -1,6 +1,6 @@
 {
   "name": "vk-music-client",
-  "version": "26.10.31-rb2dd",
+  "version": "26.11.2-r935a",
   "description": "VK Music client on Electron",
   "desktopName": "VKN",
   "main": "main.js",
@@ -16,6 +16,7 @@
     "hls.js": "^1.6.15",
     "koffi": "^3.3.2",
     "lottie-web": "^5.13.0",
+    "music-metadata": "^12.3.3",
     "qrcode": "^1.5.4",
     "qs": "^6.12.1",
     "tough-cookie": "^6.0.1"
@@ -33,17 +34,17 @@
     "electron",
     "esbuild"
   ],
-  "vknVersion": "26.10.31b2dd",
+  "vknVersion": "26.11.02935a",
   "vknRelease": {
     "formatVersion": 1,
-    "version": "26.10.31b2dd",
-    "tag": "v26.10.31b2dd",
-    "commit": "3f66e74fa641333c1d82652368a1d98b561b64df",
-    "createdAt": "2026-10-31T06:57:37.000Z",
-    "runId": "101",
+    "version": "26.11.02935a",
+    "tag": "v26.11.02935a",
+    "commit": "17ac1bc2d90f4ec436f92719cfc54e8e0f8f2394",
+    "createdAt": "2026-11-02T12:19:58.000Z",
+    "runId": "102",
     "nonce": 0,
-    "technicalVersion": "26.10.31-rb2dd",
-    "buildVersion": "26.10.31.45789",
+    "technicalVersion": "26.11.2-r935a",
+    "buildVersion": "26.11.2.37722",
     "author": "@gr4shin"
   }
 }
