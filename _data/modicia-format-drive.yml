@@ -1,9 +1,9 @@
-name: MODICIA FormatDrive
-description: Modern, high-performance utility for Linux
+name: MODICIA Format Drive
+description: Utility per la formattazione e creazione di unità USB avviabili.
 categories:
-  - utility
-  - file system
+  - System
+  - Utility
 license: GPL-3.0
 links:
-  - type: GitHub
-    url: Modicia/modicia-format-drive
+  - type: SourceForge
+    url: linuxrufus
