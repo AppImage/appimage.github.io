@@ -1,10 +1,10 @@
 name: MODICIA MediaStudio
-description: Suite multimediale professionale per MODICIA O.S.
+description: Suite multimediale professionale per la produzione audio e video.
 categories:
   - AudioVideo
   - Video
   - Audio
 license: GPL-3.0
 links:
-  - type: GitHub
-    url: Modicia/modicia-mediastudio
+  - type: SourceForge
+    url: novadub
