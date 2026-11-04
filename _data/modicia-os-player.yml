@@ -1,0 +1,10 @@
+name: MODICIA MediaStudio
+description: Suite multimediale professionale per MODICIA O.S.
+categories:
+  - AudioVideo
+  - Video
+  - Audio
+license: GPL-3.0
+links:
+  - type: GitHub
+    url: Modicia/modicia-os-player
