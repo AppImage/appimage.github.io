@@ -1,0 +1,11 @@
+https://sourceforge.net/projects/linuxrufus/files/MODICIA-Format-Drive-1.2.2-x86_64.AppImage/download
+
+name: MODICIA Format Drive
+description: Utility per la formattazione e creazione di unità USB avviabili.
+categories:
+  - System
+  - Utility
+license: GPL-3.0
+links:
+  - type: SourceForge
+    url: linuxrufus
