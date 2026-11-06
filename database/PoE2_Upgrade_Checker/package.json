@@ -1,0 +1,14 @@
+{
+  "name": "poe2-upgrade-checker",
+  "version": "0.4.3",
+  "description": "Free Path of Exile 2 overlay: press F2 on an item to see if it's really an upgrade for your build, judged by Path of Building's own calculations. Finds better gear on the trade site within your budget.",
+  "main": "src/main.js",
+  "private": true,
+  "dependencies": {
+    "electron-updater": "6.3.9"
+  },
+  "author": {
+    "name": "ets-public"
+  },
+  "homepage": "https://github.com/ets-public/poe2-upgrade-checker"
+}

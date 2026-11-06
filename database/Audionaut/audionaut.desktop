@@ -1,0 +1,30 @@
+# Desktop entry for both Linux packages: the AppImage (packaged by
+# .github/workflows/release-linux.yml) and the .deb (Audionaut/Builds/Debian).
+# Only the .deb also ships the application/x-audium-project MIME definition;
+# in the AppImage the type below is simply unregistered, which is harmless.
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Audionaut
+GenericName=Audio Editor
+Comment=Audio editing application for multitrack recordings
+Exec=audionaut %f
+TryExec=audionaut
+Icon=audionaut
+Terminal=false
+StartupNotify=true
+StartupWMClass=Audionaut
+Categories=AudioVideo;Audio;AudioVideoEditing;Recorder;
+MimeType=application/x-audium-project;
+Keywords=audio;editor;recording;multitrack;
+X-AppImage-Version=1.6.7
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|kvoltmer|Audionaut|latest|Audionaut-*x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35

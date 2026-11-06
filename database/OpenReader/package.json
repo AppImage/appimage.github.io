@@ -1,0 +1,16 @@
+{
+  "name": "openreader-desktop",
+  "productName": "OpenReader Desktop",
+  "private": true,
+  "description": "OpenReader desktop app: the slim runtime in an Electron shell",
+  "author": "Richard R <me@richardr.dev>",
+  "homepage": "https://github.com/richardr1126/openreader",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/main.mjs",
+  "packageManager": "pnpm@10.34.7",
+  "dependencies": {
+    "electron-updater": "6.8.11"
+  },
+  "version": "5.4.1"
+}

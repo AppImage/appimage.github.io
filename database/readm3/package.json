@@ -1,0 +1,12 @@
+{
+  "name": "readm3-desktop",
+  "productName": "readm3",
+  "version": "0.27.0",
+  "private": true,
+  "description": "readm3 as a desktop app: a plain, fast text editor for Markdown and code.",
+  "author": "Profullstack, Inc. <hello@profullstack.com>",
+  "homepage": "https://readm3.com",
+  "license": "MIT",
+  "main": "main.cjs",
+  "desktopName": "readm3.desktop"
+}

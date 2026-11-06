@@ -1,0 +1,44 @@
+---
+layout: app
+
+permalink: /tlum/
+
+icons:
+  - tlum/icons/scalable/com.tercad.tlum.svg
+
+screenshots:
+  - tlum/screenshot.png
+
+authors:
+  - name: "lyskouski"
+    url: "https://github.com/lyskouski"
+
+links:
+  - type: GitHub
+    url: lyskouski/app-language
+  - type: Download
+    url: https://github.com/lyskouski/app-language/releases
+
+desktop:
+  Desktop Entry:
+    X-AppImage-Arch: x86_64
+    X-AppImage-Version: 0.6.11
+    X-AppImage-Name: Tlum
+    Name: Tlum
+    Exec: tlum
+    Icon: com.tercad.tlum
+    Type: Application
+    Terminal: false
+    Categories: Utility
+    Comment: 
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: bundled
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: true
+---

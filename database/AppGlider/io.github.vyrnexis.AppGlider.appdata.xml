@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.vyrnexis.AppGlider</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>AppGlider</name>
+  <summary>Install, update and launch AppImages from GitHub</summary>
+  <developer id="io.github.vyrnexis">
+    <name>Vyrnexis</name>
+  </developer>
+  <description>
+    <p>
+      AppGlider installs, updates and launches AppImage apps from GitHub, from one window.
+      Add any public GitHub repository that publishes an AppImage, and AppGlider downloads it,
+      checks it against the checksum the project published, adds it to your application menu
+      and tells you when a new version is out.
+    </p>
+    <ul>
+      <li>Checks every download against its published SHA-256 before installing</li>
+      <li>Keeps the previous version so you can roll back if an update misbehaves</li>
+      <li>Stable releases by default, with previews and release notes per app</li>
+      <li>Hold an app at its current version</li>
+      <li>Update all, a tray icon with an update badge and optional notifications</li>
+      <li>Your own app order and pinned favourites</li>
+      <li>Share lists of apps as plain-text catalogs</li>
+    </ul>
+    <p>
+      AppGlider only manages the apps it installed itself; AppImages you already have are
+      left alone.
+    </p>
+  </description>
+  <launchable type="desktop-id">appglider.desktop</launchable>
+  <url type="homepage">https://appglider.org/</url>
+  <url type="bugtracker">https://github.com/Vyrnexis/AppGlider/issues</url>
+  <url type="vcs-browser">https://github.com/Vyrnexis/AppGlider</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The library with two updates waiting</caption>
+      <image>https://raw.githubusercontent.com/Vyrnexis/AppGlider/main/docs/previews/appglider-library.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>An app's page with release notes, versions and preferences</caption>
+      <image>https://raw.githubusercontent.com/Vyrnexis/AppGlider/main/docs/previews/appglider-app-page.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Adding an app from a GitHub repository</caption>
+      <image>https://raw.githubusercontent.com/Vyrnexis/AppGlider/main/docs/previews/appglider-add-app.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <provides>
+    <binary>appglider</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.9.5" date="2026-10-29"/>
+    <release version="0.9.4" date="2026-10-29"/>
+    <release version="0.9.3" date="2026-10-28"/>
+    <release version="0.9.2" date="2026-10-28"/>
+    <release version="0.9.1" date="2026-10-28"/>
+    <release version="0.9.0" date="2026-10-26"/>
+    <release version="0.8.1" date="2026-10-25"/>
+    <release version="0.8.0" date="2026-10-25"/>
+  </releases>
+</component>

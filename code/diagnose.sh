@@ -34,9 +34,9 @@ HINTS=(
   "-"
   "AppRun.wrapped (or the launcher it starts) could not be executed. This typically happens with Tauri and linuxdeploy builds when a cached launcher was packaged with mode 0770 and is owned by root, so that it is not executable for the test user. Please make the AppDir readable and executable for everyone before packaging, e.g. \`chmod -R a+rX AppDir\` (and \`chmod a+x\` on AppRun and AppRun.wrapped) before running appimagetool."
 
-  "error while loading shared libraries"
+  "error while loading shared libraries|[Ll]ibrary [^ ]+ could not be loaded|lib[^ ]*\.so[^ ]* could not be loaded|[Cc]ould not load (shared )?library"
   "error-missing-library"
-  "The application needs a library that is neither in the AppImage nor on the test system (\"error while loading shared libraries\", the first error below names it). Please bundle this library, and what it depends on, in the AppImage: an AppImage cannot rely on libraries that are not installed on every target system."
+  "The application needs a library that is neither in the AppImage nor on the test system (\"error while loading shared libraries\" or \"Library ... could not be loaded\", the first error below names it). Please bundle this library, and what it depends on, in the AppImage: an AppImage cannot rely on libraries that are not installed on every target system."
 
   "^ERROR: The application exited within [0-9]+ seconds"
   "error-app-exits"
@@ -76,7 +76,7 @@ HINTS=(
 
   "^ERROR: Could not mount the AppImage"
   "error-not-squashfs"
-  "The AppImage could not be mounted. AppImageHub currently supports only AppImages with a SquashFS file system; other formats such as DwarFS (used, e.g., by uruntime and quick-sharun) are not supported yet."
+  "The AppImage could not be mounted. appimage.github.io currently supports only AppImages with a SquashFS file system; other formats such as DwarFS (used, e.g., by uruntime and quick-sharun) are not supported yet."
 
   "^ERROR: File name "
   "error-filename"
@@ -132,9 +132,13 @@ HINTS=(
 
   "^(ERROR|WARNING): The screenshot shows text mostly not in English"
   "error-not-english"
-  "The text on the screenshot is mostly not in English. AppImageHub is in English: please make the application start in English when the system language is English or not set (the test runs it with the C locale), e.g. by falling back to English instead of to another language."
+  "The text on the screenshot is mostly not in English. appimage.github.io is in English: please make the application start in English when the system language is English or not set (the test runs it with the C locale), e.g. by falling back to English instead of to another language."
 
-  "^FATAL: .* (is missing|not found|missing in)"
+  "^FATAL: \\.DirIcon is missing"
+  "error-no-icon"
+  "The AppImage has no .DirIcon, the icon file that file managers show for it. Please add a PNG icon (256x256 pixels recommended) as .DirIcon at the top level of the AppDir: appimagetool creates it by itself from <Icon>.png in the AppDir root, where <Icon> is the Icon= value of your .desktop file, so put your PNG there (an SVG is not accepted). See https://docs.appimage.org/reference/appdir.html"
+
+  "^FATAL: ([^.]|\\.[^D]).* (is missing|not found|missing in)"
   "error-missing-file"
   "The AppImage is missing a required file (see below). See https://docs.appimage.org/reference/appdir.html for what an AppImage must contain."
 
@@ -175,7 +179,7 @@ if [ "$1" == "--labels" ] ; then
 fi
 
 # Errors that are not worth a hint of their own but mark where things went wrong
-GENERIC="error while loading shared libraries|Segmentation fault|Traceback \\(most recent call last\\)|Exception in thread|^FATAL|^Error:|^ERROR|exited with a non-zero code"
+GENERIC="error while loading shared libraries|[Ll]ibrary [^ ]+ could not be loaded|lib[^ ]*\.so[^ ]* could not be loaded|[Cc]ould not load (shared )?library|Segmentation fault|Traceback \\(most recent call last\\)|Exception in thread|^FATAL|^Error:|^ERROR|exited with a non-zero code"
 
 if [ "$1" == "--excerpt" ] ; then
   LOG="$2"
@@ -183,7 +187,7 @@ if [ "$1" == "--excerpt" ] ; then
   # A missing library is almost always the real cause, wherever it appears;
   # otherwise the first line matching an error (not a warning or a remark:
   # hints without a label)
-  PRIORITY="error while loading shared libraries"
+  PRIORITY="error while loading shared libraries|[Ll]ibrary [^ ]+ could not be loaded|lib[^ ]*\.so[^ ]* could not be loaded|[Cc]ould not load (shared )?library"
   PATTERN="$GENERIC"
   for ((i = 0; i < ${#HINTS[@]}; i += 3)) ; do
     [ "${HINTS[$((i + 1))]}" == "-" ] && continue

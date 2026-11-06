@@ -1,0 +1,11 @@
+{
+  "name": "traceroost-desktop",
+  "private": true,
+  "version": "0.20.0",
+  "description": "TraceRoost desktop shell — Electron app and menu bar/tray icon around the standalone collector and dashboard (macOS, Linux, Windows)",
+  "license": "MIT",
+  "main": "out/main.js",
+  "desktopName": "traceroost-desktop.desktop",
+  "author": "Roger Reed",
+  "homepage": "https://github.com/traceroost/core"
+}

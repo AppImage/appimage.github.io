@@ -1,0 +1,30 @@
+{
+  "name": "morrow",
+  "productName": "Morrow",
+  "private": true,
+  "version": "1.1.0",
+  "description": "A free, open source, local first workspace for notes, databases and canvases, kept as plain Markdown files. No account, no cloud, and no AI unless you bring your own.",
+  "desktopName": "morrow.desktop",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Aarav Gupta and Morrow contributors"
+  },
+  "homepage": "https://github.com/Aarav2709/Morrow",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aarav2709/Morrow.git"
+  },
+  "type": "module",
+  "main": "dist-electron/main.cjs",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 110,
+    "trailingComma": "all"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.135.0"
+  }
+}

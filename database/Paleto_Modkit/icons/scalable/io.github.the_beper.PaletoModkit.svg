@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFC15E"/>
+      <stop offset="0.45" stop-color="#F7845E"/>
+      <stop offset="1" stop-color="#7B3F98"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2E7FB8"/>
+      <stop offset="1" stop-color="#1B3F6B"/>
+    </linearGradient>
+    <clipPath id="tile"><rect x="8" y="8" width="240" height="240" rx="52"/></clipPath>
+  </defs>
+  <g clip-path="url(#tile)">
+    <rect x="8" y="8" width="240" height="240" fill="url(#sky)"/>
+    <!-- sun -->
+    <circle cx="186" cy="74" r="30" fill="#FFE3A3" opacity="0.9"/>
+    <!-- crate: top, left and right faces -->
+    <g stroke="#3A2414" stroke-width="6" stroke-linejoin="round">
+      <path d="M128 66 L192 98 L128 130 L64 98 Z" fill="#F2B45A"/>
+      <path d="M64 98 L128 130 L128 196 L64 164 Z" fill="#C9772F"/>
+      <path d="M192 98 L128 130 L128 196 L192 164 Z" fill="#E0954A"/>
+    </g>
+    <!-- planks -->
+    <g stroke="#3A2414" stroke-width="4" stroke-linecap="round" opacity="0.55">
+      <path d="M64 120 L128 152 L192 120"/>
+      <path d="M64 142 L128 174 L192 142"/>
+    </g>
+    <!-- sea -->
+    <path d="M8 178 C40 160 64 160 96 176 C128 192 152 192 184 176 C208 164 228 164 248 172 L248 248 L8 248 Z" fill="url(#sea)"/>
+    <path d="M8 178 C40 160 64 160 96 176 C128 192 152 192 184 176 C208 164 228 164 248 172" fill="none" stroke="#BFE6FF" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>

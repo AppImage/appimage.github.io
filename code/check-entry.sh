@@ -30,7 +30,7 @@ URL=$(head -n 1 "$FILE" | tr -d '\r')
 # "#Channel" at the end of the URL (https://github.com/o/r#Nightly): see find-appimage.sh
 CHANNEL=""
 if [[ "$URL" == *"#"* ]] ; then
-  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._-')
+  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._*?-')
   URL="${URL%%#*}"
 fi
 

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream MetaInfo: the app's listing in software stores (Flathub, GNOME Software,
+     KDE Discover). Check it with "appstreamcli validate" (with the pedantic option).
+     Add a <release> for every version (newest first) when releasing. -->
+<component type="desktop-application">
+  <id>io.github.fabiocmazzo.quillwright</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Quillwright</name>
+  <summary>Write long-form text in plain Markdown, alongside AI agents</summary>
+  <developer id="io.github.fabiocmazzo">
+    <name>Fabio Covolo Mazzo</name>
+  </developer>
+
+  <description>
+    <p>
+      Quillwright is a quiet, book-like writing environment for novels and other long
+      documents. A project is an ordinary folder of Markdown files: one per chapter, one per
+      character, and a page of world rules. There is no database and no lock-in.
+    </p>
+    <p>
+      It is designed to run next to AI agents that edit the same folder. Changes made on disk
+      appear in the editor as they happen, and your unsaved text is never overwritten. The
+      assistant panel uses the AI tool you already have installed, and its suggestions are
+      shown as a diff that you accept or reject.
+    </p>
+    <ul>
+      <li>Live Markdown styling on a page, with Paper, Sepia, and Night themes and a focus mode</li>
+      <li>Chapters, character sheets, outline, word counts, and session goals</li>
+      <li>Autosave and version history kept outside the project folder</li>
+      <li>Research files beside the page: PDFs, images, and notes, with search inside PDFs</li>
+      <li>Search across the whole project</li>
+      <li>Spell checking with Hunspell dictionaries</li>
+      <li>Export to Word, EPUB, PDF, OpenDocument, and HTML, built in and offline</li>
+      <li>Project templates for novels and for legal cases, in English and Portuguese</li>
+    </ul>
+    <p>
+      The assistant runs a program installed on your computer, such as Claude Code, Codex, or
+      Ollama, which handles its own sign-in. Quillwright stores no API keys and sends nothing
+      on its own.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.fabiocmazzo.quillwright.desktop</launchable>
+  <provides>
+    <binary>quillwright</binary>
+  </provides>
+
+  <url type="homepage">https://fabiocmazzo.github.io/quillwright/</url>
+  <url type="bugtracker">https://github.com/fabiocmazzo/quillwright/issues</url>
+  <url type="vcs-browser">https://github.com/fabiocmazzo/quillwright</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>A chapter on the page, with the manuscript sidebar (Paper theme)</caption>
+      <image>https://raw.githubusercontent.com/fabiocmazzo/quillwright/main/screenshots/paper.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The Night theme</caption>
+      <image>https://raw.githubusercontent.com/fabiocmazzo/quillwright/main/screenshots/night.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Office</category>
+    <category>WordProcessor</category>
+  </categories>
+  <keywords>
+    <keyword>writing</keyword>
+    <keyword>novel</keyword>
+    <keyword>fiction</keyword>
+    <keyword>markdown</keyword>
+    <keyword>manuscript</keyword>
+    <keyword>legal</keyword>
+  </keywords>
+
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.5.0" date="2026-10-22">
+      <description>
+        <p>Research files (PDFs, images, notes) open in a reference panel beside the page,
+        with search inside PDFs, and passages can be sent to the assistant with their
+        source. Project-wide search, a project template for legal cases in English and
+        Portuguese, and a theme that follows the system's light or dark mode.</p>
+      </description>
+    </release>
+    <release version="0.4.0" date="2026-10-20">
+      <description>
+        <p>Spell checking as you write, with suggestions on right-click and a plain-text
+        project dictionary. Each book is checked in its own language.</p>
+      </description>
+    </release>
+    <release version="0.3.0" date="2026-10-20">
+      <description>
+        <p>Updated interface toolkit, with better text rendering and many fixes to text
+        input and window handling.</p>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-10-20">
+      <description>
+        <p>Export to Word, EPUB, PDF, OpenDocument, and HTML is now built in and works
+        offline, with new language and page size options.</p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-10-19">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

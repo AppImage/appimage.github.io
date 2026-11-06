@@ -1,0 +1,51 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="128"
+    height="128"
+    viewBox="6 3.5 116 116"
+>
+    <circle cx="35.65" cy="76.65" r="27.10" fill="#1a5fb4" />
+    <circle cx="69.25" cy="55.65" r="33.40" fill="#1a5fb4" />
+    <circle cx="92.35" cy="76.65" r="27.10" fill="#1a5fb4" />
+    <rect x="35.65" y="72.45" width="56.70" height="31.30" fill="#1a5fb4" />
+    <circle cx="35.65" cy="73.65" r="27.10" fill="#1a5fb4" />
+    <circle cx="69.25" cy="52.65" r="33.40" fill="#1a5fb4" />
+    <circle cx="92.35" cy="73.65" r="27.10" fill="#1a5fb4" />
+    <rect x="35.65" y="69.45" width="56.70" height="31.30" fill="#1a5fb4" />
+    <circle cx="35.65" cy="73.65" r="23.10" fill="#fff" />
+    <circle cx="69.25" cy="52.65" r="29.40" fill="#fff" />
+    <circle cx="92.35" cy="73.65" r="23.10" fill="#fff" />
+    <rect x="35.65" y="69.45" width="56.70" height="27.30" fill="#fff" />
+    <g transform="translate(64.25 61) skewX(-14) translate(-64.25 -61)">
+        <path
+            d="M 64.25 61 A 13 11 0 0 1 64.25 39 L 72.25 39"
+            fill="none"
+            stroke="#1a5fb4"
+            stroke-width="7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+        <path
+            d="M 81.75 39 L 71.25 31.4 L 71.25 46.6 Z"
+            fill="#1a5fb4"
+            stroke="#1a5fb4"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+        />
+        <path
+            d="M 64.25 61 A 13 11 0 0 1 64.25 83 L 56.25 83"
+            fill="none"
+            stroke="#1a5fb4"
+            stroke-width="7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+        <path
+            d="M 46.75 83 L 57.25 75.4 L 57.25 90.6 Z"
+            fill="#1a5fb4"
+            stroke="#1a5fb4"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+        />
+    </g>
+</svg>

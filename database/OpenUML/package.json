@@ -1,0 +1,18 @@
+{
+  "name": "openuml",
+  "productName": "OpenUML",
+  "version": "0.1.6",
+  "description": "Open-source UML modeling tool (class, use case, sequence and activity diagrams) with .mdj file compatibility.",
+  "license": "MIT",
+  "private": true,
+  "main": "./out/main/index.js",
+  "desktopName": "openuml.desktop",
+  "overrides": {
+    "global-agent": "4.1.3"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true,
+    "electron-winstaller@5.4.0": true
+  }
+}
