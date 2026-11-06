@@ -1,0 +1,11 @@
+name: MODICIA Format Drive
+description: Easy to use formatting tool for USB drives and storage media.
+categories:
+  - System
+  - Utility
+license: GPL-3.0
+authors:
+  - name: Marco M. Mariani
+links:
+  - type: Download
+    url: https://sourceforge.net/projects/linuxrufus/files/MODICIA-Format-Drive-1.2.2-x86_64.AppImage/download
