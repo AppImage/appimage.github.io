@@ -1,0 +1,27 @@
+{
+  "name": "leafdesk-desktop",
+  "productName": "Leafdesk",
+  "version": "0.7.2",
+  "description": "Leafdesk for macOS, Windows and Linux: a window on your own Leafdesk server.",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "author": "esmworks",
+  "homepage": "https://esmworks.github.io/leafdesk/",
+  "repository": "github:esmworks/leafdesk",
+  "type": "module",
+  "main": "dist/main.js",
+  "dependencies": {
+    "electron-updater": "6.8.9"
+  },
+  "optionalDependencies": {
+    "@embedded-postgres/darwin-arm64": "18.4.0-beta.17",
+    "@embedded-postgres/darwin-x64": "18.4.0-beta.17",
+    "@embedded-postgres/linux-arm64": "18.4.0-beta.17",
+    "@embedded-postgres/linux-x64": "18.4.0-beta.17",
+    "@embedded-postgres/windows-x64": "18.4.0-beta.17"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.9.0"
+}
