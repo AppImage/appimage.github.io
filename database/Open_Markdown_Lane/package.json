@@ -1,0 +1,17 @@
+{
+  "name": "open-markdown-lane",
+  "version": "0.24.4",
+  "description": "A local Markdown writing space with live rendering and lossless source editing.",
+  "main": "electron/main.mjs",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "AniChikage",
+    "url": "https://github.com/AniChikage"
+  },
+  "desktopName": "open-markdown-lane.desktop",
+  "homepage": "https://github.com/AniChikage/open-markdown-lane#readme",
+  "dependencies": {
+    "iconv-lite": "0.6.3"
+  }
+}
