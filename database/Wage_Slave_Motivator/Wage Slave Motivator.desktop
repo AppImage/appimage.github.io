@@ -1,0 +1,21 @@
+[Desktop Entry]
+Categories=Office;
+Comment=Live earnings and focus timer for your workday
+Exec=wage_slave_motivator
+StartupWMClass=wage_slave_motivator
+Icon=wage_slave_motivator
+Name=Wage Slave Motivator
+Terminal=false
+Type=Application
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=MIT
