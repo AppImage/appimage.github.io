@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.cpntodd.YLRAuto</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>YLR-Auto</name>
+  <summary>Rip discs with MakeMKV and file them into Jellyfin</summary>
+  <description>
+    <p>Rips discs from each optical drive using MakeMKV, which you install separately, and watches rips started in its own window. Finished rips are filed into Jellyfin libraries using names from TMDb.</p>
+    <p>Films that match exactly one TMDb entry by name and runtime, or the runtime of a film you picked before ripping, can be filed automatically. Anything uncertain waits for you, and unattended filing never deletes a file.</p>
+  </description>
+  <provides>
+    <binary>ylr-auto</binary>
+  </provides>
+  <launchable type="desktop-id">io.github.cpntodd.YLRAuto.desktop</launchable>
+  <url type="homepage">https://github.com/cpntodd/YLR-Auto</url>
+  <url type="bugtracker">https://github.com/cpntodd/YLR-Auto/issues</url>
+  <developer id="io.github.cpntodd">
+    <name>cpntodd</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+  <screenshots>
+    <screenshot type="default">
+      <caption>An opened disc, with TMDb matches above the titles to tick</caption>
+      <image>https://raw.githubusercontent.com/cpntodd/YLR-Auto/main/docs/screenshot-drive.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Finished rips waiting, with TMDb matches, posters and main actors</caption>
+      <image>https://raw.githubusercontent.com/cpntodd/YLR-Auto/main/docs/screenshot.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A large poster shown over the TMDb results</caption>
+      <image>https://raw.githubusercontent.com/cpntodd/YLR-Auto/main/docs/screenshot-poster.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The About window</caption>
+      <image>https://raw.githubusercontent.com/cpntodd/YLR-Auto/main/docs/screenshot-about.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="2.0.2" date="2026-11-06">
+      <description>
+        <p>Accepts a TMDb link or ID in place of a name, shows original titles in search results, and splits run-together disc labels.</p>
+      </description>
+    </release>
+    <release version="2.0.1" date="2026-11-06">
+      <description>
+        <p>Lists similar titles to pick from when a TMDb search finds nothing.</p>
+      </description>
+    </release>
+    <release version="2.0.0" date="2026-11-06">
+      <description>
+        <p>Rips from each optical drive without opening MakeMKV's window. Open a disc, pick what it is on TMDb, tick its titles and rip. Drives can run at once, with progress throughout, and eject when they finish. Settings and presets decide what each drive does, up to ripping a disc as soon as it is inserted. The AppImage can now update itself with AppImageUpdate.</p>
+      </description>
+    </release>
+    <release version="1.1.1" date="2026-11-06">
+      <description>
+        <p>Says that MakeMKV is needed, and how to get it, when it is absent.</p>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-11-06">
+      <description>
+        <p>Rewritten in Rust as one program with no Python dependency. It opens faster and uses less memory. A new install follows the desktop's light or dark preference. While ripping, the percentage is in the tray icon's tooltip.</p>
+      </description>
+    </release>
+    <release version="1.0.4" date="2026-11-06"/>
+    <release version="1.0.3" date="2026-11-06"/>
+    <release version="1.0.2" date="2026-11-06"/>
+    <release version="1.0.1" date="2026-11-06"/>
+    <release version="1.0.0" date="2026-11-05"/>
+  </releases>
+</component>
