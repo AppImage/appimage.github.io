@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2022 Ruby Mamistvalove -->
+<component type="desktop-application">
+    <id>io.github.nuttyartist.notes</id>
+    <launchable type="desktop-id">io.github.nuttyartist.notes.desktop</launchable>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>MPL-2.0</project_license>
+    <name>Notes</name>
+    <developer_name>Ruby Mamistvalove</developer_name>
+    <update_contact>ruby.mamistvalove@gmail.com</update_contact>
+    <summary>Note-taking app. Write down your thoughts</summary>
+    <url type="homepage">https://www.notes-foss.com/</url>
+    <url type="bugtracker">https://github.com/nuttyartist/notes/issues</url>
+    <url type="donation">https://github.com/sponsors/nuttyartist</url>
+    <description>
+        <p>Notes is an open source and cross-platform note-taking app that is both beautiful and powerful.</p>
+        <p>Features overview:</p>
+        <ul>
+            <li>Native app (written in C++ with Qt)</li>
+            <li>Turn your Markdown tasks into a beautiful Kanban board</li>
+            <li>Fast and beautiful</li>
+            <li>Fully open source and cross-platform (Linux, macOS, Windows)</li>
+            <li>Completely private: Tracks nothing</li>
+            <li>Folders and tags: Organize your ideas hierarchically using nested folders and universally using tags</li>
+            <li>Markdown Support: Format text without lifting your hands from the keyboard</li>
+            <li>Different themes: Switch between Light, Dark, and Sepia</li>
+            <li>Feed View: Select multiple notes to see them all one after another in the editor</li>
+            <li>Always runs in the background: Use the hotkey <code>Super</code> + <code>Shift</code> + <code>N</code> to summon Notes</li>
+        </ul>
+    </description>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://www.rubymamistvalove.com/screenshots/linux/this_is_a_line_linux.png</image>
+            <caption>Overview</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://www.rubymamistvalove.com/screenshots/linux/kanban.png</image>
+            <caption>Kanban Board</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://www.rubymamistvalove.com/screenshots/linux/tasks.png</image>
+            <caption>Markdown Tasks</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://www.rubymamistvalove.com/screenshots/linux/theme.png</image>
+            <caption>Dark Theme</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://www.rubymamistvalove.com/screenshots/linux/sepia.png</image>
+            <caption>Sepia theme</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://www.rubymamistvalove.com/screenshots/linux/tags.png</image>
+            <caption>Folders and Tags</caption>
+        </screenshot>
+    </screenshots>
+    <content_rating type="oars-1.1" />
+    <releases>
+        <release date="2024-10-01" version="2.3.1">
+            <description>
+                <p>This is a minor, bugfix release.</p>
+                <p>Changes:</p>
+                <ul>
+                    <li>Fixed a visual bug where the "Hide to tray" option would not reflect its real state.</li>
+                    <li>Changed the strikethrough keyboard shortcut from Ctrl+S to Ctrl+Shift+X.</li>
+                </ul>
+                <p>Note: Anyone can still access all Pro features at no cost by building the app from source.</p>
+            </description>
+        </release>
+        <release date="2024-08-31" version="2.3.0">
+            <description>
+                <p>A new release is here with some new features, bug fixes and improvements.</p>
+                <p>New features:</p>
+                <ul>
+                    <li>Option to Export/Import to/from .txt/.md files.</li>
+                </ul>
+                <p>Improvements and bug fixes:</p>
+                <ul>
+                    <li>We now load a much cleaner text in the notes list pane by converting Markdown to plain text.</li>
+                    <li>Optimized the app startup time so it now launches faster.</li>
+                    <li>Much more efficient notes list loading.</li>
+                    <li>Improved the update mechanism to check for update every hour (can be disabled).</li>
+                </ul>
+                <p>Note: Anyone can still access all Pro features at no cost by building the app from source.</p>
+            </description>
+        </release>
+        <release date="2023-08-30" version="2.2.1">
+            <description>
+                <p>A new release is here with many bug fixes and improvements. To sustain and further our commitment to exceptional app development, we have transitioned to a subscription-based pricing model for the Pro version.</p>
+                <p>Improvements and bug fixes:</p>
+                <ul>
+                    <li>Resolved a conflict within the Kanban interface: previously, editing a task would not conclude if a separate task was concurrently edited.</li>
+                    <li>Addressed an issue where editing was mistakenly permitted within the editor while the Trash folder was active</li>
+                    <li>Fixed bug where icons didn't show up on some Linux distributions</li>
+                    <li>Corrected an inconsistency where icons were not displayed on certain Linux distributions</li>
+                    <li>Resolved display issues of specific windows on Ubuntu 23.04</li>
+                    <li>Addressed an issue with the Editor Settings window failing to appear on Qt 5.12.2</li>
+                    <li>For Pro users, the 'Pro' label within the Editor Settings has been made redundant and is now removed for a cleaner interface</li>
+                </ul>
+                <p>Note: Anyone can still access all Pro features at no cost by building the app from source.</p>
+            </description>
+        </release>
+        <release date="2023-07-27" version="2.2.0">
+            <description>
+                <p>A new release is here with major new features and many bug fixes and improvements.</p>
+                <p>New features:</p>
+                <ul>
+                    <li>You can now turn your Markdown tasks into a beautiful Kanban board</li>
+                    <li>Completely redesigned Editor Settings popup to quickly change the editor's settings</li>
+                    <li>New gear icon for global app settings</li>
+                    <li>Much improved Dark theme colors</li>
+                </ul>
+                <p>Improvements and bug fixes:</p>
+                <ul>
+                    <li>Text contrast in Sepia theme is improved</li>
+                    <li>Added alt+up/down keyboard shortcut to move the current line</li>
+                    <li>Toggling fullscreen is now possible with F11 and Esc</li>
+                    <li>Fixed markdown fonts not being resized properly</li>
+                    <li>Native window decoration is now default on Windows and Linux</li>
+                    <li>Fixed X11 linking on BSD systems</li>
+                    <li>Many more fixes and improvements under the hood</li>
+                </ul>
+            </description>
+        </release>
+        <release date="2023-03-08" version="2.1.0">
+            <description>
+                <p>A new release is here with some new features and many bug fixes and improvements.</p>
+                <p>New features:</p>
+                <ul>
+                    <li>You can now open external links by holding <code>Ctrl</code> while clicking them</li>
+                    <li>You can now format text using keyboard shortcuts: <code>Ctrl</code> + <code>B</code> (Bold) | <code>Ctrl</code> + <code>I</code> (Italic) | <code>Ctrl</code> + <code>S</code> (Strikethrough)</li>
+                    <li>You can create different heading levels with <code>Ctrl</code> + <code>1</code>...<code>6</code></li>
+                    <li>You can increase or decrease levels by using <code>Ctrl</code> + <code>Shift</code> + (<code>+</code> or <code>-</code>)</li>
+                    <li>You can now access the app menu by pressing <code>F10</code> (<code>Fn</code> + <code>F10</code> on macOS)</li>
+                </ul>
+                <p>Improvements and bug fixes:</p>
+                <ul>
+                    <li>Automatic updates now work on Windows</li>
+                    <li>Fixed bugs with native window decoration</li>
+                    <li>We improved the style of selecting multiple notes</li>
+                    <li>Fixed a bug on Windows causing extreme input delay when editing text</li>
+                    <li>Streamlined the look and feel of some windows to match the OS better</li>
+                    <li>Fixed issues when resizing the window's splitters and resizing the window itself</li>
+                    <li>Fixed some bugs causing crashes</li>
+                    <li>Many more fixes and improvements under the hood</li>
+                </ul>
+            </description>
+        </release>
+        <release date="2022-09-08" version="2.0.0">
+            <description>
+                <p>A new release is here with major new features and many bug fixes and improvements:</p>
+                <ul>
+                    <li>Folders and tags: Organize your ideas hierarchically using nested folders and universally using tags</li>
+                    <li>Pinned notes: Pin your most important notes at the top of each folder</li>
+                    <li>Different themes: Switch between Light, Dark, and Sepia</li>
+                    <li>Editor settings window: Change between different fonts and change the size/width of your text</li>
+                    <li>Feed View: Select multiple notes to see them all one after another in the editor</li>
+                    <li>Option to change the database path, so you can more easily sync your notes with a cloud provider</li>
+                    <li>Many bug fixes</li>
+                </ul>
+            </description>
+        </release>
+    </releases>
+    <provides>
+        <binary>notes</binary>
+    </provides>
+</component>
