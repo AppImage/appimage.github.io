@@ -1,0 +1,21 @@
+{
+  "name": "@teammate/desktop",
+  "version": "0.868.0",
+  "private": true,
+  "description": "Run AI coding agents as a team you can watch, on runtimes and models you choose.",
+  "author": "Automated Workflow",
+  "homepage": "https://locust.lol",
+  "desktopName": "locust.desktop",
+  "type": "module",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@lydell/node-pty": "1.2.0-beta.15",
+    "@xterm/xterm": "6.0.0",
+    "@xterm/addon-fit": "0.11.0",
+    "@xterm/addon-web-links": "0.12.0",
+    "electron-updater": "^6.8.9",
+    "jsonc-parser": "3.3.1",
+    "voice-glow": "0.3.0",
+    "yaml": "2.8.1"
+  }
+}
