@@ -1,0 +1,73 @@
+---
+layout: app
+
+permalink: /Beeper/
+description: Beeper: Unified Messenger
+
+icons:
+  - Beeper/icons/128x128/beeper.png
+
+screenshots:
+  - Beeper/screenshot.png
+
+authors:
+
+links:
+
+desktop:
+  Desktop Entry:
+    Name: Beeper
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: beeper
+    StartupWMClass: Beeper
+    X-AppImage-Version: 2401269p8vcb695
+    Comment: 'Beeper: Unified Messenger'
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+
+electron:
+  version: 3.93.36
+  homepage: https://beeper.com
+  description: 'Beeper: Unified Messenger'
+  author: Beeper Inc. <info@beeper.com>
+  repository:
+    type: git
+    url: https://gitlab.com/nova/nova-desktop
+  files: []
+  dependencies:
+    "@mozilla/readability": "^0.4.4"
+    "@sentry/electron": 4.4.0
+    "@todesktop/runtime": "^1.6.1"
+    auto-launch: "^5.0.5"
+    axios: "^1.4.0"
+    compute-cosine-similarity: "^1.0.0"
+    counterpart: "^0.18.6"
+    electron-log: "^4.4.8"
+    electron-store: "^6.0.1"
+    electron-window-state: "^5.0.3"
+    gpt-3-token-count: "^1.0.2"
+    html-to-text: "^9.0.5"
+    jsdom: "^21.1.2"
+    macos-version: "^5.2.1"
+    minimist: "^1.2.3"
+    openai: "^3.3.0"
+    png-to-ico: "^2.1.1"
+    request: "^2.88.2"
+    socksv5: "^0.0.6"
+    ssh2: "^0.8.9"
+    yaml: "^1.10.0"
+    youtube-transcript: "^1.0.6"
+  optionalDependencies:
+    node-mac-contacts: "^1.6.1"
+  hakDependencies:
+    matrix-seshat: "^2.3.3"
+    keytar: "^7.9.0"
+---

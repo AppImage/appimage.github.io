@@ -1,0 +1,25 @@
+{
+  "name": "expertisex",
+  "version": "3.3.0",
+  "description": "ExpertiseX - A Discord Selfbot with advanced features and a user-friendly interface.",
+  "main": "./out/main/main.js",
+  "author": "Adivise",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "cors": "^2.8.5",
+    "discord.js-selfbot-v13": "^3.7.1",
+    "electron-updater": "6.6.5",
+    "express": "^5.1.0",
+    "kazagumo": "^3.4.3",
+    "libsodium-wrappers": "^0.7.15",
+    "opusscript": "^0.0.8",
+    "react": "^19.1.0",
+    "react-autosuggest": "^10.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "react-select": "^5.10.1",
+    "react-toastify": "^11.0.5",
+    "remark-gfm": "^4.0.1",
+    "shoukaku": "^4.1.1"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@kanbots/desktop",
+  "version": "1.2.0",
+  "private": true,
+  "description": "kanbots desktop app (Electron)",
+  "main": "./dist/main.cjs",
+  "dependencies": {
+    "@octokit/core": "^6.1.6",
+    "@octokit/plugin-paginate-rest": "^11.6.0",
+    "@octokit/request-error": "^6.1.8",
+    "better-sqlite3": "^12.4.1",
+    "zod": "^3.24.1"
+  },
+  "electronmon": {
+    "patterns": [
+      "dist/**/*.cjs"
+    ],
+    "logLevel": "quiet"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@cardmirror/desktop",
+  "version": "1.13.0",
+  "description": "CardMirror — Electron desktop wrapper",
+  "author": "Anthony Trufanov",
+  "homepage": "https://github.com/ant981228/cardmirror",
+  "private": true,
+  "type": "commonjs",
+  "main": "dist/main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.3",
+    "koffi": "^3.0.2"
+  }
+}

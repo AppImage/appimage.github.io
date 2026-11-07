@@ -1,0 +1,24 @@
+[Desktop Entry]
+Name=Muster Agent
+Exec=AppRun %U
+Terminal=false
+Type=Application
+Icon=muster-agent
+StartupWMClass=muster-agent
+X-AppImage-Version=0.3.13
+Keywords=agent;ai;coding;terminal;
+Comment=Muster Code standalone agent desktop app (Electron, no Code-OSS extension host).
+MimeType=x-scheme-handler/muster;
+Categories=Development;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34
+X-AppImage-Payload-License=MIT

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>com.warlordsoftwares.wallpaper-app-4kwall</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>LicenseRef-proprietary=https://raw.githubusercontent.com/rishabh3354/4KWALL/main/share/license/LICENSE</project_license>
+	<developer_name translate="no">Warlord Softwares</developer_name>
+ <branding>
+    <color type="primary" scheme_preference="light">#b3b3b3</color>
+    <color type="primary" scheme_preference="dark">#1db954</color>
+  </branding>
+	<name>4KWALL</name>
+	<summary>Set 4K, HD and live wallpapers for your desktop background</summary>
+	<description>
+		<p>ABOUT 4KWALL :</p>
+		<p>4kWall is a fast wallpaper manager and changer for Linux. Browse, download, and set stunning 4K, UHD, and HD wallpapers as your desktop background in a single click, with thousands of high-resolution images to choose from.</p>
+		<p>FEATURES :</p>
+			<ul>
+				<li>Browse Millions of Wallpapers: Explore a huge collection of stunning HD, 4K and 8K wallpapers from the internet</li>
+				<li>High-Quality Wallpaper Downloads: Download wallpapers in their original full resolution</li>
+				<li>One-Click Wallpaper Setting: Apply any wallpaper to your desktop instantly</li>
+				<li>Auto Wallpaper Changer: Automatically rotate your wallpaper at your preferred interval</li>
+				<li>Different Wallpaper Per Monitor: Set a unique wallpaper on each connected monitor</li>
+				<li>Smart Search and Color Filters: Find wallpapers by keyword, resolution, category, ratio and color</li>
+				<li>Favourite Collections: Organize your favourite wallpapers into custom collections</li>
+				<li>Supports HD, 4K and 8K Displays: Optimized for high-resolution and ultrawide monitors</li>
+				<li>System Tray Integration: Change wallpapers quickly without leaving your workflow</li>
+				<li>Clean, Modern Dark UI: A polished, distraction-free interface built for your desktop</li>
+				<li>Regular Wallpaper Library Updates: Discover fresh wallpapers added regularly</li>
+    		</ul>
+		 <p>WHAT SETS 4KWALL APART ?</p>
+			<ul>
+			<li>Millions of high-quality HD, 4K and 8K wallpapers</li>
+			<li>Powerful wallpaper search with color filtering</li>
+			<li>Automatic wallpaper rotation</li>
+			<li>Multi-monitor wallpaper support</li>
+			<li>Auto rotation starts with login</li>
+			<li>Regular updates with new wallpapers and features</li>
+			</ul>
+	</description>
+	<keywords>
+	  <keyword>wallpapers</keyword>
+	  <keyword>background</keyword>
+	  <keyword>auto wallpaper changer</keyword>
+	  <keyword>desktop background</keyword>
+	  <keyword>wallpaper changer</keyword>
+	  <keyword>wallpaper manager</keyword>
+	  <keyword>4K</keyword>
+	  <keyword>HD</keyword>
+	  <keyword>slideshow</keyword>
+	  <keyword>wallpaper downloader</keyword>
+	  <keyword>wallpaper browser</keyword>
+	  <keyword>UHD</keyword>
+	  <keyword>slideshow</keyword>
+	  <keyword>multi-monitor</keyword>
+	  <keyword>dual monitor</keyword>
+	</keywords>
+<categories>
+    <category>Graphics</category>
+    <category>Utility</category>
+    <category>2DGraphics</category>
+    <category>Viewer</category>
+  </categories>
+	<screenshots>
+		<screenshot type="default">
+			<caption>4KWALL: Explore page</caption>
+			<image type="source">https://raw.githubusercontent.com/rishabh3354/4KWALL/main/share/screenshots/explore-page.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>4KWALL: Favorite page</caption>
+			<image type="source">https://raw.githubusercontent.com/rishabh3354/4KWALL/main/share/screenshots/favorite-page.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>4KWALL: Auto rotate wallpapers</caption>
+			<image type="source">https://raw.githubusercontent.com/rishabh3354/4KWALL/main/share/screenshots/wallpaper-auto-rotation.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>4KWALL: App settings</caption>
+			<image type="source">https://raw.githubusercontent.com/rishabh3354/4KWALL/main/share/screenshots/settings-4kwall.png</image>
+		</screenshot>
+		<screenshot>
+			<caption>4KWALL: Favorite page light theme</caption>
+			<image type="source">https://raw.githubusercontent.com/rishabh3354/4KWALL/main/share/screenshots/favorite-page-light.png</image>
+		</screenshot>
+	</screenshots>
+	<url type="homepage">https://warlordsoftwares.com/trending-apps/4kwall-modern-wallpaper-app-with-auto-wallpaper-changer/</url>
+	<url type="vcs-browser">https://github.com/rishabh3354/4KWALL/</url>
+	<url type="bugtracker">https://github.com/rishabh3354/4KWALL/issues</url>
+	<url type="contact">https://warlordsoftwares.com/contact-us/</url>
+	<url type="donation">https://www.paypal.me/rishabh3354/10</url>
+	<update_contact>contact@warlordsoftwares.com</update_contact>
+	<launchable type="desktop-id">com.warlordsoftwares.wallpaper-app-4kwall.desktop</launchable>
+	<content_rating type="oars-1.1" />
+	<releases>
+		<release version="2026.7.9" date="2026-7-9" />
+		<release version="2026.7.8" date="2026-7-8" />
+		<release version="2026.6.25" date="2026-6-29" />
+	</releases>
+</component>

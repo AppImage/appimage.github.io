@@ -1,0 +1,13 @@
+{
+  "name": "emrg-gui",
+  "version": "0.3.6",
+  "description": "EMRG GUI — Electron client for the EMRG self-evolving AI agent (Phase 3)",
+  "main": "main.js",
+  "dependencies": {
+    "dompurify": "^3.4.13",
+    "highlight.js": "^11.10.0",
+    "marked": "^12.0.2",
+    "smol-toml": "^1.3.0",
+    "ws": "^8.21.2"
+  }
+}

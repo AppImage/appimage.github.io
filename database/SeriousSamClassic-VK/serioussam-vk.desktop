@@ -1,0 +1,18 @@
+[Desktop Entry]
+X-AppImage-Arch=x86_64
+X-AppImage-Version=1.10.6d
+X-AppImage-Name=SeriousSamTFE-Vk
+Name=Serious Sam The First Encounter
+Type=Application
+Comment=Linux port of Serious Sam Classic with Vulkan support
+Exec=serioussam
+TryExec=serioussam
+Icon=serioussam
+Categories=Game;ActionGame;Shooter;
+Keywords=serious;sam;first;person;shooter;singleplayer;multiplayer;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=guess
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Sun Feb 18 12:05:06 2024 UTC                using RSA key CDC41982C027BAAA Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64

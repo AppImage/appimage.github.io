@@ -1,0 +1,24 @@
+{
+  "name": "object-builder",
+  "version": "0.1.0",
+  "description": "Object Builder - Editor de objetos graficos para OpenTibia",
+  "main": "./out/main/index.js",
+  "author": {
+    "name": "Calango Studios",
+    "email": "calangostudios@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "@tailwindcss/vite": "^4.2.1",
+    "electron-updater": "^6.8.3",
+    "i18next": "^25.8.13",
+    "lzma": "^2.3.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-i18next": "^16.5.4",
+    "react-icons": "^5.5.0",
+    "tailwindcss": "^4.2.1",
+    "zustand": "^5.0.11"
+  }
+}

@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-	<id>midi123</id>
-	<metadata_license>CC-BY-NC-SA-4.0</metadata_license>
-	<project_license>AGPL-3.0</project_license>
-	<name>midi123</name>
-	<summary>Play MIDI files using SoundFonts</summary>
-	<description>
-		<p>A SoundFont synthesizer capable of playing MIDI files from the command line.  This uses the CL-MeltySynth library for synthesis.</p>
-	</description>
-	<launchable type="desktop-id">midi123.desktop</launchable>
-	<url type="homepage">https://chiselapp.com/user/MistressRemilia/repository/CL-MeltySynth/</url>
-	<screenshots>
-		<screenshot type="default">
-			<image></image>
-		</screenshot>
-	</screenshots>
-	<provides>
-		<id>midi123.desktop</id>
-	</provides>
+        <id>midi123</id>
+        <metadata_license>CC-BY-NC-SA-4.0</metadata_license>
+        <project_license>AGPL-3.0</project_license>
+        <name>midi123</name>
+        <summary>Play MIDI files using SoundFonts</summary>
+        <description>
+                <p>A SoundFont synthesizer capable of playing MIDI files from the command line, and doing MIDI->WAV conversions.  This uses the CL-MeltySynth library for synthesis.</p>
+        </description>
+        <launchable type="desktop-id">midi123.desktop</launchable>
+        <url type="homepage">https://chiselapp.com/user/MistressRemilia/repository/midi123/</url>
+        <screenshots>
+                <screenshot type="default">
+                        <image></image>
+                </screenshot>
+        </screenshots>
+        <provides>
+                <id>midi123.desktop</id>
+        </provides>
 </component>
+

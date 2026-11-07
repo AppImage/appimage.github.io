@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 Josef Sejrek / Budbrain Software -->
+<component type="desktop-application">
+  <id>de.budbrain.jsDevCleaner</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsDevCleaner</name>
+  <summary>Reclaim the disk space your development tools left behind</summary>
+  <summary xml:lang="de">Den Speicher zurückholen, den deine Entwickler-Werkzeuge belegen</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <description>
+    <p>
+      Development tools quietly fill your disk: SDKs, emulators, package caches
+      and the dependency folders in every project you have ever built. This app
+      finds them, shows which ones are the big ones, and tells you for each
+      whether removing it costs you nothing, a download, or something you cannot
+      get back.
+    </p>
+    <p xml:lang="de">
+      Entwickler-Werkzeuge füllen die Platte, ohne zu fragen: SDKs, Emulatoren,
+      Paket-Caches und die Abhängigkeits-Ordner jedes Projekts, das je gebaut
+      wurde. Diese App findet sie, zeigt die dicken Brocken zuerst und sagt bei
+      jedem Eintrag, ob das Entfernen nichts kostet, einen Download, oder etwas,
+      das nicht wiederkommt.
+    </p>
+    <!-- EINE Liste, Übersetzung JE <li> direkt hinter dem englischen Eintrag.
+         Vorher standen hier zwei Listen, die zweite mit <ul xml:lang="de"> —
+         appstreamcli 1.0 (Ubuntu) lässt das durch, 1.1 (Fedora 41+) lehnt die
+         ganze Datei mit "description-enum-group-translated" ab. Und eine
+         abgelehnte metainfo heißt: die App erscheint dort in GNOME Software
+         überhaupt nicht. Gemessen in einem fedora:41-Container, nicht auf dem
+         Bauhost — dessen 1.0.2 meldet die Datei als fehlerfrei. -->
+    <ul>
+      <li>An overview that shows at a glance which area is eating your disk</li>
+      <li xml:lang="de">Eine Übersicht, die auf einen Blick zeigt, welcher Bereich den Platz frisst</li>
+      <li>Grouped by what you work with: IDEs, Android, Java, JavaScript, Python and more</li>
+      <li xml:lang="de">Gruppiert nach dem, womit du arbeitest: IDEs, Android, Java, JavaScript, Python und mehr</li>
+      <li>Each entry rated Safe, Caution or Risky, with a plain explanation</li>
+      <li xml:lang="de">Jeder Eintrag mit Stufe Sicher, Vorsicht oder Riskant und einer Erklärung dazu</li>
+      <li>Finds dependency and build folders inside your own projects</li>
+      <li xml:lang="de">Findet Abhängigkeits- und Build-Ordner in deinen eigenen Projekten</li>
+      <li>Keeps the newest SDK version out of harm's way</li>
+      <li xml:lang="de">Lässt die neueste SDK-Version in Ruhe</li>
+      <li>Refuses to touch system folders and other people's files</li>
+      <li xml:lang="de">Fasst Systemordner und fremde Dateien nicht an</li>
+      <li>Only shows what is actually installed on this machine</li>
+      <li xml:lang="de">Zeigt nur, was auf diesem Rechner wirklich installiert ist</li>
+      <li>44 languages, light and dark theme</li>
+      <li xml:lang="de">44 Sprachen, helles und dunkles Design</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">jsdevcleaner.desktop</launchable>
+
+  <categories>
+    <category>Development</category>
+    <category>Utility</category>
+  </categories>
+
+  <!-- Ohne <screenshots> nimmt AppImageHub selbst eines auf, in einem leeren
+       Testcontainer. Die URLs zeigen auf die Bilder der Website, die je
+       Release ohnehin gepflegt werden. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Overview: which area fills the disk</caption>
+      <caption xml:lang="de">Uebersicht: welcher Bereich die Platte fuellt</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsdevcleaner_01_overview.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A category with its entries</caption>
+      <caption xml:lang="de">Eine Kategorie mit ihren Eintraegen</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsdevcleaner_02_category.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Settings</caption>
+      <caption xml:lang="de">Einstellungen</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsdevcleaner_03_settings.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Android emulators and their images</caption>
+      <caption xml:lang="de">Android-Emulatoren und ihre Abbilder</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsdevcleaner_04_avds.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <releases>
+    <release version="1.1.0" date="2026-08-03">
+      <description>
+        <!-- Übersetzt wird JE <li>, nie die ganze Liste: ein <ul xml:lang="de">
+             lehnt appstreamcli 1.1 als "description-enum-group-translated" ab,
+             und eine abgelehnte metainfo heißt, die App erscheint in GNOME
+             Software gar nicht. -->
+        <ul>
+          <li>The app now speaks 44 languages instead of 22.</li>
+          <li xml:lang="de">Die App spricht jetzt 44 Sprachen statt 22.</li>
+          <li>The language picker has a page of its own.</li>
+          <li xml:lang="de">Die Sprachauswahl hat eine eigene, übersichtliche Seite.</li>
+          <li>It finds more: leftovers from containers, from building packages,
+          from microcontroller tools and from many more programming languages.</li>
+          <li xml:lang="de">Sie findet mehr: Reste von Containern, vom Paketbau,
+          von Mikrocontroller-Werkzeugen und von vielen weiteren
+          Programmiersprachen.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.2" date="2026-07-26">
+      <description>
+        <p>The Flatpak version now finds the IDE caches it previously walked
+        past, so the total it reports matches the other packages.</p>
+        <p xml:lang="de">Die Flatpak-Fassung findet jetzt auch die IDE-Caches, an
+        denen sie bisher vorbeigelaufen ist — die angezeigte Summe stimmt damit
+        mit den anderen Paketen überein.</p>
+      </description>
+    </release>
+    <release version="1.0.1" date="2026-07-26">
+      <description>
+        <p>The settings now show which file manager the app opens, let you try it
+        in one click, and let you enter a different one. The About window names the
+        package version as well.</p>
+        <p xml:lang="de">Die Einstellungen zeigen jetzt, welcher Dateimanager
+        geöffnet wird, lassen ihn mit einem Klick ausprobieren und erlauben, einen
+        anderen einzutragen. Das Info-Fenster nennt zusätzlich die Paketversion.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-07-25">
+      <description>
+        <p>First release.</p>
+        <p xml:lang="de">Erste Veröffentlichung.</p>
+      </description>
+    </release>
+  </releases>
+</component>

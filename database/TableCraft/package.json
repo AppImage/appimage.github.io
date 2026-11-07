@@ -1,0 +1,12 @@
+{
+  "name": "@table-craft/desktop",
+  "version": "1.18.1",
+  "private": true,
+  "description": "The table-craft Electron app",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/main/main.js",
+  "dependencies": {
+    "simple-icons": "^16.36.0"
+  }
+}

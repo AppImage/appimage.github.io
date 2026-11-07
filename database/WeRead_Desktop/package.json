@@ -1,0 +1,26 @@
+{
+  "name": "weread",
+  "productName": "WeRead",
+  "desktopName": "weread.desktop",
+  "description": "An unofficial, security-focused desktop wrapper for WeRead",
+  "homepage": "https://github.com/NeilYXIN/WeRead_Desktop",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeilYXIN/WeRead_Desktop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NeilYXIN/WeRead_Desktop/issues"
+  },
+  "main": "main.js",
+  "version": "1.1.2",
+  "author": "Xin Yang <96xinyang@gmail.com> (https://neilyxin.com)",
+  "maintainers": [
+    "Xin Yang <96xinyang@gmail.com> (https://neilyxin.com)"
+  ],
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "packageManager": "npm@11.6.0"
+}

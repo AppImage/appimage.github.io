@@ -1,0 +1,14 @@
+{
+  "name": "sbe",
+  "version": "3.8.0",
+  "description": "An unofficial Scrapbox desktop app by Electron",
+  "main": "src/main.mjs",
+  "type": "module",
+  "repository": "https://github.com/kondoumh/sbe",
+  "author": "kondoumh",
+  "license": "MIT",
+  "dependencies": {
+    "compare-versions": "^6.1.1",
+    "electron-store": "^11.0.2"
+  }
+}

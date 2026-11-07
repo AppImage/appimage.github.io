@@ -1,0 +1,17 @@
+{
+  "name": "@ecos-studio/desktop-electron",
+  "version": "0.1.0-alpha.9",
+  "private": true,
+  "description": "ECOS Studio desktop shell built with Electron.",
+  "homepage": "https://github.com/openecos-projects/ecos-studio",
+  "author": {
+    "name": "OpenECOS Team",
+    "email": "openecos-projects@users.noreply.github.com"
+  },
+  "type": "module",
+  "main": "./dist/main/index.js",
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "node-pty": "^1.1.0"
+  }
+}

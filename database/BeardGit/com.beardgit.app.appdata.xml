@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.beardgit.app</id>
+  <name>BeardGit</name>
+  <summary>One window for your whole repo</summary>
+  <developer_name>Adolfo Fuentes</developer_name>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>CC-BY-NC-SA-4.0</project_license>
+  <description>
+    <p>
+      The graph, your pull and merge requests, CI, issues, releases, terminals, AI runs,
+      your .http requests and a file editor, in the same desktop app, so shipping a change
+      stops being a tour of four of them.
+    </p>
+    <p>Built on Tauri, not Electron. No account, no telemetry.</p>
+  </description>
+  <launchable type="desktop-id">BeardGit.desktop</launchable>
+  <url type="homepage">https://the3eard.github.io/BeardGit/</url>
+  <url type="bugtracker">https://github.com/The3eard/BeardGit/issues</url>
+  <categories>
+    <category>Development</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+</component>

@@ -1,0 +1,26 @@
+{
+  "name": "vegord",
+  "version": "1.6.11",
+  "private": true,
+  "description": "Vegcord is a custom Discord desktop app",
+  "homepage": "https://vergoboy.ir/vegord",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vergoboy/vegord"
+  },
+  "license": "GPL-3.0-or-later",
+  "author": "Vergoboy",
+  "main": "dist/js/main.js",
+  "dependencies": {
+    "arrpc": "github:OpenAsar/arrpc#2234e9c9111f4c42ebcc3aa6a2215bfd979eef77",
+    "electron-updater": "6.6.2"
+  },
+  "optionalDependencies": {
+    "@vencord/venmic": "^7.1.0"
+  },
+  "packageManager": "pnpm@11.9.0",
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=11"
+  }
+}

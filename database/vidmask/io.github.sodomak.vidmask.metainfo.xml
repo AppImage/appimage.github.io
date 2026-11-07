@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.sodomak.vidmask</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>VidMask</name>
+  <summary>Privacy-focused virtual camera with background replacement</summary>
+  <description>
+    <p>
+      A privacy-focused Linux application that enables custom backgrounds in any video call.
+      Compatible with Signal Desktop, Zoom, Teams, Meet, and all other video chat software.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Real-time background replacement using MediaPipe</li>
+      <li>Multiple camera support with MJPG format</li>
+      <li>Adjustable FPS and resolution scaling</li>
+      <li>Edge smoothing with Gaussian blur</li>
+      <li>Light/Dark theme</li>
+      <li>Multi-language support (English, Čeština)</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">vidmask.desktop</launchable>
+  <url type="homepage">https://github.com/sodomak/vidmask</url>
+  <provides>
+    <binary>vidmask</binary>
+  </provides>
+  <developer id="io.github.sodomak">
+    <name>sodomak</name>
+    <url>https://github.com/sodomak</url>
+  </developer>
+  <releases>
+    <release version="0.3.1" date="2025-11-17"/>
+  </releases>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-info">mild</content_attribute>
+  </content_rating>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Video</category>
+  </categories>
+</component>

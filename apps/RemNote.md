@@ -1,0 +1,80 @@
+---
+layout: app
+
+permalink: /RemNote/
+description: RemNote
+
+icons:
+  - RemNote/icons/512x512/remnote.png
+
+screenshots:
+  - RemNote/screenshot.png
+
+authors:
+
+links:
+
+desktop:
+  Desktop Entry:
+    Name: RemNote
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: remnote
+    StartupWMClass: RemNote
+    X-AppImage-Version: 1.8.40.116298
+    Comment: RemNote
+    MimeType: x-scheme-handler/remnote
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-Signature: 'keybox ''/home/runner/.gnupg/pubring.kbx'' created [don''t
+      know]: invalid packet (ctb=0a) no signature found the signature could not be verified.
+      Please remember that the signature file (.sig or .asc) should be the first file
+      given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+
+electron:
+  name:comment3: DO NOT CHANGE THE NAME - THIS IS THE APP UID FOR LOCAL STORAGE
+  name:comment4: DO NOT CHANGE THE NAME - THIS IS THE APP UID FOR LOCAL STORAGE
+  displayName: RemNote
+  author: RemNote
+  description: RemNote
+  version:comment: MAKE SURE TO APPEND THE -BETA FLAG IF WE'RE DEPLOYING TO BETA
+  version: 1.8.40
+  main: build/electron/main.js
+  dependencies:
+    "@openid/appauth": "^1.3.0"
+    "@remnote/make-reactive": workspace:^
+    "@sentry/electron": "^4.0.0"
+    "@types/node": 16.11.38
+    adm-zip: "^0.5.1"
+    async-retry: "^1.3.3"
+    better-sqlite3: "^7.5.3"
+    cors: "^2.8.5"
+    electron-context-menu: "^2.3.0"
+    electron-devtools-installer: "^3.1.1"
+    electron-is-dev: "^1.2.0"
+    electron-updater: 5.2.4
+    eventemitter3: "^4.0.7"
+    express: "^4.17.3"
+    jest: "^27.5.1"
+    mocha: "^9.2.2"
+    nanoid: "^3.3.4"
+    node-gyp: "^9.1.0"
+    path: "^0.12.7"
+    portfinder: "^1.0.28"
+    socket.io: "^4.5.1"
+    sockjs: "^0.3.24"
+    underscore: "^1.13.4"
+    url-to-title: "^1.0.6"
+  resolutions:
+    "@types/react": "^17.0.47"
+    "@types/node": 16.11.38
+    node-gyp: 9.1.0
+  browserslist:
+    production: Chrome 100
+    electron: Chrome 100
+  engines:
+    node: 16.x
+---

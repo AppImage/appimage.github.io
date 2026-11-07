@@ -1,0 +1,32 @@
+{
+  "name": "Posnet-OPS",
+  "version": "11.29.70",
+  "description": "Online'owy Program Serwisowy",
+  "author": "Posnet Polska S.A.",
+  "license": "see details in <LICENSE>",
+  "main": "./dist/electron/main.js",
+  "productName": "Posnet OPS",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.erptool.org/electron/ops"
+  },
+  "dependencies": {
+    "@babel/node": "^7.12.6",
+    "@babel/runtime": "^7.12.5",
+    "@hapi/sntp": "^3.1.2",
+    "devextreme": "20.2.3",
+    "devextreme-vue": "20.2.3",
+    "electron-log": "^3.0.9",
+    "electron-updater": "^4.3.5",
+    "he": "^1.2.0",
+    "line-reader": "^0.4.0",
+    "lodash": "^4.17.20",
+    "node-abi": "^2.20.0",
+    "node-gzip": "^1.1.2",
+    "serialport": "9.0.7",
+    "telnet-client": "^1.4.6",
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.9",
+    "vuex": "^3.5.1"
+  }
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#185979"/><stop offset="1" stop-color="#102b49"/></linearGradient>
+    <linearGradient id="gold" x2="0" y2="1"><stop stop-color="#ffe092"/><stop offset="1" stop-color="#ef9f3d"/></linearGradient>
+    <clipPath id="round"><rect x="62" y="62" width="900" height="900" rx="205"/></clipPath>
+  </defs>
+  <rect x="62" y="62" width="900" height="900" rx="205" fill="url(#sea)"/>
+  <g clip-path="url(#round)">
+    <circle cx="555" cy="397" r="211" fill="url(#gold)"/>
+    <path d="M59 672c141-111 263-131 390-72 132 61 248 47 386-49 62-43 114-50 164-48v500H59Z" fill="#22a3a7"/>
+    <path d="M59 730c161-69 285-54 412 16 119 66 263 60 421-29 44-24 80-38 107-43v329H59Z" fill="#13627c"/>
+    <path d="M158 788c114-22 220-6 311 44 124 68 260 61 383-9" fill="none" stroke="#9af0dd" stroke-width="32" stroke-linecap="round" opacity=".8"/>
+    <path d="M341 264l-31-45m-76 142-54-11m549-180-16 54m111 75-49 25" stroke="#ffd98b" stroke-width="30" stroke-linecap="round"/>
+  </g>
+</svg>

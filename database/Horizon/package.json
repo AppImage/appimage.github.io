@@ -1,0 +1,16 @@
+{
+  "name": "horizon-electron",
+  "version": "2.3.3",
+  "author": "The F-List Team and Horizon Contributors",
+  "description": "Horizon",
+  "homepage": "https://horizn.moe",
+  "main": "main.js",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "@ghostery/adblocker-electron-preload": "^2.14.1",
+    "@mdit/plugin-alert": "^0.22.2",
+    "electron-updater": "^6.3.0",
+    "markdown-it": "^14.1.1"
+  },
+  "packageManager": "pnpm@10.33.0"
+}

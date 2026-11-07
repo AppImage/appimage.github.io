@@ -1,0 +1,20 @@
+{
+  "name": "log4ym-desktop",
+  "productName": "Log4YM",
+  "version": "3.12.1",
+  "description": "Log4YM - Amateur Radio Logging Desktop Application",
+  "homepage": "https://github.com/brianbruff/Log4YM",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brianbruff/Log4YM.git"
+  },
+  "main": "main.js",
+  "author": {
+    "name": "Brian Keating",
+    "email": "ei6lf@example.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-log": "^5.1.7"
+  }
+}

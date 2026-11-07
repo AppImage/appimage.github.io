@@ -1,0 +1,13 @@
+{
+  "name": "@sillage/desktop",
+  "productName": "Sillage",
+  "version": "0.30.0",
+  "private": true,
+  "description": "Sillage as a desktop app: the server and its interface on your own machine.",
+  "homepage": "https://marlburrow.github.io/sillage/",
+  "repository": "github:MarlBurroW/sillage",
+  "author": "MarlBurroW",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/main.cjs"
+}

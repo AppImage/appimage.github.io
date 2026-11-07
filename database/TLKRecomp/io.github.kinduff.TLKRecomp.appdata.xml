@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metainfo for the AppImage (scripts/package_appimage.sh copies it to usr/share/metainfo).
+     No screenshots on purpose: ours show game graphics, and catalogs copy them.
+     The AppImage catalog's test fails on any validate-tree warning, with appstreamcli 0.15 (Ubuntu 22.04) or
+     its own older AppImage of it. Both warn on tags newer than them, so this uses only old ones: developer_name
+     (not developer), no supports or vcs-browser url, and PolyForm as a LicenseRef (not on their SPDX list). -->
+<component type="desktop-application">
+  <id>io.github.kinduff.TLKRecomp</id>
+  <name>TLKRecomp</name>
+  <summary>The Lion King (SNES) recompiled for PC</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT AND LicenseRef-PolyForm-Noncommercial-1.0.0 AND Zlib AND OFL-1.1</project_license>
+  <developer_name>Alejandro AR</developer_name>
+  <description>
+    <p>
+      Disney's The Lion King (SNES, 1994) as a native PC program: a static recompilation of the US release, built
+      with snesrecomp. The game's 65816 program runs as compiled C; graphics, sound and timing run on an emulated PPU
+      and SPC, so it plays like the cartridge.
+    </p>
+    <p>
+      No game data is included. On first start it asks for your own dump of The Lion King (USA) ROM (.sfc or .smc)
+      and remembers where it is.
+    </p>
+    <ul>
+      <li>The whole game, start to finish, on keyboard or gamepad</li>
+      <li>Settings menu in the game (Tab or Esc), saved as you change it</li>
+      <li>CRT, LCD grid, Sharpen and Composite shaders; 8:7, 4:3 or 1:1 aspect; fullscreen</li>
+      <li>Experimental widescreen: 16:9, 21:9 or the window's shape</li>
+      <li>Practice mode for speedrunners, level select, save states and a turbo key</li>
+      <li>Remappable keys and gamepad buttons</li>
+    </ul>
+    <p>
+      For noncommercial use only: snesrecomp, compiled into the program, is under the PolyForm Noncommercial
+      License 1.0.0. The Lion King is (c) Disney / Virgin Interactive.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.kinduff.TLKRecomp.desktop</launchable>
+  <url type="homepage">https://github.com/kinduff/TLKRecomp</url>
+  <provides>
+    <binary>tlk_sdl</binary>
+  </provides>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">mild</content_attribute>
+  </content_rating>
+</component>

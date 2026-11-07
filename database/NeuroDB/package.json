@@ -1,0 +1,18 @@
+{
+  "name": "NeuroDB",
+  "version": "1.0.0",
+  "description": "AI-powered PostgreSQL database management tool",
+  "main": "main.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@langchain/core": "^0.3.0",
+    "@langchain/google-genai": "^0.1.0",
+    "dotenv": "^16.3.1",
+    "langchain": "^0.3.0",
+    "node-sql-parser": "^5.0.0",
+    "pg": "^8.11.3",
+    "xlsx": "^0.18.5"
+  }
+}

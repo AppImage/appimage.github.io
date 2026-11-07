@@ -1,0 +1,14 @@
+{
+  "name": "vyact",
+  "version": "1.4.14",
+  "description": "Local AI Agent - Voyage & Act",
+  "main": "main.js",
+  "author": {
+    "name": "Vyact",
+    "email": "vyactagent@gmail.com"
+  },
+  "homepage": "https://github.com/vyact/vyact",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "anti-detect-desktop",
+  "version": "1.13.0",
+  "private": true,
+  "type": "module",
+  "main": "./out/main/index.cjs",
+  "dependenciesMeta": {
+    "anti-detect-browser": {
+      "injected": true
+    }
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.0",
+    "playwright-core": "1.60.0",
+    "ws": "^8.0.0"
+  }
+}

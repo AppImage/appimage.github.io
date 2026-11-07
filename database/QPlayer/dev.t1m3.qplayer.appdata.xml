@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>dev.t1m3.qplayer</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0</project_license>
+
+  <name>QPlayer</name>
+  <summary>Extensible cross-platform music player</summary>
+  <summary xml:lang="zh-CN">可扩展的跨平台音乐播放器</summary>
+  <developer id="dev.t1m3">
+    <name>TIMER-err</name>
+  </developer>
+
+  <description>
+    <p>
+      QPlayer is an open-source music player for Linux, Windows, macOS, and
+      Android. It plays local music through a responsive interface with light,
+      dark, and optional cover-based dynamic color themes.
+    </p>
+    <p xml:lang="zh-CN">
+      QPlayer 是适用于 Linux、Windows、macOS 和 Android 的开源音乐播放器，
+      通过响应式界面播放本地音乐，并提供浅色、深色及可选的封面动态配色主题。
+    </p>
+    <p>
+      Animated per-syllable lyrics support translations and romanization.
+      Optional JavaScript source plugins can add online search,
+      recommendations, and playlists; QPlayer itself does not include an
+      online music source.
+    </p>
+    <p xml:lang="zh-CN">
+      逐字歌词动画支持翻译和罗马音。可选的 JavaScript 音源插件能够扩展在线搜索、
+      推荐和歌单；QPlayer 本身不内置在线音乐源。
+    </p>
+  </description>
+
+  <launchable type="desktop-id">dev.t1m3.qplayer.desktop</launchable>
+  <provides>
+    <binary>qplayer</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/TIMER-err/qplayer</url>
+  <url type="bugtracker">https://github.com/TIMER-err/qplayer/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image type="source" width="1500" height="800">https://raw.githubusercontent.com/TIMER-err/qplayer/master/docs/screenshots/platform-showcase.png</image>
+      <caption>Lyrics, settings, and recommendations across responsive layouts</caption>
+      <caption xml:lang="zh-CN">响应式布局下的歌词、设置与推荐页面</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1500" height="900">https://raw.githubusercontent.com/TIMER-err/qplayer/master/docs/screenshots/platform-showcase-2.png</image>
+      <caption>Recommendations, lyric settings, and the immersive lyric view</caption>
+      <caption xml:lang="zh-CN">推荐、歌词设置与沉浸式歌词页面</caption>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+</component>

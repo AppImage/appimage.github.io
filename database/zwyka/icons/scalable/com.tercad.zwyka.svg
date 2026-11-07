@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="108"
+   height="108"
+   viewBox="0 0 108 108"
+   version="1.1"
+   id="svg5"
+   xml:space="preserve"
+   sodipodi:docname="com.tercad.zwyka.svg"
+   inkscape:export-filename="ic_launcher.png"
+   inkscape:export-xdpi="16"
+   inkscape:export-ydpi="16"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+   id="defs10" /><sodipodi:namedview
+   id="namedview8"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="6.1650872"
+   inkscape:cx="26.844713"
+   inkscape:cy="54.25714"
+   inkscape:window-width="1920"
+   inkscape:window-height="1128"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg5"
+   showguides="true"
+   inkscape:pageshadow="0"><sodipodi:guide
+     position="56.122482,60.474314"
+     orientation="1,0"
+     id="guide9043"
+     inkscape:locked="false" /><sodipodi:guide
+     position="66.827927,53.012944"
+     orientation="0,-1"
+     id="guide9045"
+     inkscape:locked="false" /></sodipodi:namedview>
+    
+    
+    <path
+   id="path460-4-8"
+   style="fill:#912391;fill-opacity:1;stroke-width:0.30418"
+   d="m 25.913151,60.332054 c -8.453289,11.240805 -9.762346,32.399017 -5.512481,32.680524 6.125791,0.614763 8.673197,-16.031717 24.26317,-20.134305 10.034529,-2.640642 20.193471,-0.841724 28.541335,0.962888 11.017102,0.166714 4.282774,-19.026462 12.88385,-24.011285 2.531142,-1.444132 5.074887,-3.548892 3.337632,-5.760431 -0.9714,-1.26969 -2.8653,-1.883323 -4.309149,-2.185399 C 60.21628,37.791999 43.105147,39.640879 25.913151,60.332054 Z"
+   sodipodi:nodetypes="ccsccccc" />
+<circle
+   style="fill:#912391;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+   id="path442"
+   cx="80.95739"
+   cy="23.058905"
+   r="12.79952" /><circle
+   style="fill:#912391;fill-opacity:1;stroke:none;stroke-width:2.37949;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+   id="path442-3"
+   cx="53.40937"
+   cy="28.297575"
+   r="8.0582294" /><circle
+   style="fill:#912391;fill-opacity:1;stroke:none;stroke-width:2.37949;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+   id="path442-3-6"
+   cx="30.353638"
+   cy="38.469524"
+   r="8.0582294" /></svg>

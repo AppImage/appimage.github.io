@@ -1,0 +1,30 @@
+{
+  "name": "kwesi",
+  "productName": "Kwesi",
+  "version": "0.2.1",
+  "description": "Local-first desktop app for generating and training open-source music models.",
+  "author": "Fobia",
+  "homepage": "https://github.com/Fobia-ai/kwesi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fobia-ai/kwesi.git"
+  },
+  "private": true,
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "@tonejs/midi": "^2.0.28",
+    "abcjs": "^6.7.0",
+    "better-sqlite3": "^11.3.0",
+    "dotenv": "^16.4.5",
+    "electron-updater": "^6.8.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^6.26.2",
+    "remark-breaks": "^4.0.0",
+    "remark-gfm": "^4.0.1",
+    "tone": "^15.1.22",
+    "undici": "^6.28.1"
+  }
+}

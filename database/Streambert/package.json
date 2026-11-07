@@ -1,0 +1,16 @@
+{
+  "name": "streambert",
+  "version": "2.6.0",
+  "description": "Streambert Desktop App",
+  "author": {
+    "name": "truelockmc",
+    "email": "anonyson@proton.me"
+  },
+  "license": "GPL-3.0",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

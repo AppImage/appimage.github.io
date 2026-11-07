@@ -1,0 +1,15 @@
+{
+  "name": "voxa",
+  "version": "0.1.0",
+  "description": "System-wide voice-to-text desktop helper using ChatGPT transcription",
+  "homepage": "https://github.com/blackscythe123/voxa",
+  "main": "src/main.js",
+  "author": {
+    "name": "Voxa",
+    "email": "noreply@voxa.app"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-store": "^8.2.0"
+  }
+}

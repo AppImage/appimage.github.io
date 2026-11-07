@@ -1,0 +1,16 @@
+{
+  "name": "blanc",
+  "productName": "Blanc",
+  "version": "1.26.0",
+  "description": "Minimal Electron browser shell: custom chrome UI + built-in ad/tracker blocking, no extension-store dependency.",
+  "main": "src/main/main.js",
+  "type": "commonjs",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@1password/sdk": "0.5.0",
+    "@ghostery/adblocker-electron": "^2.18.2",
+    "electron-updater": "^6.8.9"
+  }
+}

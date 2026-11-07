@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <rect x="8" y="8" width="240" height="240" rx="40" fill="#7a161a" stroke="#d6aa52" stroke-width="8"/>
+  <g fill="#f0dcaa" text-anchor="middle" font-family="sans-serif" font-weight="bold">
+    <text x="128" y="116" font-size="80">DW5</text>
+    <text x="128" y="196" font-size="60">XL</text>
+  </g>
+</svg>

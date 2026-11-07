@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.dockport.Halvora</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Halvora</name>
+  <summary>Bitcoin halving tracker</summary>
+  <description>
+    <p>Halvora is a Bitcoin dashboard that tracks the bitcoin halving schedule and market data.</p>
+    <p>It shows a year-over-year price chart, per-halving historical periods, live price updates from the exchange websocket, mining difficulty, block height, and the estimated time to the next halving.</p>
+    <p>All historical bitcoin price data is stored locally, so the app works offline after an initial sync.</p>
+  </description>
+  <launchable type="desktop-id">halvora.desktop</launchable>
+  <url type="homepage">https://github.com/DOCKPORT/Halvora</url>
+  <url type="bugtracker">https://github.com/DOCKPORT/Halvora/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/DOCKPORT/Halvora/main/metainfo/halvora-screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.0.0" date="2026-08-07"/>
+  </releases>
+  <categories>
+    <category>Finance</category>
+  </categories>
+</component>

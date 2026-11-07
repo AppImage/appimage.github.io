@@ -1,0 +1,10 @@
+{
+  "name": "stargate-launcher",
+  "productName": "Stargate Command",
+  "version": "1.4.0",
+  "license": "MIT",
+  "description": "An app launcher that dials your programs like an SG-1 Stargate",
+  "author": "David Weisberg",
+  "main": "electron/main.js",
+  "private": true
+}

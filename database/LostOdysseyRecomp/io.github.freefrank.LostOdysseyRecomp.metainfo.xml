@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.freefrank.LostOdysseyRecomp</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Lost Odyssey Recomp</name>
+  <summary>Native Xbox 360 static recompilation of Lost Odyssey powered by Vulkan</summary>
+  <description>
+    <p>
+      Lost Odyssey Recomp is an experimental, native static recompilation project for Lost Odyssey on the Xbox 360, rendering with Vulkan.
+    </p>
+    <p>
+      Notice: Game data is NOT included. You must legally dump and supply your own legitimate retail game assets.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.freefrank.LostOdysseyRecomp.desktop</launchable>
+  <url type="homepage">https://github.com/freefrank/LostOdysseyRecomp</url>
+  <provides>
+    <binary>LostOdysseyRecomp</binary>
+  </provides>
+</component>

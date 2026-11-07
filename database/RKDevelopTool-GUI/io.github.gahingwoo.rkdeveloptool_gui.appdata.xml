@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata: what software centres and the AppImage catalog show
+     for the app. appimagetool validates it against the .desktop file and
+     looks it up by the .desktop file's name, and AppStream wants that name to
+     match the reverse-DNS <id> below, so all three must stay in sync.
+     CI validates it with Ubuntu 22.04's appstreamcli (0.15), which rejects
+     newer URL types such as vcs-browser. -->
+<component type="desktop-application">
+  <id>io.github.gahingwoo.rkdeveloptool_gui</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+
+  <name>RKDevelopTool GUI</name>
+  <summary>Flash and manage Rockchip devices</summary>
+
+  <developer id="io.github.gahingwoo">
+    <name>gahingwoo</name>
+  </developer>
+
+  <description>
+    <p>A graphical front end for Rockchip's rkdeveloptool. Flash firmware,
+      manage partitions and debug Rockchip boards over USB without using the
+      command line.</p>
+    <ul>
+      <li>One-click flashing of full firmware images, including packed update.img files</li>
+      <li>Partition table viewer with per-partition flashing and backup</li>
+      <li>Maskrom and Loader mode handling with loader download</li>
+      <li>Shows the equivalent rkdeveloptool command for every action</li>
+    </ul>
+    <p>It ships with rkdeveloptool built in, so nothing else needs to be installed.</p>
+  </description>
+
+  <launchable type="desktop-id">io.github.gahingwoo.rkdeveloptool_gui.desktop</launchable>
+  <provides>
+    <binary>rkdeveloptool-gui</binary>
+  </provides>
+
+  <categories>
+    <category>Development</category>
+  </categories>
+
+  <url type="homepage">https://github.com/gahingwoo/RKDevelopTool-GUI</url>
+  <url type="bugtracker">https://github.com/gahingwoo/RKDevelopTool-GUI/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Home screen</caption>
+      <image>https://raw.githubusercontent.com/gahingwoo/RKDevelopTool-GUI/main/docs/images/home_en.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="5.4.0" date="2026-09-28"/>
+  </releases>
+</component>

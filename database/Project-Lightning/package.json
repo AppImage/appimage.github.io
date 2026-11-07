@@ -1,0 +1,42 @@
+{
+  "name": "project-lightning-v2",
+  "productName": "project-lightning-data",
+  "version": "5.0.11",
+  "description": "Project Lightning V5 App",
+  "desktopName": "com.lightning.project.desktop",
+  "author": {
+    "name": "ByDraXx",
+    "email": "exaple@gmail.com"
+  },
+  "main": "src/main/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LightnigFast/Project-Lightning-V2.git"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/LightnigFast/Project-Lightning-V2/issues"
+  },
+  "homepage": "https://github.com/LightnigFast/Project-Lightning-V2#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.95.3",
+    "7zip-bin": "^5.2.0",
+    "better-sqlite3": "^12.6.2",
+    "extract-zip": "^2.0.1",
+    "node-hid": "^3.3.0",
+    "node-unrar-js": "^2.0.2",
+    "webtorrent": "^2.8.4"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.6.2": true,
+    "bufferutil@4.1.0": true,
+    "electron@40.1.0": true,
+    "electron-winstaller@5.4.0": true,
+    "lzma-native@8.0.6": true,
+    "node-datachannel@0.32.1": true,
+    "node-hid@3.3.0": true,
+    "utf-8-validate@6.0.6": true,
+    "utp-native@2.5.3": true
+  }
+}

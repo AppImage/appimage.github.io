@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.javocsoft.MesenOrion</id>
+  <name>Mesen Orion</name>
+  <summary>Multi-system emulator</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="io.github.javocsoft">
+    <name>JavocSoft</name>
+  </developer>
+  <description>
+    <p>
+      Mesen Orion is a multi-system emulator (NES, SNES, Game Boy, Game Boy Advance,
+      PC Engine, SMS/Game Gear, WonderSwan), a fork of Mesen2 with a renewed UI and
+      rendering-pipeline improvements.
+    </p>
+  </description>
+  <launchable type="desktop-id">mesen-orion.desktop</launchable>
+  <url type="homepage">https://github.com/javocsoft/MesenOrion</url>
+  <url type="bugtracker">https://github.com/javocsoft/MesenOrion/issues</url>
+  <categories>
+    <category>Game</category>
+    <category>Emulator</category>
+  </categories>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="3.0.1" date="2026-06-15" />
+    <release version="3.0.0" date="2026-06-15" />
+  </releases>
+</component>

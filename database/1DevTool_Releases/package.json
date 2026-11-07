@@ -1,0 +1,48 @@
+{
+  "name": "1devtool",
+  "version": "1.76.6",
+  "description": "One workspace. Every AI agent. Every project.",
+  "main": "dist/main/main/index.js",
+  "author": {
+    "name": "StoicSoft",
+    "email": "hello@stoicsoft.com"
+  },
+  "homepage": "https://1devtool.com",
+  "license": "MIT",
+  "dependencies": {
+    "@aptabase/electron": "^0.3.1",
+    "@clickhouse/client": "^1.18.2",
+    "@elastic/elasticsearch": "^9.3.4",
+    "@influxdata/influxdb-client": "^1.35.0",
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "@sentry/electron": "^7.10.0",
+    "@xterm/headless": "^5.5.0",
+    "axios": "^1.6.7",
+    "better-sqlite3": "^12.8.0",
+    "cassandra-driver": "^4.8.0",
+    "chokidar": "^3.6.0",
+    "electron-store": "^8.2.0",
+    "electron-updater": "^6.1.8",
+    "express": "^5.2.1",
+    "ioredis": "^5.10.0",
+    "kafkajs": "^2.2.4",
+    "mongodb": "^7.1.0",
+    "mysql2": "^3.19.1",
+    "nano": "^11.0.4",
+    "node-pty": "^1.0.0",
+    "pg": "^8.20.0",
+    "playwright": "^1.58.2",
+    "qrcode": "^1.5.4",
+    "semver": "^7.7.4",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
+    "vscode-jsonrpc": "^8.2.1",
+    "yaml": "^2.9.0",
+    "zod": "^4.3.6"
+  },
+  "overrides": {
+    "@electron/rebuild": "4.2.0",
+    "node-gyp": "12.4.0"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

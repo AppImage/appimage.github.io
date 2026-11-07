@@ -1,0 +1,10 @@
+{
+  "name": "stunts-hd",
+  "productName": "Stunts HD",
+  "version": "1.5.6",
+  "private": true,
+  "description": "Stunts (1990) in HD: the website's game, as a desktop app",
+  "main": "main.js",
+  "author": "mr-finster",
+  "homepage": "https://stunts-recomp.pages.dev/"
+}

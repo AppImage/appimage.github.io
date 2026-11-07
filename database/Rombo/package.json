@@ -1,0 +1,10 @@
+{
+  "name": "rombo",
+  "version": "1.4.4",
+  "description": "Editor di diagrammi entità-relazione (notazione Chen), per Windows, Linux e macOS",
+  "author": "Alessio Ferrari <alessioferrari374@gmail.com>",
+  "homepage": "https://github.com/AlessioFerrari8/Rombo",
+  "license": "MIT",
+  "private": true,
+  "main": "electron/main.js"
+}

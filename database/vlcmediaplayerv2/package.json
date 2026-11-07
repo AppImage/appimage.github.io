@@ -1,0 +1,17 @@
+{
+  "name": "vlc-redesign",
+  "productName": "VLC Redesign",
+  "version": "1.7.0",
+  "description": "VLC Redesign – unofficial fan-made media player (not affiliated with VideoLAN)",
+  "homepage": "https://stanotermans.github.io/vlcmediaplayerv2/",
+  "main": "main.js",
+  "author": "Stan Otermans <stanotermans@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ffmpeg-static": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stanotermans/vlcmediaplayerv2.git"
+  }
+}

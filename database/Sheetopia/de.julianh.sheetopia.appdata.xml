@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.julianh.sheetopia</id>
+  <name>Sheetopia</name>
+  <summary>Local-first sheet music app</summary>
+  <developer id="de.julianh">
+    <name>Julian Hofmann</name>
+  </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MPL-2.0</project_license>
+  <description>
+    <p>
+      Sheetopia is a cross-platform local-first sheet music app with optional self-hosted sync.
+    </p>
+  </description>
+  <launchable type="desktop-id">de.julianh.sheetopia.desktop</launchable>
+  <url type="homepage">https://github.com/juho05/sheetopia</url>
+  <url type="bugtracker">https://github.com/juho05/sheetopia/issues</url>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Music</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <provides>
+    <binary>sheetopia</binary>
+  </provides>
+</component>

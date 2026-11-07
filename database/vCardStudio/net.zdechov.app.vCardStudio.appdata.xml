@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>net.zdechov.app.vCardStudio</id>
+
+  <name>vCard Studio</name>
+  <summary>Contact management application</summary>
+
+  <url type="homepage">https://app.zdechov.net/vcard-studio</url>
+  <url type="contact">https://app.zdechov.net/c-evo#Support</url>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>CC0-1.0</project_license>
+
+  <description>
+    <p>
+      A contact management application with support for vCard file format (.vcf).
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Add, Edit, Clone or Remove contacts and contact properties</li>
+      <li>Shows contact fields in multiple tabs General, Home, Work, Social, Chat ans Others</li>
+      <li>Contact photo displayed and can be changed (supported image types JPEG, PNG, GIF and BMP)</li>
+      <li>Quick filter by table columns in contacts list</li>
+      <li>Combine multiple contact files together</li>
+      <li>Split contacts to separate files</li>
+      <li>Find any value in contacts</li>
+      <li>Find duplicate contacts to merge</li>
+      <li>Copy, Cut and Paste contacts from/to clipboard</li>
+      <li>Multilingual interface (English, Czech, Swedish)</li>
+      <li>Contact QR code</li>
+      <li>View contact source with syntax highlighting</li>
+      <li>Export to CSV, XML, MediaWiki, Excel, JSON, HTML and plain text.</li>
+      <li>Import from CSV, XML, MediaWiki and JSON.</li>
+      <li>Compare with another vCard file.</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">net.zdechov.app.vCardStudio.desktop</launchable>
+
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window</caption>
+      <image>https://svn.zdechov.net/vcard-studio/tags/1.5.0/Images/Screenshots/vCard%20Studio.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Find duplicates</caption>
+      <image>https://svn.zdechov.net/vcard-studio/tags/1.5.0/Images/Screenshots/Find%20duplicates.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Contact - General</caption>
+      <image>https://svn.zdechov.net/vcard-studio/tags/1.5.0/Images/Screenshots/Contact%20-%20General.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Contact - Work</caption>
+      <image>https://svn.zdechov.net/vcard-studio/tags/1.5.0/Images/Screenshots/Contact%20-%20Work.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Contact - Social</caption>
+      <image>https://svn.zdechov.net/vcard-studio/tags/1.5.0/Images/Screenshots/Contact%20-%20Social.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Contact - Home</caption>
+      <image>https://svn.zdechov.net/vcard-studio/tags/1.5.0/Images/Screenshots/Contact%20-%20Home.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Contact - Chat</caption>
+      <image>https://svn.zdechov.net/vcard-studio/tags/1.5.0/Images/Screenshots/Contact%20-%20Chat.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Contact - Others</caption>
+      <image>https://svn.zdechov.net/vcard-studio/tags/1.5.0/Images/Screenshots/Contact%20-%20Others.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Contact - All fields</caption>
+      <image>https://svn.zdechov.net/vcard-studio/tags/1.5.0/Images/Screenshots/Contact%20-%20All%20fields.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.5.0" date="2024-08-27">
+      <url type="details">https://svn.zdechov.net/vcard-studio/tags/1.5.0/Release%20Notes.txt</url>
+      <description>
+        <ul>
+          <li>Added: Keyboard shortcuts form accessible from Help menu.</li>
+          <li>Added: Menu action View - Fullscreen for switching into full screen mode.</li>
+          <li>Added: More menu action icons.</li>
+          <li>Added: File menu action Import to export vCard data from CSV, XML, JSON and MediaWiki.</li>
+          <li>Added: File menu action Export to export vCard data into CSV, XML, JSON, MediaWiki, Excel paste, plain text and HTML.</li>
+          <li>Added: Detect Beyond Compare as compare tool on Windows.</li>
+          <li>Added: Accept dropped files onto the application form.</li>
+          <li>Added: VCardProcessor class for processing contacts available from VCard package.</li>
+          <li>Added: Normalize menu action for normalization of contact property values.</li>
+          <li>Added: New file compare dialog with additional normalize options.</li>
+          <li>Modified: Improved new contact neme generation.</li>
+          <li>Modified: Improved forms resize handling.</li>
+          <li>Modified: Compare action uses external compare tool.</li>
+          <li>Fixed: Property form error.</li>
+          <li>Fixed: Not loaded last opened files.</li>
+          <li>Fixed: Correctly apply theme to contacts form.</li>
+          <li>Fixed: Width of not all contacts columns was remembered.</li>
+          <li>Fixed: Resize of compare and normalize forms.</li>
+          <li>Fixed: Report error if compare tool was not found.</li>
+          <li>Fixed: Font size was not scaled in source code form.</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+</component>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>com.playkye.Kye</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>MIT</project_license>
+	<developer_name>Geoff Woollams</developer_name>
+	<content_rating type="oars-1.1">
+		<content_attribute id="violence-cartoon">none</content_attribute>
+	</content_rating>
+	<name>Kye</name>
+	<summary>A classic puzzle game</summary>
+	<description>
+		<p>Kye is a current-gen remake of the Windows 3.1 puzzle game from 1992 by Colin Garbutt. In Kye, you must navigate each level to reach every diamond. Experiment to find the properties of the objects encountered to pass each level. Contains 500+ original and community levels and a level editor to make and share your own.</p>
+	</description>
+	<launchable type="desktop-id">com.playkye.Kye.desktop</launchable>
+	<url type="homepage">https://playkye.com/</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://playkye.com/images/2.png</image>
+		</screenshot>
+		<screenshot>
+			<image>https://playkye.com/images/3.png</image>
+		</screenshot>
+		<screenshot>
+			<image>https://playkye.com/images/4.png</image>
+		</screenshot>
+		<screenshot>
+			<image>https://playkye.com/images/5.png</image>
+		</screenshot>
+		<screenshot>
+			<image>https://playkye.com/images/6.png</image>
+		</screenshot>
+		<screenshot>
+			<image>https://playkye.com/images/7.png</image>
+		</screenshot>
+		<screenshot>
+			<image>https://playkye.com/images/8.png</image>
+		</screenshot>
+	</screenshots>
+</component>

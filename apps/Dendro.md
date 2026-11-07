@@ -1,0 +1,641 @@
+---
+layout: app
+
+permalink: /Dendro/
+description: "Fedora DNF5 package manager and dependency hierarchy explorer"
+license: "GPL-3.0-or-later"
+
+icons:
+  - Dendro/icons/scalable/io.github.xyasharx.Dendro.svg
+screenshots:
+- https://raw.githubusercontent.com/xyasharx/Dendro/main/data/screenshots/main_window.png
+
+authors:
+  - name: "xyasharx"
+    url: "https://github.com/xyasharx"
+
+links:
+  - type: GitHub
+    url: xyasharx/Dendro
+  - type: Download
+    url: https://github.com/xyasharx/Dendro/releases
+
+desktop:
+  Desktop Entry:
+    Name: Dendro
+    GenericName: Fedora Package Manager
+    Comment: DNF5 daemon package manager and RPM dependency inspector
+    Exec: dendro %f
+    Icon: io.github.xyasharx.Dendro
+    Terminal: false
+    Type: Application
+    Categories: Settings
+    Keywords: fedora
+    MimeType: application/x-rpm
+    StartupNotify: true
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: GPL-3.0
+
+appdata:
+  Type: desktop-application
+  ID: io.github.xyasharx.Dendro
+  Name:
+    C: Dendro
+  Summary:
+    C: Fedora DNF5 package manager and dependency hierarchy explorer
+  Description:
+    C: >-
+      <p>Dendro is a graphical package manager and dependency hierarchy explorer for Fedora RPM systems.</p>
+  
+      <p>Package changes are resolved and executed through Fedora&apos;s DNF5 system daemon. The daemon owns RPM transaction
+      locking and Polkit authorization; Dendro reviews the structured resolved plan before requesting execution.</p>
+  
+      <ul>
+        <li>Structured DNF5 transaction review with protected-package removal warnings</li>
+        <li>Repository enable and disable through the DNF5 repository D-Bus API</li>
+        <li>Native RPM metadata, dependency, file-integrity, changelog, and scriptlet inspection</li>
+        <li>Constrained direct HTTPS third-party repository-file addition and deletion on RPM installations</li>
+        <li>Flatpak support without a generic host-command escape</li>
+      </ul>
+  ProjectLicense: GPL-3.0-or-later
+  Url:
+    homepage: https://github.com/xyasharx/Dendro
+    bugtracker: https://github.com/xyasharx/Dendro/issues
+  Launchable:
+    desktop-id:
+    - io.github.xyasharx.Dendro.desktop
+  Screenshots:
+  - default: true
+    caption:
+      C: Main package tree view with queued operations
+    thumbnails: []
+    source-image:
+      url: https://raw.githubusercontent.com/xyasharx/Dendro/main/data/screenshots/main_window.png
+      lang: C
+  Releases:
+  - version: 2.12.0
+    unix-timestamp: 1792195200
+    description:
+      C: >-
+        <p>Repository configuration support and AppImage runtime repair:</p>
+  
+        <ul>
+          <li>Add direct HTTPS repository-file installation for RPM-host Dendro through a constrained Polkit helper; no shell,
+        DNF command bridge, or root-side network fetch is used.</li>
+          <li>Validate bounded UTF-8 configuration content, HTTPS repository sources, package-signature policy, option allowlists,
+        duplicate repository IDs, and atomic no-overwrite persistence.</li>
+          <li>Keep repository-file addition unavailable from Flatpak and portable builds without the RPM-installed helper.</li>
+          <li>Bundle the native Qt XCB/XKB runtime closure required by the AppImage and add an offline graphical startup smoke
+        test to release CI.</li>
+        </ul>
+  - version: 2.11.0
+    unix-timestamp: 1792022400
+    description:
+      C: >-
+        <p>DNF5 daemon transaction architecture:</p>
+  
+        <ul>
+          <li>Route package install, removal, upgrade, update, repository-state, and cache operations through Fedora&apos;s
+        DNF5 system daemon.</li>
+          <li>Review a structured daemon-resolved transaction plan before authorization and execute only that retained plan.</li>
+          <li>Remove the generic privileged DNF command runner from package transaction paths.</li>
+          <li>Constrain repository-file deletion to a validated RPM-installed helper because the daemon does not expose a deletion
+        API.</li>
+          <li>Classify repository origins from parsed base URL hostnames and treat malformed or lookalike URLs as non-official
+        origins.</li>
+        </ul>
+  - version: 2.10.1
+    unix-timestamp: 1791936000
+    description:
+      C: >-
+        <p>DNF5 Repository Overrides Ingestion, Live Network Diagnostics, and UI Alignment:</p>
+  
+        <ul>
+          <li>DNF5 Repository Overrides Ingestion: Scans /etc/dnf/repos.override.d/99-config_manager.repo to ensure repository
+        disable/enable states persist reliably across application restarts.</li>
+          <li>Sequential Polkit Command Queueing: Toggling multiple repositories in succession now queues commands in PolkitTransactionRunner,
+        preventing subsequent actions from being silently discarded.</li>
+          <li>Live Network Failure Diagnosis: The Check Mirrors action now detects DNS failures, connection timeouts, and unreachable
+        hosts in real time, displaying clear diagnostic messages instead of hanging.</li>
+          <li>Explicit Up-to-Date State: Displays an explicit confirmation message in the footer status bar when a mirror check
+        finds zero pending updates.</li>
+          <li>COPR Onboarding UI Harmonization: Aligned the Enable COPR action button and repository filter input with matching
+        26px heights, 6px corner radii, and clean card styling.</li>
+        </ul>
+  - version: 2.10.0
+    unix-timestamp: 1791936000
+    description:
+      C: >-
+        <p>Preferences Dialog, Live Mirror Telemetry, Two-Phase Progress, and Filter Syntax Engine:</p>
+  
+        <p>Special thanks to Ricky Tigg for proposing the RPM Epoch display option, search filter syntax validation, and detailed
+        usability feedback (#40).</p>
+  
+        <ul>
+          <li>Preferences &amp; About Dialog: Introduced a dedicated configuration window (Ctrl+,) to manage application behavior
+        and inspect runtime and licensing metadata.</li>
+          <li>RPM Epoch on Demand: Added an option to display package versions with their full epoch prefix (%{epoch}:%{evr},
+        e.g. 0:1.10.3-1.fc45), with instant reactive updates across the tree view.</li>
+          <li>Search Syntax Highlighting &amp; Autocompletion: Integrated real-time filter syntax validation with dynamic color-coded
+        borders (green for valid filters, purple for invalid filters) and native QCompleter autocompletion.</li>
+          <li>Unrestricted Global Search: Search queries now automatically search across all installed packages without being
+        constrained to the selected sidebar category.</li>
+          <li>DNF5 EVR Target Version Resolution: Aligned update parsing with DNF5 JSON specifications, accurately displaying
+        upgrade target paths in table columns and action buttons.</li>
+          <li>Two-Phase Progress Bar Engine: Separated package download progress (0-30%) from transaction execution (30-100%)
+        and merged process channels, resolving progress bar freezing.</li>
+          <li>Live Mirror Telemetry: The Check Mirrors action now streams real-time status updates in the footer, displaying
+        the active repository name and its remote address (metalink/baseurl).</li>
+          <li>Instant Updates Eviction: Upgraded packages are immediately evicted from the pending updates cache upon transaction
+        completion, removing them from the Available Updates view without a manual reload.</li>
+          <li>Dialog Button Geometry: Harmonized button padding and rounded corners across modal simulation dialogs and execution
+        drawers.</li>
+        </ul>
+  - version: 2.9.0
+    unix-timestamp: 1791849600
+    description:
+      C: >-
+        <p>Multi-Tier Removal Safety Engine, Responsive Layouts, and Search Polish:</p>
+  
+        <p>Special thanks to Ricky Tigg for testing, layout observations, and usability feedback (#40).</p>
+  
+        <ul>
+          <li>Multi-Tier Removal Safety Engine: Implemented a deterministic five-tier removal risk classifier (Critical, High,
+        Medium, Low, Safe), eliminating false-positive alarms on standard user software (kate) and developer subpackages (rpm-build,
+        kernel-headers).</li>
+          <li>Window &amp; Layout Usability: Added an F11 fullscreen toggle that preserves maximized window states, unlocked
+        sidebar resizing down to 180px, and added persistent layout restoration for splitters and headers.</li>
+          <li>Column Visibility Picker: Added a right-click context menu to the package table header, allowing users to show
+        or hide specific columns on demand.</li>
+          <li>Responsive Column Layout: Compacted default column baselines from 745px down to 565px and restored horizontal
+        scrollbars for narrow laptop displays.</li>
+          <li>Search &amp; Filter Enhancements: Added the status:available search filter, enabled multi-word remote repository
+        queries, and prevented path queries from jumping on incomplete keystrokes.</li>
+          <li>Toolbar Geometry Harmonization: Locked all header buttons and inputs to an exact 28px height metric while preserving
+        standard padding in dialogs and execution drawers.</li>
+          <li>Privileged Repository File Removal: Converted the repository removal action into real privileged file deletion
+        (rm -f) via Polkit rather than merely disabling the channel.</li>
+        </ul>
+  - version: 2.8.3
+    unix-timestamp: 1791763200
+    description:
+      C: >-
+        <p>Architectural Hardening, Singleton Runner Lifecycle, and Zero-Polling Quiescence:</p>
+  
+        <ul>
+          <li>Zero-Polling Architecture: Removed the legacy 500ms signal timer from the entrypoint, allowing the kernel to manage
+        SIGINT directly without periodic CPU wakeups.</li>
+          <li>Singleton Runner Lifecycle: Refactored the Polkit transaction runner from repetitive per-action instantiation
+        into a persistent single-instance service, eliminating orphaned Qt objects and memory leaks.</li>
+          <li>Event Queue CLI Opener: Replaced the arbitrary 300ms initialization delay with a 0ms event-queue post, ensuring
+        local RPM packages open immediately upon window mapping.</li>
+          <li>Telemetry Timestamp Parity: Standardized millisecond ISO timestamps across all debug log statements, including
+        backend database startup benchmarks.</li>
+        </ul>
+  - version: 2.8.2
+    unix-timestamp: 1791676800
+    description:
+      C: >-
+        <p>Idle CPU Quiescence, UI Metric Alignment, and DNF5 Hardening:</p>
+  
+        <p>Special thanks to Ricky Tigg for diagnostic reports, telemetry feedback, and extensive testing on issue #38.</p>
+  
+        <ul>
+          <li>Idle CPU Quiescence: Replaced the background polling timer with in-process Qt colorSchemeChanged and D-Bus FreeDesktop
+        portal (org.freedesktop.portal.Settings.SettingChanged) signal subscriptions, dropping idle CPU utilization to 0.0%.</li>
+          <li>DNF5 Output Hardening: Added explicit newlines to dnf5 repoquery formatting strings (%{name}\n), resolving single-line
+        package name concatenation and restoring leaf orphan and user-installed detection.</li>
+          <li>UsrMerge Symlink Resolution: Enhanced rpm -qf ownership queries to resolve canonical symlinks (/bin, /sbin, /lib64),
+        accurately identifying package ownership regardless of path format.</li>
+          <li>Terminal Log Cursor Anchoring: Anchored text insertion to the document end in the transaction drawer, preventing
+        user text selection from scrambling real-time streaming logs.</li>
+          <li>Worker Cancellation Fix: Eliminated an UnboundLocalError exception during reverse dependency worker cancellation.</li>
+          <li>Regex Precompilation: Precompiled regular expressions across natural version sorting, size parsing, and live transaction
+        progress chunks.</li>
+        </ul>
+  - version: 2.8.1
+    unix-timestamp: 1791590400
+    description:
+      C: >-
+        <p>Header Metric Alignment, Vector Theme Toggle, and Toolbar Polish:</p>
+  
+        <ul>
+          <li>Fixed dark mode theme toggle icon visibility by replacing Adwaita&apos;s hardcoded charcoal fills with resolution-independent
+        vector Sun and Moon rendering via QPainterPath.</li>
+          <li>Standardized header toolbar button metrics to an exact 30px height, eliminating vertical size discrepancies between
+        action buttons, tool clusters, and icon toggles.</li>
+          <li>Streamlined the updates view by removing the redundant Show All Packages button and utilizing the Updates pill
+        as the primary entry and exit toggle.</li>
+          <li>Hardened icon theme candidate resolution by inspecting non-null icon state rather than relying on boolean truthiness.</li>
+        </ul>
+  - version: 2.8.0
+    unix-timestamp: 1791417600
+    description:
+      C: >-
+        <p>Remote Package Installation, File Ownership Search, Fast Startup, and Theming Polish:</p>
+  
+        <ul>
+          <li>Added on-demand remote package search and installation: Search uninstalled software across enabled DNF repositories
+        and install packages directly through the Polkit execution drawer.</li>
+          <li>Integrated native file path ownership queries into the search bar: Querying paths like /usr/bin/git or /usr/lib64/libc.so.6
+        automatically identifies and selects the owning package.</li>
+          <li>Added interactive Jump to Package navigation: Double-clicking any dependency in the main tree or dependent in
+        the Required By list navigates directly to that package.</li>
+          <li>Added an RPM Maintainer Scriptlets tab in the Inspector panel to audit pre/post installation shell scripts (%pre,
+        %post).</li>
+          <li>Added a Copy Dependency Chain action to the context menu to export formatted dependency trees to the clipboard.</li>
+          <li>Eliminated the 9-second startup delay by optimizing AppStream XML parsing with in-memory root clearance, dropping
+        startup time to under 500 milliseconds.</li>
+          <li>Resolved GNOME color-scheme detection when switching back to light mode, and eliminated window titlebar theme
+        flickering on launch.</li>
+          <li>Streamlined the theme engine to two high-contrast palettes (Dark and Light) with a 1-click header toggle button.</li>
+          <li>Dynamically themed all simulation consoles, transaction tables, and progress bars to prevent dark contrast clashes
+        in light mode.</li>
+          <li>Fixed post-transaction state synchronization: Inspector panel clears removed packages automatically, and staged
+        action buttons reset immediately upon completion.</li>
+          <li>Precomputed sidebar delegate palettes to achieve smooth 60fps scrolling with zero process overhead.</li>
+        </ul>
+  - version: 2.7.1
+    unix-timestamp: 1791331200
+    description:
+      C: >-
+        <p>GTK 3 Theme Startup Fix and Monospace Console Polish:</p>
+  
+        <ul>
+          <li>Resolved GTK 3 theme auto-detection startup race condition: Synchronously queried host desktop preferences (gsettings,
+        gdbus portal, settings.ini) prior to UI construction to prevent Qt6 Wayland portal latency from forcing light mode on
+        initial launch.</li>
+          <li>Fixed duplicate desktop portal registration warning by setting the application desktop file name before QApplication
+        instantiation.</li>
+          <li>Applied native system monospace fonts (FixedFont) to the dry-run simulation log console, repository table IDs,
+        and transaction history commands.</li>
+          <li>Cleaned up duplicate event loop timer initializations and resolved syntax indentation in the dry-run simulation
+        dialog.</li>
+        </ul>
+  - version: 2.7.0
+    unix-timestamp: 1791331200
+    description:
+      C: >-
+        <p>System Typography Inheritance, Taxonomy Precision, and Navigation Polish:</p>
+  
+        <ul>
+          <li>Inherited desktop environment point sizes and stripped hardcoded pixel font sizes across all dialogs and stylesheets,
+        ensuring complete compliance with system accessibility and display scaling.</li>
+          <li>Adopted system monospace fonts for package versions, upgrade paths, transaction history commands, dry-run simulation
+        logs, and file manifests.</li>
+          <li>Fixed contextual header action buttons (Upgrade All, Check Mirrors) failing to activate when opening updates from
+        the header pill, and added a direct return button.</li>
+          <li>Resolved plasma-desktop misclassification into Web Browsers by detecting FHS shell containments and disambiguating
+        umbrella Network categories.</li>
+          <li>Resolved kamera and dendro self-classification into Themes &amp; Visual Assets by decoupling settings flags from
+        launcher detection and ignoring standard hicolor app icon paths.</li>
+          <li>Correctly routed standalone Python CLI tools (ansible, meson, certbot) to Command-Line Utilities and pure documentation
+        (man-pages, git-doc) to Development Headers &amp; SDKs.</li>
+          <li>Decoupled TreeItem parent back-references to eliminate circular reference memory retention during tree reloads.</li>
+          <li>Implemented defensive wait cursor state management to prevent cursor freeze bugs, and adopted adaptive screen
+        geometry for laptop displays.</li>
+          <li>Removed the vestigial confidence percentage badge from the inspector panel.</li>
+        </ul>
+  - version: 2.6.0
+    unix-timestamp: 1791244800
+    description:
+      C: >-
+        <p>GTK 3 Theme Integration, Fedora 45 DNF5 Paths, Desktop Shell Taxonomy Fix, and UI Polish:</p>
+  
+        <p>Special thanks to Marcin Juszkiewicz for thorough Fedora 45 testing and usability suggestions, and Ricky-Tigg for
+        reporting issue #38.</p>
+  
+        <ul>
+          <li>Resolved GTK 3 dark mode detection (Issue #38): Added multi-tier checks across gsettings gtk-theme, settings.ini,
+        XFCE xfconf-query, and GTK_THEME environment variables.</li>
+          <li>Resolved CodeQL Alert #2: Validated repository hostnames using urllib.parse.urlsplit to eliminate substring sanitization
+        vulnerabilities.</li>
+          <li>Fixed desktop shell classification: Detected FHS shell layouts and session definitions, routing plasma-desktop,
+        gnome-shell, and compositors to Window Managers &amp; Addons instead of Web Browsers.</li>
+          <li>Supported Fedora 45+ DNF5 repository relocation: Scanned /usr/share/dnf5/repos.d/ alongside classic /etc/ paths.</li>
+          <li>Accurately classified third-party repositories and added privileged repository file removal.</li>
+          <li>Displayed exact installed provider versions (e.g. 1.6.40-2.fc41) in the dependency tree instead of the generic
+        satisfied label.</li>
+          <li>Fixed right-panel Re-Scan button mutating the central dependency tree.</li>
+          <li>Added a sidebar toggle button (Ctrl+B) and a direct return action when viewing updates.</li>
+          <li>Reflowed 70-column hard-wrapped RPM package descriptions and added error-safe busy pointer indicators.</li>
+        </ul>
+  - version: 2.5.1
+    unix-timestamp: 1791072000
+    description:
+      C: >-
+        <p>Capability-Driven Classification, Reverse Dependency Sonames, and Safety Parser Fix:</p>
+  
+        <ul>
+          <li>Resolved silent reverse dependency discovery failure by querying all capabilities and ELF sonames provided by
+        a target package, enabling accurate dependent lookups for shared libraries.</li>
+          <li>Fixed transaction simulation parser to parse the multiline DNF removal section line-by-line, guaranteeing protected
+        package removals are caught across large batches.</li>
+          <li>Separated Qt5 and Qt6 plugin directories from media decoders, routing platform plugins to GUI frameworks and toolkits
+        rather than media codecs.</li>
+          <li>Expanded AppStream metadata indexing to scan active DNF5 and DNF repository repodata caches, importing metadata
+        from RPM Fusion and COPR repositories.</li>
+          <li>Integrated standardized RPM virtual capability extraction for Python distributions, Rust crates, GStreamer elements,
+        and JVM artifacts.</li>
+          <li>Refactored unit test suite to eliminate scoping collisions and added regression coverage for multiline removal
+        detection.</li>
+        </ul>
+  - version: 2.5.0
+    unix-timestamp: 1791072000
+    description:
+      C: >-
+        <p>Deterministic Taxonomy Overhaul, Decoupled System Protection, and Workflow Polish:</p>
+  
+        <ul>
+          <li>Decoupled system protection from core classification: security components (PAM, Polkit, audit, firewalld) and
+        kernel modules now reside in their functional domains rather than being hijacked by fedora_core.</li>
+          <li>Added first-class is_protected package tracking for deterministic removal safety auditing without category distortion.</li>
+          <li>Implemented an O(1) constant-time taxonomy override architecture for known upstream packaging quirks.</li>
+          <li>Enforced strict desktop launcher validation via RPM DIRINDEXES to prevent autostart and background files from
+        qualifying as applications.</li>
+          <li>Resolved a sidebar counter double-counting defect, aligning badge numbers exactly with visible package rows.</li>
+          <li>Completed the selective upgrade pipeline: staged upgrades remain visible in Pending Changes and can be executed
+        directly from the transaction drawer.</li>
+          <li>Introduced dual context menu actions for updatable packages (Queue Upgrade vs. Queue Removal).</li>
+          <li>Added defensive RPM header timestamp decoding and URL protocol sanitization in the inspector panel.</li>
+        </ul>
+  - version: 2.4.0
+    unix-timestamp: 1790985600
+    description:
+      C: >-
+        <p>Live Mirror Refresh, DNF Cache Cleaner, and Navigation Polish:</p>
+  
+        <ul>
+          <li>Added live repository synchronization using the --refresh flag to query remote mirrors directly for new packages.</li>
+          <li>Integrated a dedicated package cache cleaner into the Repositories dialog (dnf clean all).</li>
+          <li>Streamlined sidebar navigation by removing redundant view shortcuts and refining toolbar actions.</li>
+          <li>Fixed a syntax indentation issue in the main window sidebar count aggregator.</li>
+        </ul>
+  - version: 2.3.0
+    unix-timestamp: 1790726400
+    description:
+      C: >-
+        <p>Selective Upgrades, Queue Discard, and Theme Inversion Fix:</p>
+  
+        <ul>
+          <li>Introduced selective per-package upgrades, allowing individual packages to be staged and upgraded without running
+        a full system upgrade.</li>
+          <li>Added a one-click Discard action to instantly revert all staged pending changes across the tree.</li>
+          <li>Fixed a Qt style collision that caused tree view backgrounds to invert between light and dark themes on systems
+        with host dark mode enabled.</li>
+          <li>Cleaned up tree hierarchy: packages with zero dependencies no longer show an empty expansion chevron.</li>
+          <li>Fixed window and system tray icon resolution to display Dendro&apos;s application logo instead of generic download
+        arrows.</li>
+        </ul>
+  - version: 2.2.0
+    unix-timestamp: 1790640000
+    description:
+      C: >-
+        <p>In-App Upgrades, Local RPM File Handler, and UI Overhaul:</p>
+  
+        <ul>
+          <li>Integrated native in-app system upgrades (dnf upgrade) with Polkit elevation and live streaming terminal logs.</li>
+          <li>Added one-click batch leaf orphan cleanup (dnf autoremove) for unneeded dependencies.</li>
+          <li>Registered as a system file handler for local .rpm packages, providing in-process header inspection and direct
+        installation.</li>
+          <li>Added system tray integration with background update polling and native desktop notifications.</li>
+          <li>Overhauled sidebar navigation with right-aligned counter pill badges and typographic section dividers.</li>
+          <li>Refined header bar with grouped secondary tools, search shortcut chip, and micro-bordered status badges in the
+        tree view.</li>
+        </ul>
+  - version: 2.1.0
+    unix-timestamp: 1790553600
+    description:
+      C: >-
+        <p>The Deterministic Taxonomy &amp; Core Pipeline Overhaul:</p>
+  
+        <ul>
+          <li>Replaced the heuristic scoring classifier with a deterministic two-phase ontological pipeline anchored to FHS
+        filesystem manifests and FreeDesktop specifications.</li>
+          <li>Eliminated category cannibalization: interactive desktop media players are verified as applications before domain
+        checks, preventing misclassification into the hardware stack.</li>
+          <li>Strict desktop launcher validation: autostart services, Akonadi agents, and background helper desktop files are
+        no longer promoted to GUI desktop applications.</li>
+          <li>Resolved CLI utility identification for tools utilizing internal helper libraries in /usr/libexec (e.g. 7zip).</li>
+          <li>Fixed headless runtime identification, ensuring packages like java-*-openjdk-headless remain under language runtimes
+        rather than graphical applications.</li>
+          <li>Purged obsolete heuristic scoring code and synchronized unit tests for 100% deterministic test assertion.</li>
+        </ul>
+  - version: 2.0.3
+    unix-timestamp: 1790553600
+    description:
+      C: >-
+        <p>Source Archive Case-Alignment and Build Fix:</p>
+  
+        <ul>
+          <li>Resolved rpmbuild source archive filename mismatch occurring when building directly from GitHub release tarballs
+        (Dendro-2.0.1.tar.gz vs dendro-2.0.1.tar.gz).</li>
+          <li>Synchronized source directory extraction macros across dendro.spec and COPR build scripts to ensure flawless mock
+        and local source RPM generation.</li>
+        </ul>
+  - version: 2.0.1
+    unix-timestamp: 1790467200
+    description:
+      C: >-
+        <p>The Two-Tier System Taxonomy, Visual Contrast, and Native Safety Audit Release:</p>
+  
+        <ul>
+          <li>Introduced a complete two-tier hierarchical taxonomy across 6 core system pillars, adding granular FreeDesktop
+        subcategories for desktop applications and command-line tools.</li>
+          <li>Integrated automatic ingestion of Fedora comps.xml distribution compose metadata from local DNF caches to eliminate
+        package categorization guesswork.</li>
+          <li>Resolved light and dark theme icon contrast issues: dynamically synchronizes QApplication palette text colors
+        with FreeDesktop symbolic SVGs, eliminating invisible white-on-white or dark-on-dark icons.</li>
+          <li>Differentiated programming runtimes: assigned dedicated vector icons for Rust, Java, and Node.js, replacing the
+        repeated development hammer icon.</li>
+          <li>Integrated native in-process system removal safety assessment in the package inspector, reporting protected root
+        status and leaf orphan safety without external daemon requirements.</li>
+          <li>Purged all raw unicode emoji fonts and glyphs across the entire application interface to ensure complete Fontconfig
+        stability.</li>
+        </ul>
+  - version: 1.9.4
+    unix-timestamp: 1790467200
+    description:
+      C: >-
+        <p>Native FreeDesktop Icon Migration &amp; Fontconfig Fix:</p>
+  
+        <ul>
+          <li>Completely resolved a startup segmentation fault in libfontconfig (FcCharSetFindLeafForward) occurring when Qt
+        measured layout button dimensions containing raw emoji characters (#32).</li>
+          <li>Migrated all buttons, category labels, dialogs, and table indicators from raw unicode emojis to native FreeDesktop
+        vector theme icons (QIcon).</li>
+          <li>Improved desktop integration and theme consistency across GNOME and KDE Plasma environments.</li>
+        </ul>
+  - version: 1.9.3
+    unix-timestamp: 1790467200
+    description:
+      C: >-
+        <p>Critical Fontconfig Startup Fix:</p>
+  
+        <ul>
+          <li>Resolved a low-level segmentation fault (SIGSEGV) in libfontconfig.so.1 (FcCharSetFindLeafForward / FcCharSetHasChar)
+        occurring on Fedora systems during window layout initialization (#32).</li>
+          <li>Removed explicit color emoji families from the global application font stack, standardizing on system sans-serif
+        fonts to avoid font cache dereference errors during QPushButton size calculations.</li>
+        </ul>
+  - version: 1.9.2
+    unix-timestamp: 1790467200
+    description:
+      C: >-
+        <p>Build Toolchain &amp; Packaging Alignment Update:</p>
+  
+        <ul>
+          <li>Fixed Fedora 43 COPR/mock build dependency resolution by aligning pyproject.toml setuptools requirements with
+        distribution baseline (setuptools &gt;= 61.0.0).</li>
+          <li>Modernized minimum Python runtime baseline to Python 3.12+ across build configurations and documentation.</li>
+          <li>Upgraded Flatpak manifest to the active KDE 6.9 runtime branch, replacing the deprecated 6.6 runtime.</li>
+        </ul>
+  - version: 1.9.1
+    unix-timestamp: 1790467200
+    description:
+      C: >-
+        <p>The Qt 6.8+ Stability Hotfix and Diagnostics Update:</p>
+  
+        <ul>
+          <li>Fixed C++ segmentation fault (SIGSEGV) occurring under Qt 6.8+ caused by re-entrant proxy model layout signals
+        during background package queries.</li>
+          <li>Refactored package orphan, user-installed, and update status notifications into a single-batch dataChanged emission
+        to prevent proxy table corruption.</li>
+          <li>Disabled setAutoAcceptChildRows on the proxy filter to prevent invalid recursive mapping across lazy-loaded row
+        hierarchies.</li>
+          <li>Integrated native Python faulthandler in main.py to automatically dump C-level tracebacks to stderr if a low-level
+        crash occurs.</li>
+        </ul>
+  - version: 1.9.0
+    unix-timestamp: 1790467200
+    description:
+      C: >-
+        <p>The Standards-Based Classification Engine Overhaul:</p>
+  
+        <ul>
+          <li>Re-engineered classification from heuristic string matching to a deterministic contract pipeline.</li>
+          <li>Integrated native RPM Provides: application() verification to ensure only true desktop launchers are promoted
+        to Desktop Applications.</li>
+          <li>Added system-level Window Manager detection via firstboot(windowmanager) and XDG Categories.</li>
+          <li>Added Input Method subsystem detection, correctly assigning daemons like IBus to background services.</li>
+          <li>Replaced hardcoded root pillars with dynamic system protection detection from /etc/dnf/protected.d/ and running
+        kernel definitions.</li>
+        </ul>
+  - version: 1.8.3
+    unix-timestamp: 1790380800
+    description:
+      C: >-
+        <p>The Engine Hardening and Core Crash Fix Update:</p>
+  
+        <ul>
+          <li>Switched user-installed, leaf package, and history workers to isolated subprocesses to eliminate libdnf5 SWIG
+        null pointer segfaults.</li>
+          <li>Synchronized layoutAboutToBeChanged and layoutChanged across all tree mutations.</li>
+          <li>Enforced reentrant thread locking across native librpm calls.</li>
+          <li>Hooked dependency resolution strictly to on-demand tree expansion.</li>
+        </ul>
+  - version: 1.8.2
+    unix-timestamp: 1790380800
+    description:
+      C: >-
+        <p>The Stability and Theme Reactivity Hotfix:</p>
+  
+        <ul>
+          <li>Resolved native segmentation fault occurring after startup due to Qt proxy model persistent index desynchronization.</li>
+          <li>Synchronized layout signals across all model updates.</li>
+          <li>Enforced reentrant thread locking and explicit match iterator teardown across native librpm calls.</li>
+          <li>Resolved theme adaptation defects across dark and light palettes.</li>
+        </ul>
+  - version: 1.8.1
+    unix-timestamp: 1790035200
+    description:
+      C: >-
+        <p>Fix missing QIcon import in main.py</p>
+  - version: 1.8.0
+    unix-timestamp: 1790380800
+    description:
+      C: >-
+        <p>The Security Auditing, System Updates, and Engine Reliability Update:</p>
+  
+        <ul>
+          <li>Integrated package file integrity and tamper auditor (rpm -V engine).</li>
+          <li>Added native RPM changelog viewer with automated Red Hat CVE and Bugzilla linkification.</li>
+          <li>Added live system updates and security advisories engine powered by dnf5 check-upgrade.</li>
+          <li>Introduced graphical Software Repository and COPR channel manager.</li>
+          <li>Added dedicated Available Updates and User-Installed Packages sidebar channels.</li>
+        </ul>
+  - version: 1.7.0
+    unix-timestamp: 1790380800
+    description:
+      C: >-
+        <p>The Deterministic Classification and Engine Reliability Update:</p>
+  
+        <ul>
+          <li>Implemented full 10-component FreeDesktop AppStream catalog taxonomy.</li>
+          <li>Fixed NoDisplay=true settings trap and Terminal=true desktop launcher promotion.</li>
+          <li>Added user-installed package provenance tracking.</li>
+          <li>Added sequential multi-stage Polkit transaction runner for concurrent operations.</li>
+        </ul>
+  - version: 1.6.2
+    unix-timestamp: 1790121600
+    description:
+      C: >-
+        <p>Packaging hotfix resolving rpmbuild prep scriptlet execution errors.</p>
+  - version: 1.6.1
+    unix-timestamp: 1790121600
+    description:
+      C: >-
+        <p>Packaging hotfix resolving carriage return execution errors in RPM spec prep phase.</p>
+  - version: 1.6.0
+    unix-timestamp: 1790121600
+    description:
+      C: >-
+        <p>The Visuals and Precision Update: Full light and dark theming and classification anchoring.</p>
+  - version: 1.5.0
+    unix-timestamp: 1790121600
+    description:
+      C: >-
+        <p>Fine-grained category taxonomy and classification refinement.</p>
+  - version: 1.4.3
+    unix-timestamp: 1790121600
+    description:
+      C: >-
+        <p>Engine alignment and distribution parity release.</p>
+  - version: 1.4.2
+    unix-timestamp: 1790121600
+    description:
+      C: >-
+        <p>Desktop integration and packaging fix release.</p>
+  - version: 1.4.1
+    unix-timestamp: 1790035200
+    description:
+      C: >-
+        <p>Filesystem modernization and classification refinement.</p>
+  - version: 1.4.0
+    unix-timestamp: 1790035200
+    description:
+      C: >-
+        <p>The Cognitive Engine Update: Major architectural upgrade introducing intelligent package classification.</p>
+  - version: 1.3.0
+    unix-timestamp: 1789862400
+    description:
+      C: >-
+        <p>Major architectural and performance release featuring native bindings and system protection.</p>
+  - version: 1.2.0
+    unix-timestamp: 1787270400
+    description:
+      C: >-
+        <p>Production release of Dendro package manager for Fedora Linux.</p>
+  ContentRating:
+    oars-1.1: {}
+---

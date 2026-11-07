@@ -1,0 +1,24 @@
+{
+  "name": "weavit-ui",
+  "productName": "Weavit UI",
+  "version": "1.2.0",
+  "description": "Weaviate GUI — Weavit UI is a free, open-source cross-platform desktop client for the Weaviate vector database. Browse collections, inspect vectors, and run vector, hybrid and BM25 searches. Community project, not affiliated with Weaviate B.V.",
+  "author": "Weavit UI contributors",
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "main": "./out/main/index.js",
+  "homepage": "https://xenoraai.github.io/weavit-ui/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XenoraAI/weavit-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/XenoraAI/weavit-ui/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "weaviate-client": "^3.14.0"
+  }
+}

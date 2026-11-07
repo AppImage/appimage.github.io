@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.karjonas.PuzzleMoppet</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>WTFPL AND CC-BY-SA-3.0 AND GPL-3.0-or-later</project_license>
+  <name>Puzzle Moppet</name>
+  <developer_name>Jonas Karlsson</developer_name>
+  <summary>A challenging 3D puzzle game</summary>
+  <description>
+    <p>
+      A challenging 3D puzzle game where you must guide the Moppet through the
+      vast and eternal void of space by solving the various and beautiful
+      puzzles thrown at you.
+    </p>
+    <p>
+      This project is an effort to make the original Puzzle Moppet open source,
+      replace art assets and continue the game development.
+    </p>
+  </description>
+  <launchable type="desktop-id">puzzlemoppet.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Puzzle Moppet levels</caption>
+      <image>https://raw.githubusercontent.com/karjonas/Puzzle-Moppet/master/banner.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/karjonas/Puzzle-Moppet</url>
+  <url type="bugtracker">https://github.com/karjonas/Puzzle-Moppet/issues</url>
+  <provides>
+    <binary>puzzlemoppet</binary>
+  </provides>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="2025-11-23" date="2025-11-23" />
+    <release version="2025-11-21" date="2025-11-21" />
+    <release version="2024-02-08" date="2024-02-08" />
+  </releases>
+</component>

@@ -1,0 +1,30 @@
+{
+  "name": "next-dj",
+  "version": "0.1.5",
+  "description": "NextDJ desktop app",
+  "desktopName": "nextdj",
+  "license": "MIT",
+  "author": "Antonio Leiva",
+  "homepage": "https://github.com/antoniolg/next-dj",
+  "main": "./out/main/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antoniolg/next-dj.git"
+  },
+  "engines": {
+    "node": ">=26.5.0 <27",
+    "npm": ">=11.17.0 <12"
+  },
+  "packageManager": "npm@11.17.0",
+  "type": "module",
+  "dependencies": {
+    "lucide-react": "^1.23.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "allowScripts": {
+    "electron@43.1.0": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.1": true
+  }
+}

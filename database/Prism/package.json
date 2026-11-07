@@ -1,0 +1,38 @@
+{
+  "name": "prism",
+  "productName": "Prism",
+  "version": "2.1.0",
+  "description": "Every model. One interface. — A cross-platform AI desktop chat client for any provider.",
+  "main": "./out/main/index.js",
+  "author": {
+    "name": "Iteration Labz",
+    "url": "https://github.com/IterationLabz"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IterationLabz/prism.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IterationLabz/prism/issues"
+  },
+  "homepage": "https://github.com/IterationLabz/prism",
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest",
+    "@google/generative-ai": "latest",
+    "@mintplex-labs/piper-tts-web": "^1.0.4",
+    "better-sqlite3": "latest",
+    "duck-duck-scrape": "^2.2.7",
+    "highlight.js": "latest",
+    "kokoro-js": "^1.2.1",
+    "lucide-react": "latest",
+    "nodejs-whisper": "^0.3.0",
+    "openai": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-markdown": "latest",
+    "rehype-highlight": "latest",
+    "remark-breaks": "^4.0.0",
+    "zustand": "latest"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "nullchat",
+  "version": "3.1.0",
+  "description": "Minimalistic P2P Chat & Voice App using Electron and PeerJS",
+  "author": {
+    "name": "xDerApfelx",
+    "email": "117024724+xDerApfelx@users.noreply.github.com"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "better-sqlite3": "^12.8.0",
+    "peerjs": "^1.5.5",
+    "uuid": "^13.0.0"
+  }
+}

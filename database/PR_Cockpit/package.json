@@ -1,0 +1,38 @@
+{
+  "name": "pr-cockpit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "PR Cockpit — local AI PR workbench: multi-agent review in isolated git worktrees, human-gated GitHub comments",
+  "author": "Weijie Tao",
+  "main": "electron/main.mjs",
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.246",
+    "@nuxt/ui": "^4.11.0",
+    "@nuxtjs/i18n": "^10.6.0",
+    "@openai/codex": "0.149.1",
+    "better-sqlite3": "^13.0.3",
+    "dompurify": "^3.4.14",
+    "drizzle-orm": "^0.45.2",
+    "marked": "^18.0.11",
+    "nanoid": "^6.0.1",
+    "nuxt": "^4.5.2",
+    "qrcode": "^1.5.4",
+    "tailwindcss": "^4.3.3",
+    "vue": "^3.5.41",
+    "zod": "^4.4.3"
+  },
+  "packageManager": "pnpm@9.12.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taovc/pr-cockpit.git"
+  },
+  "homepage": "https://github.com/taovc/pr-cockpit"
+}

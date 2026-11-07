@@ -1,0 +1,57 @@
+# Looks again at the auto-discovered pull requests that got the label
+# suspicious-stars (many stars on a brand-new repository with few forks and
+# commits, see code/discover-apps.sh): 30 days later a genuine project has forks
+# in proportion to its stars (at least 10, no more than 30 stars per fork) or a
+# real commit history (300 commits). Then code/review-suspicious-stars.sh
+# removes suspicious-stars and manual-check-needed and comments once with the
+# numbers; a repository that still looks hollow keeps its labels. Monthly, and
+# by hand (a dry run by default).
+
+name: Review suspicious stars
+
+on:
+  schedule:
+    - cron: '23 5 12 * *' # monthly, a real run (the inputs below are for runs by hand)
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Only pull requests opened at least this many days ago'
+        type: number
+        default: 30
+      limit:
+        description: 'Clear at most this many pull requests in this run'
+        type: number
+        default: 50
+      dry_run:
+        description: 'Dry run (only print what would be cleared)'
+        type: boolean
+        default: true
+
+jobs:
+  review:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: review-suspicious-stars
+      cancel-in-progress: false
+    permissions:
+      pull-requests: write
+      issues: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Review the labeled pull requests
+        env:
+          DAYS: ${{ github.event.inputs.days || '30' }}
+          LIMIT: ${{ github.event.inputs.limit || '50' }}
+          # A scheduled run is a real run; a run by hand is a dry run unless dry_run is false
+          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || github.event.inputs.dry_run }}
+        run: |
+          ARGS=(--days "$DAYS" --limit "$LIMIT")
+          [ "$DRY_RUN" != "false" ] && ARGS+=(--dry-run)
+          bash code/review-suspicious-stars.sh "${ARGS[@]}"

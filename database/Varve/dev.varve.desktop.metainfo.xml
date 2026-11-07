@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metainfo for Varve.
+
+  Installed to /usr/share/metainfo/ by the deb, rpm and AppImage bundles so
+  GNOME Software, KDE Discover, AppImageHub and similar consumers can render
+  a proper application page. Requires at least one <release> entry; the
+  version here must match the committed release version (enforced by
+  scripts/release/linux-package-metadata.test.mjs).
+
+  License note: Varve is source-available under FSL-1.1-MIT. AppStream
+  validators (appstreamcli) still reject the bare SPDX id as an unknown
+  expression, so this file uses the custom SPDX reference
+  LicenseRef-FSL-1.1-MIT. That is the form the validator accepts for
+  licences outside its SPDX snapshot. Do not replace it with MIT or any
+  other OSI-approved stand-in.
+-->
+<component type="desktop-application">
+  <id>dev.varve.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-FSL-1.1-MIT</project_license>
+  <name>Varve</name>
+  <summary>Design, illustrate and print</summary>
+  <description>
+    <p>
+      Vector illustration, page layout, typography, photo editing and print production in one desktop app.
+      Varve keeps your work in local files on your own computer and does not need an account.
+    </p>
+    <p>Highlights:</p>
+    <ul>
+      <li>One document, several workspaces: Design, Print, Draw, Photo, Motion and Email share the same file, selection and undo history</li>
+      <li>Print-ready PDF/X-1a and PDF/X-4 export with CMYK, per-edge bleed, crop marks and colour bars</li>
+      <li>Comic lettering: speech, thought, caption and burst balloons with editable tails, text that wraps to the balloon shape, and comic, manga and vertical-scroll page setups</li>
+      <li>Opens the files you already have: SVG, PDF, PSD, AI, EPS and Sketch</li>
+      <li>Exports SVG, PNG and JPEG, plus code for React with Tailwind or CSS Modules, Flutter and SwiftUI</li>
+      <li>Open, documented .varve file format (JSON)</li>
+    </ul>
+    <p>
+      Optional on-device helpers for background removal, image upscaling and image-to-vector tracing download their models only when you ask for them.
+    </p>
+    <p>
+      Varve is source-available under the Functional Source License (FSL-1.1-MIT). Each release becomes available under the MIT licence two years after it is published.
+    </p>
+  </description>
+  <!-- Must match the .desktop file shipped in the AppImage, AUR package, and
+       Flatpak. Tauri writes Varve.desktop from productName; the AppImage prune
+       step renames it to this reverse-DNS id before linuxdeploy repacks. -->
+  <launchable type="desktop-id">dev.varve.desktop.desktop</launchable>
+  <url type="homepage">https://varve.studio</url>
+  <url type="bugtracker">https://github.com/K-Arthur/varve/issues</url>
+  <url type="vcs-browser">https://github.com/K-Arthur/varve</url>
+  <url type="faq">https://varve.studio/support/faq</url>
+  <developer id="studio.varve">
+    <name>Varve</name>
+  </developer>
+  <branding>
+    <color type="primary" scheme_preference="light">#7ED8CF</color>
+    <color type="primary" scheme_preference="dark">#1E5752</color>
+  </branding>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The Design workspace</caption>
+      <image type="source">https://varve.studio/screenshots/workspace-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Vector drawing tools</caption>
+      <image type="source">https://varve.studio/screenshots/vector-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Page layout and typography</caption>
+      <image type="source">https://varve.studio/screenshots/layout-light.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Graphics</category>
+    <category>2DGraphics</category>
+    <category>VectorGraphics</category>
+    <category>Publishing</category>
+  </categories>
+  <keywords>
+    <keyword>design</keyword>
+    <keyword>vector</keyword>
+    <keyword>illustration</keyword>
+    <keyword>layout</keyword>
+    <keyword>typography</keyword>
+    <keyword>motion</keyword>
+    <keyword>print</keyword>
+    <keyword>comic</keyword>
+    <keyword>lettering</keyword>
+  </keywords>
+  <provides>
+    <mediatype>application/x-varve</mediatype>
+  </provides>
+  <releases>
+    <release version="0.6.0" date="2026-11-01"/>
+    <release version="0.5.1" date="2026-10-15"/>
+    <release version="0.5.0" date="2026-10-09">
+      <url type="details">https://github.com/K-Arthur/varve/releases/tag/v0.5.0</url>
+      <description>
+        <p>Adds six task workspaces (Design, Print, Draw, Photo, Motion, Email), comic lettering, presentation decks, pattern authoring, and photo workflows.</p>
+      </description>
+    </release>
+    <release version="0.2.1" date="2026-08-23">
+      <url type="details">https://github.com/K-Arthur/varve/releases/tag/v0.2.1</url>
+    </release>
+    <release version="0.2.0" date="2026-08-21">
+      <url type="details">https://github.com/K-Arthur/varve/releases/tag/v0.2.0</url>
+    </release>
+    <release version="0.1.2" date="2026-08-16">
+      <url type="details">https://github.com/K-Arthur/varve/releases/tag/v0.1.2</url>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

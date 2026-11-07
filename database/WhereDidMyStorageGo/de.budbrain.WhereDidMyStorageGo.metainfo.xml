@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 Josef Sejrek / Budbrain Software -->
+<component type="desktop-application">
+  <id>de.budbrain.WhereDidMyStorageGo</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>Where Did My Storage Go?</name>
+  <summary>See where your disk space went — as a colourful treemap</summary>
+  <summary xml:lang="de">Sehen, wo der Speicherplatz hin ist — als bunte Treemap</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <description>
+    <p>
+      Scans a folder or a whole filesystem and shows what is using the space as
+      a colourful treemap: area is size, colour is file type. The big consumers
+      jump out at you, a click zooms in, and anything you mark goes to the trash
+      in one go — never deleted permanently.
+    </p>
+    <p xml:lang="de">
+      Scannt einen Ordner oder ein ganzes Dateisystem und zeigt als bunte
+      Treemap, was den Platz belegt: Fläche ist Größe, Farbe ist Dateityp. Die
+      dicken Brocken fallen sofort auf, ein Klick zoomt hinein, und Vorgemerktes
+      wandert in einem Rutsch in den Papierkorb — nie endgültig gelöscht.
+    </p>
+    <ul>
+      <li>Shows at a glance which folders are eating your disk</li>
+      <li>Colours by file type, or by age to spot what you have forgotten</li>
+      <li>A sortable list view as well, when you want exact figures</li>
+      <li>Finds what can be cleared and totals up how much that frees</li>
+      <li>Moves what you mark to the trash, so nothing is gone for good</li>
+      <li>Refuses to touch system folders and other people's files</li>
+      <li>22 languages, light and dark theme</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">wheredidmystoragego.desktop</launchable>
+
+  <categories>
+    <category>System</category>
+    <category>Filesystem</category>
+    <category>Utility</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <!-- Kein <url type="contact"> mit mailto:: AppStream verlangt dort eine
+       Web-Adresse und lehnt die Datei sonst komplett ab ("web-url-expected",
+       geprüft mit appstreamcli 1.0.2 UND 0.16.1). Eine abgelehnte metainfo
+       bedeutet: die App taucht in GNOME Software gar nicht erst auf. Die
+       Kontaktadresse steht im Maintainer-Feld der Pakete und im Über-Dialog. -->
+
+  <provides>
+    <binary>wheredidmystoragego</binary>
+  </provides>
+
+  <releases>
+    <release version="1.0.7" date="2026-07-26">
+      <description>
+        <p>Sizes and times are written the way the chosen language writes them.
+        Figures no longer show a stray extra separator.</p>
+      </description>
+    </release>
+    <release version="1.0.6" date="2026-07-25">
+      <description>
+        <p>Scanning the whole system no longer wanders into the desktop's
+        internal mount points, so the figures match the disk and you stay in
+        paths you recognise.</p>
+      </description>
+    </release>
+    <release version="1.0.5" date="2026-07-25">
+      <description>
+        <p>When system folders cannot be read, the app now says so and shows the
+        one command that grants access, instead of leaving an empty view behind.</p>
+      </description>
+    </release>
+    <release version="1.0.4" date="2026-07-25">
+      <description>
+        <p>Packing a folder now shows how far it has got, and when it is done it
+        says plainly what was created, how big it is and where it lies — with a
+        button that takes you straight there.</p>
+      </description>
+    </release>
+    <release version="1.0.3" date="2026-07-25">
+      <description>
+        <p>Find things by name in both views — a single match blinks so you
+        cannot miss it. The path bar now shows where you are in full, and you
+        can click your way back up through it. Packing a folder that cannot be
+        packed now says so straight away, and says why.</p>
+      </description>
+    </release>
+    <release version="1.0.2" date="2026-07-25">
+      <description>
+        <p>Where the trash cannot be used, the app now offers to delete the
+        items permanently instead — as a separate, clearly marked choice.</p>
+      </description>
+    </release>
+    <release version="1.0.1" date="2026-07-25">
+      <description>
+        <p>Crash reports are now readable: they name the function and line
+        instead of raw addresses, and the sections appear in the right order.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-07-25">
+      <description>
+        <p>First Linux release. Native GTK3 port of the macOS and Windows app.</p>
+      </description>
+    </release>
+  </releases>
+</component>

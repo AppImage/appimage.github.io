@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 Josef Sejrek / Budbrain Software -->
+<component type="desktop-application">
+  <id>de.budbrain.jsFileManager</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsFileManager</name>
+  <summary>Two-pane file manager built around the copy</summary>
+  <summary xml:lang="de">Zwei-Fenster-Dateimanager, gebaut um das Kopieren herum</summary>
+
+  <description>
+    <p>
+      jsFileManager shows two folders side by side and moves files between them.
+      Pick a drive at the top of each side, select what should go, and press the
+      arrow in the middle.
+    </p>
+    <p xml:lang="de">
+      jsFileManager zeigt zwei Ordner nebeneinander und bewegt Dateien zwischen
+      ihnen. Oben auf jeder Seite das Laufwerk wählen, auswählen, was gehen
+      soll, und in der Mitte auf den Pfeil drücken.
+    </p>
+    <ul>
+      <li>Local disks, removable media and network shares in one picker</li>
+      <li>A progress bar that names the file, the count, the rate and the time left</li>
+      <li>Several files copied at once, with the number of streams up to you</li>
+      <li>Name collisions answered per file or once for all of them</li>
+      <li>Rename, duplicate, pack and unpack from the list itself</li>
+      <li>Drag files in from another window and they land where you dropped them</li>
+      <li>44 languages, light and dark following the desktop</li>
+    </ul>
+    <ul xml:lang="de">
+      <li>Lokale Platten, Wechselmedien und Netzlaufwerke in einer Auswahl</li>
+      <li>Eine Fortschrittsanzeige mit Datei, Anzahl, Tempo und Restzeit</li>
+      <li>Mehrere Dateien gleichzeitig, die Anzahl der Ströme bestimmst du</li>
+      <li>Namenskonflikte je Datei oder einmal für alle beantwortet</li>
+      <li>Umbenennen, Duplizieren, Packen und Entpacken direkt aus der Liste</li>
+      <li>Dateien aus einem anderen Fenster hereinziehen — sie landen dort, wo losgelassen wurde</li>
+      <li>44 Sprachen, hell und dunkel dem Desktop folgend</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">jsfilemanager.desktop</launchable>
+
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+
+  <!-- mailto: is REFUSED here by appstreamcli ("web-url-expected"), and a
+       rejected metainfo means the app does not appear in GNOME Software at
+       all. The contact address lives in the About box instead. -->
+  <url type="homepage">https://www.budbrain.de</url>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-08-08">
+      <description>
+        <p>First release.</p>
+        <p xml:lang="de">Erste Veröffentlichung.</p>
+      </description>
+    </release>
+  </releases>
+</component>

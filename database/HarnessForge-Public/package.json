@@ -1,0 +1,17 @@
+{
+  "name": "harness-forge",
+  "private": true,
+  "version": "3.2.8",
+  "type": "module",
+  "main": "electron.js",
+  "description": "HarnessForge",
+  "author": "Andrew Colliver <ab.colliver@gmail.com>",
+  "homepage": "./",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "electron-is-dev": "^3.0.1",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}

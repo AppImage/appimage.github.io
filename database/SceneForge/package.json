@@ -1,0 +1,21 @@
+{
+  "name": "sceneforge-desktop",
+  "version": "0.9.2",
+  "private": true,
+  "description": "SceneForge Studio — open-source editor for narrated documentary videos",
+  "author": {
+    "name": "EzioDEVio",
+    "url": "https://github.com/EzioDEVio/SceneForge"
+  },
+  "license": "GPL-3.0-or-later",
+  "main": "main.cjs",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  },
+  "homepage": "https://github.com/EzioDEVio/SceneForge",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EzioDEVio/SceneForge.git"
+  },
+  "desktopName": "sceneforge-studio.desktop"
+}

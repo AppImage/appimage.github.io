@@ -1,0 +1,40 @@
+{
+  "name": "kudu",
+  "version": "3.6.1",
+  "description": "A modern, open-source system cleaner for Windows, macOS, and Linux",
+  "main": "./out/main/index.js",
+  "author": {
+    "name": "Kudu Contributors",
+    "email": "kudu@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adventdevinc/kudu.git"
+  },
+  "homepage": "https://usekudu.com",
+  "bugs": {
+    "url": "https://github.com/adventdevinc/kudu/issues"
+  },
+  "dependencies": {
+    "@litko/yara-x": "^0.7.2",
+    "@tanstack/react-table": "^9.2.4",
+    "better-sqlite3": "^12.11.1",
+    "clsx": "^2.1.1",
+    "electron-updater": "^6.8.9",
+    "framer-motion": "^13.4.2",
+    "i18next": "^26.3.6",
+    "lucide-react": "^0.577.0",
+    "pusher-js": "^8.6.0",
+    "react-i18next": "^17.0.14",
+    "react-router-dom": "^7.18.4",
+    "recharts": "^3.10.1",
+    "sonner": "^2.0.8",
+    "systeminformation": "^5.33.11",
+    "tailwind-merge": "^3.7.0",
+    "zustand": "^5.0.15"
+  }
+}

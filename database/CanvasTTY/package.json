@@ -1,0 +1,38 @@
+{
+  "name": "canvastty",
+  "version": "1.5.2",
+  "private": true,
+  "description": "A spatial desktop for local AI agents and real terminal sessions.",
+  "desktopName": "CanvasTTY",
+  "author": "howdeploy",
+  "license": "MIT",
+  "homepage": "https://github.com/howdeploy/CanvasTTY",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/howdeploy/CanvasTTY.git"
+  },
+  "main": "./out/main/index.js",
+  "type": "module",
+  "dependencies": {
+    "@xterm/addon-fit": "0.11.0",
+    "@xterm/addon-web-links": "0.12.0",
+    "@xterm/headless": "6.0.0",
+    "@xterm/xterm": "6.0.0",
+    "node-pty": "1.1.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "secure-remote-password": "0.3.1",
+    "yaml": "2.9.0"
+  },
+  "overrides": {
+    "js-yaml": "4.3.2"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.1": true,
+    "node-pty@1.1.0": true
+  },
+  "workspaces": [
+    "integrations/even-g2"
+  ]
+}

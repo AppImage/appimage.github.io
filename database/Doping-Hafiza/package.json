@@ -1,0 +1,24 @@
+{
+  "name": "doping-hafiza-desktop",
+  "productName": "Doping Hafıza Desktop",
+  "version": "1.14.3",
+  "description": "Doping Hafıza Masaüstü Uygulaması",
+  "main": "app/main.js",
+  "author": "DOPİNG BİLİŞİM TEKNOLOJİLERİ ANONİM ŞİRKETİ <developer@dopinghafiza.com>",
+  "license": "CC0-1.0",
+  "homepage": "https://www.dopinghafiza.com/",
+  "dependencies": {
+    "@sentry/electron": "^7.17.0",
+    "check-disk-space": "^3.4.0",
+    "configcat-node": "^11.4.1",
+    "electron-is-dev": "2.0.0",
+    "electron-log": "5.4.3",
+    "electron-store": "8.2.0",
+    "electron-updater": "^6.8.9",
+    "jquery": "^3.7.1",
+    "node-fetch": "2.7.0",
+    "pidusage": "^4.0.1",
+    "push-receiver-v2": "^2.2.0",
+    "systeminformation": "^5.31.14"
+  }
+}

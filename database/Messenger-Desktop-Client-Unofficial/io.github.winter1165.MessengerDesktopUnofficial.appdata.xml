@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata: the name, description and screenshots Linux
+  software catalogs show (the AppImage catalog at appimage.github.io,
+  software centers). electron-builder.yml copies it into the AppImage at
+  usr/share/metainfo/.
+-->
+<component type="desktop-application">
+  <id>io.github.winter1165.MessengerDesktopUnofficial</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Messenger Desktop (Unofficial)</name>
+  <summary>Unofficial desktop app for Facebook Messenger</summary>
+  <developer_name>WinTer1165</developer_name>
+
+  <description>
+    <p>
+      Messenger Desktop runs Facebook Messenger in a window of its own,
+      with native notifications, a tray icon and a few things a browser
+      tab can't do.
+    </p>
+    <ul>
+      <li>Notifications with the sender's picture, and incoming calls that bring the window forward</li>
+      <li>Unread messages shown on the tray icon</li>
+      <li>Do Not Disturb, hidden message previews, and no pop-ups during calls</li>
+      <li>An optional PIN lock for shared computers</li>
+      <li>Fourteen color themes for the app window</li>
+      <li>An offline screen that reloads Messenger when the connection comes back</li>
+    </ul>
+    <p>
+      This is an unofficial app. It is not affiliated with or endorsed by Meta.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">messenger-desktop-unofficial.desktop</launchable>
+
+  <url type="homepage">https://github.com/WinTer1165/Messenger-Desktop-Client-Unofficial</url>
+  <url type="bugtracker">https://github.com/WinTer1165/Messenger-Desktop-Client-Unofficial/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Settings, with the theme picker</caption>
+      <image>https://raw.githubusercontent.com/WinTer1165/Messenger-Desktop-Client-Unofficial/main/docs/screenshots/settings.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The optional PIN lock</caption>
+      <image>https://raw.githubusercontent.com/WinTer1165/Messenger-Desktop-Client-Unofficial/main/docs/screenshots/lock.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The offline screen, which reloads Messenger once you are back online</caption>
+      <image>https://raw.githubusercontent.com/WinTer1165/Messenger-Desktop-Client-Unofficial/main/docs/screenshots/offline.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+    <content_attribute id="social-contacts">intense</content_attribute>
+  </content_rating>
+
+  <releases>
+    <release version="3.0.0" date="2026-09-30"/>
+  </releases>
+</component>

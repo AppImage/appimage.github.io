@@ -24,22 +24,38 @@ desktop:
   Desktop Entry:
     Type: Application
     Name: Popsicle USB Flasher
+    Name[fr_FR]: Flasheur USB Popsicle
+    Name[pt_BR]: Gravador USB Popsicle
     GenericName: Popsicle USB Flasher
+    GenericName[fr_FR]: Flasheur USB
+    GenericName[pt_BR]: Gravador USB
     X-GNOME-FullName: Popsicle USB Flasher
+    X-GNOME-FullName[fr_FR]: Flasheur USB Popsicle
+    X-GNOME-FullName[pt_BR]: Gravador USB Popsicle
+    Comment: Multi-USB image flashing utility
     Icon: com.system76.Popsicle
     Categories: System
     Keywords: USB;Flash;Drive;Popsicle;
+    Keywords[fr_FR]: USB;Flasheur;Lecteur;Popsicle;
+    Keywords[pt_BR]: USB;Gravar;Pendrive;Popsicle;
     MimeType: application/x-cd-image
     Terminal: false
     StartupNotify: true
     Exec: popsicle-gtk %f
-    X-AppImage-Version: 1.2.0
+    X-AppImage-Version: 1.3.3
   AppImageHub:
-    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
-      the signature could not be verified. Please remember that the signature file (.sig
-      or .asc) should be the first file given on the command line."
+    X-AppImage-UpdateInformation: gh-releases-zsync|pop-os|popsicle|latest|Popsicle_USB_Flasher-*x86_64.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.28
+    X-AppImage-Payload-License: MIT
 
 appdata:
   Type: desktop-application
@@ -69,6 +85,11 @@ appdata:
   Url:
     homepage: https://github.com/pop-os/popsicle
     bugtracker: https://github.com/pop-os/popsicle
+  Icon:
+    remote:
+    - url: https://raw.githubusercontent.com/pop-os/popsicle/master/gtk/assets/icons/512x512/apps/com.system76.Popsicle.png
+      width: 512
+      height: 512
   Launchable:
     desktop-id:
     - com.system76.Popsicle.desktop
@@ -95,6 +116,8 @@ appdata:
       url: https://raw.githubusercontent.com/pop-os/popsicle/master/screenshots/screenshot-05.png
       lang: C
   Releases:
+  - version: 1.3.0
+    unix-timestamp: 1604534400
   - version: 1.2.0
     unix-timestamp: 1603756800
   - version: 1.1.0

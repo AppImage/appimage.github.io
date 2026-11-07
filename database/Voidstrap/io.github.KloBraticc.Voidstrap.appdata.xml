@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.KloBraticc.Voidstrap</id>
+  <name>Voidstrap</name>
+  <summary>Customize and launch Roblox through Sober on Linux</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="io.github.klobraticc">
+    <name>Bratic</name>
+  </developer>
+  <description>
+    <p>Voidstrap is an open source Roblox launcher for Linux. It installs and launches Roblox through Sober, bringing settings, mods, and everyday tools together in one app.</p>
+    <p>Use classic character sounds, choose a different cursor, adjust graphics settings, or customize the launcher. Save FastFlag profiles for different setups and switch between them without rebuilding your configuration each time.</p>
+    <ul>
+      <li>Sober and launching: set up Sober, launch Roblox experiences, and manage your launch preferences.</li>
+      <li>Graphics and performance: adjust available options, edit FastFlags, and create, rename, or switch saved profiles.</li>
+      <li>Mods: manage custom cursors, character sounds, fonts, textures, and other visual replacements.</li>
+      <li>Appearance: choose themes, colors, gradients, and launcher styles to match your desktop.</li>
+      <li>Roblox tools: access account and server tools, view session information, and track your playtime.</li>
+      <li>Desktop integration: customize Discord Rich Presence and use shortcuts to open Roblox or Voidstrap settings.</li>
+    </ul>
+    <p>Roblox runs through Sober on Linux. The effect of individual FastFlags and mods depends on the current Roblox and Sober versions.</p>
+    <p>The source code, releases, and issue tracker are available on GitHub. Browse the project, follow updates, or report a problem.</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Voidstrap</caption>
+      <image type="source" width="1071" height="690">https://raw.githubusercontent.com/KloBraticc/Voidstrap/main/assets/screenshots/linux/voidstrap.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>AOT</caption>
+      <image type="source" width="1920" height="1080">https://raw.githubusercontent.com/KloBraticc/Voidstrap/main/assets/screenshots/linux/aot.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Arsenal</caption>
+      <image type="source" width="1920" height="1080">https://raw.githubusercontent.com/KloBraticc/Voidstrap/main/assets/screenshots/linux/arsenal.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Ironman</caption>
+      <image type="source" width="1920" height="1080">https://raw.githubusercontent.com/KloBraticc/Voidstrap/main/assets/screenshots/linux/ironman.png</image>
+    </screenshot>
+  </screenshots>
+  <launchable type="desktop-id">io.github.KloBraticc.Voidstrap.desktop</launchable>
+  <provides>
+    <binary>voidstrap</binary>
+  </provides>
+  <url type="homepage">https://github.com/KloBraticc/Voidstrap</url>
+  <url type="vcs-browser">https://github.com/KloBraticc/Voidstrap</url>
+  <url type="bugtracker">https://github.com/KloBraticc/Voidstrap/issues</url>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="1.1.3.3" date="2026-10-14" />
+    <release version="1.1.3.3" date="2026-10-14" />
+    <release version="1.1.3.3" date="2026-10-14" />
+    <release version="1.1.3.3" date="2026-10-14" />
+    <release version="1.1.3.3" date="2026-10-14" />
+    <release version="1.1.3.3" date="2026-10-14" />
+    <release version="1.1.3.3" date="2026-10-14" />
+  </releases>
+</component>

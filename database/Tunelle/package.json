@@ -1,0 +1,32 @@
+{
+  "name": "tunelle",
+  "version": "26.11.19",
+  "description": "Lossless Audio Player",
+  "main": "out/index.js",
+  "private": true,
+  "author": {
+    "name": "Krisztian Korosi",
+    "email": "koeroesi86@gmail.com",
+    "url": "http://chris.koro.si"
+  },
+  "homepage": "https://github.com/Koeroesi86/tunelle",
+  "license": "MIT",
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "electron-window-state": "^5.0.3",
+    "mime-types": "^3.0.2",
+    "minimist": "^1.2.8",
+    "music-metadata": "^12.2.3",
+    "playlist-parser": "^0.0.12",
+    "sharp": "^0.35.5",
+    "slugify": "^1.6.9",
+    "sqlite3": "^6.0.1",
+    "windows-shortcuts-appid": "^0.3.2"
+  },
+  "overrides": {
+    "tar": "^7.5.22",
+    "xmldom": "npm:@xmldom/xmldom@^0.9.12",
+    "glob@13": "^14.0.2",
+    "minimatch@10": "^11.0.1"
+  }
+}

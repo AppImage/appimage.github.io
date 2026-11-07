@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://www.freedesktop.org/software/appstream/metainfocreator/#/guiapp -->
+
+<component type="desktop-application">
+  <id>com.iche2.gai</id>
+  
+  <name>Gai</name>
+  <summary>Generative-AI tools for beginner</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <requires>
+    <internet>always</internet>
+  </requires>
+
+  <recommends>
+    <!-- Mobile/tablet AND desktop supported -->  
+    <display_length compare="ge">360</display_length>
+  </recommends>
+
+  <!-- Desktop AND mobile supported -->
+  <supports>  
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>    
+  </supports>
+  
+  <description>
+    <p>
+      <!-- Gai: Generative-AI Tools For Beginner -->
+      No ads, No registration, No other permissions required. Internet connection only.
+    </p>
+    <ul>
+      <li>Multimodal conversations: Text, images, videos – easily get the content you need.</li>
+      <li>User-friendly interface: Conveniently manage prompts, instructions, parameters, and input/output.</li>
+      <li>Scheduled Tasks: Pre-set time, automatically generate content.</li>
+      <li>Private prompt libraries: Support offline/online prompt libraries.</li>
+      <li>Multiple output options: Local logs or your private network server.</li>
+    </ul>
+    <p>Full-featured, customizable, and easy to master!</p>
+  </description>
+  
+  <launchable type="desktop-id">com.iche2.gai.desktop</launchable>
+  <url type="homepage">https://webpath.iche2.com/app/gai/download_en.html</url>
+  <url type="help">https://webpath.iche2.com/gaidoc/en/</url>
+  <url type="vcs-browser">https://github.com/huanguan1978/pygai</url>
+  <url type="bugtracker">https://github.com/huanguan1978/pygai/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://webpath.iche2.com/gaidoc/en/img/screenshot-primary.png</image>
+	  <caption>Main UI, Ai Search</caption>
+    </screenshot>
+
+    <screenshot>
+      <image>https://webpath.iche2.com/gaidoc/en/img/screenshot-additional-1.png</image>
+	    <caption>Entry UI, Converse naturally with the AI, using text and images to generate content </caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/gaidoc/en/img/screenshot-additional-2.png</image>
+	    <caption>Chat UI, Multi-turn Conversations</caption>
+    </screenshot>    
+    <screenshot>
+      <image>https://webpath.iche2.com/gaidoc/en/img/screenshot-additional-3.png</image>
+	    <caption>Setting language, usagemode (model &amp; apikey) </caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/gaidoc/en/img/screenshot-additional-4.png</image>
+	    <caption>create HTTP request for HTTP jobs (status-only) or HTTP crons (process &amp; callback) </caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/gaidoc/en/img/screenshot-additional-5.png</image>
+	    <caption>Automatically publishes the Daily Wordsmith essay to the website using PyGai </caption>
+    </screenshot>
+    <screenshot>
+      <image>https://webpath.iche2.com/gaidoc/en/img/screenshot-additional-6.png</image>
+	    <caption>Generate image using model 2.0 preview-image-gen </caption>
+    </screenshot>
+
+
+  </screenshots>
+
+  <icon type="stock">com.iche2.gai</icon>
+  <categories>
+    <category>Utility</category>
+    <category>Documentation</category>
+    <category>ArtificialIntelligence</category>
+  </categories>
+  <provides>
+    <binary>gai</binary>
+  </provides>
+  <branding>
+    <color type="primary" scheme_preference="light">#fef7ff</color>
+    <color type="primary" scheme_preference="dark">#141218</color>
+  </branding>
+
+  <developer id="com.iche2.gai">
+    <name>Heshan Aisipai E-commerce Co., Ltd</name>
+  </developer>
+  <update_contact>crown.hg@gmail.com</update_contact>
+  <content_rating type="oars-1.0" />
+  <keywords>
+    <keyword>AI</keyword>
+    <keyword>OpenAI</keyword>
+    <keyword>Generative AI Agent</keyword>
+    <keyword>Google AI</keyword>
+    <keyword>Prompt</keyword>
+    <keyword>ChatGPT</keyword>
+    <keyword>Gemini</keyword>
+    <keyword>Imagen</keyword>
+    <keyword>dynamic thinking</keyword>
+    <keyword>image generation</keyword>        
+  </keywords>
+
+  <releases>
+  <release version="1.2.0" date="2025-06-25"> 
+      <description translate="no"> 
+        <ul> 
+          <li>support Gemini 2.5 Flash dynamic thinking.</li>
+          <li>support Gemini 2.0 Flash preview image generation.</li>
+          <li>remove Gemini 1.5 models are now discontinued.</li>
+        </ul>
+      </description>
+    </release>
+  
+    <release version="1.1.2" date="2025-02-28"> 
+      <description translate="no"> 
+        <ul> 
+          <li>support Gemini 2.0 Flash Lite, Multimodal inputs, Text output.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.1" date="2025-02-27"> 
+      <description translate="no"> 
+        <ul> 
+          <li>setting - usagemodel - API Key - support gemini API key.</li>
+          <li>setting - usagemodel - Reset Trial - fix trial errors and restart on Home.</li>
+          <li>setting - logexpiration - automatically delete logs after a set period to free up space and improve performance.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.0" date="2025-02-08">
+        <description translate="no">
+          <ul>
+            <li>support Gemini 2.0 Flash, Multimodal inputs, Text output.</li>
+            <li>automate generative AI's scheduled tasks with python.</li>
+            <li>on interruption, show the last input for easy chat retry.</li>            
+          </ul>
+        </description>
+    </release>
+    <release version="1.0.0" date="2025-01-18">
+        <description translate="no">
+          <ul>
+            <li>the first cross-platform release</li>
+            <li>support Gemini 1.5 Pro|Flash|Flash8B .</li>
+            <li>customizable, Setting -&gt; Usage Mode: Local Only and your API Key.</li>            
+            <li>support imagen 3.0 (Usage Mode: Serve Only)</li>
+          </ul>
+        </description>
+    </release>
+  </releases>
+
+</component>

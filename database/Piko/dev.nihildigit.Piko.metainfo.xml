@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>dev.nihildigit.Piko</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+  <name>Piko</name>
+  <summary>Fast, cross-platform PikPak client</summary>
+  <summary xml:lang="zh-CN">快速的跨平台 PikPak 客户端</summary>
+  <developer id="dev.nihildigit">
+    <name>NihilDigit</name>
+  </developer>
+  <description>
+    <p>
+      Piko is a third-party client for the PikPak cloud drive, built for mouse and keyboard on the
+      desktop and for touch on the phone.
+    </p>
+    <p xml:lang="zh-CN">Piko 是 PikPak 网盘的第三方客户端，桌面端照顾鼠标与键盘，手机端照顾触屏。</p>
+    <ul>
+      <li>Parses magnet links, torrents, download URLs and share links, with per-file selection before saving</li>
+      <li xml:lang="zh-CN">解析磁力链接、种子、下载链接与分享链接，保存前可逐个挑选文件</li>
+      <li>Groups files by work and episode, and plays videos straight from the drive</li>
+      <li xml:lang="zh-CN">按作品与集数整理文件，视频直接在线播放</li>
+      <li>Parallel transfers that route around slow nodes, with a speed cap that leaves playback alone</li>
+      <li xml:lang="zh-CN">并行传输，绕开慢节点；限速不影响播放</li>
+      <li>Plays random clips from the videos in the current folder</li>
+      <li xml:lang="zh-CN">随机播放当前文件夹里视频的片段</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">dev.nihildigit.Piko.desktop</launchable>
+  <icon type="stock">dev.nihildigit.Piko</icon>
+  <url type="homepage">https://github.com/NihilDigit/piko</url>
+  <url type="bugtracker">https://github.com/NihilDigit/piko/issues</url>
+  <url type="vcs-browser">https://github.com/NihilDigit/piko</url>
+  <categories>
+    <category>Network</category>
+    <category>FileTransfer</category>
+  </categories>
+  <keywords>
+    <keyword>PikPak</keyword>
+    <keyword>cloud</keyword>
+    <keyword>magnet</keyword>
+    <keyword>torrent</keyword>
+  </keywords>
+  <provides>
+    <binary>Piko</binary>
+    <mediatype>x-scheme-handler/magnet</mediatype>
+    <mediatype>application/x-bittorrent</mediatype>
+  </provides>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Poster wall on desktop and phone</caption>
+      <image>https://raw.githubusercontent.com/NihilDigit/piko/main/docs/screenshots/hero.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Links and file name parsing</caption>
+      <image>https://raw.githubusercontent.com/NihilDigit/piko/main/docs/screenshots/links.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Transfers</caption>
+      <image>https://raw.githubusercontent.com/NihilDigit/piko/main/docs/screenshots/transfers.jpg</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <releases>
+    <release version="1.4.0" date="2026-10-31"/>
+  </releases>
+</component>

@@ -1,0 +1,44 @@
+{
+  "name": "jellytunes",
+  "version": "0.7.1",
+  "description": "Take your Jellyfin music offline on MP3 players and storage devices",
+  "homepage": "https://github.com/orainlabs/jellytunes",
+  "main": "dist/main/index.js",
+  "desktopName": "jellytunes.desktop",
+  "author": {
+    "name": "Orain Labs",
+    "email": "hi@orainlabs.dev"
+  },
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/utils": "^3.0.0",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "better-sqlite3": "^12.8.0",
+    "electron-log": "^5.2.4",
+    "fluent-ffmpeg": "^2.1.3",
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "optionalDependencies": {
+    "@ffmpeg-installer/darwin-arm64": "4.1.5",
+    "@ffmpeg-installer/darwin-x64": "4.1.0",
+    "@ffmpeg-installer/linux-arm": "4.1.3",
+    "@ffmpeg-installer/linux-arm64": "4.1.4",
+    "@ffmpeg-installer/linux-ia32": "4.1.0",
+    "@ffmpeg-installer/linux-x64": "4.1.0",
+    "@ffmpeg-installer/win32-ia32": "4.1.0",
+    "@ffmpeg-installer/win32-x64": "4.1.0",
+    "usb-detection": "^4.14.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,mjs,cjs,json,css,md}": [
+      "prettier --write"
+    ]
+  }
+}

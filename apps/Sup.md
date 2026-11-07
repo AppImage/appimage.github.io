@@ -28,13 +28,110 @@ desktop:
     Type: Application
     Icon: sup
     StartupWMClass: Sup
-    X-AppImage-Version: 0.2.7
+    X-AppImage-Version: 0.3.2
     Comment: A Slack client with WhatsApp like UI
     Categories: Utility
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+
+electron:
+  author:
+    name: Alireza Rezania
+    email: alirezarzna@gmail.com
+  private: true
+  dependencies:
+    "@react-native-community/netinfo": "^4.4.0"
+    "@react-navigation/web": "^1.0.0-alpha.9"
+    "@reduxjs/toolkit": "^1.3.6"
+    "@welldone-software/why-did-you-render": "^3.3.8"
+    bytes: "^3.1.0"
+    dayjs: "^1.8.16"
+    electron-context-menu: "^0.15.0"
+    electron-debug: "^3.0.0"
+    electron-dl: "^3.0.0"
+    electron-store: "^4.0.0"
+    electron-unhandled: "^3.0.0"
+    electron-updater: "^4.0.6"
+    electron-util: "^0.12.0"
+    emoji-datasource: "^5.0.1"
+    emoji-js: "^3.5.0"
+    emoji-mart: "^2.11.2"
+    emoji-mart-native: "^0.5.0-beta"
+    expo: "^35.0.0"
+    expo-av: "^8.0.0"
+    expo-location: "^8.0.0"
+    expo-video-thumbnails: "^3.0.0"
+    howler: "^2.1.3"
+    lodash: "^4.17.15"
+    memoize-one: "^5.1.1"
+    modal-enhanced-react-native-web: "^0.2.0"
+    polished: "^3.4.1"
+    react: 16.9.0
+    react-contextmenu: "^2.13.0"
+    react-dom: 16.9.0
+    react-logger: "^1.1.0"
+    react-native: 0.61.2
+    react-native-animatable: "^1.3.3"
+    react-native-animated-ellipsis: "^2.0.0"
+    react-native-document-picker: "^3.2.4"
+    react-native-emoji-input: "^1.1.9"
+    react-native-emoji-selector: "^0.1.7"
+    react-native-fast-image: "^7.0.2"
+    react-native-fs: "^2.14.1"
+    react-native-gesture-handler: "^1.4.1"
+    react-native-gifted-chat: "^0.11.0"
+    react-native-image-zoom-viewer: "^2.2.26"
+    react-native-match-media-polyfill: "^1.0.3"
+    react-native-paper: "^2.16.0"
+    react-native-parsed-text: taskrabbit/react-native-parsed-text
+    react-native-reanimated: kmagiera/react-native-reanimated
+    react-native-responsive-ui: "^2.1.1"
+    react-native-screens: "^2.3.0"
+    react-native-svg: "^9.11.1"
+    react-native-tab-view: "^2.14.0"
+    react-native-unimodules: "^0.7.0"
+    react-native-vector-icons: "^6.6.0"
+    react-native-web: "^0.11.7"
+    react-navigation: "^4.0.10"
+    react-navigation-hooks: "^1.1.0"
+    react-navigation-stack: "^1.9.4"
+    react-navigation-tabs: "^2.5.6"
+    react-redux: "^7.1.1"
+    react-responsive: "^8.0.1"
+    redux: "^4.0.4"
+    redux-logger: "^3.0.6"
+    redux-persist: "^6.0.0"
+    redux-persist-transform-filter: "^0.0.20"
+    redux-thunk: "^2.3.0"
+    reselect: "^4.0.0"
+    typesafe-actions: "^4.4.2"
+  jest:
+    preset: react-native
+    moduleFileExtensions:
+    - ts
+    - tsx
+    - js
+    - jsx
+    - json
+    - node
+  prettier:
+    printWidth: 100
+    bracketSpacing: false
+    jsxBracketSameLine: true
+    singleQuote: true
+    trailingComma: all
+  react-native:
+    electron: false
+    electron-dl: false
+  browser:
+    electron: false
+    electron-dl: false
 ---

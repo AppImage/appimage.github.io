@@ -1,0 +1,31 @@
+{
+  "name": "hero-display",
+  "productName": "HERO display",
+  "version": "1.0.0",
+  "description": "App for display on HERO robot",
+  "main": "build/electron/main.js",
+  "author": {
+    "name": "Matthijs van der Burgh",
+    "email": "MatthijsBurgh@outlook.com",
+    "url": "https://github.com/MatthijsBurgh/"
+  },
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tue-robotics/hero-display.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tue-robotics/hero-display/issues"
+  },
+  "homepage": "https://github.com/tue-robotics/hero-display#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/vue-fontawesome": "^3.1.3",
+    "auto-ros": "^2.2.0",
+    "hero-vue": "^1.2.3",
+    "roslib": "^2.0.1",
+    "vue": "^3.5.24"
+  }
+}

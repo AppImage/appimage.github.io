@@ -1,0 +1,25 @@
+{
+  "name": "anymodel-bot",
+  "productName": "anymodel bot",
+  "version": "0.1.15",
+  "private": true,
+  "description": "anymodel bot：任意模型的个人 AI 助手（飞书 + 微信 iLink），内置 magpie 模型网关",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/electron/main.js",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "@larksuiteoapi/node-sdk": "1.76.0",
+    "htm": "^3.1.1",
+    "preact": "^11.0.2",
+    "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0",
+    "ws": "8.22.0"
+  },
+  "author": {
+    "name": "anymodel bot",
+    "email": "support@anymodel.bot"
+  }
+}

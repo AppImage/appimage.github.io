@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.s4solutionsllc.Nexis</id>
+
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+
+  <name>Nexis</name>
+  <summary>Linux system optimizer and monitoring tool</summary>
+
+  <description>
+    <p>
+      Nexis is a comprehensive system optimizer and monitoring tool for Linux.
+      It provides real-time visibility into your system's health alongside
+      practical tools for cleaning, tuning, and maintaining your machine — all
+      from a unified graphical interface.
+    </p>
+    <p>Key features include:</p>
+    <ul>
+      <li>Live dashboard with CPU, memory, swap, disk, GPU, and network tiles</li>
+      <li>Hardware info page with detailed CPU, GPU, memory, disk, and battery data</li>
+      <li>System Cleaner — scan and remove cache, logs, package leftovers, and old downloads</li>
+      <li>Process manager with GPU %, VRAM, pinned rows, and per-process CPU/memory alerts</li>
+      <li>Resource charts: CPU, memory, swap, disk I/O, network, GPU, temperature, fan speed,
+          and CPU pressure stall (PSI)</li>
+      <li>Services manager to start, stop, enable, and disable systemd units</li>
+      <li>Startup Apps manager for systemd user services and XDG autostart entries</li>
+      <li>Disk Tools: S.M.A.R.T. health, partition viewer, and benchmark</li>
+      <li>Uninstaller with post-removal app-crumbs scanner</li>
+      <li>APT Repository Manager for viewing, adding, and removing sources</li>
+      <li>Docker container and image manager</li>
+      <li>Helpers: swappiness, CPU turbo/frequency, SSD TRIM, Wake-on-LAN, and more</li>
+      <li>System Logs viewer with live filtering</li>
+      <li>HTML system report export</li>
+      <li>Scheduled cleaning with optional restore-point creation</li>
+      <li>Multiple colour themes with per-widget colour customisation</li>
+    </ul>
+  </description>
+
+  <developer id="io.github.s4solutionsllc">
+    <name>S4 Solutions LLC</name>
+  </developer>
+
+  <url type="homepage">https://github.com/s4solutionsllc/Nexis</url>
+  <url type="bugtracker">https://github.com/s4solutionsllc/Nexis/issues</url>
+
+  <launchable type="desktop-id">nexis.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Dashboard with live system metrics</caption>
+      <image>https://raw.githubusercontent.com/s4solutionsllc/Nexis/native/screenshots/Nexis-01.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Hardware information overview</caption>
+      <image>https://raw.githubusercontent.com/s4solutionsllc/Nexis/native/screenshots/Nexis-02.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>System Cleaner with category cards</caption>
+      <image>https://raw.githubusercontent.com/s4solutionsllc/Nexis/native/screenshots/Nexis-03.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Processes page with GPU and VRAM columns</caption>
+      <image>https://raw.githubusercontent.com/s4solutionsllc/Nexis/native/screenshots/Nexis-04.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Resources page with live charts</caption>
+      <image>https://raw.githubusercontent.com/s4solutionsllc/Nexis/native/screenshots/Nexis-05.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>APT Repository Manager</caption>
+      <image>https://raw.githubusercontent.com/s4solutionsllc/Nexis/native/screenshots/Nexis-06.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="2.12.0" date="2026-09-22">
+      <description>
+        <p>Changed:</p>
+        <ul>
+          <li>Disk Map now opens as a full page with redesigned treemap, bubble-map, and
+              sunburst visualizations showing two folder levels at once, plus smooth
+              drill in/out transitions.</li>
+        </ul>
+        <p>Fixed:</p>
+        <ul>
+          <li>Disk Map's bubble-map layout no longer freezes the app on a cache miss —
+              circle-packing now runs on a background thread.</li>
+          <li>Narrow-width and text-wrap fixes across page headers, System Cleaner,
+              Disk Tools, System Logs, the Docker page, and the Startup Apps macOS BTM
+              records list.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.11.0" date="2026-09-20">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Searchable Tweaks pane for hidden macOS defaults preferences.</li>
+          <li>Granular macOS cache rebuilds (dyld, XPC, font, Launchpad).</li>
+          <li>Native menu bar with Ctrl/Cmd+1-9 page navigation.</li>
+        </ul>
+        <p>Changed:</p>
+        <ul>
+          <li>UI consistency audit: fonts, page scaffold, tokens, navigation, and surfaces
+              unified across the app.</li>
+        </ul>
+        <p>Fixed:</p>
+        <ul>
+          <li>Theme-switch staleness and navigation desync after rapid page switches.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.10.0" date="2026-08-31">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>macOS menu-bar health score with a one-click Clean Now action.</li>
+          <li>Linux tray health score with a one-click Clean Now action.</li>
+          <li>Compact always-on-top mini-monitor window (Linux and macOS).</li>
+          <li>Disk map bubble-map and sunburst visualization modes.</li>
+          <li>macOS APFS/Time Machine local snapshot manager.</li>
+        </ul>
+        <p>Changed:</p>
+        <ul>
+          <li>Tray menu regrouped into MONITOR/Manage/System sections.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.9.1" date="2026-08-14">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Minimize to Tray / Start Minimized to Tray settings now disable themselves on desktop environments with no usable system tray.</li>
+          <li>Website apt install instructions updated to current supported Ubuntu series.</li>
+          <li>Settings page section cards now render with the intended elevated card styling.</li>
+          <li>Mail Cleanup nav item now has an icon.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.9.0" date="2026-08-12">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Sparkle auto-update install pipeline with Ed25519 signature verification (macOS).</li>
+          <li>Orphan Leftovers scanner for the App Uninstaller (macOS and Linux).</li>
+          <li>Secure File Shredder and Wipe Free Space tools.</li>
+          <li>Mail Attachment Cleanup (macOS).</li>
+          <li>Homebrew cask batch updater (macOS).</li>
+          <li>Stacer settings importer.</li>
+          <li>Per-process network throughput and NVIDIA GPU stats in the Processes page.</li>
+          <li>Launch directly into Kiosk Mode at startup, with monitor targeting.</li>
+          <li>macOS menu-bar CPU/memory monitor.</li>
+          <li>COPR/Fedora RPM packaging pipeline groundwork.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.8.3" date="2026-07-07">
+      <description>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Linux AppImage now reports its correct version. Previously the x86_64 AppImage was stamped with an old version, so third-party AppImage update managers kept seeing an outdated release and never offered the update.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.3.8" date="2026-05-29">
+      <description>
+        <p>New features and bug fixes:</p>
+        <ul>
+          <li>Multi-battery support: dual-battery systems (e.g. Dell Rugged 14) now show both batteries in Hardware Info with individual stats; Dashboard shows aggregated charge.</li>
+          <li>Orphaned Packages view now shows Install Type (Auto/Manual) and Reverse Deps count with color-coded safety indicators on APT systems.</li>
+          <li>Baobab, Filelight, and QDirStat are now correctly detected and launched when installed via Flatpak, including when running as an AppImage.</li>
+          <li>System Logs severity filter now correctly fetches matching entries from journalctl instead of filtering a truncated cache.</li>
+          <li>Update checker no longer fails on non-English system locales.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.3.7" date="2026-05-17">
+      <description>
+        <p>New features and bug fixes:</p>
+        <ul>
+          <li>New "Start minimized in system tray" option in Settings → General.</li>
+          <li>Flatpak packaging added for Flathub submission.</li>
+          <li>Toggle indicators no longer disappear on Linux Mint 22 and Ubuntu 24.04 derivatives.</li>
+          <li>Wi-Fi interfaces now correctly appear in Network Usage.</li>
+          <li>Window size and position are now remembered across launches.</li>
+          <li>Select All / Clear All buttons restored in System Cleaner.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.3.6" date="2026-05-11">
+      <description>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Process page search now correctly filters by substring; clearing the field restores the full list.</li>
+          <li>Application title and Settings page now always display the correct installed version.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.3.5" date="2026-05-06">
+      <description>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>APT Repository Manager no longer incorrectly flags Release-only repositories as unreachable.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.3.3" date="2026-04-24">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Restore individual dashboard tiles: an "Add Tile" button appears in Edit Mode when any tile is hidden.</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1"/>
+
+  <categories>
+    <category>Utility</category>
+    <category>System</category>
+  </categories>
+
+  <keywords>
+    <keyword>system</keyword>
+    <keyword>monitor</keyword>
+    <keyword>optimizer</keyword>
+    <keyword>cleaner</keyword>
+    <keyword>performance</keyword>
+    <keyword>process</keyword>
+    <keyword>disk</keyword>
+    <keyword>hardware</keyword>
+    <keyword>resources</keyword>
+    <keyword>services</keyword>
+    <keyword>docker</keyword>
+    <keyword>apt</keyword>
+  </keywords>
+</component>

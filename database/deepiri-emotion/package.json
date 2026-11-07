@@ -1,0 +1,38 @@
+{
+  "name": "deepiri-emotion-desktop",
+  "version": "1.0.0",
+  "description": "Deepiri Emotion — AI-powered desktop IDE with Cyrex AI and Helox pipelines",
+  "main": "src/main.js",
+  "type": "module",
+  "bin": {
+    "emotion": "./cli/index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Team-Deepiri/deepiri-emotion.git"
+  },
+  "homepage": "https://github.com/Team-Deepiri/deepiri-emotion#readme",
+  "bugs": {
+    "url": "https://github.com/Team-Deepiri/deepiri-emotion/issues"
+  },
+  "author": "Deepiri Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@monaco-editor/react": "^4.7.0",
+    "axios": "^1.18.0",
+    "chalk": "^5.3.0",
+    "ink": "^4.4.1",
+    "monaco-editor": "^0.55.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "socket.io-client": "^4.7.4",
+    "sql.js": "^1.14.1"
+  },
+  "overrides": {
+    "dompurify": "3.4.0"
+  }
+}

@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.mlm_games.mages</id>
+  <name>Mages</name>
+  <summary>Encrypted chat client for Matrix</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-only</project_license>
+  <developer id="io.github.mlm_games">
+    <name>MLM Games</name>
+  </developer>
+  <description>
+    <p>
+      Mages is an experimental Matrix chat client built with Compose Multiplatform 
+      and a Rust core powered by matrix-rust-sdk. The flatpak version has limitations with screen sharing and video cam access, 
+      which work better on manual downloads / aur builds.
+    </p>
+    <p>Features include:</p>
+    <ul>
+      <li>Room list with previews and unread counts</li>
+      <li>Room and thread timelines (text, media, polls)</li>
+      <li>End-to-end encryption via matrix-sdk</li>
+      <li>Spaces browser</li>
+      <li>Presence and privacy settings</li>
+    </ul>
+    <p>
+      Note: This is experimental software. Things may break, but encryption 
+      is handled by the battle-tested matrix-rust-sdk.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.mlm_games.mages.desktop</launchable>
+  <url type="homepage">https://github.com/mlm-games/mages</url>
+  <url type="bugtracker">https://github.com/mlm-games/mages/issues</url>
+  <url type="vcs-browser">https://github.com/mlm-games/mages</url>
+  <branding>
+    <color type="primary" scheme_preference="light">#e0c3fc</color>
+    <color type="primary" scheme_preference="dark">#3b1054</color>
+  </branding>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main login page</caption>
+      <image>https://raw.githubusercontent.com/mlm-games/Mages/refs/heads/main/fastlane/metadata/android/en-US/images/tvScreenshots/1.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+  </content_rating>
+  <releases>
+    <release version="4.11.9" date="2026-09-24" type="stable">
+      <description>
+        <ul>
+          <li>fix the attachment send issue</li>
+          <li>Space Settings expansion</li>
+          <li>actually wire notification preview setting on all platforms</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.11.8" date="2026-09-24" type="stable">
+      <description>
+        <ul>
+          <li>Space Settings expansion</li>
+          <li>actually wire notification preview setting on all platforms</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.11.7" date="2026-09-23" type="stable">
+      <description>
+        <ul>
+          <li>No user-facing changes were mentioned since previous release</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.11.6" date="2026-09-17" type="stable">
+      <description>
+        <ul>
+          <li>fix the rustls-platform-verifier issue (adapt from retorrent)</li>
+          <li>bump element call to 0.26</li>
+          <li>bump sdk to 0.19</li>
+          <li>liveloc: add a button to center on current location</li>
+          <li>Fix fdroid build</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.11.5" date="2026-09-17" type="stable">
+      <description>
+        <ul>
+          <li>bump element call to 0.26</li>
+          <li>bump sdk to 0.19</li>
+          <li>liveloc: add a button to center on current location</li>
+          <li>Fix fdroid build</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.11.4" date="2026-09-16" type="stable">
+      <description>
+        <ul>
+          <li>make the caller ui dismiss on its own (when the call is picked elsewhere or cut on the other side)</li>
+          <li>setting enums now display formatted</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.11.3" date="2026-09-16" type="stable">
+      <description>
+        <ul>
+          <li>make the caller ui dismiss on its own (when the call is picked elsewhere or cut on the other side)</li>
+          <li>setting enums now display formatted</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.11.2" date="2026-09-15" type="stable">
+      <description>
+        <ul>
+          <li>make the caller ui dismiss on its own (when the call is picked elsewhere or cut on the other side)</li>
+          <li>setting enums now display formatted</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.11.1" date="2026-09-14" type="stable">
+      <description>
+        <ul>
+          <li>build(flake): use android version from release file</li>
+          <li>fix filemname being discarded on forward</li>
+          <li>cache room states</li>
+          <li>Cancel the call notification when the call has been declined</li>
+          <li>build(flake): init for devshell</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.11.0" date="2026-09-12" type="stable">
+      <description>
+        <ul>
+          <li>cache room states</li>
+          <li>Cancel the call notification when the call has been declined</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.10.5" date="2026-09-12" type="stable">
+      <description>
+        <ul>
+          <li>Cancel the call notification when the call has been declined</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.10.4" date="2026-09-11" type="stable">
+      <description>
+        <ul>
+          <li>call notif improvements</li>
+          <li>fix the typing indicator not appearing</li>
+          <li>move the sync indicator to ( surrond, or just appear) around the avatar</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.10.3" date="2026-09-11" type="stable">
+      <description>
+        <ul>
+          <li>fix dual padding being applied on android, and add thread screen ime padding</li>
+          <li>fix #71</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.10.2" date="2026-09-01" type="stable">
+      <description>
+        <ul>
+          <li>fix #71</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.10.1" date="2026-08-29" type="stable">
+      <description>
+        <ul>
+          <li>move UnifiedPush initialisation off from the main thread</li>
+          <li>Revert "chore: switch to composenativetray"</li>
+          <li>cchore: flatpak cam flag</li>
+          <li>oled theme missed tokens (for chat bubbles)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.10.0" date="2026-08-29" type="stable">
+      <description>
+        <ul>
+          <li>Add Pure Black theme for OLED screens</li>
+          <li>Add settings to configure App lock</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.9.13" date="2026-08-27" type="stable">
+      <description>
+        <ul/>
+      </description>
+    </release>
+    <release version="4.9.12" date="2026-08-20" type="stable">
+      <description>
+        <ul>
+          <li>fix the "Jump to Bottom" being inverted in behavoir</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.9.11" date="2026-08-19" type="stable">
+      <description>
+        <ul/>
+      </description>
+    </release>
+    <release version="4.9.10" date="2026-08-17" type="stable">
+      <description>
+        <ul/>
+      </description>
+    </release>
+    <release version="4.9.9" date="2026-08-16" type="stable">
+      <description>
+        <ul>
+          <li>Desktop LiveLoc viewer</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.9.8" date="2026-07-30" type="stable">
+      <description>
+        <ul/>
+      </description>
+    </release>
+    <release version="4.9.7" date="2026-07-27" type="stable">
+      <description>
+        <ul/>
+      </description>
+    </release>
+    <release version="4.9.6" date="2026-07-21" type="stable">
+      <description>
+        <ul>
+          <li>ACCESS_LOCAL_NETWORK permission impl. (for android 17)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.9.5" date="2026-07-21" type="stable">
+      <description>
+        <ul>
+          <li>do not block-wait for the pagination of first 20 messages (for mid-load internet issues)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.9.4" date="2026-07-17" type="stable">
+      <description>
+        <ul/>
+      </description>
+    </release>
+    <release version="4.9.3" date="2026-07-14" type="stable">
+      <description>
+        <ul/>
+      </description>
+    </release>
+    <release version="4.9.2" date="2026-07-13" type="stable">
+      <description>
+        <ul>
+          <li>Dismiss notifications if read on another client</li>
+          <li>fix minimize-to-tray (not notifying previously when autostarted) on desktop</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.9.1" date="2026-07-10" type="stable">
+      <description>
+        <ul>
+          <li>Map timeline view and update interval setting similar to element-x</li>
+          <li>Tapping on the live location message item now navigates to the map viewer</li>
+          <li>call vibrations, and ring</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.8.6" date="2026-07-01" type="stable">
+      <description>
+        <ul>
+          <li>remove unused parts</li>
+          <li>Rooms: Show unread messages and notified with the unread filter, and add a setting to only show notified</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.8.5" date="2026-06-26" type="stable">
+      <description>
+        <ul/>
+      </description>
+    </release>
+    <release version="4.8.4" date="2026-06-24" type="stable">
+      <description>
+        <ul>
+          <li>Do not show grandchildren on the first nav space entry (#109)</li>
+          <li>desktop: remove duplicate sender name for grps</li>
+          <li>bump sdk to 0.18.0</li>
+          <li>Add a toggle to share encrypted history with invited users (true by default)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.8.3" date="2026-06-09" type="stable">
+      <description>
+        <ul>
+          <li>do not normalise homserver urls (#105)</li>
+          <li>Wire read receipts directly via the sdk</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.8.2" date="2026-06-06" type="stable">
+      <description>
+        <ul>
+          <li>Show multiple notifications from a room at once</li>
+          <li>rem duplicate grp name in notifications</li>
+          <li>Linux unifiedpush support</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.8.1" date="2026-06-03" type="stable">
+      <description>
+        <ul>
+          <li>Do not highlight voice button</li>
+          <li>show outgoing for all sent messages</li>
+          <li>fix timeline being reset when multiple messages were sent</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.7.5" date="2026-06-01" type="stable">
+      <description>
+        <ul>
+          <li>support http or socks proxies (#86)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.7.4" date="2026-05-27" type="stable">
+      <description>
+        <ul>
+          <li>Remove extra backfill pagination logic (#102)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.7.3" date="2026-05-19" type="stable">
+      <description>
+        <ul/>
+      </description>
+    </release>
+    <release version="4.7.2" date="2026-05-18" type="stable">
+      <description>
+        <ul>
+          <li>Improve reactions avatar UI</li>
+          <li>fix reply not taking full message width</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.7.1" date="2026-05-17" type="stable">
+      <description>
+        <ul>
+          <li>Update release notes for v4.6.5</li>
+          <li>show avatars of users who reacted</li>
+          <li>Move reaction chips closer</li>
+          <li>Compact spacing for timestamp (#82)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.6.5" date="2026-05-17" type="stable">
+      <description>
+        <ul>
+          <li>show avatars of users who reacted</li>
+          <li>Move reaction chips closer</li>
+          <li>Compact spacing for timestamp (#82)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.6.4" date="2026-05-16" type="stable">
+      <description>
+        <ul>
+          <li>Fix filename being shown as caption (prev. release fix)</li>
+          <li>refresh seen by when sending a new message</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.6.3" date="2026-05-12" type="stable">
+      <description>
+        <ul>
+          <li>Do not fallback to body as filename for media (#98), and show the caption below</li>
+          <li>Auto paginate when scrolling to the top</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.6.2" date="2026-05-04" type="stable">
+      <description>
+        <ul>
+          <li>Update release notes for v4.6.1</li>
+          <li>Add long press menu to mark rooms as read, or set room flags (#94)</li>
+          <li>live loc fix</li>
+          <li>resolve space avatars (#92)</li>
+          <li>bump target sdk to 37, and other lib vers</li>
+          <li>bump agp and element-call vers to 9.2.0 and 0.19.2 respectively</li>
+          <li>strip out &lt;body&gt; and &lt;p&gt; tags when sending markdown messages (#81)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.6.1" date="2026-05-01" type="stable">
+      <description>
+        <ul>
+          <li>Add long press menu to mark rooms as read, or set room flags (#94)</li>
+          <li>live loc fix</li>
+          <li>resolve space avatars (#92)</li>
+          <li>bump target sdk to 37, and other lib vers</li>
+          <li>bump agp and element-call vers to 9.2.0 and 0.19.2 respectively</li>
+          <li>strip out &lt;body&gt; and &lt;p&gt; tags when sending markdown messages (#81)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.5.7" date="2026-04-23" type="stable">
+      <description>
+        <ul>
+          <li>reduce the padding around floating date chip</li>
+          <li>Increase message bubble's max horiz. size</li>
+          <li>fix message grouping for username</li>
+          <li>fix audio crash</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.5.6" date="2026-04-21" type="stable">
+      <description>
+        <ul>
+          <li>bump vers</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.5.5" date="2026-04-14" type="stable">
+      <description>
+        <ul>
+          <li>Handle newline like most other chatting apps (#84)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.5.4" date="2026-04-14" type="stable">
+      <description>
+        <ul>
+          <li>Fix android voice message play logic</li>
+          <li>Update release notes for v4.5.3</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.5.3" date="2026-04-13" type="stable">
+      <description>
+        <ul/>
+      </description>
+    </release>
+    <release version="4.5.2" date="2026-04-13" type="stable">
+      <description>
+        <ul>
+          <li>fix formatted body not being sent</li>
+          <li>Update release notes for v4.5.1</li>
+          <li>Turn off bubble animations by default, and use immediate mode rendering in the markdown library (#78)</li>
+          <li>Update release notes for v4.4.7</li>
+          <li>Do not let the leave be clicked again, while the room is being left (#83)</li>
+          <li>cancel the notification after it has been clicked</li>
+          <li>experimental: audio handling</li>
+          <li>Add raw json display of a message to Message Info sheet</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.5.1" date="2026-04-13" type="stable">
+      <description>
+        <ul>
+          <li>Turn off bubble animations by default, and use immediate mode rendering in the markdown library (#78)</li>
+          <li>Update release notes for v4.4.7</li>
+          <li>Do not let the leave be clicked again, while the room is being left (#83)</li>
+          <li>cancel the notification after it has been clicked</li>
+          <li>experimental: audio handling</li>
+          <li>Add raw json display of a message to Message Info sheet</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.4.7" date="2026-04-13" type="stable">
+      <description>
+        <ul>
+          <li>Do not let the leave be clicked again, while the room is being left (#83)</li>
+          <li>cancel the notification after it has been clicked</li>
+          <li>experimental: audio handling</li>
+          <li>Add raw json display of a message to Message Info sheet</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.4.6" date="2026-04-09" type="stable">
+      <description>
+        <ul>
+          <li>Remove the padding for bubbles, when displaying avatars</li>
+          <li>Use system theme, as the default theme</li>
+          <li>Android: fix Bubbles getting cancelled on opening a notification (fix #76, #73)</li>
+          <li>Android: fix Oauth (#56)</li>
+          <li>actually fix "timeline" issue</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.4.5" date="2026-04-07" type="stable">
+      <description>
+        <ul>
+          <li>android: Remove the room name from grp notifications</li>
+          <li>Android: Always capitalise first letter, and fix "Timeline" being shown as "go5" on release builds</li>
+          <li>Add home screen shortcuts support</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.4.4" date="2026-04-02" type="stable">
+      <description>
+        <ul>
+          <li>Update release notes for v4.4.3</li>
+          <li>use m3 timepicker component for quiet time setting</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.4.3" date="2026-04-02" type="stable">
+      <description>
+        <ul>
+          <li>use m3 timepicker component for quiet time setting</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.4.2" date="2026-04-02" type="stable">
+      <description>
+        <ul>
+          <li>fix reaction notifications not being marked as read on android</li>
+          <li>basic stickers display and "send sticker from image" option (no image packs support) (#67)</li>
+          <li>Notification push rules UI</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.4.1" date="2026-03-29" type="stable">
+      <description>
+        <ul>
+          <li>Set retain state to true for markdown text bubble anim is turned off</li>
+          <li>Revert "chore: set retain state to true for markdown text bubble anim is turned off"</li>
+          <li>Improve attachments by showing its name (and type) in attachment ui, and hide filenames for images and videos</li>
+          <li>voice call audio wiring fix</li>
+          <li>improve media gallery pagination</li>
+          <li>Fix pinned message banner (attach to the bottom of the topbar)</li>
+          <li>add more types to timeline messages hide options (including deleted messages)</li>
+          <li>Refactor message and room actions to only show if they are actionable (except for delete)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.3.6" date="2026-03-29" type="stable">
+      <description>
+        <ul>
+          <li>Switching accounts clears previous cached recovery UI state (#68)</li>
+          <li>Hide left public rooms in UI (#69)</li>
+          <li>Add settings to hide few types of system timeline events</li>
+          <li>add email and phone number options for password login</li>
+          <li>Expose dynamic theme options to bubbles</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.3.5" date="2026-03-25" type="stable">
+      <description>
+        <ul>
+          <li>Fix client id not being properly saved (might need to relogin)</li>
+          <li>add the deleted toolchain resolver</li>
+          <li>make the sso and login wait for e2ee tasks before logging in</li>
+          <li>show a silent notification if the notif is not noisy instead of discarding</li>
+          <li>hide dup. circular indicator for unread messages</li>
+          <li>Change other Linear and Circular indicators to m3e wavy components</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.3.4" date="2026-03-25" type="stable">
+      <description>
+        <ul>
+          <li>hide dup. circular indicator for unread messages</li>
+          <li>Change other Linear and Circular indicators to m3e wavy components</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.3.3" date="2026-03-23" type="stable">
+      <description>
+        <ul>
+          <li>Add more details to message info sheet</li>
+          <li>add multi-room share functionality</li>
+          <li>Add ability to select multiple rooms when forwarding messages</li>
+          <li>improve Seen by chip alignment for groups</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.3.2" date="2026-03-22" type="stable">
+      <description>
+        <ul>
+          <li>Add floating timeline date display</li>
+          <li>Android: Select the correct audio device based on call method (#60)</li>
+          <li>Add a toggle for bubble appearance animations</li>
+          <li>fix android crash when trying to call</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.2.3" date="2026-03-09" type="stable">
+      <description>
+        <ul>
+          <li>show calls in previews</li>
+          <li>Improve attachment progress anim</li>
+          <li>Add language setting (to switch without switching the default lang.)</li>
+          <li>change secondary color to be slighly less greyish</li>
+          <li>fix: settings "calls" section shown as a "privacy" section</li>
+          <li>fix \' strings translation</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.2.2" date="2026-03-09" type="stable">
+      <description>
+        <ul>
+          <li>add location permission request logic</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.2.1" date="2026-03-08" type="stable">
+      <description>
+        <ul>
+          <li>Do not consider system messages for read events (#55)</li>
+          <li>Render mentions as bold links</li>
+          <li>@Mentions support</li>
+          <li>Show avatars toggle (#54)</li>
+          <li>Live location impl. (android only)</li>
+          <li>test: override OAuth for android</li>
+          <li>Bump few dependencies' versions</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.1.2" date="2026-03-06" type="stable">
+      <description>
+        <ul>
+          <li>Unread FAB, and scroll to last unread on opening a room (#50)</li>
+          <li>Add Unread count to filter chip in Rooms</li>
+          <li>fallback to global avatars if local names aren't present</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.1.1" date="2026-03-04" type="stable">
+      <description>
+        <ul>
+          <li>try forcing the redirects be ipv4 addrs (#41)</li>
+          <li>Show a return action, after clicking a reply (#50)</li>
+          <li>Only ask for call perms, when making a call</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.0.2" date="2026-03-03" type="stable">
+      <description>
+        <ul>
+          <li>Move "This Device" down in DevicesTab, and try fixing UnifiedPush again</li>
+          <li>UI: make "This device" text not autowrap</li>
+        </ul>
+      </description>
+    </release>
+    <release version="4.0.1" date="2026-03-02" type="stable">
+      <description>
+        <ul>
+          <li>Show the actual error message for few fails</li>
+          <li>Add copy action to snackbar (for errors)</li>
+          <li>Filter server or state messages to display them in a different way</li>
+          <li>Option to change recovery key, and turn off key storage</li>
+          <li>make filter chips row scrollable</li>
+          <li>[BREAKING] Bump matrix-rust-sdk to latest main, and add dm voice calling support (Need to clear data!)</li>
+          <li>Improve status indicators, and make "seen by" clickable</li>
+          <li>Revert tap to open color change (cause of bad text contrast)</li>
+          <li>Hide predecessor room banner</li>
+          <li>bump rust toolchain version, and element-call version</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.2.2" date="2026-03-01" type="stable">
+      <description>
+        <ul>
+          <li>Hide predecessor room banner</li>
+          <li>bump rust toolchain version, and element-call version</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.2.1" date="2026-02-28" type="stable">
+      <description>
+        <ul>
+          <li>Login screen refactor</li>
+          <li>add thread fallback (for non replies, replies was already present)</li>
+          <li>Initial recovery key generation impl (experimental) (#47)</li>
+          <li>Add manage account button for homeservers that support oidc (#47)</li>
+          <li>Move invite screen to a filter in room screen</li>
+          <li>implement direct user lookup in discover, while removing suggested people</li>
+          <li>Invite event formatting (#46)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.1.3" date="2026-02-25" type="stable">
+      <description>
+        <ul>
+          <li>Android: make the distributor popup appearing when there are no options to choose from</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.1.2" date="2026-02-25" type="stable">
+      <description>
+        <ul>
+          <li>Add native OAuth login support</li>
+          <li>Fix typo in license section of README.md</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.1.1" date="2026-02-22" type="stable">
+      <description>
+        <ul>
+          <li>multiple attachments, native file pickers on jvm, and an camera option</li>
+          <li>ctrl + V can now paste multiple files instead of just one</li>
+          <li>make message actions sheet scrollable</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.0.2" date="2026-02-22" type="stable">
+      <description>
+        <ul>
+          <li>make textlinks and md headings also react to the font size setting</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.0.1" date="2026-02-22" type="stable">
+      <description>
+        <ul>
+          <li>add the foss embedded distributor for notifications without a fcm client</li>
+          <li>Improve search screen UI</li>
+          <li>Fix font size not changing for messages (#44)</li>
+          <li>add sound once per room option</li>
+          <li>improve reply, and edit banner</li>
+          <li>Reactions are now handled in message events</li>
+          <li>desktop: show avatar/fp if present</li>
+          <li>Add filtering based on groups and DMs</li>
+          <li>Add a message info action to check seen by entries</li>
+          <li>condense message bubble spacers, and have reactions closer to the message</li>
+          <li>shrink images to look like other chat clients</li>
+          <li>Move members listing dropdown button to room info screen</li>
+          <li>Another room info screen overhaul</li>
+          <li>Room info screen avatar, spaces avatar, member listing, and leave button</li>
+          <li>Add swipe to reply, and the ability to click a reply to go to the message that was replied to.</li>
+          <li>Add emojis sheet to have curated emojis (like other clients), and app icon badges</li>
+          <li>Store draft messages, and other misc stuff</li>
+          <li>Have an option to change the default unifiedPush provider</li>
+          <li>Add enter handling (shift + enter now sends message by default, togglable in settings)</li>
+          <li>do not hide the status bar (#40)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.7.2" date="2026-02-15" type="stable">
+      <description>
+        <ul>
+          <li>Add ctrl + V support for desktop</li>
+          <li>Add clipboard handling (attachment sheet has an extra button for pastables)</li>
+          <li>better url handling for desktop notifications, and media gallery links</li>
+          <li>Fix room info dropdowns not being aligned to the location, and use better room join rule display names</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.7.1" date="2026-02-15" type="stable">
+      <description>
+        <ul>
+          <li>Add ctrl + V support for desktop</li>
+          <li>Add clipboard handling (attachment sheet has an extra button for pastables)</li>
+          <li>better url handling for desktop notifications, and media gallery links</li>
+          <li>Fix room info dropdowns not being aligned to the location, and use better room join rule display names</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.6.4" date="2026-02-15" type="stable">
+      <description>
+        <ul/>
+      </description>
+    </release>
+    <release version="2.6.3" date="2026-02-15" type="stable">
+      <description>
+        <ul>
+          <li>Android: Try forwarding avatar to call screen</li>
+          <li>Add start menu icons for Windows and MacOS</li>
+          <li>Add power levels, and perms management to room info screen (initial)</li>
+          <li>Add an option to set room alias when creating a room</li>
+          <li>move actually to 1.10.0</li>
+          <li>fix replies taking full width</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.6.2" date="2026-02-14" type="stable">
+      <description>
+        <ul>
+          <li>Update release notes for v2.6.1</li>
+          <li>Add start menu icons for Windows and MacOS</li>
+          <li>Add power levels, and perms management to room info screen (initial)</li>
+          <li>Add an option to set room alias when creating a room</li>
+          <li>move actually to 1.10.0</li>
+          <li>fix replies taking full width</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.6.1" date="2026-02-14" type="stable">
+      <description>
+        <ul>
+          <li>Add start menu icons for Windows and MacOS</li>
+          <li>Add power levels, and perms management to room info screen (initial)</li>
+          <li>Add an option to set room alias when creating a room</li>
+          <li>move actually to 1.10.0</li>
+          <li>fix replies taking full width</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.5.2" date="2026-02-09" type="stable">
+      <description>
+        <ul>
+          <li>(Android) pass a diff. color to markdown text for better monochrome contrast</li>
+          <li>Fix no results string</li>
+          <li>Fix no rooms match string</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.5.1" date="2026-02-08" type="stable">
+      <description>
+        <ul>
+          <li>fix thread replies again</li>
+          <li>Let message bubbles take 80% of available width</li>
+          <li>Use the Material 3 Expressive theme</li>
+          <li>Initial translation handling (es)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.4.6" date="2026-02-05" type="stable">
+      <description>
+        <ul>
+          <li>rem legacy packaging, and update ndk ver (test fdroid build)</li>
+          <li>bump from rc-02 to rel. for M. Compose</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.4.5" date="2026-02-05" type="stable">
+      <description>
+        <ul>
+          <li>Improve room info screen</li>
+          <li>Make media gallery auto paginate for all 4 tabs (remove load more)</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </recommends>
+  <supports>
+    <control>touch</control>
+  </supports>
+  <categories>
+    <category>Network</category>
+    <category>InstantMessaging</category>
+    <category>Chat</category>
+  </categories>
+  <keywords>
+    <keyword>matrix</keyword>
+    <keyword>chat</keyword>
+    <keyword>messenger</keyword>
+    <keyword>encrypted</keyword>
+    <keyword>e2ee</keyword>
+    <keyword>federation</keyword>
+  </keywords>
+</component>

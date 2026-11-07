@@ -1,0 +1,26 @@
+{
+  "name": "i3x-explorer",
+  "version": "1.0.0",
+  "description": "Cross-platform desktop client for exploring I3X API servers",
+  "main": "dist-electron/main.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": {
+    "name": "ACE Technologies",
+    "email": "info@acetechnologies.net"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/cesmii/I3X-Explorer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cesmii/I3X-Explorer.git"
+  },
+  "dependencies": {
+    "clsx": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zustand": "^4.4.7"
+  }
+}

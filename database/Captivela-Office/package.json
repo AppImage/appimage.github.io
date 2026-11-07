@@ -1,0 +1,11 @@
+{
+  "name": "@genoffice/shell",
+  "productName": "Captivela Office",
+  "version": "0.5.1",
+  "license": "Apache-2.0",
+  "private": true,
+  "description": "Unified Captivela Office shell: one app hosting the docs, sheets, slides and pdf modules behind a home/launcher window",
+  "main": "out/main/index.js",
+  "desktopName": "captivela-office.desktop",
+  "author": "Captivela Office"
+}

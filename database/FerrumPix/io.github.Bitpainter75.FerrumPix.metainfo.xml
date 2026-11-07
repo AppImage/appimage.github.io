@@ -1,0 +1,1288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream-Metadaten fuer die Veroeffentlichung (u.a. Flathub-Pflicht).
+  Die <releases> spiegeln CHANGELOG.md; neue Version dort zuerst eintragen.
+  TODO, sobald das GitHub-Repo oeffentlich ist (README + Screenshots vorhanden):
+    - Mindestens 1 Screenshot mit oeffentlich erreichbarer URL unten ergaenzen (z.B. aus GitHub raw/Releases).
+    - Mit `appstreamcli validate` gegenpruefen (offen: developer-id-invalid).
+-->
+<component type="desktop-application">
+  <id>io.github.Bitpainter75.FerrumPix</id>
+  <name>FerrumPix</name>
+  <summary>Desktop Photo/RAW-Editor, Viewer, Gallery, Immich and Nextcloud Client in one App</summary>
+  <summary xml:lang="de">Foto/RAW-Editor, Betrachter, Galerie, Immich- und Nextcloud-Client in einer Anwendung</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+
+  <developer id="io.github.bitpainter75">
+    <name>Bitpainter75</name>
+  </developer>
+
+  <description>
+    <p>
+      FerrumPix is a desktop photo editing and management application for Linux, featuring an interactive gallery,
+      a fast image viewer, an editor, and integrations for self-hosted Immich and Nextcloud servers. It includes tools for
+      exposure adjustment, automatic image enhancement, colour grading, tone curves, custom filters, text and shape overlays, a layers
+      panel for managing the object stack, blank images created from photo, screen and paper presets, and a
+      non-destructive project format that keeps edits reopenable.
+    </p>
+    <p xml:lang="de">
+      FerrumPix ist eine Desktop-Fotobearbeitungs-App fuer Linux mit Galerie, Viewer, Editor (Belichtung, automatische
+      Bildverbesserung, Farbe, Kurven, Filter, Text-/Formen-Overlays, Ebenen-Panel, neue leere Bilder aus Foto-, Bildschirm- und
+      Papiervorgaben, nicht-destruktives Projektformat u.v.m.) und einer Anbindung an selbst gehostete
+      Immich- und Nextcloud-Server.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.Bitpainter75.FerrumPix.desktop</launchable>
+
+  <!-- Screenshot-URLs zeigen auf das aktuelle Repo (Bitpainter75/FerrumPix) - siehe TODO oben:
+       sobald fuer die Veroeffentlichung ein neues GitHub-Repo aufgesetzt ist, hier den Repo-Namen anpassen. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Gallery view showing the photo catalog</caption>
+      <caption xml:lang="de">Galerieansicht des Fotokatalogs</caption>
+      <image>https://raw.githubusercontent.com/Bitpainter75/FerrumPix/main/Screenshots/Gallery.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Image viewer with navigation and filmstrip</caption>
+      <caption xml:lang="de">Bild-Viewer mit Navigation und Filmstreifen</caption>
+      <image>https://raw.githubusercontent.com/Bitpainter75/FerrumPix/main/Screenshots/Viewer.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Editor with text and shape overlays</caption>
+      <caption xml:lang="de">Editor mit Text- und Formen-Overlays</caption>
+      <image>https://raw.githubusercontent.com/Bitpainter75/FerrumPix/main/Screenshots/Editor_Text.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Cropping tool inside the editor</caption>
+      <caption xml:lang="de">Zuschneide-Werkzeug im Editor</caption>
+      <image>https://raw.githubusercontent.com/Bitpainter75/FerrumPix/main/Screenshots/Editor_Crop.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Adjustment sliders inside the editor</caption>
+      <caption xml:lang="de">Anpassungsregler im Editor</caption>
+      <image>https://raw.githubusercontent.com/Bitpainter75/FerrumPix/main/Screenshots/Editor_Light.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/Bitpainter75/FerrumPix</url>
+  <url type="bugtracker">https://github.com/Bitpainter75/FerrumPix/issues</url>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.9.54" date="2026-09-28">
+      <description>
+        <p>This release matches raw colors to the camera model and lets you choose the details under gallery tiles:</p>
+        <p xml:lang="de">Diese Version gleicht die Farben von RAW-Dateien an das Kameramodell an und lässt wählen, welche Angaben unter den Galeriekacheln stehen:</p>
+        <ul>
+          <li>An optional setting starts unedited raw files with calibration values tuned for many camera models. It is off by default.</li>
+          <li xml:lang="de">Eine optionale Einstellung startet unbearbeitete RAW-Dateien mit Kalibrierwerten, die für viele Kameramodelle abgestimmt sind. Ab Werk ist sie aus.</li>
+          <li>Settings, Gallery lets you choose up to three lines of details under each tile, shown in the list view and as a tooltip in the filmstrip too. Tiles now show the date taken by default.</li>
+          <li xml:lang="de">Unter Einstellungen, Galerie lassen sich bis zu drei Zeilen mit Angaben unter jeder Kachel wählen, die auch in der Liste und als Tooltip im Filmstreifen stehen. Ab Werk zeigt die Kachel jetzt das Aufnahmedatum.</li>
+          <li>Canon EOS R6 Mark III raw files are developed correctly, and most Canon cameras since about 2010 use the black and white levels written into each file.</li>
+          <li xml:lang="de">RAW-Dateien der Canon EOS R6 Mark III werden richtig entwickelt, und die meisten Canon-Kameras seit etwa 2010 nutzen die Schwarz- und Weißwerte aus der jeweiligen Datei.</li>
+          <li>Fixes improve the fast AI denoiser on dark areas, keyboard navigation in the gallery, the info panel, masks with lens correction, brush size steps, the rating stars and heart on tiles, outlined highlight buttons, and HEIC on Windows.</li>
+          <li xml:lang="de">Korrekturen verbessern den schnellen KI-Entrauscher in dunklen Flächen, die Tastatursteuerung der Galerie, die Info-Leiste, Masken mit Objektivkorrektur, die Schritte der Pinselgröße, Sterne und Herz auf den Kacheln, umrandete statt gefüllte hervorgehobene Knöpfe sowie HEIC unter Windows.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.53" date="2026-09-26">
+      <description>
+        <p>This release adds AI denoising controls, improves browsing in the editor's filmstrip, and makes gallery actions easier to click:</p>
+        <p xml:lang="de">Diese Version bringt KI-Rauschminderung, verbessert das Blättern im Filmstreifen des Editors und macht die Aktionen auf den Galeriekacheln leichter anklickbar:</p>
+        <ul>
+          <li>The editor can measure image noise and choose a matching denoising strength. Selection filters and export can denoise images too.</li>
+          <li xml:lang="de">Der Editor kann das Bildrauschen messen und eine passende Stärke wählen. Auch Auswahlfilter und Export können Bilder entrauschen.</li>
+          <li>Clicking a filmstrip picture selects it for browsing; double-click, ENTER or the context menu opens it. Dragging onto the photo shows where the layer will land.</li>
+          <li xml:lang="de">Ein Klick auf ein Bild im Filmstreifen wählt es zum Durchblättern aus; Doppelklick, ENTER oder das Kontextmenü öffnen es. Beim Ziehen aufs Foto wird die Einfügestelle der Ebene angezeigt.</li>
+          <li>The gallery has an export button for selected pictures. Larger click targets on tile actions and selection circles make them easier to use.</li>
+          <li xml:lang="de">Die Galerie hat einen Exportknopf für ausgewählte Bilder. Größere Trefferflächen für Kachelaktionen und Auswahlkreise erleichtern die Bedienung.</li>
+          <li>Fixes improve brush and mask strokes, gallery window dragging and timeline clicks, saved searches, and favourites.</li>
+          <li xml:lang="de">Korrekturen verbessern Pinsel- und Maskenstriche, Fensterzug und Zeitleistenklicks in der Galerie, gespeicherte Suchen und Favoriten.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.52" date="2026-09-25">
+      <description>
+        <p>This release lets text be aligned and makes new objects stand out from the picture:</p>
+        <p xml:lang="de">Diese Version richtet Text aus und lässt neue Objekte sich vom Bild abheben:</p>
+        <ul>
+          <li>Text with several lines can be set left, centred, right or justified, and text shadows move in finer steps.</li>
+          <li xml:lang="de">Mehrzeiliger Text lässt sich linksbündig, zentriert, rechtsbündig oder im Blocksatz setzen, und Textschatten lassen sich feiner verschieben.</li>
+          <li>New text, brush strokes and outlines start in a colour that contrasts with the background.</li>
+          <li xml:lang="de">Neuer Text, Pinselstriche und Umrisse beginnen in einer Farbe, die sich vom Hintergrund abhebt.</li>
+          <li>The lens data is up to date again and knows a few more cameras.</li>
+          <li xml:lang="de">Die Objektivdaten sind wieder aktuell und kennen einige Kameras mehr.</li>
+          <li>Fixes for text frames and shadows, outlines cut off while selected, moving pictures inside and out of the gallery, and saving FPX files.</li>
+          <li xml:lang="de">Korrekturen für Textrahmen und Schatten, abgeschnittene Umrisse bei markierten Objekten, das Verschieben von Bildern in und aus der Galerie und das Speichern von FPX-Dateien.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.51" date="2026-09-24">
+      <description>
+        <p>This release brings pen pressure and new tools for painting and selections, and reads the histogram one channel at a time:</p>
+        <p xml:lang="de">Diese Version bringt Stiftdruck und neue Werkzeuge für Malen und Auswahlen und zeigt das Histogramm auch Kanal für Kanal:</p>
+        <ul>
+          <li>With a pen, light pressure paints thinner for the brush, the eraser and the mask brush, and a Smoothing slider steadies strokes.</li>
+          <li xml:lang="de">Mit einem Stift malt leichter Druck schmaler, bei Pinsel, Radierer und Maskenpinsel, und ein Regler Glätten beruhigt den Strich.</li>
+          <li>Selections can be expanded, contracted, smoothed or turned into a border, and red eyes can be removed with a click.</li>
+          <li xml:lang="de">Auswahlen lassen sich erweitern, reduzieren, glätten oder zum Rand machen, und rote Augen verschwinden mit einem Klick.</li>
+          <li>The histogram shows RGB, a single colour channel or luminance, and the clipping warning has a button in the analysis panel and the J key.</li>
+          <li xml:lang="de">Das Histogramm zeigt RGB, einen einzelnen Farbkanal oder die Helligkeit, und die Clipping-Warnung hat einen Knopf im Analysepanel und die Taste J.</li>
+          <li>Text, QR codes, shapes and symbols can be inserted without clicking into the picture.</li>
+          <li xml:lang="de">Text, QR-Codes, Formen und Symbole lassen sich einfügen, ohne ins Bild zu klicken.</li>
+          <li>Fixes for eyedropper colours under changed sliders, a brush that turned invisible, text watermarks cut off or shown in the wrong place, shortcuts that stopped working, and faster painting on layers.</li>
+          <li xml:lang="de">Korrekturen für Pipettenfarben bei verstellten Reglern, einen unsichtbar gewordenen Pinsel, abgeschnittene oder falsch angezeigte Text-Wasserzeichen und Tastenkürzel, die nicht mehr griffen; dazu schnelleres Malen auf Ebenen.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.50" date="2026-09-23">
+      <description>
+        <p>This release puts your photos on a map, lets you compare with the camera's own JPEG, and brings the viewer's keys to the editor:</p>
+        <p xml:lang="de">Diese Version zeigt Fotos auf einer Karte, vergleicht mit dem JPEG der Kamera und bringt die Tasten des Betrachters in den Editor:</p>
+        <ul>
+          <li>The gallery can show pictures by where they were taken. The map is off until you turn it on, because its tiles come from a server on the internet; tiles you have seen stay on your device until you clear them.</li>
+          <li xml:lang="de">Die Galerie kann Bilder nach ihrem Aufnahmeort zeigen. Die Karte ist aus, bis Sie sie einschalten, denn ihre Kacheln kommen von einem Server im Internet; bereits gesehene Kacheln bleiben auf dem Gerät, bis Sie sie löschen.</li>
+          <li>The compare button in the editor can put the JPEG stored inside a raw file on the before side.</li>
+          <li xml:lang="de">Der Vergleichsknopf im Editor kann das in der RAW-Datei gespeicherte JPEG auf die Vorher-Seite legen.</li>
+          <li>Z, F and SHIFT+arrow keys work in the editor as in the viewer; Z zooms to 100 percent at the mouse pointer.</li>
+          <li xml:lang="de">Z, F und SHIFT+Pfeiltasten wirken im Editor wie im Betrachter; Z springt an der Stelle unter dem Mauszeiger auf 100 Prozent.</li>
+          <li>Removing haze now works locally and no longer turns clear shadows black. Fixes for lens correction being lost on reopening, CHDK DNGs, the exposure range of presets and sidecars, Nikon third-party lens names, Home and End in the photo wall, and update detection in AppImage managers.</li>
+          <li xml:lang="de">Dunst entfernen wirkt jetzt örtlich und lässt klare Tiefen nicht mehr absaufen. Korrekturen für die beim erneuten Öffnen verlorene Objektivkorrektur, CHDK-DNGs, den Belichtungsbereich von Presets und Beistelldateien, die Namen von Fremdobjektiven an Nikon, POS1 und ENDE in der Fotowand und die Update-Erkennung in AppImage-Verwaltungen.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.49" date="2026-09-22">
+      <description>
+        <p>This release adds a gallery wall, makes RAW development more predictable, and gives brushes precise line controls:</p>
+        <p xml:lang="de">Diese Version bringt eine Fotowand für die Galerie, macht die RAW-Entwicklung berechenbarer und gibt Pinseln präzise Linienhilfen:</p>
+        <ul>
+          <li>The new gallery wall keeps every photo's proportions, has no caption strip, and lets you adjust the gap and turn corners or frames off.</li>
+          <li xml:lang="de">Die neue Fotowand behält die Proportionen jedes Fotos, verzichtet auf eine Beschriftungsleiste und lässt Abstand, Ecken und Rahmen einstellen.</li>
+          <li>RAW highlights are read without clipping for recovery, with a switch under RAW development to return to the older path for cameras that need it. DNG baseline exposure is applied, and unknown LibRaw cameras now say what is wrong.</li>
+          <li xml:lang="de">RAW-Lichter werden für die Wiederherstellung ohne Beschneiden gelesen; ein Schalter unter RAW-Entwicklung führt bei Bedarf zum älteren Weg zurück. Die Grundbelichtung von DNGs wird berücksichtigt, und unbekannte LibRaw-Kameras erklären jetzt das Problem.</li>
+          <li>Hold CTRL while painting to follow the first small movement, ALT for a horizontal line and SHIFT for a vertical one. This works with painting, erasing, masks, selections, healing and smudging; the clone stamp keeps its ALT source pick and supports CTRL only.</li>
+          <li xml:lang="de">STRG beim Malen folgt der ersten kleinen Bewegung, ALT zeichnet waagerecht und UMSCHALT senkrecht. Das gilt für Malen, Radieren, Masken, Auswahlen, Reparatur und Verwischen; der Stempel behält seinen ALT-Quellpunkt und unterstützt nur STRG.</li>
+          <li>Lens correction recognises more Nikon MakerNote entries and locale-formatted apertures, while avoiding an unrelated adapted lens profile. Objects now look the same in the editor, viewer, exports and print.</li>
+          <li xml:lang="de">Die Objektivkorrektur erkennt mehr Nikon-MakerNotes und lokal formatierte Blenden, ohne ein fremdes adaptiertes Profil zu wählen. Objekte sehen nun in Editor, Viewer, Export und Druck gleich aus.</li>
+          <li>AI models downloaded in Settings can be removed there again; bundled and system-wide model files stay untouched.</li>
+          <li xml:lang="de">In den Einstellungen geladene KI-Modelle lassen sich dort wieder entfernen; mitgelieferte und systemweite Modelldateien bleiben unangetastet.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.47" date="2026-09-20">
+      <description>
+        <p>This release makes working with mask layers several times faster, sorts out lens correction and watermarks, and adds colour labels to the comparison view:</p>
+        <p xml:lang="de">Diese Version macht die Arbeit mit Maskenebenen mehrfach so schnell, bringt Objektivkorrektur und Wasserzeichen in Ordnung und gibt der Vergleichsansicht Farbetiketten:</p>
+        <ul>
+          <li>Switching between mask layers inside an adjustment tool is more than ten times faster, and building a mask, its red overlay and the brush correction on top of it all became several times quicker.</li>
+          <li xml:lang="de">Der Wechsel zwischen Maskenebenen im Anpassungswerkzeug ist mehr als zehnmal so schnell, und das Aufbauen einer Maske, ihre rote Überlagerung und die Pinselkorrektur darauf wurden mehrfach so schnell.</li>
+          <li>Lens correction is only offered where it works, on a RAW file being developed, and a lens you pick by hand now reaches the picture.</li>
+          <li xml:lang="de">Die Objektivkorrektur wird nur noch dort angeboten, wo sie wirkt, beim Entwickeln einer RAW-Datei, und ein von Hand gewähltes Objektiv erreicht jetzt das Bild.</li>
+          <li>A watermark on a straightened, cropped or turned picture stays where you put it and no longer comes out tilted.</li>
+          <li xml:lang="de">Ein Wasserzeichen auf einem begradigten, beschnittenen oder gedrehten Bild bleibt, wo es hingelegt wurde, und kommt nicht mehr gekippt heraus.</li>
+          <li>Both sides of the comparison view carry colour labels, and the editor can keep a settable margin between a fitted picture and the interface.</li>
+          <li xml:lang="de">Beide Seiten der Vergleichsansicht tragen Farbetiketten, und der Editor kann einen einstellbaren Rand zwischen dem eingepassten Bild und der Oberfläche frei lassen.</li>
+          <li>Menus and tooltips use the application font again; a damaged system font could close FerrumPix the moment a tooltip appeared. Depth blur takes about half as long.</li>
+          <li xml:lang="de">Menüs und Kurzhinweise benutzen wieder die Schrift der Anwendung; eine beschädigte Systemschrift konnte FerrumPix beim ersten Kurzhinweis beenden. Die Tiefenunschärfe braucht etwa halb so lange.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.46" date="2026-09-17">
+      <description>
+        <p>This release reads and saves JPEG XL, reworks clarity, pastes pictures from the clipboard and makes working with masks and retouching noticeably faster:</p>
+        <p xml:lang="de">Diese Version liest und speichert JPEG XL, überarbeitet die Klarheit, fügt Bilder aus der Zwischenablage ein und macht die Arbeit mit Masken und Retusche spürbar schneller:</p>
+        <ul>
+          <li>Photos in JPEG XL open with their colour profile and capture data, and you can save as JPEG XL wherever you can choose a format. JPEG files can be repacked into JPEG XL without any loss.</li>
+          <li xml:lang="de">Fotos in JPEG XL öffnen sich mit Farbprofil und Aufnahmedaten, und überall, wo sich ein Format wählen lässt, kann als JPEG XL gespeichert werden. JPEG-Dateien lassen sich verlustfrei in JPEG XL umpacken.</li>
+          <li>Clarity lifts contrast in the midtones across a wide area without rims along strong edges, and the tone curve can now set the black and white point on every channel.</li>
+          <li xml:lang="de">Die Klarheit hebt den Kontrast in den Mitteltönen großflächig an, ohne Säume an kräftigen Kanten, und die Gradationskurve setzt jetzt auf jedem Kanal Schwarz- und Weißpunkt.</li>
+          <li>A screenshot or an image copied in the browser can be pasted as a new layer, and what you copy in the editor also goes to the clipboard as a picture.</li>
+          <li xml:lang="de">Ein Bildschirmfoto oder ein im Browser kopiertes Bild lässt sich als neue Ebene einfügen, und was im Editor kopiert wird, landet auch als Bild in der Zwischenablage.</li>
+          <li>Projects with masks open faster, a mask layer shows its overlay almost at once, the depth blur is about three times faster and the healing brush several times faster.</li>
+          <li xml:lang="de">Projekte mit Masken öffnen sich schneller, eine Maskenebene zeigt ihre Überlagerung fast sofort, die Tiefenunschärfe ist etwa dreimal und der Reparaturpinsel mehrfach so schnell.</li>
+          <li>A layer mask follows its layer while you move it, erasing on an image layer removes the pixels for good, and the depth blur works with every aperture shape.</li>
+          <li xml:lang="de">Eine Ebenenmaske folgt ihrer Ebene schon beim Verschieben, Radieren auf einer Bildebene entfernt die Bildpunkte dauerhaft, und die Tiefenunschärfe funktioniert mit jeder Blendenform.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.45" date="2026-09-16">
+      <description>
+        <p>This release places photos from a GPS track, brings new noise reduction and sharpening, and makes the way back to the original a single step:</p>
+        <p xml:lang="de">Diese Version setzt Aufnahmeorte aus einer GPS-Aufzeichnung, bringt neue Rauschminderung und Schärfung und macht den Weg zurück zum Original zu einem einzigen Schritt:</p>
+        <ul>
+          <li>Select photos and point FerrumPix at a GPX file: every one of them gets the spot the track was at when it was taken.</li>
+          <li xml:lang="de">Fotos auswählen und eine GPX-Datei angeben: jedes bekommt den Ort, an dem die Aufzeichnung zum Aufnahmezeitpunkt war.</li>
+          <li>A new default noise reduction measures how noisy the picture is and also takes out the coarse, blotchy noise of high ISO shots. A second sharpening method brings fine detail back into focus without coloured fringes.</li>
+          <li xml:lang="de">Eine neue Standard-Rauschminderung misst, wie verrauscht das Bild ist, und nimmt auch das grobe, fleckige Rauschen hoher ISO-Werte heraus. Ein zweites Schärfverfahren holt feine Details ohne Farbsäume zurück.</li>
+          <li>A new setting shows your own development instead of the camera's preview for every RAW, in the viewer, in fullscreen and in the quick preview of the gallery.</li>
+          <li xml:lang="de">Eine neue Einstellung zeigt bei jeder RAW-Datei die eigene Entwicklung statt der Vorschau der Kamera, im Betrachter, im Vollbild und in der Schnellvorschau der Galerie.</li>
+          <li>Reset all edits clears sliders, crop, retouching, masks and layers at once, Save as suggests a name from a template of your choice, and the XMP and LUT preset lists can be emptied in one click.</li>
+          <li xml:lang="de">Alle Bearbeitungen zurücksetzen entfernt Regler, Zuschnitt, Retusche, Masken und Ebenen auf einmal, Speichern unter schlägt einen Namen nach einer eigenen Vorlage vor, und die Listen der XMP- und LUT-Presets lassen sich mit einem Klick leeren.</li>
+          <li>The date format can be chosen independently of the language, the info panel shows exposure compensation, and grouping by ISO gives each value its own section.</li>
+          <li xml:lang="de">Das Datumsformat lässt sich unabhängig von der Sprache wählen, das Infopanel zeigt die Belichtungskorrektur, und die Gruppierung nach ISO gibt jedem Wert einen eigenen Abschnitt.</li>
+          <li>The tone curve behaves the way you draw it: a straight curve stays straight, and steep points no longer throw it into pure black or white.</li>
+          <li xml:lang="de">Die Gradationskurve verhält sich so, wie man sie zeichnet: eine gerade Kurve bleibt gerade, und steile Punkte werfen sie nicht mehr in reines Schwarz oder Weiß.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.44" date="2026-09-13">
+      <description>
+        <p>This release straightens crooked photos by itself, gives the program a new icon and keeps the tool you are working with when you pick a layer:</p>
+        <p xml:lang="de">Diese Version stellt schiefe Fotos von selbst gerade, gibt dem Programm ein neues Symbol und behält das Werkzeug, mit dem man arbeitet, beim Wechsel der Ebene:</p>
+        <ul>
+          <li>Level to the horizon, under Transform, looks for the straight edges in the picture - the horizon, the edge of a house, a row of windows - and turns the photo until they sit level.</li>
+          <li xml:lang="de">Automatisch auf den Horizont, im Werkzeug Transformieren, sucht die geraden Kanten im Bild - den Horizont, eine Hauskante, eine Fensterreihe - und dreht das Foto, bis sie waagerecht stehen.</li>
+          <li>Correct perspective automatically, under Distort, finds the lines of a building shot that lean together and pulls them upright. Both write their result into the ordinary sliders and can be nudged afterwards.</li>
+          <li xml:lang="de">Perspektive automatisch korrigieren, im Werkzeug Verzerren, findet die stürzenden Linien einer Gebäudeaufnahme und stellt sie gerade. Beide schreiben ihr Ergebnis in die gewöhnlichen Regler und lassen sich danach nachziehen.</li>
+          <li>A new application icon, used everywhere the program shows up: window and task bar, the start menu, the dock and the installers.</li>
+          <li xml:lang="de">Ein neues Anwendungssymbol, überall dort, wo das Programm auftaucht: Fenster- und Taskleiste, Startmenü, Dock und Installationspakete.</li>
+          <li>FerrumPix is in the Microsoft Store. Windows installs it and keeps it up to date for you.</li>
+          <li xml:lang="de">FerrumPix ist im Microsoft Store. Windows installiert es und hält es aktuell.</li>
+          <li>Picking a layer no longer changes your tool. Only inserted objects still bring up their own settings, because that is where you edit them.</li>
+          <li xml:lang="de">Das Wählen einer Ebene wechselt nicht mehr das Werkzeug. Nur eingefügte Objekte holen weiterhin ihre eigenen Einstellungen hervor, weil man sie dort bearbeitet.</li>
+          <li>Pictures are inserted at their original size, and CTRL while dragging an object moves it freely, without the guides pulling it into place.</li>
+          <li xml:lang="de">Bilder werden in ihrer Originalgröße eingefügt, und STRG beim Ziehen eines Objekts bewegt es frei, ohne dass die Hilfslinien es einrasten lassen.</li>
+          <li>Setting the perspective with the sliders now makes Apply available; it only woke up when you dragged the corners in the picture.</li>
+          <li xml:lang="de">Die Perspektive über die Regler einzustellen macht jetzt auch den Knopf Anwenden bedienbar; er wachte bisher nur auf, wenn man die Ecken im Bild zog.</li>
+          <li>People found on pictures from an Immich server show their faces again, and an object being bent shows the shape it really takes.</li>
+          <li xml:lang="de">Personen von einem Immich-Server zeigen wieder ihre Gesichter, und ein Objekt beim Verformen zeigt die Form, die es wirklich annimmt.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.43" date="2026-09-11">
+      <description>
+        <p>This release saves pictures as TIFF, hands pictures to other programs, brings G'MIC into the editor and makes zooming in the viewer easier:</p>
+        <p xml:lang="de">Diese Version speichert Bilder als TIFF, gibt Bilder an andere Programme weiter, holt G'MIC in den Editor und macht das Zoomen im Betrachter leichter:</p>
+        <ul>
+          <li>Pictures can be saved as TIFF, in Save as and in every batch run that writes new files. The shot data and a copyright note go along.</li>
+          <li xml:lang="de">Bilder lassen sich als TIFF speichern, in Speichern unter und in jedem Stapellauf, der neue Dateien schreibt. Aufnahmedaten und Urheberhinweis kommen mit.</li>
+          <li>Open with hands a picture to another program. You name the programs in the settings, and they appear in the context menu of the gallery and the viewer. They always get the original file, without your edits.</li>
+          <li xml:lang="de">Öffnen mit gibt ein Bild an ein anderes Programm. Die Programme trägt man in den Einstellungen ein, sie stehen dann im Kontextmenü von Galerie und Betrachter. Sie bekommen immer die Originaldatei, ohne Bearbeitungen.</li>
+          <li>With G'MIC installed, the editor can pass the picture to it from the footer menu. Whatever you apply there comes back as a new layer on top of your photo.</li>
+          <li xml:lang="de">Ist G'MIC installiert, gibt der Editor das Bild über das Menü der Fußzeile daran weiter. Was man dort anwendet, kommt als neue Ebene über das Foto zurück.</li>
+          <li>In the viewer, Z switches between 100 % and fit, and SHIFT with the arrow keys moves around a zoomed picture. Zooming with the keys or the buttons keeps the middle of the view in place.</li>
+          <li xml:lang="de">Im Betrachter wechselt Z zwischen 100 % und Einpassen, und SHIFT mit den Pfeiltasten verschiebt ein vergrößertes Bild. Zoomen mit Tasten oder Knöpfen hält die Mitte der Ansicht fest.</li>
+          <li>Saving in the editor shows a progress bar, and the editor no longer flashes "no image" while it opens the saved file.</li>
+          <li xml:lang="de">Speichern im Editor zeigt einen Fortschrittsbalken, und beim Öffnen der gespeicherten Datei steht nicht mehr kurz "Kein Bild" da.</li>
+          <li>A video from an Immich or Nextcloud server no longer takes the app down with it.</li>
+          <li xml:lang="de">Ein Video von einem Immich- oder Nextcloud-Server nimmt die Anwendung nicht mehr mit.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.42" date="2026-09-10">
+      <description>
+        <p>This release gives noise reduction a filter that keeps detail, lets the Adjustments panel be made wider, and keeps server videos and the learned models from taking the application down:</p>
+        <p xml:lang="de">Diese Version gibt der Rauschminderung einen Filter, der die Zeichnung behält, lässt das Anpassungspanel breiter ziehen und bewahrt Servervideos und die gelernten Modelle davor, die Anwendung mitzunehmen:</p>
+        <ul>
+          <li>Noise reduction keeps your detail. The luminance slider now smooths flat areas and leaves edges alone instead of blurring everything equally, it does something from the very first tenth of the slider, and it takes colour noise with it as it goes. The two earlier methods are still there, and anything you edited before opens as you left it.</li>
+          <li xml:lang="de">Die Rauschminderung behält die Zeichnung. Der Helligkeitsregler glättet jetzt flache Flächen und lässt Kanten stehen, statt alles gleichmäßig weichzuzeichnen, er wirkt schon im ersten Zehntel seines Wegs, und er nimmt das Farbrauschen mit. Die beiden bisherigen Verfahren bleiben wählbar, und was vorher bearbeitet wurde, öffnet unverändert.</li>
+          <li>The Adjustments panel can be made wider. Drag its inner edge and every slider grows with it, so the same mouse movement changes the value in smaller steps. FerrumPix remembers the width.</li>
+          <li xml:lang="de">Das Anpassungspanel lässt sich breiter ziehen. Am inneren Rand gezogen wächst jeder Regler mit, dieselbe Mausbewegung ändert den Wert dann in feineren Schritten. Die Breite bleibt gemerkt.</li>
+          <li>The strength of the AI denoiser starts at 70 instead of 30 and is remembered, so a run is no longer minutes spent on a setting that shows little.</li>
+          <li xml:lang="de">Die Stärke des Entrauschens mit Modell beginnt bei 70 statt bei 30 und bleibt gemerkt, ein Lauf kostet also nicht mehr Minuten für eine Einstellung, die wenig zeigt.</li>
+          <li>A video from an Immich or Nextcloud server plays instead of ending the app. Such a video only becomes a file once it has been downloaded, and the viewer started it a second time on the way there; on macOS that ended the program on the spot. Videos on your own disk were never affected.</li>
+          <li xml:lang="de">Ein Video von einem Immich- oder Nextcloud-Server läuft, statt die Anwendung zu beenden. Ein solches Video wird erst nach dem Herunterladen zur Datei, und der Betrachter hat es auf dem Weg dorthin ein zweites Mal gestartet; unter macOS war die Anwendung damit weg. Videos auf der eigenen Platte waren nie betroffen.</li>
+          <li>Denoising and removing an object fit themselves to the graphics card. Both used to ask for more memory than a small card has, and on such a card the app closed without a word. FerrumPix now asks the card how much memory it has and computes in smaller pieces when there is not much.</li>
+          <li xml:lang="de">Entrauschen und Objekt entfernen richten sich nach der Grafikkarte. Beide haben mehr Speicher angefordert, als eine kleine Karte hat, und dort hat sich die Anwendung wortlos beendet. FerrumPix fragt die Karte jetzt nach ihrem Speicher und rechnet in kleineren Stücken, wenn er knapp ist.</li>
+          <li>Starting FerrumPix with --debug now shows what it is doing in the window it was started from, so a start that fails is no longer silent.</li>
+          <li xml:lang="de">Mit --debug gestartet zeigt FerrumPix jetzt im aufrufenden Fenster, was es tut, ein missglückter Start bleibt also nicht mehr stumm.</li>
+          <li>The target shown at the bottom left names the layer you are working on instead of what kind of layer it is.</li>
+          <li xml:lang="de">Das Wirkziel unten links nennt die Ebene, an der man arbeitet, statt ihrer Art.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.41" date="2026-09-09">
+      <description>
+        <p>This release converts raw files to DNG, stops photos from losing their shot data when they are saved, and takes the freezes out of video playback:</p>
+        <p xml:lang="de">Diese Version wandelt RAW-Dateien in DNG, bewahrt Fotos beim Speichern vor dem Verlust ihrer Aufnahmedaten und nimmt der Videowiedergabe ihre Hänger:</p>
+        <ul>
+          <li>Converting a selection now offers DNG as a target, so raw files from the camera can be kept as raw files in a format every program reads. It needs dnglab installed, and says so if it is missing.</li>
+          <li xml:lang="de">Das Konvertieren einer Auswahl bietet jetzt DNG an, so bleiben RAW-Dateien aus der Kamera RAW in einem Format, das jedes Programm liest. Dafür muss dnglab installiert sein, und wenn es fehlt, sagt die Anwendung das.</li>
+          <li>Starting FerrumPix with --debug writes a log for that run even though logging is otherwise off, together with a line about the machine. It is meant for the case where the app does not come up at all.</li>
+          <li xml:lang="de">Mit --debug gestartet schreibt FerrumPix ein Protokoll für diesen Lauf, auch wenn es sonst aus ist, und dazu eine Zeile über den Rechner. Gedacht für den Fall, dass die Anwendung gar nicht erst hochkommt.</li>
+          <li>Saving over the original keeps the shot data. Camera, exposure, date, keywords and copyright used to be dropped from a JPEG, PNG or WEBP every time you pressed Save on the file it came from.</li>
+          <li xml:lang="de">Das Speichern über das Original behält die Aufnahmedaten. Kamera, Belichtung, Datum, Stichwörter und Urheberrecht gingen bei JPEG, PNG und WEBP jedes Mal verloren, wenn man auf der Ursprungsdatei gespeichert hat.</li>
+          <li>Exporting a raw file carries its shot data into the JPEG, PNG or WEBP. Camera, lens, exposure, date and the place the photo was taken come along; before, none of it did.</li>
+          <li xml:lang="de">Der Export einer RAW-Datei nimmt ihre Aufnahmedaten mit in das JPEG, PNG oder WEBP. Kamera, Objektiv, Belichtung, Datum und der Aufnahmeort kommen mit; vorher kam nichts davon an.</li>
+          <li>A WEBP that was taken sideways is no longer turned twice on the way out, and the size written into a photo's shot data matches the photo after a crop or a resize.</li>
+          <li xml:lang="de">Ein hochkant aufgenommenes WEBP wird beim Speichern nicht mehr ein zweites Mal gedreht, und die Bildmaße in den Aufnahmedaten stimmen nach Zuschnitt und Größenänderung wieder mit dem Bild überein.</li>
+          <li>Width and height in the editor can be typed without the other field moving under your hands, and the arrows step by one pixel, or by ten while SHIFT is held.</li>
+          <li xml:lang="de">Breite und Höhe lassen sich im Editor eintippen, ohne dass das andere Feld unter den Händen wegspringt, und die Pfeile zählen um einen Bildpunkt, mit SHIFT um zehn.</li>
+          <li>The app no longer freezes while a video is playing, and a video no longer sometimes stays black with only its sound.</li>
+          <li xml:lang="de">Die Anwendung bleibt während der Videowiedergabe nicht mehr stehen, und ein Video bleibt nicht mehr gelegentlich schwarz mit nur seinem Ton.</li>
+          <li>On macOS a video plays inside the picture area instead of in a window of its own.</li>
+          <li xml:lang="de">Unter macOS läuft ein Video in der Bildfläche statt in einem eigenen Fenster.</li>
+          <li>Clearing up the catalogue runs in the background, counts its way through and can be stopped, instead of leaving the app standing still.</li>
+          <li xml:lang="de">Das Aufräumen des Katalogs läuft im Hintergrund, zählt sich durch und lässt sich anhalten, statt die Anwendung stehen zu lassen.</li>
+          <li>The Catalog section in the settings is translated, along with the keyword chips, the layer rows, the people tiles and the preset lists.</li>
+          <li xml:lang="de">Der Bereich Katalog in den Einstellungen ist übersetzt, ebenso die Stichwort-Chips, die Ebenenzeilen, die Personenkacheln und die Vorgabelisten.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.40" date="2026-09-07">
+      <description>
+        <p>This release rebuilds the colour mixer, brings model upscaling into the editor and teaches old raw formats to give up their date and camera:</p>
+        <p xml:lang="de">Diese Version baut den Farbmischer um, bringt das Hochskalieren mit Modell in den Editor und holt aus alten RAW-Formaten Datum und Kamera heraus:</p>
+        <ul>
+          <li>The colour mixer picks its colour range from a row of eight small dots instead of a colour wheel, which gives the tool back a good deal of room. A middle click on a dot puts that range back to zero.</li>
+          <li xml:lang="de">Der Farbmischer wählt sein Farbband über eine Zeile aus acht kleinen Kreisen statt über ein Farbrad, was dem Werkzeug viel Platz zurückgibt. Die mittlere Maustaste auf einem Kreis setzt dieses Band zurück.</li>
+          <li>Upscaling with a model is available in the image size tool: pick a model, see what size it will produce, and it is computed into the picture like a retouch.</li>
+          <li xml:lang="de">Das Hochskalieren mit Modell steht im Werkzeug Bildgröße bereit: Modell wählen, die entstehende Größe steht dabei, und gerechnet wird es in die Bildpunkte wie eine Retusche.</li>
+          <li>Each adjustment tool remembers whether it shows the histogram, the waveform or the RGB parade.</li>
+          <li xml:lang="de">Jedes Anpassungswerkzeug behält, ob es Histogramm, Waveform oder RGB-Parade zeigt.</li>
+          <li>Pictures from Canon CRW, Minolta MRW, the plain .RAW of Leica, Panasonic and Kodak and Leaf MOS now carry their shooting date, camera and dimensions, so they take part in the timeline, in sorting and in every filter.</li>
+          <li xml:lang="de">Bilder aus Canon CRW, Minolta MRW, den alten .RAW von Leica, Panasonic und Kodak sowie Leaf MOS tragen jetzt Aufnahmezeit, Kamera und Bildmaße und nehmen damit an Zeitleiste, Sortierung und jedem Filter teil.</li>
+          <li>Fujifilm RAF files open as the picture again: the lens corrections were sized against the small preview inside the file instead of the photo itself.</li>
+          <li xml:lang="de">Fujifilm-RAF-Dateien öffnen wieder als das Bild: die Objektivkorrekturen waren auf die kleine Vorschau in der Datei bemessen statt auf das Foto selbst.</li>
+          <li>Old Canon CRW files no longer show grey noise in the viewer and the gallery.</li>
+          <li xml:lang="de">Alte Canon-CRW-Dateien zeigen im Betrachter und in der Galerie nicht mehr graues Rauschen.</li>
+          <li>Levelling a horizon can trim the empty corners away, and the transform tool asks before it drops an unapplied crop or orientation.</li>
+          <li xml:lang="de">Beim Ausrichten lassen sich die leeren Ecken abschneiden, und das Transformieren-Werkzeug fragt, bevor es einen offenen Zuschnitt oder eine offene Ausrichtung verwirft.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.39" date="2026-09-07">
+      <description>
+        <p>This release gives RAW files a real white balance and cleans up what a saved photo carries:</p>
+        <p xml:lang="de">Diese Version gibt RAW-Dateien einen echten Weißabgleich und räumt auf, was ein gespeichertes Foto mit sich trägt:</p>
+        <ul>
+          <li>For a RAW photo the white balance reads in Kelvin, starting at the value the camera recorded, and is computed as a proper conversion between two lights in linear light.</li>
+          <li xml:lang="de">Bei einem RAW-Foto steht der Weißabgleich in Kelvin, beginnend beim Wert der Kamera, und wird im Linearlicht als echte Umrechnung zwischen zwei Lichtern gerechnet.</li>
+          <li>A Lightroom preset for a RAW file lands where it was meant to: its colour temperature is read against the light the photo was taken in.</li>
+          <li xml:lang="de">Ein Lightroom-Preset für eine RAW-Datei landet dort, wo es gemeint war: seine Farbtemperatur wird auf das Licht der Aufnahme bezogen.</li>
+          <li>A saved photo no longer carries the unedited preview picture and the old width and height inside it.</li>
+          <li xml:lang="de">Ein gespeichertes Foto trägt nicht mehr das unbearbeitete Vorschaubild und die alten Maße in sich.</li>
+          <li>On macOS the colours match the screen: FerrumPix tells the system what it draws, so macOS converts for the display in use.</li>
+          <li xml:lang="de">Unter macOS passen die Farben zum Bildschirm: FerrumPix sagt dem System, was es zeichnet, und macOS rechnet für den benutzten Bildschirm um.</li>
+          <li>The folder tree starts where your photos are: the folders added for the catalog sit at the top as their own starting points.</li>
+          <li xml:lang="de">Der Ordnerbaum beginnt dort, wo die Fotos liegen: die für den Katalog hinzugefügten Ordner stehen oben als eigene Ausgangspunkte.</li>
+          <li>Edge and extent of a clicked selection are set in pixels, so the number you set is the number of pixels you get.</li>
+          <li xml:lang="de">Kante und Umfang einer geklickten Auswahl werden in Bildpunkten gesetzt, die eingestellte Zahl ist also die Zahl der Bildpunkte.</li>
+          <li>On macOS the application carries its own name and its own menu again.</li>
+          <li xml:lang="de">Unter macOS trägt die Anwendung wieder ihren eigenen Namen und ihr eigenes Menü.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.38" date="2026-09-05">
+      <description>
+        <p>This release brings RAW development up to date and puts one of its steps in your hands:</p>
+        <p xml:lang="de">Diese Version bringt die RAW-Entwicklung auf den neuesten Stand und gibt einen ihrer Schritte in Ihre Hand:</p>
+        <ul>
+          <li>The lens database is current again: around 1550 lenses and 1050 camera bodies, including recent models.</li>
+          <li xml:lang="de">Die Objektivdatenbank ist wieder aktuell: rund 1550 Objektive und 1050 Kameras, auch neuere Modelle.</li>
+          <li>The Windows packages and the Flatpak carry a newer LibRaw, which knows a good seventy camera models more.</li>
+          <li xml:lang="de">Die Windows-Pakete und der Flatpak tragen eine neuere LibRaw, die gut siebzig Kameramodelle mehr kennt.</li>
+          <li>You can choose how RAW files are demosaiced: AHD, DCB or PPG.</li>
+          <li xml:lang="de">Sie können wählen, wie RAW-Dateien entwickelt werden: AHD, DCB oder PPG.</li>
+          <li>Windows now opens lossy compressed DNG files as well.</li>
+          <li xml:lang="de">Unter Windows öffnen sich jetzt auch verlustbehaftet komprimierte DNG-Dateien.</li>
+          <li>Lens matching no longer picks a lens of a different make that happens to share focal length and aperture.</li>
+          <li xml:lang="de">Der Objektivabgleich greift nicht mehr zu einem Objektiv anderer Marke, das zufällig dieselbe Brennweite und Blende hat.</li>
+          <li>On Linux, application scaling is set per display, so the interface does not end up smaller on a high-resolution screen than on the one next to it.</li>
+          <li xml:lang="de">Unter Linux wird die Anwendungsskalierung je Bildschirm eingestellt, damit die Oberfläche auf einem hochauflösenden Bildschirm nicht kleiner ausfällt als auf dem daneben.</li>
+          <li>An experimental switch on macOS tells the system that FerrumPix draws in sRGB, so wide-gamut displays no longer look oversaturated.</li>
+          <li xml:lang="de">Ein Schalter zum Ausprobieren sagt unter macOS dem System, dass FerrumPix in sRGB zeichnet, damit Bildschirme mit weitem Farbumfang nicht mehr übersättigt wirken.</li>
+          <li>Gallery filters stay as you set them while you walk through folders, and reset only when you change source.</li>
+          <li xml:lang="de">Die Filter der Galerie bleiben beim Gang durch die Ordner stehen und werden nur beim Quellenwechsel zurückgesetzt.</li>
+          <li>On macOS, RAW development and HEIC work with libraries installed through Homebrew.</li>
+          <li xml:lang="de">Unter macOS arbeiten RAW-Entwicklung und HEIC jetzt mit Bibliotheken aus Homebrew.</li>
+          <li>More of the local models can use the graphics card: removing an object, the quick upscalers and face comparison.</li>
+          <li xml:lang="de">Mehr der lokalen Modelle können die Grafikkarte nutzen: Objekt entfernen, die zügigen Hochskalierer und Gesichter vergleichen.</li>
+          <li>The model runtime does not phone home: its own reporting is switched off before it starts.</li>
+          <li xml:lang="de">Die Modelllaufzeit meldet nichts nach Hause: ihre eigene Berichterstattung wird abgeschaltet, bevor sie startet.</li>
+          <li>The grouped gallery view scrolls as smoothly as the grid, also in large folders.</li>
+          <li xml:lang="de">Die gruppierte Ansicht der Galerie rollt so ruhig wie das Raster, auch in großen Ordnern.</li>
+          <li>In the editor, a picture from the filmstrip can be dragged onto the photo, where it becomes a picture layer.</li>
+          <li xml:lang="de">Im Editor lässt sich ein Bild aus dem Filmstreifen auf das Foto ziehen und wird dort zur Bildebene.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.37" date="2026-09-04">
+      <description>
+        <p>This release makes masks quick to work with and puts the crop frame back in charge of what you get:</p>
+        <p xml:lang="de">Diese Version macht das Arbeiten mit Masken schnell und gibt dem Zuschnitt-Rahmen zurück, was er bestimmt:</p>
+        <ul>
+          <li>A crop stays adjustable in every format: JPEG and PNG behave like RAW and projects, and the cut reaches the file only when you save.</li>
+          <li xml:lang="de">Ein Zuschnitt bleibt in jedem Format änderbar: JPEG und PNG verhalten sich wie RAW und Projekte, und der Schnitt kommt erst beim Speichern in die Datei.</li>
+          <li>Turning a selection into a mask layer runs in the background with a progress bar, and painting on a mask no longer redevelops the whole photo.</li>
+          <li xml:lang="de">Aus einer Auswahl wird eine Maskenebene im Hintergrund, mit Fortschrittsbalken, und das Malen auf einer Maske entwickelt nicht mehr das ganze Foto neu.</li>
+          <li>A local correction costs only what its area reaches, and large masks open without the long wait.</li>
+          <li xml:lang="de">Eine örtliche Korrektur kostet nur noch, was ihre Fläche berührt, und große Masken öffnen ohne lange Wartezeit.</li>
+          <li>What the crop frame surrounds is what you get, even on a picture that was straightened after being cropped.</li>
+          <li xml:lang="de">Was der Zuschnitt-Rahmen umschließt, kommt auch heraus - selbst bei einem Bild, das nach dem Zuschneiden ausgerichtet wurde.</li>
+          <li>Straightening no longer takes a part of the picture for good: the crop tool shows what it loses at the corners, so you can pull the frame open and get it back.</li>
+          <li xml:lang="de">Das Ausrichten nimmt keinen Bildteil mehr endgültig weg: das Zuschneide-Werkzeug zeigt, was an den Ecken verloren geht, und der Rahmen holt es zurück.</li>
+          <li>Crop and orientation share one Apply button, and the crop numbers now measure along the axes of the picture you see.</li>
+          <li xml:lang="de">Ausschnitt und Lage teilen sich einen Anwenden-Knopf, und die Zahlen des Zuschnitts messen an den Achsen des Bildes, das Sie sehen.</li>
+          <li>A rotation can be corrected instead of repeated: the angle stays on the slider after applying, and a second pull replaces it.</li>
+          <li xml:lang="de">Eine Drehung lässt sich berichtigen, statt sie zu wiederholen: der Winkel bleibt nach dem Anwenden am Regler stehen, und ein zweiter Zug ersetzt ihn.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.36" date="2026-09-03">
+      <description>
+        <p>This release turns geometry into editable steps you can go back to, lets the keywords in your photos be found, and stops renaming from losing your work:</p>
+        <p xml:lang="de">Diese Version macht aus der Geometrie nachträglich änderbare Schritte, lässt die Stichwörter in den Fotos endlich finden und sorgt dafür, dass Umbenennen keine Arbeit mehr kostet:</p>
+        <ul>
+          <li>Crop, rotate, straighten, perspective, warps, resize and canvas size keep the order in which you used them, so you can return to an earlier crop and keep working.</li>
+          <li xml:lang="de">Zuschneiden, Drehen, Ausrichten, Perspektive, Verzerren, Bild- und Leinwandgröße behalten die Reihenfolge, in der Sie sie benutzt haben; so kommen Sie zu einem früheren Zuschnitt zurück und arbeiten dort weiter.</li>
+          <li>Crop, rotate and straighten live together under Transform, while perspective, grid, lines and envelope distortion have their own Warp tool.</li>
+          <li xml:lang="de">Zuschneiden, Drehen und Ausrichten stehen zusammen unter Transformieren, Perspektive, Gitter, Linien und Hüllkurve haben ihr eigenes Verzerren-Werkzeug.</li>
+          <li>A selected path can become an independent mask layer, or editable text running along that path.</li>
+          <li xml:lang="de">Ein ausgewählter Pfad wird zur eigenständigen Maskenebene oder zu bearbeitbarem Text auf genau diesem Pfad.</li>
+          <li>Fullscreen from the editor shows what you are working on, including unsaved adjustments.</li>
+          <li xml:lang="de">Der Vollbildmodus aus dem Editor zeigt Ihre aktuelle Arbeit, ungespeicherte Anpassungen eingeschlossen.</li>
+          <li>Keywords stored inside a picture, in its IPTC or XMP data, can now be searched, not only those from a sidecar file. The background scan takes in both, so an archive tagged in another program is searchable across the whole collection.</li>
+          <li xml:lang="de">Stichwörter, die in einem Bild selbst stehen, in seinen IPTC- oder XMP-Daten, sind jetzt durchsuchbar, nicht nur die aus einer Beistelldatei. Der Hintergrundlauf nimmt beide auf; ein anderswo verschlagwortetes Archiv ist damit über den ganzen Bestand hinweg durchsuchbar.</li>
+          <li>Renaming or moving a folder or a file keeps its ratings, labels, keywords and named people, and takes the thumbnails along instead of rendering them again. If you moved a folder outside FerrumPix, Settings can point the catalogue at its new location.</li>
+          <li xml:lang="de">Umbenennen und Verschieben behalten Bewertung, Etikett, Stichwörter und benannte Personen und nehmen die Vorschaubilder mit, statt sie neu zu rechnen. Wurde ein Ordner außerhalb verschoben, lässt sich der Katalog in den Einstellungen auf den neuen Ort setzen.</li>
+          <li>Immich and Nextcloud can load the shot data of every photo on the server in one go, from a button in their own settings section. It never runs on its own and never removes anything.</li>
+          <li xml:lang="de">Immich und Nextcloud können die Aufnahmedaten aller Fotos des Servers auf einmal laden, über einen Knopf im jeweiligen Einstellungsbereich. Er läuft nie von selbst und entfernt nie etwas.</li>
+          <li>Immich photos can be searched by focal length, lens and shutter speed, and Nextcloud keeps what it has already looked up instead of fetching it again every session.</li>
+          <li xml:lang="de">Immich-Fotos lassen sich nach Brennweite, Objektiv und Belichtungszeit durchsuchen, und Nextcloud merkt sich Abgefragtes, statt es jede Sitzung neu zu holen.</li>
+          <li>Korean, Indonesian, Turkish, Thai and Hindi are available in Settings.</li>
+          <li xml:lang="de">Koreanisch, Indonesisch, Türkisch, Thai und Hindi stehen in den Einstellungen zur Wahl.</li>
+          <li>Enlarge canvas automatically stays on for the next rotation, and a keyword added later in Lightroom or Bridge arrives again.</li>
+          <li xml:lang="de">Der Haken für die automatische Leinwandvergrößerung gilt auch für die nächste Drehung, und ein später in Lightroom oder Bridge ergänztes Stichwort kommt wieder an.</li>
+          <li>Resetting a confirmed crop, transform, perspective, warp, image or canvas size works again, and a straightened picture stays straight.</li>
+          <li xml:lang="de">Zuschnitt, Transformation, Perspektive, Verzerrung, Bild- und Leinwandgröße lassen sich auch nach dem Bestätigen zurücksetzen, und ein ausgerichtetes Bild bleibt gerade.</li>
+          <li>Video playback no longer blocks the application while stopping, and macOS finds a Homebrew libmpv when started from Finder.</li>
+          <li xml:lang="de">Die Videowiedergabe blockiert beim Beenden nicht mehr, und macOS findet eine über Homebrew installierte libmpv auch beim Start aus dem Finder.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.35" date="2026-08-31">
+      <description>
+        <p>This release adds a trackpad mode alongside the existing mouse controls, and makes reviewing and fullscreen work clearer:</p>
+        <p xml:lang="de">Diese Version ergänzt die Mausbedienung um einen Trackpad-Modus und macht das Sichten und Arbeiten im Vollbild klarer:</p>
+        <ul>
+          <li>Two fingers zoom in Viewer and Editor, a horizontal swipe browses the filmstrip, and dragging a zoomed image pans it. The mode is off by default in Settings.</li>
+          <li xml:lang="de">Zwei Finger zoomen im Viewer und Editor, eine horizontale Wischgeste blättert im Filmstreifen, und Ziehen verschiebt ein vergrößertes Bild. Der Modus ist in den Einstellungen zunächst aus.</li>
+          <li>Ratings, favourites and colour labels can be shown on filmstrip pictures when wanted.</li>
+          <li xml:lang="de">Sternbewertung, Favorit und Farbetikett können auf den Bildern im Filmstreifen angezeigt werden.</li>
+          <li>Saved LUTs and XMP presets ask before their list entry is removed; the file itself is kept.</li>
+          <li xml:lang="de">Gespeicherte LUTs und XMP-Presets fragen vor dem Entfernen ihres Listeneintrags nach; die Datei selbst bleibt erhalten.</li>
+          <li>SPACE leaves fullscreen too. Fullscreen can be entered with unsaved edits, while changing the picture stays locked until you leave it.</li>
+          <li xml:lang="de">Auch LEERTASTE beendet nun den Vollbildmodus. Mit ungespeicherten Änderungen darf man in den Vollbildmodus, ein Bildwechsel bleibt dort aber gesperrt.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.34" date="2026-08-28">
+      <description>
+        <p>This release is about speed where you feel it, and about a sidebar that shows what you want it to:</p>
+        <p xml:lang="de">Diese Version dreht sich um Tempo an den Stellen, wo man es merkt, und um eine Infoleiste, die zeigt, was man sehen will:</p>
+        <ul>
+          <li>The layers panel has a second tab with the history of the picture: every step by name, and clicking one takes the picture back to it.</li>
+          <li xml:lang="de">Das Ebenen-Panel hat einen zweiten Reiter mit der Historie des Bildes: jeder Schritt beim Namen, und ein Klick bringt das Bild dorthin zurueck.</li>
+          <li>Every step says what it was: Colour mixer: Aqua saturation, Text: Shadow strength, Image: Opacity, and the actions behind them too.</li>
+          <li xml:lang="de">Jeder Schritt sagt, was er war: Farbmischer: Aqua Saettigung, Text: Schatten Staerke, Bild: Deckkraft - und die Handgriffe dahinter ebenso.</li>
+          <li>One drag on a slider is one step: it is written when you let go, and taking it back returns to where the slider stood before.</li>
+          <li xml:lang="de">Ein Zug am Regler ist ein Schritt: er entsteht beim Loslassen, und zuruecknehmen fuehrt dorthin, wo der Regler vorher stand.</li>
+          <li>The history stays open while you work: picking another tool no longer puts the layer stack back.</li>
+          <li xml:lang="de">Die Historie bleibt beim Arbeiten offen: ein anderes Werkzeug stellt nicht mehr auf den Ebenenstapel zurueck.</li>
+          <li>The histogram behind the tone curve follows your adjustments instead of staying at the state of the file.</li>
+          <li xml:lang="de">Der Untergrund der Tonwertkurve folgt den Anpassungen, statt am Stand der Datei stehen zu bleiben.</li>
+          <li>The copyright field is back in the batch dialogs that overwrite the originals.</li>
+          <li xml:lang="de">Das Copyright-Feld steht wieder in den Stapeldialogen, die die Originale ueberschreiben.</li>
+          <li>The Save button only lights up when there is something to save, and the clipping warning ends when you switch tools.</li>
+          <li xml:lang="de">Der Speichern-Knopf leuchtet nur, wenn es etwas zu speichern gibt, und die Clipping-Warnung endet beim Werkzeugwechsel.</li>
+          <li>Apply carries the accent colour in the warp tools too, as it does under Crop and Image size.</li>
+          <li xml:lang="de">Anwenden traegt auch in den Verzerren-Werkzeugen den Akzent, wie schon bei Zuschneiden und Bildgroesse.</li>
+          <li>You choose what the info sidebar shows: camera, lens, aperture, shutter speed, ISO, focal length and the date the picture was taken, each with a tick of its own.</li>
+          <li xml:lang="de">Die Infoleiste zeigt, was Sie wollen: Kamera, Objektiv, Blende, Belichtungszeit, ISO, Brennweite und Aufnahmedatum, jedes mit einem eigenen Haken.</li>
+          <li>Scrolling the gallery is smoother, and a folder you have opened before shows up straight away.</li>
+          <li xml:lang="de">Die Galerie rollt fluessiger, und ein schon einmal geoeffneter Ordner steht sofort auf dem Schirm.</li>
+          <li>The sliders in the editor follow your hand instead of waiting for you to let go, and editing a picture is quicker.</li>
+          <li xml:lang="de">Die Regler im Editor folgen der Hand, statt auf das Loslassen zu warten, und das Bearbeiten geht schneller.</li>
+          <li>Lens correction works on raw files again: the shooting data of the embedded preview was being read instead of the picture's own.</li>
+          <li xml:lang="de">Die Objektivkorrektur wirkt bei RAW-Dateien wieder: gelesen wurden die Aufnahmedaten des eingebetteten Vorschaubildes statt die des Fotos.</li>
+          <li>The warp grid sits on the part of the picture you can see, also after a crop.</li>
+          <li xml:lang="de">Das Verzerrungsgitter liegt auf dem sichtbaren Bildteil, auch nach einem Zuschnitt.</li>
+          <li>Depth blur can be stopped while it is working, and stopping it leaves the picture untouched.</li>
+          <li xml:lang="de">Die Tiefen-Unschaerfe laesst sich waehrend der Arbeit abbrechen, und das Bild bleibt dabei unveraendert.</li>
+          <li>A drawing tablet setting: buttons and menu entries act the moment the pen touches down, for anyone whose pen could drag sliders but press nothing.</li>
+          <li xml:lang="de">Eine Einstellung fuer Zeichentabletts: Schaltflaechen und Menueeintraege loesen beim Aufsetzen des Stifts aus - fuer alle, deren Stift zwar Regler zog, aber nichts druecken konnte.</li>
+          <li>Sliders no longer stick to the pen: a drag ends as soon as the pointer moves with no button held, even when the letting go never arrives.</li>
+          <li xml:lang="de">Regler kleben nicht mehr am Stift: ein Zug endet, sobald sich der Zeiger ohne gedrueckte Taste bewegt - auch wenn das Loslassen nie ankommt.</li>
+          <li>Cleaning the database also clears the faces of deleted pictures, so a person no longer counts photos that are gone.</li>
+          <li xml:lang="de">Das Bereinigen der Datenbank raeumt auch die Gesichter geloeschter Bilder weg, damit eine Person keine Fotos mehr mitzaehlt, die es nicht gibt.</li>
+          <li>The calibration sliders can be undone like every other slider.</li>
+          <li xml:lang="de">Die Regler der Kalibrierung lassen sich zuruecknehmen wie jeder andere Regler.</li>
+          <li>Touching a path point without moving it no longer counts as a change, so closing stops asking to save what was never altered.</li>
+          <li xml:lang="de">Einen Pfadpunkt nur anzufassen gilt nicht mehr als Aenderung - beim Schliessen kommt keine Nachfrage mehr nach etwas, das gleich geblieben ist.</li>
+          <li>A path drag ends when the pointer is taken away, by a window change, a popup or a tablet that stopped reporting.</li>
+          <li xml:lang="de">Ein Pfad-Zug endet, wenn der Zeiger wegfaellt - bei einem Fensterwechsel, einem Aufklappfenster oder einem Abbruch am Grafiktablett.</li>
+          <li>Icons on the buttons of the editor sidebar: fill type, text paths, watermark templates, saved adjustments, the picture background, and the mask and selection actions.</li>
+          <li xml:lang="de">Symbole auf den Schaltflaechen der Editor-Seitenleiste: Fuellart, Textpfade, Wasserzeichen-Vorlagen, gemerkte Anpassungen, Bildhintergrund sowie die Handgriffe an Maske und Auswahl.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.33" date="2026-08-27">
+      <description>
+        <p>This release is about colour that arrives right, and about the small things you look at all day:</p>
+        <p xml:lang="de">Diese Version dreht sich um Farben, die richtig ankommen, und um die Kleinigkeiten, auf die man den ganzen Tag schaut:</p>
+        <ul>
+          <li>Photos that name Adobe RGB only in their metadata, without a colour profile in the file, arrive in the right colours instead of looking flat and shifted.</li>
+          <li xml:lang="de">Fotos, die Adobe RGB nur in den Metadaten nennen und kein Farbprofil in der Datei tragen, kommen in den richtigen Farben an statt flau und verschoben.</li>
+          <li>Photoshop layers keep the colours of their document. Until now only the flattened image was converted.</li>
+          <li xml:lang="de">Photoshop-Ebenen behalten die Farben ihres Dokuments. Bisher wurde nur das flache Gesamtbild gewandelt.</li>
+          <li>Setting the text size is a matter of one click: eight buttons, one per step, each showing its own size.</li>
+          <li xml:lang="de">Der Schriftgrad ist eine Sache von einem Klick: acht Schaltflaechen, eine je Stufe, jede in ihrer eigenen Groesse.</li>
+          <li>Menus, submenus and switched-off text fields follow the theme you picked, and the entry under the pointer is rounded everywhere.</li>
+          <li xml:lang="de">Menues, Untermenues und abgeschaltete Textfelder folgen dem gewaehlten Thema, und die Zeile unter dem Zeiger ist ueberall abgerundet.</li>
+          <li>Save as offers the folder the picture came from, also when the picture was opened straight from the file manager.</li>
+          <li xml:lang="de">Speichern unter bietet den Ordner an, aus dem das Bild stammt - auch wenn es direkt aus dem Dateimanager geoeffnet wurde.</li>
+          <li>A cut piece of the picture no longer stays behind after pasting, and the bar at the top of the window takes less room.</li>
+          <li xml:lang="de">Ein ausgeschnittener Bildteil bleibt nach dem Einfuegen nicht mehr stehen, und die Leiste am oberen Fensterrand nimmt weniger Platz.</li>
+          <li>Windows: HEIC and HEIF photos open straight away, and installing or uninstalling no longer leaves a half-removed program behind.</li>
+          <li xml:lang="de">Windows: HEIC- und HEIF-Fotos oeffnen sofort, und Installieren oder Deinstallieren laesst kein halb entferntes Programm zurueck.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.32" date="2026-08-25">
+      <description>
+        <p>This release puts capture times right, shows where a picture has nothing left, and brings the image analysis to where you work:</p>
+        <p xml:lang="de">Diese Version rueckt Aufnahmezeiten zurecht, zeigt, wo im Bild nichts mehr steht, und bringt die Bildanalyse dorthin, wo gearbeitet wird:</p>
+        <ul>
+          <li>Set capture date gives a picture a date and time or shifts the one it has, over a whole selection at once. A raw file itself is never touched; its time goes in the sidecar next to it.</li>
+          <li xml:lang="de">Aufnahmedatum setzen gibt einem Bild Datum und Uhrzeit oder verschiebt die vorhandene, auch fuer eine ganze Auswahl auf einmal. Die RAW-Datei selbst bleibt unangetastet, ihre Zeit steht in der Beistelldatei daneben.</li>
+          <li>A new switch marks blown highlights in red and blocked shadows in blue, on the picture itself and at full zoom.</li>
+          <li xml:lang="de">Ein neuer Schalter markiert ausgefressene Lichter rot und abgesoffene Schatten blau, auf dem Bild selbst und bei voller Vergroesserung.</li>
+          <li>Histogram, waveform and RGB parade can appear in the information sidebar, beside the editor controls, or in both places at once. A click opens the full-size view.</li>
+          <li xml:lang="de">Histogramm, Waveform und RGB-Parade koennen in der Infoleiste stehen, neben den Reglern des Editors oder an beiden Stellen zugleich. Ein Klick oeffnet die grosse Ansicht.</li>
+          <li>FerrumPix no longer quits when a folder is opened on a system whose font setup names no usable standard font.</li>
+          <li xml:lang="de">FerrumPix beendet sich nicht mehr beim Oeffnen eines Ordners, wenn das System keine brauchbare Standardschrift benennt.</li>
+          <li>Objects follow their selection frame again in the adjustment tools, and raw files, colour profiles and object removal need less time and memory.</li>
+          <li xml:lang="de">Objekte folgen in den Anpassungswerkzeugen wieder ihrem Auswahlrahmen, und RAW-Dateien, Farbprofile und das Entfernen von Objekten brauchen weniger Zeit und Speicher.</li>
+          <li>Flatpak: folders mounted from a Samba, NFS or SFTP share show their pictures.</li>
+          <li xml:lang="de">Flatpak: Ordner von einer Samba-, NFS- oder SFTP-Freigabe zeigen ihre Bilder.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.31" date="2026-08-21">
+      <description>
+        <p>This release is mostly about speed, and it opens Photoshop files more completely:</p>
+        <p xml:lang="de">Diese Version geht vor allem ums Tempo, und sie oeffnet Photoshop-Dateien vollstaendiger:</p>
+        <ul>
+          <li>Photoshop files in CMYK open with their layers. Until now they came in flat, as one finished picture.</li>
+          <li xml:lang="de">Photoshop-Dateien in CMYK kommen mit ihren Ebenen herein. Bisher oeffneten sie flach, als ein fertiges Bild.</li>
+          <li>Pictures with local corrections redraw much faster, and long retouch strokes stay as quick at the end as at the start.</li>
+          <li xml:lang="de">Bilder mit lokalen Korrekturen zeichnen sich deutlich schneller neu, und lange Retuschezuege bleiben am Ende so fluessig wie am Anfang.</li>
+          <li>Thumbnails on a spinning hard disk no longer fight each other, and saving a large JPEG no longer reads the whole file first.</li>
+          <li xml:lang="de">Kacheln auf einer drehenden Platte behindern sich nicht mehr gegenseitig, und beim Speichern einer grossen JPEG wird nicht mehr die ganze Datei gelesen.</li>
+          <li>A Photoshop file you have already edited opens with its layers again - a rating alone used to be enough to lose them.</li>
+          <li xml:lang="de">Eine schon bearbeitete Photoshop-Datei oeffnet wieder mit ihren Ebenen - bisher genuegte eine Bewertung, um sie zu verlieren.</li>
+          <li>Objects can be made much smaller, and the outline can be drawn twice as thick as before.</li>
+          <li xml:lang="de">Objekte lassen sich viel kleiner anlegen, und die Kontur kann doppelt so dick gezogen werden wie bisher.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.30" date="2026-08-19">
+      <description>
+        <p>This release develops RAW files far faster on Windows and puts the everyday commands under one hand:</p>
+        <p xml:lang="de">Diese Version entwickelt RAW-Dateien unter Windows deutlich schneller und legt die haeufigen Befehle unter eine Hand:</p>
+        <ul>
+          <li>RAW development on Windows is three to four times faster, and it works on machines that never had the Microsoft Visual C++ runtime, where it used to fall back to the small preview inside the file without saying so.</li>
+          <li xml:lang="de">Die RAW-Entwicklung unter Windows ist drei- bis viermal schneller und laeuft auch auf Rechnern ohne die Microsoft-Visual-C++-Laufzeit, wo sie vorher stillschweigend auf die kleine Vorschau in der Datei zurueckfiel.</li>
+          <li>Windows on ARM develops RAW files at last. Those downloads never carried the RAW engine and quietly showed the small preview instead of the real picture.</li>
+          <li xml:lang="de">Windows auf ARM entwickelt endlich RAW-Dateien. Diese Downloads trugen die RAW-Maschine nie und zeigten still die kleine Vorschau statt des echten Bildes.</li>
+          <li>Stars, hearts and colour labels come straight from the keyboard: 1 to 5 set the rating and 0 takes it away, SHIFT with 1 to 9 sets a colour label, and the full stop or the comma marks a favourite.</li>
+          <li xml:lang="de">Sterne, Herzen und Farbetiketten kommen direkt von der Tastatur: 1 bis 5 setzen die Bewertung und 0 nimmt sie weg, SHIFT mit 1 bis 9 setzt ein Farbetikett, und Punkt oder Komma setzen den Favoriten.</li>
+          <li>The commands you reach for while working answer to a bare letter as well, not only with CTRL held - in the gallery, the viewer and the editor alike. Where you can type, a key stays a key.</li>
+          <li xml:lang="de">Die Befehle, nach denen man beim Arbeiten greift, hoeren auch auf einen blanken Buchstaben und nicht nur mit STRG - in Galerie, Betrachter und Editor gleichermassen. Wo man tippt, bleibt eine Taste eine Taste.</li>
+          <li>Your copyright can go into the pictures: "Set copyright" in the metadata menu writes it into the selected pictures, and every batch dialog carries a field for it. A JPEG gets it inside the file, everything else in the sidecar next to it, and a RAW file is never touched.</li>
+          <li xml:lang="de">Der Urheberrechtshinweis kann in die Bilder: "Copyright setzen" im Metadaten-Menue schreibt ihn in die markierten Bilder, und jeder Stapeldialog hat ein Feld dafuer. Eine JPEG bekommt ihn in die Datei, alles andere in die Beistelldatei daneben, und an eine RAW geht nichts heran.</li>
+          <li>A batch job can be stopped and says where it is: the wait panel counts the pictures and the tiles inside the one it is working on, and nothing half done ends up in the target folder.</li>
+          <li xml:lang="de">Ein Stapellauf laesst sich anhalten und sagt, wo er steht: die Wartezeile zaehlt die Bilder und die Kacheln im laufenden Bild, und nichts Halbfertiges landet im Zielordner.</li>
+          <li>Converting now gives the same picture as exporting, a picture from a server keeps its name in the editor, and double-clicking a slider takes it back to its starting value instead of its lowest one.</li>
+          <li xml:lang="de">Konvertieren liefert jetzt dasselbe Bild wie Exportieren, ein Bild vom Server behaelt seinen Namen im Editor, und ein Doppelklick auf einen Regler fuehrt ihn auf seinen Ausgangswert zurueck statt auf den kleinsten.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.29" date="2026-08-17">
+      <description>
+        <p>This release gets the colours right and adds two new ways to read a picture:</p>
+        <p xml:lang="de">Diese Version bringt die Farben in Ordnung und zwei neue Wege, ein Bild zu lesen:</p>
+        <ul>
+          <li>A picture that carries its own colour profile, such as Adobe RGB or Display P3, is converted when it is opened - in the editor, the viewer and on the thumbnails alike. Before it arrived as if it were sRGB, which left it flat and shifted the colours.</li>
+          <li xml:lang="de">Ein Bild mit eigenem Farbprofil, etwa Adobe RGB oder Display P3, wird beim Oeffnen umgerechnet - im Editor, im Betrachter und auf den Kacheln gleichermassen. Vorher kam es an, als waere es sRGB, und wirkte flau und verschoben.</li>
+          <li>What FerrumPix saves is sRGB and says so: the old profile is gone and the colour fields in the shot data and in the XMP match. Before, a file could still claim Adobe RGB and be read wrongly by the next program.</li>
+          <li xml:lang="de">Was FerrumPix speichert, ist sRGB und sagt das auch: das alte Profil ist weg, und die Farbangaben in den Aufnahmedaten und im XMP passen dazu. Vorher konnte eine Datei weiter Adobe RGB behaupten und vom naechsten Programm falsch gelesen werden.</li>
+          <li>Waveform and RGB parade join the histogram in the info panel. The waveform keeps the left-to-right position, the parade shows the three colour channels side by side, and both follow your edits.</li>
+          <li xml:lang="de">Wellenform und RGB-Parade stehen neben dem Histogramm in der Info-Leiste. Die Wellenform behaelt die Lage von links nach rechts, die Parade zeigt die drei Farbkanaele nebeneinander, und beide folgen der Bearbeitung.</li>
+          <li>Select by colour or by brightness: click a colour and everything close to it is selected, or take a range of lightness instead. Both are in the selection tool and in the mask tool and can be refined with the brush.</li>
+          <li xml:lang="de">Auswaehlen nach Farbe oder Helligkeit: eine Farbe anklicken und alles Aehnliche ist ausgewaehlt, oder stattdessen einen Helligkeitsbereich nehmen. Beides gibt es im Auswahl- und im Maskenwerkzeug und laesst sich mit dem Pinsel nacharbeiten.</li>
+          <li>The selection tool has grown: the brush and the object selection are in it as well, a selection can be copied and pasted like a mask, and CTRL keeps a rectangle square while you drag it.</li>
+          <li xml:lang="de">Das Auswahlwerkzeug ist gewachsen: Pinsel und Objektauswahl gibt es auch dort, eine Auswahl laesst sich wie eine Maske kopieren und einfuegen, und mit STRG bleibt ein Rechteck beim Aufziehen quadratisch.</li>
+          <li>The gallery and the viewer feel quick again, and FerrumPix starts a little leaner: the diagram is only worked out for the panel you have in front of you, and the symbol list is put together when you first need it.</li>
+          <li xml:lang="de">Galerie und Betrachter sind wieder fluessig, und FerrumPix startet schlanker: das Diagramm entsteht nur fuer die Leiste, die man vor sich hat, und die Symbolliste wird erst beim ersten Bedarf aufgebaut.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.28" date="2026-08-15">
+      <description>
+        <p>This release speaks nine more languages and gets along without the Memories app:</p>
+        <p xml:lang="de">Diese Version spricht neun weitere Sprachen und kommt ohne die Memories-App aus:</p>
+        <ul>
+          <li>Dutch, Swedish, Danish, Norwegian, Finnish, Polish, Czech, Russian and Japanese join the seven that were there, so FerrumPix now speaks sixteen and follows your system language as before.</li>
+          <li xml:lang="de">Niederlaendisch, Schwedisch, Daenisch, Norwegisch, Finnisch, Polnisch, Tschechisch, Russisch und Japanisch kommen zu den sieben bisherigen dazu: FerrumPix spricht damit sechzehn Sprachen und richtet sich wie bisher von selbst nach der Systemsprache.</li>
+          <li>The symbol search in the editor finds shapes by their name in every one of them, and the older languages, which only had a handful of words, are complete for the first time.</li>
+          <li xml:lang="de">Die Symbolsuche im Editor findet Formen in jeder dieser Sprachen unter ihrem Namen, und die bisherigen Sprachen, die nur eine Handvoll Woerter kannten, sind erstmals vollstaendig.</li>
+          <li>A Nextcloud no longer needs the Memories app: without it FerrumPix builds the timeline from the server itself, and albums, keywords, favourites, the trash and the search work just the same. Only people need Memories.</li>
+          <li xml:lang="de">Eine Nextcloud braucht die Memories-App nicht mehr: ohne sie baut FerrumPix die Zeitleiste selbst aus dem Server auf, und Alben, Stichwoerter, Favoriten, Papierkorb und Suche arbeiten genauso. Nur die Personen brauchen Memories.</li>
+          <li>The adjustment panel can move to the left, right next to the tool bar, and the bottom bar can be switched off separately for the gallery, the viewer and the editor.</li>
+          <li xml:lang="de">Das Anpassungs-Panel laesst sich nach links neben die Werkzeugleiste legen, und die Fussleiste kann getrennt fuer Galerie, Betrachter und Editor abgeschaltet werden.</li>
+          <li>Photoshop files bring much more with them: layer masks and groups travel in both directions and stay editable on either side, files in 16 bit or greyscale open with their layers as well, and files packed the way other programs prefer open at all.</li>
+          <li xml:lang="de">Photoshop-Dateien bringen deutlich mehr mit: Ebenenmasken und Gruppen gehen in beide Richtungen und bleiben auf beiden Seiten bearbeitbar, Dateien in 16 Bit oder Graustufen oeffnen sich ebenfalls mit ihren Ebenen, und anders gepackte Dateien lassen sich ueberhaupt oeffnen.</li>
+          <li>A picture opened from the file manager comes up straight away, a double click on the window bar switches between a maximised and a normal window again, and cleaning up the catalogue really removes what it should.</li>
+          <li xml:lang="de">Ein aus dem Dateimanager geoeffnetes Bild ist sofort da, ein Doppelklick auf die Fensterleiste wechselt wieder zwischen maximiertem und normalem Fenster, und das Aufraeumen des Katalogs entfernt tatsaechlich, was es soll.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.27" date="2026-08-12">
+      <description>
+        <p>This release groups the gallery and shows what sharpening protects:</p>
+        <p xml:lang="de">Diese Version gruppiert die Galerie und zeigt, was die Schaerfung schont:</p>
+        <ul>
+          <li>Folders can be named once and are then read into the catalogue in the background, subfolders included, so search and filters cover the whole collection instead of only the folders that were opened. Later runs only look at what has changed, and nothing is written next to the photos. The people search can be sent over the same folders in one go.</li>
+          <li xml:lang="de">Ordner lassen sich einmal eintragen und werden dann im Hintergrund in den Katalog eingelesen, samt Unterordnern - Suche und Filter erfassen damit den ganzen Bestand statt nur die geoeffneten Ordner. Spaetere Laeufe sehen sich nur an, was sich geaendert hat, und neben den Fotos wird nichts angelegt. Die Personensuche laesst sich in einem Rutsch ueber dieselben Ordner schicken.</li>
+          <li>The gallery can show your photos in groups: a third view next to grid and list puts a heading with a date and a count above each block, and the groups follow whatever you sort by. The circle in front of a heading selects the whole block at once.</li>
+          <li xml:lang="de">Die Galerie kann die Fotos in Gruppen zeigen: eine dritte Ansicht neben Raster und Liste setzt ueber jeden Block eine Ueberschrift mit Datum und Anzahl, und die Gruppen folgen der gewaehlten Sortierung. Der Kreis vor einer Ueberschrift waehlt den ganzen Block auf einmal aus.</li>
+          <li>Setting, copying, pasting and removing a location is now in the Metadata menu of the viewer and the editor as well, and the trash no longer shows up as a folder in the gallery and the filmstrip.</li>
+          <li xml:lang="de">Ort setzen, kopieren, einfuegen und entfernen stehen jetzt auch im Metadaten-Menue von Betrachter und Editor, und der Papierkorb erscheint nicht mehr als Ordner in Galerie und Filmstreifen.</li>
+          <li>With the pointer on the Masking slider, a tap of ALT turns the picture into a grey map of the sharpening: bright is sharpened, dark stays calm.</li>
+          <li xml:lang="de">Mit dem Zeiger auf dem Maskierungsregler macht ein Tippen auf ALT das Bild zur grauen Karte der Schaerfung: hell wird geschaerft, dunkel bleibt ruhig.</li>
+          <li>A model downloaded in the settings works right away, without restarting, and a tool that stays greyed out now says why.</li>
+          <li xml:lang="de">Ein in den Einstellungen geladenes Modell wirkt sofort, ohne Neustart, und ein Werkzeug, das grau bleibt, sagt jetzt auch warum.</li>
+          <li>Warping works on a cropped picture: its handles sit on the picture you see instead of on the edges of the uncropped image.</li>
+          <li xml:lang="de">Das Verformen laesst sich auch nach einem Zuschnitt bedienen: seine Anfasser sitzen am sichtbaren Bild statt an den Raendern des unbeschnittenen.</li>
+          <li>On Windows, network drives are there right after installing.</li>
+          <li xml:lang="de">Unter Windows sind die Netzlaufwerke gleich nach der Installation da.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.26" date="2026-08-11">
+      <description>
+        <p>This release adds a second server and puts your photos on the map:</p>
+        <p xml:lang="de">Diese Version bringt einen zweiten Server und setzt die Fotos auf die Karte:</p>
+        <ul>
+          <li>A Nextcloud with the Memories app can be used as a second server: timeline, albums, people, places and keywords appear as folders, photos open in the viewer and the editor, and local pictures can be uploaded by dragging, pasting or from the right-click menu.</li>
+          <li xml:lang="de">Eine Nextcloud mit der Memories-App laesst sich als zweiter Server nutzen: Zeitleiste, Alben, Personen, Orte und Stichwoerter erscheinen als Ordner, Fotos oeffnen sich im Betrachter und im Editor, und eigene Bilder wandern per Ziehen, Einfuegen oder ueber das Kontextmenue hinauf.</li>
+          <li>An edit can go back into the file on the server, so it keeps its identity, its albums and its shares. Left off, only a sidecar file is written next to the original, and RAW and PSD files are never overwritten either way.</li>
+          <li xml:lang="de">Eine Bearbeitung kann in die Datei auf dem Server zurueckgeschrieben werden, die damit ihre Identitaet, ihre Alben und ihre Freigaben behaelt. Abgeschaltet entsteht nur eine Beistelldatei neben dem Original, und RAW- und PSD-Dateien werden in keinem Fall ueberschrieben.</li>
+          <li>Photos without a location can be given one: type a coordinate or simply a town name, or copy the place from a picture that already has it and paste it onto the whole selection. It can also be taken off again, and the Metadata menu offers all of it in the gallery.</li>
+          <li xml:lang="de">Fotos ohne Aufnahmeort bekommen einen: eine Koordinate oder einfach einen Ortsnamen eingeben, oder den Ort von einem Bild kopieren, das ihn schon hat, und auf die ganze Auswahl uebertragen. Entfernen laesst er sich ebenso, und das Menue Metadaten bietet all das in der Galerie an.</li>
+          <li>Deleted photos of both servers are listed under Trash in the sidebar and can be put back with one click.</li>
+          <li xml:lang="de">Geloeschte Fotos beider Server stehen in der Seitenleiste unter Papierkorb und lassen sich mit einem Klick zurueckholen.</li>
+          <li>Immich and Nextcloud have their own search area with saved searches, and a server search asks the server itself for names, people, places, keywords and favourites.</li>
+          <li xml:lang="de">Immich und Nextcloud haben einen eigenen Suchbereich mit gespeicherten Suchen, und eine Serversuche fragt den Server selbst nach Namen, Personen, Orten, Stichwoertern und Favoriten.</li>
+          <li>Server credentials are stored encrypted, so they do not travel along in plain sight in a backup, a screenshot or an attached log.</li>
+          <li xml:lang="de">Zugangsdaten der Server liegen verschluesselt in den Einstellungen und reisen damit nicht mehr offen in einer Sicherung, einem Bildschirmfoto oder einem angehaengten Protokoll mit.</li>
+          <li>A set of sliders saved in the Adjust tool can now be applied to a whole selection, next to the built-in filters, LUTs and XMP presets.</li>
+          <li xml:lang="de">Ein im Anpassen-Werkzeug gespeicherter Reglersatz laesst sich jetzt auf eine ganze Auswahl anwenden, neben den eingebauten Filtern, LUTs und XMP-Presets.</li>
+          <li>Grain can be coloured: a new slider lets the three colour channels drift apart, from plain grey grain to the coloured speckles of a fast colour film.</li>
+          <li xml:lang="de">Das Korn kann farbig werden: ein neuer Regler laesst die drei Farbkanaele auseinandertreiben, vom grauen Korn bis zu den bunten Sprenkeln eines hochempfindlichen Farbfilms.</li>
+          <li>The top bars are a little flatter and their buttons tighter, the middle group really sits in the middle, and the gallery filters carry their name next to the icon.</li>
+          <li xml:lang="de">Die oberen Leisten sind etwas flacher und ihre Knoepfe enger gesetzt, die mittlere Gruppe sitzt wirklich in der Mitte, und die Filter der Galerie tragen ihren Namen neben dem Symbol.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.25" date="2026-08-09">
+      <description>
+        <p>This release adds the pen and makes a group behave like one layer:</p>
+        <p xml:lang="de">Diese Version bringt den Zeichenstift und laesst eine Gruppe wie eine Ebene wirken:</p>
+        <ul>
+          <li>The pen: draw a curve point by point, pull it into shape at its handles and change it at its points afterwards. A click on the curve adds a point, ALT takes one away, SHIFT collects several and moves them together.</li>
+          <li xml:lang="de">Der Zeichenstift: eine Kurve Punkt fuer Punkt zeichnen, an den Griffen in Form ziehen und danach an ihren Punkten aendern. Ein Klick auf die Kurve setzt einen Punkt, ALT entfernt einen, mit SHIFT sammelt man mehrere ein und bewegt sie gemeinsam.</li>
+          <li>A path becomes a selection, so a cut-out stays correctable: move a point, press again. Two open paths can be joined into one, and text can follow a path.</li>
+          <li xml:lang="de">Aus einem Pfad wird eine Auswahl - ein Freisteller bleibt damit korrigierbar: Punkt verschieben, noch einmal druecken. Zwei offene Pfade lassen sich zu einem verbinden, und Text kann einem Pfad folgen.</li>
+          <li>A path draws nothing on its own: it is geometry first and stays invisible until you give it a stroke or a fill.</li>
+          <li xml:lang="de">Ein Pfad zeichnet von sich aus nichts: er ist zuerst Geometrie und bleibt unsichtbar, bis man ihm eine Kontur oder eine Fuellung gibt.</li>
+          <li>A group counts as one layer, with its own opacity, blend mode and mask; an adjustment inside a group stays inside it, and groups can go inside groups.</li>
+          <li xml:lang="de">Eine Gruppe zaehlt als eine Ebene, mit eigener Deckkraft, Mischmethode und Maske; eine Korrektur in der Gruppe bleibt darin, und Gruppen lassen sich ineinanderlegen.</li>
+          <li>Removing something on a layer also works when the object was picked by clicking it, dims the picture while the model runs, and can be stopped.</li>
+          <li xml:lang="de">Objekt entfernen wirkt auf einer Ebene auch dann, wenn das Objekt per Klick ausgewaehlt wurde, legt waehrend der Rechnung einen Schleier ueber das Bild und laesst sich abbrechen.</li>
+          <li>A group holds together: picking one marks everything inside it, a group can be dragged into another group, and a mask on a group covers the layers in its subgroups as well.</li>
+          <li xml:lang="de">Eine Gruppe haelt zusammen: wer sie waehlt, markiert alles darin, eine Gruppe laesst sich in eine andere ziehen, und eine Maske auf der Gruppe deckt auch die Ebenen ihrer Untergruppen ab.</li>
+          <li>Key names are set in capitals in the help texts and the shortcut list, and a batch shows that it is working while it writes.</li>
+          <li xml:lang="de">Tastennamen stehen in den Hilfetexten und in der Kuerzelliste in Grossbuchstaben, und ein Stapellauf zeigt waehrend des Schreibens, dass er arbeitet.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.24" date="2026-08-08">
+      <description>
+        <p>This release makes layers something you paint, retouch and erase on:</p>
+        <p xml:lang="de">Diese Version macht Ebenen zu etwas, worauf man malt, retuschiert und radiert:</p>
+        <ul>
+          <li>A button under the layer list adds an empty layer to paint on, and the clone stamp, smudge, healing brush and removing something all work inside the image of the layer you picked, with the result visible while you drag.</li>
+          <li xml:lang="de">Ein Knopf unter der Ebenenliste legt eine leere Malebene an, und Stempel, Verwischen, Reparaturpinsel und Objekt entfernen arbeiten im Bild der markierten Ebene - sichtbar schon waehrend des Zuges.</li>
+          <li>Erasing on a layer goes through a layer mask, so it can be painted back, softened or dropped, and it works on text and shapes at all.</li>
+          <li xml:lang="de">Radieren auf einer Ebene laeuft ueber eine Ebenenmaske: es laesst sich zurueckmalen, weichzeichnen oder ganz verwerfen - und wirkt ueberhaupt erst auf Text und Formen.</li>
+          <li>Small things on a layer row: locking with one click, a mark for a layer's own adjustments, transparent pixels that can be locked, and Ctrl on the thumbnail to load the layer's shape as a selection.</li>
+          <li xml:lang="de">Kleinigkeiten in der Ebenenzeile: Sperren mit einem Klick, ein Zeichen fuer eigene Anpassungen der Ebene, sperrbare transparente Punkte und Strg auf der Miniatur, das die Form der Ebene als Auswahl laedt.</li>
+          <li>A crop only happens when you confirm it, with the button or with Enter, and saving a second time no longer crops the picture a second time.</li>
+          <li xml:lang="de">Ein Zuschnitt wirkt erst, wenn man ihn bestaetigt, mit dem Knopf oder mit der Eingabetaste, und ein zweites Speichern schneidet das Bild nicht noch einmal zu.</li>
+          <li>Searching for a person finds pictures on an Immich server as well, and a distorted object comes out of the export the way it looks on screen.</li>
+          <li xml:lang="de">Die Suche nach einer Person findet auch Bilder eines Immich-Servers, und ein verzerrtes Objekt kommt aus dem Export so heraus, wie es am Bildschirm aussieht.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.23" date="2026-08-07">
+      <description>
+        <p>This release lets your people travel with your photos, and it makes masks something you can look at:</p>
+        <p xml:lang="de">Diese Version laesst die Personen mit den Fotos reisen und macht aus Masken etwas, das man ansehen kann:</p>
+        <ul>
+          <li>Names you give to the people in your photos are written beside the picture, together with where in the frame that face is, and names another program put there are read back.</li>
+          <li xml:lang="de">Namen, die man den Personen in den eigenen Fotos gibt, werden neben dem Bild abgelegt, samt der Stelle im Bild - und Namen aus einem anderen Programm werden von dort gelesen.</li>
+          <li>A mask can be looked at: on its own as a greyscale image, switched off for a moment, or part by part. Its settings sit together in one panel, and its parts can be reordered and changed after the fact.</li>
+          <li xml:lang="de">Eine Maske laesst sich ansehen: einzeln als Graustufenbild, kurz ausgeschaltet oder Teil fuer Teil. Ihre Einstellungen stehen zusammen in einem Panel, und ihre Teile lassen sich nachtraeglich umsortieren und aendern.</li>
+          <li>Masks move between layers, and Ctrl+C and Ctrl+V copy a layer, the finished picture, or an image or text from another program.</li>
+          <li xml:lang="de">Masken wandern zwischen Ebenen, und Strg+C und Strg+V kopieren eine Ebene, das fertige Bild oder ein Bild beziehungsweise einen Text aus einem anderen Programm.</li>
+          <li>Delete empties a selection instead of only dropping it, out of the marked layer if there is one.</li>
+          <li xml:lang="de">Entf loescht den Inhalt einer Auswahl, statt sie nur aufzuheben - aus der markierten Ebene, wenn eine markiert ist.</li>
+          <li>Saved searches find pictures on an Immich server, a location written into the picture wins over the nearest town, and opening a RAW file in the editor now says that it is working.</li>
+          <li xml:lang="de">Gespeicherte Suchen finden auch Bilder eines Immich-Servers, ein im Bild hinterlegter Ort gilt vor dem naechstgelegenen, und das Oeffnen einer RAW-Datei im Editor meldet jetzt, dass es laeuft.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.22" date="2026-08-06">
+      <description>
+        <p>This release opens and writes Photoshop files, and it paints on the layer you picked:</p>
+        <p xml:lang="de">Diese Version oeffnet und schreibt Photoshop-Dateien und malt auf der gewaehlten Ebene:</p>
+        <ul>
+          <li>A Photoshop file opens with its layers instead of as one flat picture, each with its name, position, opacity, blend mode and clipping. Save as offers PSD in return, so work leaves FerrumPix for Photoshop, Affinity or GIMP. Layer masks, groups, 16-bit files and colour modes other than RGB stay outside for now.</li>
+          <li xml:lang="de">Eine Photoshop-Datei oeffnet mit ihren Ebenen statt als ein flaches Bild, jede mit Namen, Lage, Deckkraft, Mischmethode und Beschneidung. Speichern unter bietet umgekehrt PSD an, so verlaesst Arbeit FerrumPix in Richtung Photoshop, Affinity oder GIMP. Ebenenmasken, Gruppen, 16-Bit-Dateien und andere Farbmodi als RGB bleiben vorerst aussen vor.</li>
+          <li>Text from a Photoshop file can come in as text you can keep typing on, or as a picture with every pixel as it was. FerrumPix asks on opening, and the answer can be settled once in the settings. A file written here and opened here again gives back the text as text and the corrections as corrections.</li>
+          <li xml:lang="de">Text aus einer Photoshop-Datei kann als weiter tippbarer Text ankommen oder als Bild mit jedem Bildpunkt wie gehabt. FerrumPix fragt beim Oeffnen, und die Antwort laesst sich einmal in den Einstellungen festlegen. Eine hier geschriebene und hier wieder geoeffnete Datei gibt den Text als Text und die Korrekturen als Korrekturen zurueck.</li>
+          <li>Brush and eraser paint on the picture layer you selected instead of on the photo underneath it. The eraser takes real holes out of it, so what is behind shows through, and the layer keeps moving, scaling and rotating as before.</li>
+          <li xml:lang="de">Pinsel und Radierer wirken auf der markierten Bildebene statt auf dem Foto darunter. Der Radierer nimmt echte Loecher heraus, so dass Dahinterliegendes durchscheint, und die Ebene laesst sich weiter verschieben, skalieren und drehen.</li>
+          <li>A selection holds the brush. Draw a selection and it stays while you paint: brush and eraser only work inside it, right up to its soft edge, and painting outside simply does nothing instead of quietly landing on the photo.</li>
+          <li xml:lang="de">Eine Auswahl haelt den Pinsel. Sie bleibt beim Malen bestehen: Pinsel und Radierer wirken nur innerhalb, bis an ihre weiche Kante, und ein Strich ausserhalb tut nichts, statt still auf dem Foto zu landen.</li>
+          <li>The settings say when another version has been published, with a link to the download page. Nothing is sent along, and the AppImage now tells update tools about new versions itself.</li>
+          <li xml:lang="de">Die Einstellungen melden, wenn eine andere Version veroeffentlicht ist, mit einem Verweis auf die Download-Seite. Es wird nichts mitgeschickt, und das AppImage meldet neue Versionen jetzt selbst an Aktualisierungswerkzeuge.</li>
+          <li>Masks and layers keep to themselves: two layers never share a mask, inverting one sticks, a graduated mask follows its layer when you move, scale or rotate it, and brush corrections on it come along. Moving several layers at once follows the cursor again.</li>
+          <li xml:lang="de">Masken und Ebenen bleiben bei sich: zwei Ebenen teilen sich nie eine Maske, das Umkehren einer Maske bleibt erhalten, eine Verlaufsmaske geht beim Verschieben, Skalieren und Drehen mit ihrer Ebene mit, und Pinselkorrekturen darauf ebenfalls. Mehrere Ebenen zugleich zu verschieben folgt wieder dem Zeiger.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.21" date="2026-08-05">
+      <description>
+        <p>This release makes much more of masks and layers, and it can bend a picture instead of only tilting it:</p>
+        <p xml:lang="de">Diese Version macht aus Masken und Ebenen deutlich mehr und kann ein Bild biegen, statt es nur zu kippen:</p>
+        <ul>
+          <li>One mask can be built from several parts: a graduated one, a radial one and a painted one in the same mask, each added, subtracted or intersected with what is already there. A short list appears once a mask has more than one part, and clicking a part puts the handles and sliders on it. Until now every drag made another mask and another layer.</li>
+          <li xml:lang="de">Eine Maske kann aus mehreren Teilen bestehen: ein Verlauf, ein Kreis und ein gemalter Teil in derselben Maske, jeder hinzugefuegt, abgezogen oder geschnitten. Sobald eine Maske mehr als einen Teil hat, erscheint eine kurze Liste, und ein Klick auf einen Teil legt Anfasser und Regler darauf. Bisher entstand bei jedem Zug eine weitere Maske und eine weitere Ebene.</li>
+          <li>A mask on any layer, not just on a correction. Give a text, a shape or an inserted picture a layer mask and the part you paint away simply is not there any more, while the layer itself stays untouched: the text can still be typed, the picture still moved. The mask travels with its layer when you move, scale, rotate or flip it.</li>
+          <li xml:lang="de">Eine Maske auf jeder Ebene, nicht nur auf einer Korrektur. Geben Sie einem Text, einer Form oder einem eingefuegten Bild eine Ebenenmaske, und der weggemalte Teil ist einfach nicht mehr da, waehrend die Ebene selbst unangetastet bleibt: der Text laesst sich weiter tippen, das Bild weiter verschieben. Die Maske geht beim Verschieben, Skalieren, Drehen und Spiegeln mit.</li>
+          <li>Every row in the layers panel now carries a thumbnail of what is on the layer, and beside it its mask where there is one. With several masks in a stack it was not possible to tell which one sat where, and clicking a mask thumbnail opens it for editing.</li>
+          <li xml:lang="de">Jede Zeile im Ebenenbereich zeigt jetzt ein Vorschaubild dessen, was auf der Ebene liegt, daneben ihre Maske, wo es eine gibt. Bei mehreren Masken uebereinander war nicht zu erkennen, welche wo sass; ein Klick auf ein Maskenbild oeffnet sie zum Bearbeiten.</li>
+          <li>Bend a picture, not just tilt it. Warp puts a frame over the picture whose four edges are curves: place a corner, bend the edge in between, and the inside follows. A flag, a label on a bottle, a banner across a wall, all in one drag. Several layers can also be merged into one, or clipped to the layer below them.</li>
+          <li xml:lang="de">Ein Bild biegen, nicht nur kippen. Verbiegen legt einen Rahmen ueber das Bild, dessen vier Kanten Kurven sind: Ecke setzen, Kante dazwischen biegen, und das Innere folgt. Eine Fahne, ein Flaschenetikett, ein Banner ueber einer Wand, alles in einem Zug. Mehrere Ebenen lassen sich ausserdem zu einer zusammenlegen oder an der Ebene darunter beschneiden.</li>
+          <li>Distortion is part of the edit now, not of the pixels. Grid, line warp and warp used to be computed into the picture as soon as they were applied, so they were gone the next day on a RAW or a PSD. They come back when you open the picture again, masks follow along, and a button takes them off whenever you want.</li>
+          <li xml:lang="de">Verzerrungen gehoeren jetzt zur Bearbeitung, nicht zu den Bildpunkten. Gitter, Linienverzerrung und Verbiegen wurden bisher beim Anwenden ins Bild gerechnet und waren bei einer RAW- oder PSD-Datei am naechsten Tag verschwunden. Sie kommen beim erneuten Oeffnen zurueck, Masken gehen mit, und ein Schalter nimmt sie jederzeit wieder heraus.</li>
+          <li>The people and cities your Immich server recognised now appear in the filter buttons alongside the local ones. Faces on photos taken with the phone held upright are found again, a face search can be stopped, and switching face recognition off asks before it throws away the names you gave.</li>
+          <li xml:lang="de">Die Personen und Orte, die Ihr Immich-Server erkannt hat, stehen jetzt neben den lokalen in den Filterschaltflaechen. Gesichter auf hochkant aufgenommenen Fotos werden wieder gefunden, eine Gesichtssuche laesst sich abbrechen, und das Abschalten der Gesichtserkennung fragt nach, bevor es selbst vergebene Namen wegwirft.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.20" date="2026-08-03">
+      <description>
+        <p>This release lets the graphics card do the waiting, and it can enlarge a photo with a learned model:</p>
+        <p xml:lang="de">Diese Version laesst die Grafikkarte warten und kann ein Foto mit einem gelernten Modell vergroessern:</p>
+        <ul>
+          <li>A switch in the settings, under Models, hands denoising, enlarging, click-to-select and the depth map to the graphics card instead of the processor. The picture that comes out is the same one, it just arrives several times sooner. FerrumPix says which card it found and can try it out on the spot, and if there is more than one in the machine you choose. Off to begin with, and anything the card cannot take runs on the processor as before.</li>
+          <li xml:lang="de">Ein Schalter in den Einstellungen unter Modelle gibt Entrauschen, Hochskalieren, Objektauswahl und Tiefenkarte an die Grafikkarte statt an den Prozessor. Das Bild, das herauskommt, ist dasselbe, es ist nur um ein Vielfaches frueher da. FerrumPix nennt die gefundene Karte und kann sie an Ort und Stelle ausprobieren, und bei mehreren Karten waehlen Sie. Anfangs aus, und was die Karte nicht annimmt, laeuft wie bisher auf dem Prozessor.</li>
+          <li>Enlarging with a learned model, in the batch dialogs and on export. It computes the enlargement instead of averaging the pixels that are already there: edges, hair and brickwork come back rather than being smeared, and a cut-out PNG stays cut out. Eight models to choose from, each with a sentence saying what it is for, fetched once from the settings.</li>
+          <li xml:lang="de">Vergroessern mit einem gelernten Modell, in den Stapeldialogen und beim Export. Es rechnet die Vergroesserung, statt vorhandene Bildpunkte zu mitteln: Kanten, Haare und Mauerwerk kommen zurueck, statt zu verschmieren, und ein freigestelltes PNG bleibt freigestellt. Acht Modelle zur Auswahl, jedes mit einem Satz dazu, wofuer es gedacht ist, einmalig aus den Einstellungen geholt.</li>
+          <li>Denoising and removing an object can be stopped now: an X on the spinner, or Esc. The photo comes back exactly as it was. While one of them runs the whole editor is held shut, so a click cannot land in a picture that is halfway through being computed.</li>
+          <li xml:lang="de">Entrauschen und Objektentfernen lassen sich jetzt abbrechen: ein X an der Warteanzeige oder Esc. Das Foto kommt genau so zurueck, wie es war. Waehrend einer der beiden laeuft, bleibt der ganze Editor zu, damit kein Klick in ein Bild faellt, das gerade zur Haelfte neu gerechnet wird.</li>
+          <li>Work computed into the pixels of a RAW or PSD is no longer lost. It is noted beside the photo, and on the next open FerrumPix asks whether to put it back. Saving stays available on those files and writes that note, never the photo itself.</li>
+          <li xml:lang="de">In die Bildpunkte einer RAW- oder PSD-Datei gerechnete Arbeit geht nicht mehr verloren. Sie wird neben dem Foto vermerkt, und beim naechsten Oeffnen fragt FerrumPix, ob sie wieder angewandt werden soll. Das Speichern bleibt bei diesen Dateien moeglich und schreibt diesen Vermerk, nie das Foto selbst.</li>
+          <li>Saving over a file that already exists now asks first, in single files and in batch runs alike, instead of writing over it or quietly inventing a free name.</li>
+          <li xml:lang="de">Das Speichern ueber eine vorhandene Datei fragt jetzt vorher nach, einzeln wie im Stapel, statt sie zu ueberschreiben oder stillschweigend einen freien Namen zu erfinden.</li>
+          <li>Removing an object is quicker and fills the gap with far more of the grain and detail around it. Picking an object by click no longer stops short of its edge.</li>
+          <li xml:lang="de">Das Entfernen eines Objekts geht schneller und fuellt die Luecke mit deutlich mehr Korn und Zeichnung der Umgebung. Die Objektauswahl per Klick hoert nicht mehr kurz vor der Kante auf.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.19" date="2026-08-01">
+      <description>
+        <p>This release brings people and places to the library, and it is quicker at applying and saving edits:</p>
+        <p xml:lang="de">Diese Version bringt Personen und Orte in die Bibliothek und ist schneller beim Anwenden und Speichern von Bearbeitungen:</p>
+        <ul>
+          <li>Find the people in your photos. Switch it on in the settings, then use the new people button above the gallery to search a folder. Photos of the same person end up in one group, you give the group a name, and from then on you can filter and search by it. Everything happens on your machine and nothing is sent anywhere.</li>
+          <li xml:lang="de">Findet die Personen in Ihren Fotos. In den Einstellungen einschalten, dann mit dem neuen Personen-Knopf ueber der Galerie einen Ordner durchsuchen. Fotos derselben Person landen in einer Gruppe, Sie vergeben den Namen, und danach laesst sich danach filtern und suchen. Alles geschieht auf Ihrem Geraet, es wird nichts gesendet.</li>
+          <li>People management has a place of its own, reached by a button in the gallery: a wall of faces rather than a list of names. Where the recognition put a face with the wrong person, one button takes it back out, and only that photo changes.</li>
+          <li xml:lang="de">Die Personenverwaltung hat einen eigenen Bereich, erreichbar ueber einen Knopf in der Galerie: eine Wand aus Gesichtern statt einer Namensliste. Wo die Erkennung ein Gesicht der falschen Person zugeordnet hat, loest ein Knopf es wieder heraus, und nur dieses eine Foto aendert sich.</li>
+          <li>Photos know where they were taken. With the new place file installed, coordinates in a photo turn into a place and country name you can search for - entirely offline, no address is ever looked up over the internet, and there is no map view.</li>
+          <li xml:lang="de">Fotos wissen, wo sie aufgenommen wurden. Mit der neuen Ortsdatei werden Koordinaten im Bild zu einem Orts- und Landesnamen, nach dem sich suchen laesst - vollstaendig ohne Netz, es wird keine Adresse abgefragt, und eine Kartenansicht gibt es nicht.</li>
+          <li>Search by person and place, on their own or together with keywords and stars. The buttons for people, places and keywords narrow each other down instead of replacing each other, and person and place also show in the info sidebar of the viewer and the editor.</li>
+          <li xml:lang="de">Suchen nach Person und Ort, fuer sich oder zusammen mit Stichwoertern und Sternen. Die Knoepfe fuer Personen, Orte und Stichwoerter schraenken sich gegenseitig ein statt sich zu ersetzen, und Person und Ort stehen auch in der Info-Leiste von Betrachter und Editor.</li>
+          <li>HEIC, HEIF and AVIF now really open, not just as thumbnails: the tile appeared but the large picture stayed blank in the viewer and the editor. On macOS nothing has to be installed for it any more, because the system reads these formats itself.</li>
+          <li xml:lang="de">HEIC, HEIF und AVIF lassen sich jetzt wirklich oeffnen und nicht nur als Miniatur ansehen: die Kachel erschien, das grosse Bild blieb in Betrachter und Editor leer. Auf macOS muss dafuer nichts mehr installiert werden, weil das System diese Formate selbst liest.</li>
+          <li>Applying edits and saving is faster, most of all on large photos, and the result is pixel for pixel the same as before. The coarse colour noise slider is usable again, and the colour mixer now responds about as strongly as the main saturation slider does.</li>
+          <li xml:lang="de">Das Anwenden von Bearbeitungen und das Speichern geht schneller, vor allem bei grossen Fotos, und das Ergebnis ist Bildpunkt fuer Bildpunkt dasselbe wie vorher. Der Regler fuer grobes Farbrauschen ist wieder benutzbar, und der Farbmischer wirkt jetzt etwa so kraeftig wie der Hauptregler fuer die Saettigung.</li>
+          <li>Tidying up folders now separates thumbnails from catalogue data, for a single folder or the whole library, and asks first. Your photo files are never touched.</li>
+          <li xml:lang="de">Das Aufraeumen von Ordnern trennt jetzt Vorschaubilder von Katalogdaten, fuer einen Ordner oder die ganze Bibliothek, und fragt vorher nach. Ihre Bilddateien werden nie angefasst.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.18" date="2026-07-31">
+      <description>
+        <p>This release makes arranging layers instant, turns the frame into a layer of its own, and corrects a long list of smaller things across gallery, viewer and editor:</p>
+        <p xml:lang="de">Diese Version macht das Anordnen von Ebenen unmittelbar, macht den Rahmen zu einer eigenen Ebene und korrigiert eine lange Reihe kleinerer Dinge in Galerie, Betrachter und Editor:</p>
+        <ul>
+          <li>Moving, rotating and resizing a layer no longer re-renders the picture. Dragging stays smooth even with many layers on large photos, and a layer with a blend mode shows the real mixing result the whole time instead of a plain stand-in. The exported file is unchanged.</li>
+          <li xml:lang="de">Verschieben, Drehen und Skalieren einer Ebene rechnet das Bild nicht mehr neu. Das Ziehen bleibt auch mit vielen Ebenen auf grossen Fotos fluessig, und eine Ebene mit Mischmethode zeigt die ganze Zeit das echte Ergebnis statt eines Platzhalters. Die exportierte Datei bleibt dieselbe.</li>
+          <li>The frame is a layer of its own: hide it, delete it, tilt it, give it a gradient, a blend mode, a shadow or a glow. It always sits on the picture edge, and hiding the global adjustments or working inside a selection no longer takes it away. It can also be built from symbols - stars, hearts, drops - laid out in a row, along a wave or in two rows.</li>
+          <li xml:lang="de">Der Rahmen ist eine eigene Ebene: ausblenden, loeschen, kippen, mit Verlauf, Mischmethode, Schatten oder Gluehen versehen. Er sitzt immer an der Bildkante, und weder ausgeblendete Globalkorrekturen noch eine Auswahl nehmen ihn noch weg. Er laesst sich auch aus Symbolen bauen - Sternen, Herzen, Tropfen -, aufgereiht, auf einer Welle oder in zwei Reihen.</li>
+          <li>Arrow keys nudge a layer by exactly one pixel, Shift by ten, and the editor's bottom bar shows the size a save would produce.</li>
+          <li xml:lang="de">Die Pfeiltasten verschieben eine Ebene um genau einen Bildpunkt, mit Umschalt um zehn, und die Fusszeile des Editors zeigt die Groesse, die ein Speichern ergaebe.</li>
+          <li>Many corrections: a cropped RAW keeps its crop, text on a path survives being distorted, a video no longer shows an empty histogram, and the explanations in the settings are easier to read.</li>
+          <li xml:lang="de">Viele Korrekturen: ein beschnittenes RAW behaelt seinen Zuschnitt, Text auf einem Pfad ueberlebt das Verzerren, ein Video zeigt kein leeres Histogramm mehr, und die Erklaerungen in den Einstellungen sind besser lesbar.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.17" date="2026-07-31">
+      <description>
+        <p>This release brings the info panel into the gallery, lets you find photos by keyword, and makes FerrumPix behave like a proper Mac application:</p>
+        <p xml:lang="de">Diese Version bringt das Infopanel in die Galerie, laesst Fotos ueber Stichwoerter finden und macht FerrumPix auf dem Mac zu einer richtigen Mac-Anwendung:</p>
+        <ul>
+          <li>The info panel is now in the gallery too: the selected picture with its shot data, histogram, rating, colour label and keywords. With several selected it shows what they have in common, and a rating or a keyword set there applies to all of them. Its button sits next to full screen.</li>
+          <li xml:lang="de">Das Infopanel gibt es jetzt auch in der Galerie: das markierte Bild mit Aufnahmedaten, Histogramm, Bewertung, Farbetikett und Stichwoertern. Sind mehrere markiert, zeigt es die Gemeinsamkeiten, und eine dort gesetzte Bewertung oder ein Stichwort gilt fuer alle. Der Knopf dazu sitzt neben dem Vollbild.</li>
+          <li>Find pictures by keyword: a click on a keyword shows every picture carrying it, and a button next to the filter lists all keywords in use with their counts, several selectable at once.</li>
+          <li xml:lang="de">Bilder ueber Stichwoerter finden: ein Klick auf ein Stichwort zeigt alle Bilder damit, und ein Knopf neben dem Filter listet alle vergebenen Stichwoerter mit ihrer Anzahl auf, mehrere davon gleichzeitig waehlbar.</li>
+          <li>On a Mac it looks and works like a Mac: the window carries the usual title bar with the red, yellow and green buttons, and the shortcuts take Command where a Mac user reaches for it. Combinations the system has claimed for itself are left alone.</li>
+          <li xml:lang="de">Auf dem Mac sieht und verhaelt es sich wie auf dem Mac: das Fenster hat die uebliche Titelleiste mit den roten, gelben und gruenen Knoepfen, und die Kuerzel nehmen Command, wo ein Mac-Benutzer danach greift. Vom System belegte Kombinationen bleiben unangetastet.</li>
+          <li>You decide what a double-click in the gallery opens, the viewer or the editor. And folders that are only a link to another disk can now be worked on, once the matching setting is switched on.</li>
+          <li xml:lang="de">Sie entscheiden, was ein Doppelklick in der Galerie oeffnet, den Betrachter oder den Editor. Und Ordner, die nur ein Verweis auf eine andere Festplatte sind, lassen sich jetzt bearbeiten, sobald die passende Einstellung an ist.</li>
+          <li>The right-click menus reach every place they belong again, and stars, heart and colour labels sit directly in them as rows instead of submenus. A keyword keeps the capitals you typed, removing metadata asks first, and collages work with Immich pictures.</li>
+          <li xml:lang="de">Die Rechtsklick-Menues erscheinen wieder ueberall, wo sie hingehoeren, und Sterne, Herz und Farbetiketten sitzen als Zeilen direkt darin statt in Untermenues. Ein Stichwort behaelt die Gross- und Kleinschreibung, das Entfernen von Metadaten fragt vorher nach, und Collagen funktionieren auch mit Immich-Bildern.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.16" date="2026-07-29">
+      <description>
+        <p>This release corrects the errors of your lens from measured data, adds three ways to distort the picture directly in it, and lets you select an object, remove it, or work by how far away things are:</p>
+        <p xml:lang="de">Diese Version korrigiert die Fehler des Objektivs anhand von Messwerten, bringt drei Arten, das Bild direkt darin zu verzerren, und laesst Sie ein Objekt auswaehlen, entfernen oder nach Entfernung arbeiten:</p>
+        <ul>
+          <li>Select an object by clicking it: a mode in the mask tool hands the click to a model that runs on your machine, and the mask of what you hit appears - the sky behind branches, a person against a wall of the same colour. Further clicks extend it, Alt takes areas away again, and the result becomes a mask layer. Nothing leaves the machine. The model file does not come with the program: the settings have a section that says how big it is, fetches it when you press the button and checks afterwards that what arrived is what was meant. Nothing is fetched unless you press it, and without the file the button is not there.</li>
+          <li xml:lang="de">Ein Objekt per Klick auswaehlen: ein Modus im Masken-Werkzeug gibt den Klick an ein Modell weiter, das auf dem eigenen Rechner laeuft, und die Maske des getroffenen Objekts erscheint - der Himmel hinter Aesten, eine Person vor einer gleichfarbigen Wand. Weitere Klicks erweitern sie, Alt nimmt Bereiche wieder weg, und daraus wird eine Maskenebene. Es verlaesst nichts den Rechner. Die Modelldatei gehoert nicht zum Programm: die Einstellungen haben dafuer einen Bereich, der die Groesse nennt, sie auf Knopfdruck holt und danach prueft, ob wirklich das ankam, was gemeint war. Ohne Knopfdruck wird nichts geholt, und ohne die Datei ist der Knopf nicht da.</li>
+          <li>Lens errors are corrected from measured data: distortion, the coloured fringes at high-contrast edges in the corners, and the darkening towards the edges. An open collection covering some 1300 lenses comes along, and lens and camera are recognised from the shot data. Without data for your lens nothing happens to the photo - a wrong lens curve is far more visible than a missing one. On by default, and adjustable per photo in the new Lens correction group of the Adjust tool.</li>
+          <li xml:lang="de">Objektivfehler werden anhand von Messwerten korrigiert: Verzeichnung, die Farbsaeume an kontrastreichen Kanten in den Bildecken und die Randabdunklung. Eine offene Sammlung mit rund 1300 Objektiven liegt bei, Objektiv und Kamera werden aus den Aufnahmedaten erkannt. Ohne Messwerte fuer das Objektiv passiert nichts - eine falsche Kennlinie sieht man viel eher als eine fehlende. Standardmaessig an und pro Bild in der neuen Gruppe Objektivkorrektur im Anpassen-Werkzeug einstellbar.</li>
+          <li>Remove something from the picture: mark it and press Remove object. What was there disappears and the background is continued through the gap - a horizon keeps running, a wall keeps its line. It needs a model file and is computed into the pixels like retouching.</li>
+          <li xml:lang="de">Etwas aus dem Bild entfernen: markieren und auf Objekt entfernen druecken. Was da war, verschwindet, und der Hintergrund wird durch die Luecke fortgesetzt - ein Horizont laeuft weiter, eine Mauer behaelt ihre Linie. Braucht eine Modelldatei und wird wie eine Retusche in die Pixel gerechnet.</li>
+          <li>The interface speaks Chinese: simplified Chinese joins German, English, Spanish, French, Italian and Portuguese, contributed by amaztony. Texts the program puts together itself - dialog subtitles, layer names, the entries of the dropdown lists, context menus - now follow the chosen language as well.</li>
+          <li xml:lang="de">Die Oberflaeche spricht Chinesisch: vereinfachtes Chinesisch kommt zu Deutsch, Englisch, Spanisch, Franzoesisch, Italienisch und Portugiesisch hinzu, beigetragen von amaztony. Auch die Texte, die das Programm selbst zusammensetzt - Dialog-Untertitel, Ebenennamen, die Eintraege der Auswahllisten, Kontextmenues -, folgen jetzt der gewaehlten Sprache.</li>
+          <li>You decide which adjustment groups you see: twenty-four of them can be switched off in the editor settings, and a tool whose groups are all switched off disappears from the toolbar rather than opening an empty panel. Hiding one only changes the display.</li>
+          <li xml:lang="de">Sie entscheiden, welche Anpassungsgruppen Sie sehen: 24 davon lassen sich in den Editor-Einstellungen abschalten, und ein Werkzeug, dessen Gruppen alle abgeschaltet sind, verschwindet aus der Leiste, statt ein leeres Panel zu oeffnen. Ausblenden aendert nur die Anzeige.</li>
+          <li>Details and effects are two tools now: what draws more out of the picture - clarity, structure, noise, sharpening, softening, the depth blur - and what is added to it, which is the vignette, the grain and the frame. The sliders themselves are unchanged.</li>
+          <li xml:lang="de">Details und Effekte sind jetzt zwei Werkzeuge: was mehr aus dem Bild herausholt - Klarheit, Struktur, Rauschen, Schaerfe, Weichzeichnen, Tiefen-Unschaerfe - und was ihm hinzugefuegt wird, also Vignette, Koernung und Rahmen. An den Reglern selbst aendert sich nichts.</li>
+          <li>When something takes a while, you can see it and you cannot ruin it: a quiet layer over the picture names what is being computed, and the sliders are locked while it runs. A live preview reports separately and locks nothing.</li>
+          <li xml:lang="de">Wenn etwas laenger dauert, sieht man es und kann es nicht verderben: eine ruhige Flaeche ueber dem Bild nennt, was gerade gerechnet wird, und die Regler sind so lange gesperrt. Eine Live-Vorschau meldet sich getrennt und sperrt nichts.</li>
+          <li>Noise gets a group of its own, with a third way of dealing with it: the two existing sliders work at one size, so large colour blotches from a pushed exposure were out of their reach. The new one takes the picture apart into several sizes, removes what is noise at each of them, and touches only the colour - never the brightness.</li>
+          <li xml:lang="de">Rauschen bekommt eine eigene Gruppe und eine dritte Art, damit umzugehen: die beiden bestehenden Regler arbeiten auf EINER Groesse, grosse Farbflecken aus hochgezogenen Aufnahmen lagen ausserhalb ihrer Reichweite. Der neue zerlegt das Bild in mehrere Groessen, nimmt auf jeder weg, was dort Rauschen ist, und fasst nur die Farbe an - nie die Helligkeit.</li>
+          <li>Depth blur: the blur strength comes from each point's distance instead of one radius for everything. A light in the background does not fade into a grey patch, it opens into a bright disc with a clean edge, and that disc can take the shape of an aperture with five, six or seven blades. The picture shows what you are setting while you drag. It needs the depth model and has its own Apply.</li>
+          <li xml:lang="de">Tiefen-Unschaerfe: die Staerke kommt je Bildpunkt aus seiner Entfernung statt aus einem festen Radius fuer alles. Ein Licht im Hintergrund verblasst nicht zu einem grauen Fleck, sondern oeffnet sich zu einer hellen Scheibe mit klarem Rand, und diese Scheibe kann die Form einer Blende mit fuenf, sechs oder sieben Lamellen annehmen. Waehrend des Einstellens zeigt das Bild, was dabei herauskommt. Sie braucht das Tiefenmodell und hat ein eigenes Anwenden.</li>
+          <li>The rotate tool is now Rotate and distort. Perspective tilts the picture around either axis, stretches it and pulls it back in to cover the corners that go empty - worked either with four sliders or by dragging the four corners directly in the photo. Line warp is for edges: drag a line over one, then drag it where the edge should be. Grid warp lays a grid of points over the picture for everything a tilt cannot do, and the picture moves with you while you drag; it has its own Apply, because unlike the sliders it becomes part of the pixels. With an object selected, all three distort that object instead of the picture - at once, and as an entry on the object, so a distorted text can still be typed in.</li>
+          <li xml:lang="de">Das Drehen-Werkzeug heisst jetzt Drehen und Verzerren. Perspektive kippt das Bild um die waagerechte oder senkrechte Achse, dehnt es und holt es wieder heran, um die leer gewordenen Ecken zu verdecken - bedienbar ueber vier Regler oder durch Ziehen der vier Ecken direkt im Foto. Die Linienverzerrung ist fuer Kanten: eine Linie darueber legen und sie dorthin ziehen, wo die Kante hin soll. Die Gitterverzerrung legt ein Stuetzpunktraster ueber das Bild, fuer alles, was eine Kippung nicht kann, und das Bild folgt schon waehrend des Ziehens; sie hat ein eigenes Anwenden, weil sie anders als die Regler Teil der Pixel wird. Ist ein Objekt markiert, verzerren alle drei dieses Objekt statt des Bildes - sofort und als Angabe am Objekt, sodass ein verzerrter Text weiter tippbar bleibt.</li>
+          <li>The document has a background colour. It fills everything that used to stay transparent: the extended canvas, the empty corners left by straightening or distorting, erased areas. It lives in Image size under Background, starts out transparent, and one button puts it back.</li>
+          <li xml:lang="de">Das Dokument hat eine Hintergrundfarbe. Sie fuellt alles, was bisher durchsichtig blieb: die erweiterte Leinwand, die leeren Ecken nach Begradigen oder Verzerren, weggeradierte Stellen. Sie steht unter Bildgroesse bei Hintergrund, ist anfangs durchsichtig, und ein Knopf setzt sie zurueck.</li>
+          <li>Every half of the comparison carries the badges of a gallery tile: stars, favourite, Adjust and Delete, always belonging to the picture they sit on. Deleting the right photo brings the next one in; deleting the left one moves the right photo over, so a series can be culled in one pass. The round button between the halves, or the space bar, swaps them.</li>
+          <li xml:lang="de">Jede Haelfte des Vergleichs traegt die Marken einer Galerie-Kachel: Sterne, Favorit, Anpassen und Loeschen, und zwar immer fuer das Bild, auf dem sie sitzen. Das Loeschen des rechten Bildes holt das naechste nach; beim linken wandert das rechte hinueber, sodass sich eine Serie in einem Zug durchsehen laesst. Der runde Knopf zwischen den Haelften - oder die Leertaste - tauscht sie.</li>
+          <li>RAW files are now always developed in the comparison instead of showing the small preview the camera stored, the two sides can be unlinked, and the footer follows the focused side.</li>
+          <li xml:lang="de">RAW-Dateien werden im Vergleich jetzt immer entwickelt, statt die kleine Vorschau der Kamera zu zeigen, die beiden Seiten lassen sich entkoppeln, und die Fusszeile folgt der fokussierten Seite.</li>
+          <li>The radial mask can be squeezed into an ellipse with the mouse, Esc lets go of a selected layer before it leaves the editor, and the mask icon keeps its colour while you work the adjustment sliders.</li>
+          <li xml:lang="de">Die Radialmaske laesst sich per Maus zur Ellipse stauchen, Esc waehlt eine markierte Ebene erst ab, bevor es den Editor verlaesst, und das Masken-Symbol behaelt seine Farbe, waehrend man die Anpassungsregler bedient.</li>
+          <li>Fitting into the editing area really fits now. It was worked out once, while a raw file still showed the small preview stored in the camera; the full-size development arriving seconds later was never fitted again.</li>
+          <li xml:lang="de">Das Einpassen in die Bearbeitungsflaeche passt jetzt wirklich ein. Es wurde einmal gerechnet, bei einer RAW-Datei noch gegen die kleine in der Kamera gespeicherte Vorschau; die Sekunden spaeter eintreffende volle Entwicklung wurde nie neu eingepasst.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.15" date="2026-07-28">
+      <description>
+        <p>This release lets you put two photos side by side and look at exactly the same spot in both, and it makes the colour tools tell you where you have already been:</p>
+        <p xml:lang="de">Diese Version stellt zwei Fotos nebeneinander und zeigt in beiden genau dieselbe Stelle, und die Farbwerkzeuge verraten jetzt, wo bereits etwas eingestellt ist:</p>
+        <ul>
+          <li>Compare two photos side by side: pick two in the gallery and choose Compare, and the viewer puts them next to each other. One zoom applies to both, and dragging one moves the other with it, so you always see the same part of both pictures. Clicking a picture gives it the focus and switches the info panel to its data.</li>
+          <li xml:lang="de">Zwei Fotos nebeneinander vergleichen: zwei in der Galerie waehlen, Vergleichen aufrufen, und der Betrachter stellt sie nebeneinander. Ein Zoom gilt fuer beide, und das Verschieben des einen nimmt das andere mit - man sieht also immer denselben Bildteil in beiden. Ein Klick auf ein Bild gibt ihm den Fokus und schaltet das Infopanel auf seine Daten um.</li>
+          <li>Or pin the photo you are looking at: the new pin button holds it and opens the split view. Filmstrip, arrow keys and mouse wheel then page the right side onward while the pinned photo stays on the left - the natural way through a series of near-identical shots.</li>
+          <li xml:lang="de">Oder das betrachtete Foto anheften: der neue Knopf haelt es fest und oeffnet die geteilte Ansicht. Filmstreifen, Pfeiltasten und Mausrad blaettern dann die rechte Seite weiter, waehrend das angeheftete Foto links stehen bleibt - der natuerliche Weg durch eine Serie aehnlicher Aufnahmen.</li>
+          <li>The colour mixer marks every colour band that is no longer at zero, and the tone curve marks every channel that carries a curve - visible even while another one is shown.</li>
+          <li xml:lang="de">Der Farbmischer markiert jedes Farbband, das nicht mehr auf null steht, und die Tonwertkurve jeden Kanal, der eine Kurve traegt - sichtbar auch, waehrend ein anderer angezeigt wird.</li>
+          <li>Fit-to-window really fits again: resizing the window, folding a panel in or out or cropping a photo left the picture at its old zoom while the control still claimed Fit, and “always scale” now really scales up to the area. Zooming in the comparison now also anchors on the point under the mouse.</li>
+          <li xml:lang="de">Einpassen passt wieder wirklich ein: Fenstergroesse aendern oder ein Panel ein- und ausklappen liess das Bild beim alten Zoom stehen, waehrend die Anzeige weiter Einpassen behauptete. Auch das Zoomen im Vergleich verankert jetzt am Punkt unter der Maus.</li>
+          <li>DNG files that wrap an already-developed picture are no longer blown out: they were treated like sensor data and got a second tone curve on top.</li>
+          <li xml:lang="de">DNG-Dateien, die ein bereits entwickeltes Bild enthalten, werden nicht mehr ueberstrahlt: Sie galten als Sensordaten und bekamen eine zweite Tonkurve obendrauf. Die Einpassen-Einstellung des Editors wirkt jetzt sofort statt erst beim erneuten Oeffnen.</li>
+          <li>Resetting the tone curve now clears the dots on the channel switcher. They stayed on, claiming a curve that was no longer there.</li>
+          <li xml:lang="de">Das Zuruecksetzen der Tonwertkurve loescht jetzt die Punkte am Kanalumschalter. Sie blieben stehen und behaupteten eine Kurve, die es nicht mehr gab.</li>
+          <li>Thumbnails no longer get stuck or pile up in memory. A rotated raw file could keep showing its old thumbnail, and scrolling through very large folders slowly used more and more memory.</li>
+          <li xml:lang="de">Vorschaubilder bleiben nicht mehr haengen und sammeln sich nicht mehr im Speicher an. Eine gedrehte RAW-Datei konnte ihr altes Vorschaubild behalten, und langes Scrollen durch sehr grosse Ordner brauchte nach und nach mehr Speicher.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.14" date="2026-07-27">
+      <description>
+        <p>This release rebuilds the ground your RAW photos stand on, lets the brush correct a graduated or radial mask, and gives the repair brush back the structure it used to smear away:</p>
+        <p xml:lang="de">Diese Version baut den Boden neu, auf dem RAW-Fotos stehen, laesst den Pinsel eine Verlaufs- oder Radialmaske korrigieren und gibt dem Reparaturpinsel die Struktur zurueck, die er bisher verschmiert hat:</p>
+        <ul>
+          <li>RAW photos start from a truer base. Until now the decoder brightened every photo until its brightest parts were almost white, and that stretch - not the shot - decided how light or dark it came out. FerrumPix now develops the sensor data itself under a film-like base curve: a photo keeps the exposure it was taken with, and midtones and colours land much closer to other raw developers. Photos already adjusted will look different when reopened; the slider settings are untouched.</li>
+          <li xml:lang="de">RAW-Fotos beginnen auf einer richtigeren Grundlage. Bisher hellte der Decoder jedes Foto auf, bis die hellsten Stellen fast weiss waren, und diese Streckung - nicht die Aufnahme - entschied ueber hell und dunkel. FerrumPix entwickelt die Sensordaten jetzt selbst unter einer filmartigen Grundkurve: ein Foto behaelt die Belichtung, mit der es aufgenommen wurde, und Mitteltoene und Farben liegen deutlich naeher an anderen RAW-Entwicklern. Bereits bearbeitete Fotos sehen beim Wiederoeffnen anders aus; die Reglerwerte bleiben unangetastet.</li>
+          <li>Graduated and radial masks can be corrected with the brush: pull a gradient across the sky, then brush the roof back out of it. The gradient stays a gradient - it can still be moved, turned and softened afterwards, and the brushed correction stays where it was put.</li>
+          <li xml:lang="de">Verlaufs- und Radialmasken lassen sich mit dem Pinsel korrigieren: einen Verlauf ueber den Himmel ziehen und das Dach wieder herauspinseln. Der Verlauf bleibt ein Verlauf - er laesst sich weiter verschieben, drehen und weicher stellen, und die gepinselte Korrektur bleibt, wo sie gesetzt wurde.</li>
+          <li>The repair brush keeps structure and no longer leaves a dirty line down the middle of a long stroke. The pieces it works with now scale with the size of the photo, so a window grid or a railing survives a repair on a full-resolution file.</li>
+          <li xml:lang="de">Der Reparaturpinsel haelt Strukturen und hinterlaesst keine unsaubere Bahn mehr in der Mitte eines langen Zuges. Die Stuecke, mit denen er arbeitet, richten sich jetzt nach der Bildgroesse, sodass ein Fenstergitter oder ein Gelaender eine Reparatur in voller Aufloesung uebersteht.</li>
+          <li>RAW files get less colour speckle in the shadows before any slider is touched: they are cleaned up at the one moment where the sensor pattern is still known, before the colour information is reconstructed. Measured on a dark shot, colour grain came down by about 40 % with fine detail unchanged.</li>
+          <li xml:lang="de">RAW-Dateien zeigen weniger Farbkorn in den Tiefen, noch bevor ein Regler bewegt wird: Sie werden an der einen Stelle bereinigt, an der das Sensormuster noch bekannt ist - bevor die Farbinformation rekonstruiert wird. An einer dunklen Aufnahme gemessen ging das Farbkorn um rund 40 % zurueck, das feine Detail blieb unveraendert.</li>
+          <li>The colour noise slider is calibrated properly: a low setting now does what a low setting should, matching what the same number does in other raw developers.</li>
+          <li xml:lang="de">Der Farbrausch-Regler ist richtig geeicht: ein niedriger Wert tut jetzt, was ein niedriger Wert tun soll, und entspricht dem, was dieselbe Zahl in anderen RAW-Entwicklern bewirkt.</li>
+          <li>Graduated and radial masks are handled directly on the picture - the transition marks and the inner ellipse can be dragged, and dragging inside a mask moves it instead of starting a new one.</li>
+          <li xml:lang="de">Verlaufs- und Radialmasken werden direkt am Bild bedient - die Uebergangsstriche und die innere Ellipse lassen sich ziehen, und ein Zug innerhalb der Maske verschiebt sie, statt eine neue zu beginnen.</li>
+          <li>Editing a photo on an Immich server no longer risks the original: it used to go to the server bin even when the replacement was not a full stand-in - a RAW or HEIC cannot be written back, so a JPEG was uploaded instead, and a failed transfer of albums, stacks or rating was never checked. The edit is now saved as a new asset and the original stays.</li>
+          <li xml:lang="de">Das Bearbeiten eines Fotos auf einem Immich-Server gefaehrdet das Original nicht mehr: Es landete bisher auch dann im Server-Papierkorb, wenn der Ersatz kein vollwertiger war - ein RAW oder HEIC laesst sich nicht zurueckschreiben, hochgeladen wurde also ein JPEG, und ein fehlgeschlagenes Uebernehmen von Alben, Stapeln oder Bewertung wurde nie geprueft. Die Bearbeitung wird jetzt als neues Asset gespeichert, das Original bleibt.</li>
+          <li>The editor can be set to open with a chosen tool and with the tool groups in your own order, a default target format can be preselected for Save as, Convert to and Export to, and viewer and editor each decide whether a photo is only shrunk or always scaled to the area.</li>
+          <li xml:lang="de">Der Editor laesst sich so einstellen, dass er mit einem gewaehlten Werkzeug und mit den Werkzeuggruppen in eigener Reihenfolge oeffnet, ein Standard-Zielformat laesst sich fuer Speichern unter, Konvertieren nach und Exportieren nach vorwaehlen, und Betrachter und Editor entscheiden je fuer sich, ob ein Foto nur verkleinert oder immer auf die Flaeche skaliert wird.</li>
+          <li>Imported .xmp presets are now called XMP presets throughout, painting into a mask no longer bogs the machine down, adjusting several mask layers at once reaches all of them, a group of mask layers survives reopening a project, and the frame around an anchored watermark sits on the watermark again.</li>
+          <li xml:lang="de">Importierte .xmp-Vorgaben heissen durchgehend XMP-Presets, das Malen in eine Maske bremst die Maschine nicht mehr aus, das Anpassen mehrerer Maskenebenen erreicht alle davon, eine Gruppe von Maskenebenen ueberlebt das Wiederoeffnen eines Projekts, und der Rahmen um ein verankertes Wasserzeichen sitzt wieder auf dem Wasserzeichen.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.13" date="2026-07-26">
+      <description>
+        <p>This release opens FerrumPix to the formats a photo library really contains, gives the editor a proper Mask tool, and makes the batch functions work with your RAW edits instead of around them:</p>
+        <p xml:lang="de">Diese Version oeffnet FerrumPix fuer die Formate, die eine Fotosammlung wirklich enthaelt, gibt dem Editor ein richtiges Masken-Werkzeug und laesst die Stapelfunktionen mit der RAW-Bearbeitung arbeiten statt an ihr vorbei:</p>
+        <ul>
+          <li>HEIC, TIFF, BMP and GIF open now - the format your phone photographs in and the one your scanner produces. They show up in the gallery, open in the viewer and editor, and can be exported and converted. HEIC needs libheif: on Linux most distributions ship it, on Windows you have to place the library next to FerrumPix yourself.</li>
+          <li xml:lang="de">HEIC, TIFF, BMP und GIF lassen sich jetzt oeffnen - das Format, in dem das Handy fotografiert, und das des Scanners. Sie erscheinen in der Galerie, oeffnen sich in Betrachter und Editor und lassen sich exportieren und konvertieren. HEIC braucht libheif: unter Linux bringen die meisten Distributionen sie mit, unter Windows muss man die Bibliothek selbst neben FerrumPix legen.</li>
+          <li>Export to: one dialog for a whole batch export - name pattern, a look or automatic enhancement, a watermark, a size, the metadata to carry along and the target format including PDF, locally or to Immich. Your originals are never touched.</li>
+          <li xml:lang="de">Exportieren nach: ein Dialog fuer den ganzen Stapel-Export - Namensmuster, ein Look oder die automatische Bildverbesserung, ein Wasserzeichen, eine Groesse, die mitzunehmenden Metadaten und das Zielformat samt PDF, lokal oder nach Immich. Die Originale bleiben unangetastet.</li>
+          <li>A Mask tool with graduated and radial masks: drag a linear gradient across the image to hold back a bright sky, or a radial one to lift a face out of its surroundings. Both stay editable, and each becomes its own correction layer. The mask brush moved here too.</li>
+          <li xml:lang="de">Ein Masken-Werkzeug mit linearen und radialen Verlaufsmasken: einen linearen Verlauf ueber das Bild ziehen, um einen hellen Himmel zurueckzuhalten, oder einen radialen, um ein Gesicht aus seiner Umgebung zu heben. Beide bleiben aenderbar, und jeder wird eine eigene Korrekturebene. Der Masken-Pinsel ist mit umgezogen.</li>
+          <li>Carry your slider settings from one photo to the next: save them under a name in the Adjust tool and put them on any other photo later. Adjust, Colour, Details and Effects travel, crop, size, objects and masks stay behind. Any number of sets can be kept, and they are still there after a restart.</li>
+          <li xml:lang="de">Reglerstellungen von einem Foto zum naechsten mitnehmen: im Anpassen-Werkzeug unter einem Namen speichern und spaeter auf jedes andere Foto legen. Anpassen, Farbe, Details und Effekte wandern mit, Zuschnitt, Groesse, Objekte und Masken bleiben zurueck. Es lassen sich beliebig viele aufbewahren, und sie sind nach einem Neustart noch da.</li>
+          <li>Batch functions use your RAW edits: a RAW you developed in the editor is resized, watermarked, filtered and exported the way you edited it. Cropping RAW and PSD works like a RAW developer - the crop stays changeable, and there is nothing to confirm any more.</li>
+          <li xml:lang="de">Die Stapelfunktionen benutzen die RAW-Bearbeitung: ein im Editor entwickeltes RAW wird so skaliert, mit Wasserzeichen versehen, gefiltert und exportiert, wie es bearbeitet wurde. Das Zuschneiden von RAW und PSD arbeitet wie in einem RAW-Entwickler - der Ausschnitt bleibt aenderbar, und es gibt nichts mehr zu bestaetigen.</li>
+          <li>Colours hold up better: pushing a colour band no longer flattens a red jumper or a blue sky into one solid patch, lifting shadows no longer greys them out, and the colour noise slider reaches the coarse blotches of a pushed-up night sky.</li>
+          <li xml:lang="de">Farben halten mehr aus: ein Farbband hochzuziehen macht aus einem roten Pullover oder einem blauen Himmel keine einfarbige Flaeche mehr, aufgehellte Tiefen werden nicht mehr grau, und der Farbrausch-Regler erreicht auch die groben Flecken eines hochgezogenen Nachthimmels.</li>
+          <li>A batch export can stay editable: the project format is now one of the targets in Export to, so a whole batch can come out as reopenable projects instead of finished pictures. A collage can be written that way too, or straight to PDF.</li>
+          <li xml:lang="de">Ein Stapel-Export kann weiterbearbeitbar bleiben: das Projektformat ist jetzt eines der Ziele in Exportieren nach, ein ganzer Stapel kommt damit als wieder oeffenbare Projekte heraus statt als fertige Bilder. Eine Collage laesst sich ebenso schreiben, oder direkt als PDF.</li>
+          <li>Image size takes a single value for the long edge, so landscape and portrait shots come out the same size, and a watermark can keep its set size instead of shrinking with the photo. A default target format in the settings is preselected in every save and export dialog.</li>
+          <li xml:lang="de">Die Bildgroesse nimmt einen einzigen Wert fuer die lange Kante, damit Quer- und Hochformate gleich gross herauskommen, und ein Wasserzeichen kann seine eingestellte Groesse behalten statt mit dem Foto zu schrumpfen. Ein Standardformat in den Einstellungen ist in jedem Speichern- und Export-Dialog vorgewaehlt.</li>
+          <li>The editor starts the way you work: which tool is active on opening, the order of the groups in the left tool bar, and how an image is fitted into the editing area, now set separately from the viewer.</li>
+          <li xml:lang="de">Der Editor startet, wie man arbeitet: welches Werkzeug beim Oeffnen aktiv ist, die Reihenfolge der Gruppen in der linken Werkzeugleiste und das Einpassen in die Bearbeitungsflaeche, das jetzt getrennt vom Betrachter eingestellt wird.</li>
+          <li>Printing and collages show your edits: a photo you developed in the editor goes to the printer, into the PDF and into a collage the way you edited it. Contact sheets use the paper better, and a collage accepts everything FerrumPix can open.</li>
+          <li xml:lang="de">Druck und Collagen zeigen die Bearbeitung: ein im Editor entwickeltes Foto geht so zum Drucker, ins PDF und in die Collage, wie es bearbeitet wurde. Kontaktabzuege nutzen das Papier besser, und eine Collage nimmt alles an, was FerrumPix oeffnen kann.</li>
+          <li>Smaller things: a file name pattern for batch results that is remembered, image size that does what it says, watermark placement per batch run, and a long list of fixes.</li>
+          <li xml:lang="de">Kleinigkeiten: ein gemerktes Namensmuster fuer Stapel-Ergebnisse, eine Bildgroesse, die tut, was sie sagt, die Wasserzeichen-Platzierung je Stapellauf und eine lange Liste behobener Fehler.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.12" date="2026-07-25">
+      <description>
+        <p>This release brings object groups and multiple selection to the layer stack, an automatic image enhancement, sharpening that stays on the edges - and saving that can no longer damage the file you are overwriting:</p>
+        <p xml:lang="de">Diese Version bringt Objektgruppen und Mehrfachauswahl in den Ebenenstapel, eine automatische Bildverbesserung, ein Schaerfen, das auf den Kanten bleibt - und ein Speichern, das die ueberschriebene Datei nicht mehr beschaedigen kann:</p>
+        <ul>
+          <li>Saving can no longer damage the file being overwritten: the new version is written beside the old one and only put in place once it is complete. A full disk or a crash mid-save leaves your photo exactly as it was.</li>
+          <li xml:lang="de">Das Speichern kann die ueberschriebene Datei nicht mehr beschaedigen: die neue Fassung entsteht daneben und rueckt erst an ihren Platz, wenn sie vollstaendig ist. Eine volle Platte oder ein Absturz mittendrin laesst das Foto genau so, wie es war.</li>
+          <li>Several layers can be picked at once and moved, scaled, rotated and flipped as one. Ctrl+G makes a named group with its own visibility switch, Ctrl+Shift+G dissolves it, and layers can be dragged in and out. With a group picked, the panel on the right describes the whole selection.</li>
+          <li xml:lang="de">Mehrere Ebenen lassen sich gleichzeitig auswaehlen und gemeinsam verschieben, skalieren, drehen und spiegeln. Strg+G macht daraus eine benannte Gruppe mit eigenem Sichtbarkeitsschalter, Strg+Umschalt+G loest sie wieder auf, und Ebenen lassen sich hinein- und herausziehen. Bei gewaehlter Gruppe beschreibt das rechte Panel die ganze Auswahl.</li>
+          <li>An Auto button measures the photo and sets exposure, contrast, highlights, shadows, black and white point, vibrance and white balance to values that suit it. The sliders stay editable, and the reset button takes it back out.</li>
+          <li xml:lang="de">Ein Auto-Knopf misst das Foto und stellt Belichtung, Kontrast, Lichter, Tiefen, Schwarz- und Weisspunkt, Dynamik und Weissabgleich passend ein. Die Regler bleiben aenderbar, und der Zuruecksetzen-Knopf nimmt es wieder heraus.</li>
+          <li>A Masking slider pulls the sharpening back to the edges and leaves smooth areas such as sky and skin quiet. Black-and-white presets from a camera profile now arrive in black and white instead of full colour.</li>
+          <li xml:lang="de">Ein Masken-Regler zieht das Schaerfen auf die Kanten zurueck und laesst glatte Flaechen wie Himmel und Haut in Ruhe. Schwarzweiss-Presets aus einem Kameraprofil kommen jetzt auch schwarzweiss an statt in voller Farbe.</li>
+          <li>Layers can be locked against moving, scaling, rotating and flipping. Selection and mask corrections can be dragged up between the objects, where they work on everything below them.</li>
+          <li xml:lang="de">Ebenen lassen sich gegen Verschieben, Skalieren, Drehen und Spiegeln sperren. Auswahl- und Maskenkorrekturen lassen sich zwischen die Objekte hochziehen und wirken dort auf alles darunter.</li>
+          <li>A failed action no longer takes the program down with it, and errors land in a separate log. Stars and favourites on Immich photos no longer pretend to be saved when the server refused them.</li>
+          <li xml:lang="de">Eine fehlgeschlagene Aktion reisst das Programm nicht mehr mit, und Fehler landen in einem eigenen Protokoll. Sterne und Favoriten auf Immich-Fotos tun nicht mehr so, als waeren sie gespeichert, wenn der Server sie abgelehnt hat.</li>
+          <li>Smaller things: objects behave predictably while dragging, gallery tiles fit their caption exactly, the editor covers the same zoom range as the viewer, and the keyboard shortcuts were tidied up.</li>
+          <li xml:lang="de">Kleinigkeiten: Objekte verhalten sich beim Ziehen vorhersehbar, Galerie-Kacheln passen genau auf ihre Beschriftung, der Editor deckt denselben Zoombereich ab wie der Betrachter, und die Tastenkuerzel wurden aufgeraeumt.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.11" date="2026-07-24">
+      <description>
+        <p>This release adds mask-based local editing, turns fills into an editable part of correction layers, and brings imported XMP presets closer to Adobe:</p>
+        <p xml:lang="de">Diese Version bringt maskenbasierte lokale Bearbeitung, macht Fuellungen zu einem aenderbaren Teil der Korrekturebenen und rueckt importierte XMP-Presets naeher an Adobe:</p>
+        <ul>
+          <li>A mask brush paints a soft-edged mask, shown as a red overlay, with add and subtract. Selections keep their marching ants, and each kind appears as its own layer with name and icon.</li>
+          <li xml:lang="de">Ein Masken-Pinsel malt eine weichkantige Maske, dargestellt als rotes Overlay, mit Hinzufuegen und Abziehen. Auswahlen behalten ihre Laufameisen, und jede Art erscheint als eigene Ebene mit Namen und Symbol.</li>
+          <li>The fill tool no longer creates a separate object. On a selection layer the fill shows in the selected area; on a mask layer its brightness sets how strongly the adjustment applies. Fills stay editable afterwards.</li>
+          <li xml:lang="de">Das Fuellwerkzeug legt kein eigenes Objekt mehr an. Auf einer Auswahl-Ebene erscheint die Fuellung im gewaehlten Bereich, auf einer Masken-Ebene bestimmt ihre Helligkeit, wie stark die Anpassung wirkt. Fuellungen bleiben danach aenderbar.</li>
+          <li>Imported presets match Adobe more closely in tone, colour, split toning and local corrections, and resetting or switching a preset now removes everything it applied.</li>
+          <li xml:lang="de">Importierte Presets treffen Adobe naeher in Tonwert, Farbe, Teiltonung und lokalen Korrekturen, und ein Zuruecksetzen oder Wechseln entfernt jetzt alles, was das Preset gesetzt hatte.</li>
+          <li>Gallery tiles can show star ratings, the favourite mark and metadata badges always or only on hover, and ratings, favourites and tags are stored in the sidecar.</li>
+          <li xml:lang="de">Galerie-Kacheln koennen Sterne, die Favoriten-Markierung und Metadaten-Abzeichen immer oder nur beim Ueberfahren zeigen; Bewertungen, Favoriten und Stichworte liegen in der Begleitdatei.</li>
+          <li>Smaller things: objects can grow past the image border, the tool bar can be collapsed to icons, layers offer their actions by right-click, and the sliders cover the full range an imported preset can use.</li>
+          <li xml:lang="de">Kleinigkeiten: Objekte duerfen ueber den Bildrand hinauswachsen, die Werkzeugleiste laesst sich auf Symbole einklappen, Ebenen bieten ihre Aktionen per Rechtsklick, und die Regler decken den vollen Bereich ab, den ein importiertes Preset nutzen kann.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.10" date="2026-07-22">
+      <description>
+        <p>This release turns local corrections into proper layers, makes leaving the editor clearer, and fixes a long list of correctness issues:</p>
+        <p xml:lang="de">Diese Version macht lokale Korrekturen zu richtigen Ebenen, klaert das Verlassen des Editors und behebt eine lange Liste von Ungenauigkeiten:</p>
+        <ul>
+          <li>Selection-based adjustments become named correction layers with their own mask and can be reused. Older projects are migrated automatically.</li>
+          <li xml:lang="de">Auswahlbasierte Anpassungen werden zu benannten Korrekturebenen mit eigener Maske und lassen sich wiederverwenden. Aeltere Projekte wandern automatisch mit.</li>
+          <li>Leaving with unsaved changes asks a single question with Save, Don't save and Cancel, and opening projects and edited RAWs no longer flashes intermediate content.</li>
+          <li xml:lang="de">Das Verlassen mit ungespeicherten Aenderungen stellt eine einzige Frage mit Speichern, Nicht speichern und Abbrechen, und das Oeffnen von Projekten und bearbeiteten RAWs blitzt nicht mehr mit Zwischenstaenden auf.</li>
+          <li>Cropping a rotated or flipped photo removes exactly the region you framed, and brush, retouch and clone strokes land where you click even after cropping, straightening or resizing.</li>
+          <li xml:lang="de">Das Zuschneiden eines gedrehten oder gespiegelten Fotos entfernt genau den gerahmten Bereich, und Pinsel-, Retusche- und Stempelstriche landen dort, wo man klickt - auch nach Zuschnitt, Begradigung oder Groessenaenderung.</li>
+          <li>Saving refuses target formats it cannot write instead of putting JPEG data under a foreign file extension.</li>
+          <li xml:lang="de">Das Speichern lehnt Zielformate ab, die es nicht schreiben kann, statt JPEG-Daten unter fremder Endung abzulegen.</li>
+          <li>Smaller things: fine detail sliders always refresh the preview, switching to another photo no longer carries adjustments over, HSL luminance leaves neutral greys alone, and the repair search runs about a third faster.</li>
+          <li xml:lang="de">Kleinigkeiten: die Detailregler frischen die Vorschau immer auf, ein Bildwechsel nimmt keine Anpassungen mehr mit, die HSL-Luminanz laesst neutrale Grautoene in Ruhe, und die Reparatursuche laeuft rund ein Drittel schneller.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.9" date="2026-07-22">
+      <description>
+        <p>This release adds finer detail controls, optional XMP write-back and developed RAW previews, and makes repair, smudge and clone work much faster:</p>
+        <p xml:lang="de">Diese Version bringt feinere Detailregler, optionales Zurueckschreiben nach XMP und entwickelte RAW-Vorschauen und macht Reparatur, Verwischen und Stempeln deutlich schneller:</p>
+        <ul>
+          <li>Sharpening, softening and grain get their own sections with radius, detail, edge protection, size and frequency, and vignettes gain three styles.</li>
+          <li xml:lang="de">Schaerfen, Weichzeichnen und Korn bekommen eigene Bereiche mit Radius, Detail, Kantenschutz, Groesse und Frequenz, und Vignetten bekommen drei Stilarten.</li>
+          <li>Ratings, colour labels and keywords can be written back to XMP sidecars, with separate choices for updating existing files and creating missing ones.</li>
+          <li xml:lang="de">Bewertungen, Farbetiketten und Stichworte lassen sich in XMP-Begleitdateien zurueckschreiben, mit getrennter Wahl fuer das Aktualisieren vorhandener und das Anlegen fehlender Dateien.</li>
+          <li>Edited RAW files can show their developed result in gallery thumbnails and the viewer, while untouched RAWs keep the fast embedded-preview path.</li>
+          <li xml:lang="de">Bearbeitete RAW-Dateien koennen ihr entwickeltes Ergebnis in Galerie-Kacheln und im Betrachter zeigen, waehrend unbearbeitete RAWs den schnellen Weg ueber die eingebettete Vorschau behalten.</li>
+          <li>The repair brush fills long strokes without gaps and handles very large repairs, and repair, smudge and clone use far less memory.</li>
+          <li xml:lang="de">Der Reparaturpinsel fuellt lange Striche ohne Luecken und kommt mit sehr grossen Reparaturen zurecht; Reparatur, Verwischen und Stempeln brauchen deutlich weniger Speicher.</li>
+          <li>Rotation, flipping and straightening apply immediately, quarter turns fit the image back into the editor, and the mouse wheel zooms over the canvas. Coordinates stay correct after rotations and flips.</li>
+          <li xml:lang="de">Drehen, Spiegeln und Begradigen wirken sofort, Vierteldrehungen passen das Bild wieder in den Editor ein, und das Mausrad zoomt ueber der Leinwand. Koordinaten bleiben nach Drehungen und Spiegelungen richtig.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.8" date="2026-07-21">
+      <description>
+        <p>This release brings colour grading with four colour wheels, reads the ratings and develop settings you made in other programs, and gives every adjustment group its own reset button again:</p>
+        <p xml:lang="de">Diese Version bringt Farbgradierung mit vier Farbraedern, liest Bewertungen und Entwicklungseinstellungen aus anderen Programmen und gibt jeder Anpassungsgruppe wieder einen eigenen Zuruecksetzen-Knopf:</p>
+        <ul>
+          <li>Colour grading with four colour wheels - shadows, midtones, highlights and global - each with hue, saturation and brightness, plus balance and blending. It replaces the earlier split toning, and existing edits carry over.</li>
+          <li xml:lang="de">Farbgradierung mit vier Farbraedern - Tiefen, Mitten, Lichter und global -, jedes mit Farbton, Saettigung und Helligkeit, dazu Balance und Ueberblendung. Sie loest die fruehere Teiltonung ab, bestehende Bearbeitungen wandern mit.</li>
+          <li>Ratings, colour labels and keywords are read from XMP sidecars written by other programs. Only empty fields are filled and keywords are merged, so nothing you set in FerrumPix is overwritten.</li>
+          <li xml:lang="de">Bewertungen, Farbetiketten und Stichworte werden aus XMP-Begleitdateien anderer Programme gelesen. Nur leere Felder werden gefuellt und Stichworte zusammengefuehrt, sodass nichts ueberschrieben wird, was in FerrumPix gesetzt ist.</li>
+          <li>Develop settings from a Lightroom sidecar next to a RAW file are converted once, so a photo edited elsewhere opens the way it was left.</li>
+          <li xml:lang="de">Entwicklungseinstellungen aus einer Lightroom-Begleitdatei neben einem RAW werden einmal uebernommen, sodass ein anderswo bearbeitetes Foto so aufgeht, wie es verlassen wurde.</li>
+          <li>Every adjustment group has its own reset button again, and it resets only that group. LUT and XMP preset each got their own, so removing one no longer discards the rest of the edit.</li>
+          <li xml:lang="de">Jede Anpassungsgruppe hat wieder einen eigenen Zuruecksetzen-Knopf, und er setzt nur diese Gruppe zurueck. LUT und XMP-Preset haben jeweils einen eigenen, sodass das Entfernen des einen nicht den Rest der Bearbeitung verwirft.</li>
+          <li>Presets import more completely: the newer colour-grading keys, black-and-white conversion, and presets from before 2012 that used to arrive empty. Images can be dropped onto the canvas from a file manager.</li>
+          <li xml:lang="de">Presets kommen vollstaendiger an: die neueren Farbgradierungs-Schluessel, die Schwarzweiss-Umsetzung und Presets von vor 2012, die frueher leer ankamen. Bilder lassen sich aus dem Dateimanager auf die Leinwand ziehen.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.7" date="2026-07-20">
+      <description>
+        <p>This release makes editing dramatically faster, adds camera calibration and text styling, and fixes a number of colour and path issues:</p>
+        <p xml:lang="de">Diese Version macht das Bearbeiten drastisch schneller, bringt Kamerakalibrierung und Textgestaltung und behebt mehrere Farb- und Pfadfehler:</p>
+        <ul>
+          <li>Effects are far faster: clarity, structure, dehaze, glow, grain, noise and sharpening each took several seconds on a preview and now take milliseconds. A photo with everything enabled renders in under a second instead of half a minute.</li>
+          <li xml:lang="de">Effekte sind weit schneller: Klarheit, Struktur, Dunst, Glow, Korn, Rauschen und Schaerfen brauchten in der Vorschau je mehrere Sekunden und brauchen jetzt Millisekunden. Ein Foto mit allem an rendert in unter einer Sekunde statt in einer halben Minute.</li>
+          <li>Camera calibration: the primary colours can be rotated and saturated individually, plus a shadow tint. XMP presets carry these values and they were ignored until now.</li>
+          <li xml:lang="de">Kamerakalibrierung: die Primaerfarben lassen sich einzeln drehen und saettigen, dazu eine Tiefen-Toenung. XMP-Presets bringen diese Werte mit, und sie wurden bisher ignoriert.</li>
+          <li>Text objects gained bold, italic and letter spacing and a new inverted circle path, and watermarks can follow a text path as well.</li>
+          <li xml:lang="de">Textobjekte bekamen fett, kursiv und Laufweite sowie einen umgekehrten Kreispfad, und auch Wasserzeichen koennen einem Textpfad folgen.</li>
+          <li>Colour bands blend softly into each other now; a one tone value difference could previously produce a hard edge across smooth gradients.</li>
+          <li xml:lang="de">Farbbaender gehen jetzt weich ineinander ueber; ein Tonwert Unterschied konnte vorher eine harte Kante durch weiche Verlaeufe ziehen.</li>
+          <li>Opening an image no longer freezes the window and reads the file once instead of twice, and RAW files show their embedded preview immediately.</li>
+          <li xml:lang="de">Das Oeffnen eines Bildes friert das Fenster nicht mehr ein und liest die Datei einmal statt zweimal; RAW-Dateien zeigen ihre eingebettete Vorschau sofort.</li>
+          <li>Smaller things: sharpening no longer draws a white border, WebP files open in the editor again, files whose names differ only in case are kept apart, and a Technology section lists everything FerrumPix is built on.</li>
+          <li xml:lang="de">Kleinigkeiten: das Schaerfen zeichnet keinen weissen Rand mehr, WebP-Dateien oeffnen sich wieder im Editor, Dateien, die sich nur in Gross- und Kleinschreibung unterscheiden, werden auseinandergehalten, und ein Technologie-Abschnitt listet alles auf, worauf FerrumPix aufbaut.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.6" date="2026-07-19">
+      <description>
+        <p>This release lets the editor create blank images, adds a startup mode for launching without a file, and finishes the interface translations:</p>
+        <p xml:lang="de">Diese Version laesst den Editor leere Bilder anlegen, bringt einen Startmodus fuer den Start ohne Datei und vervollstaendigt die Uebersetzungen der Oberflaeche:</p>
+        <ul>
+          <li>Blank images: New sits next to Print in the toolbar (Ctrl+N) and offers presets for photo, screen and paper sizes.</li>
+          <li xml:lang="de">Leere Bilder: Neu steht neben Drucken in der Werkzeugleiste (Strg+N) und bietet Vorgaben fuer Foto-, Bildschirm- und Papierformate.</li>
+          <li>Width and height can be entered freely in millimetres, centimetres, inches or pixels at 72 to 600 dpi, with a white, transparent or coloured background.</li>
+          <li xml:lang="de">Breite und Hoehe lassen sich frei in Millimetern, Zentimetern, Zoll oder Pixeln bei 72 bis 600 dpi eintragen, mit weissem, transparentem oder farbigem Hintergrund.</li>
+          <li>The editor now works without a document and shows an empty state offering New image and Open image.</li>
+          <li xml:lang="de">Der Editor arbeitet jetzt auch ohne Dokument und zeigt einen leeren Zustand mit Neues Bild und Bild oeffnen.</li>
+          <li>A setting decides what FerrumPix shows when it is opened without a file: the gallery, the viewer with the first image of the startup folder, or the editor with the new-image dialog.</li>
+          <li xml:lang="de">Eine Einstellung bestimmt, was FerrumPix beim Start ohne Datei zeigt: die Galerie, den Betrachter mit dem ersten Bild des Startordners oder den Editor mit dem Dialog fuer ein neues Bild.</li>
+          <li>The interface translations are complete: the settings, search and collage dialogs stayed German in every language before.</li>
+          <li xml:lang="de">Die Uebersetzungen der Oberflaeche sind vollstaendig: die Dialoge fuer Einstellungen, Suche und Collage blieben vorher in jeder Sprache deutsch.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.5" date="2026-07-18">
+      <description>
+        <p>This release adds printing across all modes, extends platform support and completes the interface translations:</p>
+        <p xml:lang="de">Diese Version bringt Drucken in allen Bereichen, erweitert die Plattformunterstuetzung und vervollstaendigt die Uebersetzungen:</p>
+        <ul>
+          <li>Printing from the gallery, viewer and editor, with a live preview, page size, orientation, margin, fit or fill, and 1, 4, 9 or 16 images per page as a contact sheet. Borderless is available, and a single photo can be repeated on one sheet.</li>
+          <li xml:lang="de">Drucken aus Galerie, Betrachter und Editor, mit Live-Vorschau, Seitengroesse, Ausrichtung, Rand, Einpassen oder Fuellen und 1, 4, 9 oder 16 Bildern je Seite als Kontaktbogen. Randlos ist moeglich, und ein einzelnes Foto laesst sich mehrfach auf einen Bogen legen.</li>
+          <li>PDF as a target format in Save as and Convert to, using the page setup last confirmed in the print dialog.</li>
+          <li xml:lang="de">PDF als Zielformat in Speichern unter und Konvertieren nach, mit der zuletzt im Druckdialog bestaetigten Seiteneinrichtung.</li>
+          <li>Packages as .deb and .rpm in addition to AppImage, Flatpak and the portable archives, plus experimental ARM64 and macOS builds.</li>
+          <li xml:lang="de">Pakete als .deb und .rpm zusaetzlich zu AppImage, Flatpak und den portablen Archiven, dazu experimentelle ARM64- und macOS-Builds.</li>
+          <li>Six more brush variants: charcoal, crayon, airbrush, calligraphy, stipple and watercolor.</li>
+          <li xml:lang="de">Sechs weitere Pinselarten: Kohle, Wachsstift, Airbrush, Kalligrafie, Punktierung und Aquarell.</li>
+          <li>Smaller things: toolbar labels hide themselves when the window is too narrow, overlay lists close after picking an entry, and the translations for German, English, Spanish, French and Italian are complete.</li>
+          <li xml:lang="de">Kleinigkeiten: Beschriftungen der Werkzeugleiste blenden sich bei schmalem Fenster selbst aus, Auswahllisten in den Overlay-Dialogen schliessen nach der Wahl, und die Uebersetzungen fuer Deutsch, Englisch, Spanisch, Franzoesisch und Italienisch sind vollstaendig.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.4" date="2026-07-17">
+      <description>
+        <p>This release focuses on the editor, large-image performance, project workflows and Immich:</p>
+        <p xml:lang="de">Diese Version dreht sich um den Editor, die Arbeit mit grossen Bildern, Projektablaeufe und Immich:</p>
+        <ul>
+          <li>The native .fpx project format: adjustments, layer stack and the baked working image in one file, so an edit can be reopened and continued.</li>
+          <li xml:lang="de">Das eigene Projektformat .fpx: Anpassungen, Ebenenstapel und das gebackene Arbeitsbild in einer Datei, sodass sich eine Bearbeitung wieder oeffnen und fortsetzen laesst.</li>
+          <li>A layers panel with visibility, opacity, blend modes, renaming, duplication, drag-and-drop reordering, deletion and rasterizing.</li>
+          <li xml:lang="de">Ein Ebenen-Panel mit Sichtbarkeit, Deckkraft, Mischmodi, Umbenennen, Duplizieren, Umsortieren per Ziehen, Loeschen und Rastern.</li>
+          <li>Editing large photos got much faster: quicker previews, regional updates and high-resolution zoom detail, with a sharp before/after comparison even at high zoom.</li>
+          <li xml:lang="de">Das Bearbeiten grosser Fotos wurde deutlich schneller: schnellere Vorschauen, regionale Aktualisierungen und hochaufgeloestes Zoom-Detail, mit scharfem Vorher/Nachher auch bei hohem Zoom.</li>
+          <li>Gallery colour labels and a timeline scrubber for faster navigation in large folders.</li>
+          <li xml:lang="de">Farbetiketten in der Galerie und ein Zeitstrahl fuer die schnellere Navigation in grossen Ordnern.</li>
+          <li>Immich gained safer asset replacement, better timeout handling and People and Places navigation.</li>
+          <li xml:lang="de">Immich bekam sichereres Ersetzen von Assets, besseren Umgang mit Zeitueberschreitungen und die Navigation nach Personen und Orten.</li>
+          <li>Fixed several crashes and hangs in zoom detail rendering, viewer loading, large PNG handling and application shutdown.</li>
+          <li xml:lang="de">Mehrere Abstuerze und Haenger beim Zoom-Detail, beim Laden im Betrachter, bei grossen PNGs und beim Beenden wurden behoben.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.3" date="2026-07-15">
+      <description>
+        <p>This release replaces the video backend with libmpv and improves the editor's brush work:</p>
+        <p xml:lang="de">Diese Version ersetzt den Video-Unterbau durch libmpv und verbessert die Pinselarbeit im Editor:</p>
+        <ul>
+          <li>Video playback and video thumbnails now use libmpv; the old backend is gone.</li>
+          <li xml:lang="de">Videowiedergabe und Video-Vorschaubilder laufen jetzt ueber libmpv; der alte Unterbau ist weg.</li>
+          <li>Videos open directly from the gallery play badge, start more reliably, and can be navigated together with images in fullscreen.</li>
+          <li xml:lang="de">Videos oeffnen sich direkt ueber das Abspielzeichen in der Galerie, starten zuverlaessiger und lassen sich im Vollbild gemeinsam mit Bildern durchblaettern.</li>
+          <li>Slideshows handle videos: autoplay starts on its own, and a finished video moves on after a one-second pause.</li>
+          <li xml:lang="de">Diaschauen kommen mit Videos zurecht: die Wiedergabe startet von selbst, und ein beendetes Video geht nach einer Sekunde weiter.</li>
+          <li>Textured brush variants, a colour wheel for picking the paint colour, and shadow and glow effects for brush strokes.</li>
+          <li xml:lang="de">Strukturierte Pinselarten, ein Farbrad fuer die Malfarbe und Schatten- und Glow-Effekte fuer Pinselstriche.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.0" date="2026-07-12">
+      <description>
+        <p>This release adds film negative conversion in the editor and batch filtering in the gallery:</p>
+        <p xml:lang="de">Diese Version bringt die Filmnegativ-Umkehr in den Editor und das Stapel-Filtern in die Galerie:</p>
+        <ul>
+          <li>Turn scanned film negatives into positives, orange mask and all. The film base is measured from the image automatically or picked from the unexposed film edge with the eyedropper, and there is a black-and-white mode and a gradation slider.</li>
+          <li xml:lang="de">Gescannte Filmnegative in Positive umkehren, Orangemaske inklusive. Die Filmbasis wird automatisch aus dem Bild gemessen oder mit der Pipette am unbelichteten Filmrand aufgenommen; dazu ein Schwarzweiss-Modus und ein Gradationsregler.</li>
+          <li>Apply a built-in filter, an XMP preset or a LUT to a whole selection - overwriting the originals or writing new files into a folder or to Immich.</li>
+          <li xml:lang="de">Einen eingebauten Filter, ein XMP-Preset oder eine LUT auf eine ganze Auswahl anwenden - die Originale ueberschreiben oder neue Dateien in einen Ordner oder nach Immich schreiben.</li>
+          <li>Cropping works in pixels instead of percent, and text objects can be up to 5000 px.</li>
+          <li xml:lang="de">Das Zuschneiden arbeitet in Pixeln statt in Prozent, und Textobjekte duerfen bis 5000 px gross sein.</li>
+          <li>Faster: the glow on text and shapes no longer pins the CPU, noise reduction and dust and scratches react immediately, and typing in the search box no longer rebuilds the whole folder view with every letter.</li>
+          <li xml:lang="de">Schneller: der Glow auf Text und Formen legt die CPU nicht mehr lahm, Rauschreduzierung sowie Staub und Kratzer reagieren sofort, und das Tippen im Suchfeld baut nicht mehr bei jedem Buchstaben die ganze Ordneransicht neu auf.</li>
+          <li>Fixes: pasting a selection created two copies of every photo, a failed preview reported success and left the old image on screen, and the selection frame around large text sat next to the text.</li>
+          <li xml:lang="de">Behoben: das Einfuegen einer Auswahl legte von jedem Foto zwei Kopien an, eine fehlgeschlagene Vorschau meldete Erfolg und liess das alte Bild stehen, und der Auswahlrahmen um grossen Text sass neben dem Text.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.8.0" date="2026-07-12">
+      <description>
+        <p>This release adds a direct integration for self-hosted Immich servers, free selection in the editor, and more precise adjustment sliders:</p>
+        <p xml:lang="de">Diese Version bringt die direkte Anbindung an selbst gehostete Immich-Server, freie Auswahl im Editor und genauere Anpassungsregler:</p>
+        <ul>
+          <li>Immich: browse a self-hosted server with all photos and albums, view and edit its photos, with the whole album in the filmstrip. Ratings, favourites and keywords sync both ways.</li>
+          <li xml:lang="de">Immich: einen selbst gehosteten Server mit allen Fotos und Alben durchsehen, seine Fotos betrachten und bearbeiten, mit dem ganzen Album im Filmstreifen. Bewertungen, Favoriten und Stichworte gleichen sich in beide Richtungen ab.</li>
+          <li>Immich: create and rename albums, upload photos, and move photos between local folders and the server by copy/paste or drag and drop.</li>
+          <li xml:lang="de">Immich: Alben anlegen und umbenennen, Fotos hochladen und Fotos per Kopieren/Einfuegen oder Ziehen zwischen lokalen Ordnern und dem Server verschieben.</li>
+          <li>Free selection with four modes - rectangle, ellipse, freehand lasso and magic wand. An active selection scopes the adjustment tools, so colour, filters and effects apply only inside it.</li>
+          <li xml:lang="de">Freie Auswahl mit vier Arten - Rechteck, Ellipse, Freihand-Lasso und Zauberstab. Eine aktive Auswahl begrenzt die Anpassungswerkzeuge, sodass Farbe, Filter und Effekte nur darin wirken.</li>
+          <li>Brightness, contrast and exposure no longer clip to flat black or white, and the 8-band colour mixer gains a luminance slider per band. XMP presets bring their white balance, HSL luminance and tone curve with them.</li>
+          <li xml:lang="de">Helligkeit, Kontrast und Belichtung laufen nicht mehr in flaches Schwarz oder Weiss, und der achtbandige Farbmischer bekommt je Band einen Luminanzregler. XMP-Presets bringen ihren Weissabgleich, ihre HSL-Luminanz und ihre Tonwertkurve mit.</li>
+          <li>Delete moves photos to the trash instead of deleting them permanently, and the file-conflict dialog gains overwrite all and skip all.</li>
+          <li xml:lang="de">Loeschen legt Fotos in den Papierkorb statt sie endgueltig zu entfernen, und der Dialog bei Namenskonflikten bekommt Alle ueberschreiben und Alle ueberspringen.</li>
+          <li>Fixed sliders that did nothing at all - Structure, and Dust and scratches above about a third - and RAW files losing aperture, ISO, exposure time and lens on the way into the library.</li>
+          <li xml:lang="de">Behoben: Regler, die gar nichts taten - Struktur sowie Staub und Kratzer oberhalb von etwa einem Drittel - und RAW-Dateien, die auf dem Weg in die Bibliothek Blende, ISO, Belichtungszeit und Objektiv verloren.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.7.0" date="2026-07-10">
+      <description>
+        <p>This release moves to AvaloniaUI 12, replaces the video view, and adds rulers and a pixel grid to the editor:</p>
+        <p xml:lang="de">Diese Version wechselt auf AvaloniaUI 12, ersetzt die Videoansicht und bringt Lineale und ein Pixelraster in den Editor:</p>
+        <ul>
+          <li>Moved to AvaloniaUI 12, which fixes copying files to a file manager and enables drag and drop with other applications.</li>
+          <li xml:lang="de">Wechsel auf AvaloniaUI 12; damit funktioniert das Kopieren von Dateien in einen Dateimanager, und Ziehen und Ablegen mit anderen Anwendungen ist moeglich.</li>
+          <li>An own video view replaces the previous package, and it fixes a freeze after fullscreen, a finished video that could not be played again, and a distorted frame after leaving fullscreen.</li>
+          <li xml:lang="de">Eine eigene Videoansicht loest das bisherige Paket ab und behebt ein Einfrieren nach dem Vollbild, ein beendetes Video, das sich nicht erneut abspielen liess, und ein verzerrtes Bild nach dem Verlassen des Vollbilds.</li>
+          <li>Rulers and a pixel grid with draggable guides and a configurable grid size.</li>
+          <li xml:lang="de">Lineale und ein Pixelraster mit ziehbaren Hilfslinien und einstellbarer Rasterweite.</li>
+          <li>F11 toggles fullscreen in every mode, every paint tool keeps its own settings, and shapes and symbols no longer stall when opened.</li>
+          <li xml:lang="de">F11 schaltet ueberall auf Vollbild, jedes Malwerkzeug behaelt seine eigenen Einstellungen, und Formen und Symbole haengen beim Oeffnen nicht mehr.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.6.0" date="2026-07-09">
+      <description>
+        <p>This release adds a clone stamp, a colour mixer with an eyedropper and a font scale setting:</p>
+        <p xml:lang="de">Diese Version bringt einen Kopierstempel, einen Farbmischer mit Pipette und eine Schriftgroessen-Einstellung:</p>
+        <ul>
+          <li>A clone stamp next to brush, eraser and blur; Alt+click sets the source.</li>
+          <li xml:lang="de">Ein Kopierstempel neben Pinsel, Radierer und Weichzeichner; Alt+Klick setzt die Quelle.</li>
+          <li>A colour mixer with a colour wheel, swappable fill and background swatches, opacity, hex input and an eyedropper.</li>
+          <li xml:lang="de">Ein Farbmischer mit Farbrad, tauschbaren Feldern fuer Fuell- und Hintergrundfarbe, Deckkraft, Hex-Eingabe und Pipette.</li>
+          <li>Cropping is repeatable and composes into the previous crop, and selecting an object no longer overwrites it with the previous object's properties.</li>
+          <li xml:lang="de">Das Zuschneiden laesst sich wiederholen und setzt auf dem vorigen Zuschnitt auf, und das Auswaehlen eines Objekts ueberschreibt es nicht mehr mit den Eigenschaften des vorigen.</li>
+          <li>Drag and drop works with external file managers, and dropped files land in the folder on screen.</li>
+          <li xml:lang="de">Ziehen und Ablegen funktioniert mit externen Dateimanagern, und abgelegte Dateien landen im angezeigten Ordner.</li>
+          <li>The font scale applies without a restart, and the settings file is written atomically.</li>
+          <li xml:lang="de">Die Schriftgroesse wirkt ohne Neustart, und die Einstellungsdatei wird atomar geschrieben.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.5.0" date="2026-07-09">
+      <description>
+        <p>This release adds watermarks, XMP preset and LUT import, and metadata badges in the gallery:</p>
+        <p xml:lang="de">Diese Version bringt Wasserzeichen, den Import von XMP-Presets und LUTs und Metadaten-Abzeichen in der Galerie:</p>
+        <ul>
+          <li>Watermarks are defined once, saved in the settings and applied from the context menu.</li>
+          <li xml:lang="de">Wasserzeichen werden einmal festgelegt, in den Einstellungen gespeichert und aus dem Kontextmenue angewendet.</li>
+          <li>XMP presets are loaded from .xmp files, including tone curve, 8-channel HSL, split toning and white balance, and LUTs from .cube files.</li>
+          <li xml:lang="de">XMP-Presets werden aus .xmp-Dateien geladen, samt Tonwertkurve, achtkanaligem HSL, Teiltonung und Weissabgleich; LUTs kommen aus .cube-Dateien.</li>
+          <li>New effects for dust and scratches, haze, noise, structure and glow, each with its own slider.</li>
+          <li xml:lang="de">Neue Effekte fuer Staub und Kratzer, Dunst, Rauschen, Struktur und Glow, jeder mit eigenem Regler.</li>
+          <li>Small icons show whether EXIF, IPTC or XMP data is present, and the XMP rating becomes the star rating.</li>
+          <li xml:lang="de">Kleine Symbole zeigen, ob EXIF-, IPTC- oder XMP-Daten vorhanden sind, und die XMP-Bewertung wird zur Sternebewertung.</li>
+          <li>The vignette was reworked with settings for transition, roundness, feather and position, and text objects can be created with a gradient.</li>
+          <li xml:lang="de">Die Vignette wurde ueberarbeitet, mit Einstellungen fuer Uebergang, Rundung, weiche Kante und Position; Textobjekte lassen sich mit einem Verlauf anlegen.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.4.0" date="2026-07-05">
+      <description>
+        <p>This release brings performance work, more sorting options and a more predictable zoom:</p>
+        <p xml:lang="de">Diese Version bringt Arbeit an der Geschwindigkeit, mehr Sortiermoeglichkeiten und einen berechenbareren Zoom:</p>
+        <ul>
+          <li>Width, height and file size are part of the catalogue and can be sorted by, and generic date sorting was replaced by taken and modified dates.</li>
+          <li xml:lang="de">Breite, Hoehe und Dateigroesse stehen im Katalog und lassen sich sortieren, und die allgemeine Datumssortierung wurde durch Aufnahme- und Aenderungsdatum ersetzt.</li>
+          <li>The thumbnail cache is limited to 5,000 images, with a slider in the settings.</li>
+          <li xml:lang="de">Der Vorschaubild-Zwischenspeicher ist auf 5.000 Bilder begrenzt, mit einem Regler in den Einstellungen.</li>
+          <li>Zoom keeps its state - Fit or 100% - across image changes, and the fit behaviour can be configured.</li>
+          <li xml:lang="de">Der Zoom behaelt seinen Zustand - Einpassen oder 100% - ueber Bildwechsel hinweg, und das Einpassen laesst sich einstellen.</li>
+          <li>Live mouse coordinates in the status bar, and cropping no longer switches the tool by itself.</li>
+          <li xml:lang="de">Live-Mauskoordinaten in der Statuszeile, und das Zuschneiden wechselt nicht mehr von selbst das Werkzeug.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.0" date="2026-07-04">
+      <description>
+        <p>Introduced collage layouts (Hero, Random), batch conversion tools, and advanced search functionality with AND/OR condition support.</p>
+        <p xml:lang="de">Collage-Layouts (Hero, Zufall), Stapel-Konvertierung, erweiterte Suche mit UND/ODER-Bedingungen.</p>
+      </description>
+    </release>
+  </releases>
+
+  <categories>
+    <category>Graphics</category>
+    <category>Photography</category>
+  </categories>
+</component>

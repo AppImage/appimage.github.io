@@ -1,0 +1,17 @@
+{
+  "name": "complianceguard-desktop",
+  "version": "4.2.4",
+  "description": "ComplianceGuard - SOC 2 Automation Desktop Application",
+  "main": "electron/main.js",
+  "author": "Egyan07",
+  "license": "BSL-1.1",
+  "private": true,
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "electron-log": "^4.4.8",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.8.9",
+    "js-yaml": "^4.3.2",
+    "zod": "^4.4.3"
+  }
+}

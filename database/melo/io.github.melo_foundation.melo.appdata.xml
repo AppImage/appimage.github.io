@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.melo_foundation.melo</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <!-- © 2026 melo-foundation -->
+
+  <name>melo</name>
+  <summary>YouTube integrated native desktop music player</summary>
+
+  <description>
+    <p>melo is a desktop music player for YouTube and YouTube Music.</p>
+    <p>Features:</p>
+    <ul>
+      <li>Search, home feed, mixes and radio from YouTube and YouTube Music</li>
+      <li>Use the YouTube accounts signed in to your browsers, or guest profiles with their own recommendations</li>
+      <li>Library and playlists, with offline downloads and local file import</li>
+      <li>Automatic tagging from MusicBrainz, Deezer and Last.fm</li>
+      <li>Crossfade, gapless playback and skipping of silent intros and outros</li>
+      <li>Time-synced lyrics</li>
+      <li>10-band equaliser and MilkDrop visualiser</li>
+      <li>16 built-in themes and an extensive theme editor</li>
+      <li>Customisable player bar and a mini player</li>
+      <li>Keyboard shortcuts, media keys and MPRIS</li>
+      <li>Plugins for new music sources, player bar buttons and windows</li>
+    </ul>
+    <p>melo is in alpha: expect bugs and missing features.</p>
+  </description>
+
+  <launchable type="desktop-id">melo.desktop</launchable>
+
+  <developer id="io.github.melo_foundation">
+    <name>melo-foundation</name>
+  </developer>
+
+  <url type="homepage">https://melo-foundation.github.io/melo/</url>
+  <url type="bugtracker">https://github.com/melo-foundation/melo/issues</url>
+  <url type="vcs-browser">https://github.com/melo-foundation/melo</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Now playing</caption>
+      <image>https://raw.githubusercontent.com/melo-foundation/melo/main/.github/screenshots/now-playing.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Four themes</caption>
+      <image>https://raw.githubusercontent.com/melo-foundation/melo/main/.github/screenshots/row.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Player</category>
+  </categories>
+
+  <keywords>
+    <keyword>music</keyword>
+    <keyword>audio</keyword>
+    <keyword>player</keyword>
+    <keyword>youtube</keyword>
+    <keyword>playlist</keyword>
+  </keywords>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="0.2.1" type="development" date="2026-09-29">
+      <description>
+        <p>Hotfix for Alpha 2: fixed the full AppImage not opening in AppImage tools.</p>
+      </description>
+    </release>
+    <release version="0.2.0" type="development" date="2026-09-28">
+      <description>
+        <p>Second alpha.</p>
+      </description>
+    </release>
+    <release version="0.1.0" type="development" date="2026-09-24">
+      <description>
+        <p>First alpha.</p>
+      </description>
+    </release>
+  </releases>
+</component>

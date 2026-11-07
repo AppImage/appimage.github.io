@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0e1117"/>
+  <rect x="24" y="24" width="464" height="464" rx="76" fill="none" stroke="#20d9eb" stroke-width="18"/>
+  <circle cx="190" cy="244" r="104" fill="#18212b" stroke="#20d9eb" stroke-width="18"/>
+  <circle cx="190" cy="244" r="30" fill="#20d9eb"/>
+  <path d="M286 182h102l-30-30 24-24 72 72-72 72-24-24 30-30H286z" fill="#20d9eb"/>
+  <path d="M355 305H253l30 30-24 24-72-72 72-72 24 24-30 30h102z" fill="#f5c348"/>
+  <text x="256" y="442" text-anchor="middle" fill="#f2f5f7" font-family="sans-serif" font-size="68" font-weight="700">PS2 V4</text>
+</svg>

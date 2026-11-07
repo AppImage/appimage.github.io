@@ -1,0 +1,19 @@
+{
+  "name": "@sprocket/desktop",
+  "version": "0.3.9",
+  "private": true,
+  "license": "FSL-1.1-ALv2",
+  "author": "Spikonado",
+  "description": "Sprocket desktop application",
+  "type": "module",
+  "main": "./main.mjs",
+  "desktopName": "com.spikonado.sprocket.desktop",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spikonado/sprocket.git",
+    "directory": "apps/desktop"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

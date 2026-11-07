@@ -1,0 +1,17 @@
+{
+  "name": "colosseum-launcher",
+  "version": "0.2.0",
+  "private": true,
+  "author": "colosseum-port contributors",
+  "license": "MIT",
+  "desktopName": "colosseum-launcher.desktop",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "description": "Desktop setup, build, update, and play launcher for the Pokémon Colosseum PC port",
+  "main": "src/main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "tar": "^7.5.22"
+  }
+}

@@ -1,0 +1,112 @@
+---
+layout: app
+
+permalink: /MindGraph_Notes/
+description: Lokaler Workspace, der dir täglich zeigt, was in deinen Notizen, Aufgaben und E-Mails wichtig ist — mit Wissensgraph und KI.
+
+icons:
+  - MindGraph_Notes/icons/128x128/mindgraph-notes.png
+
+screenshots:
+  - MindGraph_Notes/screenshot.png
+
+authors:
+  - name: bydb
+    url: https://github.com/bydb
+
+links:
+  - type: GitHub
+    url: bydb/mindgraph-notes
+  - type: Download
+    url: https://github.com/bydb/mindgraph-notes/releases
+
+desktop:
+  Desktop Entry:
+    Name: MindGraph Notes
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: mindgraph-notes
+    StartupWMClass: MindGraph Notes
+    X-AppImage-Version: 0.11.25-beta
+    Comment: Lokaler Workspace, der dir täglich zeigt, was in deinen Notizen, Aufgaben
+      und E-Mails wichtig ist — mit Wissensgraph und KI.
+    Categories: Office
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+
+electron:
+    und E-Mails wichtig ist — mit Wissensgraph und KI.
+  main: out/main/index.js
+  workspaces:
+  - packages/*
+  author:
+    name: Jochen Leeder
+    email: info@bydb.io
+  license: AGPL-3.0-or-later
+  repository:
+    type: git
+    url: https://github.com/bydb/mindgraph-notes.git
+  dependencies:
+    "@codemirror/commands": "^6.10.1"
+    "@codemirror/lang-markdown": "^6.5.0"
+    "@codemirror/language": "^6.12.1"
+    "@codemirror/language-data": "^6.5.2"
+    "@codemirror/search": "^6.7.1"
+    "@codemirror/state": "^6.5.4"
+    "@codemirror/view": "^6.39.11"
+    "@huggingface/transformers": "^4.2.0"
+    "@lezer/highlight": "^1.2.3"
+    "@types/turndown": "^5.0.6"
+    "@vitejs/plugin-react": "^5.1.2"
+    "@xterm/addon-fit": "^0.11.0"
+    "@xterm/xterm": "^6.0.0"
+    adm-zip: "^0.6.1"
+    ajv: "^6.14.0"
+    chokidar: "^5.0.0"
+    defuddle: "^0.19.1"
+    docx: "^9.6.1"
+    dompurify: "^3.3.1"
+    electron-updater: "^6.8.3"
+    grammy: "^1.42.0"
+    highlight.js: "^11.11.1"
+    html-to-image: "^1.11.13"
+    imapflow: "^1.2.9"
+    jszip: "^3.10.1"
+    katex: "^0.16.27"
+    linkedom: "^0.18.13"
+    mailparser: "^3.9.26"
+    mammoth: "^1.11.0"
+    markdown-it: "^14.1.0"
+    markdown-it-footnote: "^4.0.0"
+    markdown-it-task-lists: "^2.1.1"
+    markdown-it-texmath: "^1.0.0"
+    mermaid: "^11.12.2"
+    node-pty: "^1.1.0"
+    nodemailer: "^9.1.1"
+    pdfjs-dist: 5.4.296
+    react: "^19.2.3"
+    react-dom: "^19.2.3"
+    react-pdf: "^10.3.0"
+    reactflow: "^11.11.4"
+    sql.js: "^1.13.0"
+    tar: "^7.5.19"
+    turndown: "^7.2.4"
+    ws: "^8.18.0"
+    xlsx: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
+    xterm: "^5.3.0"
+    zustand: "^5.0.10"
+  overrides:
+    brace-expansion: "^5.0.8"
+    adm-zip: "^0.6.1"
+    sharp: "^0.35.3"
+---

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 Josef Sejrek / Budbrain Software
+
+     Diese Datei lag früher unter flatpak/ und wurde deshalb NUR vom Flatpak
+     ausgeliefert — Snap, .deb, RPM und AppImage hatten gar keine AppStream-
+     Daten, und die App blieb in GNOME Software und KDE Discover unsichtbar.
+     Sie liegt jetzt wie bei den Schwester-Apps unter packaging/ und wird von
+     CMake in JEDES Paket installiert.
+
+     <launchable> nennt den Kurznamen der .desktop-Datei, so wie CMake sie
+     installiert. Das Flatpak benennt beide beim Bauen auf die Reverse-DNS-Form
+     um und zieht diesen Eintrag mit (siehe post-install im Flatpak-Manifest);
+     zeigt er ins Leere, bricht der Flatpak-Build mit "gui-app-without-icon" ab.
+-->
+<component type="desktop-application">
+  <id>de.budbrain.jsCPUMonitor</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsCPUMonitor</name>
+  <summary>Per-core CPU monitor for the Linux desktop</summary>
+  <summary xml:lang="de">Prozessoranzeige je Kern für den Linux-Desktop</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <description>
+    <p>
+      A slim window that stays in view and shows what every processor core is
+      doing right now, with a rolling chart of the last minute. Alongside it:
+      the clock speed of each core, the temperature, and how much power the
+      processor is drawing.
+    </p>
+    <p xml:lang="de">
+      Ein schmales Fenster, das im Blick bleibt und zeigt, was jeder
+      Prozessorkern gerade tut — mit dem Verlauf der letzten Minute. Daneben
+      stehen der Takt jedes Kerns, die Temperatur und wie viel Strom der
+      Prozessor gerade zieht.
+    </p>
+    <ul>
+      <li>Every core at a glance, with a minute of history</li>
+      <li>Performance and efficiency cores grouped separately</li>
+      <li>Clock speed, temperature and power draw</li>
+      <li>Warns when the processor slows itself down because it is too hot</li>
+      <li>Stays on top, remembers its size and position</li>
+      <li>Colours can be set to taste</li>
+      <li>44 languages, light and dark theme</li>
+    </ul>
+    <ul xml:lang="de">
+      <li>Alle Kerne auf einen Blick, mit dem Verlauf einer Minute</li>
+      <li>Leistungs- und Effizienzkerne getrennt gruppiert</li>
+      <li>Takt, Temperatur und Stromaufnahme</li>
+      <li>Meldet, wenn der Prozessor wegen Hitze langsamer wird</li>
+      <li>Bleibt im Vordergrund, merkt sich Größe und Position</li>
+      <li>Farben lassen sich frei einstellen</li>
+      <li>44 Sprachen, helles und dunkles Erscheinungsbild</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">jscpumonitor.desktop</launchable>
+
+  <categories>
+    <category>System</category>
+    <category>Monitor</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <!-- Kein <url type="contact"> mit mailto:: AppStream verlangt dort eine
+       Web-Adresse und lehnt die Datei sonst komplett ab ("web-url-expected").
+       Eine abgelehnte metainfo bedeutet: die App taucht in GNOME Software gar
+       nicht erst auf. Genau das stand hier vorher. -->
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Every core with its clock speed, plus temperature and power draw</caption>
+      <caption xml:lang="de">Jeder Kern mit seinem Takt, dazu Temperatur und Stromaufnahme</caption>
+      <image>https://www.budbrain.de/jscpumonitor/screenshot-1.png</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>jscpumonitor</binary>
+  </provides>
+
+  <releases>
+    <release version="1.15" date="2026-08-04">
+      <description>
+        <p>A wide layout, and twice as many languages.</p>
+        <p xml:lang="de">Ein breites Format und doppelt so viele Sprachen.</p>
+        <ul>
+          <li>The window can now lie on its side: a wide bar instead of a tall strip, switchable in the settings.</li>
+          <li xml:lang="de">Das Fenster kann jetzt quer liegen: eine breite Leiste statt eines hohen Streifens, umschaltbar in den Einstellungen.</li>
+          <li>In the wide layout, set the count to 1 and the whole processor fits on one line — performance cores first, efficiency cores after them.</li>
+          <li xml:lang="de">Im Querformat passt bei der Einstellung 1 der ganze Prozessor in eine Zeile — erst die Leistungskerne, dann die Effizienzkerne.</li>
+          <li>Each layout remembers its own position, size and arrangement.</li>
+          <li xml:lang="de">Jede Ausrichtung merkt sich ihre eigene Position, Größe und Aufteilung.</li>
+          <li>Available in 44 languages, twice as many as before.</li>
+          <li xml:lang="de">In 44 Sprachen verfügbar, doppelt so viele wie bisher.</li>
+          <li>The clock speed behind the charts is easier to read in dark mode.</li>
+          <li xml:lang="de">Der Takt hinter den Verläufen ist im dunklen Erscheinungsbild besser lesbar.</li>
+          <li>The temperature sits next to the gear now and says what it belongs to.</li>
+          <li xml:lang="de">Die Temperatur steht jetzt neben dem Zahnrad und sagt, wozu sie gehört.</li>
+          <li>The core, thread and memory line shortens itself on a narrow window instead of wrapping.</li>
+          <li xml:lang="de">Die Zeile mit Kernen, Threads und Arbeitsspeicher kürzt sich bei schmalem Fenster, statt umzubrechen.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.14" date="2026-07-26">
+      <description>
+        <p>Fixes for Wayland desktops.</p>
+        <ul>
+          <li>Fixed: the window could not be resized at all on a Wayland desktop — which is the default on current Fedora and Ubuntu.</li>
+          <li>The settings gear now sits in the corner of the panel instead of being pushed out of it.</li>
+          <li>The app now shows up in the software centre from every package, not just the Flatpak.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.13" date="2026-07-14">
+      <description>
+        <p>Languages, dark mode and custom colours.</p>
+        <ul>
+          <li>Available in 22 languages; the language can be picked in the settings (Automatic follows the system language).</li>
+          <li>Dark mode: Automatic, Light or Dark. Automatic follows the desktop's colour scheme.</li>
+          <li>All colours can be customised — background, panels, text, the gear and each core group.</li>
+          <li>RAM usage shown in the header.</li>
+          <li>Throttle indicator: turns red when the CPU is throttling because it is too hot.</li>
+          <li>Fixed: the crash reporter stayed silent on fatal GLib errors instead of writing a report.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.12" date="2026-07-14">
+      <description>
+        <p>Fixes the colour picker.</p>
+        <ul>
+          <li>Fixed: choosing a colour crashed the app in the Snap package.</li>
+          <li>Fixed: colour swatches were invisible in dark mode — they now have a visible outline.</li>
+          <li>Fixed: the crash reporter missed fatal GLib errors and stayed silent instead of writing a report.</li>
+          <li>The language and theme dropdowns no longer tower over the rest of the settings dialog.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.11" date="2026-07-14">
+      <description>
+        <p>Languages, dark mode and custom colours.</p>
+        <ul>
+          <li>Available in 22 languages; the language can be picked in the settings.</li>
+          <li>Dark mode: Automatic, Light or Dark.</li>
+          <li>All colours can be customised.</li>
+          <li>RAM usage shown in the header.</li>
+          <li>Throttle indicator: shows when the CPU is cutting frequency because it is too hot.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.10" date="2026-04-20">
+      <description>
+        <p>Initial Flatpak release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

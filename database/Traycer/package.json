@@ -1,0 +1,35 @@
+{
+  "name": "@traycer-clients/desktop",
+  "version": "1.4.0",
+  "private": true,
+  "description": "Traycer standalone desktop shell (Electron) hosting the gui-app renderer; host lifecycle is delegated to the Traycer CLI.",
+  "homepage": "https://traycer.ai",
+  "license": "MIT",
+  "author": {
+    "name": "Traycer AI",
+    "email": "support@traycer.ai"
+  },
+  "main": "dist/main/index.js",
+  "dependencies": {
+    "@sentry/browser": "catalog:",
+    "@sentry/core": "catalog:",
+    "@sentry/electron": "catalog:",
+    "electron-log": "catalog:",
+    "electron-updater": "^6.8.9",
+    "encrypt-storage": "catalog:",
+    "font-list": "^2.1.0",
+    "perfect-freehand": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "zod": "catalog:"
+  },
+  "desktopName": "traycer-desktop.desktop",
+  "nx": {
+    "implicitDependencies": [
+      "@traycer/protocol",
+      "@traycer-clients/shared",
+      "traycer-clients-gui-app"
+    ]
+  },
+  "productName": "Traycer"
+}

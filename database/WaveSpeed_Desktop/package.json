@@ -1,0 +1,32 @@
+{
+  "name": "wavespeed-desktop",
+  "version": "2.1.62",
+  "description": "WaveSpeedAI Desktop Application - A playground for AI models",
+  "engines": {
+    "node": "24.18.0"
+  },
+  "main": "./out/main/index.js",
+  "author": {
+    "name": "WaveSpeed",
+    "email": "support@wavespeed.ai"
+  },
+  "homepage": "https://wavespeed.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WaveSpeedAI/wavespeed-desktop"
+  },
+  "dependencies": {
+    "7zip-bin": "^5.2.0",
+    "adm-zip": "^0.6.0",
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.6.2",
+    "json-stable-stringify": "^1.1.1",
+    "mediabunny": "^1.61.0",
+    "react-easy-crop": "^6.2.3",
+    "sql.js": "^1.13.0",
+    "uuid": "^14.0.0"
+  },
+  "overrides": {
+    "onnxruntime-web": "1.21.0"
+  }
+}

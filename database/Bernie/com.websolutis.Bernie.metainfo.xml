@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fiche AppStream de Bernie pour Linux (Flathub, Snap Store, logithèques GNOME et KDE) ; texte repris de la fiche
+     Microsoft Store (docs/microsoft-store/fiche.json). Captures prises sous Linux, publiées dans le dépôt public
+     beber666/bernie-releases. Vérification : appstreamcli validate (tools/linux/paquets-linux.sh). -->
+<component type="desktop-application">
+  <id>com.websolutis.Bernie</id>
+  <name>Bernie</name>
+  <summary>Prepare and run laser engraving and cutting jobs</summary>
+  <summary xml:lang="fr">Préparer et piloter vos gravures et découpes au laser</summary>
+  <developer id="com.websolutis">
+    <name>Websolutis</name>
+  </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <description>
+    <p>Bernie prepares and runs your laser engraving and cutting jobs, from the first line to the last pass. Free, with no account, no subscription and no ads.</p>
+    <p xml:lang="fr">Bernie prépare et pilote vos gravures et découpes au laser, du premier trait au dernier passage. Gratuit, sans compte ni abonnement, sans publicité.</p>
+    <p>DRAW FOR THE LASER</p>
+    <p xml:lang="fr">DESSINER POUR LE LASER</p>
+    <ul>
+      <li>A complete vector editor: shapes, nodes, booleans, offsets, arrays, nesting</li>
+      <li xml:lang="fr">Éditeur vectoriel complet : formes, nœuds, booléens, décalages, tableaux, imbrication</li>
+      <li>Text in your own fonts, text on a path, variable text (serial numbers, dates, CSV files)</li>
+      <li xml:lang="fr">Texte avec vos polices, texte sur un chemin, texte variable (numéros de série, dates, fichier CSV)</li>
+      <li>QR codes and barcodes</li>
+      <li xml:lang="fr">QR codes et codes-barres</li>
+      <li>Art libraries: your own drawings, plus free libraries to download</li>
+      <li xml:lang="fr">Bibliothèques d'art : vos dessins, et des bibliothèques gratuites à télécharger</li>
+    </ul>
+    <p>ENGRAVE PHOTOS</p>
+    <p xml:lang="fr">GRAVER DES PHOTOS</p>
+    <ul>
+      <li>Proven dithering (Stucki, Floyd-Steinberg, Atkinson, halftone…) or grayscale</li>
+      <li xml:lang="fr">Tramages éprouvés (Stucki, Floyd-Steinberg, Atkinson, similigravure…) ou niveaux de gris</li>
+      <li>Brightness, contrast, gamma and sharpening, with a preview of the engraving</li>
+      <li xml:lang="fr">Luminosité, contraste, gamma et accentuation, avec l'aperçu de la gravure</li>
+      <li>Trace an image into outlines</li>
+      <li xml:lang="fr">Vectorisation d'une image en contours</li>
+    </ul>
+    <p>SET UP EVERY MATERIAL</p>
+    <p xml:lang="fr">RÉGLER CHAQUE MATÉRIAU</p>
+    <ul>
+      <li>30 color layers: line, fill, image; speed, power, passes, lead-ins and tabs</li>
+      <li xml:lang="fr">30 calques de couleur : ligne, remplissage, image ; vitesse, puissance, passes, entrées de coupe et ponts</li>
+      <li>More than 1,800 ready-to-use material settings, grid material tests and calibration patterns</li>
+      <li xml:lang="fr">Plus de 1 800 réglages de matériaux prêts à l'emploi, tests de matériau en grille et mires de réglage</li>
+    </ul>
+    <p>CHECK BEFORE YOU SEND</p>
+    <p xml:lang="fr">VÉRIFIER AVANT D'ENVOYER</p>
+    <ul>
+      <li>Path preview and estimated time, accelerations included</li>
+      <li xml:lang="fr">Aperçu des trajets et durée estimée, accélérations comprises</li>
+      <li>Pre-flight check: job outside the work area, power, machine settings</li>
+      <li xml:lang="fr">Contrôle avant envoi : travail hors de la zone, puissance, réglages de la machine</li>
+      <li>Cut order optimization</li>
+      <li xml:lang="fr">Optimisation de l'ordre de coupe</li>
+    </ul>
+    <p>RUN YOUR LASER</p>
+    <p xml:lang="fr">PILOTER VOTRE LASER</p>
+    <ul>
+      <li>Over USB or the network (Wi-Fi, Ethernet): Bernie finds the machine and reads its settings</li>
+      <li xml:lang="fr">En USB ou en réseau (Wi-Fi, Ethernet) : Bernie trouve la machine et lit ses réglages</li>
+      <li>GRBL, grblHAL, FluidNC, Marlin, Smoothieware; Ruida over the network; galvo through EZCad export</li>
+      <li xml:lang="fr">GRBL, grblHAL, FluidNC, Marlin, Smoothieware ; Ruida par le réseau ; galvo par l'export EZCad</li>
+      <li>Framing, jogging, macros, pause, and STOP always within reach</li>
+      <li xml:lang="fr">Cadrage, déplacements, macros, pause, et l'ARRÊT toujours à portée de main</li>
+      <li>Built-in virtual laser: try everything without a machine</li>
+      <li xml:lang="fr">Laser virtuel intégré : tout essayer sans machine</li>
+    </ul>
+    <p>AND ALSO</p>
+    <p xml:lang="fr">ET AUSSI</p>
+    <ul>
+      <li>Camera: the work area under your design, Print &amp; Cut</li>
+      <li xml:lang="fr">Caméra : l'image du plateau sous votre dessin, Print &amp; Cut</li>
+      <li>Rotary for tumblers and round objects, center finding</li>
+      <li xml:lang="fr">Rotatif pour les gobelets et objets ronds, centre d'une pièce</li>
+      <li>Opens SVG, DXF, PDF, AI, EPS, images and your existing projects; exports G-code</li>
+      <li xml:lang="fr">Ouvre SVG, DXF, PDF, AI, EPS, images et vos projets existants ; exporte en G-code</li>
+      <li>Settings shared between computers: a common folder (network drive, synced folder)</li>
+      <li xml:lang="fr">Réglages partagés entre postes : un dossier commun (lecteur réseau, dossier synchronisé)</li>
+      <li>Built-in user guide in English and French</li>
+      <li xml:lang="fr">Manuel intégré en français et en anglais</li>
+    </ul>
+    <p>SAFETY</p>
+    <p xml:lang="fr">SÉCURITÉ</p>
+    <p>Confirmation before every job, manual firing off by default, and nothing starts remotely without your approval.</p>
+    <p xml:lang="fr">Confirmation avant chaque travail, tir manuel désactivé par défaut, et rien ne démarre à distance sans votre accord.</p>
+    <p>Bernie is free. If you like it, an optional donation (the “Support Bernie” button, through PayPal) helps it grow; it unlocks nothing: everyone gets everything.</p>
+    <p xml:lang="fr">Bernie est gratuit. Si Bernie vous plaît, un don facultatif (bouton « Soutenir Bernie », par PayPal) aide à le faire grandir ; il ne débloque rien : tout le monde a tout.</p>
+    <p>USB lasers: your account must be a member of the dialout group (sudo usermod -aG dialout $USER, then log out and back in).</p>
+    <p xml:lang="fr">Lasers en USB : votre compte doit faire partie du groupe dialout (sudo usermod -aG dialout $USER, puis fermer et rouvrir la session).</p>
+  </description>
+  <launchable type="desktop-id">Bernie.desktop</launchable>
+  <url type="homepage">https://bernie.websolutis.com/</url>
+  <url type="help">https://bernie.websolutis.com/</url>
+  <url type="contact">https://bernie.websolutis.com/suggest-an-idea/</url>
+  <url type="bugtracker">https://bernie.websolutis.com/suggest-an-idea/</url>
+  <url type="donation">https://www.paypal.biz/websolutis</url>
+  <categories>
+    <category>Graphics</category>
+    <category>Engineering</category>
+  </categories>
+  <keywords>
+    <keyword>laser</keyword>
+    <keyword>engraving</keyword>
+    <keyword>engraver</keyword>
+    <keyword>cutter</keyword>
+    <keyword>GRBL</keyword>
+    <keyword>G-code</keyword>
+    <keyword>CNC</keyword>
+    <keyword>SVG</keyword>
+    <keyword xml:lang="fr">gravure</keyword>
+    <keyword xml:lang="fr">découpe</keyword>
+  </keywords>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Designed for the laser: shapes, text, QR codes and color layers</caption>
+      <caption xml:lang="fr">Dessinez pour le laser : formes, texte, QR codes et calques de couleur</caption>
+      <image>https://raw.githubusercontent.com/beber666/bernie-releases/main/captures/linux-1.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Engrave your photos: proven dithering and a faithful preview</caption>
+      <caption xml:lang="fr">Gravez vos photos : tramages éprouvés et aperçu fidèle</caption>
+      <image>https://raw.githubusercontent.com/beber666/bernie-releases/main/captures/linux-2.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Check before you burn: paths, estimated time and pre-flight check</caption>
+      <caption xml:lang="fr">Vérifiez avant de graver : trajets, durée estimée et contrôle avant envoi</caption>
+      <image>https://raw.githubusercontent.com/beber666/bernie-releases/main/captures/linux-3.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Run your laser over USB or the network, or try the virtual laser</caption>
+      <caption xml:lang="fr">Pilotez votre laser en USB ou en réseau, ou essayez le laser virtuel</caption>
+      <image>https://raw.githubusercontent.com/beber666/bernie-releases/main/captures/linux-4.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Find the right settings with material tests</caption>
+      <caption xml:lang="fr">Trouvez le bon réglage avec les tests de matériau</caption>
+      <image>https://raw.githubusercontent.com/beber666/bernie-releases/main/captures/linux-5.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>bernie-desktop</binary>
+    <mediatype>application/x-bernie</mediatype>
+    <mediatype>application/x-bernielot</mediatype>
+  </provides>
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <branding>
+    <color type="primary" scheme_preference="light">#f7f4ee</color>
+    <color type="primary" scheme_preference="dark">#151515</color>
+  </branding>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.9.1" date="2026-10-18">
+      <description>
+        <p>Better integration with Linux software centers.</p>
+        <p xml:lang="fr">Meilleure intégration aux logithèques Linux.</p>
+      </description>
+    </release>
+    <release version="0.9.0" date="2026-10-18">
+      <description>
+        <p>First release on Linux app stores.</p>
+        <p xml:lang="fr">Première version dans les logithèques Linux.</p>
+      </description>
+    </release>
+  </releases>
+</component>

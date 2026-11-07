@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>xyz.waozi.inbe</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>BSD-3-Clause</project_license>
+  <name>Inner Breeze</name>
+  <summary>Syncable breathing, meditation, and habit practice app</summary>
+  <description>
+    <p>Inner Breeze is a free, open-source practice app for breathing, meditation, and habit tracking.</p>
+    <p>It provides guided practice sessions with visual and audio cues, meditation timers, habit counters, session history, import and export, theme customization, and optional sync for habits, sessions, and practice progress.</p>
+  </description>
+  <launchable type="desktop-id">inbe.desktop</launchable>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <url type="homepage">https://inbe.waozi.xyz/</url>
+  <url type="bugtracker">https://github.com/waozixyz/inbe/issues</url>
+  <developer id="xyz.waozi">
+    <name>waozi</name>
+  </developer>
+  <provides>
+    <binary>inbe</binary>
+  </provides>
+  <releases>
+    <release version="1.4.3" date="2026-06-20"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

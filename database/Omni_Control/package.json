@@ -1,0 +1,19 @@
+{
+  "name": "omnicontrol-desktop",
+  "version": "1.0.0",
+  "description": "Omni Control - Remote PC Control Desktop Server",
+  "author": "Abdullah Al Mridul <rim89987@gmail.com>",
+  "homepage": "https://github.com/OmniControl-HQ/omni-control",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "@hurdlegroup/robotjs": "^0.12.3",
+    "@tailwindcss/vite": "^4.3.2",
+    "fastify": "^5.10.0",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.1",
+    "socket.io": "^4.7.5",
+    "tailwindcss": "^4.3.2"
+  }
+}

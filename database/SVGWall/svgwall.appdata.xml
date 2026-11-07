@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright © 2024 Grim Pirate. All rights reserved worldwide. -->
+<component type="console-application">
+	<id>svgwall</id>
+	<metadata_license>MITNFA</metadata_license>
+	<project_license>MITNFA</project_license>
+	<name>SVGWall</name>
+	<summary>SVG Wallpaper Utility for Xorg</summary>
+	<icon type="local">icon</icon>
+	<description>
+		<p>Applies SVG files (both local and remote) as wallpapers/backgrounds to an Xorg server.</p>
+	</description>
+	<categories>
+		<category>Utility</category>
+	</categories>
+	<launchable type="desktop-id">svgwall.desktop</launchable>
+	<url type="homepage">https://github.com/grimpirate/SVGWall</url>
+	<screenshots>
+		<screenshot type="default">
+			<caption>A sample desktop with SVG wallpaper applied</caption>
+			<image>https://raw.githubusercontent.com/grimpirate/SVGWall/main/screenshot.png</image>
+		</screenshot>
+	</screenshots>
+	<provides>
+		<id>svgwall.desktop</id>
+		<binary>AppRun</binary>
+		<library>libjnix11.so</library>
+		<mediatype>image/svg+xml</mediatype>
+	</provides>
+	<requires>
+		<id version="1.17" compare="ge">Apache Batik</id>
+		<id version="4.7.6">picocli</id>
+		<id version="1.7.15">Mozilla Rhino</id>
+		<id version="22">OpenJDK</id>
+		<id version="1.8.9.1">libX11</id>
+	</requires>
+	<supports>
+		<internet>always</internet>
+	</supports>
+	<releases>
+		<release version="20240626.1" date="2024-06-26">
+			<description>
+				<p>SVG display using javascript</p>
+			</description>
+		</release>
+		<release version="20240625.1" date="2024-06-25">
+			<description>
+				<p>JavaScipt code refactor</p>
+			</description>
+		</release>
+		<release version="20240624.1" date="2024-06-24">
+			<description>
+				<p>Mozilla Rhino included for text overlay scripting</p>
+			</description>
+		</release>
+		<release version="20240619.1" date="2024-06-19">
+			<description>
+				<p>Repackaged</p>
+			</description>
+		</release>
+		<release version="20240618.1" date="2024-06-18">
+			<description>
+				<ul>
+					<li>Shell class created</li>
+					<li>Screenshot URL changed</li>
+				</ul>
+			</description>
+		</release>
+		<release version="20240617.3" date="2024-06-17">
+			<description>
+				<p>Reconfiguration of AppDir</p>
+			</description>
+		</release>
+		<release version="20240617.2" date="2024-06-17">
+			<description>
+				<p>Embedded autoimageupdatetool (flags -u and -c)</p>
+			</description>
+		</release>
+		<release version="20240617.1" date="2024-06-17">
+			<description>
+				<ul>
+					<li>picocli integration</li>
+					<li>JNIX11 lib update</li>
+				</ul>
+			</description>
+		</release>
+		<release version="20240616.1" date="2024-06-16">
+			<description>
+				<p>JNIX11 lib update</p>
+			</description>
+		</release>
+		<release version="20240615.3" date="2024-06-15">
+			<description>
+				<ul>
+					<li>New JRE built on CentOS 6</li>
+					<li>Stream and ByteBuffer usage for JNI</li>
+				</ul>
+			</description>
+		</release>
+		<release version="20240615.2" date="2024-06-15">
+			<description>
+				<p>JNI lib update for better performance</p>
+			</description>
+		</release>
+		<release version="20240615.1" date="2024-06-15">
+			<description>
+				<ul>
+					<li>New JRE built on Ubuntu 14.04.6 LTS</li>
+					<li>Rainbow pattern fallback on SVG transcoding failure</li>
+					<li>Timestamp when wallpaper was applied</li>
+				</ul>
+			</description>
+		</release>
+		<release version="20240614.4" date="2024-06-14">
+			<description>
+				<p>Inclusion of shared libraries necessary for portable JRE execution</p>
+			</description>
+		</release>
+		<release version="20240614.3" date="2024-06-14">
+			<description>
+				<ul>
+					<li>Java code refactoring with static JNI method</li>
+					<li>Version info printed to wallpaper</li>
+				</ul>
+			</description>
+		</release>
+		<release version="20240614.2" date="2024-06-14">
+			<description>
+				<p>Print version info to console</p>
+			</description>
+		</release>
+		<release version="20240614.1" date="2024-06-14">
+			<description>
+				<p>AppImage svg icon</p>
+			</description>
+		</release>
+		<release version="20240613.2" date="2024-06-13">
+			<description>
+				<p>Renamed binaries/libraries</p>
+			</description>
+		</release>
+		<release version="20240613.1" date="2024-06-13">
+			<description>
+				<p>Initial release</p>
+			</description>
+		</release>
+	</releases>
+	<developer>
+		<id>com.grimpirate</id>
+		<name>Grim Pirate</name>
+	</developer>
+	<content_rating type="oars-1.0" />
+</component>

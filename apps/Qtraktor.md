@@ -1,0 +1,50 @@
+---
+layout: app
+
+permalink: /Qtraktor/
+description: WPRESS Extractor
+license: GPL-3.0
+
+icons:
+  - Qtraktor/icons/128x128/traktor.png
+
+screenshots:
+  - Qtraktor/screenshot.png
+
+authors:
+  - name: servmask
+    url: https://github.com/servmask
+
+links:
+  - type: GitHub
+    url: servmask/Qtraktor
+  - type: Download
+    url: https://github.com/servmask/Qtraktor/releases
+
+desktop:
+  Desktop Entry:
+    Name: Traktor
+    Comment: WPRESS Extractor
+    Exec: Traktor %f
+    Icon: traktor
+    Type: Application
+    Categories: Utility
+    MimeType: application/x-wpress
+    Actions: Extract
+    X-AppImage-Version: v1.12.0
+  Desktop Action Extract:
+    Name: Extract with Traktor
+    Exec: Traktor %f
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: GPL-3.0
+---

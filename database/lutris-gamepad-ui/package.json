@@ -1,0 +1,20 @@
+{
+  "name": "lutris-gamepad-ui",
+  "private": true,
+  "version": "0.2.0",
+  "main": "electron.cjs",
+  "type": "module",
+  "description": "A simple, TV-friendly, gamepad-navigable frontend for the Lutris game launcher on Linux.",
+  "author": {
+    "name": "Andrew-LD",
+    "email": "andrewld@protonmail.com"
+  },
+  "license": "GPL-3.0-only",
+  "homepage": "https://github.com/andrew-ld/lutris-gamepad-ui/",
+  "dependencies": {
+    "@futpib/paclient": "github:andrew-ld/paclient#450fc5046e2bb6b3ce7920211ec89bc3748d0463",
+    "@homebridge/dbus-native": "github:andrew-ld/dbus-native#b1e7adc7daf54a3c1d23912cb020832085322109",
+    "koffi": "^2.16.1",
+    "modern-tar": "^0.7.6"
+  }
+}

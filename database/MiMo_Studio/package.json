@@ -1,0 +1,29 @@
+{
+  "name": "mimo-studio",
+  "version": "1.5.0",
+  "type": "module",
+  "description": "MiMo Studio — 基于 MiMo Code 的 AI Agent 桌面工作站，支持工具调用、文件操作、多模型切换",
+  "main": "electron/main.cjs",
+  "author": "MiMo Studio Contributors <mimo-studio@outlook.com>",
+  "license": "MIT",
+  "homepage": "https://gitee.com/shdowzh/mimo-studio",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/shdowzh/mimo-studio.git"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.9.1",
+    "dompurify": "^3.4.10",
+    "electron-updater": "^6.8.9",
+    "lucide-react": "^1.18.0",
+    "marked": "^15.0.8",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.17.0",
+    "react-virtuoso": "^4.18.7",
+    "xterm": "^5.3.0",
+    "xterm-addon-fit": "^0.8.0",
+    "xterm-addon-web-links": "^0.9.0",
+    "zustand": "^5.0.5"
+  }
+}

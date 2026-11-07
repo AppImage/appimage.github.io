@@ -2,11 +2,11 @@
 layout: app
 
 permalink: /TreeSheets/
-description: A hierarhical spreadsheet / outliner productivity tool.
+description: A hierarchical spreadsheet / outliner productivity tool.
 license: Zlib
 
 icons:
-  - TreeSheets/icons/scalable/treesheets.svg
+  - TreeSheets/icons/scalable/com.strlen.TreeSheets.svg
 
 screenshots:
   - TreeSheets/screenshot.png
@@ -26,22 +26,28 @@ desktop:
     Version: 1.0
     Type: Application
     Name: TreeSheets
-    GenericName: Treesheets
-    Comment: A hierarhical spreadsheet / outliner productivity tool.
-    TryExec: treesheets
-    Exec: treesheets
+    GenericName: Hierarchical Spreadsheet
+    GenericName[it]: Fogli di Calcolo
+    Comment: A hierarchical spreadsheet / outliner productivity tool.
+    TryExec: TreeSheets
+    Exec: TreeSheets %f
     Terminal: false
-    Icon: treesheets
+    Icon: com.strlen.TreeSheets
+    StartupWMClass: TreeSheets
     MimeType: application/x-treesheets
     Categories: Office
-    Keywords: Mindmaps
-    X-AppImage-Version: 245f9d8
+    Keywords: mindmaps
+    X-AppImage-Version: 2.1.1
   AppImageHub:
-    X-AppImage-UpdateInformation: gh-releases-zsync|aardappel|treesheets|continuous|TreeSheets*-x86_64.AppImage.zsync
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.35
     X-AppImage-Payload-License: Zlib
 ---

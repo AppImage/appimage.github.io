@@ -1,0 +1,26 @@
+{
+  "name": "open-webui",
+  "version": "0.0.20",
+  "license": "AGPL-3.0",
+  "description": "Open WebUI Desktop",
+  "main": "./out/main/index.js",
+  "author": "Open WebUI Inc. (Timothy Jaeryang Baek)",
+  "homepage": "https://openwebui.com",
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@tailwindcss/vite": "^4.2.1",
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.3.9",
+    "i18next": "^25.8.18",
+    "i18next-browser-languagedetector": "^8.2.1",
+    "i18next-resources-to-backend": "^1.2.1",
+    "node-pty": "^1.1.0",
+    "svelte-sonner": "^1.1.0",
+    "tailwindcss": "^4.2.1",
+    "tar": "^7.5.11",
+    "tippy.js": "^6.3.7"
+  }
+}

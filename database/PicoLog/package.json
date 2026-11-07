@@ -1,0 +1,28 @@
+{
+  "name": "picolog",
+  "productName": "PicoLog",
+  "longProductName": "PicoLog",
+  "description": "PicoLog Data Logging Software",
+  "author": "Pico Technology <support@picotech.com>",
+  "version": "6.2.5",
+  "userModelID": "com.picotech.picolog",
+  "homepage": "http://picotech.com",
+  "license": "UNLICENSED",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PicoTechPicoLog/PicoLog6.git"
+  },
+  "private": true,
+  "sentryDsn": "https://d54003f9727e4beab21b738deaa46bb9@o81916.ingest.sentry.io/178578",
+  "googleAnalyticsKey": "UA-100385227-1",
+  "legalInfoUrl": "https://www.picotech.com/about/legal-information",
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "ffi-napi": "^2.4.6",
+    "keytar": "^7.9.0",
+    "level": "^6.0.1",
+    "ref-napi": "^1.4.3",
+    "usb-detection": "^4.14.1"
+  }
+}

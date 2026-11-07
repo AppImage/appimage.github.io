@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.vzhd1701.gridplayer</id>
+  <launchable type="desktop-id">com.vzhd1701.gridplayer.desktop</launchable>
+  <content_rating type="oars-1.0" />
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <developer_name>vzhd1701</developer_name>
+  <name>GridPlayer</name>
+  <update_contact>vzhd1701@gmail.com</update_contact>
+  <summary>Play videos side-by-side</summary>
+  <description>
+    <p>
+      Simple VLC-based video player that can play multiple videos at the same time.
+      You can play as many videos as you like, the only limit is your hardware. It
+      supports all video formats that VLC supports (which is all of them). You can
+      save your playlist retaining information about the position, sound volume,
+      loops, aspect ratio, etc.
+    </p>
+    <p>Built using Python, Qt and VLC.</p>
+    <p>Features:</p>
+    <ul>
+      <li>Cross-platform (Linux, Mac, and Windows)</li>
+      <li>Support for any video and audio format (VLC)</li>
+      <li>Support for (almost) any streaming URLs (streamlink + yt-dlp)</li>
+      <li>Hardware and software video decoding</li>
+      <li>Control video aspect, playback speed, zoom</li>
+      <li>Set loop fragments with frame percision</li>
+      <li>Configurable grid layout</li>
+      <li>Easy swap videos with drag-n-drop</li>
+      <li>Playlist retains settings for each video</li>
+    </ul>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://cdn.jsdelivr.net/gh/vzhd1701/gridplayer@v0.5.5/resources/public/screenshot-001.png</image>
+      <caption>Main window with 4 videos playing</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://cdn.jsdelivr.net/gh/vzhd1701/gridplayer@v0.5.5/resources/public/screenshot-002.png</image>
+      <caption>Context menu</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://cdn.jsdelivr.net/gh/vzhd1701/gridplayer@v0.5.5/resources/public/screenshot-003.png</image>
+      <caption>Settings window</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://cdn.jsdelivr.net/gh/vzhd1701/gridplayer@v0.5.5/resources/public/screenshot-004.png</image>
+      <caption>Vertical videos</caption>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/vzhd1701/gridplayer</url>
+  <url type="bugtracker">https://github.com/vzhd1701/gridplayer/issues</url>
+  <url type="vcs-browser">https://github.com/vzhd1701/gridplayer</url>
+  <releases>
+    <release date="2026-07-24" version="0.5.5"/>
+  </releases>
+</component>

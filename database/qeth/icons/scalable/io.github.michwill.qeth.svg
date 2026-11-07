@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="56 2 268 268" width="512" height="512">
+  <!-- Self-contained "tile": light glyph on a dark rounded rectangle with
+       a faint rim, so the icon stays legible on any surface (light window
+       bg, dark panel/taskbar) without guessing the background. Sibling of
+       qeth-icon-circle.svg — same glyph, square frame. -->
+  <rect x="60" y="6" width="260" height="260" rx="60" fill="#1b1a22"/>
+  <rect x="62.5" y="8.5" width="255" height="255" rx="57.5" fill="none" stroke="#f4f1ea" stroke-width="5" opacity="0.22"/>
+  <g transform="translate(172,136) scale(0.88) translate(-187.4,-137.8)">
+    <g transform="translate(0,18)">
+      <g stroke="#f4f1ea" stroke-linecap="round" fill="none">
+        <line x1="94" y1="74" x2="150" y2="74" stroke-width="9" opacity="0.85"/>
+        <line x1="72" y1="116" x2="150" y2="116" stroke-width="12" opacity="1"/>
+        <line x1="106" y1="158" x2="150" y2="158" stroke-width="8" opacity="0.6"/>
+      </g>
+      <g transform="translate(166,0) skewX(-16) translate(-150,0)"><g transform="translate(150,0)">
+        <path d="M 100 8 L 172 100 L 100 124 L 28 100 Z" fill="#f4f1ea"/>
+        <path d="M 100 8 L 100 124 L 28 100 Z" fill="#f4f1ea" opacity="0.78"/>
+        <path d="M 28 114 L 100 232 L 172 114 L 100 138 Z" fill="#f4f1ea" opacity="0.55"/>
+        <path d="M 28 114 L 100 232 L 100 138 Z" fill="#f4f1ea" opacity="0.75"/>
+      </g></g>
+    </g>
+  </g>
+</svg>

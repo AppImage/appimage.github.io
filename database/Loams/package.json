@@ -1,0 +1,28 @@
+{
+  "name": "@loams/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Loams Desktop: the console in an Electron shell with a managed local engine.",
+  "license": "Apache-2.0",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "@noble/ed25519": "3.2.0",
+    "ajv": "8.20.0",
+    "electron-updater": "6.8.9",
+    "js-yaml": "4.3.2",
+    "mysql2": "3.24.4",
+    "pg": "8.23.0",
+    "pg-cursor": "2.22.0"
+  },
+  "exports": {
+    "./contracts": "./src/shared/contracts.ts",
+    "./validate": "./src/shared/validate.ts",
+    "./sql-lex": "./src/shared/sql-lex.ts"
+  },
+  "author": {
+    "name": "Loams",
+    "email": "hello@loams.dev"
+  },
+  "homepage": "https://loams.dev",
+  "desktopName": "loams-desktop.desktop"
+}

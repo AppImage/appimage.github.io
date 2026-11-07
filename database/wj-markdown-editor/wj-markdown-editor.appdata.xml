@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>wj-markdown-editor</id>
+  <name>wj-markdown-editor</name>
+  <summary>An open-source desktop Markdown editor</summary>
+  <summary xml:lang="zh-CN">开源桌面端 Markdown 编辑器</summary>
+
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+
+  <description>
+    <p>wj-markdown-editor is an open-source desktop Markdown editor for Windows and Linux. It offers a live preview with precise synchronized scrolling, formula and diagram rendering (KaTeX / Mermaid), GitHub alerts and custom containers, image and attachment insertion, image hosting upload, dark mode and custom themes, export to PDF / PNG / JPEG, and full-text search.</p>
+  </description>
+
+  <launchable type="desktop-id">wj-markdown-editor.desktop</launchable>
+
+  <url type="homepage">https://github.com/nlbwqmz/wj-markdown-editor</url>
+  <url type="bugtracker">https://github.com/nlbwqmz/wj-markdown-editor/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Editing with live preview</caption>
+      <image>https://cdn.jsdelivr.net/gh/nlbwqmz/static-resource@main/image/edit_done_dKVmHx.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Preview mode</caption>
+      <image>https://cdn.jsdelivr.net/gh/nlbwqmz/static-resource@main/image/preview_done_Lu_VHD.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Utility</category>
+    <category>TextEditor</category>
+  </categories>
+
+  <keywords>
+    <keyword>markdown</keyword>
+    <keyword>editor</keyword>
+    <keyword>preview</keyword>
+  </keywords>
+
+  <releases>
+    <release version="2.22.1" date="2026-10-09"/>
+  </releases>
+</component>

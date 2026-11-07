@@ -1,0 +1,14 @@
+{
+  "desktopName": "opennotes.desktop",
+  "name": "opennotes",
+  "version": "0.0.0",
+  "author": "rajsriv <raj2005sriv@gmail.com>",
+  "homepage": "https://github.com/rajsriv/OpenNotes",
+  "private": true,
+  "type": "module",
+  "main": "electron-main.cjs",
+  "dependencies": {
+    "dbus-next": "^0.10.2",
+    "marked": "^18.0.5"
+  }
+}

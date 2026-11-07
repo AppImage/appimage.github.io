@@ -1,0 +1,21 @@
+{
+  "name": "wshawk",
+  "version": "4.0.4",
+  "description": "WSHawk - Advanced WebSocket Security Scanner",
+  "homepage": "https://github.com/regaan/wshawk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/regaan/wshawk.git"
+  },
+  "main": "index.js",
+  "author": "Regaan <regaan@rothackers.com> (https://wshawk.rothackers.com)",
+  "license": "AGPL-3.0",
+  "type": "commonjs",
+  "dependencies": {
+    "socket.io-client": "^4.8.3"
+  },
+  "overrides": {
+    "minimatch": "^10.2.1",
+    "glob": "^11.0.0"
+  }
+}

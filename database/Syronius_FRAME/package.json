@@ -1,0 +1,10 @@
+{
+  "name": "@syronius-frame/setup",
+  "version": "1.0.0-release",
+  "frameReleaseTag": "v1.0.0-release",
+  "private": true,
+  "type": "module",
+  "description": "FRAME online installer and launcher.",
+  "author": "Syronius FRAME",
+  "main": "electron/main.cjs"
+}

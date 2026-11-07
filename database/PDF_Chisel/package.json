@@ -1,0 +1,12 @@
+{
+  "name": "pdf-chisel",
+  "version": "0.2.0",
+  "description": "Cross-platform PDF editor with WYSIWYG editing — Electron + open-source libraries",
+  "main": "dist/main/index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "electron-updater": "^6.3.0",
+    "node-addon-api": "^8.0.0"
+  }
+}

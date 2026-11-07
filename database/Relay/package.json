@@ -1,0 +1,12 @@
+{
+  "name": "relay-desktop",
+  "version": "0.2.1",
+  "description": "Relay desktop app (Electron). A vendor-neutral cockpit for multi-agent coding handoff.",
+  "author": "Daniel Bisina",
+  "license": "Apache-2.0",
+  "homepage": "https://dbisina.github.io/relay",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

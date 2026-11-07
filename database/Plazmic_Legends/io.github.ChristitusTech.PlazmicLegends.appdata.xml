@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.ChristitusTech.PlazmicLegends</id>
+  <name>Plazmic Legends</name>
+  <summary>Read-only EverQuest Legends companion</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <description>
+    <p>
+      Plazmic Legends is an independent native Linux window that displays
+      installed map geometry and bounded read-only game state from an exact
+      supported EverQuest Legends client running under Wine.
+    </p>
+  </description>
+  <launchable type="desktop-id">plazmic-legends.desktop</launchable>
+  <url type="homepage">https://github.com/ChrisTitusTech/plazmic-legends</url>
+  <content_rating type="oars-1.1"/>
+  <provides>
+    <binary>plazmic-legends</binary>
+  </provides>
+  <releases>
+    <release version="0.2.0" date="2026-08-03"/>
+    <release version="0.1.3" date="2026-08-01"/>
+    <release version="0.1.2" date="2026-07-30"/>
+    <release version="0.1.1" date="2026-07-30"/>
+  </releases>
+</component>

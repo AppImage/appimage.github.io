@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  
+  <!-- Background rounded rect -->
+  <rect width="256" height="256" rx="56" fill="url(#bgGrad)"/>
+  
+  <!-- Outer glowing border -->
+  <rect x="4" y="4" width="248" height="248" rx="52" fill="none" stroke="#60A5FA" stroke-width="4" stroke-opacity="0.6"/>
+
+  <!-- Tilted Card Behind -->
+  <rect x="52" y="44" width="152" height="168" rx="18" fill="#93C5FD" opacity="0.5" transform="rotate(-7 128 128)"/>
+
+  <!-- Main Flashcard -->
+  <rect x="48" y="48" width="160" height="160" rx="18" fill="url(#cardGrad)" filter="url(#shadow)"/>
+  
+  <!-- Card Header Stripe -->
+  <rect x="48" y="48" width="160" height="36" rx="18" fill="#2563EB"/>
+  <rect x="48" y="66" width="160" height="18" fill="#2563EB"/>
+  
+  <!-- Mini Flashcard Icon inside header -->
+  <circle cx="68" cy="66" r="6" fill="#FDE047"/>
+  <circle cx="86" cy="66" r="6" fill="#6EE7B7"/>
+  
+  <!-- Sound wave symbol -->
+  <path d="M178 62 C184 64, 184 70, 178 72" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M184 58 C192 62, 192 74, 184 78" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Center Text / Icon 'A' -->
+  <text x="128" y="148" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="58" font-weight="900" fill="#1E293B" text-anchor="middle">A</text>
+  
+  <!-- Persian/Phonetic subtle badge -->
+  <rect x="74" y="166" width="108" height="22" rx="11" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+  <text x="128" y="181" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="800" fill="#2563EB" text-anchor="middle">ANKI • AI • TTS</text>
+  
+  <!-- Sparkle Star Top Right -->
+  <path d="M210 36 Q210 50 196 50 Q210 50 210 64 Q210 50 224 50 Q210 50 210 36 Z" fill="#FDE047"/>
+</svg>

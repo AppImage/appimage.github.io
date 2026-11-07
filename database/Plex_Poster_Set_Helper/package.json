@@ -1,0 +1,29 @@
+{
+  "name": "plex-poster-set-helper-2",
+  "version": "2.4.1",
+  "description": "Download and apply custom poster artwork from ThePosterDB and MediUX to your Plex Media Server",
+  "author": "molexxxx",
+  "license": "MIT",
+  "main": "electron/dist/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/molexxxx/plex-poster-set-helper-2.git"
+  },
+  "dependencies": {
+    "@fastify/rate-limit": "^11.2.0",
+    "@fastify/static": "^10.1.5",
+    "cheerio": "^1.2.0",
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.8.9",
+    "fastify": "^5.12.5",
+    "fuse.js": "^7.5.0",
+    "node-cron": "^4.6.0",
+    "p-limit": "^3.1.0",
+    "playwright": "^1.63.0",
+    "plex-oauth": "^2.2.0",
+    "winston": "^3.19.0"
+  },
+  "allowScripts": {
+    "electron-winstaller@5.4.0": true
+  }
+}

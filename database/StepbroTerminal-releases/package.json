@@ -1,0 +1,35 @@
+{
+  "name": "step-terminal",
+  "productName": "StepbroTerminal",
+  "version": "0.1.0-beta.9",
+  "private": true,
+  "description": "StepbroTerminal: a beautiful cross-platform terminal for always-on AI coding agents.",
+  "author": {
+    "name": "Kevin",
+    "email": "roloocoste@gmail.com"
+  },
+  "main": "out/main/index.js",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "electron-updater": "^6.8.9",
+    "gsap": "^3.15.0",
+    "node-pty": "^1.1.0",
+    "zod": "^4.5.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild",
+      "node-pty",
+      "@resvg/resvg-js"
+    ],
+    "patchedDependencies": {
+      "node-pty@1.1.0": "patches/node-pty@1.1.0.patch"
+    }
+  }
+}

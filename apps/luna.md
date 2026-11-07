@@ -2,8 +2,11 @@
 layout: app
 
 permalink: /luna/
-description: Manage your NPM packages.
+description: npm desktop manager for handling npm dependencies. Supported platforms: OS X Windows and Linux. Build on Electron
 license: GPL-3.0
+
+icons:
+  - luna/icons/512x512/luna.png
 
 screenshots:
   - luna/screenshot.png
@@ -21,28 +24,87 @@ links:
 desktop:
   Desktop Entry:
     Name: luna
-    Comment: Manage your NPM packages.
-    Exec: AppRun
+    Exec: AppRun %U
     Terminal: false
     Type: Application
     Icon: luna
-    X-AppImage-Version: 2.0.0
-    X-AppImage-BuildId: 5c9204c0-3a78-11a8-2c04-f1c050b8ed34
+    StartupWMClass: luna
+    X-AppImage-Version: 3.4.6
+    Comment: 'npm desktop manager for handling npm dependencies. Supported platforms:
+      OS X Windows and Linux. Build on Electron'
     Categories: Development
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.16
     X-AppImage-Payload-License: GPL-3.0
 
 electron:
-  description: Manage your NPM packages.
-  main: "./main.prod.js"
-  author:
-    name: rvpanoz
-    email: rvpanoz@gmail.com
-    url: https://github.com/rvpanoz
-  license: GPLv3
+  description: 'npm desktop manager for handling npm dependencies. Supported platforms:
+    OS X Windows and Linux. Build on Electron'
+  lint-staged:
+    "*.{js,jsx}":
+    - cross-env NODE_ENV=development eslint --cache --format=pretty
+    - prettier --ignore-path .eslintignore --single-quote --write
+    - git add
+    "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}":
+    - prettier --ignore-path .eslintignore --parser json --write
+    - git add
+    "*.{css,scss}":
+    - stylelint --ignore-path .eslintignore --syntax scss --fix
+    - prettier --ignore-path .eslintignore --single-quote --write
+    - git add
+    "*.{yml,md}":
+    - prettier --ignore-path .eslintignore --single-quote --write
+    - git add
+  main: "./app/main.prod.js"
+  repository:
+    type: git
+    url: git+https://github.com/rvpanoz/luna.git
+  author: rvpanoz <rvpanoz@gmail.com> (https://github.com/rvpanoz)
+  license: GPL-3.0
+  bugs:
+    url: https://github.com/rvpanoz/luna/issues
+  homepage: https://github.com/rvpanoz/luna#readme
+  dependencies:
+    "@material-ui/core": "^4.11.0"
+    "@material-ui/icons": "^4.9.1"
+    animejs: "^3.2.1"
+    chalk: "^4.1.0"
+    classnames: "^2.2.6"
+    core-js: "^3.6.5"
+    date-fns: "^2.16.1"
+    electron-debug: "^3.1.0"
+    electron-log: "^4.2.4"
+    electron-store: "^6.0.1"
+    eslint: "^7.12.0"
+    fix-path: "^3.0.0"
+    lock-verify: "^2.2.1"
+    material-design-icons: "^3.0.1"
+    prop-types: "^15.7.2"
+    ramda: "^0.27.1"
+    react: "^17.0.1"
+    react-dom: "^17.0.1"
+    react-redux: "^7.2.1"
+    redux: "^4.0.5"
+    redux-observable: "^1.2.0"
+    redux-react-hook: "^4.0.3"
+    rxjs: "^6.6.3"
+    semver: "^7.3.2"
+    source-map-support: "^0.5.19"
+    typeface-roboto: "^1.1.13"
+    uuid: "^8.3.1"
+  devEngines:
+    node: ">=7.x"
+    npm: ">=4.x"
+  husky:
+    hooks:
+      pre-commit: lint-staged
 ---

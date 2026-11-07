@@ -1,0 +1,22 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=Listen Moe
+Comment=J-POP and K-POP radio
+Categories=AudioVideo;Audio;Music;
+Keywords=Radio;Audio;J-POP;K-POP;
+Icon=io.github.noobping.listenmoe
+Exec=listenmoe
+Terminal=false
+X-AppImage-Version=v1.3.0-test.86beea6
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|noobping|listenmoe|latest|listenmoe-*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=bundled
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=true
+X-AppImage-Payload-License=MIT

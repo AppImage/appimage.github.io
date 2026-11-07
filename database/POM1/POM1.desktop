@@ -1,0 +1,32 @@
+[Desktop Entry]
+Type=Application
+# NO Version= key, deliberately. It names the Desktop Entry SPEC version (never
+# POM1's), it is OPTIONAL, and a validator treats a value it does not recognise
+# as a hard ERROR — which is how the Pi release job died twice: linuxdeploy's
+# aarch64 build refused 1.5, then refused 1.1, while the x86_64 build of the
+# same tag accepted both. Absent, there is no value left to reject; a key
+# introduced after the declared version would only ever have been a warning, so
+# the key was buying nothing and costing a release job. Do not re-add it.
+Name=POM1
+GenericName=Apple 1 Emulator
+Comment=Dear ImGui emulator of the 1976 Apple 1 with 6502, ACI cassette, and a full stack of expansion cards.
+Exec=POM1
+Icon=POM1
+Terminal=false
+Categories=Game;Emulator;
+Keywords=apple1;6502;emulator;retro;
+StartupNotify=true
+StartupWMClass=POM1
+X-AppImage-Version=1.9.7
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.27
+X-AppImage-Payload-License=GPL-3.0

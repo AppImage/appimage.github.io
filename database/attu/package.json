@@ -1,0 +1,20 @@
+{
+  "name": "attu",
+  "version": "3.0.1",
+  "description": "Desktop client for Milvus vector database management",
+  "homepage": "https://github.com/zilliztech/attu",
+  "author": {
+    "name": "Zilliz",
+    "email": "support@zilliz.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zilliztech/attu"
+  },
+  "productName": "Attu",
+  "private": true,
+  "main": "dist/main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

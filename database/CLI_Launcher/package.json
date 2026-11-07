@@ -1,0 +1,19 @@
+{
+  "name": "cli-launcher",
+  "version": "0.0.4",
+  "description": "Floating launcher for terminal AI CLIs",
+  "author": {
+    "name": "Mad Blast",
+    "email": "81722794+MadBlast0@users.noreply.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MadBlast0/Cli-launcher.git"
+  },
+  "main": "dist/main/main.js",
+  "dependencies": {
+    "electron-updater": "^6.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

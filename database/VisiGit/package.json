@@ -1,0 +1,32 @@
+{
+  "name": "visigit",
+  "version": "1.0.5",
+  "description": "Git repository visualizer with AI-powered commit summaries",
+  "main": "./out/main/index.js",
+  "bin": {
+    "visigit": "bin/visigit.js"
+  },
+  "files": [
+    "out/**/*",
+    "bin/**/*",
+    "logo.png"
+  ],
+  "author": {
+    "name": "shayderrr",
+    "email": "darknessshayder@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/shayderrr/visigit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shayderrr/visigit.git"
+  },
+  "dependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
+    "@gitgraph/react": "^1.6.0",
+    "@uiw/react-heat-map": "^2.3.4",
+    "recharts": "^2.15.3",
+    "simple-git": "^3.36.0",
+    "visigit": "^1.0.4"
+  }
+}

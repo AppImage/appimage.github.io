@@ -1,0 +1,17 @@
+{
+  "name": "Crescat",
+  "version": "1.5.2",
+  "description": "",
+  "main": "main.js",
+  "author": "Crescat <matteo@crescat.no>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@todesktop/runtime": "1.5.7-beta.1"
+  },
+  "desktopifyServerVersion": "1.554.0",
+  "productName": "Crescat",
+  "homepage": "https://app.crescat.io",
+  "repository": "https://github.com/ToDesktop/desktopify/",
+  "electronVersion": "33.2.0",
+  "desktopifyVersion": "6.6.0"
+}

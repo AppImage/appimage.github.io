@@ -1,0 +1,22 @@
+[Desktop Entry]
+Type=Application
+Name=jsBudbrainsFxStudio
+Comment=Live effects for the whole system: reverb, echo, pitch and more
+Comment[de]=Live-Effekte für das ganze System: Hall, Echo, Tonhöhe und mehr
+Exec=jsBudbrainsFxStudio
+Icon=jsbudbrainsfxstudio
+Terminal=false
+Categories=AudioVideo;Audio;Mixer;
+Keywords=effects;reverb;echo;delay;pitch;chorus;flanger;phaser;mixer;sound;audio;
+StartupWMClass=jsbudbrainsfxstudio
+X-AppImage-Version=1.0.0
+
+[AppImageHub]
+X-AppImage-UpdateInformation=zsync|https://www.budbrain.de/appimage/jsbudbrainsfxstudio-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34

@@ -1,0 +1,21 @@
+{
+  "name": "crew44",
+  "productName": "Crew44",
+  "version": "0.8.1",
+  "description": "Crew44 — local-first AI crew runner",
+  "author": {
+    "name": "Crew44",
+    "email": "support@mindivelabs.com"
+  },
+  "main": "electron/main.cjs",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "katex": "^0.17.0",
+    "qrcode.react": "^4.2.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  }
+}

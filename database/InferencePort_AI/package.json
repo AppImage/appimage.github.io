@@ -1,0 +1,28 @@
+{
+  "name": "InferencePortAI",
+  "version": "2.13.0",
+  "main": "main.js",
+  "type": "module",
+  "author": "Rihaan Meher <sharktidedev@gmail.com>",
+  "homepage": "https://inference.js.org",
+  "license": "Apache 2.0",
+  "description": "AI, anywhere",
+  "dependencies": {
+    "@gradio/client": "^2.6.0",
+    "@supabase/supabase-js": "^2.112.4",
+    "fix-path": "^5.0.0",
+    "html-to-text": "^10.0.1",
+    "openai": "^7.8.0",
+    "systeminformation": "^5.33.1",
+    "ws": "^8.21.3"
+  },
+  "napi": {
+    "binaryName": "ipai-native-addons",
+    "targets": [
+      "x86_64-pc-windows-msvc",
+      "x86_64-apple-darwin",
+      "aarch64-apple-darwin",
+      "x86_64-unknown-linux-gnu"
+    ]
+  }
+}

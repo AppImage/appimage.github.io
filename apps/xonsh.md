@@ -2,11 +2,11 @@
 layout: app
 
 permalink: /xonsh/
-description: Xonsh on Python 3.8.5
-license: Python-2.0
+description: Xonsh shell on Python 3.14.7
+license: BSD
 
 icons:
-  - xonsh/icons/256x256/python.png
+  - xonsh/icons/205x205/xonsh_terminal_icon_256x256_cropped.png
 
 authors:
   - name: xonsh
@@ -23,17 +23,20 @@ desktop:
     Type: Application
     Name: xonsh
     Exec: xonsh
-    Comment: Xonsh on Python 3.8.5
-    Icon: python
+    Comment: Xonsh on Python 3.14.7
+    Icon: xonsh_terminal_icon_256x256_cropped
     Categories: System
     Terminal: true
-    X-AppImage-Version: 0.9.20
   AppImageHub:
-    X-AppImage-Signature: no valid OpenPGP data found. the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
 
 appdata:
   Type: desktop-application
@@ -41,11 +44,14 @@ appdata:
   Name:
     C: Xonsh
   Summary:
-    C: Xonsh on Python 3.8.5
+    C: Xonsh shell on Python 3.14.7
   Description:
     C: >-
-      <p>Python 3.8.5 + Xonsh bundled in an AppImage.</p>
-  ProjectLicense: Python-2.0
+      <p>Xonsh shell, bundled with Python 3.14.7. Xonsh (sounds like &quot;consh&quot;) is a modern,
+                 full-featured and cross-platform Python-based shell. The language is a superset of Python 3 with
+                 seamless integration of shell functionality and commands. Xonsh is meant for the daily use of experts
+                 and novices.</p>
+  ProjectLicense: BSD
   Url:
     homepage: http://xon.sh
   Launchable:
@@ -53,5 +59,5 @@ appdata:
     - xonsh.desktop
   Provides:
     binaries:
-    - python3.8
+    - python3.14
 ---

@@ -1,0 +1,21 @@
+{
+  "name": "cubicle-crew",
+  "version": "2.1.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "main": "electron/main.js",
+  "description": "Your Claude Code agents, living in a tiny pixel-art office",
+  "author": "Kalin Dimitrov",
+  "license": "MIT",
+  "homepage": "https://github.com/rezored/cubicle-crew",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rezored/cubicle-crew.git"
+  }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.SeCherkasov.SkerrySSH</id>
+  <name>Skerry</name>
+  <summary>Manage SSH terminals, remote files and port forwarding</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <description>
+    <p>Skerry is a cross-platform SSH client with split terminal sessions,
+    an SFTP file manager and port forwarding.</p>
+    <p>Organize hosts, store credentials in an encrypted vault and automate
+    repeatable tasks with snippets and runbooks.</p>
+  </description>
+  <launchable type="desktop-id">io.github.SeCherkasov.SkerrySSH.desktop</launchable>
+  <url type="homepage">https://github.com/SeCherkasov/SkerrySSH</url>
+  <url type="bugtracker">https://github.com/SeCherkasov/SkerrySSH/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The Skerry desktop workspace</caption>
+      <image type="source" width="1280" height="1015">https://github.com/user-attachments/assets/8305709e-f876-4187-9b5b-799a72a2c235</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.5.1" date="2026-10-01"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

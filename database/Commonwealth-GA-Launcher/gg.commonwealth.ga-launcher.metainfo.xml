@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>gg.commonwealth.ga-launcher</id>
+  <name>Commonwealth GA</name>
+  <summary>Launcher for the Commonwealth Global Agenda private server</summary>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>Set up and launch Global Agenda on the Commonwealth private server.
+    Manage game settings, optional maps and client patches, and keep up with
+    community events and server updates.</p>
+  </description>
+  <launchable type="desktop-id">commonwealth-ga-launcher.desktop</launchable>
+  <url type="homepage">https://github.com/Zotikus1001/commonwealth-ga-launcher</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The launcher main page with server updates and game launch controls</caption>
+      <image type="source">https://raw.githubusercontent.com/Zotikus1001/commonwealth-ga-launcher/master/images/launcher-main.jpg</image>
+    </screenshot>
+  </screenshots>
+</component>

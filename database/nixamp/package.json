@@ -1,0 +1,14 @@
+{
+  "name": "@nixamp/desktop",
+  "productName": "nixamp",
+  "version": "0.28.43",
+  "private": true,
+  "description": "nixamp as a desktop app: the PWA in a window, with the CLI bundled in.",
+  "author": "Profullstack, Inc. <anthony@profullstack.com>",
+  "homepage": "https://nixamp.com",
+  "license": "MIT",
+  "main": "main.cjs",
+  "trustedDependencies": [
+    "electron"
+  ]
+}

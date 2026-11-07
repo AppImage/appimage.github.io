@@ -1,0 +1,185 @@
+---
+layout: app
+
+permalink: /Dome/
+description: Desktop app for knowledge management and academic research
+
+icons:
+  - Dome/icons/512x512/dome.png
+
+screenshots:
+  - Dome/screenshot.png
+
+authors:
+  - name: maxprain12
+    url: https://github.com/maxprain12
+
+links:
+  - type: GitHub
+    url: maxprain12/dome
+  - type: Download
+    url: https://github.com/maxprain12/dome/releases
+
+desktop:
+  Desktop Entry:
+    Name: Dome
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: dome
+    StartupWMClass: Dome
+    X-AppImage-Version: 2.9.2
+    Comment: Desktop app for knowledge management and academic research
+    Categories: Office
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+
+electron:
+    and an AI that can use both'
+  author: Dome Team
+  repository:
+    type: git
+    url: https://github.com/maxprain12/dome
+  main: electron/main.cjs
+  type: module
+  private: true
+  packageManager: pnpm@11.8.0
+  dependencies:
+    "@dnd-kit/core": "^6.3.1"
+    "@dnd-kit/modifiers": "^9.0.0"
+    "@dnd-kit/sortable": "^10.0.0"
+    "@dnd-kit/utilities": "^3.2.2"
+    "@dome/agent-core": workspace:*
+    "@dome/ai": workspace:*
+    "@dome/db": workspace:*
+    "@dome/i18n": workspace:*
+    "@dome/prompts": workspace:*
+    "@dome/tools": workspace:*
+    "@emoji-mart/data": "^1.2.1"
+    "@emoji-mart/react": "^1.1.1"
+    "@ffmpeg-installer/ffmpeg": "^1.1.0"
+    "@floating-ui/dom": "^1.8.0"
+    "@floating-ui/react": "^0.27.19"
+    "@fontsource-variable/inter": "^5.2.8"
+    "@hugeicons/core-free-icons": "^4.2.2"
+    "@hugeicons/react": "^1.1.9"
+    "@lancedb/lancedb": "^0.21.3"
+    "@langchain/core": "^1.1.48"
+    "@modelcontextprotocol/sdk": "^1.29.0"
+    "@mozilla/readability": "^0.6.0"
+    "@napi-rs/canvas": "^0.1.100"
+    "@sentry/electron": "^7.13.0"
+    "@shadcn/react": "^0.2.1"
+    "@sinclair/typebox": "^0.34.49"
+    "@tanstack/react-table": "^9.2.4"
+    "@tiptap/core": "^3.31.3"
+    "@tiptap/extension-code-block-lowlight": "^3.31.3"
+    "@tiptap/extension-collaboration": "^3.31.3"
+    "@tiptap/extension-details": "^3.31.3"
+    "@tiptap/extension-drag-handle": "^3.31.3"
+    "@tiptap/extension-drag-handle-react": "^3.31.3"
+    "@tiptap/extension-file-handler": "^3.31.3"
+    "@tiptap/extension-highlight": "^3.31.3"
+    "@tiptap/extension-image": "^3.31.3"
+    "@tiptap/extension-mathematics": "^3.31.3"
+    "@tiptap/extension-mention": "^3.31.3"
+    "@tiptap/extension-node-range": "^3.31.3"
+    "@tiptap/extension-placeholder": "^3.31.3"
+    "@tiptap/extension-table": "^3.31.3"
+    "@tiptap/extension-table-of-contents": "^3.31.3"
+    "@tiptap/extension-task-item": "^3.31.3"
+    "@tiptap/extension-task-list": "^3.31.3"
+    "@tiptap/extension-typography": "^3.31.3"
+    "@tiptap/extension-youtube": "^3.31.3"
+    "@tiptap/extensions": "^3.31.3"
+    "@tiptap/markdown": "^3.31.3"
+    "@tiptap/pm": "^3.31.3"
+    "@tiptap/react": "^3.31.3"
+    "@tiptap/starter-kit": "^3.31.3"
+    "@tiptap/suggestion": "^3.31.3"
+    "@tiptap/y-tiptap": "^3.0.9"
+    adm-zip: "^0.6.0"
+    apache-arrow: "^18.1.0"
+    archiver: "^7.0.1"
+    better-sqlite3: "^12.6.2"
+    cheerio: "^1.1.2"
+    chokidar: "^5.0.0"
+    clsx: "^2.1.0"
+    cmdk: "^1.1.1"
+    cn: "^0.3.0"
+    d3-drag: "^3.0.0"
+    d3-force: "^3.0.0"
+    d3-selection: "^3.0.0"
+    d3-zoom: "^3.0.0"
+    date-fns: "^4.1.0"
+    docx: "^9.6.1"
+    driver.js: "^1.4.0"
+    electron-ollama: "^0.1.25"
+    electron-updater: "^6.8.9"
+    emoji-mart: "^5.6.0"
+    exceljs: "^4.4.0"
+    fluent-ffmpeg: "^2.1.3"
+    html-to-docx: "^1.8.0"
+    i18next: "^25.10.10"
+    jotai: "^2.19.1"
+    jszip: "^3.10.1"
+    katex: "^0.18.9"
+    langfuse-langchain: "^3.38.20"
+    linkedom: "^0.18.13"
+    llm-chunk: "^0.0.1"
+    lowlight: "^3.1.0"
+    mammoth: "^1.11.0"
+    marked: "^17.0.6"
+    mermaid: "^12.0.0"
+    next-themes: "^0.4.6"
+    papaparse: "^5.5.3"
+    path-to-regexp: "^6.3.0"
+    pdfjs-dist: "^5.6.205"
+    picomatch: "^2.3.2"
+    posthog-js: "^1.372.1"
+    pptx-preview: "^1.0.7"
+    pptxgenjs: "^3.12.0"
+    protobufjs: "^7.6.4"
+    punycode: "^2.3.1"
+    pyodide: "^314.0.2"
+    qrcode: "^1.5.4"
+    react: "^18.3.0"
+    react-colorful: "^5.6.1"
+    react-day-picker: "^10.0.1"
+    react-dom: "^18.3.0"
+    react-hotkeys-hook: "^5.2.4"
+    react-i18next: "^16.6.6"
+    react-markdown: "^10.1.0"
+    react-resizable-panels: "^4.12.2"
+    react-router-dom: "^7.14.2"
+    react-textarea-autosize: "^8.5.9"
+    recharts: 3.8.0
+    remark-gfm: "^4.0.1"
+    shadcn: "^4.13.0"
+    sharp: "^0.35.3"
+    sonner: "^2.0.7"
+    tailwind-merge: "^2.6.1"
+    ts-fsrs: "^5.4.1"
+    turndown: "^7.2.4"
+    tw-animate-css: "^1.4.0"
+    yaml: 2.9.0
+    yauzl: "^3.2.1"
+    yjs: "^13.6.30"
+    zod: "^4.3.6"
+    zod-to-json-schema: "^3.25.2"
+    zustand: "^4.5.7"
+  overrides:
+    "@tootallnate/once": "^3.0.1"
+    protobufjs: "^7.6.4"
+    "@protobufjs/utf8": "^1.1.1"
+    langsmith: "^0.6.0"
+---

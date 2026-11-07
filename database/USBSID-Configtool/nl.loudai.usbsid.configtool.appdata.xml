@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2024-2026 LouD -->
+<!-- scripts/build-appimage.sh fills the releases placeholder from CHANGELOG.md -->
+<component type="desktop-application">
+  <id>nl.loudai.usbsid.configtool</id>
+  <name>USBSID-Configtool</name>
+  <summary>Configure USBSID-Pico boards</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="nl.loudai">
+    <name>LouD</name>
+  </developer>
+
+  <description>
+    <p>
+      USBSID-Configtool is the graphical configuration tool for USBSID-Pico, a Raspberry Pi
+      Pico (RP2040/RP2350) based board for one or two MOS SID chips and/or hardware SID
+      emulators over USB.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Predefined and manual socket configurations</li>
+      <li>Socket chip/SID auto detect</li>
+      <li>Clock, LED and PCB feature configuration</li>
+      <li>Clone chip configuration (FPGASID)</li>
+      <li>Save configs to an INI file and import them back, compatible with cfg_usbsid INI files</li>
+    </ul>
+    <p>Requires USBSID-Pico firmware 0.5.0-BETA or newer, 0.7.0-BETA or newer is advised.</p>
+  </description>
+
+  <launchable type="desktop-id">nl.loudai.usbsid.configtool.desktop</launchable>
+
+  <url type="homepage">https://github.com/LouDnl/USBSID-Configtool</url>
+  <url type="bugtracker">https://github.com/LouDnl/USBSID-Configtool/issues</url>
+  <url type="vcs-browser">https://github.com/LouDnl/USBSID-Configtool</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Welcome screen</caption>
+      <image>https://raw.githubusercontent.com/LouDnl/USBSID-Configtool/master/images/screenshot-linux-2.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Utility</category>
+    <category>Electronics</category>
+  </categories>
+
+  <keywords>
+    <keyword>USBSID</keyword>
+    <keyword>SID</keyword>
+    <keyword>C64</keyword>
+    <keyword>Commodore</keyword>
+  </keywords>
+
+  <provides>
+    <modalias>usb:vCAFEp4011d*</modalias>
+  </provides>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="0.4.8" date="2026-09-30"><description><ul><li>Relicense from EPL-2.0 to GPL-3.0-or-later with a GPLv3 section 7 exception for Clojure and other EPL libraries</li><li>AppImage: update information and .zsync on releases, GPG signature, AppStream metainfo, square icons</li><li>AppImage: 103 MiB -&gt; 43 MiB (trimmed Java runtime, no unused WebView/media/other-platform native libs)</li><li>Update bundled Java driver to 1.2.1</li><li>Fit window size and minimum size to small screens</li><li>Drop no-op JavaFX --add-opens from packaged launchers</li></ul></description></release>
+    <release version="0.4.7" date="2026-08-17"><description><ul><li>Update bundled Java driver to 1.2</li><li>Update CI build/release workflow</li></ul></description></release>
+    <release version="0.4.6" date="2026-08-15"><description><ul><li>Fix socket presets, add silent auto detect on preset selection</li></ul></description></release>
+    <release version="0.4.5" date="2026-08-01"><description><ul><li>Version bump only, no functional change</li></ul></description></release>
+    <release version="0.4.4" date="2026-08-01"><description><ul><li>Version bump only, no functional change</li></ul></description></release>
+    <release version="0.4.3" date="2026-08-01"><description><ul><li>Fix exception when setting a config item on v1.5 boards</li></ul></description></release>
+    <release version="0.4.2" date="2026-07-27"><description><ul><li>Fix presets throwing exceptions</li><li>Fix CI release action matching tags by glob instead of regex</li></ul></description></release>
+    <release version="0.4.1" date="2026-07-25"><description><ul><li>Fix disable-autodetect setting for v1.5 boards</li><li>Fix button popups, add a shared popup-hide key for common buttons and events that could throw after clicking</li><li>Use disconnect events instead of only updating state on driver actions</li><li>FPGASID config overview layout</li><li>Fix unit tests</li></ul></description></release>
+    <release version="0.3.1" date="2026-07-03"><description><ul><li>Add FPGASID config parser and UI tab, plus SID navigation items</li><li>Handle socket chip type changes: change event, connection state chip type, view refresh on change</li><li>Add read-config command</li><li>Update tool name</li></ul></description></release>
+    <release version="0.2.0" date="2026-06-13"><description><ul><li>First tagged release of the Clojure/cljfx GUI config tool</li><li>Main window, config model and widgets for socket, clock, LED, feature and SID test configuration</li><li>Java driver integration (usb4java/javax.usb) for USB CDC communication with USBSID-Pico</li><li>Window state persistence via an EDN file in the user directory</li><li>Save/import config as an INI file, compatible with cfg_usbsid files, with backward compatibility for older config/INI versions</li><li>Firmware version check on connect</li><li>Cross platform builds: Linux AppImage/zip, Windows MSI, macOS (Intel/Apple silicon) DMG, plus a driver-less Java JAR</li><li>GitHub Actions CI with tagged build/release workflow and bundled driver artifact</li><li>Unit test suite</li></ul></description></release>
+  </releases>
+</component>

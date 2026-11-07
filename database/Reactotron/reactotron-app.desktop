@@ -1,18 +1,22 @@
 [Desktop Entry]
 Name=Reactotron
-Comment=Reactotron desktop mode engage!
-Exec=AppRun
+Exec=AppRun --no-sandbox %U
 Terminal=false
 Type=Application
 Icon=reactotron-app
 StartupWMClass=Reactotron
-X-AppImage-Version=2.4.4.154
+X-AppImage-Version=3.11.0.4140
+Comment=A desktop app for inspecting your React JS and React Native projects. macOS, Linux, and Windows
 Categories=Development;
-X-AppImage-BuildId=1EACeio9wZbGosBTrKRct0IMOu8
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
 # (e.g., with appimagetool -u) so that users can easily update the AppImage
-X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Signature=[don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.17
+X-AppImage-Payload-License=MIT

@@ -3,10 +3,11 @@ layout: app
 
 permalink: /Another_Redis_Desktop_Manager/
 description: A faster, better and more stable redis desktop manager.
+A faster, better and more stable redis desktop manager.
 license: MIT
 
 icons:
-  - Another_Redis_Desktop_Manager/icons/512x512/another-redis-manager.png
+  - Another_Redis_Desktop_Manager/icons/512x512/another-redis-desktop-manager.png
 
 screenshots:
   - Another_Redis_Desktop_Manager/screenshot.png
@@ -24,13 +25,13 @@ links:
 desktop:
   Desktop Entry:
     Name: Another Redis Dsektop Manager
-    Comment: A faster, better and more stable redis desktop manager.
     Exec: AppRun
     Terminal: false
     Type: Application
     Icon: another-redis-manager
     StartupWMClass: Another Redis Dsektop Manager
     X-AppImage-Version: 1.1.0
+    Comment: A faster, better and more stable redis desktop manager.
     Categories: Utility
     X-AppImage-BuildId: 1IcDSJorHRex0mIBUhU82mTHt1F
   AppImageHub:
@@ -42,7 +43,11 @@ desktop:
     X-AppImage-Payload-License: MIT
 
 electron:
-  author: qii404.me
+  author: Another
   private: true
   main: electron-main.js
+  dependencies:
+    electron-updater: 4.6.5
+    font-list: "^1.4.5"
+  repository: github:qishibo/AnotherRedisDesktopManager
 ---

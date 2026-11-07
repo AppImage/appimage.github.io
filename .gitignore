@@ -1,6 +1,5 @@
 # Working copies
 *.AppImage
-appdir-lint.sh
 excludelist
 firejail.tar.gz
   

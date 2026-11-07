@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- What Flathub, GNOME Software and KDE Discover show for Ferry. Add a
+     <release> for each version that goes out, newest first. -->
+<component type="desktop-application">
+  <id>com.ferrynotes.Ferry</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://ferrynotes.com/terms</project_license>
+
+  <name>Ferry</name>
+  <summary>Sticky notes on your desktop, in sync with your phone</summary>
+  <developer id="com.ferrynotes">
+    <name>Nollie</name>
+  </developer>
+
+  <description>
+    <p>
+      Ferry puts sticky notes on your desktop and in widgets on your phone's home screen, and
+      carries every note between them. Type it on your desktop, and it's on your phone.
+    </p>
+    <ul>
+      <li>Each note floats in its own window, right where you left it, and can stay on top of
+        everything else</li>
+      <li>Notes and checklists, in colours, with a list of every note in the tray</li>
+      <li>Version history brings back text you replaced</li>
+      <li>Export every note to Markdown and JSON at any time, and import them again</li>
+      <li>Ferry for Windows, Mac, iPhone and Android carries the same notes</li>
+    </ul>
+    <p>
+      An account only if you want one. Signed out, your notes stay on this computer, free and
+      without limits. Sign in with Google, Apple, Microsoft or GitHub when you want them on your
+      other devices too: syncing them is Ferry Pro, a subscription or a one-off purchase, with a
+      free trial of 30 days.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">Ferry.desktop</launchable>
+  <provides>
+    <binary>ferry-desktop</binary>
+  </provides>
+
+  <url type="homepage">https://ferrynotes.com</url>
+  <url type="help">https://ferrynotes.com/support</url>
+  <url type="contact">https://ferrynotes.com/support</url>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#f6f5f1</color>
+    <color type="primary" scheme_preference="dark">#0b1426</color>
+  </branding>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Notes on the desktop, beside the list of every note</caption>
+      <image>https://ferrynotes.com/screenshots/linux-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Checklists and notes, in the dark too</caption>
+      <image>https://ferrynotes.com/screenshots/linux-dark.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="money-purchasing">intense</content_attribute>
+  </content_rating>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+
+  <keywords>
+    <keyword>sticky notes</keyword>
+    <keyword>stickies</keyword>
+    <keyword>notes</keyword>
+    <keyword>checklist</keyword>
+    <keyword>sync</keyword>
+  </keywords>
+
+  <releases>
+    <release version="1.0.6" date="2026-11-06">
+      <description>
+        <p>The AppImage opens your default browser to sign in or to buy Pro, on KDE Plasma 6 and elsewhere.</p>
+      </description>
+    </release>
+    <release version="1.0.5" date="2026-11-05">
+      <description>
+        <p>A maintenance release: signing in is reorganised for the Mac and works here as before.</p>
+      </description>
+    </release>
+    <release version="1.0.4" date="2026-11-03">
+      <description>
+        <p>The AppImage starts in sandboxes that open it themselves, such as firejail.</p>
+      </description>
+    </release>
+    <release version="1.0.3" date="2026-11-03">
+      <description>
+        <p>Ferry comes from the Snap Store too, where it starts at login and hands a second
+          launch to the copy already running, as everywhere else.</p>
+      </description>
+    </release>
+    <release version="1.0.2" date="2026-11-03">
+      <description>
+        <p>The AppImage no longer opens a blank window on newer distributions, such as Ubuntu
+          26.04.</p>
+      </description>
+    </release>
+    <release version="1.0.1" date="2026-11-02">
+      <description>
+        <p>The first release for Linux.</p>
+      </description>
+    </release>
+  </releases>
+</component>

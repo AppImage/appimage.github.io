@@ -1,0 +1,12 @@
+{
+  "name": "@doriface/desktop",
+  "version": "0.1.5",
+  "private": true,
+  "description": "Doriterm desktop shell",
+  "homepage": "https://github.com/sisyphuslabs/doriterm",
+  "license": "AGPL-3.0-only",
+  "author": "Sisyphus Labs",
+  "type": "module",
+  "main": "dist/app/main.js",
+  "productName": "Doriterm"
+}
