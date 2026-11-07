@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.skwir.skwir</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0</project_license>
+  <name>skwir</name>
+  <developer id="org.skwir">
+    <name>The skwir authors</name>
+  </developer>
+  <summary>Browse, find and organize your files</summary>
+  <description>
+    <p>
+      skwir is an augmented file manager, built to be driven by humans and
+      agents alike.
+    </p>
+    <ul>
+      <li>Lists, grids and columns that stay responsive on very large folders</li>
+      <li>Previews of documents, pictures, music, films, archives and maps</li>
+      <li>Tags kept on the files themselves, where other applications find them</li>
+      <li>Every change undoable, and planned for review before it is applied</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">org.skwir.skwir.desktop</launchable>
+  <url type="homepage">https://skwir.org</url>
+  <url type="bugtracker">https://skwir.org/issues</url>
+  <url type="vcs-browser">https://skwir.org/source</url>
+  <provides>
+    <binary>skwir</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.3.1" date="2026-11-05"/>
+    <release version="0.3.0" date="2026-11-03"/>
+    <release version="0.2.0" date="2026-10-20"/>
+    <release version="0.1.0" date="2026-10-13"/>
+  </releases>
+</component>

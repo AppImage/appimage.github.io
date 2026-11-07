@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <!-- skwir's icon: the squirrel reversed on an ink tile. About draws it,
+       and every package installs it under the application's id. -->
+  <rect x="2" y="2" width="76" height="76" rx="18" fill="#203042"/>
+  <g transform="translate(8 8) scale(.8)">
+    <path d="M40 70C22 71 8 60 8 44 8 32 15 26 21 20 26 15 25 9 19 7 28 3 39 9 38 20 37 29 29 34 29 44 29 54 35 61 43 63Z" fill="#fbfaf7"/>
+    <path d="M42 72C32 72 27 64 28 54 29 45 35 40 40 36 38 30 38 22 44 17 50 12 60 12 65 17 68 20 72 25 73 28 74 31 70 35 64 37 62 44 63 52 60 60 57 67 51 72 42 72Z" fill="#fbfaf7" stroke="#203042" stroke-width="3"/>
+    <path d="M44 20C44 13 46 8 49 5 52 9 55 13 56 16Z" fill="#fbfaf7"/>
+    <circle cx="58" cy="25" r="3" fill="#203042"/>
+    <ellipse cx="66" cy="50" rx="5" ry="6" fill="#dd8851" stroke="#203042" stroke-width="2.5"/>
+  </g>
+</svg>
