@@ -1,0 +1,46 @@
+---
+layout: app
+
+permalink: /PaperDuet/
+description: "Side-by-side paper reader with local-model Chinese translation"
+
+icons:
+  - PaperDuet/icons/128x128/paperduet.png
+
+screenshots:
+  - PaperDuet/screenshot.png
+
+authors:
+  - name: "KalenHwei"
+    url: "https://github.com/KalenHwei"
+
+links:
+  - type: GitHub
+    url: KalenHwei/PaperDuet
+  - type: Download
+    url: https://github.com/KalenHwei/PaperDuet/releases
+
+desktop:
+  Desktop Entry:
+    Categories: Office
+    Comment: Side-by-side paper reader with local-model Chinese translation
+    Exec: paperduet
+    StartupWMClass: paperduet
+    Icon: paperduet
+    Name: PaperDuet
+    Terminal: false
+    Type: Application
+    MimeType: application/pdf
+    X-AppImage-Version: 0.7.2
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.35
+---
