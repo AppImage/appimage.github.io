@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<title>Lorenz</title>
+<defs>
+<clipPath id="t"><rect x="8" y="8" width="240" height="240" rx="58"/></clipPath>
+<filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="26"/></filter>
+<filter id="lift" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#2a1e5c" flood-opacity=".22"/></filter>
+<linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="film" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#78e0ff"/><stop offset=".3" stop-color="#aa96ff"/><stop offset=".55" stop-color="#ff96d6"/><stop offset=".8" stop-color="#ffd68c"/><stop offset="1" stop-color="#78e0ff"/></linearGradient>
+</defs>
+<g clip-path="url(#t)">
+<rect x="8" y="8" width="240" height="240" fill="#f1eefb"/>
+<g filter="url(#soft)"><circle cx="40" cy="40" r="90" fill="#ffb48f"/><circle cx="235" cy="110" r="95" fill="#8fcaff"/><circle cx="120" cy="250" r="95" fill="#d6b0ff"/></g>
+</g>
+<rect x="9" y="9" width="238" height="238" rx="57" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="2"/>
+<g filter="url(#lift)"><circle cx="128" cy="128" r="94" fill="#fff" fill-opacity=".38"/></g>
+<circle cx="128" cy="128" r="94" fill="url(#sheen)"/>
+<circle cx="128" cy="128" r="93" fill="none" stroke="#fff" stroke-width="2"/>
+<circle cx="128" cy="128" r="95.5" fill="none" stroke="url(#film)" stroke-width="3"/>
+<rect x="113.0" y="53.0" width="30" height="26" rx="8" fill="#fff" fill-opacity=".45" stroke="#fff" stroke-opacity=".9" stroke-width="1.4"/><rect x="166.7" y="84.0" width="30" height="26" rx="8" fill="#fff" fill-opacity=".45" stroke="#fff" stroke-opacity=".9" stroke-width="1.4"/><rect x="166.7" y="146.0" width="30" height="26" rx="8" fill="#fff" fill-opacity=".45" stroke="#fff" stroke-opacity=".9" stroke-width="1.4"/><rect x="113.0" y="177.0" width="30" height="26" rx="8" fill="#fff" fill-opacity=".45" stroke="#fff" stroke-opacity=".9" stroke-width="1.4"/><rect x="59.3" y="146.0" width="30" height="26" rx="8" fill="#fff" fill-opacity=".45" stroke="#fff" stroke-opacity=".9" stroke-width="1.4"/><rect x="53.3" y="79.0" width="42" height="36" rx="11" fill="#e6f6fd" stroke="#40baf0" stroke-opacity=".9" stroke-width="2"/>
+<g filter="url(#lift)"><circle cx="128" cy="128" r="27" fill="#fff" fill-opacity=".92"/></g>
+<circle cx="128" cy="128" r="9" fill="#40baf0"/>
+</svg>
