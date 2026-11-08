@@ -1,0 +1,36 @@
+{
+  "name": "agenda-heritage-studio",
+  "version": "2.7.0",
+  "private": true,
+  "homepage": "https://github.com/jonidimo/agenda-heritage-generator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonidimo/agenda-heritage-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonidimo/agenda-heritage-generator/issues"
+  },
+  "description": "Design, preview and print handmade planners in signatures, for any year, language and country.",
+  "type": "module",
+  "main": "electron/main.mjs",
+  "desktopName": "agenda-heritage-studio.desktop",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "dependencies": {
+    "@cantoo/pdf-lib": "^2.11.1",
+    "astronomy-engine": "^2.1.19",
+    "clsx": "^2.1.1",
+    "fontkit": "^2.0.4",
+    "idb-keyval": "^6.3.0",
+    "immer": "^11.2.9",
+    "lucide-react": "^1.67.0",
+    "pdfjs-dist": "^6.5.438",
+    "pdfkit": "^0.20.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zod": "^4.6.7",
+    "zustand": "^5.0.16"
+  },
+  "author": "Jonatan <jonidimo@gmail.com>"
+}
