@@ -1,0 +1,52 @@
+{
+  "name": "sabaki",
+  "productName": "Sabaki",
+  "version": "0.60.0",
+  "description": "An elegant Go/Baduk/Weiqi board and SGF editor for a more civilized age.",
+  "author": "Yichuan Shen <shen.yichuan@gmail.com>",
+  "homepage": "http://sabaki.yichuanshen.de",
+  "license": "MIT",
+  "main": "./src/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SabakiHQ/Sabaki"
+  },
+  "bugs": {
+    "url": "https://github.com/SabakiHQ/Sabaki/issues"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "proseWrap": "always",
+    "trailingComma": "all",
+    "arrowParens": "always"
+  },
+  "dependencies": {
+    "@mariotacke/color-thief": "^3.0.1",
+    "@primer/octicons": "^19.29.1",
+    "@sabaki/boardmatcher": "^1.2.0",
+    "@sabaki/deadstones": "^2.1.2",
+    "@sabaki/go-board": "^1.4.1",
+    "@sabaki/gtp": "^3.0.0",
+    "@sabaki/i18n": "0.51.1-1",
+    "@sabaki/immutable-gametree": "^1.9.4",
+    "@sabaki/influence": "^1.2.2",
+    "@sabaki/sgf": "^3.4.7",
+    "@sabaki/shudan": "^1.7.1",
+    "argv-split": "^3.2.1",
+    "classnames": "^2.2.6",
+    "dolm": "^0.7.3-beta",
+    "fix-path": "<6.0.0",
+    "iconv-lite": "^0.7.2",
+    "jschardet": "^3.0.0",
+    "natsort": "^2.0.2",
+    "pikaday": "^1.8.0",
+    "preact": "^10.4.0",
+    "react-markdown": "^10.1.0",
+    "remark-breaks": "^3.0.2",
+    "rimraf": "^6.1.2",
+    "uuid": "^14.0.1",
+    "winston": "^3.2.1"
+  }
+}
