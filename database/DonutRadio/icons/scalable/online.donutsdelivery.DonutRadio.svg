@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- Teal background like Win95 desktop -->
+  <rect x="0" y="0" width="48" height="48" fill="#008080"/>
+
+  <!-- Main unit beveled -->
+  <rect x="4" y="8" width="40" height="32" fill="#C0C0C0"/>
+  <rect x="4" y="8" width="40" height="2" fill="#FFFFFF"/>
+  <rect x="4" y="8" width="2" height="32" fill="#FFFFFF"/>
+  <rect x="4" y="38" width="40" height="2" fill="#808080"/>
+  <rect x="42" y="8" width="2" height="32" fill="#808080"/>
+
+  <!-- Display area (inset) -->
+  <rect x="7" y="11" width="34" height="14" fill="#808080"/>
+  <rect x="8" y="12" width="32" height="12" fill="#000000"/>
+
+  <!-- Rainbow frequency display -->
+  <rect x="10" y="14" width="4" height="8" fill="#FF0000"/>
+  <rect x="15" y="14" width="4" height="8" fill="#FF8000"/>
+  <rect x="20" y="14" width="4" height="8" fill="#FFFF00"/>
+  <rect x="25" y="14" width="4" height="8" fill="#00FF00"/>
+  <rect x="30" y="14" width="4" height="8" fill="#00FFFF"/>
+  <rect x="35" y="14" width="4" height="8" fill="#8000FF"/>
+
+  <!-- Tuning indicator line -->
+  <rect x="22" y="13" width="2" height="10" fill="#FFFFFF"/>
+
+  <!-- Control buttons row -->
+  <rect x="8" y="28" width="8" height="8" fill="#C0C0C0"/>
+  <rect x="8" y="28" width="8" height="1" fill="#FFFFFF"/>
+  <rect x="8" y="28" width="1" height="8" fill="#FFFFFF"/>
+  <rect x="8" y="35" width="8" height="1" fill="#808080"/>
+  <rect x="15" y="28" width="1" height="8" fill="#808080"/>
+  <polygon points="10,30 10,34 14,32" fill="#000000"/>
+
+  <rect x="18" y="28" width="8" height="8" fill="#C0C0C0"/>
+  <rect x="18" y="28" width="8" height="1" fill="#FFFFFF"/>
+  <rect x="18" y="28" width="1" height="8" fill="#FFFFFF"/>
+  <rect x="18" y="35" width="8" height="1" fill="#808080"/>
+  <rect x="25" y="28" width="1" height="8" fill="#808080"/>
+  <rect x="20" y="30" width="4" height="4" fill="#000000"/>
+
+  <rect x="28" y="28" width="8" height="8" fill="#C0C0C0"/>
+  <rect x="28" y="28" width="8" height="1" fill="#FFFFFF"/>
+  <rect x="28" y="28" width="1" height="8" fill="#FFFFFF"/>
+  <rect x="28" y="35" width="8" height="1" fill="#808080"/>
+  <rect x="35" y="28" width="1" height="8" fill="#808080"/>
+  <rect x="30" y="30" width="2" height="4" fill="#000000"/>
+  <rect x="33" y="30" width="2" height="4" fill="#000000"/>
+</svg>
