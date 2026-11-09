@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>pt.ptrtech.UVtools</id>
+  <name>UVtools</name>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+  <content_rating type="oars-1.0" />
+  <summary>MSLA/DLP, file analysis, calibration, repair, conversion and manipulation</summary>
+  <description>
+    <p>MSLA/DLP, file analysis, calibration, repair, conversion and manipulation</p>
+  </description>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+  <recommends>
+    <display_length compare="ge">1024</display_length>
+  </recommends>
+  <launchable type="desktop-id">pt.ptrtech.UVtools.desktop</launchable>
+  <url type="homepage">https://github.com/sn4k3/UVtools</url>
+  <developer id="pt.ptrtech">
+    <name>Tiago Conceição, sn4k3</name>
+  </developer>
+  <provides>
+    <binary>UVtools</binary>
+    <mediatype>application/x-sl1</mediatype>
+    <mediatype>application/x-sl1s</mediatype>
+    <mediatype>application/x-photon</mediatype>
+    <mediatype>application/x-cbddlp</mediatype>
+    <mediatype>application/x-ctb</mediatype>
+    <mediatype>application/x-photons</mediatype>
+    <mediatype>application/x-phz</mediatype>
+    <mediatype>application/x-pws</mediatype>
+    <mediatype>application/x-pw0</mediatype>
+    <mediatype>application/x-pwx</mediatype>
+    <mediatype>application/x-dlp</mediatype>
+    <mediatype>application/x-dl2p</mediatype>
+    <mediatype>application/x-pwmx</mediatype>
+    <mediatype>application/x-pmx2</mediatype>
+    <mediatype>application/x-pwmb</mediatype>
+    <mediatype>application/x-px6s</mediatype>
+    <mediatype>application/x-pwmo</mediatype>
+    <mediatype>application/x-pm3n</mediatype>
+    <mediatype>application/x-pm4n</mediatype>
+    <mediatype>application/x-pwms</mediatype>
+    <mediatype>application/x-pwma</mediatype>
+    <mediatype>application/x-pmsq</mediatype>
+    <mediatype>application/x-pm3</mediatype>
+    <mediatype>application/x-pm3m</mediatype>
+    <mediatype>application/x-pm3r</mediatype>
+    <mediatype>application/x-pm5</mediatype>
+    <mediatype>application/x-pm5s</mediatype>
+    <mediatype>application/x-m5sp</mediatype>
+    <mediatype>application/x-pwc</mediatype>
+    <mediatype>application/x-pm4u</mediatype>
+    <mediatype>application/x-pm7</mediatype>
+    <mediatype>application/x-pm7m</mediatype>
+    <mediatype>application/x-pwsz</mediatype>
+    <mediatype>application/x-pp1</mediatype>
+    <mediatype>application/x-pp1m</mediatype>
+    <mediatype>application/x-cws</mediatype>
+    <mediatype>application/x-n4</mediatype>
+    <mediatype>application/x-n7</mediatype>
+    <mediatype>application/x-lgs</mediatype>
+    <mediatype>application/x-lgs30</mediatype>
+    <mediatype>application/x-lgs120</mediatype>
+    <mediatype>application/x-lgs4k</mediatype>
+    <mediatype>application/x-vdt</mediatype>
+    <mediatype>application/x-cxdlp</mediatype>
+    <mediatype>application/x-cxdlpv4</mediatype>
+    <mediatype>application/x-nanodlp</mediatype>
+    <mediatype>application/x-fdg</mediatype>
+    <mediatype>application/x-goo</mediatype>
+    <mediatype>application/x-prz</mediatype>
+    <mediatype>application/x-zcode</mediatype>
+    <mediatype>application/x-jxs</mediatype>
+    <mediatype>application/x-zcodex</mediatype>
+    <mediatype>application/x-mdlp</mediatype>
+    <mediatype>application/x-gr1</mediatype>
+    <mediatype>application/x-svgx</mediatype>
+    <mediatype>application/x-qdt</mediatype>
+    <mediatype>application/x-osla</mediatype>
+    <mediatype>application/x-osf</mediatype>
+    <mediatype>application/x-uvj</mediatype>
+  </provides>
+</component>

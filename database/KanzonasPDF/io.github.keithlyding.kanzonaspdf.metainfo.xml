@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata for the AppImage (software centers, AppImageHub). make_appimage.py
+     fills in 1.9 and 2026-11-06 and checks it with appstreamcli: the build machine's
+     (Ubuntu 22.04, AppStream 0.15) fails on warnings too, such as a url type it doesn't
+     know (vcs-browser, contribute). -->
+<component type="desktop-application">
+  <id>io.github.keithlyding.kanzonaspdf</id>
+  <name>KanzonasPDF</name>
+  <summary>View, edit, annotate and sign PDF files</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-only</project_license>
+  <developer id="io.github.keithlyding">
+    <name>KanzonasPDF</name>
+  </developer>
+  <description>
+    <p>
+      A free, open-source PDF viewer and editor: comments and markups, editing the
+      PDF's own text and pictures, filling in and signing forms, digital signatures,
+      OCR, redaction, page tools, compare, and export to Word, Excel and PowerPoint.
+      For drawings and plans it also measures lengths, areas and volumes to scale.
+    </p>
+    <p>No account and no telemetry.</p>
+  </description>
+  <launchable type="desktop-id">kanzonaspdf.desktop</launchable>
+  <icon type="stock">kanzonaspdf</icon>
+  <url type="homepage">https://github.com/keithlyding/KanzonasPDF</url>
+  <url type="bugtracker">https://github.com/keithlyding/KanzonasPDF/issues</url>
+  <categories>
+    <category>Office</category>
+    <category>Viewer</category>
+    <category>Graphics</category>
+  </categories>
+  <provides>
+    <binary>KanzonasPDF</binary>
+    <mediatype>application/pdf</mediatype>
+  </provides>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Reviewing a PDF: highlights, a cloud and callout, a note and a stamp</caption>
+      <image>https://raw.githubusercontent.com/keithlyding/KanzonasPDF/main/docs/screenshot-markup.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.9" date="2026-11-06"/>
+  </releases>
+</component>

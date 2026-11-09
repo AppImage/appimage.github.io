@@ -1,0 +1,16 @@
+{
+  "name": "open-slap-desktop",
+  "version": "2.2.10",
+  "description": "Desktop-local agentic engine with real-time chat, multiple LLM providers, and controlled automation",
+  "author": "Paulo Martins <pemartins1970@gmail.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pemartins1970/open-slap.git"
+  },
+  "main": "electron/main.js",
+  "homepage": "./",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}

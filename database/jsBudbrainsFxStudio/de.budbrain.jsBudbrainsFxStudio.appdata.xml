@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainsFxStudio</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsBudbrainsFxStudio</name>
+  <summary>Live effects for everything your computer plays — reverb, echo, pitch and more</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <!-- Derselbe Text wie im Snap Store (snap/snapcraft.yaml, dist/snap.txt). -->
+  <description>
+    <p>
+      Music, videos, games, calls in the browser — everything your computer plays runs through a small mixing desk of live effects. Turn up the reverb of a concert hall, add an echo from the mountains, raise or lower the pitch, or sweep a filter, a chorus, a flanger or a phaser across it.
+    </p>
+    <p>
+      Every effect has its own channel with two knobs and a mix fader that blends it into the sound. A master fader sets how much of all effects goes into the main mix. Above the desk, a live waveform and level meters show what you are hearing right now.
+    </p>
+    <p>
+      Pick one of the ready-made settings or build your own and save it under a name. One click switches the effects off, and the sound goes straight to your speakers again.
+    </p>
+    <ul>
+      <li>Eight effects: pitch, filter, drive, chorus, flanger, phaser, echo, reverb</li>
+      <li>Every effect with its own knobs and mix fader</li>
+      <li>Master fader for the share of effects in the main mix, plus output and stereo width</li>
+      <li>Live waveform and level meters</li>
+      <li>Ready-made settings and your own, saved under a name</li>
+      <li>Faders glide smoothly into place when you switch</li>
+      <li>Built-in limiter protects your ears and speakers</li>
+      <li>Mute button for when the phone rings</li>
+      <li>Choose which speakers or headphones to use</li>
+      <li>Small window that stays on top</li>
+      <li>Starts when you log in, if you like</li>
+      <li>Light and dark design</li>
+      <li>Available in 44 languages</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">jsbudbrainsfxstudio.desktop</launchable>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Mixer</category>
+  </categories>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <!-- Die Aufnahmen des Snap-Store-Eintrags (dist/screenshots/), auf der
+       Website unter images/linux/ mit dem Praefix jsbudbrainsfxstudio_
+       (website-software/generate-site.sh). Ohne <screenshots> nimmt
+       AppImageHub selbst eines auf, in einem leeren Testcontainer. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Eight effect channels and the master, live waveform on top</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsfxstudio_01-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The same in the light design</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsfxstudio_02-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Desk folded away — just the waveform and the levels</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsfxstudio_03-folded.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The small window that stays on top</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsfxstudio_04-compact.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Ready-made settings and your own</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsfxstudio_05-presets.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-10-10">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

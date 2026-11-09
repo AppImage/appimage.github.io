@@ -1,0 +1,20 @@
+<component type="desktop-application">
+    <id>org.antara.gaming.sfml.flappybird.desktop</id>
+    <metadata_license>MIT</metadata_license>
+    <project_license>MIT</project_license>
+    <name>flappy-bird</name>
+    <summary>flappy-bird tutorial antara gaming sdk</summary>
+    <description>
+        <p>Written in c++17</p>
+    </description>
+    <launchable type="desktop-id">org.antara.gaming.sfml.flappybird.desktop</launchable>
+    <url type="homepage">https://github.com/KomodoPlatform/antara-gaming-sdk</url>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://www.freedesktop.org/software/appstream/docs/images/scr-examples/geany-good.png</image>
+        </screenshot>
+    </screenshots>
+    <provides>
+        <id>org.antara.gaming.sfml.flappybird.desktop</id>
+    </provides>
+</component>

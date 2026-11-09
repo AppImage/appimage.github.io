@@ -3,7 +3,7 @@ layout: app
 
 permalink: /mpc-qt/
 description: Qt media player based on libmpv
-license: GPL-2.0+
+license: GPL-2.0-or-later
 
 icons:
   - mpc-qt/icons/scalable/mpc-qt.svg
@@ -33,6 +33,7 @@ desktop:
     TryExec: mpc-qt
     Icon: mpc-qt
     StartupNotify: true
+    StartupWMClass: io.github.mpc_qt.mpc-qt
     Terminal: false
     Categories: Qt
     MimeType: application/ogg
@@ -54,4 +55,9 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.35
+    X-AppImage-Payload-License: GPL-2.0
 ---

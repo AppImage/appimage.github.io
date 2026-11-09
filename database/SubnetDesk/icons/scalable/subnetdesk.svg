@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1024 1024"
+  role="img"
+  aria-labelledby="title description"
+>
+  <title id="title">SubnetDesk application icon</title>
+  <desc id="description">
+    Two desktop endpoints connected directly across a local subnet.
+  </desc>
+
+  <defs>
+    <linearGradient
+      id="connection-gradient"
+      x1="512"
+      y1="300"
+      x2="512"
+      y2="724"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#21C7A8" />
+      <stop offset="1" stop-color="#3B82F6" />
+    </linearGradient>
+  </defs>
+
+  <rect x="40" y="40" width="944" height="944" rx="216" fill="#0B1F33" />
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#21C7A8" stroke-width="44">
+      <rect x="176" y="188" width="336" height="224" rx="44" />
+      <path d="M344 412v60M282 472h124" />
+    </g>
+
+    <path
+      d="M512 300h136c56 0 100 44 100 100v84c0 40-32 72-72 72H348c-40 0-72 32-72 72v24c0 40 32 72 72 72h164"
+      stroke="url(#connection-gradient)"
+      stroke-width="44"
+    />
+
+    <g stroke="#3B82F6" stroke-width="44">
+      <rect x="512" y="612" width="336" height="224" rx="44" />
+      <path d="M680 836v60M618 896h124" />
+    </g>
+  </g>
+
+  <g fill="#0B1F33" stroke="#FFFFFF" stroke-width="16">
+    <circle cx="748" cy="484" r="24" />
+    <circle cx="276" cy="652" r="24" />
+  </g>
+</svg>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.rigroom.RigRoom</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>RigRoom</name>
+  <summary>High-performance guitar &amp; bass multieffects host and plugin router</summary>
+
+  <description>
+    <p>
+      RigRoom is an open-source real-time audio plugin host and signal router built for guitarists and bassists.
+      It supports LV2, CLAP, and VST3 plugins with low-latency JACK/PipeWire audio routing, flexible parallel/serial node canvases, and AI neural amp modeling.
+    </p>
+  </description>
+
+  <url type="homepage">https://github.com/toiminimi/RigRoom</url>
+
+  <developer id="io.github.toiminimi">
+    <name>RigRoom Open Source Contributors</name>
+  </developer>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="0.13.0" date="2026-10-01" />
+    <release version="0.12.0" date="2026-09-21" />
+    <release version="0.11.1" date="2026-09-20" />
+    <release version="0.11.0" date="2026-09-19" />
+    <release version="0.10.0" date="2026-09-12" />
+    <release version="0.9.1" date="2026-07-28" />
+    <release version="0.9.0" date="2026-07-27" />
+  </releases>
+
+  <launchable type="desktop-id">org.rigroom.RigRoom.desktop</launchable>
+  <provides>
+    <binary>RigRoom</binary>
+  </provides>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Mixer</category>
+  </categories>
+</component>

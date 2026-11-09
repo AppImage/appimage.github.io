@@ -1,0 +1,21 @@
+{
+  "name": "shareclip",
+  "private": true,
+  "version": "4.5.7",
+  "description": "ShareCLIP PC Client",
+  "author": "ShareCLIP Team <support@shareclip.com>",
+  "homepage": "https://novamindlab.github.io/AIShare-Grabber/",
+  "type": "module",
+  "main": "main.cjs",
+  "dependencies": {
+    "@vueuse/core": "^14.3.0",
+    "electron-updater": "^6.8.9",
+    "exif-reader": "^2.0.3",
+    "mixpanel-browser": "^2.82.0",
+    "onnxruntime-node": "^1.18.0",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.33.4",
+    "sqlite3": "^6.0.1",
+    "vue": "^3.5.38"
+  }
+}

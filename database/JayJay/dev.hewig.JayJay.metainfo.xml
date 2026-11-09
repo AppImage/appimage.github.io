@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>dev.hewig.JayJay</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>BUSL-1.1</project_license>
+  <name>JayJay</name>
+  <summary>Native desktop client for Jujutsu version control</summary>
+  <description>
+    <p>
+      JayJay is a desktop client for Jujutsu version control. The GPUI shell is
+      a cross-platform frontend for browsing changes, reviewing diffs,
+      managing bookmarks and workspaces, and running focused write actions.
+    </p>
+  </description>
+  <launchable type="desktop-id">dev.hewig.JayJay.desktop</launchable>
+  <url type="homepage">https://jayjay.hewig.dev/</url>
+  <url type="bugtracker">https://github.com/hewigovens/jayjay/issues</url>
+  <url type="vcs-browser">https://github.com/hewigovens/jayjay</url>
+  <categories>
+    <category>Development</category>
+    <category>RevisionControl</category>
+  </categories>
+  <releases>
+    <release version="0.3.22" type="stable" date="2026-10-28">
+      <description>
+        <p>GPUI AppImage release.</p>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1" />
+</component>

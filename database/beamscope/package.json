@@ -1,0 +1,14 @@
+{
+  "name": "antenna-array-analysis",
+  "version": "3.0.0",
+  "description": "A GUI tool for antenna array analysis",
+  "main": "dist/main/main.js",
+  "author": "Zhengyu Peng",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=26"
+  },
+  "dependencies": {
+    "plotly.js-dist-min": "^3.7.0"
+  }
+}

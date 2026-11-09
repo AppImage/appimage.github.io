@@ -1,0 +1,11 @@
+{
+  "name": "agentbox-desktop",
+  "private": true,
+  "version": "0.10.0",
+  "description": "AgentBox desktop app: a client of the AgentBox daemon",
+  "author": "AgentBox",
+  "license": "MIT",
+  "repository": "https://github.com/leciric/agentbox.git",
+  "desktopName": "agentbox-desktop.desktop",
+  "main": "out/main/index.cjs"
+}

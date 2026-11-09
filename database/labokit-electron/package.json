@@ -1,0 +1,16 @@
+{
+  "name": "labokit",
+  "description": "A sci-fi themed image processing application with AI upscaling, background removal, and format conversion",
+  "author": "LABOKit Team",
+  "private": true,
+  "version": "1.3.0",
+  "type": "module",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "image-size": "^2.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^3.4.0"
+  },
+  "main": "dist-electron/main.js"
+}

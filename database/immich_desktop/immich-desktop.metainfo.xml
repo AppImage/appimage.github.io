@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 Immich Desktop Community -->
+<component type="desktop-application">
+  <id>io.github.hdmain.immich-desktop</id>
+  <name>immich desktop</name>
+  <summary>Unofficial Immich desktop client</summary>
+  <developer id="io.github.hdmain">
+    <name>Immich Desktop Community</name>
+  </developer>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>
+      Unofficial fan-made Qt desktop client for Immich, a self-hosted photo and
+      video management platform. Browse your library, explore people and places,
+      upload and download media, and stream videos from your own server.
+    </p>
+    <p>
+      Features include an Immich-style timeline, explore views, search, upload
+      queue with offline retry, local caching, themes, system tray, and
+      single-instance desktop integration.
+    </p>
+    <p>
+      This project is not affiliated with, maintained by, or endorsed by the
+      official Immich project.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/hdmain/immich-desktop</url>
+  <url type="bugtracker">https://github.com/hdmain/immich-desktop/issues</url>
+  <url type="vcs-browser">https://github.com/hdmain/immich-desktop</url>
+  <launchable type="desktop-id">io.github.hdmain.immich-desktop.desktop</launchable>
+  <provides>
+    <binary>immich</binary>
+    <id>immich-desktop.desktop</id>
+    <id>com.github.hdmain.immich-desktop</id>
+  </provides>
+  <replaces>
+    <id>com.github.hdmain.immich-desktop</id>
+  </replaces>
+  <categories>
+    <category>Graphics</category>
+    <category>Photography</category>
+  </categories>
+  <keywords>
+    <keyword>immich</keyword>
+    <keyword>photos</keyword>
+    <keyword>videos</keyword>
+    <keyword>gallery</keyword>
+    <keyword>self-hosted</keyword>
+  </keywords>
+  <branding>
+    <color type="primary" scheme_preference="light">#4250af</color>
+    <color type="primary" scheme_preference="dark">#a685e2</color>
+  </branding>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Library timeline with photos and videos</caption>
+      <image>https://raw.githubusercontent.com/hdmain/immich-desktop/v0.1.7/docs/screenshots/immich-desktop-library.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="0.2.1" date="2026-10-13">
+      <description>
+        <p>Advanced Library search with expandable options.</p>
+        <ul>
+          <li>Show search settings after activating the search field</li>
+          <li>Filter by scope, people, date, city, and media type</li>
+          <li>Search visual context, file name, description, full path, or OCR text</li>
+          <li>Support filter-only searches, filter reset, and outdated response protection</li>
+          <li>Choose Lucide, Tabler, or Bootstrap Icons in Appearance settings</li>
+          <li>Use a minimalist interface with icon buttons and a compact sidebar</li>
+        </ul>
+      </description>
+      <url>https://github.com/hdmain/immich-desktop/releases/tag/v0.2.1</url>
+    </release>
+    <release version="0.1.7" date="2026-07-23">
+      <description>
+        <p>Stability, update, and packaging improvements.</p>
+        <ul>
+          <li>Fixed video stream proxy Content-Length handling and Snap multimedia setup</li>
+          <li>Fixed Windows UpdateManager link error</li>
+          <li>Show local cache size in Appearance settings</li>
+          <li>Snap-aware update messaging</li>
+          <li>Flatpak packaging for Flathub (App ID io.github.hdmain.immich-desktop)</li>
+        </ul>
+      </description>
+      <url>https://github.com/hdmain/immich-desktop/releases/tag/v0.1.7</url>
+    </release>
+  </releases>
+</component>

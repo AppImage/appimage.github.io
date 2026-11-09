@@ -1,0 +1,17 @@
+{
+  "name": "sms-launcher",
+  "version": "0.1.52",
+  "private": true,
+  "author": "sms-port contributors",
+  "license": "MIT",
+  "desktopName": "sms-launcher.desktop",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "description": "Desktop setup, build, update, and play launcher for sms-pc-port",
+  "main": "src/main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "tar": "^7.5.22"
+  }
+}

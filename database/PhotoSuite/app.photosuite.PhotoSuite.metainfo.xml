@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata for the AppImage, embedded at
+  /usr/share/metainfo by the `appimage.files` entry in tauri.linux.conf.json.
+  AppImageHub reads this file to catalog the build.
+
+  Kept in step with packaging/flatpak/app.photosuite.PhotoSuite.metainfo.xml,
+  which carries the same metadata for the Flatpak. Two deliberate differences:
+  <launchable>, because the Flatpak renames the desktop file to its application
+  ID while the AppImage keeps the PhotoSuite.desktop that Tauri generates, and
+  the developer element, which is spelled the pre-1.0 way here.
+-->
+<component type="desktop-application">
+  <id>app.photosuite.PhotoSuite</id>
+  <launchable type="desktop-id">PhotoSuite.desktop</launchable>
+
+  <name>PhotoSuite</name>
+  <summary>Advanced image editor</summary>
+
+  <!-- The legacy spelling, not the <developer id> element the Flatpak copy
+       uses: the AppImage is validated by the appstreamcli on the Ubuntu 22.04
+       baseline, which is AppStream 0.15 and predates it. -->
+  <developer_name>eolix</developer_name>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <description>
+    <p>
+      PhotoSuite is a layered image editor. It reads and writes Photoshop
+      documents (PSD) alongside the common bitmap and vector formats.
+    </p>
+  </description>
+
+  <categories>
+    <category>Graphics</category>
+    <category>Photography</category>
+  </categories>
+
+  <keywords>
+    <keyword>image</keyword>
+    <keyword>editor</keyword>
+    <keyword>photo</keyword>
+    <keyword>psd</keyword>
+    <keyword>layers</keyword>
+  </keywords>
+
+  <!-- The homepage must sit on the domain the app ID resolves to
+       (app.photosuite.PhotoSuite -> photosuite.app), which is also where the
+       Flathub verification token would go. -->
+  <url type="homepage">https://photosuite.app</url>
+  <url type="bugtracker">https://github.com/eolix/photosuite/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://photosuite.app/screenshots/001.png</image>
+      <caption>Starting a new document from a size preset</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://photosuite.app/screenshots/002.png</image>
+      <caption>Editing blending options and layer styles on a layered poster</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://photosuite.app/screenshots/003.png</image>
+      <caption>Developing a raw photo in the Camera Raw editor</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://photosuite.app/screenshots/004.png</image>
+      <caption>Applying lens correction matched to the camera and lens profile</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://photosuite.app/screenshots/005.png</image>
+      <caption>Browsing artistic effects in the Filter Gallery</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://photosuite.app/screenshots/006.png</image>
+      <caption>Reaching tonal and colour adjustments from the Image menu</caption>
+    </screenshot>
+  </screenshots>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <recommends>
+    <display_length compare="ge">960</display_length>
+  </recommends>
+
+  <content_rating type="oars-1.1"/>
+</component>

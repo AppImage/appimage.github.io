@@ -1,0 +1,140 @@
+# Marks as read ("closes") the notification threads of the account whose token
+# is used, when the last person to post on the issue or pull request is in an
+# allow-list (by default probonopd and github-actions). Posts by github-actions
+# are looked through: if github-actions posted last, the one before it counts,
+# so a message from anyone else never goes unread behind a bot comment. A post is
+# the opener's own, a comment, or the merge of a pull request. When only
+# github-actions posted, the thread is closed. Reviews and review comments are not
+# considered.
+#
+# Threads that are not about an issue or pull request are marked read too (they
+# have no posts to check). An issue or pull request whose last poster is someone
+# else - or cannot be read - is left untouched. Runs only when started by hand,
+# and changes nothing unless "dry_run" is set to false (it lists what it would do
+# first).
+#
+# Needs a classic personal access token with the "notifications" scope (add
+# "repo" as well to read participants in private repositories) in the
+# NOTIFICATIONS_TOKEN secret: the automatic GITHUB_TOKEN cannot read or change a
+# user's notifications.
+
+name: Clean up notifications
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Only list what would be marked as read; change nothing
+        type: boolean
+        default: false
+      allowed:
+        description: Comma-separated logins that may be the sole participants
+        default: probonopd,github-actions
+
+permissions: {}
+
+concurrency:
+  group: cleanup-notifications
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.NOTIFICATIONS_TOKEN }}
+      DRY_RUN: ${{ inputs.dry_run }}
+      ALLOWED: ${{ inputs.allowed }}
+    steps:
+      - name: Mark matching notifications as read
+        run: |
+          set -u
+          if [ -z "${GH_TOKEN:-}" ] ; then
+            echo "::error::Set the NOTIFICATIONS_TOKEN secret to a classic personal access token with the 'notifications' scope."
+            exit 1
+          fi
+
+          # Compare logins case-insensitively and treat "github-actions" and
+          # "github-actions[bot]" as the same account.
+          norm() { tr 'A-Z' 'a-z' | sed 's/\[bot\]$//' ; }
+          ALLOW=$(echo "$ALLOWED" | tr ',' '\n' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//' | norm | grep . | sort -u)
+          echo "Allowed last posters (github-actions is looked through):"
+          echo "$ALLOW" | sed 's/^/  /'
+          echo ""
+
+          # Who made the last post on an issue or pull request, not counting
+          # github-actions: the opener, the authors of its comments and the one
+          # who merged it (reviews and review comments are deliberately not
+          # counted). Sets LAST_BY ("-" when only github-actions posted, empty if
+          # nothing can be read). $1 is the API URL of the issue or pull request
+          # (.subject.url).
+          last_poster() {
+            local u="$1" issue posts
+            issue=$(echo "$u" | sed 's#/pulls/#/issues/#')  # PR conversation comments are issue comments
+            LAST_BY=""
+            posts=$({
+              gh api "$u" --jq '[.created_at, .user.login] | @tsv' 2>/dev/null                  # the opener
+              gh api --paginate "$issue/comments" --jq '.[] | [.created_at, .user.login] | @tsv' 2>/dev/null
+              if [[ "$u" == */pulls/* ]] ; then                                                # the merge
+                gh api "$u" --jq 'select(.merged_at != null) | [.merged_at, .merged_by.login] | @tsv' 2>/dev/null
+              fi
+            } | grep . | sort)
+            [ -n "$posts" ] || return 0
+            LAST_BY=$(echo "$posts" | cut -f 2 | norm | grep -vx github-actions | tail -n 1)
+            [ -n "$LAST_BY" ] || LAST_BY="-"
+          }
+
+          # Unread notifications of the token's account, across all repositories
+          gh api --paginate "/notifications?all=false&per_page=100" \
+            --jq '.[] | [.id, .subject.type, (.subject.url // ""), .repository.full_name, .subject.title] | @tsv' \
+            > threads.tsv || true
+          if [ ! -s threads.tsv ] ; then
+            echo "No unread notifications."
+            exit 0
+          fi
+
+          CHECKED=0 ; MATCHED=0 ; KEPT=0
+          close() {  # close THREAD_ID LABEL
+            MATCHED=$((MATCHED + 1))
+            if [ "$DRY_RUN" = "false" ] ; then
+              if gh api --silent -X PATCH "/notifications/threads/$1" 2>/dev/null ; then
+                echo "closed $2"
+              else
+                echo "::warning::Could not mark thread $1 as read ($2)"
+              fi
+            else
+              echo "would close $2"
+            fi
+          }
+          while IFS=$'\t' read -r ID TYPE URL REPO TITLE ; do
+            CHECKED=$((CHECKED + 1))
+            # Threads that are not an issue or pull request have no posts to
+            # check; close them too, rather than keeping them just for being a
+            # different subject type.
+            case "$TYPE" in
+              Issue|PullRequest) ;;
+              *) close "$ID" "[$TYPE] $REPO: $TITLE" ; continue ;;
+            esac
+            # Without a subject URL, or when the last post cannot be read, keep it
+            if [ -z "$URL" ] ; then
+              echo "keep  $REPO: $TITLE (no subject URL)" ; KEPT=$((KEPT + 1)) ; continue
+            fi
+            last_poster "$URL"
+            if [ -z "$LAST_BY" ] ; then
+              echo "keep  $REPO: $TITLE (could not read the last post)" ; KEPT=$((KEPT + 1)) ; continue
+            fi
+            if [ "$LAST_BY" = "-" ] ; then
+              close "$ID" "$REPO: $TITLE (only github-actions posted)"
+            elif echo "$ALLOW" | grep -qx "$(echo "$LAST_BY" | norm)" ; then
+              close "$ID" "$REPO: $TITLE (last post by $LAST_BY)"
+            else
+              echo "keep  $REPO: $TITLE (last post by $LAST_BY)"
+              KEPT=$((KEPT + 1))
+            fi
+          done < threads.tsv
+
+          echo ""
+          echo "Checked $CHECKED notification(s): matched $MATCHED, kept $KEPT."
+          if [ "$DRY_RUN" != "false" ] ; then
+            echo "Dry run: nothing was changed. Re-run with dry_run = false to mark the matching ones as read."
+          fi

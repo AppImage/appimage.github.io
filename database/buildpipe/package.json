@@ -1,0 +1,12 @@
+{
+  "name": "buildpipe",
+  "version": "1.0.2",
+  "description": "A local-first pipeline automation app for developers, powered by AI",
+  "author": {
+    "name": "Raiyan Yahya",
+    "email": "raiyanyahyadeveloper@gmail.com"
+  },
+  "private": true,
+  "type": "module",
+  "main": "src/main.js"
+}

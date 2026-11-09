@@ -1,0 +1,17 @@
+{
+  "name": "flybudget",
+  "version": "0.1.0",
+  "license": "AGPL-3.0-only",
+  "description": "A fast, open-source budgeting app that gives you complete control over your financial data.",
+  "main": "electron/dist/main.js",
+  "desktopName": "flybudget.desktop",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtymoszenko/flybudget.git"
+  },
+  "author": "David Tymoszenko",
+  "bugs": {
+    "url": "https://github.com/dtymoszenko/flybudget/issues"
+  },
+  "homepage": "https://github.com/dtymoszenko/flybudget#readme"
+}

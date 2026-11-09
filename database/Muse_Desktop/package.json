@@ -1,0 +1,36 @@
+{
+  "name": "muse-desktop",
+  "private": true,
+  "version": "0.2.0",
+  "description": "Unofficial macOS, Windows, and Linux desktop companion for Muse Code. Not affiliated with Meta.",
+  "author": {
+    "name": "Robert Courson",
+    "url": "https://github.com/robzilla1738"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "out/main/index.js",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "@muse-code/sdk": "1.4.7",
+    "lucide-react": "1.55.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-markdown": "10.1.0",
+    "remark-gfm": "4.0.1",
+    "zod": "4.6.7"
+  },
+  "overrides": {
+    "global-agent": "4.1.3"
+  },
+  "homepage": "https://github.com/robzilla1738/muse-desktop#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robzilla1738/muse-desktop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robzilla1738/muse-desktop/issues"
+  }
+}

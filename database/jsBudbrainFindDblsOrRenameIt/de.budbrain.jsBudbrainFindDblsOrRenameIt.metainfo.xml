@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainFindDblsOrRenameIt</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsBudbrainFindDblsOrRenameIt</name>
+  <summary>Find duplicate files and rename many files by rules</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <description>
+    <p>
+      Two tools in one: find files that exist more than once and tidy them up, and rename many files at once by your own rules. You see every change before it happens.
+    </p>
+    <ul>
+      <li>Finds real duplicates by their content, whatever they are called</li>
+      <li>Searches all subfolders, finds empty folders too</li>
+      <li>You decide what stays — the newest copy is kept by default</li>
+      <li>Narrow the search by type, name, size or date, or find everything else</li>
+      <li>Trash, move, delete or replace by links</li>
+      <li>Find any file by name, type, size or date and see where it is</li>
+      <li>Rename by rules: replace, insert, number, upper and lower case, date taken</li>
+      <li>Live preview of every new name, problems are shown before anything happens</li>
+      <li>Try name patterns on sample names before you rename anything</li>
+      <li>Save your searches and use them again with one click</li>
+      <li>Run several searches at once as jobs and keep them for later</li>
+      <li>Moving and renaming can be undone</li>
+      <li>Light and dark design</li>
+      <li>Available in 47 languages</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">jsbudbrainfinddblsorrenameit.desktop</launchable>
+
+  <provides>
+    <binary>jsBudbrainFindDblsOrRenameIt</binary>
+  </provides>
+
+  <categories>
+    <category>Utility</category>
+    <category>FileTools</category>
+  </categories>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Duplicates found — the newest copy stays, the others are marked</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainfinddblsorrenameit_01-duplicates-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Find files by name, type, size or date, dark design</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainfinddblsorrenameit_02-search-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Rename by a rule: what is found and what it becomes</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainfinddblsorrenameit_03-rename-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Try a name pattern on sample names first</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainfinddblsorrenameit_04-regex-editor-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Several searches as jobs, each with its result</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainfinddblsorrenameit_05-jobs-light.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-10-17">
+      <description>
+        <p>First release: find duplicate files and empty folders, tidy them up, and rename many files by rules with live preview and undo, in 47 languages.</p>
+      </description>
+    </release>
+  </releases>
+</component>

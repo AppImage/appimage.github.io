@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io._3df.osi.densify</id>
+
+  <name>Densify</name>
+  <summary>GTK4 GUI Wrapper for Compressing PDF Files with GhostScript</summary>
+
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+
+  <description>
+    <p>
+      A GTK4 GUI Wrapper written in Python that simplifies compressing PDF files with Ghostscript.
+    </p>
+    <p>
+      While most distros will have GhostScript installed by default, if it's not already installed, you must first have it installed on your system or else this wrapper will not work.
+    </p>
+    <p>
+      It essentially takes your GUI input and turns it into a Ghostscript command to compress your PDF with various quality settings: screen, ebook, printer, prepress, or default.
+    </p>
+    <p>
+      This utility is produced by 3DF Open Source Initiative (OSI) and sponsored by 3DF Limited.
+    </p>
+  </description>
+
+  <url type="homepage">https://osi.3df.io</url>
+  <url type="bugtracker">https://github.com/hkdb/Densify/issues</url>
+
+  <launchable type="desktop-id">io._3df.osi.densify.desktop</launchable>
+
+  <provides>
+    <binary>densify</binary>
+  </provides>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://osi.3df.io/wp-content/uploads/2018/05/Densify2-165x300.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.4.2" date="2026-02-01">
+      <description>
+        <p>Fixed invalid application ID causing AppImage to to not pass appimage.github.io test</p>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1" />
+</component>

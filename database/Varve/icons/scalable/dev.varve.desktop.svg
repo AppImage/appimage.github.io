@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!--
+    Varve app icon — full-colour launcher icon (1024×1024 master).
+    Background rx=180 approximates Apple squircle; all mark content sits inside
+    the 80% safe zone (x/y=[102,922]). Mark content: x=[160,864], y=[208,816].
+    Colours: design-system brand tokens — all three pass 3:1 on #f5f7fa background.
+  -->
+  <rect width="1024" height="1024" rx="180" fill="#FAFAF8"/>
+  <path d="M160,208 H672 L736,368 H224 Z" fill="#39D0C6"/>
+  <path d="M224,432 H736 L800,592 H288 Z" fill="#E28C3C"/>
+  <path d="M288,656 H800 L864,816 H352 Z" fill="#C54B3A"/>
+</svg>

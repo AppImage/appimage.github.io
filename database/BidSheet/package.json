@@ -1,0 +1,34 @@
+{
+  "name": "bidsheet",
+  "version": "0.3.5",
+  "description": "Open source underground utility estimating software for subcontractors",
+  "author": {
+    "name": "Person810",
+    "email": "person810@users.noreply.github.com"
+  },
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/Person810/BidSheet#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Person810/BidSheet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Person810/BidSheet/issues"
+  },
+  "main": "dist/main/main.js",
+  "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "better-sqlite3": "^12.10.0",
+    "delaunator": "^5.1.0",
+    "electron-updater": "^6.8.9",
+    "lucide-react": "^0.460.0",
+    "pdfjs-dist": "4.8.69",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-router-dom": "^6.23.0",
+    "three": "^0.169.0",
+    "zod": "^4.4.3",
+    "zustand": "^4.5.0"
+  }
+}

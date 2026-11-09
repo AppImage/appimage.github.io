@@ -1,0 +1,24 @@
+{
+  "name": "homematic-manager",
+  "version": "3.0.0-beta.29",
+  "private": true,
+  "type": "module",
+  "description": "Electron host of the Homematic Manager: main process, preload, renderer",
+  "//productName": "Electron derives app.getName() - and with it app.getPath('userData') - from this, falling back to `name`. Without it the profile would live in a directory called `@homematic-manager/electron`.",
+  "productName": "Homematic Manager",
+  "license": "AGPL-3.0-or-later",
+  "author": "Sebastian 'hobbyquaker' Raff <hobbyquaker@gmail.com>",
+  "//homepage": "Not decoration: the deb target refuses to build without a project homepage, and the About panel of a packaged app links it.",
+  "homepage": "https://github.com/hobbyquaker/homematic-manager",
+  "main": "./out/main/index.js",
+  "//desktopName": "Read by electron-builder, not by node: it becomes the Linux .desktop file name and, with linux.syncDesktopName, the WM_CLASS Electron reports - which is what links a running window to its launcher icon.",
+  "desktopName": "homematic-manager.desktop",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "dependencies": {
+    "@homematic-manager/backend": "3.0.0-beta.29",
+    "@homematic-manager/core": "3.0.0-beta.29",
+    "electron-updater": "^6.8.9"
+  }
+}

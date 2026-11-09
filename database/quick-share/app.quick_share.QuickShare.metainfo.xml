@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metainfo for Flathub.
+
+  The <id> MUST stay in sync with APPLICATION_ID in app/linux/CMakeLists.txt.
+
+  TODO before submitting (and things to keep updated after acceptance):
+    - upload the screenshots to the website paths below (PNG, 1280x800 or larger)
+    - confirm the subscription wording + terms URL in <description> match the
+      actual offering (Flathub monetisation policy requires upfront disclosure)
+    - add a <release> entry for every published version
+-->
+<component type="desktop-application">
+  <id>app.quick_share.QuickShare</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Quick Share</name>
+  <summary>Send and receive files across devices on your local network</summary>
+  <developer_name>Quick Share Team</developer_name>
+  <update_contact>support@quick-share.app</update_contact>
+  <launchable type="desktop-id">app.quick_share.QuickShare.desktop</launchable>
+
+  <description>
+    <p>
+      Quick Share is a cross-platform app to send and receive files, photos, and
+      text between nearby devices over the local network — no internet
+      connection required.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Fast peer-to-peer transfer over your Wi-Fi/LAN</li>
+      <li>Works across Windows, macOS, Linux, Android and iOS</li>
+      <li>Optional account with cloud transfer to reach devices outside your LAN</li>
+      <li>System tray integration, drag-and-drop, and a native look on every platform</li>
+    </ul>
+    <p>
+      Quick Share is proprietary software. Local network transfers are free;
+      account-based cloud features are offered as an optional paid subscription.
+      Terms and privacy policy are published on the Quick Share website
+      (quick-share.app/terms).
+    </p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window showing nearby devices</caption>
+      <image>https://storage.quick-share.app/img/screenshots/linux-main.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Sending files to a nearby device</caption>
+      <image>https://storage.quick-share.app/img/screenshots/linux-send.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Receiving files</caption>
+      <image>https://storage.quick-share.app/img/screenshots/linux-receive.png</image>
+    </screenshot>
+  </screenshots>
+
+  <keywords>
+    <keyword>share</keyword>
+    <keyword>files</keyword>
+    <keyword>transfer</keyword>
+    <keyword>airdrop</keyword>
+    <keyword>lan</keyword>
+    <keyword>wifi</keyword>
+  </keywords>
+
+  <url type="homepage">https://quick-share.app/</url>
+  <url type="bugtracker">https://quick-share.app/contact</url>
+  <url type="help">https://quick-share.app/contact</url>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-08-06">
+      <description>
+        <p>Initial release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

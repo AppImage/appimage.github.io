@@ -1,0 +1,19 @@
+{
+  "name": "vayu-client",
+  "version": "0.38.0",
+  "description": "Vayu - High-Performance API Testing Platform",
+  "desktopName": "vayu.desktop",
+  "author": {
+    "name": "Atharva Kusumbia",
+    "email": "atharvakusumbia@gmail.com"
+  },
+  "homepage": "https://github.com/athrvk/vayu",
+  "main": "dist-electron/main.js",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "electron-updater": "^6.8.9",
+    "zod": "^4.5.4"
+  },
+  "license": "Apache-2.0"
+}

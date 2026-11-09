@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>name.krot.NetMode</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>NetMode</name>
+  <summary>Internet availability and connection diagnostics</summary>
+  <description><p>NetMode checks internet availability, records local connection events and provides network diagnostics and speed measurements.</p></description>
+  <launchable type="desktop-id">name.krot.NetMode.desktop</launchable>
+  <url type="homepage">https://krot.name/netmode/downloads/</url>
+  <url type="help">https://krot.name/netmode/downloads/</url>
+  <developer_name>Kreout</developer_name>
+  <categories><category>Network</category><category>Utility</category></categories>
+  <provides><binary>NetMode</binary></provides>
+  <releases><release version="1.8.0" date="2026-10-28"/></releases>
+</component>

@@ -1,0 +1,14 @@
+{
+  "name": "@see-sol-lab/deepseekgui",
+  "description": "DeepSeek-native Harness-first desktop host and Workbench foundation",
+  "version": "1.2.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/See-Sol-Lab/DeepSeekGUI.git",
+    "directory": "apps/deepseekgui"
+  },
+  "type": "module",
+  "main": "lib/main.js",
+  "license": "SEE LICENSE IN LICENSE"
+}

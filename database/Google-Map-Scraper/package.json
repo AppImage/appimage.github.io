@@ -1,0 +1,25 @@
+{
+  "name": "map-scraper",
+  "version": "1.1.0",
+  "description": "Google Maps Scraper Application",
+  "author": "FenrirDWolf",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FenrirDWolf/Map-scrap.git"
+  },
+  "private": true,
+  "main": "electron/main.js",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-writer": "^1.6.0",
+    "electron-updater": "^6.1.7",
+    "express": "^4.18.2",
+    "playwright": "1.46.1",
+    "sequelize": "^6.37.7",
+    "sqlite3": "5.1.6"
+  }
+}

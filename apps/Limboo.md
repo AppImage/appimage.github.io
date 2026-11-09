@@ -1,0 +1,133 @@
+---
+layout: app
+
+permalink: /Limboo/
+description: My Electron application description
+license: MIT
+
+icons:
+  - Limboo/icons/512x512/Limboo.png
+
+screenshots:
+  - Limboo/screenshot.png
+
+authors:
+  - name: limboo-ai
+    url: https://github.com/limboo-ai
+
+links:
+  - type: GitHub
+    url: limboo-ai/limboo
+  - type: Download
+    url: https://github.com/limboo-ai/limboo/releases
+
+desktop:
+  Desktop Entry:
+    Name: Limboo
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: Limboo
+    StartupWMClass: Limboo
+    X-AppImage-Version: 1.20.0
+    Comment: My Electron application description
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: MIT
+
+electron:
+  description: My Electron application description
+  main: ".vite/build/main.js"
+  private: true
+  scripts:
+    start: electron-forge start
+    package: electron-forge package
+    make: npm run dist
+    publish: npm run dist:publish
+    dist: electron-forge package && node scripts/dist.mjs
+    dist:publish: electron-forge package && node scripts/dist.mjs --publish always
+    gen:icons: node scripts/gen-icons.mjs
+    gen:notes: node scripts/gen-release-notes.mjs
+    gen:installer: node scripts/gen-installer-assets.mjs
+    gen:appx: node scripts/gen-appx-assets.mjs
+    lint: eslint --ext .ts,.tsx .
+    check:unions: node scripts/check-unions.mjs
+  repository:
+    type: git
+    url: git+https://github.com/limboo-ai/limboo.git
+  engines:
+    node: ">=22.12.0"
+  keywords: []
+  author:
+    name: BotCoder254
+    email: teumteum776@gmail.com
+  license: MIT
+  devDependencies:
+    "@electron-forge/cli": "^7.11.2"
+    "@electron-forge/maker-deb": "^7.11.2"
+    "@electron-forge/maker-rpm": "^7.11.2"
+    "@electron-forge/maker-squirrel": "^7.11.2"
+    "@electron-forge/maker-zip": "^7.11.2"
+    "@electron-forge/plugin-auto-unpack-natives": "^7.11.2"
+    "@electron-forge/plugin-fuses": "^7.11.2"
+    "@electron-forge/plugin-vite": "^7.11.2"
+    "@electron/fuses": "^1.8.0"
+    "@electron/rebuild": "^4.0.6"
+    "@resvg/resvg-js": "^2.6.2"
+    "@tailwindcss/vite": "^4.3.1"
+    "@types/electron-squirrel-startup": "^1.0.2"
+    "@types/react": "^19.2.18"
+    "@types/react-dom": "^19.2.4"
+    "@types/tar-fs": "^2.0.4"
+    "@typescript-eslint/eslint-plugin": "^5.62.0"
+    "@typescript-eslint/parser": "^5.62.0"
+    "@vitejs/plugin-react": "^4.7.0"
+    electron: "^42.5.0"
+    electron-builder: 26.13.0
+    eslint: "^8.57.1"
+    eslint-plugin-import: "^2.32.0"
+    opentype.js: "^1.3.4"
+    png-to-ico: "^3.0.1"
+    sharp: "^0.34.5"
+    tailwindcss: "^4.3.1"
+    typescript: "~4.5.4"
+    vite: "^5.4.21"
+  dependencies:
+    "@ai-sdk/harness": 1.0.91
+    "@ai-sdk/harness-claude-code": 1.0.94
+    "@ai-sdk/harness-codex": "^1.0.93"
+    "@ai-sdk/harness-pi": "^1.0.93"
+    "@anthropic-ai/claude-agent-sdk": "^0.3.247"
+    "@xterm/addon-fit": "^0.11.0"
+    "@xterm/xterm": "^6.0.0"
+    ai: "^7.0.59"
+    better-sqlite3: "^13.0.3"
+    chokidar: "^5.0.0"
+    electron-squirrel-startup: "^1.0.1"
+    electron-updater: "^6.8.9"
+    ignore: "^7.0.6"
+    lucide-react: "^1.34.0"
+    node-pty: 1.2.0-beta.15
+    react: "^19.2.8"
+    react-dom: "^19.2.8"
+    react-markdown: "^10.1.0"
+    rehype-sanitize: "^6.0.0"
+    remark-gfm: "^4.0.1"
+    sherpa-onnx-node: 1.13.6
+    shiki: "^4.4.3"
+    tar-fs: 3.1.3
+    unbzip2-stream: 1.4.3
+    ws: "^8.21.3"
+    zod: "^4.4.3"
+    zustand: "^5.0.15"
+---

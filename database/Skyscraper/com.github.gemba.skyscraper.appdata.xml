@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>com.github.gemba.skyscraper</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <name>Skyscraper</name>
+    <summary>Powerful and versatile game data scraper written in Qt and C++</summary>
+    <description>
+        <p>Skyscraper is the powerful and highly customizable scraping-tool to maintain your gamelists. It supports various metadata sources, like screenscraper.fr, The GamesDB, ZXInfo, ... and lets you generate and customize the output for different frontends like EmulationStation, ES-DE, Batocera, Pegasus and many more.</p>
+    </description>
+    <launchable type="desktop-id">skyscraper.desktop</launchable>
+    <url type="homepage">https://gemba.github.io/skyscraper/</url>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://gemba.github.io/skyscraper/resources/skyscraper_banner.png</image>
+        </screenshot>
+    </screenshots>
+    <provides>
+        <id>skyscraper.desktop</id>
+    </provides>
+    <content_rating type="oars-1.0" />
+</component>

@@ -1,0 +1,14 @@
+{
+  "name": "openmarker",
+  "version": "1.0.1",
+  "description": "openmarker is an AI-powered grading assistant for teachers and lecturers. Automatically grade essays and reports so you can spend more time teaching and engaging with students.",
+  "license": "MIT",
+  "author": "Dalex Davis",
+  "type": "commonjs",
+  "main": "src/main.js",
+  "dependencies": {
+    "docx": "^9.6.1",
+    "mammoth": "^1.12.0",
+    "node-llama-cpp": "^3.18.1"
+  }
+}

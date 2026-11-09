@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <metadata_license>MIT</metadata_license>
+
+    <id>app.tomblauncher.tomblauncher</id>
+    <name>Tomb Launcher</name>
+    <summary>A Tomb Raider Custom Level management application</summary>
+    <developer_name>Tomb Launcher developers</developer_name>
+    <url type="homepage">https://tomblauncher.app</url>
+    <project_license>MIT</project_license>
+    <content_rating type="oars-1.1" />
+
+    <launchable type="desktop-id">app.tomblauncher.tomblauncher.desktop</launchable>
+
+    <description>
+        <p>Tomb Launcher is a manager and downloader for Tomb Raider custom levels.
+It allows you to browse, download and install custom levels from community
+sites such as TRLE.net, TRCustoms.org and AspideTR.com.</p>
+
+<ul>
+<li>Browse and search thousands of custom levels from multiple community sites</li>
+<li>Download and install levels with a single click</li>
+<li>Track your play time and statistics</li>
+<li>Manage save files and game settings</li>
+<li>Supports multiple Tomb Raider engines including TRNG, TombEngine, TR1X and TR2X</li>
+<li>Available on Windows and Linux</li>
+</ul>
+    </description>
+
+    <!-- Freedesktop Categories -->
+    <categories>
+        <category>Game</category>
+    </categories>
+
+    <keywords>
+        <keyword>game</keyword>
+        <keyword>games</keyword>
+        <keyword>launcher</keyword>
+        <keyword>tomb</keyword>
+        <keyword>raider</keyword>
+        <keyword>trle</keyword>
+    </keywords>
+
+    <screenshots>
+        <screenshot type="default">
+            <image>https://i.postimg.cc/6pHch7br/Screenshot.png</image>
+        </screenshot>
+    </screenshots>
+
+    <releases>
+        <release version="1.5.0" date="2026-06-07"/>
+    </releases>
+
+</component>

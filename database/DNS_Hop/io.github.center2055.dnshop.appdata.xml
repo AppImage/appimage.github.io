@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.center2055.dnshop.desktop</id>
+  <name>DNS Hop</name>
+  <summary>Modern DNS benchmark and resolver switcher</summary>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <url type="homepage">https://github.com/center2055/DNS-Hop</url>
+  <description>
+    <p>DNS Hop benchmarks DNS resolvers and can apply classic DNS endpoints as the system resolver.</p>
+  </description>
+  <launchable type="desktop-id">io.github.center2055.dnshop.desktop</launchable>
+  <provides>
+    <binary>DNSHop.App</binary>
+  </provides>
+</component>

@@ -1,0 +1,110 @@
+---
+layout: app
+
+permalink: /AniMathIO/
+description: AniMathIO is a video editor application for editing Manim-like video projects
+license: MIT
+
+icons:
+  - AniMathIO/icons/500x500/AniMathIO.png
+
+screenshots:
+  - AniMathIO/screenshot.png
+
+authors:
+  - name: AniMathIO
+    url: https://github.com/AniMathIO
+
+links:
+  - type: GitHub
+    url: AniMathIO/AniMathIO
+  - type: Download
+    url: https://github.com/AniMathIO/AniMathIO/releases
+
+desktop:
+  Desktop Entry:
+    Name: AniMathIO
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: AniMathIO
+    StartupWMClass: AniMathIO
+    X-AppImage-Version: 1.7.1
+    Comment: AniMathIO is a video editor application for editing Manim-like video projects
+    Categories: AudioVideo
+    MimeType: application/octet-stream
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.28
+    X-AppImage-Payload-License: MIT
+
+electron:
+    projects
+  version: 1.7.1
+  homepage: https://animathio.com
+  repository:
+    type: git
+    url: https://github.com/AniMathIO/AniMathIO.git
+  author:
+    name: Kovács Bálint-Hunor
+    email: kovacsbalinthunor53@gmail.com
+  main: app/background.js
+  dependencies:
+    "@ffmpeg/ffmpeg": 0.12.15
+    "@ffmpeg/util": 0.12.2
+    "@google/genai": 2.21.0
+    "@hello-pangea/color-picker": 3.2.2
+    "@heroicons/react": 2.2.0
+    "@imgly/background-removal": 1.7.0
+    "@tailwindcss/postcss": 4.3.3
+    "@wavesurfer/react": 1.0.12
+    animejs: 4.5.0
+    canvas: 3.2.3
+    electron-serve: 3.0.1
+    electron-store: 11.0.2
+    eslint: 10.10.0
+    eslint-config-next: 16.3.4
+    glob: 13.0.6
+    heroicons: 2.2.0
+    html-to-image: 1.11.13
+    idb: 8.0.3
+    konva: 9.3.18
+    mafs: 0.21.0
+    mobx: 6.16.1
+    mobx-react: 9.2.2
+    mobx-react-lite: 4.1.1
+    onnxruntime-web: 1.21.0
+    pako: 3.0.1
+    react-icons: 5.7.0
+    react-konva: 19.2.5
+    react-modal: 3.16.3
+    rimraf: 6.1.3
+    wavesurfer.js: 7.12.10
+    webm-duration-fix: 1.0.4
+  optionalDependencies:
+    dmg-license: 1.0.11
+  overrides:
+    node-abi: 4.33.0
+  engines:
+    node: ">=26.0.0"
+    npm: ">=10.0.0"
+  allowScripts:
+    canvas@3.2.3: true
+    core-js-pure@3.50.0: true
+    electron@44.2.0: true
+    electron-winstaller@5.4.0: true
+    esbuild@0.27.4: true
+    protobufjs@7.6.6: true
+    sharp@0.34.5: true
+    "@tailwindcss/oxide@4.3.3": true
+    unrs-resolver@1.12.2: true
+    "@google/genai@2.21.0": true
+---

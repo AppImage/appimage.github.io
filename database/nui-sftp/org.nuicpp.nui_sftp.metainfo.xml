@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>org.nuicpp.nui_sftp</id>
+    <name>nui-sftp</name>
+    <summary>A SSH/SFTP client using the NuiCpp UI Framework</summary>
+    <description>
+        <p>nui-sftp is a desktop client for SSH and SFTP. It is built on libssh and the
+            NuiCpp UI framework, and combines file transfer, directory synchronization,
+            and interactive shell access over a single SSH connection per session.</p>
+        <p>Features:</p>
+        <ul>
+            <li>SFTP browser with side-by-side local and remote panes, drag-and-drop transfers, and a queueable operation list.</li>
+            <li>Directory synchronization (one-way or bidirectional) with a diff preview and per-entry selection before any change is applied.</li>
+            <li>Open remote files in an external editor; subsequent saves are detected on disk and re-uploaded automatically.</li>
+            <li>Multiple interactive SSH shell channels per session, multiplexed over the same connection and presented as tabs.</li>
+            <li>Local terminal panes alongside the remote panes within the same workspace.</li>
+            <li>Per-host session profiles, configurable panel layout, themeable UI, and customizable keybinds.</li>
+            <li>Archive transfer mode for bulk uploads and downloads.</li>
+            <li>No telemetry, no account, no network access beyond the SSH/SFTP connections the user configures.</li>
+        </ul>
+        <p>The source code is available on GitHub under a permissive license. nui-sftp is
+            also packaged as a native Windows build, in the Arch User Repository, and as an
+            AppImage.</p>
+    </description>
+    <metadata_license>MIT</metadata_license>
+    <project_license>MIT</project_license>
+    <developer_name>Tim Ebbeke (aka 5cript)</developer_name>
+    <launchable type="desktop-id">org.nuicpp.nui_sftp.desktop</launchable>
+    <url type="homepage">https://nui-sftp.nuicpp.org/</url>
+    <url type="bugtracker">https://github.com/5cript/nui-sftp/issues</url>
+    <url type="vcs-browser">https://github.com/5cript/nui-sftp</url>
+    <screenshots>
+        <screenshot type="default">
+            <caption>nui-sftp Main Window</caption>
+            <image>https://s3.g.s4.mega.io/jgemkib4a5fte35rktt5wxrwkw4ejk4ybemkf/nui-sftp-releases/images/Screenshots/session.png</image>
+        </screenshot>
+    </screenshots>
+    <releases>
+        <release version="1.11.0" date="2026-10-27">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Run the CI tests after the release uploads, with retries and a manual skip by @5cript in #269</li>
+                    <li>Local File Interaction by @5cript in #270</li>
+                    <li>Fix Archive Transfers Cancel Crashing by @5cript in #273</li>
+                    <li>Fix renderer crash in the bulk transfer card by @5cript in #274</li>
+                    <li>Logged WASM traps and quit in debug builds instead of a silent renderer crash by @5cript in #275</li>
+                    <li>Cancel Without Cleanup by @5cript in #276</li>
+                    <li>Added a reduced motion Setting by @5cript in #277</li>
+                    <li>Overlaid items with a queued delete with a trash icon by @5cript in #278</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.10.0…v1.11.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.11.0</url>
+        </release>
+        <release version="1.10.0" date="2026-10-26">
+            <description>
+                <p>What&apos;s Changed</p>
+                <p>Most important feature is the transfer performance optimization and benchmarking, now performing similar or faster to to OpenSSH. Only many small file downloads are still slightly behind.
+The end session button is now no longer pressable when there is no session open.
+The archive transfer dialog is visually more appealing now and no longer maps compression levels but shows different levels for different algorithms.</p>
+                <ul>
+                    <li>Archive Dialog Redesign by @5cript in #262</li>
+                    <li>Disable End Session while no session is open by @5cript in #263</li>
+                    <li>Improve Thransfer Throughput by @5cript in #265</li>
+                    <li>Unsafe Fast Queue Optimization by @5cript in #266</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.9.0…v1.10.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.10.0</url>
+        </release>
+        <release version="1.9.0" date="2026-10-25">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Feat default layout and xterm renderer by @5cript in #249</li>
+                    <li>Local &amp; Remote Markers by @5cript in #250</li>
+                    <li>Moved Nui to v3.7.2 by @5cript in #251</li>
+                    <li>Upload and Watch &amp; Watch Rearchitecture by @5cript in #254</li>
+                    <li>File Tracking Panel Redesign by @5cript in #257</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.8.0…v1.9.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.9.0</url>
+        </release>
+        <release version="1.8.0" date="2026-10-19">
+            <description>
+                <p>Chromium Embedded Framework</p>
+                <p>On Linux and macOS, nui-sftp now ships its own browser engine (Chromium via CEF) instead of the system&apos;s WebKit. Every distribution now runs the same engine, independent of the installed WebKitGTK version.</p>
+                <ul>
+                    <li>Your sessions and settings carry over, nothing needs to be migrated.</li>
+                    <li>Downloads are larger (about 150 MB), since the engine is now part of the package.</li>
+                    <li>On macOS, allow the Local Network prompt again after updating. Connections fail with &quot;No route to host&quot; until it is allowed.</li>
+                    <li>Windows is unchanged and keeps using WebView2.</li>
+                    <li>The About section now shows the browser engine and its version, and the licenses page lists CEF and Chromium.</li>
+                </ul>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Fixed missing transfer speed for desktop drops by @5cript in #242</li>
+                    <li>Disabled the DMA-BUF renderer only where the GPU is not known to handle it by @5cript in #243</li>
+                    <li>Move to CEF Browser Engine by @5cript in #247</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.7.2…v1.8.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.8.0</url>
+        </release>
+        <release version="1.7.2" date="2026-10-16">
+            <description>
+                <p>What&apos;s Changed</p>
+                <p>Improves security and behaviour across many several edge cases and fixes some bugs.</p>
+                <ul>
+                    <li>Improve file operation safety Part 1 by @5cript in #233</li>
+                    <li>Improve file operation safety Part 2 by @5cript in #238</li>
+                    <li>Improve file operation safety Part 3 by @5cript in #239</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.7.1…v1.7.2
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.7.2</url>
+        </release>
+        <release version="1.7.1" date="2026-10-16">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Fix pty input loss by @5cript in #231</li>
+                    <li>Fix macOS Pipeline by @5cript in #234</li>
+                    <li>Fix file grid paint cost by @5cript in #235</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.7.0…v1.7.1
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.7.1</url>
+        </release>
+        <release version="1.7.0" date="2026-10-12">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Fix fmt deprecation warnings by @5cript in #223</li>
+                    <li>Update website and readme images by @5cript in #224</li>
+                    <li>Gave the macOS bundle a Local Network usage description by @5cript in #225</li>
+                    <li>Direct Connect Inheritables Selection and Multi User by @5cript in #227</li>
+                    <li>Open files on double click and Enter in the file explorer by @5cript in #229</li>
+                    <li>Fix sync screen performance by @5cript in #230</li>
+                    <li>Also fixes some bugs in the synchronization</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.6.2…v1.7.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.7.0</url>
+        </release>
+        <release version="1.6.2" date="2026-10-11">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Fix macos close crash by @5cript in #222</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.6.1…v1.6.2
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.6.2</url>
+        </release>
+        <release version="1.6.1" date="2026-10-11">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>macos llvm toolchain by @5cript in #219</li>
+                    <li>Makes the program able to be built using newer clang versions on mac. Also fixes some issues from the mac port.</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.6.0…v1.6.1
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.6.1</url>
+        </release>
+        <release version="1.6.0" date="2026-10-10">
+            <description>
+                <p>What&apos;s Changed</p>
+                <p>(Due to issues regarding mac, this release is incomplete)</p>
+                <p>The application is now able to run on macos, file/dir opener, open with dialog, file watching and everything else working.
+Updated nui to fix macos related bugs. Also fixed bugs when connecting to a mac system (wrong home directory).</p>
+                <p>PRs</p>
+                <ul>
+                    <li>Fix remote home directory on Mac by @5cript in #217</li>
+                    <li>macos support by @5cript in #218</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.5.2…v1.6.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.6.0</url>
+        </release>
+        <release version="1.5.2" date="2026-10-10">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Started host programs with the host environment instead of the AppImage Env by @5cript in #214</li>
+                    <li>Fix termios control characters by @5cript in #215</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.5.1…v1.5.2
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.5.2</url>
+        </release>
+        <release version="1.5.1" date="2026-10-08">
+            <description>
+                <p>What&apos;s Changed</p>
+                <p>Adds a small fix onto the history and snippets feature</p>
+                <ul>
+                    <li>Stopped Enter in the snippet variable form from also sending a newline by @5cript in #208</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.5.0…v1.5.1
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.5.1</url>
+        </release>
+        <release version="1.5.0" date="2026-10-08">
+            <description>
+                <p>THIS RELEASE IS NOT COMPLETE (MISSING ARTIFACTS), USE 1.5.1</p>
+                <p>What&apos;s Changed</p>
+                <p>Brings the new snippet and command history feature.
+Replaces icons that were of unknown license origin with proper attributed open source icons.
+And fixes many many issues.</p>
+                <ul>
+                    <li>History and snippets by @5cript in #198</li>
+                    <li>Version in gui by @5cript in #199</li>
+                    <li>More Localization by @5cript in #200</li>
+                    <li>Settings search by @5cript in #202</li>
+                    <li>Snippet import by @5cript in #204</li>
+                    <li>Fix windows icons by @5cript in #205</li>
+                    <li>Fix command store and icons by @5cript in #206</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.4.0…v1.5.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.5.0</url>
+        </release>
+        <release version="1.4.0" date="2026-10-01">
+            <description>
+                <p>Bulk Uploads and Downloads now can have concurrency (moving multiple files at the same time).
+The setting can be found in the SFTP settings and the default is 2.</p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.4.0</url>
+        </release>
+        <release version="1.3.1" date="2026-06-03">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Add SECURITY.md with vulnerability reporting details by @5cript in #179</li>
+                    <li>Update Ko-fi username in FUNDING.yml by @5cript in #180</li>
+                    <li>Update issue templates by @5cript in #181</li>
+                    <li>Modify bug report template for nui-sftp by @5cript in #182</li>
+                    <li>Added CONTRIBUTING.md by @5cript in #183</li>
+                    <li>Fix bulk upload progress not reaching 100% by @5cript in #191</li>
+                    <li>Fixes logic to reach 100%, the total was overshooting the actual transfer size.</li>
+                    <li>Made bug issue template less intimidating</li>
+                    <li>Made progress refresh more frequent when large buffers are used.</li>
+                    <li>Readded missing side refreshes after operations.</li>
+                    <li>Removed some logging that eats performance even on info level</li>
+                    <li>Added limit to confirm dialog on many items selected.</li>
+                    <li>Turned any delete into queued delete to avoid timeout problems.</li>
+                    <li>Made bulk delete card text more useful when not started.</li>
+                    <li>Made sort by name case insensitive.</li>
+                    <li>Optimized overwrite check for many-uploads drastically.</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.3.0…v1.3.1
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.3.1</url>
+        </release>
+        <release version="1.3.0" date="2026-05-25">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Update Windows installation instructions in README by @5cript in #171</li>
+                    <li>Feat/better first session ux by @5cript in #178</li>
+                </ul>
+                <p>Improved startup experience, by eliminating config load and defaulting warnings.
+Also improved the buttons in the toolbar and gave the &quot;add server&quot; button a highlight, when no servers are configured, otherwise connect is highlighted. Connect is disabled when there are no servers configured.</p>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.2.0…v1.3.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.3.0</url>
+        </release>
+        <release version="1.2.0" date="2026-05-25">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Add ico for windows as app icon. by @5cript in #170</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.1.1…v1.2.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.2.0</url>
+        </release>
+        <release version="1.1.1" date="2026-05-16">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Feat/docs flatpak update by @5cript in #167</li>
+                    <li>Fixed reconnect multi terminal restore. by @5cript in #168</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.1.0…v1.1.1
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.1.1</url>
+        </release>
+        <release version="1.1.0" date="2026-05-09">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Fix missing rpc replies by @5cript in #164</li>
+                    <li>Onboarding Flow by @5cript in #165</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.0.2…v1.1.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.1.0</url>
+        </release>
+        <release version="1.0.2" date="2026-05-06">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Prevent tests from failing when run im parallel. by @5cript in #161</li>
+                    <li>Added mention of AppImage to Readme and WebPage. by @5cript in #163</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.0.1…v1.0.2
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.0.2</url>
+        </release>
+        <release version="1.0.1" date="2026-05-04">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Improved documentation about package availability. by @5cript in #158</li>
+                    <li>Ssh Processing Thread Crash Fix by @5cript in #160</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v1.0.0…v1.0.1
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.0.1</url>
+        </release>
+        <release version="1.0.0" date="2026-05-02">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Add license page by @5cript in #148</li>
+                    <li>Add WebPage by @5cript in #152</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v0.10.3…v1.0.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v1.0.0</url>
+        </release>
+        <release version="0.10.3" date="2026-04-24">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Optimize sync diffing by @5cript in #146</li>
+                    <li>Removed sdbus++ leftovers. by @5cript in #147</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v0.10.2…v0.10.3
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.10.3</url>
+        </release>
+        <release version="0.10.2" date="2026-04-23">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Fix Portal, Remote Favorites and Renaming by @5cript in #144</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v0.10.1…v0.10.2
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.10.2</url>
+        </release>
+        <release version="0.10.1" date="2026-04-22">
+            <description>
+                <p>Moving to submodules from manually checked out deps.</p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.10.1</url>
+        </release>
+        <release version="0.10.0" date="2026-04-21">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Fixing Bugs &amp; Reconnect Feature by @5cript in #124</li>
+                    <li>Settings restart warning &amp; Reorder Operations by @5cript in #125</li>
+                    <li>Transfer as Archive Feature by @5cript in #129</li>
+                    <li>Updated README.md by @5cript in #135</li>
+                    <li>Archive Transfer Fixes by @5cript in #136</li>
+                    <li>More Fixes by @5cript in #138</li>
+                    <li>Fixed version regex. by @5cript in #139</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v0.9.0…v0.10.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.10.0</url>
+        </release>
+        <release version="0.9.0" date="2026-04-16">
+            <description>
+                <p>File Grid</p>
+                <ul>
+                    <li>Added pagination to file grid when large amounts of items are in a directory</li>
+                    <li>Improved performance in the file grid by a large amount.</li>
+                    <li>Reduced list files payload size to improve performance.</li>
+                    <li>Added loading indicator when listing files takes longer.</li>
+                    <li>Improved drag and drop performance drastically.</li>
+                    <li>Fixed bug where navigating into a local directory didnt reset the navigation on failure.</li>
+                </ul>
+                <p>Operations &amp; Queue</p>
+                <ul>
+                    <li>Made several individual files collapse into bulk operation instead of individual file downloads to improve UI performance</li>
+                    <li>Added pagination to operation queue to stop the operation queue from slowing down the application if the user choses not to auto clear.</li>
+                </ul>
+                <p>Sync</p>
+                <ul>
+                    <li>Added sync screen to sync a directory up, down or in both directions</li>
+                </ul>
+                <p>General</p>
+                <ul>
+                    <li>Added more unit tests.</li>
+                    <li>Many smaller changes.</li>
+                    <li>Some utf improvements for windows, I expect more work to be needed.</li>
+                </ul>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.9.0</url>
+        </release>
+        <release version="0.8.0" date="2026-04-11">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Rename / Clone Session by @5cript in #95</li>
+                    <li>Rename Session, Fixed Local Shell on Linux and more by @5cript in #96</li>
+                    <li>Single Side Explorer &amp; Local Session Fixes by @5cript in #101</li>
+                    <li>Places Panel for File Grid by @5cript in #103</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v0.7.1…v0.8.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.8.0</url>
+        </release>
+        <release version="0.7.1" date="2026-04-07">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Fix/flatpak dialogs by @5cript in #94</li>
+                </ul>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.7.1</url>
+        </release>
+        <release version="0.7.0" date="2026-04-07">
+            <description>
+                <p>Open and monitor files and directories.</p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.7.0</url>
+        </release>
+        <release version="0.6.1" date="2026-04-03">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Feat/asset finder improvements by @5cript in #87</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v0.6.0…v0.6.1
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.6.1</url>
+        </release>
+        <release version="0.6.0" date="2026-04-03">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Split language file into each language</li>
+                    <li>Improved loading of files through custom scheme / asset finding and loading</li>
+                    <li>Created tool to check language files completeness</li>
+                    <li>Made file explorer columns resizeable, auto resize on container resize and spread column to available size on button press</li>
+                    <li>Added the program icon to the toolbar</li>
+                    <li>Closing a single PTY channel no longer closes the entire connection.</li>
+                    <li>Closing a single PTY channel now closes the terminal tab.</li>
+                    <li>Fixed issue in saving the terminal contents on connection loss.</li>
+                    <li>Operation queue auto remove text no longer looks disabled.</li>
+                    <li>Bright / Dark mode button no longer shows question mark on system mode setting, but finds out what the system mode is and shows the opposite to switch to.</li>
+                    <li>&quot;Scan could not be applied to transfer&quot; console message fixed.</li>
+                    <li>Progress bar no longer animates on 100%</li>
+                </ul>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.6.0</url>
+        </release>
+        <release version="0.5.0" date="2026-03-31">
+            <description>
+                <p>What changed?</p>
+                <ul>
+                    <li>#50 &amp; #49 Improved operation progress bar visibility and fixed several overflow and twitching issues.</li>
+                    <li>#45 Added load for custom themes on box click.</li>
+                    <li>#48 Ctrl + A selected &quot;..&quot;, which would lead to problems on transfers.</li>
+                    <li>#47 End/Home buttons for selection in file grid now work.</li>
+                    <li>#46 Some Confirm Dialog instances can now be &quot;ignored&quot; until reactivated via settings.</li>
+                </ul>
+                <p>Known issues</p>
+                <ul>
+                    <li>Language keys are missing. This will be fixed later with together with the language file split and a tool to match ui language references with the yaml file and find missing keys.</li>
+                </ul>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.5.0</url>
+        </release>
+        <release version="0.4.0" date="2026-03-30">
+            <description>
+                <p>What changed</p>
+                <ul>
+                    <li>#43 Path box suggestion sorting and fuzzing</li>
+                    <li>#42 Hide dot files</li>
+                    <li>#41 Path box should now enter on enter press</li>
+                    <li>#40 Fixed terminal encoding issues. Also implemented termios settings</li>
+                    <li>#37 &amp; #38 Improved password input box</li>
+                    <li>#36 Symlinks that are directories are can now be entered</li>
+                </ul>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.4.0</url>
+        </release>
+        <release version="0.3.1" date="2026-03-26">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Updated components. by @5cript in #34</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v0.3.0…v0.3.1
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.3.1</url>
+        </release>
+        <release version="0.3.0" date="2026-03-25">
+            <description>
+                <p>Dark/Light and full custom theming.</p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.3.0</url>
+        </release>
+        <release version="0.2.0" date="2026-03-22">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>File Grid Improvements &amp; Bug Fixes by @5cript in #32</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v0.1.1…v0.2.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.2.0</url>
+        </release>
+        <release version="0.1.1" date="2026-03-22">
+            <description>
+                <p>What changed</p>
+                <p>There are no more ui5 themes to deploy, so they were removed from deploy.sh</p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.1.1</url>
+        </release>
+        <release version="0.1.0" date="2026-03-22">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Remove ui5 webcomponents by @5cript in #28</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v0.0.5…v0.1.0
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.1.0</url>
+        </release>
+        <release version="0.0.5" date="2026-03-11">
+            <description>
+                <p>Fixed Frontend Artifact Upload</p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.0.5</url>
+        </release>
+        <release version="0.0.4" date="2026-03-11">
+            <description>
+                <p>Moved from CMake 4.2 to CMake 4.1</p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.0.4</url>
+        </release>
+        <release version="0.0.3-beta" date="2026-03-07">
+            <description>
+                <p>What&apos;s Changed</p>
+                <ul>
+                    <li>Several Changes for Package Builds by @5cript in #21</li>
+                </ul>
+                <p>
+                    
+                    <em>Full Changelog</em>
+                    : v0.0.2-beta…v0.0.3-beta
+                </p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.0.3-beta</url>
+        </release>
+        <release version="0.0.2-beta" date="2026-03-02">
+            <description>
+                <p>The CMake version script no longer fails on -beta or +build suffixes.</p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.0.2-beta</url>
+        </release>
+        <release version="0.0.1-beta" date="2026-03-02">
+            <description>
+                <p>Initial feature onset.</p>
+            </description>
+            <url type="details">https://github.com/5cript/nui-sftp/releases/tag/v0.0.1-beta</url>
+        </release>
+    </releases>
+    <requires>
+        <display_length compare="ge">768</display_length>
+    </requires>
+    <recommends>
+        <control>keyboard</control>
+        <control>pointing</control>
+    </recommends>
+    <content_rating type="oars-1.1"></content_rating>
+</component>

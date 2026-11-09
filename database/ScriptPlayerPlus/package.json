@@ -1,0 +1,24 @@
+{
+  "name": "scriptplayer-plus",
+  "version": "0.6.3",
+  "description": "ScriptPlayer+ - Funscript video player with Handy, Intiface, and FunOSR support",
+  "homepage": "https://github.com/sioaeko/scriptplayer-plus",
+  "private": true,
+  "author": "sioaeko <grade0422@gmail.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "dist-electron/main.js",
+  "engines": {
+    "node": ">=22.12.0 <23"
+  },
+  "dependencies": {
+    "@serialport/bindings-cpp": "^13.0.0",
+    "@serialport/stream": "^13.0.0",
+    "electron-updater": "^6.8.9",
+    "hls.js": "^1.7.1",
+    "lucide-react": "^0.460.0",
+    "music-metadata": "^11.15.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "strtok3": "^10.3.5"
+  }
+}

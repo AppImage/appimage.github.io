@@ -1,0 +1,15 @@
+{
+  "name": "viva",
+  "version": "0.2.0",
+  "description": "VIVA — Visual Interface for Version Assistance",
+  "author": "Sean Lee",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.0",
+    "@electron-toolkit/utils": "^3.0.0",
+    "chokidar": "^3.6.0",
+    "electron-store": "^8.2.0",
+    "simple-git": "^3.27.0",
+    "uuid": "^9.0.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "shift-nightly",
+  "productName": "Shift Nightly",
+  "version": "0.93.1",
+  "private": true,
+  "description": "Shift font editor - desktop application",
+  "main": ".vite/build/main.js",
+  "author": {
+    "name": "Kostya Farber",
+    "email": "kostya.farber@gmail.com"
+  },
+  "license": "MIT OR Apache-2.0",
+  "dependencies": {
+    "@shift/bridge": "workspace:*",
+    "@shift/editor": "workspace:*",
+    "@shift/geo": "workspace:*",
+    "@shift/glyph-info": "workspace:*",
+    "@shift/glyph-state": "workspace:*",
+    "@shift/types": "workspace:*",
+    "@shift/ui": "workspace:*",
+    "@shift/validation": "workspace:*",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "d3-drag": "^3.0.0",
+    "d3-scale": "^4.0.2",
+    "d3-selection": "^3.0.0",
+    "electron-log": "^5.4.4",
+    "electron-updater": "6.8.9",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-hook-form": "^7.81.0",
+    "react-router": "^8.3.0",
+    "shift-bridge": "workspace:*",
+    "zod": "^4.1.12"
+  },
+  "homepage": "https://shift.graphics",
+  "desktopName": "shift-nightly"
+}

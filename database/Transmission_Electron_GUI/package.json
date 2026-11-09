@@ -1,0 +1,25 @@
+{
+  "name": "transmission-electron-gui",
+  "version": "0.1.8",
+  "description": "A modern Electron desktop GUI for Transmission daemon RPC.",
+  "author": {
+    "name": "adameat",
+    "email": "adameat@users.noreply.github.com"
+  },
+  "private": true,
+  "type": "module",
+  "main": "out/main/index.js",
+  "homepage": "https://github.com/adameat/transmission-electron-gui#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adameat/transmission-electron-gui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adameat/transmission-electron-gui/issues"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

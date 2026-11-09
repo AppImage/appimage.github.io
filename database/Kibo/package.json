@@ -1,0 +1,28 @@
+{
+  "name": "kibo",
+  "version": "0.2.0",
+  "description": "A friendly desktop companion for healthier work habits.",
+  "author": "Javier Henriquez <javier.hensep@outlook.com>",
+  "license": "MIT",
+  "main": "out/main/index.js",
+  "type": "module",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JvierDev/kibo.git"
+  },
+  "homepage": "https://github.com/JvierDev/kibo",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.21.0",
+      "onFail": "download"
+    }
+  },
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/utils": "^4.0.0",
+    "electron-store": "^11.0.2",
+    "lucide-react": "^1.41.0"
+  }
+}

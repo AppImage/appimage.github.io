@@ -3,9 +3,10 @@ layout: app
 
 permalink: /EmuDeck/
 description: Play all your RetroGames
+license: MIT
 
 icons:
-  - EmuDeck/icons/96x96/emudeck.png
+  - EmuDeck/icons/128x128/emudeck.png
 
 screenshots:
   - EmuDeck/screenshot.png
@@ -28,7 +29,7 @@ desktop:
     Type: Application
     Icon: emudeck
     StartupWMClass: EmuDeck
-    X-AppImage-Version: 2.1.4
+    X-AppImage-Version: 2.5.0
     Comment: Play all your RetroGames
     Categories: Development
   AppImageHub:
@@ -38,6 +39,11 @@ desktop:
       should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
+    X-AppImage-Payload-License: MIT
 
 electron:
   license: MIT

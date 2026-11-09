@@ -1,0 +1,15 @@
+{
+  "name": "xenia-dashboard",
+  "version": "1.3.4",
+  "description": "Xbox 360 Dashboard for Xenia Emulator",
+  "main": "main.js",
+  "author": "ALHROOBIX",
+  "license": "MIT",
+  "dependencies": {
+    "7zip-bin": "^5.2.0",
+    "axios": "^1.13.2",
+    "electron-store": "^11.0.2",
+    "node-7z": "^3.0.0",
+    "node-fetch": "^2.7.0"
+  }
+}

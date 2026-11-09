@@ -2,14 +2,18 @@
 layout: app
 
 permalink: /Sabaki/
-description: An elegant Go/Baduk/Weiqi board and SGF editor for a more civilized age.
+description: "An elegant Go/Baduk/Weiqi board and SGF editor for a more civilized age."
+license: "MIT"
+
+icons:
+  - Sabaki/icons/128x128/sabaki.png
 
 screenshots:
   - Sabaki/screenshot.png
 
 authors:
-  - name: yishn
-    url: https://github.com/yishn
+  - name: "yishn"
+    url: "https://github.com/yishn"
 
 links:
   - type: GitHub
@@ -20,16 +24,26 @@ links:
 desktop:
   Desktop Entry:
     Name: Sabaki
-    Comment: An elegant Go/Baduk/Weiqi board and SGF editor for a more civilized age.
-    Exec: AppRun
+    Exec: AppRun --no-sandbox %U
     Terminal: false
     Type: Application
     Icon: sabaki
-    X-AppImage-Version: 0.31.2
-    X-AppImage-BuildId: 30714f60-694d-11a7-10e2-e35eea45fe45
+    StartupWMClass: Sabaki
+    X-AppImage-Version: 0.60.0
+    Comment: An elegant Go/Baduk/Weiqi board and SGF editor for a more civilized age.
     Categories: Game
   AppImageHub:
-    X-AppImage-UpdateInformation: false
-    X-AppImage-Type: 1
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: MIT
+
+electron: {"name":"sabaki","productName":"Sabaki","version":"0.60.0","description":"An elegant Go/Baduk/Weiqi board and SGF editor for a more civilized age.","author":"Yichuan Shen <shen.yichuan@gmail.com>","homepage":"http://sabaki.yichuanshen.de","license":"MIT","main":"./src/main.js","repository":{"type":"git","url":"https://github.com/SabakiHQ/Sabaki"},"bugs":{"url":"https://github.com/SabakiHQ/Sabaki/issues"},"prettier":{"semi":false,"singleQuote":true,"bracketSpacing":false,"proseWrap":"always","trailingComma":"all","arrowParens":"always"},"dependencies":{"@mariotacke/color-thief":"^3.0.1","@primer/octicons":"^19.29.1","@sabaki/boardmatcher":"^1.2.0","@sabaki/deadstones":"^2.1.2","@sabaki/go-board":"^1.4.1","@sabaki/gtp":"^3.0.0","@sabaki/i18n":"0.51.1-1","@sabaki/immutable-gametree":"^1.9.4","@sabaki/influence":"^1.2.2","@sabaki/sgf":"^3.4.7","@sabaki/shudan":"^1.7.1","argv-split":"^3.2.1","classnames":"^2.2.6","dolm":"^0.7.3-beta","fix-path":"<6.0.0","iconv-lite":"^0.7.2","jschardet":"^3.0.0","natsort":"^2.0.2","pikaday":"^1.8.0","preact":"^10.4.0","react-markdown":"^10.1.0","remark-breaks":"^3.0.2","rimraf":"^6.1.2","uuid":"^14.0.1","winston":"^3.2.1"}}
 ---

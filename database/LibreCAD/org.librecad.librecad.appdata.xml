@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2010-2022 LibreCAD contributors <info@librecad.org> -->
+<component type="desktop-application">
+    <id>org.librecad.librecad</id>
+    <metadata_license>CC-BY-SA-4.0</metadata_license>
+    <project_license>GPL-2.0</project_license>
+    <name>LibreCAD</name>
+    <summary>2D Computer Aided Design (CAD)</summary>
+    <description>
+        <p>LibreCAD is a 2D Computer Aided Design (CAD) application for creating plans and designs on your computer. It can be used to make accurate 2D representations of floorplans, part designs and just about anything that can be represented as a flat 2D plan.</p>
+    </description>
+    <launchable type="desktop-id">librecad.desktop</launchable>
+    <url type="homepage">https://librecad.org/</url>
+    <url type="vcs-browser">https://github.com/LibreCAD/LibreCAD</url>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://dokuwiki.librecad.org/lib/exe/fetch.php/librecad_screeshot_2.2.png</image>
+            <caption>Main Window</caption>
+        </screenshot>
+    </screenshots>
+    <provides>
+        <id>librecad.desktop</id>
+        <binary>librecad</binary>
+    </provides>
+    <update_contact>info@librecad.org</update_contact>
+    <content_rating type="oars-1.1" />
+    <developer_name>LibreCAD Developers</developer_name>
+    <releases>
+        <release date="2026-01-11" version="2.2.1.3">
+          <url>https://github.com/LibreCAD/LibreCAD/releases/tag/v2.2.1.3</url>
+        </release>
+        <release date="2025-02-19" version="2.2.1.2">
+          <url>https://github.com/LibreCAD/LibreCAD/releases/tag/v2.2.1.2</url>
+        </release>
+        <release date="2025-02-19" version="2.2.1.1">
+          <url>https://github.com/LibreCAD/LibreCAD/releases/tag/v2.2.1.1</url>
+        </release>
+        <release date="2025-01-04" version="2.2.1">
+          <url>https://github.com/LibreCAD/LibreCAD/releases/tag/v2.2.1</url>
+        </release>
+        <release date="2023-07-29" version="2.2.0.2">
+          <description>
+            <ul>
+              <li>An undetected vulnerability, opening malformed LFF
+              font files caused a crash</li>
+              <li>Format issues in bundled fonts</li>
+              <li>A regression, finding nearest points on ellipses
+              caused a crash</li>
+            </ul>
+          </description>
+        </release>
+        <release date="2022-12-17" version="2.2.0" />
+    </releases>
+</component>

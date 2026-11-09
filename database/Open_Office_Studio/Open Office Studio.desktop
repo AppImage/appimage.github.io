@@ -1,0 +1,47 @@
+[Desktop Entry]
+# Gemaakt door scripts/maak-desktopbestanden.mjs uit src/i18n/locales/*/desktop.json; niet met de hand bewerken.
+# Tauri vult de Handlebars-variabelen in (bundle.linux.deb/rpm.desktopTemplate in tauri.conf.json).
+Type=Application
+Name=Open Office Studio
+GenericName=Office suite
+GenericName[nl]=Kantoorpakket
+GenericName[de]=Office-Paket
+GenericName[fr]=Suite bureautique
+GenericName[es]=Paquete ofimático
+GenericName[it]=Suite per ufficio
+GenericName[pt_BR]=Pacote de escritório
+GenericName[zh_CN]=办公套件
+Comment=Local OpenAEC office environment
+Comment[nl]=Lokale OpenAEC-kantooromgeving
+Comment[de]=Lokale OpenAEC-Büroumgebung
+Comment[fr]=Environnement bureautique local OpenAEC
+Comment[es]=Entorno ofimático local de OpenAEC
+Comment[it]=Ambiente per ufficio locale di OpenAEC
+Comment[pt_BR]=Ambiente de escritório local da OpenAEC
+Comment[zh_CN]=本地 OpenAEC 办公环境
+Keywords=word processor;spreadsheet;presentation;database;email;office;
+Keywords[nl]=tekstverwerker;rekenblad;presentatie;database;e-mail;kantoor;
+Keywords[de]=Textverarbeitung;Tabellenkalkulation;Präsentation;Datenbank;E-Mail;Büro;Office;
+Keywords[fr]=traitement de texte;tableur;présentation;base de données;courriel;bureautique;
+Keywords[es]=procesador de textos;hoja de cálculo;presentación;base de datos;correo;ofimática;
+Keywords[it]=elaboratore di testi;foglio di calcolo;presentazione;database;email;ufficio;
+Keywords[pt_BR]=processador de texto;planilha;apresentação;banco de dados;e-mail;escritório;
+Keywords[zh_CN]=文字处理;电子表格;演示文稿;数据库;电子邮件;办公;office;
+Exec=open-office-studio %F
+StartupWMClass=open-office-studio
+Icon=open-office-studio
+Terminal=false
+Categories=Office;
+MimeType=application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-word.document.macroEnabled.12;application/vnd.openxmlformats-officedocument.wordprocessingml.template;application/vnd.ms-word.template.macroEnabled.12;application/msword;application/msword-template;application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.text-template;application/rtf;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel.sheet.macroEnabled.12;application/vnd.openxmlformats-officedocument.spreadsheetml.template;application/vnd.ms-excel.template.macroEnabled.12;application/vnd.ms-excel.sheet.binary.macroEnabled.12;application/vnd.ms-excel;application/vnd.oasis.opendocument.spreadsheet;application/vnd.oasis.opendocument.spreadsheet-template;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-powerpoint.presentation.macroEnabled.12;application/vnd.openxmlformats-officedocument.presentationml.template;application/vnd.ms-powerpoint.template.macroEnabled.12;application/vnd.openxmlformats-officedocument.presentationml.slideshow;application/vnd.ms-powerpoint;application/vnd.oasis.opendocument.presentation;application/vnd.oasis.opendocument.presentation-template;application/vnd.ms-access;application/x-openaec-office-ifcx
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=Apache-2.0

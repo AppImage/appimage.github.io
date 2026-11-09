@@ -1,0 +1,20 @@
+{
+  "name": "@escanor/desktop",
+  "version": "0.10.32",
+  "private": true,
+  "description": "Escanor Desktop: the complete Escanor app, with your laptop as the server.",
+  "author": "Escanor",
+  "desktopName": "escanor.desktop",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "electron-updater": "^6.8.11",
+    "node-pty": "^1.1.0",
+    "qrcode": "^1.5.4",
+    "systeminformation": "^5.33.15",
+    "tar": "^7.5.22",
+    "ws": "^8.22.0",
+    "zod": "3",
+    "zod-to-json-schema": "^3.25.2"
+  },
+  "homepage": "https://www.escanor.in"
+}

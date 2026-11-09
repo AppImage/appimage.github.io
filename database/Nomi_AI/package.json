@@ -1,0 +1,39 @@
+{
+  "name": "@nomi-ai/electron",
+  "version": "1.1.1",
+  "description": "Electron主进程和预加载脚本",
+  "main": "dist/main.js",
+  "author": "Cookieboty",
+  "license": "MIT",
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.78",
+    "@ai-sdk/mcp": "^2.0.73",
+    "@ai-sdk/openai": "^4.0.91",
+    "@ai-sdk/openai-compatible": "^3.0.67",
+    "@nomi-ai/ai-runtime": "workspace:*",
+    "@nomi-ai/ai-sdk": "workspace:*",
+    "@nomi-ai/ai-sdk-client": "workspace:*",
+    "@nomi-ai/bundle-ig-base": "workspace:*",
+    "@nomi-ai/bundle-ig-electron-caps": "workspace:*",
+    "@nomi-ai/bundle-ig-mascot": "workspace:*",
+    "@nomi-ai/gateway": "workspace:*",
+    "@nomi-ai/types": "workspace:*",
+    "ai": "^7.0.136",
+    "electron-updater": "^6.6.2",
+    "fflate": "^0.8.3",
+    "onnxruntime-web": "1.30.0",
+    "sherpa-onnx-node": "1.13.8",
+    "smol-toml": "1.9.0",
+    "tar-stream": "3.2.2",
+    "tesseract.js": "7.0.0",
+    "unbzip2-stream": "1.4.3",
+    "unpdf": "^1.8.1",
+    "ws": "8.21.3"
+  },
+  "desktopName": "nomi.desktop",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cookieboty/nomi-ai.git"
+  },
+  "homepage": "https://github.com/Cookieboty/nomi-ai"
+}

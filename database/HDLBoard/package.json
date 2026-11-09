@@ -1,0 +1,9 @@
+{
+  "name": "hdl-board-desktop",
+  "private": true,
+  "version": "1.6.2",
+  "license": "GPL-2.0-only",
+  "description": "Windows desktop shell for HDLBoard — packages the frontend, the simulation backend, GHDL and Icarus Verilog into one installer",
+  "author": "Rune Langøy",
+  "main": "main.js"
+}

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.ashbuk.dabri</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Dabri</name>
+  <summary>Offline speech-to-text desktop app</summary>
+  <description>
+    <p>
+      A minimalist, privacy-focused desktop application for offline speech-to-text.
+      Converts voice input directly into any active window (editors, browsers, IDEs, AI assistants)
+      using the Whisper model locally for speech recognition.
+    </p>
+    <p>
+      For system tray integration on GNOME and automatic typing on Wayland,
+      see the Desktop Environment Support Guide.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Offline speech-to-text, privacy-first: all processing happens locally</li>
+      <li>Portable AppImage and Flatpak packages</li>
+      <li>Cross-platform support for X11 and Wayland</li>
+      <li>Linux desktop integration with GNOME, KDE, and others</li>
+      <li>GPU and CPU support with Vulkan acceleration and CPU fallback</li>
+      <li>Voice typing or clipboard mode</li>
+      <li>Flexible audio recording with ALSA or PulseAudio/PipeWire</li>
+      <li>Multi-language support, custom hotkey binding, visual notifications</li>
+      <li>Model management: switch between base, small, medium, and large-v3 whisper models via tray or CLI</li>
+    </ul>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Dabri main window and system tray</caption>
+      <image>https://raw.githubusercontent.com/AshBuk/dabri/screenshots/main-window.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/AshBuk/dabri</url>
+  <url type="bugtracker">https://github.com/AshBuk/dabri/issues</url>
+  <url type="vcs-browser">https://github.com/AshBuk/dabri</url>
+  <url type="help">https://github.com/AshBuk/dabri/blob/master/README.md</url>
+  <url type="donation">https://github.com/sponsors/AshBuk</url>
+  <developer id="io.github.ashbuk">
+    <name>Asher Buk</name>
+  </developer>
+  <launchable type="desktop-id">io.github.ashbuk.dabri.desktop</launchable>
+  <provides>
+    <binary>dabri</binary>
+  </provides>
+  <releases>
+    <release version="2.2.4" date="2026-09-26">
+      <description><p>Flatpak now bundles xdotool for X11 typing; runtime updated to Freedesktop 26.08</p></description>
+    </release>
+    <release version="2.2.3" date="2026-09-14">
+      <description><p>Tray button recovers when the tray starts after Dabri at login; whisper.cpp updated to v1.9.4</p></description>
+    </release>
+    <release version="2.2.2" date="2026-08-20">
+      <description><p>Clearer tray/background button on desktops without a tray backend</p></description>
+    </release>
+    <release version="2.2.1" date="2026-08-19">
+      <description><p>Global shortcuts keep working on Plasma 6.7.4; whisper.cpp updated to v1.9.2</p></description>
+    </release>
+    <release version="2.2.0" date="2026-07-02">
+      <description><p>Portal Unicode auto-paste in active-window mode; Flatpak bundles the small Whisper model</p></description>
+    </release>
+    <release version="2.1.4" date="2026-06-19">
+      <description><p>Leaner Flatpak manifest and runtime version resolution</p></description>
+    </release>
+    <release version="2.1.3" date="2026-06-17">
+      <description><p>aarch64 packages for Fedora, AUR, and AppImage, plus first-run model-download progress in the log</p></description>
+    </release>
+    <release version="2.1.2" date="2026-06-17">
+      <description><p>Flathub-ready Flatpak: freedesktop runtime, desktop-portal notifications, and Go SDK extension build</p></description>
+    </release>
+    <release version="2.1.1" date="2026-06-10">
+      <description><p>Polish GNOME/Wayland portal global shortcuts and a single source of truth for config defaults</p></description>
+    </release>
+    <release version="2.1.0" date="2026-06-09">
+      <description><p>Sandbox-friendly Flatpak release with a dedicated Wayland portal library and a tray status window</p></description>
+    </release>
+    <release version="2.0.2" date="2026-06-04">
+      <description><p>Bug fixes and improvements</p></description>
+    </release>
+    <release version="2.0.1" date="2026-05-19"/>
+    <release version="1.8.2" date="2026-05-15"/>
+    <release version="1.8.1" date="2026-04-19"/>
+    <release version="1.8.0" date="2026-03-21"/>
+    <release version="1.7.2" date="2026-03-15"/>
+    <release version="1.7.1" date="2026-03-02"/>
+    <release version="1.7.0" date="2026-03-02"/>
+    <release version="1.6.3" date="2026-02-23"/>
+    <release version="1.6.2" date="2026-02-07"/>
+    <release version="1.6.1" date="2026-01-19"/>
+    <release version="1.6.0" date="2026-01-14"/>
+    <release version="1.5.2" date="2026-01-07"/>
+    <release version="1.5.1" date="2026-01-06"/>
+    <release version="1.5.0" date="2026-01-06"/>
+    <release version="1.4.2" date="2025-12-29"/>
+    <release version="1.4.1" date="2025-12-25"/>
+    <release version="1.4.0" date="2025-12-15"/>
+    <release version="1.3.4" date="2025-12-07"/>
+    <release version="1.3.3" date="2025-11-27"/>
+    <release version="1.3.2" date="2025-11-13"/>
+    <release version="1.3.1" date="2025-10-31"/>
+    <release version="1.3.0" date="2025-10-29"/>
+    <release version="1.2.0" date="2025-10-17"/>
+    <release version="1.1.0" date="2025-10-06"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+  <keywords>
+    <keyword>speech</keyword>
+    <keyword>voice</keyword>
+    <keyword>transcription</keyword>
+    <keyword>ai</keyword>
+    <keyword>whisper</keyword>
+    <keyword>offline</keyword>
+    <keyword>privacy</keyword>
+  </keywords>
+</component> 

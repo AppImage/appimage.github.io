@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.hamza_abdelmoumene.vespera</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Vespera</name>
+  <summary>Music player companion with synced lyrics, visualizer and equalizer</summary>
+
+  <description>
+    <p>
+      Vespera is a standalone, distro-agnostic music player companion. It is a
+      controller, not a player: it drives whatever is already playing over MPRIS
+      and wraps it in a premium, themeable interface.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>MPRIS control with ranked active-player selection and browser de-prioritisation</li>
+      <li>Synced lyrics (lrclib) with click-to-seek and per-track offset</li>
+      <li>Audio visualizer powered by cava (optional)</li>
+      <li>10-band equalizer applied through EasyEffects (optional)</li>
+      <li>Album-derived theming and an animated starry backdrop</li>
+      <li>Single-instance D-Bus control so any WM can bind keys to it</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">vespera.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The expanded player with synced lyrics, visualizer and equalizer</caption>
+      <image>https://raw.githubusercontent.com/hamza-abdelmoumene/vespera/main/docs/screenshots/expanded.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Compact now-playing layout</caption>
+      <image>https://raw.githubusercontent.com/hamza-abdelmoumene/vespera/main/docs/screenshots/compact.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/hamza-abdelmoumene/vespera</url>
+  <url type="bugtracker">https://github.com/hamza-abdelmoumene/vespera/issues</url>
+
+  <developer id="io.github.hamza_abdelmoumene">
+    <name>Hamza Abdelmoumene</name>
+  </developer>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.1.0" date="2026-07-18">
+      <description>
+        <p>Initial release: core MPRIS player, responsive layout, synced lyrics, cava visualizer and EasyEffects equalizer.</p>
+      </description>
+    </release>
+  </releases>
+</component>

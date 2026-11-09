@@ -33,12 +33,17 @@ desktop:
     MimeType: image/jpeg
     Terminal: false
   AppImageHub:
-    X-AppImage-Signature: 'keybox ''/home/runner/.gnupg/pubring.kbx'' created [don''t
-      know]: invalid packet (ctb=0a) no signature found the signature could not be verified.
-      Please remember that the signature file (.sig or .asc) should be the first file
-      given on the command line.'
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.30
+    X-AppImage-Payload-License: GPL-3.0
 
 appdata:
   Type: desktop-application
@@ -56,7 +61,7 @@ appdata:
       <p>Change exposure, contrast and color.
             Turn color photos in to black and white images with control how color is handled.
             Rotate, crop, straighten and resize photos.</p>
-      <p>Copyright (C) 2022 Jari Ahola</p>
+      <p>Copyright (C) 2022-2025 Jari Ahola</p>
   
       <p>Lisensed under GNU GPLv3. Full source code available at https://github.com/aphototool/A-Photo-Tool-Libre</p>
   ProjectLicense: GPL-3.0-or-later
@@ -98,13 +103,11 @@ appdata:
       url: https://raw.githubusercontent.com/aphototool/A-Photo-Tool-Libre/main/pics/APhotoTool(Libre)ToolsScreenShot.png
       lang: C
   Releases:
-  - version: 1.0.4
-    unix-timestamp: 1664496000
+  - version: 1.0.7
+    unix-timestamp: 1739491200
     description:
       C: >-
-        <p>1.0.4-3 2022-09-30: Fix to apply changed dark/light mode to new windows</p>
-  
-        <p>1.0.4-2 2022-09-23: Fix to changing from dark to light mode</p>
-  
-        <p>1.0.4-1 2022-09-12: PNG image preview improvement</p>
+        <p>1.0.7-1 2025-02-14: Crop tool improvements</p>
+  ContentRating:
+    oars-1.0: {}
 ---

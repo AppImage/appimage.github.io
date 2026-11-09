@@ -1,0 +1,41 @@
+{
+  "name": "wfhelper",
+  "version": "2.1.1",
+  "description": "Warframe companion: inventory, foundry, relic and riven scanning, market orders.",
+  "main": ".electron-build/main.js",
+  "desktopName": "wfhelper.desktop",
+  "engines": {
+    "node": ">=22.12",
+    "pnpm": ">=11"
+  },
+  "packageManager": "pnpm@11.1.2",
+  "author": "WFHelper",
+  "license": "MIT",
+  "dependencies": {
+    "@napi-rs/system-ocr": "1.0.2",
+    "@wfcd/items": "^1.1276.6",
+    "chokidar": "^4.0.0",
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.8.9",
+    "html-to-image": "^1.11.13",
+    "koffi": "^2.15.1",
+    "lzma": "^2.3.2",
+    "ms": "2.1.3",
+    "onnxruntime-node": "^1.24.3",
+    "sharp": "^0.35.4",
+    "warframe-public-export-plus": "^0.6.8",
+    "ws": "^8.21.0"
+  },
+  "optionalDependencies": {
+    "@img/sharp-libvips-linux-x64": "1.3.3",
+    "@img/sharp-linux-x64": "0.35.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WFHelper/WFHelper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WFHelper/WFHelper/issues"
+  },
+  "homepage": "https://github.com/WFHelper/WFHelper#readme"
+}

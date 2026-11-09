@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <title>leolink</title>
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d4a5c"/>
+      <stop offset="1" stop-color="#232c38"/>
+    </linearGradient>
+    <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a90d9"/>
+      <stop offset="1" stop-color="#2b6cb0"/>
+    </linearGradient>
+    <radialGradient id="glass" cx="0.35" cy="0.3" r="0.85">
+      <stop offset="0" stop-color="#7fd4ff"/>
+      <stop offset="0.45" stop-color="#1f6f9c"/>
+      <stop offset="1" stop-color="#0b1c26"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Rounded plate: reads cleanly at 16px and against light or dark shells. -->
+  <rect x="6" y="6" width="116" height="116" rx="26" fill="url(#plate)"/>
+
+  <!-- Wall mount -->
+  <path d="M22 92 h13 v14 a4 4 0 0 1-4 4 h-5 a4 4 0 0 1-4-4 z" fill="#1b2430" opacity="0.9"/>
+  <path d="M28.5 92 V70 a6 6 0 0 1 6-6 h6" fill="none" stroke="#1b2430"
+        stroke-width="7" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- Camera body, tilted as if watching the room -->
+  <g transform="rotate(-14 68 62)">
+    <rect x="36" y="44" width="62" height="36" rx="12" fill="url(#body)"/>
+    <!-- Sun shade -->
+    <rect x="33" y="40" width="46" height="8" rx="4" fill="#1b2430" opacity="0.75"/>
+
+    <!-- Lens -->
+    <circle cx="88" cy="62" r="19" fill="#151d26"/>
+    <circle cx="88" cy="62" r="14.5" fill="url(#glass)"/>
+    <circle cx="88" cy="62" r="6" fill="#071018"/>
+    <!-- Specular highlight keeps the glass from looking like a flat hole -->
+    <ellipse cx="82.5" cy="55.5" rx="5" ry="3.4" fill="#ffffff" opacity="0.45"
+             transform="rotate(-35 82.5 55.5)"/>
+
+    <!-- Infrared ring -->
+    <g fill="#c0392b" opacity="0.85">
+      <circle cx="88" cy="41.5" r="2.1"/>
+      <circle cx="105" cy="53" r="2.1"/>
+      <circle cx="105" cy="71" r="2.1"/>
+      <circle cx="88" cy="82.5" r="2.1"/>
+    </g>
+  </g>
+
+  <!-- Signal arcs: the camera is streaming, which is what this app is for -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" opacity="0.85">
+    <path d="M96 100 a14 14 0 0 1 10 10" stroke-width="5"/>
+    <path d="M92 88 a26 26 0 0 1 22 22" stroke-width="5" opacity="0.6"/>
+  </g>
+</svg>

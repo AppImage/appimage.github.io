@@ -1,0 +1,28 @@
+{
+  "name": "jan-launcher",
+  "version": "1.1.0",
+  "private": true,
+  "description": "JanLauncher - custom Hytale launcher",
+  "homepage": "https://github.com/janekdeveloper/JanLauncher",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/janekdeveloper/JanLauncher.git"
+  },
+  "author": {
+    "name": "Jan Dev",
+    "email": "jandev.official@gmail.com"
+  },
+  "main": "dist/main/app.js",
+  "dependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "adm-zip": "^0.5.16",
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "electron-updater": "^6.7.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1",
+    "react-virtuoso": "^4.6.2",
+    "tar": "^7.5.6"
+  }
+}

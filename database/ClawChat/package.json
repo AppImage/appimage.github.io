@@ -1,0 +1,24 @@
+{
+  "name": "clawchat",
+  "productName": "ClawChat",
+  "private": true,
+  "version": "0.2.6",
+  "type": "module",
+  "dependencies": {
+    "@noble/ed25519": "^3.0.0",
+    "consola": "^3.4.2",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "clsx": "^2.1.1",
+    "electron-context-menu": "^4.1.1",
+    "electron-store": "^11.0.2",
+    "lucide-react": "^0.563.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^16.1.0",
+    "remark-gfm": "^4.0.1",
+    "tailwind-merge": "^3.4.0",
+    "ws": "^8.19.0"
+  },
+  "main": "dist-electron/main.js"
+}

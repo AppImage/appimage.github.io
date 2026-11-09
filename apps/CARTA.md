@@ -6,7 +6,7 @@ description: Visualisation and analysis tool for radio astronomy
 license: GPL-3.0+
 
 icons:
-  - CARTA/icons/64x64/carta.png
+  - CARTA/icons/512x512/carta.png
 screenshots:
 - https://cartavis.org/images/gallery-images/spectral_line_analysis.png
 
@@ -28,14 +28,18 @@ desktop:
     Type: Application
     Comment: Cube Analysis and Rendering Tool for Astronomy
     Categories: Science
-    X-AppImage-Version: 3.0.0
+    X-AppImage-Version: v4.1.0
   AppImageHub:
-    X-AppImage-Signature: keybox '/home/runner/.gnupg/pubring.kbx' created no valid
-      OpenPGP data found. the signature could not be verified. Please remember that
-      the signature file (.sig or .asc) should be the first file given on the command
-      line.
+    X-AppImage-Signature: directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx'
+      created no valid OpenPGP data found. the signature could not be verified. Please
+      remember that the signature file (.sig or .asc) should be the first file given
+      on the command line.
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.17
 
 appdata:
   Type: desktop-application
@@ -74,6 +78,6 @@ appdata:
       url: https://cartavis.org/images/gallery-images/polarization_analysis.png
       lang: C
   Releases:
-  - version: 3.0.0
-    unix-timestamp: 1365724800
+  - version: 4.1.0
+    unix-timestamp: 1705622400
 ---

@@ -1,0 +1,20 @@
+{
+  "name": "nagome-electron",
+  "version": "1.0.6",
+  "description": "Electron packege of Nagome Web UI",
+  "author": {
+    "name": "Diginatu",
+    "email": "diginatu.510o@gmail.com"
+  },
+  "license": "MIT",
+  "main": "app/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/diginatu/nagome-electron.git"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.1.0",
+    "electron-log": "^4.2.4",
+    "electron-updater": "^4.0.6"
+  }
+}

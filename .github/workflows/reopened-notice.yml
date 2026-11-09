@@ -1,0 +1,43 @@
+# When the author of a pull request closes and reopens it, they are usually
+# trying to run the test again. Tell them, once, that commenting /retest does
+# that (and that a comment saying a fix or a new release is out does it too).
+#
+# Only for authors who are not maintainers, and not for the reopens that
+# retest.yml and auto-retest.yml do themselves (those are done by another
+# account than the author). pull_request_target, from master: nothing from the
+# PR is checked out or run; only the API is used.
+name: Reopened notice
+
+on:
+  pull_request_target:
+    types: [reopened]
+
+jobs:
+  notice:
+    if: >-
+      github.repository == 'AppImage/appimage.github.io' &&
+      github.event.sender.login == github.event.pull_request.user.login &&
+      github.event.sender.type != 'Bot' &&
+      !contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.pull_request.author_association)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.pull_request.number }}
+    steps:
+      - name: Say how to test again
+        run: |
+          MARKER='<!-- appimagehub-retest-howto -->'
+          if gh api --paginate "repos/$REPO/issues/$PR/comments" --jq '.[].body' | grep -qF "$MARKER" ; then
+            echo "Told already."
+            exit 0
+          fi
+          {
+            echo "$MARKER"
+            echo 'You do not need to close and reopen this pull request to test it again: comment `/retest` on it. It is also tested again automatically when you comment that a fix or a new release is out (e.g. "v1.2 is out, fixed in v1.2"). The author of the pull request, the GitHub account the AppImage comes from and maintainers can do either.'
+          } > notice.md
+          gh pr comment "$PR" -R "$REPO" --body-file notice.md

@@ -13,6 +13,7 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
       <th>Description</th>
       <th>Authors</th>
       <th>Update Information</th>
+      <th title="Runs without a compatible C library (glibc) on the system">Self-contained</th>
     </tr>
   </thead>
   <tbody>
@@ -46,6 +47,16 @@ We currently have {{ site.pages | size }} [apps]({{ site.baseurl }}/apps/) in ou
             {% if post.desktop.AppImageHub.X-AppImage-Signature %}
               {% assign shortsig = post.desktop.AppImageHub.X-AppImage-Signature | split: '.' %}
               <span class="octicon octicon-key"></span> {{ shortsig[0] }}
+            {% endif %}
+          </td>
+          <td style="vertical-align: top;">
+            {% assign hub = post.desktop.AppImageHub %}
+            {% if hub.X-AppImage-Self-Contained == true %}
+              <span class="octicon octicon-check" style="color:green;"></span> Yes
+            {% elsif hub.X-AppImage-Libc %}
+              No{% if hub.X-AppImage-Glibc-Required %}, may need glibc {{ hub.X-AppImage-Glibc-Required | remove: "GLIBC_" }}+{% endif %}{% if hub.X-AppImage-Libc != 'host' and hub.X-AppImage-Runtime == 'dynamic' %} (old AppImage runtime){% endif %}
+            {% else %}
+              <span title="Not checked yet">&ndash;</span>
             {% endif %}
           </td>
           </tr>

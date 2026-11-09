@@ -1,0 +1,35 @@
+{
+  "name": "timeseries-explorer",
+  "private": true,
+  "version": "0.3.0",
+  "description": "Desktop and web time-series explorer for MATLAB, Modelica, tabular, netCDF, and Micro-Cap data.",
+  "author": "Franco Ferrucci",
+  "license": "MIT",
+  "homepage": "https://ferrucci-franco.github.io/timeseries-explorer/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferrucci-franco/timeseries-explorer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ferrucci-franco/timeseries-explorer/issues"
+  },
+  "type": "module",
+  "main": "electron/main.cjs",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "@duckdb/duckdb-wasm": "1.32.0",
+    "duckdb": "1.4.4",
+    "fflate": "^0.8.3",
+    "h5wasm": "^0.10.3",
+    "netcdfjs": "^4.0.0",
+    "pickleparser": "^0.2.1",
+    "plotly.js-dist-min": "^3.5.1",
+    "plotly.js-locales": "3.5.1",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "overrides": {
+    "tar": ">=7.5.21"
+  }
+}

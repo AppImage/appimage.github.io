@@ -1,0 +1,14 @@
+{
+  "name": "@ai-canvas/desktop",
+  "private": true,
+  "version": "2026.617.8",
+  "description": "Local-first scene-first mockup editor desktop app.",
+  "author": "Nick Chadwick",
+  "homepage": "https://github.com/chadnickbok/ai-canvas",
+  "productName": "AI Canvas",
+  "type": "module",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "electron-updater": "^6.8.3"
+  }
+}

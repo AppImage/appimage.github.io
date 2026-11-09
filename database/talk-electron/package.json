@@ -1,0 +1,25 @@
+{
+  "name": "talk-electron",
+  "productName": "NC Talk Electron",
+  "description": "Talk web embedded app",
+  "icon": "icon.png",
+  "main": "./main.js",
+  "version": "1.0.4",
+  "author": "Yuri Samoilov <root@drlight.fun>",
+  "homepage": "https://github.com/drlight17/talk-electron",
+  "dependencies": {
+    "@electron/packager": "latest",
+    "@paymoapp/electron-shutdown-handler": "latest",
+    "custom-electron-prompt": "latest",
+    "dbus-next": "latest",
+    "electron-fetch": "^1.9.1",
+    "electron-store": "^8.2.0",
+    "https-proxy-agent": "^7.0.5",
+    "keytar": "^7.9.0",
+    "semver": "latest",
+    "sharp": "^0.34.5"
+  },
+  "optionalDependencies": {
+    "node-desktop-idle-v2": "latest"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "life-parental-control",
+  "version": "1.1.6",
+  "description": "LiFE Parental Control - KDE Plasma parental control tool",
+  "productName": "LiFE_Parental_Control",
+  "author": "Thomas Michael Weissel",
+  "license": "GPL-3.0",
+  "private": true,
+  "main": "out/main/index.js",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "pinia": "^3.0.4",
+    "sweetalert2": "^11.26.24",
+    "vue": "^3.5.30",
+    "vue-i18n": "^11.3.0",
+    "vue-router": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=10.0.0"
+  }
+}

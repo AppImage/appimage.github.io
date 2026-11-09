@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.tomneda.DABstar</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>DABstar</name>
+  <summary>DAB and DAB+ software defined radio receiver</summary>
+  
+  <description>
+    <p>
+      DABstar is a feature-rich DAB and DAB+ digital audio broadcasting receiver
+      application supporting Software-Defined Radio (SDR) hardware such as RTL-SDR,
+      SDRplay, Airspy, HackRF and others.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.tomneda.DABstar.desktop</launchable>
+
+  <developer id="github.com.tomneda">
+    <name>tomneda</name>
+  </developer>
+
+  <url type="homepage">https://github.com/tomneda/DABstar</url>
+  <url type="bugtracker">https://github.com/tomneda/DABstar/issues</url>
+
+  <provides>
+    <binary>dabstar</binary>
+  </provides>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="5.8.1" date="2026-10-11"/>
+  </releases>
+</component>

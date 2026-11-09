@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>8B</title>
+  <defs>
+    <path id="petal" d="M-1.56 -1.08C-6.61 -5.14 -6.4 -11.74 0 -18.5C6.4 -11.74 6.61 -5.14 1.56 -1.08A1.9 1.9 0 0 0 -1.56 -1.08Z"/>
+    <path id="facet" d="M-1.56 -1.08C-6.61 -5.14 -6.4 -11.74 0 -18.5V-1.9A1.9 1.9 0 0 0 -1.56 -1.08Z"/>
+  </defs>
+  <rect x="4" y="4" width="40" height="40" rx="2" fill="#1f2d44"/>
+  <rect x="4.5" y="4.5" width="39" height="39" rx="1.5" fill="none" stroke="#2c3d5a"/>
+  <path d="M6 4H42A2 2 0 0 1 44 6V7A2 2 0 0 0 42 5H6A2 2 0 0 0 4 7V6A2 2 0 0 1 6 4Z" fill="#fff" opacity=".3"/>
+  <path d="M4 42A2 2 0 0 0 6 44H42A2 2 0 0 0 44 42V41A2 2 0 0 1 42 43H6A2 2 0 0 1 4 41Z" fill="#131c2b"/>
+  <g transform="translate(24 25.75)">
+    <use xlink:href="#petal" fill="#a9cfe6"/>
+    <use xlink:href="#facet" fill="#fcfcfc"/>
+    <use xlink:href="#petal" fill="#a9cfe6" transform="rotate(72)"/>
+    <use xlink:href="#facet" fill="#fcfcfc" transform="rotate(72)"/>
+    <use xlink:href="#petal" fill="#a9cfe6" transform="rotate(144)"/>
+    <use xlink:href="#facet" fill="#fcfcfc" transform="rotate(144) scale(-1 1)"/>
+    <use xlink:href="#petal" fill="#a9cfe6" transform="rotate(216)"/>
+    <use xlink:href="#facet" fill="#fcfcfc" transform="rotate(216) scale(-1 1)"/>
+    <use xlink:href="#petal" fill="#a9cfe6" transform="rotate(288)"/>
+    <use xlink:href="#facet" fill="#fcfcfc" transform="rotate(288) scale(-1 1)"/>
+  </g>
+</svg>

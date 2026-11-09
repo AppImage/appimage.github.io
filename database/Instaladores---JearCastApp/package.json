@@ -1,0 +1,22 @@
+{
+  "name": "jearcastapp_electrone",
+  "version": "1.0.0",
+  "description": "proyect_init_jearcastapp_v2",
+  "main": "src/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Josu09P/jearcastapp_electron_v2.git"
+  },
+  "author": {
+    "name": "Josue Elias Algarate Rubio",
+    "email": "josuealgarate24@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Josu09P/jearcastapp_electron_v2/issues"
+  },
+  "homepage": "https://github.com/Josu09P/jearcastapp_electron_v2#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

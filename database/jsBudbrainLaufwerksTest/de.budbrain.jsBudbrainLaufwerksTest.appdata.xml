@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainLaufwerksTest</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsBudbrainLaufwerksTest</name>
+  <summary>Measure how fast a drive writes and reads</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <description>
+    <p>
+      Writes a test file to a drive, reads it back, checks every block and deletes it again. Two level meters show the current speed live, two charts record the whole run.
+    </p>
+    <ul>
+      <li>Test size from 1024 MB up to 16 GB, or a fixed duration from 5 seconds to 16 minutes</li>
+      <li>Measures the drive itself, not the computer's memory</li>
+      <li>Every block is verified on reading, which helps to uncover drives with a faked capacity</li>
+      <li>Shows when a fast drive runs out of breath and the speed drops</li>
+      <li>Worst, average and best value for writing and reading</li>
+      <li>History of all runs, export as text</li>
+      <li>Never fills a drive: space for the system stays free</li>
+      <li>Light and dark design</li>
+      <li>Available in 47 languages</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">jsbudbrainlaufwerkstest.desktop</launchable>
+
+  <provides>
+    <binary>jsBudbrainLaufwerksTest</binary>
+  </provides>
+
+  <categories>
+    <category>System</category>
+    <category>Monitor</category>
+  </categories>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Result of a test on an NVMe drive</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainlaufwerkstest_01-result-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A test running on a network drive, dark design</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainlaufwerkstest_02-live-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A test by time with both charts</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainlaufwerkstest_03-by-time-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>History of all tests, save as text or copy</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainlaufwerkstest_04-history.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Settings: level meters up to 1,000,000 MB/s</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainlaufwerkstest_05-settings.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-10-14">
+      <description>
+        <p>First release: write and read speed of any drive with live level meters and charts, by size or by time, a check of every block, a history of all tests and 47 languages.</p>
+      </description>
+    </release>
+  </releases>
+</component>

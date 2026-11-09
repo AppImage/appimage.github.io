@@ -1,0 +1,31 @@
+{
+  "name": "matjari-pos",
+  "version": "2.9.5",
+  "description": "نظام إدارة المبيعات الذكي - Smart POS for Small Business",
+  "main": "main.js",
+  "author": {
+    "name": "Saleh GNUTUX",
+    "email": "saleh@gnutux.com",
+    "url": "https://github.com/SalehGNUTUX"
+  },
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SalehGNUTUX/matjari"
+  },
+  "dependencies": {
+    "@capacitor/app": "^6.0.0",
+    "@capacitor/browser": "^6.0.0",
+    "@capacitor/camera": "^6.0.0",
+    "@capacitor/filesystem": "^6.0.0",
+    "@capacitor/share": "^6.0.0",
+    "html2canvas": "^1.4.1",
+    "html5-qrcode": "^2.3.8",
+    "jsqr": "^1.4.0",
+    "lucide-react": "^0.344.0",
+    "qrcode.react": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.12.2"
+  }
+}

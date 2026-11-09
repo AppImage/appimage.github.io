@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Linux 包（AppImage / deb）的 AppStream 元数据。文件名必须与 <id> 一致，
+     安装位置为 usr/share/metainfo。发行新版本时同步 <releases>。 -->
+<component type="desktop-application">
+  <id>app.termpilot.desktop</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>TermPilot</name>
+  <summary>Terminals and desktops your agent can keep using</summary>
+
+  <description>
+    <p>
+      TermPilot is a desktop application for SSH, Telnet and serial terminals plus VNC and
+      RDP desktops. You sign in yourself, then an AI agent continues on the same session or
+      the same desktop through the built-in MCP server.
+    </p>
+    <p>
+      Credentials are encrypted with the system keychain and stored only on this machine.
+      There is no account system and no telemetry.
+    </p>
+    <ul>
+      <li>Terminal tabs for SSH, Telnet, serial and local shells, with SFTP in the same window.</li>
+      <li>VNC and RDP desktops in the same window, with a shared text clipboard.</li>
+      <li>A built-in MCP server exposing 35 tools, bound to 127.0.0.1 and protected by a token.</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">TermPilot.desktop</launchable>
+
+  <url type="homepage">https://term.xyun.dev</url>
+  <url type="bugtracker">https://github.com/xy200303/termpilot/issues</url>
+  <url type="vcs-browser">https://github.com/xy200303/termpilot</url>
+
+  <developer id="dev.xyun">
+    <name>xy200303</name>
+  </developer>
+
+  <categories>
+    <category>Development</category>
+    <category>Network</category>
+  </categories>
+
+  <keywords>
+    <keyword>SSH</keyword>
+    <keyword>Telnet</keyword>
+    <keyword>serial</keyword>
+    <keyword>SFTP</keyword>
+    <keyword>VNC</keyword>
+    <keyword>RDP</keyword>
+    <keyword>MCP</keyword>
+    <keyword>terminal</keyword>
+  </keywords>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Connections, terminals and desktops in one window</caption>
+      <image>https://term.xyun.dev/shots/hero.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>File panel sharing the same SSH connection</caption>
+      <image>https://term.xyun.dev/shots/sftp.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.9.1" date="2026-11-08"/>
+  </releases>
+
+  <content_rating type="oars-1.1"/>
+</component>

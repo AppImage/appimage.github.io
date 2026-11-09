@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<component type="desktop-application">
+	<id>org.beagleboard.imagingutility</id>
+
+	<name>BeagleBoard Imager</name>
+	<summary>BeagleBoard Imaging Utility</summary>
+	<developer id="org.beagleboard">
+		<name>BeagleBoard.org Developers</name>
+	</developer>
+
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>MIT</project_license>
+
+	<description>
+		<p>
+			Notice: Please download the udev permissions for fixing permission errors when working with BeagleConnect Freedom.
+		</p>
+		<p>
+			The easiest way to install the latest operating system images for your Beagle.
+		</p>
+	</description>
+
+	<launchable type="desktop-id">org.beagleboard.imagingutility.desktop</launchable>
+
+	<branding>
+		<color type="primary" scheme_preference="light">#aa5137</color>
+		<color type="primary" scheme_preference="dark">#aa5137</color>
+	</branding>
+
+	<categories>
+		<category>Development</category>
+	</categories>
+
+	<url type="homepage">https://www.beagleboard.org/bb-imager</url>
+	<url type="bugtracker">https://github.com/beagleboard/bb-imager-rs/issues</url>
+	<url type="donation">https://github.com/sponsors/beagleboard</url>
+	<url type="contact">https://www.beagleboard.org/collaborate</url>
+	<url type="contribute">https://github.com/beagleboard/bb-imager-rs/tree/main?tab=contributing-ov-file</url>
+	<url type="vcs-browser">https://github.com/beagleboard/bb-imager-rs</url>
+
+	<content_rating type="oars-1.1" />
+
+	<screenshots>
+		<screenshot type="default">
+			<image>https://media.githubusercontent.com/media/beagleboard/bb-imager-rs/refs/tags/1.0.13/assets/screenshots/1_board_selection.webp</image>
+			<caption>Board Selection</caption>
+        	</screenshot>
+		<screenshot type="default">
+			<image>https://media.githubusercontent.com/media/beagleboard/bb-imager-rs/refs/tags/1.0.13/assets/screenshots/2_image_selection.webp</image>
+			<caption>Image Selection</caption>
+        	</screenshot>
+		<screenshot type="default">
+			<image>https://media.githubusercontent.com/media/beagleboard/bb-imager-rs/refs/tags/1.0.13/assets/screenshots/3_dest_selection.webp</image>
+			<caption>Destination Selection</caption>
+        	</screenshot>
+        	<screenshot>
+        		<image>https://media.githubusercontent.com/media/beagleboard/bb-imager-rs/refs/tags/1.0.13/assets/screenshots/4_customization.webp</image>
+			<caption>Image customization</caption>
+        	</screenshot>
+        	<screenshot>
+        		<image>https://media.githubusercontent.com/media/beagleboard/bb-imager-rs/refs/tags/1.0.13/assets/screenshots/5_review.webp</image>
+			<caption>Review</caption>
+        	</screenshot>
+        	<screenshot>
+        		<image>https://media.githubusercontent.com/media/beagleboard/bb-imager-rs/refs/tags/1.0.13/assets/screenshots/6_flashing.webp</image>
+			<caption>Flashing progress</caption>
+        	</screenshot>
+        	<screenshot>
+        		<image>https://media.githubusercontent.com/media/beagleboard/bb-imager-rs/refs/tags/1.0.13/assets/screenshots/7_sucess.webp</image>
+			<caption>Flashing Success</caption>
+        	</screenshot>
+	</screenshots>
+
+	<releases>
+		<release version="1.0.18" date="2026-09-28">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.18</url>
+		</release>
+		<release version="1.0.17" date="2026-09-24">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.17</url>
+		</release>
+		<release version="1.0.16" date="2026-09-11">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.16</url>
+		</release>
+		<release version="1.0.15" date="2026-09-03">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.15</url>
+		</release>
+		<release version="1.0.14" date="2026-08-02">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.14</url>
+		</release>
+		<release version="1.0.13" date="2026-07-08">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.13</url>
+		</release>
+		<release version="1.0.12" date="2026-06-23">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.12</url>
+		</release>
+		<release version="1.0.11" date="2026-06-23">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.11</url>
+		</release>
+		<release version="1.0.10" date="2026-06-22">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.10</url>
+		</release>
+		<release version="1.0.9" date="2026-06-20">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.9</url>
+		</release>
+		<release version="1.0.8" date="2026-06-06">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.8</url>
+		</release>
+		<release version="1.0.7" date="2026-05-12">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.7</url>
+		</release>
+		<release version="1.0.6" date="2026-05-10">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.6</url>
+		</release>
+		<release version="1.0.5" date="2026-05-07">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.5</url>
+		</release>
+		<release version="1.0.4" date="2026-05-07">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.4</url>
+		</release>
+		<release version="1.0.3" date="2026-05-06">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.3</url>
+		</release>
+		<release version="1.0.2" date="2026-05-06">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.2</url>
+		</release>
+		<release version="1.0.1" date="2026-04-29">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.1</url>
+		</release>
+		<release version="1.0.0" date="2026-04-24">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/1.0.0</url>
+		</release>
+		<release version="0.0.21" date="2026-04-11">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/0.0.21</url>
+		</release>
+		<release version="0.0.20" date="2026-02-07">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/0.0.20</url>
+		</release>
+		<release version="0.0.19" date="2026-01-17">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/0.0.19</url>
+		</release>
+		<release version="0.0.18" date="2026-01-10">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/0.0.18</url>
+		</release>
+		<release version="0.0.17" date="2025-12-09">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/v0.0.17</url>
+		</release>
+		<release version="0.0.16" date="2025-12-04">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/v0.0.16</url>
+		</release>
+		<release version="0.0.15" date="2025-11-05">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/v0.0.15</url>
+		</release>
+		<release version="0.0.14" date="2025-09-17">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/v0.0.14</url>
+		</release>
+		<release version="0.0.13" date="2025-09-07">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/v0.0.13</url>
+		</release>
+		<release version="0.0.12" date="2025-07-16">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/v0.0.12</url>
+		</release>
+		<release version="0.0.11" date="2025-07-14">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/v0.0.11</url>
+		</release>
+		<release version="0.0.10" date="2025-07-05">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/v0.0.10</url>
+		</release>
+		<release version="0.0.9" date="2025-07-04">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/v0.0.9</url>
+		</release>
+		<release version="0.0.8" date="2025-06-26">
+			<url>https://github.com/beagleboard/bb-imager-rs/releases/tag/v0.0.8</url>
+		</release>
+	</releases>
+</component>

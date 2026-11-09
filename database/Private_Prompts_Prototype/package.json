@@ -1,0 +1,21 @@
+{
+  "name": "private-prompts-electron-app",
+  "productName": "Private Prompts",
+  "description": "Private Prompts Electron Application",
+  "version": "0.0.5-beta",
+  "appId": "org.privateprompts.app",
+  "author": {
+    "name": "Frank Börncke <frank.boerncke@gmail.com>",
+    "url": "https://github.com/fboerncke"
+  },
+  "homepage": "https://www.boerncke.de",
+  "license": "AGPL-3.0-only",
+  "main": "main/main.js",
+  "repository": "https://github.com/fboerncke",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "electron-store": "^8.0.1",
+    "node-polyfill-webpack-plugin": "^4.0.0",
+    "vite-plugin-node-polyfills": "^0.22.0"
+  }
+}

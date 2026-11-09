@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>page.yell0wsuit.ctrdx.editor</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Cut the Rope DX: Level Editor</name>
+  <summary>A standalone level editor for Cut the Rope: DX.</summary>
+  <description>
+    <p>
+      A standalone level editor for Cut the Rope: DX. Create and edit levels, preview
+      objects and movement paths, and play-test levels directly in the game.
+    </p>
+  </description>
+  <launchable type="desktop-id">CtrDxEditor.desktop</launchable>
+  <categories>
+    <category>Development</category>
+    <category>Graphics</category>
+  </categories>
+  <releases>
+    <release version="1.19.0" date="2026-09-29" />
+  </releases>
+  <content_rating type="oars-1.1" />
+</component>

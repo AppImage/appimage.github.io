@@ -1,0 +1,9 @@
+{
+  "name": "desktop",
+  "version": "1.2.2",
+  "private": true,
+  "main": "dist/main.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,17 @@
+{
+  "name": "mise-browser",
+  "version": "1.0.0",
+  "description": "Mise Browser - Electron Edition",
+  "main": "main.js",
+  "license": "GPL-3.0-or-later",
+  "allowScripts": {
+    "electron@44.7.2": true
+  },
+  "dependencies": {
+    "@ghostery/adblocker-electron": "^2.18.2"
+  },
+  "overrides": {
+    "vite": "^6.4.3",
+    "global-agent": "^4.1.3"
+  }
+}

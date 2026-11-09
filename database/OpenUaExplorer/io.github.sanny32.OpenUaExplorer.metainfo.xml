@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.sanny32.OpenUaExplorer</id>
+  <launchable type="desktop-id">io.github.sanny32.OpenUaExplorer.desktop</launchable>
+
+  <name>Open UaExplorer</name>
+  <summary>Browse, inspect, and monitor OPC UA servers</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <developer id="io.github.sanny32">
+    <name>Ananev Alexandr</name>
+  </developer>
+
+  <description>
+    <p>
+      OpenUaExplorer is an open source OPC UA client for browsing, inspecting, and
+      monitoring OPC UA servers.
+    </p>
+    <ul>
+      <li>Browse the OPC UA address space and inspect node attributes.</li>
+      <li>View Data Access, subscriptions, events, and history panels.</li>
+      <li>Plot live and historical values on charts.</li>
+      <li>Connect anonymously, with a username, or with a client certificate.</li>
+    </ul>
+  </description>
+
+  <provides>
+    <mediatype>application/x-ouaexp-session</mediatype>
+  </provides>
+
+  <categories>
+    <category>Utility</category>
+    <category>Engineering</category>    
+  </categories>
+
+  <keywords>
+    <keyword>OPC</keyword>
+    <keyword>UA</keyword>
+    <keyword>OPCUA</keyword>
+    <keyword>SCADA</keyword>
+    <keyword>Automation</keyword>
+    <keyword>Industrial</keyword>
+    <keyword>Monitoring</keyword>
+  </keywords>
+
+  <url type="homepage">https://github.com/sanny32/OpenUaExplorer</url>
+  <url type="bugtracker">https://github.com/sanny32/OpenUaExplorer/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Browsing an OPC UA address space</caption>
+      <image>https://raw.githubusercontent.com/sanny32/OpenUaExplorer/main/.github/assets/app-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The dark theme</caption>
+      <image>https://raw.githubusercontent.com/sanny32/OpenUaExplorer/main/.github/assets/app-dark.png</image>
+    </screenshot>
+  </screenshots>
+
+  <!-- The workflow substitutes the version it is building and the date of the commit
+       it is building from, so the entry cannot drift from the package it ships in. -->
+  <releases>
+    <release version="1.0.0" date="2026-08-21"/>
+  </releases>
+
+  <content_rating type="oars-1.1"/>
+</component>

@@ -32,11 +32,16 @@ desktop:
     Type: Application
     Keywords: doom
   AppImageHub:
-    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
-      created Signature made Sun Feb  9 16:36:50 2025 UTC                using RSA key
-      6E9137E3B0FE3FDC67D70F2ECDC41982C027BAAA Can''t check signature: No public key'
+    X-AppImage-Signature: 'Signature made Sun Feb  9 16:36:50 2025 UTC                using
+      RSA key 6E9137E3B0FE3FDC67D70F2ECDC41982C027BAAA Can''t check signature: No public
+      key'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.30
+    X-AppImage-Payload-License: GPL-3.0
 
 appdata:
   Type: desktop-application

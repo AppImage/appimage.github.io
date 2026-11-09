@@ -1,0 +1,46 @@
+{
+  "name": "heroic",
+  "version": "2.22.4",
+  "versionNames": {
+    "stable": "Hajrudin",
+    "beta": "Caesar Clown"
+  },
+  "private": false,
+  "main": "build/main/main.js",
+  "homepage": "./",
+  "license": "GPL-3.0-only",
+  "description": "An Open Source Launcher for GOG, Epic Games and Amazon Games",
+  "repository": {
+    "type": "Github",
+    "url": "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher"
+  },
+  "author": {
+    "name": "Heroic Games Launcher",
+    "email": "heroicgameslauncher@protonmail.com"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@12.5.1",
+  "dependencies": {
+    "easydl": "^1.2.0",
+    "electron-store": "^8.2.0",
+    "filesize": "^10.1.6",
+    "fs-extra": "^11.3.0",
+    "fuse.js": "^6.6.2",
+    "graceful-fs": "^4.2.11",
+    "ini": "^3.0.1",
+    "intro.js": "^7.2.0",
+    "intro.js-react": "^1.0.0",
+    "json5": "^2.2.3",
+    "plist": "^3.1.0",
+    "react-markdown": "^8.0.7",
+    "rehype-raw": "^6.1.1",
+    "sanitize-filename": "^1.6.3",
+    "sanitize-html": "^2.16.0",
+    "semver": "^7.7.1",
+    "shlex": "^2.1.2",
+    "short-uuid": "^4.2.2",
+    "simple-keyboard": "^3.8.53"
+  }
+}

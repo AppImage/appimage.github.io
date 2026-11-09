@@ -1,0 +1,11 @@
+{
+  "name": "edentext",
+  "private": true,
+  "type": "module",
+  "main": "main.mjs",
+  "version": "0.8.0",
+  "description": "A fully client-side, serverless rich-text editor that saves documents as .odt",
+  "author": "Steffen Becker <stffn.becker@gmail.com>",
+  "homepage": "https://stffnb.github.io/edentext/",
+  "license": "AGPL-3.0-only"
+}

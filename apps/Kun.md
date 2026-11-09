@@ -1,0 +1,141 @@
+---
+layout: app
+
+permalink: /Kun/
+description: Electron workbench for the Kun runtime (HTTP/SSE)
+
+icons:
+  - Kun/icons/1254x1254/kun-gui.png
+
+screenshots:
+  - Kun/screenshot.png
+
+authors:
+  - name: KunAgent
+    url: https://github.com/KunAgent
+
+links:
+  - type: GitHub
+    url: KunAgent/Kun
+  - type: Download
+    url: https://github.com/KunAgent/Kun/releases
+
+desktop:
+  Desktop Entry:
+    Name: Kun
+    Exec: AppRun --disable-setuid-sandbox --no-first-run %U
+    Terminal: false
+    Type: Application
+    Icon: kun-gui
+    StartupWMClass: Kun
+    X-AppImage-Version: 0.3.12
+    Comment: Electron workbench for the Kun runtime (HTTP/SSE)
+    MimeType: x-scheme-handler/kun
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.38
+
+electron:
+  description: Electron workbench for the Kun runtime (HTTP/SSE)
+  engines:
+    node: ">=22.19.0"
+  main: "./out/main/index.js"
+  type: module
+  workspaces:
+  - packages/*
+  dependencies:
+    "@computer-use/nut-js": "^4.2.0"
+    "@google/design.md": 0.3.0
+    "@kun/extension-api": 1.5.0
+    "@kun/provider-catalog": 0.1.0
+    "@larksuiteoapi/node-sdk": "^1.71.1"
+    "@modelcontextprotocol/sdk": "^1.29.0"
+    "@napi-rs/canvas": "^0.1.100"
+    "@tencent-weixin/openclaw-weixin": 2.4.3
+    "@tesseract.js-data/eng": "^1.0.0"
+    "@trycua/cua-driver": 0.22.2
+    better-sqlite3: 12.11.1
+    bindings: 1.5.0
+    diff: "^8.0.4"
+    electron-store: "^10.1.0"
+    electron-updater: "^6.8.9"
+    file-uri-to-path: 2.0.0
+    hast-util-to-html: 9.0.5
+    html-to-docx: npm:@turbodocx/html-to-docx@1.22.2
+    ipaddr.js: "^2.4.0"
+    jszip: 3.10.1
+    katex: "^0.16.46"
+    mdast-util-find-and-replace: "^3.0.2"
+    mdast-util-frontmatter: 2.0.1
+    mdast-util-gfm: 3.1.0
+    mdast-util-gfm-autolink-literal: 2.0.1
+    mdast-util-gfm-footnote: 2.1.0
+    mdast-util-gfm-strikethrough: 2.0.0
+    mdast-util-gfm-table: 2.0.0
+    mdast-util-gfm-task-list-item: 2.0.0
+    mdast-util-math: 3.0.0
+    mdast-util-to-markdown: 2.1.2
+    micromark-extension-gfm-autolink-literal: 2.1.0
+    micromark-extension-gfm-footnote: 2.1.0
+    micromark-extension-gfm-strikethrough: 2.1.0
+    micromark-extension-gfm-table: 2.1.1
+    micromark-extension-gfm-task-list-item: 2.1.0
+    node-pty: "^1.1.0"
+    openclaw: file:vendor/openclaw-shim
+    parse5: "^7.3.0"
+    pdfjs-dist: "^5.4.394"
+    proxy-agent: "^8.0.2"
+    react: "^19.0.0"
+    react-dom: "^19.0.0"
+    react-markdown: "^10.1.0"
+    rehype-katex: 7.0.1
+    rehype-sanitize: 6.0.0
+    remark-frontmatter: 5.0.0
+    remark-gfm: "^4.0.1"
+    remark-math: 6.0.0
+    remark-parse: 11.0.0
+    remark-rehype: 11.1.2
+    semver: "^7.8.5"
+    sharp: "^0.35.4"
+    ssh2: "^1.17.0"
+    tar-stream: 3.2.1
+    tesseract.js: "^7.0.0"
+    unified: 11.0.5
+    unist-util-visit: "^5.1.0"
+    vfile: "^6.0.3"
+    xlsx: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
+    yaml: 2.9.0
+    yauzl: "^3.4.0"
+    yazl: "^3.3.1"
+    zod: "^4.4.3"
+  overrides:
+    "@hono/node-server": 2.0.11
+    adm-zip: 0.6.0
+    fast-uri: 3.1.6
+    hono: 4.13.5
+    ip-address: 10.4.0
+    js-yaml: 4.3.2
+    node-gyp:
+      undici: 8.10.2
+    qs: 6.16.0
+  author: Kun Contributors
+  license: PolyForm-Noncommercial-1.0.0
+  homepage: https://github.com/KunAgent/Kun
+  repository:
+    type: git
+    url: https://github.com/KunAgent/Kun.git
+  kunAppFlavor: production
+  updateChannel: stable
+  buildHints:
+    macSigningEnabled: false
+    notarizationEnabled: false
+---

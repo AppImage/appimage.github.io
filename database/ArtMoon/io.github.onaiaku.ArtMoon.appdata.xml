@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>io.github.onaiaku.ArtMoon</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0+</project_license>
+	<name>ArtMoon</name>
+	<launchable type="desktop-id">io.github.onaiaku.ArtMoon.desktop</launchable>
+	<summary>Gamepad-first game stream client for Sunshine, Apollo and GeForce Experience</summary>
+
+	<description>
+		<p>ArtMoon is a gamepad-first streaming client built on Moonlight. It streams games and other applications from another PC running Sunshine, Apollo or GeForce Experience, with a native companion integration for ArtLight on the host.</p>
+		<p>Features include:</p>
+		<ul>
+			<li>Hardware accelerated video decoding with VAAPI, VDPAU, and Vulkan Video support</li>
+			<li>H.264, HEVC, and AV1 codec support</li>
+			<li>7.1 surround sound audio support</li>
+			<li>10-point multitouch support</li>
+			<li>Gamepad-first interface with force feedback for up to 16 players</li>
+			<li>Support for both pointer capture (for games) and direct mouse control (for remote desktop)</li>
+			<li>Support for passing system-wide keyboard shortcuts like Alt+Tab to the host</li>
+			<li>Per-host profiles, per-game overrides, and native display refresh-rate detection</li>
+		</ul>
+	</description>
+
+	<url type="homepage">https://github.com/onaiaku/ArtMoon</url>
+	<url type="bugtracker">https://github.com/onaiaku/ArtMoon/issues</url>
+	<url type="help">https://github.com/moonlight-stream/moonlight-docs/wiki/Setup-Guide</url>
+	<url type="vcs-browser">https://github.com/onaiaku/ArtMoon</url>
+	<developer id="io.github.onaiaku">
+		<name>onaiaku</name>
+	</developer>
+	<content_rating type="oars-1.1" />
+</component>

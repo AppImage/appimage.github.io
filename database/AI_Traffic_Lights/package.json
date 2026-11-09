@@ -1,0 +1,20 @@
+{
+  "name": "ai-traffic-lights",
+  "version": "0.7.3",
+  "description": "Overlay com um semáforo 🟢🟡🔴 por sessão de agente de IA no desktop — Claude Code, Antigravity, Codex e OpenCode via adapters",
+  "main": "main.js",
+  "author": "Aron Peyroteo <aronpeyroteo@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/aronpc/ai-traffic-lights",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aronpc/ai-traffic-lights.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aronpc/ai-traffic-lights/issues"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "electron-updater": "^6.8.9"
+  }
+}

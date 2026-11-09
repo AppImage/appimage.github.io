@@ -1,0 +1,11 @@
+{
+  "name": "@callmeclaude/desktop",
+  "productName": "CallMeClaude",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CallMeClaude in the system tray: sessions, approvals, and voice calls with Claude on this computer.",
+  "license": "MIT",
+  "author": "CallMeClaude contributors",
+  "homepage": "https://github.com/wutlu/callmeclaude",
+  "main": "dist/main.cjs"
+}

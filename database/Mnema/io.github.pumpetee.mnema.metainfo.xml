@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- What app catalogs (AppImage catalog, software centers) show about Mnema: the name, the description and the
+     screenshots of the main window. Goes into the AppImage as usr/share/metainfo. -->
+<component type="desktop-application">
+  <id>io.github.pumpetee.mnema</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-only</project_license>
+  <name>Mnema</name>
+  <summary>Your memory for every AI</summary>
+  <developer id="io.github.pumpetee">
+    <name>Pumpetee</name>
+  </developer>
+  <description>
+    <p>
+      Stop explaining yourself to every new chat. One memory for Claude, ChatGPT, Gemini and local models,
+      free and kept on your computer as ordinary files.
+    </p>
+    <ul>
+      <li>Learns who you are from your conversations and gives every AI the same picture of you</li>
+      <li>Consortium: several AIs discuss a question and agree on an answer</li>
+      <li>Local models that run without the internet</li>
+      <li>Reads and writes your files with your permission on every action</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github.pumpetee.mnema.desktop</launchable>
+  <url type="homepage">https://github.com/Pumpetee/Mnema</url>
+  <url type="bugtracker">https://github.com/Pumpetee/Mnema/issues</url>
+  <categories>
+    <category>Office</category>
+    <category>Utility</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <caption>A conversation with memory: the answer already knows your plans</caption>
+      <image>https://raw.githubusercontent.com/Pumpetee/Mnema/main/docs/img/en/hero.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>What Mnema knows about you: the portrait and the memory map</caption>
+      <image>https://raw.githubusercontent.com/Pumpetee/Mnema/main/docs/img/en/memory.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Consortium: several AIs discuss a question and sum it up</caption>
+      <image>https://raw.githubusercontent.com/Pumpetee/Mnema/main/docs/img/en/consortium.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="2.0.0" date="2026-10-24"/>
+  </releases>
+</component>

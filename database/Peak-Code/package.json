@@ -1,0 +1,31 @@
+{
+  "name": "peak-code-desktop",
+  "version": "0.9.0",
+  "buildVersion": "0.9.0",
+  "peakcodeCommitHash": "dfd8a0cfc524",
+  "private": true,
+  "description": "Peak Code desktop build",
+  "author": "Peak Code AI",
+  "main": "apps/desktop/dist-electron/main.js",
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.168",
+    "@earendil-works/pi-agent-core": "^0.85.1",
+    "@earendil-works/pi-ai": "^0.85.1",
+    "@earendil-works/pi-coding-agent": "^0.85.1",
+    "@effect/platform-node": "https://pkg.pr.new/Effect-TS/effect-smol/@effect/platform-node@8881a9b",
+    "@effect/sql-sqlite-bun": "https://pkg.pr.new/Effect-TS/effect-smol/@effect/sql-sqlite-bun@8881a9b",
+    "@larksuiteoapi/node-sdk": "^1.74.0",
+    "@opencode-ai/sdk": "^1.16.2",
+    "@pierre/diffs": "^1.1.0-beta.16",
+    "effect": "https://pkg.pr.new/Effect-TS/effect-smol/effect@8881a9b",
+    "node-pty": "^1.1.0",
+    "open": "^10.1.0",
+    "qrcode": "^1.5.4",
+    "tree-kill": "^1.2.2",
+    "ws": "^8.18.0",
+    "electron-updater": "^6.6.2"
+  },
+  "overrides": {
+    "vite": "^8.0.0"
+  }
+}

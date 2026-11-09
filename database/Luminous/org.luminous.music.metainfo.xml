@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.luminous.music</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Luminous Music Player</name>
+  <summary>A high-performance home for the music you already own</summary>
+  <description>
+    <p>
+      Luminous is a fast, local-first player for your own audio library — no streaming, no
+      subscriptions, no cloud. Just your files, indexed, searchable, and beautifully played.
+    </p>
+  </description>
+  <developer id="dev.esoltys">
+    <name>Eric James Soltys</name>
+  </developer>
+  <launchable type="desktop-id">org.luminous.music.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>A high-performance home for the music you already own</caption>
+      <image type="source">https://esoltys.dev/luminous/landing-assets/home-EN.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Your library, indexed and instant</caption>
+      <image type="source">https://esoltys.dev/luminous/landing-assets/albums-EN.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Playlists that build themselves</caption>
+      <image type="source">https://esoltys.dev/luminous/landing-assets/playlist-auto-EN.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Genres, curated your way</caption>
+      <image type="source">https://esoltys.dev/luminous/landing-assets/genres-EN.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A miniplayer for quick skips, without the whole window</caption>
+      <image type="source">https://esoltys.dev/luminous/landing-assets/miniplayer-EN.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A miniplayer for quick skips, without the whole window</caption>
+      <image type="source">https://esoltys.dev/luminous/landing-assets/miniplayer-hover-EN.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A player that matches your music, not the other way around</caption>
+      <image type="source">https://esoltys.dev/luminous/landing-assets/themes-EN.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Follow along, line by line</caption>
+      <image type="source">https://esoltys.dev/luminous/landing-assets/lyrics-EN.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Find any track by the rules you set</caption>
+      <image type="source">https://esoltys.dev/luminous/landing-assets/advanced-search-EN.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://esoltys.dev/luminous/</url>
+  <url type="vcs-browser">https://github.com/esoltys/luminous</url>
+  <url type="bugtracker">https://github.com/esoltys/luminous/issues</url>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Music</category>
+    <category>Player</category>
+  </categories>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="3.0.0" date="2026-10-14" />
+    <release version="2.6.0" date="2026-09-27" />
+    <release version="2.5.0" date="2026-09-25" />
+    <release version="2.0.0" date="2026-09-18" />
+    <release version="1.8.0" date="2026-09-07" />
+    <release version="1.7.0" date="2026-09-03" />
+    <release version="1.6.0" date="2026-09-01" />
+    <release version="1.5.0" date="2026-08-29" />
+    <release version="1.0.1" date="2026-08-19" />
+    <release version="1.0.0" date="2026-08-19" />
+  </releases>
+</component>

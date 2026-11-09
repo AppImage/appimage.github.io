@@ -1,17 +1,16 @@
 [Desktop Entry]
 Name=Vidra
-GenericName=Video Downloader
+GenericName=Advanced Video Download Manager
 Exec=LD_LIBRARY_PATH=usr/lib vidra %u
 Icon=vidra
 Type=Application
 StartupNotify=true
-Categories=Network;Utility
-Keywords=Vidra;yt-dlp;Download;Video
+Categories=Network;Utility;AudioVideo
+Keywords=Vidra;yt-dlp;Download;Video;Media;Manager;Flutter
 
 
 [AppImageHub]
-# Dear upstream developer, please include update information in your AppImage
-# (e.g., with appimagetool -u) so that users can easily update the AppImage
-X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-UpdateInformation=gh-releases-zsync|chomusuke-mk|vidra|latest|vidra-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Sat Aug 15 08:15:25 2026 UTC                using RSA key 5D317A329AECB4D0FBDE1685470282696D71639C Can't check signature: No public key 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64

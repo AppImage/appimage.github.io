@@ -1,0 +1,29 @@
+{
+  "name": "pastemax",
+  "version": "v1.1.1-stable",
+  "main": "electron/main.js",
+  "author": {
+    "name": "kleneway",
+    "email": "kleneway@notreal.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kleneway/pastemax"
+  },
+  "homepage": "https://kleneway.github.io/pastemax",
+  "description": "A modern file viewer application for developers to easily navigate, search, and copy code from repositories.",
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "gpt-3-encoder": "^1.1.4",
+    "ignore": "^7.0.3",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.477.0",
+    "node-fetch": "^2.7.0",
+    "p-queue": "^8.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "semver": "^7.7.1",
+    "tiktoken": "^1.0.21"
+  }
+}

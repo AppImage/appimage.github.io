@@ -1,0 +1,8 @@
+{
+  "name": "hyperion-desktop",
+  "version": "1.0.25",
+  "description": "Hyperion Anti-detect Multibrowser Desktop Client",
+  "main": "main.js",
+  "author": "Linchevatel <295051633+Linchevatel@users.noreply.github.com>",
+  "license": "MIT"
+}

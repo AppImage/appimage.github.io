@@ -1,0 +1,11 @@
+{
+  "name": "go-notes",
+  "version": "1.0.0",
+  "description": "Desktop client for go-notes collaborative note-taking",
+  "main": "main.js",
+  "author": "TheFozid",
+  "license": "MIT",
+  "dependencies": {
+    "electron-store": "^10.0.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "fox-vpn",
+  "productName": "Fox VPN",
+  "version": "1.0.0",
+  "description": "Independent VPN client built on Mozilla's Firefox VPN infrastructure",
+  "author": "Erfan Tahvilian",
+  "license": "GPL-3.0-or-later",
+  "main": "src/main.cjs",
+  "dependencies": {
+    "socks": "2.8.10"
+  }
+}

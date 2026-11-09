@@ -1,0 +1,10 @@
+{
+  "name": "cowork-desktop",
+  "version": "0.1.1",
+  "description": "Claude Cowork-style desktop shell. Drives the headless `claude` CLI directly from the Electron main process.",
+  "main": "electron/main.cjs",
+  "private": true,
+  "dependencies": {
+    "better-sqlite3": "^11.3.0"
+  }
+}

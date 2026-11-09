@@ -1,0 +1,24 @@
+{
+  "name": "byan-app",
+  "private": true,
+  "version": "1.2.9",
+  "description": "BYAN Electron desktop app — main + preload + renderer (TypeScript). F1 app shell, F2 IPC contract.",
+  "main": "dist/main/index.js",
+  "dependencies": {
+    "byan-platform-config": "file:../install/packages/platform-config",
+    "chalk": "^4.1.2",
+    "electron-updater": "^6.8.3",
+    "fs-extra": "^11.3.6",
+    "inquirer": "^8.2.7",
+    "js-yaml": "^4.3.0",
+    "keytar": "^7.9.0",
+    "lucide-react": "^1.14.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "ws": "^8.21.1"
+  },
+  "homepage": "https://github.com/Yan-Acadenice/BYAN",
+  "author": "Yan Acadenice <yan@acadenice.fr>"
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.buxjr.melia</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://melia.buxjr.com/eula</project_license>
+
+  <name>Melia</name>
+  <summary>A private, offline-first email client for Linux</summary>
+
+  <description>
+    <p>Melia is a desktop email client for Linux. It connects directly to your IMAP and SMTP servers, with no cloud relay, no telemetry, and no account to create. Messages are stored in a local SQLite database, and your credentials are kept in your OS keyring.</p>
+    <p>Every message is re-rendered for legibility, with corrected contrast in light and dark mode, padding fixes for messages that would otherwise look broken, and tracking-pixel neutralization so senders cannot tell when you have opened a message.</p>
+    <p>Features:</p>
+    <ul>
+      <li>IMAP and SMTP for Gmail, Outlook, Yahoo, Fastmail, and any standard mail server</li>
+      <li>OAuth2 for Microsoft accounts</li>
+      <li>Offline-first: read, search, and queue replies with no connection</li>
+      <li>Full-text search across every account and folder</li>
+      <li>Smart dark mode that re-renders each message for legibility</li>
+      <li>Tracking-pixel neutralization and suspicious-sender warnings</li>
+      <li>Drag-and-drop folder organization with multi-account sidebar</li>
+      <li>Compose with rich text, inline images, attachments, and signatures</li>
+      <li>Desktop notifications, dock unread badge, and EML file viewer</li>
+    </ul>
+    <p>Melia is free for a single account with no feature limits. A one-time $10 unlock removes the account cap. There is no subscription and no trial.</p>
+  </description>
+
+  <url type="homepage">https://melia.buxjr.com</url>
+  <url type="bugtracker">https://github.com/buxjr311/melia-app/issues</url>
+
+  <launchable type="desktop-id">com.buxjr.melia.desktop</launchable>
+
+  <icon type="stock">com.buxjr.melia</icon>
+
+  <categories>
+    <category>Network</category>
+    <category>Email</category>
+  </categories>
+
+  <keywords>
+    <keyword>email</keyword>
+    <keyword>mail</keyword>
+    <keyword>imap</keyword>
+    <keyword>smtp</keyword>
+    <keyword>inbox</keyword>
+    <keyword>gmail</keyword>
+    <keyword>outlook</keyword>
+  </keywords>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Three-pane inbox view with smart dark mode email rendering</caption>
+      <image type="source">https://melia.buxjr.com/img/melia_full_app_dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Light mode with the same layout, adapting to your desktop theme</caption>
+      <image type="source">https://melia.buxjr.com/img/melia_full_app_light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Compose window with rich text formatting and inline links</caption>
+      <image type="source">https://melia.buxjr.com/img/melia_compose.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Advanced search with scope filters across accounts and folders</caption>
+      <image type="source">https://melia.buxjr.com/img/melia_search.png</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>melia</binary>
+    <mediatype>message/rfc822</mediatype>
+  </provides>
+
+  <developer id="com.buxjr">
+    <name>buxjr</name>
+  </developer>
+
+  <update_contact>melia_at_buxjr.com</update_contact>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="1.1.396" date="2026-09-29">
+      <description>
+        <p>Tiling shadow-collapse now covers the full tiling matrix — follow-up to Oto&apos;s v1.1.270 retest on Pop!_OS 24.04.</p>
+      </description>
+    </release>
+    <release version="1.1.174" date="2026-05-07">
+      <description>
+        <p>Rebrand from Box to melia, with the same codebase and authorship. Direct IMAP/SMTP, offline-first operation, and smart dark mode rendering are all carried forward. Adds a themed wordmark logo in the title bar with light and dark variants.</p>
+      </description>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,26 @@
+{
+  "name": "hyperswitch",
+  "version": "0.1.1",
+  "description": "Provider and model configuration manager",
+  "private": true,
+  "type": "module",
+  "main": "./out/main/index.js",
+  "author": {
+    "name": "HyperSwitch",
+    "email": "Wanxiaace@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Wanxiaace/HyperSwitch",
+  "license": "MIT",
+  "desktopName": "HyperSwitch",
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/utils": "^4.0.0",
+    "pinia": "^4.0.3",
+    "vue": "^3.5.22",
+    "vue-router": "^5.3.0",
+    "yaml": "^2.9.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

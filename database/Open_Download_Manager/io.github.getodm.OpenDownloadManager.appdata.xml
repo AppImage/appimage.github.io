@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.getodm.OpenDownloadManager</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Open Download Manager</name>
+  <summary>Download files, videos and websites</summary>
+  <developer_name>Open Download Manager contributors</developer_name>
+  <description>
+    <p>Open Download Manager is a native GTK4 download manager for Linux.
+    Manage file transfers, torrents, media downloads and website mirrors
+    from one window, with queues, scheduling, pause and resume.</p>
+    <p>Downloads use aria2, yt-dlp, curl and HTTrack, with FFmpeg for media
+    processing and optional proxychains and Tor routing.</p>
+  </description>
+  <launchable type="desktop-id">org.odm.desktop</launchable>
+  <icon type="stock">open-download-manager</icon>
+  <categories>
+    <category>Network</category>
+    <category>FileTransfer</category>
+  </categories>
+  <url type="homepage">https://github.com/getodm/open-download-manager</url>
+  <url type="bugtracker">https://github.com/getodm/open-download-manager/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/getodm/open-download-manager/main/docs/wiki/images/screenshot.png</image>
+      <caption>Download queue and transfer details</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.3.1" date="2026-09-27"/>
+  </releases>
+  <provides>
+    <binary>open-download-manager</binary>
+  </provides>
+</component>

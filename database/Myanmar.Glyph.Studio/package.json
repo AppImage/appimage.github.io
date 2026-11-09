@@ -1,0 +1,11 @@
+{
+  "name": "myanmar-glyph-studio-desktop",
+  "productName": "Myanmar Glyph Studio",
+  "version": "0.13.0",
+  "description": "Sketch your own Myanmar font, glyph by glyph — desktop shell for the Glyph Studio",
+  "author": "Myanmar Glyph Studio contributors <koshanlay1994@gmail.com>",
+  "homepage": "https://thiha-lynn.github.io/myanmar-glyph-studio/",
+  "license": "MIT",
+  "private": true,
+  "main": "main.js"
+}

@@ -119,7 +119,7 @@ X-MultipleArgs=false
 Type=Application
 MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;application/x-xpinstall;application/pdf;application/json;
 StartupNotify=true
-StartupWMClass=firefox
+StartupWMClass=Firefox
 Categories=Network;WebBrowser;
 Actions=new-window;new-private-window;
 
@@ -340,7 +340,12 @@ Name[zh_TW]=新增隱私視窗
 Exec=firefox --private-window %u
 
 [AppImageHub]
-X-AppImage-UpdateInformation=gh-releases-zsync|srevinsaju|Firefox-AppImage|stable|Firefox*.AppImage.zsync
-X-AppImage-Signature=no valid OpenPGP data found. the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-UpdateInformation=gh-releases-zsync|srevinsaju|Firefox-Appimage|firefox|firefox*.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.18
+X-AppImage-Payload-License=MIT

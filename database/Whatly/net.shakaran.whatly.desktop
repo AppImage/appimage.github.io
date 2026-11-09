@@ -1,0 +1,54 @@
+[Desktop Entry]
+Name=Whatly
+GenericName[it]=Client Qt per WhatsApp Web
+GenericName=Qt WhatsApp Web Client
+Comment[it]=Un Client per WhatsApp Web basato su Qt
+Comment=A WhatsApp Web Client using the Qt framework
+Icon=net.shakaran.whatly
+Exec=whatly %u
+Terminal=false
+Type=Application
+Categories=Chat;Network;InstantMessaging;Qt;
+Keywords=Whatly;WhatsApp;
+StartupWMClass=whatly
+StartupNotify=true
+MimeType=x-scheme-handler/whatsapp;
+X-GNOME-UsesNotifications=true
+
+Actions=Chat;Settings;Theme;Lock;About;
+
+[Desktop Action Chat]
+Name[it]=Nuova Chat
+Name=New Chat
+Exec=whatly -n
+
+[Desktop Action Theme]
+Name[it]=Cambia tema
+Name=Toggle theme
+Exec=whatly -t
+
+[Desktop Action Settings]
+Name[it]=Impostazioni
+Name=Settings
+Exec=whatly -s
+
+[Desktop Action Lock]
+Name[it]=Blocca
+Name=Lock
+Exec=whatly -l
+
+[Desktop Action About]
+Name[it]=Info
+Name=About
+Exec=whatly -i
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|shakaran|whatly|latest|Whatly-*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Fri Sep 25 23:29:50 2026 UTC                using EDDSA key 8C5C5A38C555975B422059675842881BA4358AE3 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34
+X-AppImage-Payload-License=MIT

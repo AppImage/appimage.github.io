@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.gitlab.maik3531.MagnolieOrganizer</id>
+  <name>Magnolie Organizer</name>
+  <summary>Personal organizer with a classic paper appearance</summary>
+  <summary xml:lang="de">Persoenlicher Organizer im Stil eines Papier-Organizers</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <description>
+    <p>Manage appointments, contacts, tasks, notes, anniversaries and printable planners locally without handing personal organizer data to a cloud service.</p>
+    <p xml:lang="de">Verwaltet Termine, Adressen, Aufgaben, Notizen, Jahrestage und druckbare Planer lokal, ohne persoenliche Organizer-Daten an einen Cloud-Dienst zu geben.</p>
+  </description>
+  <launchable type="desktop-id">io.gitlab.maik3531.MagnolieOrganizer.desktop</launchable>
+  <url type="homepage">https://gitlab.com/maik3531/mint-forgs</url>
+  <developer id="io.gitlab.maik3531">
+    <name>Maik Walter</name>
+  </developer>
+  <releases>
+    <release version="2.0.25" date="2026-09-29"/>
+    <release version="2.0.24" date="2026-09-27"/>
+    <release version="2.0.23" date="2026-09-25"/>
+    <release version="2.0.22" date="2026-09-24"/>
+    <release version="2.0.21" date="2026-09-23"/>
+    <release version="2.0.20" date="2026-09-23"/>
+    <release version="2.0.19" date="2026-09-19"/>
+    <release version="2.0.18" date="2026-09-07"/>
+    <release version="2.0.17" date="2026-09-02"/>
+    <release version="2.0.16" date="2026-09-01"/>
+    <release version="2.0.15" date="2026-09-01"/>
+    <release version="2.0.14" date="2026-08-31"/>
+    <release version="2.0.13" date="2026-08-30"/>
+    <release version="2.0.12" date="2026-08-30"/>
+    <release version="2.0.11" date="2026-08-29"/>
+    <release version="2.0.10" date="2026-08-29"/>
+    <release version="2.0.9" date="2026-08-29"/>
+    <release version="2.0.8" date="2026-08-27"/>
+    <release version="2.0.7" date="2026-08-27"/>
+    <release version="2.0.6" date="2026-08-26"/>
+    <release version="2.0.5" date="2026-08-26"/>
+    <release version="2.0.4" date="2026-08-24"/>
+    <release version="2.0.3" date="2026-08-24"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+  <provides>
+    <binary>magnolie-organizer</binary>
+  </provides>
+  <categories>
+    <category>Office</category>
+    <category>Calendar</category>
+  </categories>
+</component>

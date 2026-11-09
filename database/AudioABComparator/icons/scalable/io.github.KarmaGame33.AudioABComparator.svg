@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="background" x1="72" y1="48" x2="440" y2="464" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#182231"/>
+      <stop offset="1" stop-color="#090e16"/>
+    </linearGradient>
+    <linearGradient id="track-a" x1="80" y1="112" x2="256" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#62e4d0"/>
+      <stop offset="1" stop-color="#34bea9"/>
+    </linearGradient>
+    <linearGradient id="track-b" x1="256" y1="112" x2="432" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9aa2ff"/>
+      <stop offset="1" stop-color="#6f79ef"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000000" flood-opacity="0.34"/>
+    </filter>
+  </defs>
+
+  <rect x="20" y="20" width="472" height="472" rx="112" fill="url(#background)"/>
+  <rect x="22" y="22" width="468" height="468" rx="110" fill="none" stroke="#2c394c" stroke-width="4"/>
+
+  <g filter="url(#shadow)">
+    <path d="M80 166c0-35.3 28.7-64 64-64h112v308H144c-35.3 0-64-28.7-64-64V166z" fill="url(#track-a)"/>
+    <path d="M256 102h112c35.3 0 64 28.7 64 64v180c0 35.3-28.7 64-64 64H256V102z" fill="url(#track-b)"/>
+  </g>
+
+  <path d="M256 102v308" stroke="#0d1420" stroke-opacity="0.34" stroke-width="12"/>
+
+  <text x="168" y="298" fill="#0b2424" font-family="DejaVu Sans, sans-serif" font-size="142" font-weight="800" text-anchor="middle">A</text>
+  <text x="344" y="298" fill="#161a4b" font-family="DejaVu Sans, sans-serif" font-size="142" font-weight="800" text-anchor="middle">B</text>
+
+  <path d="M107 352h31l13-35 23 69 22-51 17 34 20-17h46l14-17 18 34 22-51 23 68 14-34h35"
+        fill="none" stroke="#f5f8ff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,15 @@
+{
+  "name": "self-hosted-git-client",
+  "version": "1.2.2",
+  "description": "A free, open and self-hosted desktop Git client",
+  "main": "./out/main/index.js",
+  "author": "Teckperry <teckperry.95@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teckperry/self-hosted-git-client.git"
+  },
+  "dependencies": {
+    "simple-git": "^3.27.0"
+  }
+}

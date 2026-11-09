@@ -1,0 +1,17 @@
+{
+  "name": "cinekive-desktop",
+  "version": "0.5.3",
+  "private": true,
+  "description": "Cinekive — local cinematic archive desktop app",
+  "homepage": "https://github.com/Gianluca-Improta/cinekive",
+  "main": "main.js",
+  "author": {
+    "name": "Gianluca Improta",
+    "email": "hello@gianlucaimprota.com",
+    "url": "https://gianlucaimprota.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

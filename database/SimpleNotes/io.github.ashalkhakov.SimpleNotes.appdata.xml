@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SimpleNotes' AppStream metadata: what software centres and the AppImage
+     catalog show (name, description, screenshots). Installed into the
+     AppImage by Scripts/package-appimage.sh, as *.appdata.xml (the name the
+     catalog's appdir-lint.sh looks for) in usr/share/metainfo, and checked
+     against Ubuntu 22.04's appstreamcli, the oldest the catalog tests on. -->
+<component type="desktop-application">
+  <id>io.github.ashalkhakov.SimpleNotes</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LGPL-2.1-or-later</project_license>
+
+  <name>SimpleNotes</name>
+  <summary>A self-hosted Apple Notes that merges what was written apart</summary>
+  <developer_name>Artyom Shalkhakov</developer_name>
+
+  <description>
+    <p>
+      A small Apple Notes for Linux, macOS and iPhone/iPad. Every note is kept
+      on the device and works offline; notes sync through a server of your
+      own. When the same note is edited on two devices that could not reach
+      each other, both edits end up in the note: nobody is asked to pick a
+      version.
+    </p>
+    <ul>
+      <li>Rich text with titles, headings, lists and checklists, block quotes, colours and highlights, collapsible sections, links, images, files and tables</li>
+      <li>Folders in folders, tags, smart folders, pinning, a gallery view, an attachments browser, search and Recently Deleted</li>
+      <li>Find and replace, printing and export as PDF, export as Markdown, and import from Markdown, Obsidian, Joplin, Bear and Trilium</li>
+      <li>Version history, kept by the server</li>
+      <li>Sync with your own server, or directly with your devices on the same network</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">simplenotes.desktop</launchable>
+
+  <url type="homepage">https://github.com/ashalkhakov/TopoText/tree/master/Examples/SimpleNotes</url>
+  <url type="bugtracker">https://github.com/ashalkhakov/TopoText/issues</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Folders, notes and a note with a checklist</caption>
+      <image>https://raw.githubusercontent.com/ashalkhakov/TopoText/master/Examples/SimpleNotes/Screenshots/gnustep.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Office</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+</component>

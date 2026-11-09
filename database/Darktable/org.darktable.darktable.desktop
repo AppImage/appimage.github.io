@@ -1,0 +1,101 @@
+[Desktop Entry]
+Name=Darktable
+GenericName=Virtual Lighttable and Darkroom
+GenericName[cs]=Virtuální katalog a editor
+GenericName[de]=Virtueller Leuchttisch und Dunkelkammer
+GenericName[en@truecase]=Virtual Lighttable and Darkroom
+GenericName[es]=Mesa de Luz y Cuarto Oscuro Virtuales
+GenericName[fi]=Virtuaalinen valopöytä ja pimiö.
+GenericName[fr]=Table lumineuse et Chambre noire virtuelles
+GenericName[hu]=Virtuális átvilágító és sötétkamra
+GenericName[ja]=バーチャルのライトテーブルとダークルーム
+GenericName[ko_KR]=가상 Lighttable 및 darkroom
+GenericName[lo]=ຫ້ອງແສງ ແລະ ຫ້ອງມືດສະເໝືອນຈິງ
+GenericName[nb]=Virtuelt lysbord og mørkerom
+GenericName[nl]=Virtuele lichtbak en donkere kamer
+GenericName[pl]=Wirtualny Stół Podświetlany i Ciemnia
+GenericName[pt_BR]=Mesa de Luz e Sala Escura Virtuais
+GenericName[ru]=Виртуальные световой стол и проявка
+GenericName[sl]=Virtualna osvetljena podlaga in temnica
+GenericName[sq]=Fototeka virtuale dhe dhoma e errët
+GenericName[sv]=Virtuellt ljusbord och mörkerrum
+GenericName[uk]=Віртуальний світлий стіл і темна кімната
+GenericName[zh_CN]=虚拟的光台和暗房
+GenericName[zh_TW]=虛擬燈箱與暗房
+Comment=Organize and develop images from digital cameras
+Comment[cs]=Uspořádejte a vytvářejte snímky z digitálních fotoaparátů
+Comment[de]=Organisiere und entwickle Bilder von Digitalkameras
+Comment[en@truecase]=Organize and develop images from digital cameras
+Comment[es]=Organice y revele fotografías de cámaras digitales
+Comment[fi]=Hallinnoi ja kehitä digitaalikameroilla otettuja valokuvia
+Comment[fr]=Organiser et développer les images d’un boîtier numérique
+Comment[hu]=Digitális fényképező képeinek rendezése, kidolgozása
+Comment[ja]=デジタルカメラで撮影した画像を整理し現像します
+Comment[ko_KR]=디지털 카메라에서 이미지를 정리하고 현상하세요
+Comment[lo]=ຈັດລະບຽບ ແລະ ປັບແຕ່ງຮູບພາບຈາກກ້ອງດິຈິຕອນ
+Comment[nb]=Organiser og fremkall bilder fra digitale kamera
+Comment[nl]=Organiseer en ontwikkel afbeeldingen van digitale camera's
+Comment[pl]=Organizuj i obrabiaj zdjęcia z aparatów cyfrowych
+Comment[pt_BR]=Organize e trate imagens de câmeras digitais
+Comment[ru]=Организация и обработка цифровых фотографий
+Comment[sl]=Organizira in razvija slike digitalnih kamer
+Comment[sq]=Organizoni dhe zhvilloni imazhet e kamerave digjitale
+Comment[sv]=Organisera och utveckla bilder från digitalkameror
+Comment[uk]=Організація і обробка цифрових фотографій
+Comment[zh_CN]=组织并冲印来自数码相机的图片
+Comment[zh_TW]=整理和顯影來自數位相機的影像
+
+X-GNOME-FullName=Darktable Photo Workflow Software
+
+Version=1.0
+
+Type=Application
+Categories=Graphics;Photography;GTK;
+# TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=graphics;photography;raw;
+Keywords[cs]=grafika;fotografie;RAW;
+Keywords[de]=Graphik;Grafik;Photographie;Fotografie;RAW;
+Keywords[en@truecase]=graphics;photography;raw;
+Keywords[es]=gráficos;fotografía;raw;
+Keywords[fi]=Grafiikka;Valokuvaus;RAW;
+Keywords[fr]=graphisme;photographie;RAW;
+Keywords[hu]=grafika;fénykép;fotó;raw;
+Keywords[ja]=グラフィックス、写真、RAW
+Keywords[ko_KR]=그래픽스;사진;RAW;
+Keywords[lo]=ກຣາຟິກ;ການຖ່າຍຮູບ;ໄຟລ໌ດິບ;
+Keywords[nb]=grafikk;fotografering;raw;
+Keywords[nl]=grafisch;fotografie;raw;
+Keywords[pl]=grafika;fotografia;raw;
+Keywords[pt_BR]=gráfico;fotografia;raw;
+Keywords[ru]=графика;фотография;RAW;
+Keywords[sl]=grafika;fotografije;surove;
+Keywords[sq]=graphics;photography;raw;
+Keywords[sv]=grafik;fotografi;rå;
+Keywords[uk]=graphics;photography;raw;
+Keywords[zh_CN]=graphics;photography;raw;图片;图像;摄影;
+Keywords[zh_TW]=圖形、攝影、RAW 檔;
+
+Exec=darktable %U
+TryExec=darktable
+Terminal=false
+StartupNotify=true
+
+MimeType=application/x-darktable;image/x-dcraw;image/x-adobe-dng;image/x-canon-cr2;image/x-canon-crw;image/x-fuji-raf;image/x-kodak-dcr;image/x-kodak-kdc;image/x-minolta-mrw;image/x-nikon-nef;image/x-nikon-nrw;image/x-olympus-orf;image/x-panasonic-rw;image/x-panasonic-rw2;image/x-pentax-pef;image/x-sony-arw;image/x-sony-sr2;image/x-sony-srf;image/jpeg;image/png;image/tiff;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-portable-floatmap;image/vnd.radiance;image/avif;image/x-canon-cr3;image/x-exr;image/aces;image/heif;image/heic;image/hej2k;image/avci;image/jp2;image/jxl;image/webp;image/qoi;image/fits
+
+Icon=darktable
+StartupWMClass=darktable
+
+X-Unity-IconBackgroundColor=#252525
+X-AppImage-Version=5.6.1
+
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|darktable-org|darktable|latest|Darktable-*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=GPL-3.0

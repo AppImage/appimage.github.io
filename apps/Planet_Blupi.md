@@ -8,7 +8,7 @@ license: GPL-3.0+
 icons:
   - Planet_Blupi/icons/scalable/blupi.svg
 screenshots:
-- http://devel.schroetersa.ch/blupi.org/download/screen/planetblupi.png
+- https://blupi.org/download/screen/planetblupi.png
 
 authors:
   - name: blupi-games
@@ -32,15 +32,20 @@ desktop:
     Icon: blupi
     Categories: Game
   AppImageHub:
-    X-AppImage-Signature: 'Signature made Thu 17 Oct 2019 06:21:15 AM UTC using RSA
-      key ID FA9DA8A8 Can''t check signature: No public key'
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created Signature made Fri Nov 15 22:15:29 2024 UTC                using RSA key
+      3F1A5D3F769A8CF0282F1ADB8B9145A5FA9DA8A8 Can''t check signature: No public key'
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.15
     X-AppImage-Payload-License: GPL-3.0
 
 appdata:
   Type: desktop-application
-  ID: planetblupi
+  ID: org.blupi.planetblupi
   Name:
     C: Planet Blupi
   Summary:
@@ -51,7 +56,7 @@ appdata:
       quiet and gentle facade, you&apos;ll enjoy a fascinating diversion full of surprises.</p>
   ProjectLicense: GPL-3.0+
   Url:
-    homepage: http://blupi.org/
+    homepage: https://blupi.org/
   Launchable:
     desktop-id:
     - planetblupi.desktop
@@ -59,6 +64,6 @@ appdata:
   - default: true
     thumbnails: []
     source-image:
-      url: http://devel.schroetersa.ch/blupi.org/download/screen/planetblupi.png
+      url: https://blupi.org/download/screen/planetblupi.png
       lang: C
 ---

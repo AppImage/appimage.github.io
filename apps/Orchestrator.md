@@ -1,0 +1,50 @@
+---
+layout: app
+
+permalink: /Orchestrator/
+description: "Electron + TypeScript frontend for the agent-orchestrator rewrite"
+license: "Apache-2.0"
+
+icons:
+  - Orchestrator/icons/1024x1024/agent-orchestrator.png
+
+screenshots:
+  - Orchestrator/screenshot.png
+
+authors:
+  - name: "OrchestratorInc"
+    url: "https://github.com/OrchestratorInc"
+
+links:
+  - type: GitHub
+    url: OrchestratorInc/agent-orchestrator
+  - type: Download
+    url: https://github.com/OrchestratorInc/agent-orchestrator/releases
+
+desktop:
+  Desktop Entry:
+    Name: Orchestrator
+    Exec: AppRun %U
+    Terminal: false
+    Type: Application
+    Icon: agent-orchestrator
+    StartupWMClass: Orchestrator
+    X-AppImage-Version: 0.14.10
+    Comment: Electron + TypeScript frontend for the agent-orchestrator rewrite
+    MimeType: x-scheme-handler/ao-app
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: Apache-2.0
+
+electron: {"name":"agent-orchestrator","productName":"Orchestrator","version":"0.14.10","private":true,"description":"Electron + TypeScript frontend for the agent-orchestrator rewrite","author":"Orchestrator.inc","license":"MIT","homepage":"https://github.com/aoagents/agent-orchestrator","main":".vite/build/main.js","repository":{"type":"git","url":"https://github.com/aoagents/agent-orchestrator"},"scripts":{"build:acp-runtime":"node ./scripts/build-acp-runtime.mjs","build:tmux":"node ./scripts/build-tmux.mjs","browser-runtime:prepare":"node ./scripts/prepare-agent-browser.mjs","cloudflared:prepare":"node ./scripts/prepare-cloudflared.mjs","build:daemon":"node ./scripts/build-daemon.mjs","build:wake-helper":"node ./scripts/build-wake-helper.mjs","build:dictation-helper":"node ./scripts/build-dictation-helper.mjs","build:host":"node ./scripts/build-host-bundle.mjs","build:browser-extension":"node ./scripts/build-browser-extension.mjs","predev":"npm run build:daemon -- --dev && npm run build:browser-extension && node ./scripts/build-wake-helper.mjs --if-supported && node ./scripts/build-dictation-helper.mjs --if-supported && node ./scripts/ensure-browser-runtime.mjs && npm run build:acp-runtime","dev":"electron-forge start","dev:web":"node ./scripts/dev-web.mjs","build":"npm run package","prepackage":"npm run build:daemon && npm run build:browser-extension && npm run build:tmux && npm run browser-runtime:prepare && npm run cloudflared:prepare && npm run build:acp-runtime","package":"electron-forge package","premake":"npm run build:daemon && npm run build:browser-extension && npm run build:tmux && npm run browser-runtime:prepare && npm run cloudflared:prepare && npm run build:acp-runtime","make":"electron-forge make","publish":"npm run build:daemon && npm run build:browser-extension && npm run build:tmux && npm run browser-runtime:prepare && npm run cloudflared:prepare && npm run build:acp-runtime && electron-forge publish","typecheck":"tsgo --noEmit","typecheck:e2e":"tsgo --noEmit -p tsconfig.e2e.json","test":"vitest run --config vite.renderer.config.ts","test:browser-postcondition-integration":"node ./scripts/run-browser-postcondition-integration.mjs","test:e2e":"playwright test","test:e2e:renderer":"playwright test --grep \"@T0|@P0\"","api:ts":"openapi-typescript ../backend/internal/httpd/apispec/openapi.yaml -o src/api/schema.ts"},"devDependencies":{"@electron-forge/cli":"^7.8.0","@electron-forge/maker-base":"^7.8.0","@electron-forge/maker-deb":"^7.8.0","@electron-forge/maker-rpm":"^7.8.0","@electron-forge/maker-zip":"^7.8.0","@electron-forge/plugin-auto-unpack-natives":"^7.8.0","@electron-forge/plugin-fuses":"^7.11.2","@electron-forge/plugin-vite":"^7.8.0","@electron-forge/publisher-github":"^7.8.0","@electron/fuses":"^1.8.0","@electron/rebuild":"^4.0.4","@playwright/test":"^1.60.0","@tailwindcss/vite":"^4.3.0","@tanstack/router-plugin":"^1.168.18","@testing-library/jest-dom":"^6.9.1","@testing-library/react":"^16.3.2","@testing-library/user-event":"^14.6.1","@types/react":"^19.2.17","@types/react-dom":"^19.2.3","@types/semver":"^7.7.1","@types/ws":"^8.18.1","@typescript/native-preview":"7.0.0-dev.20260707.2","@vitejs/plugin-react":"^6.0.2","app-builder-lib":"^26.15.3","electron":"^44.7.0","jsdom":"^29.1.1","openapi-typescript":"^7.13.0","playwright":"^1.60.0","tailwindcss":"^4.3.0","tw-animate-css":"^1.4.0","typescript":"^5.6.0","vite":"^8.0.16","vitest":"^4.1.8"},"dependencies":{"@aoagents/product-ui":"file:../packages/product-ui","@codemirror/autocomplete":"^6.20.3","@codemirror/commands":"^6.11.1","@codemirror/lang-markdown":"^6.5.2","@codemirror/language":"^6.12.4","@codemirror/search":"^6.7.2","@codemirror/state":"^6.7.6","@codemirror/view":"^6.43.13","@dnd-kit/core":"^6.3.1","@dnd-kit/sortable":"^10.0.0","@dnd-kit/utilities":"^3.2.2","@fontsource-variable/geist":"^5.3.0","@fontsource-variable/geist-mono":"^5.3.0","@lexical/react":"^0.49.0","@pierre/diffs":"1.6.1","@pierre/trees":"1.0.0-beta.6","@radix-ui/react-accordion":"^1.2.13","@radix-ui/react-dialog":"^1.1.16","@radix-ui/react-slot":"^1.2.5","@radix-ui/react-tabs":"^1.1.14","@react-symbols/icons":"^1.4.1","@sentry/electron":"7.17.0","@shikijs/langs":"4.5.0","@shikijs/stream":"4.5.0","@tanstack/react-query":"^5.101.0","@tanstack/react-router":"^1.170.15","@tanstack/react-virtual":"^3.14.9","@workos-inc/node":"^10.9.0","@xterm/addon-fit":"0.12.0-beta.301","@xterm/addon-search":"0.17.0-beta.301","@xterm/addon-unicode11":"0.10.0-beta.301","@xterm/addon-web-links":"0.13.0-beta.301","@xterm/addon-webgl":"0.20.0-beta.300","@xterm/xterm":"6.1.0-beta.304","better-sqlite3":"^12.11.1","class-variance-authority":"^0.7.1","clsx":"^2.1.1","cmdk":"^1.1.1","dompurify":"3.4.14","electron-updater":"^6.8.9","github-markdown-css":"^5.9.0","i18next":"^26.3.6","katex":"^0.16.47","lexical":"^0.49.0","lucide-react":"^1.17.0","mdast-util-math":"^3.0.0","mermaid":"11.17.2","micromark-extension-llm-math":"^3.1.0","motion":"^12.43.0","openapi-fetch":"^0.17.0","pdfjs-dist":"^6.4.299","posthog-js":"^1.390.2","qrcode-generator":"^1.5.2","radix-ui":"^1.5.0","react":"^19.2.7","react-dom":"^19.2.7","react-i18next":"^17.0.11","react-markdown":"^10.1.0","react-resizable-panels":"^4.11.2","rehype-autolink-headings":"^7.1.0","rehype-github-alerts":"^4.2.0","rehype-slug":"^6.0.0","remark-gfm":"^4.0.1","remark-parse":"11.0.0","remend":"1.4.0","semver":"^7.8.5","shiki":"4.5.0","tailwind-merge":"^3.6.0","unified":"11.0.5","ws":"^8.21.1","zustand":"^5.0.14"},"optionalDependencies":{"electron-installer-debian":"^3.2.0","electron-installer-redhat":"^3.4.0"}}
+---

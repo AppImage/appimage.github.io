@@ -3,12 +3,21 @@
 <component type="desktop-application">
   <id>dev.chomusuke.vidra</id>
   <name>Vidra</name>
-  <summary>Video Downloader</summary>
+  <summary>Advanced and modern video download manager</summary>
   <metadata_license>MIT</metadata_license>
-  <project_license>GPLv3</project_license>
+  <project_license>GPL-3.0-or-later</project_license>
 
   <description>
-    <p>Vidra is a video downloader for the Linux desktop.</p>
+    <p>Vidra is an advanced video and task manager for the Linux desktop. It combines a beautiful, modern user interface built with Flutter with a robust Python backend powered by the industry-standard yt-dlp.</p>
+    <p>Whether you need to download a single video or manage a large queue of media, Vidra provides a seamless and fast experience without relying on command-line interfaces.</p>
+    <p>Key features include:</p>
+    <ul>
+      <li>Support for hundreds of video platforms via the embedded yt-dlp engine.</li>
+      <li>Automatic media processing and merging using bundled FFmpeg and QuickJS.</li>
+      <li>Clean and responsive user interface with full dark mode support.</li>
+      <li>Localized in over 150 languages.</li>
+      <li>Built-in Over-The-Air (OTA) updates to keep the downloader engine always up to date.</li>
+    </ul>
   </description>
 
   <launchable type="desktop-id">vidra.desktop</launchable>
@@ -23,6 +32,12 @@
       <image>https://raw.githubusercontent.com/chomusuke-mk/vidra/refs/heads/main/assets/screenshots/linux-screenshot-3.png</image>
     </screenshot>
   </screenshots>
-  <url type="homepage">https://github.com/chomusuke-mk</url>
+  
+  <url type="homepage">https://github.com/chomusuke-mk/vidra</url>
+  <url type="bugtracker">https://github.com/chomusuke-mk/vidra/issues</url>
+  <url type="donation">https://www.buymeacoffee.com/chomusuke</url>
+  
   <developer_name>Chomusuke</developer_name>
+  
+  <content_rating type="oars-1.1"/>
 </component>

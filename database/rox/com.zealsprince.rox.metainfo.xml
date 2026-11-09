@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The AppStream record every Linux channel installs under share/metainfo:
+  the deb (Cargo.toml deb assets), nix (flake.nix postInstall), the AppImage
+  and the tarball (release.yml), and the Flatpak, whose manifest renames it
+  to com.zealsprince.rox.metainfo.xml and rewrites the launchable to match.
+
+  The releases element is committed, newest first, one entry per stable
+  version. scripts/bump-version.sh adds the entry in the commit that sets the
+  version, so each tag carries its own complete list: Flathub builds from the
+  tag and requires the metainfo to come from upstream, and every other
+  channel installs this file as is. Candidates get no entry.
+-->
+<component type="desktop-application">
+  <id>com.zealsprince.rox</id>
+  <name>rox</name>
+  <summary>A desktop music player for large, carefully tagged local libraries</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-only</project_license>
+  <developer id="com.zealsprince">
+    <name>Andrew Lake</name>
+  </developer>
+  <launchable type="desktop-id">com.zealsprince.rox.desktop</launchable>
+  <description>
+    <p>
+      rox is a desktop music player for people with large, carefully tagged
+      local libraries. It reads full tags and true durations from every file
+      on import, watches the library folders for changes, and stays fast at
+      tens of thousands of tracks.
+    </p>
+    <p>
+      The interface is panels you compose yourself: library, queue, playlists,
+      lyrics, cover art, visualizers, and forty-odd more, each duplicated
+      with its own settings, popped out into real windows, and saved as a
+      workspace. A workspace is one file carrying the layout, palette, and
+      appearance, so a look can be shared.
+    </p>
+    <p>
+      Tagging is deep enough to trust with a real collection: a full tag
+      editor with atomic writes, batch edits with find and replace, ratings
+      stored in the files themselves, online lookup through MusicBrainz and
+      others, lyrics, and ReplayGain for the files no tagger ever measured.
+    </p>
+  </description>
+  <url type="homepage">https://rox.music</url>
+  <url type="bugtracker">https://github.com/zealsprince/rox/issues</url>
+  <url type="vcs-browser">https://github.com/zealsprince/rox</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/zealsprince/rox/main/docs/0S-screenshots/Preview_Dark.png</image>
+      <caption>The default workspace in the dark theme: art grid, playlists, spectrum, and waveform</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/zealsprince/rox/main/docs/0S-screenshots/Preview_Light.png</image>
+      <caption>The same workspace in the light theme</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.30.9" date="2026-10-08">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.30.9</url>
+    </release>
+    <release version="1.30.8" date="2026-10-08">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.30.8</url>
+    </release>
+    <release version="1.30.7" date="2026-10-08">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.30.7</url>
+    </release>
+    <release version="1.30.6" date="2026-10-07">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.30.6</url>
+    </release>
+    <release version="1.30.5" date="2026-10-06">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.30.5</url>
+    </release>
+    <release version="1.30.4" date="2026-10-05">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.30.4</url>
+    </release>
+    <release version="1.30.3" date="2026-10-05">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.30.3</url>
+    </release>
+    <release version="1.30.2" date="2026-10-04">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.30.2</url>
+    </release>
+    <release version="1.30.1" date="2026-10-04">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.30.1</url>
+    </release>
+    <release version="1.30.0" date="2026-10-03">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.30.0</url>
+    </release>
+    <release version="1.29.4" date="2026-10-03">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.29.4</url>
+    </release>
+    <release version="1.29.3" date="2026-10-02">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.29.3</url>
+    </release>
+    <release version="1.29.2" date="2026-10-02">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.29.2</url>
+    </release>
+    <release version="1.29.1" date="2026-09-30">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.29.1</url>
+    </release>
+    <release version="1.29.0" date="2026-09-30">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.29.0</url>
+    </release>
+    <release version="1.28.6" date="2026-09-25">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.28.6</url>
+    </release>
+    <release version="1.28.5" date="2026-09-24">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.28.5</url>
+    </release>
+    <release version="1.28.4" date="2026-09-23">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.28.4</url>
+    </release>
+    <release version="1.28.3" date="2026-09-22">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.28.3</url>
+    </release>
+    <release version="1.28.2" date="2026-09-21">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.28.2</url>
+    </release>
+    <release version="1.28.1" date="2026-09-21">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.28.1</url>
+    </release>
+    <release version="1.28.0" date="2026-09-21">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.28.0</url>
+    </release>
+    <release version="1.27.0" date="2026-09-12">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.27.0</url>
+    </release>
+    <release version="1.26.5" date="2026-09-10">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.26.5</url>
+    </release>
+    <release version="1.26.4" date="2026-09-09">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.26.4</url>
+    </release>
+    <release version="1.26.3" date="2026-09-09">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.26.3</url>
+    </release>
+    <release version="1.26.2" date="2026-09-08">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.26.2</url>
+    </release>
+    <release version="1.26.1" date="2026-09-07">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.26.1</url>
+    </release>
+    <release version="1.26.0" date="2026-09-07">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.26.0</url>
+    </release>
+    <release version="1.25.0" date="2026-09-06">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.25.0</url>
+    </release>
+    <release version="1.24.0" date="2026-09-03">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.24.0</url>
+    </release>
+    <release version="1.23.6" date="2026-08-30">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.23.6</url>
+    </release>
+    <release version="1.23.5" date="2026-08-29">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.23.5</url>
+    </release>
+    <release version="1.23.4" date="2026-08-28">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.23.4</url>
+    </release>
+    <release version="1.23.3" date="2026-08-28">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.23.3</url>
+    </release>
+    <release version="1.23.2" date="2026-08-28">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.23.2</url>
+    </release>
+    <release version="1.23.1" date="2026-08-28">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.23.1</url>
+    </release>
+    <release version="1.23.0" date="2026-08-28">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.23.0</url>
+    </release>
+    <release version="1.22.0" date="2026-08-28">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.22.0</url>
+    </release>
+    <release version="1.21.0" date="2026-08-28">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.21.0</url>
+    </release>
+    <release version="1.20.0" date="2026-08-28">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.20.0</url>
+    </release>
+    <release version="1.19.0" date="2026-08-25">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.19.0</url>
+    </release>
+    <release version="1.18.2" date="2026-08-15">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.18.2</url>
+    </release>
+    <release version="1.18.1" date="2026-08-14">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.18.1</url>
+    </release>
+    <release version="1.18.0" date="2026-08-14">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.18.0</url>
+    </release>
+    <release version="1.17.0" date="2026-08-13">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.17.0</url>
+    </release>
+    <release version="1.16.0" date="2026-08-10">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.16.0</url>
+    </release>
+    <release version="1.15.2" date="2026-08-10">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.15.2</url>
+    </release>
+    <release version="1.15.1" date="2026-08-09">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.15.1</url>
+    </release>
+    <release version="1.15.0" date="2026-08-09">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.15.0</url>
+    </release>
+    <release version="1.14.0" date="2026-08-05">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.14.0</url>
+    </release>
+    <release version="1.13.2" date="2026-08-05">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.13.2</url>
+    </release>
+    <release version="1.13.1" date="2026-08-05">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.13.1</url>
+    </release>
+    <release version="1.13.0" date="2026-08-05">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.13.0</url>
+    </release>
+    <release version="1.12.0" date="2026-08-05">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.12.0</url>
+    </release>
+    <release version="1.11.0" date="2026-08-03">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.11.0</url>
+    </release>
+    <release version="1.10.1" date="2026-08-03">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.10.1</url>
+    </release>
+    <release version="1.10.0" date="2026-08-03">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.10.0</url>
+    </release>
+    <release version="1.9.0" date="2026-08-02">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.9.0</url>
+    </release>
+    <release version="1.8.0" date="2026-08-01">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.8.0</url>
+    </release>
+    <release version="1.7.0" date="2026-08-01">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.7.0</url>
+    </release>
+    <release version="1.6.1" date="2026-07-29">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.6.1</url>
+    </release>
+    <release version="1.6.0" date="2026-07-29">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.6.0</url>
+    </release>
+    <release version="1.5.2" date="2026-07-26">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.5.2</url>
+    </release>
+    <release version="1.5.1" date="2026-07-26">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.5.1</url>
+    </release>
+    <release version="1.5.0" date="2026-07-26">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.5.0</url>
+    </release>
+    <release version="1.4.1" date="2026-07-25">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.4.1</url>
+    </release>
+    <release version="1.4.0" date="2026-07-24">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.4.0</url>
+    </release>
+    <release version="1.3.0" date="2026-07-22">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.3.0</url>
+    </release>
+    <release version="1.2.1" date="2026-07-22">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.2.1</url>
+    </release>
+    <release version="1.2.0" date="2026-07-21">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.2.0</url>
+    </release>
+    <release version="1.1.1" date="2026-07-21">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.1.1</url>
+    </release>
+    <release version="1.1.0" date="2026-07-21">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.1.0</url>
+    </release>
+    <release version="1.0.0" date="2026-07-20">
+      <url type="details">https://github.com/zealsprince/rox/releases/tag/v1.0.0</url>
+    </release>
+  </releases>
+</component>

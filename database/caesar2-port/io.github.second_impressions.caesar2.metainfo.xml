@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.second_impressions.caesar2</id>
+  <name>Caesar II</name>
+  <summary>Build and govern the cities of the Roman Empire</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+  <developer id="io.github.second_impressions">
+    <name>Second Impressions</name>
+  </developer>
+  <description>
+    <p>
+      A source port of Impressions Games' Caesar II (1995) for current
+      systems. It runs the recovered original game engine on SDL3, plays the
+      original music through a faithful OPL3 driver, and reads the game data
+      from a player's own installation, CD-ROM, disc image or archive.
+    </p>
+    <p>
+      The original game data is required and is not included.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.second_impressions.caesar2.desktop</launchable>
+  <url type="homepage">https://github.com/second-impressions/caesar2-port</url>
+  <url type="bugtracker">https://github.com/second-impressions/caesar2-port/issues</url>
+  <categories>
+    <category>Game</category>
+    <category>StrategyGame</category>
+  </categories>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-fantasy">mild</content_attribute>
+  </content_rating>
+  <provides>
+    <binary>caesar2</binary>
+  </provides>
+  <releases>
+    <release version="1.0.3" date="2026-09-09"/>
+    <release version="1.0.2" date="2026-09-08"/>
+    <release version="1.0.1" date="2026-09-07"/>
+    <release version="1.0.0" date="2026-09-07"/>
+  </releases>
+</component>

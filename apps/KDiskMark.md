@@ -2,7 +2,8 @@
 layout: app
 
 permalink: /KDiskMark/
-description: A disk drive benchmark tool
+description: A storage device benchmark tool
+license: GPL-3.0-only
 
 icons:
   - KDiskMark/icons/128x128/kdiskmark.png
@@ -24,48 +25,66 @@ desktop:
   Desktop Entry:
     Name: KDiskMark
     GenericName: KDiskMark
-    Comment: A disk drive benchmark tool
-    Comment[cs]: Nástroj pro otestování výkonnosti datového úložiště
-    Comment[de]: Ein Festplatten-Benchmark-Tool
-    Comment[es_MX]: Una herramienta para benchmark de unidades de disco
-    Comment[fr]: Un outil pour mesurer la performance des disques physiques
-    Comment[hu]: Lemezek teljesítményét mérő alkalmazás
-    Comment[it]: Uno strumento per misurare le prestazioni di dischi e memorie fisiche
-    Comment[ja]: ディスクドライブのベンチマークツール
-    Comment[nl]: Een hulpmiddel voor het benchmarken van schijven
-    Comment[pl]: Narzędzie do testowania wydajności dysków
-    Comment[pt_BR]: Uma ferramenta de benchmark de discos
-    Comment[ru]: Тестирование производительности накопителей
-    Comment[sv]: Prestandatest för hårddiskar
-    Comment[tr]: Disk Sürücü performans ölçüm aracı
-    Comment[zh_CN]: 磁盘测速工具
+    Comment: A storage device benchmark tool
+    Comment[cs]: Nástroj pro testování úložišť
+    Comment[de]: Ein Werkzeug für Speichergeräte-Tests
+    Comment[es_ES]: Una herramienta de diagnóstico para dispositivos de almacenamiento
+    Comment[es_MX]: Una herramienta de evaluación de almacenamiento
+    Comment[fi]: Tallennuslaitteiden testaustyökalu
+    Comment[fr]: Un outil de test des périphériques de stockage
+    Comment[hi]: एक भंडारण परीक्षण उपकरण
+    Comment[hu]: Egy tárolóeszköz teljesítménymérő
+    Comment[it]: Uno strumento di test dispositivi di archiviazione
+    Comment[ja]: ストレージデバイス性能測定ツール
+    Comment[ko]: 저장 장치 성능 측정 도구
+    Comment[nl]: Een hulpmiddel voor opslagprestaties
+    Comment[pl]: Narzędzie testowania pamięci masowej
+    Comment[pt_BR]: Uma ferramenta de teste de armazenamento
+    Comment[ru]: Тест производительности накопителей
+    Comment[sk]: Nástroj na testovanie úložísk
+    Comment[sv]: Ett prestandatest för lagringsenheter
+    Comment[tr]: Bir depolama test aracı
+    Comment[uk]: Тест швидкодії накопичувачів
+    Comment[zh_CN]: 存储设备测试工具
+    Comment[zh_TW]: 儲存裝置測試工具
     Keywords: benchmark
-    Keywords[es_MX]: benchmark
-    Keywords[de]: benchmark
-    Keywords[fr]: benchmark
-    Keywords[hu]: benchmark
-    Keywords[it]: benchmark
-    Keywords[ja]: ベンチマーク
-    Keywords[nl]: benchmark
-    Keywords[pl]: benchmark
-    Keywords[pt_BR]: benchmark
-    Keywords[ru]: производительность
-    Keywords[sv]: prestandatest
-    Keywords[tr]: benchmark
-    Keywords[zh_CN]: 基准测试
+    Keywords[cs]: test
+    Keywords[de]: test
+    Keywords[es_MX]: prueba
+    Keywords[fi]: testi
+    Keywords[fr]: test
+    Keywords[hi]: परीक्षण
+    Keywords[hu]: teszt
+    Keywords[it]: test
+    Keywords[ja]: テスト
+    Keywords[ko]: 테스트
+    Keywords[nl]: test
+    Keywords[pl]: test
+    Keywords[pt_BR]: teste
+    Keywords[ru]: тест
+    Keywords[sk]: test
+    Keywords[sv]: test
+    Keywords[tr]: test
+    Keywords[uk]: тест
+    Keywords[zh_CN]: 测试
+    Keywords[zh_TW]: 測試
     Exec: kdiskmark
     Icon: kdiskmark
     Terminal: false
     StartupNotify: false
     Type: Application
     Categories: System
-    X-AppImage-Version: 3.1.4-fio-3.35
+    X-AppImage-Version: 3.3.0-fio-3.42
   AppImageHub:
     X-AppImage-UpdateInformation: gh-releases-zsync|JonMagon|KDiskMark|latest|*.zsync
-    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
-      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
-      could not be verified. Please remember that the signature file (.sig or .asc)
-      should be the first file given on the command line.'
+    X-AppImage-Signature: "[don't know]: invalid packet (ctb=0a) no signature found
+      the signature could not be verified. Please remember that the signature file (.sig
+      or .asc) should be the first file given on the command line."
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.35
+    X-AppImage-Payload-License: GPL-3.0
 ---

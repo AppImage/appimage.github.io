@@ -25,23 +25,26 @@
       <li>Emulates extended ADB keyboard and 3-button mouse</li>
       <li>Uses UAE 68k emulation</li>
     </ul>
+    <p>
+      Authorship: This build was compiled by https://github.com/Korkman/macemu-appimage-builder from https://github.com/kanjitalk755/macemu which is a fork of the official https://github.com/cebix/macemu.
+    </p>
   </description>
 
   <launchable type="desktop-id">com.github.korkman.macemu.basiliskii.desktop</launchable>
 
   <screenshots>
     <screenshot type="default">
-      <caption>Prefs editor GUI</caption>
-      <image>https://raw.githubusercontent.com/Korkman/macemu-appimage-builder/main/screenshots/basiliskii-prefs-editor.png</image>
-    </screenshot>
-    <screenshot>
       <caption>Emulating MacOS 7</caption>
       <image>https://raw.githubusercontent.com/Korkman/macemu-appimage-builder/main/screenshots/basiliskii-os7.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Prefs editor GUI</caption>
+      <image>https://raw.githubusercontent.com/Korkman/macemu-appimage-builder/main/screenshots/basiliskii-prefs-editor.png</image>
     </screenshot>
   </screenshots>
 
   <url type="homepage">https://github.com/Korkman/macemu-appimage-builder</url>
-  <url type="help">https://www.emaculation.com/doku.php/ubuntu</url>
+  <url type="help">https://www.emaculation.com/doku.php/sheepshaver_basiliskii_linux</url>
 
   <provides>
     <binary>BasiliskII</binary>

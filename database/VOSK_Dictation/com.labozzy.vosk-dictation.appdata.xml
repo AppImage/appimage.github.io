@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.labozzy.vosk-dictation</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0</project_license>
+  <name>VOSK Dictation</name>
+  <summary>Offline Russian speech dictation for X11 desktops</summary>
+  <description>
+    <p>VOSK Dictation recognizes Russian speech offline and inserts the result into the focused text field. It runs in the system tray without a main window.</p>
+    <p>Hold the left Alt key for about 1.2 seconds to start recording, then hold it again to stop recording and insert the recognized text. The included model is vosk-model-small-ru-0.22.</p>
+  </description>
+  <launchable type="desktop-id">vosk-dictation.desktop</launchable>
+  <url type="homepage">https://github.com/OzzyLabz/vosk-dictation</url>
+  <url type="bugtracker">https://github.com/OzzyLabz/vosk-dictation/issues</url>
+  <releases>
+    <release version="1.2.3" date="2026-10-06">
+      <description>
+        <p>Repacked the SquashFS filesystem with gzip compression for AppImageHub compatibility.</p>
+      </description>
+    </release>
+    <release version="1.2.2" date="2026-10-05">
+      <description>
+        <p>Added valid English AppStream metadata to the Kali-tested AppImage package.</p>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

@@ -1,0 +1,13 @@
+<component type="desktop-application">
+  <id>Angor2</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>Angor</name>
+  <summary>No description provided</summary>
+  <description>
+    <p>No description provided</p>
+  </description>
+  <launchable type="desktop-id">angor.desktop</launchable>
+  <provides>
+    <id>angor.desktop</id>
+  </provides>
+</component>

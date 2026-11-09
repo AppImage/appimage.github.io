@@ -1,0 +1,26 @@
+[Desktop Entry]
+Type=Application
+Name=Atech Atelier
+GenericName=CAD Application
+Comment=Parametric CAD with a built-in design agent
+Exec=AppRun - --single-instance %F
+Terminal=false
+Icon=dev.atech.Atelier
+Categories=Graphics;2DGraphics;3DGraphics;Engineering;
+Keywords=CAD;3D;parametric;FreeCAD;design;agent;
+StartupNotify=true
+StartupWMClass=Atech Atelier
+MimeType=application/x-extension-fcstd;model/step;model/iges;model/stl;
+X-AppImage-Version=0.1.2
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.17
+X-AppImage-Payload-License=LGPL-3.0

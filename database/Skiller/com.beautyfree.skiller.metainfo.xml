@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.beautyfree.skiller</id>
+  <name>Skiller</name>
+  <summary>Manage skills for AI coding agents</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-Sustainable-Use-1.0</project_license>
+  <description>
+    <p>Skiller helps you discover, install, and manage skills for AI coding agents
+    from a desktop application. Browse the marketplace and manage your local
+    skill library across supported agents.</p>
+  </description>
+  <launchable type="desktop-id">skiller.desktop</launchable>
+  <url type="homepage">https://skiller.download/</url>
+  <url type="vcs-browser">https://github.com/beautyfree/skiller</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The Skiller dashboard</caption>
+      <image type="source" width="2742" height="1934">https://raw.githubusercontent.com/beautyfree/skiller/main/docs/images/screenshots/dashboard.png</image>
+    </screenshot>
+  </screenshots>
+</component>

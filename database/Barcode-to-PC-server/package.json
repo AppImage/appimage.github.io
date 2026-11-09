@@ -1,0 +1,21 @@
+{
+  "name": "@btp/desktop",
+  "version": "5.0.0-beta.2",
+  "private": true,
+  "description": "Barcode to PC server — desktop shell (Electron). Thin: tray/windows/dialogs/updater. All server behavior lives in @btp/server.",
+  "homepage": "https://barcodetopc.com",
+  "author": "Filippo Tortomasi <filippo.tortomasi@gmail.com>",
+  "desktopName": "barcode-to-pc-server.desktop",
+  "main": "dist/main.js",
+  "dependencies": {
+    "@btp/i18n": "workspace:*",
+    "@btp/protocol": "workspace:*",
+    "@btp/server": "workspace:*",
+    "@nut-tree/nut-js": "4.6.0",
+    "electron-updater": "^6.8.9",
+    "qrcode": "^1.5.4",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "productName": "Barcode to PC server"
+}

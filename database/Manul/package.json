@@ -1,0 +1,23 @@
+{
+  "name": "manul",
+  "productName": "Manul",
+  "version": "0.1.1",
+  "private": true,
+  "license": "GPL-3.0-only",
+  "description": "An agentic video editor. Drop in a video, say what you want, and it does it.",
+  "type": "module",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "@ag-ui/core": "^1.0.2",
+    "@earendil-works/chord": "^1.0.4",
+    "@earendil-works/pi-ai": "^1.0.4",
+    "@earendil-works/pi-durable": "^1.0.4",
+    "electron-updater": "^6.8.9",
+    "isomorphic-git": "^1.43.0"
+  },
+  "author": {
+    "name": "Hormuz Labs",
+    "email": "hello@hormuz-labs.dev"
+  },
+  "homepage": "https://github.com/hormuz-labs/manul"
+}

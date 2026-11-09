@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.molexxxx.plex_poster_set_helper_2</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Plex Poster Set Helper 2</name>
+  <summary>Poster sets from ThePosterDB and MediUX for Plex</summary>
+  <developer id="com.molexxxx">
+    <name>molexxxx</name>
+  </developer>
+  <description>
+    <p>Plex Poster Set Helper downloads custom poster sets from ThePosterDB and MediUX and applies them to the matching movies, shows, seasons, and collections on a Plex Media Server.</p>
+    <p>Browse your Plex libraries, preview sets from your favorite creators, apply them in bulk, schedule recurring updates, and reset posters back to the originals when needed.</p>
+  </description>
+  <launchable type="desktop-id">plex-poster-set-helper-2.desktop</launchable>
+  <url type="homepage">https://github.com/molexxxx/plex-poster-set-helper-2</url>
+  <url type="bugtracker">https://github.com/molexxxx/plex-poster-set-helper-2/issues</url>
+  <url type="vcs-browser">https://github.com/molexxxx/plex-poster-set-helper-2</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Library Browser with MediUX poster sets for the selected show</caption>
+      <image>https://raw.githubusercontent.com/molexxxx/plex-poster-set-helper-2/main/.github/assets/gallery/library-browser.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <provides>
+    <binary>plex-poster-set-helper-2</binary>
+  </provides>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="2.4.1" date="2026-09-30" />
+  </releases>
+</component>

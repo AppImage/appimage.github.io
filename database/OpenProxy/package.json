@@ -1,0 +1,20 @@
+{
+  "name": "open-proxy",
+  "productName": "OpenProxy",
+  "version": "1.0.32",
+  "description": "OpenProxy — HTTP intercept proxy with a native desktop UI",
+  "license": "GPL-3.0-only",
+  "homepage": "https://github.com/TiagoParente32/open-proxy#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TiagoParente32/open-proxy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TiagoParente32/open-proxy/issues"
+  },
+  "main": "electron/main.js",
+  "author": {
+    "name": "Tiago",
+    "email": "t.parente.32@gmail.com"
+  }
+}

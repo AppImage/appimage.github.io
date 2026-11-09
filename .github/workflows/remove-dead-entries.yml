@@ -1,0 +1,53 @@
+# Removes the entries whose AppImage has been gone for months: an open
+# entry-unavailable issue ("Where did the AppImage of NAME go?", from
+# ping-authors.yml) at least 90 days old that nobody answered, and whose entry
+# code/check-entry.sh still finds dead right now. code/remove-dead-entries.sh
+# removes them (data/, database/, apps/) in one commit on master and closes the
+# issues with a comment. A new pull request brings an application back.
+# Manual only, a dry run by default.
+
+name: Remove dead entries
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Maximum number of entries to remove in this run (oldest issues first)'
+        type: number
+        default: 10
+      days:
+        description: 'The issue must be at least this many days old'
+        type: number
+        default: 90
+      dry_run:
+        description: 'Dry run (only list what would be removed)'
+        type: boolean
+        default: true
+
+jobs:
+  remove-dead:
+    if: github.repository == 'AppImage/appimage.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    concurrency:
+      group: remove-entry
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      issues: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Remove the entries that have been dead for months
+        env:
+          LIMIT: ${{ github.event.inputs.limit || '10' }}
+          DAYS: ${{ github.event.inputs.days || '90' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          ARGS=(--limit "$LIMIT" --days "$DAYS")
+          [ "$DRY_RUN" != "false" ] && ARGS+=(--dry-run)
+          bash code/remove-dead-entries.sh "${ARGS[@]}"

@@ -1,0 +1,32 @@
+{
+  "name": "dram-desktop",
+  "version": "0.1.10",
+  "description": "Secure local-first desktop layer for OpenClaw featuring voice, canvas, and hardened security guardrails.",
+  "type": "module",
+  "main": "runtime/main/index-wrapper.cjs",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": {
+    "name": "DRAM",
+    "email": "jeremy8776@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/Jeremy8776/DRAM#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeremy8776/DRAM.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jeremy8776/DRAM/issues"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "electron-updater": "^6.3.0",
+    "png-to-icns": "^1.0.0",
+    "ws": "^8.19.0"
+  }
+}

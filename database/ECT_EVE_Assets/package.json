@@ -1,0 +1,33 @@
+{
+  "name": "ecteveassets",
+  "version": "2.7.7",
+  "type": "module",
+  "description": "EVE Online Asset Management Desktop Application",
+  "main": "dist-electron/main.cjs",
+  "author": "EC Trade <contact@edencom.net>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ectkirk/ect-eve-assets"
+  },
+  "dependencies": {
+    "@radix-ui/react-context-menu": "^2.2.16",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-hover-card": "^1.1.15",
+    "@radix-ui/react-scroll-area": "^1.2.10",
+    "clsx": "2.1.1",
+    "dompurify": "^3.4.3",
+    "dotenv": "^17.4.2",
+    "electron-updater": "^6.8.3",
+    "i18next": "^26.2.0",
+    "jose": "^6.2.3",
+    "lucide-react": "^1.16.0",
+    "p-limit": "^7.3.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-i18next": "^17.0.8",
+    "tailwind-merge": "3.6.0",
+    "zod": "^4.4.3",
+    "zustand": "5.0.13"
+  }
+}

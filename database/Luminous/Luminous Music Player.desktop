@@ -1,0 +1,22 @@
+[Desktop Entry]
+Categories=AudioVideo;Audio;Music;
+Comment=A high-performance home for the music you already own
+Exec=LuminousMusicPlayer
+StartupWMClass=LuminousMusicPlayer
+Icon=LuminousMusicPlayer
+Name=Luminous Music Player
+Terminal=false
+Type=Application
+MimeType=audio/mpeg;audio/flac;audio/ogg;audio/mp4;audio/mp4;audio/aac;audio/vnd.wave;audio/x-aiff;audio/x-wavpack;audio/x-musepack;audio/x-ape;audio/x-tta;audio/x-dsf;audio/x-dff;application/vnd.ms-asf;audio/x-ms-wma;audio/x-m4b;audio/x-mpegurl;application/vnd.apple.mpegurl;audio/x-scpls;application/xspf+xml
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=MIT

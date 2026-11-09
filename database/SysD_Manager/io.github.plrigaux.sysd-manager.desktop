@@ -1,0 +1,69 @@
+[Desktop Entry]
+#Desktop File Name please do not translate
+Name[cs]=SysD Manager
+Name[es]=Administrador de SysD
+Name[et]=SysD haldur
+Name[fr]=SysD Manager
+Name[pt]=Gestor SysD
+Name[pt_BR]=Gerenciador SysD
+Name[ru]=SysD Менеджер
+Name[uk]=SysD Manager
+Name[zh_Hans]=SysD 管理器
+Name=SysD Manager
+
+#Desktop File GenericName
+GenericName[cs]=Správce služeb
+GenericName[es]=Gerente de servicio
+GenericName[et]=Teenusehaldur
+GenericName[fr]=Gestionnaire de services
+GenericName[nb_NO]=Tjenestebehandler
+GenericName[pt]=Gerente de serviço
+GenericName[pt_BR]=Gerente de serviço
+GenericName[ru]=Менеджер служб
+GenericName[uk]=Менеджер служб
+GenericName[zh_Hans]=服务管理器
+GenericName=Service manager
+
+#Desktop File Comment
+Comment[cs]=Uživatelsky přívětivá aplikace pro správu systemd jednotek
+Comment[de]=Eine bedienerfreundliche Anwendung um Systemd Units zu verwalten
+Comment[es]=Una aplicación fácil de usar para administrar unidades systemd
+Comment[et]=Kasutajasõbralik rakendus systemd teenuseüksuste haldamiseks
+Comment[fr]=Une application conviviale pour gérer les unités de systemd
+Comment[nb_NO]=En brukervennlig applikasjon for å behandle systemds enheter
+Comment[pt]=Uma aplicação amigável para gerir unidades systemd
+Comment[pt_BR]=Um aplicativo amigável para gerenciar unidades systemd
+Comment[ru]=Удобное приложение для управления юнитами systemd
+Comment[zh_Hans]=一个用于管理 systemd 单元，用户友好的应用程序
+Comment=A user-friendly application to manage systemd's units
+
+#Desktop File Keywords
+Keywords[cs]=Systemd;Systemctl;Služby;log;záznam;
+Keywords[es]=Systemd;Systemctl;Servicios;registro;
+Keywords[et]=Systemd;Systemctl;Services;log;teenus;teenused;deemon;deemonid;daemon;ühik;ühikud;mask;süsteem;süsteemilogi;
+Keywords[fr]=Systemd;Systemctl;Services;log;
+Keywords[nb_NO]=Systemd;Systemctl;Tjenester,logg;
+Keywords[pt]=Systemd;Systemctl;Serviços;log;
+Keywords[pt_BR]=Systemd;Systemctl;Serviços;log;
+Keywords[ru]=Systemd;Systemctl;Services;log;
+Keywords[uk]=Systemd;Systemctl;Services;log;сервіси;
+Keywords[zh_Hans]=Systemd;Systemctl;服务;日志;
+Keywords=Systemd;Systemctl;Services;log;
+
+Exec=sysd-manager
+Icon=io.github.plrigaux.sysd-manager
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Utility;System;Settings
+X-AppImage-Version=2.22.2
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=bundled
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=true

@@ -1,0 +1,16 @@
+{
+  "name": "gamepad-io",
+  "version": "1.1.1",
+  "author": "Joseph Adams <joseph@josephadams.dev>",
+  "description": "Use gamepads to control your computer",
+  "main": "index.js",
+  "dependencies": {
+    "electron-store": "^8.0.0",
+    "express": "^4.19.2",
+    "hyperaxe": "^2.0.1",
+    "nanochoo": "^6.13.0",
+    "short-uuid": "^5.2.0",
+    "socket.io": "^4.7.5",
+    "style.css": "^1.0.3"
+  }
+}

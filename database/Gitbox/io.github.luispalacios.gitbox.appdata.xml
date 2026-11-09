@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metainfo for the Linux AppImage. build-appimage.sh fills in
+     1.6.3 and 2026-10-01 and validates the result with appstreamcli. Keep to
+     tags that appstreamcli 0.15 (Ubuntu 22.04, which CI and the AppImage
+     catalog test on) accepts: no <developer>, no vcs-browser url. -->
+<component type="desktop-application">
+  <id>io.github.luispalacios.gitbox</id>
+  <name>gitbox</name>
+  <summary>Work with multiple git repos, accounts and credentials</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>
+      gitbox manages Git multi-account environments across GitHub, GitLab,
+      Gitea, Forgejo and Bitbucket. It keeps each account's clones under its
+      own folder, wires the right credential (Git Credential Manager, SSH or
+      token) per account, discovers repositories you already have on disk,
+      and sets up push and pull mirrors between providers.
+    </p>
+    <p>
+      The AppImage bundles the graphical app together with the gitbox
+      command-line tool and terminal UI.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.luispalacios.gitbox.desktop</launchable>
+  <url type="homepage">https://github.com/LuisPalacios/gitbox</url>
+  <url type="bugtracker">https://github.com/LuisPalacios/gitbox/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Accounts and repositories overview</caption>
+      <image>https://raw.githubusercontent.com/LuisPalacios/gitbox/main/assets/screenshot-gui.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Development</category>
+  </categories>
+  <provides>
+    <binary>gitbox</binary>
+    <binary>GitboxApp</binary>
+  </provides>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="1.6.3" date="2026-10-01" />
+  </releases>
+</component>

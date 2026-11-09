@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.regaan.Lockroot</id>
+  <name>Lockroot</name>
+  <summary>Local encrypted password manager</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+  <description>
+    <p>Lockroot stores password entries inside a local encrypted vault protected by a master password.</p>
+    <p>The Linux build uses Argon2id key derivation and AES-256-GCM authenticated encryption.</p>
+  </description>
+  <launchable type="desktop-id">lockroot.desktop</launchable>
+  <url type="homepage">https://lockroot.rothackers.com</url>
+  <url type="bugtracker">https://github.com/regaan/LockRoot/issues</url>
+  <developer_name>REGAAN</developer_name>
+  <content_rating type="oars-1.1" />
+</component>
