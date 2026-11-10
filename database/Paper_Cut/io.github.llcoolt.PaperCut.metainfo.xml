@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The Flatpak's (and software centres') description of Paper Cut: tools/port/linux_packages.py -->
+<component type="desktop-application">
+  <id>io.github.llcoolt.PaperCut</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Paper Cut</name>
+  <summary>Paper Mario: The Thousand-Year Door, native</summary>
+  <description>
+    <p>
+      Paper Cut plays Paper Mario: The Thousand-Year Door natively, from your own disc image of the Japanese, US
+      or European release. It includes no game data.
+    </p>
+    <p>
+      Widescreen, high frame rates, higher resolutions, controllers of every kind, mods, save sync through any
+      folder, and settings in the game's own Start menu.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.llcoolt.PaperCut.desktop</launchable>
+  <url type="homepage">https://github.com/LLCOOLT/paper-cut</url>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">mild</content_attribute>
+  </content_rating>
+  <supports>
+    <control>gamepad</control>
+    <control>keyboard</control>
+  </supports>
+</component>
