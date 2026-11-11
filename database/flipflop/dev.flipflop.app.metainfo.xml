@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>dev.flipflop.app</id>
+  <name>flipflop</name>
+  <summary>Share files, texts and a scratchpad with your devices, peer to peer</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+  <developer id="dev.flipflop"><name>andunie</name></developer>
+  <description>
+    <p>flipflop connects your devices directly, over the local network, Bluetooth or the internet, with no account and no server in the middle. Make groups, offer files, paste texts and edit a shared scratchpad. Guests can join a group from a browser with a link.</p>
+  </description>
+  <launchable type="desktop-id">dev.flipflop.app.desktop</launchable>
+  <url type="homepage">https://github.com/andunieee/flipflop</url>
+  <url type="bugtracker">https://github.com/andunieee/flipflop/issues</url>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="0.1.0" date="2026-10-27" />
+  </releases>
+</component>
