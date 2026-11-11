@@ -1,0 +1,23 @@
+{
+  "name": "desktop",
+  "productName": "Staaash",
+  "version": "2.0.0-rc.7",
+  "description": "Staaash desktop sync client.",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "author": "Staaash",
+  "homepage": "https://github.com/itsmeares/staaash",
+  "main": "dist/main/index.cjs",
+  "desktopName": "staaash.desktop",
+  "dependencies": {
+    "@parcel/watcher": "^2.6.0"
+  },
+  "optionalDependencies": {
+    "@parcel/watcher-darwin-arm64": "2.6.0",
+    "@parcel/watcher-darwin-x64": "2.6.0",
+    "@parcel/watcher-linux-arm64-glibc": "2.6.0",
+    "@parcel/watcher-linux-x64-glibc": "2.6.0",
+    "@parcel/watcher-win32-arm64": "2.6.0",
+    "@parcel/watcher-win32-x64": "2.6.0"
+  }
+}
