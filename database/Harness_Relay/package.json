@@ -1,0 +1,10 @@
+{
+  "name": "harness-relay",
+  "productName": "Harness Relay",
+  "version": "2026.1111.1",
+  "description": "A local group chat for the real Claude Code, Codex and Grok CLIs: give each a role, choose how they take turns, and they work on your code, or any question, and answer each other.",
+  "license": "Apache-2.0",
+  "author": "Harness Relay contributors",
+  "private": true,
+  "main": "main.cjs"
+}
