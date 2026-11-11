@@ -569,7 +569,8 @@ with `dry_run`) calls three workflows one after the other through
 `workflow_call`, with `secrets: inherit`: `discover-apps.yml` (count 500,
 months 3), then a `wait` job (until `test.yml` and `publish-pr-screenshot.yml`
 have nothing queued or running for two checks in a row, at most 5 hours), then
-`merge-labeled.yml` (max 500), then `cleanup-notifications.yml`. Each step runs
+`merge-labeled.yml` (max 500), a second `wait` job (for the Test runs that the
+merges started), `build-website.yml`, then `cleanup-notifications.yml`. Each step runs
 after the previous one ended, also when it failed (not when the run was
 cancelled). The PRs that discovery opens are therefore tested and merged the
 same night, if they pass (this needs `DISCOVER_TOKEN` or
