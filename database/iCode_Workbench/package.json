@@ -1,0 +1,38 @@
+{
+  "name": "icode",
+  "version": "0.7.0",
+  "private": true,
+  "description": "iCode Workbench — the universal agent development environment for every agent and platform",
+  "license": "AGPL-3.0-only",
+  "homepage": "https://github.com/icodehq/icode-workbench",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icodehq/icode-workbench.git"
+  },
+  "bugs": {
+    "url": "https://github.com/icodehq/icode-workbench/issues"
+  },
+  "main": "./out/main/index.js",
+  "desktopName": "iCode.desktop",
+  "packageManager": "pnpm@11.16.0",
+  "engines": {
+    "node": "24.x"
+  },
+  "dependencies": {
+    "@xterm/addon-fit": "0.11.0",
+    "@xterm/addon-serialize": "0.14.0",
+    "@xterm/headless": "6.0.0",
+    "@xterm/xterm": "6.0.0",
+    "chokidar": "4.0.3",
+    "lucide-react": "0.577.0",
+    "monaco-editor": "0.57.0",
+    "node-pty": "1.1.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "4.6.7"
+  },
+  "author": {
+    "name": "iCode contributors",
+    "email": "icode-maintainers@users.noreply.github.com"
+  }
+}
