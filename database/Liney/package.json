@@ -1,0 +1,26 @@
+{
+  "name": "liney",
+  "private": true,
+  "version": "0.1.4",
+  "license": "LicenseRef-TLL-1.0",
+  "type": "module",
+  "dependencies": {
+    "@evex/linejs": "npm:@jsr/evex__linejs@3.5.0",
+    "@tanstack/react-virtual": "^3.14.13",
+    "electron-updater": "6.8.11",
+    "lucide-react": "^1.41.0",
+    "motion": "^13.2.0",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "zustand": "^5.0.15"
+  },
+  "description": "Independent unofficial LINE desktop client for Linux",
+  "author": "Cytech Team Development",
+  "repository": "https://github.com/Cytech-Team/Liney",
+  "patchedDependencies": {
+    "lucide-react@1.41.0": "patches/lucide-react@1.41.0.patch"
+  },
+  "main": "electron/main.mjs",
+  "desktopName": "dev.cytechteam.liney.electron-preview"
+}
