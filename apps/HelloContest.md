@@ -1,0 +1,49 @@
+---
+layout: app
+
+permalink: /HelloContest/
+description: "Hello Contest is a simple HF contest log for Linux"
+license: "MIT"
+
+icons:
+  - HelloContest/icons/256x256/hellocontest.png
+
+screenshots:
+  - HelloContest/screenshot.png
+
+authors:
+  - name: "ftl"
+    url: "https://github.com/ftl"
+
+links:
+  - type: GitHub
+    url: ftl/hellocontest
+  - type: Download
+    url: https://github.com/ftl/hellocontest/releases
+
+desktop:
+  Desktop Entry:
+    Version: 1.0
+    Name: Hello Contest
+    Comment: Hello Contest is a simple HF contest log for Linux
+    Exec: hellocontest
+    Icon: hellocontest
+    Terminal: false
+    X-MultipleArgs: false
+    Type: Application
+    Categories: Network
+    StartupNotify: true
+  AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|ftl|hellocontest|latest|hellocontest-*-x86_64.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.35
+    X-AppImage-Payload-License: MIT
+---
