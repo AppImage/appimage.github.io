@@ -1,0 +1,31 @@
+{
+  "name": "orfeo",
+  "version": "1.7.2",
+  "description": "Modern piano learning app with MIDI visualization",
+  "author": "SquareBow",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "main": "out/main/main.js",
+  "type": "module",
+  "dependencies": {
+    "@coderline/alphatab": "^1.8.4",
+    "@tonejs/midi": "^2.0.28",
+    "electron-updater": "^6.8.11",
+    "fuse.js": "^7.5.0",
+    "gsap": "^3.15.0",
+    "jazz-midi-electron": "^2.0.3",
+    "jzz": "^1.9.6",
+    "jzz-midi-smf": "^1.9.9",
+    "jzz-synth-tiny": "^1.4.4",
+    "midi-file": "^1.2.4",
+    "pdfkit": "^0.20.2",
+    "pixi-filters": "^6.1.5",
+    "pixi.js": "^8.22.0",
+    "soundfont-player": "^0.12.0",
+    "spessasynth_core": "^4.3.22",
+    "spessasynth_lib": "^4.3.13",
+    "tonal": "^6.4.0",
+    "tone": "^15.1.22",
+    "wasm-media-encoders": "^0.7.0",
+    "zustand": "^5.0.16"
+  }
+}
