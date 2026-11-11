@@ -1,0 +1,72 @@
+# Every night, one after the other:
+#   1. discover-apps.yml proposes new entries from GitHub (pull requests
+#      labeled auto-discovered),
+#   2. merge-labeled.yml merges the pull requests that passed with
+#      screenshot-ok (and nothing else but auto-discovered),
+#   3. cleanup-notifications.yml marks notifications as read whose last poster is
+#      in the allow-list.
+# Each step runs after the previous one has finished, also when that one failed
+# (but not when the whole run is cancelled), so a failure in discovery never
+# keeps the merging and the notification cleanup from running.
+#
+# Pull requests opened by step 1 are tested after this run, so they are merged by
+# a later night's step 2. The three workflows can still be started by hand
+# separately.
+#
+# Needs the secrets of the three workflows (DISCOVER_TOKEN or
+# SCREENSHOT_UPLOAD_TOKEN, NOTIFICATIONS_TOKEN); they are passed on with
+# "secrets: inherit". Switch off: disable this workflow in the Actions tab.
+# Scheduled runs only happen on the default branch.
+
+name: Nightly
+
+on:
+  schedule:
+    - cron: '17 1 * * *' # 01:17 UTC every night
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (the three steps only list what they would do)'
+        type: boolean
+        default: false
+
+permissions: {}
+
+concurrency:
+  group: nightly
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    if: github.repository == 'AppImage/appimage.github.io'
+    uses: ./.github/workflows/discover-apps.yml
+    with:
+      count: 5
+      months: 3
+      dry_run: ${{ inputs.dry_run || false }}
+    secrets: inherit
+    permissions:
+      contents: write
+      pull-requests: write
+
+  merge:
+    needs: discover
+    if: ${{ !cancelled() && github.repository == 'AppImage/appimage.github.io' }}
+    uses: ./.github/workflows/merge-labeled.yml
+    with:
+      max: 50
+      dry_run: ${{ inputs.dry_run || false }}
+    secrets: inherit
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+
+  cleanup:
+    needs: merge
+    if: ${{ !cancelled() && github.repository == 'AppImage/appimage.github.io' }}
+    uses: ./.github/workflows/cleanup-notifications.yml
+    with:
+      dry_run: ${{ inputs.dry_run || false }}
+    secrets: inherit
+    permissions: {}

@@ -256,7 +256,7 @@ GitHub Pages (Jekyll) from this repository.
    of them). Deleting only
    `data/NAME` used to leave the page on the site.
 
-6. `.github/workflows/discover-apps.yml` (`workflow_dispatch` only; inputs
+6. `.github/workflows/discover-apps.yml` (`workflow_dispatch`, `workflow_call` and, nightly, `nightly.yml`; inputs
    `count`, default 1, no upper limit, `months` (default 3) and `dry_run`) runs `code/discover-apps.sh` to
    find GitHub repositories that publish AppImages on their releases but are
    not in the catalog yet, and proposes each as a new entry in its own pull
@@ -561,6 +561,18 @@ GitHub Pages (Jekyll) from this repository.
   catalog shows the metainfo's screenshot (`type="default"`, else the first;
   from `*.metainfo.xml` or `*.appdata.xml`) instead of the automated one,
   which the test still takes and checks.
+
+## Nightly run
+
+`.github/workflows/nightly.yml` (`schedule` 01:17 UTC, and `workflow_dispatch`
+with `dry_run`) calls three workflows one after the other through
+`workflow_call`, with `secrets: inherit`: `discover-apps.yml` (count 5, months
+3), then `merge-labeled.yml` (max 50), then `cleanup-notifications.yml`. Each
+step runs after the previous one ended, also when it failed (not when the run
+was cancelled). PRs that discovery opens are tested after the run, so a later
+night merges them. Those three workflows keep their `workflow_dispatch` trigger.
+When adding an input to one of them, add it to its `workflow_call` block too.
+Switch off: disable "Nightly" in the Actions tab.
 
 ## Investigating and answering in pull requests
 

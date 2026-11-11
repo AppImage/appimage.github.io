@@ -92,6 +92,14 @@ shipping an AppStream metainfo file (description, links, and screenshots of
 the author's choice, which the catalog shows instead of the automated one).
 The text is `code/appstream-help.md`; edit it there.
 
+## Nightly run
+
+`.github/workflows/nightly.yml` runs every night at 01:17 UTC, one step after
+the other: Discover apps (5 pull requests at most), Merge labeled PRs, Clean up
+notifications. It needs the secrets of these workflows (`DISCOVER_TOKEN` or
+`SCREENSHOT_UPLOAD_TOKEN`, `NOTIFICATIONS_TOKEN`). To try it, start "Nightly"
+from the Actions tab with `dry_run` set. To stop it, disable the workflow there.
+
 ## Running "Discover apps" manually
 
 `.github/workflows/discover-apps.yml` searches GitHub for repositories that

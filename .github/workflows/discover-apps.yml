@@ -13,6 +13,18 @@
 name: Discover apps
 
 on:
+  # Also called by nightly.yml
+  workflow_call:
+    inputs:
+      count:
+        type: number
+        default: 1
+      months:
+        type: number
+        default: 3
+      dry_run:
+        type: boolean
+        default: false
   workflow_dispatch:
     inputs:
       count:
@@ -60,9 +72,9 @@ jobs:
 
       - name: Discover and propose new entries
         env:
-          COUNT: ${{ github.event.inputs.count || '1' }}
-          MONTHS: ${{ github.event.inputs.months || '3' }}
-          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          COUNT: ${{ github.event.inputs.count || inputs.count || '1' }}
+          MONTHS: ${{ github.event.inputs.months || inputs.months || '3' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || inputs.dry_run }}
         run: |
           ARGS=(--count "$COUNT" --months "$MONTHS")
           [ "$DRY_RUN" == "true" ] && ARGS+=(--dry-run)
