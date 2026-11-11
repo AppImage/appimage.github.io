@@ -1,0 +1,29 @@
+[Desktop Entry]
+Version=1.0
+Name=MuseScore 3.7-portable-dev
+GenericName=Music notation
+GenericName[de]=Notensatz
+GenericName[fr]=Notation musicale
+Comment=Create, play and print sheet music
+Comment[ru]=Визуальный редактор нотных партитур
+Comment[fr]=Gravure de partitions musicales
+Exec=mscore-portable-dev %F
+Icon=mscore-portable-dev
+StartupNotify=true
+StartupWMClass=mscore-portable-dev
+Terminal=false
+Type=Application
+Categories=Qt;Audio;Sequencer;Midi;AudioVideoEditing;Music;AudioVideo;
+Keywords=music;notation;composition;composing;arranging;making;sheet music;music notation software;lead sheet;leadsheet;score;full score;scorewriter;MIDI;musicxml;playback;instrument;
+Keywords[de]=Musik;Noten;Musiknoten;Komposition;Komponieren;Arrangieren;Notenblatt;Notenblätter;Notationsprogramm;Musiknotationsprogramm;Musiknotation;Tabulatur;MIDI;musicxml;Instrument;
+MimeType=application/x-musescore;application/x-musescore+xml;application/vnd.recordare.musicxml;application/vnd.recordare.musicxml+xml;audio/midi;application/x-bww;application/x-biab;application/x-capella;audio/x-gtp;application/x-musedata;application/x-overture;audio/x-ptb;application/x-sf2;application/x-sf3;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|Jojo-Schmitz|MuseScore|continuous|MuseScore-*x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34
