@@ -1,0 +1,22 @@
+{
+  "name": "cdplayer",
+  "productName": "CDPlayer",
+  "version": "2.21.0",
+  "description": "A desktop music player that recreates the tactile feel of a physical CD player. Plays MP3, M4A, FLAC, WAV, AIFF, OGG and more with nothing else to install.",
+  "author": "Kizarov3",
+  "license": "MIT",
+  "homepage": "https://github.com/Kizarov3/CDPlayer",
+  "main": "src/main/main.js",
+  "dependencies": {
+    "kuromoji": "0.1.2",
+    "music-metadata": "^11.16.1",
+    "node-taglib-sharp": "^6.0.3",
+    "onnxruntime-web": "^1.31.1",
+    "opencc-js": "1.4.2",
+    "pinyin-pro": "3.29.5"
+  },
+  "desktopName": "cdplayer.desktop",
+  "overrides": {
+    "uuid": "^11.1.1"
+  }
+}
