@@ -566,11 +566,15 @@ GitHub Pages (Jekyll) from this repository.
 
 `.github/workflows/nightly.yml` (`schedule` 01:17 UTC, and `workflow_dispatch`
 with `dry_run`) calls three workflows one after the other through
-`workflow_call`, with `secrets: inherit`: `discover-apps.yml` (count 5, months
-3), then `merge-labeled.yml` (max 50), then `cleanup-notifications.yml`. Each
-step runs after the previous one ended, also when it failed (not when the run
-was cancelled). PRs that discovery opens are tested after the run, so a later
-night merges them. Those three workflows keep their `workflow_dispatch` trigger.
+`workflow_call`, with `secrets: inherit`: `discover-apps.yml` (count 500,
+months 3), then a `wait` job (until `test.yml` and `publish-pr-screenshot.yml`
+have nothing queued or running for two checks in a row, at most 5 hours), then
+`merge-labeled.yml` (max 500), then `cleanup-notifications.yml`. Each step runs
+after the previous one ended, also when it failed (not when the run was
+cancelled). The PRs that discovery opens are therefore tested and merged the
+same night, if they pass (this needs `DISCOVER_TOKEN` or
+`SCREENSHOT_UPLOAD_TOKEN`, or their Test workflow does not start). Those three
+workflows keep their `workflow_dispatch` trigger.
 When adding an input to one of them, add it to its `workflow_call` block too.
 Switch off: disable "Nightly" in the Actions tab.
 
