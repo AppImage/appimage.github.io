@@ -1,0 +1,116 @@
+# Every night, one after the other:
+#   1. discover-apps.yml proposes new entries from GitHub (at most 500 pull
+#      requests, labeled auto-discovered),
+#   2. merge-labeled.yml merges the pull requests that passed with
+#      screenshot-ok (and nothing else but auto-discovered),
+#   3. cleanup-notifications.yml marks notifications as read whose last poster is
+#      in the allow-list.
+# Each step runs after the previous one has finished, also when that one failed
+# (but not when the whole run is cancelled), so a failure in discovery never
+# keeps the merging and the notification cleanup from running.
+#
+# Between steps 1 and 2 a job waits (at most 5 hours) until the tests of the
+# pull requests opened by step 1 have run and been labeled, so that they are
+# merged the same night. For their tests to start, step 1 needs DISCOVER_TOKEN
+# or SCREENSHOT_UPLOAD_TOKEN. The three workflows can still be started by hand
+# separately.
+#
+# Needs the secrets of the three workflows (DISCOVER_TOKEN or
+# SCREENSHOT_UPLOAD_TOKEN, NOTIFICATIONS_TOKEN); they are passed on with
+# "secrets: inherit". Switch off: disable this workflow in the Actions tab.
+# Scheduled runs only happen on the default branch.
+
+name: Nightly
+
+on:
+  schedule:
+    - cron: '17 1 * * *' # 01:17 UTC every night
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (the three steps only list what they would do)'
+        type: boolean
+        default: false
+
+permissions: {}
+
+concurrency:
+  group: nightly
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    if: github.repository == 'AppImage/appimage.github.io'
+    uses: ./.github/workflows/discover-apps.yml
+    with:
+      count: 500
+      months: 3
+      dry_run: ${{ inputs.dry_run || false }}
+    secrets: inherit
+    permissions:
+      contents: write
+      pull-requests: write
+
+  # Waits until the tests of the pull requests opened by the discovery have run
+  # and been labeled (Test and publish-pr-screenshot.yml have nothing queued or
+  # running any more), so that they are merged the same night
+  wait:
+    needs: discover
+    if: ${{ !cancelled() && github.repository == 'AppImage/appimage.github.io' && !inputs.dry_run }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    permissions:
+      actions: read
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+    steps:
+      - name: Wait for the tests of the new pull requests
+        run: |
+          # Runs queued, waiting or running for the two workflows; a failed
+          # request counts as busy
+          busy() {
+            local n=0 wf st c
+            for wf in test.yml publish-pr-screenshot.yml ; do
+              for st in queued in_progress waiting pending ; do
+                c=$(gh api "repos/$REPO/actions/workflows/$wf/runs?status=$st&per_page=1" --jq .total_count 2>/dev/null) || c=1
+                n=$((n + c))
+              done
+            done
+            echo "$n"
+          }
+          # Stop waiting after 5 hours (the job may run 5.5 hours at most)
+          DEADLINE=$((SECONDS + 18000))
+          IDLE=0
+          while [ "$SECONDS" -lt "$DEADLINE" ] ; do
+            N=$(busy)
+            if [ "$N" -eq 0 ] ; then IDLE=$((IDLE + 1)) ; else IDLE=0 ; fi
+            echo "$(date -u +%H:%M:%S) $N run(s) queued or running"
+            # idle on two checks in a row: the labels are set by the publish
+            # workflow right after a test ends
+            [ "$IDLE" -ge 2 ] && break
+            sleep 90
+          done
+          [ "$IDLE" -ge 2 ] || echo "::warning::Gave up waiting after 5 hours; merging what is ready"
+
+  merge:
+    needs: [discover, wait]
+    if: ${{ !cancelled() && github.repository == 'AppImage/appimage.github.io' }}
+    uses: ./.github/workflows/merge-labeled.yml
+    with:
+      max: 500
+      dry_run: ${{ inputs.dry_run || false }}
+    secrets: inherit
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+
+  cleanup:
+    needs: merge
+    if: ${{ !cancelled() && github.repository == 'AppImage/appimage.github.io' }}
+    uses: ./.github/workflows/cleanup-notifications.yml
+    with:
+      dry_run: ${{ inputs.dry_run || false }}
+    secrets: inherit
+    permissions: {}
