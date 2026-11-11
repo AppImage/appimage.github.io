@@ -1,0 +1,21 @@
+{
+  "name": "openextract",
+  "version": "0.13.0",
+  "description": "Free, open-source iPhone backup extractor",
+  "main": "dist-electron/main.js",
+  "author": "OpenExtract Contributors",
+  "homepage": "https://www.openextract.app",
+  "license": "MIT",
+  "dependencies": {
+    "@fontsource/fraunces": "^5.2.9",
+    "@fontsource/geist": "^5.2.8",
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "benz-amr-recorder": "^1.1.5",
+    "date-fns": "^4.1.0",
+    "electron-updater": "^6.8.10",
+    "lucide-react": "^0.577.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^3.8.1"
+  }
+}
