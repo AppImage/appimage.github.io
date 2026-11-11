@@ -1,0 +1,10 @@
+{
+  "name": "nutflix",
+  "productName": "Nutflix",
+  "version": "0.1.2",
+  "description": "Nostr-native peer-to-peer video, paid per block with Cashu ecash",
+  "author": "SovTech",
+  "license": "AGPL-3.0-or-later",
+  "main": "main/main.js",
+  "type": "module"
+}
