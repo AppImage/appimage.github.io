@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>app.chatpane.Chatpane</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Chatpane</name>
+  <summary>Unofficial desktop app for Facebook Messenger</summary>
+  <description>
+    <p>
+      Chatpane wraps Messenger in a small native desktop window and removes the
+      surrounding Facebook feed, Reels, Marketplace, and other distractions.
+    </p>
+    <p>
+      It provides native notifications, unread indicators, keyboard shortcuts,
+      system theme integration, privacy controls, and a system tray.
+    </p>
+    <p>
+      A Facebook account is required. Voice and video calls are not yet
+      available on Linux. Chatpane is an independent project and is not
+      affiliated with or endorsed by Meta.
+    </p>
+  </description>
+  <launchable type="desktop-id">Chatpane.desktop</launchable>
+  <categories>
+    <category>Network</category>
+    <category>Chat</category>
+    <category>InstantMessaging</category>
+  </categories>
+  <keywords>
+    <keyword>Messenger</keyword>
+    <keyword>Facebook</keyword>
+    <keyword>Chat</keyword>
+    <keyword>Message</keyword>
+  </keywords>
+  <provides>
+    <binary>chatpane</binary>
+  </provides>
+  <url type="homepage">https://chatpane.app/</url>
+  <url type="bugtracker">https://github.com/kristofferR/Chatpane/issues</url>
+  <url type="vcs-browser">https://github.com/kristofferR/Chatpane</url>
+  <developer id="io.github.kristofferr">
+    <name>kristofferR</name>
+  </developer>
+  <update_contact>481270+kristofferR@users.noreply.github.com</update_contact>
+  <branding>
+    <color type="primary" scheme_preference="light">#c4bdff</color>
+    <color type="primary" scheme_preference="dark">#2d2580</color>
+  </branding>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-info">moderate</content_attribute>
+  </content_rating>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://chatpane.app/screenshots/chatpane-linux-en-light.png</image>
+      <caption>Chatpane on Linux with fictional English demo conversations</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://chatpane.app/screenshots/chatpane-linux-en-dark.png</image>
+      <caption>Dark appearance with the same fictional English demo conversations</caption>
+    </screenshot>
+  </screenshots>
+  <!-- The release workflow adds each newer release from its GitHub release notes
+       (scripts/release/metainfo.ts). Don't add entries here by hand. -->
+  <releases>
+    <release version="3.2.0" date="2026-11-10">
+      <description>
+        <p>Pin your chats, get notified about reactions, and use Chatpane in any Facebook language.</p>
+        <p>What's New</p>
+        <ul><li>Pin chats. Right-click a chat and choose Pin chat to keep it in a Pinned section above the chat list. facebook.com has no pinning of its own.</li><li>Reaction notifications. When someone reacts to one of your messages, you get a notification, like on your phone. Turn it off in Settings → Notifications → Reaction Notifications.</li><li>Works in every Facebook language. Right-click menus, notification actions, keyboard shortcuts, Hide Names &amp; Avatars and notifications no longer depend on Facebook being set to English.</li><li>Mute from a notification mutes the chat for 8 hours without opening it, in any language.</li><li>One message sound. Settings → Notifications → Message sound now plays once per new message, whether Chatpane is in front or not, and Messenger's own sound is one of the choices.</li><li>Read receipts. Turn them on or off in Settings → Account.</li><li>Your account in Settings. Settings → Account shows who is signed in, with a Log Out… button.</li><li>Change Messenger's language after logging in, from Settings → General → Messenger Language.</li><li>Double-click beside a message to reply, like the old Messenger desktop app.</li><li>Schedule send has a new menu in Messenger's own style, with quick choices and a custom date and time.</li><li>Passkey sign-in help. If a passkey is your only two-factor method, the login page explains how to get past the step that can't finish in Chatpane.</li><li>Settings opens instantly, already filled in, without a blank window first.</li><li>The Terminal theme uses a monospace font across the chat list too.</li><li>winget. On Windows, install and update Chatpane with winget install chatpane.</li><li>Make your own theme with the new theme guide.</li></ul>
+        <p>Bug Fixes</p>
+        <ul><li>Windows: encrypted chats stopped syncing after reloading the window, until Chatpane rebuilt it about ten minutes later. Reloads now keep them working.</li><li>Windows: Log Out could leave the old account's reset pending and wipe a later login on a following launch.</li><li>Windows: a window restored at a size from a bigger screen hid the message box under the taskbar, and the Settings footer could sit under it too. Both now fit the screen.</li><li>Chatpane did more and more background work the longer Messenger stayed open, which could slow it down and send one reaction notification hundreds of times.</li><li>A reaction no longer shows a second banner, and a group message or a photo no longer raises two notifications.</li><li>Group notifications keep the sender's photo.</li><li>Quick replies from a notification are sent when Chatpane isn't in front.</li><li>Messenger recovers by itself when it shows &quot;Couldn't load chats&quot;.</li><li>Hide Names covers names in event lines (&quot;X added Y&quot;, poll votes), people just added to a group, and previews in every language.</li><li>Download image, Share and Copy image work for every image, and Copy image works for JPEGs on Windows.</li><li>Schedule send shows times on your locale's clock.</li><li>Next conversation and Ctrl/Cmd+1–9 no longer open an empty page when no chat is open.</li><li>The login page shows its form right away instead of invisible text for up to 15 seconds, and the cookie dialog no longer reappears after you enter your password.</li><li>A settings.json saved with a byte order mark no longer resets all settings.</li><li>Linux: no GTK menu bar over Chatpane's window controls, and WebKit's safe mode is no longer forced on niri. Settings windows and extra Messenger windows no longer leave their web processes running after they close.</li><li>Updating from Carrier also carries over the logs, the macOS preferences and the saved zoom.</li></ul>
+      </description>
+    </release>
+    <release version="3.1.0" date="2026-11-09">
+      <description>
+        <p>The app has a new name, Chatpane, and a home at chatpane.app. Updating keeps your login, settings, and themes.</p>
+        <p>Chatpane now speaks 30 languages, lets you choose the notification sound, exports a chat from the chat list, and follows the tiled or floating state of windows on Linux tiling window managers.</p>
+      </description>
+    </release>
+    <release version="3.0.1" date="2026-11-08">
+      <description>
+        <p>Added the Pink, Lavender, Sage, Slate, and Terminal color themes, and fixed the first click in a Settings window opened in the background.</p>
+      </description>
+    </release>
+    <release version="3.0.0" date="2026-11-08">
+      <description>
+        <p>Redesigned Settings with a theme gallery, custom themes, accent colors, message fonts, and alternate app icons. Added right-click menus for messages and conversations, resizable panes, and conversation export to HTML or JSON.</p>
+      </description>
+    </release>
+    <release version="2.1.0" date="2026-11-05">
+      <description>
+        <p>Voice and video calls start again on macOS and Windows. On Linux, hovering the call buttons now explains why calls are not yet available.</p>
+      </description>
+    </release>
+    <release version="2.0.7" date="2026-11-05">
+      <description>
+        <p>File attachments such as PDFs, office documents, and archives download again, and failed downloads explain why.</p>
+      </description>
+    </release>
+    <release version="2.0.6" date="2026-11-04">
+      <description>
+        <p>Stopped repeated notifications for messages that were already announced, and updated Tauri with security fixes.</p>
+      </description>
+    </release>
+    <release version="2.0.5" date="2026-10-18">
+      <description>
+        <p>Recovered Messenger's background connection on macOS after a network outage.</p>
+      </description>
+    </release>
+    <release version="2.0.4" date="2026-10-17">
+      <description>
+        <p>Kept the layout inside the window when zooming in, and kept muted conversations quiet when they have unread messages.</p>
+      </description>
+    </release>
+    <release version="2.0.3" date="2026-10-09">
+      <description>
+        <p>Stopped old messages from triggering notifications after a reload, and fixed repeated reloads when the chat connection stalls.</p>
+      </description>
+    </release>
+    <release version="2.0.2" date="2026-10-07">
+      <description>
+        <p>Added thumbs-up reactions and eight-hour mutes directly from message notifications, and fixed stuck unread counts.</p>
+      </description>
+    </release>
+    <release version="2.0.1" date="2026-10-01">
+      <description>
+        <p>Recovered automatically from Messenger's fatal reconnect dialog and long sleeps, and released memory from long-running sessions.</p>
+      </description>
+    </release>
+    <release version="2.0.0" date="2026-09-24">
+      <description>
+        <p>Repaired Messenger connection failures in the background and recovered blank or frozen windows. Added scheduled messages that persist across restarts.</p>
+      </description>
+    </release>
+    <release version="1.14.0" date="2026-09-17">
+      <description>
+        <p>Recovered chats when the encrypted-message connection stays disconnected, and improved Facebook login layouts and Linux notification avatars.</p>
+      </description>
+    </release>
+    <release version="1.13.0" date="2026-09-08">
+      <description>
+        <p>Improved recovery when Messenger stops responding or limits requests, and added clearer camera and microphone troubleshooting.</p>
+        <p>Restored native desktop menus and improved Linux Wayland startup.</p>
+      </description>
+    </release>
+    <release version="1.7.0" date="2026-07-26">
+      <description>
+        <p>Completed Linux desktop integration and cut Messenger memory and CPU use.</p>
+      </description>
+    </release>
+    <release version="1.6.0" date="2026-07-23">
+      <description>
+        <p>Improved Messenger reliability and reduced Linux WebKit memory use.</p>
+      </description>
+    </release>
+    <release version="1.5.1" date="2026-07-21">
+      <description>
+        <p>Fixed notification hydration and conversation routing.</p>
+      </description>
+    </release>
+    <release version="1.5.0" date="2026-07-20">
+      <description>
+        <p>Added stronger privacy, notification, and desktop integration controls.</p>
+      </description>
+    </release>
+    <release version="1.4.0" date="2026-07-18">
+      <description>
+        <p>Expanded native desktop behavior and Messenger page integration.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-06-27">
+      <description>
+        <p>First stable Chatpane release.</p>
+      </description>
+    </release>
+  </releases>
+</component>
