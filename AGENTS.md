@@ -564,13 +564,14 @@ GitHub Pages (Jekyll) from this repository.
 
 ## Nightly run
 
-`.github/workflows/nightly.yml` (`schedule` 01:17 UTC, and `workflow_dispatch`
+`.github/workflows/nightly.yml` (`schedule` 15:07 UTC, i.e. 16:07/17:07 German time: GitHub starts scheduled runs hours late, and the run takes about 5 hours at most; and `workflow_dispatch`
 with `dry_run`) calls three workflows one after the other through
 `workflow_call`, with `secrets: inherit`: `discover-apps.yml` (count 500,
-months 3), then a `wait` job (until `test.yml` and `publish-pr-screenshot.yml`
-have nothing queued or running for two checks in a row, at most 5 hours), then
+months 3, `max_seconds` 5400), then a `wait` job (until `test.yml` and `publish-pr-screenshot.yml`
+have nothing queued or running for two checks in a row, counting only runs
+created since the nightly run started; at most 1.5 hours), then
 `merge-labeled.yml` (max 500), a second `wait` job (for the Test runs that the
-merges started), `build-website.yml`, then `cleanup-notifications.yml`. Each step runs
+merges started; at most 1 hour), `build-website.yml`, then `cleanup-notifications.yml`. Each step runs
 after the previous one ended, also when it failed (not when the run was
 cancelled). The PRs that discovery opens are therefore tested and merged the
 same night, if they pass (this needs `DISCOVER_TOKEN` or
