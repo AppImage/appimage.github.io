@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata: what a Linux software centre shows for the app, and what
+  appimagetool validates the AppImage against. The file name, the <id> and the
+  desktop entry's name are all the same reverse-DNS ID: appimagetool finds this
+  file by the desktop entry's name, and the validator rejects any ID that is
+  not reverse-DNS. Installed to share/metainfo/ by gui/cmake/packaging.cmake.
+-->
+<component type="desktop-application">
+  <id>io.github.bucanero.apollo_patcher</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Apollo Save Patcher</name>
+  <summary>Apply save patches to PlayStation save data</summary>
+  <description>
+    <p>
+      Apollo Save Patcher applies Apollo save patches (Save Wizard codes, BSD
+      scripts and Python scripts) to PlayStation save data on a computer. Point
+      it at a folder of saves, pick a game by name, and patch it.
+    </p>
+    <p>
+      It handles PS1, PS2, PSP, PS3, PS4 and PS Vita saves, including the PSP's
+      and PS3's own savedata encryption and the .PSV container PS1 and PS2 saves
+      travel in. The patch database is bundled, so it works offline.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.bucanero.apollo_patcher.desktop</launchable>
+  <url type="homepage">https://github.com/bucanero/apollo-patcher</url>
+  <url type="bugtracker">https://github.com/bucanero/apollo-patcher/issues</url>
+  <url type="help">https://bucanero.github.io/apollo-patcher/guide.html</url>
+  <developer_name>Damian Parrino</developer_name>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/bucanero/apollo-patcher/main/docs/images/saves-list.webp</image>
+      <caption>The saves list</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <provides>
+    <binary>apollo_patcher_gui</binary>
+  </provides>
+</component>
