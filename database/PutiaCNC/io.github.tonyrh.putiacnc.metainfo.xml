@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.tonyrh.putiacnc</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>PutiaCNC</name>
+  <summary>CNC toolpath studio for GRBL machines</summary>
+  <description>
+    <p>PutiaCNC is a CAM program for small CNC routers. Draw or import shapes, give them operations (profile, pocket, V-carve, drill, inlay, 3D relief) and preview the result in 2D and 3D before it is cut.</p>
+    <p>It writes G-code for GRBL, and also for Mach3, LinuxCNC and Marlin.</p>
+  </description>
+  <launchable type="desktop-id">putiacnc.desktop</launchable>
+  <url type="homepage">https://tonyrh.github.io/putiacnc/</url>
+  <url type="bugtracker">https://github.com/tonyrh/putiacnc/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The 2D design view with an operation</caption>
+      <image>https://raw.githubusercontent.com/tonyrh/putiacnc/main/docs/appstream-2d.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The 3D preview of the toolpaths</caption>
+      <image>https://raw.githubusercontent.com/tonyrh/putiacnc/main/docs/screenshot-3d.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Graphics</category>
+    <category>Engineering</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <provides><binary>putiacnc</binary></provides>
+</component>
