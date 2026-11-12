@@ -1,5 +1,5 @@
 # Every night, one after the other:
-#   1. discover-apps.yml proposes new entries from GitHub (at most 500 pull
+#   1. discover-apps.yml proposes new entries from GitHub (at most 100 pull
 #      requests, labeled auto-discovered),
 #   2. merge-labeled.yml merges the pull requests that passed with
 #      screenshot-ok (and nothing else but auto-discovered),
@@ -12,7 +12,7 @@
 # (but not when the whole run is cancelled), so a failure in discovery never
 # keeps the merging and the notification cleanup from running.
 #
-# Between steps 1 and 2 a job waits (at most 1.5 hours) until the tests of the
+# Between steps 1 and 2 a job waits (at most 1 hour) until the tests of the
 # pull requests opened by step 1 have run and been labeled, so that they are
 # merged the same night. For their tests to start, step 1 needs DISCOVER_TOKEN
 # or SCREENSHOT_UPLOAD_TOKEN. The three workflows can still be started by hand
@@ -27,10 +27,11 @@ name: Nightly
 
 on:
   schedule:
-    # 15:07 UTC = 16:07 (17:07 in summer) German time. GitHub starts scheduled runs
-    # late, often by hours (here 6.5 to 7 hours), so this is early enough for the
-    # whole run (about 5 hours at most) to end well before 7:00 German time.
-    - cron: '7 15 * * *'
+    # 23:07 UTC = 00:07 (01:07 in summer) German time: not before midnight German
+    # time. The whole run takes about 4 hours at most (the steps below are capped),
+    # so it ends before 7:00 German time if GitHub starts it on time. GitHub can
+    # start scheduled runs late; nothing here can prevent that.
+    - cron: '7 23 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -49,9 +50,9 @@ jobs:
     if: github.repository == 'AppImage/appimage.github.io'
     uses: ./.github/workflows/discover-apps.yml
     with:
-      count: 500
-      months: 3
-      max_seconds: 5400 # stop searching after 1.5 hours
+      count: 100
+      months: 1
+      max_seconds: 3600 # stop searching after 1 hour
       dry_run: ${{ inputs.dry_run || false }}
     secrets: inherit
     permissions:
@@ -65,7 +66,7 @@ jobs:
     needs: discover
     if: ${{ !cancelled() && github.repository == 'AppImage/appimage.github.io' && !inputs.dry_run }}
     runs-on: ubuntu-latest
-    timeout-minutes: 100
+    timeout-minutes: 80
     permissions:
       actions: read
     env:
@@ -73,63 +74,6 @@ jobs:
       REPO: ${{ github.repository }}
     steps:
       - name: Wait for the tests of the new pull requests
-        run: |
-          # Runs queued, waiting or running for the two workflows; a failed
-          # request counts as busy
-          # Only runs created since this nightly run started count: other runs
-          # of these workflows can be going on all day and must not hold it up
-          START=$(gh api "repos/$REPO/actions/runs/$GITHUB_RUN_ID" --jq .run_started_at 2>/dev/null || date -u -d '3 hours ago' +%Y-%m-%dT%H:%M:%SZ)
-          busy() {
-            local n=0 wf st c
-            for wf in test.yml publish-pr-screenshot.yml ; do
-              for st in queued in_progress waiting pending ; do
-                c=$(gh api "repos/$REPO/actions/workflows/$wf/runs?status=$st&created=%3E%3D$START&per_page=1" --jq .total_count 2>/dev/null) || c=1
-                n=$((n + c))
-              done
-            done
-            echo "$n"
-          }
-          # Stop waiting after 1.5 hours
-          DEADLINE=$((SECONDS + 5400))
-          IDLE=0
-          while [ "$SECONDS" -lt "$DEADLINE" ] ; do
-            N=$(busy)
-            if [ "$N" -eq 0 ] ; then IDLE=$((IDLE + 1)) ; else IDLE=0 ; fi
-            echo "$(date -u +%H:%M:%S) $N run(s) queued or running"
-            # idle on two checks in a row: the labels are set by the publish
-            # workflow right after a test ends
-            [ "$IDLE" -ge 2 ] && break
-            sleep 90
-          done
-          [ "$IDLE" -ge 2 ] || echo "::warning::Gave up waiting after 1.5 hours; merging what is ready"
-
-  merge:
-    needs: [discover, wait]
-    if: ${{ !cancelled() && github.repository == 'AppImage/appimage.github.io' }}
-    uses: ./.github/workflows/merge-labeled.yml
-    with:
-      max: 500
-      dry_run: ${{ inputs.dry_run || false }}
-    secrets: inherit
-    permissions:
-      contents: write
-      pull-requests: write
-      actions: write
-
-  # Waits until the Test runs that the merges started (they write database/ and
-  # apps/ to master) have ended, so that the website is built from the result
-  wait-merged:
-    needs: merge
-    if: ${{ !cancelled() && github.repository == 'AppImage/appimage.github.io' && !inputs.dry_run }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 70
-    permissions:
-      actions: read
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      REPO: ${{ github.repository }}
-    steps:
-      - name: Wait for the Test runs started by the merges
         run: |
           # Runs queued, waiting or running for the two workflows; a failed
           # request counts as busy
@@ -158,7 +102,64 @@ jobs:
             [ "$IDLE" -ge 2 ] && break
             sleep 90
           done
-          [ "$IDLE" -ge 2 ] || echo "::warning::Gave up waiting after 1 hour; building the website anyway"
+          [ "$IDLE" -ge 2 ] || echo "::warning::Gave up waiting after 1 hour; merging what is ready"
+
+  merge:
+    needs: [discover, wait]
+    if: ${{ !cancelled() && github.repository == 'AppImage/appimage.github.io' }}
+    uses: ./.github/workflows/merge-labeled.yml
+    with:
+      max: 100
+      dry_run: ${{ inputs.dry_run || false }}
+    secrets: inherit
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+
+  # Waits until the Test runs that the merges started (they write database/ and
+  # apps/ to master) have ended, so that the website is built from the result
+  wait-merged:
+    needs: merge
+    if: ${{ !cancelled() && github.repository == 'AppImage/appimage.github.io' && !inputs.dry_run }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      actions: read
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+    steps:
+      - name: Wait for the Test runs started by the merges
+        run: |
+          # Runs queued, waiting or running for the two workflows; a failed
+          # request counts as busy
+          # Only runs created since this nightly run started count: other runs
+          # of these workflows can be going on all day and must not hold it up
+          START=$(gh api "repos/$REPO/actions/runs/$GITHUB_RUN_ID" --jq .run_started_at 2>/dev/null || date -u -d '3 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+          busy() {
+            local n=0 wf st c
+            for wf in test.yml publish-pr-screenshot.yml ; do
+              for st in queued in_progress waiting pending ; do
+                c=$(gh api "repos/$REPO/actions/workflows/$wf/runs?status=$st&created=%3E%3D$START&per_page=1" --jq .total_count 2>/dev/null) || c=1
+                n=$((n + c))
+              done
+            done
+            echo "$n"
+          }
+          # Stop waiting after 45 minutes
+          DEADLINE=$((SECONDS + 2700))
+          IDLE=0
+          while [ "$SECONDS" -lt "$DEADLINE" ] ; do
+            N=$(busy)
+            if [ "$N" -eq 0 ] ; then IDLE=$((IDLE + 1)) ; else IDLE=0 ; fi
+            echo "$(date -u +%H:%M:%S) $N run(s) queued or running"
+            # idle on two checks in a row: the labels are set by the publish
+            # workflow right after a test ends
+            [ "$IDLE" -ge 2 ] && break
+            sleep 90
+          done
+          [ "$IDLE" -ge 2 ] || echo "::warning::Gave up waiting after 45 minutes; building the website anyway"
 
   # Builds and deploys the website from the merged result
   website:
