@@ -3,12 +3,12 @@ layout: app
 
 permalink: /Atomic_Bomberman/
 description: "Native battle game with private online and LAN multiplayer"
+license: "MIT"
 
 icons:
   - Atomic_Bomberman/icons/scalable/atomic-bomberman.svg
-
 screenshots:
-  - Atomic_Bomberman/screenshot.png
+- https://github.com/user-attachments/assets/e4e612a5-4348-40bc-be67-29af098ff4ed
 
 authors:
   - name: "andrei-ace"
@@ -31,6 +31,7 @@ desktop:
     Categories: Game
     X-AppImage-Integrate: false
   AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|andrei-ace|atomic_bomberman|latest|atomic-bomberman-*-x86_64.AppImage.zsync
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
       could not be verified. Please remember that the signature file (.sig or .asc)
