@@ -1,0 +1,23 @@
+{
+  "name": "openplot-ai",
+  "productName": "OpenPlot AI",
+  "version": "1.3.0",
+  "description": "OpenPlot AI — a local-first AI chat & story-writing studio by Mahakam Moonlight Studio, for Windows, Linux and macOS.",
+  "main": "dist-electron/main.js",
+  "author": "Mahakam Moonlight Studio",
+  "license": "MIT",
+  "homepage": "https://github.com/mahakammoonlightstudio-beep/OpenPlot-AI#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahakammoonlightstudio-beep/OpenPlot-AI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mahakammoonlightstudio-beep/OpenPlot-AI/issues"
+  },
+  "dependencies": {
+    "dompurify": "^3.4.17",
+    "highlight.js": "^11.10.0",
+    "marked": "^15.0.0",
+    "sql.js": "^1.13.0"
+  }
+}

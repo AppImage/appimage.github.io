@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream description, read by software centres and AppImage catalogues. -->
+<component type="desktop-application">
+  <id>io.github.dsalvado.ShuttleSCP</id>
+  <name>ShuttleSCP</name>
+  <summary>Graphical SFTP and FTP client, inspired by WinSCP</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="io.github.dsalvado">
+    <name>David Salvador</name>
+  </developer>
+  <description>
+    <p>
+      ShuttleSCP shows your computer's files next to a server's and copies between them
+      by drag and drop, the right-click menu or the keyboard. It speaks SFTP, SCP, FTP
+      and FTPS, keeps passwords in the desktop keyring, resumes interrupted transfers
+      and can hold several connections open at once.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.dsalvado.ShuttleSCP.desktop</launchable>
+  <url type="homepage">https://shuttlescp.dsalvado.ca/</url>
+  <url type="vcs-browser">https://github.com/dsalvado/shuttlescp</url>
+  <url type="bugtracker">https://github.com/dsalvado/shuttlescp/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/dsalvado/shuttlescp/master/docs/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.14.0" date="2026-10-22"/>
+    <release version="0.13.0" date="2026-10-22"/>
+    <release version="0.12.0" date="2026-10-22"/>
+    <release version="0.11.0" date="2026-10-21"/>
+    <release version="0.10.0" date="2026-10-21"/>
+    <release version="0.9.3" date="2026-10-21"/>
+    <release version="0.9.2" date="2026-10-21"/>
+    <release version="0.9.1" date="2026-10-21"/>
+    <release version="0.9.0" date="2026-10-21"/>
+  </releases>
+</component>

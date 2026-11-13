@@ -1,0 +1,49 @@
+---
+layout: app
+
+permalink: /IncarnaMind/
+description: "A local-first notebook that answers Questions from your own Documents."
+license: "Apache-2.0"
+
+icons:
+  - IncarnaMind/icons/128x128/incarnamind.png
+
+screenshots:
+  - IncarnaMind/screenshot.png
+
+authors:
+  - name: "IncarnaMind"
+    url: "https://github.com/IncarnaMind"
+
+links:
+  - type: GitHub
+    url: IncarnaMind/IncarnaMind
+  - type: Download
+    url: https://github.com/IncarnaMind/IncarnaMind/releases
+
+desktop:
+  Desktop Entry:
+    Name: IncarnaMind
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: incarnamind
+    StartupWMClass: IncarnaMind
+    X-AppImage-Version: 0.1.0-alpha.4
+    Comment: A local-first notebook that answers Questions from your own Documents.
+    Categories: Office
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.32
+    X-AppImage-Payload-License: Apache-2.0
+
+electron: {"name":"incarnamind","productName":"IncarnaMind","version":"0.1.0-alpha.4","private":true,"description":"A local-first notebook that answers Questions from your own Documents.","license":"Apache-2.0","author":"Junru Xiong","homepage":"https://github.com/IncarnaMind/IncarnaMind","main":"./out/main/index.js","engines":{"node":">=24"},"dependencies":{"@ai-sdk/alibaba":"2.0.65","@ai-sdk/anthropic":"4.0.78","@ai-sdk/cohere":"4.0.59","@ai-sdk/deepseek":"3.0.63","@ai-sdk/google":"4.0.93","@ai-sdk/mistral":"4.0.62","@ai-sdk/moonshotai":"3.0.67","@ai-sdk/openai":"4.0.91","@ai-sdk/openai-compatible":"3.0.67","@ai-sdk/voyage":"2.0.58","@ai-sdk/xai":"5.0.20","@ai-sdk/zai":"3.0.29","@anthropic-ai/sandbox-runtime":"0.0.79","@floating-ui/dom":"1.8.0","@huggingface/tokenizers":"0.2.0","@modelcontextprotocol/sdk":"1.32.1","@modelcontextprotocol/server":"2.3.1","@mozilla/readability":"0.6.0","@napi-rs/canvas":"1.0.10","@openrouter/ai-sdk-provider":"3.1.0","@tiptap/core":"3.31.4","@tiptap/extension-code-block":"3.31.4","@tiptap/extension-code-block-lowlight":"3.31.4","@tiptap/extension-collaboration":"3.31.4","@tiptap/extension-drag-handle":"3.31.4","@tiptap/extension-drag-handle-react":"3.31.4","@tiptap/extension-highlight":"3.31.4","@tiptap/extension-list":"3.31.4","@tiptap/extension-mathematics":"3.31.4","@tiptap/extension-node-range":"3.31.4","@tiptap/extension-table":"3.31.4","@tiptap/extension-typography":"3.31.4","@tiptap/extension-unique-id":"3.31.4","@tiptap/extensions":"3.31.4","@tiptap/pm":"3.31.4","@tiptap/react":"3.31.4","@tiptap/starter-kit":"3.31.4","@tiptap/suggestion":"3.31.4","@tiptap/y-tiptap":"3.0.9","@xmldom/xmldom":"0.9.12","ai":"7.0.129","ajv":"8.20.0","cross-spawn":"7.0.6","docx-preview":"0.4.1","electron-updater":"6.8.10","highlight.js":"11.12.0","ipaddr.js":"2.5.0","katex":"0.18.10","linkedom":"0.18.13","lowlight":"3.3.0","motion":"14.1.0","ollama-ai-provider-v2":"4.0.1","onnxruntime-node":"1.30.0","pdfjs-dist":"6.4.299","react":"19.3.0","react-dom":"19.3.0","sherpa-onnx-node":"1.13.8","undici":"7.30.0","y-protocols":"1.0.7","yjs":"13.6.33","zod":"4.6.5","zustand":"5.0.15"},"allowScripts":{"esbuild":true,"onnxruntime-node":true,"electron-winstaller":false,"fsevents":false}}
+---

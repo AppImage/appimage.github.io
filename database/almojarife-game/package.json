@@ -1,0 +1,12 @@
+{
+  "name": "almojarife-desktop",
+  "private": true,
+  "version": "0.5.0-beta.2",
+  "description": "Desktop shell for El Almojarife (Electron). The game itself lives at the repository root.",
+  "main": "main.cjs",
+  "homepage": "https://github.com/HALCONDEORO/almojarife-game",
+  "author": {
+    "name": "Marco Tevar",
+    "email": "HALCONDEORO@users.noreply.github.com"
+  }
+}

@@ -42,7 +42,7 @@ echo $URL
 # of the name of the file; not part of the URL itself
 CHANNEL=""
 if [[ "$URL" == *"#"* ]] ; then
-  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._-')
+  CHANNEL=$(echo "${URL#*#}" | tr -cd 'A-Za-z0-9._*?-')
   URL="${URL%%#*}"
 fi
 
@@ -243,7 +243,7 @@ if [ x"$TYPE" == x2 ] ; then
   done
   if [ -z "$APPDIR" ] ; then
     cat runtime-mount.log
-    echo "ERROR: Could not mount the AppImage. AppImageHub currently supports only AppImages with a SquashFS file system"
+    echo "ERROR: Could not mount the AppImage. appimage.github.io currently supports only AppImages with a SquashFS file system"
     exit 1
   fi
   echo $APPDIR

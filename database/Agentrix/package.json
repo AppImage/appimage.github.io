@@ -1,0 +1,32 @@
+{
+  "name": "agentrix",
+  "productName": "Agentrix",
+  "version": "1.4.2",
+  "description": "面向未来的 AI 编辑器：任何 AI 编程命令行工具都能接入，多个项目并排开工，对话排成可读的文档，完成即提醒。",
+  "author": "Agentrix",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noeigenstate/Agentrix.git"
+  },
+  "type": "module",
+  "main": "electron/main.cjs",
+  "desktopName": "agentrix.desktop",
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "0.3.317",
+    "@anthropic-ai/sdk": "1.4.0",
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "electron-updater": "6.8.9",
+    "jsonc-parser": "3.3.1",
+    "node-pty": "1.2.0-beta.15",
+    "sherpa-onnx-node": "1.13.8",
+    "ws": "8.22.0",
+    "zod": "4.6.7"
+  },
+  "allowScripts": {
+    "electron@44.3.0": true,
+    "node-pty@1.2.0-beta.15": true,
+    "ssh2@1.17.0": true
+  }
+}

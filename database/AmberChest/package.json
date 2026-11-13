@@ -1,0 +1,19 @@
+{
+  "name": "@amberchest/desktop",
+  "version": "2.2.0",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0-or-later",
+  "main": "dist/main.js",
+  "dependencies": {
+    "@amberchest/core": "*",
+    "@amberchest/server": "*"
+  },
+  "description": "AmberChest - IMAP mail backup in plain .eml files",
+  "author": "sphings79",
+  "homepage": "https://github.com/sphings79/amberchest",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sphings79/amberchest.git"
+  }
+}

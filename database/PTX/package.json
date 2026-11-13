@@ -1,0 +1,31 @@
+{
+  "name": "ptx",
+  "version": "1.0.2",
+  "private": true,
+  "description": "A desktop workspace for Pi and OMP",
+  "main": "out/main/index.js",
+  "desktopName": "ptx.desktop",
+  "author": {
+    "name": "Ptx contributors",
+    "email": "42459108+am-will@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/clawuv/PTX",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@larksuiteoapi/node-sdk": "1.76.0",
+    "electron-updater": "^6.8.9",
+    "js-yaml": "^5.5.0",
+    "node-pty": "^1.1.0",
+    "qrcode": "1.5.4",
+    "rrule": "^2.8.1"
+  },
+  "overrides": {
+    "extract-zip": "npm:@electron-internal/extract-zip@1.0.5"
+  },
+  "engines": {
+    "node": ">=24.15.0",
+    "npm": ">=12.0.2"
+  },
+  "packageManager": "npm@12.0.2"
+}

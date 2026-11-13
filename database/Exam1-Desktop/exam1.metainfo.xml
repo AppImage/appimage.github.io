@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>fr.exam1.Exam1</id>
+  <name>Exam'1</name>
+  <summary>French amateur radio licence exam trainer</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <description>
+    <p>Mock exams for the French amateur radio operator certificate, using the question bank
+    maintained by F6GPX. The exam screen reproduces the ANFR examination interface.</p>
+  </description>
+  <launchable type="desktop-id">exam1.desktop</launchable>
+  <categories>
+    <category>Education</category>
+    <category>HamRadio</category>
+  </categories>
+</component>

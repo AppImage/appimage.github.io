@@ -1,0 +1,8 @@
+{
+  "name": "bobix",
+  "version": "0.1.0",
+  "description": "Your Claude Code sessions as pixel pets on your desktop, with a control panel and notifications.",
+  "main": "src/main.js",
+  "license": "MIT",
+  "private": true
+}

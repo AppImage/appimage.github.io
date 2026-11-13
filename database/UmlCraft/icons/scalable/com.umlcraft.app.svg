@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="UmlCraft">
+  <rect width="512" height="512" rx="112" fill="#0E1A2B"/>
+  <path d="M126 200V296a130 130 0 0 0 260 0V200" fill="none" stroke="#F4F6F9" stroke-width="38" stroke-linecap="round"/>
+  <path d="M256 72V232" stroke="#F4F6F9" stroke-width="38" stroke-linecap="round"/>
+  <circle cx="256" cy="296" r="82" fill="#F5C542" stroke="#0E1A2B" stroke-width="14"/>
+</svg>

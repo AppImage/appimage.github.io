@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- MailCraft app icon (original artwork; MIT OR Apache-2.0): a shaded envelope on a teal tile. -->
+  <defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#14A0A6"/>
+  <stop offset="1" stop-color="#0B5F69"/>
+  </linearGradient>
+  <filter id="sh" x="-20%" y="-20%" width="140%" height="150%">
+  <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#032E33" flood-opacity=".35"/>
+  </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <g filter="url(#sh)">
+  <rect x="100" y="146" width="312" height="220" rx="28" fill="#FFFFFF"/>
+  </g>
+<path d="M100 342 L224 250 Q256 228 288 250 L412 342 L412 338 Q412 366 384 366 L128 366 Q100 366 100 338 Z" fill="#E6F4F4"/>
+<path d="M100 174 Q100 146 128 146 L384 146 Q412 146 412 174 L412 176 L280 270 Q256 286 232 270 L100 176 Z" fill="#D2ECEE"/>
+<path d="M104 178 L232 268 Q256 284 280 268 L408 178" fill="none" stroke="#0E7C86" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+  </svg>

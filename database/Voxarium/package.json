@@ -1,0 +1,29 @@
+{
+  "name": "voxarium",
+  "productName": "Voxarium",
+  "version": "0.1.0",
+  "description": "A private, on-device text-to-speech studio with many local voice models.",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.cjs",
+  "author": "Voxarium contributors",
+  "license": "AGPL-3.0-or-later",
+  "homepage": "https://github.com/AhmadMansy/voxarium",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmadMansy/voxarium.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AhmadMansy/voxarium/issues"
+  },
+  "dependencies": {
+    "@breezystack/lamejs": "^1.2.7",
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "@fontsource-variable/noto-sans-arabic": "^5.3.0",
+    "phonon-tts": "^0.5.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}

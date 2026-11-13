@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1254 1254" width="1254" height="1254" role="img" aria-labelledby="title desc">
+  <title id="title">AgentLens 应用图标矢量主母版</title>
+  <desc id="desc">AgentLens 应用图标：蓝青圆角底、两条汇聚曲线、双端节点、白色环体与橙色中心。</desc>
+  <defs>
+    <linearGradient id="background" x1="72" y1="1208" x2="1181" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#005DFF"/>
+      <stop offset="0.27" stop-color="#007FFA"/>
+      <stop offset="0.55" stop-color="#00A1F2"/>
+      <stop offset="0.78" stop-color="#00C0EC"/>
+      <stop offset="1" stop-color="#00DDE4"/>
+    </linearGradient>
+    <linearGradient id="whiteBody" x1="629" y1="408" x2="1105" y2="826" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.58" stop-color="#FFFDFD"/>
+      <stop offset="1" stop-color="#F8F7F9"/>
+    </linearGradient>
+    <linearGradient id="upperRibbon" x1="276" y1="398" x2="744" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D8FFFF"/>
+      <stop offset="0.2" stop-color="#FFFFFF"/>
+      <stop offset="0.84" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFF4DE"/>
+    </linearGradient>
+    <linearGradient id="lowerRibbon" x1="276" y1="858" x2="744" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C6DBFF"/>
+      <stop offset="0.22" stop-color="#F9FDFF"/>
+      <stop offset="0.84" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFF4DE"/>
+    </linearGradient>
+    <radialGradient id="upperNode" cx="0" cy="0" r="1" gradientTransform="translate(218 379) rotate(50) scale(83)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#80FBD5"/>
+      <stop offset="1" stop-color="#70FBE0"/>
+    </radialGradient>
+    <radialGradient id="lowerNode" cx="0" cy="0" r="1" gradientTransform="translate(214 839) rotate(45) scale(85)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#74A6FC"/>
+      <stop offset="1" stop-color="#6B9DFF"/>
+    </radialGradient>
+    <radialGradient id="centerNode" cx="0" cy="0" r="1" gradientTransform="translate(716 608) rotate(53) scale(105 79)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFB10F"/>
+      <stop offset="0.35" stop-color="#FDA122"/>
+      <stop offset="1" stop-color="#FF7B20"/>
+    </radialGradient>
+    <clipPath id="iconMask">
+      <rect width="1254" height="1254" rx="250"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#iconMask)">
+    <rect width="1254" height="1254" fill="url(#background)"/>
+
+    <path fill="url(#whiteBody)" d="M934 454h78c56 0 93 78 93 178s-37 178-93 178h-78c36-44 55-107 55-178s-19-134-55-178Z"/>
+
+    <path fill="url(#whiteBody)" fill-rule="evenodd" d="M767 395h77c76 0 129 100 129 237s-53 237-129 237h-77c-79 0-139-100-139-237s60-237 139-237Zm1 36c-57 0-101 89-101 201s44 200 101 200 101-88 101-200-44-201-101-201Z"/>
+
+    <path fill="url(#upperRibbon)" d="M270 391c86 20 169 74 244 131 66 50 118 78 190 96l42 12-42-3c-76-12-132-35-186-68-89-54-154-113-250-139l2-29Z"/>
+    <path fill="url(#lowerRibbon)" d="M268 839c98-29 160-85 246-144 69-47 126-63 190-62l42-3-42 9c-68 17-118 40-166 71-88 57-157 121-267 158l-3-29Z"/>
+
+    <circle cx="235" cy="401" r="46" fill="url(#upperNode)"/>
+    <circle cx="235" cy="862" r="46" fill="url(#lowerNode)"/>
+    <ellipse cx="744" cy="630" rx="46" ry="61" fill="url(#centerNode)"/>
+  </g>
+
+</svg>

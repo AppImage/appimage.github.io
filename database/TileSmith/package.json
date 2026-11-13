@@ -1,0 +1,20 @@
+{
+  "name": "tilesmith",
+  "version": "3.5.0",
+  "description": "TileSmith - LED Wall Builder: pixel mapping, engineering layout and live NDI®, Spout and Syphon output",
+  "main": "main.js",
+  "author": "Callum Davenport-Lambton <tilesmithapp@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "koffi": "^2.16.3"
+  },
+  "overrides": {
+    "tar": "^7.5.21"
+  },
+  "allowScripts": {
+    "electron": true,
+    "koffi": true,
+    "electron-winstaller": false
+  },
+  "homepage": "https://github.com/kingof9x/TileSmith"
+}

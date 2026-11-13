@@ -1,0 +1,33 @@
+{
+  "name": "vivify-live-client",
+  "version": "0.2.17",
+  "desktopMacBuildVersion": "233",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.15.1",
+  "pnpm": {
+    "patchedDependencies": {
+      "@decartai/sdk@0.2.12": "patches/decart-sdk-0.2.12-capacity.patch"
+    },
+    "overrides": {
+      "@volcengine/rtc": "4.68.5"
+    }
+  },
+  "main": "dist/electron/main/main.js",
+  "description": "Vivify Live realtime AI desktop client for Linux.",
+  "dependencies": {
+    "@better-auth/electron": "1.6.26",
+    "@decartai/sdk": "^0.2.12",
+    "@xmaxai/sdk-global": "^1.1.13",
+    "better-auth": "1.6.26",
+    "conf": "15.0.2",
+    "electron-updater": "^6.8.9"
+  },
+  "author": {
+    "name": "Vivify"
+  },
+  "homepage": "https://vivify.video",
+  "desktopBrand": "vivify",
+  "desktopAppId": "video.vivify.live-client.virtual-camera.prototype",
+  "desktopName": "vivify-live-client"
+}

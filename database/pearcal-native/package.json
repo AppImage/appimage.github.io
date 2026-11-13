@@ -1,0 +1,32 @@
+{
+  "name": "pearcal-electron",
+  "version": "1.0.51",
+  "description": "PearCal desktop client (Electron). Mirrors PearGuard's pattern.",
+  "homepage": "https://peerloomllc.com/pearcal/",
+  "author": {
+    "name": "Timothy Hudgins",
+    "email": "peerloomllc@proton.me"
+  },
+  "private": true,
+  "main": "src/main/index.js",
+  "dependencies": {
+    "autobase": "7.25.1",
+    "b4a": "^1.8.0",
+    "bare-fs": "^4.5.4",
+    "bare-path": "^3.0.0",
+    "bip39-mnemonic": "^2.5.0",
+    "blind-peering": "^2.0.1",
+    "corestore": "^7.8.0",
+    "electron-updater": "^6.8.9",
+    "hyperbee": "^2.27.3",
+    "hypercore": "11.26.0",
+    "hyperdht": "6.33.0",
+    "hyperswarm": "^4.17.0",
+    "keet-identity-key": "^3.1.0",
+    "protomux-wakeup": "^2.9.0",
+    "sodium-native": "^5.0.10"
+  },
+  "overrides": {
+    "hypercore": "11.26.0"
+  }
+}

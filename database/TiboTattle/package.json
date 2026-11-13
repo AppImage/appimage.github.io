@@ -1,0 +1,21 @@
+{
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "main": "apps/electron/main.js",
+  "name": "app-usagemonitor",
+  "private": true,
+  "type": "module",
+  "version": "0.1.29",
+  "productName": "TiboTattle",
+  "tibotattleDistribution": {
+    "appId": "com.usagemonitor.local",
+    "buildNumber": "2026102601",
+    "channel": "stable",
+    "contributionPolicy": "accountless-opt-out-v1",
+    "schemaVersion": "tibotattle-electron-distribution-v1",
+    "sourceRevision": "905d9f9682ef472671eb87281fb35ead38711561",
+    "target": "linux-x64",
+    "updateFeed": "https://updates.tibotattle.com/electron/stable/linux-x64"
+  }
+}

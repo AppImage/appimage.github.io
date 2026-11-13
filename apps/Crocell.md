@@ -1,0 +1,50 @@
+---
+layout: app
+
+permalink: /Crocell/
+description: "Proxy and tunnel client for Xray and Mihomo subscriptions"
+license: "GPL-3.0"
+
+icons:
+  - Crocell/icons/256x256/crocell.png
+
+screenshots:
+  - Crocell/screenshot.png
+
+authors:
+  - name: "WiselessGroup"
+    url: "https://github.com/WiselessGroup"
+
+links:
+  - type: GitHub
+    url: WiselessGroup/Crocell
+  - type: Download
+    url: https://github.com/WiselessGroup/Crocell/releases
+
+desktop:
+  Desktop Entry:
+    Type: Application
+    Name: Crocell
+    GenericName: VPN client
+    Comment: Proxy and tunnel client for Xray and Mihomo subscriptions
+    Comment[ru]: Прокси и туннель для подписок Xray и Mihomo
+    Exec: crocell
+    Icon: crocell
+    Terminal: false
+    Categories: Network
+    StartupWMClass: net.wiseless.crocell
+    X-AppImage-Version: 0.8.0
+  AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|WiselessGroup|Crocell|latest|Crocell-x86_64.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.34
+    X-AppImage-Payload-License: GPL-3.0
+---

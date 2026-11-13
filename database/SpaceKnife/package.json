@@ -1,0 +1,16 @@
+{
+  "name": "spaceknife-electron",
+  "productName": "SpaceKnife",
+  "version": "0.3.5",
+  "private": true,
+  "description": "SpaceKnife — see what fills your drives",
+  "author": {
+    "name": "DuskXi",
+    "email": "84715902+DuskXi@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/DuskXi/SpaceKnife",
+  "type": "module",
+  "main": "out/main/index.js",
+  "desktopName": "spaceknife.desktop"
+}

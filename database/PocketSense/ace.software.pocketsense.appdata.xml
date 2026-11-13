@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Read by software centres and by appimage.github.io, which shows the
+     first screenshot here instead of the one its headless test takes. -->
+<component type="desktop-application">
+  <id>ace.software.pocketsense</id>
+  <name>Pocket Sense</name>
+  <summary>Private, offline money tracker in English and Arabic</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <launchable type="desktop-id">ace.software.pocketsense.desktop</launchable>
+  <developer id="io.github.software-ace">
+    <name>software-ace</name>
+  </developer>
+
+  <description>
+    <p>
+      Pocket Sense tracks your income, spending, accounts, budgets, bills and loans
+      without signing up and without the internet, in any of 69 currencies.
+      Everything stays in an encrypted database on your computer. It leaves only as
+      an encrypted backup, or, if you turn on sync, encrypted to your own paired
+      devices on your Wi-Fi.
+    </p>
+    <ul>
+      <li>No sign-in, no servers, no ads, no analytics</li>
+      <li>Encrypted with SQLCipher, with the key kept in your desktop keyring, or behind a passphrase if there is none</li>
+      <li>Home: monthly totals, a 30-day spending chart, and spending by category, merchant and weekday</li>
+      <li>Accounts, transfers, budgets, recurring bills with reminders, loans and savings circles</li>
+      <li>Offline voice entry in English</li>
+      <li>Encrypted backups, and CSV import and export</li>
+      <li>Sync with your phone or another computer over your local network</li>
+      <li>Full Arabic interface, right to left</li>
+    </ul>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Home: monthly totals, a 30-day spending chart, and spending by category and by merchant</caption>
+      <image>https://raw.githubusercontent.com/software-ace/PocketSense/main/docs/screenshots/desktop-home.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Income vs spending over 6 months, this month against last, and spending by weekday</caption>
+      <image>https://raw.githubusercontent.com/software-ace/PocketSense/main/docs/screenshots/desktop-charts.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Savings circles: where you stand in each, and the next payment</caption>
+      <image>https://raw.githubusercontent.com/software-ace/PocketSense/main/docs/screenshots/desktop-circles.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Accounts with their balances</caption>
+      <image>https://raw.githubusercontent.com/software-ace/PocketSense/main/docs/screenshots/desktop-accounts.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Budgets per category</caption>
+      <image>https://raw.githubusercontent.com/software-ace/PocketSense/main/docs/screenshots/desktop-budgets.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Home in Arabic</caption>
+      <image>https://raw.githubusercontent.com/software-ace/PocketSense/main/docs/screenshots/desktop-home-ar.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/software-ace/PocketSense</url>
+  <url type="bugtracker">https://github.com/software-ace/PocketSense/issues</url>
+  <url type="donation">https://github.com/sponsors/software-ace</url>
+  <categories>
+    <category>Office</category>
+    <category>Finance</category>
+  </categories>
+  <keywords>
+    <keyword>money</keyword>
+    <keyword>budget</keyword>
+    <keyword>expenses</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+</component>

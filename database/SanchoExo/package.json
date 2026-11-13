@@ -1,0 +1,8 @@
+{
+  "name": "sanchoexo",
+  "version": "2.2.5",
+  "description": "SanchoExo — AI-driven collaboration platform",
+  "main": "backend/electron-main.js",
+  "author": "SanchoExo",
+  "private": true
+}

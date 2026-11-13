@@ -1,0 +1,19 @@
+{
+  "name": "markdown-editor",
+  "version": "1.3.13",
+  "desktopName": "com.xmd.markdown-editor.desktop",
+  "description": "A Typora-like Markdown editor built with Electron + Vue 3 + TipTap",
+  "main": "out/main/index.js",
+  "packageManager": "bun@1.3.14",
+  "dependencies": {
+    "@mastra/core": "^1.67.0",
+    "@mastra/rag": "^2.6.3",
+    "@tiptap/extension-subscript": "^3.31.3",
+    "@tiptap/extension-superscript": "^3.31.3",
+    "chokidar": "^5.0.0",
+    "html-to-image": "^1.11.13",
+    "openai": "^7.19.0"
+  },
+  "author": "dadong",
+  "license": "GPL-3.0-only"
+}

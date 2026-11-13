@@ -1,0 +1,15 @@
+{
+  "name": "@genoffice/shell",
+  "productName": "ZenOffice",
+  "version": "0.6.106",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/bennix/GenZenMuxAIOffice",
+  "private": true,
+  "description": "Unified ZenOffice shell: one app hosting the docs and sheets modules behind a home/launcher window",
+  "main": "out/main/index.js",
+  "desktopName": "genoffice.desktop",
+  "author": "ZenOffice",
+  "dependencies": {
+    "word-extractor": "^1.0.4"
+  }
+}

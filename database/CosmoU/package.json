@@ -1,0 +1,15 @@
+{
+  "name": "cosmou",
+  "productName": "CosmoU",
+  "version": "0.11.2",
+  "description": "CosmoU – a Wii U style launcher for Cemu",
+  "main": "main.js",
+  "dependencies": {
+    "adm-zip": "^0.5.16"
+  },
+  "homepage": "https://github.com/Eryski/CosmoU",
+  "author": {
+    "name": "ErykBS",
+    "url": "https://github.com/Eryski"
+  }
+}

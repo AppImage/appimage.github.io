@@ -1,0 +1,23 @@
+[Desktop Entry]
+Type=Application
+Name=Vivi
+GenericName=Media Player
+Comment=Fast, minimal media player built on mpv
+Exec=vivi %U
+Icon=vivi
+Terminal=false
+Categories=AudioVideo;Audio;Video;Player;
+Keywords=video;audio;player;mpv;movie;music;
+StartupWMClass=vivi
+MimeType=video/mp4;video/x-matroska;video/webm;video/x-msvideo;video/quicktime;video/mpeg;video/ogg;video/x-flv;video/3gpp;video/mp2t;audio/mpeg;audio/flac;audio/ogg;audio/x-vorbis+ogg;audio/opus;audio/mp4;audio/aac;audio/x-wav;audio/x-matroska;audio/x-mpegurl;application/x-mpegurl;application/vnd.apple.mpegurl;audio/x-m4a;audio/m4a;audio/mp3;audio/x-mp3;audio/wav;audio/vnd.wave;audio/x-flac;audio/x-aiff;audio/aiff;audio/x-ms-wma;audio/x-ape;audio/x-wavpack;audio/webm;audio/x-aac;audio/vorbis;video/x-m4v;video/x-ms-wmv;video/x-ms-asf;video/3gpp2;video/avi;video/vnd.avi;video/x-ogm+ogg;video/x-theora+ogg;x-scheme-handler/vivi;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|Loafer19|vivi|latest|Vivi-*x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=MIT

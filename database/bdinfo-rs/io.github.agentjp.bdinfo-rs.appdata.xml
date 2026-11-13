@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metainfo, shared verbatim by the deb, the rpm, and the AppImage.
+     The id is the io.github.<user>.<repo> form. A dash is legal in an id's last
+     component, and Flathub's app-id check demangles a four-component id back to
+     a repository URL WITHOUT converting underscores in that last component — so
+     only the literal `bdinfo-rs` resolves to github.com/agentjp/bdinfo-rs. The
+     desktop file and the icons the Linux packages install are named after the
+     id, as the freedesktop convention expects.
+
+     <developer_name> is deprecated in AppStream 1.0 but only INFO-severity,
+     whereas a <developer id="…"> whose id is not a valid rDNS string or
+     Fediverse handle is a WARNING that fails Flathub's linter. Leave it. -->
+<component type="desktop-application">
+  <id>io.github.agentjp.bdinfo-rs</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LGPL-2.1-or-later</project_license>
+  <name>bdinfo-rs GUI</name>
+  <summary>Blu-ray disc analyzer producing the classic BDInfo report</summary>
+  <description>
+    <p>
+      Scans BDMV folders and .iso images, measures every stream, and renders
+      the classic per-stream video/audio technical report, byte-identical to
+      the bdinfo-rs command-line tool. Damaged discs scan through, with
+      unreadable files collected into the report's warning block.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.agentjp.bdinfo-rs.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The measured scan's per-stream report</caption>
+      <image>https://raw.githubusercontent.com/agentjp/bdinfo-rs/master/crates/bdinfo-rs-gui/packaging/screenshot-report.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>bdinfo-rs-gui</binary>
+  </provides>
+  <url type="homepage">https://github.com/agentjp/bdinfo-rs</url>
+  <url type="bugtracker">https://github.com/agentjp/bdinfo-rs/issues</url>
+  <developer_name>agentjp</developer_name>
+  <releases>
+    <release version="5.0.0" date="2026-11-10"/>
+    <release version="4.0.0" date="2026-08-16"/>
+    <release version="3.0.0" date="2026-08-08"/>
+    <release version="2.0.0" date="2026-07-20"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Utility</category>
+  </categories>
+</component>

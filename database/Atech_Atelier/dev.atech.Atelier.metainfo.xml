@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metainfo for Atech Atelier. Installed by
+     branding/build_appimage.sh to usr/share/metainfo/dev.atech.Atelier.metainfo.xml.
+
+     Markers replaced at build time by branding/release_meta.py:
+       RELEASES     the version from the repository's VERSION file and the
+                    release date (R39)
+       SCREENSHOTS  ATECH_SCREENSHOT_URLS, or a PLACEHOLDER comment while no
+                    screenshot is hosted. Never an invented URL.
+
+     project_license (ADR-006, owner 2026-10-03) covers ATECH'S OWN FILES
+     ONLY: Atech's code is LGPL-2.1-or-later and the Atech module models and
+     presets.yaml are CC BY-NC 4.0. Both kinds ship in the image, so the SPDX
+     expression is a conjunction (AND), not a choice (OR). FreeCAD ("LGPL2+"
+     per its LICENSE.html; its source files mostly LGPL-2.1-or-later), the
+     libraries it bundles and the AppImage runtime keep their own licences,
+     listed in usr/share/doc/ (CREDITS.md, packages.txt); an expression
+     covering all of them is not practical.
+     The homepage is the PROPOSED public repository (ADR-006); it does not
+     exist until the owner creates it. -->
+<component type="desktop-application">
+  <id>dev.atech.Atelier</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LGPL-2.1-or-later AND CC-BY-NC-4.0</project_license>
+  <name>Atech Atelier</name>
+  <summary>Parametric CAD with a built-in design agent</summary>
+  <developer id="dev.atech">
+    <name>Atech</name>
+  </developer>
+  <description>
+    <p>
+      Atech Atelier is built on FreeCAD 1.1.3 and adds the Atech agent
+      workbench: describe a part in plain language and the agent writes,
+      runs and measures a FreeCAD script, then shows the result in the 3D
+      view.
+    </p>
+    <p>
+      This is a preview release.
+    </p>
+    <p>
+      Atech's code is licensed LGPL-2.1-or-later. The Atech board and module
+      3D models are licensed CC BY-NC 4.0: free for non-commercial use with
+      attribution to Atech.
+    </p>
+    <p>
+      Atech Atelier is built on FreeCAD, whose program files it ships
+      unmodified (FreeCAD's LICENSE.html: "LGPL2+"; its source files:
+      LGPL-2.1-or-later), and is not endorsed by, affiliated with, or a
+      product of the FreeCAD project or the FreeCAD Project Association.
+    </p>
+  </description>
+  <launchable type="desktop-id">dev.atech.Atelier.desktop</launchable>
+  <url type="homepage">https://github.com/atechdotdev/atech-atelier</url>
+  <url type="bugtracker">https://github.com/atechdotdev/atech-atelier/issues</url>
+  <categories>
+    <category>Graphics</category>
+    <category>Engineering</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <!-- SCREENSHOTS: PLACEHOLDER. None published yet; set ATECH_SCREENSHOT_URLS at build time once the images are hosted. -->
+  <releases>
+    <release version="0.1.2" date="2026-10-27">
+      <description>
+        <p>Atech Atelier 0.1.2, a preview release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

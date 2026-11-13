@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>eu.burnsure.BurnSure</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>BurnSure</name>
+  <summary>Prepare, burn and verify optical discs</summary>
+  <description>
+    <p>BurnSure is a free Linux desktop application for preparing, writing and independently verifying data CDs, DVDs and Blu-ray discs.</p>
+    <p>It supports SHA-256 verification, recovery of pending verification, and experimental multisession burning on compatible drives and media.</p>
+  </description>
+  <launchable type="desktop-id">burnsure.desktop</launchable>
+  <url type="homepage">https://burnsure.eu/</url>
+  <url type="help">https://burnsure.eu/support/</url>
+  <developer id="nl.devside">
+    <name>Devside.nl</name>
+  </developer>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+</component>

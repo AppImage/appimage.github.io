@@ -1,0 +1,13 @@
+{
+  "name": "@overtchat/desktop",
+  "productName": "overtchat",
+  "version": "0.12.0",
+  "private": true,
+  "description": "OvertChat desktop app for an operator-supplied server",
+  "author": "OvertChat contributors",
+  "homepage": "https://overtchat.com",
+  "license": "MIT",
+  "desktopName": "com.overtchat.desktop.desktop",
+  "type": "module",
+  "main": "./out/main/index.js"
+}
