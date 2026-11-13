@@ -1,0 +1,17 @@
+{
+  "name": "aria2-desktop",
+  "version": "1.3.4",
+  "description": "集成 Aria2 引擎的现代化桌面下载管理器",
+  "main": "dist/electron/electron/main.js",
+  "author": "Young-ZJ66",
+  "license": "MIT",
+  "homepage": "https://github.com/Young-ZJ66/Aria2Desktop",
+  "dependencies": {
+    "electron-log": "^5.4.4",
+    "electron-store": "^8.2.0"
+  },
+  "allowScripts": {
+    "electron-winstaller@5.4.0": true,
+    "vue-demi@0.14.10": true
+  }
+}
