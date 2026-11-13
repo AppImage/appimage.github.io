@@ -73,7 +73,7 @@ appdata:
   - AudioVideo
   - Player
   Url:
-    homepage: https://github.com/Loafer19/vivi
+    homepage: https://viviplayer.app
     bugtracker: https://github.com/Loafer19/vivi/issues
   Launchable:
     desktop-id:
