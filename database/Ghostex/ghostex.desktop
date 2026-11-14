@@ -1,0 +1,24 @@
+[Desktop Entry]
+Type=Application
+Name=Ghostex
+Comment=AI development workspaces and terminals
+Exec=ghostex %U
+Icon=ghostex
+Terminal=false
+Categories=Development;TerminalEmulator;
+StartupNotify=true
+StartupWMClass=ghostex
+MimeType=x-scheme-handler/ghostex;
+X-AppImage-Version=11.7.0
+X-AppImage-Homepage=https://ghostex.dev
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|maddada|Ghostex|latest|ghostex-*-linux-x64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Sat Nov 14 08:31:43 2026 UTC                using RSA key 093568F45FD8FFFED60AB4F94A5D4C4A8D2E45D3 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=MIT

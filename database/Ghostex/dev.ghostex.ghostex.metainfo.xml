@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>dev.ghostex.ghostex</id>
+  <name>Ghostex</name>
+  <summary>AI development workspaces and terminals</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="dev.ghostex">
+    <name>Mohamad Yahia</name>
+  </developer>
+  <description>
+    <p>Ghostex runs your coding agents side by side, each with its own terminal and chat, next to the projects, worktrees, browser and files they work on.</p>
+  </description>
+  <launchable type="desktop-id">ghostex.desktop</launchable>
+  <url type="homepage">https://ghostex.dev</url>
+  <url type="bugtracker">https://github.com/maddada/Ghostex/issues</url>
+  <categories>
+    <category>Development</category>
+  </categories>
+  <provides>
+    <binary>ghostex</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="11.7.0" date="2026-11-14">
+      <url type="details">https://github.com/maddada/Ghostex/releases/tag/v11.7.0</url>
+    </release>
+  </releases>
+</component>
