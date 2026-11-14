@@ -1,0 +1,17 @@
+{
+  "name": "pyrocade",
+  "version": "0.9.0",
+  "description": "3D carousel front-end for emulators with built-in emulator downloader/updater",
+  "license": "MIT",
+  "main": "main.js",
+  "productName": "PyroCade",
+  "author": {
+    "name": "Pyrodrifter",
+    "email": "151417494+Pyrodrifter@users.noreply.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pyrodrifter/PyroCade.git"
+  },
+  "homepage": "https://github.com/Pyrodrifter/PyroCade"
+}
