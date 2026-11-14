@@ -1,0 +1,12 @@
+{
+  "name": "wicaby",
+  "productName": "Wicaby",
+  "version": "0.14.2",
+  "description": "Wicaby: all your media in one place (Emby and Jellyfin client for Windows and Linux)",
+  "author": "Wika",
+  "license": "GPL-3.0-or-later",
+  "private": true,
+  "type": "module",
+  "main": "out/main/index.cjs",
+  "homepage": "https://github.com/WicaebethTheo/wicaby"
+}
