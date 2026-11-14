@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14142a"/>
+      <stop offset="1" stop-color="#07070d"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="240" height="240" rx="44" fill="url(#bg)" stroke="#ff2a6d" stroke-width="4" filter="url(#glow)"/>
+
+  <g filter="url(#glow)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- body, narrower at the front -->
+    <path d="M128 42 C158 42 184 66 186 116 L186 158 C186 196 160 218 128 218 C96 218 70 196 70 158 L70 116 C72 66 98 42 128 42 Z"
+          stroke="#ff2a6d" stroke-width="7" fill="#0e0e1a"/>
+    <!-- button split and palm seam -->
+    <path d="M128 42 L128 112" stroke="#00f0ff" stroke-width="4"/>
+    <path d="M74 112 Q128 130 182 112" stroke="#00f0ff" stroke-width="4"/>
+    <!-- scroll wheel -->
+    <rect x="119" y="62" width="18" height="36" rx="9" stroke="#00f0ff" stroke-width="5" fill="#07070d"/>
+  </g>
+
+  <!-- thumb grid -->
+  <g fill="#fcee0a" filter="url(#glow)">
+    <rect x="92" y="140" width="14" height="14" rx="3"/>
+    <rect x="112" y="140" width="14" height="14" rx="3"/>
+    <rect x="92" y="160" width="14" height="14" rx="3"/>
+    <rect x="112" y="160" width="14" height="14" rx="3"/>
+    <rect x="92" y="180" width="14" height="14" rx="3"/>
+    <rect x="112" y="180" width="14" height="14" rx="3"/>
+  </g>
+</svg>
