@@ -1,0 +1,21 @@
+{
+  "name": "claude-swarm-lite",
+  "version": "0.84.1",
+  "private": true,
+  "description": "Minimal Electron GUI for several Claude Code sessions in tabs.",
+  "repository": "github:raul-cortez/svarmo",
+  "main": "bootstrap.js",
+  "desktopName": "swarm.desktop",
+  "license": "MIT",
+  "dependencies": {
+    "@homebridge/node-pty-prebuilt-multiarch": "^0.13.1",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/addon-web-links": "^0.11.0",
+    "@xterm/headless": "^5.5.0",
+    "@xterm/xterm": "^5.5.0",
+    "qrcode-generator": "^2.0.4"
+  },
+  "overrides": {
+    "@noble/hashes": "1.8.0"
+  }
+}
