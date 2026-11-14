@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 -32 64 64" width="64" height="64">
+  <g fill="#f4b6c8">
+    <path id="p" d="M0 -2 C -9 -10 -10 -22 -4 -28 C -2 -30 0 -28 0 -25 C 0 -28 2 -30 4 -28 C 10 -22 9 -10 0 -2 Z"/>
+    <use href="#p" transform="rotate(72)"/>
+    <use href="#p" transform="rotate(144)"/>
+    <use href="#p" transform="rotate(216)"/>
+    <use href="#p" transform="rotate(288)"/>
+  </g>
+  <circle r="4" fill="#e98fab"/>
+</svg>
