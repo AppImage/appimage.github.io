@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainsVisualizerEQ</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <name>jsBudbrainsVisualizerEQ</name>
+  <summary>An equalizer for all your sound, with animations that move to the music</summary>
+
+  <developer id="de.budbrain">
+    <name>Josef Sejrek / Budbrain Software</name>
+  </developer>
+
+  <!-- Derselbe Text wie im Snap Store (snap/snapcraft.yaml, dist/snap.txt). -->
+  <description>
+    <p>
+      Make everything you hear sound just the way you like it – music, films,
+      games and calls – and watch your music come alive on the screen.
+    </p>
+    <p>
+      The animations follow the beat and keep changing, so there is always
+      something new to see. Turn them into a light show on the whole screen,
+      or let them play quietly beside your work.
+    </p>
+    <p>
+      Find your sound in a moment and keep your favourites. One click brings
+      back the original sound whenever you want it.
+    </p>
+    <ul>
+      <li>Fuller bass, clearer voices, brighter highs</li>
+      <li>Animations that dance to your music</li>
+      <li>A light show for the whole screen</li>
+      <li>Your favourite sound, ready whenever you need it</li>
+      <li>For your speakers and your headphones</li>
+      <li>Quiet in a second when the phone rings</li>
+      <li>Keeps you company in a small window while you work</li>
+      <li>Available in 83 languages</li>
+    </ul>
+  </description>
+
+  <!-- Die URLs zeigen auf die Bilder der Website (website-software/generate-site.sh,
+       Praefix jsbudbrainsvisualizereq_, Quelle dist/screenshots/). -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Shape your sound while the music takes you on a journey</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsvisualizereq_01-tunnel.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Let the animations fill the whole screen</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsvisualizereq_02-fractal.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A light show for your evening</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsvisualizereq_03-disco.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Your favourite sound, one click away</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsvisualizereq_04-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Keeps you company in a small window while you work</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsvisualizereq_05-compact.png</image>
+    </screenshot>
+  </screenshots>
+
+  <launchable type="desktop-id">jsbudbrainsvisualizereq.desktop</launchable>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Mixer</category>
+  </categories>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <url type="contact">https://www.budbrain.de</url>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="1.0.3" date="2026-11-14">
+      <description>
+        <p>Picture and sound now stay perfectly in sync, everything runs smoother while using far less processor power, shapes and figures morph into one another, new 3D laser shows, and the level display keeps surprising you with new appearances.</p>
+      </description>
+    </release>
+    <release version="1.0.2" date="2026-11-13">
+      <description>
+        <p>A flight through an endless maze, a bass drum detection that hits on time with any sound profile, a notice for photosensitive people with a switch that reduces flashes, and the window now opens centred on first start.</p>
+      </description>
+    </release>
+    <release version="1.0.1" date="2026-11-12">
+      <description>
+        <p>Many new animations and effects that blend into one another, a beat detection that follows the drums, and a level display that moves with the picture.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-11-11">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>
