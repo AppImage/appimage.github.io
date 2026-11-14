@@ -1,0 +1,29 @@
+{
+  "name": "@opencode/desktop",
+  "private": true,
+  "version": "0.2.1",
+  "type": "module",
+  "license": "MIT",
+  "description": "Capri, a Cyberpunk: Edgerunners fork of OpenCode",
+  "homepage": "https://github.com/seanyih/Capri",
+  "author": {
+    "name": "seanyih"
+  },
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@zip.js/zip.js": "2.7.62",
+    "electron-context-menu": "5.0.0",
+    "electron-log": "^5",
+    "electron-updater": "6.8.9",
+    "lighthouse": "13.4.1"
+  },
+  "optionalDependencies": {
+    "@lydell/node-pty-darwin-arm64": "1.2.0-beta.12",
+    "@lydell/node-pty-darwin-x64": "1.2.0-beta.12",
+    "@lydell/node-pty-linux-arm64": "1.2.0-beta.12",
+    "@lydell/node-pty-linux-x64": "1.2.0-beta.12",
+    "@lydell/node-pty-win32-arm64": "1.2.0-beta.12",
+    "@lydell/node-pty-win32-x64": "1.2.0-beta.12"
+  },
+  "desktopName": "io.github.seanyih.capri.desktop"
+}
