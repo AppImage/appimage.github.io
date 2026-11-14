@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.Techlm77.NowCaption</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>NowCaption</name>
+  <summary>Live captions for any audio</summary>
+  <developer id="io.github.techlm77">
+    <name>Techlm77</name>
+  </developer>
+  <description>
+    <p>
+      NowCaption shows live captions for videos, calls, streams and games, or for your
+      microphone. It is made for people who are deaf or hard of hearing, and for anyone who
+      wants to read what is being said.
+    </p>
+    <p>
+      Speech is recognised on your own computer. Audio never leaves it, no account is needed,
+      and it works offline. NowCaption currently understands English only.
+    </p>
+    <ul>
+      <li>Punctuation and capital letters, written as people speak</li>
+      <li>Streaming captions that update as people speak</li>
+      <li>Light on the processor, and idle while everything is quiet</li>
+      <li>Floats above other windows on KDE Plasma, Hyprland and Sway</li>
+      <li>Adjustable text size and background, and a transcript you can copy or save</li>
+    </ul>
+    <p>Right-click the captions for settings. Drag them to move them.</p>
+  </description>
+  <launchable type="desktop-id">io.github.Techlm77.NowCaption.desktop</launchable>
+  <url type="homepage">https://github.com/Techlm77/NowCaption</url>
+  <url type="bugtracker">https://github.com/Techlm77/NowCaption/issues</url>
+  <url type="vcs-browser">https://github.com/Techlm77/NowCaption</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Techlm77/NowCaption/main/data/screenshots/captions.png</image>
+      <caption>Three lines of live captions</caption>
+    </screenshot>
+  </screenshots>
+  <keywords>
+    <keyword>captions</keyword>
+    <keyword>subtitles</keyword>
+    <keyword>deaf</keyword>
+    <keyword>hard of hearing</keyword>
+    <keyword>speech to text</keyword>
+    <keyword>transcription</keyword>
+  </keywords>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <supports>
+    <control>pointing</control>
+  </supports>
+  <content_rating type="oars-1.1"/>
+  <branding>
+    <color type="primary" scheme_preference="light">#f7c873</color>
+    <color type="primary" scheme_preference="dark">#7a5214</color>
+  </branding>
+  <releases>
+    <release version="1.2.2" date="2026-10-29">
+      <description>
+        <p>
+          A new speech model, NowCaption's own v4: slightly fewer mistakes, with less than half the
+          CPU time.
+        </p>
+        <ul>
+          <li>Fewer wrong words when captioning continuously: 13.3% to 13.0% across meetings, calls,
+            podcasts, speeches and noisy recordings, and 13.8% to 13.5% across 20 accent groups</li>
+          <li>The speech model now needs about 7% of one CPU core for non-stop speech, down from
+            about 18%</li>
+          <li>Words show as soon as before; the download is smaller (111 MB, was 127 MB) and it needs
+            a little less memory</li>
+          <li>Known limit: very occasionally a word is repeated several times in a row</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.1" date="2026-10-27">
+      <description>
+        <p>
+          On KDE Plasma 6, a floating panel now stops floating while docked captions touch it, as it
+          does when a window touches it, and floats again when they move away or NowCaption quits.
+        </p>
+      </description>
+    </release>
+    <release version="1.2.0" date="2026-10-27">
+      <description>
+        <p>
+          A new speech model, NowCaption's own v3: fewer mistakes in everyday speech, words that
+          show a little sooner, and captions that keep up after pauses.
+        </p>
+        <ul>
+          <li>About a fifth fewer wrong words when captioning continuously, as the app does: 17.3% to
+            13.3% across meetings, calls, podcasts, accents and noisy recordings</li>
+          <li>The first words after a pause are wrong far less often (28% to 17%)</li>
+          <li>Fewer mistakes for 16 of the 20 accent groups tested, including British, Irish, Scottish,
+            Welsh, American, Canadian, Indian and African English, and none clearly worse</li>
+          <li>Words show a little sooner on average, with about the same CPU use; the model is 127 MB and
+            needs about 30 MB more memory</li>
+          <li>Known limit: a short sentence straight after a pause can show slightly later than before</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.16" date="2026-10-24">
+      <description>
+        <p>
+          A round of fixes from a full check of NowCaption, and easier ways to reach the menu.
+        </p>
+        <ul>
+          <li>After a problem, More options has a Restart button to listen again; the messages
+            now point to it</li>
+          <li>The newest lines reach the history when you log out or shut down, not only when
+            you quit, and Clear always empties the session's history</li>
+          <li>The captions keep their width when a long message shows, keep their rows when the
+            colour or background changes, and go back to your chosen screen when it is plugged
+            in again</li>
+          <li>Pixel effects no longer jump or flicker when a new line starts, new lines glide up
+            without a final nudge, and turning off animations stops all motion at once</li>
+          <li>On KDE Plasma 5.27 (such as Kubuntu 24.04), docked captions now float over fullscreen
+            apps too</li>
+          <li>Searching a long transcript no longer slows the captions, the transcript can be
+            selected with the keyboard, and closed windows free their memory</li>
+          <li>Touch and hold the captions to open the menu, and the app launcher offers Open
+            transcript, More options and Quit</li>
+          <li>The AppImage now includes the licence notices of the libraries it bundles</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.15" date="2026-10-24">
+      <description>
+        <p>
+          Choose how new words appear, and a new More options window for the settings the menu
+          has no room for.
+        </p>
+        <ul>
+          <li>New words can appear at once, fade in, or arrive as pixels: Pixel assemble,
+            Pixel dissolve, Mosaic sharpen or Pixel rain, at a fast, normal or slow speed</li>
+          <li>The pixel effects are cut from the text itself, so each word lands exactly as it
+            reads</li>
+          <li>More options shows a sample caption, so you can see each effect before you press
+            Apply</li>
+          <li>Listen to (desktop audio or microphone) moved to More options; the menu now shows
+            Appearance, Position, Transcript, then More options</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.14" date="2026-10-24">
+      <description>
+        <p>
+          Captions docked on the left or right no longer cover a panel at the top or bottom
+          of the screen: they now stop at the panel, like other docked captions.
+        </p>
+      </description>
+    </release>
+    <release version="1.1.13" date="2026-10-24">
+      <description>
+        <p>
+          Changing Position now slides the captions, and docked captions behave like a panel.
+        </p>
+        <ul>
+          <li>Docked captions slide into their edge and out of the new one, and maximised
+            windows beside them grow and shrink along with the slide instead of jumping.
+            Floating captions fade</li>
+          <li>Docked captions sit next to the panels already there instead of pushing them
+            aside</li>
+          <li>On KDE Plasma, docked captions float above a fullscreen game or video on their
+            screen, and dock again when it closes</li>
+          <li>The AppImage now runs on Ubuntu 22.04, Debian 12 and newer, not only on systems
+            from 2024</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.12" date="2026-10-24">
+      <description>
+        <p>
+          Captions stay steady in long conversations. Words already on screen keep their rows,
+          instead of moving between rows every few seconds once a conversation had gone on
+          for several minutes, or when a comma came and went at the end of a row.
+        </p>
+      </description>
+    </release>
+    <release version="1.1.11" date="2026-10-24">
+      <description>
+        <p>
+          Dock the captions along any edge of the screen, and the caption box keeps up with
+          Text size.
+        </p>
+        <ul>
+          <li>Position, in the menu: floating, or docked at the top, bottom, left or right.
+            Docked captions take that strip of the screen and maximised or snapped windows
+            make room for them; drag the edge between them to resize both (KDE Plasma,
+            Hyprland and Sway)</li>
+          <li>The box grows and shrinks with the text on every click of Text size, instead
+            of a step behind</li>
+          <li>Floating captions keep their bottom edge in place when the text size changes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.10" date="2026-10-24">
+      <description>
+        <p>
+          Nine text colours, and captions that move gently. When a line fills up, the text
+          glides up instead of jumping, and new words fade in, so your eyes can follow it.
+        </p>
+        <ul>
+          <li>Five more text colours: orange, pink, lavender, brown and red, picked from a
+            row of dots under Text colour</li>
+          <li>New lines glide up and new words fade in</li>
+          <li>The captions fade in when NowCaption starts and out when it quits</li>
+          <li>A new text colour or background blends in</li>
+          <li>Status messages fade in and out, and "Listening…" gently pulses while
+            NowCaption waits for speech</li>
+          <li>All of it follows your desktop's animation setting: turn animations off there
+            for no motion</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.9" date="2026-10-23">
+      <description>
+        <p>
+          A transcript window, history, and a clearer menu. Open transcript shows everything
+          captioned in a window you can scroll, select and copy from, and search. NowCaption
+          now keeps each session's transcript for 7 days, on your computer only, and deletes
+          older ones by itself; it can be turned off in the menu.
+        </p>
+        <ul>
+          <li>Open transcript: earlier sessions under their date, the current one updating as
+            each line is finished, with Find (Ctrl+F), Copy all, Save and Delete history</li>
+          <li>Keep 7 days of history, on by default; Clear this session removes the current
+            session from it too</li>
+          <li>The words still being spoken when NowCaption quits are kept as well</li>
+          <li>A tidier menu in labelled sections; text size and background show their value</li>
+          <li>Saved and copied transcripts start each session with its date</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.8" date="2026-10-23">
+      <description>
+        <p>
+          Quitting no longer crashes the AppImage, or NowCaption run from source with Python
+          3.12 or 3.13, while it is captioning speech.
+        </p>
+      </description>
+    </release>
+    <release version="1.1.7" date="2026-10-23">
+      <description>
+        <p>
+          Choose the colour of the caption text. White stays the default, and yellow, cyan
+          and lime are there for anyone who finds another colour easier to read, as on TV
+          captions. NowCaption remembers the choice every time it starts and after updates.
+        </p>
+        <ul>
+          <li>Text colour in the menu: white, yellow, cyan or lime, shown on the captions as
+            soon as it is chosen</li>
+          <li>Punctuation runs about a quarter less often, so captions use a little less CPU.
+            Finished captions and transcripts read exactly as before</li>
+          <li>Captions flicker a little less while punctuation settles</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.6" date="2026-10-23">
+      <description>
+        <p>
+          NowCaption's own speech model: NVIDIA's model trained further on 3,100 hours of
+          English speech. It makes fewer mistakes in meetings, calls, videos and
+          noisy speech (13.7% of words against 15.0% on average), as quickly as before and
+          on the same CPU. Also fixes for changing screens and for computers that cannot keep
+          up with the speech. The Background filter has been removed: it still missed most
+          words over music and made plain speech less accurate.
+        </p>
+        <ul>
+          <li>Fewer word errors on everyday speech: meetings 21.1% instead of 24.5%,
+            noisy speech 20.8% instead of 24.5%, business calls 17.2% instead of 20.0%</li>
+          <li>After Move to next screen, the captions still notice screens being plugged in or
+            removed, and still fit the screen when its resolution or scaling changes</li>
+          <li>When recognition falls behind, captions skip ahead to live speech in one step
+            instead of staying two seconds late and restarting many times a second</li>
+          <li>The Falling behind notice no longer says that 0.0 s of audio was skipped</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.5" date="2026-10-16">
+      <description>
+        <p>
+          NowCaption is English-only again: Translate to English has been removed. Copied and
+          saved transcripts now keep the same punctuation as the captions on screen, including
+          lines that have scrolled away.
+        </p>
+        <ul>
+          <li>Saving to the same file twice in quick succession always keeps the newer
+            transcript</li>
+          <li>A late error from a previous sound source can no longer interrupt recovery of
+            the current one</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.4" date="2026-10-13">
+      <description>
+        <p>
+          Memory use no longer grows with the length of a session, and NowCaption uses about
+          15% less memory. Finished caption lines now go to a temporary file that only
+          NowCaption can open and that is deleted when it quits, and memory it no longer
+          needs is returned to the system. Captions, Copy and Save are unchanged.
+        </p>
+      </description>
+    </release>
+    <release version="1.1.3" date="2026-10-13">
+      <description>
+        <p>
+          Fixes a memory leak that made NowCaption use about 800 MB more memory for every
+          hour of speech, reaching several gigabytes in a long session. Memory use now stays
+          flat. Captions are unchanged.
+        </p>
+      </description>
+    </release>
+    <release version="1.1.2" date="2026-10-13">
+      <description>
+        <p>
+          Music-filter errors now turn the filter off while ordinary captions continue.
+          Source changes keep buffered filter audio and settled punctuation. Audio and
+          recognition warnings stay visible until recovery, and failed transcript exports
+          release pending saves. Source setup now fetches the filter model and repairs
+          broken Python environments after interpreter changes.
+        </p>
+      </description>
+    </release>
+    <release version="1.1.1" date="2026-10-12">
+      <description>
+        <p>
+          The right-click menu now stays open while you change the text size or background,
+          so you can press − or + several times in a row and watch the captions change.
+        </p>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-10-12">
+      <description>
+        <p>
+          New: Filter out music, in the right-click menu. It picks out voices from music
+          before recognition, so songs and speech over background music get many more words
+          captioned. It is off by default because it uses a little more processor time and
+          slightly lowers accuracy on plain speech.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.9" date="2026-10-12">
+      <description>
+        <p>
+          Captions appear sooner: audio now reaches the speech model in smaller pieces,
+          cutting the typical delay by 60 to 80 milliseconds with the same accuracy and
+          processor use.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.8" date="2026-10-12">
+      <description>
+        <p>
+          Settings that are out of range, for example after editing the settings file by hand,
+          are corrected instead of giving an unreadable caption box. If the settings file cannot
+          be saved, changes still apply until you quit, and switching the sound source keeps
+          working.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.7" date="2026-10-12">
+      <description>
+        <p>
+          NowCaption now runs on 64-bit ARM computers as well as x86_64. It can be installed
+          from its own Flatpak repository, so new versions arrive with your other updates
+          instead of being downloaded by hand.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.6" date="2026-10-12">
+      <description>
+        <p>
+          Captions no longer jump around: punctuation in older lines stays as it was shown, so
+          commas and full stops do not come and go and re-wrap the text. A large caption box now
+          fills all its rows instead of stopping at two or three. The right-click menu opens on
+          the first click on KDE Plasma.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.5" date="2026-10-12">
+      <description>
+        <p>
+          The caption box can be resized: drag an edge or corner to make it wider, narrower or
+          taller. The height snaps to whole rows, so a taller box shows more lines of captions.
+          The size is remembered, and Reset size in the menu restores the default.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.4" date="2026-10-11">
+      <description>
+        <p>
+          Recognition retries now back off correctly and cannot interrupt a recovered sound
+          source. Notifications appear below live captions. Quit and window close wait for
+          accepted transcript saves to finish, and failed saves keep the app open. Benchmark
+          tracing now retains words after they scroll out of the caption window.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.3" date="2026-10-11">
+      <description>
+        <p>
+          Model-loading failures can now be retried from the source menu. Recognition recovery
+          preserves unfinished transcript text, and Clear discards buffered speech. Audio setup
+          and shutdown run in the background, queued audio is bounded when recognition stalls,
+          and captions resize when display resolution or scaling changes. Additional regression
+          tests and corrected transcript and latency checks improve release verification.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.2" date="2026-10-11">
+      <description>
+        <p>
+          More dependable captions. If the audio device disappears or the sound server restarts,
+          NowCaption says so and reconnects by itself, and an error in speech recognition is
+          reported and recovered from instead of silently stopping the captions. Copy and Save now
+          include the words still being spoken and the whole session, Clear no longer lets old words
+          come back, and saving reports whether it worked. Switching screens resizes the captions to fit.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.1" date="2026-10-11">
+      <description>
+        <p>
+          Captions can now be dragged anywhere on the screen, and on KDE Plasma, Hyprland and Sway
+          clicks outside them reach the windows underneath. Captions always show two lines, with
+          punctuation that carries across pauses. The right-click menu is smaller and opens where
+          you click, with one-row text size and background controls.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-10-11">
+      <description>
+        <p>
+          First release. Captions desktop audio or the microphone in English, with
+          punctuation, adjustable text and a transcript you can copy or save.
+        </p>
+      </description>
+    </release>
+  </releases>
+</component>
