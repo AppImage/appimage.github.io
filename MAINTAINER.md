@@ -94,9 +94,9 @@ The text is `code/appstream-help.md`; edit it there.
 
 ## Nightly run
 
-`.github/workflows/nightly.yml` runs every night at 01:17 UTC, one step after
-the other: Discover apps (500 pull requests at most), wait for their tests (5 hours
-at most), Merge labeled PRs (500 at most), wait for the Test
+`.github/workflows/nightly.yml` runs every night at 23:07 UTC (00:07 German time in winter, 01:07 in summer; it takes about 4 hours at most), one step after
+the other: Discover apps (100 pull requests at most, 1 hour at most), wait for their tests (1 hour
+at most), Merge labeled PRs (100 at most), wait for the Test
 runs that the merges started, Build website, Clean up notifications. It needs the secrets of these workflows (`DISCOVER_TOKEN` or
 `SCREENSHOT_UPLOAD_TOKEN`, `NOTIFICATIONS_TOKEN`). To try it, start "Nightly"
 from the Actions tab with `dry_run` set. To stop it, disable the workflow there.
