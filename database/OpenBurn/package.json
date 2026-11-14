@@ -1,0 +1,29 @@
+{
+  "name": "openburn",
+  "version": "0.11.0",
+  "description": "OpenBurn — open-source laser cutting & engraving software with LightBurn .lbrn/.lbrn2 import and export, GRBL control and an animated preview.",
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.11",
+    "fabric": "^6.5.1",
+    "imagetracerjs": "^1.2.6",
+    "opentype.js": "^1.3.4",
+    "paper": "^0.12.18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "license": "MIT",
+  "author": "Santiago Leal (SJLS27)",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "homepage": "https://github.com/SJLS27/openburn#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SJLS27/openburn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SJLS27/openburn/issues"
+  },
+  "desktopName": "io.github.SJLS27.OpenBurn"
+}
