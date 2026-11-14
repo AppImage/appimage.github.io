@@ -1,0 +1,22 @@
+{
+  "name": "xjaus",
+  "homepage": "https://github.com/perjesus111-hub/xjaus",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/perjesus111-hub/xjaus.git"
+  },
+  "main": "electron/main.cjs",
+  "private": true,
+  "version": "1.2.2",
+  "type": "module",
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-opener": "^2"
+  },
+  "description": "High-performance Xbox Cloud Gaming & Remote Play client for Linux",
+  "license": "GPL-3.0-only",
+  "author": {
+    "name": "XJAUS contributors"
+  },
+  "desktopName": "io.github.xjaus.xjaus.desktop"
+}
