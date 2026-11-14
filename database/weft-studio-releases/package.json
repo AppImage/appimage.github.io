@@ -1,0 +1,16 @@
+{
+  "name": "codeweaves-studio",
+  "productName": "CodeWeaves Studio",
+  "desktopName": "codeweaves-studio.desktop",
+  "version": "0.2.0-alpha.7.hotfix-1",
+  "description": "Design in HTML with AI agents from any provider, on one canvas.",
+  "homepage": "https://github.com/Willi005/CodeWeaves",
+  "author": {
+    "name": "CodeWeaves",
+    "email": "codeweaves@users.noreply.github.com"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "main": "dist/main.js"
+}
