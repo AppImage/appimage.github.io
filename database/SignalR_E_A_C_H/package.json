@@ -1,0 +1,23 @@
+{
+  "name": "reach-studio",
+  "productName": "Reach Studio",
+  "version": "26.11.0",
+  "description": "Desktop workspace for AI agents, browsing, editing, and optional Reach CLI tools",
+  "homepage": "https://github.com/falabellamichael/SignalR.E.A.C.H",
+  "desktopName": "reach-studio.desktop",
+  "main": "main.mjs",
+  "author": "Michael Anthony Falabella <falabellamichael@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "overrides": {
+    "http-cache-semantics": "^4.3.0",
+    "minimatch@>=7 <11.0.1": "^11.0.1"
+  },
+  "allowScripts": {
+    "electron@44.3.0": true,
+    "esbuild@0.28.2": true,
+    "electron-winstaller@5.4.0": true
+  }
+}
