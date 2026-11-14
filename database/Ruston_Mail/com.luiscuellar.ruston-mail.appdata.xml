@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2026 Luis Cuellar <luiscuellar31@proton.me>
+  SPDX-License-Identifier: CC0-1.0
+-->
+<component type="desktop-application">
+  <id>com.luiscuellar.ruston-mail</id>
+  <name>Ruston Mail</name>
+  <summary>Unofficial native desktop client for Proton Mail</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <description>
+    <p>
+      Ruston Mail is an unofficial desktop client for Proton Mail, written in
+      Rust. Its three-pane interface lets you read, organize, and send mail
+      without an embedded browser.
+    </p>
+    <p>
+      It ships with ruston-cli, a command-line client for the same Proton
+      account. Ruston Mail is not affiliated with or endorsed by Proton AG.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">com.luiscuellar.ruston-mail.desktop</launchable>
+  <url type="homepage">https://github.com/luiscuellar31/ruston-mail</url>
+  <url type="bugtracker">https://github.com/luiscuellar31/ruston-mail/issues</url>
+  <developer id="io.github.luiscuellar31">
+    <name>Luis Cuellar</name>
+  </developer>
+  <provides>
+    <binary>ruston</binary>
+    <binary>ruston-cli</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+</component>
