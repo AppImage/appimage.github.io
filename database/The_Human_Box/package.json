@@ -1,0 +1,16 @@
+{
+  "name": "thehumanbox-desktop",
+  "productName": "The Human Box",
+  "version": "0.7.70",
+  "private": true,
+  "description": "The Human Box — desktop app. Runs a local simulation or connects to thehumanbox.com.",
+  "homepage": "https://thehumanbox.com",
+  "author": {
+    "name": "The Human Box",
+    "email": "voxire.tech@gmail.com"
+  },
+  "main": "dist/main/index.js",
+  "dependencies": {
+    "electron-updater": "^6.8.11"
+  }
+}
