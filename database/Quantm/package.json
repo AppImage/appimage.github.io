@@ -1,0 +1,25 @@
+{
+  "name": "quantm",
+  "productName": "Quantm",
+  "version": "1.2.6",
+  "description": "Quantm",
+  "main": "main.js",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "electron-updater": "6.3.9",
+    "koffi": "^2.9.0"
+  },
+  "author": {
+    "name": "Quantm",
+    "email": "54776242+drumplayer1234@users.noreply.github.com",
+    "url": "https://github.com/quantm-app/Quantm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quantm-app/Quantm.git"
+  },
+  "homepage": "https://github.com/quantm-app/Quantm",
+  "bugs": {
+    "url": "https://github.com/quantm-app/Quantm/issues"
+  }
+}
