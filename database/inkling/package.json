@@ -1,0 +1,44 @@
+{
+  "name": "inkling",
+  "version": "0.1.1-nightly.20261114.45",
+  "private": true,
+  "description": "A private local library for everything worth keeping",
+  "homepage": "https://github.com/Squidys-Tools/inkling",
+  "license": "MIT",
+  "author": "exodus712",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tools/*",
+    "extension"
+  ],
+  "type": "module",
+  "main": "dist/desktop/main.mjs",
+  "dependencies": {
+    "@effect/sql-sqlite-node": "4.1.4",
+    "@huggingface/tokenizers": "0.2.0",
+    "@img/sharp-wasm32": "0.35.5",
+    "@napi-rs/canvas": "1.1.0",
+    "@tesseract.js-data/eng": "1.0.0",
+    "builder-util-runtime": "9.7.0",
+    "defuddle": "0.19.6",
+    "dompurify": "3.4.17",
+    "effect": "4.1.4",
+    "electron-updater": "6.8.11",
+    "entities": "9.0.0",
+    "ipaddr.js": "2.5.0",
+    "linkedom": "0.18.15",
+    "onnxruntime-node": "1.31.1",
+    "pdfjs-dist": "6.5.438",
+    "semver": "7.8.6",
+    "sharp": "0.35.5",
+    "tesseract.js": "7.0.0"
+  },
+  "overrides": {
+    "isbinaryfile": "6.0.0"
+  },
+  "desktopName": "inkling.desktop",
+  "patchedDependencies": {
+    "sharp@0.35.5": "patches/sharp@0.35.5.patch"
+  }
+}
