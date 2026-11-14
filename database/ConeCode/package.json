@@ -1,0 +1,26 @@
+{
+  "name": "conecode",
+  "version": "2.4.15",
+  "description": "AI Desktop Client",
+  "author": "ConeCode",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/songguomix/ConeCode.git"
+  },
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "@deepseek-ai/cordis": "4.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
+    "selfsigned": "^5.5.0",
+    "semver": "7.7.2",
+    "uuid": "^11.1.1",
+    "yaml": "2.9.1",
+    "zustand": "^4.5.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
