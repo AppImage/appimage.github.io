@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.ramazankara.nightjar</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>Nightjar</name>
+  <summary>Stream games from your PC</summary>
+  <developer id="io.github.ramazankara">
+    <name>RamazanKara</name>
+  </developer>
+  <description>
+    <p>
+      Nightjar is a Moonlight-protocol game-streaming client. It works with Sunshine, Apollo,
+      Vibepollo, Rubylight and GeForce Experience, with hardware decoding, HDR10, VRR pacing,
+      audio, keyboard, mouse and controllers.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.ramazankara.nightjar.desktop</launchable>
+  <url type="homepage">https://github.com/RamazanKara/nightjar</url>
+  <url type="bugtracker">https://github.com/RamazanKara/nightjar/issues</url>
+  <content_rating type="oars-1.1"/>
+  <categories>
+    <category>Game</category>
+  </categories>
+</component>
