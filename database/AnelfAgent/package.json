@@ -1,0 +1,21 @@
+{
+  "name": "anelf-launcher",
+  "productName": "AnelfAgent",
+  "version": "0.4.0",
+  "description": "AnelfAgent environment installer and local runtime manager",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "anelf.cn",
+    "url": "https://anelf.cn"
+  },
+  "homepage": "https://anelf.cn",
+  "main": "main.cjs",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "anelf": {
+    "uvVersion": "0.13.6"
+  }
+}
