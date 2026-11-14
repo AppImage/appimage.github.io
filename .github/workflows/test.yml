@@ -185,8 +185,10 @@ jobs:
               appname=$(basename "$(dirname "$screenshot")" | tr -cd 'A-Za-z0-9._-')
               cp "$screenshot" "pr-result/${appname}.png"
             done
-            # For the screenshot-ok label: a screenshot, and code/check-screenshot.sh had no remarks
-            if ls pr-result/*.png >/dev/null 2>&1 && ! grep -qE '^(WARNING|ERROR): The (window|screenshot)' log.txt ; then
+            # For the screenshot-ok label: a screenshot, and code/check-screenshot.sh had no
+            # remarks, except that the window is mostly dark (only a suggestion: a dark
+            # theme by default is not a defect of the test, and the screenshot still shows the application)
+            if ls pr-result/*.png >/dev/null 2>&1 && ! grep -E '^(WARNING|ERROR): The (window|screenshot)' log.txt | grep -qv '^WARNING: The window is mostly dark' ; then
               touch pr-result/screenshot-ok
             fi
           else

@@ -338,7 +338,7 @@ jobs:
               # is untrusted, so only accept lines we know
               HINTS=$(grep -xF -f <(bash code/diagnose.sh --list) out/hints.md || true)
               if [ -n "$HINTS" ] ; then
-                [ "$CONCLUSION" = success ] && echo "**Warnings:**" && echo
+                [ "$CONCLUSION" = success ] && echo "**Suggestions for improving the AppImage:**" && echo
                 echo "$HINTS" | sed 's/^/- /'
                 echo
               fi
@@ -362,7 +362,7 @@ jobs:
           # Errors or findings: @mention the GitHub account the AppImage comes
           # from, unless that is who opened the PR (or a bot). The URL is read
           # from the PR's data/ files at the tested commit, not from the artifact.
-          if [ "$CONCLUSION" != success ] || grep -qE '^\*\*(Warnings|Names):\*\*' comment.md ; then
+          if [ "$CONCLUSION" != success ] || grep -qE '^\*\*(Suggestions for improving the AppImage|Names):\*\*' comment.md ; then
             AUTHOR=$(gh api "repos/$REPO/pulls/$PR" --jq '.user.login' | tr 'A-Z' 'a-z')
             OWNERS=$(gh api --paginate "repos/$REPO/pulls/$PR/files" \
                        --jq '.[] | select(.filename | startswith("data/")) | select(.status != "removed") | .filename' \

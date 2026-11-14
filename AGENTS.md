@@ -71,7 +71,7 @@ GitHub Pages (Jekyll) from this repository.
    - `code/check-names-agree.sh`: a warning when the name of the repository, the
      AppImage's name and the README's headline (`code/fetch-readme.sh`) disagree
      within a tolerance (equal, one contains the other, or >= 80 % similar, ignoring
-     case and punctuation); shown under "Names" and "Warnings" in the test result;
+     case and punctuation); shown under "Names" and "Suggestions for improving the AppImage" in the test result;
      it also warns when the file name has a `-` where the README writes blanks (`XI-on-Anything`,
      README "XI on Anything"): use `_` (`XI_on_Anything`); `code/pick-name.sh` (discovery) does that itself;
    - runs the application in firejail **without network**, waits 30 s, takes a
@@ -90,7 +90,8 @@ GitHub Pages (Jekyll) from this repository.
      60 % of a downscaled gray version darker than 35 % gray, mean below 35 %):
      the test system has no dark-mode preference, so the application defaults
      to a dark theme, which the README asks not to do (a dark canvas of a video
-     player or game is fine; warning only, skipped for `terminal` and `tray`);
+     player or game is fine; warning only, skipped for `terminal` and `tray`; if it
+     is the only remark about the screenshot, `screenshot-ok` is still set);
    - warns when the AppImage has no (or broken) update information;
    - writes `database/` and `apps/`. `links:` in `apps/<Name>.md` (shown on
      the page and in `feed.json`) gets the repository and its releases for
@@ -114,7 +115,10 @@ GitHub Pages (Jekyll) from this repository.
    none applies) and
    removes `error-*` labels that no longer apply; the green `screenshot-ok` label
    marks a passed test whose screenshot `code/check-screenshot.sh` found fine
-   (no warnings).
+   (no warnings; a mostly dark window alone does not count).
+   Warnings about the AppImage itself (no update information, ...) are listed
+   under "Suggestions for improving the AppImage" in the comment; they do not
+   keep `screenshot-ok` from being set either.
    When the test failed or reports warnings or name remarks, the comment
    @mentions the GitHub account the AppImage comes from
    (`code/upstream-owner.sh` on the first line of the PR's `data/` files,
