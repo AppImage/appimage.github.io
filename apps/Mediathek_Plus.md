@@ -3,6 +3,7 @@ layout: app
 
 permalink: /Mediathek_Plus/
 description: "Mediathek-Suche und -Download"
+license: "LicenseRef-proprietary"
 
 icons:
   - Mediathek_Plus/icons/128x128/mediathek-extractor.png

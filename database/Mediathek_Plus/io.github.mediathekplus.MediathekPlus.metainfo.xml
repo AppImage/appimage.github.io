@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream-Metadaten für AppImage/deb (Softwarecenter, AppImage-Katalog) -->
+<component type="desktop-application">
+  <id>io.github.mediathekplus.MediathekPlus</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Mediathek Plus</name>
+  <summary>Entdecken, schauen und laden aus ARD, ZDF, ARTE, 3sat und mehr</summary>
+  <summary xml:lang="en">Discover, watch and download from German public broadcasters</summary>
+  <description>
+    <p>
+      Mediathek Plus durchsucht alle öffentlich-rechtlichen Mediatheken auf einmal – ARD, ZDF, ARTE, 3sat, KiKA und mehr.
+      Im Modus „Sofa“ spielst du Filme, Serien, Dokus und Live-TV direkt ab, mit Weiterschauen, nächster Folge,
+      Originalton und Untertiteln. Wer Filme sammelt, lädt sie fertig benannt für Plex, Jellyfin und Kodi herunter.
+    </p>
+    <ul>
+      <li>Sofa: einfach schauen, ganz mit Pfeiltasten bedienbar</li>
+      <li>Merkliste: neue Folgen deiner Serien von selbst</li>
+      <li>Deutsch und Original in einer Datei, Untertitel als Spur</li>
+      <li>Kostenlos, ohne Konto, ohne Werbung, ohne Datensammlung</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">Mediathek Plus.desktop</launchable>
+  <url type="homepage">https://github.com/7hdmm9pp2w-code/Mediathek-Plus</url>
+  <url type="bugtracker">https://github.com/7hdmm9pp2w-code/Mediathek-Plus/issues</url>
+  <developer id="io.github.mediathekplus">
+    <name>Mediathek Plus</name>
+  </developer>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Video</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="3.0.1" date="2026-11-11"/>
+  </releases>
+</component>
