@@ -1,0 +1,38 @@
+{
+  "name": "pluginblueprint",
+  "version": "2.2.0",
+  "description": "Visual editor to create Paper (Minecraft server) plugins",
+  "main": "out/main.js",
+  "files": [
+    "**/*",
+    "data",
+    "assets",
+    "*.js",
+    "*.html"
+  ],
+  "author": {
+    "name": "Haylee Schaefer",
+    "email": "mail@inventivetalent.org",
+    "url": "https://inventivetalent.org"
+  },
+  "homepage": "https://pluginblueprint.net",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "@electron/remote": "^2.1.3",
+    "@fortawesome/fontawesome-free": "^5.6.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.12",
+    "@fortawesome/free-solid-svg-icons": "^5.6.3",
+    "adm-zip": "^0.6.1",
+    "deep-equal": "^2.2.3",
+    "electron-progressbar": "^2.2.1",
+    "electron-prompt": "^1.7.0",
+    "fs-extra": "^11.4.1",
+    "isomorphic-git": "^1.44.3",
+    "jquery": "^3.7.1",
+    "key.pics": "^1.0.2",
+    "materialize-css": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
