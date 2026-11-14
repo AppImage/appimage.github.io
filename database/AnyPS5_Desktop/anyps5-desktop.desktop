@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Name=AnyPS5 Desktop
+GenericName=PS5 game launcher
+Comment=Run PS5 game dumps with AnyPS5
+Comment[tr]=PS5 oyun dökümlerini AnyPS5 ile çalıştır
+Exec=anyps5-desktop %U
+Icon=anyps5-desktop
+Terminal=false
+Categories=Game;Emulator;
+Keywords=PS5;PlayStation;AnyPS5;games;
+StartupWMClass=anyps5_desktop
+MimeType=x-scheme-handler/anyps5;application/x-anyps5theme;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34
+X-AppImage-Payload-License=GPL-2.0
