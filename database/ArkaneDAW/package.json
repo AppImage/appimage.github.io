@@ -1,0 +1,19 @@
+{
+  "name": "arkane-daw",
+  "productName": "ArkaneDAW",
+  "version": "0.3.11",
+  "description": "ArkaneDAW - a pattern-based digital audio workstation",
+  "main": "./out/main/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elevchyt/ArkaneDAW"
+  },
+  "private": true,
+  "type": "module",
+  "author": {
+    "name": "elevchyt"
+  },
+  "homepage": "https://github.com/elevchyt/ArkaneDAW",
+  "desktopName": "arkanedaw.desktop"
+}

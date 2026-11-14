@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metainfo, installed into the AppImage as usr/share/metainfo/ (electron-builder.yml: linux.extraFiles). -->
+<component type="desktop-application">
+  <id>com.elevchyt.arkanedaw</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>ArkaneDAW</name>
+  <summary>Pattern-based digital audio workstation</summary>
+  <developer id="io.github.elevchyt">
+    <name>elevchyt</name>
+  </developer>
+  <description>
+    <p>
+      ArkaneDAW is a Linux-first, pattern-based digital audio workstation: build patterns in the channel rack and
+      piano roll, arrange them in the playlist and mix them in the mixer.
+    </p>
+    <ul>
+      <li>Built-in instruments: modelled pianos and guitars, FM, wavetable and ROMpler synths, basslines, chiptune, drum machines and a sampler</li>
+      <li>Built-in effects: EQ, compressors, limiter, gate, reverb, delay and more</li>
+      <li>Hosts VST3, VST2 and CLAP plugins in a crash-isolated process</li>
+      <li>Audio and MIDI recording, MIDI import, and export to WAV, MP3, OGG and FLAC</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">arkane-daw.desktop</launchable>
+  <icon type="stock">arkane-daw</icon>
+  <url type="homepage">https://github.com/elevchyt/ArkaneDAW</url>
+  <url type="bugtracker">https://github.com/elevchyt/ArkaneDAW/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Channel rack, piano roll, playlist and mixer</caption>
+      <image>https://raw.githubusercontent.com/elevchyt/ArkaneDAW/main/docs/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+  </categories>
+  <keywords>
+    <keyword>DAW</keyword>
+    <keyword>music</keyword>
+    <keyword>sequencer</keyword>
+    <keyword>synthesizer</keyword>
+    <keyword>VST</keyword>
+    <keyword>CLAP</keyword>
+  </keywords>
+  <provides>
+    <binary>arkane-daw</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+</component>
