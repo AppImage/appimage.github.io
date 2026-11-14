@@ -1,0 +1,27 @@
+{
+  "name": "openterm5",
+  "productName": "OpenTerm5",
+  "version": "1.2.0",
+  "description": "Open-source, cross-platform desktop trading terminal for MetaTrader 5 accounts, with a trade copier, risk-based orders and a webhook signal API.",
+  "homepage": "https://github.com/cyenite/OpenTerm5#readme",
+  "bugs": {
+    "url": "https://github.com/cyenite/OpenTerm5/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyenite/OpenTerm5.git"
+  },
+  "author": "The OpenTerm5 contributors",
+  "license": "AGPL-3.0-only",
+  "private": true,
+  "engines": {
+    "node": ">=22.12"
+  },
+  "main": "dist-electron/electron/main.js",
+  "dependencies": {
+    "electron-updater": "6.8.11",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "ws": "8.22.1"
+  }
+}
