@@ -1,0 +1,14 @@
+{
+  "name": "@flare/desktop",
+  "productName": "Flare",
+  "version": "0.5.1",
+  "private": true,
+  "description": "Flare desktop receiver — catches files flicked from your phone and lands them on your desktop.",
+  "main": "dist/main/index.js",
+  "dependencies": {
+    "busboy": "^1.6.0",
+    "ws": "^8.22.0"
+  },
+  "author": "Flare",
+  "homepage": "https://github.com/CTAGRAM/flare-releases"
+}
