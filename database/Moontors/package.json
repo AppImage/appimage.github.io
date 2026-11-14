@@ -1,0 +1,21 @@
+{
+  "name": "moontors",
+  "version": "0.8.6",
+  "private": true,
+  "description": "Run many coding-agent sessions at once",
+  "main": "out-release/main/index.js",
+  "author": {
+    "name": "Moontors",
+    "email": "hello@moontors.com"
+  },
+  "homepage": "https://github.com/moontors/moontors",
+  "repository": "github:moontors/moontors",
+  "dependencies": {
+    "@napi-rs/keyring": "^2.1.2",
+    "@parcel/watcher": "^2.6.0",
+    "@vscode/ripgrep": "^1.18.0",
+    "electron-updater": "^6.8.10",
+    "lean-qr": "^2.7.4",
+    "node-pty": "1.2.0-beta.18"
+  }
+}
