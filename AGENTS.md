@@ -71,7 +71,7 @@ GitHub Pages (Jekyll) from this repository.
    - `code/check-names-agree.sh`: a warning when the name of the repository, the
      AppImage's name and the README's headline (`code/fetch-readme.sh`) disagree
      within a tolerance (equal, one contains the other, or >= 80 % similar, ignoring
-     case and punctuation); shown under "Names" and "Warnings" in the test result;
+     case and punctuation); shown under "Names" and "Suggestions for improving the AppImage" in the test result;
      it also warns when the file name has a `-` where the README writes blanks (`XI-on-Anything`,
      README "XI on Anything"): use `_` (`XI_on_Anything`); `code/pick-name.sh` (discovery) does that itself;
    - runs the application in firejail **without network**, waits 30 s, takes a
@@ -90,7 +90,8 @@ GitHub Pages (Jekyll) from this repository.
      60 % of a downscaled gray version darker than 35 % gray, mean below 35 %):
      the test system has no dark-mode preference, so the application defaults
      to a dark theme, which the README asks not to do (a dark canvas of a video
-     player or game is fine; warning only, skipped for `terminal` and `tray`);
+     player or game is fine; warning only, skipped for `terminal` and `tray`; if it
+     is the only remark about the screenshot, `screenshot-ok` is still set);
    - warns when the AppImage has no (or broken) update information;
    - writes `database/` and `apps/`. `links:` in `apps/<Name>.md` (shown on
      the page and in `feed.json`) gets the repository and its releases for
@@ -114,7 +115,10 @@ GitHub Pages (Jekyll) from this repository.
    none applies) and
    removes `error-*` labels that no longer apply; the green `screenshot-ok` label
    marks a passed test whose screenshot `code/check-screenshot.sh` found fine
-   (no warnings).
+   (no warnings; a mostly dark window alone does not count).
+   Warnings about the AppImage itself (no update information, ...) are listed
+   under "Suggestions for improving the AppImage" in the comment; they do not
+   keep `screenshot-ok` from being set either.
    When the test failed or reports warnings or name remarks, the comment
    @mentions the GitHub account the AppImage comes from
    (`code/upstream-owner.sh` on the first line of the PR's `data/` files,
@@ -256,7 +260,7 @@ GitHub Pages (Jekyll) from this repository.
    of them). Deleting only
    `data/NAME` used to leave the page on the site.
 
-6. `.github/workflows/discover-apps.yml` (`workflow_dispatch` only; inputs
+6. `.github/workflows/discover-apps.yml` (`workflow_dispatch`, `workflow_call` and, nightly, `nightly.yml`; inputs
    `count`, default 1, no upper limit, `months` (default 3) and `dry_run`) runs `code/discover-apps.sh` to
    find GitHub repositories that publish AppImages on their releases but are
    not in the catalog yet, and proposes each as a new entry in its own pull
@@ -561,6 +565,24 @@ GitHub Pages (Jekyll) from this repository.
   catalog shows the metainfo's screenshot (`type="default"`, else the first;
   from `*.metainfo.xml` or `*.appdata.xml`) instead of the automated one,
   which the test still takes and checks.
+
+## Nightly run
+
+`.github/workflows/nightly.yml` (`schedule` 23:07 UTC, i.e. 00:07/01:07 German time, not before midnight; the run takes about 4 hours at most, and GitHub may start scheduled runs late; and `workflow_dispatch`
+with `dry_run`) calls three workflows one after the other through
+`workflow_call`, with `secrets: inherit`: `discover-apps.yml` (count 100,
+months 1, `max_seconds` 3600), then a `wait` job (until `test.yml` and `publish-pr-screenshot.yml`
+have nothing queued or running for two checks in a row, counting only runs
+created since the nightly run started; at most 1 hour), then
+`merge-labeled.yml` (max 100), a second `wait` job (for the Test runs that the
+merges started; at most 45 minutes), `build-website.yml`, then `cleanup-notifications.yml`. Each step runs
+after the previous one ended, also when it failed (not when the run was
+cancelled). The PRs that discovery opens are therefore tested and merged the
+same night, if they pass (this needs `DISCOVER_TOKEN` or
+`SCREENSHOT_UPLOAD_TOKEN`, or their Test workflow does not start). Those three
+workflows keep their `workflow_dispatch` trigger.
+When adding an input to one of them, add it to its `workflow_call` block too.
+Switch off: disable "Nightly" in the Actions tab.
 
 ## Investigating and answering in pull requests
 

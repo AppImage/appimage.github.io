@@ -1,0 +1,9 @@
+{
+  "name": "pezzhub-tv-installer",
+  "version": "1.1.37",
+  "private": true,
+  "author": "ceres",
+  "description": "Installa pezzhub sulle TV Samsung (Tizen)",
+  "main": "tv-installer/main.js",
+  "dependencies": {}
+}

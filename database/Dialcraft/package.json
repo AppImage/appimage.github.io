@@ -1,0 +1,13 @@
+{
+  "name": "dialcraft",
+  "version": "0.5.2",
+  "description": "Dialcraft — a watchface designer for Zepp OS / Amazfit watches: visual editor, Zeus CLI export, .zab build and Wi-Fi install",
+  "main": "main.js",
+  "dependencies": {
+    "@jsquash/oxipng": "^2.3.0",
+    "electron-updater": "^6.8.9",
+    "libimagequant-wasm": "^0.3.0",
+    "pngjs": "^7.0.0",
+    "qrcode": "^1.5.4"
+  }
+}

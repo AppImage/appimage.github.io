@@ -21,6 +21,15 @@
 name: Merge labeled PRs
 
 on:
+  # Also called by nightly.yml
+  workflow_call:
+    inputs:
+      max:
+        type: number
+        default: 50
+      dry_run:
+        type: boolean
+        default: false
   workflow_dispatch:
     inputs:
       max:

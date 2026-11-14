@@ -1,0 +1,15 @@
+{
+  "name": "shrike",
+  "productName": "Shrike",
+  "version": "0.2.0",
+  "description": "The Agentic Debugging Environment",
+  "author": "Sumant Tirkey <st72365@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/SumantxD/shrike",
+  "type": "module",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "pg": "^8.23.1", "mysql2": "^3.24.5", "mongodb": "^7.7.0", "redis": "^6.3.0",
+    "@aws-sdk/client-dynamodb": "^3.1147.0", "node-llama-cpp": "3.22.1"
+  }
+}

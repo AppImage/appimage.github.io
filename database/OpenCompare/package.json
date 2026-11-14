@@ -1,0 +1,35 @@
+{
+  "name": "opencompare",
+  "version": "0.2.24",
+  "private": true,
+  "description": "OpenCompare — 现代跨平台桌面对比与三向合并工具",
+  "author": {
+    "name": "OpenCompare Contributors",
+    "email": "chaxiu@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/chaxiu/OpenCompare",
+  "main": "./out/main/index.js",
+  "packageManager": "pnpm@10.18.3",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "dependencies": {
+    "@tanstack/react-virtual": "^3.14.21",
+    "diff": "^9.0.0",
+    "highlight.js": "^11.11.2",
+    "jsonc-parser": "^3.3.1",
+    "lowlight": "^3.3.0",
+    "node-diff3": "^3.2.1",
+    "papaparse": "^5.7.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "yaml": "^2.9.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
+  }
+}

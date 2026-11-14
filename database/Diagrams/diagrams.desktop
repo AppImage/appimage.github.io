@@ -1,0 +1,23 @@
+[Desktop Entry]
+Name=Diagrams
+Exec=AppRun %U
+Terminal=false
+Type=Application
+Icon=diagrams
+StartupWMClass=diagrams
+X-AppImage-Version=0.2.2
+Comment=Animated architecture diagrams and user flows, on the web and as a desktop app that AI agents can edit.
+MimeType=x-scheme-handler/diagrams;
+Categories=Development;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Thu Nov 12 03:44:55 2026 UTC                using RSA key 1BCF6C6949C1C337F1BF25A87221CC15B1E0F344 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.25
+X-AppImage-Payload-License=MIT

@@ -1,0 +1,10 @@
+{
+  "name": "@sequence/desktop",
+  "version": "0.1.8",
+  "private": true,
+  "description": "Sequence",
+  "license": "MIT",
+  "homepage": "https://github.com/naidx0/sequence-arch-tool",
+  "author": "Sequence <sequence@users.noreply.github.com>",
+  "main": "dist/main.js"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "predator-vpn",
+  "productName": "Predator VPN",
+  "version": "2.0.5",
+  "description": "Independent cross-platform VPN client with private DNS and split tunneling",
+  "author": "Erfan Tahvilian",
+  "license": "GPL-3.0-or-later",
+  "main": "src/main.cjs",
+  "dependencies": {
+    "socks": "2.8.10"
+  }
+}

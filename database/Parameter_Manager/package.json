@@ -1,0 +1,23 @@
+{
+  "name": "parameter-manager",
+  "productName": "Parameter Manager",
+  "version": "0.2.0",
+  "description": "Desktop client for AWS SSM Parameter Store",
+  "homepage": "https://pmanager.convenia.com.br",
+  "private": true,
+  "type": "module",
+  "main": "./out/main/index.js",
+  "author": {
+    "name": "Leonardo Lemos",
+    "email": "leonardo.lemos@convenia.com.br"
+  },
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ssm": "^3.1145.0",
+    "@aws-sdk/credential-providers": "^3.1145.0",
+    "@smithy/shared-ini-file-loader": "^4.7.2"
+  }
+}

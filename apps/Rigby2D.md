@@ -1,0 +1,46 @@
+---
+layout: app
+
+permalink: /Rigby2D/
+description: "2D skeletal animation for games, films and interactive experiences"
+license: "Apache-2.0"
+
+icons:
+  - Rigby2D/icons/128x128/rigby2d.png
+
+screenshots:
+  - Rigby2D/screenshot.png
+
+authors:
+  - name: "jaisurya-dev-art"
+    url: "https://github.com/jaisurya-dev-art"
+
+links:
+  - type: GitHub
+    url: jaisurya-dev-art/rigby2d
+  - type: Download
+    url: https://github.com/jaisurya-dev-art/rigby2d/releases
+
+desktop:
+  Desktop Entry:
+    Categories: Graphics
+    Comment: 2D skeletal animation for games, films and interactive experiences
+    Exec: rigby2d
+    StartupWMClass: rigby2d
+    Icon: rigby2d
+    Name: Rigby2D
+    Terminal: false
+    Type: Application
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.35
+    X-AppImage-Payload-License: Apache-2.0
+---

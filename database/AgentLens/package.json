@@ -1,0 +1,18 @@
+{
+  "name": "@agent-lens/desktop",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "main": "src/bootstrap.mjs",
+  "description": "AgentLens 智能体透镜跨平台桌面客户端。",
+  "author": "7ping <z7ping@outlook.com>",
+  "dependencies": {
+    "@deepseek-ai/cordis": "4.0.1",
+    "@earendil-works/pi-coding-agent": "1.2.0",
+    "better-sqlite3": "12.11.1",
+    "semver": "7.8.5",
+    "smol-toml": "1.9.1"
+  },
+  "homepage": "https://github.com/z7ping/agent-lens",
+  "license": "MIT"
+}

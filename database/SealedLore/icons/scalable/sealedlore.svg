@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <!-- SealedLore: a closed book of lore, bound by a ribbon under a wax seal with a keyhole. -->
+  <rect x="8" y="8" width="240" height="240" rx="52" fill="#16181d"/>
+  <rect x="8" y="8" width="240" height="240" rx="52" fill="none" stroke="#2b3040" stroke-width="4"/>
+  <!-- The pages, showing past the cover's right and bottom edges. -->
+  <rect x="76" y="54" width="122" height="156" rx="8" fill="#d8dbe2"/>
+  <g stroke="#a9b1d6" stroke-width="3" stroke-linecap="round">
+    <line x1="190" y1="70" x2="190" y2="196"/>
+    <line x1="92" y1="203" x2="184" y2="203"/>
+  </g>
+  <!-- The cover and its spine. -->
+  <rect x="60" y="44" width="126" height="158" rx="10" fill="#3d59a1"/>
+  <rect x="60" y="44" width="22" height="158" rx="10" fill="#2e4480"/>
+  <rect x="74" y="44" width="8" height="158" fill="#2e4480"/>
+  <line x1="82" y1="48" x2="82" y2="198" stroke="#7aa2f7" stroke-width="3"/>
+  <!-- The ribbon that binds it, over the cover and round the pages. -->
+  <rect x="60" y="110" width="140" height="26" fill="#bb9af7"/>
+  <rect x="186" y="110" width="14" height="26" fill="#9d7cd8"/>
+  <!-- The wax seal: an uneven disc, a pressed ring, and a keyhole. -->
+  <path d="M126.7 90.9 Q134.0 89.0 141.9 89.6 Q149.8 90.1 155.0 96.1 Q160.2 102.1 164.6 108.6 Q169.1 115.0 168.6 122.9 Q168.1 130.8 165.5 138.4 Q162.9 146.1 155.7 149.6 Q148.5 153.2 141.3 156.1 Q134.0 159.0 126.5 156.5 Q119.0 154.1 112.1 150.1 Q105.1 146.1 103.0 138.3 Q100.9 130.6 100.1 122.8 Q99.4 115.1 102.4 107.7 Q105.5 100.2 112.5 96.5 Q119.5 92.8 126.7 90.9 Z" fill="#e0556f"/>
+  <circle cx="134" cy="123" r="22" fill="none" stroke="#b8435a" stroke-width="4"/>
+  <circle cx="134" cy="117" r="7" fill="#5c1f2c"/>
+  <path d="M130 120 L127 136 L141 136 L138 120 Z" fill="#5c1f2c"/>
+</svg>

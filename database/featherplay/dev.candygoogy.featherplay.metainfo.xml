@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata. build-linux.sh fills in the release from the crate version and
+     CHANGELOG.md, and checks the result with `appstreamcli validate`. -->
+<component type="desktop-application">
+  <id>dev.candygoogy.featherplay</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>featherplay</name>
+  <summary>A light native player for YouTube Music</summary>
+  <developer id="dev.candygoogy">
+    <name>candygoogy</name>
+  </developer>
+
+  <description>
+    <p>
+      featherplay plays your YouTube Music library, playlists, search results and radio from
+      one native program. It's written in Rust and drawn with Slint, so no web browser runs
+      behind the window and nothing plays but the audio.
+    </p>
+    <p>It keeps what people use most in a desktop player:</p>
+    <ul>
+      <li>Last.fm and ListenBrainz scrobbling</li>
+      <li>Media keys and the system's media controls</li>
+      <li>SponsorBlock, which skips non-music segments in music videos</li>
+      <li>Your Discord status</li>
+      <li>Synced lyrics</li>
+    </ul>
+    <p>
+      featherplay is an independent project. It isn't made, endorsed or supported by Google or
+      YouTube. The Linux version is experimental.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">dev.candygoogy.featherplay.desktop</launchable>
+  <provides>
+    <binary>featherplay</binary>
+  </provides>
+
+  <url type="homepage">https://featherplay.candygoogy.dev/</url>
+  <url type="bugtracker">https://github.com/candygoogy/featherplay/issues</url>
+  <url type="vcs-browser">https://github.com/candygoogy/featherplay</url>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Player</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.4.0" date="2026-11-14"/>
+  </releases>
+</component>

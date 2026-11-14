@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.capsuleos.CapsuleCraft</id>
+  <name>CapsuleCraft</name>
+  <summary>Offline knowledge base stored as a folder of .eml files</summary>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>CapsuleCraft stores every note as a standards-compliant email (.eml) file in a folder you own. No database, no account, no network required.</p>
+    <p>Native egui shell, built-in FAQ, Markdown blocks, attachments, search, and an optional IMAP mailbox sync.</p>
+  </description>
+  <launchable type="desktop-id">capsulecraft.desktop</launchable>
+  <url type="homepage">https://github.com/kostyk348/CapsuleCraft</url>
+  <categories>
+    <category>Office</category>
+    <category>Utility</category>
+  </categories>
+  <releases>
+    <release version="2.12.4" date="2026-11-13"/>
+  </releases>
+</component>

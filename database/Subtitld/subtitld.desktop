@@ -1,0 +1,27 @@
+[Desktop Entry]
+Type=Application
+Name=Subtitld
+Name[pt_BR]=Subtitld
+GenericName=Subtitle Editor
+Comment=Create and edit subtitles
+Comment[pt_BR]=Crie e edite legendas
+Exec=subtitld %f
+Icon=subtitld
+Terminal=false
+Categories=AudioVideo;AudioVideoEditing;
+StartupNotify=true
+MimeType=application/x-usfx;application/x-subrip;text/vtt;text/x-ssa;application/x-sami;text/x-microdvd;text/x-mpsub;text/x-subviewer;application/x-usf;application/ttml+xml;text/x-sbv;text/x-scc;text/x-mcc;
+Keywords=subtitle;caption;srt;vtt;transcription;dubbing;
+X-AppImage-Version=26.10.18.0446
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=GPL-3.0

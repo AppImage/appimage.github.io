@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.nobledoodle.ferricone</id>
+  <name>Ferricone Player</name>
+  <summary>A redesigned VLC-based media player with a library beside the video</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="io.github.nobledoodle">
+    <name>NobleDoodle</name>
+  </developer>
+  <description>
+    <p>Ferricone plays videos, music and network streams on VLC's own engine, libVLC 4,
+    with a new interface after Juxtopposed's "VLC Redesign".</p>
+    <ul>
+      <li>A library dock and full library with watched progress, music by album and artist, and saved streams</li>
+      <li>A settings sidebar with presets that stick per folder</li>
+      <li>A subtitle timeline on the seek bar, Add Subtitles with OpenSubtitles, and casting</li>
+      <li>Light, dark and system themes, any accent color, and Omarchy's colors where installed</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github.nobledoodle.ferricone.desktop</launchable>
+  <url type="homepage">https://nobledoodle.github.io/ferricone/</url>
+  <url type="vcs-browser">https://github.com/NobleDoodle/ferricone</url>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.2.2" date="2026-11-10"/>
+    <release version="1.2.1" date="2026-11-10"/>
+    <release version="1.2.0" date="2026-11-08"/>
+    <release version="1.2.0~dev.1" date="2026-11-08" type="development"/>
+    <release version="1.1.0" date="2026-11-07"/>
+    <release version="1.1.0~dev.3" date="2026-11-06" type="development"/>
+    <release version="1.1.0~dev.2" date="2026-11-06" type="development"/>
+    <release version="1.1.0~dev.1" date="2026-10-18" type="development"/>
+    <release version="1.0.0" date="2026-10-16"/>
+  </releases>
+</component>

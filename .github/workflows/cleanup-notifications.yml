@@ -21,6 +21,15 @@
 name: Clean up notifications
 
 on:
+  # Also called by nightly.yml
+  workflow_call:
+    inputs:
+      dry_run:
+        type: boolean
+        default: false
+      allowed:
+        type: string
+        default: probonopd,github-actions
   workflow_dispatch:
     inputs:
       dry_run:

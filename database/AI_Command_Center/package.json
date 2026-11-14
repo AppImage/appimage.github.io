@@ -1,0 +1,32 @@
+{
+  "name": "ai-command-center",
+  "productName": "AI Command Center",
+  "version": "0.9.0",
+  "description": "Centro de mando local para IAs, agentes y proyectos (Windows, macOS y Linux)",
+  "author": "Hredo",
+  "license": "MIT",
+  "private": true,
+  "main": "./out/main/index.js",
+  "desktopName": "ai-command-center.desktop",
+  "dependencies": {
+    "@homebridge/node-pty-prebuilt-multiarch": "0.14.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@homebridge/node-pty-prebuilt-multiarch",
+      "electron",
+      "esbuild"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hredo/ai-command-center.git"
+  },
+  "homepage": "https://github.com/Hredo/ai-command-center",
+  "bugs": {
+    "url": "https://github.com/Hredo/ai-command-center/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.nileshchakraborty.AstraPlay</id>
+  <launchable type="desktop-id">io.github.nileshchakraborty.AstraPlay.desktop</launchable>
+  <name>AstraPlay</name>
+  <summary>Free and Open Source Remote Play Client</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-only</project_license>
+  <developer id="co.ksco.astraplay">
+    <name>nileshchakraborty</name>
+  </developer>
+  <url type="homepage">https://github.com/nileshchakraborty/astraplay</url>
+  <url type="bugtracker">https://github.com/nileshchakraborty/astraplay/issues</url>
+  <description>
+    <p>
+      AstraPlay is a free, community-built, open source remote play client forked from Chiaki.
+      It focuses on maintaining internet remote play across platforms and aims to keep
+      the app easy to access through major app marketplaces. Supports PlayStation 4 and
+      PlayStation 5 consoles.
+    </p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Browse your game catalog for internet play streaming</caption>
+      <image type="source">https://raw.githubusercontent.com/nileshchakraborty/astraplay/4390eb61e4d65e770e94164beb106d5f42c16a14/gui/screenshots/01-cloud-play.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Auto-discover and connect to your PlayStation console</caption>
+      <image type="source">https://raw.githubusercontent.com/nileshchakraborty/astraplay/4390eb61e4d65e770e94164beb106d5f42c16a14/gui/screenshots/02-remote-play.jpg</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1" />
+  <!-- Flathub: add <release> entries here when shipping new versions (not generated from CMake). -->
+  <releases>
+    <release date="2026-11-10" version="2.12.26">
+      <description>
+        <p>Hardened in-app auto-updater with SHA-256 checksum verification against release digests.</p>
+        <p>AES-256 encrypted credential vault for desktop secrets and tokens bound to hardware identity.</p>
+        <p>Embedded PSN login relay TCP stream framing, rate-limiting, and memory bounds protection.</p>
+        <p>Enforced strict TLS certificate and hostname verification across remote holepunch transport.</p>
+        <p>Added hardware controller profile for ASUS ROG Xbox Ally X (PID 0x1b4c).</p>
+      </description>
+    </release>
+    <release date="2026-11-09" version="2.12.25">
+      <description>
+        <p>Simplified PS sign-in with clear 3-step workflow and direct authentication links.</p>
+        <p>Smart auto-extraction for 64-character account codes from clipboard or webpage.</p>
+        <p>Enhanced Android TV and Fire TV D-pad remote navigation.</p>
+        <p>In-app PSN relay configuration and offline account connection options.</p>
+        <p>Performance, UI responsiveness, and streaming stability improvements.</p>
+      </description>
+    </release>
+    <release date="2026-08-02" version="2.11.4">
+      <description>
+        <p>Cloud Play fixes for regions without native PlayStation cloud support: the streamable PS3 and PS4 catalog is restored, and titles such as Bloodborne now launch correctly. Improved store routing and reliability for all regions.</p>
+      </description>
+    </release>
+    <release date="2026-07-11" version="2.11.3">
+      <description>
+        <p>Fix Steam shortcut creation for games on Flatpak and refresh shortcut branding.</p>
+      </description>
+    </release>
+    <release date="2026-07-11" version="2.11.2">
+      <description>
+        <p>Improved controller support and various bug fixes.</p>
+        <p>Improved cloud game language support and region fallback.</p>
+      </description>
+    </release>
+    <release date="2026-05-27" version="2.10.21">
+      <description>
+        <p>Major update: improved PS5 cloud game catalog, ownership, and locale handling on desktop.</p>
+        <p>Steam Deck: add Gaming Mode shortcut on first launch and Flatpak Steam library access.</p>
+        <p>Fixes for cloud game discovery, QR login layout, and settings across platforms.</p>
+      </description>
+    </release>
+    <release date="2026-04-24" version="2.10.13">
+      <description>
+        <p>Rebrand user-facing names from chiaki-ng to AstraPlay across macOS, desktop, and packaging.</p>
+      </description>
+    </release>
+    <release date="2026-04-21" version="2.10.11">
+      <description>
+        <p>Version bump; release branches aligned with master.</p>
+      </description>
+    </release>
+    <release date="2026-04-20" version="2.10.10">
+      <description>
+        <p>Initial AstraPlay release on Flathub.</p>
+      </description>
+    </release>
+  </releases>
+</component>

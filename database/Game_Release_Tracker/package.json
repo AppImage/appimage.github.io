@@ -1,0 +1,21 @@
+{
+  "name": "game-release-tracker",
+  "version": "0.7.0",
+  "description": "A desktop app that tracks upcoming game releases and keeps a journal of the games you finish.",
+  "author": "hachi23 (https://github.com/hachi23)",
+  "homepage": "https://github.com/hachi23/game-release-tracker",
+  "desktopName": "game-release-tracker.desktop",
+  "license": "MIT",
+  "private": true,
+  "main": "dist/apps/desktop/src/main.js",
+  "dependencies": {
+    "better-sqlite3": "12.11.1"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true,
+    "electron@42.11.8": true,
+    "esbuild@0.27.7": true,
+    "esbuild@0.25.12": true,
+    "electron-winstaller@5.4.0": true
+  }
+}

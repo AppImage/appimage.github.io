@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata, for software centres. packaging/linux.sh fills in 0.2.69 and 2026-11-14. -->
+<component type="desktop-application">
+  <id>dev.tinyclient.app</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT AND AGPL-3.0-only</project_license>
+  <name>tinyclient</name>
+  <summary>One small native app for Slack, Discord, Telegram, Teams and Signal</summary>
+  <developer id="dev.tinyclient">
+    <name>Justin Scroggins</name>
+  </developer>
+  <description>
+    <p>
+      tinyclient signs in to your Slack workspaces, Discord, Telegram, Microsoft Teams and Signal
+      and shows them in one window with one design. It runs entirely on your machine: it talks to
+      each network directly, there is no tinyclient server, and nothing is sent anywhere else.
+    </p>
+    <ul>
+      <li>Messages are cached on your disk; sessions are kept in the Secret Service.</li>
+      <li>No telemetry, no usage pings and no update check.</li>
+      <li>A native window, not a browser: the only web page it shows is a network's own sign-in page.</li>
+      <li>Voice calls on Discord, in a process that exists only for the length of the call.</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">dev.tinyclient.app.desktop</launchable>
+  <icon type="stock">dev.tinyclient.app</icon>
+  <provides>
+    <binary>tinyclient</binary>
+  </provides>
+  <url type="homepage">https://tinyclient.io</url>
+  <url type="bugtracker">https://github.com/itz4blitz/tinyclient/issues</url>
+  <url type="vcs-browser">https://github.com/itz4blitz/tinyclient</url>
+  <url type="help">https://tinyclient.io/docs/</url>
+  <categories>
+    <category>Network</category>
+    <category>InstantMessaging</category>
+    <category>Chat</category>
+  </categories>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+    <content_attribute id="social-contacts">intense</content_attribute>
+  </content_rating>
+  <releases>
+    <release version="0.2.69" date="2026-11-14"/>
+  </releases>
+</component>

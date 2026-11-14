@@ -1,0 +1,17 @@
+{
+  "name": "diskgoup-electron",
+  "private": true,
+  "author": {
+    "name": "Elshad Aghayev",
+    "url": "https://github.com/elshadaghazade"
+  },
+  "license": "MIT",
+  "homepage": "https://diskgoup.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elshadaghazade/diskgoup.git"
+  },
+  "version": "0.4.1",
+  "description": "Electron wrapper for DiskGOup — bundles the Vite UI and the compiled CLI binary.",
+  "main": "dist/main.js"
+}

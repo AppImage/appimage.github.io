@@ -14,6 +14,8 @@
 name: Build website
 
 on:
+  # Also called by nightly.yml
+  workflow_call:
   workflow_dispatch:
 
 # Read the repository, and write to Pages

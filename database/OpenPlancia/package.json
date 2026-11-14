@@ -1,0 +1,30 @@
+{
+  "name": "openplancia",
+  "version": "0.1.2",
+  "private": true,
+  "description": "OpenPlancia — lavagna infinita per sviluppatori: panel, terminali Claude Code e frecce come contesto.",
+  "author": {
+    "name": "Marco Pagnanini"
+  },
+  "homepage": "https://github.com/Marco-Pagnanini/OpenPlancia",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Marco-Pagnanini/OpenPlancia.git"
+  },
+  "type": "module",
+  "main": "./out/main/index.js",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "dependencies": {
+    "@dagrejs/dagre": "3.1.1",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "chokidar": "^5.0.0",
+    "node-pty": "^1.1.0",
+    "zod": "^4.6.7"
+  },
+  "overrides": {
+    "dompurify": "3.4.17"
+  },
+  "productName": "OpenPlancia"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "serial-arm-core",
+  "private": true,
+  "license": "GPL-3.0-only",
+  "description": "SerialArm-Core native control and desktop workbench with optional ROS2 adapters",
+  "main": "desktop/main.cjs",
+  "dependencies": {
+    "@xterm/xterm": "5.5.0",
+    "@xterm/addon-fit": "0.10.0",
+    "three": "0.186.1"
+  },
+  "version": "0.6.2",
+  "productName": "SerialArm Core",
+  "author": {
+    "name": "AgroTech Innovation Lab",
+    "email": "kaerei@foxmail.com"
+  },
+  "homepage": "https://github.com/Kaede-Rei/SerialArm-Core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kaede-Rei/SerialArm-Core.git"
+  },
+  "desktopName": "lab.agrotech.serialarm"
+}

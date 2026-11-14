@@ -1,0 +1,29 @@
+{
+  "name": "tartan",
+  "productName": "Tartan",
+  "desktopName": "com.manraj.tartan.desktop",
+  "version": "0.1.1",
+  "description": "Your semester in one desktop app: classes, deadlines, notes with LaTeX, grades and course sites. Plain local files, no account.",
+  "main": "./out/main/index.js",
+  "author": "Manraj",
+  "license": "MIT",
+  "homepage": "https://github.com/Manraj10/tartan#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manraj10/tartan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Manraj10/tartan/issues"
+  },
+  "//private": "Not an npm package — this flag only stops an accidental `npm publish`.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "allowScripts": {
+    "electron@44.5.1": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "replay-altar",
+  "productName": "Replay Altar",
+  "version": "0.2.5",
+  "description": "Warcraft III replay coach",
+  "author": "Replay Altar",
+  "main": "out/main.cjs",
+  "desktopName": "replay-altar.desktop"
+}

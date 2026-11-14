@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="koraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2FF"/>
+      <stop offset="100%" stop-color="#0047FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#001850" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Rounded Badge -->
+  <rect x="12" y="12" width="104" height="104" rx="28" fill="url(#koraGrad)" filter="url(#shadow)"/>
+  
+  <!-- Sleek White 'K' Emblem -->
+  <path d="M 40 32 L 52 32 L 52 96 L 40 96 Z" fill="#FFFFFF"/>
+  <path d="M 52 64 L 80 32 L 95 32 L 64 67 L 96 96 L 80 96 L 52 70 Z" fill="#FFFFFF"/>
+</svg>
+

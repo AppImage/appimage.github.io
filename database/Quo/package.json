@@ -1,0 +1,27 @@
+{
+  "name": "quo-desktop",
+  "productName": "Quo",
+  "version": "1.7.1",
+  "private": true,
+  "description": "Quo, private AI that runs on your computer and works offline.",
+  "author": {
+    "name": "Astra Labs Ltd",
+    "email": "hello@quo.computer"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://quo.computer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quo-ai/quo.git"
+  },
+  "main": "src/main.js",
+  "desktopName": "quo-desktop.desktop",
+  "dependencies": {
+    "electron-updater": "^6.8.10",
+    "fflate": "^0.8.3",
+    "pdfjs-dist": "6.5.438"
+  },
+  "allowScripts": {
+    "electron-winstaller": false
+  }
+}

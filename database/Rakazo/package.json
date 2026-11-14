@@ -1,0 +1,18 @@
+{
+  "name": "rakazo",
+  "productName": "Rakazo",
+  "version": "0.11.0",
+  "author": {
+    "name": "Rakazo"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "dist/main.js",
+  "dependencies": {
+    "@rakazo/contracts": "workspace:*",
+    "@rakazo/logging": "workspace:*",
+    "@sentry/electron": "8.3.0",
+    "electron-updater": "6.8.12",
+    "koffi": "3.3.7"
+  }
+}

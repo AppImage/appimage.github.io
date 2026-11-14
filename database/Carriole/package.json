@@ -1,0 +1,12 @@
+{
+  "name": "carriole",
+  "productName": "Carriole",
+  "version": "0.1.7",
+  "description": "Carriole, the geospatial-first ETL (desktop application)",
+  "desktopName": "carriole.desktop",
+  "author": "Thomas Lecae",
+  "license": "MIT",
+  "homepage": "https://tlecae.github.io/Carriole/",
+  "private": true,
+  "main": "dist/main.js"
+}

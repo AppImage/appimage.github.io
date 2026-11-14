@@ -1,0 +1,12 @@
+{
+  "name": "d2-web-desktop",
+  "version": "0.1.101",
+  "private": true,
+  "description": "Desktop app for d2-web: a window onto the staged browser build",
+  "author": "d2-web project",
+  "type": "module",
+  "main": "main.mjs",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/Virtastic/d2-web",
+  "desktopName": "d2-web-desktop.desktop"
+}

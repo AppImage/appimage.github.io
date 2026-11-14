@@ -1,0 +1,16 @@
+{
+  "name": "sc-player",
+  "productName": "sc player",
+  "version": "2.4.0",
+  "private": true,
+  "description": "sc player — a SoundCloud desktop client for Windows, macOS and Linux",
+  "author": "waterlil",
+  "license": "GPL-3.0-only",
+  "main": "out/main/index.js",
+  "type": "module",
+  "dependencies": {
+    "mediabunny": "^1.62.1",
+    "music-metadata": "12.2.1",
+    "onnxruntime-node": "1.30.0"
+  }
+}

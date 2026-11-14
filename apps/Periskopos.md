@@ -1,0 +1,50 @@
+---
+layout: app
+
+permalink: /Periskopos/
+description: "Every app you ship, watched from one window: a desktop app for uptime, deploys, configuration, errors and expiring certificates across your hosts and services, with your keys kept on your PC."
+license: "Apache-2.0"
+
+icons:
+  - Periskopos/icons/512x512/periskopos.png
+
+screenshots:
+  - Periskopos/screenshot.png
+
+authors:
+  - name: "periskopos"
+    url: "https://github.com/periskopos"
+
+links:
+  - type: GitHub
+    url: periskopos/periskopos
+  - type: Download
+    url: https://github.com/periskopos/periskopos/releases
+
+desktop:
+  Desktop Entry:
+    Name: Periskopos
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: periskopos
+    StartupWMClass: Periskopos
+    X-AppImage-Version: 0.5.0
+    Comment: 'Every app you ship, watched from one window: a desktop app for uptime,
+      deploys, configuration, errors and expiring certificates across your hosts and
+      services, with your keys kept on your PC.'
+    MimeType: x-scheme-handler/periskopos
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: Apache-2.0
+---

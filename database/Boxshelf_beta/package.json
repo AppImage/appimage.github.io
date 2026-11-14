@@ -1,0 +1,8 @@
+{
+  "name": "boxshelf",
+  "productName": "Boxshelf",
+  "version": "1.82.0-beta.12",
+  "description": "TV-style launcher for emulators, Steam and media apps",
+  "main": "main.js",
+  "private": true
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata: software centres and the AppImage catalog show the summary, the
+     description and the screenshots from it. metainfo.sh adds the releases from CHANGELOG.md
+     and puts it into the AppImage and the .deb. The screenshots are made by
+     scripts/build-site.py (docs/img/appstream/). -->
+<component type="desktop-application">
+  <id>io.github.erkinbek.bigtext</id>
+  <name>BigText</name>
+  <summary>Text editor for huge files that never freezes</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <!-- developer_name and no vcs-browser link: appstreamcli on Ubuntu 22.04, where the AppImage
+       catalog tests, knows neither <developer> nor that link type. -->
+  <developer_name>Erkin Pardayev</developer_name>
+  <description>
+    <p>
+      BigText opens text files of any size at once, from 1 to 50 GB and more, because it never
+      loads a whole file into memory: a 50 GB log takes about 100 MB of RAM. Scrolling, jumping
+      to a line, searching and saving work in the background, so the window never freezes.
+    </p>
+    <ul>
+      <li>Search with regular expressions at a few GB/s, Find All with a list of matches, and Replace All through the whole file</li>
+      <li>Logs: follow mode like tail -F, jump to a time, filters by level, logs merged by time, and logs on servers over SSH</li>
+      <li>CSV, TSV and JSON Lines as tables, far past the row limit of spreadsheets</li>
+      <li>Compare two huge files, a hex view, and .gz, .zst and .xz files opened directly</li>
+      <li>Editing with undo, and saves that replace the file only when it is completely written</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">bigtext.desktop</launchable>
+  <url type="homepage">https://erkinbek.github.io/bigtext/</url>
+  <url type="bugtracker">https://github.com/Erkinbek/bigtext/issues</url>
+  <provides>
+    <binary>bigtext</binary>
+    <binary>bigtext-cli</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The middle of a 10 GB log, line 45 million, opened at once</caption>
+      <image>https://erkinbek.github.io/bigtext/img/appstream/hero.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Regular expression Find All over a 10 GB log</caption>
+      <image>https://erkinbek.github.io/bigtext/img/appstream/search.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The light theme with JSON highlighting, a split view and bookmarks</caption>
+      <image>https://erkinbek.github.io/bigtext/img/appstream/json.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Comparing two logs</caption>
+      <image>https://erkinbek.github.io/bigtext/img/appstream/compare.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.9.0" date="2026-11-13"/>
+    <release version="0.8.1" date="2026-11-13"/>
+    <release version="0.8.0" date="2026-11-13"/>
+    <release version="0.7.3" date="2026-11-12"/>
+    <release version="0.7.2" date="2026-11-12"/>
+  </releases>
+</component>

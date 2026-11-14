@@ -1,0 +1,47 @@
+---
+layout: app
+
+permalink: /Clipboard/
+description: "A high-performance cross-platform clipboard manager"
+license: "AGPL-3.0"
+
+icons:
+  - Clipboard/icons/128x128/clipboard-desktop.png
+
+screenshots:
+  - Clipboard/screenshot.png
+
+authors:
+  - name: "muutot"
+    url: "https://github.com/muutot"
+
+links:
+  - type: GitHub
+    url: muutot/Clipboard
+  - type: Download
+    url: https://github.com/muutot/Clipboard/releases
+
+desktop:
+  Desktop Entry:
+    Categories: 
+    Comment: A high-performance cross-platform clipboard manager
+    Exec: clipboard-desktop
+    StartupWMClass: clipboard-desktop
+    Icon: clipboard-desktop
+    Name: Clipboard
+    Terminal: false
+    Type: Application
+  AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|muutot|Clipboard|latest|Clipboard_*_amd64.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.35
+    X-AppImage-Payload-License: AGPL-3.0
+---

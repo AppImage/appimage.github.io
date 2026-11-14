@@ -1,0 +1,22 @@
+{
+  "name": "@aycode/desktop",
+  "productName": "AyCode",
+  "version": "8.0.0",
+  "private": true,
+  "description": "Your agents. Your second brain. One calm workspace for macOS, Windows and Linux.",
+  "homepage": "https://aycode.app",
+  "desktopName": "aycode.desktop",
+  "author": "Ayont",
+  "license": "UNLICENSED",
+  "main": "dist/main.cjs",
+  "dependencies": {
+    "@yogesharc/thinking-orbs": "0.1.1",
+    "node-pty": "1.1.0",
+    "qrcode": "1.5.4",
+    "selfsigned": "5.5.0",
+    "ws": "8.21.3"
+  },
+  "optionalDependencies": {
+    "electron-liquid-glass": "1.1.1"
+  }
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata for software catalogs (AppImageHub, GNOME Software,
+     KDE Discover). packaging/linux/metainfo.sh fills in @RELEASES@ from
+     CHANGELOG.md, so a release needs no edit here. -->
+<component type="desktop-application">
+  <id>io.github.chaos_tic.Lorenz</id>
+  <name>Lorenz</name>
+  <summary>Convert, edit and act on files from wheels at your cursor</summary>
+  <developer id="io.github.chaos_tic">
+    <name>Chaos-Tic</name>
+  </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <description>
+    <p>
+      Lorenz puts three wheels under your cursor while you drag a file: Shift
+      converts it, Ctrl edits it (compress, resize, rotate, split, merge) and Alt
+      acts on it (copy, move, share, open a terminal).
+    </p>
+    <p>
+      Everything runs locally with the engines installed on your computer, and
+      originals are never modified. No account, server or cloud service is
+      involved; the only network use is a once-a-day check for a newer release,
+      which can be turned off in Settings.
+    </p>
+    <p>
+      The global drag gesture works on KDE Plasma 6.8 (Wayland) and on Windows.
+      Other Linux desktops get the same wheels from the file manager's context
+      menu. A batch manager in the system tray lists every conversion.
+    </p>
+  </description>
+  <launchable type="desktop-id">lorenz.desktop</launchable>
+  <provides>
+    <binary>lorenz</binary>
+    <binary>lorenz-desktop</binary>
+  </provides>
+  <url type="homepage">https://github.com/Chaos-Tic/Lorenz</url>
+  <url type="bugtracker">https://github.com/Chaos-Tic/Lorenz/issues</url>
+  <url type="help">https://github.com/Chaos-Tic/Lorenz/blob/main/docs/USER_GUIDE.md</url>
+  <url type="vcs-browser">https://github.com/Chaos-Tic/Lorenz</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The three wheels in turn: Convert, Tools and Actions</caption>
+      <image>https://raw.githubusercontent.com/Chaos-Tic/Lorenz/main/docs/media/hero.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Convert, Tools and Actions side by side, each with one choice magnified</caption>
+      <image>https://raw.githubusercontent.com/Chaos-Tic/Lorenz/main/docs/media/three-wheels.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The batch manager after a conversion</caption>
+      <image>https://raw.githubusercontent.com/Chaos-Tic/Lorenz/main/docs/media/desktop-converted.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Settings: wheel keys, start at login, update check and language</caption>
+      <image>https://raw.githubusercontent.com/Chaos-Tic/Lorenz/main/docs/media/settings.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <keywords>
+    <keyword>convert</keyword>
+    <keyword>converter</keyword>
+    <keyword>file</keyword>
+    <keyword>image</keyword>
+    <keyword>drag</keyword>
+    <keyword>radial menu</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.2.3" date="2026-11-02"/>
+    <release version="1.2.2" date="2026-11-02"/>
+    <release version="1.2.1" date="2026-10-24"/>
+    <release version="1.2.0" date="2026-10-20"/>
+    <release version="1.1.0" date="2026-10-19"/>
+    <release version="1.0.0" date="2026-10-19"/>
+  </releases>
+</component>

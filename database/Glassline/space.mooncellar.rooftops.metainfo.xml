@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>space.mooncellar.rooftops</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Glassline</name>
+  <summary>PC port for Mirror's Edge (iPad) by MoonCellar Team</summary>
+  <summary xml:lang="ru">PC-порт для Mirror's Edge (iPad) от MoonCellar Team</summary>
+  <developer id="space.mooncellar">
+    <name>MoonCellar Team</name>
+  </developer>
+  <description>
+    <p>Glassline is an unofficial port by MoonCellar Team. Mirror's Edge is a trademark of Electronic Arts Inc.; this project is not affiliated with or endorsed by Electronic Arts. Game assets are loaded from your own copy of the game.</p>
+    <p xml:lang="ru">Glassline — неофициальный порт от MoonCellar Team. Mirror's Edge — товарный знак Electronic Arts Inc.; проект не связан с Electronic Arts и не одобрен ею. Ресурсы игры загружаются из вашей копии игры.</p>
+  </description>
+  <url type="homepage">https://mooncellar.space</url>
+  <launchable type="desktop-id">space.mooncellar.rooftops.desktop</launchable>
+  <categories>
+    <category>Game</category>
+    <category>ActionGame</category>
+  </categories>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-realistic">moderate</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+  </content_rating>
+</component>

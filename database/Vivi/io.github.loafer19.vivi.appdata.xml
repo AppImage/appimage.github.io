@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.loafer19.vivi</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Vivi</name>
+  <summary>Fast, lightweight media player</summary>
+  <developer_name>Loafer19</developer_name>
+  <description>
+    <p>
+      Vivi is a fast, minimal media player built on mpv, inspired by Juxtopposed's VLC redesign.
+      It plays nearly any video or audio file, remembers where you stopped and stays out of your way.
+    </p>
+    <ul>
+      <li>Hardware-accelerated playback powered by libmpv</li>
+      <li>Music and video library with artwork</li>
+      <li>Audio equalizer and video filters</li>
+      <li>Subtitles, chapters and playlists</li>
+      <li>MPRIS media keys and a compact miniplayer</li>
+      <li>Downloadable plugins</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">vivi.desktop</launchable>
+  <url type="homepage">https://github.com/Loafer19/vivi</url>
+  <url type="bugtracker">https://github.com/Loafer19/vivi/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Loafer19/vivi/master/docs/screenshots/library-home.png</image>
+      <caption>Library home</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Player</category>
+  </categories>
+  <provides>
+    <binary>vivi</binary>
+  </provides>
+  <releases>
+    <release version="0.16.3" date="2026-11-10">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.16.3</url>
+      <description>
+        <p>Everything from the unpublished v0.16.2 tag, plus SQLite compiled into the binary so the AppImage builds on Ubuntu 22.04.</p>
+      </description>
+    </release>
+    <release version="0.16.2" date="2026-11-10">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.16.2</url>
+      <description>
+        <p>Lower idle CPU and RAM, accessibility and empty states, a player-menu fix, a SQLite security update, and System default theme for new installs.</p>
+      </description>
+    </release>
+    <release version="0.16.1" date="2026-11-07">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.16.1</url>
+    </release>
+    <release version="0.16.0" date="2026-11-06">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.16.0</url>
+    </release>
+    <release version="0.15.0" date="2026-10-27">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.15.0</url>
+    </release>
+    <release version="0.14.0" date="2026-10-25">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.14.0</url>
+    </release>
+    <release version="0.13.1" date="2026-10-20">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.13.1</url>
+    </release>
+    <release version="0.13.0" date="2026-10-20">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.13.0</url>
+    </release>
+    <release version="0.12.0" date="2026-10-18">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.12.0</url>
+    </release>
+    <release version="0.11.1" date="2026-10-17">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.11.1</url>
+    </release>
+    <release version="0.11.0" date="2026-10-17">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.11.0</url>
+    </release>
+    <release version="0.10.0" date="2026-10-15">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.10.0</url>
+    </release>
+    <release version="0.9.1" date="2026-10-15">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.9.1</url>
+    </release>
+    <release version="0.9.0" date="2026-10-15">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.9.0</url>
+    </release>
+    <release version="0.8.0" date="2026-10-14">
+      <url type="details">https://github.com/Loafer19/vivi/releases/tag/v0.8.0</url>
+    </release>
+    <release version="0.7.0" date="2026-10-14"/>
+  </releases>
+</component>

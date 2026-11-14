@@ -1,0 +1,16 @@
+{
+  "name": "fm1-emulator",
+  "version": "1.1.3",
+  "description": "An offline desktop emulator for the M-VAVE FM-1 — run FM-1 firmware with no hardware.",
+  "author": "briksquared",
+  "license": "MIT",
+  "homepage": "https://github.com/briksquared/fm1-emulator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/briksquared/fm1-emulator.git"
+  },
+  "main": "main.js",
+  "overrides": {
+    "minimatch": "11.0.1"
+  }
+}

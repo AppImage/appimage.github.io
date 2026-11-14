@@ -1,0 +1,13 @@
+{
+  "name": "duplex",
+  "version": "0.2.10",
+  "private": true,
+  "description": "Duplex - one browser shared by a human and an AI: visual for the human, source-level for the AI",
+  "main": "./out/main/index.js",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.1",
+    "playwright-core": "^1.64.0",
+    "zod": "^4.6.5"
+  }
+}

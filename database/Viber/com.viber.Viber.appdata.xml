@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.viber.Viber</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://www.viber.com/en/terms/viber-terms-use/</project_license>
+
+  <name>Viber</name>
+  <summary>Free and secure calls and messages</summary>
+  <developer id="com.viber">
+    <name>Viber Media S.à r.l.</name>
+  </developer>
+
+  <description>
+    <p>Viber for Desktop lets you send free messages and make free calls to other Viber users on any device and network, in any country.</p>
+    <p>Your contacts, messages and call history are synced with your mobile device.</p>
+    <ul>
+      <li>End-to-end encrypted chats and calls</li>
+      <li>HD audio and video calls, group calls and screen sharing</li>
+      <li>Groups, communities and channels</li>
+      <li>Stickers, GIFs, files and voice messages</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">com.viber.Viber.desktop</launchable>
+  <provides>
+    <binary>Viber</binary>
+  </provides>
+
+  <url type="homepage">https://www.viber.com/</url>
+  <url type="contact">https://www.viber.com/en/contact/</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://www.viber.com/app/uploads/main_WINDOWS.png</image>
+      <caption>Chats and calls</caption>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Network</category>
+    <category>InstantMessaging</category>
+  </categories>
+
+  <keywords>
+    <keyword>chat</keyword>
+    <keyword>messenger</keyword>
+    <keyword>call</keyword>
+    <keyword>video</keyword>
+  </keywords>
+
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-info">intense</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+    <content_attribute id="social-contacts">intense</content_attribute>
+    <content_attribute id="money-purchasing">mild</content_attribute>
+  </content_rating>
+
+  <releases>
+    <release version="29.4.0.7" date="2026-11-05"/>
+  </releases>
+</component>

@@ -1,0 +1,22 @@
+{
+  "name": "trace",
+  "private": true,
+  "version": "0.3.0-alpha.1",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "cytoscape": "^3.34.4",
+    "file-saver": "^2.0.5",
+    "js-yaml": "^5.5.0",
+    "jszip": "^3.10.2",
+    "lucide-react": "^1.58.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "sql.js": "^1.15.0",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.7"
+  }
+}

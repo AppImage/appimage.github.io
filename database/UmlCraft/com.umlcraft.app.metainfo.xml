@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.umlcraft.app</id>
+  <name>UmlCraft</name>
+  <summary>Draw UML diagrams the way Astah does</summary>
+  <developer id="com.umlcraft">
+    <name>UmlCraft</name>
+  </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT OR Apache-2.0</project_license>
+  <update_contact>app@umlcraft.com</update_contact>
+  <!-- One line per paragraph: snapcraft keeps line breaks inside a paragraph. -->
+  <description>
+    <p>A UML modeling tool written in Rust with GPUI, built from scratch after the model of Astah Professional. It draws diagrams the way Astah does, opens and writes Astah projects, and imports Java, C#, C++ and Python source code.</p>
+    <p>It covers class, object, use case, sequence, activity, state machine, component and deployment diagrams and exports them as SVG and PNG.</p>
+  </description>
+  <launchable type="desktop-id">com.umlcraft.app.desktop</launchable>
+  <provides>
+    <binary>umlcraft</binary>
+    <mediatype>application/x-umlcraft</mediatype>
+  </provides>
+  <url type="homepage">https://umlcraft.com/</url>
+  <url type="bugtracker">https://github.com/udvlp/UmlCraft/issues</url>
+  <url type="vcs-browser">https://github.com/udvlp/UmlCraft</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>A state machine diagram of the sample project</caption>
+      <image>https://raw.githubusercontent.com/udvlp/UmlCraft/main/assets/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Development</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.21.0" date="2026-11-11">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.21.0</url>
+    </release>
+    <release version="0.20.0" date="2026-11-07">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.20.0</url>
+    </release>
+    <release version="0.19.0" date="2026-11-04">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.19.0</url>
+    </release>
+    <release version="0.18.0" date="2026-11-03">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.18.0</url>
+    </release>
+    <release version="0.17.0" date="2026-11-02">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.17.0</url>
+    </release>
+    <release version="0.16.0" date="2026-11-01">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.16.0</url>
+    </release>
+    <release version="0.15.2" date="2026-11-01">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.15.2</url>
+    </release>
+    <release version="0.15.1" date="2026-11-01">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.15.1</url>
+    </release>
+    <release version="0.15.0" date="2026-11-01">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.15.0</url>
+    </release>
+    <release version="0.14.0" date="2026-11-01">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.14.0</url>
+    </release>
+    <release version="0.13.0" date="2026-11-01">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.13.0</url>
+    </release>
+    <release version="0.12.1" date="2026-10-31">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.12.1</url>
+    </release>
+    <release version="0.11.2" date="2026-10-31">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.11.2</url>
+    </release>
+    <release version="0.11.1" date="2026-10-31">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.11.1</url>
+    </release>
+    <release version="0.11.0" date="2026-10-30">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.11.0</url>
+    </release>
+    <release version="0.10.0" date="2026-10-30">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.10.0</url>
+    </release>
+    <release version="0.9.0" date="2026-10-29">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.9.0</url>
+    </release>
+    <release version="0.8.0" date="2026-10-28">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.8.0</url>
+    </release>
+    <release version="0.7.0" date="2026-10-26">
+      <url type="details">https://github.com/udvlp/UmlCraft/releases/tag/v0.7.0</url>
+    </release>
+  </releases>
+</component>

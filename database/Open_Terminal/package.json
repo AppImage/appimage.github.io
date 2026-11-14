@@ -1,0 +1,12 @@
+{
+  "name": "openterminal-desktop",
+  "productName": "Open Terminal",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open Terminal as a desktop app: the release bundle's server in an Electron utility process, a window on it, a tray.",
+  "license": "MIT",
+  "author": "Open Terminal",
+  "homepage": "https://terminal.spova.ai",
+  "main": "dist/main.cjs",
+  "desktopName": "openterminal-app.desktop"
+}

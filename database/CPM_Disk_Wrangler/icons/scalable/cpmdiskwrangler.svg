@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CP/M Disk Wrangler icon: an 8-inch floppy disc. Copyright (C) 2026 Daniel Jameson, GPL v3 or later.
+     Same geometry as floppyIconImage() in icon.cpp (100 x 100 grid); keep the two in step. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512">
+  <path fill="#3a332d" fill-rule="evenodd" d="M7.5 5h85a2.5 2.5 0 0 1 2.5 2.5V74h-3v6h3v12.5a2.5 2.5 0 0 1-2.5 2.5h-85A2.5 2.5 0 0 1 5 92.5v-85A2.5 2.5 0 0 1 7.5 5z"/>
+  <rect x="7" y="6.3" width="86" height="2.2" rx="1.1" fill="#4a4239"/>
+  <rect x="12" y="11" width="52" height="17" rx="1.6" fill="#f4f1e8"/>
+  <rect x="12" y="11" width="52" height="5" fill="#2f8a4c"/>
+  <rect x="16" y="19.5" width="38" height="1.4" fill="#8c8779"/>
+  <rect x="16" y="23.5" width="28" height="1.4" fill="#8c8779"/>
+  <circle cx="50" cy="50" r="15.5" fill="#5b5146"/>
+  <circle cx="50" cy="50" r="13" fill="#6d6156"/>
+  <circle cx="50" cy="50" r="8.4" fill="#1d1a17"/>
+  <circle cx="71.5" cy="43.5" r="2.1" fill="#5b5146"/>
+  <rect x="45.5" y="71" width="9" height="21" rx="4.5" fill="#5b5146"/>
+</svg>

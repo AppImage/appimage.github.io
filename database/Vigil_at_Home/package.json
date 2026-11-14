@@ -1,0 +1,16 @@
+{
+  "name": "@vigil/desktop",
+  "version": "0.1.0-alpha.6",
+  "private": true,
+  "description": "Vigil at Home menu-bar app",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShmalexM/Vigil-at-Home.git",
+    "directory": "apps/desktop"
+  },
+  "author": "Vigil at Home contributors",
+  "type": "module",
+  "main": "out/main/index.js",
+  "desktopName": "vigil-at-home.desktop"
+}

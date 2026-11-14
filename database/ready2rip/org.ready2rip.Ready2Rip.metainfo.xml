@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.ready2rip.Ready2Rip</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>ready2rip</name>
+  <summary>Secure CD ripper for Linux</summary>
+  <icon type="stock">org.ready2rip.Ready2Rip</icon>
+  <description>
+    <p>
+      Ready2Rip is a secure CD ripper for Linux. Built as a modern GNOME app, it
+      focuses on careful archival extraction with full cdparanoia (test &amp;
+      copy, retries, and drive calibration), then verifies results with
+      AccurateRip.
+    </p>
+    <p>
+      It also looks up metadata via MusicBrainz (and FreeDB-compatible services),
+      writes ReplayGain, and fetches album art with optional embed sizes—so you
+      get trustworthy rips and complete tags in one place.
+    </p>
+  </description>
+  <launchable type="desktop-id">org.ready2rip.Ready2Rip.desktop</launchable>
+  <url type="homepage">https://github.com/gnostiko/ready2rip</url>
+  <url type="bugtracker">https://github.com/gnostiko/ready2rip/issues</url>
+  <developer id="io.github.gnostiko">
+    <name>gnostiko</name>
+  </developer>
+  <releases>
+    <release version="0.4.43" date="2026-11-11">
+      <description>
+        <p>
+          0.4.43: Use Pango.WrapMode for Gtk.Label wrap in the drive setup
+          dialog so AppImage GTK 4.14 does not TypeError on first-run smoke.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.42" date="2026-11-11">
+      <description>
+        <p>
+          0.4.42: Tolerate libadwaita 1.5 in the AppImage GNOME prefix when
+          settings ViewStack transitions (1.7+) are unavailable, so Ubuntu
+          22.04 smoke tests and AppImageHub catalog checks pass.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.41" date="2026-11-11">
+      <description>
+        <p>
+          0.4.41: Ship GLib/Gio typelibs from the AppImage GNOME prefix (so
+          Gio.ApplicationFlags.DEFAULT_FLAGS works) and smoke-test AppImages
+          under Xvfb on Ubuntu 22.04 before publish.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.40" date="2026-11-11">
+      <description>
+        <p>
+          0.4.40: Build AppImages on Ubuntu 22.04 (glibc 2.35) with a modern
+          GTK 4 / libadwaita prefix so they run on older LTS hosts and pass
+          AppImageHub’s catalog tester; keeps 0.4.39 DirIcon and lossless-only
+          .bin data-track behaviour.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.39" date="2026-11-11">
+      <description>
+        <p>
+          0.4.39: AppImage ships a root PNG so file managers get .DirIcon;
+          mixed-mode / CD-Extra .bin data tracks are saved with lossless
+          output only (not into Also-encode lossy folders).
+        </p>
+      </description>
+    </release>
+    <release version="0.4.38" date="2026-11-08">
+      <description>
+        <p>
+          0.4.38: QAAC Also-encode; Encoded by always names the codec tool;
+          Ripper tag comment; separate lossy/lossless embed sizes (no loose
+          cover beside lossy); lyrics save mode (embed / sidecar / both);
+          smoother settings expanders; AppImage / deb / rpm packaging only.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.37" date="2026-11-07">
+      <description>
+        <p>
+          0.4.37: Keep encode-format helpers free of PyGObject so CI unit
+          tests import cleanly; same features as 0.4.36 (lossless-primary rip,
+          Also encode lossy, LRCLIB lyrics, settings cleanup, lossless embed
+          art, 100 MB art limit, metadata cache prune).
+        </p>
+      </description>
+    </release>
+    <release version="0.4.36" date="2026-11-07">
+      <description>
+        <p>
+          0.4.36: Primary rip lossless-only; Also encode lossy companions;
+          LRCLIB lyrics (lossless tags + sidecars); settings UI cleanup;
+          lossless embed artwork option; 100 MB art limit; metadata cache prune.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.35" date="2026-11-06">
+      <description>
+        <p>
+          0.4.35: Sound Check from track ReplayGain; multi-artist tags kept
+          separate across codecs; embed artwork for lossy only (≤800 px,
+          default 600).
+        </p>
+      </description>
+    </release>
+    <release version="0.4.34" date="2026-11-06">
+      <description>
+        <p>
+          0.4.34: AIFF encode option; iTunes Sound Check (iTunNORM) for
+          MP3 / M4A / AIFF / WAV with a Tags preference toggle.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.33" date="2026-11-06">
+      <description>
+        <p>
+          0.4.33: Encoded by tag on by default (Tags preference to disable);
+          continuous whole-rip progress; custom naming fields only when
+          Custom… is selected.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.32" date="2026-11-06">
+      <description>
+        <p>
+          0.4.32: Codec quality lists lowest→highest; Also encode lossy
+          labels; rip log with the primary encode; CUE sheets for lossless
+          only; keep the custom lossy output folder across layout changes.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.31" date="2026-11-06">
+      <description>
+        <p>
+          0.4.31: Restore the green rip banner; advance progress once per
+          finished track so the fill no longer stalls mid-extract.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.30" date="2026-11-06">
+      <description>
+        <p>
+          0.4.30: Replace the custom CSS rip banner with a standard
+          Gtk.ProgressBar.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.29" date="2026-11-06">
+      <description>
+        <p>
+          0.4.29: Whole-rip progress (selected tracks or full disc), and fix
+          extract progress stalling on partial cdparanoia stderr lines.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.28" date="2026-11-06">
+      <description>
+        <p>
+          0.4.28: Progress bar no longer freezes during CRC/encode/verify;
+          Also encode can write to a custom output folder.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.27" date="2026-11-06">
+      <description>
+        <p>
+          0.4.27: Optional Also encode (lossy companion), Copy Image
+          progress/overread trim fixes, and per-track edge overread.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.26" date="2026-11-05">
+      <description>
+        <p>
+          0.4.26: Keep AAC encode argv helpers free of PyGObject (fix CI).
+        </p>
+      </description>
+    </release>
+    <release version="0.4.25" date="2026-11-05">
+      <description>
+        <p>
+          0.4.25: Keep secure-WAV unit tests free of PyGObject (fix CI).
+        </p>
+      </description>
+    </release>
+    <release version="0.4.24" date="2026-11-05">
+      <description>
+        <p>
+          0.4.24: Same as 0.4.23; fix Ruff import/branch lint that failed CI.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.23" date="2026-11-05">
+      <description>
+        <p>
+          0.4.23: Drive overread when available, tighter WAV and CTDB
+          quality gates, native AAC VBR, FLAC default level 5.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.22" date="2026-11-05">
+      <description>
+        <p>
+          0.4.22: Remove barcode and ISRC edit fields from the UI and
+          restore the previous Title / Artist track-row sizing. Tags and
+          CUE sheets still receive barcode and ISRC when metadata or the
+          disc provides them.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.21" date="2026-11-05">
+      <description>
+        <p>
+          Gold-standard archival polish — AccurateRip and CTDB on Copy
+          Image, hard sample-offset gate when verification is on
+          (auto-resume after Detect), live CD-TEXT / MCN / ISRC from the
+          disc, date / barcode / ISRC in tags, multi-disc CD1/ folders
+          with matching CUE sheets, FreeDB disc N/M heuristics, FLAC
+          level 8 with verify, and README catch-up.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.20" date="2026-11-04">
+      <description>
+        <p>
+          More reliable rip progress (line-buffered extract updates,
+          monotonic WAV-size progress, correct phase order), plain status
+          labels without percents, and remove the empty-state eject button
+          (header eject remains).
+        </p>
+      </description>
+    </release>
+    <release version="0.4.19" date="2026-11-04">
+      <description>
+        <p>
+          Live progress during cdparanoia extract (banner no longer
+          stalls), and a trimmed tag set — title, album, artist, album
+          artist, track/disc totals, genre, label, compilation, and
+          ReplayGain only.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.18" date="2026-11-04">
+      <description>
+        <p>
+          Remove the empty-state disc icon for all tray/no-disc screens
+          (same as tray-open), grey out track select checkboxes while
+          ripping, and trim unused helpers across CTDB, MMC, and disc
+          modules.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.17" date="2026-11-04">
+      <description>
+        <p>
+          Stronger secure-rip pipeline — warn when the drive sample
+          offset is uncalibrated, one PCM pass for log peak plus
+          AccurateRip/CTDB, safer encode-overlap cancel (no half files),
+          louder burst honesty with EAC log checksums, CTDB submit
+          quality 100 only for clean secure test&amp;copy, and honest
+          CD-TEXT/MCN/ISRC stubs. Default embed art size 1000px; clear
+          the empty-state disc icon when the tray is open.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.16" date="2026-11-03">
+      <description>
+        <p>
+          Picard-aligned tags for FLAC/Opus, MP3, and M4A —
+          multi-value artists, split track/disc totals, correct
+          MusicBrainz recording IDs, and richer barcode/catalog/country
+          fields. Artist style setting applies to filenames; feat. still
+          rewrites titles.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.15" date="2026-11-03">
+      <description>
+        <p>
+          Write multi-artist separators into tags (semicolon, slash, or
+          feat. on the title), show a bottom toast while looking up
+          metadata, and keep path-migration unit tests free of PyGObject.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.14" date="2026-11-03">
+      <description>
+        <p>
+          Multi-artist save styles (semicolon, slash, feat.),
+          multi-disc-safe default filenames ({disc_track}), leaner
+          naming presets with hover hints, and Custom templates that
+          stay empty until Custom is chosen. Encoder list order
+          WAV→FLAC→Opus→M4A→MP3; AppImage GIRepository 3.0 and ./run
+          host-Python fixes.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.13" date="2026-11-02">
+      <description>
+        <p>
+          Rework sample-offset detection popup, grow cover art
+          to match the Album block, defer metadata until setup finishes,
+          and remove the top lookup progress bar. Snappier disc and
+          tray updates; ready2rip branding in UI copy.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.12" date="2026-11-02">
+      <description>
+        <p>
+          Artwork hover actions, naming scheme presets, nested
+          sample-offset settings, and UI capitalization cleanup.
+          Remove dual-encode option. Album fields grey out while
+          ripping; track Title/Artist spacing restored.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.11" date="2026-11-02">
+      <description>
+        <p>
+          Track list layout polish.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.10" date="2026-11-02">
+      <description>
+        <p>
+          Bundle CA certificates in the AppImage so HTTPS
+          metadata and artwork lookups work with the bundled OpenSSL.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.9" date="2026-11-01">
+      <description>
+        <p>
+          Facing UI layout (art 1/3 + album 2/3, flat editors,
+          header actions); MusicBrainz top genre; remove in-app CD
+          playback; sharper HiDPI cover art.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.8" date="2026-11-01">
+      <description>
+        <p>
+          Ripping disc progress banner with green success and red
+          cancel/error flash; AppImage rebuilt for broader Linux
+          compatibility.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.7" date="2026-10-31">
+      <description>
+        <p>
+          CTDB confirm and new-parity submit (Galois16 encode, syndrome
+          upload); optional Submit to CTDB; hasparity repair probe (no
+          PCM rewrite yet).
+        </p>
+      </description>
+    </release>
+    <release version="0.4.6" date="2026-10-29">
+      <description>
+        <p>
+          Security hardening (device allowlist, fetch host allowlist,
+          cache path checks); data-track test &amp; copy; stronger
+          cache defeat for full-disc images; correct whole-album
+          ReplayGain.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.5" date="2026-10-29">
+      <description>
+        <p>
+          Full INDEX 00 pregaps in CUE sheets (EAC default /
+          noncompliant) and mixed-mode / CD-Extra data tracks as raw
+          2352-byte .bin files. Secure extract flags unchanged.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.4" date="2026-10-28">
+      <description>
+        <p>
+          Clean up dead code and shared helpers (unused rip states,
+          pref-row tracking, PCM CRC and duration formatting) without
+          changing rip behaviour.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.3" date="2026-10-18">
+      <description>
+        <p>
+          Fix truncated rips after in-app playback (wait for GStreamer
+          to release the drive); avoid duplicate GNOME icons with
+          AppImage/Gear Lever; bundle CDDA plugins for AppImage
+          playback; remove unused code.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.2" date="2026-10-17">
+      <description>
+        <p>
+          Secure archival rip and stock FLAC/MP3/Opus/AAC encode;
+          in-app CD playback with seek and next-track wrap; MusicBrainz
+          retry / clearer FreeDB errors; README screenshot refresh.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.1" date="2026-08-21">
+      <description>
+        <p>
+          Theme consistency fixes; updated app icons (PNG + SVG);
+          dark-mode polish; README screenshot refresh.
+        </p>
+      </description>
+    </release>
+    <release version="0.4.0" date="2026-08-11">
+      <description>
+        <p>
+          Secure-CD-ripper-for-Linux positioning; System/Light/Dark appearance
+          with pure-black dark and warm-grey light chrome; Art + Album
+          side-by-side layout with cover origin/size captions; nested embed under
+          Download artwork; Calibrate drive in Ripping; UI refactor
+          (window.ui, theme module).
+        </p>
+      </description>
+    </release>
+    <release version="0.3.0" date="2026-08-01">
+      <description>
+        <p>
+          MusicBrainz release-link lookup when auto-match is wrong;
+          smarter burst fallback (one CRC retry, then full-disc burst re-rip);
+          archival rip log with accurate CRC/mode/session history; Lookup menu;
+          pill Eject/Rip styling; bottom progress panel polish.
+        </p>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-07-21">
+      <description>
+        <p>
+          Secure cdparanoia extraction with test &amp; copy, AccurateRip,
+          CUE/log output, Copy Image mode, AppImage packaging with Gear Lever
+          update support, and UI polish.
+        </p>
+      </description>
+    </release>
+  </releases>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </recommends>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+</component>

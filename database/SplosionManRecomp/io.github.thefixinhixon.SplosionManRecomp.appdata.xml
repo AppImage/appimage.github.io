@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata: shown by the AppImage catalog and software centers.
+     Add a <release> entry for every release (newest first). -->
+<component type="desktop-application">
+  <id>io.github.thefixinhixon.SplosionManRecomp</id>
+  <name>SplosionManRecomp</name>
+  <summary>Native PC port of 'Splosion Man (Xbox 360)</summary>
+  <developer id="io.github.thefixinhixon">
+    <name>thefixinhixon</name>
+  </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <launchable type="desktop-id">io.github.thefixinhixon.SplosionManRecomp.desktop</launchable>
+  <provides>
+    <binary>SplosionManRecomp</binary>
+  </provides>
+
+  <description>
+    <p>
+      SplosionManRecomp is a native Linux port of 'Splosion Man, Twisted Pixel's
+      2009 Xbox Live Arcade platformer, made by static recompilation with the
+      ReXGlue SDK.
+    </p>
+    <p>
+      No game data is included. You need your own legally obtained copy of the
+      game's XBLA package: the launcher imports it, or you can point it at an
+      extracted game folder.
+    </p>
+    <ul>
+      <li>Unlocked frame rate and low input latency</li>
+      <li>In-game options menu (F1, or both sticks): frame cap, VSync, AMD FSR and CAS upscaling, resolution, audio and controls</li>
+      <li>Controller with vibration, or keyboard</li>
+      <li>A launcher that explains every setting in plain language</li>
+    </ul>
+    <p>
+      An unofficial fan project, not affiliated with Twisted Pixel Games or Microsoft.
+    </p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Sploding through the office</caption>
+      <image>https://raw.githubusercontent.com/thefixinhixon/SplosionManRecomp/main/docs/screenshots/gameplay-office.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Title screen</caption>
+      <image>https://raw.githubusercontent.com/thefixinhixon/SplosionManRecomp/main/docs/screenshots/title.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Scientists scatter</caption>
+      <image>https://raw.githubusercontent.com/thefixinhixon/SplosionManRecomp/main/docs/screenshots/gameplay-scientists.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The lava lab</caption>
+      <image>https://raw.githubusercontent.com/thefixinhixon/SplosionManRecomp/main/docs/screenshots/gameplay-lava-lab.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/thefixinhixon/SplosionManRecomp</url>
+  <url type="bugtracker">https://github.com/thefixinhixon/SplosionManRecomp/issues</url>
+
+  <categories>
+    <category>Game</category>
+    <category>ActionGame</category>
+  </categories>
+  <keywords>
+    <keyword>platformer</keyword>
+    <keyword>recompilation</keyword>
+    <keyword>Xbox 360</keyword>
+  </keywords>
+
+  <supports>
+    <control>keyboard</control>
+  </supports>
+  <recommends>
+    <control>gamepad</control>
+  </recommends>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#f06414</color>
+    <color type="primary" scheme_preference="dark">#a8460e</color>
+  </branding>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">moderate</content_attribute>
+    <content_attribute id="violence-bloodshed">mild</content_attribute>
+  </content_rating>
+
+  <releases>
+    <release version="2.3.1" date="2026-11-12">
+      <description>
+        <p>DLC support: the launcher can import the Prologue to Ms. 'Splosion Man package, and the game now reads it instead of reporting it unreadable.</p>
+      </description>
+    </release>
+    <release version="2.3" date="2026-11-12">
+      <description>
+        <p>A new launcher: its settings match the in-game menu, it shows art from your own game package, and it follows your light or dark desktop theme. The AppImage can now update itself with AppImageUpdate and similar tools.</p>
+      </description>
+    </release>
+    <release version="2.2.2" date="2026-11-12">
+      <description>
+        <p>Runs on Ubuntu 22.04 and other older distros (glibc 2.34); the launcher is now called SplosionManRecomp.</p>
+      </description>
+    </release>
+    <release version="2.2" date="2026-11-09">
+      <description>
+        <p>Unlocked frame rate, lower input latency, an in-game options menu and an FPS overlay.</p>
+      </description>
+    </release>
+  </releases>
+</component>

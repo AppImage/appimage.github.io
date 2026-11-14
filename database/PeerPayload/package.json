@@ -1,0 +1,20 @@
+{
+  "name": "peerpayload-connect-desktop",
+  "version": "0.3.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "description": "PeerPayload Connect desktop app: a device identity created on this machine, contacts added by invite link or QR code, and file/folder transfers between paired devices. No accounts.",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@peerpayload/ui": "file:../../packages/ui",
+    "@tailwindcss/vite": "^4.3.3",
+    "connect-core": "file:../core",
+    "lucide-react": "^0.577.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^4.3.3"
+  }
+}

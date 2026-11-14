@@ -1,0 +1,20 @@
+{
+  "name": "stratas",
+  "version": "1.7.1",
+  "private": true,
+  "description": "Mix your MCSR Ranked private room replays with a player at any Elo you pick, then watch them side by side.",
+  "type": "module",
+  "main": "dist/electron/main.cjs",
+  "desktopName": "stratas.desktop",
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "fflate": "^0.8.3"
+  },
+  "author": "cyoshi",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://stratas.lol",
+  "allowScripts": {
+    "esbuild": true,
+    "electron-winstaller": false
+  }
+}

@@ -1,0 +1,48 @@
+---
+layout: app
+
+permalink: /pi-web/
+description: "Desktop build of pi-web-simple: one local directory per project, sessions in the pi coding agent, wrapped in an Electron shell with its own Node.js runtime."
+license: "MIT"
+
+icons:
+  - pi-web/icons/1024x1024/pi-web-simple.png
+
+screenshots:
+  - pi-web/screenshot.png
+
+authors:
+  - name: "woxihejinghao"
+    url: "https://github.com/woxihejinghao"
+
+links:
+  - type: GitHub
+    url: woxihejinghao/pi-web
+  - type: Download
+    url: https://github.com/woxihejinghao/pi-web/releases
+
+desktop:
+  Desktop Entry:
+    Name: pi-web-simple
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: pi-web-simple
+    StartupWMClass: pi-web-simple
+    X-AppImage-Version: 0.14.1
+    Comment: 'Desktop build of pi-web-simple: one local directory per project, sessions
+      in the pi coding agent, wrapped in an Electron shell with its own Node.js runtime.'
+    Categories: Development
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.28
+    X-AppImage-Payload-License: MIT
+---

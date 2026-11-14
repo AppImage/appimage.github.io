@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.altqx.HikariSub</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <developer id="io.github.altqx">
+    <name>altqx</name>
+  </developer>
+
+  <name>HikariSub</name>
+  <summary>Subtitle editor</summary>
+  <summary xml:lang="pl">Edytor napisów</summary>
+
+  <description>
+    <p>
+      HikariSub is a subtitle editor and player for ASS, SSA, SRT and other
+      subtitle formats, with audio and video preview, typesetting tools,
+      spell checking and Lua automation.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.altqx.HikariSub.desktop</launchable>
+  <provides>
+    <binary>hikarisub</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/altqx/hikari</url>
+  <url type="bugtracker">https://github.com/altqx/hikari/issues</url>
+
+  <releases>
+    <release version="0.0.2" date="2026-10-22" type="stable"/>
+  </releases>
+
+  <content_rating type="oars-1.1"/>
+</component>

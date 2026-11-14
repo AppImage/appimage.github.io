@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.nea1971.panepilot</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>PanePilot</name>
+  <summary>Two-panel file manager inspired by FreeCommander</summary>
+  <summary xml:lang="de">Zwei-Fenster-Dateimanager nach dem Vorbild von FreeCommander</summary>
+  <developer_name>NEA1971</developer_name>
+  <description>
+    <p>
+      PanePilot is a free two-panel file manager for Linux, inspired by FreeCommander.
+      It combines tools that usually require several separate programs in one application.
+    </p>
+    <ul>
+      <li>Two panels with folder tree, nested favourites and a drive overview</li>
+      <li>Search by file name and content</li>
+      <li>Multi-rename with placeholders, counters, dates, regular expressions, preview and undo</li>
+      <li>Meta wizard for music tags with covers, converters, CSV import and export, playlists and ReplayGain</li>
+      <li>Checksums with comparison and drag and drop of checksum files</li>
+      <li>Configurable keyboard shortcuts, function-key bar and toolbar</li>
+      <li>Six languages and built-in help</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">panepilot.desktop</launchable>
+  <url type="homepage">https://github.com/NEA1971/PanePilot</url>
+  <url type="bugtracker">https://github.com/NEA1971/PanePilot/issues</url>
+  <url type="donation">https://ko-fi.com/panepilot</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Two panels with favourites</caption>
+      <image>https://raw.githubusercontent.com/NEA1971/PanePilot/main/docs/screenshots/main.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Meta wizard for music tags</caption>
+      <image>https://raw.githubusercontent.com/NEA1971/PanePilot/main/docs/screenshots/metawizard.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Multi-rename with live preview</caption>
+      <image>https://raw.githubusercontent.com/NEA1971/PanePilot/main/docs/screenshots/multirename.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>System</category>
+    <category>FileManager</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <provides>
+    <binary>PanePilot</binary>
+  </provides>
+  <releases>
+    <release version="1.0.1" date="2026-11-10">
+      <description>
+        <p>Packaging: AppStream metadata and an English desktop entry for software centers and AppImageHub.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-11-10">
+      <description>
+        <p>First stable release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

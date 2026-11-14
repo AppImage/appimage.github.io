@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>online.donutsdelivery.DonutRadio</id>
+  <name>DonutRadio</name>
+  <summary>Internet radio without ads or talk</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <developer id="online.donutsdelivery">
+    <name>DonutsDelivery</name>
+  </developer>
+  <description>
+    <p>DonutRadio plays internet radio stations picked for having no ads and no talk. It streams through its own audio engine, so the spectrum visualizer reads the same audio you hear.</p>
+    <p>Browse stations by genre, save favorites, and set the volume. A matching widget for KDE Plasma 6 is available.</p>
+  </description>
+  <launchable type="desktop-id">online.donutsdelivery.DonutRadio.desktop</launchable>
+  <url type="homepage">https://donutsdelivery.online/freeradio</url>
+  <url type="vcs-browser">https://github.com/DonutsDelivery/Free-Radio-NoAds-NoTalk</url>
+  <url type="bugtracker">https://github.com/DonutsDelivery/Free-Radio-NoAds-NoTalk/issues</url>
+  <provides>
+    <binary>donutradio</binary>
+  </provides>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Player</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="2.3.0" date="2026-11-08">
+      <description>
+        <p>Free Radio is now DonutRadio. Playback runs on a built-in audio engine with a pinned LGPL FFmpeg, and the Plasma widget installs with the app.</p>
+      </description>
+    </release>
+    <release version="2.0.0" date="2026-02-21"/>
+  </releases>
+</component>

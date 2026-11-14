@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.andrei_ace.AtomicBomberman</id>
+  <name>Atomic Bomberman</name>
+  <summary>Classic Bomberman battles for up to ten players</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer_name>Atomic Bomberman Rust contributors</developer_name>
+  <description>
+    <p>A native Rust reconstruction of Interplay's 1997 Atomic Bomberman.
+    Play local, LAN and private online battles with up to ten players and bots.</p>
+    <p>Choose from eleven arenas and sixty-eight schemes, with teams, powerups,
+    diseases, rematches and optional HD graphics. Keyboard and gamepad controls
+    are supported.</p>
+    <p>Original Atomic Bomberman game data is required and imported locally
+    from your copy of the game. Downloads include the application and importer;
+    original artwork, music and sounds are not bundled.</p>
+  </description>
+  <launchable type="desktop-id">atomic-bomberman.desktop</launchable>
+  <url type="homepage">https://github.com/andrei-ace/atomic_bomberman</url>
+  <url type="bugtracker">https://github.com/andrei-ace/atomic_bomberman/issues</url>
+  <categories>
+    <category>Game</category>
+    <category>ActionGame</category>
+  </categories>
+  <keywords>
+    <keyword>Bomberman</keyword>
+    <keyword>multiplayer</keyword>
+    <keyword>LAN</keyword>
+    <keyword>retro</keyword>
+    <keyword>arcade</keyword>
+  </keywords>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Ten-player battle in Classic graphics mode</caption>
+      <image type="source" width="640" height="480">https://github.com/user-attachments/assets/e4e612a5-4348-40bc-be67-29af098ff4ed</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.7.5" date="2026-11-11"/>
+  </releases>
+</component>

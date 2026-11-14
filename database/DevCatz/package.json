@@ -1,0 +1,27 @@
+{
+  "name": "devcatz",
+  "productName": "DevCatz",
+  "desktopName": "devcatz.desktop",
+  "version": "1.2.1",
+  "license": "GPL-3.0-only",
+  "private": true,
+  "description": "Local development environment for JavaScript, Go and PHP/Laravel projects on macOS: sites on *.localhost with HTTPS, runtimes, databases and Docker",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.1.0",
+    "@catzoid/mcatzp-host": "^1.0.5",
+    "@catzoid/mcatzp-protocol": "^1.0.5",
+    "ajv": "^8.17.1",
+    "electron-updater": "^6.8.11",
+    "http-proxy-3": "^2.0.1",
+    "node-forge": "^1.4.0",
+    "qrcode": "1.5.4"
+  },
+  "trustedDependencies": [
+    "electron",
+    "electron-winstaller"
+  ],
+  "author": {
+    "name": "Mahryan Rakhmatullah"
+  }
+}

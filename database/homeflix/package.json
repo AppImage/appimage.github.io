@@ -1,0 +1,19 @@
+{
+  "name": "homeflix",
+  "productName": "HOMEFLIX",
+  "version": "1.5.0",
+  "description": "Stream the movies on your laptop to your iPad, phone or TV over your home Wi-Fi.",
+  "author": {
+    "name": "HOMEFLIX",
+    "email": "kprakz@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "private": true,
+  "repository": "github:kprakz/homeflix",
+  "main": "electron/main.js",
+  "dependencies": {
+    "hls.js": "^1.7.3",
+    "qrcode": "^1.5.4"
+  },
+  "homepage": "https://kprakz.github.io/homeflix/"
+}

@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Agentrix
+Exec=AppRun %U
+Terminal=false
+Type=Application
+Icon=agentrix
+StartupWMClass=agentrix
+X-AppImage-Version=1.4.2
+Comment=面向未来的 AI 编辑器：任何 AI 编程命令行工具都能接入，多个项目并排开工，对话排成可读的文档，完成即提醒。
+Categories=Development;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|noeigenstate|Agentrix|latest|Agentrix-*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.28
+X-AppImage-Payload-License=MIT

@@ -1,0 +1,10 @@
+{
+  "name": "pi-webapp-desktop",
+  "version": "0.1.52",
+  "private": true,
+  "type": "module",
+  "main": "main.mjs",
+  "description": "Desktop host for pi-webapp",
+  "author": "chengzhiyi",
+  "license": "MIT"
+}

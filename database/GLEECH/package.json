@@ -1,0 +1,23 @@
+{
+  "name": "@gleech/desktop",
+  "version": "0.2.1",
+  "private": true,
+  "description": "GLEECH procedural image workstation",
+  "author": "GLEECH contributors",
+  "main": "./out/main/index.js",
+  "dependencies": {
+    "@gleech/command-service": "workspace:*",
+    "@gleech/effects": "workspace:*",
+    "@gleech/mcp": "workspace:*",
+    "@gleech/project-model": "workspace:*",
+    "@gleech/renderer-core": "workspace:*",
+    "electron-updater": "6.8.9",
+    "onnxruntime-node": "1.30.0",
+    "onnxruntime-node-macos-x64": "npm:onnxruntime-node@1.22.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sharp": "0.35.5",
+    "zod": "4.6.6"
+  },
+  "license": "MIT"
+}

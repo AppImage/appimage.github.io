@@ -1,0 +1,19 @@
+{
+  "name": "pdefe",
+  "productName": "PDEfe",
+  "version": "0.3.1",
+  "description": "PDEfe — Windows, macOS ve Linux için PDF görüntüleyici ve düzenleyici",
+  "desktopName": "pdefe.desktop",
+  "author": "Geliştirici: x.com/CgrShn",
+  "homepage": "https://github.com/SCgrS/PDEfe",
+  "license": "AGPL-3.0",
+  "private": true,
+  "type": "module",
+  "main": "src/main/main.js",
+  "dependencies": {
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.8.9",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.3.289"
+  }
+}

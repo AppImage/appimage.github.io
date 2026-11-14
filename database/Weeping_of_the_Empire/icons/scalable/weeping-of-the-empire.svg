@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- our own neutral mark (no game artwork): a drop over a horizon -->
+  <rect width="256" height="256" rx="48" fill="#1d2a36"/>
+  <path d="M128 40 C 160 96, 184 124, 184 160 A 56 56 0 0 1 72 160 C 72 124, 96 96, 128 40 Z" fill="#7cc4c9"/>
+  <rect x="40" y="196" width="176" height="10" rx="5" fill="#d8b46a"/>
+</svg>
