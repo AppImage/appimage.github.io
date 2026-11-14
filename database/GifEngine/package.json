@@ -1,0 +1,17 @@
+{
+  "name": "gifengine",
+  "productName": "GifEngine",
+  "version": "0.2.2",
+  "description": "Cross-platform desktop overlay engine for animated, transparent media widgets",
+  "license": "MIT",
+  "author": {
+    "name": "SunqdXX",
+    "email": "331240593+SunqdXX@users.noreply.github.com"
+  },
+  "main": "out/main/app.js",
+  "dependencies": {
+    "zod": "^4.6.5"
+  },
+  "homepage": "https://github.com/SunqdXX/GifEngine",
+  "desktopName": "gifengine.desktop"
+}
