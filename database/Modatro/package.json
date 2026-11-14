@@ -1,0 +1,27 @@
+{
+  "name": "modatro",
+  "version": "0.6.4",
+  "description": "An independent, safety-first Balatro mod manager",
+  "private": true,
+  "author": "Modatro contributors",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist-electron/main.cjs",
+  "packageManager": "pnpm@12.8.1",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "fflate": "0.8.2",
+    "luaparse": "0.3.1",
+    "lucide-react": "^0.577.0",
+    "pngjs": "7.0.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "semver": "^7.7.3",
+    "yauzl": "^3.2.0",
+    "zod": "^4.6.5"
+  },
+  "homepage": "https://github.com/NorthernBranch/modatro",
+  "desktopName": "modatro.desktop"
+}
