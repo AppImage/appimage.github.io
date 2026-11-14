@@ -1,0 +1,27 @@
+# LastWave — AppImage desktop entry.
+# Same identity as lastwave.desktop, but Exec is the bare binary name:
+# inside the AppImage the executable lives at $APPDIR/usr/bin and there
+# is no /opt/lastwave (that absolute path belongs to the deb/rpm layout).
+# Used ONLY by the CI AppImage step; see .github/workflows/desktop.yml.
+[Desktop Entry]
+Name=LastWave
+Comment=Desktop music player — YouTube Music, lossless audio, Last.fm scrobbling
+Exec=lastwave_desktop  %u
+Icon=lastwave
+Terminal=false
+Type=Application
+Categories=Audio;Music;AudioVideo;
+MimeType=x-scheme-handler/lastwave;
+StartupWMClass=lastwave_desktop
+X-AppImage-Version=2.1.0
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
