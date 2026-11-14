@@ -1,0 +1,35 @@
+{
+  "name": "vanta-dota",
+  "productName": "VANTA",
+  "desktopName": "vanta",
+  "version": "2.0.25",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "description": "Independent Dota 2 mod manager with an offline bundled cosmetics catalog.",
+  "author": {
+    "name": "VANTA",
+    "email": "artem-prime42@users.noreply.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artem-prime42/Vanta-Dota2-Hub.git"
+  },
+  "main": "src/main/index.js",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.12.0",
+    "@grpc/proto-loader": "^0.7.13",
+    "adm-zip": "^0.6.1",
+    "discord-rpc": "^4.0.1",
+    "electron-updater": "^6.8.9",
+    "meshoptimizer": "^1.3.0",
+    "vpk-tools": "^1.0.3",
+    "yauzl": "^3.4.0"
+  },
+  "allowScripts": {
+    "electron@41.10.7": true,
+    "electron-winstaller@5.4.0": true,
+    "protobufjs@7.6.6": true,
+    "github:devsnek/node-register-scheme#e7cc9a63a1f512565da44cb57316d9fb10750e17": true
+  }
+}
