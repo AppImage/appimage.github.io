@@ -1,0 +1,29 @@
+{
+  "name": "yarc",
+  "productName": "YARC",
+  "version": "0.1.40",
+  "description": "Yarrr! Yet Another Arc Clone: an open-source, Arc-style browser built on Electron: vertical sidebar, spaces with separate profiles, command bar, split view and Little Arc.",
+  "license": "GPL-3.0-or-later",
+  "author": "YARC contributors",
+  "homepage": "https://github.com/yenebeb/arc-shell",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yenebeb/arc-shell.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yenebeb/arc-shell/issues"
+  },
+  "main": "./out/main/index.js",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "@ghostery/adblocker-electron": "2.20.3",
+    "@ghostery/adblocker-electron-preload": "2.20.3",
+    "electron-chrome-extensions": "4.10.0",
+    "electron-chrome-web-store": "0.13.0",
+    "electron-updater": "6.8.11",
+    "tldts-experimental": "7.4.21"
+  },
+  "packageManager": "pnpm@12.16.1"
+}
