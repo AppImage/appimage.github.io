@@ -1,0 +1,11 @@
+{
+  "name": "keel-desktop",
+  "version": "0.27.0",
+  "private": true,
+  "description": "keel as a desktop app: keel's engine and api inside, no Docker",
+  "license": "MIT",
+  "author": "Milad Nalbandi",
+  "homepage": "https://github.com/MiladNalbandi/keel-v2",
+  "main": "out/src/main.js",
+  "desktopName": "keel.desktop"
+}
