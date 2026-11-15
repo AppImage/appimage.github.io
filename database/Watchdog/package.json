@@ -1,0 +1,20 @@
+{
+  "name": "watchdog-desktop",
+  "productName": "Watchdog",
+  "version": "1.2.0",
+  "description": "Desktop app for Watchdog — investigative document intelligence",
+  "main": "./out/main/index.js",
+  "author": "Tom Cardoso",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/tomcardoso/watchdog",
+  "dependencies": {
+    "electron-log": "^5.4.4",
+    "electron-updater": "^6.8.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomcardoso/watchdog.git",
+    "directory": "gui"
+  }
+}
