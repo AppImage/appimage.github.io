@@ -1,0 +1,22 @@
+{
+  "name": "we-manager",
+  "version": "0.9.10",
+  "type": "module",
+  "description": "Wallpaper Engine workshop manager",
+  "desktopName": "we-manager.desktop",
+  "author": "UwU <260361707+WallpaperEngineLover@users.noreply.github.com>",
+  "email": "260361707+WallpaperEngineLover@users.noreply.github.com",
+  "license": "MIT",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "@tanstack/react-query": "^5.101.4",
+    "clsx": "^2.1.1",
+    "electron-store": "^12.0.0",
+    "koffi": "^3.3.5",
+    "lucide-react": "^1.63.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "steamworks.js": "^0.4.0"
+  },
+  "homepage": "https://github.com/WallpaperEngineLover/we_manager"
+}
