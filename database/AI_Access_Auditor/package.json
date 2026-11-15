@@ -1,0 +1,14 @@
+{
+  "name": "ai-access-auditor",
+  "productName": "AI Access Auditor",
+  "version": "1.0.15",
+  "description": "Find and revoke the access you've given AI agents",
+  "homepage": "https://dirmedmr-alt.github.io/ai-access-auditor/",
+  "author": {
+    "name": "dirmedmr-alt",
+    "email": "260786838+dirmedmr-alt@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "main": "main.js",
+  "private": true
+}
