@@ -96,7 +96,8 @@ if [ -z "$DESKTOP" ] ; then
   for OTHER in "$DATADIR"/* ; do
     OTHER=$(basename "$OTHER")
     if [ "$OTHER" != "$NAME" ] && [ "$(echo "$OTHER" | tr 'A-Z' 'a-z')" == "$LOWER" ] ; then
-      problem "an entry with the same name in different capitalization exists already: data/$OTHER; please change that file instead"
+      # only a warning: it may be another application with a similar name
+      remark "an entry with the same name in different capitalization exists already: data/$OTHER. If it is the same application, please change that file instead of adding a second entry; if not, this is fine, although file systems that ignore case (macOS, Windows) cannot hold both files in a clone of this repository"
       break
     fi
   done
