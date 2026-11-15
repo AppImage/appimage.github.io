@@ -63,8 +63,12 @@ GitHub Pages (Jekyll) from this repository.
      or a name with capitals with `Terminal=true`: all-lowercase names are typically
      command line tools; the publish workflow only shows a note that
      `check-name.sh --note-text` generates exactly;
-     an existing entry whose name differs only in capitalization (`Shift` and `shift`)
-     is only a warning, never an error, since it may be another application;
+     an existing entry whose name differs only in capitalization (`Shift` and `shift`) is
+     compared by the first lines of the two files: the same download location (or a
+     repository that was renamed) is an error (a second entry for the same application);
+     the same owner (GitHub user or organization, forge project, domain) is a warning;
+     another owner is not mentioned (another application with a similar name); when
+     only a name is checked (discovery) it stays an error;
    - `code/check-name.sh` also rejects the word "App" in a name (`Foo-App`, `foo_app`,
      `App_Outlet`: a token between `-`, `_`, `.` or blanks; not `WhatsApp`, `Apple`), an
      error for files a PR adds and a warning for the 32 old ones, and `code/pick-name.sh`
