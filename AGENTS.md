@@ -568,7 +568,7 @@ GitHub Pages (Jekyll) from this repository.
 
 ## Nightly run
 
-`.github/workflows/nightly.yml` (`schedule` 23:07 UTC, i.e. 00:07/01:07 German time, not before midnight; the run takes about 4 hours at most, and GitHub may start scheduled runs late; and `workflow_dispatch`
+`.github/workflows/nightly.yml` (`schedule` 16:37 UTC: GitHub starts this repository's scheduled runs about 6.5 hours late (6h19 to 7h02 on 11-11 to 11-14), so the run begins around midnight German time; it takes about 4 hours at most; and `workflow_dispatch`
 with `dry_run`) calls three workflows one after the other through
 `workflow_call`, with `secrets: inherit`: `discover-apps.yml` (count 100,
 months 1, `max_seconds` 3600), then a `wait` job (until `test.yml` and `publish-pr-screenshot.yml`

@@ -27,11 +27,13 @@ name: Nightly
 
 on:
   schedule:
-    # 23:07 UTC = 00:07 (01:07 in summer) German time: not before midnight German
-    # time. The whole run takes about 4 hours at most (the steps below are capped),
-    # so it ends before 7:00 German time if GitHub starts it on time. GitHub can
-    # start scheduled runs late; nothing here can prevent that.
-    - cron: '7 23 * * *'
+    # GitHub starts the scheduled runs of this repository about 6.5 hours late (the
+    # runs scheduled for 01:17 UTC started at 07:45, 08:19, 07:57 and 07:36 UTC on
+    # 11-11 to 11-14: 6h19 to 7h02 late). To begin around midnight German time
+    # (23:00 UTC, 00:00 in winter), the slot is set 6.5 hours earlier: 16:37 UTC.
+    # The whole run takes about 4 hours at most (the steps below are capped), so it
+    # ends before 7:00 German time. If GitHub's delay changes, adjust this time.
+    - cron: '37 16 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
