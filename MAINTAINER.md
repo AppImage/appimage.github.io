@@ -94,7 +94,7 @@ The text is `code/appstream-help.md`; edit it there.
 
 ## Nightly run
 
-`.github/workflows/nightly.yml` runs every night at 23:07 UTC (00:07 German time in winter, 01:07 in summer; it takes about 4 hours at most), one step after
+`.github/workflows/nightly.yml` is scheduled for 16:37 UTC; GitHub starts it about 6.5 hours late, so it begins around midnight German time and takes about 4 hours at most, one step after
 the other: Discover apps (100 pull requests at most, 1 hour at most), wait for their tests (1 hour
 at most), Merge labeled PRs (100 at most), wait for the Test
 runs that the merges started, Build website, Clean up notifications. It needs the secrets of these workflows (`DISCOVER_TOKEN` or
