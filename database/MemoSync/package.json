@@ -1,0 +1,13 @@
+{
+  "name": "memosync-desktop",
+  "version": "0.45.0",
+  "private": true,
+  "description": "MemoSync desktop shell",
+  "homepage": "https://github.com/SLEEPYBQ/MemoSync",
+  "license": "MIT",
+  "desktopName": "memosync.desktop",
+  "main": "main.cjs",
+  "trustedDependencies": [
+    "electron"
+  ]
+}
