@@ -1,0 +1,48 @@
+---
+layout: app
+
+permalink: /finch-releases/
+description: "Finch desktop agent client: be the agent of your choice."
+
+icons:
+  - finch-releases/icons/128x128/Finch.png
+
+screenshots:
+  - finch-releases/screenshot.png
+
+authors:
+  - name: "finchtoys"
+    url: "https://github.com/finchtoys"
+
+links:
+  - type: GitHub
+    url: finchtoys/finch-releases
+  - type: Download
+    url: https://github.com/finchtoys/finch-releases/releases
+
+desktop:
+  Desktop Entry:
+    Name: Finch
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: Finch
+    StartupWMClass: Finch
+    X-AppImage-Version: 1.8.0
+    Comment: 'Finch desktop agent client: be the agent of your choice.'
+    MimeType: application/x-finch-miniprogram
+    Categories: Utility
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+
+electron: {"name":"finch-desktop","productName":"Finch","desktopName":"Finch","version":"1.8.0","author":{"name":"puterjam","email":"puterjam@gmail.com"},"private":true,"workspaces":["vendor/finch-wings"],"browserslist":["electron >= 42"],"description":"Finch desktop agent client: be the agent of your choice.","type":"module","main":"dist/main/main.js","//build":"仅在裸跑 electron-builder（未传 --config）时命中，用于拦截并提示走 npm run pack。正常打包的完整配置来自 build/electron-builder/<flavor>.yml。","//audit:i18n":"audit:i18n 是完整门禁（硬违规 + 冻结基线棘轮），本地、评审与 npm test 用；audit:i18n:hard 只拦硬违规，release / dev(beta) 构建用，避免「新代码又用了旧写法」把发布卡住。引入新债时用 node scripts/audit-i18n.mjs --write-baseline 刷新基线。","dependencies":{"@dicebear/core":"^10.7.0","@dicebear/styles":"^10.6.0","@finch/wings":"file:./vendor/finch-wings","@streamdown/math":"^1.0.2","@twemoji/parser":"^17.0.2","dotenv":"^16.4.7","electron-updater":"^6.8.3","js-yaml":"^4.3.0","react-infinite-scroll-component":"^7.2.1","turndown":"^7.2.4","typebox":"^1.1.38","undici":"^6.28.0","unpdf":"^1.6.2","zod":"^4.0.0"},"overrides":{"@babel/core":"^7.29.1","axios":"^1.18.0","brace-expansion":">=5.0.8","dompurify":"^3.4.12","@electron/get":{"undici":"^7.29.0"},"esbuild":"^0.28.1","js-yaml":"^4.3.0","shell-quote":"^1.9.0"},"allowScripts":{"esbuild@0.28.1":true,"electron-winstaller@5.4.0":true,"protobufjs@7.6.5":true},"finchBuildFlavor":"prod"}
+---
