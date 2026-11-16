@@ -1,0 +1,453 @@
+---
+layout: app
+
+permalink: /PDF4QT/
+description: "Open Source PDF Editor"
+license: "MIT"
+
+icons:
+  - PDF4QT/icons/scalable/io.github.JakubMelka.Pdf4qt.svg
+screenshots:
+- https://jakubmelka.github.io/assets/flatpak/profi-editor.png
+
+authors:
+  - name: "JakubMelka"
+    url: "https://github.com/JakubMelka"
+
+links:
+  - type: GitHub
+    url: JakubMelka/PDF4QT
+  - type: Download
+    url: https://github.com/JakubMelka/PDF4QT/releases
+
+desktop:
+  Desktop Entry:
+    Version: 1.0
+    Type: Application
+    Name: PDF4QT LaunchPad
+    Comment: Launch PDF applications
+    Exec: Pdf4QtLaunchPad %f
+    Icon: io.github.JakubMelka.Pdf4qt
+    Terminal: false
+    Categories: Office
+    MimeType: application/pdf
+  AppImageHub:
+    X-AppImage-UpdateInformation: gh-releases-zsync|JakubMelka|PDF4QT|latest|PDF4QT-*-x86_64.AppImage.zsync
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created Signature made Sun Nov  8 14:46:47 2026 UTC                using RSA key
+      C826AA3F0062382CAC1C6ECEC96B559BE2F73792 Can''t check signature: No public key'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.35
+    X-AppImage-Payload-License: MIT
+
+appdata:
+  Type: desktop-application
+  ID: io.github.JakubMelka.Pdf4qt
+  Name:
+    C: PDF4QT
+  Summary:
+    C: Open Source PDF Editor
+  Description:
+    C: >-
+      <p>Unleash the power of PDF4QT: Your go-to open source PDF editor. Beyond its capabilities in encryption, optimization,
+      advanced annotations, editing, and signing, PDF4QT offers an extensive range of features to enhance your PDF experience.
+      With intuitive PDF viewing/editing applications and a handy command-line tool, PDF4QT streamlines your PDF interactions.
+      Discover its vast potential today.</p>
+  DeveloperName:
+    C: Jakub Melka
+  ProjectLicense: MIT
+  Categories:
+  - Office
+  - Utility
+  Url:
+    homepage: https://jakubmelka.github.io/
+    bugtracker: https://github.com/JakubMelka/PDF4QT/issues
+    help: https://github.com/JakubMelka/PDF4QT/discussions
+  Launchable:
+    desktop-id:
+    - io.github.JakubMelka.Pdf4qt.desktop
+  Screenshots:
+  - default: true
+    caption:
+      C: Edit content of PDF documents
+    thumbnails: []
+    source-image:
+      url: https://jakubmelka.github.io/assets/flatpak/profi-editor.png
+      lang: C
+  - caption:
+      C: Browse PDF files easily and efficiently
+    thumbnails: []
+    source-image:
+      url: https://jakubmelka.github.io/assets/flatpak/profi-default.png
+      lang: C
+  - caption:
+      C: Utilize the 'magnifying glass' feature to zoom in on specific sections of the page
+    thumbnails: []
+    source-image:
+      url: https://jakubmelka.github.io/assets/flatpak/profi-magnifier.png
+      lang: C
+  - caption:
+      C: Display statistics for various content types within the PDF file
+    thumbnails: []
+    source-image:
+      url: https://jakubmelka.github.io/assets/flatpak/profi-object-statistics.png
+      lang: C
+  - caption:
+      C: View the document details
+    thumbnails: []
+    source-image:
+      url: https://jakubmelka.github.io/assets/flatpak/profi-properties.png
+      lang: C
+  - caption:
+      C: List of add-ons available for the PDF editor
+    thumbnails: []
+    source-image:
+      url: https://jakubmelka.github.io/assets/flatpak/profi-addons.png
+      lang: C
+  - caption:
+      C: Search PDF documents using regular expressions
+    thumbnails: []
+    source-image:
+      url: https://jakubmelka.github.io/assets/flatpak/profi-search-regex.png
+      lang: C
+  Releases:
+  - version: 1.7.0.0
+    unix-timestamp: 1794096000
+    description:
+      C: >-
+        <ul>
+          <li>Issue #431: Blend2D is crashing on some cropped images</li>
+          <li>Issue #430: Text layout optimization</li>
+          <li>Issue #417: Allow digital signature support with visible signatures</li>
+          <li>Issue #427: Bitonal scans lose thin strokes: precompiled page images are downsampled bilinearly instead of area-averaged</li>
+          <li>Issue #425: Update bitonal document feature</li>
+          <li>Issue #424: Improved measurement functionality</li>
+          <li>Issue #422: Streamline outline creation</li>
+          <li>Issue #420: Allow changing default border color when redacting rectangles</li>
+          <li>Issue #419: Invert redaction rectangles as well in dark mode</li>
+          <li>Issue #416: Optimize Images: allow global defaults to be run for multiple/all images</li>
+          <li>Issue #415: PDF is presented as completely blank</li>
+          <li>Issue #413: Editor: embedded images (signatures) flipped vertically after editing page content</li>
+          <li>Issue #412: Change default note author name (do not use the system name)</li>
+          <li>Issue #411: Edit mode UX issues</li>
+          <li>Issue #410: All text is inverted after exiting edit mode</li>
+          <li>Issue #409: Choose color of redact rectangle</li>
+          <li>Issue #408: Make XYZ shortcut refer to outline item when selected</li>
+          <li>Issue #398: Enhancing speech support: locale add-ons and system voice detection</li>
+          <li>Issue #397: No audio output when using text-to-speech</li>
+          <li>Issue #395: White crosshair easier to see in dark mode</li>
+          <li>Issue #393: Text in some PDFs is displayed incorrectly</li>
+          <li>Issue #392: Checkboxes not working</li>
+          <li>Issue #391: View options to fit page are not working on Windows</li>
+          <li>Issue #337: Text removed from page when adding image with editor</li>
+          <li>Issue #332: Some suggestions and problem reports for PDF editors</li>
+          <li>Issue #328: PDF viewer display error visible only at some zoom levels</li>
+          <li>Issue #327: Does not handle forms correctly</li>
+          <li>Issue #299: PDF element display error</li>
+          <li>Issue #278: PDF4QT Diff</li>
+          <li>Issue #258: Insert page number</li>
+          <li>Issue #252: Select elements (annotations)</li>
+          <li>Issue #238: Editor: &quot;Edit page content&quot; makes image disappear</li>
+          <li>Issue #231: PDF4QT Diff does not open files on Linux</li>
+          <li>Issue #223: Page corrupted</li>
+          <li>Issue #211: Text is inverted on edit</li>
+          <li>Issue #204: Editor corrupts some vector graphics</li>
+          <li>Issue #203: Editor seems to forget location of text after editing it</li>
+          <li>Issue #196: Not able to edit PDF files</li>
+          <li>Issue #188: Timestamp feature request</li>
+          <li>Issue #169: Option to render text as text when using QPainter backend</li>
+          <li>Issue #85: Add OCR</li>
+        </ul>
+  - version: 1.6.0.0
+    unix-timestamp: 1781395200
+    description:
+      C: >-
+        <ul>
+          <li>Issue #389: Adding hyperlink to _internal_ object in PDF</li>
+          <li>Issue #388: Update Windows color management system</li>
+          <li>Issue #385: PDFTextLayoutGenerator::isContentKindSuppressed(ContentKind kind) is missing ContentKind::Form</li>
+          <li>Issue #384: In the &quot;Optimize Images&quot; dialog, the info on the final image resolution and final DPI does
+        not update</li>
+          <li>Issue #383: UX improvements for PDF4QT PageMaster tool (v1.5.3.1) (ex. DocPage Organizer)</li>
+          <li>Issue #382: Startup Settings</li>
+          <li>Issue #381: Separated apps for double-click viewer in Linux</li>
+          <li>Issue #380: Ability to run app with custom settings directory - executable parameter with path</li>
+          <li>Issue #379: Advanced Find - Wildcard Mode</li>
+          <li>Issue #378: Advanced Find - Should start searching if Enter key is pressed</li>
+          <li>Issue #376: Deleting a note jumps to Outline</li>
+          <li>Issue #375: Not enough maximum compiled page cache</li>
+          <li>Issue #373: Ctrl/Shift keyboard selection for Outline</li>
+          <li>Issue #372: Option to not color images</li>
+          <li>Issue #370: Extracting pages within a range</li>
+          <li>Issue #369: Keeping redact box on</li>
+          <li>Issue #368: Side-to-side scrolling</li>
+          <li>Issue #357: Bulk delete/add/edit of page labels</li>
+          <li>Issue #356: Compatibility issues - font problems</li>
+          <li>Issue #354: Color blend mode for highlights</li>
+          <li>Issue #352: Icon size of the sidebar</li>
+          <li>Issue #349: Add inherit zoom to bookmark zoom options</li>
+          <li>Issue #338: Editor toolbox higher than editor window</li>
+          <li>Issue #334: Impossible to set French language</li>
+          <li>Issue #326: Checkboxes don&apos;t render in PDF4QT</li>
+          <li>Issue #324: Menu text not rendered with correct color</li>
+          <li>Issue #321: Select text in Viewer</li>
+          <li>Issue #291: Support for editing XMP metadata or exporting to PDF/UA format</li>
+          <li>Issue #282: Editor outline view always zooms to around 50%</li>
+          <li>Issue #256: PDF4QT cannot show some specific fonts correctly</li>
+          <li>Issue #253: Undo/redo doesn&apos;t work in &quot;edit page content&quot; mode</li>
+          <li>Issue #250: Snapping</li>
+          <li>Issue #242: Full screen</li>
+          <li>Issue #234: Setting font, font size and area of text annotations</li>
+          <li>Issue #230: Garbled characters when opening PDF files with PDF4QT</li>
+          <li>Issue #225: PDF4QT cannot open PDF files with embedded files</li>
+          <li>Issue #224: Option to remove invisible text</li>
+          <li>Issue #194: Change page size</li>
+          <li>Issue #160: Color | Custom (green/black) does not work</li>
+          <li>Issue #136: Smooth scrolling of document with mouse middle wheel - flywheel</li>
+          <li>Issue #92: Add image compression to PDF DocPage Organizer</li>
+          <li>Issue #18: Performance optimization - OutputPreview Renderer</li>
+        </ul>
+  - version: 1.5.3.1
+    unix-timestamp: 1769040000
+    description:
+      C: >-
+        <p>Windows installer fix</p>
+  - version: 1.5.3.0
+    unix-timestamp: 1768694400
+    description:
+      C: >-
+        <p>This release was withdrawn.</p>
+  
+        <ul>
+          <li>Issue #341: Embed AppImage update information</li>
+          <li>Issue #339: Traditional Chinese translation file</li>
+          <li>Issue #333: ijg-libjpeg obsoleted in vcpkg</li>
+          <li>Issue #329: How to remove &quot;External links&quot;</li>
+          <li>Issue #269: Nested bookmarks lose children when moving</li>
+          <li>Issue #179: Adding a JPG or PNG signature image crashes PDF4QT</li>
+          <li>Issue #146: Incorrect fonts displayed on Linux</li>
+          <li>Issue #144: Drag and drop text note annotations</li>
+        </ul>
+  - version: 1.5.2.0
+    unix-timestamp: 1758326400
+    description:
+      C: >-
+        <ul>
+          <li>Issue #313: Remove history UX improvement</li>
+          <li>Issue #310: Docpage organiser uses PDF title rather than filename</li>
+          <li>Issue #306: Unable to delete the recent files history.</li>
+          <li>Issue #303: Add Dockerfile for Simplified PDF4QT Setup with Qt 6.9.1 and All Dependencies</li>
+          <li>Issue #301: Russian Language file</li>
+          <li>Issue #296: Redaction annotation support in PdfTool</li>
+          <li>Issue #295: Request: Make page layout choice persist between files</li>
+          <li>Issue #279: qt_add_translations uses options only in qt 6.9</li>
+          <li>Issue #284: Scaling dimensions [Enhancements, Features]</li>
+          <li>Issue #281: install API headers for reuse by other applications ?</li>
+          <li>Issue #251: Let user lock direction of lines/polylines when pressing keybinding (e.g. shift)</li>
+        </ul>
+  - version: 1.5.1.0
+    unix-timestamp: 1745712000
+    description:
+      C: >-
+        <ul>
+          <li>Issue #271: Change of the license to MIT</li>
+          <li>Issue #257: Force light mode (or dark mode)</li>
+          <li>Issue #255: Page Master invert selection does not work</li>
+          <li>Issue #254: Unit Settings default window size too small</li>
+          <li>Issue #248: Update version and year in About page</li>
+          <li>Issue #247: Option to hide cross when adding annotations</li>
+        </ul>
+  - version: 1.5.0.0
+    unix-timestamp: 1741478400
+    description:
+      C: >-
+        <ul>
+          <li>Issue #244: Unite document after page removal loses outline</li>
+          <li>Issue #236: Highlighting - Allow color selection and intensity</li>
+          <li>Issue #229: Can&apos;t add picture to PDF</li>
+          <li>Issue #228: Reverse pages order</li>
+          <li>Issue #222: UnitTests fails several tests</li>
+          <li>Issue #207: Zoom to Cursor (Zoom Anchoring)</li>
+          <li>Issue #206: Name of the executable / command</li>
+          <li>Issue #205: Editor cannot create white or transparent annotations</li>
+          <li>Issue #202: Certain raster content not rendered</li>
+          <li>Issue #200: Icons under dark theme on Arch/KDE broken</li>
+          <li>Issue #185: Latest git fails to build on Linux</li>
+          <li>Issue #165: Inline Text latency issues on Flatpak/AppImage</li>
+          <li>Issue #161: Trust certificates like in Acrobat</li>
+        </ul>
+  - version: 1.4.0.0
+    unix-timestamp: 1720051200
+    description:
+      C: >-
+        <ul>
+          <li>Issue #190: PageMaster crash after removing pages</li>
+          <li>Issue #184: Form field font size too large</li>
+          <li>Issue #183: Option to ignore PDF security settings</li>
+          <li>Issue #182: Diff command-line arguments ignored</li>
+          <li>Issue #181: Dark mode feature</li>
+          <li>Issue #180: Options windows larger than desktop</li>
+          <li>Issue #174: Limited Linux support improvements</li>
+          <li>Issue #173: Errors loading Echoplex.pdf</li>
+          <li>Issue #172: Missing access keys in menus</li>
+          <li>Issue #168: Stamp disappears when merging files</li>
+          <li>Issue #166: Adding images to PDF</li>
+          <li>Issue #164: Taskbar icon not shown on Linux Mint</li>
+          <li>Issue #163: Invalid PDF rendering issues</li>
+          <li>Issue #161: Trust certificates like in Acrobat</li>
+          <li>Issue #159: Separate AppImage offerings</li>
+          <li>Issue #123: Alternative rendering backend (Blend2D)</li>
+          <li>Issue #42: Real text editing improvements</li>
+          <li>Issue #26: Add pictures in PDF files</li>
+        </ul>
+  - version: 1.3.7
+    unix-timestamp: 1704844800
+    description:
+      C: >-
+        <ul>
+          <li>Issue #142: Cannot reach the top</li>
+          <li>Issue #141: Save button in toolbar</li>
+          <li>Issue #140: New bookmarks created empty?</li>
+          <li>Issue #139: Changing page layout resets the current page</li>
+          <li>Issue #137: Redaction - Cannot convert &apos;#000000&apos; to color value</li>
+          <li>Issue #134: Add search bar for actions</li>
+          <li>Issue #133: Rectangle selector when choosing the page of the PDF</li>
+          <li>Issue #129: Cannot compile with lcms 2.16</li>
+          <li>Issue #128: Create list of markup annotations</li>
+          <li>Issue #126: Remove &lt;QtCore&gt; include from main headers</li>
+          <li>Issue #119: Improve search bar 2 (the revenge)</li>
+          <li>Issue #118: Adding CMake options for minimal builds</li>
+          <li>Issue #116: Improve search bar (remember searched text, allow scroll and zoom)</li>
+          <li>Issue #115: Redesign of sidebar widget, new icons</li>
+          <li>Issue #113: Color | Custom (green/black) partially works in scanned PDF</li>
+          <li>Issue #112: Smooth scrolling</li>
+          <li>Issue #104: pdf_3d branch and license</li>
+          <li>Issue #102: PDF engine implementation details</li>
+          <li>Issue #99: Icons for dark mode</li>
+          <li>Issue #55: System certificates store not found</li>
+          <li>Issue #54: Bookmarks for pages</li>
+        </ul>
+  - version: 1.3.6
+    unix-timestamp: 1700784000
+    description:
+      C: >-
+        <ul>
+          <li>Issue #110: Viewer Lite arbitrary code execution when using Send by Email</li>
+          <li>Issue #109: Text, font and page parts missing</li>
+          <li>Issue #108: Add accessibility options in PDF reader</li>
+          <li>Issue #107: Create document with converted bitonic images</li>
+          <li>Issue #106: Hardware acceleration is not supported warning</li>
+          <li>Issue #103: Bookmark sidebar greyed out if a bookmark is not already present</li>
+          <li>Issue #100: Highlight rectangle</li>
+          <li>Issue #97: DocPage Organizer drag and drop, context menu and responsive layout</li>
+          <li>Issue #94: New directory structure</li>
+          <li>Issue #83: Default font for unrecognized fonts</li>
+          <li>Issue #76: Outline editing</li>
+          <li>Issue #58: PDF document with rotated Type 3 fonts</li>
+        </ul>
+  - version: 1.3.5
+    unix-timestamp: 1694131200
+    description:
+      C: >-
+        <ul>
+          <li>Issue #65: Text-to-speech doesn&apos;t work on Linux</li>
+          <li>Issue #72: Cannot select text</li>
+          <li>Issue #82: Hot reload function</li>
+          <li>Issue #80: Optimizer is slow on large PDF files</li>
+          <li>Issue #77: Document read error</li>
+          <li>Issue #78: Error decompressing stream</li>
+        </ul>
+  - version: 1.3.4
+    unix-timestamp: 1691020800
+    description:
+      C: >-
+        <ul>
+          <li>Issue #75: Redesign of sidebar widget</li>
+          <li>Issue #74: Highlighting text opens the sidebar every time</li>
+          <li>Issue #73: Minor GUI issues</li>
+          <li>Issue #71: Pages are mirrored</li>
+          <li>Issue #69: Dashed line not rendered as expected</li>
+          <li>Issue #68: Add alternative vcpkg file with dependency on Qt</li>
+          <li>Issue #59: Fix character font encoding for Mac Roman and Unicode tables</li>
+          <li>Issue #50: Some types of PDF don&apos;t open as expected</li>
+        </ul>
+  - version: 1.3.3
+    unix-timestamp: 1682121600
+    description:
+      C: >-
+        <ul>
+          <li>Issue #49: Document read error</li>
+          <li>Issue #46: Program does not launch or freezes on Windows</li>
+          <li>Issue #48: Page not displayed correctly</li>
+          <li>Issue #45: Blank page in DocPage Organizer</li>
+          <li>Issue #43: Save question</li>
+          <li>Issue #40: Sanitization of documents</li>
+        </ul>
+  - version: 1.3.2
+    unix-timestamp: 1675209600
+    description:
+      C: >-
+        <ul>
+          <li>Issue #39: Code-signed installation</li>
+        </ul>
+  - version: 1.3.1
+    unix-timestamp: 1672185600
+    description:
+      C: >-
+        <ul>
+          <li>Issue #34: Reset option</li>
+          <li>Issue #35: Window state is not remembered for viewers</li>
+        </ul>
+  - version: 1.3.0
+    unix-timestamp: 1671926400
+    description:
+      C: >-
+        <ul>
+          <li>Issue #21: Table selection tool</li>
+          <li>Issue #22: Solve compilation warnings</li>
+          <li>Issue #24: Text selection and table selection algorithm improvement</li>
+          <li>Issue #25: Move to Qt 6.4, CMake and vcpkg</li>
+          <li>Issue #28: Add multiple PDF files at once for merging</li>
+          <li>Issue #33: ToUnicode for simple fonts not used</li>
+          <li>Issue #32: New stable release</li>
+        </ul>
+  - version: 1.2.1
+    unix-timestamp: 1656547200
+    description:
+      C: >-
+        <ul>
+          <li>Issue #17: Public key security handler</li>
+          <li>Issue #19: Remove dependency on Microsoft Visual Studio Redistributable Packages</li>
+        </ul>
+  - version: 1.2.0
+    unix-timestamp: 1654387200
+    description:
+      C: >-
+        <ul>
+          <li>Issue #10: Performance optimization</li>
+          <li>Issue #14: Incorrect text drawing for vertical writing systems</li>
+          <li>Issue #15: MSI installer</li>
+          <li>Static XFA support (read-only, simple XFA only)</li>
+          <li>Electronically and digitally sign documents</li>
+        </ul>
+  - version: 1.1.0
+    unix-timestamp: 1639872000
+    description:
+      C: >-
+        <ul>
+          <li>DocDiff application for comparing similar PDF documents</li>
+          <li>Linux support</li>
+          <li>New icon set</li>
+        </ul>
+  - version: 1.0.0
+    unix-timestamp: 1632009600
+    description:
+      C: >-
+        <p>Initial beta release for non-production testing</p>
+  ContentRating:
+    oars-1.1: {}
+---
