@@ -71,7 +71,7 @@ if [ -z "$APPDATA" ] ; then
   warn 'No appdata file present. Please provide one in the AppImage as per the instructions on https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps'
 elif command -v appstreamcli >/dev/null ; then
   if ! appstreamcli validate-tree "${APPDIR}" ; then
-    fatal "appstreamcli validate-tree found errors in the AppStream metainfo (see above)"
+    fatal "appstreamcli validate-tree found errors in the AppStream metainfo (see the output of appstreamcli in the log)"
   fi
 else
   echo "Skipping AppStream validation since appstreamcli is not on the \$PATH"

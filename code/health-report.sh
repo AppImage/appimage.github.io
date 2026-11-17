@@ -130,7 +130,7 @@ cat <<EOT
 
 ### Handled by the automation
 
-- [$TOTAL open pull requests]($Q) in all: [$N_DISC auto-discovered]($Q+label%3Aauto-discovered) ($N_DISC_ERR of them failed their test), $N_ERR with an \`error-*\` label (the table below), $N_RETEST re-tests of catalog entries, [$N_UNLABELED without any label]($Q+no%3Alabel) (never tested, or the result was lost)
+- [$TOTAL open pull requests]($Q) in all: [$N_DISC auto-discovered]($Q+label%3Aauto-discovered) ($N_DISC_ERR of them failed their test), $N_ERR with an \`error-*\` label (the table under "Handled by the automation"), $N_RETEST re-tests of catalog entries, [$N_UNLABELED without any label]($Q+no%3Alabel) (never tested, or the result was lost)
 - Failed tests by cause (open pull requests; click a label to list them):
 
 | label | pull requests |
