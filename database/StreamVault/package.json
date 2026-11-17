@@ -1,0 +1,24 @@
+{
+  "name": "streamvault-app",
+  "productName": "StreamVault",
+  "private": true,
+  "version": "1.0.8",
+  "description": "StreamVault for Android and Linux",
+  "author": {
+    "name": "Burhanuddin Rajkotwala",
+    "email": "BurhanRajkot@users.noreply.github.com"
+  },
+  "homepage": "https://stream-vault.site",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "dependencies": {
+    "@capacitor/android": "8.6.0",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/browser": "8.0.5",
+    "@capacitor/core": "8.6.0",
+    "@capacitor/splash-screen": "8.0.2",
+    "@capacitor/status-bar": "8.0.4",
+    "selfsigned": "5.5.0"
+  },
+  "license": "UNLICENSED"
+}
