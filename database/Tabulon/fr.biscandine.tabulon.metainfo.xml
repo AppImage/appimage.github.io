@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Métadonnées AppStream de Tabulon : logithèques Linux (GNOME Logiciels,
+     Discover) et catalogue appimage.github.io, qui les valide avec
+     appstreamcli. Posé dans /usr/share/metainfo/ de l'AppImage, du .deb et du
+     .rpm par tauri.conf.json (bundle.linux.*.files). Le desktop-id est le
+     fichier .desktop que Tauri nomme d'après productName. -->
+<component type="desktop-application">
+  <id>fr.biscandine.tabulon</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-only</project_license>
+  <name>Tabulon</name>
+  <summary>Play chess, draughts, shogi and many more board games</summary>
+  <summary xml:lang="fr">Jouer aux échecs, aux dames, au shogi et à bien d'autres jeux de plateau</summary>
+  <developer id="io.github.fhoudebert">
+    <name>fhoudebert</name>
+  </developer>
+  <description>
+    <p>
+      Tabulon is a free application for playing board games on your desktop:
+      chess and its variants, draughts, shogi, xiangqi, go, mills, tafl and
+      many more, built on the Jocly game library.
+    </p>
+    <p xml:lang="fr">
+      Tabulon est une application libre pour jouer aux jeux de plateau sur
+      l'ordinateur : échecs et variantes, dames, shogi, xiangqi, go, moulin,
+      tafl et bien d'autres, sur la bibliothèque de jeux Jocly.
+    </p>
+    <ul>
+      <li>Play in 2D or 3D, with rotatable and zoomable boards</li>
+      <li>Play against the computer, against a friend on the same machine, or online</li>
+      <li>Illustrated rules for every game, in English and French</li>
+      <li>Game clocks, move history with takeback and replay, saved games</li>
+    </ul>
+    <ul xml:lang="fr">
+      <li>Jouer en 2D ou en 3D, plateaux orientables et zoomables</li>
+      <li>Jouer contre l'ordinateur, contre un ami sur la même machine ou en ligne</li>
+      <li>Règles illustrées pour chaque jeu, en anglais et en français</li>
+      <li>Pendules, historique des coups avec retour et relecture, parties enregistrées</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">Tabulon.desktop</launchable>
+  <url type="homepage">https://github.com/fhoudebert/tabulon</url>
+  <url type="bugtracker">https://github.com/fhoudebert/tabulon/issues</url>
+  <url type="vcs-browser">https://github.com/fhoudebert/tabulon</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The game list</caption>
+      <image>https://raw.githubusercontent.com/fhoudebert/tabulon/main/liste.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A game in progress</caption>
+      <image>https://raw.githubusercontent.com/fhoudebert/tabulon/main/game.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Game</category>
+    <category>BoardGame</category>
+  </categories>
+  <keywords>
+    <keyword>chess</keyword>
+    <keyword>draughts</keyword>
+    <keyword>checkers</keyword>
+    <keyword>shogi</keyword>
+    <keyword>xiangqi</keyword>
+    <keyword>go</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <provides>
+    <binary>tabulon</binary>
+  </provides>
+  <releases>
+    <release version="1.1.1" date="2026-11-14"/>
+  </releases>
+</component>
