@@ -96,7 +96,43 @@ if [ -z "$DESKTOP" ] ; then
   for OTHER in "$DATADIR"/* ; do
     OTHER=$(basename "$OTHER")
     if [ "$OTHER" != "$NAME" ] && [ "$(echo "$OTHER" | tr 'A-Z' 'a-z')" == "$LOWER" ] ; then
-      problem "an entry with the same name in different capitalization exists already: data/$OTHER; please change that file instead"
+      SAME=unknown
+      # Is the entry that differs only in capitalization the same application? Compare
+      # where the two entries get the AppImage from (the first line of the files), if
+      # both files are there (not when a name is only proposed, e.g., by the discovery)
+      if [ -r "$DATADIR/$NAME" ] && [ -r "$DATADIR/$OTHER" ] ; then
+        MINE=$(head -n 1 "$DATADIR/$NAME" | tr -d '\r' | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
+        THEIRS=$(head -n 1 "$DATADIR/$OTHER" | tr -d '\r' | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
+        # Repository (or download location) without the channel, host in lower case
+        loc() { echo "$1" | sed -E 's/#.*//; s/[?].*//; s|^[a-zA-Z]+://||; s|^www[.]||; s|/+$||; s|[.]git$||' | tr 'A-Z' 'a-z' ; }
+        chan() { case "$1" in *"#"*) echo "${1#*#}" | tr 'A-Z' 'a-z' ;; esac ; }
+        if [ -z "$MINE" ] || [ -z "$THEIRS" ] ; then
+          SAME=unknown
+        elif [ "$(loc "$MINE")" == "$(loc "$THEIRS")" ] && [ "$(chan "$MINE")" == "$(chan "$THEIRS")" ] ; then
+          SAME=same # the same download location
+        else
+          timeout 60 bash "$(dirname "$0")/check-origin.sh" "$THEIRS" "$MINE" >/dev/null 2>&1
+          case $? in
+            0) SAME=owner ;;     # the same GitHub user or organization, forge project or domain
+            2) SAME=same ;;      # the repository was renamed or moved: the same project
+            1) SAME=different ;; # another owner: a different application with a similar name
+            *) SAME=unknown ;;
+          esac
+        fi
+      fi
+      case "$SAME" in
+        same) problem "this is the same application as the entry data/$OTHER (the same download location): please change that file instead of adding a second entry whose name differs only in capitalization" ;;
+        owner) remark "data/$OTHER has the same name in different capitalization and comes from the same owner. If it is the same application, please change that file instead of adding a second entry; if it is another one, this is fine, although file systems that ignore case (macOS, Windows) cannot hold both files in a clone of this repository" ;;
+        different) ;; # another owner: another application that happens to have a similar name
+        *)
+          if [ -r "$DATADIR/$NAME" ] ; then
+            remark "an entry with the same name in different capitalization exists already: data/$OTHER. If it is the same application, please change that file instead of adding a second entry; if not, this is fine, although file systems that ignore case (macOS, Windows) cannot hold both files in a clone of this repository"
+          else
+            # only a name is checked (e.g., one that the discovery proposes): it cannot be told
+            # whether it is the same application, so do not propose it
+            problem "an entry with the same name in different capitalization exists already: data/$OTHER; please change that file instead"
+          fi ;;
+      esac
       break
     fi
   done
