@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream data for software centres and the AppImage. -->
+<component type="desktop-application">
+  <id>io.github.popamp.popamp</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT OR Apache-2.0</project_license>
+  <name>Popamp</name>
+  <summary>Winamp-style skinnable audio player</summary>
+  <description>
+    <p>
+      Popamp is an audio player in the style of the classic Winamp 2: main
+      window, equalizer and playlist editor that dock together, with
+      support for classic .wsz skins.
+    </p>
+    <p>
+      It plays MP3, Ogg Vorbis, FLAC, WAV, AIFF, AAC/M4A and internet
+      radio streams.
+    </p>
+  </description>
+  <launchable type="desktop-id">popamp.desktop</launchable>
+  <provides>
+    <binary>popamp</binary>
+  </provides>
+  <url type="homepage">https://github.com/popamp/popamp</url>
+  <url type="bugtracker">https://github.com/popamp/popamp/issues</url>
+  <developer id="io.github.popamp">
+    <name>Gunyakov</name>
+  </developer>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Player</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.0.1" date="2026-11-16"/>
+    <release version="1.0.0" date="2026-11-14"/>
+    <release version="0.9.1" date="2026-11-13"/>
+    <release version="0.9.0" date="2026-11-12"/>
+    <release version="0.8.0" date="2026-11-11"/>
+    <release version="0.7.0" date="2026-11-09"/>
+    <release version="0.6.0" date="2026-11-07"/>
+    <release version="0.5.0" date="2026-11-06"/>
+  </releases>
+</component>
