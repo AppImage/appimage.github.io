@@ -1,0 +1,22 @@
+{
+  "name": "forgepilot",
+  "version": "2.4.2",
+  "description": "Desktop agent workspace for local and hosted LLMs with tool calling, MCP, and document support.",
+  "productName": "ForgePilot",
+  "author": {
+    "name": "ForgePilot",
+    "email": "hello@forgepilot.app"
+  },
+  "homepage": "https://forgepilot.app",
+  "type": "module",
+  "main": "src/main/main.js",
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "htm": "3.1.1",
+    "marked": "^18.0.14",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}
