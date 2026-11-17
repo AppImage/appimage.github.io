@@ -1,0 +1,16 @@
+{
+  "name": "@nicotind/desktop",
+  "version": "0.8.132",
+  "private": true,
+  "type": "module",
+  "description": "NicotinD desktop app — local music library, streaming, and radio (Electron)",
+  "author": {
+    "name": "Kevin Roberts",
+    "email": "kevinch3@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/kevinch3/NicotinD",
+  "main": "dist/main.js",
+  "dependencies": {
+    "electron-updater": "^6.3.9"
+  }
+}
