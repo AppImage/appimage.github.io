@@ -1,0 +1,9 @@
+{
+  "name": "@kalka/electron",
+  "private": true,
+  "type": "module",
+  "main": "dist/main.js",
+  "productName": "Kalka",
+  "version": "0.2.0-beta.2",
+  "description": "Design like you do in Figma. Every layer is real HTML and CSS."
+}
