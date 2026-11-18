@@ -1,0 +1,20 @@
+{
+  "name": "@ordewell/desktop",
+  "version": "0.14.2",
+  "private": true,
+  "description": "Ordewell's desktop app: an Electron client of the local daemon.",
+  "license": "Apache-2.0",
+  "author": "Alessandro Costanzo Ciano",
+  "homepage": "https://ordewell.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ordewell/ordewell.git",
+    "directory": "packages/desktop"
+  },
+  "main": "dist/main/index.js",
+  "dependencies": {
+    "@ordewell/web": "^0.14.2",
+    "electron-updater": "^6.8.11",
+    "node-pty": "^1.1.0"
+  }
+}
