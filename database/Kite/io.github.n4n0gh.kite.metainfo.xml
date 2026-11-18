@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>io.github.n4n0gh.kite</id>
+  <name>Kite</name>
+  <summary>KDE web browser with Firefox extension support</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="io.github.n4n0gh">
+    <name>Kite contributors</name>
+  </developer>
+  <description>
+    <p>Kite is a web browser for the Plasma desktop, modelled on Falkon and written in Rust. It runs Firefox extensions, installed straight from addons.mozilla.org.</p>
+    <p>It blocks ads and trackers itself, keeps passwords in KWallet, fills forms, has a reader view, container tabs, and private windows that leave nothing behind. Plugins add Vim keys, mouse gestures, picture-in-picture, and integration with Plasma: media controls, KRunner, KDE Connect and the panel's download progress.</p>
+  </description>
+  <url type="homepage">https://github.com/n4n0GH/Kite</url>
+  <url type="bugtracker">https://github.com/n4n0GH/Kite/issues</url>
+  <url type="vcs-browser">https://github.com/n4n0GH/Kite</url>
+  <launchable type="desktop-id">io.github.n4n0gh.kite.desktop</launchable>
+  <categories>
+    <category>Network</category>
+    <category>WebBrowser</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Kite on Plasma, showing its empty start page</caption>
+      <image>https://raw.githubusercontent.com/n4n0GH/Kite/master/.readme/startpage.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>kite</binary>
+    <mediatype>text/html</mediatype>
+    <mediatype>application/xhtml+xml</mediatype>
+    <mediatype>x-scheme-handler/http</mediatype>
+    <mediatype>x-scheme-handler/https</mediatype>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.10.2" date="2026-11-17">
+      <description>
+        <p>PDF documents open in the tab, in the engine's own viewer, where they used to be downloaded; a setting under Browsing has them downloaded instead. The downloads button's panel now lists the downloads that have just ended, the ones its dot is about, with Open, Show in folder and Remove from list.</p>
+      </description>
+    </release>
+    <release version="0.10.1" date="2026-11-16">
+      <description>
+        <p>Open tabs use less memory: about 10 MiB less each in Kite itself, as a tab's menus, prompts and popups are made when first needed, and about 4 MiB less per page, as pages are no longer gone through for scrollbars of their own. A scrollbar a page draws itself now gets the overlay look when pointed at or scrolled. A performance report against Falkon and Firefox is in the documentation.</p>
+      </description>
+    </release>
+    <release version="0.10.0" date="2026-11-16">
+      <description>
+        <p>Page Info: a window with a page's technical details and meta tags, its pictures and media to preview and save (one by one or all at once), every permission its site can be given, and its connection, history and cookies. The address bar's site popup now lists only the permissions a site is allowed or is using.</p>
+        <p>A site allowed or blocked from opening links like mailto: is no longer asked about again after a restart. Show in Folder no longer freezes Kite or opens a second file manager when the file manager is slow to start; the Flatpak asks the file manager directly, for which it may now talk to org.freedesktop.FileManager1.</p>
+      </description>
+    </release>
+    <release version="0.9.18" date="2026-11-15">
+      <description>
+        <p>Fixes a crash when a tab's icon was drawn after tabs had been unloaded, dropdowns on pages closing at once on Wayland, and the tab crashing on Line wrap in a page's source. The Library keeps its lists and bars inside a narrow window, and history has a new icon.</p>
+      </description>
+    </release>
+    <release version="0.9.17" date="2026-11-15">
+      <description>
+        <p>Show in Folder opens the file manager with the downloaded file selected. In the settings, the spell checking languages and the search engines are lists like the saved logins, with a button to remove each entry and one to remove all.</p>
+      </description>
+    </release>
+    <release version="0.9.16" date="2026-11-15">
+      <description>
+        <p>The downloads button opens a panel with the downloads under way, which can be paused and cancelled there; the full list moved into the Library. Toolbar buttons are all as tall as the address bar and stay pressed in while their menu is open.</p>
+      </description>
+    </release>
+    <release version="0.9.15" date="2026-11-15">
+      <description>
+        <p>The custom rules in the Content Blocking settings can be scrolled, so rules past the end of the field can be reached.</p>
+      </description>
+    </release>
+    <release version="0.9.14" date="2026-11-14">
+      <description>
+        <p>A possible fix for Vim keys, and a site's own keyboard shortcuts, doing nothing on a newly opened page while an input method such as IBus is running.</p>
+      </description>
+    </release>
+    <release version="0.9.13" date="2026-11-13">
+      <description>
+        <p>The Flatpak follows the desktop's colors when they change while Kite is open, such as a switch between a light and a dark theme.</p>
+      </description>
+    </release>
+    <release version="0.9.12" date="2026-11-12">
+      <description>
+        <p>The extensions button's panel leaves out the Extensions section while WebExtensions are switched off.</p>
+      </description>
+    </release>
+    <release version="0.9.11" date="2026-11-12">
+      <description>
+        <p>The About dialog shows Kite's icon again.</p>
+      </description>
+    </release>
+    <release version="0.9.10" date="2026-11-12">
+      <description>
+        <p>Kite as a Flatpak, from a repository that keeps it updated. Its application ID is now io.github.n4n0gh.kite.</p>
+      </description>
+    </release>
+    <release version="0.9.9" date="2026-11-11">
+      <description>
+        <p>Private windows can have purple window chrome. Vim keys no longer go quiet with the keyboard in a widget frame or a picker. Profiles can be renamed from the picker. A YouTube Download plugin saves videos with yt-dlp. The built-in blocker works like uBlock Origin, with an element picker.</p>
+      </description>
+    </release>
+    <release version="0.9.0" date="2026-11-09">
+      <description>
+        <p>Settings laid out as in System Settings, with Apply. A user agent per site. A log file and crash reports. Forms act only on trusted clicks, submits and Enter.</p>
+      </description>
+    </release>
+    <release version="0.8.1" date="2026-11-08">
+      <description>
+        <p>Pointer lock for pages, on Wayland.</p>
+      </description>
+    </release>
+    <release version="0.8.0" date="2026-11-08"/>
+  </releases>
+</component>
