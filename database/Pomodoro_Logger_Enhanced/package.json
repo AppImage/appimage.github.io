@@ -1,0 +1,40 @@
+{
+  "name": "pomodoro-logger-enhanced",
+  "version": "1.6.0",
+  "description": "Pomodoro Logger -- When a time logger meets Pomodoro and Kanban board. This is an enhanced edition, as the original version has been archived.",
+  "main": "./dist/main.js",
+  "lint-staged": {
+    "{src,test,mocks}/**/*.{js,ts,tsx,json,css,scss,md}": [
+      "prettier --config ./.prettierrc --write"
+    ],
+    "{src,test,mocks}/**/*.{ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:NightZed/PomodoroLogger-Enhanced.git"
+  },
+  "author": {
+    "name": "NightZed",
+    "email": "NightZed@outlook.com"
+  },
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/NightZed/PomodoroLogger-Enhanced/issues"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.1.1",
+    "electron-updater": "^6.8.11",
+    "get-windows": "10.0.0"
+  },
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss",
+    "./src/main/**/*",
+    "./src/config.ts",
+    "./src/renderer/echartsSetup.ts",
+    "**/electron"
+  ],
+  "packageManager": "pnpm@11.28.11"
+}
