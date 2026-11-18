@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.coozoo.trackrideviz</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>Race Track Visualizer</name>
+  <summary>Telemetry overlays for action camera video</summary>
+  <developer id="io.github.coozoo">
+    <name>Yuriy Kuzin</name>
+  </developer>
+  <description>
+    <p>
+      Puts the data of a ride or a track day on its video: speed, lap times, G-force, the track
+      map, heart rate, power, OBD data and more, drawn as gauges over the footage and exported as
+      a new video.
+    </p>
+    <ul>
+      <li>FIT, GPX and TCX files, or the data a GoPro wrote into the video, synchronized automatically</li>
+      <li>Gauges placed and sized with the mouse, templates, and a gauge editor</li>
+      <li>Laps and sectors timed from lines placed on the route</li>
+      <li>Routes on street maps, elevation from a terrain model</li>
+      <li>Export with the graphics card's encoder, music, cuts, and a command line</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">trackrideviz.desktop</launchable>
+  <url type="homepage">https://github.com/coozoo/trackrideviz</url>
+  <url type="bugtracker">https://github.com/coozoo/trackrideviz/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>A video with gauges, the route on a street map and the data below</caption>
+      <image>https://raw.githubusercontent.com/coozoo/trackrideviz/main/docs/images/mainview.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A template applied to the video</caption>
+      <image>https://raw.githubusercontent.com/coozoo/trackrideviz/main/docs/images/templates.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Exporting the video</caption>
+      <image>https://raw.githubusercontent.com/coozoo/trackrideviz/main/docs/images/export.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Video</category>
+  </categories>
+  <provides>
+    <mediatype>application/x-trackrideviz-project</mediatype>
+    <mediatype>application/x-trackrideviz-gauge</mediatype>
+    <mediatype>application/x-trackrideviz-template</mediatype>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.01" date="2026-11-18"/>
+  </releases>
+</component>
