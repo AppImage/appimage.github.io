@@ -1,0 +1,63 @@
+[Desktop Entry]
+Categories=Utility;
+Comment=Your files. Your storage. One shortcut away.
+Exec=aktar %u
+StartupWMClass=aktar
+Icon=aktar
+Name=Aktar
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/aktar
+Actions=capture;upload-clipboard;
+
+[Desktop Action capture]
+Name=Capture and Upload
+Name[de]=Aufnehmen und hochladen
+Name[es]=Capturar y subir
+Name[fr]=Capturer et envoyer
+Name[id]=Tangkap layar dan unggah
+Name[it]=Acquisisci e carica
+Name[ja]=取り込んでアップロード
+Name[ko]=캡처 후 업로드
+Name[nl]=Leg vast en upload
+Name[pl]=Przechwyć i prześlij
+Name[pt_BR]=Capturar e enviar
+Name[ru]=Сделать снимок и загрузить
+Name[tr]=Yakala ve yükle
+Name[uk]=Зробити знімок і вивантажити
+Name[vi]=Chụp màn hình và tải lên
+Name[zh_CN]=截屏并上传
+Name[zh_TW]=截圖並上傳
+Exec=aktar --capture
+
+[Desktop Action upload-clipboard]
+Name=Upload Clipboard
+Name[de]=Zwischenablage hochladen
+Name[es]=Subir el portapapeles
+Name[fr]=Envoyer le presse-papiers
+Name[id]=Unggah Papan Klip
+Name[it]=Carica Appunti
+Name[ja]=クリップボードをアップロード
+Name[ko]=클립보드 업로드
+Name[nl]=Upload klembord
+Name[pl]=Prześlij zawartość schowka
+Name[pt_BR]=Enviar área de transferência
+Name[ru]=Загрузить из буфера обмена
+Name[tr]=Panoyu Yükle
+Name[uk]=Вивантажити буфер обміну
+Name[vi]=Tải lên bộ nhớ tạm
+Name[zh_CN]=上传剪贴板内容
+Name[zh_TW]=上傳剪貼簿
+Exec=aktar --upload-clipboard
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=MIT
