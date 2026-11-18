@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata for the Linux AppImage (software centres, AppImageHub).
+     4.5.2 and 2026-11-18 are filled in by scripts/build_appimage.sh. -->
+<component type="desktop-application">
+  <id>io.github.gorkem_taha.g_toolbox</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>CC-BY-NC-4.0</project_license>
+  <name>G-Toolbox</name>
+  <summary>Local AI and media toolkit that keeps your files on your computer</summary>
+  <developer id="io.github.gorkem_taha">
+    <name>Görkem Taha</name>
+  </developer>
+  <description>
+    <p>
+      G-Toolbox is an all-in-one workspace for media, documents and local AI. Files are processed
+      on your own computer: nothing is uploaded to a cloud service and no account is needed.
+    </p>
+    <ul>
+      <li>Convert images, audio and video; make GIF/WebP clips; burn subtitles</li>
+      <li>Remove backgrounds, erase objects and upscale images with local AI models</li>
+      <li>Transcribe speech to text and subtitles, separate vocals and instruments</li>
+      <li>Clean photo metadata, merge and split PDFs, encrypt files with AES-256</li>
+      <li>Download videos, apply audio effects and reduce noise</li>
+    </ul>
+    <p>
+      The app runs in your web browser; a small window shows that it is running and stops it
+      when closed. A phone can use the computer's power after a one-time pairing.
+    </p>
+  </description>
+  <launchable type="desktop-id">g-toolbox.desktop</launchable>
+  <url type="homepage">https://github.com/Gorkem-Taha/G-Toolbox</url>
+  <url type="bugtracker">https://github.com/Gorkem-Taha/G-Toolbox/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The G-Toolbox workspace</caption>
+      <image>https://raw.githubusercontent.com/Gorkem-Taha/G-Toolbox/main/static/menu.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="4.5.2" date="2026-11-18"/>
+  </releases>
+</component>
