@@ -1,0 +1,8 @@
+{
+  "name": "ocarina-atlas",
+  "version": "2.3.0",
+  "description": "Interactive Ocarina of Time Remake map & live telemetry launcher",
+  "main": "main.cjs",
+  "license": "AGPL-3.0",
+  "author": "antonioalvromero"
+}
