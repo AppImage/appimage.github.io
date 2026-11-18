@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 yoyofr -->
+<component type="desktop-application">
+  <id>app.rewamp.Rewamp</id>
+
+  <name>Rewamp</name>
+  <summary>Chiptune, tracker and console music player</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <!-- The combined binary is GPL-3.0-or-later because three bundled decoders
+       are GPL-3 and everything links into one process. See LICENSING.md. -->
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <developer id="app.rewamp">
+    <name>yoyofr</name>
+  </developer>
+
+  <launchable type="desktop-id">app.rewamp.Rewamp.desktop</launchable>
+
+  <description>
+    <p>
+      Rewamp plays the music of the machines that made it. Not recordings —
+      emulation. A .sid runs on an emulated 6581, a .nsf on the NES sound
+      hardware, a .mod through a real Amiga Paula mixer. What you hear is the
+      chip doing the work, exactly as it did on the original hardware.
+    </p>
+    <p>More than 35 audio engines cover over 1,200 file extensions:</p>
+    <ul>
+      <li>Tracker modules — MOD, XM, S3M, IT, MPTM, and dozens of older Amiga and PC formats</li>
+      <li>Amiga — 300+ custom-player formats through a full 68k emulator (TFMX, Hippel, Future Composer, David Whittaker…)</li>
+      <li>Commodore 64 — SID, with HVSC song lengths and STIL credits</li>
+      <li>Nintendo — NSF, GBS, SPC, GSF, 2SF, NCSF, SNSF, USF</li>
+      <li>Sega, NEC, SNK — VGM, S98, HES, SGC, SSF, DSF</li>
+      <li>Computers — MSX, ZX Spectrum, Atari ST and 8-bit, Amstrad CPC, PC-98, X68000, FM Towns, AdLib OPL2/OPL3</li>
+      <li>Game streams — 700+ container formats via vgmstream</li>
+      <li>Also MIDI with SoundFonts, SunVox, PxTone, Organya and Furnace</li>
+    </ul>
+    <p>See the sound:</p>
+    <ul>
+      <li>Oscilloscope — stereo, or one trace per voice with the real channel names</li>
+      <li>Spectrum — five looks, from classic bars to a full-screen beam and a polar ring</li>
+      <li>Notation — every note as it plays, with vibrato, pan and zoom</li>
+      <li>Pattern — the tracker view, in the original font, with VU meters per channel</li>
+      <li>Milkdrop — the full projectM engine and its preset library</li>
+    </ul>
+    <p>
+      Mute any voice, isolate a single channel, and hear how the track was
+      built. Search a large online archive of chip and tracker music by title,
+      artist, group, platform or format; browse by demoparty, production or
+      year. Downloads live in your library and play without a connection.
+    </p>
+    <p>
+      An account is optional and never required. With one, your library,
+      playlists and favourites follow you to your other devices.
+    </p>
+  </description>
+
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Player</category>
+  </categories>
+
+  <keywords>
+    <keyword>chiptune</keyword>
+    <keyword>tracker</keyword>
+    <keyword>module</keyword>
+    <keyword>demoscene</keyword>
+    <keyword>emulation</keyword>
+    <keyword>SID</keyword>
+    <keyword>MOD</keyword>
+    <keyword>NSF</keyword>
+    <keyword>SPC</keyword>
+    <keyword>VGM</keyword>
+    <keyword>Amiga</keyword>
+  </keywords>
+
+  <url type="homepage">https://rewamp.app</url>
+  <url type="bugtracker">https://github.com/yoyofr/rewamp-app/issues</url>
+  <url type="vcs-browser">https://github.com/yoyofr/rewamp-app</url>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#f0388f</color>
+    <color type="primary" scheme_preference="dark">#160a1e</color>
+  </branding>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+
+  <provides>
+    <binary>rewamp</binary>
+    <mediatype>audio/x-mod</mediatype>
+    <mediatype>audio/x-s3m</mediatype>
+    <mediatype>audio/x-it</mediatype>
+    <mediatype>audio/x-xm</mediatype>
+    <mediatype>audio/x-stm</mediatype>
+    <mediatype>audio/prs.sid</mediatype>
+    <mediatype>audio/x-psf</mediatype>
+    <mediatype>audio/x-minipsf</mediatype>
+    <mediatype>audio/midi</mediatype>
+  </provides>
+
+  <!-- TODO avant soumission Flathub: au moins une capture, hébergée sur une URL
+       stable et publique (1er élément = celle de la vitrine). Flathub refuse un
+       composant sans <screenshots>. -->
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/yoyofr/rewamp-app/main/docs/store/screenshots/linux-player.png</image>
+      <caption>The player, with the per-voice oscilloscope</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.0.0" date="2026-10-24">
+      <description>
+        <p>Out of beta.</p>
+        <ul>
+          <li>New "Podiums" browser: demoscene competition winners by party, year or kind of compo, with a hall of fame</li>
+          <li>Opening a slow track no longer freezes the app; a thin ring around play/pause shows it is still loading</li>
+          <li>Arcade: Ensoniq ES5505/ES5506 (Taito F3) and ZSG-2 (Taito Zoom) music now plays, and the engines are up to date (FM-Kingtracker .fmk added)</li>
+          <li>VGM: looping tracks end with an adjustable fade-out (0 to 16 s, 5 by default)</li>
+          <li>Info panel: format, engine, channels and loop points come first</li>
+          <li>Per-voice oscilloscope shows up to 64 voices</li>
+          <li>Piano visualizer: songs with many voices or instruments at once are spread over more keyboards</li>
+          <li>Amiga: StoneTracker, SUNtronic (TSM rips) and more Soundtracker 2.6 modules now play</li>
+          <li>ZX Spectrum: zxart .mt3 files play, and the ZXTune formats and SAM Coupé .cop programs are included</li>
+          <li>Dropped files are queued in the order they were displayed</li>
+          <li>Fixed: crashes with some .mtc files and with Apple IIGS VGM files; with crossfade on, tracks shorter than the fade can be heard again</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.8.0" date="2026-10-11">
+      <description>
+        <ul>
+          <li>Playback speed from 0.2× to 3×; most engines keep the pitch</li>
+          <li>New players: NoiseTracker GS (Apple IIGS), Ron Klaren (Amiga) and SAM Coupé .cop programs</li>
+          <li>More Amiga and Atari ST formats play: SidMon 1, Sonic Arranger, Paul Robotham, Quartet, SoundFactory</li>
+          <li>MSX MoonBlaster songs load their sample kit instead of playing noise</li>
+          <li>Library: hide items not on this device</li>
+          <li>Long-press the player artwork to see it full screen</li>
+          <li>Visualizer defaults: per-voice oscilloscope, and the line spectrum for streamed formats; steadier stereo oscilloscope</li>
+          <li>Fixed: tapping a track of some PSF-family albums played another track</li>
+          <li>A folder with several playlists now forms one album with every track</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.7.0" date="2026-10-04">
+      <description>
+        <ul>
+          <li>Visualizers now work under X11, including Steam Deck game mode</li>
+          <li>"Always on top" is back under X11</li>
+          <li>Closing the window no longer crashes the app</li>
+          <li>Game Boy .gbr and DefleMask .dmf files play</li>
+          <li>Smoother player and visualizers</li>
+          <li>Long titles scroll in a one-way loop</li>
+          <li>projectM preset packs install up to nine times faster</li>
+          <li>Fixed: pausing could skip to the next track</li>
+          <li>Single-archive PSF albums unfold into their tracks</li>
+          <li>Covers load much faster</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.6.1" date="2026-09-19">
+      <description>
+        <ul>
+          <li>Roland MT-32 engine for game MIDI, with your own ROMs</li>
+          <li>Ten rare module formats, and every track of Westwood .adl files</li>
+          <li>Instruments named and coloured in the visualizers</li>
+          <li>Search: filter demoscene competition winners</li>
+          <li>Subsongs shorter than a threshold are left out of Play all</li>
+          <li>Import a whole folder, and organise your folders</li>
+          <li>Fixed: wrong song on PC Engine, Master System and SNDH files</li>
+          <li>Fixed: MIDI drums no longer play as a piano</li>
+          <li>Far less processor and battery when nothing is playing</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1"/>
+</component>
