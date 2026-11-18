@@ -1,0 +1,18 @@
+{
+  "name": "electron-kvm-client",
+  "version": "0.3.5",
+  "description": "Electron KVM Client for macOS",
+  "main": "src/main.js",
+  "author": {
+    "name": "MotorBottle",
+    "email": "motorbottt@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/MotorBottle/USB-KVM-Electron",
+  "dependencies": {
+    "node-hid": "^3.0.0",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.4",
+    "ws": "^8.16.0"
+  }
+}
