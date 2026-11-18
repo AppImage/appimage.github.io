@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Name=VPNRouter
+Comment=Virtual Penguin Network — process-based split-tunnel VPN
+Exec=VPNRouter.App
+Icon=vpnrouter
+Terminal=false
+Categories=Network;
+StartupNotify=true
+# Avalonia sets X11 WM_CLASS to the binary name. Without this hint the
+# window-manager's taskbar can't link the running window to this .desktop
+# entry, which falls back to a generic cogwheel icon.
+StartupWMClass=VPNRouter.App
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.27
+X-AppImage-Payload-License=GPL-3.0
