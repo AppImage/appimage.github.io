@@ -1,0 +1,23 @@
+[Desktop Entry]
+Name=Converter Studio
+Exec=AppRun --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=converter-studio
+StartupWMClass=converter-studio
+X-AppImage-Version=0.1.8
+Keywords=convert;converter;video;audio;image;pdf;document;
+Comment=Converter Studio for Windows, macOS and Linux
+MimeType=application/epub+zip;application/gzip;application/illustrator;application/json;application/msword;application/pdf;application/postscript;application/rtf;application/vnd.amazon.ebook;application/vnd.ms-excel;application/vnd.ms-powerpoint;application/vnd.oasis.opendocument.presentation;application/vnd.oasis.opendocument.spreadsheet;application/vnd.oasis.opendocument.text;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.rar;application/x-7z-compressed;application/x-fictionbook+xml;application/x-mobipocket-ebook;application/x-subrip;application/x-tar;application/xml;application/yaml;application/zip;audio/aac;audio/aiff;audio/flac;audio/mp4;audio/mpeg;audio/ogg;audio/opus;audio/wav;audio/x-aiff;audio/x-m4a;audio/x-ms-wma;audio/x-wav;font/otf;font/ttf;font/woff;font/woff2;image/avif;image/bmp;image/gif;image/heic;image/heif;image/jpeg;image/png;image/svg+xml;image/tiff;image/vnd.microsoft.icon;image/webp;image/x-adobe-dng;image/x-canon-cr2;image/x-icon;image/x-nikon-nef;image/x-sony-arw;text/csv;text/html;text/markdown;text/plain;text/rtf;text/vtt;text/x-ssa;text/xml;text/yaml;video/3gpp;video/3gpp2;video/mp4;video/quicktime;video/webm;video/x-flv;video/x-matroska;video/x-ms-wmv;video/x-msvideo;x-scheme-handler/converter-studio;
+Categories=Utility;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=dynamic
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.28
