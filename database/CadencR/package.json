@@ -1,0 +1,19 @@
+{
+  "name": "@cadencr/desktop",
+  "version": "0.16.2",
+  "private": true,
+  "description": "Cadencr desktop shell — Electron app with a React frontend for driving local AI coding agents.",
+  "homepage": "https://cadencr.com",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Raphael Le Minor",
+    "email": "raphael.leminor@gmail.com"
+  },
+  "main": "out/main/index.js",
+  "dependencies": {
+    "@fontsource-variable/figtree": "^5.3.0",
+    "dotenv": "^17.4.2",
+    "electron-updater": "^6.8.10"
+  },
+  "desktopName": "cadencr.desktop"
+}
