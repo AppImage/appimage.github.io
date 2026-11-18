@@ -1,0 +1,31 @@
+{
+  "name": "context-heavy-diagrams",
+  "version": "0.12.0",
+  "description": "Offline desktop diagramming: git-friendly plain-text diagrams, drill-down linked diagrams, and per-node notes and tags. Early open-source release.",
+  "main": "./out/main/index.js",
+  "license": "GPL-3.0-or-later",
+  "author": "Magnus Elden",
+  "homepage": "https://github.com/NoobsDeSroobs/context-heavy-diagrams#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoobsDeSroobs/context-heavy-diagrams.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NoobsDeSroobs/context-heavy-diagrams/issues"
+  },
+  "dependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
+    "@tabler/icons": "^3.46.0",
+    "@xyflow/react": "^12.11.3",
+    "dompurify": "^3.4.18",
+    "html-to-image": "^1.11.13",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "allowScripts": {
+    "electron-winstaller": false,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true,
+    "fsevents": false
+  }
+}
