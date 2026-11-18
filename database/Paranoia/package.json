@@ -1,0 +1,11 @@
+{
+  "name": "@paranoia/desktop",
+  "private": true,
+  "version": "0.9.0",
+  "type": "module",
+  "license": "Apache-2.0",
+  "description": "Paranoia — open-source reverse engineering platform",
+  "author": "Paranoia contributors",
+  "homepage": "https://github.com/Altumptic/paranoia",
+  "main": "electron/main.cjs"
+}
