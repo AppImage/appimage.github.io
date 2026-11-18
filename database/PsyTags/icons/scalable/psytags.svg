@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="PsyTags App Icon">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#292741"/>
+      <stop offset=".5" stop-color="#1e1e32"/>
+      <stop offset="1" stop-color="#151326"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#d1b3ff"/>
+      <stop offset=".28" stop-color="#66508c"/>
+      <stop offset=".65" stop-color="#39304f"/>
+      <stop offset="1" stop-color="#9b72d8"/>
+    </linearGradient>
+    <linearGradient id="tag" x1=".15" y1="1" x2=".9" y2="0">
+      <stop stop-color="#b58aef"/>
+      <stop offset=".48" stop-color="#cba6f7"/>
+      <stop offset="1" stop-color="#c4c0ff"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#252139"/>
+      <stop offset="1" stop-color="#1e1b31"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#080612" flood-opacity=".35"/>
+    </filter>
+    <filter id="glow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+  <rect x="40" y="48" width="944" height="928" rx="170" fill="none" stroke="#9d6ee2" stroke-opacity=".45" stroke-width="6" filter="url(#glow)"/>
+  <rect x="40" y="48" width="944" height="928" rx="170" fill="url(#tile)" stroke="url(#rim)" stroke-width="3"/>
+  <rect x="46" y="54" width="932" height="916" rx="164" fill="none" stroke="#cba6f7" stroke-opacity=".07" stroke-width="2"/>
+  <path d="M602 194H754Q813 194 813 253V452Q813 478 794 498L495 831Q455 875 412 853Q399 847 387 835L211 660Q168 617 203 573L559 217Q579 194 602 194Z" fill="url(#tag)" filter="url(#shadow)"/>
+  <circle cx="723" cy="286" r="39" fill="url(#ink)"/>
+  <path d="M455 417L644 366Q665 360 665 383L650 581C648 612 627 640 594 658C560 677 529 673 519 652C506 625 527 591 560 570C585 555 609 551 625 556L630 447L481 487L465 618C461 647 440 674 408 689C376 704 346 702 334 681C319 654 339 621 372 600C397 584 422 581 440 586L447 443Q448 423 455 417Z" fill="url(#ink)"/>
+</svg>
