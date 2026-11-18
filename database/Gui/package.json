@@ -1,0 +1,35 @@
+{
+  "name": "gui",
+  "productName": "Gui",
+  "desktopName": "gui.desktop",
+  "version": "0.1.0-alpha.23",
+  "description": "Design real interfaces with your own AI agents",
+  "homepage": "https://usegui.com",
+  "author": "Bridger Tower <bridgertower@gmail.com>",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./out/main/index.js",
+  "trustedDependencies": [
+    "electron",
+    "esbuild",
+    "node-pty"
+  ],
+  "dependencies": {
+    "@agentclientprotocol/claude-agent-acp": "^0.101.1",
+    "@agentclientprotocol/codex-acp": "^2.6.0",
+    "@agentclientprotocol/sdk": "^1.7.0",
+    "@bex-co/muse-code-acp": "0.11.0",
+    "@modelcontextprotocol/sdk": "^1.32.0",
+    "amp-acp": "0.12.0",
+    "electron-updater": "^6.8.9",
+    "ghostty-web": "0.4.0",
+    "node-pty": "^1.1.0",
+    "pi-acp": "0.0.34",
+    "source-map-js": "^1.2.2",
+    "zod": "^4.6.7"
+  },
+  "overrides": {
+    "zod": "4.6.7"
+  }
+}
