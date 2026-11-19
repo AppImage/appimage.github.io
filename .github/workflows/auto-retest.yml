@@ -106,8 +106,8 @@ jobs:
             for FILE in $(echo "$FILES" | head -n 5) ; do
               URL=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$FILE?ref=$SHA" 2>/dev/null | head -n 1 || true)
               OWNER=$(bash code/upstream-owner.sh "$URL")
-              if [ -n "$OWNER" ] && [ "$(lower "$OWNER")" == "$(lower "$COMMENTER")" ] ; then
-                WHO="the account the AppImage comes from"
+              if [ -n "$OWNER" ] && bash code/is-upstream-account.sh "$COMMENTER" "$OWNER" ; then
+                WHO="the account the AppImage comes from (or a member of that organization)"
               fi
             done
           fi
