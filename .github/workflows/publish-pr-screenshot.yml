@@ -402,6 +402,10 @@ jobs:
         env:
           PR: ${{ steps.pr.outputs.number }}
           CHINESE: ${{ steps.lang.outputs.chinese }}
+          # Opt-in policies (repository variables): see AGENTS.md
+          AUTO_MERGE_DISCOVERED: ${{ vars.AUTO_MERGE_DISCOVERED }}
+          AUTO_MERGE_MIN_STARS: ${{ vars.AUTO_MERGE_MIN_STARS }}
+          AUTO_MERGE_OWN_APP: ${{ vars.AUTO_MERGE_OWN_APP }}
         run: |
           skip() { echo "Not auto-merging: $1" ; exit 0 ; }
           [ "$CONCLUSION" = success ] || skip "the test did not pass"
@@ -410,7 +414,6 @@ jobs:
           [ "$(jq -r .state pr.json)" = open ] || skip "not open"
           [ "$(jq -r .draft pr.json)" = false ] || skip "draft"
           [ "$(jq -r .head.sha pr.json)" = "$HEAD_SHA" ] || skip "newer commits than the tested one"
-          case "$(jq -r .head.ref pr.json)" in discover/*) skip "discovered automatically; a maintainer reviews it" ;; esac
           first_line() { gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$1?ref=$2" | head -n 1 | tr -d '\r' ; }
           # Re-test PRs (retest.yml opens them for /retest on a merged PR):
           # the entries are listed already, so a passed test is enough, even
@@ -435,11 +438,6 @@ jobs:
             gh workflow run test.yml -R "$REPO" --ref master -f commit="$MERGED"
             exit 0
           fi
-          gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name' | grep -qx auto-discovered && skip "discovered automatically; a maintainer reviews it"
-          case "$(jq -r .author_association pr.json)" in
-            CONTRIBUTOR|COLLABORATOR|MEMBER|OWNER) ;;
-            *) skip "first contribution (author association $(jq -r .author_association pr.json)); a maintainer reviews it" ;;
-          esac
           LABELS=$(gh api "repos/$REPO/issues/$PR/labels" --jq '.[].name')
           echo "$LABELS" | grep -qx screenshot-ok || skip "no screenshot-ok label"
           ! echo "$LABELS" | grep -qxE 'manual-check-needed|do-not-merge' || skip "labeled for a manual check"
@@ -447,6 +445,44 @@ jobs:
           [ "$(wc -l < files.tsv)" -eq 1 ] || skip "changes more than one file"
           IFS=$'\t' read -r FILE STATUS < files.tsv
           [[ "$FILE" == data/* ]] || skip "does not change a file in data/"
+          DISCOVERED=false
+          { echo "$LABELS" | grep -qx auto-discovered || [[ "$(jq -r .head.ref pr.json)" == discover/* ]] ; } && DISCOVERED=true
+          if [ "$DISCOVERED" = true ] ; then
+            # Auto-discovered: only with the repository variable AUTO_MERGE_DISCOVERED=true,
+            # and only an established project whose own repository it is: no
+            # not-upstream/repackaged label, a GitHub repository (not a fork) at
+            # least 180 days old with at least 20 stars, a new entry, and no comment
+            # by a human (a maintainer who commented wants to decide)
+            [ "${AUTO_MERGE_DISCOVERED:-false}" = true ] || skip "discovered automatically; a maintainer reviews it (repository variable AUTO_MERGE_DISCOVERED is not true)"
+            ! echo "$LABELS" | grep -qxE 'not-upstream|repackaged' || skip "discovered automatically and possibly not the application's own repository; a maintainer reviews it"
+            [ "$STATUS" = added ] || skip "discovered automatically but not a new entry; a maintainer reviews it"
+            URL=$(first_line "$FILE" "$HEAD_SHA")
+            [[ "$URL" =~ ^https://github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)/?$ ]] || skip "discovered automatically and not a plain GitHub repository link; a maintainer reviews it"
+            gh api "repos/${BASH_REMATCH[1]}/${BASH_REMATCH[2]%.git}" > upstream.json 2>/dev/null || skip "the upstream repository could not be read; a maintainer reviews it"
+            [ "$(jq -r '.fork // true' upstream.json)" = false ] || skip "the upstream repository is a fork; a maintainer reviews it"
+            STARS=$(jq -r '.stargazers_count // 0' upstream.json)
+            CREATED=$(jq -r '.created_at // ""' upstream.json | cut -c1-10)
+            [[ "$STARS" =~ ^[0-9]+$ ]] && [ "$STARS" -ge "${AUTO_MERGE_MIN_STARS:-20}" ] || skip "the upstream repository has $STARS stars (fewer than ${AUTO_MERGE_MIN_STARS:-20}); a maintainer reviews it"
+            [ -n "$CREATED" ] && [[ "$CREATED" < "$(date -u -d '180 days ago' +%Y-%m-%d)" ]] || skip "the upstream repository is younger than 180 days ($CREATED); a maintainer reviews it"
+            if gh api --paginate "repos/$REPO/issues/$PR/comments?per_page=100" --jq '.[].user.login' | grep -vqx 'github-actions[bot]' ; then
+              skip "discovered automatically and somebody commented; a maintainer reviews it"
+            fi
+            echo "Auto-discovered, but an established project ($STARS stars, created $CREATED) that passed cleanly: merging"
+          else
+            case "$(jq -r .author_association pr.json)" in
+              CONTRIBUTOR|COLLABORATOR|MEMBER|OWNER) ;;
+              *)
+                # A first contribution is merged only when the author IS the GitHub
+                # account the AppImage comes from (adding their own application), and
+                # the repository variable AUTO_MERGE_OWN_APP is true
+                [ "${AUTO_MERGE_OWN_APP:-false}" = true ] || skip "first contribution (author association $(jq -r .author_association pr.json)); a maintainer reviews it"
+                AUTHOR=$(jq -r .user.login pr.json | tr 'A-Z' 'a-z')
+                OWNER=$(bash code/upstream-owner.sh "$(first_line "$FILE" "$HEAD_SHA")" | tr 'A-Z' 'a-z')
+                [ -n "$OWNER" ] && [ "$OWNER" = "$AUTHOR" ] || skip "first contribution by @$AUTHOR, who is not the GitHub account the AppImage comes from (${OWNER:-none}); a maintainer reviews it"
+                [ "$STATUS" = added ] || skip "first contribution that changes an existing entry; a maintainer reviews it"
+                echo "First contribution by the application's own GitHub account (@$AUTHOR): merging" ;;
+            esac
+          fi
           case "$STATUS" in
             added) ;;
             modified)
