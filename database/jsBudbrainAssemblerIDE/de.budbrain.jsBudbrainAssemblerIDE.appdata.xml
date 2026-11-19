@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainAssemblerIDE</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>jsBudbrainAssemblerIDE</name>
+  <summary>Assembler IDE: write, build, debug and disassemble x86 programs</summary>
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+  <description>
+    <p>Write x86 assembler programs, build them with NASM and step through them in the built-in debugger — and look into any binary: machine code and assembler side by side, both editable.</p>
+    <ul>
+      <li>Editor with NASM colours, completion, search and replace, rename and go to definition</li>
+      <li>Debugger: single steps, breakpoints, registers, flags, watched expressions and memory watchpoints</li>
+      <li>Every step shows what it changed — registers, flags, memory</li>
+      <li>Hex and assembler view of any program, editable and searchable</li>
+      <li>Disassemble programs into source code that builds again</li>
+      <li>Reference for every instruction, directive, system call and error code</li>
+      <li>Light and dark, in 83 languages</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">jsbudbrainassembleride.desktop</launchable>
+  <url type="homepage">https://www.budbrain.de/budbrain-software/</url>
+  <url type="contact">https://www.budbrain.de/kontakt.html</url>
+  <content_rating type="oars-1.1"/>
+  <!-- Ohne <screenshots> nimmt AppImageHub selbst eines auf. Die URLs zeigen auf
+       die Bilder der Website (website-software/generate-site.sh kopiert
+       dist/screenshots/*.png mit dem Praefix asmide-, deutsch). -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Step through your program and see what every instruction changed</caption>
+      <caption xml:lang="de">Schritt für Schritt durchs Programm – und sehen, was jeder Befehl verändert</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/asmide-01-debugger.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Machine code and assembler side by side, searchable and editable</caption>
+      <caption xml:lang="de">Maschinencode und Assembler nebeneinander, durchsuchbar und änderbar</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/asmide-02-binary-view.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A reference for every instruction, system call and error code</caption>
+      <caption xml:lang="de">Nachschlagen: jeder Befehl, jeder Systemaufruf, jeder Fehlercode</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/asmide-03-reference.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A compiled C program turned back into assembler source</caption>
+      <caption xml:lang="de">Ein übersetztes C-Programm, zurückverwandelt in Assembler-Quelltext</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/asmide-04-disassembled-c.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Completion while you type, in light or dark</caption>
+      <caption xml:lang="de">Vervollständigung beim Tippen, hell oder dunkel</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/asmide-05-light-completion.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.0.1" date="2026-11-07">
+      <description>
+        <p>The start screen is drawn cleanly again, the first window opens larger, and the window is found by tools that look for it by name.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-11-07"/>
+  </releases>
+</component>
