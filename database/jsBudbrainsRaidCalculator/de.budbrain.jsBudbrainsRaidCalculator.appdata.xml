@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainsRaidCalculator</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>jsBudbrainsRaidCalculator</name>
+  <summary>Plan a disk array: capacity, speed and fault tolerance at a glance</summary>
+  <summary xml:lang="de">Plattenverbund planen: Kapazität, Tempo und Ausfallsicherheit auf einen Blick</summary>
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+  <description>
+    <p>Enter the size and number of your disks, choose a RAID level and see at once what you get: usable capacity, reading and writing speed, and how many disks may fail.</p>
+    <ul>
+      <li>JBOD, RAID 0, 1, 5, 6, 10, 50, 60 and triple parity side by side</li>
+      <li>Click a disk to let it fail and see whether your data survives</li>
+      <li>A step-by-step guide that builds the chosen array with mdadm, every command ready to copy</li>
+      <li>Light and dark appearance, 83 languages</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">jsbudbrainsraidcalculator.desktop</launchable>
+  <url type="homepage">https://www.budbrain.de/budbrain-software/</url>
+  <url type="contact">https://www.budbrain.de/budbrain-software/</url>
+  <!-- The images are the German shots from dist/screenshots/, published by
+       website-software/generate-site.sh under exactly these names. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Size and number of disks, the level, and what you get</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsraidcalculator_1-calculator.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Every level side by side, and the array disk by disk with failed disks</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsraidcalculator_2-compare-and-array.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The guide starts with finding the right disks</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsraidcalculator_3-guide-find-disks.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>RAID 10 in the light design</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsraidcalculator_4-calculator-raid10.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A check before the restart</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainsraidcalculator_5-guide-check.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <provides>
+    <binary>jsBudbrainsRaidCalculator</binary>
+  </provides>
+  <releases>
+    <release version="1.0.0" date="2026-11-18">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>
