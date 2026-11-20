@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<component type="desktop-application">
+  <id>net.casualhacks.chipdx</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Chip's Challenge DX</name>
+  <summary>Play and create Chip's Challenge levels</summary>
+  <description>
+    <p>Collect computer chips, navigate traps, and reach the exit in five bundled community level packs. The included editor lets you open and create custom levels.</p>
+  </description>
+  <url type="homepage">https://github.com/CasualX/chipdx</url>
+  <launchable type="desktop-id">net.casualhacks.chipdx.desktop</launchable>
+<releases><release version="v2026-11" date="2026-11-19"><url type="details">https://github.com/CasualX/chipdx/releases/tag/v2026-11</url></release></releases></component>
