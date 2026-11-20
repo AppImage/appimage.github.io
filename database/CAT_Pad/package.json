@@ -1,0 +1,10 @@
+{
+  "name": "cat-pad",
+  "productName": "CAT Pad",
+  "version": "1.1.0",
+  "description": "Vở ghi dạy học Toán - Lý - Hoá - Sinh của Chuyên Anh Tutorials",
+  "author": "Chuyên Anh Tutorials",
+  "homepage": "https://github.com/chuyenanhtutorialsfw-ux/CAT-Pad",
+  "main": "main.js",
+  "desktopName": "cat-pad.desktop"
+}
