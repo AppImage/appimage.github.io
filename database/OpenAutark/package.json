@@ -1,7 +1,7 @@
 {
   "name": "autark",
   "productName": "Autark",
-  "version": "0.3.9",
+  "version": "0.3.14",
   "private": true,
   "description": "Local-first AI workforce: agents, chats, tasks and a calm to-do list",
   "author": "Teydra",
@@ -19,6 +19,7 @@
     "playwright-core": "1.61.1",
     "qrcode": "1.5.4",
     "sherpa-onnx-node": "2.0.1",
+    "werift": "0.27.0",
     "ws": "8.22.0"
   },
   "overrides": {

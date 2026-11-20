@@ -5,7 +5,7 @@ Terminal=false
 Type=Application
 Icon=autark
 StartupWMClass=Autark
-X-AppImage-Version=0.3.9
+X-AppImage-Version=0.3.14
 Comment=Local-first AI workforce: agents, chats, tasks and a calm to-do list
 Categories=Office;
 

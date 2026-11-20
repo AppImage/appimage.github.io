@@ -29,7 +29,7 @@ desktop:
     Type: Application
     Icon: autark
     StartupWMClass: Autark
-    X-AppImage-Version: 0.3.9
+    X-AppImage-Version: 0.3.14
     Comment: 'Local-first AI workforce: agents, chats, tasks and a calm to-do list'
     Categories: Office
   AppImageHub:
@@ -45,5 +45,5 @@ desktop:
     X-AppImage-Glibc-Required: GLIBC_2.32
     X-AppImage-Payload-License: Apache-2.0
 
-electron: {"name":"autark","productName":"Autark","version":"0.3.9","private":true,"description":"Local-first AI workforce: agents, chats, tasks and a calm to-do list","author":"Teydra","license":"Apache-2.0","type":"module","main":"app/main.cjs","dependencies":{"@noble/curves":"2.4.0","@noble/hashes":"2.4.0","@thednp/dommatrix":"3.1.2","croner":"10.0.1","electron-updater":"6.8.9","onnxruntime-web":"1.31.1","pdfjs-dist":"6.4.299","playwright-core":"1.61.1","qrcode":"1.5.4","sherpa-onnx-node":"2.0.1","ws":"8.22.0"},"overrides":{"global-agent":"4.1.3"}}
+electron: {"name":"autark","productName":"Autark","version":"0.3.14","private":true,"description":"Local-first AI workforce: agents, chats, tasks and a calm to-do list","author":"Teydra","license":"Apache-2.0","type":"module","main":"app/main.cjs","dependencies":{"@noble/curves":"2.4.0","@noble/hashes":"2.4.0","@thednp/dommatrix":"3.1.2","croner":"10.0.1","electron-updater":"6.8.9","onnxruntime-web":"1.31.1","pdfjs-dist":"6.4.299","playwright-core":"1.61.1","qrcode":"1.5.4","sherpa-onnx-node":"2.0.1","werift":"0.27.0","ws":"8.22.0"},"overrides":{"global-agent":"4.1.3"}}
 ---
