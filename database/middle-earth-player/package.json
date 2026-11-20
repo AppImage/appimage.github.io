@@ -1,0 +1,13 @@
+{
+  "name": "middle-earth-player",
+  "productName": "Middle-Earth Player",
+  "version": "0.8.0",
+  "description": "An offline app for playing The Lord of the Rings: The Card Game solo. Fan-made, not affiliated with Fantasy Flight Games.",
+  "license": "MIT",
+  "homepage": "https://github.com/j-jmnz/middle-earth-player#readme",
+  "author": {
+    "name": "Middle-Earth Player contributors",
+    "email": "noreply@users.noreply.github.com"
+  },
+  "main": "main.js"
+}
