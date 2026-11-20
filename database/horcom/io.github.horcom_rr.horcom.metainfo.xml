@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+SPDX-License-Identifier: GPL-3.0-or-later
+horcom, the C++ rewrite of HORCOM by Robert Rettig (1989 to 2010)
+Copyright (c) 2026 Dominik Schwimmbeck
+-->
+<component type="desktop-application">
+  <id>io.github.horcom_rr.horcom</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>HORCOM</name>
+  <summary>Horoscope calculation and charts</summary>
+  <summary xml:lang="de">Horoskop-Berechnung und Graphiken</summary>
+  <description>
+    <p>
+      HORCOM is the modern C++ rewrite of the astrology program Robert Rettig
+      developed from 1989 to 2010, first on the Atari ST and then on Windows.
+      It keeps his calculation core, his parallax and topocentric corrections,
+      his menus and his chart graphics.
+    </p>
+    <p xml:lang="de">
+      HORCOM ist die moderne C++-Neufassung des Astrologie-Programms, das Robert
+      Rettig von 1989 bis 2010 entwickelte, zuerst auf dem Atari ST und dann unter
+      Windows. Sie bewahrt seinen Rechenkern, seine Parallaxen- und topozentrischen
+      Korrekturen, seine Menüs und seine Horoskop-Graphiken.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.horcom_rr.horcom.desktop</launchable>
+  <provides>
+    <binary>horcom_gui</binary>
+    <binary>horcom</binary>
+  </provides>
+  <url type="homepage">https://github.com/horcom-rr/HORCOM</url>
+  <url type="bugtracker">https://github.com/horcom-rr/HORCOM/issues</url>
+  <developer id="io.github.horcom_rr">
+    <name>Dominik Schwimmbeck</name>
+  </developer>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/horcom-rr/HORCOM/main/assets/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <categories>
+    <category>Education</category>
+    <category>Science</category>
+  </categories>
+</component>
