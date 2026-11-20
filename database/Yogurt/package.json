@@ -1,0 +1,18 @@
+{
+  "name": "yogurt",
+  "version": "0.3.51",
+  "private": true,
+  "type": "module",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "chrono-node": "2.10.3",
+    "electron-updater": "6.8.10",
+    "ical.js": "2.2.1",
+    "node-llama-cpp": "3.22.1"
+  },
+  "productName": "Yogurt",
+  "desktopName": "yogurt.desktop",
+  "description": "Free, private, open-source AI meeting notes for Mac, Windows and Linux.",
+  "author": "Frigade",
+  "license": "MIT"
+}
