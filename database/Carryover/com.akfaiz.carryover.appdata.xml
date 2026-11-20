@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata, installed at share/metainfo/ by the AppImage and the tarball's install.sh.
+     Named *.appdata.xml (not *.metainfo.xml): AppImage's appdir-lint only looks for that name.
+     Check with: appstreamcli validate packaging/linux/com.akfaiz.carryover.appdata.xml -->
+<component type="desktop-application">
+  <id>com.akfaiz.carryover</id>
+  <name>Carryover</name>
+  <summary>Game launcher that syncs your saves through your own cloud storage</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="com.akfaiz">
+    <name>Ahmad Faiz Kamaludin</name>
+  </developer>
+  <description>
+    <p>
+      Carryover launches your games and syncs their save folders before and after every play session, so you can
+      continue on another computer or on the Steam Deck. Saves go to your own Google Drive, Dropbox, OneDrive,
+      WebDAV, SFTP or SMB storage; rclone is built in, so nothing else needs installing.
+    </p>
+    <ul>
+      <li>One cloud copy per game, mapped to a different save folder on each device</li>
+      <li>Syncs from the launcher or from Steam: "Add to Steam" creates a shortcut that syncs even in Game Mode</li>
+      <li>Launches games installed by Heroic Games Launcher in their own Wine prefix</li>
+      <li>Transfers only the files that changed, and asks which side to keep when saves changed on both</li>
+      <li>Optional cloud backups, plus a local copy before a download replaces your saves</li>
+      <li>Save location suggestions for about 21,000 games, including Proton, Wine, Heroic, Lutris and Bottles prefixes</li>
+      <li>Game list, covers and artwork shared between your devices</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">com.akfaiz.carryover.desktop</launchable>
+  <provides>
+    <binary>carryover</binary>
+  </provides>
+  <url type="homepage">https://github.com/akfaiz/carryover</url>
+  <url type="bugtracker">https://github.com/akfaiz/carryover/issues</url>
+  <url type="vcs-browser">https://github.com/akfaiz/carryover</url>
+  <categories>
+    <category>Game</category>
+    <category>Utility</category>
+  </categories>
+  <keywords>
+    <keyword>saves</keyword>
+    <keyword>sync</keyword>
+    <keyword>steam</keyword>
+    <keyword>rclone</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <releases>
+    <release version="0.1.0" date="2026-11-12">
+      <url type="details">https://github.com/akfaiz/carryover/releases/tag/v0.1.0</url>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232838"/>
+      <stop offset="1" stop-color="#0e0f14"/>
+    </linearGradient>
+    <linearGradient id="hop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5b8cff"/>
+      <stop offset="1" stop-color="#3ccf91"/>
+    </linearGradient>
+    <linearGradient id="play" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7aa3ff"/>
+      <stop offset="1" stop-color="#3d6de0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background tile -->
+  <path d="M 264 64 H 760 A 200 200 0 0 1 960 264 V 760 A 200 200 0 0 1 760 960 H 264 A 200 200 0 0 1 64 760 V 264 A 200 200 0 0 1 264 64 Z" fill="url(#bg)"/>
+  <path d="M 264 66 H 760 A 198 198 0 0 1 958 264 V 760 A 198 198 0 0 1 760 958 H 264 A 198 198 0 0 1 66 760 V 264 A 198 198 0 0 1 264 66 Z" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="4"/>
+
+  <!-- ground the save hops over -->
+  <path d="M 186 732 H 810" stroke="#ffffff" stroke-opacity="0.14" stroke-width="20" stroke-linecap="round"/>
+
+  <!-- the hop: progress carried over from one device to the other -->
+  <path d="M 238 622 V 572 A 260 260 0 0 1 758 572 V 592" fill="none" stroke="url(#hop)" stroke-width="60" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="682,586 834,586 758,698" fill="#3ccf91" stroke="#3ccf91" stroke-width="28" stroke-linejoin="round"/>
+
+  <!-- play button carried under the hop -->
+  <polygon points="454,460 454,620 590,540" fill="url(#play)" stroke="url(#play)" stroke-width="40" stroke-linejoin="round"/>
+</svg>
