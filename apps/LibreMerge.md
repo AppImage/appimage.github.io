@@ -48,7 +48,7 @@ desktop:
     Keywords[fr]: diff
     Keywords[pt_BR]: diff
     StartupWMClass: libremerge
-    X-AppImage-Version: 1.4.0
+    X-AppImage-Version: 1.5.0
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
@@ -129,6 +129,8 @@ appdata:
       url: https://raw.githubusercontent.com/iagodpassos/libremerge/main/docs/screenshots/linux-debian.png
       lang: C
   Releases:
+  - version: 1.5.0
+    unix-timestamp: 1795132800
   - version: 1.4.0
     unix-timestamp: 1794528000
   - version: 1.3.0
