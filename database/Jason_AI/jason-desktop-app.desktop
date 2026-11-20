@@ -1,0 +1,22 @@
+[Desktop Entry]
+Name=Jason
+Exec=AppRun %U
+Terminal=false
+Type=Application
+Icon=jason-desktop-app
+StartupWMClass=Jason
+X-AppImage-Version=0.49.1
+Comment=Jason as a desktop application: a window on the installation the jason command line uses.
+Categories=Office;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.27
+X-AppImage-Payload-License=MIT

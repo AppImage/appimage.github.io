@@ -1,0 +1,17 @@
+{
+  "name": "jason-desktop",
+  "productName": "Jason",
+  "private": true,
+  "version": "0.49.1",
+  "description": "Jason as a desktop application: a window on the installation the jason command line uses.",
+  "license": "MIT",
+  "author": "Reply",
+  "main": "lib/main.js",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "dependencies": {
+    "electron-updater": "6.8.11"
+  },
+  "homepage": "https://github.com/reply-team/jason-ai"
+}
