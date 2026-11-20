@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff1f1f"/>
+      <stop offset="0.5" stop-color="#d4103f"/>
+      <stop offset="1" stop-color="#6a1b9a"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.18" cy="0.16" r="0.6">
+      <stop offset="0" stop-color="#ff8a65" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#ff8a65" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.9" cy="0.9" r="0.62">
+      <stop offset="0" stop-color="#b14dff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#b14dff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffd0d0" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#ffd0d0" stop-opacity="0.45"/>
+      <stop offset="0.7" stop-color="#e0a0ff" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#e0a0ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="note" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e3ecff"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- squircle body (same shape on every layer: no clip paths, renders everywhere) -->
+  <rect x="8" y="8" width="240" height="240" rx="72" fill="url(#bg)"/>
+  <rect x="8" y="8" width="240" height="240" rx="72" fill="url(#glow1)"/>
+  <rect x="8" y="8" width="240" height="240" rx="72" fill="url(#glow2)"/>
+  <!-- aurora ribbon -->
+  <path d="M20 176 C70 140 110 196 160 160 S226 128 240 138 L240 158 C214 150 196 178 160 184 S70 168 20 198 Z" fill="url(#ribbon)"/>
+  <!-- radio waves -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="11">
+    <path d="M70 92 A60 60 0 0 0 70 172" stroke-opacity="0.9"/>
+    <path d="M186 92 A60 60 0 0 1 186 172" stroke-opacity="0.9"/>
+    <path d="M46 70 A92 92 0 0 0 46 194" stroke-opacity="0.5"/>
+    <path d="M210 70 A92 92 0 0 1 210 194" stroke-opacity="0.5"/>
+  </g>
+  <!-- music note -->
+  <g fill="url(#note)">
+    <ellipse cx="114" cy="166" rx="23" ry="17" transform="rotate(-22 114 166)"/>
+    <rect x="128" y="74" width="11" height="94" rx="5"/>
+    <path d="M133 74 C150 78 170 92 166 120 C162 108 150 100 133 98 Z"/>
+  </g>
+  <!-- glass highlight and rim -->
+  <rect x="22" y="16" width="212" height="100" rx="50" fill="url(#sheen)"/>
+  <rect x="9" y="9" width="238" height="238" rx="71" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/>
+</svg>
