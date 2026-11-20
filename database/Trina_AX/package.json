@@ -1,0 +1,13 @@
+{
+  "name": "@mycel/desktop",
+  "version": "0.5.23",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "author": "TreeSoop",
+  "homepage": "https://treesoop.com",
+  "description": "Trina AX desktop app",
+  "main": "dist/main.cjs",
+  "productName": "Trina AX",
+  "desktopName": "trina-ax.desktop"
+}
