@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "name": "steamachievementnotifierv1.9",
+  "author": "SteamAchievementNotifier",
+  "version": "1.9.48",
+  "description": "Steam Achievement Notifier (V1.9)",
+  "main": "dist/app/app.js",
+  "repository": {
+    "url": "https://github.com/SteamAchievementNotifier/SteamAchievementNotifier"
+  },
+  "bugs": {
+    "url": "https://github.com/SteamAchievementNotifier/SteamAchievementNotifier/issues"
+  },
+  "homepage": "https://github.com/SteamAchievementNotifier/SteamAchievementNotifier#readme",
+  "dependencies": {
+    "@electron/asar": "^3.3.1",
+    "@jaames/iro": "^5.5.2",
+    "@retroachievements/api": "^2.4.0",
+    "adm-zip": "^0.6.0",
+    "electron-log": "4.4.8",
+    "electron-store": "8.2.0",
+    "electron-updater": "^6.1.7",
+    "fs-extra": "^11.2.0",
+    "icojs": "^0.22.1",
+    "jpeg-js": "^0.4.4",
+    "sanhelper.rs": "./deps/sanhelper.rs",
+    "sanwatcher.rs": "./deps/sanwatcher.rs",
+    "simple-vdf": "^1.1.1",
+    "sortablejs": "^1.15.6",
+    "steam-game-path": "^2.3.0",
+    "steamworks.js": "./deps/steamworks.js",
+    "tippy.js": "^6.3.7"
+  },
+  "overrides": {
+    "steam-game-path": {
+      "steam-appticket": "^2.0.1",
+      "steam-user": "^5.2.3"
+    },
+    "adm-zip": "^0.6.0",
+    "brace-expansion": "^5.0.8"
+  }
+}
