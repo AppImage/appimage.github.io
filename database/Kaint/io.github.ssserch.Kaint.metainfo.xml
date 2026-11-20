@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 SSSerch -->
+<component type="desktop-application">
+  <id>io.github.ssserch.Kaint</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+
+  <name>Kaint</name>
+  <summary>Edit images with layers and effects</summary>
+  <summary xml:lang="es">Edita imágenes con capas y efectos</summary>
+
+  <developer id="io.github.ssserch">
+    <name>SSSerch</name>
+  </developer>
+
+  <description>
+    <p>
+      Kaint is a raster image editor that recreates the look, the tools and the workflow of
+      Paint.NET as a native Qt application. It is made for KDE Plasma and also follows the
+      light or dark style of other desktops.
+    </p>
+    <p xml:lang="es">
+      Kaint es un editor de imágenes que recrea el aspecto, las herramientas y la forma de
+      trabajar de Paint.NET como una aplicación nativa de Qt. Está hecho para KDE Plasma y también
+      sigue el estilo claro u oscuro de otros escritorios.
+    </p>
+    <p>Features:</p>
+    <p xml:lang="es">Funciones:</p>
+    <ul>
+      <li>Selections with combine modes, move pixels with scale and rotation, brushes, clone stamp, recolor, paint bucket, gradients, lines, curves, shapes and text</li>
+      <li xml:lang="es">Selecciones con modos de combinación, mover píxeles con escala y giro, pinceles, tampón de clonar, recolorear, bote de pintura, degradados, líneas, curvas, formas y texto</li>
+      <li>Editable history: gradients, lines, shapes, text and fills stay editable when you go back to their step</li>
+      <li xml:lang="es">Historial editable: degradados, líneas, formas, texto y rellenos se pueden seguir editando al volver a su paso</li>
+      <li>Layers with blend modes, opacity and live thumbnails</li>
+      <li xml:lang="es">Capas con modos de fusión, opacidad y miniaturas en directo</li>
+      <li>Adjustments and effects with live preview</li>
+      <li xml:lang="es">Ajustes y efectos con vista previa en directo</li>
+      <li>Paint.NET effect plugins and native plugins with a C API</li>
+      <li xml:lang="es">Complementos de efectos de Paint.NET y complementos nativos con una API en C</li>
+      <li>OpenRaster projects with layers, PNG, JPEG, WebP, AVIF, JPEG XL, BMP, TIFF, TGA, animated GIF and ICO, and opens Paint.NET .pdn files</li>
+      <li xml:lang="es">Proyectos OpenRaster con capas, PNG, JPEG, WebP, AVIF, JPEG XL, BMP, TIFF, TGA, GIF animado e ICO, y abre archivos .pdn de Paint.NET</li>
+      <li>Light, dark and custom themes, and recovery copies of unsaved images</li>
+      <li xml:lang="es">Temas claro, oscuro y personalizados, y copias de recuperación de las imágenes sin guardar</li>
+    </ul>
+    <p>
+      Kaint is an independent project, not affiliated with or endorsed by dotPDN LLC. Paint.NET is
+      a trademark of dotPDN LLC.
+    </p>
+    <p xml:lang="es">
+      Kaint es un proyecto independiente, sin relación con dotPDN LLC ni respaldado por ella.
+      Paint.NET es una marca registrada de dotPDN LLC.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.ssserch.Kaint.desktop</launchable>
+  <provides>
+    <binary>kaint</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/ssserch/Kaint</url>
+  <url type="bugtracker">https://github.com/ssserch/Kaint/issues</url>
+  <url type="vcs-browser">https://github.com/ssserch/Kaint</url>
+  <url type="donation">https://ko-fi.com/E1E5ZOEH6</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The dark theme with the tools, colors, history and layers windows</caption>
+      <caption xml:lang="es">El tema oscuro con las ventanas de herramientas, colores, historial y capas</caption>
+      <image>https://raw.githubusercontent.com/ssserch/Kaint/v1.1.2/img/other/screenshot.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The light theme</caption>
+      <caption xml:lang="es">El tema claro</caption>
+      <image>https://raw.githubusercontent.com/ssserch/Kaint/v1.1.2/img/other/screenshot-light.png</image>
+    </screenshot>
+  </screenshots>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#f6c49f</color>
+    <color type="primary" scheme_preference="dark">#6b2410</color>
+  </branding>
+
+  <content_rating type="oars-1.1"/>
+
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>tablet</control>
+  </supports>
+
+  <categories>
+    <category>Graphics</category>
+    <category>2DGraphics</category>
+    <category>RasterGraphics</category>
+  </categories>
+  <keywords>
+    <keyword>paint</keyword>
+    <keyword>draw</keyword>
+    <keyword>image</keyword>
+    <keyword>photo</keyword>
+    <keyword>layers</keyword>
+    <keyword xml:lang="es">pintar</keyword>
+    <keyword xml:lang="es">dibujar</keyword>
+    <keyword xml:lang="es">imagen</keyword>
+    <keyword xml:lang="es">capas</keyword>
+  </keywords>
+
+  <releases>
+    <release version="1.1.9" date="2026-11-18">
+      <description>
+        <p>A plugin system switch with OpenD2D, more file formats, an image strip like Paint.NET's and many fixes, also in the web and Android versions.</p>
+        <ul>
+          <li>Paint.NET plugins (.dll) can run with OpenD2D (mono with the open source Direct2D, DirectWrite and WIC) or inside Wine, chosen in Settings → Plugins or in the welcome window; with OpenD2D, a plugin or an effect that doesn't work with mono can run with Wine, only that part; build.sh fetches and builds the latest OpenD2D, or a released version, or a local copy</li>
+          <li>New formats: Photoshop large documents (.psb) are saved too, and PCX, SGI, Farbfeld, PAM and Windows cursors (.cur) are opened and saved by Kaint itself; Krita, GIMP, OpenEXR, Radiance HDR, JPEG 2000, macOS icons, camera RAW, SVG, Amiga IFF and more open when Qt's image plugins are installed</li>
+          <li>Image strip: the edge arrows show only where there are more images, move one image per click and highlight under the pointer, with the thumbnails fading at that edge; thumbnails are dragged with an animation, the others making room</li>
+          <li>Zoom to Window goes back to how the image opened (100 % if it fits) and centered, even after zooming or moving around; then the scroll bars hide and its button shows the framed picture</li>
+          <li>Save All: number each sequence on its own (hola1…hola9, adios1…adios5), keep their numbers or add a name beside theirs with * (puerta_*), animated reordering, and all images can be saved again</li>
+          <li>The mouse wheel over sliders (Hardness, Spacing, Tolerance, effect sliders) can be turned off and its step chosen</li>
+          <li>GIF editor: reverse the order, back and forth (boomerang), faster or slower keeping each frame's duration, move frames and remove copies</li>
+          <li>Title bar buttons: a new Automatic choice (the theme's buttons); Windows 10 buttons can now be chosen with the Windows 7 themes</li>
+          <li>Web and Android: two fingers zoom, move and rotate the image (with snapping to right angles), scroll bars can be hidden (hidden on phones), ibis Paint style effects (Extract Line Art, Chromatic Aberration, Glitch), faster image switching and history, and the same fixes and formats as the desktop</li>
+          <li>Browse Plugins has a search bar</li>
+          <li>Fixes: Random Effect and other plugins that open another effect's dialog failed; the last image could not be closed when the strip was scrolled; the strip's left arrow sometimes did nothing; Save All ignored the chosen folder for images that already had a file; in the web version, .pdn files and PSD files without warnings did not open, and closing all images left the last one on screen; Kaint can be built on macOS (no SOCK_CLOEXEC there) and the AppImage runs on older distributions</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.8" date="2026-11-12">
+      <description>
+        <p>Animated and video backgrounds, Windows 7 and XP in the custom theme, and better Paint.NET plugin support.</p>
+        <ul>
+          <li>The custom theme can start from Windows 7 (light or dark) or Windows XP, with their buttons, menus and windows, so you can use your own background with the Windows 7 look</li>
+          <li>The canvas background can be an animated GIF (or WebP) or a video (MP4, WebM, MOV...), played in a loop without sound</li>
+          <li>Windows 7 Dark theme in the web version, and its custom theme gets the same bases and backgrounds</li>
+          <li>Paint.NET plugins: old ones that use the standard Amount, Two/Three Amounts and Angle windows now open in Kaint's effect window with a live preview, and Burninate, Combined Adjustments, the bevel and inner shadow of ObjectTools and SelectionTools and Film work; helper libraries no longer show up as incompatible plugins, and file type plugins say what they are</li>
+          <li>Built-in effects such as Outline, Median and Reduce Noise are faster, and effects are computed below the interface's priority, so dragging a slider no longer lags; in the web version the preview no longer copies the image to every thread on each change</li>
+          <li>The Windows 7 style follows the custom theme's colors (buttons, bars, menus, selection), with a window color of your own for the glass</li>
+          <li>Custom themes can be exported and imported: a .zip with the theme and its background (image, GIF or video), or a .json without one; the same files work in Kaint and in the web version</li>
+          <li>Drag plugin files or folders onto Settings → Plugins to install them; the ones that can't be read are left out</li>
+          <li>The selection looks like Paint.NET's (a pale lavender inside and gray marching ants), Settings opens several times faster and is a bit taller, and the window opening animation on Windows is shorter, so dialogs can be used sooner</li>
+          <li>Fixes: Kaint could close when turning plugins or their effects on or off in Settings; the odd shadow behind window titles with the Windows 7 themes; the empty space after the menus in the web version</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.7" date="2026-11-11">
+      <description>
+        <p>Collaborative mode, over the Internet or on the local network, between Kaint and the web version.</p>
+        <ul>
+          <li>Edit the current image together: over the Internet with P2P (share the session code; the image goes straight from one computer to the other) or on the local network, where nearby sessions are found automatically</li>
+          <li>Real time between copies of Kaint, between browsers and between Kaint and the web version; guests can also suggest their changes from a private draft, and the host accepts them: they appear in the history as "Change made by…"</li>
+          <li>Colored pointers with each person's name and tool, open, approved, password-protected or ID-only sessions, and only the host saves the image</li>
+          <li>The session image's tab turns yellow, with a crown (is the host's image saved?) and, for guests, a computer (is your exported copy up to date?)</li>
+          <li>The host's history for everyone, and going back to an earlier version for everyone (the host, and the guests it allows)</li>
+          <li>Icon pack editor: create your own icon pack, side by side with Kaint's icons, and export it as a .zip</li>
+          <li>The Paintbrush is selected when Kaint starts, sharper image thumbnails, and the ruler's pointer mark grows with the zoom to the size of a pixel</li>
+          <li>Animated GIFs can also be opened as a single image or with just the frames you choose</li>
+          <li>Your own selection color for the Light and Dark themes, a faster live preview in Hue / Saturation, and the numbers in yellow in Save All</li>
+          <li>Its own section in Settings, with a simplified and a compact view; addresses and session codes stay blurred until clicked, with a button to copy them</li>
+          <li>Dropping an image asks whether to open it or add it as a layer; Save All; color gradients in Hue / Saturation and smoother Curves</li>
+          <li>Windows 7 Dark theme with smoked glass, a Windows-like opening animation for windows, and the Zalgo button in the Text tool</li>
+          <li>Fixes: Kaint's title bar buttons on Windows, white text with the Windows 7 theme when Windows is in dark mode, and the Colors window drawing the glass behind the color wheel</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.6" date="2026-11-05">
+      <description>
+        <p>Desktop support for paint.js plugins, more image formats everywhere and a tidier phone version.</p>
+        <ul>
+          <li>Support for paint.js plugins (.paintjs), the same ones as the web version: their effects and file types (Photoshop PSD with layers, for example), run in a sandboxed JavaScript engine with no access to your files or the internet</li>
+          <li>The web version's plugin catalog, behind a button you can turn on in Settings → Plugins</li>
+          <li>TGA, DDS and QOI open and save on every system, without depending on Qt's image plugins</li>
+          <li>Kaint's own title bar and window frame can also be used on Windows</li>
+          <li>Phone version: windows hidden in the corners stay out of each other's way, the File menu lives in the save button and the menus fit in one row</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.5" date="2026-11-04">
+      <description>
+        <p>Saving as Paint.NET files, customizable menus and title bars, and a phone-friendly web version.</p>
+        <ul>
+          <li>Save as Paint.NET (.pdn), with layers, blend modes, resolution and thumbnail</li>
+          <li>Move any effect, plugin ones too, to another menu or submenu, hide effects and reorder the Tools window</li>
+          <li>Turn single effects of a plugin on or off; native plugins can bring their own icon (plugin API 2)</li>
+          <li>Animated GIFs open as layers or as separate images, and save from the layers or from the open images you pick</li>
+          <li>On Linux, title bar buttons like those of Windows 11, 10, 7, XP or 98 or macOS, on the right or on the left</li>
+          <li>Paint.NET style: a Windows 11 recreation with rounded windows and slider tracks like Paint.NET's</li>
+          <li>Windows 7, Windows XP and Windows 98 ALT themes, based on 7.css, XP.css and 98.css, with their window frames on floating windows and dialogs</li>
+          <li>Floating windows are translucent only while they cover the image, like Paint.NET</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.4" date="2026-11-01">
+      <description>
+        <p>Plugins from PhotoCraft and LightCraft, a sharper brush and a closer Paint.NET look.</p>
+        <ul>
+          <li>PhotoCraft filter plugins (.wasm) run sandboxed in Kaint's own WebAssembly interpreter</li>
+          <li>LightCraft looks (.cube, .3dl) and develop presets (.xmp), with an Amount slider</li>
+          <li>A crisper paintbrush, with Paint.NET's soft edge and smoothing that does not lag behind</li>
+          <li>Paint.NET style: gray and blue bar sliders, hollow handles, a shape grid and wider dash styles</li>
+          <li>On Linux, a Windows 10 (or Windows 98) title bar drawn by Kaint, with its shadow from KWin</li>
+          <li>Floating windows snap to the edges and to each other; interface font and top bar color in Settings</li>
+          <li>A Preview box in effect dialogs and a negative Gamma Boost in the blurs</li>
+          <li>Nearest Neighbor sampling stays sharp when shrinking with Move Selected Pixels</li>
+          <li>The Paint.NET style and cursors are now the defaults</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.3" date="2026-10-30">
+      <description>
+        <p>Paint.NET-style cursors, the Blue theme and closer Paint.NET behavior.</p>
+        <ul>
+          <li>Optional Paint.NET cursors in pixel art, chosen in Settings or on first start</li>
+          <li>The hand near the edges of a selection stretches it with the Move tools</li>
+          <li>New Bilinear Multisample and Anisotropic sampling for Move Selected Pixels</li>
+          <li>New Blue theme, and rulers that follow the theme in light mode</li>
+          <li>Canvas settings with a color wheel for the canvas border, like Paint.NET</li>
+          <li>The cursor position stays visible after leaving the canvas</li>
+          <li>On Windows, the title bar stays active while a Kaint dialog is open and cursors are smaller</li>
+          <li>Page Setup removed from the File menu (it could crash on Windows)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.2" date="2026-10-30">
+      <description>
+        <p>Fixes for the cursors and new icons in the main toolbar.</p>
+        <ul>
+          <li>Cursors with a tool thumbnail follow the pointer size chosen in KDE or GTK and play animated pointers</li>
+          <li>On Windows, those cursors are no longer blurry or distorted with custom pointers</li>
+          <li>New Cut, Copy, Paste, Crop to Selection and Deselect icons in the main toolbar</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.1" date="2026-10-29">
+      <description>
+        <p>A Paint.NET style for the interface, a welcome window and many fixes.</p>
+        <ul>
+          <li>New Paint.NET interface style, more compact and without borders, next to Kaint's own</li>
+          <li>A welcome window on the first start with the theme, style, language and Discord options</li>
+          <li>Open and Save As use the system file dialog</li>
+          <li>Cursors with a tool thumbnail use the system pointer</li>
+          <li>Layers follow the mouse while dragged in the Layers window</li>
+          <li>Fixed selection outlines, the background shifting while moving pixels and the font chooser</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-10-29">
+      <description>
+        <p>Animations, icon packs, editable shortcuts and a web version.</p>
+        <ul>
+          <li>Animations for menus, windows, layers and colors, with a switch in Settings</li>
+          <li>New interface icons, icon packs and editable keyboard shortcuts</li>
+          <li>Fonts and Paint.NET shapes can be added from Settings</li>
+          <li>Windows 10 style floating windows with a configurable border, and new rulers</li>
+          <li>Tool cursors with their icons and an exact zoom to a rectangle</li>
+          <li>Windows installer with an uninstaller</li>
+          <li>KaintHTML, Kaint for the web</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.3" date="2026-10-24">
+      <description>
+        <p>Flatpak and Flathub support.</p>
+        <ul>
+          <li>New application ID: io.github.ssserch.Kaint</li>
+          <li>Paint.NET plugins work in the Flatpak, with mono included</li>
+          <li>Paint bucket and pixel art fixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.2" date="2026-10-23">
+      <description>
+        <p>Fixes for the Windows version and nicer effect previews.</p>
+      </description>
+    </release>
+    <release version="1.0.1" date="2026-10-23">
+      <description>
+        <p>Windows support with build.bat, Paint.NET plugins on Windows, new icons and a restart when the language changes.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-10-22">
+      <description>
+        <p>First stable release.</p>
+      </description>
+    </release>
+  </releases>
+</component>
