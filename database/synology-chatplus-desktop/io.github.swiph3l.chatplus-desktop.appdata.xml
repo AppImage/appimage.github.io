@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.swiph3l.chatplus-desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>Chat+ Desktop</name>
+  <summary>Use Synology ChatPlus and Synology Chat with multiple accounts</summary>
+  <description>
+    <p>Chat+ Desktop is an independent messaging client built with Rust and Tauri.
+    Keep separate accounts signed in, receive native notifications and choose
+    Light, Dark or Retro appearance.</p>
+    <p>Synology ChatPlus and Synology Chat are the primary supported integrations.
+    Discord, WhatsApp, Messenger, Mattermost and Slack have experimental web
+    integrations. Available notification and unread features vary by service.</p>
+  </description>
+  <launchable type="desktop-id">ChatPlus Desktop.desktop</launchable>
+  <url type="homepage">https://chatplus.bir.gg/</url>
+  <url type="bugtracker">https://github.com/Swiph3l/synology-chatplus-desktop/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Chat+ Desktop settings on Ubuntu</caption>
+      <image>https://raw.githubusercontent.com/Swiph3l/synology-chatplus-desktop/45988bc26fd667f2ca68efa0fd3d419aaa7da99e/docs/screenshots/desktop-104-linux-settings.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+  </content_rating>
+</component>
