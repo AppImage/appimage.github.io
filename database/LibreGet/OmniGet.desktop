@@ -1,0 +1,27 @@
+[Desktop Entry]
+# Categories, GenericName and Keywords are hardcoded rather than derived from
+# `bundle.category`: settings.app_category() maps through a fixed AppCategory
+# table that cannot express a multi-value list like Network;FileTransfer;.
+# Keep these three lines in sync with flatpak/com.openselena.omniget.desktop.
+Categories=Network;FileTransfer;Utility;
+GenericName=Download Manager
+Keywords=omniget;download;downloader;video;media;udemy;hotmart;youtube;telegram;
+Comment=OmniGet — Universal Downloader & Media Player
+Exec=omniget
+StartupWMClass=omniget
+Icon=omniget
+Name=OmniGet
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/omniget
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|OpenSelena|omniget|latest|*AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=GPL-3.0
