@@ -1,0 +1,15 @@
+{
+  "name": "remoteku",
+  "version": "2.1.0",
+  "description": "A Roku Remote Control Electron Application",
+  "main": "main.js",
+  "author": "KevinOBytes",
+  "license": "ISC",
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/plus-jakarta-sans": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "axios": "^1.21.1",
+    "fast-xml-parser": "^5.12.0"
+  }
+}
