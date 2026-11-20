@@ -1,0 +1,38 @@
+[Desktop Entry]
+Categories=
+Comment=A local Spotify-style music player
+Exec=audion %U
+Icon=audion
+Name=Audion
+Terminal=false
+Type=Application
+MimeType=audio/mpeg;audio/flac;audio/x-wav;audio/ogg;audio/opus;audio/mp4;audio/aac;audio/x-alac;x-scheme-handler/audion;
+Actions=Play;Pause;Next;Previous;
+
+[Desktop Action Play]
+Name=Play
+Exec=audion --play
+
+[Desktop Action Pause]
+Name=Pause
+Exec=audion --pause
+
+[Desktop Action Next]
+Name=Next
+Exec=audion --next
+
+[Desktop Action Previous]
+Name=Previous
+Exec=audion --previous
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=GPL-3.0
