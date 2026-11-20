@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>com.qrcode_ai.qrcode_barcode_scanner</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+  <name>QR Code &amp; Barcode Scanner</name>
+  <summary>Read QR codes and barcodes from image files</summary>
+  <description>
+    <p>
+      qrscan reads the QR codes, barcodes and other 2D codes of an image file and prints what it
+      found as JSON: the format of each code, its exact content and where it sits in the image.
+    </p>
+    <p>
+      For a QR code it also gives a scannability score, with the reasons behind it. That helps
+      before printing an artistic or AI-generated QR code.
+    </p>
+    <p>
+      It runs on this computer. No image and no result is sent over the network, and a decoded
+      link is never opened.
+    </p>
+  </description>
+  <developer id="com.qrcode_ai">
+    <name>QR Code AI</name>
+  </developer>
+  <developer_name>QR Code AI</developer_name>
+  <url type="homepage">https://qrcode-ai.com/en-US/qr-code-scanner/cli</url>
+  <url type="bugtracker">https://github.com/qrcode-ai-com/qrcode-barcode-scanner/issues</url>
+  <url type="help">https://github.com/qrcode-ai-com/qrcode-barcode-scanner/blob/v0.11.0/docs/api/cli.mdx</url>
+  <url type="vcs-browser">https://github.com/qrcode-ai-com/qrcode-barcode-scanner</url>
+  <launchable type="desktop-id">qrcode-barcode-scanner.desktop</launchable>
+  <provides>
+    <binary>qrscan</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.11.0" date="2026-11-05">
+      <url type="details">https://github.com/qrcode-ai-com/qrcode-barcode-scanner/releases/tag/v0.11.0</url>
+    </release>
+  </releases>
+</component>
