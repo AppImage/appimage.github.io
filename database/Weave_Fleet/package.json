@@ -1,0 +1,19 @@
+{
+  "name": "fleet-desktop",
+  "productName": "Fleet",
+  "version": "0.73.0",
+  "private": true,
+  "description": "Weave Fleet as a desktop app",
+  "homepage": "https://github.com/pgermishuys/weave-fleet",
+  "author": {
+    "name": "Pieter Germishuys",
+    "email": "pieter@pieterg.com"
+  },
+  "main": "dist/main.js",
+  "trustedDependencies": [
+    "electron"
+  ],
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}
