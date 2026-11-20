@@ -1,0 +1,44 @@
+{
+  "name": "kettu",
+  "productName": "Kettu",
+  "version": "0.1.14",
+  "private": true,
+  "description": "A beautifully crafted desktop workbench for terminal coding agents.",
+  "author": "Amigoer",
+  "license": "AGPL-3.0-only",
+  "homepage": "https://github.com/KettuAI/Kettu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KettuAI/Kettu.git"
+  },
+  "main": "./out/main/index.js",
+  "packageManager": "pnpm@10.11.1",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
+    "agent-device": "0.21.36",
+    "decompress": "4.2.1",
+    "electron-updater": "6.8.9",
+    "node-pty": "1.1.0"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "electron-winstaller"
+    ],
+    "onlyBuiltDependencies": [
+      "node-pty"
+    ],
+    "patchedDependencies": {
+      "@pierre/theming@1.0.1": "patches/@pierre__theming@1.0.1.patch",
+      "@electron/notarize@2.5.0": "patches/@electron__notarize@2.5.0.patch",
+      "@expo/serve-sim@0.13.3": "patches/@expo__serve-sim@0.13.3.patch",
+      "@shadcn/react@0.3.1": "patches/@shadcn__react@0.3.1.patch",
+      "streamdown@2.7.1": "patches/streamdown@2.7.1.patch"
+    }
+  },
+  "optionalDependencies": {
+    "@expo/serve-sim": "0.13.3"
+  }
+}
