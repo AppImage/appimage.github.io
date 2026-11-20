@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ruum's mark (C1 · Machined Monolith): sharp 90° slabs and amber Watchdog core. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#151821"/>
+      <stop offset="100%" stop-color="#0A0C10"/>
+    </linearGradient>
+    <linearGradient id="titanium" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#DDE4F0"/>
+    </linearGradient>
+    <linearGradient id="amberCore" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="10" fill="url(#bg)"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="9.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.11" stroke-width="1"/>
+  <rect x="12" y="12" width="40" height="40" fill="#0B0D13"/>
+  <line x1="14" y1="29.5" x2="50" y2="29.5" stroke="#222836" stroke-width="1"/>
+  <line x1="29.5" y1="14" x2="29.5" y2="50" stroke="#222836" stroke-width="1"/>
+  <rect x="13" y="13" width="38" height="38" fill="none" stroke="#5B657A" stroke-width="2"/>
+  <rect x="17" y="17" width="11" height="30" fill="url(#titanium)"/>
+  <rect x="31" y="17" width="16" height="11" fill="#949FB1"/>
+  <rect x="17" y="17" width="11" height="1" fill="#FFFFFF"/>
+  <rect x="31" y="17" width="16" height="1" fill="#CBD5E1" fill-opacity="0.55"/>
+  <rect x="32" y="32" width="14" height="14" fill="none" stroke="url(#amberCore)" stroke-width="2"/>
+  <rect x="35" y="35" width="8" height="8" fill="url(#amberCore)"/>
+  <rect x="35" y="35" width="8" height="1" fill="#FEF3C7" fill-opacity="0.75"/>
+</svg>

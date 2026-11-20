@@ -1,0 +1,34 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=ruum
+GenericName=Disk space treemap
+Comment=Find what is using a volume, mark what should go, remove it
+Exec=ruum-gui %f
+Icon=ruum
+Terminal=false
+Categories=System;Filesystem;
+Keywords=disk;space;usage;du;treemap;cleanup;
+StartupNotify=true
+StartupWMClass=ruum
+# Registered for directories, so a file manager can offer "Open with ruum".
+# This adds a handler; it does not become the default.
+MimeType=inode/directory;
+Actions=remote;
+X-AppVersion=0.2.3
+X-AppImage-Version=0.2.3
+
+[Desktop Action remote]
+Name=Remote SSH servers
+Exec=ruum-gui --open-screen remote
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|JsonLee12138|Ruum|latest|ruum-*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=GPL-3.0

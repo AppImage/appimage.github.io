@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.tobi.ruum</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>ruum</name>
+  <summary>Interactive treemap disk space analyzer and cleanup tool</summary>
+  <description>
+    <p>
+      ruum turns local drives and remote SSH volumes into an interactive
+      nested treemap sized by actual allocated disk usage, keeping your
+      volume's live free space in view while you explore and reclaim space.
+    </p>
+    <p>
+      Mark directories and files non-destructively, review the reclaimable
+      list with safety guards, and remove targets to the system trash or
+      permanently with full before-and-after verification.
+    </p>
+  </description>
+  <launchable type="desktop-id">ruum.desktop</launchable>
+  <url type="homepage">https://github.com/JsonLee12138/Ruum</url>
+  <url type="bugtracker">https://github.com/JsonLee12138/Ruum/issues</url>
+  <developer_name>JsonLee12138</developer_name>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Interactive disk usage treemap and cleanup panel</caption>
+      <image>https://raw.githubusercontent.com/JsonLee12138/Ruum/main/assets/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>ruum-gui</binary>
+    <binary>ruum</binary>
+  </provides>
+  <content_rating type="oars-1.1" />
+</component>
