@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.vibetyper.app</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://vibetyper.com/terms</project_license>
+  <name>Vibe Typer</name>
+  <developer id="com.vibetyper">
+    <name>Abram Industries</name>
+  </developer>
+  <summary>Speech to text in any app</summary>
+  <description>
+    <p>Press a hotkey, speak, and clean, punctuated text is typed at your cursor in any app, terminals and code editors included. No window to copy from and no per-app setup.</p>
+    <p>Magic Formatter, our own model built just for cleaning up dictation, tidies what you said once you stop talking, so ums, repeats and spoken corrections like "scratch that" never reach the page.</p>
+    <ul>
+      <li>Speech to text in 99 languages, with automatic detection</li>
+      <li>Paragraphs and lists from how you talk, plus tone presets</li>
+      <li>A dictionary that learns from your corrections</li>
+      <li>Rewrite or reply to selected text by voice</li>
+      <li>Voice typing on Wayland and X11, including GNOME and KDE Plasma</li>
+      <li>Also on Windows, Mac and iPhone</li>
+    </ul>
+    <p>Sign up free, no card needed: every feature, with 2,000 words and 20 AI rewrites or replies a month. Pro removes both limits. Audio is processed in the cloud, in memory, and not stored on our servers.</p>
+  </description>
+  <launchable type="desktop-id">Vibe Typer.desktop</launchable>
+  <keywords>
+    <keyword>dictation</keyword>
+    <keyword>speech</keyword>
+    <keyword>voice</keyword>
+    <keyword>speech to text</keyword>
+    <keyword>voice to text</keyword>
+    <keyword>voice typing</keyword>
+    <keyword>speech recognition</keyword>
+    <keyword>dictate</keyword>
+    <keyword>voice input</keyword>
+    <keyword>talk to text</keyword>
+  </keywords>
+  <categories>
+    <category>Utility</category>
+    <category>Accessibility</category>
+    <category>TextTools</category>
+  </categories>
+  <url type="homepage">https://vibetyper.com</url>
+  <url type="help">https://vibetyper.com/docs</url>
+  <url type="contact">https://vibetyper.com/support</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Magic Formatter: what you said against what was typed</caption>
+      <image type="source" width="2000" height="1400">https://vibetyper.com/images/appstream/history-diff-light.png?v=3866baa9</image>
+    </screenshot>
+    <screenshot>
+      <caption>A dictionary that learns from your corrections</caption>
+      <image type="source" width="2000" height="1400">https://vibetyper.com/images/appstream/dictionary-light.png?v=a5cade84</image>
+    </screenshot>
+    <screenshot>
+      <caption>Time saved, words dictated and speaking pace</caption>
+      <image type="source" width="2000" height="1400">https://vibetyper.com/images/appstream/activity-pro-dark.png?v=2d15cb1a</image>
+    </screenshot>
+    <screenshot>
+      <caption>Choose the Magic Formatter version and tone</caption>
+      <image type="source" width="2000" height="1334">https://vibetyper.com/images/appstream/settings-formatting-light.png?v=5bf9c9cd</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.6.5" date="2026-11-04"/>
+  </releases>
+  <branding>
+    <color type="primary" scheme_preference="light">#ddd6fe</color>
+    <color type="primary" scheme_preference="dark">#2e1065</color>
+  </branding>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-info">intense</content_attribute>
+    <content_attribute id="money-purchasing">intense</content_attribute>
+  </content_rating>
+</component>
