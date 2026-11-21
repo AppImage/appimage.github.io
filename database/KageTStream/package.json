@@ -1,0 +1,12 @@
+{
+  "name": "kagetsu-tohya-desktop",
+  "productName": "Kagetsu Tohya",
+  "version": "1.0.9",
+  "description": "Kagetsu Tohya, the browser port, as a desktop program",
+  "author": "Kagetsu Tohya browser port",
+  "private": true,
+  "main": "main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.11"
+  }
+}
