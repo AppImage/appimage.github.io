@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>io.github.ffalt.mah</id>
+	<metadata_license>MIT</metadata_license>
+	<project_license>MIT</project_license>
+	<developer_name>ffalt</developer_name>
+	<name>Mah</name>
+	<keywords>
+		<keyword>mahjong</keyword>
+		<keyword>solitaire</keyword>
+		<keyword>tiles</keyword>
+		<keyword>puzzle</keyword>
+	</keywords>
+	<categories>
+		<category>Game</category>
+		<category>PuzzleGame</category>
+	</categories>
+	<summary>A Mahjong Solitaire game with customizable layouts, tile sets, and difficulty modes</summary>
+	<description>
+		<p>Mah - Mahjong Solitaire is a relaxing single-player puzzle game where you clear a board by matching pairs of identical, free tiles. Choose from many layouts, customize your game with tile sets and light or dark variants, and play in three difficulty modes.</p>
+	</description>
+	<launchable type="desktop-id">mah.desktop</launchable>
+	<url type="homepage">https://github.com/ffalt/mah</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://raw.githubusercontent.com/ffalt/mah/main/screenshot.jpg</image>
+		</screenshot>
+	</screenshots>
+</component>
