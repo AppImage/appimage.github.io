@@ -1,0 +1,13 @@
+{
+  "name": "yourlyrics",
+  "version": "0.4.2",
+  "description": "yourLyrics desktop app",
+  "main": "src/main/index.js",
+  "author": "",
+  "license": "GPL-3.0-only",
+  "type": "commonjs",
+  "dependencies": {
+    "electron-updater": "^6.8.11",
+    "hls.js": "^1.7.4"
+  }
+}
