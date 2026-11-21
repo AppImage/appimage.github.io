@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>online.donutsdelivery.DonutTaskManager</id>
+  <name>DonutTaskManager</name>
+  <summary>System process manager and performance monitor</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="online.donutsdelivery">
+    <name>Zero Action (DonutsDelivery)</name>
+  </developer>
+  <description>
+    <p>
+      DonutTaskManager is a lightweight system monitor for Linux, built with GTK4 and libadwaita.
+      It lists running processes grouped by application, and graphs CPU, memory, disk, network and GPU use.
+    </p>
+    <p>
+      You can end, force kill and reprioritize processes, manage startup entries and systemd services,
+      and restart desktop environment components. A warning dialog stops you from killing critical
+      system processes by accident. Ctrl+Shift+Esc can be registered as a global shortcut from the app.
+    </p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Processes grouped by application</caption>
+      <image>https://raw.githubusercontent.com/DonutsDelivery/task-manager-linux/main/data/screenshots/processes.png</image>
+    </screenshot>
+  </screenshots>
+  <launchable type="desktop-id">online.donutsdelivery.DonutTaskManager.desktop</launchable>
+  <provides>
+    <binary>donut-taskmgr</binary>
+  </provides>
+  <url type="homepage">https://github.com/DonutsDelivery/task-manager-linux</url>
+  <url type="vcs-browser">https://github.com/DonutsDelivery/task-manager-linux</url>
+  <url type="bugtracker">https://github.com/DonutsDelivery/task-manager-linux/issues</url>
+  <categories>
+    <category>System</category>
+    <category>Monitor</category>
+  </categories>
+  <keywords>
+    <keyword>task manager</keyword>
+    <keyword>process</keyword>
+    <keyword>system monitor</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <releases>
+    <release version="0.4.0" date="2026-11-08">
+      <description>
+        <p>Renamed to DonutTaskManager. The binary is now donut-taskmgr, and the app ID is online.donutsdelivery.DonutTaskManager.</p>
+      </description>
+    </release>
+    <release version="0.3.2" date="2026-07-30"/>
+  </releases>
+</component>

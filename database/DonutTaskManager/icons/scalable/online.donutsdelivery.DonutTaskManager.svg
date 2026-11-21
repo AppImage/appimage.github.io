@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" shape-rendering="crispEdges">
+  <!-- Win95 window outer border: raised bevel -->
+  <rect x="1" y="1" width="46" height="46" fill="#c0c0c0"/>
+  <!-- Top-left highlight -->
+  <rect x="1" y="1" width="46" height="2" fill="#fff"/>
+  <rect x="1" y="1" width="2" height="46" fill="#fff"/>
+  <!-- Bottom-right shadow -->
+  <rect x="1" y="45" width="46" height="2" fill="#808080"/>
+  <rect x="45" y="1" width="2" height="46" fill="#808080"/>
+  <!-- Dark corner -->
+  <rect x="0" y="47" width="48" height="1" fill="#000"/>
+  <rect x="47" y="0" width="1" height="48" fill="#000"/>
+  <rect x="0" y="0" width="48" height="1" fill="#dfdfdf"/>
+  <rect x="0" y="0" width="1" height="48" fill="#dfdfdf"/>
+
+  <!-- Title bar -->
+  <rect x="3" y="3" width="42" height="14" fill="#000080"/>
+  <!-- Title text (clipped to title bar area) -->
+  <clipPath id="titleclip"><rect x="3" y="3" width="29" height="14"/></clipPath>
+  <text x="5" y="13" font-family="monospace" font-size="9" font-weight="bold" fill="#fff" clip-path="url(#titleclip)">Task Mgr</text>
+
+  <!-- Close button (Win95 style) -->
+  <rect x="33" y="5" width="10" height="10" fill="#c0c0c0"/>
+  <rect x="33" y="5" width="10" height="1" fill="#fff"/>
+  <rect x="33" y="5" width="1" height="10" fill="#fff"/>
+  <rect x="33" y="14" width="10" height="1" fill="#808080"/>
+  <rect x="42" y="5" width="1" height="10" fill="#808080"/>
+  <!-- X mark -->
+  <line x1="35" y1="7" x2="41" y2="13" stroke="#000" stroke-width="1.5"/>
+  <line x1="41" y1="7" x2="35" y2="13" stroke="#000" stroke-width="1.5"/>
+
+  <!-- Inner client area (sunken) -->
+  <rect x="3" y="19" width="42" height="26" fill="#c0c0c0"/>
+  <rect x="3" y="19" width="42" height="1" fill="#808080"/>
+  <rect x="3" y="19" width="1" height="26" fill="#808080"/>
+  <rect x="3" y="44" width="42" height="1" fill="#fff"/>
+  <rect x="44" y="19" width="1" height="26" fill="#fff"/>
+
+  <!-- Graph background (black sunken area) -->
+  <rect x="5" y="21" width="38" height="22" fill="#000"/>
+  <rect x="5" y="21" width="38" height="1" fill="#808080"/>
+  <rect x="5" y="21" width="1" height="22" fill="#808080"/>
+
+  <!-- Grid lines (dark green) -->
+  <line x1="5" y1="27" x2="43" y2="27" stroke="#003300" stroke-width="1"/>
+  <line x1="5" y1="33" x2="43" y2="33" stroke="#003300" stroke-width="1"/>
+  <line x1="5" y1="39" x2="43" y2="39" stroke="#003300" stroke-width="1"/>
+  <line x1="15" y1="21" x2="15" y2="43" stroke="#003300" stroke-width="1"/>
+  <line x1="25" y1="21" x2="25" y2="43" stroke="#003300" stroke-width="1"/>
+  <line x1="35" y1="21" x2="35" y2="43" stroke="#003300" stroke-width="1"/>
+
+  <!-- CPU usage graph line (bright green, jagged) -->
+  <polyline points="6,40 9,38 12,35 15,37 18,30 21,32 24,26 27,24 30,28 33,23 36,25 39,30 42,28"
+    fill="none" stroke="#00ff00" stroke-width="2"/>
+
+  <!-- Second line (lighter green, memory-ish) -->
+  <polyline points="6,41 9,40 12,39 15,40 18,37 21,38 24,35 27,36 30,34 33,35 36,33 39,34 42,32"
+    fill="none" stroke="#00aa00" stroke-width="1"/>
+</svg>
