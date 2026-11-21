@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bezel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4fd8"/>
+      <stop offset="1" stop-color="#4fd6ff"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d0221"/>
+      <stop offset="0.55" stop-color="#3a0c5c"/>
+      <stop offset="1" stop-color="#ff3d8b"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe45c"/>
+      <stop offset="1" stop-color="#ff3d8b"/>
+    </linearGradient>
+    <!-- Chrome: sky reflection above a dark horizon line, warm light below. -->
+    <linearGradient id="chrome" gradientUnits="userSpaceOnUse" x1="0" y1="48" x2="0" y2="206">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.17" stop-color="#8fe6ff"/>
+      <stop offset="0.2" stop-color="#1b1f6f"/>
+      <stop offset="0.55" stop-color="#6a4fd8"/>
+      <stop offset="1" stop-color="#ffb3f0"/>
+    </linearGradient>
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000"/>
+    </pattern>
+    <clipPath id="screen">
+      <rect x="28" y="28" width="200" height="200" rx="28"/>
+    </clipPath>
+    <mask id="sun-stripes" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256">
+      <rect x="0" y="0" width="256" height="256" fill="#fff"/>
+      <rect x="60" y="116" width="136" height="4" fill="#000"/>
+      <rect x="60" y="128" width="136" height="5" fill="#000"/>
+      <rect x="60" y="140" width="136" height="6" fill="#000"/>
+    </mask>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect x="12" y="12" width="232" height="232" rx="44" fill="#120a1f"/>
+  <rect x="12" y="12" width="232" height="232" rx="44" fill="none" stroke="url(#bezel)" stroke-width="8"/>
+
+  <g clip-path="url(#screen)">
+    <rect x="28" y="28" width="200" height="124" fill="url(#sky)"/>
+    <circle cx="128" cy="152" r="62" fill="url(#sun)" mask="url(#sun-stripes)"/>
+    <rect x="28" y="152" width="200" height="76" fill="#0d0221"/>
+    <g stroke="#ff4fd8" stroke-width="2" fill="none">
+      <path d="M28 152 H228" stroke-width="3"/>
+      <path d="M28 160 H228 M28 172 H228 M28 190 H228 M28 216 H228"/>
+      <path d="M128 152 V228 M104 152 L56 228 M80 152 L-16 228 M152 152 L200 228 M176 152 L272 228"/>
+    </g>
+    <rect x="28" y="28" width="200" height="200" fill="url(#scanlines)" opacity="0.15"/>
+  </g>
+
+  <g stroke-linejoin="round">
+    <path d="M60 56 H208 V94 H154 V212 H114 V94 H60 Z" fill="#4fd6ff"/>
+    <path d="M56 52 H204 V90 H150 V208 H110 V90 H56 Z" fill="#ff3d8b"/>
+    <path d="M52 48 H200 V86 H146 V204 H106 V86 H52 Z" fill="url(#chrome)" stroke="#0d0221" stroke-width="4" filter="url(#glow)"/>
+    <path d="M57 53 H195" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+  </g>
+</svg>

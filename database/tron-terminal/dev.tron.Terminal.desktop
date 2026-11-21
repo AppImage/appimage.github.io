@@ -1,0 +1,32 @@
+[Desktop Entry]
+Type=Application
+Version=1.4
+Name=tron
+GenericName=Terminal Emulator
+Comment=Fast GPU accelerated terminal emulator
+Exec=tron
+TryExec=tron
+Icon=dev.tron.Terminal
+Terminal=false
+Categories=System;TerminalEmulator;
+Keywords=terminal;terminal emulator;console;shell;prompt;command;command line;commandline;cli;tty;bash;zsh;fish;gpu;
+StartupNotify=true
+StartupWMClass=dev.tron.Terminal
+X-ExecArg=-e
+X-TerminalArgExec=-e
+Actions=new-window;
+X-AppImage-Version=0.4.14
+
+[Desktop Action new-window]
+Name=New Window
+Exec=tron
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|skyline69|tron-terminal|latest|tron-*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34
