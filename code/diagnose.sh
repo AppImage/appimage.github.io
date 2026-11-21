@@ -36,11 +36,11 @@ HINTS=(
 
   "error while loading shared libraries|[Ll]ibrary [^ ]+ could not be loaded|lib[^ ]*\.so[^ ]* could not be loaded|[Cc]ould not load (shared )?library"
   "error-missing-library"
-  "The application needs a library that is neither in the AppImage nor on the test system (\"error while loading shared libraries\" or \"Library ... could not be loaded\", the first error below names it). Please bundle this library, and what it depends on, in the AppImage: an AppImage cannot rely on libraries that are not installed on every target system."
+  "The application needs a library that is neither in the AppImage nor on the test system (\"error while loading shared libraries\" or \"Library ... could not be loaded\", the first error under \"First error in the log\" names it). Please bundle this library, and what it depends on, in the AppImage: an AppImage cannot rely on libraries that are not installed on every target system."
 
   "^ERROR: The application exited within [0-9]+ seconds"
   "error-app-exits"
-  "The application quit or crashed right after starting; the error below usually shows why. Note that the test runs the application without network access, on purpose, and that this is a requirement for the catalog: an AppImage must start without network (users are offline too). If the application needs a server, a login or an update check to start, please make it show its window (or at least a message) first and connect afterwards, and handle a failed connection instead of exiting."
+  "The application quit or crashed right after starting; the error under \"First error in the log\" usually shows why. Note that the test runs the application without network access, on purpose, and that this is a requirement for the catalog: an AppImage must start without network (users are offline too). If the application needs a server, a login or an update check to start, please make it show its window (or at least a message) first and connect afterwards, and handle a failed connection instead of exiting."
 
   "^ERROR: Could not find a single window on screen"
   "error-no-window"
@@ -80,15 +80,15 @@ HINTS=(
 
   "^ERROR: File name "
   "error-filename"
-  "The name of the file in data/ does not follow the rules (see below): it must be the name of the application, without blanks (use _), architecture, file extension, \"AppImage\" or \"Linux\"."
+  "The name of the file in data/ does not follow the rules (see the remarks under \"Names\"): it must be the name of the application, without blanks (use _), architecture, file extension, \"AppImage\" or \"Linux\"."
 
   "^WARNING: (File name|AppImage name) "
   "-"
-  "Please check the remarks about the names below."
+  "Please check the remarks under \"Names\"."
 
   "^WARNING: The names of the .* differ: "
   "-"
-  "The repository, the AppImage and the README (whichever exist) call the application by different names (see the remarks below). Please check that they all belong to the same application, and that the name of the file in data/ is the right one."
+  "The repository, the AppImage and the README (whichever exist) call the application by different names (see the remarks under \"Names\"). Please check that they all belong to the same application, and that the name of the file in data/ is the right one."
 
   "^FATAL: AppRun is missing"
   "error-not-an-appimage"
@@ -104,7 +104,7 @@ HINTS=(
 
   "^ERROR: The screenshot shows an error message"
   "error-message-on-screen"
-  "The screenshot shows an error message (see below)."
+  "The screenshot shows an error message (see \"First error in the log\")."
 
   "^WARNING: The window is mostly empty"
   "-"
@@ -140,7 +140,7 @@ HINTS=(
 
   "^FATAL: ([^.]|\\.[^D]).* (is missing|not found|missing in)"
   "error-missing-file"
-  "The AppImage is missing a required file (see below). See https://docs.appimage.org/reference/appdir.html for what an AppImage must contain."
+  "The AppImage is missing a required file (see \"First error in the log\"). See https://docs.appimage.org/reference/appdir.html for what an AppImage must contain."
 
   "^Could not find icon file"
   "error-no-icon"

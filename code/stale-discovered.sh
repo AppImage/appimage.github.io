@@ -169,7 +169,7 @@ while IFS= read -r ROW ; do
       ensure_label "$L_PINGED" fef2c0 "Auto-discovered, still failing after a re-test; the application's author was asked (stale-discovered.yml); closed if unanswered"
       {
         echo "$PING_MARKER"
-        echo "${OWNER:+@$OWNER: }This pull request was opened automatically to add the application to the [AppImage catalog](https://appimage.github.io), and we would like to list it, but its AppImage does not pass the test (the result above says what fails and how to fix it; the test was just run again on the newest release). Could you have a look? Once a fixed release is out, comment \`/retest\` here and it is tested again. If we do not hear anything in $CLOSE_DAYS days, this pull request is closed to keep the queue manageable; the application is proposed again automatically when the repository publishes a new release. Thank you!"
+        echo "${OWNER:+@$OWNER: }This pull request was opened automatically to add the application to the [AppImage catalog](https://appimage.github.io), and we would like to list it, but its AppImage does not pass the test (the latest test result on this pull request says what fails and how to fix it; the test was just run again on the newest release). Could you have a look? Once a fixed release is out, comment \`/retest\` here and it is tested again. If we do not hear anything in $CLOSE_DAYS days, this pull request is closed to keep the queue manageable; the application is proposed again automatically when the repository publishes a new release. Thank you!"
       } > "$WORKDIR/c.md"
       api -X POST "repos/$REPO/issues/$N/comments" -F body=@"$WORKDIR/c.md" >/dev/null
       api -X POST "repos/$REPO/issues/$N/labels" -f "labels[]=$L_PINGED" >/dev/null

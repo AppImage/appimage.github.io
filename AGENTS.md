@@ -673,5 +673,8 @@ Rules for an agent working on the repository by hand:
 - Keep the shell style of the surrounding code (plain bash, `[ x"$A" == x... ]`
   in old code is fine to leave).
 - Messages meant for contributors should say what to do, in plain words.
+- In messages, never point with "above" or "below": the order of the parts of a
+  comment changes (and the text may be shown somewhere else). Name the part instead,
+  e.g. 'the remarks under "Names"' or 'the error under "First error in the log"'.
 - Existing entries are not re-tested automatically; new checks and flags apply
   to PRs and to entries as they are updated.
