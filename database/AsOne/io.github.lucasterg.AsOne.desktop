@@ -1,0 +1,30 @@
+[Desktop Entry]
+Type=Application
+Name=AsOne
+GenericName=Edytor zdjęć produktowych
+GenericName[en]=Product photo editor
+Comment=Zdjęcia produktowe do internetu: kadr, marginesy, białe tło, Progressive JPEG bez metadanych
+Comment[en]=Product photos for the web: crop, margins, white background, metadata-free progressive JPEG
+Exec=asone %F
+TryExec=asone
+Icon=io.github.lucasterg.AsOne
+Terminal=false
+# Natywny runner nie kończy powiadomień o starcie.
+StartupNotify=false
+StartupWMClass=io.github.lucasterg.AsOne
+Categories=Graphics;2DGraphics;RasterGraphics;Photography;
+Keywords=zdjęcia;produkt;sklep;jpeg;tło;e-commerce;photo;product;background;
+MimeType=image/jpeg;image/png;image/webp;image/tiff;image/bmp;
+# AppRun sam rejestruje skrót i ikony; zewnętrzne integratory AppImage nie dodają duplikatu.
+X-AppImage-Integrate=false
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|LucasTerg|AsOne|latest|AsOne-*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=Apache-2.0

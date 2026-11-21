@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Metadane AppStream (centra oprogramowania, Flathub). 0.1.28 i 2026-11-21 podstawiają skrypty pakujące. -->
+<component type="desktop-application">
+  <id>io.github.lucasterg.AsOne</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT OR Apache-2.0</project_license>
+  <name>AsOne</name>
+  <summary>Product photos for the web, in one batch</summary>
+  <summary xml:lang="pl">Zdjęcia produktowe do internetu – cała paczka naraz</summary>
+  <developer id="io.github.lucasterg">
+    <name>LucasTerg</name>
+  </developer>
+  <description>
+    <p>
+      AsOne prepares a batch of product photos for an online shop: crop, margins,
+      white background, square 1:1, background removal, URL-friendly file names
+      and a metadata-free progressive JPEG export that respects size limits.
+    </p>
+    <ul>
+      <li>GPU preview with zoom, crop, eraser and rectangle cut-outs</li>
+      <li>Background removal with local BRIA RMBG models (ONNX)</li>
+      <li>Export limits enforced on every save (e.g. 3000×3600 px, 3 MB)</li>
+      <li>CLI and MCP server for automation</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github.lucasterg.AsOne.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Photo list, a product with the background removed and the tools panel</caption>
+      <caption xml:lang="pl">Lista zdjęć, produkt z usuniętym tłem i panel narzędzi</caption>
+      <image type="source" width="1440" height="900">https://raw.githubusercontent.com/LucasTerg/AsOne/main/docs/screenshots/en-editor.png</image>
+      <image type="source" width="1440" height="900" xml:lang="pl">https://raw.githubusercontent.com/LucasTerg/AsOne/main/docs/screenshots/edytor.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Before and after: background removed, cropped to the product, square, 5 px frame</caption>
+      <caption xml:lang="pl">Przed i po: usunięte tło, kadr do produktu, kwadrat, ramka 5 px</caption>
+      <image type="source" width="794" height="632">https://raw.githubusercontent.com/LucasTerg/AsOne/main/docs/screenshots/przed-po.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Export summary with file names, sizes and quality</caption>
+      <caption xml:lang="pl">Podsumowanie eksportu: nazwy plików, rozmiary i jakość</caption>
+      <image type="source" width="1440" height="900">https://raw.githubusercontent.com/LucasTerg/AsOne/main/docs/screenshots/eksport.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Version suffix (-ver2) from the thumbnail context menu</caption>
+      <caption xml:lang="pl">Dopisek wersji (-ver2) z menu kontekstowego miniatury</caption>
+      <image type="source" width="1440" height="900">https://raw.githubusercontent.com/LucasTerg/AsOne/main/docs/screenshots/ver2.png</image>
+    </screenshot>
+  </screenshots>
+  <icon type="stock">io.github.lucasterg.AsOne</icon>
+  <url type="homepage">https://github.com/LucasTerg/AsOne</url>
+  <url type="bugtracker">https://github.com/LucasTerg/AsOne/issues</url>
+  <categories>
+    <category>Graphics</category>
+    <category>Photography</category>
+  </categories>
+  <keywords>
+    <keyword>photo</keyword>
+    <keyword>product</keyword>
+    <keyword>jpeg</keyword>
+    <keyword xml:lang="pl">zdjęcia</keyword>
+  </keywords>
+  <branding>
+    <color type="primary" scheme_preference="light">#9cc6f7</color>
+    <color type="primary" scheme_preference="dark">#1b5fb8</color>
+  </branding>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="0.1.28" date="2026-11-21" />
+  </releases>
+</component>
