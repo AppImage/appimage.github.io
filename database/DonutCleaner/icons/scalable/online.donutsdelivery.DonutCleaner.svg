@@ -1,0 +1,25 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2E7D32"/>
+      <stop offset="100%" style="stop-color:#1B5E20"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="url(#bg)"/>
+  <!-- Broom/sweep icon -->
+  <g transform="translate(64,64)" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Handle -->
+    <line x1="-20" y1="-30" x2="20" y2="30"/>
+    <!-- Bristles -->
+    <path d="M12,22 L30,40 M20,30 L38,36 M20,30 L32,48"/>
+    <!-- Sparkle -->
+    <g transform="translate(-28,-20)" stroke-width="3">
+      <line x1="0" y1="-8" x2="0" y2="8"/>
+      <line x1="-8" y1="0" x2="8" y2="0"/>
+    </g>
+    <g transform="translate(-14,-38)" stroke-width="2">
+      <line x1="0" y1="-5" x2="0" y2="5"/>
+      <line x1="-5" y1="0" x2="5" y2="0"/>
+    </g>
+  </g>
+</svg>

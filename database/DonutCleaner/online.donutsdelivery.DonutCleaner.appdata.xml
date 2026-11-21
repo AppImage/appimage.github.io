@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>online.donutsdelivery.DonutCleaner</id>
+  <name>DonutCleaner</name>
+  <summary>Clean caches and remove unused packages</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="online.donutsdelivery">
+    <name>Zero Action (DonutsDelivery)</name>
+  </developer>
+  <description>
+    <p>
+      DonutCleaner shows how much space your caches and installed software take up
+      and lets you remove what you no longer need. It draws installed packages and
+      their dependencies as a graph, warns before you remove something other
+      packages rely on, and scans for reclaimable space such as package caches,
+      orphaned packages, build caches, coredumps and the systemd journal.
+    </p>
+    <p>
+      System package cleanup currently supports Arch-based systems. On other
+      distributions, Flatpak, AppImage, Cargo, npm and pip cleanup still work.
+    </p>
+  </description>
+  <launchable type="desktop-id">online.donutsdelivery.DonutCleaner.desktop</launchable>
+  <url type="homepage">https://github.com/DonutsDelivery/Smart-Cleaner</url>
+  <url type="bugtracker">https://github.com/DonutsDelivery/Smart-Cleaner/issues</url>
+  <provides>
+    <binary>donutcleaner</binary>
+  </provides>
+  <categories>
+    <category>System</category>
+    <category>PackageManager</category>
+  </categories>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.2.2" date="2026-11-09">
+      <description>
+        <p>Adds an AppImage. Copies that cannot install the administrator helper, such as the AppImage, show the install commands on first run.</p>
+      </description>
+    </release>
+    <release version="0.2.1" date="2026-11-09">
+      <description>
+        <p>Root actions now go through a separate helper with its own polkit action. The helper accepts seven fixed operations and checks every path and package name.</p>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-11-08">
+      <description>
+        <p>First release as DonutCleaner, formerly SysClean. Cleanup commands now pass each path as its own argument.</p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-03-11"/>
+  </releases>
+</component>

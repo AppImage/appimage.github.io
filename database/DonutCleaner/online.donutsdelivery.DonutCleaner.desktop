@@ -1,0 +1,23 @@
+[Desktop Entry]
+Type=Application
+Name=DonutCleaner
+GenericName=System Cleaner
+Comment=Clean caches and remove unused packages
+Exec=donutcleaner
+Icon=online.donutsdelivery.DonutCleaner
+Categories=System;PackageManager;GTK;
+Keywords=package;dependency;clean;maintenance;cache;orphan;
+StartupWMClass=online.donutsdelivery.DonutCleaner
+Terminal=false
+StartupNotify=true
+X-AppImage-Version=0.2.2
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|DonutsDelivery|Smart-Cleaner|latest|DonutCleaner-*x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=bundled
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=true
+X-AppImage-Payload-License=MIT
