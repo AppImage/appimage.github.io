@@ -2,8 +2,8 @@
 layout: app
 
 permalink: /LaTeX_Editor/
-description: LaTeX editor with live PDF preview
-license: GPL-3.0-only
+description: "LaTeX editor with live PDF preview"
+license: "GPL-3.0-only"
 
 icons:
   - LaTeX_Editor/icons/256x256/latex-editor.png
@@ -11,8 +11,8 @@ screenshots:
 - https://s-balli.github.io/latex-editor/assets/01.png
 
 authors:
-  - name: s-balli
-    url: https://github.com/s-balli
+  - name: "s-balli"
+    url: "https://github.com/s-balli"
 
 links:
   - type: GitHub
@@ -45,6 +45,7 @@ desktop:
     X-AppImage-Runtime: static
     X-AppImage-Self-Contained: false
     X-AppImage-Glibc-Required: GLIBC_2.35
+    X-AppImage-Payload-License: GPL-3.0
 
 appdata:
   Type: desktop-application
@@ -106,6 +107,24 @@ appdata:
       url: https://s-balli.github.io/latex-editor/assets/01.png
       lang: C
   Releases:
+  - version: 1.2.7
+    unix-timestamp: 1794873600
+  - version: 1.2.6
+    unix-timestamp: 1793059200
+  - version: 1.2.5
+    unix-timestamp: 1791504000
+  - version: 1.2.4
+    unix-timestamp: 1791072000
+  - version: 1.2.3
+    unix-timestamp: 1790726400
+  - version: 1.2.2
+    unix-timestamp: 1790726400
+  - version: 1.2.1
+    unix-timestamp: 1790726400
+  - version: 1.2.0
+    unix-timestamp: 1790640000
+  - version: 1.1.2
+    unix-timestamp: 1790553600
   - version: 1.1.1
     unix-timestamp: 1790380800
   - version: 1.1.0
