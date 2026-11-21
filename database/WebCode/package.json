@@ -1,0 +1,24 @@
+{
+  "name": "web-code",
+  "productName": "Web Code",
+  "version": "1.0.2-rc.3",
+  "description": "A code editor made specifically for web development",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Louis2324/WebCode.git"
+  },
+  "author": {
+    "name": "Louis2324",
+    "email": "miguellouis2023@gmail.com"
+  },
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Louis2324/WebCode/issues"
+  },
+  "homepage": "https://github.com/Louis2324/WebCode#readme",
+  "dependencies": {
+    "ace-builds": "^1.43.3"
+  }
+}
