@@ -1,0 +1,17 @@
+{
+  "name": "installa-salotto",
+  "productName": "Salotto TV Setup",
+  "version": "0.2.8",
+  "description": "Guided installer of Salotto for Fire TV Stick 4K 2nd generation, one window and no terminal.",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/simplemal/salotto-tv",
+  "author": "simplemal",
+  "private": true,
+  "main": "src/main/main.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.11"
+  }
+}
