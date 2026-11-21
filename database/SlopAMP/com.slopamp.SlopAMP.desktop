@@ -1,0 +1,24 @@
+[Desktop Entry]
+Type=Application
+Name=SlopAMP
+GenericName=Media Player
+Comment=Retro media player for your files, YouTube links and downloads, with an EQ and a MilkDrop-style visualizer
+Exec=slopamp %F
+Icon=slopamp
+Terminal=false
+Categories=AudioVideo;Audio;Video;Player;
+Keywords=music;video;player;playlist;equalizer;visualizer;youtube;
+StartupWMClass=com.slopamp.SlopAMP
+MimeType=audio/mpeg;audio/mp3;audio/x-mp3;audio/flac;audio/x-flac;audio/wav;audio/x-wav;audio/ogg;audio/x-vorbis+ogg;audio/x-opus+ogg;audio/opus;audio/mp4;audio/x-m4a;audio/aac;audio/x-aac;audio/x-ms-wma;audio/x-ape;audio/x-aiff;audio/x-matroska;audio/ac3;audio/x-wavpack;video/mp4;video/x-m4v;video/x-matroska;video/webm;video/x-msvideo;video/avi;video/quicktime;video/x-ms-wmv;video/x-ms-asf;video/x-flv;video/mpeg;video/mp2t;video/3gpp;video/3gpp2;video/ogg;video/x-ogm+ogg;audio/x-mpegurl;audio/mpegurl;application/vnd.apple.mpegurl;application/x-mpegurl;audio/x-scpls;
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.28
+X-AppImage-Payload-License=MIT
