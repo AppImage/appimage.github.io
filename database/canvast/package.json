@@ -1,0 +1,11 @@
+{
+  "name": "canvast",
+  "productName": "canvast",
+  "desktopName": "canvast.desktop",
+  "version": "0.61.1",
+  "main": "main.cjs",
+  "private": true,
+  "homepage": "https://github.com/emarpiee/canvast",
+  "description": "An offline-first endless canvas for drawing and references",
+  "license": "GPL-3.0-or-later"
+}
