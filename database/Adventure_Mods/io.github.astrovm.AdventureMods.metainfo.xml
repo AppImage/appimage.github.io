@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.astrovm.AdventureMods</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name translate="no">Adventure Mods</name>
+  <name xml:lang="ja">Adventure Mods</name>
+  <name xml:lang="it">Adventure Mods</name>
+  <name xml:lang="fr">Adventure Mods</name>
+  <name xml:lang="es">Adventure Mods</name>
+  <name xml:lang="de">Adventure Mods</name>
+  <summary>Set up Sonic Adventure mods</summary>
+  <summary xml:lang="ja">ソニックアドベンチャーのModをセットアップ</summary>
+  <summary xml:lang="it">Configura i mod di Sonic Adventure</summary>
+  <summary xml:lang="fr">Configurez des mods pour Sonic Adventure</summary>
+  <summary xml:lang="es">Configurá mods de Sonic Adventure</summary>
+  <summary xml:lang="de">Mods für Sonic Adventure einrichten</summary>
+  <description>
+    <p>
+      The easiest way to mod Sonic Adventure DX and Sonic Adventure 2 on Linux.
+      Finds your Steam installs, downloads community mods, and handles mod
+      managers, runtimes, resolution, load order, and language settings so you
+      can play right away.
+    </p>
+    <p xml:lang="ja">LinuxでSonic Adventure DXとSonic Adventure 2にModを入れるいちばん簡単な方法です。Steamのインストールを見つけ、コミュニティのModをダウンロードし、Modマネージャー、ランタイム、解像度、読み込み順、言語の設定まで済ませるので、すぐに遊べます。</p>
+    <p xml:lang="it">Il modo più semplice per moddare Sonic Adventure DX e Sonic Adventure 2 su Linux. Trova le tue installazioni di Steam, scarica i mod della community e si occupa di gestori dei mod, runtime, risoluzione, ordine di caricamento e lingue, così puoi giocare subito.</p>
+    <p xml:lang="fr">La façon la plus simple de modder Sonic Adventure DX et Sonic Adventure 2 sous Linux. Trouve vos installations Steam, télécharge des mods de la communauté et s’occupe des gestionnaires de mods, des runtimes, de la résolution, de l’ordre de chargement et des langues pour que vous puissiez jouer tout de suite.</p>
+    <p xml:lang="es">La forma más fácil de usar mods en Sonic Adventure DX y Sonic Adventure 2 en Linux. Encuentra tus instalaciones de Steam, descarga mods de la comunidad y se encarga de los gestores de mods, los runtimes, la resolución, el orden de carga y los idiomas, así podés jugar enseguida.</p>
+    <p xml:lang="de">Der einfachste Weg, Sonic Adventure DX und Sonic Adventure 2 unter Linux zu modden. Findet deine Steam-Installationen, lädt Community-Mods herunter und kümmert sich um Mod-Manager, Runtimes, Auflösung, Ladereihenfolge und Spracheinstellungen, damit du sofort loslegen kannst.</p>
+    <ul>
+      <li>Detects SADX and SA2 across all Steam library folders</li>
+      <li xml:lang="ja">すべてのSteamライブラリフォルダーからSADXとSA2を見つけます</li>
+      <li xml:lang="it">Trova SADX e SA2 in tutte le cartelle delle librerie di Steam</li>
+      <li xml:lang="fr">Détecte SADX et SA2 dans tous les dossiers de bibliothèque Steam</li>
+      <li xml:lang="es">Detecta SADX y SA2 en todas las carpetas de bibliotecas de Steam</li>
+      <li xml:lang="de">Erkennt SADX und SA2 in allen Steam-Bibliotheksordnern</li>
+      <li>30 SADX mods and 16 SA2 mods</li>
+      <li xml:lang="ja">SADX用のMod 30個とSA2用のMod 16個</li>
+      <li xml:lang="it">30 mod per SADX e 16 per SA2</li>
+      <li xml:lang="fr">30 mods pour SADX et 16 pour SA2</li>
+      <li xml:lang="es">30 mods para SADX y 16 para SA2</li>
+      <li xml:lang="de">30 Mods für SADX und 16 für SA2</li>
+      <li>SADX presets: DX Enhanced and Dreamcast Restoration</li>
+      <li xml:lang="ja">SADXのプリセット：DX EnhancedとDreamcast Restoration</li>
+      <li xml:lang="it">Preset per SADX: DX Enhanced e Dreamcast Restoration</li>
+      <li xml:lang="fr">Préréglages SADX : DX Enhanced et Dreamcast Restoration</li>
+      <li xml:lang="es">Presets para SADX: DX Enhanced y Dreamcast Restoration</li>
+      <li xml:lang="de">SADX-Voreinstellungen: DX Enhanced und Dreamcast Restoration</li>
+      <li>Installs mod managers, mods, and dependencies in one step</li>
+      <li xml:lang="ja">Modマネージャー、Mod、必要なものを一度にインストール</li>
+      <li xml:lang="it">Installa gestori dei mod, mod e dipendenze in un solo passo</li>
+      <li xml:lang="fr">Installe gestionnaires de mods, mods et dépendances en une seule étape</li>
+      <li xml:lang="es">Instala gestores de mods, mods y dependencias en un solo paso</li>
+      <li xml:lang="de">Installiert Mod-Manager, Mods und Abhängigkeiten in einem Schritt</li>
+      <li>Sets your screen resolution, window mode, and recommended settings</li>
+      <li xml:lang="ja">画面の解像度とウィンドウモードを設定し、おすすめの設定を適用します</li>
+      <li xml:lang="it">Imposta la risoluzione dello schermo, la modalità finestra e le impostazioni consigliate</li>
+      <li xml:lang="fr">Règle la résolution de votre écran, le mode fenêtré et les paramètres recommandés</li>
+      <li xml:lang="es">Configura la resolución de tu pantalla, el modo de ventana y los ajustes recomendados</li>
+      <li xml:lang="de">Stellt deine Bildschirmauflösung, den Fenstermodus und empfohlene Einstellungen ein</li>
+      <li>Lets you choose subtitle and voice language during setup</li>
+      <li xml:lang="ja">セットアップ中に字幕と音声の言語を選べます</li>
+      <li xml:lang="it">Ti fa scegliere la lingua di sottotitoli e voci durante la configurazione</li>
+      <li xml:lang="fr">Permet de choisir la langue des sous-titres et des voix pendant la configuration</li>
+      <li xml:lang="es">Te deja elegir el idioma de los subtítulos y las voces durante la configuración</li>
+      <li xml:lang="de">Lässt dich bei der Einrichtung die Sprache für Untertitel und Sprachausgabe wählen</li>
+      <li>Works with a controller, a keyboard, a mouse, or touch, including Steam Deck Game Mode</li>
+      <li xml:lang="ja">コントローラー、キーボード、マウス、タッチで操作でき、Steam Deckのゲームモードにも対応</li>
+      <li xml:lang="it">Funziona con controller, tastiera, mouse o touch, anche nella modalità Gioco di Steam Deck</li>
+      <li xml:lang="fr">Fonctionne avec une manette, un clavier, une souris ou l’écran tactile, y compris le mode Jeu du Steam Deck</li>
+      <li xml:lang="es">Funciona con joystick, teclado, mouse o pantalla táctil, incluido el modo Juego de Steam Deck</li>
+      <li xml:lang="de">Funktioniert mit Controller, Tastatur, Maus oder Touch, auch im Spielmodus des Steam Deck</li>
+      <li>In English, Spanish, French, German, Italian, and Japanese</li>
+      <li xml:lang="ja">英語、スペイン語、フランス語、ドイツ語、イタリア語、日本語に対応</li>
+      <li xml:lang="it">In inglese, spagnolo, francese, tedesco, italiano e giapponese</li>
+      <li xml:lang="fr">En anglais, espagnol, français, allemand, italien et japonais</li>
+      <li xml:lang="es">En inglés, español, francés, alemán, italiano y japonés</li>
+      <li xml:lang="de">Auf Englisch, Spanisch, Französisch, Deutsch, Italienisch und Japanisch</li>
+    </ul>
+  </description>
+  <url type="homepage">https://github.com/astrovm/AdventureMods</url>
+  <url type="bugtracker">https://github.com/astrovm/AdventureMods/issues</url>
+  <url type="vcs-browser">https://github.com/astrovm/AdventureMods</url>
+  <developer id="io.github.astrovm">
+    <name translate="no">astrovm</name>
+  </developer>
+  <launchable type="desktop-id">io.github.astrovm.AdventureMods.desktop</launchable>
+  <supports>
+    <control>gamepad</control>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <content_rating type="oars-1.1"/>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/astrovm/AdventureMods/main/data/screenshots/welcome.png</image>
+      <caption>Your games, ready to set up</caption>
+      <caption xml:lang="ja">すぐにセットアップできるゲーム</caption>
+      <caption xml:lang="it">I tuoi giochi, pronti da configurare</caption>
+      <caption xml:lang="fr">Vos jeux, prêts à être configurés</caption>
+      <caption xml:lang="es">Tus juegos, listos para configurar</caption>
+      <caption xml:lang="de">Deine Spiele, bereit zum Einrichten</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/astrovm/AdventureMods/main/data/screenshots/mod-selection.png</image>
+      <caption>Mod selection with previews and presets</caption>
+      <caption xml:lang="ja">プレビューとプリセット付きのMod選択</caption>
+      <caption xml:lang="it">Scelta dei mod con anteprime e preset</caption>
+      <caption xml:lang="fr">Choix des mods avec aperçus et préréglages</caption>
+      <caption xml:lang="es">Elección de mods con vistas previas y presets</caption>
+      <caption xml:lang="de">Mod-Auswahl mit Vorschau und Voreinstellungen</caption>
+    </screenshot>
+  </screenshots>
+  <branding>
+    <color type="primary" scheme_preference="light">#62a0ea</color>
+    <color type="primary" scheme_preference="dark">#1a5fb4</color>
+  </branding>
+  <releases translate="no">
+    <release version="1.3.6" date="2026-11-21">
+      <description>
+        <p>The AppImage opens its window on systems without some X11 keyboard and cursor libraries, such as a minimal Ubuntu 22.04.</p>
+      </description>
+    </release>
+    <release version="1.3.5" date="2026-11-21">
+      <description>
+        <p>The AppImage now starts on older systems, such as Ubuntu 22.04.</p>
+      </description>
+    </release>
+    <release version="1.3.4" date="2026-11-08">
+      <description>
+        <p>Games Steam moved to another library are found again.</p>
+        <ul>
+          <li>Games are found from Steam's own install records, even when its library list is out of date</li>
+          <li>A library that was deleted no longer asks for Grant Access when the game is installed elsewhere</li>
+          <li>An empty NO_COLOR setting no longer turns off colors in the terminal</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.3" date="2026-11-01">
+      <description>
+        <p>GE-Proton and other custom Proton builds are recognized.</p>
+        <ul>
+          <li>GE-Proton 10 is detected as Proton 10, and Proton 11 builds such as GE-Proton 11 are caught before setup</li>
+          <li>Proton is found in every Steam library and tool folder, so a leftover copy no longer asks you to launch the game again and again</li>
+          <li>Messages name the Proton build, such as Proton 10.0 or GE-Proton10-34</li>
+          <li>The detect command shows each game's Proton status</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.2" date="2026-10-28">
+      <description>
+        <p>The Snap can get into your Steam folders without a terminal.</p>
+        <ul>
+          <li>When the Snap can't open your Steam folder, Grant Access opens the file chooser right there</li>
+          <li>Games in your other Steam libraries show up once the Steam folder is granted</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.1" date="2026-10-22">
+      <description>
+        <p>The Snap asks for less access to your Steam folders and tells you what it's missing.</p>
+        <ul>
+          <li>The Snap can only change the two games' folders and their Proton prefixes</li>
+          <li>When the Snap can't open your Steam folder, it shows the command that fixes it, with a Copy button</li>
+          <li>A library the Snap can't change shows Grant Access, instead of failing partway through setup</li>
+          <li>Libraries picked in the file chooser show their real folder</li>
+          <li>Long install paths no longer run over the Installation title</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.0" date="2026-10-18">
+      <description>
+        <p>The app now remembers your window size and the mods you picked.</p>
+        <ul>
+          <li>The window opens at the size you left it, on Wayland too</li>
+          <li>Setup starts with the preset or mods you picked last time for each game</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.4" date="2026-10-17">
+      <description>
+        <p>Mod downloads no longer crawl when GameBanana sends them to a slow mirror.</p>
+        <ul>
+          <li>A download that stays very slow for 20 seconds asks GameBanana for another mirror and keeps what it already has, up to three times</li>
+          <li>The log no longer repeats the detected screen resolution on every frame</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.3" date="2026-10-17">
+      <description>
+        <p>Setting up .NET no longer runs anything through Proton, and the Flatpak and Snap need less access to your system.</p>
+        <ul>
+          <li>.NET is unpacked straight into the game's Proton prefix instead of running Microsoft's installers</li>
+          <li>The Flatpak can no longer run programs outside its sandbox</li>
+          <li>Every package builds 7-Zip and HDiffPatch from source</li>
+          <li>The AppImage now runs on older distros, like Ubuntu 24.04, Debian 13 and Fedora 42</li>
+          <li>The Snap now runs in Snap's sandbox instead of with full access to your system</li>
+          <li>Snap users: after installing, run the snap connect commands from the README so it can reach Steam, your drives and controllers</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.2" date="2026-10-16">
+      <description>
+        <p>Mod downloads no longer hang when a server stops responding.</p>
+        <ul>
+          <li>A download that gets no data for 30 seconds stops and tries again, up to three times</li>
+          <li>The install screen shows which mod is downloading, how much is done, and when it is waiting for the server or retrying</li>
+          <li>Cancel now stops a stuck download right away</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.1" date="2026-10-16">
+      <description>
+        <p>Fixes a crash when reading some Steam library files.</p>
+        <ul>
+          <li>Steam library files with a backslash before an accented or other non-English character no longer crash game detection</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.0" date="2026-10-15">
+      <description>
+        <p>Adventure Mods now speaks Spanish, French, German, Italian, and Japanese, and the mod lists got an update.</p>
+        <ul>
+          <li>The app follows your system language</li>
+          <li>Every screen, message, and mod description is translated, and so is the command line</li>
+          <li>Sizes and decimals are written the way your language writes them</li>
+          <li>Japanese text has its own font, so it never shows as boxes</li>
+          <li>7 new mods: 4 for SA2 and 3 for SADX</li>
+          <li>HUD Plus and Cutscene Revamp Extensions start with their best options on</li>
+          <li>SA2 Render Fix loads first, so it no longer warns at startup</li>
+          <li>Multiplayer and the SA2 retranslations load where their pages ask</li>
+          <li>ADX Audio and 16:9 Flashbacks are gone: the Steam copy doesn't need the first, and Dreamcast Conversion overrides the second</li>
+          <li>Every mod has a plainer description</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.5" date="2026-10-11">
+      <description>
+        <p>The app opens faster, and screenshots and covers show up right away.</p>
+        <ul>
+          <li>The Flatpak is now an optimized build, so the whole app opens and runs faster</li>
+          <li>Mod screenshots load ahead of time, so hovering a mod or turning a page shows them instantly</li>
+          <li>Game covers appear on the first frame</li>
+          <li>The page arrows no longer miss a click while a screenshot loads</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.4" date="2026-10-10">
+      <description>
+        <p>Fixes the mod preview ignoring the mouse.</p>
+        <ul>
+          <li>Hovering a mod now previews it right away, without clicking somewhere else first</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.3" date="2026-10-10">
+      <description>
+        <p>The app now fits every screen size.</p>
+        <ul>
+          <li>Scaled the whole app with the window, so it fits small windows and fills big screens</li>
+          <li>Opened the first window sized for the screen</li>
+          <li>Kept the mod preview picture from pushing its description off screen</li>
+          <li>Added "Made with ❤ by astro" to About</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.2" date="2026-10-09">
+      <description>
+        <p>Fixes controller hints showing up without a controller.</p>
+        <ul>
+          <li>Stopped treating some virtual mice as controllers in the Flatpak</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.1" date="2026-10-09">
+      <description>
+        <p>Fixes a missing arrow in setup instructions.</p>
+        <ul>
+          <li>Showed the arrow in "Properties → Compatibility" instead of a box</li>
+          <li>Updated the screenshots to the new look</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-10-09">
+      <description>
+        <p>A new interface made for the couch: it works with a controller and fits the Steam Deck.</p>
+        <ul>
+          <li>Moved from GTK to egui, with large text and buttons and a clear focus ring</li>
+          <li>Added controller support: the D-pad or stick moves, A selects, B goes back, Start continues</li>
+          <li>Opened fullscreen in Steam's Game Mode</li>
+          <li>Added smooth animations and a cleaner, centered layout</li>
+          <li>Moved the Flatpak to the smaller Freedesktop runtime</li>
+          <li>Added a Snap package to each release</li>
+          <li>Kept settings and granted Steam libraries from earlier versions</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.1" date="2026-10-09">
+      <description>
+        <p>A new app icon, plus updated dependencies.</p>
+        <ul>
+          <li>Redesigned the app icon</li>
+          <li>Updated the bundled 7-Zip to 26.04</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-09-28">
+      <description>
+        <p>The first stable release. Every part of the app and the command line is now covered by automated tests.</p>
+      </description>
+    </release>
+    <release version="0.3.16" date="2026-09-27">
+      <description>
+        <p>Redesigned setup, and added restoring the original game, mod updates and resumable downloads.</p>
+        <ul>
+          <li>Made every choice up front, then installed everything in one step with a live checklist</li>
+          <li>Showed on each game whether its mods are installed, with Change Mods and Restore</li>
+          <li>Added Restore to undo setup, keeping downloaded mods for later</li>
+          <li>Installed .NET Desktop Runtime 8 next to 10: SA Mod Manager 1.3.7 needs 8 to start and warns until 10 is installed</li>
+          <li>Updated installed mods when a newer file is available, keeping their settings</li>
+          <li>Resumed interrupted downloads instead of starting over</li>
+          <li>Showed the total download size while choosing mods</li>
+          <li>Kept the mod list responsive while screenshots load</li>
+          <li>Used Steam libraries granted in the app from the command line too</li>
+          <li>Explained when a game is in a Steam library that cannot be accessed</li>
+          <li>Moved the Flatpak to the GNOME 51 runtime</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.15" date="2026-09-24">
+      <description>
+        <p>Updated release downloads to include the version in every AppImage and Flatpak filename.</p>
+        <p>Updated application and packaging dependencies.</p>
+      </description>
+    </release>
+    <release version="0.3.14" date="2026-09-11">
+      <description>
+        <p>Improved Steam library access and Proton detection in Flatpak.</p>
+        <ul>
+          <li>Refreshed detected games automatically after granting Steam library access</li>
+          <li>Resolved Proton installations stored outside the sandbox through the document portal</li>
+          <li>Validated that granted paths match the requested Steam library</li>
+          <li>Ran .NET dependency installers through Proton's prefix launcher and compatible Wine runtime</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.13" date="2026-07-25">
+      <description>
+        <p>Improved Proton compatibility checks before setup begins.</p>
+        <ul>
+          <li>Detected configured Proton 11+ tools before Steam replaces a working Proton 10 prefix</li>
+          <li>Prevented setup from continuing until the game's Proton configuration is ready</li>
+          <li>Added a Check Again action to refresh the configuration without starting installation</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.12" date="2026-07-24">
+      <description>
+        <p>Improved animation smoothness and interface responsiveness.</p>
+        <ul>
+          <li>Coalesced progress display updates to keep animations responsive</li>
+          <li>Cached and reused mod preview images while avoiding redundant refreshes</li>
+          <li>Added quick fade-in step transitions with reduced-motion support</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.11" date="2026-07-23">
+      <description>
+        <p>Updated runtime requirements for the latest SA Mod Manager.</p>
+        <ul>
+          <li>Installed .NET Desktop Runtime 10 instead of 8</li>
+          <li>Detected runtime major version 10 or newer so existing 8.x prefixes are upgraded</li>
+          <li>Detected Proton 11+ prefixes and guided users to force Proton 10.0</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.10" date="2026-07-23">
+      <description>
+        <p>Improved Linux packaging and Flatpak distribution.</p>
+        <ul>
+          <li>Added production Flatpak builds for x86_64 and ARM64</li>
+          <li>Prepared publication through the official astrovm Flatpak repository</li>
+          <li>Updated Flatpak and AppImage dependencies, validation, and host integration</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.9" date="2026-07-02">
+      <description>
+        <p>Added ARM64 packaging support and refreshed CI builds.</p>
+        <ul>
+          <li>Added x86_64 and ARM64 AppImage release builds</li>
+          <li>Added architecture-specific Flatpak helper binaries for 7-Zip and hpatchz</li>
+          <li>Updated GitHub Actions builds to Ubuntu 26.04 runners</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.8" date="2026-07-02">
+      <description>
+        <p>Improved graphical setup crash resilience.</p>
+        <ul>
+          <li>Prevented Rust panics in GTK callbacks from aborting the application</li>
+          <li>Handled stale setup navigation state with retryable errors instead of crashes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.7" date="2026-07-02">
+      <description>
+        <p>Improved setup reliability, mod selection polish, and maintainability.</p>
+        <ul>
+          <li>Unified CLI and graphical setup workflows for consistent installation behavior</li>
+          <li>Improved Proton discovery performance</li>
+          <li>Stabilized mod selection column widths when preview content changes</li>
+          <li>Updated Rust dependencies, including GTK bindings and download stack support</li>
+          <li>Simplified setup code and test organization for easier maintenance</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.6" date="2026-04-25">
+      <description>
+        <p>AppImage compatibility and auto-update support.</p>
+        <ul>
+          <li>Bundled libxml2 in the AppImage for compatibility with distributions shipping libxml2 2.15+</li>
+          <li>Added AppImage auto-updates via zsync</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.5" date="2026-04-13">
+      <description>
+        <ul>
+          <li>Paths in the UI and CLI now abbreviate the home directory as ~</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.4" date="2026-04-11">
+      <description>
+        <p>CLI setup now prompts for language and detects physical resolution.</p>
+        <ul>
+          <li>Interactive CLI setup prompts for subtitle and voice language like the GUI does</li>
+          <li>Resolution detection uses physical pixel dimensions accounting for fractional scaling</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.3" date="2026-04-10">
+      <description>
+        <p>Faster, more reliable mod setup.</p>
+        <ul>
+          <li>Downloads and installs selected mods concurrently during setup</li>
+          <li>Resolves the latest GameBanana downloads at install time</li>
+          <li>Downloads SA2 Render Fix directly from its GitHub releases page</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.2" date="2026-04-10">
+      <description>
+        <p>Improved progress reporting in both the GUI and CLI.</p>
+        <ul>
+          <li>GUI progress bars now show meaningful status labels during all download steps</li>
+          <li>Per-mod byte-level download progress shown in both GUI and CLI</li>
+          <li>CLI displays live MB counter for convert and mod manager download steps</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.1" date="2026-04-10">
+      <description>
+        <p>Removed status messages shown after game detection.</p>
+      </description>
+    </release>
+    <release version="0.3.0" date="2026-04-08">
+      <description>
+        <p>Added a full command-line workflow for setup and detection, plus manual language selection during setup.</p>
+        <ul>
+          <li>Added detect command to show supported game installs and inaccessible Steam libraries</li>
+          <li>Added list-mods command to show presets and recommended mods by game</li>
+          <li>Added setup command for headless installation and config generation</li>
+          <li>Added subtitle and voice language selection for SADX and SA2 setup</li>
+          <li>Saved language selections per game so rerunning setup reuses the last choice</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.4" date="2026-04-08">
+      <description>
+        <p>Improved setup reliability and Steam integration.</p>
+        <ul>
+          <li>Replaced protontricks-based setup with direct Proton integration</li>
+          <li>Expanded Steam library detection</li>
+          <li>Improved the welcome page and setup flow</li>
+          <li>Fixed packaged archive extraction</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-03-15">
+      <description>
+        <p>First release.</p>
+        <ul>
+          <li>Full mod setup for Sonic Adventure DX and Sonic Adventure 2</li>
+          <li>Steam install detection</li>
+          <li>Mod preset support</li>
+          <li>Mod manager installation</li>
+          <li>.NET runtime setup through protontricks</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

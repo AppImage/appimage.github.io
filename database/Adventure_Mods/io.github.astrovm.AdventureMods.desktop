@@ -1,0 +1,36 @@
+[Desktop Entry]
+Name[de]=Adventure Mods
+Name[es]=Adventure Mods
+Name[fr]=Adventure Mods
+Name[it]=Adventure Mods
+Name[ja]=Adventure Mods
+Name=Adventure Mods
+Comment[de]=Mods für Sonic Adventure einrichten
+Comment[es]=Configurá mods de Sonic Adventure
+Comment[fr]=Configurez des mods pour Sonic Adventure
+Comment[it]=Configura i mod di Sonic Adventure
+Comment[ja]=ソニックアドベンチャーのModをセットアップ
+Comment=Set up Sonic Adventure mods
+Type=Application
+Exec=adventure-mods
+Icon=io.github.astrovm.AdventureMods
+Terminal=false
+Categories=Game;
+Keywords[de]=sonic;adventure;mods;sadx;sa2;spiel;
+Keywords[es]=sonic;adventure;mods;sadx;sa2;juego;
+Keywords[fr]=sonic;adventure;mods;sadx;sa2;jeu;
+Keywords[it]=sonic;adventure;mods;sadx;sa2;gioco;
+Keywords[ja]=sonic;adventure;mods;sadx;sa2;ソニック;ゲーム;
+Keywords=sonic;adventure;mods;sadx;sa2;
+StartupWMClass=io.github.astrovm.AdventureMods
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|astrovm|AdventureMods|latest|AdventureMods-v*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=MIT
