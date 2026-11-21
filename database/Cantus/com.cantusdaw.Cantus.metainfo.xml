@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.cantusdaw.Cantus</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Cantus</name>
+  <summary>Make music: record, arrange, mix and master</summary>
+  <summary xml:lang="es">Haz música: graba, arregla, mezcla y masteriza</summary>
+  <developer id="com.cantusdaw">
+    <name>Luis Ángel Almazán</name>
+  </developer>
+  <description>
+    <p>
+      Cantus is a free and open-source digital audio workstation: a channel rack, a piano
+      roll, a playlist and a mixer in the way musicians already know, its own instruments
+      and effects, recording and mastering, and CLAP and VST3 plug-ins from other makers.
+    </p>
+    <p xml:lang="es">
+      Cantus es una estación de trabajo de audio digital libre y de código abierto: rack de
+      canales, piano roll, lista de reproducción y mezclador como los músicos ya los
+      conocen, instrumentos y efectos propios, grabación y masterización, y complementos
+      CLAP y VST3 de otros fabricantes.
+    </p>
+  </description>
+  <launchable type="desktop-id">com.cantusdaw.Cantus.desktop</launchable>
+  <url type="homepage">https://cantusdaw.com</url>
+  <url type="vcs-browser">https://github.com/luis314159/cantus-daw</url>
+  <url type="bugtracker">https://github.com/luis314159/cantus-daw/issues</url>
+  <content_rating type="oars-1.1"/>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+  </categories>
+  <provides>
+    <mediatype>application/x-cantus-project</mediatype>
+  </provides>
+  <releases>
+    <release version="0.1.0-beta.15" date="2026-11-20"/>
+  </releases>
+</component>
