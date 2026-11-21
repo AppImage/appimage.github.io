@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="RedGem">
+  <defs>
+    <clipPath id="m-wire"><polygon points="0,0 68,0 50,120 0,120"/></clipPath>
+    <clipPath id="m-solid"><polygon points="68,0 120,0 120,120 50,120"/></clipPath>
+  </defs>
+  <!-- A ruby, half wireframe and half rendered: what a 3D engine does. -->
+  <g clip-path="url(#m-wire)" fill="none" stroke="#ff5a74" stroke-width="2.6" stroke-linejoin="round"><polygon points="10,46 36,18 44,46"/><polygon points="36,18 84,18 76,46 44,46"/><polygon points="84,18 110,46 76,46"/><polygon points="10,46 44,46 60,108"/><polygon points="44,46 76,46 60,108"/><polygon points="76,46 110,46 60,108"/></g>
+  <g clip-path="url(#m-solid)"><polygon points="10,46 36,18 44,46" fill="#ff8fa0"/><polygon points="36,18 84,18 76,46 44,46" fill="#ffd0d7"/><polygon points="84,18 110,46 76,46" fill="#b40f39"/><polygon points="10,46 44,46 60,108" fill="#f0375c"/><polygon points="44,46 76,46 60,108" fill="#e3204b"/><polygon points="76,46 110,46 60,108" fill="#7a0928"/></g>
+</svg>
