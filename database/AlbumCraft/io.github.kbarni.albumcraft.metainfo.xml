@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata (software centres, Flathub). package.sh fills in 0.8.5 and 2026-11-19. -->
+<component type="desktop-application">
+  <id>io.github.kbarni.albumcraft</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT OR Apache-2.0</project_license>
+  <name>AlbumCraft</name>
+  <summary>Organize, edit and share your pictures</summary>
+  <summary xml:lang="fr">Organisez, retouchez et partagez vos photos</summary>
+  <summary xml:lang="de">Fotos ordnen, bearbeiten und teilen</summary>
+  <summary xml:lang="es">Organice, retoque y comparta sus fotos</summary>
+  <summary xml:lang="it">Organizza, ritocca e condividi le tue foto</summary>
+  <summary xml:lang="pt">Organize, edite e compartilhe as suas fotos</summary>
+  <developer id="io.github.kbarni">
+    <name>Keresztes Barna</name>
+  </developer>
+  <description>
+    <p>
+      AlbumCraft is a fast, simple photo organizer with a non-destructive editor. Point it at your
+      picture folders and it shows every picture, newest first; pick, reject and rate them, add
+      captions, tags and people, sort them into albums and see where they were taken on a map.
+    </p>
+    <p>
+      The editor has one-click fixes, sliders for light and colour, preset looks and effects. Your
+      original pictures are never modified: edits are applied when a picture is shown or exported.
+    </p>
+    <p>
+      Share pictures as exported copies, collages, prints, slideshows with music, web galleries and
+      slideshow movies.
+    </p>
+    <p xml:lang="fr">
+      AlbumCraft est un organiseur de photos rapide et simple, avec un éditeur non destructif.
+      Indiquez-lui vos dossiers de photos et il les affiche toutes, les plus récentes d'abord ;
+      choisissez, rejetez et notez-les, ajoutez des légendes, des mots-clés et des personnes,
+      rangez-les dans des albums et voyez où elles ont été prises sur une carte.
+    </p>
+    <p xml:lang="fr">
+      L'éditeur propose des corrections en un clic, des curseurs pour la lumière et la couleur,
+      des rendus prédéfinis et des effets. Vos photos originales ne sont jamais modifiées : les
+      retouches sont appliquées quand une photo est affichée ou exportée.
+    </p>
+    <p xml:lang="fr">
+      Partagez vos photos sous forme de copies exportées, de collages, d'impressions, de
+      diaporamas avec musique, de galeries web et de films de diaporama.
+    </p>
+    <p xml:lang="de">
+      AlbumCraft ist ein schneller, einfacher Fotoorganizer mit einem zerstörungsfreien Editor.
+      Zeigen Sie ihm Ihre Fotoordner, und er zeigt alle Fotos, die neuesten zuerst; markieren,
+      lehnen Sie ab und bewerten Sie sie, fügen Sie Bildunterschriften, Stichwörter und Personen
+      hinzu, sortieren Sie sie in Alben und sehen Sie auf einer Karte, wo sie aufgenommen wurden.
+    </p>
+    <p xml:lang="de">
+      Der Editor bietet Korrekturen mit einem Klick, Regler für Licht und Farbe, vordefinierte
+      Looks und Effekte. Ihre Originalfotos werden nie verändert: Bearbeitungen werden angewendet,
+      wenn ein Foto angezeigt oder exportiert wird.
+    </p>
+    <p xml:lang="de">
+      Teilen Sie Fotos als exportierte Kopien, Collagen, Ausdrucke, Diashows mit Musik,
+      Web-Galerien und Diashow-Filme.
+    </p>
+    <p xml:lang="es">
+      AlbumCraft es un organizador de fotos rápido y sencillo, con un editor no destructivo.
+      Indíquele sus carpetas de fotos y las mostrará todas, las más recientes primero; elíjalas,
+      rechácelas y puntúelas, añada pies de foto, etiquetas y personas, ordénelas en álbumes y
+      vea en un mapa dónde se tomaron.
+    </p>
+    <p xml:lang="es">
+      El editor ofrece correcciones con un clic, deslizadores para la luz y el color, aspectos
+      predefinidos y efectos. Sus fotos originales nunca se modifican: los retoques se aplican
+      cuando se muestra o se exporta una foto.
+    </p>
+    <p xml:lang="es">
+      Comparta sus fotos como copias exportadas, collages, impresiones, presentaciones con música,
+      galerías web y películas de presentación.
+    </p>
+    <p xml:lang="it">
+      AlbumCraft è un organizzatore di foto veloce e semplice, con un editor non distruttivo.
+      Indicagli le tue cartelle di foto e le mostrerà tutte, dalle più recenti; scegli, scarta e
+      valuta le foto, aggiungi didascalie, tag e persone, ordinale in album e guarda su una mappa
+      dove sono state scattate.
+    </p>
+    <p xml:lang="it">
+      L'editor offre correzioni con un clic, cursori per luce e colore, look predefiniti ed
+      effetti. Le tue foto originali non vengono mai modificate: le modifiche vengono applicate
+      quando una foto viene mostrata o esportata.
+    </p>
+    <p xml:lang="it">
+      Condividi le foto come copie esportate, collage, stampe, presentazioni con musica,
+      gallerie web e filmati di presentazione.
+    </p>
+    <p xml:lang="pt">
+      O AlbumCraft é um organizador de fotos rápido e simples, com um editor não destrutivo.
+      Aponte para as suas pastas de fotos e ele mostra todas, das mais recentes às mais antigas;
+      escolha, rejeite e avalie as fotos, adicione legendas, tags e pessoas, organize-as em álbuns
+      e veja em um mapa onde foram tiradas.
+    </p>
+    <p xml:lang="pt">
+      O editor oferece correções com um clique, controles deslizantes para luz e cor, visuais
+      predefinidos e efeitos. As suas fotos originais nunca são alteradas: as edições são
+      aplicadas quando uma foto é mostrada ou exportada.
+    </p>
+    <p xml:lang="pt">
+      Compartilhe as fotos como cópias exportadas, colagens, impressões, apresentações com
+      música, galerias web e filmes de apresentação.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.kbarni.albumcraft.desktop</launchable>
+  <icon type="stock">io.github.kbarni.albumcraft</icon>
+  <url type="homepage">https://github.com/kbarni/AlbumCraft</url>
+  <url type="bugtracker">https://github.com/kbarni/AlbumCraft/issues</url>
+  <categories>
+    <category>Graphics</category>
+    <category>Photography</category>
+  </categories>
+  <keywords>
+    <keyword>photo</keyword>
+    <keyword>picture</keyword>
+    <keyword>album</keyword>
+    <keyword>raw</keyword>
+    <keyword xml:lang="fr">photo</keyword>
+    <keyword xml:lang="fr">image</keyword>
+    <keyword xml:lang="fr">album</keyword>
+    <keyword xml:lang="fr">diaporama</keyword>
+    <keyword xml:lang="de">Foto</keyword>
+    <keyword xml:lang="de">Bild</keyword>
+    <keyword xml:lang="de">Album</keyword>
+    <keyword xml:lang="de">Diashow</keyword>
+    <keyword xml:lang="es">foto</keyword>
+    <keyword xml:lang="es">imagen</keyword>
+    <keyword xml:lang="es">álbum</keyword>
+    <keyword xml:lang="es">presentación</keyword>
+    <keyword xml:lang="it">foto</keyword>
+    <keyword xml:lang="it">immagine</keyword>
+    <keyword xml:lang="it">album</keyword>
+    <keyword xml:lang="it">presentazione</keyword>
+    <keyword xml:lang="pt">foto</keyword>
+    <keyword xml:lang="pt">imagem</keyword>
+    <keyword xml:lang="pt">álbum</keyword>
+    <keyword xml:lang="pt">apresentação</keyword>
+  </keywords>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The library</caption>
+      <caption xml:lang="fr">La bibliothèque</caption>
+      <caption xml:lang="de">Die Bibliothek</caption>
+      <caption xml:lang="es">La biblioteca</caption>
+      <caption xml:lang="it">La libreria</caption>
+      <caption xml:lang="pt">A biblioteca</caption>
+      <image type="source">https://raw.githubusercontent.com/kbarni/AlbumCraft/main/docs/screenshots/library.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Editing with the Advanced sliders</caption>
+      <caption xml:lang="fr">Retouche avec les curseurs avancés</caption>
+      <caption xml:lang="de">Bearbeiten mit den erweiterten Reglern</caption>
+      <caption xml:lang="es">Edición con los deslizadores avanzados</caption>
+      <caption xml:lang="it">Modifica con i cursori avanzati</caption>
+      <caption xml:lang="pt">Edição com os controles deslizantes avançados</caption>
+      <image type="source">https://raw.githubusercontent.com/kbarni/AlbumCraft/main/docs/screenshots/compare.jpg</image>
+    </screenshot>
+  </screenshots>
+  <requires>
+    <display_length compare="ge">900</display_length>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+  <provides>
+    <binary>albumcraft</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.8.5" date="2026-11-19"/>
+  </releases>
+</component>

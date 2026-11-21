@@ -1,0 +1,40 @@
+[Desktop Entry]
+Type=Application
+Name=AlbumCraft
+GenericName=Photo Organizer
+GenericName[fr]=Organiseur de photos
+GenericName[de]=Fotoorganizer
+GenericName[es]=Organizador de fotos
+GenericName[it]=Organizzatore di foto
+GenericName[pt]=Organizador de fotos
+Comment=Organize, edit and share your pictures
+Comment[fr]=Organisez, retouchez et partagez vos photos
+Comment[de]=Fotos ordnen, bearbeiten und teilen
+Comment[es]=Organice, retoque y comparta sus fotos
+Comment[it]=Organizza, ritocca e condividi le tue foto
+Comment[pt]=Organize, edite e compartilhe as suas fotos
+Exec=albumcraft
+TryExec=albumcraft
+Icon=io.github.kbarni.albumcraft
+Terminal=false
+StartupNotify=true
+StartupWMClass=io.github.kbarni.albumcraft
+Categories=Graphics;2DGraphics;RasterGraphics;Photography;Viewer;
+Keywords=photo;picture;album;raw;slideshow;
+Keywords[fr]=photo;image;album;raw;diaporama;
+Keywords[de]=Foto;Bild;Album;Raw;Diashow;
+Keywords[es]=foto;imagen;álbum;raw;presentación;
+Keywords[it]=foto;immagine;album;raw;presentazione;
+Keywords[pt]=foto;imagem;álbum;raw;apresentação;
+X-AppImage-Version=0.8.5
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|kbarni|AlbumCraft|latest|albumcraft-*-linux-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.35
+X-AppImage-Payload-License=Apache-2.0
