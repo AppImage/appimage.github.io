@@ -1,0 +1,47 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#39FF14" />
+      <stop offset="100%" stop-color="#2ECC71" />
+    </linearGradient>
+    <linearGradient id="mandarinGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFB347" />
+      <stop offset="100%" stop-color="#FF8C00" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="120" fill="#0D0D0D"/>
+  <circle cx="256" cy="256" r="200" stroke="white" stroke-width="1" opacity="0.05"/>
+
+  <path d="M256 60L420 160V352L256 452L92 352V160L256 60Z" fill="#1A1A1A" stroke="url(#neonGradient)" stroke-width="4" opacity="0.8"/>
+
+  <g filter="url(#glow)">
+    <path d="M210 140H302V190H210V140Z" fill="url(#neonGradient)" fill-opacity="0.2" stroke="url(#neonGradient)" stroke-width="3"/>
+    <circle cx="225" cy="155" r="4" fill="url(#neonGradient)"/>
+    <circle cx="287" cy="155" r="4" fill="url(#neonGradient)"/>
+    <circle cx="225" cy="175" r="4" fill="url(#neonGradient)"/>
+    <circle cx="287" cy="175" r="4" fill="url(#neonGradient)"/>
+  </g>
+
+  <g>
+    <rect x="150" y="240" width="12" height="40" rx="6" fill="url(#mandarinGradient)"/>
+    <rect x="175" y="210" width="12" height="100" rx="6" fill="url(#mandarinGradient)"/>
+    <rect x="200" y="230" width="12" height="60" rx="6" fill="url(#mandarinGradient)"/>
+  </g>
+
+  <g>
+    <rect x="310" y="240" width="70" height="10" rx="5" fill="url(#mandarinGradient)"/>
+    <rect x="310" y="265" width="50" height="10" rx="5" fill="url(#mandarinGradient)"/>
+    <rect x="310" y="290" width="60" height="10" rx="5" fill="url(#mandarinGradient)"/>
+  </g>
+
+  <path d="M256 120V380" stroke="url(#neonGradient)" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 20"/>
+  <path d="M256 360L200 420H312L256 360Z" fill="url(#neonGradient)"/>
+
+  <circle cx="256" cy="100" r="3" fill="#39FF14" />
+  <circle cx="256" cy="320" r="3" fill="#39FF14" />
+</svg>

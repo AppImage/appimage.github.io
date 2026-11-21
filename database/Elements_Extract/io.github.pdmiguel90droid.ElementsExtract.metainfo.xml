@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.pdmiguel90droid.ElementsExtract.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Elements Extract</name>
+  <summary>Extract audio, video and subtitle tracks, translate subtitles offline</summary>
+  <summary xml:lang="es">Extrae pistas de audio, vídeo y subtítulos; traduce subtítulos sin conexión</summary>
+
+  <description>
+    <p>
+      Elements Extract is a graphical batch extractor for audio, video and
+      subtitle tracks, with offline neural subtitle translation
+      (bergamot-translator) and embedding of the translation back into the
+      video (remux) without re-encoding. Your files never leave your machine.
+    </p>
+    <p xml:lang="es">
+      Elements Extract es un extractor gráfico por lotes de pistas de audio,
+      vídeo y subtítulos, con traducción neuronal de subtítulos sin conexión
+      (bergamot-translator) e incrustación de la traducción en el vídeo
+      (remux) sin re-codificar. Tus archivos nunca salen de tu máquina.
+    </p>
+    <ul>
+      <li>Batch extraction of audio, video and subtitle tracks</li>
+      <li>Subtitle filter by language across all batch files</li>
+      <li>Offline translation (English, Spanish, French, Portuguese + triangular)</li>
+      <li>Single-file remux with all translated tracks, MP4-safe fallback to MKV</li>
+    </ul>
+    <ul xml:lang="es">
+      <li>Extracción por lotes de pistas de audio, vídeo y subtítulos</li>
+      <li>Filtro de subtítulos por idioma en todo el lote</li>
+      <li>Traducción sin conexión (inglés, español, francés, portugués + triangular)</li>
+      <li>Remux en un solo archivo con todas las pistas, con repliegue MP4→MKV</li>
+    </ul>
+  </description>
+
+  <developer>
+    <name>pdmiguel90-droid</name>
+  </developer>
+
+  <!-- Flathub usa este contacto para avisos de compilación -->
+  <update_contact>pdmiguel90_AT_gmail.com</update_contact>
+
+  <launchable type="desktop-id">io.github.pdmiguel90droid.ElementsExtract.desktop</launchable>
+
+  <provides>
+    <binary>elements-extract</binary>
+  </provides>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window with a loaded movie</caption>
+      <caption xml:lang="es">Ventana principal con una película cargada</caption>
+      <image>https://raw.githubusercontent.com/pdmiguel90-droid/elements-extract/main/screenshots/main-window.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Subtitle filter by language in action</caption>
+      <caption xml:lang="es">Filtro de subtítulos por idioma en acción</caption>
+      <image>https://raw.githubusercontent.com/pdmiguel90-droid/elements-extract/main/screenshots/subtitle-filter.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.2.2" date="2026-11-02">
+      <description>
+        <p>Translate standalone subtitle files (.srt/.ass/.ssa/.vtt) opened from the desktop context menu, without video extraction. Desktop entry now advertises subtitle MIME types.</p>
+      </description>
+    </release>
+    <release version="1.2.1" date="2026-10-22">
+      <description>
+        <p>English UI under C/POSIX locales, bundled ffprobe on Windows and portable executable lookup.</p>
+      </description>
+    </release>
+    <release version="1.2.0" date="2026-10-11">
+      <description>
+        <p>Subtitle filter by language, translation with embedding (remux), triangular translation, model manager.</p>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+
+  <keywords>
+    <keyword>ffmpeg</keyword>
+    <keyword>extractor</keyword>
+    <keyword>subtitles</keyword>
+    <keyword>subtitulos</keyword>
+    <keyword>pistas</keyword>
+    <keyword>translation</keyword>
+    <keyword>traduccion</keyword>
+    <keyword>remux</keyword>
+    <keyword>mkv</keyword>
+  </keywords>
+
+  <url type="homepage">https://github.com/pdmiguel90-droid/elements-extract</url>
+  <url type="bugtracker">https://github.com/pdmiguel90-droid/elements-extract/issues</url>
+  <url type="help">https://github.com/pdmiguel90-droid/elements-extract#readme</url>
+</component>
