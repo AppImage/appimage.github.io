@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512" role="img" aria-label="PlanCraft">
+  <title>PlanCraft</title>
+  <!-- Deep-blue tile -->
+  <rect x="0" y="0" width="100" height="100" rx="22" fill="#1B3A8C"/>
+  <!-- Dependency elbows -->
+  <g stroke="#FFFFFF" stroke-opacity="0.67" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M53 28.5 H58 V44.5"/>
+    <path d="M71 50 H75"/>
+  </g>
+  <!-- Cascade of schedule bars -->
+  <g fill="#FFFFFF">
+    <rect x="17" y="23" width="36" height="11" rx="4.5"/>
+    <rect x="31" y="44.5" width="40" height="11" rx="4.5"/>
+    <rect x="45" y="66" width="19" height="11" rx="4.5"/>
+  </g>
+  <!-- Milestone diamond -->
+  <polygon points="78.5,61 89,71.5 78.5,82 68,71.5" fill="#F2B11C"/>
+</svg>
