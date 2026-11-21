@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.ircv3.lesalon</id>
+  <name>Le Salon</name>
+  <summary>Client IRCv3 moderne en Rust avec GPUI</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT OR Apache-2.0</project_license>
+  <description>
+    <p>
+      Client IRCv3 natif : négociation CAP 302, SASL PLAIN, TLS rustls,
+      message tags, salons, messages privés, liste des pseudos et interface
+      GPU dessinée par GPUI (le framework UI de Zed).
+    </p>
+  </description>
+  <launchable type="desktop-id">le-salon.desktop</launchable>
+  <categories>
+    <category>Network</category>
+    <category>IRCClient</category>
+  </categories>
+  <releases>
+    <release version="1.9.4" date="2026-11-16"/>
+    <release version="1.9.3" date="2026-11-16"/>
+    <release version="1.9.2" date="2026-11-16"/>
+    <release version="1.9.1" date="2026-11-16"/>
+    <release version="1.9.0" date="2026-11-11"/>
+    <release version="1.8.0" date="2026-11-10"/>
+    <release version="1.7.1" date="2026-11-10"/>
+    <release version="1.7.0" date="2026-11-08"/>
+  </releases>
+</component>
