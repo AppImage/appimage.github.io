@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainQuasarion</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Budbrain Quasarion</name>
+  <summary>Fly a dragonfly through glowing fantasy worlds and face giant beasts</summary>
+  <summary xml:lang="de">Flieg als Libelle durch leuchtende Fantasiewelten und stell dich riesigen Tieren</summary>
+
+  <description>
+    <p>
+      Spread your wings as a little dragonfly and fly upward through starlit
+      fantasy worlds. Swarms of strange insects sweep in on ever-changing
+      flight paths, and every level ends with its own giant animal – a
+      hedgehog full of spines, a huge toad, a scorpion lurking at the edge
+      and many more.
+    </p>
+    <p xml:lang="de">
+      Breite die Flügel aus und flieg als kleine Libelle durch sternklare
+      Fantasiewelten. Schwärme seltsamer Insekten ziehen auf immer neuen Bahnen
+      heran, und am Ende jedes Levels wartet ein eigenes Riesentier – ein Igel
+      voller Stacheln, eine gewaltige Kröte, ein Skorpion, der am Rand lauert,
+      und viele mehr.
+    </p>
+    <p>
+      Your dragonfly grows with you: catch glowing orbs to change and
+      strengthen its light, gather fireflies that follow your flight, and
+      watch it look different at every stage. Between flights you rest in
+      your nest and spend what you collected on lasting upgrades and a large
+      skill tree.
+    </p>
+    <p xml:lang="de">
+      Deine Libelle wächst mit dir: Leuchtkugeln ändern und verstärken ihr
+      Licht, Glühwürmchen folgen deiner Flugbahn, und in jeder Stufe sieht sie
+      anders aus. Zwischen den Flügen ruhst du im Nest und steckst, was du
+      gesammelt hast, in dauerhafte Ausbauten und einen großen Ausbaubaum.
+    </p>
+    <!-- Übersetzt wird je <li>, nie die ganze <ul> (appstreamcli 1.1 lehnt das ab). -->
+    <ul>
+      <li>Ten fantasy worlds, each with its own landscapes and insects</li>
+      <li xml:lang="de">Zehn Fantasiewelten, jede mit eigenen Landschaften und Insekten</li>
+      <li>A different giant animal at the end of every level</li>
+      <li xml:lang="de">Am Ende jedes Levels ein anderes Riesentier</li>
+      <li>Eight kinds of light for your dragonfly, each in eight stages</li>
+      <li xml:lang="de">Acht Lichtarten für deine Libelle, jede in acht Stufen</li>
+      <li>Fireflies, nest upgrades and a skill tree that grows with you</li>
+      <li xml:lang="de">Glühwürmchen, Ausbauten im Nest und ein Ausbaubaum, der mit dir wächst</li>
+      <li>A diamond tunnel to the beat of the music after every world</li>
+      <li xml:lang="de">Nach jeder Welt ein Rautentunnel im Takt der Musik</li>
+      <li>Six difficulty levels, from Easy to Insane</li>
+      <li xml:lang="de">Sechs Schwierigkeitsgrade, von Einfach bis Geisteskrank</li>
+      <li>Keyboard, gamepad or touch</li>
+      <li xml:lang="de">Tastatur, Gamepad oder Touch</li>
+      <li>Available in 83 languages</li>
+      <li xml:lang="de">In 83 Sprachen</li>
+    </ul>
+    <p>The first two worlds with 20 levels are ready to play; more worlds follow with updates.</p>
+    <p xml:lang="de">Die ersten zwei Welten mit 20 Leveln sind spielbar, weitere Welten folgen mit Updates.</p>
+  </description>
+
+  <launchable type="desktop-id">de.budbrain.jsBudbrainQuasarion.desktop</launchable>
+
+  <url type="homepage">https://www.budbrain.de</url>
+  <!-- ACHTUNG: <url type="contact"> nimmt KEIN mailto: — appstreamcli verwirft
+       dann die ganze Datei, und die App erscheint in keinem Software-Center. -->
+  <url type="contact">https://www.budbrain.de/kontakt.html</url>
+
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+
+  <categories>
+    <category>Game</category>
+    <category>ArcadeGame</category>
+  </categories>
+
+  <keywords>
+    <keyword>dragonfly</keyword>
+    <keyword>fantasy</keyword>
+    <keyword>arcade</keyword>
+    <keyword>space</keyword>
+    <keyword>insects</keyword>
+    <keyword>retro</keyword>
+  </keywords>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>gamepad</control>
+  </supports>
+
+  <requires>
+    <display_length compare="ge">560</display_length>
+  </requires>
+
+  <!-- Ehrlich angegeben: Insekten und Fantasietiere werden vom Licht der
+       Libelle getroffen und zerplatzen — gemalt, keine Menschen, kein Blut. -->
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">moderate</content_attribute>
+  </content_rating>
+
+  <!-- Ohne <screenshots> nimmt AppImageHub selbst eines auf. Die URLs zeigen auf
+       die Bilder der Website (website-software/generate-site.sh, dieselben
+       Dateien wie dist/screenshots/); optimize-images.py laesst genau diese
+       Dateien auf dem Server stehen, weil sie hier genannt sind. -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Your first giant animal: the hedgehog full of spines</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/quasarion_01-boss.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Insect swarms on ever-changing paths</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/quasarion_02-swarm.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>The star map shows how far you have come</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/quasarion_03-map.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>In the nest you upgrade your dragonfly</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/quasarion_04-nest.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The diamond tunnel to the beat of the music</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/quasarion_05-tunnel.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.0.3" date="2026-10-27">
+      <description>
+        <p>The fourth world is open: the asteroid belt with levels 31 to 40 and ten new giant animals – a nautilus that blurs everything around it, a meteor rhino charging out of dust storms, a star stag with enormous antlers and a space whale that switches off the lights. Every giant animal now has its own voice.</p>
+        <p xml:lang="de">Die vierte Welt ist offen: der Asteroidengürtel mit Level 31 bis 40 und zehn neuen Riesentieren – ein Nautilus, bei dem alles verschwimmt, ein Meteornashorn, das aus dem Staubsturm hervorbricht, ein Sternhirsch mit riesigem Geweih und ein Weltraumwal, der das Licht ausknipst. Jedes Riesentier hat jetzt seine eigene Stimme.</p>
+      </description>
+    </release>
+    <release version="1.0.2" date="2026-10-25">
+      <description>
+        <p>The third world is open: levels 21 to 30 with ten new giant animals, each with its own surprises. Every world now has its own music.</p>
+        <p xml:lang="de">Die dritte Welt ist offen: Level 21 bis 30 mit zehn neuen Riesentieren, jedes mit eigenen Überraschungen. Jede Welt hat jetzt ihre eigene Musik.</p>
+      </description>
+    </release>
+    <release version="1.0.1" date="2026-10-24">
+      <description>
+        <p>Corrected menu labels in several languages and an updated list of licenses.</p>
+        <p xml:lang="de">Menübeschriftungen in mehreren Sprachen korrigiert, Lizenzliste aktualisiert.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-10-24">
+      <description>
+        <p>First release.</p>
+        <p xml:lang="de">Erste Fassung.</p>
+      </description>
+    </release>
+  </releases>
+</component>
