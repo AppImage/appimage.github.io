@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019 Nico Linder <nico@nicoviii.net> -->
+<component type="desktop-application">
+  <id>net.nicoviii.andromeda</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Andromeda for GOG</name>
+  <summary>Open source game manager for GOG games</summary>
+
+  <description>
+    <p>
+      Andromeda is a game manager for GOG games with a focus on linux systems (for Windows and macOS
+      there is the official Galaxy Client).
+      It's an application which should help you by managing your games and keeping them up to date.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">net.nicoviii.andromeda.desktop</launchable>
+
+  <url type="homepage">https://github.com/NicoVIII/Andromeda-for-GOG</url>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-info">mild</content_attribute>
+  </content_rating>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/NicoVIII/Andromeda-for-GOG/raw/main/screenshot-1.png</image>
+    </screenshot>
+  </screenshots>
+
+  <!-- Taken from CHANGELOG.md -->
+  <releases>
+    <release version="0.5.2" date="2022-03-03" />
+    <release version="0.5.1" date="2022-03-03" />
+    <release version="0.5.0" date="2022-03-03" />
+    <release version="0.4.0" date="2020-12-05" />
+    <release version="0.3.0" date="2020-02-29" />
+    <release version="0.2.0" date="2018-08-25" />
+    <release version="0.1.0" date="2018-07-16" />
+  </releases>
+</component>
