@@ -59,9 +59,62 @@
       <caption xml:lang="es">Filtro de subtítulos por idioma en acción</caption>
       <image>https://raw.githubusercontent.com/pdmiguel90-droid/elements-extract/main/screenshots/subtitle-filter.png</image>
     </screenshot>
+    <screenshot>
+      <caption>Online subtitle search with results in the target language</caption>
+      <caption xml:lang="es">Búsqueda de subtítulos online con resultados en el idioma de destino</caption>
+      <image>https://raw.githubusercontent.com/pdmiguel90-droid/elements-extract/main/screenshots/online-subtitles.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Settings: opensubtitles.org XML-RPC backend</caption>
+      <caption xml:lang="es">Ajustes: backend XML-RPC de opensubtitles.org</caption>
+      <image>https://raw.githubusercontent.com/pdmiguel90-droid/elements-extract/main/screenshots/settings-online-subtitles.png</image>
+    </screenshot>
   </screenshots>
 
   <releases>
+    <release version="1.2.10" date="2026-11-22">
+      <description>
+        <p>Layout fix: the Cancel and Start Extraction buttons now stay visible in a fixed footer, and the activity log no longer shrinks the work area.</p>
+      </description>
+    </release>
+    <release version="1.2.9" date="2026-11-22">
+      <description>
+        <p>Added an update notifier backed by the GitHub Releases API, with a manual "Check for updates" action in the Help menu and release notes with a download link.</p>
+      </description>
+    </release>
+    <release version="1.2.8" date="2026-11-22">
+      <description>
+        <p>Build fixes: Linux CI now installs zlib1g-dev and the nOCR template database is shipped as a tracked resource, so clean checkouts compile again.</p>
+        <p>Public documentation and English screenshots updated for AppImageHub, covering the online subtitle backends and the experimental image OCR.</p>
+      </description>
+    </release>
+    <release version="1.2.7" date="2026-11-22">
+      <description>
+        <p>Default online subtitle backend switched to the opensubtitles.org XML-RPC API, with direct download links and anonymous search like VLSub in VLC; the official opensubtitles.com REST API remains available in Settings.</p>
+        <p>Optional, experimental image subtitle OCR with nOCR: extracts PGS/VobSub frames with ffmpeg and writes a translatable .srt, keeping the original .mks copy if recognition fails. Progress is shown in the log and a full episode can take several minutes.</p>
+        <p>Online search now combines file hash and title/season/episode results without duplicates, so releases with only English hash matches also find translations in other languages.</p>
+      </description>
+    </release>
+    <release version="1.2.6" date="2026-11-22">
+      <description>
+        <p>Prefer the target language from Settings when searching online subtitles: it is highlighted and its results are sorted first. When no subtitle exists in that language, the app offers downloading another language and translating it with the existing triangular path. Help updated.</p>
+      </description>
+    </release>
+    <release version="1.2.5" date="2026-11-22">
+      <description>
+        <p>Search subtitles manually for the selected video or in batch for several videos from the file list, with editable per-file queries. Credentials are stored in the operating system secure keyring (Secret Service, Credential Manager or Keychain) instead of plaintext settings.</p>
+      </description>
+    </release>
+    <release version="1.2.4" date="2026-11-22">
+      <description>
+        <p>Search, download and translate subtitles from OpenSubtitles.com using your own account. Downloads are unpacked (ZIP/GZIP/RAR) before offline translation, with hash-based matching and title fallback.</p>
+      </description>
+    </release>
+    <release version="1.2.3" date="2026-11-22">
+      <description>
+        <p>Extract image-based subtitles (Blu-ray PGS, DVD/VobSub, DVB, XSUB) verbatim as .mks via stream copy. Subtitle codecs and languages are now shown per file, with clearer ffprobe/ffmpeg error messages.</p>
+      </description>
+    </release>
     <release version="1.2.2" date="2026-11-02">
       <description>
         <p>Translate standalone subtitle files (.srt/.ass/.ssa/.vtt) opened from the desktop context menu, without video extraction. Desktop entry now advertises subtitle MIME types.</p>
