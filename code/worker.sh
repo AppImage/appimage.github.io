@@ -605,6 +605,14 @@ if [ $(file -b --mime-type database/$INPUTBASENAME/screenshot.png) != "image/png
   exit 1
 fi
 
+# A launcher or manager may show "Not installed" in its window as normal status text (#9233)
+MANAGER_HINT=$(bash "$(dirname "$0")/manager-hint.sh" "$INPUTBASENAME" "$(ls "$APPDIR"/*.desktop 2>/dev/null | head -n 1)" || true)
+export MANAGER_APP=false
+if [ -n "$MANAGER_HINT" ] ; then
+  echo "Launcher or manager ($MANAGER_HINT): 'not installed' on the screenshot is only a warning"
+  export MANAGER_APP=true
+fi
+
 # Fail on an empty window or an error message on screen
 if ! bash "$(dirname "$0")/check-screenshot.sh" database/$INPUTBASENAME/screenshot.png $([ x"$TERMINAL" == xtrue ] && echo terminal) $([ "$TRAY" == true ] && echo tray) ; then
   mkdir -p failure-screens

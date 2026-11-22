@@ -4,12 +4,13 @@
 # window (e.g., only a menu bar on white, typical for Electron applications
 # that failed to render) or an error message.
 #
-# Usage: check-screenshot.sh screenshot.png [terminal|tray]
+# Usage: [MANAGER_APP=true] check-screenshot.sh screenshot.png [terminal|tray]
 # Prints ERROR: and WARNING: lines; exits 1 if there is an ERROR.
 # With "terminal" (the application was run with --help in xterm), only
 # warnings are given: help texts often contain words like "fatal".
 # With "tray" (a system tray application: the screenshot shows its icon in a
 # system tray, or what clicking it opened), the empty-window check is skipped.
+# With MANAGER_APP=true (a launcher or manager), "not installed" is only a warning.
 #
 # The thresholds were chosen by running this over the ~1500 screenshots in
 # database/: it fails ~50 of them, nearly all of which are blank or stuck
@@ -62,6 +63,13 @@ fi
 
 HARD='traceback|exception|segmentation fault|fatal|error while loading|glibc|not installed|cannot open display|permission denied|no such file|could not (load|find|open|start|initiali)|failed to (load|start|open|initiali|create)|cannot (load|find|open|execute|configure)|unable to (load|find|open|start)|command not found|core dumped'
 SOFT='error|failed|failure|could not|cannot|unable to|not found'
+# A launcher or manager (code/manager-hint.sh; worker.sh sets MANAGER_APP=true) shows
+# "Not installed" next to an "Install" button in normal operation (#9233): only a
+# warning for them; every other AppImage has to be complete in itself
+if [ "${MANAGER_APP:-}" = true ] ; then
+  HARD=${HARD/not installed|/}
+  SOFT="$SOFT|not installed"
+fi
 MATCH=$(echo "$TEXT" | grep -oiE ".{0,40}(${HARD}).{0,60}" | head -n 1)
 if [ -n "$MATCH" ] && [ "$TERMINAL" != terminal ] ; then
   echo "ERROR: The screenshot shows an error message: ${MATCH}"
