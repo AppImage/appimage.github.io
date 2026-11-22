@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <!-- Colours from docs/art/palette.json, dark mode: bg0, aqua (accent), fg0 (text). -->
+  <title>re-psn</title>
+  <rect width="256" height="256" rx="40" fill="#282828"/>
+  <g fill="none" stroke="#89b482" stroke-width="12" stroke-linecap="round">
+    <line x1="72" y1="88" x2="184" y2="88"/>
+    <line x1="72" y1="88" x2="128" y2="176"/>
+    <line x1="184" y1="88" x2="128" y2="176"/>
+  </g>
+  <g fill="#d4be98">
+    <circle cx="72" cy="88" r="22"/>
+    <circle cx="184" cy="88" r="22"/>
+    <circle cx="128" cy="176" r="22"/>
+  </g>
+</svg>
