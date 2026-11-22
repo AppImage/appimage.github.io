@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.saulob.alienation_pc</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later AND GPL-2.0-only</project_license>
+  <name>Alienation PC</name>
+  <summary>PC port of Alienation, bring your own game package</summary>
+  <description>
+    <p>
+      An unofficial native PC port of Housemarque's Alienation (PS4). The game's own x86-64 code runs directly on the
+      PC through replacement PS4 system libraries and a Vulkan renderer derived from shadPS4.
+    </p>
+    <p>
+      No game files are included. Install your own Alienation package from the launcher: CUSA00062 1.00 or 1.06 (EUR,
+      including the official update) or CUSA04430 1.00 (ASIA/KR).
+    </p>
+    <ul>
+      <li>Online co-op for two to four players, with friends, invitations and a relay when a direct connection fails</li>
+      <li>Local co-op for up to four controllers on CUSA00062 1.06</li>
+      <li>Render resolution, aspect ratio, ultrawide, SMAA, FSR 1 and texture filtering</li>
+      <li>Frame rate options from 30 to 240 FPS and Unlimited, with the game itself running at its original speed</li>
+      <li>Xbox and PlayStation button prompts, Skip Intro and Exit Game</li>
+      <li>Trophies, save data per user, and a built-in updater</li>
+    </ul>
+    <p>
+      Alienation is a trademark of its rights holders. This project is not affiliated with or endorsed by Housemarque
+      or Sony Interactive Entertainment.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.saulob.alienation_pc.desktop</launchable>
+  <icon type="stock">alienation-pc</icon>
+  <developer id="io.github.saulob">
+    <name>saulob</name>
+  </developer>
+  <url type="homepage">https://github.com/saulob/alienation-pc</url>
+  <url type="bugtracker">https://github.com/saulob/alienation-pc/issues</url>
+  <url type="donation">https://github.com/sponsors/saulob</url>
+  <categories>
+    <category>Game</category>
+    <category>ActionGame</category>
+  </categories>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>gamepad</control>
+  </supports>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-fantasy">intense</content_attribute>
+    <content_attribute id="violence-bloodshed">moderate</content_attribute>
+    <content_attribute id="social-info">mild</content_attribute>
+  </content_rating>
+  <releases>
+    <release version="0.1.1" date="2026-11-20"/>
+  </releases>
+</component>
