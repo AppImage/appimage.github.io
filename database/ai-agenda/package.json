@@ -1,0 +1,23 @@
+{
+  "name": "agenda",
+  "productName": "Agenda",
+  "version": "0.4.0",
+  "private": true,
+  "license": "MIT",
+  "description": "多 AI 协作桌面应用：Claude Code、Codex、Gemini、DeepSeek 等在同一个空间里讨论、分工，一起修改同一个文件夹，可导入其他 AI 软件里的对话接着做",
+  "homepage": "https://github.com/xxxpixel-x/ai-agenda",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxxpixel-x/ai-agenda.git"
+  },
+  "author": "xxxpixel-x",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "dependencies": {
+    "@earendil-works/pi-ai": "1.5.2",
+    "@earendil-works/pi-coding-agent": "1.5.2"
+  }
+}
