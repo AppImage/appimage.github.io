@@ -90,7 +90,13 @@ GitHub Pages (Jekyll) from this repository.
      and takes the tray and menu; `check-screenshot.sh` gets `tray` (no
      empty-window check) and a warning asks the maintainer to check it;
    - `code/check-screenshot.sh`: fails on an (almost) empty window or an error
-     message found by OCR (tesseract), or text mostly in Chinese, Arabic,
+     message found by OCR (tesseract; "not installed" is one of them, because an
+     AppImage must be complete in itself, but only a warning for a launcher or
+     manager: `code/manager-hint.sh`, run by `worker.sh`, looks at the name of the
+     entry and the Name, GenericName and Comment of the desktop file for words
+     like launcher, manager, installer, downloader, updater, marketplace, app
+     store, and at `Categories=PackageManager`; then `MANAGER_APP=true`, and
+     `screenshot-ok` is not set, a maintainer looks at it), or text mostly in Chinese, Arabic,
      Cyrillic or Greek script (OCR with those models, confident words only;
      label `error-not-english`); warns when the window is mostly dark (at least
      60 % of a downscaled gray version darker than 35 % gray, mean below 35 %):
