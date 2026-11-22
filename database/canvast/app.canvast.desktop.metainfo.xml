@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- What app stores and catalogs show of canvast (AppStream, B32): put into the AppImage as usr/share/metainfo/ by
+     scripts/package-desktop.mjs, which fills in 0.62.0 and 2026-11-23. The screenshots are made by the Screenshots workflow
+     (tests/shots, the shots marked `store`) and kept in docs/screenshots/store/. -->
+<component type="desktop-application">
+  <id>app.canvast.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>canvast</name>
+  <summary>An endless canvas for drawing and references, offline</summary>
+  <description>
+    <p>Your references, drawings and notes in one place: a creative workspace on an endless canvas. It works offline, with no account.</p>
+    <ul>
+      <li>Reference boards: pictures, video, PDFs and 3D models on a canvas, cropped, flipped and adjusted without touching the files</li>
+      <li>Drawing and vector editing: pressure pens, shapes, Bézier paths, boolean shapes, masks, gradients, patterns and guides</li>
+      <li>Comics and storyboards: pages cut into panels, speech balloons, rich text with your own fonts</li>
+      <li>A library of your files in folders and tags, with a viewer and a search that knows sizes, colours and dates</li>
+      <li>Linked markdown notes, and Pins: a canvas or a folder in a window above every view</li>
+      <li>Your workspace is a plain folder any sync tool can carry; hidden items are encrypted</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">canvast.desktop</launchable>
+  <url type="homepage">https://github.com/emarpiee/canvast</url>
+  <url type="bugtracker">https://github.com/emarpiee/canvast/issues</url>
+  <developer id="io.github.emarpiee">
+    <name>emarpiee</name>
+  </developer>
+  <categories>
+    <category>Graphics</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/emarpiee/canvast/main/docs/screenshots/store/hero.png</image>
+      <caption>A canvas in use: the showcase's Solar System at home</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/emarpiee/canvast/main/docs/screenshots/store/library.png</image>
+      <caption>The Library: folders, the grid of files and a print's details</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.62.0" date="2026-11-23"/>
+  </releases>
+</component>

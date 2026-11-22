@@ -3,13 +3,12 @@ layout: app
 
 permalink: /canvast/
 description: "An offline-first endless canvas for drawing and references"
-license: "GPL-3.0"
+license: "GPL-3.0-or-later"
 
 icons:
   - canvast/icons/512x512/canvast.png
-
 screenshots:
-  - canvast/screenshot.png
+- https://raw.githubusercontent.com/emarpiee/canvast/main/docs/screenshots/store/hero.png
 
 authors:
   - name: "emarpiee"
@@ -24,12 +23,12 @@ links:
 desktop:
   Desktop Entry:
     Name: canvast
-    Exec: AppRun --no-sandbox %U
+    Exec: AppRun %U
     Terminal: false
     Type: Application
     Icon: canvast
     StartupWMClass: canvast
-    X-AppImage-Version: 0.61.1
+    X-AppImage-Version: 0.62.0
     Comment: An offline-first endless canvas for drawing and references
     GenericName: Reference canvas
     Keywords: canvas
@@ -43,10 +42,10 @@ desktop:
     X-AppImage-Type: 2
     X-AppImage-Architecture: x86_64
     X-AppImage-Libc: host
-    X-AppImage-Runtime: dynamic
+    X-AppImage-Runtime: static
     X-AppImage-Self-Contained: false
     X-AppImage-Glibc-Required: GLIBC_2.34
     X-AppImage-Payload-License: GPL-3.0
 
-electron: {"name":"canvast","productName":"canvast","desktopName":"canvast.desktop","version":"0.61.1","main":"main.cjs","private":true,"homepage":"https://github.com/emarpiee/canvast","description":"An offline-first endless canvas for drawing and references","license":"GPL-3.0-or-later"}
+electron: {"name":"canvast","productName":"canvast","desktopName":"canvast.desktop","version":"0.62.0","main":"main.cjs","private":true,"homepage":"https://github.com/emarpiee/canvast","description":"An offline-first endless canvas for drawing and references","license":"GPL-3.0-or-later"}
 ---

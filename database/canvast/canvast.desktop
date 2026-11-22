@@ -1,11 +1,11 @@
 [Desktop Entry]
 Name=canvast
-Exec=AppRun --no-sandbox %U
+Exec=AppRun %U
 Terminal=false
 Type=Application
 Icon=canvast
 StartupWMClass=canvast
-X-AppImage-Version=0.61.1
+X-AppImage-Version=0.62.0
 Comment=An offline-first endless canvas for drawing and references
 GenericName=Reference canvas
 Keywords=canvas;drawing;reference;moodboard;
@@ -17,7 +17,7 @@ X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runne
 X-AppImage-Type=2
 X-AppImage-Architecture=x86_64
 X-AppImage-Libc=host
-X-AppImage-Runtime=dynamic
+X-AppImage-Runtime=static
 X-AppImage-Self-Contained=false
 X-AppImage-Glibc-Required=GLIBC_2.34
 X-AppImage-Payload-License=GPL-3.0
