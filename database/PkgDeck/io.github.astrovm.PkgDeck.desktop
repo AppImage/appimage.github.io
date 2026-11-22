@@ -1,0 +1,22 @@
+[Desktop Entry]
+Type=Application
+Name=PkgDeck
+Comment=All your package managers in one app
+Exec=pkgdeck %u
+Icon=io.github.astrovm.PkgDeck
+Terminal=false
+Categories=System;PackageManager;
+# KDE opens a file or link with the app that has the highest preference
+# when nobody picked one. Discover's Flatpak link handler has 5.
+InitialPreference=6
+MimeType=application/vnd.debian.binary-package;application/x-rpm;application/vnd.flatpak;application/vnd.flatpak.ref;application/vnd.flatpak.repo;application/vnd.appimage;application/x-iso9660-appimage;application/vnd.snap;application/x-pacman-package;text/x-suse-ymp;x-scheme-handler/flatpak+https;
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|astrovm|PkgDeck|latest|PkgDeck-v*-x86_64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=bundled
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=true
+X-AppImage-Payload-License=MIT

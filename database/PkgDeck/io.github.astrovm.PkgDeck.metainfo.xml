@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.astrovm.PkgDeck</id>
+  <name>PkgDeck</name>
+  <summary>All your package managers in one app</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description><p>Search, install, update, and clean up software from every package manager on your computer. PkgDeck works with APT, Flatpak, Snap, Homebrew, developer tools, container images, and firmware updates, and includes the pkd command-line tool.</p></description>
+  <launchable type="desktop-id">io.github.astrovm.PkgDeck.desktop</launchable>
+  <url type="homepage">https://github.com/astrovm/PkgDeck</url>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.15.7" date="2026-11-21">
+      <description>
+        <p>The AppImage opens its window on systems without some X11 keyboard and cursor libraries, such as a minimal Ubuntu 22.04.</p>
+      </description>
+    </release>
+    <release version="0.15.6" date="2026-11-21">
+      <description>
+        <p>The AppImage and Snap now start on older systems, such as Ubuntu 22.04.</p>
+      </description>
+    </release>
+    <release version="0.15.5" date="2026-11-18">
+      <description>
+        <p>The Updates page shows when APT keeps packages back and leaves them out of Update all.</p>
+      </description>
+    </release>
+    <release version="0.15.4" date="2026-11-17">
+      <description>
+        <p>Updating npm, pnpm and Bun tools keeps the version you have when the available release is older.</p>
+      </description>
+    </release>
+    <release version="0.15.3" date="2026-11-13">
+      <description>
+        <p>Automatic updates no longer fail while a Flatpak or Snap release waits.</p>
+        <ul>
+          <li>With Wait for new releases on, automatic updates update the other system Flatpaks one by one instead of failing</li>
+          <li>While a Snap release waits, the other Snap updates wait for you instead of failing</li>
+          <li>A snap held with snap refresh --hold no longer shows an update that Update all never makes</li>
+          <li>A Flatpak masked with flatpak mask, or an extension of one, no longer shows an update that Update all never makes</li>
+          <li>An Alpine package pinned in /etc/apk/world, or a package DNF 4 versionlock holds back, no longer shows an update either</li>
+          <li>An Alpine package from a tagged repository, like scanelf@edge, shows its update</li>
+          <li>When one Homebrew cask changed since you reviewed it, the other casks in the run still update</li>
+          <li>Updates that failed because of the password prompt, the system helper or PkgDeck running as root are tried again</li>
+          <li>An Alpine update that stopped because a repository couldn't be reached is tried again</li>
+          <li>Updates that an older PkgDeck marked as failed are tried again</li>
+          <li>Automatic updates skip an update only after it failed twice, so a run without network doesn't hold it back</li>
+          <li>One update the helper can't run no longer stops the rest of the run</li>
+          <li>Updates that run as you still run when the system helper can't start</li>
+          <li>Activity no longer keeps what a package manager printed when a change failed, and older entries drop it too</li>
+          <li>An update that rebuilds the same version, like a new Flathub build, says "new build" instead of "2.1.0 from 2.1.0"</li>
+          <li>Repositories says in a sentence why it couldn't list Flatpak or Firmware repositories, and names the installation</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.15.2" date="2026-11-06">
+      <description>
+        <p>User and System no longer swap places between screens.</p>
+        <ul>
+          <li>A long homepage link wraps inside the app page instead of running past its edge</li>
+          <li>PkgDeck no longer asks the desktop for its animation setting every 5 seconds: it reads it once and waits to hear about changes</li>
+          <li>Every choice between User and System shows User first, on an app's page and in its dialogs</li>
+          <li>A closing dialog keeps what it showed until it's gone, instead of going blank</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.15.1" date="2026-11-06">
+      <description>
+        <p>Closing the password prompt no longer looks like the package manager broke.</p>
+        <ul>
+          <li>Closing the password prompt, or entering a wrong password too many times, says PkgDeck didn't get administrator access and nothing was changed, for every system change and not only APT</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.15.0" date="2026-11-05">
+      <description>
+        <p>Wait before installing brand new releases, and choose System or User for any Flatpak.</p>
+        <ul>
+          <li>Wait for new releases, off by default, holds back versions published too recently, for the time you pick</li>
+          <li>Updates still waiting show a clock instead of a checkbox, and only Update now on their own row installs them</li>
+          <li>Search lets you choose System or User even when only one has the app's repository: installing in the other adds it, and the review says so</li>
+          <li>An app installed in one place and offered in the other stays one row in Search, with the switch</li>
+          <li>The page of an opened Flatpak file or link has a System and User switch, and the next one starts with your last choice</li>
+          <li>.flatpak files can install for the whole system, not only for you</li>
+          <li>A .flatpak file whose app is already installed offers Update, Reinstall or Downgrade beside Launch, also when it's installed for the system</li>
+          <li>Replacing an installed copy from a file says so when it finishes, and no longer offers an Undo that would remove the app</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.14.1" date="2026-11-04">
+      <description>
+        <p>Updating several Homebrew casks asks for your password once.</p>
+        <ul>
+          <li>Homebrew casks you check together update in one go, so you enter your password once, and each row still says how its cask went</li>
+          <li>If you cancel while they update, PkgDeck waits for all of them to finish</li>
+          <li>A cask Homebrew skips without an error, such as a disabled one, no longer reads as updated</li>
+          <li>While a batch runs, a row only gets a green check once it's known to have worked</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.14.0" date="2026-11-04">
+      <description>
+        <p>Updates stay right on opening, Mac apps show their icons, and Cua, Cua Driver and Cua Spaces get updates.</p>
+        <ul>
+          <li>Cua and Cua Driver show up with real update checks, and updating them refreshes their skills in your agents</li>
+          <li>Electron AppImages such as Cua Spaces check their own update list instead of always showing as up to date</li>
+          <li>Automatic updates of Cua Driver wait until it's idle, since updating it stops the MCP servers of open agents</li>
+          <li>pkd upgrade with a name says nothing needs doing when it's already up to date</li>
+          <li>Updates no longer lists updates that disappear a moment after PkgDeck opens</li>
+          <li>Updating PkgDeck shows one notification instead of two</li>
+          <li>Homebrew casks on a Mac show their own app icons in Installed and Updates</li>
+          <li>A cask Homebrew no longer has a definition for doesn't hide the others</li>
+          <li>Cancelling Homebrew's password dialog stops it asking again during that update, and a dialog left unanswered closes after 5 minutes</li>
+          <li>Homebrew no longer waits minutes on a server address that never answers, and PkgDeck says when it can't reach Homebrew's server</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.13.0" date="2026-11-02">
+      <description>
+        <p>See and clean the data apps keep in your home folder.</p>
+        <ul>
+          <li>Clean lists the folders removed Flatpaks and snaps left in your home, unchecked</li>
+          <li>An installed Flatpak's or snap's page shows how much data it keeps, with Open data folder and Move data to Trash</li>
+          <li>App data goes to the Trash, so it can be restored</li>
+          <li>pkd info shows an app's data folder and size</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.12.9" date="2026-11-01">
+      <description>
+        <p>Updates shows only real updates again.</p>
+        <ul>
+          <li>Opening Updates while Installed refreshed no longer lists every installed package as an update</li>
+          <li>Clicking a row's button while a list reloads no longer closes PkgDeck</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.12.8" date="2026-10-29">
+      <description>
+        <p>Clean finds much more to free up, and the time sliders take exact values.</p>
+        <ul>
+          <li>Old snap revisions, system logs older than a week, crash dumps and crash reports can be cleaned, with your password</li>
+          <li>Unused Android system images, broken emulators and Rust toolchains no project pins show in Clean</li>
+          <li>Hugging Face models nobody read in a while, the pip cache and thumbnails show in Clean</li>
+          <li>Old Rust build output in the cache folder counts as an old project</li>
+          <li>Steam games that left their files behind show as leftovers, unchecked</li>
+          <li>Container images that lost their tag to a newer pull are found and deleted</li>
+          <li>Check every and Old after take a typed value in minutes, hours, days or weeks</li>
+          <li>Old after can be as short as a few hours</li>
+          <li>Container caches from older recipes no longer pile up</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.12.7" date="2026-10-28">
+      <description>
+        <p>Activity opens smoothly with its list ready.</p>
+        <ul>
+          <li>The Activity panel slides in and out smoothly and stays inside the window frame</li>
+          <li>Activity loads after the window first appears, so its list is ready when opened</li>
+          <li>Long Activity lists and review details scroll with less work per frame</li>
+          <li>Background replies appear promptly while the app is idle</li>
+          <li>Reading Activity on macOS avoids unnecessary history writes</li>
+          <li>Changes left waiting when PkgDeck closed are settled when Activity is read</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.12.6" date="2026-10-28">
+      <description>
+        <p>Skipped cleanups read as skipped everywhere, and Activity keeps their names.</p>
+        <ul>
+          <li>pkd marks a cleanup a build uses as skipped, not failed, and exits with 0</li>
+          <li>Activity names a cleaned task after it's gone, and after a restart</li>
+          <li>A task waiting for a build says since when it waits</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.12.5" date="2026-10-28">
+      <description>
+        <p>Cleaning and automatic updates stop calling things failed when nothing went wrong.</p>
+        <ul>
+          <li>A cleanup task that a build uses waits for that build, then cleans on its own</li>
+          <li>Only builds that use a cache or project hold it, so the rest clean right away</li>
+          <li>A task whose files are already gone counts as cleaned</li>
+          <li>Activity keeps why each change failed, waits or was skipped</li>
+          <li>Automatic cleaning shows in Activity</li>
+          <li>Apps, container images and coding assistants update during builds</li>
+          <li>Settings names the updates that wait for builds</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.12.4" date="2026-10-27">
+      <description>
+        <p>Links in the window open again, and automatic updates and cleaning stop getting stuck.</p>
+        <ul>
+          <li>GitHub in Settings, About opens the project page</li>
+          <li>A package's homepage opens in the browser</li>
+          <li>Show in folder opens an AppImage's folder in the file manager</li>
+          <li>Automatic cleaning runs once a day even when every check finds updates</li>
+          <li>Updating Cargo, Bun, pnpm, pip, uv or Composer tools updates only the outdated ones, and one failing doesn't stop the rest</li>
+          <li>A Cargo tool installed from Git is no longer reinstalled from crates.io, where its name can be another crate</li>
+          <li>Cargo tools keep the features they were built with</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.12.3" date="2026-10-27">
+      <description>
+        <p>Installing a new version of an AppImage replaces the old one, instead of adding a second app.</p>
+        <ul>
+          <li>The new version keeps the old one's launch settings and where it updates from</li>
+          <li>The review says which copy it replaces, also for AppImages opened from a link</li>
+          <li>Clean offers the older copies left by earlier versions of PkgDeck</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.12.2" date="2026-10-19">
+      <description>
+        <p>A change whose plan moved on opens for review again, instead of failing.</p>
+        <ul>
+          <li>An install or removal that would now do something else reopens its review, like full updates already did</li>
+          <li>Podman and Docker cleanups that changed say so the same way as other cleanup tasks</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.12.1" date="2026-10-19">
+      <description>
+        <p>One cleanup task that changed no longer stops the others.</p>
+        <ul>
+          <li>If a task changed since you reviewed it, only that task is skipped and the rest are cleaned</li>
+          <li>Podman and Docker cleanups still run when an image, volume or container came into use, and keep what is in use</li>
+          <li>Automatic updates skip only the sources that can't run on their own, not the whole batch</li>
+          <li>Select all no longer checks cleanups that start unchecked, such as unused volumes and sccache</li>
+          <li>npm and pnpm installed with fnm, Volta or nvm are found again</li>
+          <li>Homebrew cleanup still runs when a file it lists changed size</li>
+          <li>Errors read more clearly, and Activity shows each reason once</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.12.0" date="2026-10-18">
+      <description>
+        <p>Updates from different sources run at the same time, and pacman updates work on Arch again.</p>
+        <ul>
+          <li>APT, Flatpak, Snap and other sources update side by side, with one password per batch</li>
+          <li>The progress card names every update that is running</li>
+          <li>Selected pacman updates run in one transaction, with the packages that need their exact version</li>
+          <li>The window opens at the size you left it, maximized if it was</li>
+          <li>Screen readers read out the progress card</li>
+          <li>zypper and DNF no longer show as failed when their first check after a change is slow</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.11.8" date="2026-10-17">
+      <description>
+        <p>Flatpak update checks no longer fail on apps from bundles or local builds.</p>
+        <ul>
+          <li>Apps installed from a .flatpak bundle or a local build are left out of update checks</li>
+          <li>A source that fails more than once shows once, with every reason</li>
+          <li>An opened AppImage file can launch without installing it</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.11.7" date="2026-10-17">
+      <description>
+        <p>The AppImage works on more Linux systems, and Flatpak apps opened from a link can start.</p>
+        <ul>
+          <li>The AppImage and Snap start on Ubuntu 24.04, Debian 13 and other systems with glibc 2.39 or newer</li>
+          <li>A Flatpak link's page shows the app as installed after installing it for the whole system</li>
+          <li>Installed Flatpak apps opened from a link or file have Launch</li>
+          <li>Flatpak links remember whether you last installed for yourself or the whole system</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.11.6" date="2026-10-17">
+      <description>
+        <p>Choose what automatic updates wait for.</p>
+        <ul>
+          <li>Automatic updates and cleaning can run on battery</li>
+          <li>Automatic updates can run on a metered connection</li>
+          <li>Automatic cleaning no longer waits for a metered connection</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.11.5" date="2026-10-16">
+      <description>
+        <p>Better pages for opened Flatpak links.</p>
+        <ul>
+          <li>A Flatpak link shows the app's icon, description and screenshots when its repository is set up</li>
+          <li>A Flatpak link for an app installed for all users offers Update or Reinstall instead of Install</li>
+          <li>A Flatpak link shows the version it installs instead of its branch</li>
+          <li>App descriptions keep their paragraphs and show list items one per line</li>
+          <li>Every section and running change words what it's doing the same way</li>
+          <li>The tray icon can show always, only with updates, or never</li>
+          <li>Checks can notify, install updates, or do nothing with them</li>
+          <li>Automatic updates install only from the sources you pick, and wait on metered connections</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.11.4" date="2026-10-16">
+      <description>
+        <p>Fixes for opened files, Homebrew Casks and KDE.</p>
+        <ul>
+          <li>An opened file for something already installed offers Update, or for Flatpak, Reinstall or Downgrade, instead of Install</li>
+          <li>Going to another page leaves an opened file's page</li>
+          <li>Flatpak links open in PkgDeck on KDE</li>
+          <li>Homebrew Casks searches no longer fail on casks with no version for this system</li>
+          <li>Header buttons drop their labels before covering the page title</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>
