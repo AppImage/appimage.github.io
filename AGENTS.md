@@ -571,6 +571,13 @@ GitHub Pages (Jekyll) from this repository.
   test result (and the upstream account is mentioned). Entries named in the title of an
   open PR (not their files: thousands of open PRs, 1000 API requests an hour), or that this script re-tested in the last 60 days (any state), and
   entries without a file in `data/`, are skipped.
+  `--unpublished` (input `unpublished`; also a second `schedule`, weekly, 20 entries)
+  takes instead the entries that have a file in `data/` but no result at all: no
+  `database/NAME` and no `apps/NAME.md` (a name that differs from a published one only in
+  capitalization does not count: a duplicate, to be removed by hand), in alphabetical
+  order. About 230 in November 2026 (never tested after they came into the catalog, or
+  never passed); nothing else tests them, because "stale" is read from `database/`.
+  Their re-test PR passes or stays open with the test result like the others.
 - `/appstream` (maintainers, or the author of the issue or PR):
   `.github/workflows/appstream-help.yml` posts `code/appstream-help.md` from
   `master`, how to ship an AppStream metainfo file with screenshots. The
