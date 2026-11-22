@@ -13,6 +13,12 @@
 #   --limit N  Open at most N pull requests (default 10).
 #   --days D   An entry is stale when nothing in database/NAME was committed
 #              for D days (default 365).
+#   --unpublished  Instead of the stale entries: the entries that have a file in
+#              data/ but no result at all (no database/NAME, no apps/NAME.md; not
+#              counting an entry whose name differs from a published one only in
+#              capitalization: that is a duplicate to remove by hand). Nothing else
+#              tests them: they are not "stale", they never had a result. In
+#              alphabetical order.
 #   --pinned   Instead of the stale entries: the entries whose first line links
 #              to the AppImage of one particular release (.../releases/download/...),
 #              whatever their age; the re-test points them to the repository
@@ -43,10 +49,12 @@ DRY_RUN=false
 LIMIT=10
 DAYS=365
 PINNED=false
+UNPUBLISHED=false
 while [ $# -gt 0 ] ; do
   case "$1" in
     --dry-run) DRY_RUN=true ;;
     --pinned) PINNED=true ;;
+    --unpublished) UNPUBLISHED=true ;;
     --limit) LIMIT="$2" ; shift ;;
     --limit=*) LIMIT="${1#*=}" ;;
     --days) DAYS="$2" ; shift ;;
@@ -81,6 +89,19 @@ if [ "$PINNED" = true ] ; then
   mv "$WORKDIR/ages.pinned.tsv" "$WORKDIR/ages.tsv"
   CUTOFF=$(( $(date -u +%s) + 1 ))
   echo "$(wc -l < "$WORKDIR/ages.tsv") of them pinned to one release" >&2
+fi
+
+if [ "$UNPUBLISHED" = true ] ; then
+  # Entries without any result, whatever their age (age 0); a published name is
+  # compared in lower case, so that digiKam is not "unpublished" next to digikam
+  { ls -1 database 2>/dev/null ; ls -1 apps 2>/dev/null | sed 's/[.]md$//' ; } | tr 'A-Z' 'a-z' | sort -u > "$WORKDIR/published.txt"
+  for F in data/* ; do
+    N=$(basename "$F")
+    grep -qxF -- "$(tr 'A-Z' 'a-z' <<<"$N")" "$WORKDIR/published.txt" || printf '0\t%s\n' "$N"
+  done | sort -t "$(printf '\t')" -k2 > "$WORKDIR/ages.unpublished.tsv"
+  mv "$WORKDIR/ages.unpublished.tsv" "$WORKDIR/ages.tsv"
+  CUTOFF=$(( $(date -u +%s) + 1 ))
+  echo "$(wc -l < "$WORKDIR/ages.tsv") entries without a result" >&2
 fi
 
 # --- names to leave alone ---------------------------------------------------
@@ -123,6 +144,7 @@ while IFS=$'\t' read -r T N ; do
   KEY=$(tr 'A-Z' 'a-z' <<<"$N" | tr -cd 'a-z0-9')
   if [ -n "$KEY" ] && grep -qF -- "$KEY" "$WORKDIR/open-titles.key" ; then N_SKIP=$((N_SKIP + 1)) ; continue ; fi
   DAY=$(date -u -d "@$T" +%Y-%m-%d)
+  [ "$UNPUBLISHED" = true ] && DAY="never"
   if [ "$DRY_RUN" = true ] ; then
     echo "Would re-test $N (database/$N from $DAY)"
     OPENED=$((OPENED + 1))
@@ -148,9 +170,10 @@ while IFS=$'\t' read -r T N ; do
   git config user.name "GitHub Actions"
   git config user.email "actions@users.noreply.github.com"
   git add "data/$N"
-  git commit -q -m "Re-test $N (its database entry is from $DAY)"
+  git commit -q -m "Re-test $N ($([ "$UNPUBLISHED" = true ] && echo "it has no result yet" || echo "its database entry is from $DAY"))"
   if git push -q "https://x-access-token:$PAT@github.com/$REPO.git" "$BRANCH:$BRANCH" 2>/dev/null ; then
-    BODY="Re-test of \`data/$N\`: its stored result in \`database/$N\` is from $DAY, more than $DAYS days old. Opened by \`.github/workflows/retest-stale.yml\`. If the test passes this is merged automatically and the entry is refreshed; if it fails, the result below says why.$CHANGE"
+    if [ "$UNPUBLISHED" = true ] ; then WHY="it has no result: there is no \`database/$N\` and no page, so it was never published (or never passed). Opened by" ; else WHY="its stored result in \`database/$N\` is from $DAY, more than $DAYS days old. Opened by" ; fi
+    BODY="Re-test of \`data/$N\`: $WHY \`.github/workflows/retest-stale.yml\`. If the test passes this is merged automatically and the entry is refreshed; if it fails, the result below says why.$CHANGE"
     URL=$(GH_TOKEN="$PAT" gh api -X POST "repos/$REPO/pulls" -f base=master -f head="$BRANCH" \
             -f title="Re-test $N" -f body="$BODY" --jq .html_url 2>/dev/null)
     if [ -n "$URL" ] ; then
@@ -170,7 +193,8 @@ done < "$WORKDIR/ages.tsv"
 {
   echo "## Re-test stale entries"
   echo
-  if [ "$PINNED" = true ] ; then echo "Entries pinned to one release: $STALE (oldest result first), $N_SKIP of them left alone (an open pull request's title, or re-tested in the last 60 days)." ; else
+  if [ "$UNPUBLISHED" = true ] ; then echo "Entries without a result (no database/ and no page): $STALE (alphabetical), $N_SKIP of them left alone (an open pull request's title, or re-tested in the last 60 days)"
+  elif [ "$PINNED" = true ] ; then echo "Entries pinned to one release: $STALE (oldest result first), $N_SKIP of them left alone (an open pull request's title, or re-tested in the last 60 days)." ; else
   echo "Entries whose database/ is older than $DAYS days: $STALE (oldest first), $N_SKIP of them left alone (an open pull request's title, or re-tested in the last 60 days); $N_NODATA without a file in data/." ; fi
   if [ "$DRY_RUN" = true ] ; then echo "Pull requests that would be opened: $OPENED (limit $LIMIT)" ; else echo "Pull requests opened: $OPENED (limit $LIMIT)" ; fi
   [ "$DRY_RUN" = true ] && echo && echo "(dry run: nothing was pushed)"
