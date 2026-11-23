@@ -3,7 +3,7 @@ layout: app
 
 permalink: /qrcode-barcode-scanner/
 description: "Read QR codes and barcodes from image files"
-license: "AGPL-3.0-or-later"
+license: "MIT"
 
 icons:
   - qrcode-barcode-scanner/icons/256x256/qrcode-barcode-scanner.png
@@ -32,7 +32,7 @@ desktop:
     Terminal: true
     Categories: Utility
     Keywords: qr
-    X-AppImage-Version: 0.11.0
+    X-AppImage-Version: 0.12.0
   AppImageHub:
     X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
       created [don''t know]: invalid packet (ctb=0a) no signature found the signature
@@ -63,11 +63,11 @@ appdata:
             link is never opened.</p>
   DeveloperName:
     C: QR Code AI
-  ProjectLicense: AGPL-3.0-or-later
+  ProjectLicense: MIT
   Url:
     homepage: https://qrcode-ai.com/en-US/qr-code-scanner/cli
     bugtracker: https://github.com/qrcode-ai-com/qrcode-barcode-scanner/issues
-    help: https://github.com/qrcode-ai-com/qrcode-barcode-scanner/blob/v0.11.0/docs/api/cli.mdx
+    help: https://github.com/qrcode-ai-com/qrcode-barcode-scanner/blob/v0.12.0/docs/api/cli.mdx
   Launchable:
     desktop-id:
     - qrcode-barcode-scanner.desktop
@@ -75,8 +75,8 @@ appdata:
     binaries:
     - qrscan
   Releases:
-  - version: 0.11.0
-    unix-timestamp: 1793836800
+  - version: 0.12.0
+    unix-timestamp: 1795305600
   ContentRating:
     oars-1.1: {}
 ---

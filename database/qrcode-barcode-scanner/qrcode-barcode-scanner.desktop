@@ -8,7 +8,7 @@ Icon=qrcode-barcode-scanner
 Terminal=true
 Categories=Utility;
 Keywords=qr;qrcode;barcode;scanner;decode;
-X-AppImage-Version=0.11.0
+X-AppImage-Version=0.12.0
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
