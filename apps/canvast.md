@@ -28,7 +28,7 @@ desktop:
     Type: Application
     Icon: canvast
     StartupWMClass: canvast
-    X-AppImage-Version: 0.62.0
+    X-AppImage-Version: 0.63.0
     Comment: An offline-first endless canvas for drawing and references
     GenericName: Reference canvas
     Keywords: canvas
@@ -47,5 +47,5 @@ desktop:
     X-AppImage-Glibc-Required: GLIBC_2.34
     X-AppImage-Payload-License: GPL-3.0
 
-electron: {"name":"canvast","productName":"canvast","desktopName":"canvast.desktop","version":"0.62.0","main":"main.cjs","private":true,"homepage":"https://github.com/emarpiee/canvast","description":"An offline-first endless canvas for drawing and references","license":"GPL-3.0-or-later"}
+electron: {"name":"canvast","productName":"canvast","desktopName":"canvast.desktop","version":"0.63.0","main":"main.cjs","private":true,"homepage":"https://github.com/emarpiee/canvast","description":"An offline-first endless canvas for drawing and references","license":"GPL-3.0-or-later"}
 ---

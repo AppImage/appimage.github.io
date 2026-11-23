@@ -2,7 +2,7 @@
   "name": "canvast",
   "productName": "canvast",
   "desktopName": "canvast.desktop",
-  "version": "0.62.0",
+  "version": "0.63.0",
   "main": "main.cjs",
   "private": true,
   "homepage": "https://github.com/emarpiee/canvast",

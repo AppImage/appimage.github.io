@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- What app stores and catalogs show of canvast (AppStream, B32): put into the AppImage as usr/share/metainfo/ by
-     scripts/package-desktop.mjs, which fills in 0.62.0 and 2026-11-23. The screenshots are made by the Screenshots workflow
+     scripts/package-desktop.mjs, which fills in 0.63.0 and 2026-11-24. The screenshots are made by the Screenshots workflow
      (tests/shots, the shots marked `store`) and kept in docs/screenshots/store/. -->
 <component type="desktop-application">
   <id>app.canvast.desktop</id>
@@ -40,6 +40,6 @@
   </screenshots>
   <content_rating type="oars-1.1"/>
   <releases>
-    <release version="0.62.0" date="2026-11-23"/>
+    <release version="0.63.0" date="2026-11-24"/>
   </releases>
 </component>
