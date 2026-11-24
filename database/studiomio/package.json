@@ -1,0 +1,16 @@
+{
+  "name": "studiomio",
+  "productName": "studiomio",
+  "private": true,
+  "version": "0.3.67",
+  "description": "DAW with warp in the style of Ableton Live",
+  "author": "David <ing.casaert@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/davvoz/studiomio",
+  "desktopName": "studiomio.desktop",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}
