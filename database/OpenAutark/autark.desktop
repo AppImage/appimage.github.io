@@ -1,11 +1,11 @@
 [Desktop Entry]
 Name=Autark
-Exec=AppRun %U
+Exec=AppRun --no-sandbox %U
 Terminal=false
 Type=Application
 Icon=autark
 StartupWMClass=Autark
-X-AppImage-Version=0.3.14
+X-AppImage-Version=0.3.18
 Comment=Local-first AI workforce: agents, chats, tasks and a calm to-do list
 Categories=Office;
 

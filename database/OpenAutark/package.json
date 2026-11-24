@@ -1,7 +1,7 @@
 {
   "name": "autark",
   "productName": "Autark",
-  "version": "0.3.14",
+  "version": "0.3.18",
   "private": true,
   "description": "Local-first AI workforce: agents, chats, tasks and a calm to-do list",
   "author": "Teydra",

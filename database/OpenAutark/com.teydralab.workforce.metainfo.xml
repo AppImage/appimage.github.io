@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.teydralab.workforce</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0</project_license>
+  <name>Autark</name>
+  <summary>A small AI company on your own PC</summary>
+  <developer id="com.teydralab">
+    <name>Teydra Lab</name>
+  </developer>
+  <description>
+    <p>Autark is a desktop app that runs a small AI company for you: a personal manager as your right hand, teams of agents, chats and tasks, a daily overview with your calendar, a browser beside the chat, your phone, and your other PCs as one.</p>
+    <p>The agents work through the AI plans you already have, API keys or local model servers. Everything runs on your own PC.</p>
+  </description>
+  <launchable type="desktop-id">autark.desktop</launchable>
+  <url type="homepage">https://github.com/teydra/OpenAutark</url>
+  <url type="bugtracker">https://github.com/teydra/OpenAutark/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/teydra/OpenAutark/main/docs/screenshots/main-window.png</image>
+      <caption>The Autark main window</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.3.18" date="2026-11-23"/>
+  </releases>
+</component>
