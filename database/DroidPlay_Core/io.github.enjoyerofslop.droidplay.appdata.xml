@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata of DroidPlay for Linux's AppImage (dm/android/linux/stage.sh puts it in usr/share/metainfo): what software centres and AppImage
+     managers show for it. The release line is filled in by stage.sh. -->
+<component type="desktop-application">
+  <id>io.github.enjoyerofslop.droidplay</id>
+  <name>DroidPlay</name>
+  <summary>Build the Switch games you own into Android apps</summary>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT AND LGPL-3.0-only AND PSF-2.0</project_license>
+  <developer id="io.github.enjoyerofslop">
+    <name>enjoyerofslop</name>
+  </developer>
+  <description>
+    <p>
+      DroidPlay builds your own copy of a Switch game into an Android app: the game's code runs directly on the phone's processor, not in an emulator, and
+      its graphics are drawn by the phone's GPU through Vulkan. You build each game once on this computer, and DroidPlay installs it on your phone over adb.
+    </p>
+    <p>
+      Bring your own game: you dump the game and the keys from your own Switch. Nothing from any game comes with DroidPlay.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.enjoyerofslop.droidplay.desktop</launchable>
+  <url type="homepage">https://github.com/enjoyerofslop/droidplay-core</url>
+  <url type="bugtracker">https://github.com/enjoyerofslop/droidplay-core/issues</url>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.8.13" date="2026-11-17"/>
+  </releases>
+</component>
