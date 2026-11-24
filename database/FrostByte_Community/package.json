@@ -1,0 +1,45 @@
+{
+  "name": "frostbyte",
+  "productName": "FrostByte",
+  "desktopName": "frostbyte",
+  "frostbyteEdition": "community",
+  "version": "2.0.0",
+  "description": "FrostByte — an agentic workspace, model manager, and peer-to-peer model network.",
+  "bin": {
+    "frostbyte": "src/cli/index.js"
+  },
+  "homepage": "https://blackfrostai.com/frostbyte",
+  "author": "Blackfrost_AI",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "src/main/index.js",
+  "dependencies": {
+    "@scure/bip39": "^1.5.4",
+    "@silentbot1/nat-api": "^0.4.9",
+    "create-torrent": "6.1.3",
+    "ip-address": "10.7.4",
+    "junk": "4.0.1",
+    "multiformats": "14.0.5",
+    "parse-torrent": "^11.0.24",
+    "ssh2": "^1.17.0",
+    "webtorrent": "^3.0.21"
+  },
+  "allowScripts": {
+    "electron@44.3.0": true,
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": false,
+    "node-datachannel@0.32.3": true,
+    "utp-native@2.5.3": true,
+    "bufferutil@4.1.0": true,
+    "utf-8-validate@6.0.6": true,
+    "ip-set@3.0.0": false,
+    "electron-winstaller@5.4.0": false,
+    "cpu-features@0.0.10": false,
+    "ssh2@1.17.0": false
+  },
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=11.17.0"
+  },
+  "private": true
+}
