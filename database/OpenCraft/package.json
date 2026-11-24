@@ -1,0 +1,28 @@
+{
+  "name": "@opencraft/workbench-electron",
+  "private": true,
+  "version": "0.2.0",
+  "description": "OpenCraft desktop workbench",
+  "author": {
+    "name": "OpenCraft",
+    "url": "https://github.com/opencraft-app/opencraft"
+  },
+  "homepage": "https://github.com/opencraft-app/opencraft",
+  "desktopName": "OpenCraft",
+  "type": "module",
+  "main": "dist-host/main.cjs",
+  "dependencies": {
+    "@opencraft/browser-cdp": "0.1.0",
+    "@opencraft/i18n": "0.1.0",
+    "@opencraft/design-system": "0.1.0",
+    "@opencraft/document-storage": "0.1.0",
+    "@opencraft/app-host-protocol": "0.1.0",
+    "@opencraft/daemon-ipc": "0.1.0",
+    "@opencraft/ui-preferences": "0.1.0",
+    "@opencraft/workbench-runtime": "0.1.0",
+    "@opencraft/sqlite-node": "0.1.0",
+    "@opencraft/plugin-local-account": "0.1.0",
+    "ws": "^8.23.0",
+    "@opencraft/headless-server": "0.1.0"
+  }
+}
