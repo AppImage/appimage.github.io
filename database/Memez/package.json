@@ -1,0 +1,23 @@
+{
+  "name": "memez",
+  "version": "1.2.0",
+  "description": "Local meme library with a hotkey search popup and on-device AI tags",
+  "license": "MIT",
+  "homepage": "https://github.com/ramxcodes/memez",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramxcodes/memez.git"
+  },
+  "main": "./out/main/index.js",
+  "desktopName": "memez.desktop",
+  "author": "ramxcodes",
+  "dependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@huggingface/transformers": "^4.3.1",
+    "@napi-rs/system-ocr": "^1.2.0",
+    "fflate": "^0.8.3",
+    "fuse.js": "^7.5.0",
+    "lucide-react": "^1.60.0"
+  }
+}
