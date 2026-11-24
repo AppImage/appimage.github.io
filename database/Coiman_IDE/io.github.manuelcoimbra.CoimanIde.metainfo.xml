@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- What software centres (GNOME Software, KDE Discover, Flathub) show about Coiman IDE. -->
+<component type="desktop-application">
+  <id>io.github.manuelcoimbra.CoimanIde</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Coiman IDE</name>
+  <summary>Edit, run, test and debug code</summary>
+  <developer id="io.github.manuelcoimbra">
+    <name>Manuel Pereira</name>
+  </developer>
+  <description>
+    <p>
+      Coiman IDE is a code editor and IDE written in Rust. It opens folders as projects, edits
+      with syntax colours and language servers, runs and debugs programs, runs tests, and works
+      with Git.
+    </p>
+    <p>
+      It has no AI features and opens no network connections of its own: it runs the tools you
+      already have, such as git, compilers and debuggers.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.manuelcoimbra.CoimanIde.desktop</launchable>
+  <url type="homepage">https://github.com/ManuelCoimbra/coiman-ide</url>
+  <url type="bugtracker">https://github.com/ManuelCoimbra/coiman-ide/issues</url>
+  <content_rating type="oars-1.1"/>
+  <provides>
+    <binary>coiman-ide</binary>
+  </provides>
+  <categories>
+    <category>Development</category>
+    <category>IDE</category>
+  </categories>
+  <releases>
+    <release version="0.6.0" date="2026-11-21"/>
+    <release version="0.5.0" date="2026-11-16"/>
+    <release version="0.4.3" date="2026-11-14"/>
+    <release version="0.4.2" date="2026-11-14"/>
+    <release version="0.4.1" date="2026-11-14"/>
+    <release version="0.4.0" date="2026-11-14"/>
+    <release version="0.3.0" date="2026-11-08"/>
+  </releases>
+</component>

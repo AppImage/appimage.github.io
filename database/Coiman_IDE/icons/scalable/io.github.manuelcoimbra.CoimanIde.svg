@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Coiman IDE: a hexagon; three linked nodes making a C; a small square, the editor. -->
+  <defs>
+    <linearGradient id="navy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#13224A"/>
+      <stop offset="1" stop-color="#0A1430"/>
+    </linearGradient>
+  </defs>
+  <!-- The hexagon, point up, its corners softened. -->
+  <polygon points="128,10 230,69 230,187 128,246 26,187 26,69"
+           fill="url(#navy)" stroke="#2F8CFF" stroke-width="12" stroke-linejoin="round"/>
+  <!-- The C: an arc around the middle, open to the right. -->
+  <path d="M 178 78 A 66 66 0 1 0 178 178" fill="none" stroke="#FFFFFF" stroke-width="16"
+        stroke-linecap="round"/>
+  <!-- Its three nodes: the two ends and the left of the curve. -->
+  <circle cx="178" cy="78" r="20" fill="#2F8CFF" stroke="#FFFFFF" stroke-width="7"/>
+  <circle cx="69" cy="128" r="20" fill="#2F8CFF" stroke="#FFFFFF" stroke-width="7"/>
+  <circle cx="178" cy="178" r="20" fill="#2F8CFF" stroke="#FFFFFF" stroke-width="7"/>
+  <!-- The editor, inside the C. -->
+  <rect x="112" y="105" width="46" height="46" rx="5" fill="#2F8CFF"/>
+  <rect x="123" y="116" width="24" height="24" rx="2" fill="#0A1430"/>
+</svg>
