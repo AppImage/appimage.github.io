@@ -1,0 +1,16 @@
+{
+  "name": "idleterino",
+  "productName": "Idleterino",
+  "version": "0.3.44",
+  "description": "PokeIdle, Twitch e Kick num sÃ³ app: bÃ´nus, pontos, lives e contas do jogo, leve e organizado.",
+  "author": "VinniiSaantos",
+  "license": "MIT",
+  "homepage": "https://viinnisantoos.github.io/idleterino/",
+  "repository": "github:ViinniSantoos/idleterino",
+  "main": "main.js",
+  "dependencies": {
+    "electron-updater": "^6.6.2",
+    "qrcode-generator": "^1.4.4"
+  },
+  "desktopName": "idleterino.desktop"
+}
