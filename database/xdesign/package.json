@@ -1,0 +1,8 @@
+{
+  "name": "@xdesign/desktop",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "productName": "xDesign",
+  "main": "dist/main.mjs"
+}
