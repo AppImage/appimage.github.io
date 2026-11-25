@@ -1,0 +1,11 @@
+{
+  "name": "vela-desktop",
+  "productName": "Vela",
+  "version": "0.2.60",
+  "description": "Vela for macOS and Linux: a cinematic client for Ether, Jellyfin, Emby and Plex.",
+  "homepage": "https://github.com/braedonsaunders/vela",
+  "author": "Braedon Saunders",
+  "license": "GPL-3.0-only",
+  "private": true,
+  "main": "main.js"
+}
