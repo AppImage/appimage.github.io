@@ -1,0 +1,21 @@
+{
+  "name": "opengp5-launchpad",
+  "productName": "OpenGP5 Launchpad",
+  "version": "0.3.0",
+  "description": "Flash, manage and back up a Valeton GP-5 running stock or OpenGP5 firmware.",
+  "main": "main.js",
+  "type": "commonjs",
+  "private": true,
+  "launchpad": {
+    "updates": {
+      "repo": "OpenGP5/Launchpad",
+      "tagPrefix": "v"
+    }
+  },
+  "homepage": "https://github.com/OpenGP5/Launchpad",
+  "author": {
+    "name": "OpenGP5",
+    "email": "noreply@opengp5.invalid"
+  },
+  "license": "MIT"
+}
