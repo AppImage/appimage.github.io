@@ -1,0 +1,28 @@
+{
+  "name": "bellepoule-modern",
+  "productName": "BellePoule Modern",
+  "version": "2.0.0",
+  "description": "Modern fencing tournament management software - Rewritten from the original BellePoule",
+  "main": "dist/main/main.js",
+  "author": {
+    "name": "BellePoule Modern Contributors",
+    "email": "yann.deboeuf@gmail.com"
+  },
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BellePoule-Modern/bellepoule-modern"
+  },
+  "dependencies": {
+    "better-sqlite3-multiple-ciphers": "^13.2.0",
+    "lucide-react": "^1.72.0",
+    "selfsigned": "^5.5.0"
+  },
+  "overrides": {
+    "eslint-plugin-react": {
+      "eslint": "$eslint"
+    },
+    "minimatch@>=7 <11.0.1": "^11.0.1",
+    "ws": "^8.23.0"
+  }
+}
