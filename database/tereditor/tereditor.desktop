@@ -1,0 +1,20 @@
+[Desktop Entry]
+Type=Application
+Name=tereditor
+Comment=Workbench for projects, Git worktrees, specs and agent terminals
+Exec=tereditor
+Icon=tereditor
+Terminal=false
+Categories=Development;IDE;
+StartupWMClass=Tereditor.UI
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Tue Nov 24 13:29:06 2026 UTC                using EDDSA key BF9D7774ECCFDC198C66D607CB5448D7F25D5997 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.34
