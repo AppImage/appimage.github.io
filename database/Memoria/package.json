@@ -1,0 +1,41 @@
+{
+  "name": "memoria",
+  "version": "0.17.0",
+  "description": "Local-first memory for AI coding tools: capture Claude Code, Codex, Gemini CLI, Copilot, Cursor and more, recall anywhere over MCP",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xinzzu/Memoria.git"
+  },
+  "homepage": "https://memoria.xinzzu.web.id",
+  "bugs": {
+    "url": "https://github.com/xinzzu/Memoria/issues"
+  },
+  "main": "dist/electron/main.js",
+  "bin": {
+    "memoria": "dist/engine/index.js"
+  },
+  "files": [
+    "dist/engine/",
+    "web/",
+    "logo.png",
+    "README.md",
+    "LICENSE",
+    "PRIVACY.md"
+  ],
+  "type": "commonjs",
+  "desktopName": "Memoria",
+  "author": {
+    "name": "xinzzu",
+    "email": "xinzzui@gmail.com",
+    "url": "https://github.com/xinzzu"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "chokidar": "^4.0.3"
+  },
+  "mcpName": "io.github.xinzzu/memoria"
+}
