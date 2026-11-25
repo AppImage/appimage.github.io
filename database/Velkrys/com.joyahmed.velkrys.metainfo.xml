@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata for software centres (plan 22.3.1). Installed to /usr/share/metainfo by
+     tauri.linux.conf.json. Homepage: Joy's pick 2026-10-23. No screenshot yet. -->
+<component type="desktop-application">
+  <id>com.joyahmed.velkrys</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Velkrys</name>
+  <summary>Fast file explorer with real tabs</summary>
+  <developer id="com.joyahmed">
+    <name>Joy Ahmed</name>
+  </developer>
+  <description>
+    <p>
+      Velkrys is a fast file explorer with real tabs and one look on Windows, Mac and Ubuntu.
+    </p>
+    <ul>
+      <li>Open many folders in tabs</li>
+      <li>Press Ctrl K to find anything; a search index finds files by name at once</li>
+      <li>Spotlight: a small window on a shortcut that finds files and apps and does sums</li>
+      <li>See each folder's size, counted in the background</li>
+      <li>Open zip, 7z and tar files like folders, extract them and make new ones</li>
+      <li>A terminal pane that starts your own shell</li>
+    </ul>
+  </description>
+  <url type="homepage">https://github.com/joyahmed/velkrys</url>
+  <launchable type="desktop-id">Velkrys.desktop</launchable>
+  <provides>
+    <binary>velkrys</binary>
+  </provides>
+  <categories>
+    <category>Utility</category>
+    <category>FileManager</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.1.0" date="2026-10-23"/>
+  </releases>
+</component>
