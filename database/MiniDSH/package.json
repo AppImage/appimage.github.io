@@ -1,0 +1,11 @@
+{
+  "name": "minidsh",
+  "productName": "MiniDSH",
+  "version": "2.0.0",
+  "description": "The MiniDSH desktop app: one window over the minidsh runtime and its Web UI",
+  "author": "MiniDSH contributors",
+  "license": "MIT",
+  "homepage": "https://github.com/earthwalker17/MiniDSH#readme",
+  "type": "module",
+  "main": "lib/main.js"
+}
