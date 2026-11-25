@@ -1,0 +1,16 @@
+{
+  "name": "RAILbench",
+  "version": "0.6.1",
+  "description": "Modellbahn Gleisplanungs-Tool",
+  "author": "RAILbench Team",
+  "private": true,
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "dependencies": {
+    "@types/three": "^0.187.0",
+    "@types/ws": "^8.18.2",
+    "pixi.js": "^8.0.0",
+    "three": "^0.187.0",
+    "ws": "^8.22.1"
+  }
+}
