@@ -1,0 +1,21 @@
+{
+  "name": "ofintech-desk",
+  "productName": "OfinTech Desk",
+  "version": "1.5.0",
+  "description": "AI workspace for finance and accounting teams",
+  "private": true,
+  "main": "dist/main.js",
+  "homepage": "https://ofintech.ai",
+  "author": {
+    "name": "OFIN INC",
+    "email": "it@ofintech.ai",
+    "url": "https://ofintech.ai"
+  },
+  "overrides": {
+    "minimatch@^3": "^11.0.1",
+    "minimatch@^5": "^11.0.1",
+    "minimatch@^9": "^11.0.1",
+    "minimatch@^10": "^11.0.1"
+  },
+  "license": "Apache-2.0"
+}
