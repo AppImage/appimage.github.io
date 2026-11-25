@@ -1,0 +1,30 @@
+{
+  "name": "studio",
+  "version": "1.0.431",
+  "buildVersion": "1.0.431",
+  "studioCommitHash": "6f287fabb2da",
+  "studioBuild": {
+    "signed": false
+  },
+  "private": true,
+  "packageManager": "pnpm@11.10.0",
+  "description": "SpecWithCode is a desktop app for coding agents. Work with your existing agent subscriptions, review code changes, and run commands in your projects. Connect from desktop, web, or mobile to continue working remotely.",
+  "license": "MIT",
+  "homepage": "https://studio.invalid",
+  "author": "Studio Tools",
+  "main": "apps/desktop/dist-electron/boot.cjs",
+  "dependencies": {
+    "@cursor/sdk": "1.0.35",
+    "@ff-labs/fff-node": "0.9.4",
+    "@napi-rs/keyring": "^1.3.0",
+    "node-pty": "1.2.0-beta.15",
+    "playwright-core": "1.60.0",
+    "typescript-legacy": "npm:typescript@6.0.3",
+    "zod": "4.6.7",
+    "@clerk/electron-passkeys": "0.0.3",
+    "@crowecawcaw/xa11y": "0.13.0",
+    "ffi-rs": "1.3.2",
+    "@ff-labs/fff-bin-linux-x64-gnu": "0.9.4",
+    "@ff-labs/fff-bin-linux-x64-musl": "0.9.4"
+  }
+}
