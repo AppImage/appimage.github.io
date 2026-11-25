@@ -1,0 +1,21 @@
+{
+  "name": "gigamail",
+  "productName": "GigaMail",
+  "version": "0.6.8",
+  "description": "GigaMail — secure agentic email console",
+  "license": "AGPL-3.0-or-later",
+  "main": "main.js",
+  "desktopName": "gigamail.desktop",
+  "author": {
+    "name": "Adecubed",
+    "email": "info@adecubed.com"
+  },
+  "homepage": "https://adecubed.com",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "electron-updater": "^6.8.3"
+  }
+}
