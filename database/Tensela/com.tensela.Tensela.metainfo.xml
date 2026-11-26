@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- What the software centres of Linux show of Tensela (AppStream). It goes inside the AppImage, in
+     usr/share/metainfo, and is what Flathub reads. Each release adds its line under <releases>. -->
+<component type="desktop-application">
+  <id>com.tensela.Tensela</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Tensela</name>
+  <summary>Parametric design an architect understands</summary>
+  <summary xml:lang="es">Diseño paramétrico que un arquitecto entiende</summary>
+
+  <developer id="com.tensela">
+    <name>Victor Crespo</name>
+  </developer>
+
+  <description>
+    <p>
+      Tensela is a parametric design program for architects. A design is built with nodes joined by cables, lists
+      with names and the language of the trade: say a tower has 24 floors and each one turns 6° more than the one
+      below, and the whole tower appears; change one number and all of it answers.
+    </p>
+    <p xml:lang="es">
+      Tensela es un programa de diseño paramétrico para arquitectos. El diseño se arma con nodos unidos por cables,
+      listas con nombre y el lenguaje del oficio: dices que una torre tiene 24 pisos y que cada uno gira 6° más que el
+      de abajo, y aparece la torre entera; cambias un número y toda responde.
+    </p>
+    <p>What you can make:</p>
+    <p xml:lang="es">Qué puedes hacer:</p>
+    <ul>
+      <li>Facades and sun fins that open and close by distance or by sun</li>
+      <li xml:lang="es">Fachadas y quiebrasoles que se abren y cierran según la distancia o el sol</li>
+      <li>Roofs and surfaces: hyperbolic paraboloids, ribs, grids and diagrids</li>
+      <li xml:lang="es">Cubiertas y superficies: paraboloides hiperbólicos, costillas, retículas y diagrids</li>
+      <li>Hanging cables and membranes that find their own shape, and a first check of the bars</li>
+      <li xml:lang="es">Cables y membranas que encuentran su forma, y una primera revisión de las barras</li>
+      <li>Sun and shadow for any place and date, sun hours and daylight</li>
+      <li xml:lang="es">Sol y sombra para cualquier lugar y fecha, horas de sol y luz natural</li>
+      <li>Fabrication: sections, waffles and pieces laid flat on sheets with their numbers</li>
+      <li xml:lang="es">Fabricación: secciones, waffles y piezas acostadas en planchas con sus números</li>
+      <li>Files for your CAD, BIM, renderer, laser cutter or 3D printer: OBJ, STL, 3MF, DXF, SVG and PDF</li>
+      <li xml:lang="es">Archivos para tu CAD, BIM, renderizador, cortadora láser o impresora 3D: OBJ, STL, 3MF, DXF, SVG y PDF</li>
+    </ul>
+    <p>
+      It works entirely on your computer, without an account or internet, in English and Spanish, and comes with a
+      complete manual with recipes explained step by step.
+    </p>
+    <p xml:lang="es">
+      Funciona completamente en tu computadora, sin cuenta ni internet, en español e inglés, y trae un manual completo
+      con recetas explicadas paso a paso.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">tensela.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>A tower whose floors turn, with the seven nodes that make it</caption>
+      <caption xml:lang="es">Una torre cuyos pisos giran, con los siete nodos que la arman</caption>
+      <image>https://tensela.com/press/tensela-window.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Sun fins that turn near a point</caption>
+      <caption xml:lang="es">Quiebrasoles que giran cerca de un punto</caption>
+      <image>https://tensela.com/images/manual/app/window-en.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://tensela.com</url>
+  <url type="help">https://tensela.com/manual/</url>
+  <url type="bugtracker">https://github.com/tensela/tensela/issues</url>
+  <url type="vcs-browser">https://github.com/tensela/tensela</url>
+  <url type="donation">https://tensela.com/donate/</url>
+  <url type="contact">https://tensela.com/legal/</url>
+
+  <categories>
+    <category>Graphics</category>
+    <category>3DGraphics</category>
+    <category>Engineering</category>
+  </categories>
+
+  <keywords>
+    <keyword>parametric</keyword>
+    <keyword>architecture</keyword>
+    <keyword>nodes</keyword>
+    <keyword>design</keyword>
+    <keyword>facade</keyword>
+    <keyword xml:lang="es">paramétrico</keyword>
+    <keyword xml:lang="es">arquitectura</keyword>
+    <keyword xml:lang="es">nodos</keyword>
+    <keyword xml:lang="es">diseño</keyword>
+    <keyword xml:lang="es">fachada</keyword>
+  </keywords>
+
+  <provides>
+    <mediatype>application/x-tensela</mediatype>
+    <binary>tensela</binary>
+  </provides>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <requires>
+    <display_length compare="ge">768</display_length>
+  </requires>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#d4ceff</color>
+    <color type="primary" scheme_preference="dark">#5b4bf0</color>
+  </branding>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.9.4" date="2026-11-25">
+      <description>
+        <p>Opens its window in seconds also on computers without a graphics card, where it took close to a minute.</p>
+      </description>
+    </release>
+    <release version="0.9.3" date="2026-11-25">
+      <description>
+        <p>Opens its window also on systems without a desktop (a bare X11 session), which lack two libraries of the
+          keyboard: it brings its own, used only when they are missing.</p>
+      </description>
+    </release>
+    <release version="0.9.2" date="2026-11-25">
+      <description>
+        <p>Its launcher now passes the checks of older systems, such as Ubuntu 22.04.</p>
+      </description>
+    </release>
+    <release version="0.9.1" date="2026-11-25">
+      <description>
+        <p>The first update of the beta.</p>
+        <ul>
+          <li>Starts with the light theme when the desktop does not ask for the dark one</li>
+          <li>Comes with its description for the software centres of Linux</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.0" date="2026-11-25">
+      <description>
+        <p>The first public version, as a beta.</p>
+      </description>
+    </release>
+  </releases>
+</component>
