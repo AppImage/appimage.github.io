@@ -1,0 +1,9 @@
+{
+  "name": "pi-kit",
+  "productName": "pi-kit",
+  "version": "0.95.2",
+  "description": "A desktop UI for the pi coding agent",
+  "author": "pi-kit",
+  "license": "MIT",
+  "main": "desktop/main.cjs"
+}

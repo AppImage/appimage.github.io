@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">Omapdf</title>
+  <desc id="description">A folded peach document with the original geometric reading mark and a PDF label.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="48" x2="0" y2="464" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fddec6"/>
+      <stop offset="1" stop-color="#faa968"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#10131b"/>
+  <path d="M128 48H316L408 140V440Q408 464 384 464H128Q104 464 104 440V72Q104 48 128 48Z" fill="url(#paper)"/>
+  <path d="M316 48V116Q316 140 340 140H408Z" fill="#9c6d49"/>
+  <path d="m1200 1200h-480v-80h400v-1040h-479.996v160h-400v720h720v-720h-80v-80h159.996v880h-400v160h-640v-1200h1200zm-1120-80h480v-80h-400l.004-400h-80.004zm0-560h80.004v-400h400v-80h-480.004z" transform="translate(152 180) scale(.1733333333)" fill="#4c3b2f" fill-rule="evenodd" clip-rule="evenodd"/>
+  <rect x="80" y="384" width="176" height="64" rx="16" fill="#4c3b2f"/>
+  <g fill="none" stroke="#fddec6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 430V402H131C146 402 146 418 131 418H120"/>
+    <path d="M156 402H163C182 402 182 430 163 430H156Z"/>
+    <path d="M194 430V402H216M194 416H211"/>
+  </g>
+</svg>

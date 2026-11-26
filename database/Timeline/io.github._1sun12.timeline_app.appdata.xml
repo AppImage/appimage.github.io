@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata, shipped in the AppImage at usr/share/metainfo/. Software
+     centres and AppImageHub read it. Add a <release> for every version: the
+     AppImage build fails if the one in tauri.conf.json is missing. -->
+<component type="desktop-application">
+  <id>io.github._1sun12.timeline_app</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Timeline</name>
+  <summary>Plot what you read on a timeline</summary>
+  <developer id="io.github.1sun12">
+    <name>1sun12</name>
+  </developer>
+  <description>
+    <p>
+      Timeline places the books and papers you read on a timeline, so you can see how
+      works answer, borrow from and contradict each other across the centuries. Think of
+      a linked notes graph, laid out in time instead.
+    </p>
+    <ul>
+      <li>Every note has a date, from the Big Bang to this morning</li>
+      <li>Link notes with [[Title]] and see the links drawn between cards</li>
+      <li>Drag cards anywhere and they stay where you put them</li>
+      <li>Works offline, and syncs between devices through a private git repo you own</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github._1sun12.timeline_app.desktop</launchable>
+  <url type="homepage">https://github.com/1sun12/timeline-app</url>
+  <url type="bugtracker">https://github.com/1sun12/timeline-app/issues</url>
+  <url type="vcs-browser">https://github.com/1sun12/timeline-app</url>
+  <url type="donation">https://buymeacoffee.com/1sun12</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Books placed on a timeline from 1000 BCE to 2000 AD, with links between them</caption>
+      <image>https://raw.githubusercontent.com/1sun12/timeline-app/main/docs/screenshots/dashboard.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A note open in the side panel, written in Markdown</caption>
+      <image>https://raw.githubusercontent.com/1sun12/timeline-app/main/docs/screenshots/note-panel.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Deep time: geologic periods and mass extinctions marked</caption>
+      <image>https://raw.githubusercontent.com/1sun12/timeline-app/main/docs/screenshots/deep-time.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Settings: theme, accent colours, timeline markers, Vim mode and sync</caption>
+      <image>https://raw.githubusercontent.com/1sun12/timeline-app/main/docs/screenshots/settings.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Office</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.1.2" date="2026-11-23">
+      <description>
+        <p>Security hardening, signed and self-updating AppImage, and AppStream metadata.</p>
+      </description>
+    </release>
+    <release version="0.1.1" date="2026-11-23"/>
+    <release version="0.1.0" date="2026-11-16"/>
+  </releases>
+</component>

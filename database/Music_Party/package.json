@@ -1,0 +1,32 @@
+{
+  "name": "music-party",
+  "version": "0.13.1",
+  "private": true,
+  "description": "网易云官方多人一起听桌面客户端",
+  "main": "out/main/index.js",
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@neteasecloudmusicapienhanced/api": "4.40.1",
+    "@yxim/nim-web-sdk": "9.21.19",
+    "animejs": "^4.5.0",
+    "electron-updater": "6.8.9",
+    "lucide-react": "^1.48.0",
+    "overlayscrollbars": "^2.17.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "packageManager": "pnpm@11.26.0",
+  "desktopName": "music-party.desktop",
+  "author": {
+    "name": "tabidachinokaze",
+    "url": "https://github.com/tabidachinokaze"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tabidachinokaze/music-party.git"
+  },
+  "homepage": "https://github.com/tabidachinokaze/music-party",
+  "bugs": {
+    "url": "https://github.com/tabidachinokaze/music-party/issues"
+  }
+}

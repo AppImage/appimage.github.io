@@ -1,0 +1,14 @@
+{
+  "name": "clipmer",
+  "version": "3.6.3",
+  "description": "Secrets-aware clipboard manager for Linux",
+  "author": {
+    "name": "Mustafa",
+    "email": "mustafa@clipmer.local"
+  },
+  "homepage": "https://github.com/0x99M/clipmer",
+  "main": "main.js",
+  "dependencies": {
+    "electron-store": "8.2.0"
+  }
+}

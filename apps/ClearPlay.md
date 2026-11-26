@@ -1,0 +1,51 @@
+---
+layout: app
+
+permalink: /ClearPlay/
+description: "ClearPlay is a minimal desktop music player for self-hosted Navidrome and OpenSubsonic servers."
+license: "MIT"
+
+icons:
+  - ClearPlay/icons/512x512/clearplay.png
+
+screenshots:
+  - ClearPlay/screenshot.png
+
+authors:
+  - name: "tonihk00"
+    url: "https://github.com/tonihk00"
+
+links:
+  - type: GitHub
+    url: tonihk00/ClearPlay
+  - type: Download
+    url: https://github.com/tonihk00/ClearPlay/releases
+
+desktop:
+  Desktop Entry:
+    Name: ClearPlay
+    Exec: AppRun --no-sandbox %U
+    Terminal: false
+    Type: Application
+    Icon: clearplay
+    StartupWMClass: ClearPlay
+    X-AppImage-Version: 0.6.0
+    Keywords: music
+    Comment: ClearPlay is a minimal desktop music player for self-hosted Navidrome and
+      OpenSubsonic servers.
+    Categories: AudioVideo
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: dynamic
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.25
+    X-AppImage-Payload-License: MIT
+
+electron: {"name":"clearplay","private":true,"version":"0.6.0","description":"A frosted-glass desktop player for Navidrome (OpenSubsonic) servers.","author":{"name":"tonihk00"},"main":"./out/main/index.js","type":"module","productName":"ClearPlay","repository":{"url":"https://github.com/tonihk00/ClearPlay"},"dependencies":{"@chriscodesthings/random-css-hex-color":"^1.1.0","@electron-toolkit/preload":"^3.0.1","@electron-toolkit/utils":"^4.0.0","@fontsource-variable/inter":"^5.3.0","@hookform/resolvers":"^3.10.0","@radix-ui/react-alert-dialog":"^1.1.15","@radix-ui/react-aspect-ratio":"^1.1.8","@radix-ui/react-avatar":"^1.1.11","@radix-ui/react-checkbox":"^1.3.3","@radix-ui/react-collapsible":"^1.1.12","@radix-ui/react-context-menu":"^2.2.16","@radix-ui/react-dialog":"^1.1.15","@radix-ui/react-dropdown-menu":"^2.1.16","@radix-ui/react-hover-card":"^1.1.15","@radix-ui/react-label":"^2.1.8","@radix-ui/react-menubar":"^1.1.16","@radix-ui/react-popover":"^1.1.15","@radix-ui/react-scroll-area":"^1.2.10","@radix-ui/react-select":"^2.2.6","@radix-ui/react-separator":"^1.1.8","@radix-ui/react-slider":"^1.3.6","@radix-ui/react-slot":"^1.2.4","@radix-ui/react-switch":"^1.2.6","@radix-ui/react-tabs":"^1.1.13","@radix-ui/react-tooltip":"^1.2.8","@tanstack/react-query":"^5.71.10","@tanstack/react-table":"^8.21.2","@tanstack/react-virtual":"^3.13.6","@virtual-grid/react":"^2.0.3","bufferutil":"^4.0.9","class-variance-authority":"^0.7.1","clsx":"^2.1.1","cmdk":"^1.1.1","crypto-js":"^4.2.0","dayjs":"^1.11.13","electron-dl":"^4.0.0","electron-store":"^11.0.2","electron-updater":"^6.7.3","embla-carousel-autoplay":"^8.6.0","embla-carousel-react":"^8.6.0","fast-average-color":"^9.5.0","hls.js":"^1.6.15","html-to-text":"^9.0.5","i18next":"^23.16.8","i18next-browser-languagedetector":"^8.0.4","icecast-metadata-stats":"^0.1.12","idb-keyval":"^6.2.2","immer":"^10.1.1","iso-639-2":"^3.0.2","linkify-it":"^5.0.2","lodash":"^4.17.23","lucide-react":"^0.563.0","music-metadata":"^11.16.1","react":"^18.3.1","react-country-flag":"^3.1.0","react-device-detect":"^2.2.3","react-dom":"^18.3.1","react-fast-marquee":"^1.6.5","react-hook-form":"^7.55.0","react-hotkeys-hook":"^4.6.1","react-i18next":"^14.1.3","react-lazy-load-image-component":"^1.6.3","react-markdown":"^10.1.0","react-router-dom":"^6.30.4","react-toastify":"^10.0.6","rehype-raw":"^7.0.0","remark-gfm":"^4.0.1","standardized-audio-context":"^25.3.77","tailwind-extended-shadows":"^0.4.1","tailwind-extended-shadows-merge":"^0.2.2","tailwind-merge":"^2.6.0","tailwindcss-animate":"^1.0.7","use-debounce":"^10.0.4","utf-8-validate":"^6.0.5","vaul":"^0.9.9","yet-another-react-lightbox":"^3.22.0","zod":"^3.24.2","zustand":"^4.5.6"},"packageManager":"pnpm@11.9.0","electron":{"window":{"defaultWidth":960,"defaultHeight":600,"defaultBgColor":"#060e23"}}}
+---

@@ -1,0 +1,63 @@
+---
+layout: app
+
+permalink: /AnyVector/
+description: "Vector graphics editor"
+license: "LicenseRef-proprietary"
+
+icons:
+  - AnyVector/icons/scalable/io.github.toim22.AnyVector.svg
+
+screenshots:
+  - AnyVector/screenshot.png
+
+authors:
+  - name: "toim22"
+    url: "https://github.com/toim22"
+
+links:
+  - type: GitHub
+    url: toim22/AnyVector
+  - type: Download
+    url: https://github.com/toim22/AnyVector/releases
+
+desktop:
+  Desktop Entry:
+    Type: Application
+    Version: 1.1
+    Name: AnyVector
+    Comment: Vector graphics editor
+    Comment[cs]: Editor vektorové grafiky
+    Comment[de]: Vektorgrafik-Editor
+    Comment[es]: Editor de gráficos vectoriales
+    Comment[fr]: Éditeur de graphiques vectoriels
+    Comment[it]: Editor di grafica vettoriale
+    Comment[ja]: ベクター グラフィック エディタ
+    Comment[nl]: Editor voor vectorafbeeldingen
+    Comment[pl]: Edytor grafiki wektorowej
+    Comment[pt_BR]: Editor de gráficos vetoriais
+    Comment[ru]: Редактор векторной графики
+    Comment[sv]: Program för vektorgrafik
+    Comment[tr]: Vektör grafik düzenleyicisi
+    Comment[zh_CN]: 矢量图形编辑器
+    Comment[zh_TW]: 向量繪圖編輯器
+    Icon: io.github.toim22.AnyVector
+    Exec: anyvector %F
+    Terminal: false
+    StartupWMClass: io.github.toim22.AnyVector
+    Categories: Graphics
+    Keywords: vector
+    MimeType: application/x-vector-drawing
+    X-AppImage-Version: 0.1.1
+  AppImageHub:
+    X-AppImage-Signature: 'directory ''/home/runner/.gnupg'' created keybox ''/home/runner/.gnupg/pubring.kbx''
+      created [don''t know]: invalid packet (ctb=0a) no signature found the signature
+      could not be verified. Please remember that the signature file (.sig or .asc)
+      should be the first file given on the command line.'
+    X-AppImage-Type: 2
+    X-AppImage-Architecture: x86_64
+    X-AppImage-Libc: host
+    X-AppImage-Runtime: static
+    X-AppImage-Self-Contained: false
+    X-AppImage-Glibc-Required: GLIBC_2.35
+---

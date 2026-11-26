@@ -1,12 +1,15 @@
 [Desktop Entry]
-Categories=Office;
-Comment=Plot what you read on a timeline
-Exec=timeline-app
-StartupWMClass=timeline-app
-Icon=timeline-app
-Name=Timeline
-Terminal=false
 Type=Application
+Name=Elio
+GenericName=Terminal and SSH client
+Comment=Terminal and SSH client
+Exec=elio
+Icon=elio
+Terminal=false
+Categories=System;TerminalEmulator;Network;
+Keywords=ssh;sftp;terminal;shell;
+StartupWMClass=elio
+X-AppImage-Version=0.1.9
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage
@@ -17,5 +20,5 @@ X-AppImage-Architecture=x86_64
 X-AppImage-Libc=host
 X-AppImage-Runtime=static
 X-AppImage-Self-Contained=false
-X-AppImage-Glibc-Required=GLIBC_2.35
-X-AppImage-Payload-License=MIT
+X-AppImage-Glibc-Required=GLIBC_2.27
+X-AppImage-Payload-License=Apache-2.0
