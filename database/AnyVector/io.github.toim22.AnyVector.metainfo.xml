@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: CC0-1.0 -->
+<component type="desktop-application">
+  <id>io.github.toim22.AnyVector</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>AnyVector</name>
+  <summary>Vector graphics editor</summary>
+  <summary xml:lang="cs">Editor vektorové grafiky</summary>
+  <summary xml:lang="de">Vektorgrafik-Editor</summary>
+  <summary xml:lang="es">Editor de gráficos vectoriales</summary>
+  <summary xml:lang="fr">Éditeur de graphiques vectoriels</summary>
+  <summary xml:lang="it">Editor di grafica vettoriale</summary>
+  <summary xml:lang="ja">ベクター グラフィック エディタ</summary>
+  <summary xml:lang="nl">Editor voor vectorafbeeldingen</summary>
+  <summary xml:lang="pl">Edytor grafiki wektorowej</summary>
+  <summary xml:lang="pt_BR">Editor de gráficos vetoriais</summary>
+  <summary xml:lang="ru">Редактор векторной графики</summary>
+  <summary xml:lang="sv">Program för vektorgrafik</summary>
+  <summary xml:lang="tr">Vektör grafik düzenleyicisi</summary>
+  <summary xml:lang="zh_CN">矢量图形编辑器</summary>
+  <summary xml:lang="zh_TW">向量繪圖編輯器</summary>
+  <developer_name>AnyVector Team</developer_name>
+  <description>
+    <p>
+      AnyVector is a vector graphics editor for illustrations, layouts and logos. Its menus, toolbars,
+      tools, property bars, dockers and dialogs follow the CorelDRAW layout, with the same captions,
+      shortcuts and order.
+    </p>
+    <ul>
+      <li>Opens drawings saved by CorelDRAW, and SVG, PDF, EPS, PostScript, Adobe Illustrator, DXF and CMX files</li>
+      <li>Shape, curve, text, table, dimension and connector tools, and effects such as blend, contour, envelope, extrude and drop shadow</li>
+      <li>Bitmap effects, bitmap tracing and color management</li>
+      <li>Publishes to PDF, including PDF/X and PDF/A, and prints with a preview and prepress options</li>
+      <li>Interface in 15 languages</li>
+    </ul>
+    <p>CorelDRAW is a trademark of its owner. AnyVector is an independent product, not affiliated with it.</p>
+  </description>
+  <launchable type="desktop-id">io.github.toim22.AnyVector.desktop</launchable>
+  <icon type="stock">io.github.toim22.AnyVector</icon>
+  <categories>
+    <category>Graphics</category>
+    <category>2DGraphics</category>
+    <category>VectorGraphics</category>
+  </categories>
+  <url type="homepage">https://github.com/toim22/AnyVector</url>
+  <url type="bugtracker">https://github.com/toim22/AnyVector/issues</url>
+  <provides>
+    <binary>anyvector</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <!-- the Linux versions, newest first; add the version here when it changes in Cargo.toml (xtask/tests/linux_packaging.rs) -->
+  <releases>
+    <release version="0.1.1" date="2026-11-25">
+      <url>https://github.com/toim22/AnyVector/releases/tag/v0.1.1-linux</url>
+    </release>
+    <release version="0.1.0" date="2026-11-24">
+      <url>https://github.com/toim22/AnyVector/releases/tag/v0.1.0-linux</url>
+    </release>
+  </releases>
+</component>

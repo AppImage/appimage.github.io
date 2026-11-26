@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="96 86 1062 1062" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b3242"/>
+      <stop offset="0.35" stop-color="#151a26"/>
+      <stop offset="1" stop-color="#0b0d16"/>
+    </linearGradient>
+    <radialGradient id="glowBlue" cx="640" cy="420" r="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a9cff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#0a9cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowGreen" cx="330" cy="580" r="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1fd06a" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#1fd06a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowRed" cx="520" cy="800" r="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d0175e" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#d0175e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowOrange" cx="880" cy="720" r="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff6a00" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#ff6a00" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="blue" x1="300" y1="0" x2="1050" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#21b8ff"/>
+      <stop offset="1" stop-color="#0a8fe6"/>
+    </linearGradient>
+    <linearGradient id="green" x1="430" y1="650" x2="560" y2="470" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4fe04a"/>
+      <stop offset="0.45" stop-color="#3ccc45"/>
+      <stop offset="0.55" stop-color="#0a8d3e"/>
+      <stop offset="1" stop-color="#06833a"/>
+    </linearGradient>
+    <linearGradient id="yellow" x1="700" y1="0" x2="1076" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d8ec18"/>
+      <stop offset="1" stop-color="#eef200"/>
+    </linearGradient>
+    <linearGradient id="lower" x1="430" y1="0" x2="700" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b8174f"/>
+      <stop offset="0.45" stop-color="#c41a52"/>
+      <stop offset="0.75" stop-color="#ff6a12"/>
+      <stop offset="1" stop-color="#ff7d00"/>
+    </linearGradient>
+    <radialGradient id="shade" cx="640" cy="440" r="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="0.6" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.18"/>
+    </radialGradient>
+    <linearGradient id="gondola" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a9bb0"/>
+      <stop offset="1" stop-color="#5b6b80"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="65"/>
+    </filter>
+    <clipPath id="body">
+      <path d="M193 608 C212 525 340 425 540 398 C720 372 960 400 1040 480 C1062 503 1076 532 1076 560 C1060 640 980 720 890 752 C800 785 680 795 540 780 C400 765 260 700 193 608 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- fundo -->
+  <rect x="96" y="86" width="1062" height="1062" rx="230" fill="url(#bg)"/>
+  <rect x="96" y="86" width="1062" height="1062" rx="230" fill="url(#glowBlue)"/>
+  <g filter="url(#glow)" opacity="0.6">
+    <use href="#paint" transform="translate(635 590) scale(1.08 1.18) translate(-635 -590)"/>
+  </g>
+
+  <!-- aletas e gôndola -->
+  <path d="M174 492 C210 478 250 482 292 515 L232 585 C212 548 192 520 174 492 Z" fill="#0f9bf0"/>
+  <path d="M178 730 C190 690 205 662 222 640 L292 692 C255 718 215 732 178 730 Z" fill="#c8e01c"/>
+  <path d="M586 790 L712 790 L692 828 C688 832 684 834 678 834 L620 834 C614 834 610 832 606 828 Z" fill="url(#gondola)"/>
+
+  <!-- corpo -->
+  <g clip-path="url(#body)">
+    <g id="paint" clip-path="url(#body)">
+    <rect x="150" y="350" width="960" height="500" fill="#45d84a"/>
+    <path d="M540 700 C590 630 680 590 790 572 L1100 548 V800 H540 Z" fill="url(#yellow)"/>
+    <path d="M100 300 H1100 V560 L1080 560 C960 530 760 520 560 570 C420 600 380 680 410 790 L100 790 Z" fill="url(#green)"/>
+    <path d="M440 790 C540 690 760 610 1080 565 L1100 565 V900 H440 Z" fill="#ff7a0a"/>
+    <path d="M100 612 L196 612 C330 680 600 730 780 700 C920 675 1030 610 1080 565 L1100 565 V900 H100 Z" fill="#c01b55"/>
+    <path d="M520 820 C570 760 620 725 700 708 C850 680 1000 620 1090 560 V900 H520 Z" fill="#ff7608"/>
+    <path d="M100 300 H1100 V300 L760 385 C480 440 300 520 196 605 L100 605 Z" fill="url(#blue)"/>
+    <path d="M560 462 C720 420 960 440 1080 560 L1100 560 V300 H560 Z" fill="url(#blue)"/>
+    </g>
+
+    <rect x="150" y="350" width="960" height="500" fill="url(#shade)"/>
+
+    <g fill="none" stroke="#ffffff" stroke-width="26" stroke-linecap="round">
+      <path d="M190 607 C300 520 480 440 780 382"/>
+      <path d="M345 780 C300 640 380 520 560 462 C720 420 960 440 1085 560"/>
+      <path d="M410 800 C380 680 420 600 560 570 C760 535 960 545 1085 562"/>
+      <path d="M440 800 C540 690 760 610 1085 565"/>
+      <path d="M190 612 C330 680 600 730 780 700 C920 675 1030 610 1085 565"/>
+    </g>
+  </g>
+  <!-- contorno branco fino da ponta/cauda -->
+  <path d="M193 608 C212 525 340 425 540 398 C720 372 960 400 1040 480 C1062 503 1076 532 1076 560 C1060 640 980 720 890 752 C800 785 680 795 540 780 C400 765 260 700 193 608 Z" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
+</svg>
