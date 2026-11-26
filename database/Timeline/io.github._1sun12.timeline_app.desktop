@@ -1,0 +1,20 @@
+[Desktop Entry]
+Type=Application
+Name=Timeline
+Comment=Plot what you read on a timeline
+Exec=timeline-app
+Icon=io.github._1sun12.timeline_app
+Categories=Office;
+Terminal=false
+StartupWMClass=timeline-app
+X-AppImage-Version=0.1.2
+
+[AppImageHub]
+X-AppImage-UpdateInformation=gh-releases-zsync|1sun12|timeline-app|latest|Timeline_*_amd64.AppImage.zsync
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created Signature made Tue Nov 24 06:03:00 2026 UTC                using RSA key BE3C957EFD361B62483372C8BFBC8DFD37E33103 Can't check signature: No public key 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=bundled
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=true
+X-AppImage-Payload-License=MIT
