@@ -1,0 +1,14 @@
+{
+  "name": "notecomplete-desktop",
+  "version": "1.2.95",
+  "private": true,
+  "description": "NoteComplete document reader and editor",
+  "author": "NoteComplete contributors",
+  "type": "module",
+  "main": "main.js",
+  "dependencies": {
+    "ws": "8.22.1",
+    "y-protocols": "1.0.7",
+    "yjs": "13.6.33"
+  }
+}
