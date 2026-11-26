@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata, shipped in the AppImage at usr/share/metainfo/ (see
+  "extraFiles" in package.json). The AppImage catalog (appimage.github.io) shows
+  these screenshots instead of its own test capture, which only finds the tray
+  menu, and fails the listing if `appstreamcli validate-tree` reports errors.
+  Its test only looks for *.appdata.xml, hence the extension. validate-tree
+  also needs the launchable at usr/share/applications/clipmer.desktop, which
+  electron-builder doesn't write (it puts the desktop file only at the AppImage
+  root), so build/clipmer.desktop is shipped there too. Keep it in step with
+  the desktop entry electron-builder generates.
+
+  On every release, add a <release> line at the top of <releases>, with the same
+  version and date as web/lib/changelog.ts.
+-->
+<component type="desktop-application">
+  <id>app.clipmer.Clipmer</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://github.com/0x99M/clipmer/blob/master/LICENSE</project_license>
+
+  <name>Clipmer</name>
+  <summary>Searchable clipboard history that can hide secrets</summary>
+  <developer id="app.clipmer">
+    <name>0x99M</name>
+  </developer>
+
+  <description>
+    <p>
+      Clipmer keeps a history of the text you copy. Press Ctrl+Shift+D, type any
+      word you remember, and paste it again.
+    </p>
+    <ul>
+      <li>Search across the whole text of every entry, not just the first line</li>
+      <li>Hide an entry that holds a password or token: it shows as dots and stays out of search, but still pastes</li>
+      <li>Opens with Ctrl+Shift+D on GNOME and KDE Plasma, on Wayland and X11</li>
+      <li>Optional auto-paste on GNOME, off by default</li>
+      <li>History is stored on your computer; nothing is sent anywhere</li>
+    </ul>
+    <p>
+      Clipmer keeps text only: no images or files. The free version shows your
+      last 100 entries. Clipmer Pro, a one-time purchase, shows 200 and adds
+      folders and notes.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">clipmer.desktop</launchable>
+
+  <url type="homepage">https://clipmer.app</url>
+  <url type="bugtracker">https://github.com/0x99M/clipmer/issues</url>
+  <url type="vcs-browser">https://github.com/0x99M/clipmer</url>
+  <url type="contact">https://clipmer.app/contact</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The history window. The second entry is hidden, so it shows as dots. Example entries.</caption>
+      <image type="source" width="840" height="1120">https://clipmer.app/screenshots/clipmer-clipboard-history.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Type any word you remember; the list narrows as you type. Example entries.</caption>
+      <image type="source" width="840" height="1120">https://clipmer.app/screenshots/clipmer-search.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Clipmer Pro: a Deploy folder, with notes under its entries. Example entries.</caption>
+      <image type="source" width="840" height="1120">https://clipmer.app/screenshots/clipmer-folders-notes.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>clipboard</keyword>
+    <keyword>clipboard history</keyword>
+    <keyword>clipboard manager</keyword>
+    <keyword>copy</keyword>
+    <keyword>paste</keyword>
+  </keywords>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="3.6.3" date="2026-11-25" />
+    <release version="3.6.2" date="2026-11-25" />
+    <release version="3.6.1" date="2026-11-08" />
+  </releases>
+</component>
