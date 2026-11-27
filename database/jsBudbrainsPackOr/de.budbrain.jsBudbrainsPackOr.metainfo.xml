@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>de.budbrain.jsBudbrainsPackOr</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>jsBudbrainsPackOr</name>
+  <summary>Pack and unpack by drag and drop</summary>
+  <summary xml:lang="de">Packen und Entpacken per Ziehen und Ablegen</summary>
+  <description>
+    <p>A little bunny sits on your desktop. Drop files on it and it packs them, with two ogres hammering the pile into a parcel. Drop an archive on it and it shows what is inside and extracts it.</p>
+    <p xml:lang="de">Ein kleiner Hase sitzt auf dem Desktop. Dateien auf ihn werfen, und er packt sie – zwei Oger hämmern den Stapel zum Paket. Ein Archiv auf ihn werfen, und er zeigt, was drin ist, und entpackt es.</p>
+    <ul>
+      <li>ZIP, 7Z, TAR.GZ, TAR.XZ, TAR.ZST, TAR.BZ2, TAR.LZ4 and TAR</li>
+      <li xml:lang="de">ZIP, 7Z, TAR.GZ, TAR.XZ, TAR.ZST, TAR.BZ2, TAR.LZ4 und TAR</li>
+      <li>Uses all processor cores</li>
+      <li xml:lang="de">Nutzt alle Prozessorkerne</li>
+      <li>Password ZIP, split archives, checksums, 83 languages</li>
+      <li xml:lang="de">Passwort-ZIP, geteilte Archive, Prüfsummen, 83 Sprachen</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">jsbudbrainspackor.desktop</launchable>
+  <url type="homepage">https://www.budbrain.de/budbrain-software/</url>
+  <url type="contact">https://www.budbrain.de/budbrain-software/</url>
+  <developer id="de.budbrain">
+    <name>Budbrain Software</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Two ogres hammer the dropped files into a parcel</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainspackor_01-packing.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The bunny waits on the desktop for files</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainspackor_02-on-the-desktop.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Done, with time taken and checksums</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainspackor_03-done.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Language, bunny size and text size</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainspackor_04-settings.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Look into an archive and extract only what you tick</caption>
+      <image>https://www.budbrain.de/budbrain-software/images/linux/jsbudbrainspackor_05-archive.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>jsBudbrainsPackOr</binary>
+  </provides>
+  <releases>
+    <release version="1.0.0" date="2026-11-27">
+      <description>
+        <p>First version.</p>
+        <p xml:lang="de">Erste Fassung.</p>
+      </description>
+    </release>
+  </releases>
+</component>
