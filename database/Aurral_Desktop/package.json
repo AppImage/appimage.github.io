@@ -1,0 +1,14 @@
+{
+  "name": "aurral-desktop",
+  "productName": "Aurral Desktop",
+  "desktopName": "io.github.apollovulpez.aurral-desktop.desktop",
+  "version": "0.1.10",
+  "dependencies": {
+    "@jellybrick/dbus-next": "0.11.4"
+  },
+  "main": "main.cjs",
+  "description": "A desktop front end for your Aurral server.",
+  "homepage": "https://github.com/ApolloVulpez/aurral-desktop",
+  "author": "Aurral Desktop Contributors",
+  "license": "MIT"
+}

@@ -1,0 +1,35 @@
+[Desktop Entry]
+Name=Aurral Desktop
+Exec=AppRun %U
+Terminal=false
+Type=Application
+Icon=aurral-desktop
+StartupWMClass=io.github.apollovulpez.aurral-desktop
+X-AppImage-Version=0.1.10
+Comment=A desktop front end for your Aurral server.
+Categories=AudioVideo;
+Actions=PreviousTrack;PlayPause;NextTrack;
+
+[Desktop Action PreviousTrack]
+Name=Previous Track
+Exec="/opt/Aurral Desktop/aurral-desktop" --aurral-playback=previoustrack
+
+[Desktop Action PlayPause]
+Name=Play/Pause
+Exec="/opt/Aurral Desktop/aurral-desktop" --aurral-playback=toggle
+
+[Desktop Action NextTrack]
+Name=Next Track
+Exec="/opt/Aurral Desktop/aurral-desktop" --aurral-playback=nexttrack
+
+[AppImageHub]
+# Dear upstream developer, please include update information in your AppImage
+# (e.g., with appimagetool -u) so that users can easily update the AppImage
+X-AppImage-Signature=directory '/home/runner/.gnupg' created keybox '/home/runner/.gnupg/pubring.kbx' created [don't know]: invalid packet (ctb=0a) no signature found the signature could not be verified. Please remember that the signature file (.sig or .asc) should be the first file given on the command line. 
+X-AppImage-Type=2
+X-AppImage-Architecture=x86_64
+X-AppImage-Libc=host
+X-AppImage-Runtime=static
+X-AppImage-Self-Contained=false
+X-AppImage-Glibc-Required=GLIBC_2.25
+X-AppImage-Payload-License=MIT
