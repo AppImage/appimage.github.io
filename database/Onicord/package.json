@@ -1,0 +1,23 @@
+{
+  "name": "onicord",
+  "version": "0.3.8",
+  "description": "Onicord",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "author": "Oniverse <oniverse.dsg@gmail.com>",
+  "license": "AGPL-3.0-only",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "adm-zip": "^0.6.0",
+    "b4a": "^1.6.9",
+    "better-sqlite3": "^12.11.1",
+    "electron-updater": "^6.8.9",
+    "hyperswarm": "^4.9.0",
+    "lucide-react": "^1.77.0",
+    "torrent-stream": "^1.2.1",
+    "uiohook-napi": "^1.5.5"
+  }
+}
