@@ -1,0 +1,21 @@
+{
+  "name": "nexis-desktop",
+  "productName": "Noxa",
+  "version": "1.2.1",
+  "description": "Noxa pour Windows, macOS et Linux : l'interface de votre serveur Noxa, dans une vraie application.",
+  "homepage": "https://github.com/xenix13/Noxa",
+  "author": {
+    "name": "Noxa",
+    "email": "noxa@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "private": true,
+  "main": "main.js",
+  "desktopName": "nexis.desktop",
+  "dependencies": {
+    "electron-updater": "6.8.11"
+  },
+  "overrides": {
+    "minimatch@>=7.0.0 <11.0.1": "11.0.8"
+  }
+}
