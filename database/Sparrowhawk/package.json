@@ -1,0 +1,8 @@
+{
+  "name": "sparrowhawk-electron",
+  "version": "0.2.0",
+  "description": "Sparrowhawk: private bacterial genomics in your browser and desktop",
+  "homepage": "https://sparrowhawk.bacpop.org",
+  "private": true,
+  "main": "main.js"
+}
