@@ -1,0 +1,31 @@
+{
+  "name": "volyx-lens",
+  "version": "0.9.0",
+  "description": "Private desktop context assistant for screen, voice, meetings, and coding workflows on macOS, Windows, and Linux.",
+  "author": "VolyxAI",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.14.0",
+    "@deepgram/sdk": "^5.20.0",
+    "@google/genai": "^2.32.0",
+    "electron-updater": "^6.8.11",
+    "jszip": "^3.10.2",
+    "mammoth": "^1.12.0",
+    "openai": "^7.65.0",
+    "pdfjs-dist": "^6.5.438",
+    "ws": "^8.23.1"
+  },
+  "overrides": {
+    "app-builder-lib": {
+      "@electron/get": "5.1.0"
+    },
+    "brace-expansion": "5.0.12",
+    "tar": "7.5.22",
+    "glob": "^14.0.2",
+    "minimatch": "^11.0.1"
+  }
+}
