@@ -1,0 +1,7 @@
+{
+  "description": "Electron window that joins an Orchbee Session as a Server Client",
+  "desktopName": "orchbee.desktop",
+  "main": "dist/main/main.cjs",
+  "name": "orchbee",
+  "version": "0.1.0-beta.26"
+}
