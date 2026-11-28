@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata: what software centres (GNOME Software, Discover)
+     and package indexes show for Glossa. Installed by packaging/linux/stage.sh
+     as usr/share/metainfo/io.github.bropines.Glossa.metainfo.xml. Add a
+     <release> for every version (see .github/AGENTS.md); check the file with
+     `appstreamcli validate` where that tool is at hand. -->
+<component type="desktop-application">
+  <id>io.github.bropines.Glossa</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT OR Apache-2.0</project_license>
+  <name>Glossa</name>
+  <summary>Translate the selection anywhere, recognise text on screen</summary>
+  <summary xml:lang="ru">Перевод выделенного текста в любой программе, распознавание текста на экране</summary>
+  <developer id="io.github.bropines">
+    <name>Bropines</name>
+  </developer>
+  <description>
+    <p>
+      Glossa sits in the tray and translates the text you select in any
+      program: press a hotkey and a popup with the translation opens by the
+      pointer. It is a clean-room successor to QTranslate, the classic
+      Windows translator, for Linux, Windows and macOS.
+    </p>
+    <ul>
+      <li>Many translation services side by side, including any OpenAI-compatible API</li>
+      <li>Text recognition in a region of the screen (Google Lens, Tesseract or any command)</li>
+      <li>Online and offline dictionaries, history, text to speech</li>
+      <li>Modules in JavaScript, Python, Java or native code add services of your own</li>
+      <li>glossa-cli does the same from a terminal</li>
+    </ul>
+    <p>
+      Glossa sends the text you ask it to translate to the service you
+      chose; the services' own terms apply. The Linux build has not been
+      tested on real hardware yet.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.bropines.Glossa.desktop</launchable>
+  <icon type="stock">io.github.bropines.Glossa</icon>
+  <url type="homepage">https://github.com/bropines/glossa</url>
+  <url type="bugtracker">https://github.com/bropines/glossa/issues</url>
+  <url type="help">https://github.com/bropines/glossa/tree/main/docs</url>
+  <url type="vcs-browser">https://github.com/bropines/glossa</url>
+  <categories>
+    <category>Utility</category>
+    <category>Office</category>
+    <category>Dictionary</category>
+  </categories>
+  <keywords>
+    <keyword>translate</keyword>
+    <keyword>translator</keyword>
+    <keyword>dictionary</keyword>
+    <keyword>ocr</keyword>
+  </keywords>
+  <provides>
+    <binary>glossa</binary>
+    <binary>glossa-cli</binary>
+  </provides>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main window</caption>
+      <image type="source">https://raw.githubusercontent.com/bropines/glossa/main/docs/screenshots/main-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>The popup with a translation of the selected text</caption>
+      <image type="source">https://raw.githubusercontent.com/bropines/glossa/main/docs/screenshots/popup-dark.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.1.2" type="stable" date="2026-11-28">
+      <url type="details">https://github.com/bropines/glossa/releases/tag/v0.1.2</url>
+    </release>
+    <release version="0.1.1" type="stable" date="2026-11-27">
+      <url type="details">https://github.com/bropines/glossa/releases/tag/v0.1.1</url>
+    </release>
+    <release version="0.1.0" type="stable" date="2026-11-17">
+      <url type="details">https://github.com/bropines/glossa/releases/tag/v0.1.0</url>
+    </release>
+    <release version="0.1.0~beta.2" type="development" date="2026-11-02">
+      <url type="details">https://github.com/bropines/glossa/releases/tag/v0.1.0-beta.2</url>
+    </release>
+    <release version="0.1.0~beta.1" type="development" date="2026-11-01">
+      <url type="details">https://github.com/bropines/glossa/releases/tag/v0.1.0-beta.1</url>
+    </release>
+  </releases>
+</component>
