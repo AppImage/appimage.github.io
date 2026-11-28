@@ -1,0 +1,18 @@
+{
+  "name": "quadit-desktop",
+  "productName": "Quadit",
+  "description": "The Quadit desktop app: your Quadit servers in their own windows.",
+  "private": true,
+  "license": "MIT",
+  "version": "0.1.0-beta.15",
+  "author": "Quadit",
+  "homepage": "https://agrigoryan.github.io/quadit/",
+  "main": "out/main.js",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
+  },
+  "quaditDesktop": {}
+}
