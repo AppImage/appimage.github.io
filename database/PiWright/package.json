@@ -1,0 +1,19 @@
+{
+  "name": "piwright",
+  "version": "0.6.2",
+  "description": "Desktop workbench for the pi coding agent",
+  "main": "./out/main/index.js",
+  "author": "PiWright",
+  "license": "MIT",
+  "desktopName": "piwright.desktop",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/php-programmist/PiWright.git"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "electron-updater": "^6.6.4",
+    "node-pty": "^1.1.0",
+    "ssh2": "^1.17.0"
+  }
+}

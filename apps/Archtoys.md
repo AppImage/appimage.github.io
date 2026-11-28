@@ -2,14 +2,13 @@
 layout: app
 
 permalink: /Archtoys/
-description: "System-wide color picker for Linux"
+description: "Pick colors, copy text from the screen, measure it"
 license: "MIT"
 
 icons:
   - Archtoys/icons/256x256/archtoys.png
-
 screenshots:
-  - Archtoys/screenshot.png
+- https://raw.githubusercontent.com/Mujtaba1i/Archtoys/main/docs/screenshots/picker.png
 
 authors:
   - name: "Mujtaba1i"
@@ -26,7 +25,7 @@ desktop:
     Version: 1.0
     Type: Application
     Name: Archtoys
-    Comment: System-wide color picker for Linux
+    Comment: Pick colors, copy text from the screen, measure it
     Exec: archtoys %u
     Icon: archtoys
     Terminal: false

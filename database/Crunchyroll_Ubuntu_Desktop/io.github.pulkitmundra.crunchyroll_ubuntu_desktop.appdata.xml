@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.pulkitmundra.crunchyroll_ubuntu_desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>ISC</project_license>
+  <name>Crunchyroll</name>
+  <summary>Unofficial Linux desktop client for Crunchyroll with Widevine DRM, Auto-PiP and MPRIS</summary>
+  <description>
+    <p>
+      Crunchyroll Desktop (Unofficial) is a free, open-source Linux desktop and HTPC client for
+      streaming Crunchyroll with built-in Widevine DRM playback via Castlabs Electron and a
+      custom glassmorphic dark interface.
+    </p>
+    <ul>
+      <li>Smart Auto-PiP (F10) and Floating Mini-Player (F9) that preserve styled anime subtitles</li>
+      <li>Linear 20% to 100% see-through player translucency across Wayland and X11</li>
+      <li>In-player Video Quality selector (Q), Sleep Timer (T), and timeline chapter markers</li>
+      <li>Self-healing PipeWire audio recovery across long pauses, Bluetooth switches, and sleep/wake</li>
+      <li>Native GNOME MPRIS media keys, Watchlist, Custom Crunchylists, and frame capture (Ctrl+Shift+S)</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github.pulkitmundra.crunchyroll_ubuntu_desktop.desktop</launchable>
+  <developer id="com.pulkitmundra">
+    <name>Pulkit Mundra</name>
+  </developer>
+  <url type="homepage">https://pulkitmundra.com/projects/crunchyroll-ubuntu-desktop</url>
+  <url type="bugtracker">https://github.com/pulkitmundra/crunchyroll-ubuntu-desktop/issues</url>
+  <url type="vcs-browser">https://github.com/pulkitmundra/crunchyroll-ubuntu-desktop</url>
+  <url type="donation">https://buymeacoffee.com/pulkitmundra</url>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="2.4.1" date="2026-11-28">
+      <description>
+        <p>Graceful offline startup, static AppImage runtime, and AppStream metadata for AppImageHub.</p>
+      </description>
+    </release>
+    <release version="2.4.0" date="2026-11-18">
+      <description>
+        <p>Long-pause and sleep/wake PipeWire audio recovery, star ratings, and movie playback support.</p>
+      </description>
+    </release>
+  </releases>
+</component>

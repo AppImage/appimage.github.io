@@ -2,14 +2,14 @@
 Version=1.0
 Type=Application
 Name=Archtoys
-Comment=System-wide color picker for Linux
+Comment=Pick colors, copy text from the screen, measure it
 Exec=archtoys %u
 Icon=archtoys
 Terminal=false
 StartupNotify=false
 StartupWMClass=archtoys
 Categories=Graphics;Utility;
-Keywords=color;picker;eyedropper;hex;
+Keywords=color;picker;eyedropper;hex;ocr;text;ruler;measure;
 
 [AppImageHub]
 # Dear upstream developer, please include update information in your AppImage

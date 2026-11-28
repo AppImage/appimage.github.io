@@ -1,0 +1,15 @@
+{
+  "name": "lydia",
+  "version": "1.6.2",
+  "license": "SEE LICENSE IN LICENSE",
+  "description": "A workstation for Linux that lives at the top of your screen, like a dynamic island",
+  "main": "app/main.js",
+  "author": {
+    "name": "Gabriel Dias",
+    "email": "programacao@grupohermesltda.com"
+  },
+  "type": "commonjs",
+  "private": true,
+  "homepage": "https://cattastudios.com.br/lydia-releases/",
+  "desktopName": "lydia.desktop"
+}

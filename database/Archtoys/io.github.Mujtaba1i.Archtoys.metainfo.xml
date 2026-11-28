@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- What KDE Discover and GNOME Software show about Archtoys (AppStream).
+     Checked in CI with appstreamcli; installed by the .deb, RPM and AUR packages. -->
+<component type="desktop-application">
+  <id>io.github.Mujtaba1i.Archtoys</id>
+  <launchable type="desktop-id">archtoys.desktop</launchable>
+  <name>Archtoys</name>
+  <summary>PowerToys-style tools for Linux: pick colors, copy text, measure the screen</summary>
+  <developer id="io.github.mujtaba1i">
+    <name>Mujtaba1i</name>
+  </developer>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>
+      Archtoys is a growing set of small tools for Linux in one native app, inspired by
+      Microsoft PowerToys. It works on Wayland and X11 and is at home on KDE Plasma.
+    </p>
+    <p>Color Picker:</p>
+    <ul>
+      <li>Pick any pixel on any monitor, with a magnifier and arrow keys for precision</li>
+      <li>See the color's name among about 32,000, and find colors by name</li>
+      <li>Copy it as HEX, RGB, HSL, HSV, OKLCH and more, edit and compare colors</li>
+    </ul>
+    <p>Text Extractor:</p>
+    <ul>
+      <li>Drag over any part of the screen and copy the text in it, even from images and videos</li>
+      <li>Languages are detected by themselves</li>
+    </ul>
+    <p>Screen Ruler:</p>
+    <ul>
+      <li>Measure a box, the space around a point, a width or a height, in px, cm or inches</li>
+      <li>Keep up to three boxes on the screen and copy their sizes at once</li>
+    </ul>
+    <p>Awake:</p>
+    <ul>
+      <li>Keep the computer from sleeping for a set time, until a time of day, or until you turn it off</li>
+      <li>Keep the screen on too, or only the computer, from its page or the tray</li>
+    </ul>
+    <p>Micro-toys:</p>
+    <ul>
+      <li>Screenshot to clipboard: drag over an area and it is copied as a picture</li>
+      <li>Image Resizer: resize and convert pictures from the file manager's right-click menu</li>
+    </ul>
+    <p>
+      Archtoys works offline. Text Extractor uses Tesseract and Image Resizer uses ImageMagick,
+      installed when you turn them on, and Text Extractor downloads a language's data the
+      first time it is needed.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/Mujtaba1i/Archtoys</url>
+  <url type="bugtracker">https://github.com/Mujtaba1i/Archtoys/issues</url>
+  <url type="vcs-browser">https://github.com/Mujtaba1i/Archtoys</url>
+  <url type="donation">https://mujtaba1i.github.io/Archtoys/support/</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Picking a color, with the magnifier next to the cursor</caption>
+      <image>https://raw.githubusercontent.com/Mujtaba1i/Archtoys/main/docs/screenshots/picker.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Graphics</category>
+    <category>Utility</category>
+  </categories>
+  <keywords>
+    <keyword>color</keyword>
+    <keyword>picker</keyword>
+    <keyword>eyedropper</keyword>
+    <keyword>OCR</keyword>
+    <keyword>text</keyword>
+    <keyword>ruler</keyword>
+    <keyword>measure</keyword>
+    <keyword>awake</keyword>
+    <keyword>resize</keyword>
+    <keyword>image</keyword>
+    <keyword>PowerToys</keyword>
+  </keywords>
+  <provides>
+    <binary>archtoys</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.9.3" date="2026-11-27">
+      <description>
+        <ul>
+          <li>CI: the package checks no longer fail at random when apt, dnf or pacman lists several versions</li>
+          <li>Archtoys starts fast again: the window shows about 5 times sooner than in v0.9.1 and v0.9.2</li>
+          <li>Image Resizer: a notification when it's done instead of a window (Settings, Micro-toys turns it off)</li>
+          <li>CI: the benchmark measures more times, for steadier numbers</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.2" date="2026-11-27">
+      <description>
+        <ul>
+          <li>Release: each new version is sent to Flathub as a pull request</li>
+          <li>Software centers and Flathub: the app's description lists each release and its changes</li>
+          <li>APT repository: its index no longer lists its own previous copy</li>
+          <li>CI: the APT package check shows apt's warnings when a version doesn't show up</li>
+          <li>Flatpak: built on the newer 26.08 runtime</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.1" date="2026-11-27">
+      <description>
+        <ul>
+          <li>Archtoys runs as a Flatpak, with every toy working, and updates from Flathub</li>
+          <li>The AppImage carries the app's description</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.0" date="2026-11-26">
+      <description>
+        <ul>
+          <li>Awake: keep the computer awake for as long as you choose</li>
+          <li>Image Resizer: resize and convert pictures from the file manager's right-click menu</li>
+          <li>An APT repository for Debian and Ubuntu</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.8.4" date="2026-11-25"/>
+    <release version="0.8.3" date="2026-11-25"/>
+    <release version="0.8.2" date="2026-11-24"/>
+    <release version="0.8.1" date="2026-11-23"/>
+    <release version="0.8.0" date="2026-11-19"/>
+    <release version="0.7.5" date="2026-11-14"/>
+    <release version="0.7.4" date="2026-11-12"/>
+    <release version="0.7.3" date="2026-11-10"/>
+    <release version="0.7.2" date="2026-11-08"/>
+    <release version="0.7.1" date="2026-11-06"/>
+    <release version="0.7.0" date="2026-11-05"/>
+  </releases>
+</component>
