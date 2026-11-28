@@ -1,0 +1,47 @@
+{
+  "name": "citefox",
+  "productName": "CiteFox",
+  "version": "0.13.8",
+  "private": true,
+  "description": "Desktop app that tracks whether Google AI Overviews cite a website's pages.",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Space-O Technologies (https://www.spaceo.ca)",
+  "homepage": "https://github.com/spcaeo/citefox",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spcaeo/citefox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spcaeo/citefox/issues"
+  },
+  "main": "./out/main/index.js",
+  "engines": {
+    "node": ">=24.19.0"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=24.19.0",
+      "onFail": "error"
+    }
+  },
+  "dependencies": {
+    "@napi-rs/keyring": "^2.1.2",
+    "ajv": "^8.20.0",
+    "better-sqlite3": "^13.0.3",
+    "exceljs": "^4.4.0",
+    "nodemailer": "^10.1.7",
+    "pdfkit": "0.20.2",
+    "svg-to-pdfkit": "0.1.8"
+  },
+  "allowScripts": {
+    "better-sqlite3": false,
+    "fsevents": false,
+    "electron-winstaller": false
+  },
+  "overrides": {
+    "exceljs": {
+      "uuid": "^11.1.1"
+    }
+  }
+}
